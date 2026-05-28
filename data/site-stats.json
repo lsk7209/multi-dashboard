@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T16:45:46.103Z",
+  "generatedAt": "2026-05-28T16:55:28.756Z",
   "rangeDays": 7,
   "previousRangeDays": 28,
   "stats": [
@@ -8,6 +8,7 @@
       "name": "bojo24.kr",
       "url": "https://bojo24.kr/",
       "ga4PropertyId": "534288708",
+      "gscSiteUrl": "https://bojo24.kr/",
       "last7Days": {
         "activeUsers": 809,
         "sessions": 877,
@@ -19,6 +20,18 @@
         "sessions": 2253,
         "screenPageViews": 2942,
         "eventCount": 12117
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -26,6 +39,7 @@
       "name": "tennisfrens.com",
       "url": "https://tennisfrens.com/",
       "ga4PropertyId": "534356101",
+      "gscSiteUrl": "https://tennisfrens.com/",
       "last7Days": {
         "activeUsers": 799,
         "sessions": 870,
@@ -37,13 +51,27 @@
         "sessions": 1754,
         "screenPageViews": 4295,
         "eventCount": 10160
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://tennisfrens.com/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "haemongdream",
       "name": "해몽드림 - GA4",
       "url": "https://haemongdream.com/",
       "ga4PropertyId": "516256882",
+      "gscSiteUrl": "https://haemongdream.com/",
       "last7Days": {
         "activeUsers": 611,
         "sessions": 649,
@@ -55,6 +83,18 @@
         "sessions": 3342,
         "screenPageViews": 3665,
         "eventCount": 12982
+      },
+      "gscLast7Days": {
+        "clicks": 16,
+        "impressions": 181,
+        "ctr": 0.08839779005524862,
+        "position": 13.751381215469614
+      },
+      "gscLast28Days": {
+        "clicks": 47,
+        "impressions": 975,
+        "ctr": 0.048205128205128206,
+        "position": 10.49948717948718
       }
     },
     {
@@ -62,6 +102,7 @@
       "name": "todaypharm.kr",
       "url": "https://todaypharm.kr/",
       "ga4PropertyId": "534313222",
+      "gscSiteUrl": "https://todaypharm.kr/",
       "last7Days": {
         "activeUsers": 519,
         "sessions": 553,
@@ -73,6 +114,18 @@
         "sessions": 1025,
         "screenPageViews": 1951,
         "eventCount": 5382
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -80,6 +133,7 @@
       "name": "ehon365.kr",
       "url": "https://ehon365.kr/",
       "ga4PropertyId": "535779756",
+      "gscSiteUrl": "https://ehon365.kr/",
       "last7Days": {
         "activeUsers": 488,
         "sessions": 514,
@@ -91,13 +145,27 @@
         "sessions": 609,
         "screenPageViews": 101,
         "eventCount": 7178
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://ehon365.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "temon",
       "name": "테몬_temon.kr",
       "url": "https://temon.kr/",
       "ga4PropertyId": "516369797",
+      "gscSiteUrl": "https://temon.kr/",
       "last7Days": {
         "activeUsers": 222,
         "sessions": 238,
@@ -109,13 +177,27 @@
         "sessions": 1000,
         "screenPageViews": 5998,
         "eventCount": 27417
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://temon.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "luckyday",
       "name": "럭키데이 - GA4",
       "url": "https://luckyday.kr/",
       "ga4PropertyId": "512019715",
+      "gscSiteUrl": "https://luckyday.kr/",
       "last7Days": {
         "activeUsers": 130,
         "sessions": 137,
@@ -127,13 +209,27 @@
         "sessions": 193,
         "screenPageViews": 249,
         "eventCount": 790
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "cartain-2",
       "name": "cartain.kr",
       "url": "https://cartain.kr/",
       "ga4PropertyId": "536558706",
+      "gscSiteUrl": "https://cartain.kr/",
       "last7Days": {
         "activeUsers": 127,
         "sessions": 151,
@@ -145,6 +241,18 @@
         "sessions": 177,
         "screenPageViews": 228,
         "eventCount": 781
+      },
+      "gscLast7Days": {
+        "clicks": 2,
+        "impressions": 69,
+        "ctr": 0.028985507246376812,
+        "position": 6.927536231884058
+      },
+      "gscLast28Days": {
+        "clicks": 6,
+        "impressions": 205,
+        "ctr": 0.02926829268292683,
+        "position": 8.029268292682927
       }
     },
     {
@@ -152,6 +260,7 @@
       "name": "블로그 - GA4",
       "url": "https://klick.kr/",
       "ga4PropertyId": "515381693",
+      "gscSiteUrl": "https://klick.kr/",
       "last7Days": {
         "activeUsers": 115,
         "sessions": 123,
@@ -163,6 +272,18 @@
         "sessions": 1668,
         "screenPageViews": 1802,
         "eventCount": 6541
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 1.5
       }
     },
     {
@@ -170,6 +291,7 @@
       "name": "klick.kr",
       "url": "https://klick.kr/",
       "ga4PropertyId": "533748860",
+      "gscSiteUrl": "https://klick.kr/",
       "last7Days": {
         "activeUsers": 100,
         "sessions": 104,
@@ -181,6 +303,18 @@
         "sessions": 1422,
         "screenPageViews": 1520,
         "eventCount": 13390
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 1.5
       }
     },
     {
@@ -188,6 +322,7 @@
       "name": "spinkorea.kr",
       "url": "https://spinkorea.kr/",
       "ga4PropertyId": "536081634",
+      "gscSiteUrl": "https://spinkorea.kr/",
       "last7Days": {
         "activeUsers": 91,
         "sessions": 100,
@@ -199,6 +334,18 @@
         "sessions": 220,
         "screenPageViews": 792,
         "eventCount": 1598
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2
       }
     },
     {
@@ -206,6 +353,7 @@
       "name": "picklefriend.kr",
       "url": "https://picklefriend.kr/",
       "ga4PropertyId": "539268592",
+      "gscSiteUrl": "https://picklefriend.kr/",
       "last7Days": {
         "activeUsers": 85,
         "sessions": 87,
@@ -217,6 +365,18 @@
         "sessions": 87,
         "screenPageViews": 101,
         "eventCount": 477
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -224,6 +384,7 @@
       "name": "tasko.kr",
       "url": "https://tasko.kr/",
       "ga4PropertyId": "533744995",
+      "gscSiteUrl": "https://tasko.kr/",
       "last7Days": {
         "activeUsers": 51,
         "sessions": 57,
@@ -235,6 +396,18 @@
         "sessions": 283,
         "screenPageViews": 432,
         "eventCount": 1329
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -242,6 +415,7 @@
       "name": "tasko.kr",
       "url": "https://mbti.tasko.kr/",
       "ga4PropertyId": "533744995",
+      "gscSiteUrl": "https://mbti.tasko.kr/",
       "last7Days": {
         "activeUsers": 51,
         "sessions": 57,
@@ -253,6 +427,18 @@
         "sessions": 283,
         "screenPageViews": 432,
         "eventCount": 1329
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -260,6 +446,7 @@
       "name": "petjigi.kr",
       "url": "https://petjigi.kr/",
       "ga4PropertyId": "538418545",
+      "gscSiteUrl": "https://petjigi.kr/",
       "last7Days": {
         "activeUsers": 49,
         "sessions": 55,
@@ -271,6 +458,18 @@
         "sessions": 76,
         "screenPageViews": 146,
         "eventCount": 578
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -278,6 +477,7 @@
       "name": "태스코 - GA4",
       "url": "https://tasko.kr/",
       "ga4PropertyId": "511810052",
+      "gscSiteUrl": "https://tasko.kr/",
       "last7Days": {
         "activeUsers": 38,
         "sessions": 40,
@@ -289,6 +489,18 @@
         "sessions": 257,
         "screenPageViews": 367,
         "eventCount": 1105
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -296,6 +508,7 @@
       "name": "2mlab.kr",
       "url": "https://2mlab.kr/",
       "ga4PropertyId": "536008285",
+      "gscSiteUrl": "https://2mlab.kr/",
       "last7Days": {
         "activeUsers": 26,
         "sessions": 26,
@@ -307,6 +520,18 @@
         "sessions": 179,
         "screenPageViews": 178,
         "eventCount": 720
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -314,6 +539,7 @@
       "name": "askore.kr",
       "url": "https://askore.kr/",
       "ga4PropertyId": "536871374",
+      "gscSiteUrl": "https://askore.kr/",
       "last7Days": {
         "activeUsers": 26,
         "sessions": 27,
@@ -325,6 +551,18 @@
         "sessions": 61,
         "screenPageViews": 119,
         "eventCount": 277
+      },
+      "gscLast7Days": {
+        "clicks": 15,
+        "impressions": 748,
+        "ctr": 0.020053475935828877,
+        "position": 7.483957219251337
+      },
+      "gscLast28Days": {
+        "clicks": 15,
+        "impressions": 807,
+        "ctr": 0.01858736059479554,
+        "position": 7.436183395291202
       }
     },
     {
@@ -332,6 +570,7 @@
       "name": "notebook.klick.kr",
       "url": "https://notebook.klick.kr/",
       "ga4PropertyId": "538469681",
+      "gscSiteUrl": "https://notebook.klick.kr/",
       "last7Days": {
         "activeUsers": 25,
         "sessions": 28,
@@ -343,6 +582,18 @@
         "sessions": 38,
         "screenPageViews": 111,
         "eventCount": 322
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -350,6 +601,7 @@
       "name": "패스트잡 - GA4",
       "url": "https://fastjob.kr/",
       "ga4PropertyId": "513769879",
+      "gscSiteUrl": "https://fastjob.kr/",
       "last7Days": {
         "activeUsers": 24,
         "sessions": 26,
@@ -361,6 +613,18 @@
         "sessions": 167,
         "screenPageViews": 196,
         "eventCount": 606
+      },
+      "gscLast7Days": {
+        "clicks": 6,
+        "impressions": 517,
+        "ctr": 0.01160541586073501,
+        "position": 13.994197292069632
+      },
+      "gscLast28Days": {
+        "clicks": 33,
+        "impressions": 3745,
+        "ctr": 0.008811748998664886,
+        "position": 9.85260347129506
       }
     },
     {
@@ -368,6 +632,7 @@
       "name": "소프트와 - GA4",
       "url": "https://softwa.kr/",
       "ga4PropertyId": "519577510",
+      "gscSiteUrl": "https://softwa.kr/",
       "last7Days": {
         "activeUsers": 23,
         "sessions": 25,
@@ -379,6 +644,18 @@
         "sessions": 78,
         "screenPageViews": 113,
         "eventCount": 349
+      },
+      "gscLast7Days": {
+        "clicks": 5,
+        "impressions": 153,
+        "ctr": 0.032679738562091505,
+        "position": 10.235294117647058
+      },
+      "gscLast28Days": {
+        "clicks": 9,
+        "impressions": 231,
+        "ctr": 0.03896103896103896,
+        "position": 11
       }
     },
     {
@@ -386,6 +663,7 @@
       "name": "나이스우먼 - GA4",
       "url": "https://nicewomen.kr/",
       "ga4PropertyId": "524548131",
+      "gscSiteUrl": "https://nicewomen.kr/",
       "last7Days": {
         "activeUsers": 19,
         "sessions": 19,
@@ -397,6 +675,18 @@
         "sessions": 86,
         "screenPageViews": 91,
         "eventCount": 301
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -404,6 +694,7 @@
       "name": "건강팡팡 - GA4",
       "url": "https://healthgotoo.com/",
       "ga4PropertyId": "517066030",
+      "gscSiteUrl": "https://healthgotoo.com/",
       "last7Days": {
         "activeUsers": 18,
         "sessions": 19,
@@ -415,6 +706,18 @@
         "sessions": 85,
         "screenPageViews": 118,
         "eventCount": 373
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
       }
     },
     {
@@ -422,6 +725,7 @@
       "name": "car.luckyday.kr",
       "url": "https://car.luckyday.kr/",
       "ga4PropertyId": "538367953",
+      "gscSiteUrl": "https://car.luckyday.kr/",
       "last7Days": {
         "activeUsers": 18,
         "sessions": 32,
@@ -433,13 +737,27 @@
         "sessions": 64,
         "screenPageViews": 212,
         "eventCount": 1016
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://car.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "dogspang-2",
       "name": "dogspang.kr",
       "url": "https://dogspang.kr/",
       "ga4PropertyId": "536564400",
+      "gscSiteUrl": "https://dogspang.kr/",
       "last7Days": {
         "activeUsers": 16,
         "sessions": 17,
@@ -451,6 +769,18 @@
         "sessions": 97,
         "screenPageViews": 124,
         "eventCount": 433
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "position": 17.318181818181817
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 100,
+        "ctr": 0.01,
+        "position": 12.58
       }
     },
     {
@@ -458,6 +788,7 @@
       "name": "nexttech7.com",
       "url": "https://nexttech7.com/",
       "ga4PropertyId": "533760772",
+      "gscSiteUrl": "https://nexttech7.com/",
       "last7Days": {
         "activeUsers": 14,
         "sessions": 14,
@@ -469,6 +800,18 @@
         "sessions": 64,
         "screenPageViews": 109,
         "eventCount": 343
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 32,
+        "ctr": 0,
+        "position": 12.09375
+      },
+      "gscLast28Days": {
+        "clicks": 2,
+        "impressions": 173,
+        "ctr": 0.011560693641618497,
+        "position": 9.196531791907514
       }
     },
     {
@@ -476,6 +819,7 @@
       "name": "보조금365 - GA4",
       "url": "https://gover.kr/",
       "ga4PropertyId": "523266152",
+      "gscSiteUrl": "https://gover.kr/",
       "last7Days": {
         "activeUsers": 12,
         "sessions": 12,
@@ -487,6 +831,18 @@
         "sessions": 67,
         "screenPageViews": 144,
         "eventCount": 428
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 15.333333333333334
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 54,
+        "ctr": 0,
+        "position": 14.425925925925926
       }
     },
     {
@@ -494,6 +850,7 @@
       "name": "richyou.kr",
       "url": "https://richyou.kr/",
       "ga4PropertyId": "537950699",
+      "gscSiteUrl": "https://richyou.kr/",
       "last7Days": {
         "activeUsers": 12,
         "sessions": 12,
@@ -505,6 +862,18 @@
         "sessions": 23,
         "screenPageViews": 25,
         "eventCount": 80
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -512,6 +881,7 @@
       "name": "케이뉴스스토리 - GA4",
       "url": "https://knewstory.kr/",
       "ga4PropertyId": "511978714",
+      "gscSiteUrl": "https://knewstory.kr/",
       "last7Days": {
         "activeUsers": 11,
         "sessions": 11,
@@ -523,6 +893,18 @@
         "sessions": 61,
         "screenPageViews": 80,
         "eventCount": 244
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 36.75
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 42
       }
     },
     {
@@ -530,6 +912,7 @@
       "name": "legalser - GA4",
       "url": "https://legalser.com/",
       "ga4PropertyId": "519536919",
+      "gscSiteUrl": "https://legalser.com/",
       "last7Days": {
         "activeUsers": 11,
         "sessions": 11,
@@ -541,6 +924,18 @@
         "sessions": 23,
         "screenPageViews": 33,
         "eventCount": 91
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 57
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 37,
+        "ctr": 0,
+        "position": 35.5945945945946
       }
     },
     {
@@ -548,6 +943,7 @@
       "name": "sellerpit.kr",
       "url": "https://sellerpit.kr/",
       "ga4PropertyId": "534005389",
+      "gscSiteUrl": "https://sellerpit.kr/",
       "last7Days": {
         "activeUsers": 11,
         "sessions": 12,
@@ -559,6 +955,18 @@
         "sessions": 59,
         "screenPageViews": 81,
         "eventCount": 362
+      },
+      "gscLast7Days": {
+        "clicks": 1,
+        "impressions": 14,
+        "ctr": 0.07142857142857142,
+        "position": 16
+      },
+      "gscLast28Days": {
+        "clicks": 8,
+        "impressions": 240,
+        "ctr": 0.03333333333333333,
+        "position": 10.370833333333334
       }
     },
     {
@@ -566,6 +974,7 @@
       "name": "today2424.kr",
       "url": "https://today2424.kr/",
       "ga4PropertyId": "534327620",
+      "gscSiteUrl": "https://today2424.kr/",
       "last7Days": {
         "activeUsers": 11,
         "sessions": 12,
@@ -577,6 +986,18 @@
         "sessions": 47,
         "screenPageViews": 20,
         "eventCount": 222
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -584,6 +1005,7 @@
       "name": "디스크파티 - GA4",
       "url": "https://discparty.com/",
       "ga4PropertyId": "513733245",
+      "gscSiteUrl": "https://discparty.com/",
       "last7Days": {
         "activeUsers": 10,
         "sessions": 10,
@@ -595,6 +1017,18 @@
         "sessions": 59,
         "screenPageViews": 94,
         "eventCount": 255
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 8.5
+      },
+      "gscLast28Days": {
+        "clicks": 3,
+        "impressions": 170,
+        "ctr": 0.01764705882352941,
+        "position": 9.564705882352941
       }
     },
     {
@@ -602,6 +1036,7 @@
       "name": "매너팡팡 - GA4",
       "url": "https://etique.kr/",
       "ga4PropertyId": "521236824",
+      "gscSiteUrl": "https://etique.kr/",
       "last7Days": {
         "activeUsers": 10,
         "sessions": 10,
@@ -613,6 +1048,18 @@
         "sessions": 76,
         "screenPageViews": 94,
         "eventCount": 312
+      },
+      "gscLast7Days": {
+        "clicks": 1,
+        "impressions": 120,
+        "ctr": 0.008333333333333333,
+        "position": 11.783333333333333
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 464,
+        "ctr": 0.0021551724137931034,
+        "position": 11.515086206896552
       }
     },
     {
@@ -620,6 +1067,7 @@
       "name": "yesa.kr",
       "url": "https://yesa.kr/",
       "ga4PropertyId": "539176876",
+      "gscSiteUrl": "https://yesa.kr/",
       "last7Days": {
         "activeUsers": 10,
         "sessions": 29,
@@ -631,6 +1079,18 @@
         "sessions": 29,
         "screenPageViews": 81,
         "eventCount": 195
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -638,6 +1098,7 @@
       "name": "autoscares.com",
       "url": "https://autoscares.com/",
       "ga4PropertyId": "536651077",
+      "gscSiteUrl": "https://autoscares.com/",
       "last7Days": {
         "activeUsers": 9,
         "sessions": 10,
@@ -649,6 +1110,18 @@
         "sessions": 24,
         "screenPageViews": 49,
         "eventCount": 138
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 7.411764705882353
       }
     },
     {
@@ -656,6 +1129,7 @@
       "name": "roadways.kr",
       "url": "https://roadways.kr/",
       "ga4PropertyId": "536902558",
+      "gscSiteUrl": "https://roadways.kr/",
       "last7Days": {
         "activeUsers": 9,
         "sessions": 9,
@@ -667,6 +1141,18 @@
         "sessions": 29,
         "screenPageViews": 54,
         "eventCount": 125
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -674,6 +1160,7 @@
       "name": "ezfunnel.kr",
       "url": "https://ezfunnel.kr/",
       "ga4PropertyId": "536106465",
+      "gscSiteUrl": "https://ezfunnel.kr/",
       "last7Days": {
         "activeUsers": 8,
         "sessions": 9,
@@ -685,6 +1172,18 @@
         "sessions": 22,
         "screenPageViews": 32,
         "eventCount": 102
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -692,6 +1191,7 @@
       "name": "saju.tasko.kr",
       "url": "https://saju.tasko.kr/",
       "ga4PropertyId": "538409598",
+      "gscSiteUrl": "https://saju.tasko.kr/",
       "last7Days": {
         "activeUsers": 8,
         "sessions": 10,
@@ -703,13 +1203,27 @@
         "sessions": 23,
         "screenPageViews": 25,
         "eventCount": 113
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://saju.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "phone-luckyday",
       "name": "phone.luckyday.kr",
       "url": "https://phone.luckyday.kr/",
       "ga4PropertyId": "538379576",
+      "gscSiteUrl": "https://phone.luckyday.kr/",
       "last7Days": {
         "activeUsers": 7,
         "sessions": 21,
@@ -721,6 +1235,18 @@
         "sessions": 38,
         "screenPageViews": 158,
         "eventCount": 491
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -728,6 +1254,7 @@
       "name": "여행브이 - GA4",
       "url": "https://trave.kr/",
       "ga4PropertyId": "521243855",
+      "gscSiteUrl": "https://trave.kr/",
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -739,6 +1266,18 @@
         "sessions": 333,
         "screenPageViews": 434,
         "eventCount": 1432
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 12
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 9,
+        "ctr": 0.1111111111111111,
+        "position": 10.333333333333334
       }
     },
     {
@@ -746,6 +1285,7 @@
       "name": "runmania.kr",
       "url": "https://runmania.kr/",
       "ga4PropertyId": "533614337",
+      "gscSiteUrl": "https://runmania.kr/",
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -757,6 +1297,18 @@
         "sessions": 39,
         "screenPageViews": 55,
         "eventCount": 180
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
       }
     },
     {
@@ -764,6 +1316,7 @@
       "name": "chatgipt.kr",
       "url": "https://chatgipt.kr/",
       "ga4PropertyId": "534308136",
+      "gscSiteUrl": "https://chatgipt.kr/",
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -775,6 +1328,18 @@
         "sessions": 24,
         "screenPageViews": 29,
         "eventCount": 84
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.4
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 8.088235294117647
       }
     },
     {
@@ -782,6 +1347,7 @@
       "name": "certifi.kr",
       "url": "https://certifi.kr/",
       "ga4PropertyId": "537945374",
+      "gscSiteUrl": "https://certifi.kr/",
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -793,6 +1359,18 @@
         "sessions": 21,
         "screenPageViews": 56,
         "eventCount": 198
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -800,6 +1378,7 @@
       "name": "insupang - GA4",
       "url": "https://insupang.com/",
       "ga4PropertyId": "517897382",
+      "gscSiteUrl": "https://insupang.com/",
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -811,6 +1390,18 @@
         "sessions": 18,
         "screenPageViews": 38,
         "eventCount": 103
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 81.91666666666667
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 64,
+        "ctr": 0,
+        "position": 77.015625
       }
     },
     {
@@ -818,6 +1409,7 @@
       "name": "푸드팡팡 - GA4",
       "url": "https://estat.kr/",
       "ga4PropertyId": "523324426",
+      "gscSiteUrl": "https://estat.kr/",
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -829,6 +1421,18 @@
         "sessions": 37,
         "screenPageViews": 44,
         "eventCount": 136
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 7.696969696969697
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 174,
+        "ctr": 0.005747126436781609,
+        "position": 8.988505747126437
       }
     },
     {
@@ -836,6 +1440,7 @@
       "name": "esgyo.kr",
       "url": "https://esgyo.kr/",
       "ga4PropertyId": "534284697",
+      "gscSiteUrl": "https://esgyo.kr/",
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -847,6 +1452,18 @@
         "sessions": 13,
         "screenPageViews": 15,
         "eventCount": 49
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -854,6 +1471,7 @@
       "name": "todayshops.kr",
       "url": "https://todayshops.kr/",
       "ga4PropertyId": "537250213",
+      "gscSiteUrl": "https://todayshops.kr/",
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -865,6 +1483,18 @@
         "sessions": 16,
         "screenPageViews": 47,
         "eventCount": 132
+      },
+      "gscLast7Days": {
+        "clicks": 3,
+        "impressions": 145,
+        "ctr": 0.020689655172413793,
+        "position": 7.7172413793103445
+      },
+      "gscLast28Days": {
+        "clicks": 3,
+        "impressions": 261,
+        "ctr": 0.011494252873563218,
+        "position": 7.5440613026819925
       }
     },
     {
@@ -872,6 +1502,7 @@
       "name": "healfood.kr",
       "url": "https://healfood.kr/",
       "ga4PropertyId": "536788301",
+      "gscSiteUrl": "https://healfood.kr/",
       "last7Days": {
         "activeUsers": 3,
         "sessions": 3,
@@ -883,6 +1514,18 @@
         "sessions": 14,
         "screenPageViews": 18,
         "eventCount": 66
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 60
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 45.25
       }
     },
     {
@@ -890,6 +1533,7 @@
       "name": "gong365.kr",
       "url": "https://gong365.kr/",
       "ga4PropertyId": "536928839",
+      "gscSiteUrl": "https://gong365.kr/",
       "last7Days": {
         "activeUsers": 3,
         "sessions": 3,
@@ -901,6 +1545,18 @@
         "sessions": 31,
         "screenPageViews": 100,
         "eventCount": 233
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 56,
+        "ctr": 0,
+        "position": 8.5
+      },
+      "gscLast28Days": {
+        "clicks": 3,
+        "impressions": 304,
+        "ctr": 0.009868421052631578,
+        "position": 7
       }
     },
     {
@@ -908,6 +1564,7 @@
       "name": "crepika.com",
       "url": "https://crepika.com/",
       "ga4PropertyId": "536578195",
+      "gscSiteUrl": "https://crepika.com/",
       "last7Days": {
         "activeUsers": 2,
         "sessions": 2,
@@ -919,6 +1576,18 @@
         "sessions": 193,
         "screenPageViews": 267,
         "eventCount": 948
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -926,6 +1595,7 @@
       "name": "educaer.com",
       "url": "https://educaer.com/",
       "ga4PropertyId": "537331142",
+      "gscSiteUrl": "https://educaer.com/",
       "last7Days": {
         "activeUsers": 2,
         "sessions": 2,
@@ -937,6 +1607,18 @@
         "sessions": 8,
         "screenPageViews": 18,
         "eventCount": 45
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
       }
     },
     {
@@ -944,6 +1626,7 @@
       "name": "finan.kr",
       "url": "https://finan.kr/",
       "ga4PropertyId": "537937514",
+      "gscSiteUrl": "https://finan.kr/",
       "last7Days": {
         "activeUsers": 2,
         "sessions": 7,
@@ -955,6 +1638,18 @@
         "sessions": 17,
         "screenPageViews": 74,
         "eventCount": 220
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 57,
+        "ctr": 0,
+        "position": 8.68421052631579
+      },
+      "gscLast28Days": {
+        "clicks": 2,
+        "impressions": 94,
+        "ctr": 0.02127659574468085,
+        "position": 9.606382978723405
       }
     },
     {
@@ -962,6 +1657,7 @@
       "name": "ai.tasko.kr",
       "url": "https://ai.tasko.kr/",
       "ga4PropertyId": "538418068",
+      "gscSiteUrl": "https://ai.tasko.kr/",
       "last7Days": {
         "activeUsers": 2,
         "sessions": 4,
@@ -973,13 +1669,27 @@
         "sessions": 8,
         "screenPageViews": 27,
         "eventCount": 78
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://ai.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "lawer",
       "name": "법이람 - GA4",
       "url": "https://lawer.kr/",
       "ga4PropertyId": "521770057",
+      "gscSiteUrl": "https://lawer.kr/",
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -991,6 +1701,18 @@
         "sessions": 16,
         "screenPageViews": 57,
         "eventCount": 134
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10.5
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 12.166666666666666
       }
     },
     {
@@ -998,6 +1720,7 @@
       "name": "coinyo.kr",
       "url": "https://coinyo.kr/",
       "ga4PropertyId": "536352221",
+      "gscSiteUrl": "https://coinyo.kr/",
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -1009,6 +1732,18 @@
         "sessions": 16,
         "screenPageViews": 46,
         "eventCount": 130
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -1016,6 +1751,7 @@
       "name": "travelpang.kr",
       "url": "https://travelpang.kr/",
       "ga4PropertyId": "536559437",
+      "gscSiteUrl": "https://travelpang.kr/",
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -1027,6 +1763,18 @@
         "sessions": 31,
         "screenPageViews": 70,
         "eventCount": 202
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 7.333333333333333
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 97,
+        "ctr": 0,
+        "position": 7.577319587628866
       }
     },
     {
@@ -1034,6 +1782,7 @@
       "name": "petinsuer.com",
       "url": "https://petinsuer.com/",
       "ga4PropertyId": "536670197",
+      "gscSiteUrl": "https://petinsuer.com/",
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -1045,6 +1794,18 @@
         "sessions": 13,
         "screenPageViews": 15,
         "eventCount": 54
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 53,
+        "ctr": 0,
+        "position": 10.169811320754716
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 197,
+        "ctr": 0.005076142131979695,
+        "position": 9.238578680203046
       }
     },
     {
@@ -1052,6 +1813,7 @@
       "name": "goesku.com",
       "url": "https://goesku.com/",
       "ga4PropertyId": "536856718",
+      "gscSiteUrl": "https://goesku.com/",
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -1063,6 +1825,18 @@
         "sessions": 21,
         "screenPageViews": 24,
         "eventCount": 85
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0,
+        "position": 19.75
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0,
+        "position": 21.175
       }
     },
     {
@@ -1070,6 +1844,7 @@
       "name": "gong.luckyday.kr",
       "url": "https://gong.luckyday.kr/",
       "ga4PropertyId": "538330802",
+      "gscSiteUrl": "https://gong.luckyday.kr/",
       "last7Days": {
         "activeUsers": 1,
         "sessions": 15,
@@ -1081,13 +1856,27 @@
         "sessions": 29,
         "screenPageViews": 130,
         "eventCount": 291
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://gong.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "kang4",
       "name": "강사자판기",
       "url": "https://kang4.com/",
       "ga4PropertyId": "325680688",
+      "gscSiteUrl": "https://kang4.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1099,6 +1888,18 @@
         "sessions": 21,
         "screenPageViews": 35,
         "eventCount": 83
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -1106,6 +1907,7 @@
       "name": "팀하우스 - GA4",
       "url": "https://2mlab.kr/",
       "ga4PropertyId": "511994173",
+      "gscSiteUrl": "https://2mlab.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1117,6 +1919,18 @@
         "sessions": 42,
         "screenPageViews": 44,
         "eventCount": 151
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -1124,6 +1938,7 @@
       "name": "블로그 - GA4",
       "url": "https://chatgipt.kr/",
       "ga4PropertyId": "512060443",
+      "gscSiteUrl": "https://chatgipt.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1135,6 +1950,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.4
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 8.088235294117647
       }
     },
     {
@@ -1142,6 +1969,7 @@
       "name": "블로그 - GA4",
       "url": "https://chatgipt.kr/",
       "ga4PropertyId": "512050444",
+      "gscSiteUrl": "https://chatgipt.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1153,6 +1981,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.4
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 8.088235294117647
       }
     },
     {
@@ -1160,6 +2000,7 @@
       "name": "여행팡 - GA4",
       "url": "https://travelpang.kr/",
       "ga4PropertyId": "517948231",
+      "gscSiteUrl": "https://travelpang.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1171,6 +2012,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 7.333333333333333
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 97,
+        "ctr": 0,
+        "position": 7.577319587628866
       }
     },
     {
@@ -1178,6 +2031,7 @@
       "name": "코인요요 - GA4",
       "url": "https://coinyo.kr/",
       "ga4PropertyId": "517634776",
+      "gscSiteUrl": "https://coinyo.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1189,6 +2043,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -1196,6 +2062,7 @@
       "name": "정보랩 - GA4",
       "url": "https://dogspang.kr/",
       "ga4PropertyId": "517108655",
+      "gscSiteUrl": "https://dogspang.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1207,6 +2074,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "position": 17.318181818181817
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 100,
+        "ctr": 0.01,
+        "position": 12.58
       }
     },
     {
@@ -1214,6 +2093,7 @@
       "name": "cartain",
       "url": "https://cartain.kr/",
       "ga4PropertyId": "518554091",
+      "gscSiteUrl": "https://cartain.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1225,6 +2105,18 @@
         "sessions": 48,
         "screenPageViews": 113,
         "eventCount": 261
+      },
+      "gscLast7Days": {
+        "clicks": 2,
+        "impressions": 69,
+        "ctr": 0.028985507246376812,
+        "position": 6.927536231884058
+      },
+      "gscLast28Days": {
+        "clicks": 6,
+        "impressions": 205,
+        "ctr": 0.02926829268292683,
+        "position": 8.029268292682927
       }
     },
     {
@@ -1232,6 +2124,7 @@
       "name": "펫인사이트 - GA4",
       "url": "https://petinsuer.com/",
       "ga4PropertyId": "519578899",
+      "gscSiteUrl": "https://petinsuer.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1243,6 +2136,18 @@
         "sessions": 8,
         "screenPageViews": 8,
         "eventCount": 24
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 53,
+        "ctr": 0,
+        "position": 10.169811320754716
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 197,
+        "ctr": 0.005076142131979695,
+        "position": 9.238578680203046
       }
     },
     {
@@ -1250,6 +2155,7 @@
       "name": "homemake - GA4",
       "url": "https://homeimer.com/",
       "ga4PropertyId": "519582866",
+      "gscSiteUrl": "https://homeimer.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1261,6 +2167,18 @@
         "sessions": 5,
         "screenPageViews": 6,
         "eventCount": 19
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 62.25
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 27,
+        "ctr": 0,
+        "position": 23.37037037037037
       }
     },
     {
@@ -1268,6 +2186,7 @@
       "name": "건강푸드팡 - GA4",
       "url": "https://healfood.kr/",
       "ga4PropertyId": "520249990",
+      "gscSiteUrl": "https://healfood.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1279,6 +2198,18 @@
         "sessions": 16,
         "screenPageViews": 19,
         "eventCount": 60
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 60
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 45.25
       }
     },
     {
@@ -1286,6 +2217,7 @@
       "name": "파이날팡 - GA4",
       "url": "https://finan.kr/",
       "ga4PropertyId": "520579523",
+      "gscSiteUrl": "https://finan.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1297,6 +2229,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 57,
+        "ctr": 0,
+        "position": 8.68421052631579
+      },
+      "gscLast28Days": {
+        "clicks": 2,
+        "impressions": 94,
+        "ctr": 0.02127659574468085,
+        "position": 9.606382978723405
       }
     },
     {
@@ -1304,6 +2248,7 @@
       "name": "luxurytraver - GA4",
       "url": "https://luxurytraver.com/",
       "ga4PropertyId": "521243475",
+      "gscSiteUrl": "https://luxurytraver.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1315,6 +2260,18 @@
         "sessions": 3,
         "screenPageViews": 3,
         "eventCount": 6
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 15.5
       }
     },
     {
@@ -1322,6 +2279,7 @@
       "name": "자동차팡팡 - GA4",
       "url": "https://autoscares.com/",
       "ga4PropertyId": "521782814",
+      "gscSiteUrl": "https://autoscares.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1333,6 +2291,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 7.411764705882353
       }
     },
     {
@@ -1340,6 +2310,7 @@
       "name": "이에스지요 - GA4",
       "url": "https://esgyo.kr/",
       "ga4PropertyId": "524502961",
+      "gscSiteUrl": "https://esgyo.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1351,6 +2322,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     },
     {
@@ -1358,6 +2341,7 @@
       "name": "셀러핏 - GA4",
       "url": "https://sellerpit.kr/",
       "ga4PropertyId": "525923821",
+      "gscSiteUrl": "https://sellerpit.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1369,6 +2353,18 @@
         "sessions": 9,
         "screenPageViews": 22,
         "eventCount": 53
+      },
+      "gscLast7Days": {
+        "clicks": 1,
+        "impressions": 14,
+        "ctr": 0.07142857142857142,
+        "position": 16
+      },
+      "gscLast28Days": {
+        "clicks": 8,
+        "impressions": 240,
+        "ctr": 0.03333333333333333,
+        "position": 10.370833333333334
       }
     },
     {
@@ -1376,6 +2372,7 @@
       "name": "스핀코리아",
       "url": "https://spinkorea.kr/",
       "ga4PropertyId": "532855163",
+      "gscSiteUrl": "https://spinkorea.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1387,6 +2384,18 @@
         "sessions": 200,
         "screenPageViews": 871,
         "eventCount": 1720
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2
       }
     },
     {
@@ -1394,6 +2403,7 @@
       "name": "texturb.com",
       "url": "https://texturb.com/",
       "ga4PropertyId": "532887366",
+      "gscSiteUrl": "https://texturb.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1405,13 +2415,27 @@
         "sessions": 72,
         "screenPageViews": 90,
         "eventCount": 407
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://texturb.com/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "luckyday-2",
       "name": "https://luckyday.kr",
       "url": "https://luckyday.kr/",
       "ga4PropertyId": "533729607",
+      "gscSiteUrl": "https://luckyday.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1423,13 +2447,27 @@
         "sessions": 10,
         "screenPageViews": 15,
         "eventCount": 46
-      }
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
     },
     {
       "id": "knewstory-2",
       "name": "knewstory.kr",
       "url": "https://knewstory.kr/",
       "ga4PropertyId": "536122428",
+      "gscSiteUrl": "https://knewstory.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1441,6 +2479,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 36.75
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 42
       }
     },
     {
@@ -1448,6 +2498,7 @@
       "name": "kang4.com",
       "url": "https://kang4.com/",
       "ga4PropertyId": "536337959",
+      "gscSiteUrl": "https://kang4.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1459,6 +2510,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 1
       }
     },
     {
@@ -1466,6 +2529,7 @@
       "name": "fastjob.kr",
       "url": "https://fastjob.kr/",
       "ga4PropertyId": "536358308",
+      "gscSiteUrl": "https://fastjob.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1477,6 +2541,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 6,
+        "impressions": 517,
+        "ctr": 0.01160541586073501,
+        "position": 13.994197292069632
+      },
+      "gscLast28Days": {
+        "clicks": 33,
+        "impressions": 3745,
+        "ctr": 0.008811748998664886,
+        "position": 9.85260347129506
       }
     },
     {
@@ -1484,6 +2560,7 @@
       "name": "insupang.com",
       "url": "https://insupang.com/",
       "ga4PropertyId": "536533161",
+      "gscSiteUrl": "https://insupang.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1495,6 +2572,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 81.91666666666667
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 64,
+        "ctr": 0,
+        "position": 77.015625
       }
     },
     {
@@ -1502,6 +2591,7 @@
       "name": "healthgotoo.com",
       "url": "https://healthgotoo.com/",
       "ga4PropertyId": "536550724",
+      "gscSiteUrl": "https://healthgotoo.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1513,6 +2603,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
       }
     },
     {
@@ -1520,6 +2622,7 @@
       "name": "legalser.com",
       "url": "https://legalser.com/",
       "ga4PropertyId": "536573278",
+      "gscSiteUrl": "https://legalser.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1531,6 +2634,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 57
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 37,
+        "ctr": 0,
+        "position": 35.5945945945946
       }
     },
     {
@@ -1538,6 +2653,7 @@
       "name": "etique.kr",
       "url": "https://etique.kr/",
       "ga4PropertyId": "536548785",
+      "gscSiteUrl": "https://etique.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1549,6 +2665,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 1,
+        "impressions": 120,
+        "ctr": 0.008333333333333333,
+        "position": 11.783333333333333
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 464,
+        "ctr": 0.0021551724137931034,
+        "position": 11.515086206896552
       }
     },
     {
@@ -1556,6 +2684,7 @@
       "name": "luxurytraver.com",
       "url": "https://luxurytraver.com/",
       "ga4PropertyId": "536662292",
+      "gscSiteUrl": "https://luxurytraver.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1567,6 +2696,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 15.5
       }
     },
     {
@@ -1574,6 +2715,7 @@
       "name": "softwa.kr",
       "url": "https://softwa.kr/",
       "ga4PropertyId": "536668384",
+      "gscSiteUrl": "https://softwa.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1585,6 +2727,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 5,
+        "impressions": 153,
+        "ctr": 0.032679738562091505,
+        "position": 10.235294117647058
+      },
+      "gscLast28Days": {
+        "clicks": 9,
+        "impressions": 231,
+        "ctr": 0.03896103896103896,
+        "position": 11
       }
     },
     {
@@ -1592,6 +2746,7 @@
       "name": "gover.kr",
       "url": "https://gover.kr/",
       "ga4PropertyId": "536824904",
+      "gscSiteUrl": "https://gover.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1603,6 +2758,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 15.333333333333334
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 54,
+        "ctr": 0,
+        "position": 14.425925925925926
       }
     },
     {
@@ -1610,6 +2777,7 @@
       "name": "estat.kr",
       "url": "https://estat.kr/",
       "ga4PropertyId": "536753109",
+      "gscSiteUrl": "https://estat.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1621,6 +2789,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 7.696969696969697
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 174,
+        "ctr": 0.005747126436781609,
+        "position": 8.988505747126437
       }
     },
     {
@@ -1628,6 +2808,7 @@
       "name": "homeimer.com",
       "url": "https://homeimer.com/",
       "ga4PropertyId": "536833044",
+      "gscSiteUrl": "https://homeimer.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1639,6 +2820,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 62.25
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 27,
+        "ctr": 0,
+        "position": 23.37037037037037
       }
     },
     {
@@ -1646,6 +2839,7 @@
       "name": "trave.kr",
       "url": "https://trave.kr/",
       "ga4PropertyId": "536910323",
+      "gscSiteUrl": "https://trave.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1657,6 +2851,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 12
+      },
+      "gscLast28Days": {
+        "clicks": 1,
+        "impressions": 9,
+        "ctr": 0.1111111111111111,
+        "position": 10.333333333333334
       }
     },
     {
@@ -1664,6 +2870,7 @@
       "name": "lawer.kr",
       "url": "https://lawer.kr/",
       "ga4PropertyId": "537125482",
+      "gscSiteUrl": "https://lawer.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1675,6 +2882,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10.5
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 12.166666666666666
       }
     },
     {
@@ -1682,6 +2901,7 @@
       "name": "sssaass.com",
       "url": "https://sssaass.com/",
       "ga4PropertyId": "537317309",
+      "gscSiteUrl": "https://sssaass.com/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1693,6 +2913,18 @@
         "sessions": 17,
         "screenPageViews": 39,
         "eventCount": 106
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 6.9
       }
     },
     {
@@ -1700,6 +2932,7 @@
       "name": "todayshops.kr",
       "url": "https://todayshops.kr/",
       "ga4PropertyId": "537295441",
+      "gscSiteUrl": "https://todayshops.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1711,6 +2944,18 @@
         "sessions": 0,
         "screenPageViews": 0,
         "eventCount": 0
+      },
+      "gscLast7Days": {
+        "clicks": 3,
+        "impressions": 145,
+        "ctr": 0.020689655172413793,
+        "position": 7.7172413793103445
+      },
+      "gscLast28Days": {
+        "clicks": 3,
+        "impressions": 261,
+        "ctr": 0.011494252873563218,
+        "position": 7.5440613026819925
       }
     },
     {
@@ -1718,6 +2963,7 @@
       "name": "노트북고고",
       "url": "https://notebook.klick.kr/",
       "ga4PropertyId": "538351492",
+      "gscSiteUrl": "https://notebook.klick.kr/",
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -1729,6 +2975,18 @@
         "sessions": 24,
         "screenPageViews": 28,
         "eventCount": 97
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast28Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     }
   ]

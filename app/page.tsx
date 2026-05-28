@@ -22,16 +22,16 @@ export default function DashboardPage() {
       <section className="summary-grid" aria-label="전체 통계 요약">
         <StatusCard label="등록 사이트" value={formatNumber(data.siteCount)} hint="GA4 web stream 기준" />
         <StatusCard label="추적 중" value={formatNumber(data.trackedCount)} hint="통계 수집 성공" />
-        <StatusCard label="7일 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint="전체 합계" />
-        <StatusCard label="7일 조회수" value={formatNumber(data.totalLast7Days.screenPageViews)} hint="전체 합계" />
+        <StatusCard label="GA4 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint="최근 7일" />
+        <StatusCard label="GSC 클릭" value={formatNumber(data.totalGscLast7Days.clicks)} hint="최근 7일" />
       </section>
 
       <section className="content-grid stats-layout">
         <article className="panel wide-panel stats-panel">
           <div className="panel-heading">
             <div>
-              <h2>사이트별 GA4 통계</h2>
-              <p>최근 7일 기준으로 정렬했습니다. 28일 지표는 비교용 누적값입니다.</p>
+              <h2>사이트별 GA4 + GSC 통계</h2>
+              <p>GA4 사용자를 기준으로 정렬했습니다. GSC는 Search Console 검색 성과입니다.</p>
             </div>
             <span>{data.failedCount > 0 ? `오류 ${data.failedCount}개` : "정상"}</span>
           </div>
@@ -43,7 +43,10 @@ export default function DashboardPage() {
                   <th>7일 사용자</th>
                   <th>7일 세션</th>
                   <th>7일 조회수</th>
-                  <th>28일 사용자</th>
+                  <th>GSC 클릭</th>
+                  <th>GSC 노출</th>
+                  <th>CTR</th>
+                  <th>평균순위</th>
                   <th>상태</th>
                 </tr>
               </thead>
@@ -66,6 +69,8 @@ export default function DashboardPage() {
               <MiniMetric label="세션" value={data.totalLast28Days.sessions} />
               <MiniMetric label="조회수" value={data.totalLast28Days.screenPageViews} />
               <MiniMetric label="이벤트" value={data.totalLast28Days.eventCount} />
+              <MiniMetric label="GSC 클릭" value={data.totalGscLast28Days.clicks} />
+              <MiniMetric label="GSC 노출" value={data.totalGscLast28Days.impressions} />
             </div>
           </article>
 
@@ -75,7 +80,7 @@ export default function DashboardPage() {
             </div>
             <div className="command-list">
               <div className="command-row">
-                <span>GA4 통계 수집</span>
+                <span>GA4/GSC 통계 수집</span>
                 <code>pnpm stats:update</code>
               </div>
               <div className="command-row">
@@ -102,9 +107,14 @@ function StatsRow({ stat }: { stat: SiteStat }) {
       <td>{formatNumber(stat.last7Days.activeUsers)}</td>
       <td>{formatNumber(stat.last7Days.sessions)}</td>
       <td>{formatNumber(stat.last7Days.screenPageViews)}</td>
-      <td>{formatNumber(stat.last28Days.activeUsers)}</td>
+      <td>{formatNumber(stat.gscLast7Days?.clicks ?? 0)}</td>
+      <td>{formatNumber(stat.gscLast7Days?.impressions ?? 0)}</td>
+      <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
+      <td>{formatDecimal(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
-        <span className={stat.error ? "badge badge-error" : "badge"}>{stat.error ? "확인 필요" : "정상"}</span>
+        <span className={stat.error || stat.gscError ? "badge badge-error" : "badge"}>
+          {stat.error || stat.gscError ? "확인 필요" : "정상"}
+        </span>
       </td>
     </tr>
   );
@@ -131,4 +141,12 @@ function MiniMetric({ label, value }: { label: string; value: number }) {
 
 function formatNumber(value: number): string {
   return new Intl.NumberFormat("ko-KR").format(value);
+}
+
+function formatPercent(value: number): string {
+  return `${(value * 100).toFixed(1)}%`;
+}
+
+function formatDecimal(value: number): string {
+  return value === 0 ? "-" : value.toFixed(1);
 }

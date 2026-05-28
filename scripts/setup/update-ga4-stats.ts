@@ -1,7 +1,8 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import pLimit from "p-limit";
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
-import { parseServiceAccountKey } from "./lib/gcp.js";
+import { google } from "googleapis";
+import { makeGoogleAuth, parseServiceAccountKey } from "./lib/gcp.js";
 import { loadLocalSecrets, readSecret } from "./lib/secrets.js";
 import { loadSites, type Site } from "./lib/sites.js";
 import { getErrorMessage } from "./lib/errors.js";
@@ -18,14 +19,25 @@ interface MetricSet {
   eventCount: number;
 }
 
+interface GscMetricSet {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
 interface SiteStat {
   id: string;
   name: string;
   url: string;
   ga4PropertyId: string;
+  gscSiteUrl: string;
   last7Days: MetricSet;
   last28Days: MetricSet;
+  gscLast7Days: GscMetricSet;
+  gscLast28Days: GscMetricSet;
   error?: string;
+  gscError?: string;
 }
 
 interface StatsSnapshot {
@@ -44,12 +56,27 @@ function emptyMetrics(): MetricSet {
   };
 }
 
+function emptyGscMetrics(): GscMetricSet {
+  return {
+    clicks: 0,
+    impressions: 0,
+    ctr: 0,
+    position: 0,
+  };
+}
+
 function metricValue(row: unknown, index: number): number {
   const values = (row as { metricValues?: Array<{ value?: string | null }> }).metricValues ?? [];
   return Number(values[index]?.value ?? 0);
 }
 
-async function fetchMetrics(client: BetaAnalyticsDataClient, propertyId: string, days: number): Promise<MetricSet> {
+function dateDaysAgo(days: number): string {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() - days);
+  return date.toISOString().slice(0, 10);
+}
+
+async function fetchGa4Metrics(client: BetaAnalyticsDataClient, propertyId: string, days: number): Promise<MetricSet> {
   const [response] = await client.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [{ startDate: `${days}daysAgo`, endDate: "yesterday" }],
@@ -74,42 +101,90 @@ async function fetchMetrics(client: BetaAnalyticsDataClient, propertyId: string,
   };
 }
 
-async function fetchSiteStat(client: BetaAnalyticsDataClient, site: Site): Promise<SiteStat> {
-  const base = {
+async function fetchGscMetrics(
+  client: ReturnType<typeof google.searchconsole>,
+  siteUrl: string,
+  days: number,
+): Promise<GscMetricSet> {
+  const response = await client.searchanalytics.query({
+    siteUrl,
+    requestBody: {
+      startDate: dateDaysAgo(days),
+      endDate: dateDaysAgo(1),
+      rowLimit: 1,
+    },
+  });
+  const row = response.data.rows?.[0];
+
+  if (!row) {
+    return emptyGscMetrics();
+  }
+
+  return {
+    clicks: row.clicks ?? 0,
+    impressions: row.impressions ?? 0,
+    ctr: row.ctr ?? 0,
+    position: row.position ?? 0,
+  };
+}
+
+async function fetchSiteStat(
+  ga4Client: BetaAnalyticsDataClient,
+  gscClient: ReturnType<typeof google.searchconsole>,
+  site: Site,
+): Promise<SiteStat> {
+  let last7Days = emptyMetrics();
+  let last28Days = emptyMetrics();
+  let gscLast7Days = emptyGscMetrics();
+  let gscLast28Days = emptyGscMetrics();
+  let error: string | undefined;
+  let gscError: string | undefined;
+
+  if (!site.ga4PropertyId) {
+    error = "Missing ga4PropertyId";
+  } else {
+    try {
+      [last7Days, last28Days] = await Promise.all([
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, RANGE_DAYS),
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, PREVIOUS_RANGE_DAYS),
+      ]);
+    } catch (ga4Error) {
+      error = getErrorMessage(ga4Error);
+    }
+  }
+
+  const gscSiteUrl = site.gscSiteUrl ?? site.url;
+
+  try {
+    [gscLast7Days, gscLast28Days] = await Promise.all([
+      fetchGscMetrics(gscClient, gscSiteUrl, RANGE_DAYS),
+      fetchGscMetrics(gscClient, gscSiteUrl, PREVIOUS_RANGE_DAYS),
+    ]);
+  } catch (searchError) {
+    gscError = getErrorMessage(searchError);
+  }
+
+  const stat: SiteStat = {
     id: site.id,
     name: site.name ?? site.id,
     url: site.url,
     ga4PropertyId: site.ga4PropertyId ?? "",
+    gscSiteUrl,
+    last7Days,
+    last28Days,
+    gscLast7Days,
+    gscLast28Days,
   };
 
-  if (!site.ga4PropertyId) {
-    return {
-      ...base,
-      last7Days: emptyMetrics(),
-      last28Days: emptyMetrics(),
-      error: "Missing ga4PropertyId",
-    };
+  if (error) {
+    stat.error = error;
   }
 
-  try {
-    const [last7Days, last28Days] = await Promise.all([
-      fetchMetrics(client, site.ga4PropertyId, RANGE_DAYS),
-      fetchMetrics(client, site.ga4PropertyId, PREVIOUS_RANGE_DAYS),
-    ]);
-
-    return {
-      ...base,
-      last7Days,
-      last28Days,
-    };
-  } catch (error) {
-    return {
-      ...base,
-      last7Days: emptyMetrics(),
-      last28Days: emptyMetrics(),
-      error: getErrorMessage(error),
-    };
+  if (gscError) {
+    stat.gscError = gscError;
   }
+
+  return stat;
 }
 
 async function main(): Promise<void> {
@@ -121,10 +196,13 @@ async function main(): Promise<void> {
   }
 
   const sites = (await loadSites()).filter((site) => site.enabled !== false && site.ga4PropertyId);
-  const client = new BetaAnalyticsDataClient({ credentials: parseServiceAccountKey(keyJson) });
+  const credentials = parseServiceAccountKey(keyJson);
+  const ga4Client = new BetaAnalyticsDataClient({ credentials });
+  const auth = makeGoogleAuth(keyJson, ["https://www.googleapis.com/auth/webmasters.readonly"]);
+  const gscClient = google.searchconsole({ version: "v1", auth });
   const limit = pLimit(CONCURRENCY);
 
-  const stats = await Promise.all(sites.map((site) => limit(() => fetchSiteStat(client, site))));
+  const stats = await Promise.all(sites.map((site) => limit(() => fetchSiteStat(ga4Client, gscClient, site))));
   const snapshot: StatsSnapshot = {
     generatedAt: new Date().toISOString(),
     rangeDays: RANGE_DAYS,
@@ -135,8 +213,9 @@ async function main(): Promise<void> {
   await mkdir("data", { recursive: true });
   await writeFile(OUTPUT_PATH, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
 
-  const failed = stats.filter((site) => site.error).length;
-  console.log(`GA4 stats updated: ${stats.length} sites, ${failed} failed, output=${OUTPUT_PATH}`);
+  const ga4Failed = stats.filter((site) => site.error).length;
+  const gscFailed = stats.filter((site) => site.gscError).length;
+  console.log(`Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, output=${OUTPUT_PATH}`);
 }
 
 main().catch((error) => {

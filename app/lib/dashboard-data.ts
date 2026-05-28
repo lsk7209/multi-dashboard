@@ -23,14 +23,25 @@ interface MetricSet {
   eventCount: number;
 }
 
+interface GscMetricSet {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
 export interface SiteStat {
   id: string;
   name: string;
   url: string;
   ga4PropertyId: string;
+  gscSiteUrl?: string;
   last7Days: MetricSet;
   last28Days: MetricSet;
+  gscLast7Days?: GscMetricSet;
+  gscLast28Days?: GscMetricSet;
   error?: string;
+  gscError?: string;
 }
 
 interface StatsSnapshot {
@@ -49,6 +60,8 @@ export interface DashboardData {
   failedCount: number;
   totalLast7Days: MetricSet;
   totalLast28Days: MetricSet;
+  totalGscLast7Days: GscMetricSet;
+  totalGscLast28Days: GscMetricSet;
 }
 
 export function getDashboardData(): DashboardData {
@@ -66,6 +79,8 @@ export function getDashboardData(): DashboardData {
     failedCount: stats.filter((stat) => stat.error).length,
     totalLast7Days: sumMetrics(stats.map((stat) => stat.last7Days)),
     totalLast28Days: sumMetrics(stats.map((stat) => stat.last28Days)),
+    totalGscLast7Days: sumGscMetrics(stats.map((stat) => stat.gscLast7Days ?? emptyGscMetrics())),
+    totalGscLast28Days: sumGscMetrics(stats.map((stat) => stat.gscLast28Days ?? emptyGscMetrics())),
   };
 }
 
@@ -93,8 +108,11 @@ function emptySiteStat(site: Site): SiteStat {
     name: site.name ?? site.id,
     url: site.url,
     ga4PropertyId: site.ga4PropertyId ?? "",
+    gscSiteUrl: site.gscSiteUrl ?? site.url,
     last7Days: emptyMetrics(),
     last28Days: emptyMetrics(),
+    gscLast7Days: emptyGscMetrics(),
+    gscLast28Days: emptyGscMetrics(),
     error: site.ga4PropertyId ? "통계 스냅샷 없음" : "GA4 속성 없음",
   };
 }
@@ -108,6 +126,15 @@ function emptyMetrics(): MetricSet {
   };
 }
 
+function emptyGscMetrics(): GscMetricSet {
+  return {
+    clicks: 0,
+    impressions: 0,
+    ctr: 0,
+    position: 0,
+  };
+}
+
 function sumMetrics(metrics: MetricSet[]): MetricSet {
   return metrics.reduce(
     (total, metric) => ({
@@ -118,4 +145,23 @@ function sumMetrics(metrics: MetricSet[]): MetricSet {
     }),
     emptyMetrics(),
   );
+}
+
+function sumGscMetrics(metrics: GscMetricSet[]): GscMetricSet {
+  const totals = metrics.reduce(
+    (total, metric) => ({
+      clicks: total.clicks + metric.clicks,
+      impressions: total.impressions + metric.impressions,
+      weightedCtr: total.weightedCtr + metric.ctr * metric.impressions,
+      weightedPosition: total.weightedPosition + metric.position * metric.impressions,
+    }),
+    { clicks: 0, impressions: 0, weightedCtr: 0, weightedPosition: 0 },
+  );
+
+  return {
+    clicks: totals.clicks,
+    impressions: totals.impressions,
+    ctr: totals.impressions === 0 ? 0 : totals.weightedCtr / totals.impressions,
+    position: totals.impressions === 0 ? 0 : totals.weightedPosition / totals.impressions,
+  };
 }
