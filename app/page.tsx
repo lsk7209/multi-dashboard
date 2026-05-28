@@ -1,119 +1,112 @@
-import { getDashboardData } from "./lib/dashboard-data.js";
+import { getDashboardData, type SiteStat } from "./lib/dashboard-data.js";
 
-const REQUIRED_SECRETS = [
-  "GCP_SA_KEY_JSON",
-  "GCP_SA_EMAIL",
-  "GH_TOKEN",
-  "VERCEL_TOKEN",
-  "VERCEL_PROJECT_ID",
-  "TURSO_URL_WRITE",
-  "TURSO_TOKEN_WRITE",
-  "NAVER_API_KEY",
-  "BOK_API_KEY",
-  "AUTH_SECRET",
-  "CRON_SECRET",
-  "INTERNAL_KEY",
-  "APP_URL",
-];
-
-const COMMANDS = [
-  { label: "사전 점검", command: "pnpm setup:preflight" },
-  { label: "전체 실행", command: "pnpm setup:all" },
-  { label: "재개", command: "pnpm setup:resume" },
-  { label: "검증", command: "pnpm setup:verify" },
-];
+export const dynamic = "force-static";
 
 export default function DashboardPage() {
   const data = getDashboardData();
-  const configuredRate = data.enabledCount === 0 ? 0 : Math.round((data.configuredCount / data.enabledCount) * 100);
+  const sortedStats = [...data.stats].sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers);
+  const updatedAt = data.generatedAt ? new Date(data.generatedAt).toLocaleString("ko-KR") : "아직 수집 전";
 
   return (
     <main className="dashboard-shell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">Multi Dashboard</p>
-          <h1>멀티 사이트 준비 자동화</h1>
+          <p className="eyebrow">GA4 Multi-Site Dashboard</p>
+          <h1>사이트별 통계 대시보드</h1>
         </div>
-        <div className="status-pill" aria-label="현재 운영 준비 상태">
-          {data.missingSiteConfig ? "사이트 입력 필요" : "구성 확인 가능"}
+        <div className="status-pill" aria-label="통계 스냅샷 생성 시각">
+          {updatedAt}
         </div>
       </header>
 
-      <section className="summary-grid" aria-label="요약 상태">
-        <StatusCard label="등록 사이트" value={`${data.enabledCount}`} hint="enabled 기준" />
-        <StatusCard label="WordPress" value={`${data.wordpressCount}`} hint="봇 계정 자동화 대상" />
-        <StatusCard label="구성률" value={`${configuredRate}%`} hint="필수 사이트 필드 기준" />
-        <StatusCard label="Secret 항목" value={`${REQUIRED_SECRETS.length}`} hint="preflight 확인 대상" />
+      <section className="summary-grid" aria-label="전체 통계 요약">
+        <StatusCard label="등록 사이트" value={formatNumber(data.siteCount)} hint="GA4 web stream 기준" />
+        <StatusCard label="추적 중" value={formatNumber(data.trackedCount)} hint="통계 수집 성공" />
+        <StatusCard label="7일 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint="전체 합계" />
+        <StatusCard label="7일 조회수" value={formatNumber(data.totalLast7Days.screenPageViews)} hint="전체 합계" />
       </section>
 
-      <section className="content-grid">
-        <article className="panel wide-panel">
+      <section className="content-grid stats-layout">
+        <article className="panel wide-panel stats-panel">
           <div className="panel-heading">
-            <h2>사이트 구성</h2>
-            <span>{data.generatedAt.slice(0, 10)}</span>
+            <div>
+              <h2>사이트별 GA4 통계</h2>
+              <p>최근 7일 기준으로 정렬했습니다. 28일 지표는 비교용 누적값입니다.</p>
+            </div>
+            <span>{data.failedCount > 0 ? `오류 ${data.failedCount}개` : "정상"}</span>
           </div>
-          {data.sites.length === 0 ? (
-            <div className="empty-state">
-              <strong>아직 등록된 사이트가 없습니다.</strong>
-              <p>
-                `scripts/setup/sites.example.yaml`을 참고해 `scripts/setup/sites.yaml`에 운영 사이트를 추가하면
-                대시보드와 preflight가 함께 동작합니다.
-              </p>
-            </div>
-          ) : (
-            <div className="site-list">
-              {data.sites.map((site) => (
-                <div className="site-row" key={site.id}>
-                  <div>
-                    <strong>{site.name ?? site.id}</strong>
-                    <span>{site.url}</span>
-                  </div>
-                  <em>{site.platform}</em>
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="stats-table-wrap">
+            <table className="stats-table">
+              <thead>
+                <tr>
+                  <th>사이트</th>
+                  <th>7일 사용자</th>
+                  <th>7일 세션</th>
+                  <th>7일 조회수</th>
+                  <th>28일 사용자</th>
+                  <th>상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                {sortedStats.map((stat) => (
+                  <StatsRow key={`${stat.id}-${stat.ga4PropertyId}`} stat={stat} />
+                ))}
+              </tbody>
+            </table>
+          </div>
         </article>
 
-        <article className="panel">
-          <div className="panel-heading">
-            <h2>실행 순서</h2>
-          </div>
-          <ol className="step-list">
-            <li>사이트 목록 입력</li>
-            <li>로컬 secret 입력</li>
-            <li>preflight 통과</li>
-            <li>setup:all 실행</li>
-          </ol>
-        </article>
+        <aside className="side-stack">
+          <article className="panel">
+            <div className="panel-heading">
+              <h2>전체 28일</h2>
+            </div>
+            <div className="metric-stack">
+              <MiniMetric label="사용자" value={data.totalLast28Days.activeUsers} />
+              <MiniMetric label="세션" value={data.totalLast28Days.sessions} />
+              <MiniMetric label="조회수" value={data.totalLast28Days.screenPageViews} />
+              <MiniMetric label="이벤트" value={data.totalLast28Days.eventCount} />
+            </div>
+          </article>
 
-        <article className="panel">
-          <div className="panel-heading">
-            <h2>명령어</h2>
-          </div>
-          <div className="command-list">
-            {COMMANDS.map((item) => (
-              <div className="command-row" key={item.command}>
-                <span>{item.label}</span>
-                <code>{item.command}</code>
+          <article className="panel">
+            <div className="panel-heading">
+              <h2>갱신 명령</h2>
+            </div>
+            <div className="command-list">
+              <div className="command-row">
+                <span>GA4 통계 수집</span>
+                <code>pnpm stats:update</code>
               </div>
-            ))}
-          </div>
-        </article>
-
-        <article className="panel wide-panel">
-          <div className="panel-heading">
-            <h2>Secret 체크</h2>
-            <span>값은 화면에 표시하지 않음</span>
-          </div>
-          <div className="secret-grid">
-            {REQUIRED_SECRETS.map((secret) => (
-              <span key={secret}>{secret}</span>
-            ))}
-          </div>
-        </article>
+              <div className="command-row">
+                <span>사이트 재등록</span>
+                <code>pnpm setup:import-ga4-sites -- --account=236349432</code>
+              </div>
+            </div>
+          </article>
+        </aside>
       </section>
     </main>
+  );
+}
+
+function StatsRow({ stat }: { stat: SiteStat }) {
+  return (
+    <tr>
+      <td>
+        <div className="site-cell">
+          <strong>{stat.name}</strong>
+          <a href={stat.url}>{stat.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</a>
+        </div>
+      </td>
+      <td>{formatNumber(stat.last7Days.activeUsers)}</td>
+      <td>{formatNumber(stat.last7Days.sessions)}</td>
+      <td>{formatNumber(stat.last7Days.screenPageViews)}</td>
+      <td>{formatNumber(stat.last28Days.activeUsers)}</td>
+      <td>
+        <span className={stat.error ? "badge badge-error" : "badge"}>{stat.error ? "확인 필요" : "정상"}</span>
+      </td>
+    </tr>
   );
 }
 
@@ -125,4 +118,17 @@ function StatusCard({ label, value, hint }: { label: string; value: string; hint
       <p>{hint}</p>
     </article>
   );
+}
+
+function MiniMetric({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="mini-metric">
+      <span>{label}</span>
+      <strong>{formatNumber(value)}</strong>
+    </div>
+  );
+}
+
+function formatNumber(value: number): string {
+  return new Intl.NumberFormat("ko-KR").format(value);
 }

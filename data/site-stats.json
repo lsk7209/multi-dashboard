@@ -1,0 +1,1735 @@
+{
+  "generatedAt": "2026-05-28T16:45:46.103Z",
+  "rangeDays": 7,
+  "previousRangeDays": 28,
+  "stats": [
+    {
+      "id": "bojo24",
+      "name": "bojo24.kr",
+      "url": "https://bojo24.kr/",
+      "ga4PropertyId": "534288708",
+      "last7Days": {
+        "activeUsers": 809,
+        "sessions": 877,
+        "screenPageViews": 1063,
+        "eventCount": 4860
+      },
+      "last28Days": {
+        "activeUsers": 2035,
+        "sessions": 2253,
+        "screenPageViews": 2942,
+        "eventCount": 12117
+      }
+    },
+    {
+      "id": "tennisfrens",
+      "name": "tennisfrens.com",
+      "url": "https://tennisfrens.com/",
+      "ga4PropertyId": "534356101",
+      "last7Days": {
+        "activeUsers": 799,
+        "sessions": 870,
+        "screenPageViews": 1721,
+        "eventCount": 4588
+      },
+      "last28Days": {
+        "activeUsers": 1590,
+        "sessions": 1754,
+        "screenPageViews": 4295,
+        "eventCount": 10160
+      }
+    },
+    {
+      "id": "haemongdream",
+      "name": "해몽드림 - GA4",
+      "url": "https://haemongdream.com/",
+      "ga4PropertyId": "516256882",
+      "last7Days": {
+        "activeUsers": 611,
+        "sessions": 649,
+        "screenPageViews": 716,
+        "eventCount": 2542
+      },
+      "last28Days": {
+        "activeUsers": 3118,
+        "sessions": 3342,
+        "screenPageViews": 3665,
+        "eventCount": 12982
+      }
+    },
+    {
+      "id": "todaypharm",
+      "name": "todaypharm.kr",
+      "url": "https://todaypharm.kr/",
+      "ga4PropertyId": "534313222",
+      "last7Days": {
+        "activeUsers": 519,
+        "sessions": 553,
+        "screenPageViews": 833,
+        "eventCount": 2776
+      },
+      "last28Days": {
+        "activeUsers": 945,
+        "sessions": 1025,
+        "screenPageViews": 1951,
+        "eventCount": 5382
+      }
+    },
+    {
+      "id": "ehon365",
+      "name": "ehon365.kr",
+      "url": "https://ehon365.kr/",
+      "ga4PropertyId": "535779756",
+      "last7Days": {
+        "activeUsers": 488,
+        "sessions": 514,
+        "screenPageViews": 87,
+        "eventCount": 6134
+      },
+      "last28Days": {
+        "activeUsers": 572,
+        "sessions": 609,
+        "screenPageViews": 101,
+        "eventCount": 7178
+      }
+    },
+    {
+      "id": "temon",
+      "name": "테몬_temon.kr",
+      "url": "https://temon.kr/",
+      "ga4PropertyId": "516369797",
+      "last7Days": {
+        "activeUsers": 222,
+        "sessions": 238,
+        "screenPageViews": 1449,
+        "eventCount": 6175
+      },
+      "last28Days": {
+        "activeUsers": 889,
+        "sessions": 1000,
+        "screenPageViews": 5998,
+        "eventCount": 27417
+      }
+    },
+    {
+      "id": "luckyday",
+      "name": "럭키데이 - GA4",
+      "url": "https://luckyday.kr/",
+      "ga4PropertyId": "512019715",
+      "last7Days": {
+        "activeUsers": 130,
+        "sessions": 137,
+        "screenPageViews": 161,
+        "eventCount": 539
+      },
+      "last28Days": {
+        "activeUsers": 182,
+        "sessions": 193,
+        "screenPageViews": 249,
+        "eventCount": 790
+      }
+    },
+    {
+      "id": "cartain-2",
+      "name": "cartain.kr",
+      "url": "https://cartain.kr/",
+      "ga4PropertyId": "536558706",
+      "last7Days": {
+        "activeUsers": 127,
+        "sessions": 151,
+        "screenPageViews": 187,
+        "eventCount": 669
+      },
+      "last28Days": {
+        "activeUsers": 148,
+        "sessions": 177,
+        "screenPageViews": 228,
+        "eventCount": 781
+      }
+    },
+    {
+      "id": "klick",
+      "name": "블로그 - GA4",
+      "url": "https://klick.kr/",
+      "ga4PropertyId": "515381693",
+      "last7Days": {
+        "activeUsers": 115,
+        "sessions": 123,
+        "screenPageViews": 132,
+        "eventCount": 504
+      },
+      "last28Days": {
+        "activeUsers": 1567,
+        "sessions": 1668,
+        "screenPageViews": 1802,
+        "eventCount": 6541
+      }
+    },
+    {
+      "id": "klick-2",
+      "name": "klick.kr",
+      "url": "https://klick.kr/",
+      "ga4PropertyId": "533748860",
+      "last7Days": {
+        "activeUsers": 100,
+        "sessions": 104,
+        "screenPageViews": 107,
+        "eventCount": 1070
+      },
+      "last28Days": {
+        "activeUsers": 1345,
+        "sessions": 1422,
+        "screenPageViews": 1520,
+        "eventCount": 13390
+      }
+    },
+    {
+      "id": "spinkorea-2",
+      "name": "spinkorea.kr",
+      "url": "https://spinkorea.kr/",
+      "ga4PropertyId": "536081634",
+      "last7Days": {
+        "activeUsers": 91,
+        "sessions": 100,
+        "screenPageViews": 361,
+        "eventCount": 731
+      },
+      "last28Days": {
+        "activeUsers": 187,
+        "sessions": 220,
+        "screenPageViews": 792,
+        "eventCount": 1598
+      }
+    },
+    {
+      "id": "picklefriend",
+      "name": "picklefriend.kr",
+      "url": "https://picklefriend.kr/",
+      "ga4PropertyId": "539268592",
+      "last7Days": {
+        "activeUsers": 85,
+        "sessions": 87,
+        "screenPageViews": 101,
+        "eventCount": 477
+      },
+      "last28Days": {
+        "activeUsers": 85,
+        "sessions": 87,
+        "screenPageViews": 101,
+        "eventCount": 477
+      }
+    },
+    {
+      "id": "tasko-2",
+      "name": "tasko.kr",
+      "url": "https://tasko.kr/",
+      "ga4PropertyId": "533744995",
+      "last7Days": {
+        "activeUsers": 51,
+        "sessions": 57,
+        "screenPageViews": 93,
+        "eventCount": 296
+      },
+      "last28Days": {
+        "activeUsers": 252,
+        "sessions": 283,
+        "screenPageViews": 432,
+        "eventCount": 1329
+      }
+    },
+    {
+      "id": "mbti-tasko",
+      "name": "tasko.kr",
+      "url": "https://mbti.tasko.kr/",
+      "ga4PropertyId": "533744995",
+      "last7Days": {
+        "activeUsers": 51,
+        "sessions": 57,
+        "screenPageViews": 93,
+        "eventCount": 296
+      },
+      "last28Days": {
+        "activeUsers": 252,
+        "sessions": 283,
+        "screenPageViews": 432,
+        "eventCount": 1329
+      }
+    },
+    {
+      "id": "petjigi",
+      "name": "petjigi.kr",
+      "url": "https://petjigi.kr/",
+      "ga4PropertyId": "538418545",
+      "last7Days": {
+        "activeUsers": 49,
+        "sessions": 55,
+        "screenPageViews": 86,
+        "eventCount": 363
+      },
+      "last28Days": {
+        "activeUsers": 67,
+        "sessions": 76,
+        "screenPageViews": 146,
+        "eventCount": 578
+      }
+    },
+    {
+      "id": "tasko",
+      "name": "태스코 - GA4",
+      "url": "https://tasko.kr/",
+      "ga4PropertyId": "511810052",
+      "last7Days": {
+        "activeUsers": 38,
+        "sessions": 40,
+        "screenPageViews": 57,
+        "eventCount": 176
+      },
+      "last28Days": {
+        "activeUsers": 238,
+        "sessions": 257,
+        "screenPageViews": 367,
+        "eventCount": 1105
+      }
+    },
+    {
+      "id": "2mlab-2",
+      "name": "2mlab.kr",
+      "url": "https://2mlab.kr/",
+      "ga4PropertyId": "536008285",
+      "last7Days": {
+        "activeUsers": 26,
+        "sessions": 26,
+        "screenPageViews": 26,
+        "eventCount": 105
+      },
+      "last28Days": {
+        "activeUsers": 163,
+        "sessions": 179,
+        "screenPageViews": 178,
+        "eventCount": 720
+      }
+    },
+    {
+      "id": "askore",
+      "name": "askore.kr",
+      "url": "https://askore.kr/",
+      "ga4PropertyId": "536871374",
+      "last7Days": {
+        "activeUsers": 26,
+        "sessions": 27,
+        "screenPageViews": 46,
+        "eventCount": 121
+      },
+      "last28Days": {
+        "activeUsers": 45,
+        "sessions": 61,
+        "screenPageViews": 119,
+        "eventCount": 277
+      }
+    },
+    {
+      "id": "notebook-klick-2",
+      "name": "notebook.klick.kr",
+      "url": "https://notebook.klick.kr/",
+      "ga4PropertyId": "538469681",
+      "last7Days": {
+        "activeUsers": 25,
+        "sessions": 28,
+        "screenPageViews": 56,
+        "eventCount": 172
+      },
+      "last28Days": {
+        "activeUsers": 32,
+        "sessions": 38,
+        "screenPageViews": 111,
+        "eventCount": 322
+      }
+    },
+    {
+      "id": "fastjob",
+      "name": "패스트잡 - GA4",
+      "url": "https://fastjob.kr/",
+      "ga4PropertyId": "513769879",
+      "last7Days": {
+        "activeUsers": 24,
+        "sessions": 26,
+        "screenPageViews": 28,
+        "eventCount": 95
+      },
+      "last28Days": {
+        "activeUsers": 155,
+        "sessions": 167,
+        "screenPageViews": 196,
+        "eventCount": 606
+      }
+    },
+    {
+      "id": "softwa",
+      "name": "소프트와 - GA4",
+      "url": "https://softwa.kr/",
+      "ga4PropertyId": "519577510",
+      "last7Days": {
+        "activeUsers": 23,
+        "sessions": 25,
+        "screenPageViews": 42,
+        "eventCount": 117
+      },
+      "last28Days": {
+        "activeUsers": 71,
+        "sessions": 78,
+        "screenPageViews": 113,
+        "eventCount": 349
+      }
+    },
+    {
+      "id": "nicewomen",
+      "name": "나이스우먼 - GA4",
+      "url": "https://nicewomen.kr/",
+      "ga4PropertyId": "524548131",
+      "last7Days": {
+        "activeUsers": 19,
+        "sessions": 19,
+        "screenPageViews": 19,
+        "eventCount": 67
+      },
+      "last28Days": {
+        "activeUsers": 83,
+        "sessions": 86,
+        "screenPageViews": 91,
+        "eventCount": 301
+      }
+    },
+    {
+      "id": "healthgotoo",
+      "name": "건강팡팡 - GA4",
+      "url": "https://healthgotoo.com/",
+      "ga4PropertyId": "517066030",
+      "last7Days": {
+        "activeUsers": 18,
+        "sessions": 19,
+        "screenPageViews": 21,
+        "eventCount": 75
+      },
+      "last28Days": {
+        "activeUsers": 74,
+        "sessions": 85,
+        "screenPageViews": 118,
+        "eventCount": 373
+      }
+    },
+    {
+      "id": "car-luckyday",
+      "name": "car.luckyday.kr",
+      "url": "https://car.luckyday.kr/",
+      "ga4PropertyId": "538367953",
+      "last7Days": {
+        "activeUsers": 18,
+        "sessions": 32,
+        "screenPageViews": 152,
+        "eventCount": 709
+      },
+      "last28Days": {
+        "activeUsers": 39,
+        "sessions": 64,
+        "screenPageViews": 212,
+        "eventCount": 1016
+      }
+    },
+    {
+      "id": "dogspang-2",
+      "name": "dogspang.kr",
+      "url": "https://dogspang.kr/",
+      "ga4PropertyId": "536564400",
+      "last7Days": {
+        "activeUsers": 16,
+        "sessions": 17,
+        "screenPageViews": 19,
+        "eventCount": 76
+      },
+      "last28Days": {
+        "activeUsers": 87,
+        "sessions": 97,
+        "screenPageViews": 124,
+        "eventCount": 433
+      }
+    },
+    {
+      "id": "nexttech7",
+      "name": "nexttech7.com",
+      "url": "https://nexttech7.com/",
+      "ga4PropertyId": "533760772",
+      "last7Days": {
+        "activeUsers": 14,
+        "sessions": 14,
+        "screenPageViews": 22,
+        "eventCount": 71
+      },
+      "last28Days": {
+        "activeUsers": 63,
+        "sessions": 64,
+        "screenPageViews": 109,
+        "eventCount": 343
+      }
+    },
+    {
+      "id": "gover",
+      "name": "보조금365 - GA4",
+      "url": "https://gover.kr/",
+      "ga4PropertyId": "523266152",
+      "last7Days": {
+        "activeUsers": 12,
+        "sessions": 12,
+        "screenPageViews": 16,
+        "eventCount": 62
+      },
+      "last28Days": {
+        "activeUsers": 66,
+        "sessions": 67,
+        "screenPageViews": 144,
+        "eventCount": 428
+      }
+    },
+    {
+      "id": "richyou",
+      "name": "richyou.kr",
+      "url": "https://richyou.kr/",
+      "ga4PropertyId": "537950699",
+      "last7Days": {
+        "activeUsers": 12,
+        "sessions": 12,
+        "screenPageViews": 14,
+        "eventCount": 45
+      },
+      "last28Days": {
+        "activeUsers": 23,
+        "sessions": 23,
+        "screenPageViews": 25,
+        "eventCount": 80
+      }
+    },
+    {
+      "id": "knewstory",
+      "name": "케이뉴스스토리 - GA4",
+      "url": "https://knewstory.kr/",
+      "ga4PropertyId": "511978714",
+      "last7Days": {
+        "activeUsers": 11,
+        "sessions": 11,
+        "screenPageViews": 15,
+        "eventCount": 44
+      },
+      "last28Days": {
+        "activeUsers": 57,
+        "sessions": 61,
+        "screenPageViews": 80,
+        "eventCount": 244
+      }
+    },
+    {
+      "id": "legalser",
+      "name": "legalser - GA4",
+      "url": "https://legalser.com/",
+      "ga4PropertyId": "519536919",
+      "last7Days": {
+        "activeUsers": 11,
+        "sessions": 11,
+        "screenPageViews": 15,
+        "eventCount": 41
+      },
+      "last28Days": {
+        "activeUsers": 21,
+        "sessions": 23,
+        "screenPageViews": 33,
+        "eventCount": 91
+      }
+    },
+    {
+      "id": "sellerpit-2",
+      "name": "sellerpit.kr",
+      "url": "https://sellerpit.kr/",
+      "ga4PropertyId": "534005389",
+      "last7Days": {
+        "activeUsers": 11,
+        "sessions": 12,
+        "screenPageViews": 15,
+        "eventCount": 79
+      },
+      "last28Days": {
+        "activeUsers": 53,
+        "sessions": 59,
+        "screenPageViews": 81,
+        "eventCount": 362
+      }
+    },
+    {
+      "id": "today2424",
+      "name": "today2424.kr",
+      "url": "https://today2424.kr/",
+      "ga4PropertyId": "534327620",
+      "last7Days": {
+        "activeUsers": 11,
+        "sessions": 12,
+        "screenPageViews": 1,
+        "eventCount": 66
+      },
+      "last28Days": {
+        "activeUsers": 41,
+        "sessions": 47,
+        "screenPageViews": 20,
+        "eventCount": 222
+      }
+    },
+    {
+      "id": "discparty",
+      "name": "디스크파티 - GA4",
+      "url": "https://discparty.com/",
+      "ga4PropertyId": "513733245",
+      "last7Days": {
+        "activeUsers": 10,
+        "sessions": 10,
+        "screenPageViews": 16,
+        "eventCount": 46
+      },
+      "last28Days": {
+        "activeUsers": 48,
+        "sessions": 59,
+        "screenPageViews": 94,
+        "eventCount": 255
+      }
+    },
+    {
+      "id": "etique",
+      "name": "매너팡팡 - GA4",
+      "url": "https://etique.kr/",
+      "ga4PropertyId": "521236824",
+      "last7Days": {
+        "activeUsers": 10,
+        "sessions": 10,
+        "screenPageViews": 12,
+        "eventCount": 42
+      },
+      "last28Days": {
+        "activeUsers": 71,
+        "sessions": 76,
+        "screenPageViews": 94,
+        "eventCount": 312
+      }
+    },
+    {
+      "id": "yesa",
+      "name": "yesa.kr",
+      "url": "https://yesa.kr/",
+      "ga4PropertyId": "539176876",
+      "last7Days": {
+        "activeUsers": 10,
+        "sessions": 29,
+        "screenPageViews": 81,
+        "eventCount": 195
+      },
+      "last28Days": {
+        "activeUsers": 10,
+        "sessions": 29,
+        "screenPageViews": 81,
+        "eventCount": 195
+      }
+    },
+    {
+      "id": "autoscares-2",
+      "name": "autoscares.com",
+      "url": "https://autoscares.com/",
+      "ga4PropertyId": "536651077",
+      "last7Days": {
+        "activeUsers": 9,
+        "sessions": 10,
+        "screenPageViews": 13,
+        "eventCount": 45
+      },
+      "last28Days": {
+        "activeUsers": 22,
+        "sessions": 24,
+        "screenPageViews": 49,
+        "eventCount": 138
+      }
+    },
+    {
+      "id": "roadways",
+      "name": "roadways.kr",
+      "url": "https://roadways.kr/",
+      "ga4PropertyId": "536902558",
+      "last7Days": {
+        "activeUsers": 9,
+        "sessions": 9,
+        "screenPageViews": 9,
+        "eventCount": 30
+      },
+      "last28Days": {
+        "activeUsers": 22,
+        "sessions": 29,
+        "screenPageViews": 54,
+        "eventCount": 125
+      }
+    },
+    {
+      "id": "ezfunnel",
+      "name": "ezfunnel.kr",
+      "url": "https://ezfunnel.kr/",
+      "ga4PropertyId": "536106465",
+      "last7Days": {
+        "activeUsers": 8,
+        "sessions": 9,
+        "screenPageViews": 14,
+        "eventCount": 42
+      },
+      "last28Days": {
+        "activeUsers": 21,
+        "sessions": 22,
+        "screenPageViews": 32,
+        "eventCount": 102
+      }
+    },
+    {
+      "id": "saju-tasko",
+      "name": "saju.tasko.kr",
+      "url": "https://saju.tasko.kr/",
+      "ga4PropertyId": "538409598",
+      "last7Days": {
+        "activeUsers": 8,
+        "sessions": 10,
+        "screenPageViews": 9,
+        "eventCount": 42
+      },
+      "last28Days": {
+        "activeUsers": 17,
+        "sessions": 23,
+        "screenPageViews": 25,
+        "eventCount": 113
+      }
+    },
+    {
+      "id": "phone-luckyday",
+      "name": "phone.luckyday.kr",
+      "url": "https://phone.luckyday.kr/",
+      "ga4PropertyId": "538379576",
+      "last7Days": {
+        "activeUsers": 7,
+        "sessions": 21,
+        "screenPageViews": 85,
+        "eventCount": 251
+      },
+      "last28Days": {
+        "activeUsers": 16,
+        "sessions": 38,
+        "screenPageViews": 158,
+        "eventCount": 491
+      }
+    },
+    {
+      "id": "trave",
+      "name": "여행브이 - GA4",
+      "url": "https://trave.kr/",
+      "ga4PropertyId": "521243855",
+      "last7Days": {
+        "activeUsers": 5,
+        "sessions": 5,
+        "screenPageViews": 6,
+        "eventCount": 18
+      },
+      "last28Days": {
+        "activeUsers": 319,
+        "sessions": 333,
+        "screenPageViews": 434,
+        "eventCount": 1432
+      }
+    },
+    {
+      "id": "runmania",
+      "name": "runmania.kr",
+      "url": "https://runmania.kr/",
+      "ga4PropertyId": "533614337",
+      "last7Days": {
+        "activeUsers": 5,
+        "sessions": 5,
+        "screenPageViews": 5,
+        "eventCount": 24
+      },
+      "last28Days": {
+        "activeUsers": 36,
+        "sessions": 39,
+        "screenPageViews": 55,
+        "eventCount": 180
+      }
+    },
+    {
+      "id": "chatgipt-3",
+      "name": "chatgipt.kr",
+      "url": "https://chatgipt.kr/",
+      "ga4PropertyId": "534308136",
+      "last7Days": {
+        "activeUsers": 5,
+        "sessions": 5,
+        "screenPageViews": 5,
+        "eventCount": 16
+      },
+      "last28Days": {
+        "activeUsers": 20,
+        "sessions": 24,
+        "screenPageViews": 29,
+        "eventCount": 84
+      }
+    },
+    {
+      "id": "certifi",
+      "name": "certifi.kr",
+      "url": "https://certifi.kr/",
+      "ga4PropertyId": "537945374",
+      "last7Days": {
+        "activeUsers": 5,
+        "sessions": 5,
+        "screenPageViews": 5,
+        "eventCount": 20
+      },
+      "last28Days": {
+        "activeUsers": 14,
+        "sessions": 21,
+        "screenPageViews": 56,
+        "eventCount": 198
+      }
+    },
+    {
+      "id": "insupang",
+      "name": "insupang - GA4",
+      "url": "https://insupang.com/",
+      "ga4PropertyId": "517897382",
+      "last7Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 5,
+        "eventCount": 15
+      },
+      "last28Days": {
+        "activeUsers": 14,
+        "sessions": 18,
+        "screenPageViews": 38,
+        "eventCount": 103
+      }
+    },
+    {
+      "id": "estat",
+      "name": "푸드팡팡 - GA4",
+      "url": "https://estat.kr/",
+      "ga4PropertyId": "523324426",
+      "last7Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 5,
+        "eventCount": 16
+      },
+      "last28Days": {
+        "activeUsers": 35,
+        "sessions": 37,
+        "screenPageViews": 44,
+        "eventCount": 136
+      }
+    },
+    {
+      "id": "esgyo-2",
+      "name": "esgyo.kr",
+      "url": "https://esgyo.kr/",
+      "ga4PropertyId": "534284697",
+      "last7Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 4,
+        "eventCount": 13
+      },
+      "last28Days": {
+        "activeUsers": 10,
+        "sessions": 13,
+        "screenPageViews": 15,
+        "eventCount": 49
+      }
+    },
+    {
+      "id": "todayshops-2",
+      "name": "todayshops.kr",
+      "url": "https://todayshops.kr/",
+      "ga4PropertyId": "537250213",
+      "last7Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 4,
+        "eventCount": 15
+      },
+      "last28Days": {
+        "activeUsers": 7,
+        "sessions": 16,
+        "screenPageViews": 47,
+        "eventCount": 132
+      }
+    },
+    {
+      "id": "healfood-2",
+      "name": "healfood.kr",
+      "url": "https://healfood.kr/",
+      "ga4PropertyId": "536788301",
+      "last7Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 17
+      },
+      "last28Days": {
+        "activeUsers": 14,
+        "sessions": 14,
+        "screenPageViews": 18,
+        "eventCount": 66
+      }
+    },
+    {
+      "id": "gong365",
+      "name": "gong365.kr",
+      "url": "https://gong365.kr/",
+      "ga4PropertyId": "536928839",
+      "last7Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 17
+      },
+      "last28Days": {
+        "activeUsers": 13,
+        "sessions": 31,
+        "screenPageViews": 100,
+        "eventCount": 233
+      }
+    },
+    {
+      "id": "crepika",
+      "name": "crepika.com",
+      "url": "https://crepika.com/",
+      "ga4PropertyId": "536578195",
+      "last7Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 8
+      },
+      "last28Days": {
+        "activeUsers": 179,
+        "sessions": 193,
+        "screenPageViews": 267,
+        "eventCount": 948
+      }
+    },
+    {
+      "id": "educaer",
+      "name": "educaer.com",
+      "url": "https://educaer.com/",
+      "ga4PropertyId": "537331142",
+      "last7Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 6
+      },
+      "last28Days": {
+        "activeUsers": 7,
+        "sessions": 8,
+        "screenPageViews": 18,
+        "eventCount": 45
+      }
+    },
+    {
+      "id": "finan-2",
+      "name": "finan.kr",
+      "url": "https://finan.kr/",
+      "ga4PropertyId": "537937514",
+      "last7Days": {
+        "activeUsers": 2,
+        "sessions": 7,
+        "screenPageViews": 32,
+        "eventCount": 88
+      },
+      "last28Days": {
+        "activeUsers": 7,
+        "sessions": 17,
+        "screenPageViews": 74,
+        "eventCount": 220
+      }
+    },
+    {
+      "id": "ai-tasko",
+      "name": "ai.tasko.kr",
+      "url": "https://ai.tasko.kr/",
+      "ga4PropertyId": "538418068",
+      "last7Days": {
+        "activeUsers": 2,
+        "sessions": 4,
+        "screenPageViews": 12,
+        "eventCount": 37
+      },
+      "last28Days": {
+        "activeUsers": 5,
+        "sessions": 8,
+        "screenPageViews": 27,
+        "eventCount": 78
+      }
+    },
+    {
+      "id": "lawer",
+      "name": "법이람 - GA4",
+      "url": "https://lawer.kr/",
+      "ga4PropertyId": "521770057",
+      "last7Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
+      "last28Days": {
+        "activeUsers": 7,
+        "sessions": 16,
+        "screenPageViews": 57,
+        "eventCount": 134
+      }
+    },
+    {
+      "id": "coinyo-2",
+      "name": "coinyo.kr",
+      "url": "https://coinyo.kr/",
+      "ga4PropertyId": "536352221",
+      "last7Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
+      "last28Days": {
+        "activeUsers": 11,
+        "sessions": 16,
+        "screenPageViews": 46,
+        "eventCount": 130
+      }
+    },
+    {
+      "id": "travelpang-2",
+      "name": "travelpang.kr",
+      "url": "https://travelpang.kr/",
+      "ga4PropertyId": "536559437",
+      "last7Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 6
+      },
+      "last28Days": {
+        "activeUsers": 18,
+        "sessions": 31,
+        "screenPageViews": 70,
+        "eventCount": 202
+      }
+    },
+    {
+      "id": "petinsuer-2",
+      "name": "petinsuer.com",
+      "url": "https://petinsuer.com/",
+      "ga4PropertyId": "536670197",
+      "last7Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
+      "last28Days": {
+        "activeUsers": 13,
+        "sessions": 13,
+        "screenPageViews": 15,
+        "eventCount": 54
+      }
+    },
+    {
+      "id": "goesku",
+      "name": "goesku.com",
+      "url": "https://goesku.com/",
+      "ga4PropertyId": "536856718",
+      "last7Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
+      "last28Days": {
+        "activeUsers": 17,
+        "sessions": 21,
+        "screenPageViews": 24,
+        "eventCount": 85
+      }
+    },
+    {
+      "id": "gong-luckyday",
+      "name": "gong.luckyday.kr",
+      "url": "https://gong.luckyday.kr/",
+      "ga4PropertyId": "538330802",
+      "last7Days": {
+        "activeUsers": 1,
+        "sessions": 15,
+        "screenPageViews": 77,
+        "eventCount": 173
+      },
+      "last28Days": {
+        "activeUsers": 6,
+        "sessions": 29,
+        "screenPageViews": 130,
+        "eventCount": 291
+      }
+    },
+    {
+      "id": "kang4",
+      "name": "강사자판기",
+      "url": "https://kang4.com/",
+      "ga4PropertyId": "325680688",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 19,
+        "sessions": 21,
+        "screenPageViews": 35,
+        "eventCount": 83
+      }
+    },
+    {
+      "id": "2mlab",
+      "name": "팀하우스 - GA4",
+      "url": "https://2mlab.kr/",
+      "ga4PropertyId": "511994173",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 38,
+        "sessions": 42,
+        "screenPageViews": 44,
+        "eventCount": 151
+      }
+    },
+    {
+      "id": "chatgipt",
+      "name": "블로그 - GA4",
+      "url": "https://chatgipt.kr/",
+      "ga4PropertyId": "512060443",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "chatgipt-2",
+      "name": "블로그 - GA4",
+      "url": "https://chatgipt.kr/",
+      "ga4PropertyId": "512050444",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "travelpang",
+      "name": "여행팡 - GA4",
+      "url": "https://travelpang.kr/",
+      "ga4PropertyId": "517948231",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "coinyo",
+      "name": "코인요요 - GA4",
+      "url": "https://coinyo.kr/",
+      "ga4PropertyId": "517634776",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "dogspang",
+      "name": "정보랩 - GA4",
+      "url": "https://dogspang.kr/",
+      "ga4PropertyId": "517108655",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "cartain",
+      "name": "cartain",
+      "url": "https://cartain.kr/",
+      "ga4PropertyId": "518554091",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 32,
+        "sessions": 48,
+        "screenPageViews": 113,
+        "eventCount": 261
+      }
+    },
+    {
+      "id": "petinsuer",
+      "name": "펫인사이트 - GA4",
+      "url": "https://petinsuer.com/",
+      "ga4PropertyId": "519578899",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 6,
+        "sessions": 8,
+        "screenPageViews": 8,
+        "eventCount": 24
+      }
+    },
+    {
+      "id": "homeimer",
+      "name": "homemake - GA4",
+      "url": "https://homeimer.com/",
+      "ga4PropertyId": "519582866",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 4,
+        "sessions": 5,
+        "screenPageViews": 6,
+        "eventCount": 19
+      }
+    },
+    {
+      "id": "healfood",
+      "name": "건강푸드팡 - GA4",
+      "url": "https://healfood.kr/",
+      "ga4PropertyId": "520249990",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 14,
+        "sessions": 16,
+        "screenPageViews": 19,
+        "eventCount": 60
+      }
+    },
+    {
+      "id": "finan",
+      "name": "파이날팡 - GA4",
+      "url": "https://finan.kr/",
+      "ga4PropertyId": "520579523",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "luxurytraver",
+      "name": "luxurytraver - GA4",
+      "url": "https://luxurytraver.com/",
+      "ga4PropertyId": "521243475",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 1,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 6
+      }
+    },
+    {
+      "id": "autoscares",
+      "name": "자동차팡팡 - GA4",
+      "url": "https://autoscares.com/",
+      "ga4PropertyId": "521782814",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "esgyo",
+      "name": "이에스지요 - GA4",
+      "url": "https://esgyo.kr/",
+      "ga4PropertyId": "524502961",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "sellerpit",
+      "name": "셀러핏 - GA4",
+      "url": "https://sellerpit.kr/",
+      "ga4PropertyId": "525923821",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 5,
+        "sessions": 9,
+        "screenPageViews": 22,
+        "eventCount": 53
+      }
+    },
+    {
+      "id": "spinkorea",
+      "name": "스핀코리아",
+      "url": "https://spinkorea.kr/",
+      "ga4PropertyId": "532855163",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 158,
+        "sessions": 200,
+        "screenPageViews": 871,
+        "eventCount": 1720
+      }
+    },
+    {
+      "id": "texturb",
+      "name": "texturb.com",
+      "url": "https://texturb.com/",
+      "ga4PropertyId": "532887366",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 62,
+        "sessions": 72,
+        "screenPageViews": 90,
+        "eventCount": 407
+      }
+    },
+    {
+      "id": "luckyday-2",
+      "name": "https://luckyday.kr",
+      "url": "https://luckyday.kr/",
+      "ga4PropertyId": "533729607",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 9,
+        "sessions": 10,
+        "screenPageViews": 15,
+        "eventCount": 46
+      }
+    },
+    {
+      "id": "knewstory-2",
+      "name": "knewstory.kr",
+      "url": "https://knewstory.kr/",
+      "ga4PropertyId": "536122428",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "kang4-2",
+      "name": "kang4.com",
+      "url": "https://kang4.com/",
+      "ga4PropertyId": "536337959",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "fastjob-2",
+      "name": "fastjob.kr",
+      "url": "https://fastjob.kr/",
+      "ga4PropertyId": "536358308",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "insupang-2",
+      "name": "insupang.com",
+      "url": "https://insupang.com/",
+      "ga4PropertyId": "536533161",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "healthgotoo-2",
+      "name": "healthgotoo.com",
+      "url": "https://healthgotoo.com/",
+      "ga4PropertyId": "536550724",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "legalser-2",
+      "name": "legalser.com",
+      "url": "https://legalser.com/",
+      "ga4PropertyId": "536573278",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "etique-2",
+      "name": "etique.kr",
+      "url": "https://etique.kr/",
+      "ga4PropertyId": "536548785",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "luxurytraver-2",
+      "name": "luxurytraver.com",
+      "url": "https://luxurytraver.com/",
+      "ga4PropertyId": "536662292",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "softwa-2",
+      "name": "softwa.kr",
+      "url": "https://softwa.kr/",
+      "ga4PropertyId": "536668384",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "gover-2",
+      "name": "gover.kr",
+      "url": "https://gover.kr/",
+      "ga4PropertyId": "536824904",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "estat-2",
+      "name": "estat.kr",
+      "url": "https://estat.kr/",
+      "ga4PropertyId": "536753109",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "homeimer-2",
+      "name": "homeimer.com",
+      "url": "https://homeimer.com/",
+      "ga4PropertyId": "536833044",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "trave-2",
+      "name": "trave.kr",
+      "url": "https://trave.kr/",
+      "ga4PropertyId": "536910323",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "lawer-2",
+      "name": "lawer.kr",
+      "url": "https://lawer.kr/",
+      "ga4PropertyId": "537125482",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "sssaass",
+      "name": "sssaass.com",
+      "url": "https://sssaass.com/",
+      "ga4PropertyId": "537317309",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 7,
+        "sessions": 17,
+        "screenPageViews": 39,
+        "eventCount": 106
+      }
+    },
+    {
+      "id": "todayshops",
+      "name": "todayshops.kr",
+      "url": "https://todayshops.kr/",
+      "ga4PropertyId": "537295441",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      }
+    },
+    {
+      "id": "notebook-klick",
+      "name": "노트북고고",
+      "url": "https://notebook.klick.kr/",
+      "ga4PropertyId": "538351492",
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last28Days": {
+        "activeUsers": 24,
+        "sessions": 24,
+        "screenPageViews": 28,
+        "eventCount": 97
+      }
+    }
+  ]
+}

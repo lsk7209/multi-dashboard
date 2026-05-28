@@ -134,13 +134,14 @@ h2 {
   gap: 18px;
 }
 
+.stats-layout {
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+}
+
 .panel {
   min-width: 0;
   padding: 18px;
-}
-
-.wide-panel {
-  grid-column: span 1;
 }
 
 .panel-heading {
@@ -149,6 +150,12 @@ h2 {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 16px;
+}
+
+.panel-heading p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .empty-state {
@@ -170,7 +177,9 @@ h2 {
 }
 
 .site-list,
-.command-list {
+.command-list,
+.side-stack,
+.metric-stack {
   display: grid;
   gap: 10px;
 }
@@ -256,6 +265,110 @@ code {
   white-space: nowrap;
 }
 
+.stats-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.stats-panel .panel-heading {
+  margin-bottom: 0;
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.stats-table-wrap {
+  overflow-x: auto;
+}
+
+.stats-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.stats-table th,
+.stats-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 14px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.stats-table th:first-child,
+.stats-table td:first-child {
+  text-align: left;
+}
+
+.stats-table th {
+  color: var(--muted);
+  background: #fbfcfd;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stats-table td {
+  font-size: 14px;
+}
+
+.site-cell {
+  display: grid;
+  gap: 3px;
+  min-width: 220px;
+}
+
+.site-cell strong,
+.site-cell a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-cell a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.site-cell a:hover {
+  color: var(--accent);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge-error {
+  color: var(--warning);
+  background: var(--warning-weak);
+}
+
+.mini-metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.mini-metric span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.mini-metric strong {
+  font-size: 18px;
+}
+
 @media (max-width: 860px) {
   .dashboard-shell {
     width: min(100% - 24px, 720px);
@@ -272,6 +385,7 @@ code {
 
   .summary-grid,
   .content-grid,
+  .stats-layout,
   .secret-grid {
     grid-template-columns: 1fr;
   }
