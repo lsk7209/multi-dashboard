@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "setup:preflight": "tsx scripts/setup/preflight.ts",
+    "setup:preflight:dashboard": "tsx scripts/setup/preflight.ts --scope=dashboard",
     "setup:import-ga4-sites": "tsx scripts/setup/import-ga4-sites.ts",
     "setup:gsc": "tsx scripts/setup/01-register-gsc-users.ts",
     "setup:ga4": "tsx scripts/setup/02-register-ga4-bindings.ts",

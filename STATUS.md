@@ -2,6 +2,7 @@
 ## 현재 작업
 prep-automation v1.1 TypeScript 자동화 개발 완료, 실제 운영 입력 대기
 ## 최근 변경 (최근 5개만)
+- 05-29: preflight scope 분리(dashboard/all)로 사이트 등록 확인 가능
 - 05-28: GA4 계정 236349432에서 web stream 96개 사이트 등록
 - 05-28: setup:preflight 추가로 누락 사이트/secret 점검 가능
 - 05-28: preflight 실행 결과 운영 secret/site 미입력 확인

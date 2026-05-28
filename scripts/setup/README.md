@@ -32,6 +32,7 @@ WP_ADMIN_<SITE_ID>_PASSWORD=application-password
 ## Commands
 
 ```bash
+pnpm setup:preflight:dashboard
 pnpm setup:preflight
 pnpm setup:all
 pnpm setup:resume

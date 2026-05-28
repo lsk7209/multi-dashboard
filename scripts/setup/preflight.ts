@@ -24,6 +24,19 @@ const REQUIRED_KEYS = [
   "APP_URL",
 ] as const;
 
+type Scope = "dashboard" | "all";
+
+function readScope(): Scope {
+  const arg = process.argv.find((item) => item.startsWith("--scope="));
+  const scope = arg?.slice("--scope=".length);
+
+  if (scope === "dashboard" || scope === "all") {
+    return scope;
+  }
+
+  return "all";
+}
+
 function toEnvKey(siteId: string): string {
   return siteId.toUpperCase().replace(/[^A-Z0-9]/g, "_");
 }
@@ -31,13 +44,16 @@ function toEnvKey(siteId: string): string {
 async function main(): Promise<void> {
   loadLocalSecrets();
 
+  const scope = readScope();
   const sites = await loadSites();
   const enabledSites = sites.filter((site) => site.enabled);
   const missing: string[] = [];
 
-  for (const key of REQUIRED_KEYS) {
-    if (!readSecret(key)) {
-      missing.push(key);
+  if (scope === "all") {
+    for (const key of REQUIRED_KEYS) {
+      if (!readSecret(key)) {
+        missing.push(key);
+      }
     }
   }
 
@@ -45,7 +61,7 @@ async function main(): Promise<void> {
     missing.push("scripts/setup/sites.yaml: at least one enabled site");
   }
 
-  for (const site of enabledSites.filter((item) => item.platform === "wordpress")) {
+  for (const site of enabledSites.filter((item) => scope === "all" && item.platform === "wordpress")) {
     const prefix = `WP_ADMIN_${toEnvKey(site.id)}`;
     for (const suffix of ["URL", "USERNAME", "PASSWORD"]) {
       const key = `${prefix}_${suffix}`;
@@ -61,13 +77,16 @@ async function main(): Promise<void> {
 
   if (missing.length > 0) {
     console.error("Preflight failed. Missing:");
-    for (const item of missing) {
+    for (const item of missing.slice(0, 80)) {
       console.error(`- ${item}`);
+    }
+    if (missing.length > 80) {
+      console.error(`- ...and ${missing.length - 80} more`);
     }
     process.exit(1);
   }
 
-  console.log(`Preflight passed. ${enabledSites.length} enabled site(s) ready.`);
+  console.log(`Preflight passed (${scope}). ${enabledSites.length} enabled site(s) ready.`);
 }
 
 main().catch((error) => {
