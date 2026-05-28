@@ -1,0 +1,47 @@
+{
+  "name": "multi-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "setup:preflight": "tsx scripts/setup/preflight.ts",
+    "setup:gsc": "tsx scripts/setup/01-register-gsc-users.ts",
+    "setup:ga4": "tsx scripts/setup/02-register-ga4-bindings.ts",
+    "setup:wp": "tsx scripts/setup/03-setup-wp-users.ts",
+    "setup:gha": "tsx scripts/setup/04-set-gha-secrets.ts",
+    "setup:vercel": "tsx scripts/setup/05-set-vercel-envs.ts",
+    "setup:verify": "tsx scripts/setup/06-verify-readiness.ts",
+    "setup:verify:dry": "tsx scripts/setup/06-verify-readiness.ts --dry-run",
+    "setup:cleanup-wp": "tsx scripts/setup/07-cleanup-wp-bot.ts",
+    "setup:all": "tsx scripts/setup/run-all.ts",
+    "setup:resume": "tsx scripts/setup/run-all.ts --resume",
+    "setup:add-site": "tsx scripts/setup/add-site.ts",
+    "setup:revoke": "tsx scripts/setup/revoke-tokens.ts"
+  },
+  "dependencies": {
+    "@google-analytics/admin": "^9.1.0",
+    "@google-analytics/data": "^5.2.0",
+    "@octokit/rest": "^22.0.0",
+    "@vercel/sdk": "^1.12.0",
+    "googleapis": "^166.0.0",
+    "libsodium-wrappers": "^0.7.15",
+    "listr2": "^9.0.5",
+    "ora": "^9.0.0",
+    "p-limit": "^7.2.0",
+    "p-retry": "^7.1.0",
+    "yaml": "^2.8.1",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/libsodium-wrappers": "^0.7.14",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

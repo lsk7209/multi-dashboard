@@ -1,0 +1,9 @@
+sites:
+  - id: example-01
+    name: Example WordPress Site
+    enabled: true
+    platform: wordpress
+    url: https://example.com
+    wpRestBase: https://example.com/wp-json/wp/v2
+    ga4PropertyId: "123456789"
+    gscSiteUrl: https://example.com/

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.omx/
+.env
+.env.*
+!.env.setup.template
+!.env.setup.local.example
+.setup-state.json
+setup.log
