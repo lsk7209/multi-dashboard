@@ -8,8 +8,9 @@ import { loadSites, type Site } from "./lib/sites.js";
 import { getErrorMessage } from "./lib/errors.js";
 
 const OUTPUT_PATH = "data/site-stats.json";
+const DAY_RANGE = 1;
 const RANGE_DAYS = 7;
-const PREVIOUS_RANGE_DAYS = 28;
+const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
 
 interface MetricSet {
@@ -32,12 +33,13 @@ interface SiteStat {
   url: string;
   ga4PropertyId: string;
   gscSiteUrl: string;
+  last1Days: MetricSet;
   last7Days: MetricSet;
   previous7Days: MetricSet;
-  last28Days: MetricSet;
+  last30Days: MetricSet;
   gscLast7Days: GscMetricSet;
   gscPrevious7Days: GscMetricSet;
-  gscLast28Days: GscMetricSet;
+  gscLast30Days: GscMetricSet;
   error?: string;
   gscError?: string;
 }
@@ -46,6 +48,7 @@ interface StatsSnapshot {
   generatedAt: string;
   rangeDays: number;
   previousRangeDays: number;
+  longRangeDays: number;
   stats: SiteStat[];
 }
 
@@ -164,12 +167,13 @@ async function fetchSiteStat(
   gscClient: ReturnType<typeof google.searchconsole>,
   site: Site,
 ): Promise<SiteStat> {
+  let last1Days = emptyMetrics();
   let last7Days = emptyMetrics();
   let previous7Days = emptyMetrics();
-  let last28Days = emptyMetrics();
+  let last30Days = emptyMetrics();
   let gscLast7Days = emptyGscMetrics();
   let gscPrevious7Days = emptyGscMetrics();
-  let gscLast28Days = emptyGscMetrics();
+  let gscLast30Days = emptyGscMetrics();
   let error: string | undefined;
   let gscError: string | undefined;
 
@@ -177,10 +181,11 @@ async function fetchSiteStat(
     error = "Missing ga4PropertyId";
   } else {
     try {
-      [last7Days, previous7Days, last28Days] = await Promise.all([
+      [last1Days, last7Days, previous7Days, last30Days] = await Promise.all([
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, DAY_RANGE),
         fetchGa4Metrics(ga4Client, site.ga4PropertyId, RANGE_DAYS),
         fetchPreviousGa4Metrics(ga4Client, site.ga4PropertyId),
-        fetchGa4Metrics(ga4Client, site.ga4PropertyId, PREVIOUS_RANGE_DAYS),
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, LONG_RANGE_DAYS),
       ]);
     } catch (ga4Error) {
       error = getErrorMessage(ga4Error);
@@ -190,10 +195,10 @@ async function fetchSiteStat(
   const gscSiteUrl = site.gscSiteUrl ?? site.url;
 
   try {
-    [gscLast7Days, gscPrevious7Days, gscLast28Days] = await Promise.all([
+    [gscLast7Days, gscPrevious7Days, gscLast30Days] = await Promise.all([
       fetchGscMetrics(gscClient, gscSiteUrl, RANGE_DAYS),
       fetchPreviousGscMetrics(gscClient, gscSiteUrl),
-      fetchGscMetrics(gscClient, gscSiteUrl, PREVIOUS_RANGE_DAYS),
+      fetchGscMetrics(gscClient, gscSiteUrl, LONG_RANGE_DAYS),
     ]);
   } catch (searchError) {
     gscError = getErrorMessage(searchError);
@@ -205,12 +210,13 @@ async function fetchSiteStat(
     url: site.url,
     ga4PropertyId: site.ga4PropertyId ?? "",
     gscSiteUrl,
+    last1Days,
     last7Days,
     previous7Days,
-    last28Days,
+    last30Days,
     gscLast7Days,
     gscPrevious7Days,
-    gscLast28Days,
+    gscLast30Days,
   };
 
   if (error) {
@@ -243,7 +249,8 @@ async function main(): Promise<void> {
   const snapshot: StatsSnapshot = {
     generatedAt: new Date().toISOString(),
     rangeDays: RANGE_DAYS,
-    previousRangeDays: PREVIOUS_RANGE_DAYS,
+    previousRangeDays: RANGE_DAYS,
+    longRangeDays: LONG_RANGE_DAYS,
     stats: stats.sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers),
   };
 

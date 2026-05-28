@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-05-28T17:10:26.129Z",
+  "generatedAt": "2026-05-28T17:20:31.967Z",
   "rangeDays": 7,
-  "previousRangeDays": 28,
+  "previousRangeDays": 7,
+  "longRangeDays": 30,
   "stats": [
     {
       "id": "bojo24",
@@ -9,6 +10,12 @@
       "url": "https://bojo24.kr/",
       "ga4PropertyId": "534288708",
       "gscSiteUrl": "https://bojo24.kr/",
+      "last1Days": {
+        "activeUsers": 128,
+        "sessions": 140,
+        "screenPageViews": 151,
+        "eventCount": 695
+      },
       "last7Days": {
         "activeUsers": 809,
         "sessions": 877,
@@ -21,11 +28,11 @@
         "screenPageViews": 807,
         "eventCount": 3385
       },
-      "last28Days": {
-        "activeUsers": 2035,
-        "sessions": 2253,
-        "screenPageViews": 2942,
-        "eventCount": 12117
+      "last30Days": {
+        "activeUsers": 2125,
+        "sessions": 2352,
+        "screenPageViews": 3104,
+        "eventCount": 12616
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -39,7 +46,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -52,6 +59,12 @@
       "url": "https://tennisfrens.com/",
       "ga4PropertyId": "534356101",
       "gscSiteUrl": "https://tennisfrens.com/",
+      "last1Days": {
+        "activeUsers": 77,
+        "sessions": 83,
+        "screenPageViews": 187,
+        "eventCount": 433
+      },
       "last7Days": {
         "activeUsers": 799,
         "sessions": 870,
@@ -64,7 +77,7 @@
         "screenPageViews": 842,
         "eventCount": 1870
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 1590,
         "sessions": 1754,
         "screenPageViews": 4299,
@@ -82,7 +95,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -96,6 +109,12 @@
       "url": "https://haemongdream.com/",
       "ga4PropertyId": "516256882",
       "gscSiteUrl": "https://haemongdream.com/",
+      "last1Days": {
+        "activeUsers": 70,
+        "sessions": 75,
+        "screenPageViews": 89,
+        "eventCount": 303
+      },
       "last7Days": {
         "activeUsers": 611,
         "sessions": 649,
@@ -108,11 +127,11 @@
         "screenPageViews": 869,
         "eventCount": 3163
       },
-      "last28Days": {
-        "activeUsers": 3118,
-        "sessions": 3342,
-        "screenPageViews": 3665,
-        "eventCount": 12982
+      "last30Days": {
+        "activeUsers": 3316,
+        "sessions": 3543,
+        "screenPageViews": 3934,
+        "eventCount": 13853
       },
       "gscLast7Days": {
         "clicks": 16,
@@ -126,11 +145,11 @@
         "ctr": 0.031578947368421054,
         "position": 10.24561403508772
       },
-      "gscLast28Days": {
-        "clicks": 47,
-        "impressions": 975,
-        "ctr": 0.048205128205128206,
-        "position": 10.49948717948718
+      "gscLast30Days": {
+        "clicks": 48,
+        "impressions": 1050,
+        "ctr": 0.045714285714285714,
+        "position": 10.383809523809523
       }
     },
     {
@@ -139,11 +158,17 @@
       "url": "https://todaypharm.kr/",
       "ga4PropertyId": "534313222",
       "gscSiteUrl": "https://todaypharm.kr/",
+      "last1Days": {
+        "activeUsers": 123,
+        "sessions": 129,
+        "screenPageViews": 153,
+        "eventCount": 604
+      },
       "last7Days": {
         "activeUsers": 519,
         "sessions": 553,
         "screenPageViews": 833,
-        "eventCount": 2776
+        "eventCount": 2777
       },
       "previous7Days": {
         "activeUsers": 124,
@@ -151,11 +176,11 @@
         "screenPageViews": 316,
         "eventCount": 744
       },
-      "last28Days": {
-        "activeUsers": 945,
-        "sessions": 1025,
-        "screenPageViews": 1951,
-        "eventCount": 5382
+      "last30Days": {
+        "activeUsers": 946,
+        "sessions": 1026,
+        "screenPageViews": 1952,
+        "eventCount": 5387
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -169,7 +194,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -182,11 +207,17 @@
       "url": "https://ehon365.kr/",
       "ga4PropertyId": "535779756",
       "gscSiteUrl": "https://ehon365.kr/",
+      "last1Days": {
+        "activeUsers": 80,
+        "sessions": 84,
+        "screenPageViews": 24,
+        "eventCount": 1133
+      },
       "last7Days": {
         "activeUsers": 488,
         "sessions": 514,
         "screenPageViews": 87,
-        "eventCount": 6138
+        "eventCount": 6140
       },
       "previous7Days": {
         "activeUsers": 45,
@@ -194,11 +225,11 @@
         "screenPageViews": 4,
         "eventCount": 529
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 572,
         "sessions": 609,
         "screenPageViews": 101,
-        "eventCount": 7182
+        "eventCount": 7184
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -212,7 +243,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -226,6 +257,12 @@
       "url": "https://temon.kr/",
       "ga4PropertyId": "516369797",
       "gscSiteUrl": "https://temon.kr/",
+      "last1Days": {
+        "activeUsers": 38,
+        "sessions": 40,
+        "screenPageViews": 166,
+        "eventCount": 844
+      },
       "last7Days": {
         "activeUsers": 222,
         "sessions": 238,
@@ -238,7 +275,7 @@
         "screenPageViews": 1329,
         "eventCount": 6064
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 889,
         "sessions": 1000,
         "screenPageViews": 5999,
@@ -256,7 +293,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -270,6 +307,12 @@
       "url": "https://luckyday.kr/",
       "ga4PropertyId": "512019715",
       "gscSiteUrl": "https://luckyday.kr/",
+      "last1Days": {
+        "activeUsers": 20,
+        "sessions": 23,
+        "screenPageViews": 23,
+        "eventCount": 82
+      },
       "last7Days": {
         "activeUsers": 130,
         "sessions": 137,
@@ -282,11 +325,11 @@
         "screenPageViews": 23,
         "eventCount": 71
       },
-      "last28Days": {
-        "activeUsers": 182,
-        "sessions": 193,
-        "screenPageViews": 249,
-        "eventCount": 790
+      "last30Days": {
+        "activeUsers": 189,
+        "sessions": 200,
+        "screenPageViews": 259,
+        "eventCount": 822
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -300,7 +343,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -314,6 +357,12 @@
       "url": "https://cartain.kr/",
       "ga4PropertyId": "536558706",
       "gscSiteUrl": "https://cartain.kr/",
+      "last1Days": {
+        "activeUsers": 28,
+        "sessions": 33,
+        "screenPageViews": 30,
+        "eventCount": 115
+      },
       "last7Days": {
         "activeUsers": 127,
         "sessions": 151,
@@ -326,7 +375,7 @@
         "screenPageViews": 33,
         "eventCount": 89
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 148,
         "sessions": 177,
         "screenPageViews": 228,
@@ -344,11 +393,11 @@
         "ctr": 0,
         "position": 7.983050847457627
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 6,
-        "impressions": 205,
-        "ctr": 0.02926829268292683,
-        "position": 8.029268292682927
+        "impressions": 210,
+        "ctr": 0.02857142857142857,
+        "position": 8.004761904761905
       }
     },
     {
@@ -357,6 +406,12 @@
       "url": "https://klick.kr/",
       "ga4PropertyId": "515381693",
       "gscSiteUrl": "https://klick.kr/",
+      "last1Days": {
+        "activeUsers": 26,
+        "sessions": 26,
+        "screenPageViews": 27,
+        "eventCount": 127
+      },
       "last7Days": {
         "activeUsers": 115,
         "sessions": 123,
@@ -369,11 +424,11 @@
         "screenPageViews": 488,
         "eventCount": 1782
       },
-      "last28Days": {
-        "activeUsers": 1567,
-        "sessions": 1668,
-        "screenPageViews": 1802,
-        "eventCount": 6541
+      "last30Days": {
+        "activeUsers": 1728,
+        "sessions": 1842,
+        "screenPageViews": 1995,
+        "eventCount": 7228
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -387,7 +442,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 4,
         "ctr": 0,
@@ -400,6 +455,12 @@
       "url": "https://klick.kr/",
       "ga4PropertyId": "533748860",
       "gscSiteUrl": "https://klick.kr/",
+      "last1Days": {
+        "activeUsers": 14,
+        "sessions": 14,
+        "screenPageViews": 9,
+        "eventCount": 130
+      },
       "last7Days": {
         "activeUsers": 100,
         "sessions": 104,
@@ -412,7 +473,7 @@
         "screenPageViews": 429,
         "eventCount": 4564
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 1345,
         "sessions": 1422,
         "screenPageViews": 1520,
@@ -430,7 +491,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 4,
         "ctr": 0,
@@ -443,11 +504,17 @@
       "url": "https://spinkorea.kr/",
       "ga4PropertyId": "536081634",
       "gscSiteUrl": "https://spinkorea.kr/",
+      "last1Days": {
+        "activeUsers": 11,
+        "sessions": 14,
+        "screenPageViews": 31,
+        "eventCount": 74
+      },
       "last7Days": {
         "activeUsers": 91,
         "sessions": 100,
         "screenPageViews": 361,
-        "eventCount": 731
+        "eventCount": 732
       },
       "previous7Days": {
         "activeUsers": 97,
@@ -455,11 +522,11 @@
         "screenPageViews": 431,
         "eventCount": 867
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 187,
         "sessions": 220,
         "screenPageViews": 792,
-        "eventCount": 1598
+        "eventCount": 1599
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -473,7 +540,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 5,
         "ctr": 0,
@@ -486,6 +553,12 @@
       "url": "https://picklefriend.kr/",
       "ga4PropertyId": "539268592",
       "gscSiteUrl": "https://picklefriend.kr/",
+      "last1Days": {
+        "activeUsers": 85,
+        "sessions": 87,
+        "screenPageViews": 101,
+        "eventCount": 477
+      },
       "last7Days": {
         "activeUsers": 85,
         "sessions": 87,
@@ -498,7 +571,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 85,
         "sessions": 87,
         "screenPageViews": 101,
@@ -516,7 +589,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -529,6 +602,12 @@
       "url": "https://tasko.kr/",
       "ga4PropertyId": "533744995",
       "gscSiteUrl": "https://tasko.kr/",
+      "last1Days": {
+        "activeUsers": 13,
+        "sessions": 13,
+        "screenPageViews": 19,
+        "eventCount": 61
+      },
       "last7Days": {
         "activeUsers": 51,
         "sessions": 57,
@@ -541,11 +620,11 @@
         "screenPageViews": 115,
         "eventCount": 347
       },
-      "last28Days": {
-        "activeUsers": 252,
-        "sessions": 283,
-        "screenPageViews": 432,
-        "eventCount": 1329
+      "last30Days": {
+        "activeUsers": 271,
+        "sessions": 305,
+        "screenPageViews": 457,
+        "eventCount": 1412
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -559,7 +638,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
@@ -572,6 +651,12 @@
       "url": "https://mbti.tasko.kr/",
       "ga4PropertyId": "533744995",
       "gscSiteUrl": "https://mbti.tasko.kr/",
+      "last1Days": {
+        "activeUsers": 13,
+        "sessions": 13,
+        "screenPageViews": 19,
+        "eventCount": 61
+      },
       "last7Days": {
         "activeUsers": 51,
         "sessions": 57,
@@ -584,11 +669,11 @@
         "screenPageViews": 115,
         "eventCount": 347
       },
-      "last28Days": {
-        "activeUsers": 252,
-        "sessions": 283,
-        "screenPageViews": 432,
-        "eventCount": 1329
+      "last30Days": {
+        "activeUsers": 271,
+        "sessions": 305,
+        "screenPageViews": 457,
+        "eventCount": 1412
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -602,7 +687,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -615,6 +700,12 @@
       "url": "https://petjigi.kr/",
       "ga4PropertyId": "538418545",
       "gscSiteUrl": "https://petjigi.kr/",
+      "last1Days": {
+        "activeUsers": 8,
+        "sessions": 12,
+        "screenPageViews": 22,
+        "eventCount": 148
+      },
       "last7Days": {
         "activeUsers": 49,
         "sessions": 56,
@@ -627,7 +718,7 @@
         "screenPageViews": 60,
         "eventCount": 215
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 67,
         "sessions": 77,
         "screenPageViews": 146,
@@ -645,7 +736,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -658,6 +749,12 @@
       "url": "https://tasko.kr/",
       "ga4PropertyId": "511810052",
       "gscSiteUrl": "https://tasko.kr/",
+      "last1Days": {
+        "activeUsers": 15,
+        "sessions": 15,
+        "screenPageViews": 20,
+        "eventCount": 64
+      },
       "last7Days": {
         "activeUsers": 38,
         "sessions": 40,
@@ -670,11 +767,11 @@
         "screenPageViews": 92,
         "eventCount": 276
       },
-      "last28Days": {
-        "activeUsers": 238,
-        "sessions": 257,
-        "screenPageViews": 367,
-        "eventCount": 1105
+      "last30Days": {
+        "activeUsers": 257,
+        "sessions": 278,
+        "screenPageViews": 392,
+        "eventCount": 1185
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -688,7 +785,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
@@ -701,6 +798,12 @@
       "url": "https://2mlab.kr/",
       "ga4PropertyId": "536008285",
       "gscSiteUrl": "https://2mlab.kr/",
+      "last1Days": {
+        "activeUsers": 7,
+        "sessions": 7,
+        "screenPageViews": 5,
+        "eventCount": 21
+      },
       "last7Days": {
         "activeUsers": 26,
         "sessions": 26,
@@ -713,7 +816,7 @@
         "screenPageViews": 52,
         "eventCount": 213
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 163,
         "sessions": 179,
         "screenPageViews": 178,
@@ -731,7 +834,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 3,
         "ctr": 0,
@@ -744,6 +847,12 @@
       "url": "https://askore.kr/",
       "ga4PropertyId": "536871374",
       "gscSiteUrl": "https://askore.kr/",
+      "last1Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 11
+      },
       "last7Days": {
         "activeUsers": 26,
         "sessions": 27,
@@ -756,7 +865,7 @@
         "screenPageViews": 47,
         "eventCount": 96
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 45,
         "sessions": 61,
         "screenPageViews": 119,
@@ -774,7 +883,7 @@
         "ctr": 0,
         "position": 7.109090909090909
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 15,
         "impressions": 807,
         "ctr": 0.01858736059479554,
@@ -787,6 +896,12 @@
       "url": "https://notebook.klick.kr/",
       "ga4PropertyId": "538469681",
       "gscSiteUrl": "https://notebook.klick.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 9
+      },
       "last7Days": {
         "activeUsers": 25,
         "sessions": 28,
@@ -799,7 +914,7 @@
         "screenPageViews": 55,
         "eventCount": 150
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 32,
         "sessions": 38,
         "screenPageViews": 111,
@@ -817,7 +932,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -830,6 +945,12 @@
       "url": "https://fastjob.kr/",
       "ga4PropertyId": "513769879",
       "gscSiteUrl": "https://fastjob.kr/",
+      "last1Days": {
+        "activeUsers": 8,
+        "sessions": 8,
+        "screenPageViews": 9,
+        "eventCount": 31
+      },
       "last7Days": {
         "activeUsers": 24,
         "sessions": 26,
@@ -842,11 +963,11 @@
         "screenPageViews": 25,
         "eventCount": 85
       },
-      "last28Days": {
-        "activeUsers": 155,
-        "sessions": 167,
-        "screenPageViews": 196,
-        "eventCount": 606
+      "last30Days": {
+        "activeUsers": 171,
+        "sessions": 183,
+        "screenPageViews": 212,
+        "eventCount": 663
       },
       "gscLast7Days": {
         "clicks": 6,
@@ -860,11 +981,11 @@
         "ctr": 0.009578544061302681,
         "position": 9.064176245210728
       },
-      "gscLast28Days": {
-        "clicks": 33,
-        "impressions": 3745,
-        "ctr": 0.008811748998664886,
-        "position": 9.85260347129506
+      "gscLast30Days": {
+        "clicks": 39,
+        "impressions": 4173,
+        "ctr": 0.009345794392523364,
+        "position": 9.68511861969806
       }
     },
     {
@@ -873,6 +994,12 @@
       "url": "https://softwa.kr/",
       "ga4PropertyId": "519577510",
       "gscSiteUrl": "https://softwa.kr/",
+      "last1Days": {
+        "activeUsers": 5,
+        "sessions": 5,
+        "screenPageViews": 11,
+        "eventCount": 26
+      },
       "last7Days": {
         "activeUsers": 23,
         "sessions": 25,
@@ -885,11 +1012,11 @@
         "screenPageViews": 26,
         "eventCount": 86
       },
-      "last28Days": {
-        "activeUsers": 71,
-        "sessions": 78,
-        "screenPageViews": 113,
-        "eventCount": 349
+      "last30Days": {
+        "activeUsers": 73,
+        "sessions": 80,
+        "screenPageViews": 117,
+        "eventCount": 359
       },
       "gscLast7Days": {
         "clicks": 5,
@@ -903,7 +1030,7 @@
         "ctr": 0.06060606060606061,
         "position": 11.121212121212121
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 9,
         "impressions": 231,
         "ctr": 0.03896103896103896,
@@ -916,6 +1043,12 @@
       "url": "https://nicewomen.kr/",
       "ga4PropertyId": "524548131",
       "gscSiteUrl": "https://nicewomen.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 5
+      },
       "last7Days": {
         "activeUsers": 19,
         "sessions": 19,
@@ -928,11 +1061,11 @@
         "screenPageViews": 27,
         "eventCount": 85
       },
-      "last28Days": {
-        "activeUsers": 83,
-        "sessions": 86,
-        "screenPageViews": 91,
-        "eventCount": 301
+      "last30Days": {
+        "activeUsers": 89,
+        "sessions": 92,
+        "screenPageViews": 97,
+        "eventCount": 322
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -946,7 +1079,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -959,6 +1092,12 @@
       "url": "https://healthgotoo.com/",
       "ga4PropertyId": "517066030",
       "gscSiteUrl": "https://healthgotoo.com/",
+      "last1Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 5,
+        "eventCount": 17
+      },
       "last7Days": {
         "activeUsers": 18,
         "sessions": 19,
@@ -971,7 +1110,7 @@
         "screenPageViews": 24,
         "eventCount": 86
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 74,
         "sessions": 85,
         "screenPageViews": 118,
@@ -989,7 +1128,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
@@ -1002,6 +1141,12 @@
       "url": "https://car.luckyday.kr/",
       "ga4PropertyId": "538367953",
       "gscSiteUrl": "https://car.luckyday.kr/",
+      "last1Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 2,
+        "eventCount": 8
+      },
       "last7Days": {
         "activeUsers": 18,
         "sessions": 32,
@@ -1014,7 +1159,7 @@
         "screenPageViews": 60,
         "eventCount": 307
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 39,
         "sessions": 64,
         "screenPageViews": 212,
@@ -1032,7 +1177,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -1046,6 +1191,12 @@
       "url": "https://dogspang.kr/",
       "ga4PropertyId": "536564400",
       "gscSiteUrl": "https://dogspang.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 2,
+        "eventCount": 5
+      },
       "last7Days": {
         "activeUsers": 16,
         "sessions": 17,
@@ -1058,7 +1209,7 @@
         "screenPageViews": 36,
         "eventCount": 135
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 87,
         "sessions": 97,
         "screenPageViews": 124,
@@ -1076,11 +1227,11 @@
         "ctr": 0,
         "position": 12
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 100,
-        "ctr": 0.01,
-        "position": 12.58
+        "impressions": 105,
+        "ctr": 0.009523809523809525,
+        "position": 12.17142857142857
       }
     },
     {
@@ -1089,6 +1240,12 @@
       "url": "https://nexttech7.com/",
       "ga4PropertyId": "533760772",
       "gscSiteUrl": "https://nexttech7.com/",
+      "last1Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 5,
+        "eventCount": 15
+      },
       "last7Days": {
         "activeUsers": 14,
         "sessions": 14,
@@ -1101,7 +1258,7 @@
         "screenPageViews": 28,
         "eventCount": 99
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 63,
         "sessions": 64,
         "screenPageViews": 109,
@@ -1119,11 +1276,11 @@
         "ctr": 0.03225806451612903,
         "position": 8.193548387096774
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 2,
-        "impressions": 173,
-        "ctr": 0.011560693641618497,
-        "position": 9.196531791907514
+        "impressions": 186,
+        "ctr": 0.010752688172043012,
+        "position": 9.35483870967742
       }
     },
     {
@@ -1132,6 +1289,12 @@
       "url": "https://gover.kr/",
       "ga4PropertyId": "523266152",
       "gscSiteUrl": "https://gover.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
       "last7Days": {
         "activeUsers": 12,
         "sessions": 12,
@@ -1144,11 +1307,11 @@
         "screenPageViews": 33,
         "eventCount": 118
       },
-      "last28Days": {
-        "activeUsers": 66,
-        "sessions": 67,
-        "screenPageViews": 144,
-        "eventCount": 428
+      "last30Days": {
+        "activeUsers": 69,
+        "sessions": 70,
+        "screenPageViews": 149,
+        "eventCount": 443
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1162,11 +1325,11 @@
         "ctr": 0,
         "position": 14.9
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 54,
+        "impressions": 56,
         "ctr": 0,
-        "position": 14.425925925925926
+        "position": 14.107142857142858
       }
     },
     {
@@ -1175,6 +1338,12 @@
       "url": "https://richyou.kr/",
       "ga4PropertyId": "537950699",
       "gscSiteUrl": "https://richyou.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 4,
+        "eventCount": 11
+      },
       "last7Days": {
         "activeUsers": 12,
         "sessions": 12,
@@ -1187,7 +1356,7 @@
         "screenPageViews": 11,
         "eventCount": 35
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 23,
         "sessions": 23,
         "screenPageViews": 25,
@@ -1205,7 +1374,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -1218,6 +1387,12 @@
       "url": "https://knewstory.kr/",
       "ga4PropertyId": "511978714",
       "gscSiteUrl": "https://knewstory.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
       "last7Days": {
         "activeUsers": 11,
         "sessions": 11,
@@ -1230,11 +1405,11 @@
         "screenPageViews": 27,
         "eventCount": 78
       },
-      "last28Days": {
-        "activeUsers": 57,
-        "sessions": 61,
-        "screenPageViews": 80,
-        "eventCount": 244
+      "last30Days": {
+        "activeUsers": 63,
+        "sessions": 68,
+        "screenPageViews": 90,
+        "eventCount": 274
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1248,7 +1423,7 @@
         "ctr": 0,
         "position": 45.25
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 10,
         "ctr": 0,
@@ -1261,6 +1436,12 @@
       "url": "https://legalser.com/",
       "ga4PropertyId": "519536919",
       "gscSiteUrl": "https://legalser.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 11,
         "sessions": 11,
@@ -1273,11 +1454,11 @@
         "screenPageViews": 2,
         "eventCount": 7
       },
-      "last28Days": {
-        "activeUsers": 21,
-        "sessions": 23,
-        "screenPageViews": 33,
-        "eventCount": 91
+      "last30Days": {
+        "activeUsers": 23,
+        "sessions": 25,
+        "screenPageViews": 36,
+        "eventCount": 99
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1291,7 +1472,7 @@
         "ctr": 0,
         "position": 43.875
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 37,
         "ctr": 0,
@@ -1304,6 +1485,12 @@
       "url": "https://sellerpit.kr/",
       "ga4PropertyId": "534005389",
       "gscSiteUrl": "https://sellerpit.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 3
+      },
       "last7Days": {
         "activeUsers": 11,
         "sessions": 12,
@@ -1316,7 +1503,7 @@
         "screenPageViews": 26,
         "eventCount": 129
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 53,
         "sessions": 59,
         "screenPageViews": 81,
@@ -1334,11 +1521,11 @@
         "ctr": 0.0967741935483871,
         "position": 6.419354838709677
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 8,
-        "impressions": 240,
-        "ctr": 0.03333333333333333,
-        "position": 10.370833333333334
+        "impressions": 264,
+        "ctr": 0.030303030303030304,
+        "position": 10.090909090909092
       }
     },
     {
@@ -1347,6 +1534,12 @@
       "url": "https://today2424.kr/",
       "ga4PropertyId": "534327620",
       "gscSiteUrl": "https://today2424.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 0,
+        "eventCount": 5
+      },
       "last7Days": {
         "activeUsers": 11,
         "sessions": 12,
@@ -1359,11 +1552,11 @@
         "screenPageViews": 17,
         "eventCount": 77
       },
-      "last28Days": {
-        "activeUsers": 41,
-        "sessions": 47,
+      "last30Days": {
+        "activeUsers": 45,
+        "sessions": 52,
         "screenPageViews": 20,
-        "eventCount": 222
+        "eventCount": 237
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1377,7 +1570,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
@@ -1390,6 +1583,12 @@
       "url": "https://discparty.com/",
       "ga4PropertyId": "513733245",
       "gscSiteUrl": "https://discparty.com/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 4,
+        "eventCount": 10
+      },
       "last7Days": {
         "activeUsers": 10,
         "sessions": 10,
@@ -1402,11 +1601,11 @@
         "screenPageViews": 12,
         "eventCount": 38
       },
-      "last28Days": {
-        "activeUsers": 48,
-        "sessions": 59,
-        "screenPageViews": 94,
-        "eventCount": 255
+      "last30Days": {
+        "activeUsers": 49,
+        "sessions": 60,
+        "screenPageViews": 95,
+        "eventCount": 258
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1420,11 +1619,11 @@
         "ctr": 0.023255813953488372,
         "position": 10.55813953488372
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 3,
-        "impressions": 170,
-        "ctr": 0.01764705882352941,
-        "position": 9.564705882352941
+        "impressions": 191,
+        "ctr": 0.015706806282722512,
+        "position": 9.408376963350785
       }
     },
     {
@@ -1433,6 +1632,12 @@
       "url": "https://etique.kr/",
       "ga4PropertyId": "521236824",
       "gscSiteUrl": "https://etique.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 7
+      },
       "last7Days": {
         "activeUsers": 10,
         "sessions": 10,
@@ -1445,11 +1650,11 @@
         "screenPageViews": 21,
         "eventCount": 70
       },
-      "last28Days": {
-        "activeUsers": 71,
-        "sessions": 76,
-        "screenPageViews": 94,
-        "eventCount": 312
+      "last30Days": {
+        "activeUsers": 83,
+        "sessions": 88,
+        "screenPageViews": 110,
+        "eventCount": 364
       },
       "gscLast7Days": {
         "clicks": 1,
@@ -1463,11 +1668,11 @@
         "ctr": 0,
         "position": 14.03448275862069
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 464,
-        "ctr": 0.0021551724137931034,
-        "position": 11.515086206896552
+        "impressions": 498,
+        "ctr": 0.002008032128514056,
+        "position": 11.594377510040161
       }
     },
     {
@@ -1476,6 +1681,12 @@
       "url": "https://yesa.kr/",
       "ga4PropertyId": "539176876",
       "gscSiteUrl": "https://yesa.kr/",
+      "last1Days": {
+        "activeUsers": 5,
+        "sessions": 9,
+        "screenPageViews": 24,
+        "eventCount": 59
+      },
       "last7Days": {
         "activeUsers": 10,
         "sessions": 29,
@@ -1488,7 +1699,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 10,
         "sessions": 29,
         "screenPageViews": 81,
@@ -1506,7 +1717,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -1519,6 +1730,12 @@
       "url": "https://autoscares.com/",
       "ga4PropertyId": "536651077",
       "gscSiteUrl": "https://autoscares.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 9,
         "sessions": 10,
@@ -1531,7 +1748,7 @@
         "screenPageViews": 4,
         "eventCount": 13
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 22,
         "sessions": 24,
         "screenPageViews": 49,
@@ -1549,11 +1766,11 @@
         "ctr": 0,
         "position": 8.25
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 17,
+        "impressions": 23,
         "ctr": 0,
-        "position": 7.411764705882353
+        "position": 8.173913043478262
       }
     },
     {
@@ -1562,6 +1779,12 @@
       "url": "https://roadways.kr/",
       "ga4PropertyId": "536902558",
       "gscSiteUrl": "https://roadways.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 3
+      },
       "last7Days": {
         "activeUsers": 9,
         "sessions": 9,
@@ -1574,7 +1797,7 @@
         "screenPageViews": 28,
         "eventCount": 70
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 22,
         "sessions": 29,
         "screenPageViews": 54,
@@ -1592,7 +1815,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
@@ -1605,6 +1828,12 @@
       "url": "https://ezfunnel.kr/",
       "ga4PropertyId": "536106465",
       "gscSiteUrl": "https://ezfunnel.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 3,
+        "screenPageViews": 5,
+        "eventCount": 15
+      },
       "last7Days": {
         "activeUsers": 8,
         "sessions": 9,
@@ -1617,7 +1846,7 @@
         "screenPageViews": 11,
         "eventCount": 31
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 21,
         "sessions": 22,
         "screenPageViews": 32,
@@ -1635,7 +1864,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
@@ -1648,6 +1877,12 @@
       "url": "https://saju.tasko.kr/",
       "ga4PropertyId": "538409598",
       "gscSiteUrl": "https://saju.tasko.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 3,
+        "screenPageViews": 2,
+        "eventCount": 11
+      },
       "last7Days": {
         "activeUsers": 8,
         "sessions": 10,
@@ -1660,7 +1895,7 @@
         "screenPageViews": 16,
         "eventCount": 71
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 17,
         "sessions": 23,
         "screenPageViews": 25,
@@ -1678,7 +1913,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -1692,6 +1927,12 @@
       "url": "https://phone.luckyday.kr/",
       "ga4PropertyId": "538379576",
       "gscSiteUrl": "https://phone.luckyday.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 15
+      },
       "last7Days": {
         "activeUsers": 7,
         "sessions": 21,
@@ -1704,7 +1945,7 @@
         "screenPageViews": 73,
         "eventCount": 240
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 16,
         "sessions": 38,
         "screenPageViews": 158,
@@ -1722,7 +1963,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -1735,6 +1976,12 @@
       "url": "https://trave.kr/",
       "ga4PropertyId": "521243855",
       "gscSiteUrl": "https://trave.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -1747,11 +1994,11 @@
         "screenPageViews": 11,
         "eventCount": 36
       },
-      "last28Days": {
-        "activeUsers": 319,
-        "sessions": 333,
-        "screenPageViews": 434,
-        "eventCount": 1432
+      "last30Days": {
+        "activeUsers": 414,
+        "sessions": 437,
+        "screenPageViews": 563,
+        "eventCount": 1860
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1765,7 +2012,7 @@
         "ctr": 0,
         "position": 8.333333333333332
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
         "impressions": 9,
         "ctr": 0.1111111111111111,
@@ -1778,6 +2025,12 @@
       "url": "https://runmania.kr/",
       "ga4PropertyId": "533614337",
       "gscSiteUrl": "https://runmania.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -1790,11 +2043,11 @@
         "screenPageViews": 22,
         "eventCount": 71
       },
-      "last28Days": {
-        "activeUsers": 36,
-        "sessions": 39,
-        "screenPageViews": 55,
-        "eventCount": 180
+      "last30Days": {
+        "activeUsers": 40,
+        "sessions": 43,
+        "screenPageViews": 61,
+        "eventCount": 202
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1808,7 +2061,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
@@ -1821,6 +2074,12 @@
       "url": "https://chatgipt.kr/",
       "ga4PropertyId": "534308136",
       "gscSiteUrl": "https://chatgipt.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 3
+      },
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -1833,7 +2092,7 @@
         "screenPageViews": 5,
         "eventCount": 15
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 20,
         "sessions": 24,
         "screenPageViews": 29,
@@ -1851,11 +2110,11 @@
         "ctr": 0,
         "position": 5.5
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 34,
+        "impressions": 49,
         "ctr": 0,
-        "position": 8.088235294117647
+        "position": 7.775510204081633
       }
     },
     {
@@ -1864,6 +2123,12 @@
       "url": "https://certifi.kr/",
       "ga4PropertyId": "537945374",
       "gscSiteUrl": "https://certifi.kr/",
+      "last1Days": {
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 7
+      },
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
@@ -1876,7 +2141,7 @@
         "screenPageViews": 51,
         "eventCount": 178
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 14,
         "sessions": 21,
         "screenPageViews": 56,
@@ -1894,7 +2159,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -1907,6 +2172,12 @@
       "url": "https://insupang.com/",
       "ga4PropertyId": "517897382",
       "gscSiteUrl": "https://insupang.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -1919,7 +2190,7 @@
         "screenPageViews": 3,
         "eventCount": 10
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 14,
         "sessions": 18,
         "screenPageViews": 38,
@@ -1937,11 +2208,11 @@
         "ctr": 0,
         "position": 84.74074074074075
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 64,
+        "impressions": 65,
         "ctr": 0,
-        "position": 77.015625
+        "position": 77.35384615384615
       }
     },
     {
@@ -1950,6 +2221,12 @@
       "url": "https://estat.kr/",
       "ga4PropertyId": "523324426",
       "gscSiteUrl": "https://estat.kr/",
+      "last1Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 10
+      },
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -1962,11 +2239,11 @@
         "screenPageViews": 10,
         "eventCount": 32
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 35,
-        "sessions": 37,
-        "screenPageViews": 44,
-        "eventCount": 136
+        "sessions": 38,
+        "screenPageViews": 45,
+        "eventCount": 139
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1980,11 +2257,11 @@
         "ctr": 0,
         "position": 9.298245614035087
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 174,
-        "ctr": 0.005747126436781609,
-        "position": 8.988505747126437
+        "impressions": 198,
+        "ctr": 0.005050505050505051,
+        "position": 8.959595959595958
       }
     },
     {
@@ -1993,6 +2270,12 @@
       "url": "https://esgyo.kr/",
       "ga4PropertyId": "534284697",
       "gscSiteUrl": "https://esgyo.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -2005,7 +2288,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 10,
         "sessions": 13,
         "screenPageViews": 15,
@@ -2023,7 +2306,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -2036,6 +2319,12 @@
       "url": "https://todayshops.kr/",
       "ga4PropertyId": "537250213",
       "gscSiteUrl": "https://todayshops.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
@@ -2048,7 +2337,7 @@
         "screenPageViews": 14,
         "eventCount": 34
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 7,
         "sessions": 16,
         "screenPageViews": 47,
@@ -2066,7 +2355,7 @@
         "ctr": 0,
         "position": 7.634615384615385
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 3,
         "impressions": 261,
         "ctr": 0.011494252873563218,
@@ -2079,6 +2368,12 @@
       "url": "https://healfood.kr/",
       "ga4PropertyId": "536788301",
       "gscSiteUrl": "https://healfood.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 3,
         "sessions": 3,
@@ -2091,7 +2386,7 @@
         "screenPageViews": 3,
         "eventCount": 12
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 14,
         "sessions": 14,
         "screenPageViews": 18,
@@ -2109,7 +2404,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 4,
         "ctr": 0,
@@ -2122,6 +2417,12 @@
       "url": "https://gong365.kr/",
       "ga4PropertyId": "536928839",
       "gscSiteUrl": "https://gong365.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 5
+      },
       "last7Days": {
         "activeUsers": 3,
         "sessions": 3,
@@ -2134,7 +2435,7 @@
         "screenPageViews": 40,
         "eventCount": 99
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 13,
         "sessions": 31,
         "screenPageViews": 100,
@@ -2152,7 +2453,7 @@
         "ctr": 0.014184397163120567,
         "position": 7.5177304964539005
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 3,
         "impressions": 304,
         "ctr": 0.009868421052631578,
@@ -2165,6 +2466,12 @@
       "url": "https://crepika.com/",
       "ga4PropertyId": "536578195",
       "gscSiteUrl": "https://crepika.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 2,
         "sessions": 2,
@@ -2177,7 +2484,7 @@
         "screenPageViews": 140,
         "eventCount": 479
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 179,
         "sessions": 193,
         "screenPageViews": 267,
@@ -2195,7 +2502,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -2208,6 +2515,12 @@
       "url": "https://educaer.com/",
       "ga4PropertyId": "537331142",
       "gscSiteUrl": "https://educaer.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 2,
         "sessions": 2,
@@ -2220,7 +2533,7 @@
         "screenPageViews": 3,
         "eventCount": 9
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 7,
         "sessions": 8,
         "screenPageViews": 18,
@@ -2238,7 +2551,7 @@
         "ctr": 0,
         "position": 8
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
@@ -2251,6 +2564,12 @@
       "url": "https://finan.kr/",
       "ga4PropertyId": "537937514",
       "gscSiteUrl": "https://finan.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 2,
         "sessions": 7,
@@ -2263,7 +2582,7 @@
         "screenPageViews": 42,
         "eventCount": 132
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 7,
         "sessions": 17,
         "screenPageViews": 74,
@@ -2281,7 +2600,7 @@
         "ctr": 0.06060606060606061,
         "position": 11.787878787878787
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 2,
         "impressions": 94,
         "ctr": 0.02127659574468085,
@@ -2294,6 +2613,12 @@
       "url": "https://ai.tasko.kr/",
       "ga4PropertyId": "538418068",
       "gscSiteUrl": "https://ai.tasko.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 2,
         "sessions": 4,
@@ -2306,7 +2631,7 @@
         "screenPageViews": 15,
         "eventCount": 41
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 5,
         "sessions": 8,
         "screenPageViews": 27,
@@ -2324,7 +2649,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -2338,6 +2663,12 @@
       "url": "https://lawer.kr/",
       "ga4PropertyId": "521770057",
       "gscSiteUrl": "https://lawer.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -2350,11 +2681,11 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 7,
-        "sessions": 16,
-        "screenPageViews": 57,
-        "eventCount": 134
+        "sessions": 17,
+        "screenPageViews": 60,
+        "eventCount": 142
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -2368,7 +2699,7 @@
         "ctr": 0,
         "position": 13.666666666666666
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 6,
         "ctr": 0,
@@ -2381,6 +2712,12 @@
       "url": "https://coinyo.kr/",
       "ga4PropertyId": "536352221",
       "gscSiteUrl": "https://coinyo.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -2393,7 +2730,7 @@
         "screenPageViews": 1,
         "eventCount": 3
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 11,
         "sessions": 16,
         "screenPageViews": 46,
@@ -2411,7 +2748,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -2424,6 +2761,12 @@
       "url": "https://travelpang.kr/",
       "ga4PropertyId": "536559437",
       "gscSiteUrl": "https://travelpang.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -2436,7 +2779,7 @@
         "screenPageViews": 24,
         "eventCount": 72
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 18,
         "sessions": 31,
         "screenPageViews": 70,
@@ -2454,11 +2797,11 @@
         "ctr": 0,
         "position": 9.526315789473685
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 97,
+        "impressions": 109,
         "ctr": 0,
-        "position": 7.577319587628866
+        "position": 7.944954128440367
       }
     },
     {
@@ -2467,6 +2810,12 @@
       "url": "https://petinsuer.com/",
       "ga4PropertyId": "536670197",
       "gscSiteUrl": "https://petinsuer.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -2479,7 +2828,7 @@
         "screenPageViews": 7,
         "eventCount": 24
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 13,
         "sessions": 13,
         "screenPageViews": 15,
@@ -2497,11 +2846,11 @@
         "ctr": 0,
         "position": 9.081967213114755
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 197,
-        "ctr": 0.005076142131979695,
-        "position": 9.238578680203046
+        "impressions": 211,
+        "ctr": 0.004739336492890996,
+        "position": 9.104265402843602
       }
     },
     {
@@ -2510,6 +2859,12 @@
       "url": "https://goesku.com/",
       "ga4PropertyId": "536856718",
       "gscSiteUrl": "https://goesku.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 1,
         "sessions": 1,
@@ -2522,7 +2877,7 @@
         "screenPageViews": 19,
         "eventCount": 71
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 17,
         "sessions": 21,
         "screenPageViews": 24,
@@ -2540,7 +2895,7 @@
         "ctr": 0,
         "position": 23.3125
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 40,
         "ctr": 0,
@@ -2553,6 +2908,12 @@
       "url": "https://gong.luckyday.kr/",
       "ga4PropertyId": "538330802",
       "gscSiteUrl": "https://gong.luckyday.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 1,
         "sessions": 15,
@@ -2565,7 +2926,7 @@
         "screenPageViews": 53,
         "eventCount": 118
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 6,
         "sessions": 29,
         "screenPageViews": 130,
@@ -2583,7 +2944,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -2597,6 +2958,12 @@
       "url": "https://kang4.com/",
       "ga4PropertyId": "325680688",
       "gscSiteUrl": "https://kang4.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2609,11 +2976,11 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
-        "activeUsers": 19,
-        "sessions": 21,
-        "screenPageViews": 35,
-        "eventCount": 83
+      "last30Days": {
+        "activeUsers": 24,
+        "sessions": 26,
+        "screenPageViews": 44,
+        "eventCount": 104
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -2627,7 +2994,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 3,
         "ctr": 0,
@@ -2640,6 +3007,12 @@
       "url": "https://2mlab.kr/",
       "ga4PropertyId": "511994173",
       "gscSiteUrl": "https://2mlab.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2652,11 +3025,11 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
-        "activeUsers": 38,
-        "sessions": 42,
-        "screenPageViews": 44,
-        "eventCount": 151
+      "last30Days": {
+        "activeUsers": 68,
+        "sessions": 74,
+        "screenPageViews": 81,
+        "eventCount": 279
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -2670,7 +3043,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 3,
         "ctr": 0,
@@ -2683,6 +3056,12 @@
       "url": "https://chatgipt.kr/",
       "ga4PropertyId": "512060443",
       "gscSiteUrl": "https://chatgipt.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2695,7 +3074,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -2713,11 +3092,11 @@
         "ctr": 0,
         "position": 5.5
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 34,
+        "impressions": 49,
         "ctr": 0,
-        "position": 8.088235294117647
+        "position": 7.775510204081633
       }
     },
     {
@@ -2726,6 +3105,12 @@
       "url": "https://chatgipt.kr/",
       "ga4PropertyId": "512050444",
       "gscSiteUrl": "https://chatgipt.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2738,7 +3123,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -2756,11 +3141,11 @@
         "ctr": 0,
         "position": 5.5
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 34,
+        "impressions": 49,
         "ctr": 0,
-        "position": 8.088235294117647
+        "position": 7.775510204081633
       }
     },
     {
@@ -2769,6 +3154,12 @@
       "url": "https://travelpang.kr/",
       "ga4PropertyId": "517948231",
       "gscSiteUrl": "https://travelpang.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2781,7 +3172,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -2799,11 +3190,11 @@
         "ctr": 0,
         "position": 9.526315789473685
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 97,
+        "impressions": 109,
         "ctr": 0,
-        "position": 7.577319587628866
+        "position": 7.944954128440367
       }
     },
     {
@@ -2812,6 +3203,12 @@
       "url": "https://coinyo.kr/",
       "ga4PropertyId": "517634776",
       "gscSiteUrl": "https://coinyo.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2824,7 +3221,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -2842,7 +3239,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -2855,6 +3252,12 @@
       "url": "https://dogspang.kr/",
       "ga4PropertyId": "517108655",
       "gscSiteUrl": "https://dogspang.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2867,7 +3270,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -2885,11 +3288,11 @@
         "ctr": 0,
         "position": 12
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 100,
-        "ctr": 0.01,
-        "position": 12.58
+        "impressions": 105,
+        "ctr": 0.009523809523809525,
+        "position": 12.17142857142857
       }
     },
     {
@@ -2898,6 +3301,12 @@
       "url": "https://cartain.kr/",
       "ga4PropertyId": "518554091",
       "gscSiteUrl": "https://cartain.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2910,7 +3319,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 32,
         "sessions": 48,
         "screenPageViews": 113,
@@ -2928,11 +3337,11 @@
         "ctr": 0,
         "position": 7.983050847457627
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 6,
-        "impressions": 205,
-        "ctr": 0.02926829268292683,
-        "position": 8.029268292682927
+        "impressions": 210,
+        "ctr": 0.02857142857142857,
+        "position": 8.004761904761905
       }
     },
     {
@@ -2941,6 +3350,12 @@
       "url": "https://petinsuer.com/",
       "ga4PropertyId": "519578899",
       "gscSiteUrl": "https://petinsuer.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2953,7 +3368,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 6,
         "sessions": 8,
         "screenPageViews": 8,
@@ -2971,11 +3386,11 @@
         "ctr": 0,
         "position": 9.081967213114755
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 197,
-        "ctr": 0.005076142131979695,
-        "position": 9.238578680203046
+        "impressions": 211,
+        "ctr": 0.004739336492890996,
+        "position": 9.104265402843602
       }
     },
     {
@@ -2984,6 +3399,12 @@
       "url": "https://homeimer.com/",
       "ga4PropertyId": "519582866",
       "gscSiteUrl": "https://homeimer.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2996,7 +3417,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 4,
         "sessions": 5,
         "screenPageViews": 6,
@@ -3014,7 +3435,7 @@
         "ctr": 0,
         "position": 15.545454545454545
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 27,
         "ctr": 0,
@@ -3027,6 +3448,12 @@
       "url": "https://healfood.kr/",
       "ga4PropertyId": "520249990",
       "gscSiteUrl": "https://healfood.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3039,11 +3466,11 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
-        "activeUsers": 14,
-        "sessions": 16,
-        "screenPageViews": 19,
-        "eventCount": 60
+      "last30Days": {
+        "activeUsers": 16,
+        "sessions": 18,
+        "screenPageViews": 21,
+        "eventCount": 68
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -3057,7 +3484,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 4,
         "ctr": 0,
@@ -3070,6 +3497,12 @@
       "url": "https://finan.kr/",
       "ga4PropertyId": "520579523",
       "gscSiteUrl": "https://finan.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3082,7 +3515,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3100,7 +3533,7 @@
         "ctr": 0.06060606060606061,
         "position": 11.787878787878787
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 2,
         "impressions": 94,
         "ctr": 0.02127659574468085,
@@ -3113,6 +3546,12 @@
       "url": "https://luxurytraver.com/",
       "ga4PropertyId": "521243475",
       "gscSiteUrl": "https://luxurytraver.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3125,11 +3564,11 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 1,
         "sessions": 3,
-        "screenPageViews": 3,
-        "eventCount": 6
+        "screenPageViews": 7,
+        "eventCount": 16
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -3143,7 +3582,7 @@
         "ctr": 0,
         "position": 33
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 8,
         "ctr": 0,
@@ -3156,6 +3595,12 @@
       "url": "https://autoscares.com/",
       "ga4PropertyId": "521782814",
       "gscSiteUrl": "https://autoscares.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3168,7 +3613,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3186,11 +3631,11 @@
         "ctr": 0,
         "position": 8.25
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 17,
+        "impressions": 23,
         "ctr": 0,
-        "position": 7.411764705882353
+        "position": 8.173913043478262
       }
     },
     {
@@ -3199,6 +3644,12 @@
       "url": "https://esgyo.kr/",
       "ga4PropertyId": "524502961",
       "gscSiteUrl": "https://esgyo.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3211,7 +3662,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3229,7 +3680,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -3242,6 +3693,12 @@
       "url": "https://sellerpit.kr/",
       "ga4PropertyId": "525923821",
       "gscSiteUrl": "https://sellerpit.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3254,7 +3711,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 5,
         "sessions": 9,
         "screenPageViews": 22,
@@ -3272,11 +3729,11 @@
         "ctr": 0.0967741935483871,
         "position": 6.419354838709677
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 8,
-        "impressions": 240,
-        "ctr": 0.03333333333333333,
-        "position": 10.370833333333334
+        "impressions": 264,
+        "ctr": 0.030303030303030304,
+        "position": 10.090909090909092
       }
     },
     {
@@ -3285,6 +3742,12 @@
       "url": "https://spinkorea.kr/",
       "ga4PropertyId": "532855163",
       "gscSiteUrl": "https://spinkorea.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3297,11 +3760,11 @@
         "screenPageViews": 303,
         "eventCount": 511
       },
-      "last28Days": {
-        "activeUsers": 158,
-        "sessions": 200,
-        "screenPageViews": 871,
-        "eventCount": 1720
+      "last30Days": {
+        "activeUsers": 164,
+        "sessions": 206,
+        "screenPageViews": 956,
+        "eventCount": 1824
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -3315,7 +3778,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 5,
         "ctr": 0,
@@ -3328,6 +3791,12 @@
       "url": "https://texturb.com/",
       "ga4PropertyId": "532887366",
       "gscSiteUrl": "https://texturb.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3340,7 +3809,7 @@
         "screenPageViews": 2,
         "eventCount": 12
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 62,
         "sessions": 72,
         "screenPageViews": 90,
@@ -3358,7 +3827,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -3372,6 +3841,12 @@
       "url": "https://luckyday.kr/",
       "ga4PropertyId": "533729607",
       "gscSiteUrl": "https://luckyday.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3384,11 +3859,11 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
-        "activeUsers": 9,
-        "sessions": 10,
-        "screenPageViews": 15,
-        "eventCount": 46
+      "last30Days": {
+        "activeUsers": 16,
+        "sessions": 17,
+        "screenPageViews": 28,
+        "eventCount": 88
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -3402,7 +3877,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
@@ -3416,6 +3891,12 @@
       "url": "https://knewstory.kr/",
       "ga4PropertyId": "536122428",
       "gscSiteUrl": "https://knewstory.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3428,7 +3909,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3446,7 +3927,7 @@
         "ctr": 0,
         "position": 45.25
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 10,
         "ctr": 0,
@@ -3459,6 +3940,12 @@
       "url": "https://kang4.com/",
       "ga4PropertyId": "536337959",
       "gscSiteUrl": "https://kang4.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3471,7 +3958,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3489,7 +3976,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 3,
         "ctr": 0,
@@ -3502,6 +3989,12 @@
       "url": "https://fastjob.kr/",
       "ga4PropertyId": "536358308",
       "gscSiteUrl": "https://fastjob.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3514,7 +4007,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3532,11 +4025,11 @@
         "ctr": 0.009578544061302681,
         "position": 9.064176245210728
       },
-      "gscLast28Days": {
-        "clicks": 33,
-        "impressions": 3745,
-        "ctr": 0.008811748998664886,
-        "position": 9.85260347129506
+      "gscLast30Days": {
+        "clicks": 39,
+        "impressions": 4173,
+        "ctr": 0.009345794392523364,
+        "position": 9.68511861969806
       }
     },
     {
@@ -3545,6 +4038,12 @@
       "url": "https://insupang.com/",
       "ga4PropertyId": "536533161",
       "gscSiteUrl": "https://insupang.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3557,7 +4056,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3575,11 +4074,11 @@
         "ctr": 0,
         "position": 84.74074074074075
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 64,
+        "impressions": 65,
         "ctr": 0,
-        "position": 77.015625
+        "position": 77.35384615384615
       }
     },
     {
@@ -3588,6 +4087,12 @@
       "url": "https://healthgotoo.com/",
       "ga4PropertyId": "536550724",
       "gscSiteUrl": "https://healthgotoo.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3600,7 +4105,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3618,7 +4123,7 @@
         "ctr": 0,
         "position": 1
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
@@ -3631,6 +4136,12 @@
       "url": "https://legalser.com/",
       "ga4PropertyId": "536573278",
       "gscSiteUrl": "https://legalser.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3643,7 +4154,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3661,7 +4172,7 @@
         "ctr": 0,
         "position": 43.875
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 37,
         "ctr": 0,
@@ -3674,6 +4185,12 @@
       "url": "https://etique.kr/",
       "ga4PropertyId": "536548785",
       "gscSiteUrl": "https://etique.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3686,7 +4203,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3704,11 +4221,11 @@
         "ctr": 0,
         "position": 14.03448275862069
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 464,
-        "ctr": 0.0021551724137931034,
-        "position": 11.515086206896552
+        "impressions": 498,
+        "ctr": 0.002008032128514056,
+        "position": 11.594377510040161
       }
     },
     {
@@ -3717,6 +4234,12 @@
       "url": "https://luxurytraver.com/",
       "ga4PropertyId": "536662292",
       "gscSiteUrl": "https://luxurytraver.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3729,7 +4252,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3747,7 +4270,7 @@
         "ctr": 0,
         "position": 33
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 8,
         "ctr": 0,
@@ -3760,6 +4283,12 @@
       "url": "https://softwa.kr/",
       "ga4PropertyId": "536668384",
       "gscSiteUrl": "https://softwa.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3772,7 +4301,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3790,7 +4319,7 @@
         "ctr": 0.06060606060606061,
         "position": 11.121212121212121
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 9,
         "impressions": 231,
         "ctr": 0.03896103896103896,
@@ -3803,6 +4332,12 @@
       "url": "https://gover.kr/",
       "ga4PropertyId": "536824904",
       "gscSiteUrl": "https://gover.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3815,7 +4350,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3833,11 +4368,11 @@
         "ctr": 0,
         "position": 14.9
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
-        "impressions": 54,
+        "impressions": 56,
         "ctr": 0,
-        "position": 14.425925925925926
+        "position": 14.107142857142858
       }
     },
     {
@@ -3846,6 +4381,12 @@
       "url": "https://estat.kr/",
       "ga4PropertyId": "536753109",
       "gscSiteUrl": "https://estat.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3858,7 +4399,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3876,11 +4417,11 @@
         "ctr": 0,
         "position": 9.298245614035087
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
-        "impressions": 174,
-        "ctr": 0.005747126436781609,
-        "position": 8.988505747126437
+        "impressions": 198,
+        "ctr": 0.005050505050505051,
+        "position": 8.959595959595958
       }
     },
     {
@@ -3889,6 +4430,12 @@
       "url": "https://homeimer.com/",
       "ga4PropertyId": "536833044",
       "gscSiteUrl": "https://homeimer.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3901,7 +4448,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3919,7 +4466,7 @@
         "ctr": 0,
         "position": 15.545454545454545
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 27,
         "ctr": 0,
@@ -3932,6 +4479,12 @@
       "url": "https://trave.kr/",
       "ga4PropertyId": "536910323",
       "gscSiteUrl": "https://trave.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3944,7 +4497,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -3962,7 +4515,7 @@
         "ctr": 0,
         "position": 8.333333333333332
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 1,
         "impressions": 9,
         "ctr": 0.1111111111111111,
@@ -3975,6 +4528,12 @@
       "url": "https://lawer.kr/",
       "ga4PropertyId": "537125482",
       "gscSiteUrl": "https://lawer.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -3987,7 +4546,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -4005,7 +4564,7 @@
         "ctr": 0,
         "position": 13.666666666666666
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 6,
         "ctr": 0,
@@ -4018,6 +4577,12 @@
       "url": "https://sssaass.com/",
       "ga4PropertyId": "537317309",
       "gscSiteUrl": "https://sssaass.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -4030,7 +4595,7 @@
         "screenPageViews": 4,
         "eventCount": 11
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 7,
         "sessions": 17,
         "screenPageViews": 39,
@@ -4048,7 +4613,7 @@
         "ctr": 0,
         "position": 7
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 10,
         "ctr": 0,
@@ -4061,6 +4626,12 @@
       "url": "https://todayshops.kr/",
       "ga4PropertyId": "537295441",
       "gscSiteUrl": "https://todayshops.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -4073,7 +4644,7 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 0,
         "sessions": 0,
         "screenPageViews": 0,
@@ -4091,7 +4662,7 @@
         "ctr": 0,
         "position": 7.634615384615385
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 3,
         "impressions": 261,
         "ctr": 0.011494252873563218,
@@ -4104,6 +4675,12 @@
       "url": "https://notebook.klick.kr/",
       "ga4PropertyId": "538351492",
       "gscSiteUrl": "https://notebook.klick.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
       "last7Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -4116,7 +4693,7 @@
         "screenPageViews": 28,
         "eventCount": 97
       },
-      "last28Days": {
+      "last30Days": {
         "activeUsers": 24,
         "sessions": 24,
         "screenPageViews": 28,
@@ -4134,7 +4711,7 @@
         "ctr": 0,
         "position": 0
       },
-      "gscLast28Days": {
+      "gscLast30Days": {
         "clicks": 0,
         "impressions": 0,
         "ctr": 0,
