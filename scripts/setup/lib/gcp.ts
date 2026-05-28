@@ -1,4 +1,5 @@
 import { google } from "googleapis";
+import { existsSync, readFileSync } from "node:fs";
 
 export function makeGoogleAuth(keyJson: string, scopes: string[]) {
   const credentials = parseServiceAccountKey(keyJson);
@@ -10,10 +11,15 @@ export function makeGoogleAuth(keyJson: string, scopes: string[]) {
 
 export function parseServiceAccountKey(keyJson: string): Record<string, string> {
   const trimmed = keyJson.trim();
+  const content = trimmed.startsWith("{") ? trimmed : readKeyFile(trimmed);
 
-  if (!trimmed.startsWith("{")) {
-    throw new Error("GCP_SA_KEY_JSON must contain raw service-account JSON when injected by op.");
+  return JSON.parse(content) as Record<string, string>;
+}
+
+function readKeyFile(path: string): string {
+  if (!existsSync(path)) {
+    throw new Error("GCP_SA_KEY_JSON must contain raw service-account JSON or a readable JSON file path.");
   }
 
-  return JSON.parse(trimmed) as Record<string, string>;
+  return readFileSync(path, "utf8");
 }

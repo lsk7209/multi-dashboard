@@ -1,3 +1,770 @@
-# Add one entry per dashboard site.
-# Keep credentials in environment variables or D:\env\키파일.txt, not in this file.
-sites: []
+# Generated/managed by scripts/setup/import-ga4-sites.ts
+sites:
+  - id: kang4
+    name: 강사자판기
+    enabled: true
+    platform: wordpress
+    url: https://kang4.com/
+    wpRestBase: https://kang4.com/wp-json/wp/v2
+    ga4PropertyId: "325680688"
+    gscSiteUrl: https://kang4.com/
+  - id: tasko
+    name: 태스코 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://tasko.kr/
+    wpRestBase: https://tasko.kr/wp-json/wp/v2
+    ga4PropertyId: "511810052"
+    gscSiteUrl: https://tasko.kr/
+  - id: luckyday
+    name: 럭키데이 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://luckyday.kr/
+    wpRestBase: https://luckyday.kr/wp-json/wp/v2
+    ga4PropertyId: "512019715"
+    gscSiteUrl: https://luckyday.kr/
+  - id: knewstory
+    name: 케이뉴스스토리 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://knewstory.kr/
+    wpRestBase: https://knewstory.kr/wp-json/wp/v2
+    ga4PropertyId: "511978714"
+    gscSiteUrl: https://knewstory.kr/
+  - id: 2mlab
+    name: 팀하우스 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://2mlab.kr/
+    wpRestBase: https://2mlab.kr/wp-json/wp/v2
+    ga4PropertyId: "511994173"
+    gscSiteUrl: https://2mlab.kr/
+  - id: chatgipt
+    name: 블로그 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://chatgipt.kr/
+    wpRestBase: https://chatgipt.kr/wp-json/wp/v2
+    ga4PropertyId: "512060443"
+    gscSiteUrl: https://chatgipt.kr/
+  - id: chatgipt-2
+    name: 블로그 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://chatgipt.kr/
+    wpRestBase: https://chatgipt.kr/wp-json/wp/v2
+    ga4PropertyId: "512050444"
+    gscSiteUrl: https://chatgipt.kr/
+  - id: fastjob
+    name: 패스트잡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://fastjob.kr/
+    wpRestBase: https://fastjob.kr/wp-json/wp/v2
+    ga4PropertyId: "513769879"
+    gscSiteUrl: https://fastjob.kr/
+  - id: discparty
+    name: 디스크파티 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://discparty.com/
+    wpRestBase: https://discparty.com/wp-json/wp/v2
+    ga4PropertyId: "513733245"
+    gscSiteUrl: https://discparty.com/
+  - id: klick
+    name: 블로그 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://klick.kr/
+    wpRestBase: https://klick.kr/wp-json/wp/v2
+    ga4PropertyId: "515381693"
+    gscSiteUrl: https://klick.kr/
+  - id: temon
+    name: 테몬_temon.kr
+    enabled: true
+    platform: wordpress
+    url: https://temon.kr/
+    wpRestBase: https://temon.kr/wp-json/wp/v2
+    ga4PropertyId: "516369797"
+    gscSiteUrl: https://temon.kr/
+  - id: haemongdream
+    name: 해몽드림 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://haemongdream.com/
+    wpRestBase: https://haemongdream.com/wp-json/wp/v2
+    ga4PropertyId: "516256882"
+    gscSiteUrl: https://haemongdream.com/
+  - id: insupang
+    name: insupang - GA4
+    enabled: true
+    platform: wordpress
+    url: https://insupang.com/
+    wpRestBase: https://insupang.com/wp-json/wp/v2
+    ga4PropertyId: "517897382"
+    gscSiteUrl: https://insupang.com/
+  - id: healthgotoo
+    name: 건강팡팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://healthgotoo.com/
+    wpRestBase: https://healthgotoo.com/wp-json/wp/v2
+    ga4PropertyId: "517066030"
+    gscSiteUrl: https://healthgotoo.com/
+  - id: travelpang
+    name: 여행팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://travelpang.kr/
+    wpRestBase: https://travelpang.kr/wp-json/wp/v2
+    ga4PropertyId: "517948231"
+    gscSiteUrl: https://travelpang.kr/
+  - id: coinyo
+    name: 코인요요 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://coinyo.kr/
+    wpRestBase: https://coinyo.kr/wp-json/wp/v2
+    ga4PropertyId: "517634776"
+    gscSiteUrl: https://coinyo.kr/
+  - id: dogspang
+    name: 정보랩 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://dogspang.kr/
+    wpRestBase: https://dogspang.kr/wp-json/wp/v2
+    ga4PropertyId: "517108655"
+    gscSiteUrl: https://dogspang.kr/
+  - id: cartain
+    name: cartain
+    enabled: true
+    platform: wordpress
+    url: https://cartain.kr/
+    wpRestBase: https://cartain.kr/wp-json/wp/v2
+    ga4PropertyId: "518554091"
+    gscSiteUrl: https://cartain.kr/
+  - id: softwa
+    name: 소프트와 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://softwa.kr/
+    wpRestBase: https://softwa.kr/wp-json/wp/v2
+    ga4PropertyId: "519577510"
+    gscSiteUrl: https://softwa.kr/
+  - id: legalser
+    name: legalser - GA4
+    enabled: true
+    platform: wordpress
+    url: https://legalser.com/
+    wpRestBase: https://legalser.com/wp-json/wp/v2
+    ga4PropertyId: "519536919"
+    gscSiteUrl: https://legalser.com/
+  - id: petinsuer
+    name: 펫인사이트 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://petinsuer.com/
+    wpRestBase: https://petinsuer.com/wp-json/wp/v2
+    ga4PropertyId: "519578899"
+    gscSiteUrl: https://petinsuer.com/
+  - id: homeimer
+    name: homemake - GA4
+    enabled: true
+    platform: wordpress
+    url: https://homeimer.com/
+    wpRestBase: https://homeimer.com/wp-json/wp/v2
+    ga4PropertyId: "519582866"
+    gscSiteUrl: https://homeimer.com/
+  - id: healfood
+    name: 건강푸드팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://healfood.kr/
+    wpRestBase: https://healfood.kr/wp-json/wp/v2
+    ga4PropertyId: "520249990"
+    gscSiteUrl: https://healfood.kr/
+  - id: finan
+    name: 파이날팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://finan.kr/
+    wpRestBase: https://finan.kr/wp-json/wp/v2
+    ga4PropertyId: "520579523"
+    gscSiteUrl: https://finan.kr/
+  - id: luxurytraver
+    name: luxurytraver - GA4
+    enabled: true
+    platform: wordpress
+    url: https://luxurytraver.com/
+    wpRestBase: https://luxurytraver.com/wp-json/wp/v2
+    ga4PropertyId: "521243475"
+    gscSiteUrl: https://luxurytraver.com/
+  - id: etique
+    name: 매너팡팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://etique.kr/
+    wpRestBase: https://etique.kr/wp-json/wp/v2
+    ga4PropertyId: "521236824"
+    gscSiteUrl: https://etique.kr/
+  - id: trave
+    name: 여행브이 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://trave.kr/
+    wpRestBase: https://trave.kr/wp-json/wp/v2
+    ga4PropertyId: "521243855"
+    gscSiteUrl: https://trave.kr/
+  - id: autoscares
+    name: 자동차팡팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://autoscares.com/
+    wpRestBase: https://autoscares.com/wp-json/wp/v2
+    ga4PropertyId: "521782814"
+    gscSiteUrl: https://autoscares.com/
+  - id: lawer
+    name: 법이람 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://lawer.kr/
+    wpRestBase: https://lawer.kr/wp-json/wp/v2
+    ga4PropertyId: "521770057"
+    gscSiteUrl: https://lawer.kr/
+  - id: estat
+    name: 푸드팡팡 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://estat.kr/
+    wpRestBase: https://estat.kr/wp-json/wp/v2
+    ga4PropertyId: "523324426"
+    gscSiteUrl: https://estat.kr/
+  - id: gover
+    name: 보조금365 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://gover.kr/
+    wpRestBase: https://gover.kr/wp-json/wp/v2
+    ga4PropertyId: "523266152"
+    gscSiteUrl: https://gover.kr/
+  - id: nicewomen
+    name: 나이스우먼 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://nicewomen.kr/
+    wpRestBase: https://nicewomen.kr/wp-json/wp/v2
+    ga4PropertyId: "524548131"
+    gscSiteUrl: https://nicewomen.kr/
+  - id: esgyo
+    name: 이에스지요 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://esgyo.kr/
+    wpRestBase: https://esgyo.kr/wp-json/wp/v2
+    ga4PropertyId: "524502961"
+    gscSiteUrl: https://esgyo.kr/
+  - id: sellerpit
+    name: 셀러핏 - GA4
+    enabled: true
+    platform: wordpress
+    url: https://sellerpit.kr/
+    wpRestBase: https://sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "525923821"
+    gscSiteUrl: https://sellerpit.kr/
+  - id: spinkorea
+    name: 스핀코리아
+    enabled: true
+    platform: wordpress
+    url: https://spinkorea.kr/
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
+    ga4PropertyId: "532855163"
+    gscSiteUrl: https://spinkorea.kr/
+  - id: texturb
+    name: texturb.com
+    enabled: true
+    platform: wordpress
+    url: https://texturb.com/
+    wpRestBase: https://texturb.com/wp-json/wp/v2
+    ga4PropertyId: "532887366"
+    gscSiteUrl: https://texturb.com/
+  - id: runmania
+    name: runmania.kr
+    enabled: true
+    platform: wordpress
+    url: https://runmania.kr/
+    wpRestBase: https://runmania.kr/wp-json/wp/v2
+    ga4PropertyId: "533614337"
+    gscSiteUrl: https://runmania.kr/
+  - id: tasko-2
+    name: tasko.kr
+    enabled: true
+    platform: wordpress
+    url: https://tasko.kr/
+    wpRestBase: https://tasko.kr/wp-json/wp/v2
+    ga4PropertyId: "533744995"
+    gscSiteUrl: https://tasko.kr/
+  - id: mbti-tasko
+    name: tasko.kr
+    enabled: true
+    platform: wordpress
+    url: https://mbti.tasko.kr/
+    wpRestBase: https://mbti.tasko.kr/wp-json/wp/v2
+    ga4PropertyId: "533744995"
+    gscSiteUrl: https://mbti.tasko.kr/
+  - id: luckyday-2
+    name: https://luckyday.kr
+    enabled: true
+    platform: wordpress
+    url: https://luckyday.kr/
+    wpRestBase: https://luckyday.kr/wp-json/wp/v2
+    ga4PropertyId: "533729607"
+    gscSiteUrl: https://luckyday.kr/
+  - id: nexttech7
+    name: nexttech7.com
+    enabled: true
+    platform: wordpress
+    url: https://nexttech7.com/
+    wpRestBase: https://nexttech7.com/wp-json/wp/v2
+    ga4PropertyId: "533760772"
+    gscSiteUrl: https://nexttech7.com/
+  - id: klick-2
+    name: klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://klick.kr/
+    wpRestBase: https://klick.kr/wp-json/wp/v2
+    ga4PropertyId: "533748860"
+    gscSiteUrl: https://klick.kr/
+  - id: sellerpit-2
+    name: sellerpit.kr
+    enabled: true
+    platform: wordpress
+    url: https://sellerpit.kr/
+    wpRestBase: https://sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "534005389"
+    gscSiteUrl: https://sellerpit.kr/
+  - id: chatgipt-3
+    name: chatgipt.kr
+    enabled: true
+    platform: wordpress
+    url: https://chatgipt.kr/
+    wpRestBase: https://chatgipt.kr/wp-json/wp/v2
+    ga4PropertyId: "534308136"
+    gscSiteUrl: https://chatgipt.kr/
+  - id: esgyo-2
+    name: esgyo.kr
+    enabled: true
+    platform: wordpress
+    url: https://esgyo.kr/
+    wpRestBase: https://esgyo.kr/wp-json/wp/v2
+    ga4PropertyId: "534284697"
+    gscSiteUrl: https://esgyo.kr/
+  - id: today2424
+    name: today2424.kr
+    enabled: true
+    platform: wordpress
+    url: https://today2424.kr/
+    wpRestBase: https://today2424.kr/wp-json/wp/v2
+    ga4PropertyId: "534327620"
+    gscSiteUrl: https://today2424.kr/
+  - id: todaypharm
+    name: todaypharm.kr
+    enabled: true
+    platform: wordpress
+    url: https://todaypharm.kr/
+    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
+    ga4PropertyId: "534313222"
+    gscSiteUrl: https://todaypharm.kr/
+  - id: tennisfrens
+    name: tennisfrens.com
+    enabled: true
+    platform: wordpress
+    url: https://tennisfrens.com/
+    wpRestBase: https://tennisfrens.com/wp-json/wp/v2
+    ga4PropertyId: "534356101"
+    gscSiteUrl: https://tennisfrens.com/
+  - id: bojo24
+    name: bojo24.kr
+    enabled: true
+    platform: wordpress
+    url: https://bojo24.kr/
+    wpRestBase: https://bojo24.kr/wp-json/wp/v2
+    ga4PropertyId: "534288708"
+    gscSiteUrl: https://bojo24.kr/
+  - id: ehon365
+    name: ehon365.kr
+    enabled: true
+    platform: wordpress
+    url: https://ehon365.kr/
+    wpRestBase: https://ehon365.kr/wp-json/wp/v2
+    ga4PropertyId: "535779756"
+    gscSiteUrl: https://ehon365.kr/
+  - id: 2mlab-2
+    name: 2mlab.kr
+    enabled: true
+    platform: wordpress
+    url: https://2mlab.kr/
+    wpRestBase: https://2mlab.kr/wp-json/wp/v2
+    ga4PropertyId: "536008285"
+    gscSiteUrl: https://2mlab.kr/
+  - id: spinkorea-2
+    name: spinkorea.kr
+    enabled: true
+    platform: wordpress
+    url: https://spinkorea.kr/
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
+    ga4PropertyId: "536081634"
+    gscSiteUrl: https://spinkorea.kr/
+  - id: ezfunnel
+    name: ezfunnel.kr
+    enabled: true
+    platform: wordpress
+    url: https://ezfunnel.kr/
+    wpRestBase: https://ezfunnel.kr/wp-json/wp/v2
+    ga4PropertyId: "536106465"
+    gscSiteUrl: https://ezfunnel.kr/
+  - id: knewstory-2
+    name: knewstory.kr
+    enabled: true
+    platform: wordpress
+    url: https://knewstory.kr/
+    wpRestBase: https://knewstory.kr/wp-json/wp/v2
+    ga4PropertyId: "536122428"
+    gscSiteUrl: https://knewstory.kr/
+  - id: kang4-2
+    name: kang4.com
+    enabled: true
+    platform: wordpress
+    url: https://kang4.com/
+    wpRestBase: https://kang4.com/wp-json/wp/v2
+    ga4PropertyId: "536337959"
+    gscSiteUrl: https://kang4.com/
+  - id: coinyo-2
+    name: coinyo.kr
+    enabled: true
+    platform: wordpress
+    url: https://coinyo.kr/
+    wpRestBase: https://coinyo.kr/wp-json/wp/v2
+    ga4PropertyId: "536352221"
+    gscSiteUrl: https://coinyo.kr/
+  - id: fastjob-2
+    name: fastjob.kr
+    enabled: true
+    platform: wordpress
+    url: https://fastjob.kr/
+    wpRestBase: https://fastjob.kr/wp-json/wp/v2
+    ga4PropertyId: "536358308"
+    gscSiteUrl: https://fastjob.kr/
+  - id: cartain-2
+    name: cartain.kr
+    enabled: true
+    platform: wordpress
+    url: https://cartain.kr/
+    wpRestBase: https://cartain.kr/wp-json/wp/v2
+    ga4PropertyId: "536558706"
+    gscSiteUrl: https://cartain.kr/
+  - id: crepika
+    name: crepika.com
+    enabled: true
+    platform: wordpress
+    url: https://crepika.com/
+    wpRestBase: https://crepika.com/wp-json/wp/v2
+    ga4PropertyId: "536578195"
+    gscSiteUrl: https://crepika.com/
+  - id: insupang-2
+    name: insupang.com
+    enabled: true
+    platform: wordpress
+    url: https://insupang.com/
+    wpRestBase: https://insupang.com/wp-json/wp/v2
+    ga4PropertyId: "536533161"
+    gscSiteUrl: https://insupang.com/
+  - id: healthgotoo-2
+    name: healthgotoo.com
+    enabled: true
+    platform: wordpress
+    url: https://healthgotoo.com/
+    wpRestBase: https://healthgotoo.com/wp-json/wp/v2
+    ga4PropertyId: "536550724"
+    gscSiteUrl: https://healthgotoo.com/
+  - id: dogspang-2
+    name: dogspang.kr
+    enabled: true
+    platform: wordpress
+    url: https://dogspang.kr/
+    wpRestBase: https://dogspang.kr/wp-json/wp/v2
+    ga4PropertyId: "536564400"
+    gscSiteUrl: https://dogspang.kr/
+  - id: travelpang-2
+    name: travelpang.kr
+    enabled: true
+    platform: wordpress
+    url: https://travelpang.kr/
+    wpRestBase: https://travelpang.kr/wp-json/wp/v2
+    ga4PropertyId: "536559437"
+    gscSiteUrl: https://travelpang.kr/
+  - id: legalser-2
+    name: legalser.com
+    enabled: true
+    platform: wordpress
+    url: https://legalser.com/
+    wpRestBase: https://legalser.com/wp-json/wp/v2
+    ga4PropertyId: "536573278"
+    gscSiteUrl: https://legalser.com/
+  - id: petinsuer-2
+    name: petinsuer.com
+    enabled: true
+    platform: wordpress
+    url: https://petinsuer.com/
+    wpRestBase: https://petinsuer.com/wp-json/wp/v2
+    ga4PropertyId: "536670197"
+    gscSiteUrl: https://petinsuer.com/
+  - id: etique-2
+    name: etique.kr
+    enabled: true
+    platform: wordpress
+    url: https://etique.kr/
+    wpRestBase: https://etique.kr/wp-json/wp/v2
+    ga4PropertyId: "536548785"
+    gscSiteUrl: https://etique.kr/
+  - id: luxurytraver-2
+    name: luxurytraver.com
+    enabled: true
+    platform: wordpress
+    url: https://luxurytraver.com/
+    wpRestBase: https://luxurytraver.com/wp-json/wp/v2
+    ga4PropertyId: "536662292"
+    gscSiteUrl: https://luxurytraver.com/
+  - id: softwa-2
+    name: softwa.kr
+    enabled: true
+    platform: wordpress
+    url: https://softwa.kr/
+    wpRestBase: https://softwa.kr/wp-json/wp/v2
+    ga4PropertyId: "536668384"
+    gscSiteUrl: https://softwa.kr/
+  - id: autoscares-2
+    name: autoscares.com
+    enabled: true
+    platform: wordpress
+    url: https://autoscares.com/
+    wpRestBase: https://autoscares.com/wp-json/wp/v2
+    ga4PropertyId: "536651077"
+    gscSiteUrl: https://autoscares.com/
+  - id: healfood-2
+    name: healfood.kr
+    enabled: true
+    platform: wordpress
+    url: https://healfood.kr/
+    wpRestBase: https://healfood.kr/wp-json/wp/v2
+    ga4PropertyId: "536788301"
+    gscSiteUrl: https://healfood.kr/
+  - id: gover-2
+    name: gover.kr
+    enabled: true
+    platform: wordpress
+    url: https://gover.kr/
+    wpRestBase: https://gover.kr/wp-json/wp/v2
+    ga4PropertyId: "536824904"
+    gscSiteUrl: https://gover.kr/
+  - id: estat-2
+    name: estat.kr
+    enabled: true
+    platform: wordpress
+    url: https://estat.kr/
+    wpRestBase: https://estat.kr/wp-json/wp/v2
+    ga4PropertyId: "536753109"
+    gscSiteUrl: https://estat.kr/
+  - id: homeimer-2
+    name: homeimer.com
+    enabled: true
+    platform: wordpress
+    url: https://homeimer.com/
+    wpRestBase: https://homeimer.com/wp-json/wp/v2
+    ga4PropertyId: "536833044"
+    gscSiteUrl: https://homeimer.com/
+  - id: askore
+    name: askore.kr
+    enabled: true
+    platform: wordpress
+    url: https://askore.kr/
+    wpRestBase: https://askore.kr/wp-json/wp/v2
+    ga4PropertyId: "536871374"
+    gscSiteUrl: https://askore.kr/
+  - id: gong365
+    name: gong365.kr
+    enabled: true
+    platform: wordpress
+    url: https://gong365.kr/
+    wpRestBase: https://gong365.kr/wp-json/wp/v2
+    ga4PropertyId: "536928839"
+    gscSiteUrl: https://gong365.kr/
+  - id: trave-2
+    name: trave.kr
+    enabled: true
+    platform: wordpress
+    url: https://trave.kr/
+    wpRestBase: https://trave.kr/wp-json/wp/v2
+    ga4PropertyId: "536910323"
+    gscSiteUrl: https://trave.kr/
+  - id: goesku
+    name: goesku.com
+    enabled: true
+    platform: wordpress
+    url: https://goesku.com/
+    wpRestBase: https://goesku.com/wp-json/wp/v2
+    ga4PropertyId: "536856718"
+    gscSiteUrl: https://goesku.com/
+  - id: roadways
+    name: roadways.kr
+    enabled: true
+    platform: wordpress
+    url: https://roadways.kr/
+    wpRestBase: https://roadways.kr/wp-json/wp/v2
+    ga4PropertyId: "536902558"
+    gscSiteUrl: https://roadways.kr/
+  - id: lawer-2
+    name: lawer.kr
+    enabled: true
+    platform: wordpress
+    url: https://lawer.kr/
+    wpRestBase: https://lawer.kr/wp-json/wp/v2
+    ga4PropertyId: "537125482"
+    gscSiteUrl: https://lawer.kr/
+  - id: sssaass
+    name: sssaass.com
+    enabled: true
+    platform: wordpress
+    url: https://sssaass.com/
+    wpRestBase: https://sssaass.com/wp-json/wp/v2
+    ga4PropertyId: "537317309"
+    gscSiteUrl: https://sssaass.com/
+  - id: todayshops
+    name: todayshops.kr
+    enabled: true
+    platform: wordpress
+    url: https://todayshops.kr/
+    wpRestBase: https://todayshops.kr/wp-json/wp/v2
+    ga4PropertyId: "537295441"
+    gscSiteUrl: https://todayshops.kr/
+  - id: educaer
+    name: educaer.com
+    enabled: true
+    platform: wordpress
+    url: https://educaer.com/
+    wpRestBase: https://educaer.com/wp-json/wp/v2
+    ga4PropertyId: "537331142"
+    gscSiteUrl: https://educaer.com/
+  - id: todayshops-2
+    name: todayshops.kr
+    enabled: true
+    platform: wordpress
+    url: https://todayshops.kr/
+    wpRestBase: https://todayshops.kr/wp-json/wp/v2
+    ga4PropertyId: "537250213"
+    gscSiteUrl: https://todayshops.kr/
+  - id: richyou
+    name: richyou.kr
+    enabled: true
+    platform: wordpress
+    url: https://richyou.kr/
+    wpRestBase: https://richyou.kr/wp-json/wp/v2
+    ga4PropertyId: "537950699"
+    gscSiteUrl: https://richyou.kr/
+  - id: certifi
+    name: certifi.kr
+    enabled: true
+    platform: wordpress
+    url: https://certifi.kr/
+    wpRestBase: https://certifi.kr/wp-json/wp/v2
+    ga4PropertyId: "537945374"
+    gscSiteUrl: https://certifi.kr/
+  - id: finan-2
+    name: finan.kr
+    enabled: true
+    platform: wordpress
+    url: https://finan.kr/
+    wpRestBase: https://finan.kr/wp-json/wp/v2
+    ga4PropertyId: "537937514"
+    gscSiteUrl: https://finan.kr/
+  - id: phone-luckyday
+    name: phone.luckyday.kr
+    enabled: true
+    platform: wordpress
+    url: https://phone.luckyday.kr/
+    wpRestBase: https://phone.luckyday.kr/wp-json/wp/v2
+    ga4PropertyId: "538379576"
+    gscSiteUrl: https://phone.luckyday.kr/
+  - id: gong-luckyday
+    name: gong.luckyday.kr
+    enabled: true
+    platform: wordpress
+    url: https://gong.luckyday.kr/
+    wpRestBase: https://gong.luckyday.kr/wp-json/wp/v2
+    ga4PropertyId: "538330802"
+    gscSiteUrl: https://gong.luckyday.kr/
+  - id: car-luckyday
+    name: car.luckyday.kr
+    enabled: true
+    platform: wordpress
+    url: https://car.luckyday.kr/
+    wpRestBase: https://car.luckyday.kr/wp-json/wp/v2
+    ga4PropertyId: "538367953"
+    gscSiteUrl: https://car.luckyday.kr/
+  - id: notebook-klick
+    name: 노트북고고
+    enabled: true
+    platform: wordpress
+    url: https://notebook.klick.kr/
+    wpRestBase: https://notebook.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "538351492"
+    gscSiteUrl: https://notebook.klick.kr/
+  - id: notebook-klick-2
+    name: notebook.klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://notebook.klick.kr/
+    wpRestBase: https://notebook.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "538469681"
+    gscSiteUrl: https://notebook.klick.kr/
+  - id: ai-tasko
+    name: ai.tasko.kr
+    enabled: true
+    platform: wordpress
+    url: https://ai.tasko.kr/
+    wpRestBase: https://ai.tasko.kr/wp-json/wp/v2
+    ga4PropertyId: "538418068"
+    gscSiteUrl: https://ai.tasko.kr/
+  - id: saju-tasko
+    name: saju.tasko.kr
+    enabled: true
+    platform: wordpress
+    url: https://saju.tasko.kr/
+    wpRestBase: https://saju.tasko.kr/wp-json/wp/v2
+    ga4PropertyId: "538409598"
+    gscSiteUrl: https://saju.tasko.kr/
+  - id: petjigi
+    name: petjigi.kr
+    enabled: true
+    platform: wordpress
+    url: https://petjigi.kr/
+    wpRestBase: https://petjigi.kr/wp-json/wp/v2
+    ga4PropertyId: "538418545"
+    gscSiteUrl: https://petjigi.kr/
+  - id: yesa
+    name: yesa.kr
+    enabled: true
+    platform: wordpress
+    url: https://yesa.kr/
+    wpRestBase: https://yesa.kr/wp-json/wp/v2
+    ga4PropertyId: "539176876"
+    gscSiteUrl: https://yesa.kr/
+  - id: picklefriend
+    name: picklefriend.kr
+    enabled: true
+    platform: wordpress
+    url: https://picklefriend.kr/
+    wpRestBase: https://picklefriend.kr/wp-json/wp/v2
+    ga4PropertyId: "539268592"
+    gscSiteUrl: https://picklefriend.kr/

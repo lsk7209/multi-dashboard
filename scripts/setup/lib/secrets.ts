@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { readFileSync } from "node:fs";
 
 const DEFAULT_KEY_FILE = "D:\\env\\\uD0A4\uD30C\uC77C.txt";
+const DEFAULT_GCP_SA_FILE = "D:\\env\\cursorai-451704-85a5abbe8eeb.json";
 
 export interface WpAdminCredentials {
   url: string;
@@ -14,6 +15,7 @@ export function loadLocalSecrets(): void {
   loadEnvFile(".env.setup.local");
   loadEnvFile(".env.local");
   loadLooseKeyFile(process.env.SETUP_KEY_FILE ?? DEFAULT_KEY_FILE);
+  loadDefaultGoogleServiceAccount();
 }
 
 export function getWpAdmin(siteId: string): WpAdminCredentials {
@@ -60,6 +62,26 @@ function loadLooseKeyFile(path: string): void {
     const parsed = parseKeyValueLine(line);
     if (parsed && !process.env[parsed.key]) {
       process.env[parsed.key] = parsed.value;
+    }
+  }
+}
+
+function loadDefaultGoogleServiceAccount(): void {
+  if (process.env.GCP_SA_KEY_JSON || !existsSync(DEFAULT_GCP_SA_FILE)) {
+    return;
+  }
+
+  const raw = readFileSync(DEFAULT_GCP_SA_FILE, "utf8");
+  process.env.GCP_SA_KEY_JSON = raw;
+
+  if (!process.env.GCP_SA_EMAIL) {
+    try {
+      const parsed = JSON.parse(raw) as { client_email?: string };
+      if (parsed.client_email) {
+        process.env.GCP_SA_EMAIL = parsed.client_email;
+      }
+    } catch {
+      // Preflight will report the missing value if parsing fails.
     }
   }
 }
