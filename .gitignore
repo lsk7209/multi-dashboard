@@ -10,3 +10,5 @@ dev-server.*.log
 !.env.setup.local.example
 .setup-state.json
 setup.log
+
+.vercel
