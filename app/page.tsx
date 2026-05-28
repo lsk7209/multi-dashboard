@@ -33,40 +33,40 @@ export default function DashboardPage() {
         <InsightPanel title="하락 신호" description="사용자나 검색 클릭이 감소한 사이트입니다." insights={data.declineInsights} />
       </section>
 
-      <section className="content-grid stats-layout">
+      <section className="stats-layout">
         <SiteStatsTable stats={data.stats} failedCount={data.failedCount} />
+      </section>
 
-        <aside className="side-stack">
-          <article className="panel">
-            <div className="panel-heading">
-              <h2>전체 30일</h2>
-            </div>
-            <div className="metric-stack">
-              <MiniMetric label="사용자" value={data.totalLast30Days.activeUsers} />
-              <MiniMetric label="세션" value={data.totalLast30Days.sessions} />
-              <MiniMetric label="조회수" value={data.totalLast30Days.screenPageViews} />
-              <MiniMetric label="이벤트" value={data.totalLast30Days.eventCount} />
-              <MiniMetric label="GSC 클릭" value={data.totalGscLast30Days.clicks} />
-              <MiniMetric label="GSC 노출" value={data.totalGscLast30Days.impressions} />
-            </div>
-          </article>
+      <section className="support-grid" aria-label="보조 정보">
+        <article className="panel">
+          <div className="panel-heading">
+            <h2>전체 30일</h2>
+          </div>
+          <div className="metric-grid">
+            <MiniMetric label="사용자" value={data.totalLast30Days.activeUsers} />
+            <MiniMetric label="세션" value={data.totalLast30Days.sessions} />
+            <MiniMetric label="조회수" value={data.totalLast30Days.screenPageViews} />
+            <MiniMetric label="이벤트" value={data.totalLast30Days.eventCount} />
+            <MiniMetric label="GSC 클릭" value={data.totalGscLast30Days.clicks} />
+            <MiniMetric label="GSC 노출" value={data.totalGscLast30Days.impressions} />
+          </div>
+        </article>
 
-          <article className="panel">
-            <div className="panel-heading">
-              <h2>갱신 명령</h2>
+        <article className="panel">
+          <div className="panel-heading">
+            <h2>갱신 명령</h2>
+          </div>
+          <div className="command-list">
+            <div className="command-row">
+              <span>GA4/GSC 통계 수집</span>
+              <code>pnpm stats:update</code>
             </div>
-            <div className="command-list">
-              <div className="command-row">
-                <span>GA4/GSC 통계 수집</span>
-                <code>pnpm stats:update</code>
-              </div>
-              <div className="command-row">
-                <span>사이트 재등록</span>
-                <code>pnpm setup:import-ga4-sites -- --account=236349432</code>
-              </div>
+            <div className="command-row">
+              <span>사이트 재등록</span>
+              <code>pnpm setup:import-ga4-sites -- --account=236349432</code>
             </div>
-          </article>
-        </aside>
+          </div>
+        </article>
       </section>
     </main>
   );
