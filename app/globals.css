@@ -1,0 +1,278 @@
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --ink: #151922;
+  --muted: #667085;
+  --line: #dde3ea;
+  --accent: #0f766e;
+  --accent-weak: #d9f3ef;
+  --warning: #a15c00;
+  --warning-weak: #fff2d8;
+  --shadow: 0 12px 32px rgba(21, 25, 34, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family:
+    Arial,
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.dashboard-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.status-pill {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid #f3cf93;
+  border-radius: 999px;
+  color: var(--warning);
+  background: var(--warning-weak);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.status-card,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.status-card {
+  min-height: 126px;
+  padding: 18px;
+}
+
+.status-card span,
+.panel-heading span,
+.site-row span,
+.command-row span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status-card strong {
+  display: block;
+  margin: 12px 0 8px;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.status-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 18px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 18px;
+}
+
+.wide-panel {
+  grid-column: span 1;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.empty-state {
+  border: 1px dashed #b8c4d1;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fbfcfd;
+}
+
+.empty-state strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.site-list,
+.command-list {
+  display: grid;
+  gap: 10px;
+}
+
+.site-row,
+.command-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 54px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.site-row div {
+  min-width: 0;
+}
+
+.site-row strong,
+.site-row span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-row em {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.step-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.step-list li {
+  line-height: 1.5;
+}
+
+.command-row {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+code {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 6px;
+  padding: 7px 8px;
+  color: #0f172a;
+  background: #eef2f6;
+  font-size: 13px;
+}
+
+.secret-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.secret-grid span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px;
+  color: #374151;
+  background: #fbfcfd;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .dashboard-shell {
+    width: min(100% - 24px, 720px);
+    padding-top: 20px;
+  }
+
+  .topbar {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .summary-grid,
+  .content-grid,
+  .secret-grid {
+    grid-template-columns: 1fr;
+  }
+}

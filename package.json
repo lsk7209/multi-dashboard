@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "setup:preflight": "tsx scripts/setup/preflight.ts",
@@ -32,12 +35,17 @@
     "p-limit": "^7.2.0",
     "p-retry": "^7.1.0",
     "yaml": "^2.8.1",
-    "zod": "^4.1.13"
+    "zod": "^4.1.13",
+    "next": "^16.0.5",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/libsodium-wrappers": "^0.7.14",
     "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",

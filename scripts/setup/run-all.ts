@@ -7,7 +7,7 @@ interface RunContext {
   wpPasswords?: Record<string, string>;
 }
 
-function runTsx(script: string, options?: { env?: NodeJS.ProcessEnv; capture?: boolean }): string {
+function runTsx(script: string, options?: { env?: Record<string, string>; capture?: boolean }): string {
   const output = execFileSync("tsx", [script], {
     encoding: "utf8",
     stdio: options?.capture ? "pipe" : "inherit",

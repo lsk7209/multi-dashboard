@@ -1,5 +1,8 @@
 node_modules/
 dist/
+.next/
+*.tsbuildinfo
+dev-server.*.log
 .omx/
 .env
 .env.*
