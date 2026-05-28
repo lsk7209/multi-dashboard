@@ -68,7 +68,40 @@ export default function DashboardPage() {
           </div>
         </article>
       </section>
+
+      <section className="stats-layout">
+        <GscIssuePanel stats={data.gscIssueStats} />
+      </section>
     </main>
+  );
+}
+
+function GscIssuePanel({ stats }: { stats: ReturnType<typeof getDashboardData>["gscIssueStats"] }) {
+  return (
+    <article className="panel">
+      <div className="panel-heading">
+        <div>
+          <h2>GSC 권한 확인 대상</h2>
+          <p>Search Console에서 서비스 계정 권한을 추가해야 실제 GSC 지표가 잡힙니다.</p>
+        </div>
+        <span>{formatNumber(stats.length)}개</span>
+      </div>
+      {stats.length === 0 ? (
+        <p className="muted-text">현재 GSC 권한 오류가 없습니다.</p>
+      ) : (
+        <div className="issue-grid">
+          {stats.map((stat) => (
+            <div className="issue-row" key={`${stat.id}-${stat.ga4PropertyId}`}>
+              <div>
+                <strong>{stat.name}</strong>
+                <a href={stat.url}>{stat.gscSiteUrl ?? stat.url}</a>
+              </div>
+              <span>권한 필요</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </article>
   );
 }
 

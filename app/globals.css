@@ -188,7 +188,8 @@ h2 {
 .command-list,
 .side-stack,
 .metric-stack,
-.insight-list {
+.insight-list,
+.issue-grid {
   display: grid;
   gap: 10px;
 }
@@ -286,7 +287,8 @@ h2 {
 }
 
 .site-row,
-.command-row {
+.command-row,
+.issue-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -302,7 +304,9 @@ h2 {
 }
 
 .site-row strong,
-.site-row span {
+.site-row span,
+.issue-row strong,
+.issue-row a {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -317,6 +321,27 @@ h2 {
   background: var(--accent-weak);
   font-size: 12px;
   font-style: normal;
+  font-weight: 700;
+}
+
+.issue-row div {
+  min-width: 0;
+}
+
+.issue-row a {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.issue-row span {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--warning);
+  background: var(--warning-weak);
+  font-size: 12px;
   font-weight: 700;
 }
 

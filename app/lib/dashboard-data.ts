@@ -105,6 +105,7 @@ export interface DashboardData {
   seoInsights: SiteInsight[];
   growthInsights: SiteInsight[];
   declineInsights: SiteInsight[];
+  gscIssueStats: EnrichedSiteStat[];
   siteCount: number;
   trackedCount: number;
   failedCount: number;
@@ -137,6 +138,7 @@ export function getDashboardData(): DashboardData {
     seoInsights: insights.filter((insight) => insight.kind === "seoOpportunity" || insight.kind === "rankingOpportunity").slice(0, 10),
     growthInsights: insights.filter((insight) => insight.kind === "growth").slice(0, 8),
     declineInsights: insights.filter((insight) => insight.kind === "decline").slice(0, 8),
+    gscIssueStats: stats.filter((stat) => Boolean(stat.gscError)),
     siteCount: sites.length,
     trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId).length,
     failedCount: stats.filter((stat) => stat.error || stat.gscError).length,
