@@ -33,6 +33,8 @@ export interface GscMetricSet {
 export type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
 export type ErrorKind = "permission" | "not_found" | "quota" | "missing_config" | "api_error";
 export type OperationalStatus = "normal" | "needsPermission" | "apiError" | "stale";
+export type ActionKind = "permission" | "decline" | "seo" | "ranking" | "data";
+export type SegmentKey = "growth" | "decline" | "seo" | "gsc";
 
 export interface SiteStat {
   id: string;
@@ -111,6 +113,12 @@ export interface SiteTrend {
   gscClicksChange: number | null;
 }
 
+export interface SiteHealthScore {
+  score: number;
+  grade: "좋음" | "주의" | "위험";
+  reason: string;
+}
+
 export interface EnrichedSiteStat
   extends Omit<SiteStat, "last1Days" | "previous7Days" | "last30Days" | "gscPrevious7Days" | "gscLast30Days"> {
   last1Days: MetricSet;
@@ -123,6 +131,35 @@ export interface EnrichedSiteStat
   statusLabel: string;
   statusReason: string;
   isStale: boolean;
+  health: SiteHealthScore;
+}
+
+export interface DashboardActionItem {
+  id: string;
+  siteId: string;
+  siteName: string;
+  url: string;
+  kind: ActionKind;
+  priority: number;
+  label: string;
+  value: string;
+  reason: string;
+  nextStep: string;
+}
+
+export interface DashboardSegment {
+  key: SegmentKey;
+  label: string;
+  description: string;
+  count: number;
+  stats: EnrichedSiteStat[];
+}
+
+export interface HealthSummary {
+  averageScore: number;
+  healthyCount: number;
+  warningCount: number;
+  criticalCount: number;
 }
 
 export interface DashboardData {
@@ -135,6 +172,9 @@ export interface DashboardData {
   seoInsights: SiteInsight[];
   growthInsights: SiteInsight[];
   declineInsights: SiteInsight[];
+  actions: DashboardActionItem[];
+  segments: DashboardSegment[];
+  healthSummary: HealthSummary;
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
   siteCount: number;
@@ -158,6 +198,7 @@ export function getDashboardData(): DashboardData {
   const statsById = new Map(snapshot.stats.map((stat) => [stat.id, stat]));
   const stats = sites.map((site) => enrichSiteStat(statsById.get(site.id) ?? emptySiteStat(site)));
   const insights = buildInsights(stats);
+  const actions = buildActionItems(stats).slice(0, 12);
   const totalLast1Days = sumMetrics(stats.map((stat) => stat.last1Days));
   const totalLast7Days = sumMetrics(stats.map((stat) => stat.last7Days));
   const totalPrevious7Days = sumMetrics(stats.map((stat) => stat.previous7Days));
@@ -173,6 +214,9 @@ export function getDashboardData(): DashboardData {
     seoInsights: insights.filter((insight) => insight.kind === "seoOpportunity" || insight.kind === "rankingOpportunity").slice(0, 10),
     growthInsights: insights.filter((insight) => insight.kind === "growth").slice(0, 8),
     declineInsights: insights.filter((insight) => insight.kind === "decline").slice(0, 8),
+    actions,
+    segments: buildSegments(stats),
+    healthSummary: buildHealthSummary(stats),
     gscIssueStats: stats.filter((stat) => Boolean(stat.gscError)),
     dailyIssueStats: stats.filter((stat) => stat.operationalStatus !== "normal").slice(0, 20),
     siteCount: sites.length,
@@ -202,6 +246,12 @@ function enrichSiteStat(stat: SiteStat): EnrichedSiteStat {
   const gscStatus = stat.gscStatus ?? (stat.gscError ? "auth_error" : "ok");
   const operationalStatus = getOperationalStatus({ ...stat, ga4Status, gscStatus });
   const isStale = operationalStatus === "stale";
+  const trend = {
+    activeUsersChange: changeRate(stat.last7Days.activeUsers, previous7Days.activeUsers),
+    sessionsChange: changeRate(stat.last7Days.sessions, previous7Days.sessions),
+    gscClicksChange: changeRate(gscLast7Days.clicks, gscPrevious7Days.clicks),
+  };
+  const normalizedStat = { ...stat, ga4Status, gscStatus, gscLast7Days, last30Days, previous7Days, trend };
 
   return {
     ...stat,
@@ -216,11 +266,166 @@ function enrichSiteStat(stat: SiteStat): EnrichedSiteStat {
     statusLabel: getStatusLabel(operationalStatus),
     statusReason: getStatusReason({ ...stat, ga4Status, gscStatus }, operationalStatus),
     isStale,
-    trend: {
-      activeUsersChange: changeRate(stat.last7Days.activeUsers, previous7Days.activeUsers),
-      sessionsChange: changeRate(stat.last7Days.sessions, previous7Days.sessions),
-      gscClicksChange: changeRate(gscLast7Days.clicks, gscPrevious7Days.clicks),
+    trend,
+    health: getHealthScore(normalizedStat, operationalStatus),
+  };
+}
+
+function buildActionItems(stats: EnrichedSiteStat[]): DashboardActionItem[] {
+  return stats.flatMap(getActionItems).sort((a, b) => b.priority - a.priority);
+}
+
+function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
+  const items: DashboardActionItem[] = [];
+  const activeChange = stat.trend.activeUsersChange;
+  const gscChange = stat.trend.gscClicksChange;
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+
+  if (stat.operationalStatus !== "normal") {
+    items.push(makeAction(stat, "permission", 100, stat.statusLabel, stat.statusReason, "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요."));
+  }
+
+  if (activeChange !== null && activeChange <= -0.3 && stat.previous7Days.activeUsers >= 10) {
+    items.push(makeAction(stat, "decline", 90, formatSignedPercent(activeChange), "GA4 사용자가 직전 7일 대비 크게 감소했습니다.", "최근 발행, 색인, 유입 채널 변경 여부를 확인하세요."));
+  }
+
+  if (gscChange !== null && gscChange <= -0.3 && stat.gscPrevious7Days.clicks >= 5) {
+    items.push(makeAction(stat, "decline", 85, formatSignedPercent(gscChange), "GSC 클릭이 직전 7일 대비 크게 감소했습니다.", "상위 쿼리와 CTR 하락 페이지를 점검하세요."));
+  }
+
+  if (gsc.impressions >= 100 && gsc.ctr < 0.02) {
+    items.push(makeAction(stat, "seo", 70, formatPercent(gsc.ctr), "노출 대비 CTR이 낮습니다.", "제목, 메타 설명, FAQ를 검색 의도에 맞춰 보강하세요."));
+  }
+
+  if (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50) {
+    items.push(makeAction(stat, "ranking", 65, `${formatDecimal(gsc.position)}위`, "평균순위가 4~20위 구간입니다.", "상위 문서 보강과 내부링크 추가로 1페이지 진입을 노리세요."));
+  }
+
+  return items;
+}
+
+function makeAction(
+  stat: EnrichedSiteStat,
+  kind: ActionKind,
+  priority: number,
+  value: string,
+  reason: string,
+  nextStep: string,
+): DashboardActionItem {
+  return {
+    id: `${stat.id}-${stat.ga4PropertyId}-${kind}-${reason}`,
+    siteId: stat.id,
+    siteName: stat.name,
+    url: stat.url,
+    kind,
+    priority,
+    label: getActionLabel(kind),
+    value,
+    reason,
+    nextStep,
+  };
+}
+
+function getActionLabel(kind: ActionKind): string {
+  if (kind === "permission") return "권한";
+  if (kind === "decline") return "급락";
+  if (kind === "seo") return "CTR";
+  if (kind === "ranking") return "순위";
+  return "데이터";
+}
+
+function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
+  const segments: DashboardSegment[] = [
+    {
+      key: "growth",
+      label: "성장",
+      description: "7일 사용자가 직전 기간보다 30% 이상 증가한 사이트",
+      count: 0,
+      stats: stats.filter((stat) => (stat.trend.activeUsersChange ?? 0) >= 0.3).sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers),
     },
+    {
+      key: "decline",
+      label: "하락",
+      description: "7일 사용자 또는 GSC 클릭이 30% 이상 감소한 사이트",
+      count: 0,
+      stats: stats.filter((stat) => (stat.trend.activeUsersChange ?? 0) <= -0.3 || (stat.trend.gscClicksChange ?? 0) <= -0.3),
+    },
+    {
+      key: "seo",
+      label: "SEO 기회",
+      description: "CTR 또는 평균순위 개선 여지가 큰 사이트",
+      count: 0,
+      stats: stats.filter((stat) => {
+        const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+        return (gsc.impressions >= 100 && gsc.ctr < 0.02) || (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50);
+      }),
+    },
+    {
+      key: "gsc",
+      label: "GSC 문제",
+      description: "권한 오류 또는 검색 데이터 확인이 필요한 사이트",
+      count: 0,
+      stats: stats.filter((stat) => stat.gscStatus !== "ok" || Boolean(stat.gscError)),
+    },
+  ];
+
+  return segments.map((segment) => ({ ...segment, count: segment.stats.length, stats: segment.stats.slice(0, 8) }));
+}
+
+function buildHealthSummary(stats: EnrichedSiteStat[]): HealthSummary {
+  const total = stats.reduce((sum, stat) => sum + stat.health.score, 0);
+
+  return {
+    averageScore: stats.length === 0 ? 0 : Math.round(total / stats.length),
+    healthyCount: stats.filter((stat) => stat.health.grade === "좋음").length,
+    warningCount: stats.filter((stat) => stat.health.grade === "주의").length,
+    criticalCount: stats.filter((stat) => stat.health.grade === "위험").length,
+  };
+}
+
+function getHealthScore(
+  stat: Pick<SiteStat, "gscStatus" | "last7Days"> & {
+    last30Days: MetricSet;
+    gscLast7Days: GscMetricSet;
+    trend: SiteTrend;
+  },
+  operationalStatus: OperationalStatus,
+): SiteHealthScore {
+  let score = 100;
+  const reasons: string[] = [];
+
+  if (operationalStatus !== "normal") {
+    score -= operationalStatus === "needsPermission" ? 35 : 25;
+    reasons.push("수집 상태 확인 필요");
+  }
+
+  if ((stat.trend.activeUsersChange ?? 0) <= -0.3) {
+    score -= 25;
+    reasons.push("사용자 급락");
+  }
+
+  if ((stat.trend.gscClicksChange ?? 0) <= -0.3) {
+    score -= 15;
+    reasons.push("검색 클릭 감소");
+  }
+
+  if (stat.gscStatus === "ok" && stat.gscLast7Days.impressions >= 100 && stat.gscLast7Days.ctr < 0.02) {
+    score -= 10;
+    reasons.push("CTR 낮음");
+  }
+
+  if (stat.last30Days.activeUsers === 0) {
+    score -= 10;
+    reasons.push("30일 사용자 없음");
+  }
+
+  const normalizedScore = Math.max(0, Math.min(100, score));
+  const grade = normalizedScore >= 80 ? "좋음" : normalizedScore >= 55 ? "주의" : "위험";
+
+  return {
+    score: normalizedScore,
+    grade,
+    reason: reasons.length > 0 ? reasons.join(", ") : "핵심 지표 정상",
   };
 }
 

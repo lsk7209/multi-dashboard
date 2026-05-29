@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T10:18:27.657Z",
+  "generatedAt": "2026-05-29T10:30:21.204Z",
   "rangeDays": 7,
   "previousRangeDays": 7,
   "longRangeDays": 30,
@@ -74,8 +74,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:15.508Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:15.508Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:06.070Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:06.070Z"
     },
     {
       "id": "tennisfrens",
@@ -127,7 +127,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:15.129Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:05.898Z",
       "gscError": "User does not have sufficient permission for site 'https://tennisfrens.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -181,8 +181,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:04.955Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:04.955Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:55.593Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:55.593Z"
     },
     {
       "id": "todaypharm",
@@ -234,8 +234,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:14.920Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:14.920Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:05.834Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:05.834Z"
     },
     {
       "id": "ehon365",
@@ -287,7 +287,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:15.990Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:06.776Z",
       "gscError": "User does not have sufficient permission for site 'https://ehon365.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -341,7 +341,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:04.908Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:55.565Z",
       "gscError": "User does not have sufficient permission for site 'https://temon.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -395,7 +395,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z",
       "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -449,8 +449,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:17.916Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:17.916Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:08.558Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:08.558Z"
     },
     {
       "id": "klick-2",
@@ -502,8 +502,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:13.660Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:13.660Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:04.363Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:04.363Z"
     },
     {
       "id": "klick",
@@ -555,8 +555,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:04.847Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:04.847Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:55.511Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:55.511Z"
     },
     {
       "id": "spinkorea-2",
@@ -608,8 +608,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:16.261Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:16.261Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:06.899Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:06.899Z"
     },
     {
       "id": "picklefriend",
@@ -661,8 +661,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:26.442Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:26.442Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:18.062Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:18.062Z"
     },
     {
       "id": "tasko-2",
@@ -714,8 +714,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:12.779Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:12.779Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:03.649Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:03.649Z"
     },
     {
       "id": "mbti-tasko",
@@ -767,8 +767,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:13.064Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:13.064Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:03.714Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:03.714Z"
     },
     {
       "id": "petjigi",
@@ -820,8 +820,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:25.969Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:25.969Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:17.835Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:17.835Z"
     },
     {
       "id": "tasko",
@@ -873,8 +873,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z"
     },
     {
       "id": "2mlab-2",
@@ -926,8 +926,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:16.170Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:16.170Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:06.853Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:06.853Z"
     },
     {
       "id": "askore",
@@ -979,8 +979,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:22.144Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:22.144Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:12.922Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:12.922Z"
     },
     {
       "id": "fastjob",
@@ -1032,8 +1032,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:04.674Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:04.674Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:55.165Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:55.165Z"
     },
     {
       "id": "notebook-klick-2",
@@ -1085,8 +1085,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:25.514Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:25.514Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:17.403Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:17.403Z"
     },
     {
       "id": "softwa",
@@ -1138,8 +1138,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:07.442Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:07.442Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:58.491Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:58.491Z"
     },
     {
       "id": "healthgotoo",
@@ -1148,16 +1148,16 @@
       "ga4PropertyId": "517066030",
       "gscSiteUrl": "https://healthgotoo.com/",
       "last1Days": {
-        "activeUsers": 3,
-        "sessions": 3,
-        "screenPageViews": 4,
-        "eventCount": 14
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 5,
+        "eventCount": 17
       },
       "last7Days": {
-        "activeUsers": 20,
-        "sessions": 21,
-        "screenPageViews": 24,
-        "eventCount": 85
+        "activeUsers": 21,
+        "sessions": 22,
+        "screenPageViews": 25,
+        "eventCount": 88
       },
       "previous7Days": {
         "activeUsers": 20,
@@ -1166,10 +1166,10 @@
         "eventCount": 78
       },
       "last30Days": {
-        "activeUsers": 77,
-        "sessions": 88,
-        "screenPageViews": 122,
-        "eventCount": 387
+        "activeUsers": 78,
+        "sessions": 89,
+        "screenPageViews": 123,
+        "eventCount": 390
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1191,8 +1191,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:05.901Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:05.901Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:56.775Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:56.775Z"
     },
     {
       "id": "nicewomen",
@@ -1244,8 +1244,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:11.026Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:11.026Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:01.871Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:01.871Z"
     },
     {
       "id": "car-luckyday",
@@ -1297,7 +1297,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:25.128Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:16.957Z",
       "gscError": "User does not have sufficient permission for site 'https://car.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -1351,8 +1351,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:19.094Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:19.094Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:09.606Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:09.606Z"
     },
     {
       "id": "nexttech7",
@@ -1404,8 +1404,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:13.146Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:13.146Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:03.881Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:03.881Z"
     },
     {
       "id": "richyou",
@@ -1457,8 +1457,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:24.009Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:24.009Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:15.674Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:15.674Z"
     },
     {
       "id": "sellerpit-2",
@@ -1510,8 +1510,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:13.854Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:13.854Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:04.384Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:04.384Z"
     },
     {
       "id": "today2424",
@@ -1563,8 +1563,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:14.905Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:14.905Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:05.418Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:05.418Z"
     },
     {
       "id": "discparty",
@@ -1616,8 +1616,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:04.721Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:04.721Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:55.305Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:55.305Z"
     },
     {
       "id": "legalser",
@@ -1669,8 +1669,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:07.466Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:07.466Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:58.636Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:58.636Z"
     },
     {
       "id": "gover",
@@ -1722,8 +1722,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:10.983Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:10.983Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:01.717Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:01.717Z"
     },
     {
       "id": "autoscares-2",
@@ -1775,8 +1775,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:20.913Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:20.913Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:11.402Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:11.402Z"
     },
     {
       "id": "roadways",
@@ -1828,8 +1828,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:22.725Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:22.725Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:14.055Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:14.055Z"
     },
     {
       "id": "yesa",
@@ -1881,8 +1881,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:26.266Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:26.266Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:18.001Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:18.001Z"
     },
     {
       "id": "etique",
@@ -1934,8 +1934,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:09.377Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:09.377Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:00.452Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:00.452Z"
     },
     {
       "id": "ezfunnel",
@@ -1987,8 +1987,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:16.474Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:16.474Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:07.299Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:07.299Z"
     },
     {
       "id": "saju-tasko",
@@ -2040,7 +2040,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:25.721Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:17.689Z",
       "gscError": "User does not have sufficient permission for site 'https://saju.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -2094,8 +2094,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z"
     },
     {
       "id": "phone-luckyday",
@@ -2147,8 +2147,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:24.952Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:24.952Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:16.479Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:16.479Z"
     },
     {
       "id": "runmania",
@@ -2200,8 +2200,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:12.649Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:12.649Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:03.583Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:03.583Z"
     },
     {
       "id": "chatgipt-3",
@@ -2253,8 +2253,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:14.448Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:14.448Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:04.991Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:04.991Z"
     },
     {
       "id": "certifi",
@@ -2306,8 +2306,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:24.215Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:24.215Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:16.068Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:16.068Z"
     },
     {
       "id": "trave",
@@ -2359,8 +2359,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:09.738Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:09.738Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:00.722Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:00.722Z"
     },
     {
       "id": "estat",
@@ -2412,8 +2412,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:10.870Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:10.870Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:01.030Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:01.030Z"
     },
     {
       "id": "esgyo-2",
@@ -2465,8 +2465,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:14.886Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:14.886Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:05.013Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:05.013Z"
     },
     {
       "id": "todayshops-2",
@@ -2518,8 +2518,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:23.990Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:23.990Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:15.554Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:15.554Z"
     },
     {
       "id": "insupang",
@@ -2571,8 +2571,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:05.753Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:05.753Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:56.704Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:56.704Z"
     },
     {
       "id": "healfood-2",
@@ -2624,8 +2624,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:20.994Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:20.994Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:11.624Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:11.624Z"
     },
     {
       "id": "gong365",
@@ -2677,8 +2677,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:22.387Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:22.387Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:12.957Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:12.957Z"
     },
     {
       "id": "crepika",
@@ -2730,8 +2730,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:18.119Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:18.119Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:09.194Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:09.194Z"
     },
     {
       "id": "educaer",
@@ -2783,8 +2783,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:23.861Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:23.861Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:15.528Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:15.528Z"
     },
     {
       "id": "finan-2",
@@ -2836,8 +2836,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:24.328Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:24.328Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:16.125Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:16.125Z"
     },
     {
       "id": "ai-tasko",
@@ -2889,7 +2889,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:25.580Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:17.404Z",
       "gscError": "User does not have sufficient permission for site 'https://ai.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -2943,8 +2943,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:17.523Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:17.523Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:07.975Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:07.975Z"
     },
     {
       "id": "petinsuer-2",
@@ -2996,8 +2996,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:19.933Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:19.933Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:10.698Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:10.698Z"
     },
     {
       "id": "goesku",
@@ -3049,8 +3049,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:22.591Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:22.591Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:13.879Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:13.879Z"
     },
     {
       "id": "gong-luckyday",
@@ -3102,7 +3102,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:24.972Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:16.708Z",
       "gscError": "User does not have sufficient permission for site 'https://gong.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -3156,8 +3156,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:02.022Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:02.022Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:52.687Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:52.687Z"
     },
     {
       "id": "2mlab",
@@ -3209,8 +3209,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z"
     },
     {
       "id": "chatgipt",
@@ -3262,8 +3262,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:02.025Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:52.692Z"
     },
     {
       "id": "chatgipt-2",
@@ -3315,8 +3315,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:04.043Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:04.043Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:54.830Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:54.830Z"
     },
     {
       "id": "travelpang",
@@ -3368,8 +3368,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:06.271Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:06.271Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:57.102Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:57.102Z"
     },
     {
       "id": "coinyo",
@@ -3421,8 +3421,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:06.489Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:06.489Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:57.105Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:57.105Z"
     },
     {
       "id": "dogspang",
@@ -3474,8 +3474,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:06.682Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:06.682Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:57.164Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:57.164Z"
     },
     {
       "id": "cartain",
@@ -3527,8 +3527,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:07.107Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:07.107Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:57.263Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:57.263Z"
     },
     {
       "id": "petinsuer",
@@ -3580,8 +3580,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:07.872Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:07.872Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:58.753Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:58.753Z"
     },
     {
       "id": "homeimer",
@@ -3633,8 +3633,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:08.034Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:08.034Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:58.897Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:58.897Z"
     },
     {
       "id": "healfood",
@@ -3686,8 +3686,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:08.352Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:08.352Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:58.954Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:58.954Z"
     },
     {
       "id": "finan",
@@ -3739,8 +3739,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:08.997Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:08.997Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:29:59.152Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:29:59.152Z"
     },
     {
       "id": "luxurytraver",
@@ -3792,8 +3792,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:09.164Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:09.164Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:00.092Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:00.092Z"
     },
     {
       "id": "autoscares",
@@ -3845,8 +3845,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:09.923Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:09.923Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:00.798Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:00.798Z"
     },
     {
       "id": "lawer",
@@ -3898,8 +3898,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:09.953Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:09.953Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:01.028Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:01.028Z"
     },
     {
       "id": "esgyo",
@@ -3951,8 +3951,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:11.390Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:11.390Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:02.003Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:02.003Z"
     },
     {
       "id": "sellerpit",
@@ -4004,8 +4004,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:11.421Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:11.421Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:02.265Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:02.265Z"
     },
     {
       "id": "spinkorea",
@@ -4057,8 +4057,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:11.497Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:11.497Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:02.640Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:02.640Z"
     },
     {
       "id": "texturb",
@@ -4110,7 +4110,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:12.398Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:02.774Z",
       "gscError": "User does not have sufficient permission for site 'https://texturb.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -4164,7 +4164,7 @@
       },
       "ga4Status": "ok",
       "gscStatus": "auth_error",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:13.109Z",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:03.755Z",
       "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
       "gscErrorKind": "permission"
     },
@@ -4218,8 +4218,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:16.920Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:16.920Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:07.534Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:07.534Z"
     },
     {
       "id": "kang4-2",
@@ -4271,8 +4271,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:17.145Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:17.145Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:07.973Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:07.973Z"
     },
     {
       "id": "fastjob-2",
@@ -4324,8 +4324,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:17.711Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:17.711Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:08.198Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:08.198Z"
     },
     {
       "id": "insupang-2",
@@ -4377,8 +4377,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:18.967Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:18.967Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:09.297Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:09.297Z"
     },
     {
       "id": "healthgotoo-2",
@@ -4430,8 +4430,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:19.053Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:19.053Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:09.360Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:09.360Z"
     },
     {
       "id": "travelpang-2",
@@ -4483,8 +4483,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:19.303Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:19.303Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:09.812Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:09.812Z"
     },
     {
       "id": "legalser-2",
@@ -4536,8 +4536,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:19.391Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:19.391Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:09.895Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:09.895Z"
     },
     {
       "id": "etique-2",
@@ -4589,8 +4589,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:20.303Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:20.303Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:11.145Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:11.145Z"
     },
     {
       "id": "luxurytraver-2",
@@ -4642,8 +4642,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:20.468Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:20.468Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:11.175Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:11.175Z"
     },
     {
       "id": "softwa-2",
@@ -4695,8 +4695,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:20.730Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:20.730Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:11.249Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:11.249Z"
     },
     {
       "id": "gover-2",
@@ -4748,8 +4748,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:21.171Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:21.171Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:12.215Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:12.215Z"
     },
     {
       "id": "estat-2",
@@ -4801,8 +4801,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:21.222Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:21.222Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:12.305Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:12.305Z"
     },
     {
       "id": "homeimer-2",
@@ -4854,8 +4854,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:21.466Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:21.466Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:12.468Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:12.468Z"
     },
     {
       "id": "trave-2",
@@ -4907,8 +4907,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:22.536Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:22.536Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:13.093Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:13.093Z"
     },
     {
       "id": "lawer-2",
@@ -4960,8 +4960,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:22.790Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:22.790Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:14.197Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:14.197Z"
     },
     {
       "id": "sssaass",
@@ -5013,8 +5013,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:23.319Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:23.319Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:14.258Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:14.258Z"
     },
     {
       "id": "todayshops",
@@ -5066,8 +5066,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:23.825Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:23.825Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:14.272Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:14.272Z"
     },
     {
       "id": "notebook-klick",
@@ -5119,8 +5119,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-05-29T10:18:25.513Z",
-      "gscLastSuccessfulFetchAt": "2026-05-29T10:18:25.513Z"
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:30:17.116Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:30:17.116Z"
     }
   ]
 }

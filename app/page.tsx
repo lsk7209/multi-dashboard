@@ -1,5 +1,5 @@
 import { SiteStatsTable } from "./components/site-stats-table.js";
-import { getDashboardData, type SiteInsight } from "./lib/dashboard-data.js";
+import { getDashboardData, type DashboardActionItem, type SiteInsight } from "./lib/dashboard-data.js";
 
 export const dynamic = "force-static";
 
@@ -23,22 +23,24 @@ export default function DashboardPage() {
         <StatusCard label="1일 사용자" value={formatNumber(data.totalLast1Days.activeUsers)} hint={formatDateRange(data.dateRanges.last1Days)} />
         <StatusCard label="7일 GA4 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint={`${formatDateRange(data.dateRanges.last7Days)} · ${formatChange(data.totalActiveUsersChange)}`} />
         <StatusCard label="30일 사용자" value={formatNumber(data.totalLast30Days.activeUsers)} hint={`${formatNumber(data.siteCount)}개 · ${formatDateRange(data.dateRanges.last30Days)}`} />
+        <StatusCard label="운영 점수" value={`${data.healthSummary.averageScore}점`} hint={`위험 ${data.healthSummary.criticalCount}개 · 주의 ${data.healthSummary.warningCount}개`} />
         <StatusCard label="GSC 연결" value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`} hint={`권한 확인 ${data.gscIssueStats.length}개`} />
       </section>
 
+      <section className="operation-grid" aria-label="운영 우선순위">
+        <ActionQueue actions={data.actions} />
+        <HealthPanel data={data.healthSummary} />
+      </section>
+
+      <section className="stats-layout">
+        <SiteStatsTable stats={data.stats} failedCount={data.failedCount} segments={data.segments} />
+      </section>
+
       <section className="insight-grid" aria-label="핵심 인사이트">
-        <InsightPanel title="우선 확인할 사이트" description="권한, 급락, 색인 의심 신호를 먼저 봅니다." insights={data.priorityInsights} />
         <InsightPanel title="SEO 기회" description="노출 대비 CTR 또는 순위 개선 여지가 큰 사이트입니다." insights={data.seoInsights} />
         <InsightPanel title="성장 신호" description="최근 7일 사용자 증가가 두드러진 사이트입니다." insights={data.growthInsights} />
         <InsightPanel title="하락 신호" description="사용자나 검색 클릭이 감소한 사이트입니다." insights={data.declineInsights} />
-      </section>
-
-      <section className="stats-layout">
-        <SiteStatsTable stats={data.stats} failedCount={data.failedCount} />
-      </section>
-
-      <section className="stats-layout">
-        <DailyIssuePanel stats={data.dailyIssueStats} staleCount={data.staleCount} />
+        <InsightPanel title="우선 확인" description="권한, 급락, 색인 의심 신호를 모았습니다." insights={data.priorityInsights} />
       </section>
 
       <section className="support-grid" aria-label="보조 정보">
@@ -84,6 +86,60 @@ export default function DashboardPage() {
   );
 }
 
+function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
+  return (
+    <article className="panel action-panel">
+      <div className="panel-heading">
+        <div>
+          <h2>오늘의 액션</h2>
+          <p>권한, 급락, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다.</p>
+        </div>
+        <span>{formatNumber(actions.length)}개</span>
+      </div>
+      {actions.length === 0 ? (
+        <p className="muted-text">오늘 우선 조치할 항목이 없습니다.</p>
+      ) : (
+        <div className="action-list">
+          {actions.map((action) => (
+            <div className={`action-row action-${action.kind}`} key={action.id}>
+              <span>{action.label}</span>
+              <div>
+                <strong>{action.siteName}</strong>
+                <a href={action.url}>{formatHost(action.url)}</a>
+                <p>{action.reason}</p>
+                <em>{action.nextStep}</em>
+              </div>
+              <b>{action.value}</b>
+            </div>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function HealthPanel({ data }: { data: ReturnType<typeof getDashboardData>["healthSummary"] }) {
+  return (
+    <article className="panel health-panel">
+      <div className="panel-heading">
+        <div>
+          <h2>운영 상태</h2>
+          <p>수집 상태, 급락, 검색 품질을 합산한 사이트 건강도입니다.</p>
+        </div>
+      </div>
+      <div className="health-ring" aria-label={`평균 운영 점수 ${data.averageScore}점`}>
+        <strong>{data.averageScore}</strong>
+        <span>평균 점수</span>
+      </div>
+      <div className="health-breakdown">
+        <MiniMetric label="좋음" value={data.healthyCount} />
+        <MiniMetric label="주의" value={data.warningCount} />
+        <MiniMetric label="위험" value={data.criticalCount} />
+      </div>
+    </article>
+  );
+}
+
 function GscIssuePanel({ stats }: { stats: ReturnType<typeof getDashboardData>["gscIssueStats"] }) {
   return (
     <article className="panel">
@@ -106,38 +162,6 @@ function GscIssuePanel({ stats }: { stats: ReturnType<typeof getDashboardData>["
                 <p>{stat.statusReason}</p>
               </div>
               <span>{getErrorKindLabel(stat.gscErrorKind)}</span>
-            </div>
-          ))}
-        </div>
-      )}
-    </article>
-  );
-}
-
-function DailyIssuePanel({ stats, staleCount }: { stats: ReturnType<typeof getDashboardData>["dailyIssueStats"]; staleCount: number }) {
-  return (
-    <article className="panel">
-      <div className="panel-heading">
-        <div>
-          <h2>오늘 볼 문제 사이트</h2>
-          <p>권한, API 실패, 48시간 이상 오래된 데이터를 먼저 확인합니다.</p>
-        </div>
-        <span>
-          {formatNumber(stats.length)}개 · 오래됨 {formatNumber(staleCount)}개
-        </span>
-      </div>
-      {stats.length === 0 ? (
-        <p className="muted-text">현재 운영 상태 오류가 없습니다.</p>
-      ) : (
-        <div className="issue-grid">
-          {stats.map((stat) => (
-            <div className="issue-row" key={`${stat.id}-${stat.ga4PropertyId}-daily`}>
-              <div>
-                <strong>{stat.name}</strong>
-                <a href={stat.url}>{formatHost(stat.url)}</a>
-                <p>{stat.statusReason}</p>
-              </div>
-              <span>{stat.statusLabel}</span>
             </div>
           ))}
         </div>
