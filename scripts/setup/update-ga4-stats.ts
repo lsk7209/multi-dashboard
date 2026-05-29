@@ -13,6 +13,9 @@ const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
 
+type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
+type ErrorKind = "permission" | "not_found" | "quota" | "missing_config" | "api_error";
+
 interface MetricSet {
   activeUsers: number;
   sessions: number;
@@ -40,6 +43,12 @@ interface SiteStat {
   gscLast7Days: GscMetricSet;
   gscPrevious7Days: GscMetricSet;
   gscLast30Days: GscMetricSet;
+  ga4Status: CollectionStatus;
+  gscStatus: CollectionStatus;
+  ga4LastSuccessfulFetchAt?: string;
+  gscLastSuccessfulFetchAt?: string;
+  ga4ErrorKind?: ErrorKind;
+  gscErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
 }
@@ -79,6 +88,45 @@ function dateDaysAgo(days: number): string {
   const date = new Date();
   date.setUTCDate(date.getUTCDate() - days);
   return date.toISOString().slice(0, 10);
+}
+
+function classifyError(error: string): ErrorKind {
+  const normalized = error.toLowerCase();
+
+  if (normalized.includes("permission") || normalized.includes("unauthorized") || normalized.includes("forbidden")) {
+    return "permission";
+  }
+
+  if (normalized.includes("not found") || normalized.includes("not_found") || normalized.includes("404")) {
+    return "not_found";
+  }
+
+  if (normalized.includes("quota") || normalized.includes("rate limit") || normalized.includes("429")) {
+    return "quota";
+  }
+
+  if (normalized.includes("missing")) {
+    return "missing_config";
+  }
+
+  return "api_error";
+}
+
+function statusFromError(error: string | undefined, fallback: CollectionStatus): CollectionStatus {
+  if (!error) {
+    return "ok";
+  }
+
+  const kind = classifyError(error);
+  if (kind === "permission" || kind === "not_found") {
+    return "auth_error";
+  }
+
+  if (kind === "missing_config") {
+    return "missing_config";
+  }
+
+  return fallback;
 }
 
 async function fetchGa4Metrics(client: BetaAnalyticsDataClient, propertyId: string, days: number): Promise<MetricSet> {
@@ -176,6 +224,7 @@ async function fetchSiteStat(
   let gscLast30Days = emptyGscMetrics();
   let error: string | undefined;
   let gscError: string | undefined;
+  const collectedAt = new Date().toISOString();
 
   if (!site.ga4PropertyId) {
     error = "Missing ga4PropertyId";
@@ -217,14 +266,22 @@ async function fetchSiteStat(
     gscLast7Days,
     gscPrevious7Days,
     gscLast30Days,
+    ga4Status: statusFromError(error, "api_error"),
+    gscStatus: statusFromError(gscError, "api_error"),
   };
 
   if (error) {
     stat.error = error;
+    stat.ga4ErrorKind = classifyError(error);
+  } else {
+    stat.ga4LastSuccessfulFetchAt = collectedAt;
   }
 
   if (gscError) {
     stat.gscError = gscError;
+    stat.gscErrorKind = classifyError(gscError);
+  } else {
+    stat.gscLastSuccessfulFetchAt = collectedAt;
   }
 
   return stat;

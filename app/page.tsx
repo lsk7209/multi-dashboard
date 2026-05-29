@@ -23,7 +23,7 @@ export default function DashboardPage() {
         <StatusCard label="1일 사용자" value={formatNumber(data.totalLast1Days.activeUsers)} hint="어제 기준 실제 GA4" />
         <StatusCard label="7일 GA4 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint={formatChange(data.totalActiveUsersChange)} />
         <StatusCard label="30일 사용자" value={formatNumber(data.totalLast30Days.activeUsers)} hint={`${formatNumber(data.siteCount)}개 사이트 합산`} />
-        <StatusCard label="확인 필요" value={formatNumber(data.priorityInsights.length)} hint={`GSC 확인 ${data.failedCount}개`} />
+        <StatusCard label="GSC 연결" value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`} hint={`권한 확인 ${data.gscIssueStats.length}개`} />
       </section>
 
       <section className="insight-grid" aria-label="핵심 인사이트">
@@ -35,6 +35,10 @@ export default function DashboardPage() {
 
       <section className="stats-layout">
         <SiteStatsTable stats={data.stats} failedCount={data.failedCount} />
+      </section>
+
+      <section className="stats-layout">
+        <DailyIssuePanel stats={data.dailyIssueStats} staleCount={data.staleCount} />
       </section>
 
       <section className="support-grid" aria-label="보조 정보">
@@ -95,8 +99,41 @@ function GscIssuePanel({ stats }: { stats: ReturnType<typeof getDashboardData>["
               <div>
                 <strong>{stat.name}</strong>
                 <a href={stat.url}>{stat.gscSiteUrl ?? stat.url}</a>
+                <p>{stat.statusReason}</p>
               </div>
-              <span>권한 필요</span>
+              <span>{getErrorKindLabel(stat.gscErrorKind)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function DailyIssuePanel({ stats, staleCount }: { stats: ReturnType<typeof getDashboardData>["dailyIssueStats"]; staleCount: number }) {
+  return (
+    <article className="panel">
+      <div className="panel-heading">
+        <div>
+          <h2>오늘 볼 문제 사이트</h2>
+          <p>권한, API 실패, 48시간 이상 오래된 데이터를 먼저 확인합니다.</p>
+        </div>
+        <span>
+          {formatNumber(stats.length)}개 · 오래됨 {formatNumber(staleCount)}개
+        </span>
+      </div>
+      {stats.length === 0 ? (
+        <p className="muted-text">현재 운영 상태 오류가 없습니다.</p>
+      ) : (
+        <div className="issue-grid">
+          {stats.map((stat) => (
+            <div className="issue-row" key={`${stat.id}-${stat.ga4PropertyId}-daily`}>
+              <div>
+                <strong>{stat.name}</strong>
+                <a href={stat.url}>{formatHost(stat.url)}</a>
+                <p>{stat.statusReason}</p>
+              </div>
+              <span>{stat.statusLabel}</span>
             </div>
           ))}
         </div>
@@ -180,4 +217,12 @@ function formatChange(value: number | null): string {
 
   const prefix = value > 0 ? "+" : "";
   return `${prefix}${formatPercent(value)}`;
+}
+
+function getErrorKindLabel(kind: string | undefined): string {
+  if (kind === "permission") return "권한 없음";
+  if (kind === "not_found") return "속성 없음";
+  if (kind === "quota") return "할당량";
+  if (kind === "missing_config") return "설정 누락";
+  return "API 확인";
 }

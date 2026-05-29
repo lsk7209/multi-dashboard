@@ -103,8 +103,6 @@ export function SiteStatsTable({ stats, failedCount }: { stats: EnrichedSiteStat
 }
 
 function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
-  const hasIssue = Boolean(stat.error || stat.gscError);
-
   return (
     <tr>
       <td>
@@ -124,7 +122,9 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
-        <span className={hasIssue ? "badge badge-error" : "badge"}>{hasIssue ? "확인 필요" : "정상"}</span>
+        <span className={getBadgeClass(stat.operationalStatus)} title={stat.statusReason}>
+          {stat.statusLabel}
+        </span>
       </td>
     </tr>
   );
@@ -139,14 +139,25 @@ function matchesQuery(stat: EnrichedSiteStat, normalizedQuery: string): boolean 
 }
 
 function matchesStatus(stat: EnrichedSiteStat, statusFilter: StatusFilter): boolean {
-  const hasIssue = Boolean(stat.error || stat.gscError);
   if (statusFilter === "issue") {
-    return hasIssue;
+    return stat.operationalStatus !== "normal";
   }
   if (statusFilter === "normal") {
-    return !hasIssue;
+    return stat.operationalStatus === "normal";
   }
   return true;
+}
+
+function getBadgeClass(status: EnrichedSiteStat["operationalStatus"]): string {
+  if (status === "needsPermission") {
+    return "badge badge-error";
+  }
+
+  if (status === "apiError" || status === "stale") {
+    return "badge badge-warning";
+  }
+
+  return "badge";
 }
 
 function getSortValue(stat: EnrichedSiteStat, sortKey: SortKey): number {

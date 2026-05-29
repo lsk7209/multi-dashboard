@@ -335,6 +335,13 @@ h2 {
   text-decoration: none;
 }
 
+.issue-row p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .issue-row span {
   flex: 0 0 auto;
   border-radius: 999px;
@@ -521,6 +528,11 @@ code {
 .badge-error {
   color: var(--warning);
   background: var(--warning-weak);
+}
+
+.badge-warning {
+  color: #7c2d12;
+  background: #ffedd5;
 }
 
 .mini-metric {

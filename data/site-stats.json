@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T23:23:06.227Z",
+  "generatedAt": "2026-05-29T10:13:46.379Z",
   "rangeDays": 7,
   "previousRangeDays": 7,
   "longRangeDays": 30,
@@ -13,14 +13,14 @@
       "last1Days": {
         "activeUsers": 128,
         "sessions": 140,
-        "screenPageViews": 154,
-        "eventCount": 705
+        "screenPageViews": 158,
+        "eventCount": 722
       },
       "last7Days": {
         "activeUsers": 809,
-        "sessions": 877,
-        "screenPageViews": 1066,
-        "eventCount": 4870
+        "sessions": 876,
+        "screenPageViews": 1070,
+        "eventCount": 4887
       },
       "previous7Days": {
         "activeUsers": 482,
@@ -31,8 +31,8 @@
       "last30Days": {
         "activeUsers": 2125,
         "sessions": 2352,
-        "screenPageViews": 3107,
-        "eventCount": 12626
+        "screenPageViews": 3111,
+        "eventCount": 12643
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -51,7 +51,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:10.734Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:10.734Z"
     },
     {
       "id": "tennisfrens",
@@ -60,16 +64,16 @@
       "ga4PropertyId": "534356101",
       "gscSiteUrl": "https://tennisfrens.com/",
       "last1Days": {
-        "activeUsers": 77,
-        "sessions": 83,
-        "screenPageViews": 192,
-        "eventCount": 443
+        "activeUsers": 79,
+        "sessions": 85,
+        "screenPageViews": 225,
+        "eventCount": 518
       },
       "last7Days": {
-        "activeUsers": 799,
-        "sessions": 870,
-        "screenPageViews": 1730,
-        "eventCount": 4607
+        "activeUsers": 801,
+        "sessions": 872,
+        "screenPageViews": 1763,
+        "eventCount": 4682
       },
       "previous7Days": {
         "activeUsers": 268,
@@ -78,10 +82,10 @@
         "eventCount": 1870
       },
       "last30Days": {
-        "activeUsers": 1590,
-        "sessions": 1754,
-        "screenPageViews": 4304,
-        "eventCount": 10179
+        "activeUsers": 1592,
+        "sessions": 1756,
+        "screenPageViews": 4337,
+        "eventCount": 10254
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -101,7 +105,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://tennisfrens.com/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:10.692Z",
+      "gscError": "User does not have sufficient permission for site 'https://tennisfrens.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "haemongdream",
@@ -110,47 +118,51 @@
       "ga4PropertyId": "516256882",
       "gscSiteUrl": "https://haemongdream.com/",
       "last1Days": {
-        "activeUsers": 70,
-        "sessions": 75,
-        "screenPageViews": 89,
-        "eventCount": 303
+        "activeUsers": 80,
+        "sessions": 84,
+        "screenPageViews": 83,
+        "eventCount": 306
       },
       "last7Days": {
-        "activeUsers": 611,
-        "sessions": 649,
-        "screenPageViews": 716,
-        "eventCount": 2542
+        "activeUsers": 591,
+        "sessions": 632,
+        "screenPageViews": 689,
+        "eventCount": 2447
       },
       "previous7Days": {
-        "activeUsers": 776,
-        "sessions": 818,
-        "screenPageViews": 869,
-        "eventCount": 3163
+        "activeUsers": 768,
+        "sessions": 806,
+        "screenPageViews": 861,
+        "eventCount": 3129
       },
       "last30Days": {
-        "activeUsers": 3316,
-        "sessions": 3543,
-        "screenPageViews": 3934,
-        "eventCount": 13853
+        "activeUsers": 3291,
+        "sessions": 3538,
+        "screenPageViews": 3872,
+        "eventCount": 13694
       },
       "gscLast7Days": {
-        "clicks": 16,
-        "impressions": 181,
-        "ctr": 0.08839779005524862,
-        "position": 13.751381215469614
+        "clicks": 13,
+        "impressions": 192,
+        "ctr": 0.06770833333333333,
+        "position": 13.125
       },
       "gscPrevious7Days": {
-        "clicks": 9,
-        "impressions": 285,
-        "ctr": 0.031578947368421054,
-        "position": 10.24561403508772
+        "clicks": 13,
+        "impressions": 272,
+        "ctr": 0.04779411764705882,
+        "position": 10.900735294117647
       },
       "gscLast30Days": {
         "clicks": 48,
-        "impressions": 1050,
-        "ctr": 0.045714285714285714,
-        "position": 10.383809523809523
-      }
+        "impressions": 1055,
+        "ctr": 0.04549763033175355,
+        "position": 10.497630331753555
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:59.816Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:59.816Z"
     },
     {
       "id": "todaypharm",
@@ -161,14 +173,14 @@
       "last1Days": {
         "activeUsers": 123,
         "sessions": 129,
-        "screenPageViews": 153,
-        "eventCount": 604
+        "screenPageViews": 159,
+        "eventCount": 628
       },
       "last7Days": {
         "activeUsers": 519,
-        "sessions": 553,
-        "screenPageViews": 833,
-        "eventCount": 2777
+        "sessions": 552,
+        "screenPageViews": 839,
+        "eventCount": 2801
       },
       "previous7Days": {
         "activeUsers": 124,
@@ -178,9 +190,9 @@
       },
       "last30Days": {
         "activeUsers": 946,
-        "sessions": 1026,
-        "screenPageViews": 1952,
-        "eventCount": 5387
+        "sessions": 1025,
+        "screenPageViews": 1958,
+        "eventCount": 5411
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -199,7 +211,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:10.187Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:10.187Z"
     },
     {
       "id": "ehon365",
@@ -208,16 +224,16 @@
       "ga4PropertyId": "535779756",
       "gscSiteUrl": "https://ehon365.kr/",
       "last1Days": {
-        "activeUsers": 80,
+        "activeUsers": 82,
         "sessions": 84,
-        "screenPageViews": 24,
-        "eventCount": 1134
+        "screenPageViews": 26,
+        "eventCount": 1262
       },
       "last7Days": {
-        "activeUsers": 488,
+        "activeUsers": 490,
         "sessions": 514,
-        "screenPageViews": 87,
-        "eventCount": 6141
+        "screenPageViews": 89,
+        "eventCount": 6269
       },
       "previous7Days": {
         "activeUsers": 45,
@@ -226,10 +242,10 @@
         "eventCount": 529
       },
       "last30Days": {
-        "activeUsers": 572,
+        "activeUsers": 574,
         "sessions": 609,
-        "screenPageViews": 101,
-        "eventCount": 7185
+        "screenPageViews": 103,
+        "eventCount": 7313
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -249,7 +265,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://ehon365.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:10.922Z",
+      "gscError": "User does not have sufficient permission for site 'https://ehon365.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "temon",
@@ -260,14 +280,14 @@
       "last1Days": {
         "activeUsers": 38,
         "sessions": 40,
-        "screenPageViews": 171,
-        "eventCount": 861
+        "screenPageViews": 186,
+        "eventCount": 911
       },
       "last7Days": {
         "activeUsers": 222,
         "sessions": 238,
-        "screenPageViews": 1455,
-        "eventCount": 6200
+        "screenPageViews": 1470,
+        "eventCount": 6250
       },
       "previous7Days": {
         "activeUsers": 231,
@@ -278,8 +298,8 @@
       "last30Days": {
         "activeUsers": 889,
         "sessions": 1000,
-        "screenPageViews": 6004,
-        "eventCount": 27442
+        "screenPageViews": 6019,
+        "eventCount": 27492
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -299,7 +319,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://temon.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:59.573Z",
+      "gscError": "User does not have sufficient permission for site 'https://temon.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "luckyday",
@@ -308,28 +332,28 @@
       "ga4PropertyId": "512019715",
       "gscSiteUrl": "https://luckyday.kr/",
       "last1Days": {
-        "activeUsers": 20,
-        "sessions": 23,
-        "screenPageViews": 23,
-        "eventCount": 82
+        "activeUsers": 28,
+        "sessions": 30,
+        "screenPageViews": 33,
+        "eventCount": 111
       },
       "last7Days": {
-        "activeUsers": 130,
-        "sessions": 137,
-        "screenPageViews": 161,
-        "eventCount": 539
+        "activeUsers": 151,
+        "sessions": 161,
+        "screenPageViews": 187,
+        "eventCount": 625
       },
       "previous7Days": {
-        "activeUsers": 15,
-        "sessions": 17,
-        "screenPageViews": 23,
-        "eventCount": 71
+        "activeUsers": 19,
+        "sessions": 21,
+        "screenPageViews": 25,
+        "eventCount": 84
       },
       "last30Days": {
-        "activeUsers": 189,
-        "sessions": 200,
-        "screenPageViews": 259,
-        "eventCount": 822
+        "activeUsers": 214,
+        "sessions": 228,
+        "screenPageViews": 288,
+        "eventCount": 921
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -349,7 +373,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z",
+      "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "cartain-2",
@@ -360,14 +388,14 @@
       "last1Days": {
         "activeUsers": 28,
         "sessions": 33,
-        "screenPageViews": 30,
-        "eventCount": 115
+        "screenPageViews": 34,
+        "eventCount": 129
       },
       "last7Days": {
         "activeUsers": 127,
         "sessions": 151,
-        "screenPageViews": 187,
-        "eventCount": 669
+        "screenPageViews": 191,
+        "eventCount": 683
       },
       "previous7Days": {
         "activeUsers": 18,
@@ -378,76 +406,31 @@
       "last30Days": {
         "activeUsers": 148,
         "sessions": 177,
-        "screenPageViews": 228,
-        "eventCount": 781
+        "screenPageViews": 232,
+        "eventCount": 795
       },
       "gscLast7Days": {
         "clicks": 2,
-        "impressions": 69,
-        "ctr": 0.028985507246376812,
-        "position": 6.927536231884058
+        "impressions": 77,
+        "ctr": 0.025974025974025976,
+        "position": 6.8441558441558445
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 59,
+        "impressions": 42,
         "ctr": 0,
-        "position": 7.983050847457627
+        "position": 7.428571428571429
       },
       "gscLast30Days": {
         "clicks": 6,
-        "impressions": 210,
-        "ctr": 0.02857142857142857,
-        "position": 8.004761904761905
-      }
-    },
-    {
-      "id": "klick",
-      "name": "블로그 - GA4",
-      "url": "https://klick.kr/",
-      "ga4PropertyId": "515381693",
-      "gscSiteUrl": "https://klick.kr/",
-      "last1Days": {
-        "activeUsers": 26,
-        "sessions": 26,
-        "screenPageViews": 27,
-        "eventCount": 127
+        "impressions": 220,
+        "ctr": 0.02727272727272727,
+        "position": 7.95
       },
-      "last7Days": {
-        "activeUsers": 115,
-        "sessions": 123,
-        "screenPageViews": 132,
-        "eventCount": 504
-      },
-      "previous7Days": {
-        "activeUsers": 435,
-        "sessions": 468,
-        "screenPageViews": 488,
-        "eventCount": 1782
-      },
-      "last30Days": {
-        "activeUsers": 1728,
-        "sessions": 1842,
-        "screenPageViews": 1995,
-        "eventCount": 7228
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 4,
-        "ctr": 0,
-        "position": 1.5
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:13.407Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:13.407Z"
     },
     {
       "id": "klick-2",
@@ -458,14 +441,14 @@
       "last1Days": {
         "activeUsers": 14,
         "sessions": 14,
-        "screenPageViews": 9,
-        "eventCount": 131
+        "screenPageViews": 15,
+        "eventCount": 170
       },
       "last7Days": {
         "activeUsers": 100,
         "sessions": 104,
-        "screenPageViews": 107,
-        "eventCount": 1071
+        "screenPageViews": 113,
+        "eventCount": 1110
       },
       "previous7Days": {
         "activeUsers": 391,
@@ -476,8 +459,8 @@
       "last30Days": {
         "activeUsers": 1345,
         "sessions": 1422,
-        "screenPageViews": 1520,
-        "eventCount": 13391
+        "screenPageViews": 1526,
+        "eventCount": 13430
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -496,7 +479,64 @@
         "impressions": 4,
         "ctr": 0,
         "position": 1.5
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:08.821Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:08.821Z"
+    },
+    {
+      "id": "klick",
+      "name": "블로그 - GA4",
+      "url": "https://klick.kr/",
+      "ga4PropertyId": "515381693",
+      "gscSiteUrl": "https://klick.kr/",
+      "last1Days": {
+        "activeUsers": 8,
+        "sessions": 8,
+        "screenPageViews": 8,
+        "eventCount": 40
+      },
+      "last7Days": {
+        "activeUsers": 98,
+        "sessions": 102,
+        "screenPageViews": 111,
+        "eventCount": 436
+      },
+      "previous7Days": {
+        "activeUsers": 379,
+        "sessions": 409,
+        "screenPageViews": 420,
+        "eventCount": 1544
+      },
+      "last30Days": {
+        "activeUsers": 1661,
+        "sessions": 1767,
+        "screenPageViews": 1915,
+        "eventCount": 6950
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 1.5
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:59.571Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:59.571Z"
     },
     {
       "id": "spinkorea-2",
@@ -506,15 +546,15 @@
       "gscSiteUrl": "https://spinkorea.kr/",
       "last1Days": {
         "activeUsers": 11,
-        "sessions": 14,
-        "screenPageViews": 31,
-        "eventCount": 74
+        "sessions": 15,
+        "screenPageViews": 34,
+        "eventCount": 84
       },
       "last7Days": {
         "activeUsers": 91,
-        "sessions": 100,
-        "screenPageViews": 361,
-        "eventCount": 732
+        "sessions": 101,
+        "screenPageViews": 364,
+        "eventCount": 742
       },
       "previous7Days": {
         "activeUsers": 97,
@@ -524,9 +564,9 @@
       },
       "last30Days": {
         "activeUsers": 187,
-        "sessions": 220,
-        "screenPageViews": 792,
-        "eventCount": 1599
+        "sessions": 221,
+        "screenPageViews": 795,
+        "eventCount": 1609
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -545,7 +585,11 @@
         "impressions": 5,
         "ctr": 0,
         "position": 2
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:11.520Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:11.520Z"
     },
     {
       "id": "picklefriend",
@@ -556,14 +600,14 @@
       "last1Days": {
         "activeUsers": 85,
         "sessions": 87,
-        "screenPageViews": 101,
-        "eventCount": 477
+        "screenPageViews": 106,
+        "eventCount": 491
       },
       "last7Days": {
         "activeUsers": 85,
         "sessions": 87,
-        "screenPageViews": 101,
-        "eventCount": 477
+        "screenPageViews": 106,
+        "eventCount": 491
       },
       "previous7Days": {
         "activeUsers": 0,
@@ -574,8 +618,8 @@
       "last30Days": {
         "activeUsers": 85,
         "sessions": 87,
-        "screenPageViews": 101,
-        "eventCount": 477
+        "screenPageViews": 106,
+        "eventCount": 491
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -594,7 +638,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:22.377Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:22.377Z"
     },
     {
       "id": "tasko-2",
@@ -606,13 +654,13 @@
         "activeUsers": 13,
         "sessions": 13,
         "screenPageViews": 20,
-        "eventCount": 64
+        "eventCount": 67
       },
       "last7Days": {
         "activeUsers": 51,
         "sessions": 57,
         "screenPageViews": 94,
-        "eventCount": 299
+        "eventCount": 302
       },
       "previous7Days": {
         "activeUsers": 60,
@@ -624,7 +672,7 @@
         "activeUsers": 271,
         "sessions": 305,
         "screenPageViews": 458,
-        "eventCount": 1415
+        "eventCount": 1418
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -634,16 +682,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:07.769Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:07.769Z"
     },
     {
       "id": "mbti-tasko",
@@ -655,13 +707,13 @@
         "activeUsers": 13,
         "sessions": 13,
         "screenPageViews": 20,
-        "eventCount": 64
+        "eventCount": 67
       },
       "last7Days": {
         "activeUsers": 51,
         "sessions": 57,
         "screenPageViews": 94,
-        "eventCount": 299
+        "eventCount": 302
       },
       "previous7Days": {
         "activeUsers": 60,
@@ -673,7 +725,7 @@
         "activeUsers": 271,
         "sessions": 305,
         "screenPageViews": 458,
-        "eventCount": 1415
+        "eventCount": 1418
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -692,7 +744,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:07.887Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:07.887Z"
     },
     {
       "id": "petjigi",
@@ -704,13 +760,13 @@
         "activeUsers": 8,
         "sessions": 12,
         "screenPageViews": 23,
-        "eventCount": 149
+        "eventCount": 158
       },
       "last7Days": {
         "activeUsers": 49,
         "sessions": 56,
         "screenPageViews": 87,
-        "eventCount": 366
+        "eventCount": 375
       },
       "previous7Days": {
         "activeUsers": 19,
@@ -722,13 +778,13 @@
         "activeUsers": 67,
         "sessions": 77,
         "screenPageViews": 147,
-        "eventCount": 581
+        "eventCount": 590
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
       },
       "gscPrevious7Days": {
         "clicks": 0,
@@ -737,11 +793,15 @@
         "position": 0
       },
       "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
-      }
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:22.147Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:22.147Z"
     },
     {
       "id": "tasko",
@@ -750,28 +810,28 @@
       "ga4PropertyId": "511810052",
       "gscSiteUrl": "https://tasko.kr/",
       "last1Days": {
-        "activeUsers": 15,
-        "sessions": 15,
-        "screenPageViews": 20,
-        "eventCount": 64
+        "activeUsers": 8,
+        "sessions": 8,
+        "screenPageViews": 10,
+        "eventCount": 35
       },
       "last7Days": {
-        "activeUsers": 38,
+        "activeUsers": 39,
         "sessions": 40,
-        "screenPageViews": 57,
-        "eventCount": 176
+        "screenPageViews": 53,
+        "eventCount": 174
       },
       "previous7Days": {
-        "activeUsers": 59,
-        "sessions": 62,
-        "screenPageViews": 92,
-        "eventCount": 276
+        "activeUsers": 56,
+        "sessions": 60,
+        "screenPageViews": 89,
+        "eventCount": 264
       },
       "last30Days": {
         "activeUsers": 257,
-        "sessions": 278,
+        "sessions": 277,
         "screenPageViews": 392,
-        "eventCount": 1185
+        "eventCount": 1186
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -781,16 +841,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z"
     },
     {
       "id": "2mlab-2",
@@ -801,14 +865,14 @@
       "last1Days": {
         "activeUsers": 7,
         "sessions": 7,
-        "screenPageViews": 5,
-        "eventCount": 21
+        "screenPageViews": 7,
+        "eventCount": 27
       },
       "last7Days": {
         "activeUsers": 26,
         "sessions": 26,
-        "screenPageViews": 26,
-        "eventCount": 105
+        "screenPageViews": 28,
+        "eventCount": 111
       },
       "previous7Days": {
         "activeUsers": 51,
@@ -819,8 +883,8 @@
       "last30Days": {
         "activeUsers": 163,
         "sessions": 179,
-        "screenPageViews": 178,
-        "eventCount": 720
+        "screenPageViews": 180,
+        "eventCount": 726
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -830,16 +894,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 3,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:11.298Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:11.298Z"
     },
     {
       "id": "askore",
@@ -851,13 +919,13 @@
         "activeUsers": 3,
         "sessions": 3,
         "screenPageViews": 3,
-        "eventCount": 11
+        "eventCount": 12
       },
       "last7Days": {
         "activeUsers": 26,
         "sessions": 27,
         "screenPageViews": 46,
-        "eventCount": 121
+        "eventCount": 122
       },
       "previous7Days": {
         "activeUsers": 12,
@@ -869,26 +937,83 @@
         "activeUsers": 45,
         "sessions": 61,
         "screenPageViews": 119,
-        "eventCount": 277
+        "eventCount": 278
       },
       "gscLast7Days": {
-        "clicks": 15,
+        "clicks": 14,
         "impressions": 748,
-        "ctr": 0.020053475935828877,
-        "position": 7.483957219251337
+        "ctr": 0.01871657754010695,
+        "position": 7.574866310160428
       },
       "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 55,
-        "ctr": 0,
-        "position": 7.109090909090909
+        "clicks": 5,
+        "impressions": 198,
+        "ctr": 0.025252525252525252,
+        "position": 7.207070707070707
       },
       "gscLast30Days": {
-        "clicks": 15,
-        "impressions": 807,
-        "ctr": 0.01858736059479554,
-        "position": 7.436183395291202
-      }
+        "clicks": 19,
+        "impressions": 950,
+        "ctr": 0.02,
+        "position": 7.478947368421053
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:17.351Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:17.351Z"
+    },
+    {
+      "id": "fastjob",
+      "name": "패스트잡 - GA4",
+      "url": "https://fastjob.kr/",
+      "ga4PropertyId": "513769879",
+      "gscSiteUrl": "https://fastjob.kr/",
+      "last1Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 4,
+        "eventCount": 16
+      },
+      "last7Days": {
+        "activeUsers": 25,
+        "sessions": 26,
+        "screenPageViews": 28,
+        "eventCount": 97
+      },
+      "previous7Days": {
+        "activeUsers": 22,
+        "sessions": 24,
+        "screenPageViews": 26,
+        "eventCount": 88
+      },
+      "last30Days": {
+        "activeUsers": 169,
+        "sessions": 181,
+        "screenPageViews": 210,
+        "eventCount": 656
+      },
+      "gscLast7Days": {
+        "clicks": 6,
+        "impressions": 546,
+        "ctr": 0.01098901098901099,
+        "position": 14.66117216117216
+      },
+      "gscPrevious7Days": {
+        "clicks": 11,
+        "impressions": 958,
+        "ctr": 0.011482254697286013,
+        "position": 9.24634655532359
+      },
+      "gscLast30Days": {
+        "clicks": 36,
+        "impressions": 4086,
+        "ctr": 0.00881057268722467,
+        "position": 9.934654919236417
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:59.359Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:59.359Z"
     },
     {
       "id": "notebook-klick-2",
@@ -937,56 +1062,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
-    },
-    {
-      "id": "fastjob",
-      "name": "패스트잡 - GA4",
-      "url": "https://fastjob.kr/",
-      "ga4PropertyId": "513769879",
-      "gscSiteUrl": "https://fastjob.kr/",
-      "last1Days": {
-        "activeUsers": 8,
-        "sessions": 8,
-        "screenPageViews": 9,
-        "eventCount": 31
       },
-      "last7Days": {
-        "activeUsers": 24,
-        "sessions": 26,
-        "screenPageViews": 28,
-        "eventCount": 95
-      },
-      "previous7Days": {
-        "activeUsers": 22,
-        "sessions": 23,
-        "screenPageViews": 25,
-        "eventCount": 85
-      },
-      "last30Days": {
-        "activeUsers": 171,
-        "sessions": 183,
-        "screenPageViews": 212,
-        "eventCount": 663
-      },
-      "gscLast7Days": {
-        "clicks": 6,
-        "impressions": 517,
-        "ctr": 0.01160541586073501,
-        "position": 13.994197292069632
-      },
-      "gscPrevious7Days": {
-        "clicks": 10,
-        "impressions": 1044,
-        "ctr": 0.009578544061302681,
-        "position": 9.064176245210728
-      },
-      "gscLast30Days": {
-        "clicks": 39,
-        "impressions": 4173,
-        "ctr": 0.009345794392523364,
-        "position": 9.68511861969806
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:21.614Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:21.614Z"
     },
     {
       "id": "softwa",
@@ -995,96 +1075,51 @@
       "ga4PropertyId": "519577510",
       "gscSiteUrl": "https://softwa.kr/",
       "last1Days": {
-        "activeUsers": 5,
-        "sessions": 5,
-        "screenPageViews": 11,
-        "eventCount": 26
+        "activeUsers": 3,
+        "sessions": 4,
+        "screenPageViews": 5,
+        "eventCount": 16
       },
       "last7Days": {
-        "activeUsers": 23,
-        "sessions": 25,
-        "screenPageViews": 42,
-        "eventCount": 117
+        "activeUsers": 24,
+        "sessions": 27,
+        "screenPageViews": 43,
+        "eventCount": 124
       },
       "previous7Days": {
         "activeUsers": 16,
-        "sessions": 18,
-        "screenPageViews": 26,
-        "eventCount": 86
+        "sessions": 17,
+        "screenPageViews": 27,
+        "eventCount": 83
       },
       "last30Days": {
-        "activeUsers": 73,
-        "sessions": 80,
-        "screenPageViews": 117,
-        "eventCount": 359
+        "activeUsers": 76,
+        "sessions": 84,
+        "screenPageViews": 122,
+        "eventCount": 375
       },
       "gscLast7Days": {
-        "clicks": 5,
-        "impressions": 153,
-        "ctr": 0.032679738562091505,
-        "position": 10.235294117647058
+        "clicks": 4,
+        "impressions": 181,
+        "ctr": 0.022099447513812154,
+        "position": 9.966850828729282
       },
       "gscPrevious7Days": {
-        "clicks": 4,
-        "impressions": 66,
-        "ctr": 0.06060606060606061,
-        "position": 11.121212121212121
+        "clicks": 5,
+        "impressions": 83,
+        "ctr": 0.060240963855421686,
+        "position": 10.397590361445783
       },
       "gscLast30Days": {
         "clicks": 9,
-        "impressions": 231,
-        "ctr": 0.03896103896103896,
-        "position": 11
-      }
-    },
-    {
-      "id": "nicewomen",
-      "name": "나이스우먼 - GA4",
-      "url": "https://nicewomen.kr/",
-      "ga4PropertyId": "524548131",
-      "gscSiteUrl": "https://nicewomen.kr/",
-      "last1Days": {
-        "activeUsers": 1,
-        "sessions": 1,
-        "screenPageViews": 1,
-        "eventCount": 5
+        "impressions": 278,
+        "ctr": 0.03237410071942446,
+        "position": 10.661870503597122
       },
-      "last7Days": {
-        "activeUsers": 19,
-        "sessions": 19,
-        "screenPageViews": 19,
-        "eventCount": 67
-      },
-      "previous7Days": {
-        "activeUsers": 26,
-        "sessions": 26,
-        "screenPageViews": 27,
-        "eventCount": 85
-      },
-      "last30Days": {
-        "activeUsers": 89,
-        "sessions": 92,
-        "screenPageViews": 97,
-        "eventCount": 322
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 0,
-        "ctr": 0,
-        "position": 0
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:02.227Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:02.227Z"
     },
     {
       "id": "healthgotoo",
@@ -1093,28 +1128,28 @@
       "ga4PropertyId": "517066030",
       "gscSiteUrl": "https://healthgotoo.com/",
       "last1Days": {
-        "activeUsers": 4,
-        "sessions": 4,
-        "screenPageViews": 5,
-        "eventCount": 17
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 4,
+        "eventCount": 14
       },
       "last7Days": {
-        "activeUsers": 18,
-        "sessions": 19,
-        "screenPageViews": 21,
-        "eventCount": 75
+        "activeUsers": 20,
+        "sessions": 21,
+        "screenPageViews": 24,
+        "eventCount": 85
       },
       "previous7Days": {
-        "activeUsers": 22,
-        "sessions": 23,
-        "screenPageViews": 24,
-        "eventCount": 86
+        "activeUsers": 20,
+        "sessions": 21,
+        "screenPageViews": 22,
+        "eventCount": 78
       },
       "last30Days": {
-        "activeUsers": 74,
-        "sessions": 85,
-        "screenPageViews": 118,
-        "eventCount": 373
+        "activeUsers": 77,
+        "sessions": 88,
+        "screenPageViews": 122,
+        "eventCount": 387
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1124,16 +1159,73 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
         "position": 6
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:01.206Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:01.206Z"
+    },
+    {
+      "id": "nicewomen",
+      "name": "나이스우먼 - GA4",
+      "url": "https://nicewomen.kr/",
+      "ga4PropertyId": "524548131",
+      "gscSiteUrl": "https://nicewomen.kr/",
+      "last1Days": {
+        "activeUsers": 5,
+        "sessions": 5,
+        "screenPageViews": 7,
+        "eventCount": 22
+      },
+      "last7Days": {
+        "activeUsers": 20,
+        "sessions": 20,
+        "screenPageViews": 22,
+        "eventCount": 77
+      },
+      "previous7Days": {
+        "activeUsers": 26,
+        "sessions": 26,
+        "screenPageViews": 27,
+        "eventCount": 84
+      },
+      "last30Days": {
+        "activeUsers": 94,
+        "sessions": 97,
+        "screenPageViews": 104,
+        "eventCount": 344
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:06.037Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:06.037Z"
     },
     {
       "id": "car-luckyday",
@@ -1144,14 +1236,14 @@
       "last1Days": {
         "activeUsers": 3,
         "sessions": 3,
-        "screenPageViews": 2,
-        "eventCount": 8
+        "screenPageViews": 3,
+        "eventCount": 17
       },
       "last7Days": {
         "activeUsers": 18,
         "sessions": 32,
-        "screenPageViews": 152,
-        "eventCount": 709
+        "screenPageViews": 153,
+        "eventCount": 718
       },
       "previous7Days": {
         "activeUsers": 22,
@@ -1162,8 +1254,8 @@
       "last30Days": {
         "activeUsers": 39,
         "sessions": 64,
-        "screenPageViews": 212,
-        "eventCount": 1016
+        "screenPageViews": 213,
+        "eventCount": 1025
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1183,7 +1275,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://car.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:21.138Z",
+      "gscError": "User does not have sufficient permission for site 'https://car.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "dogspang-2",
@@ -1192,47 +1288,51 @@
       "ga4PropertyId": "536564400",
       "gscSiteUrl": "https://dogspang.kr/",
       "last1Days": {
-        "activeUsers": 1,
-        "sessions": 1,
-        "screenPageViews": 2,
-        "eventCount": 5
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 12
       },
       "last7Days": {
         "activeUsers": 16,
-        "sessions": 17,
-        "screenPageViews": 19,
-        "eventCount": 76
+        "sessions": 16,
+        "screenPageViews": 18,
+        "eventCount": 73
       },
       "previous7Days": {
         "activeUsers": 31,
-        "sessions": 32,
-        "screenPageViews": 36,
-        "eventCount": 135
+        "sessions": 33,
+        "screenPageViews": 37,
+        "eventCount": 136
       },
       "last30Days": {
-        "activeUsers": 87,
-        "sessions": 97,
-        "screenPageViews": 124,
-        "eventCount": 433
+        "activeUsers": 90,
+        "sessions": 100,
+        "screenPageViews": 127,
+        "eventCount": 445
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 22,
+        "impressions": 10,
         "ctr": 0,
-        "position": 17.318181818181817
+        "position": 21.2
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 41,
+        "impressions": 45,
         "ctr": 0,
-        "position": 12
+        "position": 13.066666666666666
       },
       "gscLast30Days": {
         "clicks": 1,
-        "impressions": 105,
-        "ctr": 0.009523809523809525,
-        "position": 12.17142857142857
-      }
+        "impressions": 103,
+        "ctr": 0.009708737864077669,
+        "position": 12.310679611650485
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:14.130Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:14.130Z"
     },
     {
       "id": "nexttech7",
@@ -1244,13 +1344,13 @@
         "activeUsers": 3,
         "sessions": 3,
         "screenPageViews": 5,
-        "eventCount": 15
+        "eventCount": 16
       },
       "last7Days": {
         "activeUsers": 14,
         "sessions": 14,
         "screenPageViews": 22,
-        "eventCount": 71
+        "eventCount": 72
       },
       "previous7Days": {
         "activeUsers": 21,
@@ -1262,75 +1362,30 @@
         "activeUsers": 63,
         "sessions": 64,
         "screenPageViews": 109,
-        "eventCount": 343
+        "eventCount": 344
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 32,
+        "impressions": 27,
         "ctr": 0,
-        "position": 12.09375
+        "position": 8.333333333333332
       },
       "gscPrevious7Days": {
         "clicks": 1,
-        "impressions": 31,
-        "ctr": 0.03225806451612903,
-        "position": 8.193548387096774
+        "impressions": 33,
+        "ctr": 0.030303030303030304,
+        "position": 11.606060606060606
       },
       "gscLast30Days": {
         "clicks": 2,
-        "impressions": 186,
-        "ctr": 0.010752688172043012,
-        "position": 9.35483870967742
-      }
-    },
-    {
-      "id": "gover",
-      "name": "보조금365 - GA4",
-      "url": "https://gover.kr/",
-      "ga4PropertyId": "523266152",
-      "gscSiteUrl": "https://gover.kr/",
-      "last1Days": {
-        "activeUsers": 1,
-        "sessions": 1,
-        "screenPageViews": 1,
-        "eventCount": 4
+        "impressions": 185,
+        "ctr": 0.010810810810810811,
+        "position": 9.356756756756758
       },
-      "last7Days": {
-        "activeUsers": 12,
-        "sessions": 12,
-        "screenPageViews": 16,
-        "eventCount": 62
-      },
-      "previous7Days": {
-        "activeUsers": 24,
-        "sessions": 24,
-        "screenPageViews": 33,
-        "eventCount": 118
-      },
-      "last30Days": {
-        "activeUsers": 69,
-        "sessions": 70,
-        "screenPageViews": 149,
-        "eventCount": 443
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 6,
-        "ctr": 0,
-        "position": 15.333333333333334
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 30,
-        "ctr": 0,
-        "position": 14.9
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 56,
-        "ctr": 0,
-        "position": 14.107142857142858
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:08.567Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:08.567Z"
     },
     {
       "id": "richyou",
@@ -1342,13 +1397,13 @@
         "activeUsers": 2,
         "sessions": 2,
         "screenPageViews": 4,
-        "eventCount": 11
+        "eventCount": 13
       },
       "last7Days": {
         "activeUsers": 12,
         "sessions": 12,
         "screenPageViews": 14,
-        "eventCount": 45
+        "eventCount": 47
       },
       "previous7Days": {
         "activeUsers": 11,
@@ -1360,13 +1415,13 @@
         "activeUsers": 23,
         "sessions": 23,
         "screenPageViews": 25,
-        "eventCount": 80
+        "eventCount": 82
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 1,
         "ctr": 0,
-        "position": 0
+        "position": 74
       },
       "gscPrevious7Days": {
         "clicks": 0,
@@ -1376,108 +1431,14 @@
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 1,
         "ctr": 0,
-        "position": 0
-      }
-    },
-    {
-      "id": "knewstory",
-      "name": "케이뉴스스토리 - GA4",
-      "url": "https://knewstory.kr/",
-      "ga4PropertyId": "511978714",
-      "gscSiteUrl": "https://knewstory.kr/",
-      "last1Days": {
-        "activeUsers": 2,
-        "sessions": 2,
-        "screenPageViews": 1,
-        "eventCount": 4
+        "position": 74
       },
-      "last7Days": {
-        "activeUsers": 11,
-        "sessions": 11,
-        "screenPageViews": 15,
-        "eventCount": 44
-      },
-      "previous7Days": {
-        "activeUsers": 16,
-        "sessions": 16,
-        "screenPageViews": 27,
-        "eventCount": 78
-      },
-      "last30Days": {
-        "activeUsers": 63,
-        "sessions": 68,
-        "screenPageViews": 90,
-        "eventCount": 274
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 4,
-        "ctr": 0,
-        "position": 36.75
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 4,
-        "ctr": 0,
-        "position": 45.25
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 10,
-        "ctr": 0,
-        "position": 42
-      }
-    },
-    {
-      "id": "legalser",
-      "name": "legalser - GA4",
-      "url": "https://legalser.com/",
-      "ga4PropertyId": "519536919",
-      "gscSiteUrl": "https://legalser.com/",
-      "last1Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
-      },
-      "last7Days": {
-        "activeUsers": 11,
-        "sessions": 11,
-        "screenPageViews": 15,
-        "eventCount": 41
-      },
-      "previous7Days": {
-        "activeUsers": 2,
-        "sessions": 2,
-        "screenPageViews": 2,
-        "eventCount": 7
-      },
-      "last30Days": {
-        "activeUsers": 23,
-        "sessions": 25,
-        "screenPageViews": 36,
-        "eventCount": 99
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 9,
-        "ctr": 0,
-        "position": 57
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 8,
-        "ctr": 0,
-        "position": 43.875
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 37,
-        "ctr": 0,
-        "position": 35.5945945945946
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:19.671Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:19.671Z"
     },
     {
       "id": "sellerpit-2",
@@ -1511,22 +1472,26 @@
       },
       "gscLast7Days": {
         "clicks": 1,
-        "impressions": 14,
-        "ctr": 0.07142857142857142,
-        "position": 16
+        "impressions": 10,
+        "ctr": 0.1,
+        "position": 14.5
       },
       "gscPrevious7Days": {
         "clicks": 3,
-        "impressions": 31,
-        "ctr": 0.0967741935483871,
-        "position": 6.419354838709677
+        "impressions": 32,
+        "ctr": 0.09375,
+        "position": 7.6875
       },
       "gscLast30Days": {
         "clicks": 8,
-        "impressions": 264,
-        "ctr": 0.030303030303030304,
-        "position": 10.090909090909092
-      }
+        "impressions": 256,
+        "ctr": 0.03125,
+        "position": 10.19921875
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:09.216Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:09.216Z"
     },
     {
       "id": "today2424",
@@ -1566,16 +1531,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:09.906Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:09.906Z"
     },
     {
       "id": "discparty",
@@ -1584,10 +1553,10 @@
       "ga4PropertyId": "513733245",
       "gscSiteUrl": "https://discparty.com/",
       "last1Days": {
-        "activeUsers": 2,
-        "sessions": 2,
-        "screenPageViews": 4,
-        "eventCount": 10
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
       },
       "last7Days": {
         "activeUsers": 10,
@@ -1596,133 +1565,145 @@
         "eventCount": 46
       },
       "previous7Days": {
-        "activeUsers": 12,
-        "sessions": 12,
-        "screenPageViews": 12,
-        "eventCount": 38
+        "activeUsers": 11,
+        "sessions": 11,
+        "screenPageViews": 11,
+        "eventCount": 36
       },
       "last30Days": {
-        "activeUsers": 49,
-        "sessions": 60,
-        "screenPageViews": 95,
-        "eventCount": 258
+        "activeUsers": 50,
+        "sessions": 61,
+        "screenPageViews": 96,
+        "eventCount": 262
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 34,
-        "ctr": 0,
-        "position": 8.5
+        "clicks": 1,
+        "impressions": 36,
+        "ctr": 0.027777777777777776,
+        "position": 11.555555555555555
       },
       "gscPrevious7Days": {
         "clicks": 1,
-        "impressions": 43,
-        "ctr": 0.023255813953488372,
-        "position": 10.55813953488372
+        "impressions": 38,
+        "ctr": 0.02631578947368421,
+        "position": 10.447368421052632
       },
       "gscLast30Days": {
-        "clicks": 3,
-        "impressions": 191,
-        "ctr": 0.015706806282722512,
-        "position": 9.408376963350785
-      }
+        "clicks": 4,
+        "impressions": 187,
+        "ctr": 0.0213903743315508,
+        "position": 9.882352941176471
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:59.532Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:59.532Z"
     },
     {
-      "id": "etique",
-      "name": "매너팡팡 - GA4",
-      "url": "https://etique.kr/",
-      "ga4PropertyId": "521236824",
-      "gscSiteUrl": "https://etique.kr/",
+      "id": "legalser",
+      "name": "legalser - GA4",
+      "url": "https://legalser.com/",
+      "ga4PropertyId": "519536919",
+      "gscSiteUrl": "https://legalser.com/",
       "last1Days": {
-        "activeUsers": 2,
-        "sessions": 2,
-        "screenPageViews": 2,
-        "eventCount": 7
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
       },
       "last7Days": {
         "activeUsers": 10,
         "sessions": 10,
-        "screenPageViews": 12,
-        "eventCount": 42
+        "screenPageViews": 14,
+        "eventCount": 38
       },
       "previous7Days": {
-        "activeUsers": 15,
-        "sessions": 17,
-        "screenPageViews": 21,
-        "eventCount": 70
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 4,
+        "eventCount": 14
       },
       "last30Days": {
-        "activeUsers": 83,
-        "sessions": 88,
-        "screenPageViews": 110,
-        "eventCount": 364
+        "activeUsers": 23,
+        "sessions": 25,
+        "screenPageViews": 35,
+        "eventCount": 99
       },
       "gscLast7Days": {
-        "clicks": 1,
-        "impressions": 120,
-        "ctr": 0.008333333333333333,
-        "position": 11.783333333333333
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 57.7
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 87,
+        "impressions": 8,
         "ctr": 0,
-        "position": 14.03448275862069
+        "position": 45.125
       },
       "gscLast30Days": {
-        "clicks": 1,
-        "impressions": 498,
-        "ctr": 0.002008032128514056,
-        "position": 11.594377510040161
-      }
+        "clicks": 0,
+        "impressions": 39,
+        "ctr": 0,
+        "position": 35.69230769230769
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:02.848Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:02.848Z"
     },
     {
-      "id": "yesa",
-      "name": "yesa.kr",
-      "url": "https://yesa.kr/",
-      "ga4PropertyId": "539176876",
-      "gscSiteUrl": "https://yesa.kr/",
+      "id": "gover",
+      "name": "보조금365 - GA4",
+      "url": "https://gover.kr/",
+      "ga4PropertyId": "523266152",
+      "gscSiteUrl": "https://gover.kr/",
       "last1Days": {
-        "activeUsers": 5,
-        "sessions": 9,
-        "screenPageViews": 24,
-        "eventCount": 59
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 3
       },
       "last7Days": {
         "activeUsers": 10,
-        "sessions": 29,
-        "screenPageViews": 81,
-        "eventCount": 195
+        "sessions": 10,
+        "screenPageViews": 11,
+        "eventCount": 48
       },
       "previous7Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
+        "activeUsers": 22,
+        "sessions": 22,
+        "screenPageViews": 31,
+        "eventCount": 108
       },
       "last30Days": {
-        "activeUsers": 10,
-        "sessions": 29,
-        "screenPageViews": 81,
-        "eventCount": 195
+        "activeUsers": 69,
+        "sessions": 70,
+        "screenPageViews": 148,
+        "eventCount": 441
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 5,
         "ctr": 0,
-        "position": 0
+        "position": 14.6
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 25,
         "ctr": 0,
-        "position": 0
+        "position": 8.64
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 55,
         "ctr": 0,
-        "position": 0
-      }
+        "position": 14.327272727272728
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:05.098Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:05.098Z"
     },
     {
       "id": "autoscares-2",
@@ -1768,10 +1749,14 @@
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 23,
+        "impressions": 17,
         "ctr": 0,
-        "position": 8.173913043478262
-      }
+        "position": 7.411764705882353
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:16.092Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:16.092Z"
     },
     {
       "id": "roadways",
@@ -1811,16 +1796,126 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:18.498Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:18.498Z"
+    },
+    {
+      "id": "yesa",
+      "name": "yesa.kr",
+      "url": "https://yesa.kr/",
+      "ga4PropertyId": "539176876",
+      "gscSiteUrl": "https://yesa.kr/",
+      "last1Days": {
+        "activeUsers": 4,
+        "sessions": 8,
+        "screenPageViews": 25,
+        "eventCount": 61
+      },
+      "last7Days": {
+        "activeUsers": 9,
+        "sessions": 28,
+        "screenPageViews": 82,
+        "eventCount": 197
+      },
+      "previous7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last30Days": {
+        "activeUsers": 9,
+        "sessions": 28,
+        "screenPageViews": 82,
+        "eventCount": 197
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:22.317Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:22.317Z"
+    },
+    {
+      "id": "etique",
+      "name": "매너팡팡 - GA4",
+      "url": "https://etique.kr/",
+      "ga4PropertyId": "521236824",
+      "gscSiteUrl": "https://etique.kr/",
+      "last1Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 2,
+        "eventCount": 5
+      },
+      "last7Days": {
+        "activeUsers": 8,
+        "sessions": 8,
+        "screenPageViews": 11,
+        "eventCount": 34
+      },
+      "previous7Days": {
+        "activeUsers": 13,
+        "sessions": 15,
+        "screenPageViews": 18,
+        "eventCount": 61
+      },
+      "last30Days": {
+        "activeUsers": 79,
+        "sessions": 84,
+        "screenPageViews": 105,
+        "eventCount": 346
+      },
+      "gscLast7Days": {
+        "clicks": 1,
+        "impressions": 145,
+        "ctr": 0.006896551724137931,
+        "position": 12.006896551724138
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 83,
+        "ctr": 0,
+        "position": 14.265060240963855
+      },
+      "gscLast30Days": {
+        "clicks": 1,
+        "impressions": 514,
+        "ctr": 0.0019455252918287938,
+        "position": 11.735408560311283
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:04.173Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:04.173Z"
     },
     {
       "id": "ezfunnel",
@@ -1832,13 +1927,13 @@
         "activeUsers": 2,
         "sessions": 3,
         "screenPageViews": 5,
-        "eventCount": 15
+        "eventCount": 16
       },
       "last7Days": {
         "activeUsers": 8,
         "sessions": 9,
         "screenPageViews": 14,
-        "eventCount": 42
+        "eventCount": 43
       },
       "previous7Days": {
         "activeUsers": 7,
@@ -1850,7 +1945,7 @@
         "activeUsers": 21,
         "sessions": 22,
         "screenPageViews": 32,
-        "eventCount": 102
+        "eventCount": 103
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1869,7 +1964,11 @@
         "impressions": 2,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:11.523Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:11.523Z"
     },
     {
       "id": "saju-tasko",
@@ -1919,7 +2018,64 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://saju.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:21.814Z",
+      "gscError": "User does not have sufficient permission for site 'https://saju.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
+    },
+    {
+      "id": "knewstory",
+      "name": "케이뉴스스토리 - GA4",
+      "url": "https://knewstory.kr/",
+      "ga4PropertyId": "511978714",
+      "gscSiteUrl": "https://knewstory.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last7Days": {
+        "activeUsers": 7,
+        "sessions": 7,
+        "screenPageViews": 10,
+        "eventCount": 28
+      },
+      "previous7Days": {
+        "activeUsers": 16,
+        "sessions": 16,
+        "screenPageViews": 26,
+        "eventCount": 76
+      },
+      "last30Days": {
+        "activeUsers": 62,
+        "sessions": 67,
+        "screenPageViews": 88,
+        "eventCount": 269
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 23
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 59
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 35.07692307692308
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z"
     },
     {
       "id": "phone-luckyday",
@@ -1968,56 +2124,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
-    },
-    {
-      "id": "trave",
-      "name": "여행브이 - GA4",
-      "url": "https://trave.kr/",
-      "ga4PropertyId": "521243855",
-      "gscSiteUrl": "https://trave.kr/",
-      "last1Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
       },
-      "last7Days": {
-        "activeUsers": 5,
-        "sessions": 5,
-        "screenPageViews": 6,
-        "eventCount": 18
-      },
-      "previous7Days": {
-        "activeUsers": 8,
-        "sessions": 8,
-        "screenPageViews": 11,
-        "eventCount": 36
-      },
-      "last30Days": {
-        "activeUsers": 414,
-        "sessions": 437,
-        "screenPageViews": 563,
-        "eventCount": 1860
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 4,
-        "ctr": 0,
-        "position": 12
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 3,
-        "ctr": 0,
-        "position": 8.333333333333332
-      },
-      "gscLast30Days": {
-        "clicks": 1,
-        "impressions": 9,
-        "ctr": 0.1111111111111111,
-        "position": 10.333333333333334
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:20.781Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:20.781Z"
     },
     {
       "id": "runmania",
@@ -2066,7 +2177,11 @@
         "impressions": 1,
         "ctr": 0,
         "position": 4
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:07.624Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:07.624Z"
     },
     {
       "id": "chatgipt-3",
@@ -2099,23 +2214,27 @@
         "eventCount": 84
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 5,
-        "ctr": 0,
-        "position": 8.4
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": 0.16666666666666666,
+        "position": 7.666666666666667
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 12,
+        "impressions": 6,
         "ctr": 0,
-        "position": 5.5
+        "position": 5.666666666666667
       },
       "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 49,
-        "ctr": 0,
-        "position": 7.775510204081633
-      }
+        "clicks": 1,
+        "impressions": 36,
+        "ctr": 0.027777777777777776,
+        "position": 7.861111111111111
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:09.358Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:09.358Z"
     },
     {
       "id": "certifi",
@@ -2126,14 +2245,14 @@
       "last1Days": {
         "activeUsers": 2,
         "sessions": 2,
-        "screenPageViews": 2,
-        "eventCount": 7
+        "screenPageViews": 3,
+        "eventCount": 10
       },
       "last7Days": {
         "activeUsers": 5,
         "sessions": 5,
-        "screenPageViews": 5,
-        "eventCount": 20
+        "screenPageViews": 6,
+        "eventCount": 23
       },
       "previous7Days": {
         "activeUsers": 9,
@@ -2144,8 +2263,8 @@
       "last30Days": {
         "activeUsers": 14,
         "sessions": 21,
-        "screenPageViews": 56,
-        "eventCount": 198
+        "screenPageViews": 57,
+        "eventCount": 201
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -2164,14 +2283,18 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:20.036Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:20.036Z"
     },
     {
-      "id": "insupang",
-      "name": "insupang - GA4",
-      "url": "https://insupang.com/",
-      "ga4PropertyId": "517897382",
-      "gscSiteUrl": "https://insupang.com/",
+      "id": "trave",
+      "name": "여행브이 - GA4",
+      "url": "https://trave.kr/",
+      "ga4PropertyId": "521243855",
+      "gscSiteUrl": "https://trave.kr/",
       "last1Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -2185,35 +2308,39 @@
         "eventCount": 15
       },
       "previous7Days": {
-        "activeUsers": 3,
-        "sessions": 3,
-        "screenPageViews": 3,
-        "eventCount": 10
+        "activeUsers": 7,
+        "sessions": 7,
+        "screenPageViews": 9,
+        "eventCount": 30
       },
       "last30Days": {
-        "activeUsers": 14,
-        "sessions": 18,
-        "screenPageViews": 38,
-        "eventCount": 103
+        "activeUsers": 365,
+        "sessions": 384,
+        "screenPageViews": 496,
+        "eventCount": 1640
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 12,
+        "impressions": 4,
         "ctr": 0,
-        "position": 81.91666666666667
+        "position": 12
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 27,
+        "impressions": 2,
         "ctr": 0,
-        "position": 84.74074074074075
+        "position": 9.5
       },
       "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 65,
-        "ctr": 0,
-        "position": 77.35384615384615
-      }
+        "clicks": 1,
+        "impressions": 9,
+        "ctr": 0.1111111111111111,
+        "position": 10.333333333333334
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:04.609Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:04.609Z"
     },
     {
       "id": "estat",
@@ -2222,47 +2349,51 @@
       "ga4PropertyId": "523324426",
       "gscSiteUrl": "https://estat.kr/",
       "last1Days": {
-        "activeUsers": 3,
-        "sessions": 3,
-        "screenPageViews": 3,
-        "eventCount": 10
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 3
       },
       "last7Days": {
         "activeUsers": 4,
         "sessions": 4,
-        "screenPageViews": 5,
-        "eventCount": 16
+        "screenPageViews": 4,
+        "eventCount": 13
       },
       "previous7Days": {
         "activeUsers": 8,
         "sessions": 8,
-        "screenPageViews": 10,
-        "eventCount": 32
+        "screenPageViews": 11,
+        "eventCount": 34
       },
       "last30Days": {
-        "activeUsers": 35,
-        "sessions": 38,
-        "screenPageViews": 45,
-        "eventCount": 139
+        "activeUsers": 36,
+        "sessions": 39,
+        "screenPageViews": 46,
+        "eventCount": 142
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 33,
+        "impressions": 34,
         "ctr": 0,
-        "position": 7.696969696969697
+        "position": 7.205882352941177
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 57,
+        "impressions": 54,
         "ctr": 0,
-        "position": 9.298245614035087
+        "position": 9.37037037037037
       },
       "gscLast30Days": {
         "clicks": 1,
-        "impressions": 198,
-        "ctr": 0.005050505050505051,
-        "position": 8.959595959595958
-      }
+        "impressions": 185,
+        "ctr": 0.005405405405405406,
+        "position": 8.859459459459458
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:04.981Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:04.981Z"
     },
     {
       "id": "esgyo-2",
@@ -2311,7 +2442,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:09.457Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:09.457Z"
     },
     {
       "id": "todayshops-2",
@@ -2345,22 +2480,79 @@
       },
       "gscLast7Days": {
         "clicks": 3,
-        "impressions": 145,
-        "ctr": 0.020689655172413793,
-        "position": 7.7172413793103445
+        "impressions": 165,
+        "ctr": 0.01818181818181818,
+        "position": 7.503030303030303
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 104,
+        "impressions": 117,
         "ctr": 0,
-        "position": 7.634615384615385
+        "position": 7.743589743589744
       },
       "gscLast30Days": {
         "clicks": 3,
-        "impressions": 261,
-        "ctr": 0.011494252873563218,
-        "position": 7.5440613026819925
-      }
+        "impressions": 296,
+        "ctr": 0.010135135135135136,
+        "position": 7.456081081081081
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:19.659Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:19.659Z"
+    },
+    {
+      "id": "insupang",
+      "name": "insupang - GA4",
+      "url": "https://insupang.com/",
+      "ga4PropertyId": "517897382",
+      "gscSiteUrl": "https://insupang.com/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last7Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 10
+      },
+      "previous7Days": {
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 5,
+        "eventCount": 15
+      },
+      "last30Days": {
+        "activeUsers": 14,
+        "sessions": 18,
+        "screenPageViews": 38,
+        "eventCount": 103
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 79.85714285714286
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 25,
+        "ctr": 0,
+        "position": 83.88
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 69,
+        "ctr": 0,
+        "position": 77.34782608695652
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:00.529Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:00.529Z"
     },
     {
       "id": "healfood-2",
@@ -2409,7 +2601,11 @@
         "impressions": 4,
         "ctr": 0,
         "position": 45.25
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:16.101Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:16.101Z"
     },
     {
       "id": "gong365",
@@ -2443,22 +2639,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 56,
+        "impressions": 48,
         "ctr": 0,
-        "position": 8.5
+        "position": 8.875
       },
       "gscPrevious7Days": {
         "clicks": 2,
-        "impressions": 141,
-        "ctr": 0.014184397163120567,
-        "position": 7.5177304964539005
+        "impressions": 127,
+        "ctr": 0.015748031496062992,
+        "position": 7.480314960629921
       },
       "gscLast30Days": {
         "clicks": 3,
-        "impressions": 304,
-        "ctr": 0.009868421052631578,
-        "position": 7
-      }
+        "impressions": 306,
+        "ctr": 0.00980392156862745,
+        "position": 7.026143790849673
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:17.573Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:17.573Z"
     },
     {
       "id": "crepika",
@@ -2507,7 +2707,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:13.480Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:13.480Z"
     },
     {
       "id": "educaer",
@@ -2556,7 +2760,11 @@
         "impressions": 1,
         "ctr": 0,
         "position": 8
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:19.307Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:19.307Z"
     },
     {
       "id": "finan-2",
@@ -2590,22 +2798,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 57,
+        "impressions": 62,
         "ctr": 0,
-        "position": 8.68421052631579
+        "position": 9.112903225806452
       },
       "gscPrevious7Days": {
         "clicks": 2,
-        "impressions": 33,
-        "ctr": 0.06060606060606061,
-        "position": 11.787878787878787
+        "impressions": 40,
+        "ctr": 0.05,
+        "position": 11.1
       },
       "gscLast30Days": {
         "clicks": 2,
-        "impressions": 94,
-        "ctr": 0.02127659574468085,
-        "position": 9.606382978723405
-      }
+        "impressions": 106,
+        "ctr": 0.018867924528301886,
+        "position": 9.69811320754717
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:20.153Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:20.153Z"
     },
     {
       "id": "ai-tasko",
@@ -2655,56 +2867,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://ai.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
-    },
-    {
-      "id": "lawer",
-      "name": "법이람 - GA4",
-      "url": "https://lawer.kr/",
-      "ga4PropertyId": "521770057",
-      "gscSiteUrl": "https://lawer.kr/",
-      "last1Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
-      },
-      "last7Days": {
-        "activeUsers": 1,
-        "sessions": 1,
-        "screenPageViews": 1,
-        "eventCount": 4
-      },
-      "previous7Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
-      },
-      "last30Days": {
-        "activeUsers": 7,
-        "sessions": 17,
-        "screenPageViews": 60,
-        "eventCount": 142
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 2,
-        "ctr": 0,
-        "position": 10.5
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 3,
-        "ctr": 0,
-        "position": 13.666666666666666
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 6,
-        "ctr": 0,
-        "position": 12.166666666666666
-      }
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:21.622Z",
+      "gscError": "User does not have sufficient permission for site 'https://ai.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "coinyo-2",
@@ -2753,56 +2920,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
-    },
-    {
-      "id": "travelpang-2",
-      "name": "travelpang.kr",
-      "url": "https://travelpang.kr/",
-      "ga4PropertyId": "536559437",
-      "gscSiteUrl": "https://travelpang.kr/",
-      "last1Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
       },
-      "last7Days": {
-        "activeUsers": 1,
-        "sessions": 1,
-        "screenPageViews": 1,
-        "eventCount": 6
-      },
-      "previous7Days": {
-        "activeUsers": 6,
-        "sessions": 12,
-        "screenPageViews": 24,
-        "eventCount": 72
-      },
-      "last30Days": {
-        "activeUsers": 18,
-        "sessions": 31,
-        "screenPageViews": 70,
-        "eventCount": 202
-      },
-      "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 12,
-        "ctr": 0,
-        "position": 7.333333333333333
-      },
-      "gscPrevious7Days": {
-        "clicks": 0,
-        "impressions": 19,
-        "ctr": 0,
-        "position": 9.526315789473685
-      },
-      "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 109,
-        "ctr": 0,
-        "position": 7.944954128440367
-      }
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:12.527Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:12.527Z"
     },
     {
       "id": "petinsuer-2",
@@ -2835,23 +2957,27 @@
         "eventCount": 54
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 53,
-        "ctr": 0,
-        "position": 10.169811320754716
+        "clicks": 2,
+        "impressions": 55,
+        "ctr": 0.03636363636363636,
+        "position": 11.254545454545454
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 61,
+        "impressions": 57,
         "ctr": 0,
-        "position": 9.081967213114755
+        "position": 8.789473684210527
       },
       "gscLast30Days": {
-        "clicks": 1,
-        "impressions": 211,
-        "ctr": 0.004739336492890996,
-        "position": 9.104265402843602
-      }
+        "clicks": 3,
+        "impressions": 213,
+        "ctr": 0.014084507042253521,
+        "position": 9.35680751173709
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:14.902Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:14.902Z"
     },
     {
       "id": "goesku",
@@ -2885,22 +3011,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 24,
+        "impressions": 25,
         "ctr": 0,
-        "position": 19.75
+        "position": 20.84
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 16,
+        "impressions": 18,
         "ctr": 0,
-        "position": 23.3125
+        "position": 23.944444444444443
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 40,
+        "impressions": 43,
         "ctr": 0,
-        "position": 21.175
-      }
+        "position": 22.13953488372093
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:17.793Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:17.793Z"
     },
     {
       "id": "gong-luckyday",
@@ -2950,7 +3080,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://gong.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:20.984Z",
+      "gscError": "User does not have sufficient permission for site 'https://gong.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "kang4",
@@ -2999,7 +3133,11 @@
         "impressions": 3,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:56.895Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:56.895Z"
     },
     {
       "id": "2mlab",
@@ -3026,10 +3164,10 @@
         "eventCount": 0
       },
       "last30Days": {
-        "activeUsers": 68,
-        "sessions": 74,
-        "screenPageViews": 81,
-        "eventCount": 279
+        "activeUsers": 52,
+        "sessions": 57,
+        "screenPageViews": 60,
+        "eventCount": 208
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -3039,16 +3177,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 3,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z"
     },
     {
       "id": "chatgipt",
@@ -3081,23 +3223,27 @@
         "eventCount": 0
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 5,
-        "ctr": 0,
-        "position": 8.4
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": 0.16666666666666666,
+        "position": 7.666666666666667
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 12,
+        "impressions": 6,
         "ctr": 0,
-        "position": 5.5
+        "position": 5.666666666666667
       },
       "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 49,
-        "ctr": 0,
-        "position": 7.775510204081633
-      }
+        "clicks": 1,
+        "impressions": 36,
+        "ctr": 0.027777777777777776,
+        "position": 7.861111111111111
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:56.898Z"
     },
     {
       "id": "chatgipt-2",
@@ -3130,23 +3276,27 @@
         "eventCount": 0
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 5,
-        "ctr": 0,
-        "position": 8.4
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": 0.16666666666666666,
+        "position": 7.666666666666667
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 12,
+        "impressions": 6,
         "ctr": 0,
-        "position": 5.5
+        "position": 5.666666666666667
       },
       "gscLast30Days": {
-        "clicks": 0,
-        "impressions": 49,
-        "ctr": 0,
-        "position": 7.775510204081633
-      }
+        "clicks": 1,
+        "impressions": 36,
+        "ctr": 0.027777777777777776,
+        "position": 7.861111111111111
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:12:58.959Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:12:58.959Z"
     },
     {
       "id": "travelpang",
@@ -3180,22 +3330,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 12,
+        "impressions": 15,
         "ctr": 0,
-        "position": 7.333333333333333
+        "position": 7
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 19,
+        "impressions": 17,
         "ctr": 0,
-        "position": 9.526315789473685
+        "position": 9.823529411764707
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 109,
+        "impressions": 108,
         "ctr": 0,
-        "position": 7.944954128440367
-      }
+        "position": 7.666666666666667
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:01.580Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:01.580Z"
     },
     {
       "id": "coinyo",
@@ -3244,7 +3398,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:01.673Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:01.673Z"
     },
     {
       "id": "dogspang",
@@ -3278,22 +3436,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 22,
+        "impressions": 10,
         "ctr": 0,
-        "position": 17.318181818181817
+        "position": 21.2
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 41,
+        "impressions": 45,
         "ctr": 0,
-        "position": 12
+        "position": 13.066666666666666
       },
       "gscLast30Days": {
         "clicks": 1,
-        "impressions": 105,
-        "ctr": 0.009523809523809525,
-        "position": 12.17142857142857
-      }
+        "impressions": 103,
+        "ctr": 0.009708737864077669,
+        "position": 12.310679611650485
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:01.859Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:01.859Z"
     },
     {
       "id": "cartain",
@@ -3327,22 +3489,26 @@
       },
       "gscLast7Days": {
         "clicks": 2,
-        "impressions": 69,
-        "ctr": 0.028985507246376812,
-        "position": 6.927536231884058
+        "impressions": 77,
+        "ctr": 0.025974025974025976,
+        "position": 6.8441558441558445
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 59,
+        "impressions": 42,
         "ctr": 0,
-        "position": 7.983050847457627
+        "position": 7.428571428571429
       },
       "gscLast30Days": {
         "clicks": 6,
-        "impressions": 210,
-        "ctr": 0.02857142857142857,
-        "position": 8.004761904761905
-      }
+        "impressions": 220,
+        "ctr": 0.02727272727272727,
+        "position": 7.95
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:02.079Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:02.079Z"
     },
     {
       "id": "petinsuer",
@@ -3375,23 +3541,27 @@
         "eventCount": 24
       },
       "gscLast7Days": {
-        "clicks": 0,
-        "impressions": 53,
-        "ctr": 0,
-        "position": 10.169811320754716
+        "clicks": 2,
+        "impressions": 55,
+        "ctr": 0.03636363636363636,
+        "position": 11.254545454545454
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 61,
+        "impressions": 57,
         "ctr": 0,
-        "position": 9.081967213114755
+        "position": 8.789473684210527
       },
       "gscLast30Days": {
-        "clicks": 1,
-        "impressions": 211,
-        "ctr": 0.004739336492890996,
-        "position": 9.104265402843602
-      }
+        "clicks": 3,
+        "impressions": 213,
+        "ctr": 0.014084507042253521,
+        "position": 9.35680751173709
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:03.119Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:03.119Z"
     },
     {
       "id": "homeimer",
@@ -3425,22 +3595,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 4,
+        "impressions": 5,
         "ctr": 0,
-        "position": 62.25
+        "position": 75.2
       },
       "gscPrevious7Days": {
         "clicks": 0,
         "impressions": 11,
         "ctr": 0,
-        "position": 15.545454545454545
+        "position": 20.272727272727273
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 27,
+        "impressions": 29,
         "ctr": 0,
-        "position": 23.37037037037037
-      }
+        "position": 27.96551724137931
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:03.255Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:03.255Z"
     },
     {
       "id": "healfood",
@@ -3489,7 +3663,11 @@
         "impressions": 4,
         "ctr": 0,
         "position": 45.25
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:03.466Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:03.466Z"
     },
     {
       "id": "finan",
@@ -3523,22 +3701,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 57,
+        "impressions": 62,
         "ctr": 0,
-        "position": 8.68421052631579
+        "position": 9.112903225806452
       },
       "gscPrevious7Days": {
         "clicks": 2,
-        "impressions": 33,
-        "ctr": 0.06060606060606061,
-        "position": 11.787878787878787
+        "impressions": 40,
+        "ctr": 0.05,
+        "position": 11.1
       },
       "gscLast30Days": {
         "clicks": 2,
-        "impressions": 94,
-        "ctr": 0.02127659574468085,
-        "position": 9.606382978723405
-      }
+        "impressions": 106,
+        "ctr": 0.018867924528301886,
+        "position": 9.69811320754717
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:03.803Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:03.803Z"
     },
     {
       "id": "luxurytraver",
@@ -3578,16 +3760,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 3,
+        "impressions": 2,
         "ctr": 0,
-        "position": 33
+        "position": 49
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 8,
         "ctr": 0,
         "position": 15.5
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:03.837Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:03.837Z"
     },
     {
       "id": "autoscares",
@@ -3633,10 +3819,67 @@
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 23,
+        "impressions": 17,
         "ctr": 0,
-        "position": 8.173913043478262
-      }
+        "position": 7.411764705882353
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:04.802Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:04.802Z"
+    },
+    {
+      "id": "lawer",
+      "name": "법이람 - GA4",
+      "url": "https://lawer.kr/",
+      "ga4PropertyId": "521770057",
+      "gscSiteUrl": "https://lawer.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "previous7Days": {
+        "activeUsers": 1,
+        "sessions": 1,
+        "screenPageViews": 1,
+        "eventCount": 4
+      },
+      "last30Days": {
+        "activeUsers": 7,
+        "sessions": 17,
+        "screenPageViews": 60,
+        "eventCount": 142
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10.5
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 13.666666666666666
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 12.166666666666666
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:04.839Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:04.839Z"
     },
     {
       "id": "esgyo",
@@ -3685,7 +3928,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:06.559Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:06.559Z"
     },
     {
       "id": "sellerpit",
@@ -3719,22 +3966,26 @@
       },
       "gscLast7Days": {
         "clicks": 1,
-        "impressions": 14,
-        "ctr": 0.07142857142857142,
-        "position": 16
+        "impressions": 10,
+        "ctr": 0.1,
+        "position": 14.5
       },
       "gscPrevious7Days": {
         "clicks": 3,
-        "impressions": 31,
-        "ctr": 0.0967741935483871,
-        "position": 6.419354838709677
+        "impressions": 32,
+        "ctr": 0.09375,
+        "position": 7.6875
       },
       "gscLast30Days": {
         "clicks": 8,
-        "impressions": 264,
-        "ctr": 0.030303030303030304,
-        "position": 10.090909090909092
-      }
+        "impressions": 256,
+        "ctr": 0.03125,
+        "position": 10.19921875
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:06.711Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:06.711Z"
     },
     {
       "id": "spinkorea",
@@ -3783,7 +4034,11 @@
         "impressions": 5,
         "ctr": 0,
         "position": 2
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:06.901Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:06.901Z"
     },
     {
       "id": "texturb",
@@ -3833,7 +4088,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://texturb.com/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:06.916Z",
+      "gscError": "User does not have sufficient permission for site 'https://texturb.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "luckyday-2",
@@ -3883,7 +4142,11 @@
         "ctr": 0,
         "position": 0
       },
-      "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999."
+      "ga4Status": "ok",
+      "gscStatus": "auth_error",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:08.277Z",
+      "gscError": "User does not have sufficient permission for site 'https://luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "gscErrorKind": "permission"
     },
     {
       "id": "knewstory-2",
@@ -3917,22 +4180,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 4,
+        "impressions": 5,
         "ctr": 0,
-        "position": 36.75
+        "position": 23
       },
       "gscPrevious7Days": {
         "clicks": 0,
         "impressions": 4,
         "ctr": 0,
-        "position": 45.25
+        "position": 59
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 10,
+        "impressions": 13,
         "ctr": 0,
-        "position": 42
-      }
+        "position": 35.07692307692308
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:12.319Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:12.319Z"
     },
     {
       "id": "kang4-2",
@@ -3981,7 +4248,11 @@
         "impressions": 3,
         "ctr": 0,
         "position": 1
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:12.386Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:12.386Z"
     },
     {
       "id": "fastjob-2",
@@ -4015,22 +4286,26 @@
       },
       "gscLast7Days": {
         "clicks": 6,
-        "impressions": 517,
-        "ctr": 0.01160541586073501,
-        "position": 13.994197292069632
+        "impressions": 546,
+        "ctr": 0.01098901098901099,
+        "position": 14.66117216117216
       },
       "gscPrevious7Days": {
-        "clicks": 10,
-        "impressions": 1044,
-        "ctr": 0.009578544061302681,
-        "position": 9.064176245210728
+        "clicks": 11,
+        "impressions": 958,
+        "ctr": 0.011482254697286013,
+        "position": 9.24634655532359
       },
       "gscLast30Days": {
-        "clicks": 39,
-        "impressions": 4173,
-        "ctr": 0.009345794392523364,
-        "position": 9.68511861969806
-      }
+        "clicks": 36,
+        "impressions": 4086,
+        "ctr": 0.00881057268722467,
+        "position": 9.934654919236417
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:12.901Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:12.901Z"
     },
     {
       "id": "insupang-2",
@@ -4064,22 +4339,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 12,
+        "impressions": 14,
         "ctr": 0,
-        "position": 81.91666666666667
+        "position": 79.85714285714286
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 27,
+        "impressions": 25,
         "ctr": 0,
-        "position": 84.74074074074075
+        "position": 83.88
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 65,
+        "impressions": 69,
         "ctr": 0,
-        "position": 77.35384615384615
-      }
+        "position": 77.34782608695652
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:13.750Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:13.750Z"
     },
     {
       "id": "healthgotoo-2",
@@ -4119,16 +4398,73 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 0,
         "ctr": 0,
-        "position": 1
+        "position": 0
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
         "position": 6
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:13.926Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:13.926Z"
+    },
+    {
+      "id": "travelpang-2",
+      "name": "travelpang.kr",
+      "url": "https://travelpang.kr/",
+      "ga4PropertyId": "536559437",
+      "gscSiteUrl": "https://travelpang.kr/",
+      "last1Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "last7Days": {
+        "activeUsers": 0,
+        "sessions": 0,
+        "screenPageViews": 0,
+        "eventCount": 0
+      },
+      "previous7Days": {
+        "activeUsers": 7,
+        "sessions": 7,
+        "screenPageViews": 14,
+        "eventCount": 47
+      },
+      "last30Days": {
+        "activeUsers": 18,
+        "sessions": 31,
+        "screenPageViews": 70,
+        "eventCount": 202
+      },
+      "gscLast7Days": {
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 7
+      },
+      "gscPrevious7Days": {
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 9.823529411764707
+      },
+      "gscLast30Days": {
+        "clicks": 0,
+        "impressions": 108,
+        "ctr": 0,
+        "position": 7.666666666666667
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:14.569Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:14.569Z"
     },
     {
       "id": "legalser-2",
@@ -4162,22 +4498,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 9,
+        "impressions": 10,
         "ctr": 0,
-        "position": 57
+        "position": 57.7
       },
       "gscPrevious7Days": {
         "clicks": 0,
         "impressions": 8,
         "ctr": 0,
-        "position": 43.875
+        "position": 45.125
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 37,
+        "impressions": 39,
         "ctr": 0,
-        "position": 35.5945945945946
-      }
+        "position": 35.69230769230769
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:14.770Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:14.770Z"
     },
     {
       "id": "etique-2",
@@ -4211,22 +4551,26 @@
       },
       "gscLast7Days": {
         "clicks": 1,
-        "impressions": 120,
-        "ctr": 0.008333333333333333,
-        "position": 11.783333333333333
+        "impressions": 145,
+        "ctr": 0.006896551724137931,
+        "position": 12.006896551724138
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 87,
+        "impressions": 83,
         "ctr": 0,
-        "position": 14.03448275862069
+        "position": 14.265060240963855
       },
       "gscLast30Days": {
         "clicks": 1,
-        "impressions": 498,
-        "ctr": 0.002008032128514056,
-        "position": 11.594377510040161
-      }
+        "impressions": 514,
+        "ctr": 0.0019455252918287938,
+        "position": 11.735408560311283
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:14.952Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:14.952Z"
     },
     {
       "id": "luxurytraver-2",
@@ -4266,16 +4610,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 3,
+        "impressions": 2,
         "ctr": 0,
-        "position": 33
+        "position": 49
       },
       "gscLast30Days": {
         "clicks": 0,
         "impressions": 8,
         "ctr": 0,
         "position": 15.5
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:15.654Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:15.654Z"
     },
     {
       "id": "softwa-2",
@@ -4308,23 +4656,27 @@
         "eventCount": 0
       },
       "gscLast7Days": {
-        "clicks": 5,
-        "impressions": 153,
-        "ctr": 0.032679738562091505,
-        "position": 10.235294117647058
+        "clicks": 4,
+        "impressions": 181,
+        "ctr": 0.022099447513812154,
+        "position": 9.966850828729282
       },
       "gscPrevious7Days": {
-        "clicks": 4,
-        "impressions": 66,
-        "ctr": 0.06060606060606061,
-        "position": 11.121212121212121
+        "clicks": 5,
+        "impressions": 83,
+        "ctr": 0.060240963855421686,
+        "position": 10.397590361445783
       },
       "gscLast30Days": {
         "clicks": 9,
-        "impressions": 231,
-        "ctr": 0.03896103896103896,
-        "position": 11
-      }
+        "impressions": 278,
+        "ctr": 0.03237410071942446,
+        "position": 10.661870503597122
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:16.017Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:16.017Z"
     },
     {
       "id": "gover-2",
@@ -4358,22 +4710,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 6,
+        "impressions": 5,
         "ctr": 0,
-        "position": 15.333333333333334
+        "position": 14.6
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 30,
+        "impressions": 25,
         "ctr": 0,
-        "position": 14.9
+        "position": 8.64
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 56,
+        "impressions": 55,
         "ctr": 0,
-        "position": 14.107142857142858
-      }
+        "position": 14.327272727272728
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:16.485Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:16.485Z"
     },
     {
       "id": "estat-2",
@@ -4407,22 +4763,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 33,
+        "impressions": 34,
         "ctr": 0,
-        "position": 7.696969696969697
+        "position": 7.205882352941177
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 57,
+        "impressions": 54,
         "ctr": 0,
-        "position": 9.298245614035087
+        "position": 9.37037037037037
       },
       "gscLast30Days": {
         "clicks": 1,
-        "impressions": 198,
-        "ctr": 0.005050505050505051,
-        "position": 8.959595959595958
-      }
+        "impressions": 185,
+        "ctr": 0.005405405405405406,
+        "position": 8.859459459459458
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:16.567Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:16.567Z"
     },
     {
       "id": "homeimer-2",
@@ -4456,22 +4816,26 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 4,
+        "impressions": 5,
         "ctr": 0,
-        "position": 62.25
+        "position": 75.2
       },
       "gscPrevious7Days": {
         "clicks": 0,
         "impressions": 11,
         "ctr": 0,
-        "position": 15.545454545454545
+        "position": 20.272727272727273
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 27,
+        "impressions": 29,
         "ctr": 0,
-        "position": 23.37037037037037
-      }
+        "position": 27.96551724137931
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:17.167Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:17.167Z"
     },
     {
       "id": "trave-2",
@@ -4511,16 +4875,20 @@
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 3,
+        "impressions": 2,
         "ctr": 0,
-        "position": 8.333333333333332
+        "position": 9.5
       },
       "gscLast30Days": {
         "clicks": 1,
         "impressions": 9,
         "ctr": 0.1111111111111111,
         "position": 10.333333333333334
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:17.630Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:17.630Z"
     },
     {
       "id": "lawer-2",
@@ -4569,7 +4937,11 @@
         "impressions": 6,
         "ctr": 0,
         "position": 12.166666666666666
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:18.825Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:18.825Z"
     },
     {
       "id": "sssaass",
@@ -4605,20 +4977,24 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": 0,
-        "position": 5
+        "position": 4.5
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 5,
+        "impressions": 4,
         "ctr": 0,
         "position": 7
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 10,
+        "impressions": 11,
         "ctr": 0,
-        "position": 6.9
-      }
+        "position": 6.545454545454546
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:18.911Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:18.911Z"
     },
     {
       "id": "todayshops",
@@ -4652,22 +5028,26 @@
       },
       "gscLast7Days": {
         "clicks": 3,
-        "impressions": 145,
-        "ctr": 0.020689655172413793,
-        "position": 7.7172413793103445
+        "impressions": 165,
+        "ctr": 0.01818181818181818,
+        "position": 7.503030303030303
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 104,
+        "impressions": 117,
         "ctr": 0,
-        "position": 7.634615384615385
+        "position": 7.743589743589744
       },
       "gscLast30Days": {
         "clicks": 3,
-        "impressions": 261,
-        "ctr": 0.011494252873563218,
-        "position": 7.5440613026819925
-      }
+        "impressions": 296,
+        "ctr": 0.010135135135135136,
+        "position": 7.456081081081081
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:18.925Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:18.925Z"
     },
     {
       "id": "notebook-klick",
@@ -4716,7 +5096,11 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0
-      }
+      },
+      "ga4Status": "ok",
+      "gscStatus": "ok",
+      "ga4LastSuccessfulFetchAt": "2026-05-29T10:13:21.335Z",
+      "gscLastSuccessfulFetchAt": "2026-05-29T10:13:21.335Z"
     }
   ]
 }

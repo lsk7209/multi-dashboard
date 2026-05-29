@@ -30,6 +30,10 @@ export interface GscMetricSet {
   position: number;
 }
 
+export type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
+export type ErrorKind = "permission" | "not_found" | "quota" | "missing_config" | "api_error";
+export type OperationalStatus = "normal" | "needsPermission" | "apiError" | "stale";
+
 export interface SiteStat {
   id: string;
   name: string;
@@ -45,6 +49,12 @@ export interface SiteStat {
   gscPrevious7Days?: GscMetricSet;
   gscLast28Days?: GscMetricSet;
   gscLast30Days?: GscMetricSet;
+  ga4Status?: CollectionStatus;
+  gscStatus?: CollectionStatus;
+  ga4LastSuccessfulFetchAt?: string;
+  gscLastSuccessfulFetchAt?: string;
+  ga4ErrorKind?: ErrorKind;
+  gscErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
 }
@@ -94,6 +104,10 @@ export interface EnrichedSiteStat
   gscPrevious7Days: GscMetricSet;
   gscLast30Days: GscMetricSet;
   trend: SiteTrend;
+  operationalStatus: OperationalStatus;
+  statusLabel: string;
+  statusReason: string;
+  isStale: boolean;
 }
 
 export interface DashboardData {
@@ -106,9 +120,12 @@ export interface DashboardData {
   growthInsights: SiteInsight[];
   declineInsights: SiteInsight[];
   gscIssueStats: EnrichedSiteStat[];
+  dailyIssueStats: EnrichedSiteStat[];
   siteCount: number;
   trackedCount: number;
+  gscConnectedCount: number;
   failedCount: number;
+  staleCount: number;
   totalLast1Days: MetricSet;
   totalLast7Days: MetricSet;
   totalPrevious7Days: MetricSet;
@@ -128,6 +145,7 @@ export function getDashboardData(): DashboardData {
   const totalLast1Days = sumMetrics(stats.map((stat) => stat.last1Days));
   const totalLast7Days = sumMetrics(stats.map((stat) => stat.last7Days));
   const totalPrevious7Days = sumMetrics(stats.map((stat) => stat.previous7Days));
+  const gscConnectedStats = stats.filter((stat) => stat.gscStatus === "ok");
 
   return {
     generatedAt: snapshot.generatedAt,
@@ -139,16 +157,19 @@ export function getDashboardData(): DashboardData {
     growthInsights: insights.filter((insight) => insight.kind === "growth").slice(0, 8),
     declineInsights: insights.filter((insight) => insight.kind === "decline").slice(0, 8),
     gscIssueStats: stats.filter((stat) => Boolean(stat.gscError)),
+    dailyIssueStats: stats.filter((stat) => stat.operationalStatus !== "normal").slice(0, 20),
     siteCount: sites.length,
     trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId).length,
-    failedCount: stats.filter((stat) => stat.error || stat.gscError).length,
+    gscConnectedCount: gscConnectedStats.length,
+    failedCount: stats.filter((stat) => stat.operationalStatus !== "normal").length,
+    staleCount: stats.filter((stat) => stat.isStale).length,
     totalLast1Days,
     totalLast7Days,
     totalPrevious7Days,
     totalLast30Days: sumMetrics(stats.map((stat) => stat.last30Days)),
-    totalGscLast7Days: sumGscMetrics(stats.map((stat) => stat.gscLast7Days ?? emptyGscMetrics())),
-    totalGscPrevious7Days: sumGscMetrics(stats.map((stat) => stat.gscPrevious7Days)),
-    totalGscLast30Days: sumGscMetrics(stats.map((stat) => stat.gscLast30Days)),
+    totalGscLast7Days: sumGscMetrics(gscConnectedStats.map((stat) => stat.gscLast7Days ?? emptyGscMetrics())),
+    totalGscPrevious7Days: sumGscMetrics(gscConnectedStats.map((stat) => stat.gscPrevious7Days)),
+    totalGscLast30Days: sumGscMetrics(gscConnectedStats.map((stat) => stat.gscLast30Days)),
     totalActiveUsersChange: changeRate(totalLast7Days.activeUsers, totalPrevious7Days.activeUsers),
   };
 }
@@ -160,14 +181,24 @@ function enrichSiteStat(stat: SiteStat): EnrichedSiteStat {
   const gscPrevious7Days = stat.gscPrevious7Days ?? emptyGscMetrics();
   const gscLast7Days = stat.gscLast7Days ?? emptyGscMetrics();
   const gscLast30Days = stat.gscLast30Days ?? stat.gscLast28Days ?? emptyGscMetrics();
+  const ga4Status = stat.ga4Status ?? (stat.error ? "api_error" : "ok");
+  const gscStatus = stat.gscStatus ?? (stat.gscError ? "auth_error" : "ok");
+  const operationalStatus = getOperationalStatus({ ...stat, ga4Status, gscStatus });
+  const isStale = operationalStatus === "stale";
 
   return {
     ...stat,
+    ga4Status,
+    gscStatus,
     last1Days,
     previous7Days,
     last30Days,
     gscPrevious7Days,
     gscLast30Days,
+    operationalStatus,
+    statusLabel: getStatusLabel(operationalStatus),
+    statusReason: getStatusReason({ ...stat, ga4Status, gscStatus }, operationalStatus),
+    isStale,
     trend: {
       activeUsersChange: changeRate(stat.last7Days.activeUsers, previous7Days.activeUsers),
       sessionsChange: changeRate(stat.last7Days.sessions, previous7Days.sessions),
@@ -346,8 +377,65 @@ function emptySiteStat(site: Site): SiteStat {
     gscLast7Days: emptyGscMetrics(),
     gscPrevious7Days: emptyGscMetrics(),
     gscLast30Days: emptyGscMetrics(),
+    ga4Status: site.ga4PropertyId ? "api_error" : "missing_config",
+    gscStatus: "api_error",
+    ga4ErrorKind: site.ga4PropertyId ? "api_error" : "missing_config",
     error: site.ga4PropertyId ? "통계 스냅샷 없음" : "GA4 속성 없음",
   };
+}
+
+function getOperationalStatus(stat: SiteStat): OperationalStatus {
+  if (isOlderThanHours(stat.ga4LastSuccessfulFetchAt, 48) || isOlderThanHours(stat.gscLastSuccessfulFetchAt, 48)) {
+    return "stale";
+  }
+
+  if (stat.ga4Status && stat.ga4Status !== "ok") {
+    return stat.ga4Status === "auth_error" || stat.ga4Status === "missing_config" ? "needsPermission" : "apiError";
+  }
+
+  if (stat.gscStatus && stat.gscStatus !== "ok") {
+    return stat.gscStatus === "auth_error" || stat.gscStatus === "missing_config" ? "needsPermission" : "apiError";
+  }
+
+  return "normal";
+}
+
+function getStatusLabel(status: OperationalStatus): string {
+  if (status === "needsPermission") return "권한 필요";
+  if (status === "apiError") return "API 실패";
+  if (status === "stale") return "오래된 데이터";
+  return "정상";
+}
+
+function getStatusReason(stat: SiteStat, status: OperationalStatus): string {
+  if (status === "stale") {
+    return "GA4 최근 성공 수집이 48시간을 넘었습니다.";
+  }
+
+  if (status === "needsPermission") {
+    if (stat.gscError) return "GSC 권한 또는 Search Console 속성 확인이 필요합니다.";
+    return "GA4 속성 또는 서비스 계정 권한 확인이 필요합니다.";
+  }
+
+  if (status === "apiError") {
+    if (stat.gscError) return "GSC API 호출이 실패했습니다.";
+    return "GA4 API 호출이 실패했습니다.";
+  }
+
+  return "GA4/GSC 수집 정상";
+}
+
+function isOlderThanHours(value: string | undefined, hours: number): boolean {
+  if (!value) {
+    return false;
+  }
+
+  const timestamp = Date.parse(value);
+  if (Number.isNaN(timestamp)) {
+    return true;
+  }
+
+  return Date.now() - timestamp > hours * 60 * 60 * 1000;
 }
 
 function emptyMetrics(): MetricSet {
