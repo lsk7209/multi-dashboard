@@ -23,7 +23,7 @@ sites:
     url: https://luckyday.kr/
     wpRestBase: https://luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "512019715"
-    gscSiteUrl: https://luckyday.kr/
+    gscSiteUrl: sc-domain:luckyday.kr
   - id: knewstory
     name: 케이뉴스스토리 - GA4
     enabled: true
@@ -87,7 +87,7 @@ sites:
     url: https://temon.kr/
     wpRestBase: https://temon.kr/wp-json/wp/v2
     ga4PropertyId: "516369797"
-    gscSiteUrl: https://temon.kr/
+    gscSiteUrl: sc-domain:temon.kr
   - id: haemongdream
     name: 해몽드림 - GA4
     enabled: true
@@ -319,7 +319,7 @@ sites:
     url: https://luckyday.kr/
     wpRestBase: https://luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "533729607"
-    gscSiteUrl: https://luckyday.kr/
+    gscSiteUrl: sc-domain:luckyday.kr
   - id: nexttech7
     name: nexttech7.com
     enabled: true
@@ -383,7 +383,7 @@ sites:
     url: https://tennisfrens.com/
     wpRestBase: https://tennisfrens.com/wp-json/wp/v2
     ga4PropertyId: "534356101"
-    gscSiteUrl: https://tennisfrens.com/
+    gscSiteUrl: sc-domain:tennisfrens.com
   - id: bojo24
     name: bojo24.kr
     enabled: true
@@ -399,7 +399,7 @@ sites:
     url: https://ehon365.kr/
     wpRestBase: https://ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "535779756"
-    gscSiteUrl: https://ehon365.kr/
+    gscSiteUrl: sc-domain:ehon365.kr
   - id: 2mlab-2
     name: 2mlab.kr
     enabled: true
@@ -703,7 +703,7 @@ sites:
     url: https://gong.luckyday.kr/
     wpRestBase: https://gong.luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "538330802"
-    gscSiteUrl: https://gong.luckyday.kr/
+    gscSiteUrl: sc-domain:gong.luckyday.kr
   - id: car-luckyday
     name: car.luckyday.kr
     enabled: true
@@ -711,7 +711,7 @@ sites:
     url: https://car.luckyday.kr/
     wpRestBase: https://car.luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "538367953"
-    gscSiteUrl: https://car.luckyday.kr/
+    gscSiteUrl: sc-domain:car.luckyday.kr
   - id: notebook-klick
     name: 노트북고고
     enabled: true
@@ -735,7 +735,7 @@ sites:
     url: https://ai.tasko.kr/
     wpRestBase: https://ai.tasko.kr/wp-json/wp/v2
     ga4PropertyId: "538418068"
-    gscSiteUrl: https://ai.tasko.kr/
+    gscSiteUrl: sc-domain:ai.tasko.kr
   - id: saju-tasko
     name: saju.tasko.kr
     enabled: true
@@ -743,7 +743,7 @@ sites:
     url: https://saju.tasko.kr/
     wpRestBase: https://saju.tasko.kr/wp-json/wp/v2
     ga4PropertyId: "538409598"
-    gscSiteUrl: https://saju.tasko.kr/
+    gscSiteUrl: sc-domain:saju.tasko.kr
   - id: petjigi
     name: petjigi.kr
     enabled: true
