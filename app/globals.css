@@ -87,6 +87,74 @@ h2 {
   font-weight: 700;
 }
 
+.dashboard-tabs {
+  display: grid;
+  gap: 18px;
+}
+
+.tab-radio {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.main-tabs label {
+  flex: 0 0 auto;
+  min-height: 40px;
+  border-radius: 7px;
+  padding: 10px 16px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main-tabs label:hover {
+  color: var(--accent);
+  background: #f2fbf9;
+}
+
+.dashboard-panels {
+  min-width: 0;
+}
+
+.tab-panel {
+  display: none;
+}
+
+#tab-overview:checked ~ .main-tabs label[for="tab-overview"],
+#tab-sites:checked ~ .main-tabs label[for="tab-sites"],
+#tab-insights:checked ~ .main-tabs label[for="tab-insights"],
+#tab-issues:checked ~ .main-tabs label[for="tab-issues"],
+#tab-settings:checked ~ .main-tabs label[for="tab-settings"] {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+#tab-overview:checked ~ .dashboard-panels .overview-panel,
+#tab-sites:checked ~ .dashboard-panels .sites-panel,
+#tab-insights:checked ~ .dashboard-panels .insights-panel,
+#tab-issues:checked ~ .dashboard-panels .issues-panel,
+#tab-settings:checked ~ .dashboard-panels .settings-panel {
+  display: block;
+}
+
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -153,6 +221,12 @@ h2 {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.65fr);
   gap: 18px;
   align-items: start;
+}
+
+.issue-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .panel {
@@ -840,6 +914,7 @@ code {
   .summary-grid,
   .operation-grid,
   .insight-grid,
+  .issue-layout,
   .stats-layout,
   .support-grid,
   .explorer-grid,
