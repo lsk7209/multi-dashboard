@@ -899,6 +899,18 @@ code {
   font-size: 18px;
 }
 
+.sparkline polyline {
+  stroke: var(--accent, #0f766e);
+}
+
+.sparkline.spark-down polyline {
+  stroke: var(--warning, #a15c00);
+}
+
+.sparkline-empty {
+  color: var(--muted);
+}
+
 @media (max-width: 860px) {
   .dashboard-shell {
     width: min(100% - 24px, 720px);

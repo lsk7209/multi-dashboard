@@ -1,10 +1,24 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { DashboardSegment, EnrichedSiteStat, OperationalStatus, SegmentKey } from "../lib/dashboard-data.js";
+import type {
+  DashboardSegment,
+  EnrichedSiteStat,
+  OperationalStatus,
+  SegmentKey,
+} from "../lib/dashboard-data.js";
 
 type StatusFilter = "all" | OperationalStatus;
-type SortKey = "priority" | "oneDayUsers" | "sevenDayUsers" | "thirtyDayUsers" | "change" | "gscClicks" | "gscImpressions" | "ctr" | "position";
+type SortKey =
+  | "priority"
+  | "oneDayUsers"
+  | "sevenDayUsers"
+  | "thirtyDayUsers"
+  | "change"
+  | "gscClicks"
+  | "gscImpressions"
+  | "ctr"
+  | "position";
 
 const sortLabels: Record<SortKey, string> = {
   priority: "우선순위",
@@ -43,7 +57,11 @@ export function SiteStatsTable({
 
   const visibleStats = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
-    const segmentIds = new Set(segments.find((segment) => segment.key === segmentKey)?.stats.map((stat) => stat.id) ?? []);
+    const segmentIds = new Set(
+      segments
+        .find((segment) => segment.key === segmentKey)
+        ?.stats.map((stat) => stat.id) ?? [],
+    );
 
     return stats
       .filter((stat) => segmentKey === "all" || segmentIds.has(stat.id))
@@ -52,7 +70,10 @@ export function SiteStatsTable({
       .sort((a, b) => getSortValue(b, sortKey) - getSortValue(a, sortKey));
   }, [query, segmentKey, segments, sortKey, stats, statusFilter]);
 
-  const selectedSite = visibleStats.find((stat) => stat.id === selectedSiteId) ?? visibleStats[0] ?? stats[0];
+  const selectedSite =
+    visibleStats.find((stat) => stat.id === selectedSiteId) ??
+    visibleStats[0] ??
+    stats[0];
 
   return (
     <article className="panel wide-panel stats-panel">
@@ -64,16 +85,30 @@ export function SiteStatsTable({
         <span>{failedCount > 0 ? `확인 필요 ${failedCount}개` : "정상"}</span>
       </div>
 
-      <SegmentTabs segments={segments} activeKey={segmentKey} totalCount={stats.length} onChange={setSegmentKey} />
+      <SegmentTabs
+        segments={segments}
+        activeKey={segmentKey}
+        totalCount={stats.length}
+        onChange={setSegmentKey}
+      />
 
       <div className="table-controls" aria-label="사이트 통계 필터">
         <label>
           <span>사이트 검색</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="도메인 또는 사이트명" />
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="도메인 또는 사이트명"
+          />
         </label>
         <label>
           <span>상태</span>
-          <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value as StatusFilter)}>
+          <select
+            value={statusFilter}
+            onChange={(event) =>
+              setStatusFilter(event.target.value as StatusFilter)
+            }
+          >
             {Object.entries(statusLabels).map(([value, label]) => (
               <option key={value} value={value}>
                 {label}
@@ -83,7 +118,10 @@ export function SiteStatsTable({
         </label>
         <label>
           <span>정렬</span>
-          <select value={sortKey} onChange={(event) => setSortKey(event.target.value as SortKey)}>
+          <select
+            value={sortKey}
+            onChange={(event) => setSortKey(event.target.value as SortKey)}
+          >
             {Object.entries(sortLabels).map(([value, label]) => (
               <option key={value} value={value}>
                 {label}
@@ -101,6 +139,7 @@ export function SiteStatsTable({
               <tr>
                 <th>사이트</th>
                 <th>점수</th>
+                <th>추세</th>
                 <th>1일</th>
                 <th>7일</th>
                 <th>30일</th>
@@ -115,7 +154,7 @@ export function SiteStatsTable({
             <tbody>
               {visibleStats.length === 0 ? (
                 <tr>
-                  <td className="table-empty" colSpan={11}>
+                  <td className="table-empty" colSpan={12}>
                     조건에 맞는 사이트가 없습니다.
                   </td>
                 </tr>
@@ -152,14 +191,21 @@ function SegmentTabs({
 }) {
   return (
     <div className="segment-tabs" aria-label="사이트 세그먼트">
-      <button className={activeKey === "all" ? "active" : ""} type="button" onClick={() => onChange("all")}>
-        전체{" "}
-        <strong>{formatNumber(totalCount)}</strong>
+      <button
+        className={activeKey === "all" ? "active" : ""}
+        type="button"
+        onClick={() => onChange("all")}
+      >
+        전체 <strong>{formatNumber(totalCount)}</strong>
       </button>
       {segments.map((segment) => (
-        <button className={activeKey === segment.key ? "active" : ""} key={segment.key} type="button" onClick={() => onChange(segment.key)}>
-          {segment.label}{" "}
-          <strong>{formatNumber(segment.count)}</strong>
+        <button
+          className={activeKey === segment.key ? "active" : ""}
+          key={segment.key}
+          type="button"
+          onClick={() => onChange(segment.key)}
+        >
+          {segment.label} <strong>{formatNumber(segment.count)}</strong>
         </button>
       ))}
     </div>
@@ -186,7 +232,12 @@ function StatsRow({
         </div>
       </td>
       <td>
-        <span className={getHealthClass(stat.health.grade)}>{stat.health.score}</span>
+        <span className={getHealthClass(stat.health.grade)}>
+          {stat.health.score}
+        </span>
+      </td>
+      <td>
+        <Sparkline values={stat.sparkline} />
       </td>
       <td>{formatNumber(stat.last1Days.activeUsers)}</td>
       <td>{formatNumber(stat.last7Days.activeUsers)}</td>
@@ -197,7 +248,10 @@ function StatsRow({
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
-        <span className={getBadgeClass(stat.operationalStatus)} title={stat.statusReason}>
+        <span
+          className={getBadgeClass(stat.operationalStatus)}
+          title={stat.statusReason}
+        >
           {stat.statusLabel}
         </span>
       </td>
@@ -213,17 +267,37 @@ function SiteDetailPanel({ stat }: { stat: EnrichedSiteStat }) {
           <h3>{stat.name}</h3>
           <a href={stat.url}>{formatHost(stat.url)}</a>
         </div>
-        <span className={getHealthClass(stat.health.grade)}>{stat.health.score}</span>
+        <span className={getHealthClass(stat.health.grade)}>
+          {stat.health.score}
+        </span>
       </div>
       <p className="detail-reason">{stat.health.reason}</p>
 
       <div className="detail-metrics">
-        <MiniMetric label="7일 사용자" value={formatNumber(stat.last7Days.activeUsers)} />
-        <MiniMetric label="30일 사용자" value={formatNumber(stat.last30Days.activeUsers)} />
-        <MiniMetric label="GSC 클릭" value={formatNumber(stat.gscLast7Days?.clicks ?? 0)} />
-        <MiniMetric label="GSC 노출" value={formatNumber(stat.gscLast7Days?.impressions ?? 0)} />
-        <MiniMetric label="CTR" value={formatPercent(stat.gscLast7Days?.ctr ?? 0)} />
-        <MiniMetric label="평균순위" value={formatPosition(stat.gscLast7Days?.position ?? 0)} />
+        <MiniMetric
+          label="7일 사용자"
+          value={formatNumber(stat.last7Days.activeUsers)}
+        />
+        <MiniMetric
+          label="30일 사용자"
+          value={formatNumber(stat.last30Days.activeUsers)}
+        />
+        <MiniMetric
+          label="GSC 클릭"
+          value={formatNumber(stat.gscLast7Days?.clicks ?? 0)}
+        />
+        <MiniMetric
+          label="GSC 노출"
+          value={formatNumber(stat.gscLast7Days?.impressions ?? 0)}
+        />
+        <MiniMetric
+          label="CTR"
+          value={formatPercent(stat.gscLast7Days?.ctr ?? 0)}
+        />
+        <MiniMetric
+          label="평균순위"
+          value={formatPosition(stat.gscLast7Days?.position ?? 0)}
+        />
       </div>
 
       <div className="detail-action">
@@ -243,7 +317,10 @@ function MiniMetric({ label, value }: { label: string; value: string }) {
   );
 }
 
-function matchesQuery(stat: EnrichedSiteStat, normalizedQuery: string): boolean {
+function matchesQuery(
+  stat: EnrichedSiteStat,
+  normalizedQuery: string,
+): boolean {
   if (!normalizedQuery) {
     return true;
   }
@@ -251,7 +328,10 @@ function matchesQuery(stat: EnrichedSiteStat, normalizedQuery: string): boolean 
   return `${stat.name} ${stat.url}`.toLowerCase().includes(normalizedQuery);
 }
 
-function matchesStatus(stat: EnrichedSiteStat, statusFilter: StatusFilter): boolean {
+function matchesStatus(
+  stat: EnrichedSiteStat,
+  statusFilter: StatusFilter,
+): boolean {
   if (statusFilter === "all") {
     return true;
   }
@@ -295,7 +375,10 @@ function getNextStep(stat: EnrichedSiteStat): string {
   if ((stat.trend.activeUsersChange ?? 0) <= -0.3) {
     return "사용자 급락 원인을 최근 발행, 색인, 유입 채널 순서로 확인하세요.";
   }
-  if ((stat.gscLast7Days?.ctr ?? 0) < 0.02 && (stat.gscLast7Days?.impressions ?? 0) >= 100) {
+  if (
+    (stat.gscLast7Days?.ctr ?? 0) < 0.02 &&
+    (stat.gscLast7Days?.impressions ?? 0) >= 100
+  ) {
     return "제목과 메타 설명을 먼저 개선하세요.";
   }
   return "현재는 큰 조치보다 성장 원인과 상위 페이지를 기록하세요.";
@@ -342,6 +425,35 @@ function formatChange(value: number | null): string {
 
   const prefix = value > 0 ? "+" : "";
   return `${prefix}${formatPercent(value)}`;
+}
+
+function Sparkline({ values }: { values: number[] }) {
+  if (values.length < 2 || values.every((v) => v === 0)) {
+    return <span className="sparkline-empty">-</span>;
+  }
+  const max = Math.max(...values, 1);
+  const W = 56;
+  const H = 20;
+  const pts = values
+    .map((v, i) => {
+      const x = (i / (values.length - 1)) * W;
+      const y = H - (v / max) * H;
+      return `${x},${y}`;
+    })
+    .join(" ");
+  const lastVal = values[values.length - 1] ?? 0;
+  const prevVal = values[values.length - 2] ?? 0;
+  const isUp = lastVal >= prevVal;
+  return (
+    <svg
+      width={W}
+      height={H}
+      className={`sparkline ${isUp ? "spark-up" : "spark-down"}`}
+      aria-hidden
+    >
+      <polyline fill="none" strokeWidth="1.5" points={pts} />
+    </svg>
+  );
 }
 
 function formatPosition(value: number): string {

@@ -72,6 +72,7 @@ export interface SiteStat {
   gscErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
+  lastPublishedAt?: string;
 }
 
 interface StatsSnapshot {
@@ -152,6 +153,8 @@ export interface EnrichedSiteStat extends Omit<
   isStale: boolean;
   health: SiteHealthScore;
   sparkline: number[];
+  lastPublishedAt?: string;
+  daysSincePublished?: number;
 }
 
 export interface DashboardActionItem {
@@ -198,6 +201,7 @@ export interface DashboardData {
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
   trafficDropStats: EnrichedSiteStat[];
+  wpStaleStats: EnrichedSiteStat[];
   siteCount: number;
   trackedCount: number;
   gscConnectedCount: number;
@@ -274,6 +278,12 @@ export function getDashboardData(): DashboardData {
         (a, b) =>
           (a.trend.activeUsersChange ?? 0) - (b.trend.activeUsersChange ?? 0),
       )
+      .slice(0, 20),
+    wpStaleStats: stats
+      .filter(
+        (s) => s.daysSincePublished !== undefined && s.daysSincePublished >= 7,
+      )
+      .sort((a, b) => (b.daysSincePublished ?? 0) - (a.daysSincePublished ?? 0))
       .slice(0, 20),
     siteCount: sites.length,
     trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId)
@@ -358,6 +368,10 @@ function enrichSiteStat(
     trend,
     health: getHealthScore(normalizedStat, operationalStatus),
     sparkline,
+    lastPublishedAt: stat.lastPublishedAt,
+    daysSincePublished: stat.lastPublishedAt
+      ? Math.floor((Date.now() - Date.parse(stat.lastPublishedAt)) / 86400000)
+      : undefined,
   };
 }
 

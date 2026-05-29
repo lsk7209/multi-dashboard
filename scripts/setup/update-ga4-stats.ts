@@ -14,7 +14,12 @@ const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
 
 type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
-type ErrorKind = "permission" | "not_found" | "quota" | "missing_config" | "api_error";
+type ErrorKind =
+  | "permission"
+  | "not_found"
+  | "quota"
+  | "missing_config"
+  | "api_error";
 
 interface MetricSet {
   activeUsers: number;
@@ -51,6 +56,7 @@ interface SiteStat {
   gscErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
+  lastPublishedAt?: string;
 }
 
 interface StatsSnapshot {
@@ -95,7 +101,9 @@ function emptyGscMetrics(): GscMetricSet {
 }
 
 function metricValue(row: unknown, index: number): number {
-  const values = (row as { metricValues?: Array<{ value?: string | null }> }).metricValues ?? [];
+  const values =
+    (row as { metricValues?: Array<{ value?: string | null }> }).metricValues ??
+    [];
   return Number(values[index]?.value ?? 0);
 }
 
@@ -133,15 +141,27 @@ function toGa4StartDate(days: number): string {
 function classifyError(error: string): ErrorKind {
   const normalized = error.toLowerCase();
 
-  if (normalized.includes("permission") || normalized.includes("unauthorized") || normalized.includes("forbidden")) {
+  if (
+    normalized.includes("permission") ||
+    normalized.includes("unauthorized") ||
+    normalized.includes("forbidden")
+  ) {
     return "permission";
   }
 
-  if (normalized.includes("not found") || normalized.includes("not_found") || normalized.includes("404")) {
+  if (
+    normalized.includes("not found") ||
+    normalized.includes("not_found") ||
+    normalized.includes("404")
+  ) {
     return "not_found";
   }
 
-  if (normalized.includes("quota") || normalized.includes("rate limit") || normalized.includes("429")) {
+  if (
+    normalized.includes("quota") ||
+    normalized.includes("rate limit") ||
+    normalized.includes("429")
+  ) {
     return "quota";
   }
 
@@ -152,7 +172,10 @@ function classifyError(error: string): ErrorKind {
   return "api_error";
 }
 
-function statusFromError(error: string | undefined, fallback: CollectionStatus): CollectionStatus {
+function statusFromError(
+  error: string | undefined,
+  fallback: CollectionStatus,
+): CollectionStatus {
   if (!error) {
     return "ok";
   }
@@ -169,11 +192,23 @@ function statusFromError(error: string | undefined, fallback: CollectionStatus):
   return fallback;
 }
 
-async function fetchGa4Metrics(client: BetaAnalyticsDataClient, propertyId: string, days: number): Promise<MetricSet> {
-  return fetchGa4MetricsForRange(client, propertyId, toGa4StartDate(days), "yesterday");
+async function fetchGa4Metrics(
+  client: BetaAnalyticsDataClient,
+  propertyId: string,
+  days: number,
+): Promise<MetricSet> {
+  return fetchGa4MetricsForRange(
+    client,
+    propertyId,
+    toGa4StartDate(days),
+    "yesterday",
+  );
 }
 
-async function fetchPreviousGa4Metrics(client: BetaAnalyticsDataClient, propertyId: string): Promise<MetricSet> {
+async function fetchPreviousGa4Metrics(
+  client: BetaAnalyticsDataClient,
+  propertyId: string,
+): Promise<MetricSet> {
   return fetchGa4MetricsForRange(client, propertyId, "14daysAgo", "8daysAgo");
 }
 
@@ -212,14 +247,24 @@ async function fetchGscMetrics(
   siteUrl: string,
   days: number,
 ): Promise<GscMetricSet> {
-  return fetchGscMetricsForRange(client, siteUrl, dateDaysAgo(days), dateDaysAgo(1));
+  return fetchGscMetricsForRange(
+    client,
+    siteUrl,
+    dateDaysAgo(days),
+    dateDaysAgo(1),
+  );
 }
 
 async function fetchPreviousGscMetrics(
   client: ReturnType<typeof google.searchconsole>,
   siteUrl: string,
 ): Promise<GscMetricSet> {
-  return fetchGscMetricsForRange(client, siteUrl, dateDaysAgo(14), dateDaysAgo(8));
+  return fetchGscMetricsForRange(
+    client,
+    siteUrl,
+    dateDaysAgo(14),
+    dateDaysAgo(8),
+  );
 }
 
 async function fetchGscMetricsForRange(
@@ -248,6 +293,30 @@ async function fetchGscMetricsForRange(
     ctr: row.ctr ?? 0,
     position: row.position ?? 0,
   };
+}
+
+async function fetchWpStats(
+  site: Site,
+): Promise<Pick<SiteStat, "lastPublishedAt">> {
+  if (!site.wpRestBase) {
+    return {};
+  }
+
+  try {
+    const url = `${site.wpRestBase.replace(/\/$/, "")}/posts?per_page=1&orderby=date&order=desc&_fields=date_gmt`;
+    const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (!response.ok) {
+      return {};
+    }
+    const posts = (await response.json()) as Array<{ date_gmt?: string }>;
+    const dateGmt = posts[0]?.date_gmt;
+    if (!dateGmt) {
+      return {};
+    }
+    return { lastPublishedAt: `${dateGmt}Z` };
+  } catch {
+    return {};
+  }
 }
 
 async function fetchSiteStat(
@@ -324,6 +393,11 @@ async function fetchSiteStat(
     stat.gscLastSuccessfulFetchAt = collectedAt;
   }
 
+  const wpStats = await fetchWpStats(site);
+  if (wpStats.lastPublishedAt) {
+    stat.lastPublishedAt = wpStats.lastPublishedAt;
+  }
+
   return stat;
 }
 
@@ -332,32 +406,57 @@ async function main(): Promise<void> {
   const keyJson = readSecret("GCP_SA_KEY_JSON");
 
   if (!keyJson) {
-    throw new Error("GCP_SA_KEY_JSON is missing. Add it to D:\\env\\키파일.txt or .env.setup.local.");
+    throw new Error(
+      "GCP_SA_KEY_JSON is missing. Add it to D:\\env\\키파일.txt or .env.setup.local.",
+    );
   }
 
-  const sites = (await loadSites()).filter((site) => site.enabled !== false && site.ga4PropertyId);
+  const sites = (await loadSites()).filter(
+    (site) => site.enabled !== false && site.ga4PropertyId,
+  );
   const credentials = parseServiceAccountKey(keyJson);
   const ga4Client = new BetaAnalyticsDataClient({ credentials });
-  const auth = makeGoogleAuth(keyJson, ["https://www.googleapis.com/auth/webmasters.readonly"]);
+  const auth = makeGoogleAuth(keyJson, [
+    "https://www.googleapis.com/auth/webmasters.readonly",
+  ]);
   const gscClient = google.searchconsole({ version: "v1", auth });
   const limit = pLimit(CONCURRENCY);
 
-  const stats = await Promise.all(sites.map((site) => limit(() => fetchSiteStat(ga4Client, gscClient, site))));
+  const stats = await Promise.all(
+    sites.map((site) => limit(() => fetchSiteStat(ga4Client, gscClient, site))),
+  );
   const snapshot: StatsSnapshot = {
     generatedAt: new Date().toISOString(),
     rangeDays: RANGE_DAYS,
     previousRangeDays: RANGE_DAYS,
     longRangeDays: LONG_RANGE_DAYS,
     dateRanges: buildDateRanges(),
-    stats: stats.sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers),
+    stats: stats.sort(
+      (a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers,
+    ),
   };
 
   await mkdir("data", { recursive: true });
-  await writeFile(OUTPUT_PATH, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+  await writeFile(
+    OUTPUT_PATH,
+    `${JSON.stringify(snapshot, null, 2)}\n`,
+    "utf8",
+  );
+
+  await mkdir("data/history", { recursive: true });
+  const historyDate = new Date().toISOString().slice(0, 10);
+  const historyPath = `data/history/${historyDate}.json`;
+  await writeFile(
+    historyPath,
+    `${JSON.stringify(snapshot, null, 2)}\n`,
+    "utf8",
+  );
 
   const ga4Failed = stats.filter((site) => site.error).length;
   const gscFailed = stats.filter((site) => site.gscError).length;
-  console.log(`Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, output=${OUTPUT_PATH}`);
+  console.log(
+    `Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, output=${OUTPUT_PATH}, history=${historyPath}`,
+  );
 }
 
 main().catch((error) => {

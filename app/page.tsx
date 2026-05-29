@@ -1,12 +1,21 @@
-import { DashboardTabs, type DashboardTabItem } from "./components/dashboard-tabs.js";
+import {
+  DashboardTabs,
+  type DashboardTabItem,
+} from "./components/dashboard-tabs.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
-import { getDashboardData, type DashboardActionItem, type SiteInsight } from "./lib/dashboard-data.js";
+import {
+  getDashboardData,
+  type DashboardActionItem,
+  type SiteInsight,
+} from "./lib/dashboard-data.js";
 
 export const dynamic = "force-static";
 
 export default function DashboardPage() {
   const data = getDashboardData();
-  const updatedAt = data.generatedAt ? new Date(data.generatedAt).toLocaleString("ko-KR") : "아직 수집 전";
+  const updatedAt = data.generatedAt
+    ? new Date(data.generatedAt).toLocaleString("ko-KR")
+    : "아직 수집 전";
   const tabs: DashboardTabItem[] = [
     {
       id: "overview",
@@ -19,7 +28,13 @@ export default function DashboardPage() {
       label: "사이트",
       panelLabel: "사이트",
       count: formatNumber(data.siteCount),
-      content: <SiteStatsTable stats={data.stats} failedCount={data.failedCount} segments={data.segments} />,
+      content: (
+        <SiteStatsTable
+          stats={data.stats}
+          failedCount={data.failedCount}
+          segments={data.segments}
+        />
+      ),
     },
     {
       id: "insights",
@@ -32,7 +47,7 @@ export default function DashboardPage() {
       id: "issues",
       label: "문제",
       panelLabel: "문제",
-      count: formatNumber(data.failedCount),
+      count: formatNumber(data.failedCount + data.trafficDropStats.length),
       content: <IssuesSection data={data} />,
     },
     {
@@ -60,15 +75,39 @@ export default function DashboardPage() {
   );
 }
 
-function OverviewSection({ data }: { data: ReturnType<typeof getDashboardData> }) {
+function OverviewSection({
+  data,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+}) {
   return (
     <>
       <div className="summary-grid" aria-label="전체 통계 요약">
-        <StatusCard label="1일 사용자" value={formatNumber(data.totalLast1Days.activeUsers)} hint={formatDateRange(data.dateRanges.last1Days)} />
-        <StatusCard label="7일 GA4 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint={`${formatDateRange(data.dateRanges.last7Days)} · ${formatChange(data.totalActiveUsersChange)}`} />
-        <StatusCard label="30일 사용자" value={formatNumber(data.totalLast30Days.activeUsers)} hint={`${formatNumber(data.siteCount)}개 · ${formatDateRange(data.dateRanges.last30Days)}`} />
-        <StatusCard label="운영 점수" value={`${data.healthSummary.averageScore}점`} hint={`위험 ${data.healthSummary.criticalCount}개 · 주의 ${data.healthSummary.warningCount}개`} />
-        <StatusCard label="GSC 연결" value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`} hint={`권한 확인 ${data.gscIssueStats.length}개`} />
+        <StatusCard
+          label="1일 사용자"
+          value={formatNumber(data.totalLast1Days.activeUsers)}
+          hint={formatDateRange(data.dateRanges.last1Days)}
+        />
+        <StatusCard
+          label="7일 GA4 사용자"
+          value={formatNumber(data.totalLast7Days.activeUsers)}
+          hint={`${formatDateRange(data.dateRanges.last7Days)} · ${formatChange(data.totalActiveUsersChange)}`}
+        />
+        <StatusCard
+          label="30일 사용자"
+          value={formatNumber(data.totalLast30Days.activeUsers)}
+          hint={`${formatNumber(data.siteCount)}개 · ${formatDateRange(data.dateRanges.last30Days)}`}
+        />
+        <StatusCard
+          label="운영 점수"
+          value={`${data.healthSummary.averageScore}점`}
+          hint={`위험 ${data.healthSummary.criticalCount}개 · 주의 ${data.healthSummary.warningCount}개`}
+        />
+        <StatusCard
+          label="GSC 연결"
+          value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`}
+          hint={`권한 확인 ${data.gscIssueStats.length}개`}
+        />
       </div>
       <div className="operation-grid" aria-label="운영 우선순위">
         <ActionQueue actions={data.actions} />
@@ -78,22 +117,50 @@ function OverviewSection({ data }: { data: ReturnType<typeof getDashboardData> }
   );
 }
 
-function InsightsSection({ data }: { data: ReturnType<typeof getDashboardData> }) {
+function InsightsSection({
+  data,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+}) {
   return (
     <div className="insight-grid">
-      <InsightPanel title="SEO 기회" description="노출 대비 CTR 또는 순위 개선 여지가 큰 사이트입니다." insights={data.seoInsights} />
-      <InsightPanel title="성장 신호" description="최근 7일 사용자 증가가 두드러진 사이트입니다." insights={data.growthInsights} />
-      <InsightPanel title="하락 신호" description="사용자나 검색 클릭이 감소한 사이트입니다." insights={data.declineInsights} />
-      <InsightPanel title="우선 확인" description="권한, 급락, 색인 의심 신호를 모았습니다." insights={data.priorityInsights} />
+      <InsightPanel
+        title="SEO 기회"
+        description="노출 대비 CTR 또는 순위 개선 여지가 큰 사이트입니다."
+        insights={data.seoInsights}
+      />
+      <InsightPanel
+        title="성장 신호"
+        description="최근 7일 사용자 증가가 두드러진 사이트입니다."
+        insights={data.growthInsights}
+      />
+      <InsightPanel
+        title="하락 신호"
+        description="사용자나 검색 클릭이 감소한 사이트입니다."
+        insights={data.declineInsights}
+      />
+      <InsightPanel
+        title="우선 확인"
+        description="권한, 급락, 색인 의심 신호를 모았습니다."
+        insights={data.priorityInsights}
+      />
     </div>
   );
 }
 
-function IssuesSection({ data }: { data: ReturnType<typeof getDashboardData> }) {
+function IssuesSection({
+  data,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+}) {
   return (
     <div className="issue-layout">
-      <DailyIssuePanel stats={data.dailyIssueStats} staleCount={data.staleCount} />
+      <DailyIssuePanel
+        stats={data.dailyIssueStats}
+        staleCount={data.staleCount}
+      />
       <GscIssuePanel stats={data.gscIssueStats} />
+      <TrafficDropPanel stats={data.trafficDropStats} />
     </div>
   );
 }
@@ -104,7 +171,9 @@ function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
       <div className="panel-heading">
         <div>
           <h2>오늘의 액션</h2>
-          <p>권한, 급락, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다.</p>
+          <p>
+            권한, 급락, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다.
+          </p>
         </div>
         <span>{formatNumber(actions.length)}개</span>
       </div>
@@ -130,7 +199,11 @@ function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
   );
 }
 
-function HealthPanel({ data }: { data: ReturnType<typeof getDashboardData>["healthSummary"] }) {
+function HealthPanel({
+  data,
+}: {
+  data: ReturnType<typeof getDashboardData>["healthSummary"];
+}) {
   return (
     <article className="panel health-panel">
       <div className="panel-heading">
@@ -139,7 +212,10 @@ function HealthPanel({ data }: { data: ReturnType<typeof getDashboardData>["heal
           <p>수집 상태, 급락, 검색 품질을 합산한 사이트 건강도입니다.</p>
         </div>
       </div>
-      <div className="health-ring" aria-label={`평균 운영 점수 ${data.averageScore}점`}>
+      <div
+        className="health-ring"
+        aria-label={`평균 운영 점수 ${data.averageScore}점`}
+      >
         <strong>{data.averageScore}</strong>
         <span>평균 점수</span>
       </div>
@@ -152,13 +228,20 @@ function HealthPanel({ data }: { data: ReturnType<typeof getDashboardData>["heal
   );
 }
 
-function GscIssuePanel({ stats }: { stats: ReturnType<typeof getDashboardData>["gscIssueStats"] }) {
+function GscIssuePanel({
+  stats,
+}: {
+  stats: ReturnType<typeof getDashboardData>["gscIssueStats"];
+}) {
   return (
     <article className="panel">
       <div className="panel-heading">
         <div>
           <h2>GSC 권한 확인 대상</h2>
-          <p>Search Console에서 서비스 계정 권한을 추가해야 실제 GSC 지표가 잡힙니다.</p>
+          <p>
+            Search Console에서 서비스 계정 권한을 추가해야 실제 GSC 지표가
+            잡힙니다.
+          </p>
         </div>
         <span>{formatNumber(stats.length)}개</span>
       </div>
@@ -182,7 +265,50 @@ function GscIssuePanel({ stats }: { stats: ReturnType<typeof getDashboardData>["
   );
 }
 
-function DailyIssuePanel({ stats, staleCount }: { stats: ReturnType<typeof getDashboardData>["dailyIssueStats"]; staleCount: number }) {
+function TrafficDropPanel({
+  stats,
+}: {
+  stats: ReturnType<typeof getDashboardData>["trafficDropStats"];
+}) {
+  return (
+    <article className="panel">
+      <div className="panel-heading">
+        <div>
+          <h2>트래픽 급감</h2>
+          <p>직전 7일 대비 사용자가 30% 이상 감소한 사이트입니다.</p>
+        </div>
+        <span>{formatNumber(stats.length)}개</span>
+      </div>
+      {stats.length === 0 ? (
+        <p className="muted-text">현재 급감 사이트가 없습니다.</p>
+      ) : (
+        <div className="issue-grid">
+          {stats.map((stat) => (
+            <div
+              className="issue-row"
+              key={`${stat.id}-${stat.ga4PropertyId}-drop`}
+            >
+              <div>
+                <strong>{stat.name}</strong>
+                <a href={stat.url}>{formatHost(stat.url)}</a>
+                <p>{`GA4 사용자 ${formatChange(stat.trend.activeUsersChange)} · GSC 클릭 ${formatChange(stat.trend.gscClicksChange)}`}</p>
+              </div>
+              <span>{formatChange(stat.trend.activeUsersChange)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function DailyIssuePanel({
+  stats,
+  staleCount,
+}: {
+  stats: ReturnType<typeof getDashboardData>["dailyIssueStats"];
+  staleCount: number;
+}) {
   return (
     <article className="panel">
       <div className="panel-heading">
@@ -199,7 +325,10 @@ function DailyIssuePanel({ stats, staleCount }: { stats: ReturnType<typeof getDa
       ) : (
         <div className="issue-grid">
           {stats.map((stat) => (
-            <div className="issue-row" key={`${stat.id}-${stat.ga4PropertyId}-daily`}>
+            <div
+              className="issue-row"
+              key={`${stat.id}-${stat.ga4PropertyId}-daily`}
+            >
               <div>
                 <strong>{stat.name}</strong>
                 <a href={stat.url}>{formatHost(stat.url)}</a>
@@ -225,10 +354,16 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
         <div className="metric-grid">
           <MiniMetric label="사용자" value={data.totalLast30Days.activeUsers} />
           <MiniMetric label="세션" value={data.totalLast30Days.sessions} />
-          <MiniMetric label="조회수" value={data.totalLast30Days.screenPageViews} />
+          <MiniMetric
+            label="조회수"
+            value={data.totalLast30Days.screenPageViews}
+          />
           <MiniMetric label="이벤트" value={data.totalLast30Days.eventCount} />
           <MiniMetric label="GSC 클릭" value={data.totalGscLast30Days.clicks} />
-          <MiniMetric label="GSC 노출" value={data.totalGscLast30Days.impressions} />
+          <MiniMetric
+            label="GSC 노출"
+            value={data.totalGscLast30Days.impressions}
+          />
         </div>
       </article>
 
@@ -277,7 +412,15 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
   );
 }
 
-function InsightPanel({ title, description, insights }: { title: string; description: string; insights: SiteInsight[] }) {
+function InsightPanel({
+  title,
+  description,
+  insights,
+}: {
+  title: string;
+  description: string;
+  insights: SiteInsight[];
+}) {
   return (
     <article className="panel insight-panel">
       <div className="panel-heading">
@@ -314,7 +457,15 @@ function InsightCard({ insight }: { insight: SiteInsight }) {
   );
 }
 
-function StatusCard({ label, value, hint }: { label: string; value: string; hint: string }) {
+function StatusCard({
+  label,
+  value,
+  hint,
+}: {
+  label: string;
+  value: string;
+  hint: string;
+}) {
   return (
     <article className="status-card">
       <span>{label}</span>
@@ -354,7 +505,10 @@ function formatChange(value: number | null): string {
   return `${prefix}${formatPercent(value)}`;
 }
 
-function formatDateRange(range: { startDate: string; endDate: string }): string {
+function formatDateRange(range: {
+  startDate: string;
+  endDate: string;
+}): string {
   if (range.startDate === range.endDate) {
     return range.endDate;
   }

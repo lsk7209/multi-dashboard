@@ -12,3 +12,4 @@ dev-server.*.log
 setup.log
 
 .vercel
+.gstack/
