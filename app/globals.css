@@ -92,14 +92,6 @@ h2 {
   gap: 18px;
 }
 
-.tab-radio {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .main-tabs {
   position: sticky;
   top: 0;
@@ -114,15 +106,17 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.main-tabs label {
+.main-tabs button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   flex: 0 0 auto;
   min-height: 40px;
+  border: 0;
   border-radius: 7px;
   padding: 10px 16px;
   color: var(--muted);
+  background: transparent;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
@@ -136,9 +130,15 @@ h2 {
   font-size: 12px;
 }
 
-.main-tabs label:hover {
+.main-tabs button:hover {
   color: var(--accent);
   background: #f2fbf9;
+}
+
+.main-tabs button.active,
+.main-tabs button[aria-selected="true"] {
+  color: var(--accent);
+  background: var(--accent-weak);
 }
 
 .dashboard-panels {
@@ -149,21 +149,12 @@ h2 {
   display: none;
 }
 
-#tab-overview:checked ~ .main-tabs label[for="tab-overview"],
-#tab-sites:checked ~ .main-tabs label[for="tab-sites"],
-#tab-insights:checked ~ .main-tabs label[for="tab-insights"],
-#tab-issues:checked ~ .main-tabs label[for="tab-issues"],
-#tab-settings:checked ~ .main-tabs label[for="tab-settings"] {
-  color: var(--accent);
-  background: var(--accent-weak);
+.tab-panel.active {
+  display: block;
 }
 
-#tab-overview:checked ~ .dashboard-panels .overview-panel,
-#tab-sites:checked ~ .dashboard-panels .sites-panel,
-#tab-insights:checked ~ .dashboard-panels .insights-panel,
-#tab-issues:checked ~ .dashboard-panels .issues-panel,
-#tab-settings:checked ~ .dashboard-panels .settings-panel {
-  display: block;
+.tab-panel[hidden] {
+  display: none !important;
 }
 
 .summary-grid {
@@ -927,7 +918,7 @@ code {
     padding: 6px;
   }
 
-  .main-tabs label {
+  .main-tabs button {
     min-height: 38px;
     padding: 9px 10px;
     font-size: 13px;
