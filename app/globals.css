@@ -608,12 +608,13 @@ code {
 }
 
 .stats-table-wrap {
+  min-width: 0;
   overflow-x: auto;
 }
 
 .explorer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.38fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
   align-items: start;
 }
 
@@ -736,6 +737,7 @@ code {
   display: grid;
   gap: 14px;
   min-width: 0;
+  max-width: 420px;
   border-left: 1px solid var(--line);
   padding: 18px;
   background: #fff;
