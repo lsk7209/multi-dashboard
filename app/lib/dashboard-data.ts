@@ -30,9 +30,22 @@ export interface GscMetricSet {
   position: number;
 }
 
-export type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
-export type ErrorKind = "permission" | "not_found" | "quota" | "missing_config" | "api_error";
-export type OperationalStatus = "normal" | "needsPermission" | "apiError" | "stale";
+export type CollectionStatus =
+  | "ok"
+  | "auth_error"
+  | "api_error"
+  | "missing_config";
+export type ErrorKind =
+  | "permission"
+  | "not_found"
+  | "quota"
+  | "missing_config"
+  | "api_error";
+export type OperationalStatus =
+  | "normal"
+  | "needsPermission"
+  | "apiError"
+  | "stale";
 export type ActionKind = "permission" | "decline" | "seo" | "ranking" | "data";
 export type SegmentKey = "growth" | "decline" | "seo" | "gsc";
 
@@ -119,8 +132,14 @@ export interface SiteHealthScore {
   reason: string;
 }
 
-export interface EnrichedSiteStat
-  extends Omit<SiteStat, "last1Days" | "previous7Days" | "last30Days" | "gscPrevious7Days" | "gscLast30Days"> {
+export interface EnrichedSiteStat extends Omit<
+  SiteStat,
+  | "last1Days"
+  | "previous7Days"
+  | "last30Days"
+  | "gscPrevious7Days"
+  | "gscLast30Days"
+> {
   last1Days: MetricSet;
   previous7Days: MetricSet;
   last30Days: MetricSet;
@@ -132,6 +151,7 @@ export interface EnrichedSiteStat
   statusReason: string;
   isStale: boolean;
   health: SiteHealthScore;
+  sparkline: number[];
 }
 
 export interface DashboardActionItem {
@@ -177,6 +197,7 @@ export interface DashboardData {
   healthSummary: HealthSummary;
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
+  trafficDropStats: EnrichedSiteStat[];
   siteCount: number;
   trackedCount: number;
   gscConnectedCount: number;
@@ -193,15 +214,25 @@ export interface DashboardData {
 }
 
 export function getDashboardData(): DashboardData {
-  const sites = readSites("scripts/setup/sites.yaml").filter((site) => site.enabled !== false);
+  const sites = readSites("scripts/setup/sites.yaml").filter(
+    (site) => site.enabled !== false,
+  );
   const snapshot = readStats("data/site-stats.json");
   const statsById = new Map(snapshot.stats.map((stat) => [stat.id, stat]));
-  const stats = sites.map((site) => enrichSiteStat(statsById.get(site.id) ?? emptySiteStat(site)));
+  const sparklines = loadSparklines(sites.map((s) => s.id));
+  const stats = sites.map((site) =>
+    enrichSiteStat(
+      statsById.get(site.id) ?? emptySiteStat(site),
+      sparklines.get(site.id) ?? [],
+    ),
+  );
   const insights = buildInsights(stats);
   const actions = buildActionItems(stats).slice(0, 12);
   const totalLast1Days = sumMetrics(stats.map((stat) => stat.last1Days));
   const totalLast7Days = sumMetrics(stats.map((stat) => stat.last7Days));
-  const totalPrevious7Days = sumMetrics(stats.map((stat) => stat.previous7Days));
+  const totalPrevious7Days = sumMetrics(
+    stats.map((stat) => stat.previous7Days),
+  );
   const gscConnectedStats = stats.filter((stat) => stat.gscStatus === "ok");
 
   return {
@@ -210,48 +241,103 @@ export function getDashboardData(): DashboardData {
     sites,
     stats,
     insights,
-    priorityInsights: insights.filter((insight) => insight.severity === "high").slice(0, 10),
-    seoInsights: insights.filter((insight) => insight.kind === "seoOpportunity" || insight.kind === "rankingOpportunity").slice(0, 10),
-    growthInsights: insights.filter((insight) => insight.kind === "growth").slice(0, 8),
-    declineInsights: insights.filter((insight) => insight.kind === "decline").slice(0, 8),
+    priorityInsights: groupInsightsByDomain(
+      insights.filter((insight) => insight.severity === "high"),
+    ).slice(0, 10),
+    seoInsights: groupInsightsByDomain(
+      insights.filter(
+        (insight) =>
+          insight.kind === "seoOpportunity" ||
+          insight.kind === "rankingOpportunity",
+      ),
+    ).slice(0, 10),
+    growthInsights: groupInsightsByDomain(
+      insights.filter((insight) => insight.kind === "growth"),
+    ).slice(0, 8),
+    declineInsights: groupInsightsByDomain(
+      insights.filter((insight) => insight.kind === "decline"),
+    ).slice(0, 8),
     actions,
     segments: buildSegments(stats),
     healthSummary: buildHealthSummary(stats),
     gscIssueStats: stats.filter((stat) => Boolean(stat.gscError)),
-    dailyIssueStats: stats.filter((stat) => stat.operationalStatus !== "normal").slice(0, 20),
+    dailyIssueStats: stats
+      .filter((stat) => stat.operationalStatus !== "normal")
+      .slice(0, 20),
+    trafficDropStats: stats
+      .filter(
+        (s) =>
+          (s.trend.activeUsersChange ?? 0) <= -0.3 &&
+          s.previous7Days.activeUsers >= 10,
+      )
+      .sort(
+        (a, b) =>
+          (a.trend.activeUsersChange ?? 0) - (b.trend.activeUsersChange ?? 0),
+      )
+      .slice(0, 20),
     siteCount: sites.length,
-    trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId).length,
+    trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId)
+      .length,
     gscConnectedCount: gscConnectedStats.length,
-    failedCount: stats.filter((stat) => stat.operationalStatus !== "normal").length,
+    failedCount: stats.filter((stat) => stat.operationalStatus !== "normal")
+      .length,
     staleCount: stats.filter((stat) => stat.isStale).length,
     totalLast1Days,
     totalLast7Days,
     totalPrevious7Days,
     totalLast30Days: sumMetrics(stats.map((stat) => stat.last30Days)),
-    totalGscLast7Days: sumGscMetrics(gscConnectedStats.map((stat) => stat.gscLast7Days ?? emptyGscMetrics())),
-    totalGscPrevious7Days: sumGscMetrics(gscConnectedStats.map((stat) => stat.gscPrevious7Days)),
-    totalGscLast30Days: sumGscMetrics(gscConnectedStats.map((stat) => stat.gscLast30Days)),
-    totalActiveUsersChange: changeRate(totalLast7Days.activeUsers, totalPrevious7Days.activeUsers),
+    totalGscLast7Days: sumGscMetrics(
+      gscConnectedStats.map((stat) => stat.gscLast7Days ?? emptyGscMetrics()),
+    ),
+    totalGscPrevious7Days: sumGscMetrics(
+      gscConnectedStats.map((stat) => stat.gscPrevious7Days),
+    ),
+    totalGscLast30Days: sumGscMetrics(
+      gscConnectedStats.map((stat) => stat.gscLast30Days),
+    ),
+    totalActiveUsersChange: changeRate(
+      totalLast7Days.activeUsers,
+      totalPrevious7Days.activeUsers,
+    ),
   };
 }
 
-function enrichSiteStat(stat: SiteStat): EnrichedSiteStat {
+function enrichSiteStat(
+  stat: SiteStat,
+  sparkline: number[] = [],
+): EnrichedSiteStat {
   const last1Days = stat.last1Days ?? emptyMetrics();
   const previous7Days = stat.previous7Days ?? emptyMetrics();
   const last30Days = stat.last30Days ?? stat.last28Days ?? emptyMetrics();
   const gscPrevious7Days = stat.gscPrevious7Days ?? emptyGscMetrics();
   const gscLast7Days = stat.gscLast7Days ?? emptyGscMetrics();
-  const gscLast30Days = stat.gscLast30Days ?? stat.gscLast28Days ?? emptyGscMetrics();
+  const gscLast30Days =
+    stat.gscLast30Days ?? stat.gscLast28Days ?? emptyGscMetrics();
   const ga4Status = stat.ga4Status ?? (stat.error ? "api_error" : "ok");
   const gscStatus = stat.gscStatus ?? (stat.gscError ? "auth_error" : "ok");
-  const operationalStatus = getOperationalStatus({ ...stat, ga4Status, gscStatus });
+  const operationalStatus = getOperationalStatus({
+    ...stat,
+    ga4Status,
+    gscStatus,
+  });
   const isStale = operationalStatus === "stale";
   const trend = {
-    activeUsersChange: changeRate(stat.last7Days.activeUsers, previous7Days.activeUsers),
+    activeUsersChange: changeRate(
+      stat.last7Days.activeUsers,
+      previous7Days.activeUsers,
+    ),
     sessionsChange: changeRate(stat.last7Days.sessions, previous7Days.sessions),
     gscClicksChange: changeRate(gscLast7Days.clicks, gscPrevious7Days.clicks),
   };
-  const normalizedStat = { ...stat, ga4Status, gscStatus, gscLast7Days, last30Days, previous7Days, trend };
+  const normalizedStat = {
+    ...stat,
+    ga4Status,
+    gscStatus,
+    gscLast7Days,
+    last30Days,
+    previous7Days,
+    trend,
+  };
 
   return {
     ...stat,
@@ -264,10 +350,14 @@ function enrichSiteStat(stat: SiteStat): EnrichedSiteStat {
     gscLast30Days,
     operationalStatus,
     statusLabel: getStatusLabel(operationalStatus),
-    statusReason: getStatusReason({ ...stat, ga4Status, gscStatus }, operationalStatus),
+    statusReason: getStatusReason(
+      { ...stat, ga4Status, gscStatus },
+      operationalStatus,
+    ),
     isStale,
     trend,
     health: getHealthScore(normalizedStat, operationalStatus),
+    sparkline,
   };
 }
 
@@ -282,23 +372,76 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   const gsc = stat.gscLast7Days ?? emptyGscMetrics();
 
   if (stat.operationalStatus !== "normal") {
-    items.push(makeAction(stat, "permission", 100, stat.statusLabel, stat.statusReason, "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요."));
+    items.push(
+      makeAction(
+        stat,
+        "permission",
+        100,
+        stat.statusLabel,
+        stat.statusReason,
+        "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요.",
+      ),
+    );
   }
 
-  if (activeChange !== null && activeChange <= -0.3 && stat.previous7Days.activeUsers >= 10) {
-    items.push(makeAction(stat, "decline", 90, formatSignedPercent(activeChange), "GA4 사용자가 직전 7일 대비 크게 감소했습니다.", "최근 발행, 색인, 유입 채널 변경 여부를 확인하세요."));
+  if (
+    activeChange !== null &&
+    activeChange <= -0.3 &&
+    stat.previous7Days.activeUsers >= 10
+  ) {
+    items.push(
+      makeAction(
+        stat,
+        "decline",
+        90,
+        formatSignedPercent(activeChange),
+        "GA4 사용자가 직전 7일 대비 크게 감소했습니다.",
+        "최근 발행, 색인, 유입 채널 변경 여부를 확인하세요.",
+      ),
+    );
   }
 
-  if (gscChange !== null && gscChange <= -0.3 && stat.gscPrevious7Days.clicks >= 5) {
-    items.push(makeAction(stat, "decline", 85, formatSignedPercent(gscChange), "GSC 클릭이 직전 7일 대비 크게 감소했습니다.", "상위 쿼리와 CTR 하락 페이지를 점검하세요."));
+  if (
+    gscChange !== null &&
+    gscChange <= -0.3 &&
+    stat.gscPrevious7Days.clicks >= 5
+  ) {
+    items.push(
+      makeAction(
+        stat,
+        "decline",
+        85,
+        formatSignedPercent(gscChange),
+        "GSC 클릭이 직전 7일 대비 크게 감소했습니다.",
+        "상위 쿼리와 CTR 하락 페이지를 점검하세요.",
+      ),
+    );
   }
 
   if (gsc.impressions >= 100 && gsc.ctr < 0.02) {
-    items.push(makeAction(stat, "seo", 70, formatPercent(gsc.ctr), "노출 대비 CTR이 낮습니다.", "제목, 메타 설명, FAQ를 검색 의도에 맞춰 보강하세요."));
+    items.push(
+      makeAction(
+        stat,
+        "seo",
+        70,
+        formatPercent(gsc.ctr),
+        "노출 대비 CTR이 낮습니다.",
+        "제목, 메타 설명, FAQ를 검색 의도에 맞춰 보강하세요.",
+      ),
+    );
   }
 
   if (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50) {
-    items.push(makeAction(stat, "ranking", 65, `${formatDecimal(gsc.position)}위`, "평균순위가 4~20위 구간입니다.", "상위 문서 보강과 내부링크 추가로 1페이지 진입을 노리세요."));
+    items.push(
+      makeAction(
+        stat,
+        "ranking",
+        65,
+        `${formatDecimal(gsc.position)}위`,
+        "평균순위가 4~20위 구간입니다.",
+        "상위 문서 보강과 내부링크 추가로 1페이지 진입을 노리세요.",
+      ),
+    );
   }
 
   return items;
@@ -341,14 +484,20 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
       label: "성장",
       description: "7일 사용자가 직전 기간보다 30% 이상 증가한 사이트",
       count: 0,
-      stats: stats.filter((stat) => (stat.trend.activeUsersChange ?? 0) >= 0.3).sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers),
+      stats: stats
+        .filter((stat) => (stat.trend.activeUsersChange ?? 0) >= 0.3)
+        .sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers),
     },
     {
       key: "decline",
       label: "하락",
       description: "7일 사용자 또는 GSC 클릭이 30% 이상 감소한 사이트",
       count: 0,
-      stats: stats.filter((stat) => (stat.trend.activeUsersChange ?? 0) <= -0.3 || (stat.trend.gscClicksChange ?? 0) <= -0.3),
+      stats: stats.filter(
+        (stat) =>
+          (stat.trend.activeUsersChange ?? 0) <= -0.3 ||
+          (stat.trend.gscClicksChange ?? 0) <= -0.3,
+      ),
     },
     {
       key: "seo",
@@ -357,7 +506,10 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
       count: 0,
       stats: stats.filter((stat) => {
         const gsc = stat.gscLast7Days ?? emptyGscMetrics();
-        return (gsc.impressions >= 100 && gsc.ctr < 0.02) || (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50);
+        return (
+          (gsc.impressions >= 100 && gsc.ctr < 0.02) ||
+          (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50)
+        );
       }),
     },
     {
@@ -365,11 +517,17 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
       label: "GSC 문제",
       description: "권한 오류 또는 검색 데이터 확인이 필요한 사이트",
       count: 0,
-      stats: stats.filter((stat) => stat.gscStatus !== "ok" || Boolean(stat.gscError)),
+      stats: stats.filter(
+        (stat) => stat.gscStatus !== "ok" || Boolean(stat.gscError),
+      ),
     },
   ];
 
-  return segments.map((segment) => ({ ...segment, count: segment.stats.length, stats: segment.stats.slice(0, 8) }));
+  return segments.map((segment) => ({
+    ...segment,
+    count: segment.stats.length,
+    stats: segment.stats.slice(0, 8),
+  }));
 }
 
 function buildHealthSummary(stats: EnrichedSiteStat[]): HealthSummary {
@@ -409,7 +567,11 @@ function getHealthScore(
     reasons.push("검색 클릭 감소");
   }
 
-  if (stat.gscStatus === "ok" && stat.gscLast7Days.impressions >= 100 && stat.gscLast7Days.ctr < 0.02) {
+  if (
+    stat.gscStatus === "ok" &&
+    stat.gscLast7Days.impressions >= 100 &&
+    stat.gscLast7Days.ctr < 0.02
+  ) {
     score -= 10;
     reasons.push("CTR 낮음");
   }
@@ -420,13 +582,37 @@ function getHealthScore(
   }
 
   const normalizedScore = Math.max(0, Math.min(100, score));
-  const grade = normalizedScore >= 80 ? "좋음" : normalizedScore >= 55 ? "주의" : "위험";
+  const grade =
+    normalizedScore >= 80 ? "좋음" : normalizedScore >= 55 ? "주의" : "위험";
 
   return {
     score: normalizedScore,
     grade,
     reason: reasons.length > 0 ? reasons.join(", ") : "핵심 지표 정상",
   };
+}
+
+function groupInsightsByDomain(insights: SiteInsight[]): SiteInsight[] {
+  const byDomain = new Map<string, SiteInsight[]>();
+  for (const insight of insights) {
+    const domain = normalizeUrl(insight.url);
+    const existing = byDomain.get(domain) ?? [];
+    byDomain.set(domain, [...existing, insight]);
+  }
+  const merged: SiteInsight[] = [];
+  for (const group of byDomain.values()) {
+    const primary = group[0];
+    if (group.length === 1) {
+      merged.push(primary);
+      continue;
+    }
+    const allReasons = group.map((i) => i.reason).join(" · ");
+    const allValues = [...new Set(group.map((i) => i.primaryValue))].join(
+      " / ",
+    );
+    merged.push({ ...primary, reason: allReasons, primaryValue: allValues });
+  }
+  return merged;
 }
 
 function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
@@ -438,7 +624,12 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
     const activeUsersChange = stat.trend.activeUsersChange;
     const gscClicksChange = stat.trend.gscClicksChange;
 
-    if (stat.gscError || (gsc.clicks === 0 && gsc.impressions === 0 && stat.last7Days.activeUsers >= 50)) {
+    if (
+      stat.gscError ||
+      (gsc.clicks === 0 &&
+        gsc.impressions === 0 &&
+        stat.last7Days.activeUsers >= 50)
+    ) {
       insights.push(
         makeInsight(
           stat,
@@ -451,7 +642,11 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
       );
     }
 
-    if (activeUsersChange !== null && activeUsersChange <= -0.3 && stat.previous7Days.activeUsers >= 10) {
+    if (
+      activeUsersChange !== null &&
+      activeUsersChange <= -0.3 &&
+      stat.previous7Days.activeUsers >= 10
+    ) {
       insights.push(
         makeInsight(
           stat,
@@ -464,7 +659,11 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
       );
     }
 
-    if (gscClicksChange !== null && gscClicksChange <= -0.3 && stat.gscPrevious7Days.clicks >= 5) {
+    if (
+      gscClicksChange !== null &&
+      gscClicksChange <= -0.3 &&
+      stat.gscPrevious7Days.clicks >= 5
+    ) {
       insights.push(
         makeInsight(
           stat,
@@ -477,7 +676,11 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
       );
     }
 
-    if (activeUsersChange !== null && activeUsersChange >= 0.3 && stat.last7Days.activeUsers >= 10) {
+    if (
+      activeUsersChange !== null &&
+      activeUsersChange >= 0.3 &&
+      stat.last7Days.activeUsers >= 10
+    ) {
       insights.push(
         makeInsight(
           stat,
@@ -543,7 +746,9 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
     }
   }
 
-  return insights.sort((a, b) => severityRank(b.severity) - severityRank(a.severity));
+  return insights.sort(
+    (a, b) => severityRank(b.severity) - severityRank(a.severity),
+  );
 }
 
 function makeInsight(
@@ -577,9 +782,46 @@ function readSites(path: string): Site[] {
   return parsed.sites ?? [];
 }
 
+function loadSparklines(siteIds: string[]): Map<string, number[]> {
+  const result = new Map<string, number[]>();
+  const days: number[] = [6, 5, 4, 3, 2, 1, 0];
+
+  for (const siteId of siteIds) {
+    const values: number[] = [];
+    for (const daysAgo of days) {
+      const date = new Date();
+      date.setUTCDate(date.getUTCDate() - daysAgo);
+      const dateStr = date.toISOString().slice(0, 10);
+      const historyPath = `data/history/${dateStr}.json`;
+      if (existsSync(historyPath)) {
+        try {
+          const snap = JSON.parse(
+            readFileSync(historyPath, "utf8"),
+          ) as StatsSnapshot;
+          const stat = snap.stats.find((s) => s.id === siteId);
+          values.push(stat?.last1Days?.activeUsers ?? 0);
+        } catch {
+          values.push(0);
+        }
+      } else {
+        values.push(0);
+      }
+    }
+    result.set(siteId, values);
+  }
+  return result;
+}
+
 function readStats(path: string): StatsSnapshot {
   if (!existsSync(path)) {
-    return { generatedAt: null, rangeDays: 7, previousRangeDays: 7, longRangeDays: 30, dateRanges: fallbackDateRanges(), stats: [] };
+    return {
+      generatedAt: null,
+      rangeDays: 7,
+      previousRangeDays: 7,
+      longRangeDays: 30,
+      dateRanges: fallbackDateRanges(),
+      stats: [],
+    };
   }
 
   return JSON.parse(readFileSync(path, "utf8")) as StatsSnapshot;
@@ -624,16 +866,25 @@ function emptySiteStat(site: Site): SiteStat {
 }
 
 function getOperationalStatus(stat: SiteStat): OperationalStatus {
-  if (isOlderThanHours(stat.ga4LastSuccessfulFetchAt, 48) || isOlderThanHours(stat.gscLastSuccessfulFetchAt, 48)) {
+  if (
+    isOlderThanHours(stat.ga4LastSuccessfulFetchAt, 48) ||
+    isOlderThanHours(stat.gscLastSuccessfulFetchAt, 48)
+  ) {
     return "stale";
   }
 
   if (stat.ga4Status && stat.ga4Status !== "ok") {
-    return stat.ga4Status === "auth_error" || stat.ga4Status === "missing_config" ? "needsPermission" : "apiError";
+    return stat.ga4Status === "auth_error" ||
+      stat.ga4Status === "missing_config"
+      ? "needsPermission"
+      : "apiError";
   }
 
   if (stat.gscStatus && stat.gscStatus !== "ok") {
-    return stat.gscStatus === "auth_error" || stat.gscStatus === "missing_config" ? "needsPermission" : "apiError";
+    return stat.gscStatus === "auth_error" ||
+      stat.gscStatus === "missing_config"
+      ? "needsPermission"
+      : "apiError";
   }
 
   return "normal";
@@ -652,7 +903,8 @@ function getStatusReason(stat: SiteStat, status: OperationalStatus): string {
   }
 
   if (status === "needsPermission") {
-    if (stat.gscError) return "GSC 권한 또는 Search Console 속성 확인이 필요합니다.";
+    if (stat.gscError)
+      return "GSC 권한 또는 Search Console 속성 확인이 필요합니다.";
     return "GA4 속성 또는 서비스 계정 권한 확인이 필요합니다.";
   }
 
@@ -713,7 +965,8 @@ function sumGscMetrics(metrics: GscMetricSet[]): GscMetricSet {
       clicks: total.clicks + metric.clicks,
       impressions: total.impressions + metric.impressions,
       weightedCtr: total.weightedCtr + metric.ctr * metric.impressions,
-      weightedPosition: total.weightedPosition + metric.position * metric.impressions,
+      weightedPosition:
+        total.weightedPosition + metric.position * metric.impressions,
     }),
     { clicks: 0, impressions: 0, weightedCtr: 0, weightedPosition: 0 },
   );
@@ -722,7 +975,10 @@ function sumGscMetrics(metrics: GscMetricSet[]): GscMetricSet {
     clicks: totals.clicks,
     impressions: totals.impressions,
     ctr: totals.impressions === 0 ? 0 : totals.weightedCtr / totals.impressions,
-    position: totals.impressions === 0 ? 0 : totals.weightedPosition / totals.impressions,
+    position:
+      totals.impressions === 0
+        ? 0
+        : totals.weightedPosition / totals.impressions,
   };
 }
 
