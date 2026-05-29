@@ -58,7 +58,22 @@ interface StatsSnapshot {
   rangeDays: number;
   previousRangeDays: number;
   longRangeDays: number;
+  dateRanges: DateRangeSummary;
   stats: SiteStat[];
+}
+
+interface DateRange {
+  startDate: string;
+  endDate: string;
+}
+
+interface DateRangeSummary {
+  timezone: "UTC";
+  basis: "completed_days";
+  last1Days: DateRange;
+  last7Days: DateRange;
+  previous7Days: DateRange;
+  last30Days: DateRange;
 }
 
 function emptyMetrics(): MetricSet {
@@ -88,6 +103,31 @@ function dateDaysAgo(days: number): string {
   const date = new Date();
   date.setUTCDate(date.getUTCDate() - days);
   return date.toISOString().slice(0, 10);
+}
+
+function buildDateRange(days: number): DateRange {
+  return {
+    startDate: dateDaysAgo(days),
+    endDate: dateDaysAgo(1),
+  };
+}
+
+function buildDateRanges(): DateRangeSummary {
+  return {
+    timezone: "UTC",
+    basis: "completed_days",
+    last1Days: buildDateRange(DAY_RANGE),
+    last7Days: buildDateRange(RANGE_DAYS),
+    previous7Days: {
+      startDate: dateDaysAgo(14),
+      endDate: dateDaysAgo(8),
+    },
+    last30Days: buildDateRange(LONG_RANGE_DAYS),
+  };
+}
+
+function toGa4StartDate(days: number): string {
+  return `${days}daysAgo`;
 }
 
 function classifyError(error: string): ErrorKind {
@@ -130,7 +170,7 @@ function statusFromError(error: string | undefined, fallback: CollectionStatus):
 }
 
 async function fetchGa4Metrics(client: BetaAnalyticsDataClient, propertyId: string, days: number): Promise<MetricSet> {
-  return fetchGa4MetricsForRange(client, propertyId, `${days}daysAgo`, "yesterday");
+  return fetchGa4MetricsForRange(client, propertyId, toGa4StartDate(days), "yesterday");
 }
 
 async function fetchPreviousGa4Metrics(client: BetaAnalyticsDataClient, propertyId: string): Promise<MetricSet> {
@@ -308,6 +348,7 @@ async function main(): Promise<void> {
     rangeDays: RANGE_DAYS,
     previousRangeDays: RANGE_DAYS,
     longRangeDays: LONG_RANGE_DAYS,
+    dateRanges: buildDateRanges(),
     stats: stats.sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers),
   };
 

@@ -20,9 +20,9 @@ export default function DashboardPage() {
       </header>
 
       <section className="summary-grid" aria-label="전체 통계 요약">
-        <StatusCard label="1일 사용자" value={formatNumber(data.totalLast1Days.activeUsers)} hint="어제 기준 실제 GA4" />
-        <StatusCard label="7일 GA4 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint={formatChange(data.totalActiveUsersChange)} />
-        <StatusCard label="30일 사용자" value={formatNumber(data.totalLast30Days.activeUsers)} hint={`${formatNumber(data.siteCount)}개 사이트 합산`} />
+        <StatusCard label="1일 사용자" value={formatNumber(data.totalLast1Days.activeUsers)} hint={formatDateRange(data.dateRanges.last1Days)} />
+        <StatusCard label="7일 GA4 사용자" value={formatNumber(data.totalLast7Days.activeUsers)} hint={`${formatDateRange(data.dateRanges.last7Days)} · ${formatChange(data.totalActiveUsersChange)}`} />
+        <StatusCard label="30일 사용자" value={formatNumber(data.totalLast30Days.activeUsers)} hint={`${formatNumber(data.siteCount)}개 · ${formatDateRange(data.dateRanges.last30Days)}`} />
         <StatusCard label="GSC 연결" value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`} hint={`권한 확인 ${data.gscIssueStats.length}개`} />
       </section>
 
@@ -45,6 +45,7 @@ export default function DashboardPage() {
         <article className="panel">
           <div className="panel-heading">
             <h2>전체 30일</h2>
+            <span>{formatDateRange(data.dateRanges.last30Days)}</span>
           </div>
           <div className="metric-grid">
             <MiniMetric label="사용자" value={data.totalLast30Days.activeUsers} />
@@ -58,7 +59,10 @@ export default function DashboardPage() {
 
         <article className="panel">
           <div className="panel-heading">
-            <h2>갱신 명령</h2>
+            <div>
+              <h2>갱신 명령</h2>
+              <p>기준: UTC 완료일, 오늘 제외</p>
+            </div>
           </div>
           <div className="command-list">
             <div className="command-row">
@@ -217,6 +221,14 @@ function formatChange(value: number | null): string {
 
   const prefix = value > 0 ? "+" : "";
   return `${prefix}${formatPercent(value)}`;
+}
+
+function formatDateRange(range: { startDate: string; endDate: string }): string {
+  if (range.startDate === range.endDate) {
+    return range.endDate;
+  }
+
+  return `${range.startDate}~${range.endDate}`;
 }
 
 function getErrorKindLabel(kind: string | undefined): string {

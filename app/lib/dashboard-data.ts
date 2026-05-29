@@ -64,7 +64,22 @@ interface StatsSnapshot {
   rangeDays: number;
   previousRangeDays: number;
   longRangeDays?: number;
+  dateRanges?: DateRangeSummary;
   stats: SiteStat[];
+}
+
+export interface DateRange {
+  startDate: string;
+  endDate: string;
+}
+
+export interface DateRangeSummary {
+  timezone: "UTC";
+  basis: "completed_days";
+  last1Days: DateRange;
+  last7Days: DateRange;
+  previous7Days: DateRange;
+  last30Days: DateRange;
 }
 
 export type InsightKind =
@@ -112,6 +127,7 @@ export interface EnrichedSiteStat
 
 export interface DashboardData {
   generatedAt: string | null;
+  dateRanges: DateRangeSummary;
   sites: Site[];
   stats: EnrichedSiteStat[];
   insights: SiteInsight[];
@@ -149,6 +165,7 @@ export function getDashboardData(): DashboardData {
 
   return {
     generatedAt: snapshot.generatedAt,
+    dateRanges: snapshot.dateRanges ?? fallbackDateRanges(),
     sites,
     stats,
     insights,
@@ -357,10 +374,27 @@ function readSites(path: string): Site[] {
 
 function readStats(path: string): StatsSnapshot {
   if (!existsSync(path)) {
-    return { generatedAt: null, rangeDays: 7, previousRangeDays: 7, longRangeDays: 30, stats: [] };
+    return { generatedAt: null, rangeDays: 7, previousRangeDays: 7, longRangeDays: 30, dateRanges: fallbackDateRanges(), stats: [] };
   }
 
   return JSON.parse(readFileSync(path, "utf8")) as StatsSnapshot;
+}
+
+function fallbackDateRanges(): DateRangeSummary {
+  return {
+    timezone: "UTC",
+    basis: "completed_days",
+    last1Days: { startDate: dateDaysAgo(1), endDate: dateDaysAgo(1) },
+    last7Days: { startDate: dateDaysAgo(7), endDate: dateDaysAgo(1) },
+    previous7Days: { startDate: dateDaysAgo(14), endDate: dateDaysAgo(8) },
+    last30Days: { startDate: dateDaysAgo(30), endDate: dateDaysAgo(1) },
+  };
+}
+
+function dateDaysAgo(days: number): string {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() - days);
+  return date.toISOString().slice(0, 10);
 }
 
 function emptySiteStat(site: Site): SiteStat {
