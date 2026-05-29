@@ -115,6 +115,9 @@ h2 {
 }
 
 .main-tabs label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   flex: 0 0 auto;
   min-height: 40px;
   border-radius: 7px;
@@ -123,6 +126,14 @@ h2 {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.main-tabs strong {
+  border-radius: 999px;
+  padding: 2px 6px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  font-size: 12px;
 }
 
 .main-tabs label:hover {
@@ -909,6 +920,22 @@ code {
 
   h1 {
     font-size: 28px;
+  }
+
+  .main-tabs {
+    gap: 4px;
+    padding: 6px;
+  }
+
+  .main-tabs label {
+    min-height: 38px;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .main-tabs strong {
+    padding: 1px 5px;
+    font-size: 11px;
   }
 
   .summary-grid,

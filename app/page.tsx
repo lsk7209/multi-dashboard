@@ -28,9 +28,15 @@ export default function DashboardPage() {
 
         <nav className="main-tabs" aria-label="대시보드 메뉴">
           <label htmlFor="tab-overview">개요</label>
-          <label htmlFor="tab-sites">사이트</label>
-          <label htmlFor="tab-insights">인사이트</label>
-          <label htmlFor="tab-issues">문제</label>
+          <label htmlFor="tab-sites">
+            사이트 <strong>{formatNumber(data.siteCount)}</strong>
+          </label>
+          <label htmlFor="tab-insights">
+            인사이트 <strong>{formatNumber(data.insights.length)}</strong>
+          </label>
+          <label htmlFor="tab-issues">
+            문제 <strong>{formatNumber(data.failedCount)}</strong>
+          </label>
           <label htmlFor="tab-settings">설정</label>
         </nav>
 
@@ -209,6 +215,29 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
           <MiniMetric label="이벤트" value={data.totalLast30Days.eventCount} />
           <MiniMetric label="GSC 클릭" value={data.totalGscLast30Days.clicks} />
           <MiniMetric label="GSC 노출" value={data.totalGscLast30Days.impressions} />
+        </div>
+      </article>
+
+      <article className="panel">
+        <div className="panel-heading">
+          <div>
+            <h2>데이터 기준</h2>
+            <p>모든 수치는 UTC 완료일 기준이며 오늘 데이터는 제외합니다.</p>
+          </div>
+        </div>
+        <div className="command-list">
+          <div className="command-row">
+            <span>1일</span>
+            <code>{formatDateRange(data.dateRanges.last1Days)}</code>
+          </div>
+          <div className="command-row">
+            <span>7일</span>
+            <code>{formatDateRange(data.dateRanges.last7Days)}</code>
+          </div>
+          <div className="command-row">
+            <span>직전 7일</span>
+            <code>{formatDateRange(data.dateRanges.previous7Days)}</code>
+          </div>
         </div>
       </article>
 
