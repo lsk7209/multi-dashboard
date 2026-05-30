@@ -120,6 +120,7 @@ async function writeMergedSites(imported: ImportedSite[]): Promise<{ added: numb
   const current = await loadSites(SITES_PATH);
   const byGa4 = new Map(current.filter((site) => site.ga4PropertyId).map((site) => [site.ga4PropertyId, site]));
   const byUrl = new Map(current.map((site) => [site.url.replace(/\/$/, ""), site]));
+  const currentIds = new Set(current.map((site) => site.id));
   let added = 0;
   let updated = 0;
 
@@ -141,7 +142,9 @@ async function writeMergedSites(imported: ImportedSite[]): Promise<{ added: numb
       continue;
     }
 
-    current.push(site);
+    const id = currentIds.has(site.id) ? uniqueSiteId(site.id, currentIds) : site.id;
+    currentIds.add(id);
+    current.push({ ...site, id });
     added += 1;
   }
 

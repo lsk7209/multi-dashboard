@@ -768,3 +768,35 @@ sites:
     wpRestBase: https://picklefriend.kr/wp-json/wp/v2
     ga4PropertyId: "539268592"
     gscSiteUrl: https://picklefriend.kr/
+  - id: smart-sellerpit
+    name: smart.sellerpit.kr
+    enabled: true
+    platform: wordpress
+    url: https://smart.sellerpit.kr/
+    wpRestBase: https://smart.sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "539570439"
+    gscSiteUrl: https://smart.sellerpit.kr/
+  - id: pregnancy-ehon365
+    name: pregnancy.ehon365.kr
+    enabled: true
+    platform: wordpress
+    url: https://pregnancy.ehon365.kr/
+    wpRestBase: https://pregnancy.ehon365.kr/wp-json/wp/v2
+    ga4PropertyId: "539600556"
+    gscSiteUrl: https://pregnancy.ehon365.kr/
+  - id: webtoon-klick
+    name: webtoon.klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://webtoon.klick.kr/
+    wpRestBase: https://webtoon.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "539606050"
+    gscSiteUrl: https://webtoon.klick.kr/
+  - id: sinhonjigi-ehon365
+    name: sinhonjigi.ehon365.kr
+    enabled: true
+    platform: wordpress
+    url: https://sinhonjigi.ehon365.kr/
+    wpRestBase: https://sinhonjigi.ehon365.kr/wp-json/wp/v2
+    ga4PropertyId: "539463615"
+    gscSiteUrl: https://sinhonjigi.ehon365.kr/

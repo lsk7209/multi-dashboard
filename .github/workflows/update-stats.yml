@@ -39,6 +39,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Import GA4 web streams
+        run: pnpm setup:import-ga4-sites
+
       - name: Update GA4 and GSC snapshot
         run: pnpm stats:update
 
@@ -50,12 +53,14 @@ jobs:
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- data/site-stats.json; then
+          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history; then
             echo "No stats changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/site-stats.json
-          git commit -m "Update dashboard stats"
+          git add scripts/setup/sites.yaml data/site-stats.json data/history
+          git commit \
+            -m "Keep dashboard snapshot current from scheduled collection" \
+            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history data unless the collection contract changes. Tested: pnpm stats:update; pnpm type-check; pnpm lint; pnpm build Not-tested: Manual review of every metric value."
           git push
