@@ -349,7 +349,7 @@ function enrichSiteStat(
     trend,
   };
 
-  return {
+  const enriched: EnrichedSiteStat = {
     ...stat,
     ga4Status,
     gscStatus,
@@ -368,11 +368,16 @@ function enrichSiteStat(
     trend,
     health: getHealthScore(normalizedStat, operationalStatus),
     sparkline,
-    lastPublishedAt: stat.lastPublishedAt,
-    daysSincePublished: stat.lastPublishedAt
-      ? Math.floor((Date.now() - Date.parse(stat.lastPublishedAt)) / 86400000)
-      : undefined,
   };
+
+  if (stat.lastPublishedAt) {
+    enriched.lastPublishedAt = stat.lastPublishedAt;
+    enriched.daysSincePublished = Math.floor(
+      (Date.now() - Date.parse(stat.lastPublishedAt)) / 86400000,
+    );
+  }
+
+  return enriched;
 }
 
 function buildActionItems(stats: EnrichedSiteStat[]): DashboardActionItem[] {
@@ -616,6 +621,9 @@ function groupInsightsByDomain(insights: SiteInsight[]): SiteInsight[] {
   const merged: SiteInsight[] = [];
   for (const group of byDomain.values()) {
     const primary = group[0];
+    if (!primary) {
+      continue;
+    }
     if (group.length === 1) {
       merged.push(primary);
       continue;
