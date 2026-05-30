@@ -800,3 +800,11 @@ sites:
     wpRestBase: https://sinhonjigi.ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "539463615"
     gscSiteUrl: https://sinhonjigi.ehon365.kr/
+  - id: gpt-nexttech7
+    name: gpt.nexttech7.com
+    enabled: true
+    platform: wordpress
+    url: https://gpt.nexttech7.com/
+    wpRestBase: https://gpt.nexttech7.com/wp-json/wp/v2
+    ga4PropertyId: "539592261"
+    gscSiteUrl: https://gpt.nexttech7.com/
