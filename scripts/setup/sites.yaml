@@ -808,3 +808,19 @@ sites:
     wpRestBase: https://gpt.nexttech7.com/wp-json/wp/v2
     ga4PropertyId: "539592261"
     gscSiteUrl: https://gpt.nexttech7.com/
+  - id: dolbomjigi-ehon365
+    name: dolbomjigi.ehon365.kr
+    enabled: true
+    platform: wordpress
+    url: https://dolbomjigi.ehon365.kr/
+    wpRestBase: https://dolbomjigi.ehon365.kr/wp-json/wp/v2
+    ga4PropertyId: "539658831"
+    gscSiteUrl: https://dolbomjigi.ehon365.kr/
+  - id: dog-klick
+    name: dog.klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://dog.klick.kr/
+    wpRestBase: https://dog.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "539677201"
+    gscSiteUrl: https://dog.klick.kr/
