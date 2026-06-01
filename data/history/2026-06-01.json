@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-01T21:46:02.825Z",
+  "generatedAt": "2026-06-01T23:01:54.689Z",
   "rangeDays": 7,
   "previousRangeDays": 7,
   "longRangeDays": 30,
@@ -76,10 +76,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:33.381Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:33.381Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:33.381Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:33.381Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:30.121Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:30.121Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:30.121Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:30.121Z"
     },
     {
       "id": "bojo24",
@@ -133,10 +133,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:33.537Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:33.537Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:33.537Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:33.537Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:30.985Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:30.985Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:30.985Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:30.985Z"
     },
     {
       "id": "todaypharm",
@@ -190,10 +190,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:33.282Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:33.282Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:33.282Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:33.282Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:29.991Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:29.991Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:29.991Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:29.991Z"
     },
     {
       "id": "haemongdream",
@@ -247,10 +247,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:14.583Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:14.583Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:14.583Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:14.583Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:13.447Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:13.447Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:13.447Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:13.447Z",
       "lastPublishedAt": "2026-06-01T21:18:00Z"
     },
     {
@@ -305,10 +305,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:35.675Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:35.675Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:35.675Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:35.675Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:31.164Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:31.164Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:31.164Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:31.164Z"
     },
     {
       "id": "temon",
@@ -362,11 +362,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:14.106Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:14.106Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:12.891Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:12.891Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:14.106Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:12.891Z"
     },
     {
       "id": "cartain-2",
@@ -420,11 +420,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:38.690Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:38.690Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:33.544Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:33.544Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:38.690Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:33.544Z"
     },
     {
       "id": "luckyday",
@@ -478,10 +478,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
       "lastPublishedAt": "2026-06-01T21:12:44Z"
     },
     {
@@ -536,10 +536,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:56.454Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:56.454Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:56.454Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:56.454Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:48.709Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:48.709Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:48.709Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:48.709Z"
     },
     {
       "id": "klick",
@@ -593,10 +593,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:13.771Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:13.771Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:13.771Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:13.771Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:12.575Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:12.575Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:12.575Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:12.575Z",
       "lastPublishedAt": "2026-06-01T07:39:30Z"
     },
     {
@@ -651,10 +651,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:30.490Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:30.490Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:30.490Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:30.490Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:28.071Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:28.071Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:28.071Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:28.071Z",
       "lastPublishedAt": "2026-06-01T07:39:30Z"
     },
     {
@@ -709,10 +709,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:36.111Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:36.111Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:36.111Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:36.111Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:31.828Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:31.828Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:31.828Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:31.828Z"
     },
     {
       "id": "tasko-2",
@@ -766,10 +766,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:29.127Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:29.127Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:29.127Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:29.127Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:26.548Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:26.548Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:26.548Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:26.548Z",
       "lastPublishedAt": "2026-06-01T17:46:13Z"
     },
     {
@@ -824,11 +824,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:29.522Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:29.522Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:29.522Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:29.522Z",
-      "lastPublishedAt": "2026-06-01T18:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:26.918Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:26.918Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:26.918Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:26.918Z",
+      "lastPublishedAt": "2026-06-01T23:00:00Z"
     },
     {
       "id": "tasko",
@@ -882,10 +882,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:09.996Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
       "lastPublishedAt": "2026-06-01T17:46:13Z"
     },
     {
@@ -940,10 +940,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:56.453Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:56.453Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:56.453Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:56.453Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:47.369Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:47.369Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:47.369Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:47.369Z",
       "lastPublishedAt": "2026-05-30T04:45:26Z"
     },
     {
@@ -998,11 +998,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:13.402Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:13.402Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:12.296Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:12.296Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:13.402Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:12.296Z",
       "lastPublishedAt": "2026-06-01T16:03:00Z"
     },
     {
@@ -1057,10 +1057,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:55.670Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:55.670Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:55.670Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:55.670Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:47.246Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:47.246Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:47.246Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:47.246Z"
     },
     {
       "id": "2mlab-2",
@@ -1114,10 +1114,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:35.899Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:35.899Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:35.899Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:35.899Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:31.418Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:31.418Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:31.418Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:31.418Z",
       "lastPublishedAt": "2026-06-01T15:47:23Z"
     },
     {
@@ -1172,11 +1172,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:59.505Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:59.505Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:59.505Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:59.505Z",
-      "lastPublishedAt": "2026-06-01T17:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:51.112Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:51.112Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:51.112Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:51.112Z",
+      "lastPublishedAt": "2026-06-01T22:00:00Z"
     },
     {
       "id": "healthgotoo",
@@ -1230,11 +1230,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:16.644Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:16.644Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:16.644Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:16.644Z",
-      "lastPublishedAt": "2026-06-01T17:48:48Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:14.582Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:14.582Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:14.582Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:14.582Z",
+      "lastPublishedAt": "2026-06-01T22:43:48Z"
     },
     {
       "id": "softwa",
@@ -1288,12 +1288,12 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:18.040Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:18.040Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:16.914Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:16.914Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:18.040Z",
-      "lastPublishedAt": "2026-06-01T17:27:00Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:16.914Z",
+      "lastPublishedAt": "2026-06-01T22:26:00Z"
     },
     {
       "id": "askore",
@@ -1347,10 +1347,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:45.915Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:45.915Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:45.915Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:45.915Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:39.840Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:39.840Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:39.840Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:39.840Z"
     },
     {
       "id": "notebook-klick-2",
@@ -1404,10 +1404,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:53.439Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:53.439Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:53.439Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:53.439Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:45.545Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:45.545Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:45.545Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:45.545Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -1462,10 +1462,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:26.447Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:26.447Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:26.447Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:26.447Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:23.822Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:23.822Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:23.822Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:23.822Z",
       "lastPublishedAt": "2026-06-01T19:42:00Z"
     },
     {
@@ -1477,14 +1477,14 @@
       "last1Days": {
         "activeUsers": 4,
         "sessions": 4,
-        "screenPageViews": 3,
-        "eventCount": 11
+        "screenPageViews": 4,
+        "eventCount": 14
       },
       "last7Days": {
         "activeUsers": 17,
         "sessions": 18,
-        "screenPageViews": 19,
-        "eventCount": 72
+        "screenPageViews": 20,
+        "eventCount": 75
       },
       "previous7Days": {
         "activeUsers": 26,
@@ -1495,8 +1495,8 @@
       "last30Days": {
         "activeUsers": 98,
         "sessions": 109,
-        "screenPageViews": 136,
-        "eventCount": 478
+        "screenPageViews": 137,
+        "eventCount": 481
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1520,10 +1520,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:39.975Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:39.975Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:39.975Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:39.975Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:35.342Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:35.342Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:35.342Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:35.342Z",
       "lastPublishedAt": "2026-06-01T16:58:18Z"
     },
     {
@@ -1578,10 +1578,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:47.645Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:47.645Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:47.645Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:47.645Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:41.289Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:41.289Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:41.289Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:41.289Z"
     },
     {
       "id": "knewstory",
@@ -1635,11 +1635,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "lastPublishedAt": "2026-06-01T16:45:38Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "lastPublishedAt": "2026-06-01T22:56:38Z"
     },
     {
       "id": "today2424",
@@ -1693,10 +1693,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:33.076Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:33.076Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:33.076Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:33.076Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:29.695Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:29.695Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:29.695Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:29.695Z"
     },
     {
       "id": "richyou",
@@ -1750,10 +1750,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:50.238Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:50.238Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:50.238Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:50.238Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:43.364Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:43.364Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:43.364Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:43.364Z",
       "lastPublishedAt": "2026-06-01T20:10:19Z"
     },
     {
@@ -1808,10 +1808,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:30.765Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:30.765Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:30.765Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:30.765Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:28.775Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:28.775Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:28.775Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:28.775Z",
       "lastPublishedAt": "2026-06-01T09:17:13Z"
     },
     {
@@ -1866,10 +1866,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:58.113Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:58.113Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:58.113Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:58.113Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:50.276Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:50.276Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:50.276Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:50.276Z",
       "lastPublishedAt": "2026-06-01T21:00:00Z"
     },
     {
@@ -1924,11 +1924,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:13.410Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:13.410Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:13.410Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:13.410Z",
-      "lastPublishedAt": "2026-06-01T17:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:12.534Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:12.534Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:12.534Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:12.534Z",
+      "lastPublishedAt": "2026-06-01T22:00:00Z"
     },
     {
       "id": "gover",
@@ -1982,10 +1982,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:24.045Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:24.045Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:24.045Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:24.045Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:23.200Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:23.200Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:23.200Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:23.200Z",
       "lastPublishedAt": "2026-06-01T13:19:04Z"
     },
     {
@@ -2040,10 +2040,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:30.350Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:30.350Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:30.350Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:30.350Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:27.348Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:27.348Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:27.348Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:27.348Z",
       "lastPublishedAt": "2026-06-01T21:17:27Z"
     },
     {
@@ -2098,10 +2098,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:32.596Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:32.596Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:32.596Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:32.596Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:28.947Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:28.947Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:28.947Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:28.947Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -2156,10 +2156,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:23.325Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:23.325Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:23.325Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:23.325Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:20.966Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:20.966Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:20.966Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:20.966Z",
       "lastPublishedAt": "2026-06-01T13:36:30Z"
     },
     {
@@ -2214,10 +2214,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:55.382Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:55.382Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:55.382Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:55.382Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:46.313Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:46.313Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:46.313Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:46.313Z",
       "lastPublishedAt": "2026-06-01T17:00:00Z"
     },
     {
@@ -2272,10 +2272,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:27.415Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:27.415Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:27.415Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:27.415Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:26.194Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:26.194Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:26.194Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:26.194Z"
     },
     {
       "id": "ezfunnel",
@@ -2329,10 +2329,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:36.214Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:36.214Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:36.214Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:36.214Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:32.256Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:32.256Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:32.256Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:32.256Z",
       "lastPublishedAt": "2026-06-01T17:53:00Z"
     },
     {
@@ -2387,10 +2387,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:56.692Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:56.692Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:56.692Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:56.692Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:48.778Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:48.778Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:48.778Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:48.778Z",
       "lastPublishedAt": "2026-06-01T19:28:51Z"
     },
     {
@@ -2445,10 +2445,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:43.315Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:43.315Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:43.315Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:43.315Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:37.707Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:37.707Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:37.707Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:37.707Z",
       "lastPublishedAt": "2026-06-01T18:53:16Z"
     },
     {
@@ -2503,18 +2503,18 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:19.999Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:19.999Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:19.999Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:19.999Z",
-      "lastPublishedAt": "2026-06-01T17:51:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:17.821Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:17.821Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:17.821Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:17.821Z",
+      "lastPublishedAt": "2026-06-01T22:58:00Z"
     },
     {
       "id": "dogswhere",
       "name": "dogswhere.com",
       "url": "https://dogswhere.com/",
       "ga4PropertyId": "539684317",
-      "gscSiteUrl": "https://dogswhere.com/",
+      "gscSiteUrl": "sc-domain:dogswhere.com",
       "last1Days": {
         "activeUsers": 6,
         "sessions": 7,
@@ -2541,31 +2541,30 @@
       },
       "gscLast7Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 7,
         "ctr": 0,
-        "position": 0
+        "position": 9.142857142857142
       },
       "gscPrevious7Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 20,
         "ctr": 0,
-        "position": 0
+        "position": 9.15
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 69,
         "ctr": 0,
-        "position": 0
+        "position": 9.376811594202898
       },
       "ga4Status": "ok",
-      "gscStatus": "auth_error",
+      "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:59.571Z",
-      "gscError": "User does not have sufficient permission for site 'https://dogswhere.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "gscErrorKind": "permission",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:59.571Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:59.571Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:52.464Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:52.464Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:52.464Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:52.464Z"
     },
     {
       "id": "estat",
@@ -2619,10 +2618,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:23.774Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:23.774Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:23.774Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:23.774Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:22.025Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:22.025Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:22.025Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:22.025Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -2677,10 +2676,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:44.774Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:44.774Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:44.774Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:44.774Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:39.486Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:39.486Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:39.486Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:39.486Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -2735,10 +2734,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:52.059Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:52.059Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:52.059Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:52.059Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:44.956Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:44.956Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:44.956Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:44.956Z",
       "lastPublishedAt": "2026-05-31T02:37:12Z"
     },
     {
@@ -2793,8 +2792,8 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "missing_config",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:58.417Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:58.417Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:50.494Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:50.494Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
       "adsTxtError": "ads.txt unavailable: 404",
@@ -2852,10 +2851,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:39.246Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:39.246Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:39.246Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:39.246Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:34.695Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:34.695Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:34.695Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:34.695Z"
     },
     {
       "id": "todayshops-2",
@@ -2909,10 +2908,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:49.631Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:49.631Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:49.631Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:49.631Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:42.592Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:42.592Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:42.592Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:42.592Z",
       "lastPublishedAt": "2026-06-01T18:19:30Z"
     },
     {
@@ -2967,11 +2966,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:51.934Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:51.934Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:51.934Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:51.934Z",
-      "lastPublishedAt": "2026-06-01T12:15:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:44.686Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:44.686Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:44.686Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:44.686Z",
+      "lastPublishedAt": "2026-06-01T17:15:00Z"
     },
     {
       "id": "insupang",
@@ -3025,10 +3024,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:14.810Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:14.810Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:14.810Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:14.810Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:14.223Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:14.223Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:14.223Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:14.223Z",
       "lastPublishedAt": "2026-06-01T20:05:43Z"
     },
     {
@@ -3083,10 +3082,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:41.545Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:41.545Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:41.545Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:41.545Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:36.869Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:36.869Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:36.869Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:36.869Z",
       "lastPublishedAt": "2026-06-01T16:48:37Z"
     },
     {
@@ -3141,11 +3140,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:46.345Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:46.345Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:40.046Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:40.046Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:46.345Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:40.046Z"
     },
     {
       "id": "educaer",
@@ -3199,10 +3198,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:49.019Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:49.019Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:49.019Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:49.019Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:42.530Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:42.530Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:42.530Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:42.530Z",
       "lastPublishedAt": "2026-06-01T20:00:00Z"
     },
     {
@@ -3257,10 +3256,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:50.351Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:50.351Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:50.351Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:50.351Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:43.675Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:43.675Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:43.675Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:43.675Z",
       "lastPublishedAt": "2026-06-01T21:05:58Z"
     },
     {
@@ -3315,10 +3314,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:23.369Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:23.369Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:23.369Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:23.369Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:21.143Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:21.143Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:21.143Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:21.143Z",
       "lastPublishedAt": "2026-05-13T03:28:40Z"
     },
     {
@@ -3373,10 +3372,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:43.815Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:43.815Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:43.815Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:43.815Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:37.843Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:37.843Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:37.843Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:37.843Z",
       "lastPublishedAt": "2026-06-01T16:48:08Z"
     },
     {
@@ -3431,10 +3430,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:57.430Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:57.430Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:57.430Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:57.430Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:49.622Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:49.622Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:49.622Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:49.622Z"
     },
     {
       "id": "travel-sellerpit",
@@ -3488,11 +3487,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:46:00.626Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:46:00.626Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:46:00.626Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:46:00.626Z",
-      "lastPublishedAt": "2026-06-01T16:27:03Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:52.544Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:52.544Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:52.544Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:52.544Z",
+      "lastPublishedAt": "2026-06-01T20:00:00Z"
     },
     {
       "id": "lawer",
@@ -3546,10 +3545,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:23.511Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:23.511Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:23.511Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:23.511Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:21.877Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:21.877Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:21.877Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:21.877Z",
       "lastPublishedAt": "2026-06-01T20:00:00Z"
     },
     {
@@ -3604,10 +3603,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:37.555Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:37.555Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:37.555Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:37.555Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:33.491Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:33.491Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:33.491Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:33.491Z",
       "lastPublishedAt": "2026-06-01T18:44:00Z"
     },
     {
@@ -3662,10 +3661,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:40.188Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:40.188Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:40.188Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:40.188Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:35.413Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:35.413Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:35.413Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:35.413Z"
     },
     {
       "id": "goesku",
@@ -3719,11 +3718,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:47.503Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:47.503Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:40.683Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:40.683Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:47.503Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:40.683Z"
     },
     {
       "id": "sssaass",
@@ -3777,10 +3776,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:47.827Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:47.827Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:47.827Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:47.827Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:41.876Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:41.876Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:41.876Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:41.876Z",
       "lastPublishedAt": "2026-06-01T19:30:00Z"
     },
     {
@@ -3835,11 +3834,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:52.057Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:52.057Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:44.761Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:44.761Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:52.057Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:44.761Z",
       "lastPublishedAt": "2026-06-01T19:20:00Z"
     },
     {
@@ -3894,10 +3893,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:59.337Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:59.337Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:59.337Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:59.337Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:50.616Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:50.616Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:50.616Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:50.616Z",
       "lastPublishedAt": "2026-06-01T21:00:00Z"
     },
     {
@@ -3952,10 +3951,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:09.995Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:09.995Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:09.995Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:09.995Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:09.430Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:09.430Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:09.430Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:09.430Z",
       "lastPublishedAt": "2026-06-01T19:55:00Z"
     },
     {
@@ -4010,10 +4009,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
       "lastPublishedAt": "2026-06-01T15:47:23Z"
     },
     {
@@ -4068,10 +4067,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:09.997Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:09.432Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -4126,10 +4125,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:12.906Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:12.906Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:12.906Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:12.906Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:12.197Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:12.197Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:12.197Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:12.197Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -4184,10 +4183,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:16.704Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:16.704Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:16.704Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:16.704Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:15.024Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:15.024Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:15.024Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:15.024Z"
     },
     {
       "id": "coinyo",
@@ -4241,10 +4240,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:16.916Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:16.916Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:16.916Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:16.916Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:15.660Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:15.660Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:15.660Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:15.660Z",
       "lastPublishedAt": "2026-06-01T18:44:00Z"
     },
     {
@@ -4299,10 +4298,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:17.496Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:17.496Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:17.496Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:17.496Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:15.697Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:15.697Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:15.697Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:15.697Z",
       "lastPublishedAt": "2026-06-01T16:58:18Z"
     },
     {
@@ -4357,11 +4356,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:17.652Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:17.652Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:15.957Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:15.957Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:17.652Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:15.957Z"
     },
     {
       "id": "petinsuer",
@@ -4415,10 +4414,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:20.280Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:20.280Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:20.280Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:20.280Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:18.118Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:18.118Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:18.118Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:18.118Z",
       "lastPublishedAt": "2026-06-01T16:48:37Z"
     },
     {
@@ -4473,10 +4472,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:20.282Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:20.282Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:20.282Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:20.282Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:18.158Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:18.158Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:18.158Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:18.158Z",
       "lastPublishedAt": "2026-06-01T19:41:40Z"
     },
     {
@@ -4531,10 +4530,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:20.606Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:20.606Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:20.606Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:20.606Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:18.575Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:18.575Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:18.575Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:18.575Z",
       "lastPublishedAt": "2026-06-01T16:48:08Z"
     },
     {
@@ -4589,11 +4588,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:20.714Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:20.714Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:20.714Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:20.714Z",
-      "lastPublishedAt": "2026-06-01T17:10:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:18.643Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:18.643Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:18.643Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:18.643Z",
+      "lastPublishedAt": "2026-06-01T22:10:00Z"
     },
     {
       "id": "luxurytraver",
@@ -4647,10 +4646,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:21.468Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:21.468Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:21.468Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:21.468Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:20.628Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:20.628Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:20.628Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:20.628Z",
       "lastPublishedAt": "2026-06-01T20:35:11Z"
     },
     {
@@ -4705,10 +4704,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:23.471Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:23.471Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:23.471Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:23.471Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:21.608Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:21.608Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:21.608Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:21.608Z",
       "lastPublishedAt": "2026-06-01T18:53:16Z"
     },
     {
@@ -4763,10 +4762,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:26.495Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:26.495Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:26.495Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:26.495Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:24.114Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:24.114Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:24.114Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:24.114Z",
       "lastPublishedAt": "2026-06-01T18:20:18Z"
     },
     {
@@ -4821,10 +4820,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:27.054Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:27.054Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:27.054Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:27.054Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:24.266Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:24.266Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:24.266Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:24.266Z",
       "lastPublishedAt": "2026-06-01T09:17:13Z"
     },
     {
@@ -4879,10 +4878,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:27.055Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:27.055Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:27.055Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:27.055Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:24.390Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:24.390Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:24.390Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:24.390Z"
     },
     {
       "id": "texturb",
@@ -4936,10 +4935,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:27.277Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:27.277Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:27.277Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:27.277Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:25.028Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:25.028Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:25.028Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:25.028Z"
     },
     {
       "id": "luckyday-2",
@@ -4993,10 +4992,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:30.261Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:30.261Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:30.261Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:30.261Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:26.981Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:26.981Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:26.981Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:26.981Z",
       "lastPublishedAt": "2026-06-01T21:12:44Z"
     },
     {
@@ -5051,10 +5050,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:32.653Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:32.653Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:32.653Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:32.653Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:29.448Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:29.448Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:29.448Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:29.448Z",
       "lastPublishedAt": "2026-06-01T18:20:18Z"
     },
     {
@@ -5109,11 +5108,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:36.234Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:36.234Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:36.234Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:36.234Z",
-      "lastPublishedAt": "2026-06-01T16:45:38Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:33.086Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:33.086Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:33.086Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:33.086Z",
+      "lastPublishedAt": "2026-06-01T22:56:38Z"
     },
     {
       "id": "kang4-2",
@@ -5167,10 +5166,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:36.405Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:36.405Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:36.405Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:36.405Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:33.323Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:33.323Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:33.323Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:33.323Z",
       "lastPublishedAt": "2026-06-01T19:55:00Z"
     },
     {
@@ -5225,11 +5224,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:37.610Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:37.610Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:33.531Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:33.531Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:37.610Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:33.531Z",
       "lastPublishedAt": "2026-06-01T16:03:00Z"
     },
     {
@@ -5284,10 +5283,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:39.268Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:39.268Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:39.268Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:39.268Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:35.061Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:35.061Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:35.061Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:35.061Z",
       "lastPublishedAt": "2026-06-01T20:05:43Z"
     },
     {
@@ -5342,11 +5341,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:39.915Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:39.915Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:39.915Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:39.915Z",
-      "lastPublishedAt": "2026-06-01T17:48:48Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:35.314Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:35.314Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:35.314Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:35.314Z",
+      "lastPublishedAt": "2026-06-01T22:43:48Z"
     },
     {
       "id": "legalser-2",
@@ -5400,11 +5399,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:40.362Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:40.362Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:40.362Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:40.362Z",
-      "lastPublishedAt": "2026-06-01T17:51:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:35.470Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:35.470Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:35.470Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:35.470Z",
+      "lastPublishedAt": "2026-06-01T22:58:00Z"
     },
     {
       "id": "etique-2",
@@ -5458,10 +5457,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:41.782Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:41.782Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:41.782Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:41.782Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:37.131Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:37.131Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:37.131Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:37.131Z",
       "lastPublishedAt": "2026-06-01T13:36:30Z"
     },
     {
@@ -5516,10 +5515,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:42.771Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:42.771Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:42.771Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:42.771Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:37.383Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:37.383Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:37.383Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:37.383Z",
       "lastPublishedAt": "2026-06-01T20:35:11Z"
     },
     {
@@ -5574,12 +5573,12 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:43.127Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:43.127Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:37.681Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:37.681Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:43.127Z",
-      "lastPublishedAt": "2026-06-01T17:27:00Z"
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:37.681Z",
+      "lastPublishedAt": "2026-06-01T22:26:00Z"
     },
     {
       "id": "gover-2",
@@ -5633,10 +5632,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:44.612Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:44.612Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:44.612Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:44.612Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:38.875Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:38.875Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:38.875Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:38.875Z",
       "lastPublishedAt": "2026-06-01T13:19:04Z"
     },
     {
@@ -5691,10 +5690,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:44.973Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:44.973Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:44.973Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:44.973Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:39.593Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:39.593Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:39.593Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:39.593Z",
       "lastPublishedAt": "2026-06-01T19:41:40Z"
     },
     {
@@ -5749,10 +5748,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:46.939Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:46.939Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:46.939Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:46.939Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:40.185Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:40.185Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:40.185Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:40.185Z",
       "lastPublishedAt": "2026-05-13T03:28:40Z"
     },
     {
@@ -5807,10 +5806,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:47.683Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:47.683Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:47.683Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:47.683Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:41.861Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:41.861Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:41.861Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:41.861Z",
       "lastPublishedAt": "2026-06-01T20:00:00Z"
     },
     {
@@ -5865,10 +5864,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:48.707Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:48.707Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:48.707Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:48.707Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:42.266Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:42.266Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:42.266Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:42.266Z",
       "lastPublishedAt": "2026-06-01T18:19:30Z"
     },
     {
@@ -5923,11 +5922,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:51.082Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:51.082Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:51.082Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:51.082Z",
-      "lastPublishedAt": "2026-06-01T17:10:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:43.817Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:43.817Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:43.817Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:43.817Z",
+      "lastPublishedAt": "2026-06-01T22:10:00Z"
     },
     {
       "id": "notebook-klick",
@@ -5981,10 +5980,10 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:52.775Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:52.775Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:52.775Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:52.775Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:44.960Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:44.960Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:44.960Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:44.960Z",
       "lastPublishedAt": "2026-06-01T19:00:00Z"
     },
     {
@@ -6039,11 +6038,11 @@
       "gscStatus": "ok",
       "adsenseStatus": "ok",
       "adsTxtStatus": "ok",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:55.119Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:55.119Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-01T21:45:55.119Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-01T21:45:55.119Z",
-      "lastPublishedAt": "2026-06-01T14:24:33Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:45.957Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:45.957Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-01T23:01:45.957Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-01T23:01:45.957Z",
+      "lastPublishedAt": "2026-06-01T19:24:33Z"
     },
     {
       "id": "dolbomjigi-ehon365",
@@ -6097,8 +6096,8 @@
       "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsTxtStatus": "missing_config",
-      "ga4LastSuccessfulFetchAt": "2026-06-01T21:45:59.426Z",
-      "gscLastSuccessfulFetchAt": "2026-06-01T21:45:59.426Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-01T23:01:51.013Z",
+      "gscLastSuccessfulFetchAt": "2026-06-01T23:01:51.013Z",
       "adsenseError": "Missing AdSense code",
       "adsenseErrorKind": "missing_config",
       "adsTxtError": "ads.txt unavailable: 404",
