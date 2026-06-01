@@ -9,6 +9,12 @@ import type {
 } from "../lib/dashboard-data.js";
 
 type StatusFilter = "all" | OperationalStatus;
+type MonetizationFilter =
+  | "all"
+  | "adsense_ok"
+  | "adsense_missing"
+  | "ads_txt_missing"
+  | "monetization_issue";
 type SortKey =
   | "priority"
   | "oneDayUsers"
@@ -40,6 +46,14 @@ const statusLabels: Record<StatusFilter, string> = {
   stale: "오래된 데이터",
 };
 
+const monetizationLabels: Record<MonetizationFilter, string> = {
+  all: "전체",
+  adsense_ok: "코드 연동",
+  adsense_missing: "코드 없음",
+  ads_txt_missing: "ads.txt 없음",
+  monetization_issue: "수익화 이슈",
+};
+
 export function SiteStatsTable({
   stats,
   failedCount,
@@ -51,9 +65,10 @@ export function SiteStatsTable({
 }) {
   const [query, setQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [monetizationFilter, setMonetizationFilter] =
+    useState<MonetizationFilter>("all");
   const [sortKey, setSortKey] = useState<SortKey>("priority");
   const [segmentKey, setSegmentKey] = useState<SegmentKey | "all">("all");
-  const [selectedSiteId, setSelectedSiteId] = useState("");
 
   const visibleStats = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -67,20 +82,24 @@ export function SiteStatsTable({
       .filter((stat) => segmentKey === "all" || segmentIds.has(stat.id))
       .filter((stat) => matchesQuery(stat, normalizedQuery))
       .filter((stat) => matchesStatus(stat, statusFilter))
+      .filter((stat) => matchesMonetization(stat, monetizationFilter))
       .sort((a, b) => getSortValue(b, sortKey) - getSortValue(a, sortKey));
-  }, [query, segmentKey, segments, sortKey, stats, statusFilter]);
-
-  const selectedSite =
-    visibleStats.find((stat) => stat.id === selectedSiteId) ??
-    visibleStats[0] ??
-    stats[0];
+  }, [
+    monetizationFilter,
+    query,
+    segmentKey,
+    segments,
+    sortKey,
+    stats,
+    statusFilter,
+  ]);
 
   return (
     <article className="panel wide-panel stats-panel">
       <div className="panel-heading stats-heading">
         <div>
           <h2>사이트 탐색</h2>
-          <p>세그먼트, 상태, 검색어로 좁힌 뒤 사이트별 상세 진단을 봅니다.</p>
+          <p>세그먼트, 상태, 수익화 조건으로 사이트별 지표를 비교합니다.</p>
         </div>
         <span>{failedCount > 0 ? `확인 필요 ${failedCount}개` : "정상"}</span>
       </div>
@@ -117,6 +136,21 @@ export function SiteStatsTable({
           </select>
         </label>
         <label>
+          <span>수익화</span>
+          <select
+            value={monetizationFilter}
+            onChange={(event) =>
+              setMonetizationFilter(event.target.value as MonetizationFilter)
+            }
+          >
+            {Object.entries(monetizationLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
           <span>정렬</span>
           <select
             value={sortKey}
@@ -132,47 +166,40 @@ export function SiteStatsTable({
         <strong>{formatNumber(visibleStats.length)}개 표시</strong>
       </div>
 
-      <div className="explorer-grid">
-        <div className="stats-table-wrap">
-          <table className="stats-table">
-            <thead>
+      <div className="stats-table-wrap">
+        <table className="stats-table">
+          <thead>
+            <tr>
+              <th>사이트</th>
+              <th>점수</th>
+              <th>추세</th>
+              <th>1일</th>
+              <th>7일</th>
+              <th>30일</th>
+              <th>증감</th>
+              <th>GSC 클릭</th>
+              <th>GSC 노출</th>
+              <th>CTR</th>
+              <th>AdSense</th>
+              <th>ads.txt</th>
+              <th>평균순위</th>
+              <th>상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            {visibleStats.length === 0 ? (
               <tr>
-                <th>사이트</th>
-                <th>점수</th>
-                <th>추세</th>
-                <th>1일</th>
-                <th>7일</th>
-                <th>30일</th>
-                <th>증감</th>
-                <th>GSC 클릭</th>
-                <th>GSC 노출</th>
-                <th>CTR</th>
-                <th>평균순위</th>
-                <th>상태</th>
+                <td className="table-empty" colSpan={14}>
+                  조건에 맞는 사이트가 없습니다.
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {visibleStats.length === 0 ? (
-                <tr>
-                  <td className="table-empty" colSpan={12}>
-                    조건에 맞는 사이트가 없습니다.
-                  </td>
-                </tr>
-              ) : (
-                visibleStats.map((stat) => (
-                  <StatsRow
-                    key={`${stat.id}-${stat.ga4PropertyId}`}
-                    stat={stat}
-                    isSelected={stat.id === selectedSite?.id}
-                    onSelect={() => setSelectedSiteId(stat.id)}
-                  />
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-
-        {selectedSite ? <SiteDetailPanel stat={selectedSite} /> : null}
+            ) : (
+              visibleStats.map((stat) => (
+                <StatsRow key={`${stat.id}-${stat.ga4PropertyId}`} stat={stat} />
+              ))
+            )}
+          </tbody>
+        </table>
       </div>
     </article>
   );
@@ -214,15 +241,11 @@ function SegmentTabs({
 
 function StatsRow({
   stat,
-  isSelected,
-  onSelect,
 }: {
   stat: EnrichedSiteStat;
-  isSelected: boolean;
-  onSelect: () => void;
 }) {
   return (
-    <tr className={isSelected ? "selected-row" : ""} onClick={onSelect}>
+    <tr>
       <td>
         <div className="site-cell">
           <strong>{stat.name}</strong>
@@ -246,6 +269,22 @@ function StatsRow({
       <td>{formatNumber(stat.gscLast7Days?.clicks ?? 0)}</td>
       <td>{formatNumber(stat.gscLast7Days?.impressions ?? 0)}</td>
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
+      <td>
+        <span
+          className={getAdsenseBadgeClass(stat.adsenseStatus)}
+          title={getAdsenseStatusTitle(stat)}
+        >
+          {getAdsenseStatusLabel(stat.adsenseStatus)}
+        </span>
+      </td>
+      <td>
+        <span
+          className={getMonetizationBadgeClass(stat.adsTxtStatus)}
+          title={getAdsTxtStatusTitle(stat)}
+        >
+          {getAdsTxtStatusLabel(stat.adsTxtStatus)}
+        </span>
+      </td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
         <span
@@ -256,64 +295,6 @@ function StatsRow({
         </span>
       </td>
     </tr>
-  );
-}
-
-function SiteDetailPanel({ stat }: { stat: EnrichedSiteStat }) {
-  return (
-    <aside className="site-detail-panel" aria-label="선택 사이트 상세">
-      <div className="detail-heading">
-        <div>
-          <h3>{stat.name}</h3>
-          <a href={stat.url}>{formatHost(stat.url)}</a>
-        </div>
-        <span className={getHealthClass(stat.health.grade)}>
-          {stat.health.score}
-        </span>
-      </div>
-      <p className="detail-reason">{stat.health.reason}</p>
-
-      <div className="detail-metrics">
-        <MiniMetric
-          label="7일 사용자"
-          value={formatNumber(stat.last7Days.activeUsers)}
-        />
-        <MiniMetric
-          label="30일 사용자"
-          value={formatNumber(stat.last30Days.activeUsers)}
-        />
-        <MiniMetric
-          label="GSC 클릭"
-          value={formatNumber(stat.gscLast7Days?.clicks ?? 0)}
-        />
-        <MiniMetric
-          label="GSC 노출"
-          value={formatNumber(stat.gscLast7Days?.impressions ?? 0)}
-        />
-        <MiniMetric
-          label="CTR"
-          value={formatPercent(stat.gscLast7Days?.ctr ?? 0)}
-        />
-        <MiniMetric
-          label="평균순위"
-          value={formatPosition(stat.gscLast7Days?.position ?? 0)}
-        />
-      </div>
-
-      <div className="detail-action">
-        <strong>{stat.statusLabel}</strong>
-        <p>{getNextStep(stat)}</p>
-      </div>
-    </aside>
-  );
-}
-
-function MiniMetric({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
   );
 }
 
@@ -337,6 +318,30 @@ function matchesStatus(
   }
 
   return stat.operationalStatus === statusFilter;
+}
+
+function matchesMonetization(
+  stat: EnrichedSiteStat,
+  monetizationFilter: MonetizationFilter,
+): boolean {
+  if (monetizationFilter === "all") {
+    return true;
+  }
+  if (monetizationFilter === "adsense_ok") {
+    return stat.adsenseStatus === "ok";
+  }
+  if (monetizationFilter === "adsense_missing") {
+    return stat.adsenseStatus === "missing_config";
+  }
+  if (monetizationFilter === "ads_txt_missing") {
+    return stat.adsTxtStatus === "missing_config";
+  }
+  return (
+    stat.adsenseStatus === "missing_config" ||
+    stat.adsTxtStatus === "missing_config" ||
+    stat.adsenseStatus === "api_error" ||
+    stat.adsTxtStatus === "api_error"
+  );
 }
 
 function getSortValue(stat: EnrichedSiteStat, sortKey: SortKey): number {
@@ -368,22 +373,6 @@ function getSortValue(stat: EnrichedSiteStat, sortKey: SortKey): number {
   return stat.last7Days.activeUsers;
 }
 
-function getNextStep(stat: EnrichedSiteStat): string {
-  if (stat.operationalStatus !== "normal") {
-    return stat.statusReason;
-  }
-  if ((stat.trend.activeUsersChange ?? 0) <= -0.3) {
-    return "사용자 급락 원인을 최근 발행, 색인, 유입 채널 순서로 확인하세요.";
-  }
-  if (
-    (stat.gscLast7Days?.ctr ?? 0) < 0.02 &&
-    (stat.gscLast7Days?.impressions ?? 0) >= 100
-  ) {
-    return "제목과 메타 설명을 먼저 개선하세요.";
-  }
-  return "현재는 큰 조치보다 성장 원인과 상위 페이지를 기록하세요.";
-}
-
 function getBadgeClass(status: EnrichedSiteStat["operationalStatus"]): string {
   if (status === "needsPermission") {
     return "badge badge-error";
@@ -394,6 +383,77 @@ function getBadgeClass(status: EnrichedSiteStat["operationalStatus"]): string {
   }
 
   return "badge";
+}
+
+function getAdsenseStatusLabel(
+  status: EnrichedSiteStat["adsenseStatus"],
+): string {
+  if (status === "ok") {
+    return "정상";
+  }
+  if (status === "missing_config") {
+    return "코드 없음";
+  }
+  if (status === "auth_error" || status === "api_error") {
+    return "확인 실패";
+  }
+  return "미수집";
+}
+
+function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
+  if (stat.adsenseStatus === "ok") {
+    return "홈페이지에서 AdSense 코드가 확인됐습니다.";
+  }
+  if (stat.adsenseError) {
+    return stat.adsenseError;
+  }
+  return "아직 AdSense 코드 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
+}
+
+function getAdsenseBadgeClass(
+  status: EnrichedSiteStat["adsenseStatus"],
+): string {
+  return getMonetizationBadgeClass(status);
+}
+
+function getAdsTxtStatusLabel(
+  status: EnrichedSiteStat["adsTxtStatus"],
+): string {
+  if (status === "ok") {
+    return "정상";
+  }
+  if (status === "missing_config") {
+    return "없음";
+  }
+  if (status === "auth_error" || status === "api_error") {
+    return "확인 실패";
+  }
+  return "미수집";
+}
+
+function getAdsTxtStatusTitle(stat: EnrichedSiteStat): string {
+  if (stat.adsTxtStatus === "ok") {
+    return "ads.txt에서 Google publisher 항목이 확인됐습니다.";
+  }
+  if (stat.adsTxtError) {
+    return stat.adsTxtError;
+  }
+  return "아직 ads.txt 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
+}
+
+function getMonetizationBadgeClass(
+  status: EnrichedSiteStat["adsenseStatus"] | EnrichedSiteStat["adsTxtStatus"],
+): string {
+  if (status === "ok") {
+    return "badge";
+  }
+  if (status === "missing_config") {
+    return "badge badge-warning";
+  }
+  if (status === "auth_error" || status === "api_error") {
+    return "badge badge-error";
+  }
+  return "badge badge-muted";
 }
 
 function getHealthClass(grade: EnrichedSiteStat["health"]["grade"]): string {

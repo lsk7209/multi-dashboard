@@ -19,9 +19,14 @@ export default function DashboardPage() {
   const tabs: DashboardTabItem[] = [
     {
       id: "overview",
-      label: "개요",
-      panelLabel: "개요",
-      content: <OverviewSection data={data} />,
+      label: "오늘",
+      panelLabel: "오늘",
+      count: formatNumber(
+        data.failedCount +
+          data.trafficDropStats.length +
+          data.monetizationIssueCount,
+      ),
+      content: <TodaySection data={data} />,
     },
     {
       id: "sites",
@@ -44,13 +49,6 @@ export default function DashboardPage() {
       content: <InsightsSection data={data} />,
     },
     {
-      id: "issues",
-      label: "문제",
-      panelLabel: "문제",
-      count: formatNumber(data.failedCount + data.trafficDropStats.length),
-      content: <IssuesSection data={data} />,
-    },
-    {
       id: "settings",
       label: "설정",
       panelLabel: "설정",
@@ -62,7 +60,7 @@ export default function DashboardPage() {
     <main className="dashboard-shell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">GA4 + GSC Multi-Site Dashboard</p>
+          <p className="eyebrow">GA4 + GSC + AdSense Multi-Site Dashboard</p>
           <h1>사이트별 인사이트 대시보드</h1>
         </div>
         <div className="status-pill" aria-label="통계 스냅샷 생성 시각">
@@ -75,43 +73,57 @@ export default function DashboardPage() {
   );
 }
 
-function OverviewSection({
+function TodaySection({
   data,
 }: {
   data: ReturnType<typeof getDashboardData>;
 }) {
   return (
     <>
-      <div className="summary-grid" aria-label="전체 통계 요약">
+      <div className="summary-grid priority-summary" aria-label="오늘 확인 요약">
         <StatusCard
-          label="1일 사용자"
-          value={formatNumber(data.totalLast1Days.activeUsers)}
-          hint={formatDateRange(data.dateRanges.last1Days)}
+          label="확인 필요"
+          value={formatNumber(data.failedCount)}
+          hint={`오래됨 ${formatNumber(data.staleCount)}개`}
         />
         <StatusCard
-          label="7일 GA4 사용자"
-          value={formatNumber(data.totalLast7Days.activeUsers)}
-          hint={`${formatDateRange(data.dateRanges.last7Days)} · ${formatChange(data.totalActiveUsersChange)}`}
+          label="수익화 이슈"
+          value={formatNumber(data.monetizationIssueCount)}
+          hint={`코드 ${formatNumber(data.adsenseConnectedCount)}/${formatNumber(data.siteCount)} · ads.txt ${formatNumber(data.adsTxtConnectedCount)}/${formatNumber(data.siteCount)}`}
         />
         <StatusCard
-          label="30일 사용자"
-          value={formatNumber(data.totalLast30Days.activeUsers)}
-          hint={`${formatNumber(data.siteCount)}개 · ${formatDateRange(data.dateRanges.last30Days)}`}
-        />
-        <StatusCard
-          label="운영 점수"
-          value={`${data.healthSummary.averageScore}점`}
-          hint={`위험 ${data.healthSummary.criticalCount}개 · 주의 ${data.healthSummary.warningCount}개`}
+          label="트래픽 급감"
+          value={formatNumber(data.trafficDropStats.length)}
+          hint="직전 7일 대비 -30% 이상"
         />
         <StatusCard
           label="GSC 연결"
           value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`}
           hint={`권한 확인 ${data.gscIssueStats.length}개`}
         />
+        <StatusCard
+          label="7일 사용자"
+          value={formatNumber(data.totalLast7Days.activeUsers)}
+          hint={formatChange(data.totalActiveUsersChange)}
+        />
+        <StatusCard
+          label="최종 갱신"
+          value={formatShortDateTime(data.generatedAt)}
+          hint={`UTC 완료일 ${formatDateRange(data.dateRanges.last7Days)}`}
+        />
       </div>
       <div className="operation-grid" aria-label="운영 우선순위">
         <ActionQueue actions={data.actions} />
         <HealthPanel data={data.healthSummary} />
+      </div>
+      <div className="issue-layout today-issue-layout" aria-label="오늘 문제 목록">
+        <DailyIssuePanel
+          stats={data.dailyIssueStats}
+          staleCount={data.staleCount}
+        />
+        <MonetizationIssuePanel stats={data.monetizationIssueStats} />
+        <GscIssuePanel stats={data.gscIssueStats} />
+        <TrafficDropPanel stats={data.trafficDropStats} />
       </div>
     </>
   );
@@ -148,23 +160,6 @@ function InsightsSection({
   );
 }
 
-function IssuesSection({
-  data,
-}: {
-  data: ReturnType<typeof getDashboardData>;
-}) {
-  return (
-    <div className="issue-layout">
-      <DailyIssuePanel
-        stats={data.dailyIssueStats}
-        staleCount={data.staleCount}
-      />
-      <GscIssuePanel stats={data.gscIssueStats} />
-      <TrafficDropPanel stats={data.trafficDropStats} />
-    </div>
-  );
-}
-
 function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
   return (
     <article className="panel action-panel">
@@ -172,7 +167,7 @@ function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
         <div>
           <h2>오늘의 액션</h2>
           <p>
-            권한, 급락, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다.
+            권한, 급락, 수익화, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다.
           </p>
         </div>
         <span>{formatNumber(actions.length)}개</span>
@@ -257,6 +252,45 @@ function GscIssuePanel({
                 <p>{stat.statusReason}</p>
               </div>
               <span>{getErrorKindLabel(stat.gscErrorKind)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function MonetizationIssuePanel({
+  stats,
+}: {
+  stats: ReturnType<typeof getDashboardData>["monetizationIssueStats"];
+}) {
+  return (
+    <article className="panel">
+      <div className="panel-heading">
+        <div>
+          <h2>수익화 이슈</h2>
+          <p>AdSense 코드와 ads.txt 상태를 분리해서 확인합니다.</p>
+        </div>
+        <span>{formatNumber(stats.length)}개</span>
+      </div>
+      {stats.length === 0 ? (
+        <p className="muted-text">현재 수익화 상태 이슈가 없습니다.</p>
+      ) : (
+        <div className="issue-grid">
+          {stats.map((stat) => (
+            <div
+              className="issue-row"
+              key={`${stat.id}-${stat.ga4PropertyId}-monetization`}
+            >
+              <div>
+                <strong>{stat.name}</strong>
+                <a href={stat.url}>{formatHost(stat.url)}</a>
+                <p>
+                  {`AdSense ${getMonetizationLabel(stat.adsenseStatus)} · ads.txt ${getMonetizationLabel(stat.adsTxtStatus)}`}
+                </p>
+              </div>
+              <span>{getMonetizationIssueLabel(stat)}</span>
             </div>
           ))}
         </div>
@@ -516,10 +550,38 @@ function formatDateRange(range: {
   return `${range.startDate}~${range.endDate}`;
 }
 
+function formatShortDateTime(value: string | null): string {
+  if (!value) {
+    return "미수집";
+  }
+
+  return new Date(value).toLocaleString("ko-KR", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 function getErrorKindLabel(kind: string | undefined): string {
   if (kind === "permission") return "권한 없음";
   if (kind === "not_found") return "속성 없음";
   if (kind === "quota") return "할당량";
   if (kind === "missing_config") return "설정 누락";
   return "API 확인";
+}
+
+function getMonetizationLabel(kind: string | undefined): string {
+  if (kind === "ok") return "정상";
+  if (kind === "missing_config") return "없음";
+  if (kind === "api_error" || kind === "auth_error") return "확인 실패";
+  return "미수집";
+}
+
+function getMonetizationIssueLabel(
+  stat: ReturnType<typeof getDashboardData>["stats"][number],
+): string {
+  if (stat.adsenseStatus === "missing_config") return "코드 없음";
+  if (stat.adsTxtStatus === "missing_config") return "ads.txt 없음";
+  return "확인 실패";
 }

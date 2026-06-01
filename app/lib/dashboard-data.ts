@@ -46,7 +46,13 @@ export type OperationalStatus =
   | "needsPermission"
   | "apiError"
   | "stale";
-export type ActionKind = "permission" | "decline" | "seo" | "ranking" | "data";
+export type ActionKind =
+  | "permission"
+  | "decline"
+  | "monetization"
+  | "seo"
+  | "ranking"
+  | "data";
 export type SegmentKey = "growth" | "decline" | "seo" | "gsc";
 
 export interface SiteStat {
@@ -66,12 +72,20 @@ export interface SiteStat {
   gscLast30Days?: GscMetricSet;
   ga4Status?: CollectionStatus;
   gscStatus?: CollectionStatus;
+  adsenseStatus?: CollectionStatus;
+  adsTxtStatus?: CollectionStatus;
   ga4LastSuccessfulFetchAt?: string;
   gscLastSuccessfulFetchAt?: string;
+  adsenseLastSuccessfulFetchAt?: string;
+  adsTxtLastSuccessfulFetchAt?: string;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
+  adsenseErrorKind?: ErrorKind;
+  adsTxtErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
+  adsenseError?: string;
+  adsTxtError?: string;
   lastPublishedAt?: string;
 }
 
@@ -201,10 +215,16 @@ export interface DashboardData {
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
   trafficDropStats: EnrichedSiteStat[];
+  monetizationIssueStats: EnrichedSiteStat[];
+  monetizationIssueCount: number;
   wpStaleStats: EnrichedSiteStat[];
   siteCount: number;
   trackedCount: number;
   gscConnectedCount: number;
+  adsenseConnectedCount: number;
+  adsenseCheckedCount: number;
+  adsTxtConnectedCount: number;
+  adsTxtCheckedCount: number;
   failedCount: number;
   staleCount: number;
   totalLast1Days: MetricSet;
@@ -238,6 +258,18 @@ export function getDashboardData(): DashboardData {
     stats.map((stat) => stat.previous7Days),
   );
   const gscConnectedStats = stats.filter((stat) => stat.gscStatus === "ok");
+  const adsenseCheckedStats = stats.filter((stat) => stat.adsenseStatus);
+  const adsenseConnectedStats = stats.filter(
+    (stat) => stat.adsenseStatus === "ok",
+  );
+  const adsTxtCheckedStats = stats.filter((stat) => stat.adsTxtStatus);
+  const adsTxtConnectedStats = stats.filter(
+    (stat) => stat.adsTxtStatus === "ok",
+  );
+  const monetizationIssueStats = stats
+    .filter(hasMonetizationIssue)
+    .sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers)
+    .slice(0, 20);
 
   return {
     generatedAt: snapshot.generatedAt,
@@ -279,6 +311,8 @@ export function getDashboardData(): DashboardData {
           (a.trend.activeUsersChange ?? 0) - (b.trend.activeUsersChange ?? 0),
       )
       .slice(0, 20),
+    monetizationIssueStats,
+    monetizationIssueCount: stats.filter(hasMonetizationIssue).length,
     wpStaleStats: stats
       .filter(
         (s) => s.daysSincePublished !== undefined && s.daysSincePublished >= 7,
@@ -289,6 +323,10 @@ export function getDashboardData(): DashboardData {
     trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId)
       .length,
     gscConnectedCount: gscConnectedStats.length,
+    adsenseConnectedCount: adsenseConnectedStats.length,
+    adsenseCheckedCount: adsenseCheckedStats.length,
+    adsTxtConnectedCount: adsTxtConnectedStats.length,
+    adsTxtCheckedCount: adsTxtCheckedStats.length,
     failedCount: stats.filter((stat) => stat.operationalStatus !== "normal")
       .length,
     staleCount: stats.filter((stat) => stat.isStale).length,
@@ -437,6 +475,45 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
+  if (stat.adsenseStatus === "missing_config") {
+    items.push(
+      makeAction(
+        stat,
+        "monetization",
+        80,
+        "코드 없음",
+        "홈페이지에서 AdSense 코드가 확인되지 않았습니다.",
+        "광고 코드 삽입 상태와 캐시 반영 여부를 확인하세요.",
+      ),
+    );
+  }
+
+  if (stat.adsTxtStatus === "missing_config") {
+    items.push(
+      makeAction(
+        stat,
+        "monetization",
+        78,
+        "ads.txt 없음",
+        "ads.txt에서 Google publisher 항목이 확인되지 않았습니다.",
+        "/ads.txt에 google.com, pub-... 항목이 있는지 확인하세요.",
+      ),
+    );
+  }
+
+  if (stat.adsenseStatus === "api_error" || stat.adsTxtStatus === "api_error") {
+    items.push(
+      makeAction(
+        stat,
+        "monetization",
+        76,
+        "확인 실패",
+        "AdSense 코드 또는 ads.txt 상태 확인에 실패했습니다.",
+        "홈페이지와 /ads.txt 접근 상태, 리다이렉트, 방화벽을 확인하세요.",
+      ),
+    );
+  }
+
   if (gsc.impressions >= 100 && gsc.ctr < 0.02) {
     items.push(
       makeAction(
@@ -491,9 +568,19 @@ function makeAction(
 function getActionLabel(kind: ActionKind): string {
   if (kind === "permission") return "권한";
   if (kind === "decline") return "급락";
+  if (kind === "monetization") return "수익화";
   if (kind === "seo") return "CTR";
   if (kind === "ranking") return "순위";
   return "데이터";
+}
+
+function hasMonetizationIssue(stat: EnrichedSiteStat): boolean {
+  return (
+    stat.adsenseStatus === "missing_config" ||
+    stat.adsTxtStatus === "missing_config" ||
+    stat.adsenseStatus === "api_error" ||
+    stat.adsTxtStatus === "api_error"
+  );
 }
 
 function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
@@ -882,6 +969,8 @@ function emptySiteStat(site: Site): SiteStat {
     gscLast30Days: emptyGscMetrics(),
     ga4Status: site.ga4PropertyId ? "api_error" : "missing_config",
     gscStatus: "api_error",
+    adsenseStatus: "missing_config",
+    adsTxtStatus: "missing_config",
     ga4ErrorKind: site.ga4PropertyId ? "api_error" : "missing_config",
     error: site.ga4PropertyId ? "통계 스냅샷 없음" : "GA4 속성 없음",
   };

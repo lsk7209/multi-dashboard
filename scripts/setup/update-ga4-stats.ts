@@ -50,12 +50,20 @@ interface SiteStat {
   gscLast30Days: GscMetricSet;
   ga4Status: CollectionStatus;
   gscStatus: CollectionStatus;
+  adsenseStatus?: CollectionStatus;
+  adsTxtStatus?: CollectionStatus;
   ga4LastSuccessfulFetchAt?: string;
   gscLastSuccessfulFetchAt?: string;
+  adsenseLastSuccessfulFetchAt?: string;
+  adsTxtLastSuccessfulFetchAt?: string;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
+  adsenseErrorKind?: ErrorKind;
+  adsTxtErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
+  adsenseError?: string;
+  adsTxtError?: string;
   lastPublishedAt?: string;
 }
 
@@ -192,6 +200,21 @@ function statusFromError(
   return fallback;
 }
 
+function monetizationStatusFromError(
+  error: string | undefined,
+): CollectionStatus {
+  if (!error) {
+    return "ok";
+  }
+
+  const kind = classifyError(error);
+  if (kind === "missing_config" || kind === "not_found") {
+    return "missing_config";
+  }
+
+  return "api_error";
+}
+
 async function fetchGa4Metrics(
   client: BetaAnalyticsDataClient,
   propertyId: string,
@@ -319,6 +342,40 @@ async function fetchWpStats(
   }
 }
 
+async function fetchAdsenseCodeStatus(site: Site): Promise<void> {
+  const response = await fetch(site.url, { signal: AbortSignal.timeout(8000) });
+  if (!response.ok) {
+    throw new Error(`Homepage unavailable: ${response.status}`);
+  }
+
+  const html = await response.text();
+  const normalized = html.toLowerCase();
+  const hasAdsenseCode =
+    normalized.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") ||
+    normalized.includes("adsbygoogle") ||
+    normalized.includes("ca-pub-");
+
+  if (!hasAdsenseCode) {
+    throw new Error("Missing AdSense code");
+  }
+}
+
+async function fetchAdsTxtStatus(site: Site): Promise<void> {
+  const adsTxtUrl = new URL("/ads.txt", site.url).toString();
+  const response = await fetch(adsTxtUrl, {
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!response.ok) {
+    throw new Error(`ads.txt unavailable: ${response.status}`);
+  }
+
+  const body = await response.text();
+  const normalized = body.toLowerCase();
+  if (!normalized.includes("google.com") || !normalized.includes("pub-")) {
+    throw new Error("Missing ads.txt Google publisher entry");
+  }
+}
+
 async function fetchSiteStat(
   ga4Client: BetaAnalyticsDataClient,
   gscClient: ReturnType<typeof google.searchconsole>,
@@ -333,6 +390,8 @@ async function fetchSiteStat(
   let gscLast30Days = emptyGscMetrics();
   let error: string | undefined;
   let gscError: string | undefined;
+  let adsenseError: string | undefined;
+  let adsTxtError: string | undefined;
   const collectedAt = new Date().toISOString();
 
   if (!site.ga4PropertyId) {
@@ -362,6 +421,18 @@ async function fetchSiteStat(
     gscError = getErrorMessage(searchError);
   }
 
+  try {
+    await fetchAdsenseCodeStatus(site);
+  } catch (statusError) {
+    adsenseError = getErrorMessage(statusError);
+  }
+
+  try {
+    await fetchAdsTxtStatus(site);
+  } catch (statusError) {
+    adsTxtError = getErrorMessage(statusError);
+  }
+
   const stat: SiteStat = {
     id: site.id,
     name: site.name ?? site.id,
@@ -377,6 +448,8 @@ async function fetchSiteStat(
     gscLast30Days,
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
+    adsenseStatus: monetizationStatusFromError(adsenseError),
+    adsTxtStatus: monetizationStatusFromError(adsTxtError),
   };
 
   if (error) {
@@ -391,6 +464,20 @@ async function fetchSiteStat(
     stat.gscErrorKind = classifyError(gscError);
   } else {
     stat.gscLastSuccessfulFetchAt = collectedAt;
+  }
+
+  if (adsenseError) {
+    stat.adsenseError = adsenseError;
+    stat.adsenseErrorKind = classifyError(adsenseError);
+  } else {
+    stat.adsenseLastSuccessfulFetchAt = collectedAt;
+  }
+
+  if (adsTxtError) {
+    stat.adsTxtError = adsTxtError;
+    stat.adsTxtErrorKind = classifyError(adsTxtError);
+  } else {
+    stat.adsTxtLastSuccessfulFetchAt = collectedAt;
   }
 
   const wpStats = await fetchWpStats(site);
@@ -454,8 +541,10 @@ async function main(): Promise<void> {
 
   const ga4Failed = stats.filter((site) => site.error).length;
   const gscFailed = stats.filter((site) => site.gscError).length;
+  const adsenseFailed = stats.filter((site) => site.adsenseError).length;
+  const adsTxtFailed = stats.filter((site) => site.adsTxtError).length;
   console.log(
-    `Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, output=${OUTPUT_PATH}, history=${historyPath}`,
+    `Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, AdSense failed=${adsenseFailed}, ads.txt failed=${adsTxtFailed}, output=${OUTPUT_PATH}, history=${historyPath}`,
   );
 }
 
