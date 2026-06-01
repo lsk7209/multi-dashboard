@@ -394,36 +394,15 @@ function StatsRow({
 }
 
 function CollectionCell({ stat }: { stat: EnrichedSiteStat }) {
+  const collectedAt = getLatestCollectionValue(stat);
+
   return (
-    <div className="collection-cell">
-      <span
-        className={getCollectionClass(stat.ga4LastSuccessfulFetchAt)}
-        title={formatCollectionTitle("GA4", stat.ga4LastSuccessfulFetchAt)}
-      >
-        GA4 {formatShortDate(stat.ga4LastSuccessfulFetchAt)}
-      </span>
-      <span
-        className={getCollectionClass(stat.gscLastSuccessfulFetchAt)}
-        title={formatCollectionTitle("GSC", stat.gscLastSuccessfulFetchAt)}
-      >
-        GSC {formatShortDate(stat.gscLastSuccessfulFetchAt)}
-      </span>
-      <span
-        className={getCollectionClass(stat.adsenseLastSuccessfulFetchAt)}
-        title={formatCollectionTitle(
-          "AdSense",
-          stat.adsenseLastSuccessfulFetchAt,
-        )}
-      >
-        AdSense {formatShortDate(stat.adsenseLastSuccessfulFetchAt)}
-      </span>
-      <span
-        className={getCollectionClass(stat.adsTxtLastSuccessfulFetchAt)}
-        title={formatCollectionTitle("ads.txt", stat.adsTxtLastSuccessfulFetchAt)}
-      >
-        ads.txt {formatShortDate(stat.adsTxtLastSuccessfulFetchAt)}
-      </span>
-    </div>
+    <span
+      className={`collection-cell ${getCollectionClass(collectedAt)}`}
+      title={formatCollectionSummary(stat)}
+    >
+      {formatShortDate(collectedAt)}
+    </span>
   );
 }
 
@@ -710,12 +689,18 @@ function formatPosition(value: number): string {
 }
 
 function getLatestCollectionTime(stat: EnrichedSiteStat): number {
-  return Math.max(
-    parseCollectionTime(stat.ga4LastSuccessfulFetchAt),
-    parseCollectionTime(stat.gscLastSuccessfulFetchAt),
-    parseCollectionTime(stat.adsenseLastSuccessfulFetchAt),
-    parseCollectionTime(stat.adsTxtLastSuccessfulFetchAt),
-  );
+  return parseCollectionTime(getLatestCollectionValue(stat));
+}
+
+function getLatestCollectionValue(stat: EnrichedSiteStat): string | undefined {
+  return [
+    stat.ga4LastSuccessfulFetchAt,
+    stat.gscLastSuccessfulFetchAt,
+    stat.adsenseLastSuccessfulFetchAt,
+    stat.adsTxtLastSuccessfulFetchAt,
+  ]
+    .filter((value): value is string => Boolean(value))
+    .sort((a, b) => Date.parse(b) - Date.parse(a))[0];
 }
 
 function parseCollectionTime(value: string | undefined): number {
@@ -773,6 +758,15 @@ function formatCollectionTitle(label: string, value: string | undefined): string
   const ageLabel =
     ageHours === null ? "" : ` · ${Math.floor(ageHours)}시간 전 수집`;
   return `${label} ${formatDateTime(value)}${ageLabel}`;
+}
+
+function formatCollectionSummary(stat: EnrichedSiteStat): string {
+  return [
+    formatCollectionTitle("GA4", stat.ga4LastSuccessfulFetchAt),
+    formatCollectionTitle("GSC", stat.gscLastSuccessfulFetchAt),
+    formatCollectionTitle("AdSense", stat.adsenseLastSuccessfulFetchAt),
+    formatCollectionTitle("ads.txt", stat.adsTxtLastSuccessfulFetchAt),
+  ].join("\n");
 }
 
 function getCollectionClass(value: string | undefined): string {

@@ -714,7 +714,7 @@ code {
 
 .stats-table {
   width: 100%;
-  min-width: 1420px;
+  min-width: 1340px;
   border-collapse: collapse;
 }
 
@@ -810,13 +810,14 @@ code {
 }
 
 .collection-cell {
-  display: grid;
-  gap: 2px;
-  min-width: 124px;
+  display: inline-flex;
+  min-width: 86px;
+  justify-content: flex-end;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 700;
   line-height: 1.25;
-  text-align: left;
+  text-align: right;
 }
 
 .collection-fresh {
