@@ -434,6 +434,15 @@ h2 {
   line-height: 1.45;
 }
 
+.issue-row em {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.45;
+}
+
 .issue-row span {
   flex: 0 0 auto;
   border-radius: 999px;
@@ -705,7 +714,7 @@ code {
 
 .stats-table {
   width: 100%;
-  min-width: 1240px;
+  min-width: 1420px;
   border-collapse: collapse;
 }
 
@@ -738,6 +747,37 @@ code {
   font-weight: 700;
 }
 
+.table-sort {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.stats-table th:first-child .table-sort {
+  justify-content: flex-start;
+}
+
+.table-sort:hover,
+.table-sort.active {
+  color: var(--accent-strong);
+}
+
+.table-sort span:last-child {
+  width: 12px;
+  color: currentColor;
+  font-size: 11px;
+  text-align: center;
+}
+
 .stats-table td {
   font-size: 14px;
 }
@@ -767,6 +807,30 @@ code {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.collection-cell {
+  display: grid;
+  gap: 2px;
+  min-width: 124px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.collection-fresh {
+  color: var(--accent);
+}
+
+.collection-stale {
+  color: #7c2d12;
+  font-weight: 700;
+}
+
+.collection-missing {
+  color: var(--danger);
+  font-weight: 700;
 }
 
 .site-cell a {

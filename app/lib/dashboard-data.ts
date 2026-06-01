@@ -227,6 +227,7 @@ export interface DashboardData {
   adsTxtCheckedCount: number;
   failedCount: number;
   staleCount: number;
+  collectionStaleCount: number;
   totalLast1Days: MetricSet;
   totalLast7Days: MetricSet;
   totalPrevious7Days: MetricSet;
@@ -330,6 +331,7 @@ export function getDashboardData(): DashboardData {
     failedCount: stats.filter((stat) => stat.operationalStatus !== "normal")
       .length,
     staleCount: stats.filter((stat) => stat.isStale).length,
+    collectionStaleCount: stats.filter(hasCollectionLag).length,
     totalLast1Days,
     totalLast7Days,
     totalPrevious7Days,
@@ -580,6 +582,15 @@ function hasMonetizationIssue(stat: EnrichedSiteStat): boolean {
     stat.adsTxtStatus === "missing_config" ||
     stat.adsenseStatus === "api_error" ||
     stat.adsTxtStatus === "api_error"
+  );
+}
+
+function hasCollectionLag(stat: EnrichedSiteStat): boolean {
+  return (
+    isOlderThanHours(stat.ga4LastSuccessfulFetchAt, 48) ||
+    isOlderThanHours(stat.gscLastSuccessfulFetchAt, 48) ||
+    isOlderThanHours(stat.adsenseLastSuccessfulFetchAt, 48) ||
+    isOlderThanHours(stat.adsTxtLastSuccessfulFetchAt, 48)
   );
 }
 

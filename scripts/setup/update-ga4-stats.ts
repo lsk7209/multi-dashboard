@@ -12,6 +12,7 @@ const DAY_RANGE = 1;
 const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
+const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
 
 type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
 type ErrorKind =
@@ -371,8 +372,12 @@ async function fetchAdsTxtStatus(site: Site): Promise<void> {
 
   const body = await response.text();
   const normalized = body.toLowerCase();
-  if (!normalized.includes("google.com") || !normalized.includes("pub-")) {
+  if (!normalized.includes("google.com")) {
     throw new Error("Missing ads.txt Google publisher entry");
+  }
+
+  if (!normalized.includes(ADSENSE_PUBLISHER_ID)) {
+    throw new Error(`Missing ads.txt publisher ${ADSENSE_PUBLISHER_ID}`);
   }
 }
 

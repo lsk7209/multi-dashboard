@@ -831,7 +831,7 @@ sites:
     url: https://dogswhere.com/
     wpRestBase: https://dogswhere.com/wp-json/wp/v2
     ga4PropertyId: "539684317"
-    gscSiteUrl: https://dogswhere.com/
+    gscSiteUrl: sc-domain:dogswhere.com
   - id: travel-sellerpit
     name: travel.sellerpit.kr
     enabled: true

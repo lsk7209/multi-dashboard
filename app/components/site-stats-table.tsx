@@ -16,7 +16,9 @@ type MonetizationFilter =
   | "ads_txt_missing"
   | "monetization_issue";
 type SortKey =
+  | "site"
   | "priority"
+  | "health"
   | "oneDayUsers"
   | "sevenDayUsers"
   | "thirtyDayUsers"
@@ -24,10 +26,17 @@ type SortKey =
   | "gscClicks"
   | "gscImpressions"
   | "ctr"
-  | "position";
+  | "adsense"
+  | "adsTxt"
+  | "position"
+  | "collectedAt"
+  | "status";
+type SortDirection = "asc" | "desc";
 
 const sortLabels: Record<SortKey, string> = {
+  site: "사이트",
   priority: "우선순위",
+  health: "점수",
   oneDayUsers: "1일 사용자",
   sevenDayUsers: "7일 사용자",
   thirtyDayUsers: "30일 사용자",
@@ -35,7 +44,11 @@ const sortLabels: Record<SortKey, string> = {
   gscClicks: "GSC 클릭",
   gscImpressions: "GSC 노출",
   ctr: "CTR",
+  adsense: "AdSense",
+  adsTxt: "ads.txt",
   position: "평균순위",
+  collectedAt: "수집일",
+  status: "상태",
 };
 
 const statusLabels: Record<StatusFilter, string> = {
@@ -54,6 +67,23 @@ const monetizationLabels: Record<MonetizationFilter, string> = {
   monetization_issue: "수익화 이슈",
 };
 
+const sortableHeaders: Array<{ key: SortKey; label: string }> = [
+  { key: "site", label: "사이트" },
+  { key: "health", label: "점수" },
+  { key: "oneDayUsers", label: "1일" },
+  { key: "sevenDayUsers", label: "7일" },
+  { key: "thirtyDayUsers", label: "30일" },
+  { key: "change", label: "증감" },
+  { key: "gscClicks", label: "GSC 클릭" },
+  { key: "gscImpressions", label: "GSC 노출" },
+  { key: "ctr", label: "CTR" },
+  { key: "adsense", label: "AdSense" },
+  { key: "adsTxt", label: "ads.txt" },
+  { key: "position", label: "평균순위" },
+  { key: "collectedAt", label: "수집일" },
+  { key: "status", label: "상태" },
+];
+
 export function SiteStatsTable({
   stats,
   failedCount,
@@ -68,6 +98,7 @@ export function SiteStatsTable({
   const [monetizationFilter, setMonetizationFilter] =
     useState<MonetizationFilter>("all");
   const [sortKey, setSortKey] = useState<SortKey>("priority");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [segmentKey, setSegmentKey] = useState<SegmentKey | "all">("all");
 
   const visibleStats = useMemo(() => {
@@ -83,16 +114,27 @@ export function SiteStatsTable({
       .filter((stat) => matchesQuery(stat, normalizedQuery))
       .filter((stat) => matchesStatus(stat, statusFilter))
       .filter((stat) => matchesMonetization(stat, monetizationFilter))
-      .sort((a, b) => getSortValue(b, sortKey) - getSortValue(a, sortKey));
+      .sort((a, b) => compareStats(a, b, sortKey, sortDirection));
   }, [
     monetizationFilter,
     query,
     segmentKey,
     segments,
+    sortDirection,
     sortKey,
     stats,
     statusFilter,
   ]);
+
+  function changeSort(nextSortKey: SortKey) {
+    if (nextSortKey === sortKey) {
+      setSortDirection((direction) => (direction === "desc" ? "asc" : "desc"));
+      return;
+    }
+
+    setSortKey(nextSortKey);
+    setSortDirection(getDefaultSortDirection(nextSortKey));
+  }
 
   return (
     <article className="panel wide-panel stats-panel">
@@ -154,7 +196,11 @@ export function SiteStatsTable({
           <span>정렬</span>
           <select
             value={sortKey}
-            onChange={(event) => setSortKey(event.target.value as SortKey)}
+            onChange={(event) => {
+              const nextSortKey = event.target.value as SortKey;
+              setSortKey(nextSortKey);
+              setSortDirection(getDefaultSortDirection(nextSortKey));
+            }}
           >
             {Object.entries(sortLabels).map(([value, label]) => (
               <option key={value} value={value}>
@@ -170,26 +216,37 @@ export function SiteStatsTable({
         <table className="stats-table">
           <thead>
             <tr>
-              <th>사이트</th>
-              <th>점수</th>
+              <SortableHeader
+                activeKey={sortKey}
+                direction={sortDirection}
+                label="사이트"
+                sortKey="site"
+                onSort={changeSort}
+              />
+              <SortableHeader
+                activeKey={sortKey}
+                direction={sortDirection}
+                label="점수"
+                sortKey="health"
+                onSort={changeSort}
+              />
               <th>추세</th>
-              <th>1일</th>
-              <th>7일</th>
-              <th>30일</th>
-              <th>증감</th>
-              <th>GSC 클릭</th>
-              <th>GSC 노출</th>
-              <th>CTR</th>
-              <th>AdSense</th>
-              <th>ads.txt</th>
-              <th>평균순위</th>
-              <th>상태</th>
+              {sortableHeaders.slice(2).map((header) => (
+                <SortableHeader
+                  activeKey={sortKey}
+                  direction={sortDirection}
+                  key={header.key}
+                  label={header.label}
+                  sortKey={header.key}
+                  onSort={changeSort}
+                />
+              ))}
             </tr>
           </thead>
           <tbody>
             {visibleStats.length === 0 ? (
               <tr>
-                <td className="table-empty" colSpan={14}>
+                <td className="table-empty" colSpan={15}>
                   조건에 맞는 사이트가 없습니다.
                 </td>
               </tr>
@@ -202,6 +259,41 @@ export function SiteStatsTable({
         </table>
       </div>
     </article>
+  );
+}
+
+function SortableHeader({
+  activeKey,
+  direction,
+  label,
+  sortKey,
+  onSort,
+}: {
+  activeKey: SortKey;
+  direction: SortDirection;
+  label: string;
+  sortKey: SortKey;
+  onSort: (sortKey: SortKey) => void;
+}) {
+  const active = activeKey === sortKey;
+  const ariaSort: "ascending" | "descending" | "none" = active
+    ? direction === "asc"
+      ? "ascending"
+      : "descending"
+    : "none";
+
+  return (
+    <th aria-sort={ariaSort}>
+      <button
+        className={active ? "table-sort active" : "table-sort"}
+        title={`${sortLabels[sortKey]} 정렬`}
+        onClick={() => onSort(sortKey)}
+        type="button"
+      >
+        <span>{label}</span>
+        <span aria-hidden>{active ? (direction === "asc" ? "↑" : "↓") : "↕"}</span>
+      </button>
+    </th>
   );
 }
 
@@ -287,6 +379,9 @@ function StatsRow({
       </td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
+        <CollectionCell stat={stat} />
+      </td>
+      <td>
         <span
           className={getBadgeClass(stat.operationalStatus)}
           title={stat.statusReason}
@@ -295,6 +390,40 @@ function StatsRow({
         </span>
       </td>
     </tr>
+  );
+}
+
+function CollectionCell({ stat }: { stat: EnrichedSiteStat }) {
+  return (
+    <div className="collection-cell">
+      <span
+        className={getCollectionClass(stat.ga4LastSuccessfulFetchAt)}
+        title={formatCollectionTitle("GA4", stat.ga4LastSuccessfulFetchAt)}
+      >
+        GA4 {formatShortDate(stat.ga4LastSuccessfulFetchAt)}
+      </span>
+      <span
+        className={getCollectionClass(stat.gscLastSuccessfulFetchAt)}
+        title={formatCollectionTitle("GSC", stat.gscLastSuccessfulFetchAt)}
+      >
+        GSC {formatShortDate(stat.gscLastSuccessfulFetchAt)}
+      </span>
+      <span
+        className={getCollectionClass(stat.adsenseLastSuccessfulFetchAt)}
+        title={formatCollectionTitle(
+          "AdSense",
+          stat.adsenseLastSuccessfulFetchAt,
+        )}
+      >
+        AdSense {formatShortDate(stat.adsenseLastSuccessfulFetchAt)}
+      </span>
+      <span
+        className={getCollectionClass(stat.adsTxtLastSuccessfulFetchAt)}
+        title={formatCollectionTitle("ads.txt", stat.adsTxtLastSuccessfulFetchAt)}
+      >
+        ads.txt {formatShortDate(stat.adsTxtLastSuccessfulFetchAt)}
+      </span>
+    </div>
   );
 }
 
@@ -344,12 +473,46 @@ function matchesMonetization(
   );
 }
 
-function getSortValue(stat: EnrichedSiteStat, sortKey: SortKey): number {
+function compareStats(
+  a: EnrichedSiteStat,
+  b: EnrichedSiteStat,
+  sortKey: SortKey,
+  direction: SortDirection,
+): number {
+  const multiplier = direction === "asc" ? 1 : -1;
+  const aValue = getSortValue(a, sortKey);
+  const bValue = getSortValue(b, sortKey);
+
+  if (typeof aValue === "string" || typeof bValue === "string") {
+    return (
+      String(aValue).localeCompare(String(bValue), "ko-KR", {
+        numeric: true,
+        sensitivity: "base",
+      }) * multiplier
+    );
+  }
+
+  return (aValue - bValue) * multiplier;
+}
+
+function getSortValue(
+  stat: EnrichedSiteStat,
+  sortKey: SortKey,
+): number | string {
+  if (sortKey === "site") {
+    return `${stat.name} ${formatHost(stat.url)}`;
+  }
   if (sortKey === "priority") {
     return 100 - stat.health.score;
   }
+  if (sortKey === "health") {
+    return stat.health.score;
+  }
   if (sortKey === "oneDayUsers") {
     return stat.last1Days.activeUsers;
+  }
+  if (sortKey === "sevenDayUsers") {
+    return stat.last7Days.activeUsers;
   }
   if (sortKey === "thirtyDayUsers") {
     return stat.last30Days.activeUsers;
@@ -366,11 +529,37 @@ function getSortValue(stat: EnrichedSiteStat, sortKey: SortKey): number {
   if (sortKey === "ctr") {
     return stat.gscLast7Days?.ctr ?? 0;
   }
+  if (sortKey === "adsense") {
+    return getAdsenseStatusLabel(stat.adsenseStatus);
+  }
+  if (sortKey === "adsTxt") {
+    return getAdsTxtStatusLabel(stat.adsTxtStatus);
+  }
   if (sortKey === "position") {
     const position = stat.gscLast7Days?.position ?? 0;
-    return position === 0 ? Number.NEGATIVE_INFINITY : -position;
+    return position === 0 ? Number.POSITIVE_INFINITY : position;
+  }
+  if (sortKey === "collectedAt") {
+    return getLatestCollectionTime(stat);
+  }
+  if (sortKey === "status") {
+    return stat.statusLabel;
   }
   return stat.last7Days.activeUsers;
+}
+
+function getDefaultSortDirection(sortKey: SortKey): SortDirection {
+  if (
+    sortKey === "site" ||
+    sortKey === "adsense" ||
+    sortKey === "adsTxt" ||
+    sortKey === "position" ||
+    sortKey === "status"
+  ) {
+    return "asc";
+  }
+
+  return "desc";
 }
 
 function getBadgeClass(status: EnrichedSiteStat["operationalStatus"]): string {
@@ -518,4 +707,96 @@ function Sparkline({ values }: { values: number[] }) {
 
 function formatPosition(value: number): string {
   return value === 0 ? "-" : value.toFixed(1);
+}
+
+function getLatestCollectionTime(stat: EnrichedSiteStat): number {
+  return Math.max(
+    parseCollectionTime(stat.ga4LastSuccessfulFetchAt),
+    parseCollectionTime(stat.gscLastSuccessfulFetchAt),
+    parseCollectionTime(stat.adsenseLastSuccessfulFetchAt),
+    parseCollectionTime(stat.adsTxtLastSuccessfulFetchAt),
+  );
+}
+
+function parseCollectionTime(value: string | undefined): number {
+  if (!value) {
+    return 0;
+  }
+
+  const timestamp = Date.parse(value);
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+function formatShortDate(value: string | undefined): string {
+  if (!value) {
+    return "-";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "-";
+  }
+
+  return new Intl.DateTimeFormat("ko-KR", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Seoul",
+  }).format(date);
+}
+
+function formatDateTime(value: string | undefined): string {
+  if (!value) {
+    return "수집 기록 없음";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "수집 기록 없음";
+  }
+
+  return new Intl.DateTimeFormat("ko-KR", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "Asia/Seoul",
+  }).format(date);
+}
+
+function formatCollectionTitle(label: string, value: string | undefined): string {
+  if (!value) {
+    return `${label} 수집 기록 없음`;
+  }
+
+  const ageHours = getCollectionAgeHours(value);
+  const ageLabel =
+    ageHours === null ? "" : ` · ${Math.floor(ageHours)}시간 전 수집`;
+  return `${label} ${formatDateTime(value)}${ageLabel}`;
+}
+
+function getCollectionClass(value: string | undefined): string {
+  const ageHours = getCollectionAgeHours(value);
+  if (ageHours === null) {
+    return "collection-missing";
+  }
+
+  if (ageHours >= 48) {
+    return "collection-stale";
+  }
+
+  return "collection-fresh";
+}
+
+function getCollectionAgeHours(value: string | undefined): number | null {
+  if (!value) {
+    return null;
+  }
+
+  const timestamp = Date.parse(value);
+  if (Number.isNaN(timestamp)) {
+    return null;
+  }
+
+  return (Date.now() - timestamp) / 3600000;
 }

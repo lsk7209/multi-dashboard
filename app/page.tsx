@@ -84,7 +84,7 @@ function TodaySection({
         <StatusCard
           label="확인 필요"
           value={formatNumber(data.failedCount)}
-          hint={`오래됨 ${formatNumber(data.staleCount)}개`}
+          hint={`수집 지연 ${formatNumber(data.collectionStaleCount)}개`}
         />
         <StatusCard
           label="수익화 이슈"
@@ -326,8 +326,9 @@ function TrafficDropPanel({
                 <strong>{stat.name}</strong>
                 <a href={stat.url}>{formatHost(stat.url)}</a>
                 <p>{`GA4 사용자 ${formatChange(stat.trend.activeUsersChange)} · GSC 클릭 ${formatChange(stat.trend.gscClicksChange)}`}</p>
+                <em>{getTrafficCauseDetail(stat)}</em>
               </div>
-              <span>{formatChange(stat.trend.activeUsersChange)}</span>
+              <span>{getTrafficCauseLabel(stat)}</span>
             </div>
           ))}
         </div>
@@ -584,4 +585,38 @@ function getMonetizationIssueLabel(
   if (stat.adsenseStatus === "missing_config") return "코드 없음";
   if (stat.adsTxtStatus === "missing_config") return "ads.txt 없음";
   return "확인 실패";
+}
+
+function getTrafficCauseLabel(
+  stat: ReturnType<typeof getDashboardData>["stats"][number],
+): string {
+  const ga4Drop = (stat.trend.activeUsersChange ?? 0) <= -0.3;
+  const gscDrop = (stat.trend.gscClicksChange ?? 0) <= -0.3;
+
+  if (stat.operationalStatus !== "normal") return "수집 점검";
+  if (ga4Drop && gscDrop) return "검색 하락";
+  if (ga4Drop) return "검색 외 유입";
+  if (gscDrop) return "검색 클릭";
+  return "변동";
+}
+
+function getTrafficCauseDetail(
+  stat: ReturnType<typeof getDashboardData>["stats"][number],
+): string {
+  const ga4Drop = (stat.trend.activeUsersChange ?? 0) <= -0.3;
+  const gscDrop = (stat.trend.gscClicksChange ?? 0) <= -0.3;
+
+  if (stat.operationalStatus !== "normal") {
+    return "GA4/GSC 수집 상태가 정상인지 먼저 확인하세요.";
+  }
+  if (ga4Drop && gscDrop) {
+    return "검색 유입 자체가 줄었을 가능성이 큽니다. 상위 쿼리와 색인 상태를 확인하세요.";
+  }
+  if (ga4Drop) {
+    return "검색 클릭 하락은 크지 않습니다. 직접/추천/SNS 등 검색 외 채널을 확인하세요.";
+  }
+  if (gscDrop) {
+    return "GA4 전체 사용자는 버티지만 검색 클릭이 줄었습니다. CTR과 평균순위를 확인하세요.";
+  }
+  return "단기 변동입니다. 7일 추세가 이어지는지 확인하세요.";
 }
