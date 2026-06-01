@@ -824,3 +824,19 @@ sites:
     wpRestBase: https://dog.klick.kr/wp-json/wp/v2
     ga4PropertyId: "539677201"
     gscSiteUrl: https://dog.klick.kr/
+  - id: dogswhere
+    name: dogswhere.com
+    enabled: true
+    platform: wordpress
+    url: https://dogswhere.com/
+    wpRestBase: https://dogswhere.com/wp-json/wp/v2
+    ga4PropertyId: "539684317"
+    gscSiteUrl: https://dogswhere.com/
+  - id: travel-sellerpit
+    name: travel.sellerpit.kr
+    enabled: true
+    platform: wordpress
+    url: https://travel.sellerpit.kr/
+    wpRestBase: https://travel.sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "539747744"
+    gscSiteUrl: https://travel.sellerpit.kr/
