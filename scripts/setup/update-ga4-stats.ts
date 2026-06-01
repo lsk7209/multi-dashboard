@@ -36,6 +36,14 @@ interface GscMetricSet {
   position: number;
 }
 
+interface SitemapSummary {
+  sitemapLastDownloadedAt?: string;
+  sitemapLastSubmittedAt?: string;
+  sitemapPath?: string;
+  sitemapWarnings?: number;
+  sitemapErrors?: number;
+}
+
 interface SiteStat {
   id: string;
   name: string;
@@ -57,14 +65,21 @@ interface SiteStat {
   gscLastSuccessfulFetchAt?: string;
   adsenseLastSuccessfulFetchAt?: string;
   adsTxtLastSuccessfulFetchAt?: string;
+  sitemapLastDownloadedAt?: string;
+  sitemapLastSubmittedAt?: string;
+  sitemapPath?: string;
+  sitemapWarnings?: number;
+  sitemapErrors?: number;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
   adsTxtErrorKind?: ErrorKind;
+  sitemapErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
   adsenseError?: string;
   adsTxtError?: string;
+  sitemapError?: string;
   lastPublishedAt?: string;
 }
 
@@ -319,6 +334,58 @@ async function fetchGscMetricsForRange(
   };
 }
 
+async function fetchSitemapSummary(
+  client: ReturnType<typeof google.searchconsole>,
+  siteUrl: string,
+): Promise<SitemapSummary> {
+  const response = await client.sitemaps.list({ siteUrl });
+  const sitemaps = response.data.sitemap ?? [];
+  const selected = sitemaps
+    .filter((sitemap) => sitemap.lastDownloaded || sitemap.lastSubmitted)
+    .sort(
+      (a, b) =>
+        Date.parse(b.lastDownloaded ?? b.lastSubmitted ?? "") -
+        Date.parse(a.lastDownloaded ?? a.lastSubmitted ?? ""),
+    )[0];
+
+  if (!selected) {
+    return {};
+  }
+
+  const summary: SitemapSummary = {};
+  const warnings = toOptionalNumber(selected.warnings);
+  const errors = toOptionalNumber(selected.errors);
+
+  if (selected.lastDownloaded) {
+    summary.sitemapLastDownloadedAt = selected.lastDownloaded;
+  }
+  if (selected.lastSubmitted) {
+    summary.sitemapLastSubmittedAt = selected.lastSubmitted;
+  }
+  if (selected.path) {
+    summary.sitemapPath = selected.path;
+  }
+  if (warnings !== undefined) {
+    summary.sitemapWarnings = warnings;
+  }
+  if (errors !== undefined) {
+    summary.sitemapErrors = errors;
+  }
+
+  return summary;
+}
+
+function toOptionalNumber(
+  value: string | number | null | undefined,
+): number | undefined {
+  if (value === null || value === undefined || value === "") {
+    return undefined;
+  }
+
+  const parsed = Number(value);
+  return Number.isNaN(parsed) ? undefined : parsed;
+}
+
 async function fetchWpStats(
   site: Site,
 ): Promise<Pick<SiteStat, "lastPublishedAt">> {
@@ -357,7 +424,7 @@ async function fetchAdsenseCodeStatus(site: Site): Promise<void> {
     normalized.includes("ca-pub-");
 
   if (!hasAdsenseCode) {
-    throw new Error("Missing AdSense code");
+    throw new Error("AdSense code not detected on homepage");
   }
 }
 
@@ -393,8 +460,10 @@ async function fetchSiteStat(
   let gscLast7Days = emptyGscMetrics();
   let gscPrevious7Days = emptyGscMetrics();
   let gscLast30Days = emptyGscMetrics();
+  let sitemapSummary: SitemapSummary = {};
   let error: string | undefined;
   let gscError: string | undefined;
+  let sitemapError: string | undefined;
   let adsenseError: string | undefined;
   let adsTxtError: string | undefined;
   const collectedAt = new Date().toISOString();
@@ -427,6 +496,12 @@ async function fetchSiteStat(
   }
 
   try {
+    sitemapSummary = await fetchSitemapSummary(gscClient, gscSiteUrl);
+  } catch (searchError) {
+    sitemapError = getErrorMessage(searchError);
+  }
+
+  try {
     await fetchAdsenseCodeStatus(site);
   } catch (statusError) {
     adsenseError = getErrorMessage(statusError);
@@ -455,6 +530,7 @@ async function fetchSiteStat(
     gscStatus: statusFromError(gscError, "api_error"),
     adsenseStatus: monetizationStatusFromError(adsenseError),
     adsTxtStatus: monetizationStatusFromError(adsTxtError),
+    ...sitemapSummary,
   };
 
   if (error) {
@@ -483,6 +559,11 @@ async function fetchSiteStat(
     stat.adsTxtErrorKind = classifyError(adsTxtError);
   } else {
     stat.adsTxtLastSuccessfulFetchAt = collectedAt;
+  }
+
+  if (sitemapError) {
+    stat.sitemapError = sitemapError;
+    stat.sitemapErrorKind = classifyError(sitemapError);
   }
 
   const wpStats = await fetchWpStats(site);
@@ -546,10 +627,15 @@ async function main(): Promise<void> {
 
   const ga4Failed = stats.filter((site) => site.error).length;
   const gscFailed = stats.filter((site) => site.gscError).length;
-  const adsenseFailed = stats.filter((site) => site.adsenseError).length;
+  const adsenseCodeNotDetected = stats.filter((site) => site.adsenseError)
+    .length;
   const adsTxtFailed = stats.filter((site) => site.adsTxtError).length;
+  const sitemapChecked = stats.filter(
+    (site) => site.sitemapLastDownloadedAt || site.sitemapLastSubmittedAt,
+  ).length;
+  const sitemapFailed = stats.filter((site) => site.sitemapError).length;
   console.log(
-    `Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, AdSense failed=${adsenseFailed}, ads.txt failed=${adsTxtFailed}, output=${OUTPUT_PATH}, history=${historyPath}`,
+    `Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, sitemaps checked=${sitemapChecked}, sitemaps failed=${sitemapFailed}, AdSense code not detected=${adsenseCodeNotDetected}, ads.txt failed=${adsTxtFailed}, output=${OUTPUT_PATH}, history=${historyPath}`,
   );
 }
 

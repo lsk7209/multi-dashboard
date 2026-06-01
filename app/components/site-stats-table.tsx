@@ -29,7 +29,7 @@ type SortKey =
   | "adsense"
   | "adsTxt"
   | "position"
-  | "collectedAt"
+  | "sitemapCollectedAt"
   | "status";
 type SortDirection = "asc" | "desc";
 
@@ -47,7 +47,7 @@ const sortLabels: Record<SortKey, string> = {
   adsense: "AdSense",
   adsTxt: "ads.txt",
   position: "평균순위",
-  collectedAt: "수집일",
+  sitemapCollectedAt: "사이트맵 수집일",
   status: "상태",
 };
 
@@ -62,7 +62,7 @@ const statusLabels: Record<StatusFilter, string> = {
 const monetizationLabels: Record<MonetizationFilter, string> = {
   all: "전체",
   adsense_ok: "코드 연동",
-  adsense_missing: "코드 없음",
+  adsense_missing: "코드 미탐지",
   ads_txt_missing: "ads.txt 없음",
   monetization_issue: "수익화 이슈",
 };
@@ -80,7 +80,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "adsense", label: "AdSense" },
   { key: "adsTxt", label: "ads.txt" },
   { key: "position", label: "평균순위" },
-  { key: "collectedAt", label: "수집일" },
+  { key: "sitemapCollectedAt", label: "사이트맵 수집일" },
   { key: "status", label: "상태" },
 ];
 
@@ -379,7 +379,7 @@ function StatsRow({
       </td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
-        <CollectionCell stat={stat} />
+        <SitemapCollectionCell stat={stat} />
       </td>
       <td>
         <span
@@ -393,13 +393,13 @@ function StatsRow({
   );
 }
 
-function CollectionCell({ stat }: { stat: EnrichedSiteStat }) {
-  const collectedAt = getLatestCollectionValue(stat);
+function SitemapCollectionCell({ stat }: { stat: EnrichedSiteStat }) {
+  const collectedAt = getSitemapCollectionValue(stat);
 
   return (
     <span
-      className={`collection-cell ${getCollectionClass(collectedAt)}`}
-      title={formatCollectionSummary(stat)}
+      className={`collection-cell ${getSitemapCollectionClass(stat)}`}
+      title={formatSitemapCollectionTitle(stat)}
     >
       {formatShortDate(collectedAt)}
     </span>
@@ -518,8 +518,8 @@ function getSortValue(
     const position = stat.gscLast7Days?.position ?? 0;
     return position === 0 ? Number.POSITIVE_INFINITY : position;
   }
-  if (sortKey === "collectedAt") {
-    return getLatestCollectionTime(stat);
+  if (sortKey === "sitemapCollectedAt") {
+    return parseCollectionTime(getSitemapCollectionValue(stat));
   }
   if (sortKey === "status") {
     return stat.statusLabel;
@@ -560,10 +560,10 @@ function getAdsenseStatusLabel(
     return "정상";
   }
   if (status === "missing_config") {
-    return "코드 없음";
+    return "코드 미탐지";
   }
   if (status === "auth_error" || status === "api_error") {
-    return "확인 실패";
+    return "상태 확인 실패";
   }
   return "미수집";
 }
@@ -573,7 +573,10 @@ function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
     return "홈페이지에서 AdSense 코드가 확인됐습니다.";
   }
   if (stat.adsenseError) {
-    return stat.adsenseError;
+    return stat.adsenseError === "Missing AdSense code" ||
+      stat.adsenseError === "AdSense code not detected on homepage"
+      ? "홈페이지 HTML에서 AdSense 코드가 감지되지 않았습니다. 글 상세, 조건부 삽입, 캐시 상태는 별도 확인이 필요합니다."
+      : stat.adsenseError;
   }
   return "아직 AdSense 코드 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
 }
@@ -594,7 +597,7 @@ function getAdsTxtStatusLabel(
     return "없음";
   }
   if (status === "auth_error" || status === "api_error") {
-    return "확인 실패";
+    return "상태 확인 실패";
   }
   return "미수집";
 }
@@ -688,19 +691,10 @@ function formatPosition(value: number): string {
   return value === 0 ? "-" : value.toFixed(1);
 }
 
-function getLatestCollectionTime(stat: EnrichedSiteStat): number {
-  return parseCollectionTime(getLatestCollectionValue(stat));
-}
-
-function getLatestCollectionValue(stat: EnrichedSiteStat): string | undefined {
-  return [
-    stat.ga4LastSuccessfulFetchAt,
-    stat.gscLastSuccessfulFetchAt,
-    stat.adsenseLastSuccessfulFetchAt,
-    stat.adsTxtLastSuccessfulFetchAt,
-  ]
-    .filter((value): value is string => Boolean(value))
-    .sort((a, b) => Date.parse(b) - Date.parse(a))[0];
+function getSitemapCollectionValue(
+  stat: EnrichedSiteStat,
+): string | undefined {
+  return stat.sitemapLastDownloadedAt ?? stat.sitemapLastSubmittedAt;
 }
 
 function parseCollectionTime(value: string | undefined): number {
@@ -749,48 +743,30 @@ function formatDateTime(value: string | undefined): string {
   }).format(date);
 }
 
-function formatCollectionTitle(label: string, value: string | undefined): string {
-  if (!value) {
-    return `${label} 수집 기록 없음`;
+function formatSitemapCollectionTitle(stat: EnrichedSiteStat): string {
+  if (stat.sitemapError) {
+    return `GSC 사이트맵 수집일 확인 실패: ${stat.sitemapError}`;
   }
 
-  const ageHours = getCollectionAgeHours(value);
-  const ageLabel =
-    ageHours === null ? "" : ` · ${Math.floor(ageHours)}시간 전 수집`;
-  return `${label} ${formatDateTime(value)}${ageLabel}`;
+  const downloadedAt = stat.sitemapLastDownloadedAt;
+  const submittedAt = stat.sitemapLastSubmittedAt;
+  const lines = [
+    downloadedAt
+      ? `GSC 사이트맵 마지막 수집: ${formatDateTime(downloadedAt)}`
+      : "GSC 사이트맵 마지막 수집 기록 없음",
+    submittedAt ? `GSC 사이트맵 제출: ${formatDateTime(submittedAt)}` : "",
+    stat.sitemapPath ? `사이트맵: ${stat.sitemapPath}` : "",
+    stat.sitemapErrors !== undefined ? `오류: ${stat.sitemapErrors}` : "",
+    stat.sitemapWarnings !== undefined ? `경고: ${stat.sitemapWarnings}` : "",
+  ].filter(Boolean);
+
+  return lines.join("\n");
 }
 
-function formatCollectionSummary(stat: EnrichedSiteStat): string {
-  return [
-    formatCollectionTitle("GA4", stat.ga4LastSuccessfulFetchAt),
-    formatCollectionTitle("GSC", stat.gscLastSuccessfulFetchAt),
-    formatCollectionTitle("AdSense", stat.adsenseLastSuccessfulFetchAt),
-    formatCollectionTitle("ads.txt", stat.adsTxtLastSuccessfulFetchAt),
-  ].join("\n");
-}
-
-function getCollectionClass(value: string | undefined): string {
-  const ageHours = getCollectionAgeHours(value);
-  if (ageHours === null) {
+function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
+  if (stat.sitemapError || !getSitemapCollectionValue(stat)) {
     return "collection-missing";
   }
 
-  if (ageHours >= 48) {
-    return "collection-stale";
-  }
-
   return "collection-fresh";
-}
-
-function getCollectionAgeHours(value: string | undefined): number | null {
-  if (!value) {
-    return null;
-  }
-
-  const timestamp = Date.parse(value);
-  if (Number.isNaN(timestamp)) {
-    return null;
-  }
-
-  return (Date.now() - timestamp) / 3600000;
 }

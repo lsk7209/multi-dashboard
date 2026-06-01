@@ -574,17 +574,17 @@ function getErrorKindLabel(kind: string | undefined): string {
 
 function getMonetizationLabel(kind: string | undefined): string {
   if (kind === "ok") return "정상";
-  if (kind === "missing_config") return "없음";
-  if (kind === "api_error" || kind === "auth_error") return "확인 실패";
+  if (kind === "missing_config") return "미탐지";
+  if (kind === "api_error" || kind === "auth_error") return "상태 확인 실패";
   return "미수집";
 }
 
 function getMonetizationIssueLabel(
   stat: ReturnType<typeof getDashboardData>["stats"][number],
 ): string {
-  if (stat.adsenseStatus === "missing_config") return "코드 없음";
+  if (stat.adsenseStatus === "missing_config") return "코드 미탐지";
   if (stat.adsTxtStatus === "missing_config") return "ads.txt 없음";
-  return "확인 실패";
+  return "상태 확인 실패";
 }
 
 function getTrafficCauseLabel(

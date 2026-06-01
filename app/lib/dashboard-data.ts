@@ -78,14 +78,21 @@ export interface SiteStat {
   gscLastSuccessfulFetchAt?: string;
   adsenseLastSuccessfulFetchAt?: string;
   adsTxtLastSuccessfulFetchAt?: string;
+  sitemapLastDownloadedAt?: string;
+  sitemapLastSubmittedAt?: string;
+  sitemapPath?: string;
+  sitemapWarnings?: number;
+  sitemapErrors?: number;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
   adsTxtErrorKind?: ErrorKind;
+  sitemapErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
   adsenseError?: string;
   adsTxtError?: string;
+  sitemapError?: string;
   lastPublishedAt?: string;
 }
 
@@ -483,9 +490,9 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
         stat,
         "monetization",
         80,
-        "코드 없음",
-        "홈페이지에서 AdSense 코드가 확인되지 않았습니다.",
-        "광고 코드 삽입 상태와 캐시 반영 여부를 확인하세요.",
+        "코드 미탐지",
+        "홈페이지 HTML에서 AdSense 코드가 감지되지 않았습니다.",
+        "홈페이지, 글 상세, 조건부 광고 삽입, 캐시 반영 여부를 확인하세요.",
       ),
     );
   }
@@ -509,7 +516,7 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
         stat,
         "monetization",
         76,
-        "확인 실패",
+        "상태 확인 실패",
         "AdSense 코드 또는 ads.txt 상태 확인에 실패했습니다.",
         "홈페이지와 /ads.txt 접근 상태, 리다이렉트, 방화벽을 확인하세요.",
       ),
