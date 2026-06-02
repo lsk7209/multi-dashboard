@@ -10,7 +10,7 @@ sites:
     gscSiteUrl: https://kang4.com/
   - id: tasko
     name: 태스코 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://tasko.kr/
     wpRestBase: https://tasko.kr/wp-json/wp/v2
@@ -34,7 +34,7 @@ sites:
     gscSiteUrl: https://knewstory.kr/
   - id: 2mlab
     name: 팀하우스 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://2mlab.kr/
     wpRestBase: https://2mlab.kr/wp-json/wp/v2
@@ -42,7 +42,7 @@ sites:
     gscSiteUrl: https://2mlab.kr/
   - id: chatgipt
     name: 블로그 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://chatgipt.kr/
     wpRestBase: https://chatgipt.kr/wp-json/wp/v2
@@ -50,7 +50,7 @@ sites:
     gscSiteUrl: https://chatgipt.kr/
   - id: chatgipt-2
     name: 블로그 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://chatgipt.kr/
     wpRestBase: https://chatgipt.kr/wp-json/wp/v2
@@ -74,7 +74,7 @@ sites:
     gscSiteUrl: https://discparty.com/
   - id: klick
     name: 블로그 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://klick.kr/
     wpRestBase: https://klick.kr/wp-json/wp/v2
@@ -138,7 +138,7 @@ sites:
     gscSiteUrl: https://dogspang.kr/
   - id: cartain
     name: cartain
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://cartain.kr/
     wpRestBase: https://cartain.kr/wp-json/wp/v2
@@ -314,7 +314,7 @@ sites:
     gscSiteUrl: https://mbti.tasko.kr/
   - id: luckyday-2
     name: https://luckyday.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://luckyday.kr/
     wpRestBase: https://luckyday.kr/wp-json/wp/v2
@@ -431,7 +431,7 @@ sites:
     gscSiteUrl: https://ezfunnel.kr/
   - id: knewstory-2
     name: knewstory.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://knewstory.kr/
     wpRestBase: https://knewstory.kr/wp-json/wp/v2
@@ -439,7 +439,7 @@ sites:
     gscSiteUrl: https://knewstory.kr/
   - id: kang4-2
     name: kang4.com
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://kang4.com/
     wpRestBase: https://kang4.com/wp-json/wp/v2
@@ -455,7 +455,7 @@ sites:
     gscSiteUrl: https://coinyo.kr/
   - id: fastjob-2
     name: fastjob.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://fastjob.kr/
     wpRestBase: https://fastjob.kr/wp-json/wp/v2
@@ -719,7 +719,7 @@ sites:
     gscSiteUrl: sc-domain:car.luckyday.kr
   - id: notebook-klick
     name: 노트북고고
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://notebook.klick.kr/
     wpRestBase: https://notebook.klick.kr/wp-json/wp/v2

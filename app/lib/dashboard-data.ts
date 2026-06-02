@@ -715,13 +715,11 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   }
 
   if (hasSitemapCollectionLag(stat)) {
-    const hasCurrentSitemapIssue =
-      (stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0;
     items.push(
       makeAction(
         stat,
         "sitemap",
-        hasCurrentSitemapIssue ? 96 : 74,
+        hasCurrentSitemapIssue(stat) ? 96 : 74,
         getSitemapCollectionLabel(stat),
         getSitemapCollectionReason(stat),
         "Search Console에 sitemap을 재제출하고 sitemap lastmod와 robots.txt Sitemap 라인을 확인하세요.",
@@ -814,15 +812,34 @@ function hasSitemapCollectionLag(stat: SiteStat): boolean {
     return false;
   }
 
+  if (hasCleanPendingSitemap(stat)) {
+    return false;
+  }
+
   return (
     !stat.sitemapLastDownloadedAt ||
     isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
-    (stat.sitemapErrors ?? 0) > 0 ||
-    (stat.sitemapWarnings ?? 0) > 0
+    hasCurrentSitemapIssue(stat)
   );
 }
 
 function hasSitemapProcessing(stat: SiteStat): boolean {
+  if (!hasCurrentSitemapIssue(stat)) {
+    return false;
+  }
+
+  return hasUnprocessedSitemapSubmission(stat);
+}
+
+function hasCleanPendingSitemap(stat: SiteStat): boolean {
+  return !hasCurrentSitemapIssue(stat) && hasUnprocessedSitemapSubmission(stat);
+}
+
+function hasCurrentSitemapIssue(stat: SiteStat): boolean {
+  return (stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0;
+}
+
+function hasUnprocessedSitemapSubmission(stat: SiteStat): boolean {
   if (stat.sitemapIsPending) {
     return true;
   }

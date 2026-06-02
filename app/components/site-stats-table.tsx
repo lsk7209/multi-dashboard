@@ -810,6 +810,10 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
     return "collection-missing";
   }
 
+  if (hasCleanPendingSitemap(stat)) {
+    return "collection-fresh";
+  }
+
   if (
     stat.operationalStatus === "processing" ||
     isOlderThanDays(stat.sitemapLastDownloadedAt, 14) ||
@@ -834,6 +838,9 @@ function getSitemapCollectionStatusLabel(stat: EnrichedSiteStat): string {
   if (stat.operationalStatus === "processing") {
     return "재처리";
   }
+  if (hasCleanPendingSitemap(stat)) {
+    return "정상";
+  }
   if ((stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0) {
     return "오류";
   }
@@ -842,6 +849,31 @@ function getSitemapCollectionStatusLabel(stat: EnrichedSiteStat): string {
   }
 
   return "정상";
+}
+
+function hasCleanPendingSitemap(stat: EnrichedSiteStat): boolean {
+  if ((stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0) {
+    return false;
+  }
+
+  if (stat.sitemapIsPending) {
+    return true;
+  }
+
+  if (!stat.sitemapLastSubmittedAt) {
+    return false;
+  }
+
+  const submittedAt = Date.parse(stat.sitemapLastSubmittedAt);
+  const downloadedAt = stat.sitemapLastDownloadedAt
+    ? Date.parse(stat.sitemapLastDownloadedAt)
+    : Number.NEGATIVE_INFINITY;
+
+  if (Number.isNaN(submittedAt) || Number.isNaN(downloadedAt)) {
+    return false;
+  }
+
+  return submittedAt > downloadedAt;
 }
 
 function isOlderThanDays(value: string | undefined, days: number): boolean {
