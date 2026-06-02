@@ -258,23 +258,26 @@ export function getDashboardData(): DashboardData {
       sparklines.get(site.id) ?? [],
     ),
   );
-  const insights = buildInsights(stats);
-  const actions = buildActionItems(stats).slice(0, 12);
-  const totalLast1Days = sumMetrics(stats.map((stat) => stat.last1Days));
-  const totalLast7Days = sumMetrics(stats.map((stat) => stat.last7Days));
+  const displayStats = dedupeStatsByHost(stats);
+  const insights = buildInsights(displayStats);
+  const actions = buildActionItems(displayStats).slice(0, 12);
+  const totalLast1Days = sumMetrics(displayStats.map((stat) => stat.last1Days));
+  const totalLast7Days = sumMetrics(displayStats.map((stat) => stat.last7Days));
   const totalPrevious7Days = sumMetrics(
-    stats.map((stat) => stat.previous7Days),
+    displayStats.map((stat) => stat.previous7Days),
   );
-  const gscConnectedStats = stats.filter((stat) => stat.gscStatus === "ok");
-  const adsenseCheckedStats = stats.filter((stat) => stat.adsenseStatus);
-  const adsenseConnectedStats = stats.filter(
+  const gscConnectedStats = displayStats.filter(
+    (stat) => stat.gscStatus === "ok",
+  );
+  const adsenseCheckedStats = displayStats.filter((stat) => stat.adsenseStatus);
+  const adsenseConnectedStats = displayStats.filter(
     (stat) => stat.adsenseStatus === "ok",
   );
-  const adsTxtCheckedStats = stats.filter((stat) => stat.adsTxtStatus);
-  const adsTxtConnectedStats = stats.filter(
+  const adsTxtCheckedStats = displayStats.filter((stat) => stat.adsTxtStatus);
+  const adsTxtConnectedStats = displayStats.filter(
     (stat) => stat.adsTxtStatus === "ok",
   );
-  const monetizationIssueStats = stats
+  const monetizationIssueStats = displayStats
     .filter(hasMonetizationIssue)
     .sort((a, b) => b.last7Days.activeUsers - a.last7Days.activeUsers)
     .slice(0, 20);
@@ -283,7 +286,7 @@ export function getDashboardData(): DashboardData {
     generatedAt: snapshot.generatedAt,
     dateRanges: snapshot.dateRanges ?? fallbackDateRanges(),
     sites,
-    stats,
+    stats: displayStats,
     insights,
     priorityInsights: groupInsightsByDomain(
       insights.filter((insight) => insight.severity === "high"),
@@ -302,13 +305,13 @@ export function getDashboardData(): DashboardData {
       insights.filter((insight) => insight.kind === "decline"),
     ).slice(0, 8),
     actions,
-    segments: buildSegments(stats),
-    healthSummary: buildHealthSummary(stats),
-    gscIssueStats: stats.filter((stat) => Boolean(stat.gscError)),
-    dailyIssueStats: stats
+    segments: buildSegments(displayStats),
+    healthSummary: buildHealthSummary(displayStats),
+    gscIssueStats: displayStats.filter((stat) => Boolean(stat.gscError)),
+    dailyIssueStats: displayStats
       .filter((stat) => stat.operationalStatus !== "normal")
       .slice(0, 20),
-    trafficDropStats: stats
+    trafficDropStats: displayStats
       .filter(
         (s) =>
           (s.trend.activeUsersChange ?? 0) <= -0.3 &&
@@ -320,29 +323,31 @@ export function getDashboardData(): DashboardData {
       )
       .slice(0, 20),
     monetizationIssueStats,
-    monetizationIssueCount: stats.filter(hasMonetizationIssue).length,
-    wpStaleStats: stats
+    monetizationIssueCount: displayStats.filter(hasMonetizationIssue).length,
+    wpStaleStats: displayStats
       .filter(
         (s) => s.daysSincePublished !== undefined && s.daysSincePublished >= 7,
       )
       .sort((a, b) => (b.daysSincePublished ?? 0) - (a.daysSincePublished ?? 0))
       .slice(0, 20),
-    siteCount: sites.length,
-    trackedCount: stats.filter((stat) => !stat.error && stat.ga4PropertyId)
-      .length,
+    siteCount: displayStats.length,
+    trackedCount: displayStats.filter(
+      (stat) => !stat.error && stat.ga4PropertyId,
+    ).length,
     gscConnectedCount: gscConnectedStats.length,
     adsenseConnectedCount: adsenseConnectedStats.length,
     adsenseCheckedCount: adsenseCheckedStats.length,
     adsTxtConnectedCount: adsTxtConnectedStats.length,
     adsTxtCheckedCount: adsTxtCheckedStats.length,
-    failedCount: stats.filter((stat) => stat.operationalStatus !== "normal")
-      .length,
-    staleCount: stats.filter((stat) => stat.isStale).length,
-    collectionStaleCount: stats.filter(hasCollectionLag).length,
+    failedCount: displayStats.filter(
+      (stat) => stat.operationalStatus !== "normal",
+    ).length,
+    staleCount: displayStats.filter((stat) => stat.isStale).length,
+    collectionStaleCount: displayStats.filter(hasCollectionLag).length,
     totalLast1Days,
     totalLast7Days,
     totalPrevious7Days,
-    totalLast30Days: sumMetrics(stats.map((stat) => stat.last30Days)),
+    totalLast30Days: sumMetrics(displayStats.map((stat) => stat.last30Days)),
     totalGscLast7Days: sumGscMetrics(
       gscConnectedStats.map((stat) => stat.gscLast7Days ?? emptyGscMetrics()),
     ),
@@ -357,6 +362,66 @@ export function getDashboardData(): DashboardData {
       totalPrevious7Days.activeUsers,
     ),
   };
+}
+
+function dedupeStatsByHost(stats: EnrichedSiteStat[]): EnrichedSiteStat[] {
+  const byHost = new Map<string, EnrichedSiteStat>();
+
+  for (const stat of stats) {
+    const key = normalizeHost(stat.url);
+    const current = byHost.get(key);
+    if (!current || compareRepresentative(stat, current) > 0) {
+      byHost.set(key, stat);
+    }
+  }
+
+  return [...byHost.values()];
+}
+
+function compareRepresentative(
+  candidate: EnrichedSiteStat,
+  current: EnrichedSiteStat,
+): number {
+  const candidateStatusScore = candidate.operationalStatus === "normal" ? 1 : 0;
+  const currentStatusScore = current.operationalStatus === "normal" ? 1 : 0;
+  if (candidateStatusScore !== currentStatusScore) {
+    return candidateStatusScore - currentStatusScore;
+  }
+
+  const candidateTraffic = candidate.last7Days.activeUsers;
+  const currentTraffic = current.last7Days.activeUsers;
+  if (candidateTraffic !== currentTraffic) {
+    return candidateTraffic - currentTraffic;
+  }
+
+  if (candidate.health.score !== current.health.score) {
+    return candidate.health.score - current.health.score;
+  }
+
+  return (
+    getNamePreferenceScore(candidate.name) - getNamePreferenceScore(current.name)
+  );
+}
+
+function getNamePreferenceScore(name: string): number {
+  const normalized = name.toLowerCase();
+  if (normalized.includes(" - ga4") || normalized.startsWith("http")) {
+    return 0;
+  }
+
+  return 1;
+}
+
+function normalizeHost(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return url
+      .replace(/^https?:\/\//, "")
+      .replace(/\/$/, "")
+      .replace(/^www\./, "")
+      .toLowerCase();
+  }
 }
 
 function enrichSiteStat(
