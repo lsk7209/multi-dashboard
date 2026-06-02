@@ -1,4 +1,8 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { existsSync } from "node:fs";
+import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { promisify } from "node:util";
 import pLimit from "p-limit";
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import { google } from "googleapis";
@@ -13,6 +17,12 @@ const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
 const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
+const DEFAULT_CONTENT_FIELDS = {
+  scheduled: ["scheduledAt", "scheduled_at", "publishAt", "publish_at"],
+  published: ["publishedAt", "published_at", "date", "datePublished"],
+};
+
+const execFileAsync = promisify(execFile);
 
 type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
 type ErrorKind =
@@ -523,6 +533,11 @@ function toOptionalNumber(
 async function fetchWpStats(
   site: Site,
 ): Promise<Pick<SiteStat, "lastPublishedAt" | "lastScheduledAt">> {
+  const contentStats = await fetchContentStats(site);
+  if (contentStats.lastPublishedAt || contentStats.lastScheduledAt) {
+    return contentStats;
+  }
+
   if (!site.wpRestBase) {
     return {};
   }
@@ -540,6 +555,252 @@ async function fetchWpStats(
   } catch {
     return {};
   }
+}
+
+async function fetchContentStats(
+  site: Site,
+): Promise<Pick<SiteStat, "lastPublishedAt" | "lastScheduledAt">> {
+  if (!site.contentSource) {
+    return {};
+  }
+
+  if (site.contentSource.type === "wordpress-ssh") {
+    return fetchWordPressSshStats(site);
+  }
+
+  if (
+    site.contentSource.type === "local-next" ||
+    site.contentSource.type === "github-next"
+  ) {
+    return fetchLocalNextStats(site);
+  }
+
+  return {};
+}
+
+async function fetchWordPressSshStats(
+  site: Site,
+): Promise<Pick<SiteStat, "lastPublishedAt" | "lastScheduledAt">> {
+  const source = site.contentSource;
+  if (
+    !source ||
+    source.type !== "wordpress-ssh" ||
+    !source.sshHost ||
+    !source.sshUser ||
+    !source.sshKeyPath ||
+    !source.wpPath
+  ) {
+    return {};
+  }
+
+  const php = `
+$wpPath = ${JSON.stringify(source.wpPath)};
+if (!is_file($wpPath . '/wp-load.php')) {
+    fwrite(STDERR, "wp-load.php not found");
+    exit(2);
+}
+require_once $wpPath . '/wp-load.php';
+global $wpdb;
+function md_recent_post_date(string $status, string $order): ?string {
+    global $wpdb;
+    $orderSql = $order === 'ASC' ? 'ASC' : 'DESC';
+    $sql = $wpdb->prepare(
+        "SELECT post_date_gmt FROM {$wpdb->posts} WHERE post_type = %s AND post_status = %s AND post_date_gmt IS NOT NULL AND post_date_gmt <> '0000-00-00 00:00:00' ORDER BY post_date_gmt {$orderSql} LIMIT 1",
+        'post',
+        $status
+    );
+    $value = $wpdb->get_var($sql);
+    return is_string($value) && $value !== '' ? $value : null;
+}
+echo json_encode([
+    'lastPublishedAt' => md_recent_post_date('publish', 'DESC'),
+    'lastScheduledAt' => md_recent_post_date('future', 'DESC'),
+], JSON_UNESCAPED_SLASHES);
+`;
+  const encoded = Buffer.from(php, "utf8").toString("base64");
+  const args = [
+    "-p",
+    String(source.sshPort ?? 22),
+    "-i",
+    source.sshKeyPath,
+    "-o",
+    "StrictHostKeyChecking=no",
+    "-o",
+    "BatchMode=yes",
+    `${source.sshUser}@${source.sshHost}`,
+    `php -r "$(printf %s '${encoded}' | base64 -d)"`,
+  ];
+
+  try {
+    const { stdout } = await execFileAsync("ssh", args, {
+      timeout: 15000,
+      maxBuffer: 1024 * 1024,
+    });
+    const parsed = JSON.parse(stdout.trim()) as {
+      lastPublishedAt?: string | null;
+      lastScheduledAt?: string | null;
+    };
+    return {
+      ...(parsed.lastPublishedAt
+        ? { lastPublishedAt: mysqlGmtToIso(parsed.lastPublishedAt) }
+        : {}),
+      ...(parsed.lastScheduledAt
+        ? { lastScheduledAt: mysqlGmtToIso(parsed.lastScheduledAt) }
+        : {}),
+    };
+  } catch {
+    return {};
+  }
+}
+
+async function fetchLocalNextStats(
+  site: Site,
+): Promise<Pick<SiteStat, "lastPublishedAt" | "lastScheduledAt">> {
+  const source = site.contentSource;
+  if (!source?.localPath || !existsSync(source.localPath)) {
+    return {};
+  }
+
+  const candidates = await collectContentFiles(source.localPath);
+  const scheduledFields =
+    source.scheduledFields && source.scheduledFields.length > 0
+      ? source.scheduledFields
+      : DEFAULT_CONTENT_FIELDS.scheduled;
+  const publishedFields =
+    source.publishedFields && source.publishedFields.length > 0
+      ? source.publishedFields
+      : DEFAULT_CONTENT_FIELDS.published;
+  const scheduledDates: string[] = [];
+  const publishedDates: string[] = [];
+
+  for (const filePath of candidates) {
+    const parsed = await readContentMetadata(filePath);
+    if (!parsed) {
+      continue;
+    }
+
+    const scheduledAt = firstDateField(parsed, scheduledFields);
+    const publishedAt = firstDateField(parsed, publishedFields);
+    const status = String(parsed.status ?? parsed.state ?? "").toLowerCase();
+
+    if (scheduledAt && (status === "future" || status === "scheduled" || !publishedAt)) {
+      scheduledDates.push(scheduledAt);
+      continue;
+    }
+    if (publishedAt) {
+      publishedDates.push(publishedAt);
+    }
+  }
+
+  return {
+    ...(publishedDates.length > 0
+      ? { lastPublishedAt: newestIsoDate(publishedDates) }
+      : {}),
+    ...(scheduledDates.length > 0
+      ? { lastScheduledAt: newestIsoDate(scheduledDates) }
+      : {}),
+  };
+}
+
+async function collectContentFiles(root: string): Promise<string[]> {
+  const files: string[] = [];
+  const ignored = new Set([
+    ".git",
+    ".next",
+    ".vercel",
+    "node_modules",
+    "dist",
+    "build",
+  ]);
+  const allowed = new Set([".md", ".mdx", ".json"]);
+
+  async function walk(current: string): Promise<void> {
+    const entries = await readdir(current, { withFileTypes: true });
+    for (const entry of entries) {
+      if (ignored.has(entry.name)) {
+        continue;
+      }
+      const fullPath = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        await walk(fullPath);
+        continue;
+      }
+      if (entry.isFile() && allowed.has(path.extname(entry.name).toLowerCase())) {
+        const info = await stat(fullPath);
+        if (info.size <= 256 * 1024) {
+          files.push(fullPath);
+        }
+      }
+    }
+  }
+
+  await walk(root);
+  return files;
+}
+
+async function readContentMetadata(
+  filePath: string,
+): Promise<Record<string, unknown> | undefined> {
+  const raw = await readFile(filePath, "utf8");
+  if (filePath.endsWith(".json")) {
+    try {
+      return JSON.parse(raw) as Record<string, unknown>;
+    } catch {
+      return undefined;
+    }
+  }
+
+  const frontmatter = raw.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
+  if (!frontmatter) {
+    return undefined;
+  }
+
+  const metadata: Record<string, unknown> = {};
+  const frontmatterBody = frontmatter[1];
+  if (!frontmatterBody) {
+    return undefined;
+  }
+
+  for (const line of frontmatterBody.split(/\r?\n/)) {
+    const match = line.match(/^([A-Za-z0-9_-]+):\s*(.+)$/);
+    const key = match?.[1];
+    const value = match?.[2];
+    if (key && value) {
+      metadata[key] = value.replace(/^["']|["']$/g, "").trim();
+    }
+  }
+  return metadata;
+}
+
+function firstDateField(
+  metadata: Record<string, unknown>,
+  fields: string[],
+): string | undefined {
+  for (const field of fields) {
+    const value = metadata[field];
+    if (typeof value !== "string" && typeof value !== "number") {
+      continue;
+    }
+    const normalized = normalizeDate(value);
+    if (normalized) {
+      return normalized;
+    }
+  }
+  return undefined;
+}
+
+function mysqlGmtToIso(value: string): string {
+  return normalizeDate(`${value.replace(" ", "T")}Z`) ?? `${value}Z`;
+}
+
+function normalizeDate(value: string | number): string | undefined {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+}
+
+function newestIsoDate(values: string[]): string {
+  const [newest] = values.sort((a, b) => Date.parse(b) - Date.parse(a));
+  return newest ?? "";
 }
 
 async function fetchWpPostDate(url: string): Promise<string | undefined> {

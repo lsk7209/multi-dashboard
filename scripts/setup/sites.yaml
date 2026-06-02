@@ -344,6 +344,13 @@ sites:
     wpRestBase: https://sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "534005389"
     gscSiteUrl: https://sellerpit.kr/
+    contentSource:
+      type: wordpress-ssh
+      sshHost: smart.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/sellerpit.kr
   - id: chatgipt-3
     name: chatgipt.kr
     enabled: true
@@ -781,6 +788,13 @@ sites:
     wpRestBase: https://smart.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539570439"
     gscSiteUrl: https://smart.sellerpit.kr/
+    contentSource:
+      type: wordpress-ssh
+      sshHost: smart.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/smart.sellerpit.kr
   - id: pregnancy-ehon365
     name: pregnancy.ehon365.kr
     enabled: true
@@ -845,6 +859,13 @@ sites:
     wpRestBase: https://travel.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539747744"
     gscSiteUrl: https://travel.sellerpit.kr/
+    contentSource:
+      type: wordpress-ssh
+      sshHost: smart.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/travel.sellerpit.kr
   - id: jasamall-sellerpit
     name: jasamall.sellerpit.kr
     enabled: true
@@ -853,3 +874,10 @@ sites:
     wpRestBase: https://jasamall.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539903323"
     gscSiteUrl: https://jasamall.sellerpit.kr/
+    contentSource:
+      type: wordpress-ssh
+      sshHost: smart.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/jasamall.sellerpit.kr

@@ -13,6 +13,20 @@ const siteSchema = z.object({
   ga4PropertyId: z.string().min(1).optional(),
   gscSiteUrl: z.string().min(1).optional(),
   sitemapUrls: z.array(z.string().url()).optional(),
+  contentSource: z
+    .object({
+      type: z.enum(["wordpress-ssh", "local-next", "github-next"]),
+      sshHost: z.string().min(1).optional(),
+      sshPort: z.number().int().positive().optional(),
+      sshUser: z.string().min(1).optional(),
+      sshKeyPath: z.string().min(1).optional(),
+      wpPath: z.string().min(1).optional(),
+      localPath: z.string().min(1).optional(),
+      contentGlobs: z.array(z.string().min(1)).optional(),
+      scheduledFields: z.array(z.string().min(1)).optional(),
+      publishedFields: z.array(z.string().min(1)).optional(),
+    })
+    .optional(),
 });
 
 const sitesFileSchema = z.object({
