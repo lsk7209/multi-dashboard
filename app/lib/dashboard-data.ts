@@ -59,6 +59,7 @@ export type OperationalStatus =
   | "stale";
 export type ActionKind =
   | "permission"
+  | "processing"
   | "decline"
   | "monetization"
   | "sitemap"
@@ -165,6 +166,15 @@ export interface SiteTrend {
   gscClicksChange: number | null;
 }
 
+export interface DuplicateSiteSummary {
+  id: string;
+  name: string;
+  ga4PropertyId: string;
+  activeUsers: number;
+  healthScore: number;
+  operationalStatus: OperationalStatus;
+}
+
 export interface SiteHealthScore {
   score: number;
   grade: "좋음" | "주의" | "위험";
@@ -191,6 +201,8 @@ export interface EnrichedSiteStat extends Omit<
   isStale: boolean;
   health: SiteHealthScore;
   sparkline: number[];
+  duplicateCount?: number;
+  duplicateStats?: DuplicateSiteSummary[];
   lastPublishedAt?: string;
   daysSincePublished?: number;
 }
@@ -252,6 +264,9 @@ export interface DashboardData {
   failedCount: number;
   staleCount: number;
   collectionStaleCount: number;
+  duplicateHostCount: number;
+  hiddenDuplicateCount: number;
+  processingCount: number;
   totalLast1Days: MetricSet;
   totalLast7Days: MetricSet;
   totalPrevious7Days: MetricSet;
@@ -260,6 +275,12 @@ export interface DashboardData {
   totalGscPrevious7Days: GscMetricSet;
   totalGscLast30Days: GscMetricSet;
   totalActiveUsersChange: number | null;
+}
+
+interface DedupeStatsResult {
+  stats: EnrichedSiteStat[];
+  duplicateHostCount: number;
+  hiddenDuplicateCount: number;
 }
 
 export function getDashboardData(): DashboardData {
@@ -275,7 +296,8 @@ export function getDashboardData(): DashboardData {
       sparklines.get(site.id) ?? [],
     ),
   );
-  const displayStats = dedupeStatsByHost(stats);
+  const dedupeResult = dedupeStatsByHost(stats);
+  const displayStats = dedupeResult.stats;
   const insights = buildInsights(displayStats);
   const actions = buildActionItems(displayStats).slice(0, 12);
   const totalLast1Days = sumMetrics(displayStats.map((stat) => stat.last1Days));
@@ -363,6 +385,11 @@ export function getDashboardData(): DashboardData {
     collectionStaleCount: displayStats.filter(
       (stat) => hasCollectionLag(stat) || hasSitemapCollectionLag(stat),
     ).length,
+    duplicateHostCount: dedupeResult.duplicateHostCount,
+    hiddenDuplicateCount: dedupeResult.hiddenDuplicateCount,
+    processingCount: displayStats.filter(
+      (stat) => stat.operationalStatus === "processing",
+    ).length,
     totalLast1Days,
     totalLast7Days,
     totalPrevious7Days,
@@ -383,18 +410,56 @@ export function getDashboardData(): DashboardData {
   };
 }
 
-function dedupeStatsByHost(stats: EnrichedSiteStat[]): EnrichedSiteStat[] {
-  const byHost = new Map<string, EnrichedSiteStat>();
+function dedupeStatsByHost(stats: EnrichedSiteStat[]): DedupeStatsResult {
+  const groups = new Map<string, EnrichedSiteStat[]>();
 
   for (const stat of stats) {
     const key = normalizeHost(stat.url);
-    const current = byHost.get(key);
-    if (!current || compareRepresentative(stat, current) > 0) {
-      byHost.set(key, stat);
-    }
+    groups.set(key, [...(groups.get(key) ?? []), stat]);
   }
 
-  return [...byHost.values()];
+  let duplicateHostCount = 0;
+  let hiddenDuplicateCount = 0;
+  const representatives = [...groups.values()].map((group) => {
+    const sorted = [...group].sort((a, b) => compareRepresentative(b, a));
+    const representative = sorted[0];
+    if (!representative) {
+      return undefined;
+    }
+
+    const duplicates = sorted.slice(1);
+    if (duplicates.length === 0) {
+      return representative;
+    }
+
+    duplicateHostCount += 1;
+    hiddenDuplicateCount += duplicates.length;
+
+    return {
+      ...representative,
+      duplicateCount: duplicates.length,
+      duplicateStats: duplicates.map(toDuplicateSiteSummary),
+    };
+  });
+
+  return {
+    stats: representatives.filter(
+      (stat): stat is EnrichedSiteStat => Boolean(stat),
+    ),
+    duplicateHostCount,
+    hiddenDuplicateCount,
+  };
+}
+
+function toDuplicateSiteSummary(stat: EnrichedSiteStat): DuplicateSiteSummary {
+  return {
+    id: stat.id,
+    name: stat.name,
+    ga4PropertyId: stat.ga4PropertyId,
+    activeUsers: stat.last7Days.activeUsers,
+    healthScore: stat.health.score,
+    operationalStatus: stat.operationalStatus,
+  };
 }
 
 function compareRepresentative(
@@ -521,7 +586,7 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   const gscChange = stat.trend.gscClicksChange;
   const gsc = stat.gscLast7Days ?? emptyGscMetrics();
 
-  if (stat.operationalStatus !== "normal") {
+  if (stat.operationalStatus === "needsPermission") {
     items.push(
       makeAction(
         stat,
@@ -607,15 +672,59 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
+  if (stat.operationalStatus === "apiError") {
+    items.push(
+      makeAction(
+        stat,
+        "data",
+        98,
+        stat.statusLabel,
+        stat.statusReason,
+        "API 응답, 속성 ID, 서비스 계정 권한을 확인하세요.",
+      ),
+    );
+  }
+
+  if (
+    stat.operationalStatus === "stale" &&
+    !hasSitemapCollectionLag(stat)
+  ) {
+    items.push(
+      makeAction(
+        stat,
+        "data",
+        95,
+        stat.statusLabel,
+        stat.statusReason,
+        "수집 스케줄과 최근 성공 수집 시각을 확인하세요.",
+      ),
+    );
+  }
+
+  if (stat.operationalStatus === "processing") {
+    items.push(
+      makeAction(
+        stat,
+        "processing",
+        72,
+        stat.statusLabel,
+        stat.statusReason,
+        "Google 재다운로드가 끝난 뒤 상태를 다시 확인하세요.",
+      ),
+    );
+  }
+
   if (hasSitemapCollectionLag(stat)) {
+    const hasCurrentSitemapIssue =
+      (stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0;
     items.push(
       makeAction(
         stat,
         "sitemap",
-        74,
+        hasCurrentSitemapIssue ? 96 : 74,
         getSitemapCollectionLabel(stat),
         getSitemapCollectionReason(stat),
-        "Search Console에 sitemap을 재제출하고, sitemap lastmod와 robots.txt Sitemap 라인을 함께 확인하세요.",
+        "Search Console에 sitemap을 재제출하고 sitemap lastmod와 robots.txt Sitemap 라인을 확인하세요.",
       ),
     );
   }
@@ -673,6 +782,7 @@ function makeAction(
 
 function getActionLabel(kind: ActionKind): string {
   if (kind === "permission") return "권한";
+  if (kind === "processing") return "재처리";
   if (kind === "decline") return "급락";
   if (kind === "monetization") return "수익화";
   if (kind === "sitemap") return "사이트맵";

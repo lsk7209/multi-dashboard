@@ -82,7 +82,7 @@ function TodaySection({
         <StatusCard
           label="확인 필요"
           value={formatNumber(data.failedCount)}
-          hint={`수집 지연 ${formatNumber(data.collectionStaleCount)}개`}
+          hint={`재처리 ${formatNumber(data.processingCount)}개 · 수집 지연 ${formatNumber(data.collectionStaleCount)}개`}
         />
         <StatusCard
           label="수익화 이슈"
@@ -97,7 +97,7 @@ function TodaySection({
         <StatusCard
           label="GSC 연결"
           value={`${formatNumber(data.gscConnectedCount)}/${formatNumber(data.siteCount)}`}
-          hint={`권한 확인 ${data.gscIssueStats.length}개`}
+          hint={`권한 확인 ${data.gscIssueStats.length}개 · 중복 숨김 ${formatNumber(data.hiddenDuplicateCount)}개`}
         />
         <StatusCard
           label="7일 사용자"

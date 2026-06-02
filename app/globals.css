@@ -528,6 +528,15 @@ h2 {
   background: var(--danger-weak);
 }
 
+.action-processing {
+  border-left-color: #0f766e;
+}
+
+.action-processing > span {
+  color: #0f766e;
+  background: #ccfbf1;
+}
+
 .action-monetization {
   border-left-color: var(--warning);
 }
@@ -811,13 +820,26 @@ code {
 
 .collection-cell {
   display: inline-flex;
+  flex-direction: column;
   min-width: 86px;
+  gap: 2px;
   justify-content: flex-end;
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
   text-align: right;
+}
+
+.collection-cell strong,
+.collection-cell small {
+  display: block;
+}
+
+.collection-cell small {
+  color: inherit;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .collection-fresh {
@@ -847,6 +869,20 @@ code {
 
 .site-cell a:hover {
   color: var(--accent);
+}
+
+.duplicate-note {
+  width: fit-content;
+  max-width: 160px;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 2px 7px;
+  color: #7c2d12;
+  background: #ffedd5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .badge {

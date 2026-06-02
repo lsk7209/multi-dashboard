@@ -345,6 +345,14 @@ function StatsRow({
           <a href={stat.url} onClick={(event) => event.stopPropagation()}>
             {formatHost(stat.url)}
           </a>
+          {stat.duplicateCount ? (
+            <span
+              className="duplicate-note"
+              title={formatDuplicateTitle(stat)}
+            >
+              중복 {stat.duplicateCount}개 숨김
+            </span>
+          ) : null}
         </div>
       </td>
       <td>
@@ -402,7 +410,8 @@ function SitemapCollectionCell({ stat }: { stat: EnrichedSiteStat }) {
       className={`collection-cell ${getSitemapCollectionClass(stat)}`}
       title={formatSitemapCollectionTitle(stat)}
     >
-      {formatShortDate(collectedAt)}
+      <strong>{getSitemapCollectionStatusLabel(stat)}</strong>
+      <small>{formatShortDate(collectedAt)}</small>
     </span>
   );
 }
@@ -643,6 +652,19 @@ function formatHost(url: string): string {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 
+function formatDuplicateTitle(stat: EnrichedSiteStat): string {
+  const details =
+    stat.duplicateStats?.map(
+      (duplicate) =>
+        `${duplicate.name} (${duplicate.ga4PropertyId}) · 7일 ${formatNumber(duplicate.activeUsers)}명 · 점수 ${duplicate.healthScore} · ${duplicate.operationalStatus}`,
+    ) ?? [];
+
+  return [
+    "같은 호스트의 다른 GA4 속성은 대표 항목에서 숨겼습니다.",
+    ...details,
+  ].join("\n");
+}
+
 function formatNumber(value: number): string {
   return new Intl.NumberFormat("ko-KR").format(value);
 }
@@ -800,6 +822,26 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
   }
 
   return "collection-fresh";
+}
+
+function getSitemapCollectionStatusLabel(stat: EnrichedSiteStat): string {
+  if (stat.sitemapError) {
+    return "오류";
+  }
+  if (!getSitemapCollectionValue(stat)) {
+    return "미수집";
+  }
+  if (stat.operationalStatus === "processing") {
+    return "재처리";
+  }
+  if ((stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0) {
+    return "오류";
+  }
+  if (isOlderThanDays(stat.sitemapLastDownloadedAt, 14)) {
+    return "오래됨";
+  }
+
+  return "정상";
 }
 
 function isOlderThanDays(value: string | undefined, days: number): boolean {
