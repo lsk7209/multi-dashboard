@@ -56,6 +56,7 @@ const statusLabels: Record<StatusFilter, string> = {
   normal: "정상",
   needsPermission: "권한 필요",
   apiError: "API 실패",
+  processing: "재처리중",
   stale: "오래된 데이터",
 };
 
@@ -547,7 +548,7 @@ function getBadgeClass(status: EnrichedSiteStat["operationalStatus"]): string {
     return "badge badge-error";
   }
 
-  if (status === "apiError" || status === "stale") {
+  if (status === "apiError" || status === "stale" || status === "processing") {
     return "badge badge-warning";
   }
 
@@ -770,11 +771,14 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
   }
 
   if (
+    stat.operationalStatus === "processing" ||
     isOlderThanDays(stat.sitemapLastDownloadedAt, 14) ||
     (stat.sitemapErrors ?? 0) > 0 ||
     (stat.sitemapWarnings ?? 0) > 0
   ) {
-    return "collection-stale";
+    return stat.operationalStatus === "processing"
+      ? "collection-processing"
+      : "collection-stale";
   }
 
   return "collection-fresh";

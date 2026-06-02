@@ -45,6 +45,7 @@ export type OperationalStatus =
   | "normal"
   | "needsPermission"
   | "apiError"
+  | "processing"
   | "stale";
 export type ActionKind =
   | "permission"
@@ -86,6 +87,7 @@ export interface SiteStat {
   sitemapPath?: string;
   sitemapWarnings?: number;
   sitemapErrors?: number;
+  sitemapIsPending?: boolean;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
@@ -686,12 +688,37 @@ function hasCollectionLag(stat: EnrichedSiteStat): boolean {
 }
 
 function hasSitemapCollectionLag(stat: SiteStat): boolean {
+  if (hasSitemapProcessing(stat)) {
+    return false;
+  }
+
   return (
     !stat.sitemapLastDownloadedAt ||
     isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
     (stat.sitemapErrors ?? 0) > 0 ||
     (stat.sitemapWarnings ?? 0) > 0
   );
+}
+
+function hasSitemapProcessing(stat: SiteStat): boolean {
+  if (stat.sitemapIsPending) {
+    return true;
+  }
+
+  if (!stat.sitemapLastSubmittedAt) {
+    return false;
+  }
+
+  const submittedAt = Date.parse(stat.sitemapLastSubmittedAt);
+  const downloadedAt = stat.sitemapLastDownloadedAt
+    ? Date.parse(stat.sitemapLastDownloadedAt)
+    : Number.NEGATIVE_INFINITY;
+
+  if (Number.isNaN(submittedAt) || Number.isNaN(downloadedAt)) {
+    return false;
+  }
+
+  return submittedAt > downloadedAt;
 }
 
 function getSitemapCollectionAgeDays(stat: SiteStat): number {
@@ -1179,6 +1206,10 @@ function getOperationalStatus(stat: SiteStat): OperationalStatus {
       : "apiError";
   }
 
+  if (hasSitemapProcessing(stat)) {
+    return "processing";
+  }
+
   if (hasSitemapCollectionLag(stat)) {
     return "stale";
   }
@@ -1189,11 +1220,16 @@ function getOperationalStatus(stat: SiteStat): OperationalStatus {
 function getStatusLabel(status: OperationalStatus): string {
   if (status === "needsPermission") return "권한 필요";
   if (status === "apiError") return "API 실패";
+  if (status === "processing") return "재처리중";
   if (status === "stale") return "오래된 데이터";
   return "정상";
 }
 
 function getStatusReason(stat: SiteStat, status: OperationalStatus): string {
+  if (status === "processing") {
+    return "GSC sitemap을 다시 제출했고 Google 재다운로드를 기다리는 중입니다.";
+  }
+
   if (status === "stale") {
     if (hasSitemapCollectionLag(stat)) {
       return getSitemapCollectionReason(stat);

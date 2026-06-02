@@ -829,6 +829,11 @@ code {
   font-weight: 700;
 }
 
+.collection-processing {
+  color: #0f766e;
+  font-weight: 700;
+}
+
 .collection-missing {
   color: var(--danger);
   font-weight: 700;

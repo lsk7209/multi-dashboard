@@ -42,6 +42,7 @@ interface SitemapSummary {
   sitemapPath?: string;
   sitemapWarnings?: number;
   sitemapErrors?: number;
+  sitemapIsPending?: boolean;
 }
 
 interface SiteStat {
@@ -70,6 +71,7 @@ interface SiteStat {
   sitemapPath?: string;
   sitemapWarnings?: number;
   sitemapErrors?: number;
+  sitemapIsPending?: boolean;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
@@ -392,6 +394,9 @@ async function fetchSitemapSummary(
   }
   if (errors !== undefined) {
     summary.sitemapErrors = errors;
+  }
+  if (selected.isPending !== undefined) {
+    summary.sitemapIsPending = Boolean(selected.isPending);
   }
 
   return summary;
