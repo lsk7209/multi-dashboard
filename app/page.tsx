@@ -13,11 +13,7 @@ export const dynamic = "force-static";
 
 export default function DashboardPage() {
   const data = getDashboardData();
-  const updatedAt = data.generatedAt
-    ? new Date(data.generatedAt).toLocaleString("ko-KR", {
-        timeZone: "Asia/Seoul",
-      })
-    : "아직 수집 전";
+  const updatedAt = formatSnapshotDateTime(data.generatedAt);
   const tabs: DashboardTabItem[] = [
     {
       id: "overview",
@@ -580,6 +576,23 @@ function getMonetizationLabel(kind: string | undefined): string {
   if (kind === "missing_config") return "미탐지";
   if (kind === "api_error" || kind === "auth_error") return "상태 확인 실패";
   return "미수집";
+}
+
+function formatSnapshotDateTime(value: string | null): string {
+  if (!value) {
+    return "아직 수집 전";
+  }
+
+  return `${new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  }).format(new Date(value))} KST`;
 }
 
 function getMonetizationIssueLabel(
