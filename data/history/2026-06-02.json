@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T16:26:59.211Z",
+  "generatedAt": "2026-06-02T21:27:32.778Z",
   "rangeDays": 7,
   "previousRangeDays": 7,
   "longRangeDays": 30,
@@ -31,16 +31,16 @@
       "ga4PropertyId": "534288708",
       "gscSiteUrl": "https://www.bojo24.kr/",
       "last1Days": {
-        "activeUsers": 137,
-        "sessions": 146,
-        "screenPageViews": 152,
-        "eventCount": 730
+        "activeUsers": 138,
+        "sessions": 147,
+        "screenPageViews": 153,
+        "eventCount": 733
       },
       "last7Days": {
-        "activeUsers": 880,
-        "sessions": 949,
-        "screenPageViews": 1258,
-        "eventCount": 5432
+        "activeUsers": 881,
+        "sessions": 950,
+        "screenPageViews": 1259,
+        "eventCount": 5435
       },
       "previous7Days": {
         "activeUsers": 679,
@@ -49,10 +49,10 @@
         "eventCount": 4436
       },
       "last30Days": {
-        "activeUsers": 2534,
-        "sessions": 2799,
-        "screenPageViews": 3745,
-        "eventCount": 15507
+        "activeUsers": 2535,
+        "sessions": 2800,
+        "screenPageViews": 3746,
+        "eventCount": 15510
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -117,10 +117,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:40.263Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:40.263Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:40.263Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:40.263Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:12.607Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:12.607Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:12.607Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:12.607Z"
     },
     {
       "id": "todaypharm",
@@ -131,14 +131,14 @@
       "last1Days": {
         "activeUsers": 156,
         "sessions": 159,
-        "screenPageViews": 193,
-        "eventCount": 716
+        "screenPageViews": 195,
+        "eventCount": 727
       },
       "last7Days": {
         "activeUsers": 844,
         "sessions": 897,
-        "screenPageViews": 1202,
-        "eventCount": 4345
+        "screenPageViews": 1204,
+        "eventCount": 4356
       },
       "previous7Days": {
         "activeUsers": 373,
@@ -149,8 +149,8 @@
       "last30Days": {
         "activeUsers": 1531,
         "sessions": 1640,
-        "screenPageViews": 2734,
-        "eventCount": 8345
+        "screenPageViews": 2736,
+        "eventCount": 8356
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -178,23 +178,23 @@
       "sitemapDetails": [
         {
           "path": "https://todaypharm.kr/sitemap-index.xml",
-          "lastDownloaded": "2026-06-02T14:38:26.767Z",
-          "lastSubmitted": "2026-06-02T14:38:22.079Z",
+          "lastDownloaded": "2026-06-02T19:01:57.208Z",
+          "lastSubmitted": "2026-06-02T19:01:49.881Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T14:38:26.767Z",
-      "sitemapLastSubmittedAt": "2026-06-02T14:38:22.079Z",
+      "sitemapLastDownloadedAt": "2026-06-02T19:01:57.208Z",
+      "sitemapLastSubmittedAt": "2026-06-02T19:01:49.881Z",
       "sitemapPath": "https://todaypharm.kr/sitemap-index.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:38.848Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:38.848Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:38.848Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:38.848Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:10.567Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:10.567Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:10.567Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:10.567Z"
     },
     {
       "id": "tennisfrens",
@@ -203,16 +203,16 @@
       "ga4PropertyId": "534356101",
       "gscSiteUrl": "sc-domain:tennisfrens.com",
       "last1Days": {
-        "activeUsers": 145,
-        "sessions": 153,
-        "screenPageViews": 261,
-        "eventCount": 724
+        "activeUsers": 147,
+        "sessions": 155,
+        "screenPageViews": 273,
+        "eventCount": 755
       },
       "last7Days": {
-        "activeUsers": 819,
-        "sessions": 900,
-        "screenPageViews": 1875,
-        "eventCount": 4823
+        "activeUsers": 821,
+        "sessions": 902,
+        "screenPageViews": 1887,
+        "eventCount": 4854
       },
       "previous7Days": {
         "activeUsers": 665,
@@ -221,10 +221,10 @@
         "eventCount": 3858
       },
       "last30Days": {
-        "activeUsers": 2140,
-        "sessions": 2373,
-        "screenPageViews": 5531,
-        "eventCount": 13456
+        "activeUsers": 2142,
+        "sessions": 2375,
+        "screenPageViews": 5543,
+        "eventCount": 13487
       },
       "gscLast7Days": {
         "clicks": 22,
@@ -265,10 +265,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:40.100Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:40.100Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:40.100Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:40.100Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:10.970Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:10.970Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:10.970Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:10.970Z"
     },
     {
       "id": "ehon365",
@@ -280,13 +280,13 @@
         "activeUsers": 75,
         "sessions": 79,
         "screenPageViews": 5,
-        "eventCount": 870
+        "eventCount": 881
       },
       "last7Days": {
         "activeUsers": 558,
         "sessions": 581,
         "screenPageViews": 74,
-        "eventCount": 7743
+        "eventCount": 7754
       },
       "previous7Days": {
         "activeUsers": 330,
@@ -298,7 +298,7 @@
         "activeUsers": 959,
         "sessions": 1014,
         "screenPageViews": 142,
-        "eventCount": 12576
+        "eventCount": 12587
       },
       "gscLast7Days": {
         "clicks": 2,
@@ -326,23 +326,23 @@
       "sitemapDetails": [
         {
           "path": "https://dolbomjigi.ehon365.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T15:20:47.338Z",
-          "lastSubmitted": "2026-06-02T15:20:45.314Z",
+          "lastDownloaded": "2026-06-02T20:20:43.550Z",
+          "lastSubmitted": "2026-06-02T20:20:41.410Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T15:20:47.338Z",
-      "sitemapLastSubmittedAt": "2026-06-02T15:20:45.314Z",
+      "sitemapLastDownloadedAt": "2026-06-02T20:20:43.550Z",
+      "sitemapLastSubmittedAt": "2026-06-02T20:20:41.410Z",
       "sitemapPath": "https://dolbomjigi.ehon365.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:40.708Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:40.708Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:40.708Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:40.708Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:13.211Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:13.211Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:13.211Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:13.211Z"
     },
     {
       "id": "haemongdream",
@@ -394,30 +394,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
           "path": "https://haemongdream.com/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-02T13:30:17.692Z",
-          "lastSubmitted": "2026-06-02T13:30:11.969Z",
+          "lastDownloaded": "2026-06-02T18:15:10.527Z",
+          "lastSubmitted": "2026-06-02T18:15:08.455Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T13:30:17.692Z",
-      "sitemapLastSubmittedAt": "2026-06-02T13:30:11.969Z",
+      "sitemapLastDownloadedAt": "2026-06-02T18:15:10.527Z",
+      "sitemapLastSubmittedAt": "2026-06-02T18:15:08.455Z",
       "sitemapPath": "https://haemongdream.com/wp-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:28.497Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:28.497Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:28.497Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:28.497Z",
-      "lastPublishedAt": "2026-06-02T13:18:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:58.597Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:58.597Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "cartain-2",
@@ -429,13 +430,13 @@
         "activeUsers": 42,
         "sessions": 53,
         "screenPageViews": 51,
-        "eventCount": 188
+        "eventCount": 189
       },
       "last7Days": {
         "activeUsers": 259,
         "sessions": 301,
         "screenPageViews": 395,
-        "eventCount": 1395
+        "eventCount": 1396
       },
       "previous7Days": {
         "activeUsers": 58,
@@ -447,7 +448,7 @@
         "activeUsers": 335,
         "sessions": 392,
         "screenPageViews": 501,
-        "eventCount": 1758
+        "eventCount": 1759
       },
       "gscLast7Days": {
         "clicks": 1,
@@ -488,10 +489,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:42.951Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:42.951Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:42.951Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:42.951Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:16.138Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:16.138Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:16.138Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:16.138Z"
     },
     {
       "id": "temon",
@@ -502,14 +503,14 @@
       "last1Days": {
         "activeUsers": 30,
         "sessions": 32,
-        "screenPageViews": 168,
-        "eventCount": 751
+        "screenPageViews": 171,
+        "eventCount": 779
       },
       "last7Days": {
         "activeUsers": 257,
         "sessions": 288,
-        "screenPageViews": 1829,
-        "eventCount": 8311
+        "screenPageViews": 1832,
+        "eventCount": 8339
       },
       "previous7Days": {
         "activeUsers": 193,
@@ -520,8 +521,8 @@
       "last30Days": {
         "activeUsers": 1068,
         "sessions": 1205,
-        "screenPageViews": 7324,
-        "eventCount": 33389
+        "screenPageViews": 7327,
+        "eventCount": 33417
       },
       "gscLast7Days": {
         "clicks": 32,
@@ -562,10 +563,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z"
     },
     {
       "id": "luckyday",
@@ -617,30 +618,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://car.luckyday.kr/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-02T16:00:10.201Z",
-          "lastSubmitted": "2026-06-02T16:00:04.743Z",
+          "path": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml",
+          "lastDownloaded": "2026-06-02T20:45:10.496Z",
+          "lastSubmitted": "2026-06-02T20:45:05.920Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T16:00:10.201Z",
-      "sitemapLastSubmittedAt": "2026-06-02T16:00:04.743Z",
-      "sitemapPath": "https://car.luckyday.kr/wp-sitemap.xml",
+      "sitemapLastDownloadedAt": "2026-06-02T20:45:10.496Z",
+      "sitemapLastSubmittedAt": "2026-06-02T20:45:05.920Z",
+      "sitemapPath": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "lastPublishedAt": "2026-06-02T12:18:42Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:56.052Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:56.052Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "picklefriend",
@@ -711,10 +713,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:53.445Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:53.445Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:53.445Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:53.445Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:54.645Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:54.645Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:54.645Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:54.645Z"
     },
     {
       "id": "klick-2",
@@ -766,8 +768,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -785,11 +787,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:37.505Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:37.505Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:37.505Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:37.505Z",
-      "lastPublishedAt": "2026-06-01T07:39:30Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:07.199Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:07.199Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "spinkorea-2",
@@ -847,23 +850,23 @@
       "sitemapDetails": [
         {
           "path": "https://spinkorea.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T13:48:43.220Z",
-          "lastSubmitted": "2026-06-02T13:48:40.003Z",
+          "lastDownloaded": "2026-06-02T18:31:57.454Z",
+          "lastSubmitted": "2026-06-02T18:31:53.773Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T13:48:43.220Z",
-      "sitemapLastSubmittedAt": "2026-06-02T13:48:40.003Z",
+      "sitemapLastDownloadedAt": "2026-06-02T18:31:57.454Z",
+      "sitemapLastSubmittedAt": "2026-06-02T18:31:53.773Z",
       "sitemapPath": "https://spinkorea.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:41.072Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:41.072Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:41.072Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:41.072Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:13.380Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:13.380Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:13.380Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:13.380Z"
     },
     {
       "id": "tasko-2",
@@ -874,14 +877,14 @@
       "last1Days": {
         "activeUsers": 12,
         "sessions": 13,
-        "screenPageViews": 13,
-        "eventCount": 48
+        "screenPageViews": 15,
+        "eventCount": 53
       },
       "last7Days": {
         "activeUsers": 64,
         "sessions": 65,
-        "screenPageViews": 87,
-        "eventCount": 287
+        "screenPageViews": 89,
+        "eventCount": 292
       },
       "previous7Days": {
         "activeUsers": 41,
@@ -892,8 +895,8 @@
       "last30Days": {
         "activeUsers": 254,
         "sessions": 281,
-        "screenPageViews": 421,
-        "eventCount": 1310
+        "screenPageViews": 423,
+        "eventCount": 1315
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -915,8 +918,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -934,11 +937,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:35.884Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:35.884Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:35.884Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:35.884Z",
-      "lastPublishedAt": "2026-06-02T16:02:13Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:06.257Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:06.257Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "mbti-tasko",
@@ -949,14 +953,14 @@
       "last1Days": {
         "activeUsers": 12,
         "sessions": 13,
-        "screenPageViews": 13,
-        "eventCount": 48
+        "screenPageViews": 15,
+        "eventCount": 53
       },
       "last7Days": {
         "activeUsers": 64,
         "sessions": 65,
-        "screenPageViews": 87,
-        "eventCount": 287
+        "screenPageViews": 89,
+        "eventCount": 292
       },
       "previous7Days": {
         "activeUsers": 41,
@@ -967,8 +971,8 @@
       "last30Days": {
         "activeUsers": 254,
         "sessions": 281,
-        "screenPageViews": 421,
-        "eventCount": 1310
+        "screenPageViews": 423,
+        "eventCount": 1315
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -990,30 +994,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
           "path": "https://mbti.tasko.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T14:00:32.157Z",
-          "lastSubmitted": "2026-06-02T14:00:15.720Z",
+          "lastDownloaded": "2026-06-02T19:00:19.886Z",
+          "lastSubmitted": "2026-06-02T19:00:16.768Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T14:00:32.157Z",
-      "sitemapLastSubmittedAt": "2026-06-02T14:00:15.720Z",
+      "sitemapLastDownloadedAt": "2026-06-02T19:00:19.886Z",
+      "sitemapLastSubmittedAt": "2026-06-02T19:00:16.768Z",
       "sitemapPath": "https://mbti.tasko.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:35.988Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:35.988Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:35.988Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:35.988Z",
-      "lastPublishedAt": "2026-06-02T14:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:07.175Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:07.175Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "yesa",
@@ -1065,8 +1070,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1084,11 +1089,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:52.872Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:52.872Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:52.872Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:52.872Z",
-      "lastPublishedAt": "2026-05-30T04:45:26Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:53.415Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:53.415Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "petjigi",
@@ -1097,16 +1103,16 @@
       "ga4PropertyId": "538418545",
       "gscSiteUrl": "https://petjigi.kr/",
       "last1Days": {
-        "activeUsers": 7,
-        "sessions": 8,
-        "screenPageViews": 13,
-        "eventCount": 171
+        "activeUsers": 8,
+        "sessions": 9,
+        "screenPageViews": 14,
+        "eventCount": 174
       },
       "last7Days": {
-        "activeUsers": 35,
-        "sessions": 42,
-        "screenPageViews": 59,
-        "eventCount": 438
+        "activeUsers": 36,
+        "sessions": 43,
+        "screenPageViews": 60,
+        "eventCount": 441
       },
       "previous7Days": {
         "activeUsers": 51,
@@ -1115,10 +1121,10 @@
         "eventCount": 401
       },
       "last30Days": {
-        "activeUsers": 84,
-        "sessions": 98,
-        "screenPageViews": 174,
-        "eventCount": 839
+        "activeUsers": 85,
+        "sessions": 99,
+        "screenPageViews": 175,
+        "eventCount": 842
       },
       "gscLast7Days": {
         "clicks": 1,
@@ -1159,10 +1165,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:52.556Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:52.556Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:52.556Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:52.556Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:51.795Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:51.795Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:51.795Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:51.795Z"
     },
     {
       "id": "2mlab-2",
@@ -1214,8 +1220,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1233,11 +1239,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:40.933Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:40.933Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:40.933Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:40.933Z",
-      "lastPublishedAt": "2026-06-02T07:19:23Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:13.245Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:13.245Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "fastjob",
@@ -1289,8 +1296,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1308,11 +1315,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "lastPublishedAt": "2026-06-02T13:03:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "dog-klick",
@@ -1323,14 +1331,14 @@
       "last1Days": {
         "activeUsers": 3,
         "sessions": 6,
-        "screenPageViews": 10,
-        "eventCount": 30
+        "screenPageViews": 11,
+        "eventCount": 31
       },
       "last7Days": {
         "activeUsers": 31,
         "sessions": 37,
-        "screenPageViews": 70,
-        "eventCount": 272
+        "screenPageViews": 71,
+        "eventCount": 273
       },
       "previous7Days": {
         "activeUsers": 0,
@@ -1341,8 +1349,8 @@
       "last30Days": {
         "activeUsers": 31,
         "sessions": 37,
-        "screenPageViews": 70,
-        "eventCount": 272
+        "screenPageViews": 71,
+        "eventCount": 273
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1364,8 +1372,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1383,11 +1391,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:55.831Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:55.831Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:55.831Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:55.831Z",
-      "lastPublishedAt": "2026-06-02T13:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:07.757Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:07.757Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "healthgotoo",
@@ -1439,8 +1448,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1458,11 +1467,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:28.713Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:28.713Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:28.713Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:28.713Z",
-      "lastPublishedAt": "2026-06-02T12:26:48Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:59.783Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:59.783Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "softwa",
@@ -1514,8 +1524,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1533,11 +1543,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:28.802Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:28.802Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:28.802Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:28.802Z",
-      "lastPublishedAt": "2026-06-02T12:59:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:00.050Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:00.050Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "notebook-klick-2",
@@ -1589,8 +1600,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1608,11 +1619,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:50.575Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:50.575Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:50.575Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:50.575Z",
-      "lastPublishedAt": "2026-06-02T15:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:34.947Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:34.947Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "roadways",
@@ -1683,10 +1695,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:47.725Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:47.725Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:47.725Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:47.725Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:23.353Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:23.353Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:23.353Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:23.353Z"
     },
     {
       "id": "dogspang-2",
@@ -1738,8 +1750,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1757,11 +1769,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:43.577Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:43.577Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:43.577Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:43.577Z",
-      "lastPublishedAt": "2026-06-02T15:50:18Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:17.292Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:17.292Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "askore",
@@ -1832,10 +1845,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:46.421Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:46.421Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:46.421Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:46.421Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:21.507Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:21.507Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:21.507Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:21.507Z"
     },
     {
       "id": "dogswhere",
@@ -1906,10 +1919,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:55.967Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:55.967Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:55.967Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:55.967Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:08.169Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:08.169Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:27:08.169Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:27:08.169Z"
     },
     {
       "id": "nicewomen",
@@ -1961,8 +1974,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -1980,11 +1993,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:32.913Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:32.913Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:32.913Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:32.913Z",
-      "lastPublishedAt": "2026-06-02T14:15:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:03.623Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:03.623Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "today2424",
@@ -2055,10 +2069,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:38.504Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:38.504Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:38.504Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:38.504Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:09.862Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:09.862Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:09.862Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:09.862Z"
     },
     {
       "id": "webtoon-klick",
@@ -2110,30 +2124,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
           "path": "https://webtoon.klick.kr/category-sitemap.xml/",
-          "lastDownloaded": "2026-06-02T12:00:53.595Z",
-          "lastSubmitted": "2026-06-02T12:00:14.627Z",
+          "lastDownloaded": "2026-06-02T17:00:22.935Z",
+          "lastSubmitted": "2026-06-02T17:00:17.996Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T12:00:53.595Z",
-      "sitemapLastSubmittedAt": "2026-06-02T12:00:14.627Z",
+      "sitemapLastDownloadedAt": "2026-06-02T17:00:22.935Z",
+      "sitemapLastSubmittedAt": "2026-06-02T17:00:17.996Z",
       "sitemapPath": "https://webtoon.klick.kr/category-sitemap.xml/",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:54.362Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:54.362Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:54.362Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:54.362Z",
-      "lastPublishedAt": "2026-06-02T12:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:00.285Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:00.285Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "discparty",
@@ -2185,8 +2200,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2204,11 +2219,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "lastPublishedAt": "2026-06-02T13:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:56.053Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "sellerpit-2",
@@ -2260,8 +2276,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2279,12 +2295,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:37.940Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:37.940Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:37.940Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:37.940Z",
-      "lastPublishedAt": "2026-06-02T10:28:18.000Z",
-      "lastScheduledAt": "2028-02-28T10:11:34.000Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:08.217Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:08.217Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "knewstory",
@@ -2336,8 +2352,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2355,11 +2371,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:24.805Z",
-      "lastPublishedAt": "2026-06-02T15:22:38Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:56.052Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:56.052Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "runmania",
@@ -2430,10 +2447,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:35.820Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:35.820Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:35.820Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:35.820Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:06.126Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:06.126Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:06.126Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:06.126Z"
     },
     {
       "id": "richyou",
@@ -2485,8 +2502,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2504,11 +2521,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:48.954Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:48.954Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:48.954Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:48.954Z",
-      "lastPublishedAt": "2026-06-02T16:10:19Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:24.992Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:24.992Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "gover",
@@ -2560,8 +2578,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2579,11 +2597,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:32.683Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:32.683Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:32.683Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:32.683Z",
-      "lastPublishedAt": "2026-06-02T15:33:04Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:03.465Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:03.465Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "nexttech7",
@@ -2635,8 +2654,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2654,11 +2673,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:36.113Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:36.113Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:36.113Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:36.113Z",
-      "lastPublishedAt": "2026-06-02T12:17:27Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:07.176Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:07.176Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "chatgipt-3",
@@ -2710,8 +2730,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2729,11 +2749,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:38.208Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:38.208Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:38.208Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:38.208Z",
-      "lastPublishedAt": "2026-06-02T15:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:09.455Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:09.455Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "saju-tasko",
@@ -2785,8 +2806,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2804,11 +2825,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:52.395Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:52.395Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:52.395Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:52.395Z",
-      "lastPublishedAt": "2026-06-02T13:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:43.196Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:43.196Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "smart-sellerpit",
@@ -2860,8 +2882,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2879,12 +2901,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:53.595Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:53.595Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:53.595Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:53.595Z",
-      "lastPublishedAt": "2026-06-02T15:28:51.000Z",
-      "lastScheduledAt": "2026-07-27T10:28:51.000Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:56.899Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:56.899Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "etique",
@@ -2936,8 +2958,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -2955,11 +2977,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:31.463Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:31.463Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:31.463Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:31.463Z",
-      "lastPublishedAt": "2026-06-02T15:20:30Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:02.642Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:02.642Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "crepika",
@@ -3030,10 +3053,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:43.283Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:43.283Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:43.283Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:43.283Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:16.905Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:16.905Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:16.905Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:16.905Z"
     },
     {
       "id": "ezfunnel",
@@ -3085,8 +3108,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3104,11 +3127,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:41.305Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:41.305Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:41.305Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:41.305Z",
-      "lastPublishedAt": "2026-06-02T12:05:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:13.554Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:13.554Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "autoscares-2",
@@ -3160,8 +3184,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3179,11 +3203,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:44.965Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:44.965Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:44.965Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:44.965Z",
-      "lastPublishedAt": "2026-06-02T11:40:16Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:19.433Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:19.433Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "estat-2",
@@ -3235,30 +3260,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://estat.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T01:11:28.415Z",
-          "lastSubmitted": "2026-05-30T06:51:22.734Z",
+          "path": "https://estat.kr/sitemap-categories.xml",
+          "lastDownloaded": "2026-06-02T19:08:18.619Z",
+          "lastSubmitted": "2026-05-30T06:51:23.665Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T01:11:28.415Z",
-      "sitemapLastSubmittedAt": "2026-05-30T06:51:22.734Z",
-      "sitemapPath": "https://estat.kr/sitemap.xml",
+      "sitemapLastDownloadedAt": "2026-06-02T19:08:18.619Z",
+      "sitemapLastSubmittedAt": "2026-05-30T06:51:23.665Z",
+      "sitemapPath": "https://estat.kr/sitemap-categories.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:46.252Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:46.252Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:46.252Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:46.252Z",
-      "lastPublishedAt": "2026-06-02T15:59:03Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:21.042Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:21.042Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "sssaass",
@@ -3310,8 +3336,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3329,11 +3355,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:48.455Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:48.455Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:48.455Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:48.455Z",
-      "lastPublishedAt": "2026-06-02T15:30:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:24.390Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:24.390Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "car-luckyday",
@@ -3385,30 +3412,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
           "path": "https://car.luckyday.kr/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-02T16:00:10.201Z",
-          "lastSubmitted": "2026-06-02T16:00:04.743Z",
+          "lastDownloaded": "2026-06-02T20:18:25.629Z",
+          "lastSubmitted": "2026-06-02T20:18:23.001Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T16:00:10.201Z",
-      "sitemapLastSubmittedAt": "2026-06-02T16:00:04.743Z",
+      "sitemapLastDownloadedAt": "2026-06-02T20:18:25.629Z",
+      "sitemapLastSubmittedAt": "2026-06-02T20:18:23.001Z",
       "sitemapPath": "https://car.luckyday.kr/wp-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:50.496Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:50.496Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:50.496Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:50.496Z",
-      "lastPublishedAt": "2026-06-02T14:37:12Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:34.912Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:34.912Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "sinhonjigi-ehon365",
@@ -3479,10 +3507,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:54.764Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:54.764Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:54.764Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:54.764Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:01.848Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:01.848Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:27:01.848Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:27:01.848Z"
     },
     {
       "id": "educaer",
@@ -3534,8 +3562,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3553,11 +3581,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:48.496Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:48.496Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:48.496Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:48.496Z",
-      "lastPublishedAt": "2026-06-02T16:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:24.415Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:24.415Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "todayshops-2",
@@ -3609,8 +3638,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3628,11 +3657,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:48.854Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:48.854Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:48.854Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:48.854Z",
-      "lastPublishedAt": "2026-06-02T14:19:30Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:24.882Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:24.882Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "phone-luckyday",
@@ -3684,8 +3714,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3703,11 +3733,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:49.673Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:49.673Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:49.673Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:49.673Z",
-      "lastPublishedAt": "2026-06-02T13:15:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:26.486Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:26.486Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "legalser",
@@ -3759,30 +3790,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://legalser.com/post-sitemap.xml",
-          "lastDownloaded": "2026-06-02T03:55:58.743Z",
-          "lastSubmitted": "2026-06-02T03:55:48.425Z",
+          "path": "https://legalser.com/sitemap.xml",
+          "lastDownloaded": "2026-06-02T19:56:28.231Z",
+          "lastSubmitted": "2026-05-07T11:48:38.559Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T03:55:58.743Z",
-      "sitemapLastSubmittedAt": "2026-06-02T03:55:48.425Z",
-      "sitemapPath": "https://legalser.com/post-sitemap.xml",
+      "sitemapLastDownloadedAt": "2026-06-02T19:56:28.231Z",
+      "sitemapLastSubmittedAt": "2026-05-07T11:48:38.559Z",
+      "sitemapPath": "https://legalser.com/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:29.126Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:29.126Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:29.126Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:29.126Z",
-      "lastPublishedAt": "2026-06-02T14:19:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:00.184Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:00.184Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "petinsuer-2",
@@ -3834,8 +3866,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3853,11 +3885,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:43.943Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:43.943Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:43.943Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:43.943Z",
-      "lastPublishedAt": "2026-06-02T12:06:37Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:18.202Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:18.202Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "healfood-2",
@@ -3909,8 +3942,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -3928,11 +3961,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:45.845Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:45.845Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:45.845Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:45.845Z",
-      "lastPublishedAt": "2026-06-02T08:07:08Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:20.423Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:20.423Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "certifi",
@@ -3984,30 +4018,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
           "path": "https://certifi.kr/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-02T12:07:13.308Z",
-          "lastSubmitted": "2026-06-02T12:06:50.288Z",
+          "lastDownloaded": "2026-06-02T17:07:36.454Z",
+          "lastSubmitted": "2026-06-02T17:07:31.035Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T12:07:13.308Z",
-      "sitemapLastSubmittedAt": "2026-06-02T12:06:50.288Z",
+      "sitemapLastDownloadedAt": "2026-06-02T17:07:36.454Z",
+      "sitemapLastSubmittedAt": "2026-06-02T17:07:31.035Z",
       "sitemapPath": "https://certifi.kr/wp-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:49.612Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:49.612Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:49.612Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:49.612Z",
-      "lastPublishedAt": "2026-06-02T12:05:58Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:25.274Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:25.274Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "jasamall-sellerpit",
@@ -4019,13 +4054,13 @@
         "activeUsers": 3,
         "sessions": 7,
         "screenPageViews": 36,
-        "eventCount": 85
+        "eventCount": 86
       },
       "last7Days": {
         "activeUsers": 3,
         "sessions": 7,
         "screenPageViews": 36,
-        "eventCount": 85
+        "eventCount": 86
       },
       "previous7Days": {
         "activeUsers": 0,
@@ -4037,7 +4072,7 @@
         "activeUsers": 3,
         "sessions": 7,
         "screenPageViews": 36,
-        "eventCount": 85
+        "eventCount": 86
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -4059,8 +4094,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4078,12 +4113,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:56.490Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:56.490Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:56.490Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:56.490Z",
-      "lastPublishedAt": "2026-06-02T15:00:00.000Z",
-      "lastScheduledAt": "2026-06-23T16:00:00.000Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:11.050Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:11.050Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "trave",
@@ -4135,8 +4170,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4154,11 +4189,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:32.373Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:32.373Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:32.373Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:32.373Z",
-      "lastPublishedAt": "2026-05-13T03:28:40Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:03.118Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:03.118Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "gong365",
@@ -4216,23 +4252,23 @@
       "sitemapDetails": [
         {
           "path": "https://gong365.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T11:43:34.093Z",
-          "lastSubmitted": "2026-06-02T11:43:31.846Z",
+          "lastDownloaded": "2026-06-02T20:20:16.860Z",
+          "lastSubmitted": "2026-06-02T20:20:15.450Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T11:43:34.093Z",
-      "sitemapLastSubmittedAt": "2026-06-02T11:43:31.846Z",
+      "sitemapLastDownloadedAt": "2026-06-02T20:20:16.860Z",
+      "sitemapLastSubmittedAt": "2026-06-02T20:20:15.450Z",
       "sitemapPath": "https://gong365.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:46.858Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:46.858Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:46.858Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:46.858Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:22.330Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:22.330Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:22.330Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:22.330Z"
     },
     {
       "id": "pregnancy-ehon365",
@@ -4303,10 +4339,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:53.782Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:53.782Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:53.782Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:53.782Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:59.965Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:59.965Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:59.965Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:59.965Z"
     },
     {
       "id": "travel-sellerpit",
@@ -4358,31 +4394,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
           "path": "https://travel.sellerpit.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T11:35:48.007Z",
-          "lastSubmitted": "2026-06-02T11:35:45.932Z",
+          "lastDownloaded": "2026-06-02T16:27:06.692Z",
+          "lastSubmitted": "2026-06-02T16:27:04.766Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T11:35:48.007Z",
-      "sitemapLastSubmittedAt": "2026-06-02T11:35:45.932Z",
+      "sitemapLastDownloadedAt": "2026-06-02T16:27:06.692Z",
+      "sitemapLastSubmittedAt": "2026-06-02T16:27:04.766Z",
       "sitemapPath": "https://travel.sellerpit.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:56.242Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:56.242Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:56.242Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:56.242Z",
-      "lastPublishedAt": "2026-06-02T16:00:00.000Z",
-      "lastScheduledAt": "2026-07-29T18:00:00.000Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:08.201Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:08.201Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "insupang",
@@ -4434,8 +4470,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4453,11 +4489,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:28.537Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:28.537Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:28.537Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:28.537Z",
-      "lastPublishedAt": "2026-06-02T15:31:43Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:59.588Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:59.588Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "lawer",
@@ -4509,8 +4546,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4528,11 +4565,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:32.477Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:32.477Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:32.477Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:32.477Z",
-      "lastPublishedAt": "2026-06-02T16:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:03.138Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:03.138Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "coinyo-2",
@@ -4584,8 +4622,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4603,11 +4641,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:42.885Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:42.885Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:42.885Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:42.885Z",
-      "lastPublishedAt": "2026-06-02T14:57:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:16.104Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:16.104Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "travelpang-2",
@@ -4659,8 +4698,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4678,10 +4717,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:43.774Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:43.774Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:43.774Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:43.774Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:17.709Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:17.709Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "goesku",
@@ -4752,10 +4793,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:47.448Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:47.448Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:47.448Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:47.448Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:22.342Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:22.342Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:22.342Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:22.342Z"
     },
     {
       "id": "gong-luckyday",
@@ -4807,30 +4848,31 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://gong.luckyday.kr/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-02T15:45:12.934Z",
-          "lastSubmitted": "2026-06-02T15:45:09.731Z",
+          "path": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml",
+          "lastDownloaded": "2026-06-02T20:45:10.496Z",
+          "lastSubmitted": "2026-06-02T20:45:05.920Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T15:45:12.934Z",
-      "sitemapLastSubmittedAt": "2026-06-02T15:45:09.731Z",
-      "sitemapPath": "https://gong.luckyday.kr/wp-sitemap.xml",
+      "sitemapLastDownloadedAt": "2026-06-02T20:45:10.496Z",
+      "sitemapLastSubmittedAt": "2026-06-02T20:45:05.920Z",
+      "sitemapPath": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:50.408Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:50.408Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:50.408Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:50.408Z",
-      "lastPublishedAt": "2026-06-02T15:20:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:27.989Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:27.989Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "gpt-nexttech7",
@@ -4882,8 +4924,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4901,11 +4943,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:55.246Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:55.246Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:55.246Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:55.246Z",
-      "lastPublishedAt": "2026-06-02T12:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:03.816Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:03.816Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "kang4",
@@ -4957,8 +5000,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -4976,11 +5019,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:24.804Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:24.804Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:24.804Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:24.804Z",
-      "lastPublishedAt": "2026-06-02T16:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:25:56.052Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:25:56.052Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "homeimer",
@@ -5032,8 +5076,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -5051,11 +5095,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:29.190Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:29.190Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:29.190Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:29.190Z",
-      "lastPublishedAt": "2026-06-02T11:53:40Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:00.196Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:00.196Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "finan",
@@ -5107,8 +5152,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -5126,11 +5171,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:31.054Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:31.054Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:31.054Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:31.054Z",
-      "lastPublishedAt": "2026-06-02T13:10:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:01.430Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:01.430Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "esgyo",
@@ -5182,8 +5228,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -5201,11 +5247,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:34.876Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:34.876Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:34.876Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:34.876Z",
-      "lastPublishedAt": "2026-06-02T11:04:18Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:04.399Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:04.399Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "texturb",
@@ -5276,10 +5323,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:35.489Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:35.489Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:35.489Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:35.489Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:06.055Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:06.055Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:26:06.055Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:26:06.055Z"
     },
     {
       "id": "luxurytraver-2",
@@ -5331,8 +5378,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -5350,11 +5397,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:44.898Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:44.898Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:44.898Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:44.898Z",
-      "lastPublishedAt": "2026-06-02T11:35:11Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:19.343Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:19.343Z",
+      "adsenseError": "Homepage unavailable: 415",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "ads.txt unavailable: 415",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "ai-tasko",
@@ -5406,8 +5454,8 @@
       },
       "ga4Status": "ok",
       "gscStatus": "ok",
-      "adsenseStatus": "ok",
-      "adsTxtStatus": "ok",
+      "adsenseStatus": "api_error",
+      "adsTxtStatus": "api_error",
       "sitemapCount": 1,
       "sitemapDetails": [
         {
@@ -5425,11 +5473,12 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:51.452Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:51.452Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:51.452Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:51.452Z",
-      "lastPublishedAt": "2026-06-02T15:24:33Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:26:42.764Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:26:42.764Z",
+      "adsenseError": "The operation was aborted due to timeout",
+      "adsenseErrorKind": "api_error",
+      "adsTxtError": "The operation was aborted due to timeout",
+      "adsTxtErrorKind": "api_error"
     },
     {
       "id": "dolbomjigi-ehon365",
@@ -5487,23 +5536,23 @@
       "sitemapDetails": [
         {
           "path": "https://dolbomjigi.ehon365.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T15:20:47.338Z",
-          "lastSubmitted": "2026-06-02T15:20:45.314Z",
+          "lastDownloaded": "2026-06-02T20:20:43.550Z",
+          "lastSubmitted": "2026-06-02T20:20:41.410Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T15:20:47.338Z",
-      "sitemapLastSubmittedAt": "2026-06-02T15:20:45.314Z",
+      "sitemapLastDownloadedAt": "2026-06-02T20:20:43.550Z",
+      "sitemapLastSubmittedAt": "2026-06-02T20:20:41.410Z",
       "sitemapPath": "https://dolbomjigi.ehon365.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-02T16:26:55.336Z",
-      "gscLastSuccessfulFetchAt": "2026-06-02T16:26:55.336Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-02T16:26:55.336Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-02T16:26:55.336Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-02T21:27:06.695Z",
+      "gscLastSuccessfulFetchAt": "2026-06-02T21:27:06.695Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-02T21:27:06.695Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-02T21:27:06.695Z"
     }
   ]
 }
