@@ -112,6 +112,7 @@ export interface SiteStat {
   adsTxtError?: string;
   sitemapError?: string;
   lastPublishedAt?: string;
+  lastScheduledAt?: string;
 }
 
 interface StatsSnapshot {
@@ -204,6 +205,7 @@ export interface EnrichedSiteStat extends Omit<
   duplicateCount?: number;
   duplicateStats?: DuplicateSiteSummary[];
   lastPublishedAt?: string;
+  lastScheduledAt?: string;
   daysSincePublished?: number;
 }
 
@@ -571,6 +573,9 @@ function enrichSiteStat(
     enriched.daysSincePublished = Math.floor(
       (Date.now() - Date.parse(stat.lastPublishedAt)) / 86400000,
     );
+  }
+  if (stat.lastScheduledAt) {
+    enriched.lastScheduledAt = stat.lastScheduledAt;
   }
 
   return enriched;

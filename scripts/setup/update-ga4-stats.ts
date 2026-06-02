@@ -96,6 +96,7 @@ interface SiteStat {
   adsTxtError?: string;
   sitemapError?: string;
   lastPublishedAt?: string;
+  lastScheduledAt?: string;
 }
 
 interface StatsSnapshot {
@@ -521,26 +522,35 @@ function toOptionalNumber(
 
 async function fetchWpStats(
   site: Site,
-): Promise<Pick<SiteStat, "lastPublishedAt">> {
+): Promise<Pick<SiteStat, "lastPublishedAt" | "lastScheduledAt">> {
   if (!site.wpRestBase) {
     return {};
   }
 
   try {
-    const url = `${site.wpRestBase.replace(/\/$/, "")}/posts?per_page=1&orderby=date&order=desc&_fields=date_gmt`;
-    const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
-    if (!response.ok) {
-      return {};
-    }
-    const posts = (await response.json()) as Array<{ date_gmt?: string }>;
-    const dateGmt = posts[0]?.date_gmt;
-    if (!dateGmt) {
-      return {};
-    }
-    return { lastPublishedAt: `${dateGmt}Z` };
+    const restBase = site.wpRestBase.replace(/\/$/, "");
+    const [publishedAt, scheduledAt] = await Promise.all([
+      fetchWpPostDate(`${restBase}/posts?per_page=1&orderby=date&order=desc&_fields=date_gmt`),
+      fetchWpPostDate(`${restBase}/posts?status=future&per_page=1&orderby=date&order=desc&_fields=date_gmt`),
+    ]);
+    return {
+      ...(publishedAt ? { lastPublishedAt: publishedAt } : {}),
+      ...(scheduledAt ? { lastScheduledAt: scheduledAt } : {}),
+    };
   } catch {
     return {};
   }
+}
+
+async function fetchWpPostDate(url: string): Promise<string | undefined> {
+  const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
+  if (!response.ok) {
+    return undefined;
+  }
+
+  const posts = (await response.json()) as Array<{ date_gmt?: string }>;
+  const dateGmt = posts[0]?.date_gmt;
+  return dateGmt ? `${dateGmt}Z` : undefined;
 }
 
 async function fetchAdsenseCodeStatus(site: Site): Promise<void> {
@@ -706,6 +716,9 @@ async function fetchSiteStat(
   const wpStats = await fetchWpStats(site);
   if (wpStats.lastPublishedAt) {
     stat.lastPublishedAt = wpStats.lastPublishedAt;
+  }
+  if (wpStats.lastScheduledAt) {
+    stat.lastScheduledAt = wpStats.lastScheduledAt;
   }
 
   return stat;

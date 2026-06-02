@@ -29,6 +29,7 @@ type SortKey =
   | "adsense"
   | "adsTxt"
   | "position"
+  | "lastScheduledAt"
   | "sitemapCollectedAt"
   | "status";
 type SortDirection = "asc" | "desc";
@@ -47,6 +48,7 @@ const sortLabels: Record<SortKey, string> = {
   adsense: "AdSense",
   adsTxt: "ads.txt",
   position: "평균순위",
+  lastScheduledAt: "예약글",
   sitemapCollectedAt: "사이트맵 수집일",
   status: "상태",
 };
@@ -81,6 +83,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "adsense", label: "AdSense" },
   { key: "adsTxt", label: "ads.txt" },
   { key: "position", label: "평균순위" },
+  { key: "lastScheduledAt", label: "예약글" },
   { key: "sitemapCollectedAt", label: "사이트맵 수집일" },
   { key: "status", label: "상태" },
 ];
@@ -247,7 +250,7 @@ export function SiteStatsTable({
           <tbody>
             {visibleStats.length === 0 ? (
               <tr>
-                <td className="table-empty" colSpan={15}>
+                <td className="table-empty" colSpan={16}>
                   조건에 맞는 사이트가 없습니다.
                 </td>
               </tr>
@@ -388,6 +391,9 @@ function StatsRow({
       </td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
       <td>
+        <ScheduledPostCell stat={stat} />
+      </td>
+      <td>
         <SitemapCollectionCell stat={stat} />
       </td>
       <td>
@@ -399,6 +405,18 @@ function StatsRow({
         </span>
       </td>
     </tr>
+  );
+}
+
+function ScheduledPostCell({ stat }: { stat: EnrichedSiteStat }) {
+  return (
+    <span
+      className={`collection-cell ${stat.lastScheduledAt ? "collection-fresh" : "collection-missing"}`}
+      title={formatScheduledPostTitle(stat)}
+    >
+      <strong>{stat.lastScheduledAt ? "예약" : "-"}</strong>
+      <small>{formatShortDate(stat.lastScheduledAt)}</small>
+    </span>
   );
 }
 
@@ -528,6 +546,9 @@ function getSortValue(
     const position = stat.gscLast7Days?.position ?? 0;
     return position === 0 ? Number.POSITIVE_INFINITY : position;
   }
+  if (sortKey === "lastScheduledAt") {
+    return parseCollectionTime(stat.lastScheduledAt);
+  }
   if (sortKey === "sitemapCollectedAt") {
     return parseCollectionTime(getSitemapCollectionValue(stat));
   }
@@ -543,6 +564,7 @@ function getDefaultSortDirection(sortKey: SortKey): SortDirection {
     sortKey === "adsense" ||
     sortKey === "adsTxt" ||
     sortKey === "position" ||
+    sortKey === "lastScheduledAt" ||
     sortKey === "sitemapCollectedAt" ||
     sortKey === "status"
   ) {
@@ -765,6 +787,19 @@ function formatDateTime(value: string | undefined): string {
     timeStyle: "short",
     timeZone: "Asia/Seoul",
   }).format(date);
+}
+
+function formatScheduledPostTitle(stat: EnrichedSiteStat): string {
+  const lines = [
+    stat.lastScheduledAt
+      ? `마지막 예약글: ${formatDateTime(stat.lastScheduledAt)}`
+      : "예약글 없음",
+    stat.lastPublishedAt
+      ? `마지막 발행글: ${formatDateTime(stat.lastPublishedAt)}`
+      : "",
+  ].filter(Boolean);
+
+  return lines.join("\n");
 }
 
 function formatSitemapCollectionTitle(stat: EnrichedSiteStat): string {
