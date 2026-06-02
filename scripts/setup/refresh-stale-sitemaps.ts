@@ -6,6 +6,7 @@ import { getErrorMessage } from "./lib/errors.js";
 
 const STATS_PATH = "data/site-stats.json";
 const DEFAULT_MIN_AGE_DAYS = 14;
+type RefreshBasis = "downloaded" | "submitted";
 
 interface SiteStat {
   id: string;
@@ -28,6 +29,7 @@ interface Args {
   dryRun: boolean;
   includeIssues: boolean;
   all: boolean;
+  basis: RefreshBasis;
   minAgeDays: number;
   limit: number;
 }
@@ -44,11 +46,18 @@ function parseArgs(): Args {
   const args = process.argv.slice(2);
   const minAgeArg = args.find((arg) => arg.startsWith("--min-age-days="));
   const limitArg = args.find((arg) => arg.startsWith("--limit="));
+  const basisArg = args.find((arg) => arg.startsWith("--basis="));
+  const basis = basisArg?.replace("--basis=", "");
+  if (basis && basis !== "downloaded" && basis !== "submitted") {
+    throw new Error("--basis must be downloaded or submitted.");
+  }
+  const refreshBasis: RefreshBasis = basis === "submitted" ? "submitted" : "downloaded";
 
   return {
     dryRun: args.includes("--dry-run"),
     includeIssues: args.includes("--include-issues"),
     all: args.includes("--all"),
+    basis: refreshBasis,
     minAgeDays: minAgeArg
       ? Number(minAgeArg.replace("--min-age-days=", ""))
       : DEFAULT_MIN_AGE_DAYS,
@@ -69,9 +78,11 @@ function getCollectionAgeDays(value: string | undefined, now: Date): number {
   return Math.floor((now.getTime() - timestamp) / 86400000);
 }
 
-function makeReason(stat: SiteStat, ageDays: number): string {
+function makeReason(stat: SiteStat, ageDays: number, basis: RefreshBasis): string {
   const parts = [
-    Number.isFinite(ageDays) ? `${ageDays}d since lastDownloaded` : "no lastDownloaded",
+    Number.isFinite(ageDays)
+      ? `${ageDays}d since last${basis === "submitted" ? "Submitted" : "Downloaded"}`
+      : `no last${basis === "submitted" ? "Submitted" : "Downloaded"}`,
   ];
 
   if ((stat.sitemapErrors ?? 0) > 0) {
@@ -107,7 +118,11 @@ function selectTargets(snapshot: StatsSnapshot, args: Args): Target[] {
       return [];
     }
 
-    const ageDays = getCollectionAgeDays(stat.sitemapLastDownloadedAt, now);
+    const basisDate =
+      args.basis === "submitted"
+        ? stat.sitemapLastSubmittedAt
+        : stat.sitemapLastDownloadedAt;
+    const ageDays = getCollectionAgeDays(basisDate, now);
     const hasIssue = (stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0;
     const selected =
       args.all ||
@@ -121,7 +136,7 @@ function selectTargets(snapshot: StatsSnapshot, args: Args): Target[] {
             siteUrl,
             feedpath,
             ageDays,
-            reason: makeReason(stat, ageDays),
+            reason: makeReason(stat, ageDays, args.basis),
           },
         ]
       : [];
@@ -143,7 +158,8 @@ async function inspectPublicSitemap(url: string): Promise<string> {
   const hasXml =
     text.includes("<urlset") ||
     text.includes("<sitemapindex") ||
-    text.includes("<rss");
+    text.includes("<rss") ||
+    text.includes("<feed");
   const lastmodCount = (text.match(/<lastmod>/g) ?? []).length;
 
   return hasXml ? `public ok, lastmod=${lastmodCount}` : "public not-xml";
@@ -172,7 +188,7 @@ async function main(): Promise<void> {
   const client = google.searchconsole({ version: "v1", auth });
 
   console.log(
-    `${args.dryRun ? "Dry run" : "Submitting"} ${targets.length} sitemap(s). minAgeDays=${args.minAgeDays}`,
+    `${args.dryRun ? "Dry run" : "Submitting"} ${targets.length} sitemap(s). basis=${args.basis} minAgeDays=${args.minAgeDays}`,
   );
 
   for (const target of targets) {
