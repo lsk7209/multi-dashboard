@@ -114,7 +114,7 @@ sites:
     gscSiteUrl: https://healthgotoo.com/
   - id: travelpang
     name: 여행팡 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://travelpang.kr/
     wpRestBase: https://travelpang.kr/wp-json/wp/v2
@@ -122,7 +122,7 @@ sites:
     gscSiteUrl: https://travelpang.kr/
   - id: coinyo
     name: 코인요요 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://coinyo.kr/
     wpRestBase: https://coinyo.kr/wp-json/wp/v2
@@ -130,7 +130,7 @@ sites:
     gscSiteUrl: https://coinyo.kr/
   - id: dogspang
     name: 정보랩 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://dogspang.kr/
     wpRestBase: https://dogspang.kr/wp-json/wp/v2
@@ -162,7 +162,7 @@ sites:
     gscSiteUrl: https://legalser.com/
   - id: petinsuer
     name: 펫인사이트 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://petinsuer.com/
     wpRestBase: https://petinsuer.com/wp-json/wp/v2
@@ -178,7 +178,7 @@ sites:
     gscSiteUrl: https://homeimer.com/
   - id: healfood
     name: 건강푸드팡 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://healfood.kr/
     wpRestBase: https://healfood.kr/wp-json/wp/v2
@@ -194,7 +194,7 @@ sites:
     gscSiteUrl: https://finan.kr/
   - id: luxurytraver
     name: luxurytraver - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://luxurytraver.com/
     wpRestBase: https://luxurytraver.com/wp-json/wp/v2
@@ -218,7 +218,7 @@ sites:
     gscSiteUrl: https://trave.kr/
   - id: autoscares
     name: 자동차팡팡 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://autoscares.com/
     wpRestBase: https://autoscares.com/wp-json/wp/v2
@@ -234,7 +234,7 @@ sites:
     gscSiteUrl: https://lawer.kr/
   - id: estat
     name: 푸드팡팡 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://estat.kr/
     wpRestBase: https://estat.kr/wp-json/wp/v2
@@ -266,7 +266,7 @@ sites:
     gscSiteUrl: https://esgyo.kr/
   - id: sellerpit
     name: 셀러핏 - GA4
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://sellerpit.kr/
     wpRestBase: https://sellerpit.kr/wp-json/wp/v2
@@ -274,7 +274,7 @@ sites:
     gscSiteUrl: https://sellerpit.kr/
   - id: spinkorea
     name: 스핀코리아
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://spinkorea.kr/
     wpRestBase: https://spinkorea.kr/wp-json/wp/v2
@@ -354,7 +354,7 @@ sites:
     gscSiteUrl: https://chatgipt.kr/
   - id: esgyo-2
     name: esgyo.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://esgyo.kr/
     wpRestBase: https://esgyo.kr/wp-json/wp/v2
@@ -479,7 +479,7 @@ sites:
     gscSiteUrl: https://crepika.com/
   - id: insupang-2
     name: insupang.com
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://insupang.com/
     wpRestBase: https://insupang.com/wp-json/wp/v2
@@ -487,7 +487,7 @@ sites:
     gscSiteUrl: https://insupang.com/
   - id: healthgotoo-2
     name: healthgotoo.com
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://healthgotoo.com/
     wpRestBase: https://healthgotoo.com/wp-json/wp/v2
@@ -511,7 +511,7 @@ sites:
     gscSiteUrl: https://travelpang.kr/
   - id: legalser-2
     name: legalser.com
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://legalser.com/
     wpRestBase: https://legalser.com/wp-json/wp/v2
@@ -527,7 +527,7 @@ sites:
     gscSiteUrl: https://petinsuer.com/
   - id: etique-2
     name: etique.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://etique.kr/
     wpRestBase: https://etique.kr/wp-json/wp/v2
@@ -543,7 +543,7 @@ sites:
     gscSiteUrl: https://luxurytraver.com/
   - id: softwa-2
     name: softwa.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://softwa.kr/
     wpRestBase: https://softwa.kr/wp-json/wp/v2
@@ -567,7 +567,7 @@ sites:
     gscSiteUrl: https://healfood.kr/
   - id: gover-2
     name: gover.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://gover.kr/
     wpRestBase: https://gover.kr/wp-json/wp/v2
@@ -583,7 +583,7 @@ sites:
     gscSiteUrl: https://estat.kr/
   - id: homeimer-2
     name: homeimer.com
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://homeimer.com/
     wpRestBase: https://homeimer.com/wp-json/wp/v2
@@ -607,7 +607,7 @@ sites:
     gscSiteUrl: https://gong365.kr/
   - id: trave-2
     name: trave.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://trave.kr/
     wpRestBase: https://trave.kr/wp-json/wp/v2
@@ -631,7 +631,7 @@ sites:
     gscSiteUrl: https://roadways.kr/
   - id: lawer-2
     name: lawer.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://lawer.kr/
     wpRestBase: https://lawer.kr/wp-json/wp/v2
@@ -647,7 +647,7 @@ sites:
     gscSiteUrl: https://sssaass.com/
   - id: todayshops
     name: todayshops.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://todayshops.kr/
     wpRestBase: https://todayshops.kr/wp-json/wp/v2
@@ -687,7 +687,7 @@ sites:
     gscSiteUrl: https://certifi.kr/
   - id: finan-2
     name: finan.kr
-    enabled: true
+    enabled: false
     platform: wordpress
     url: https://finan.kr/
     wpRestBase: https://finan.kr/wp-json/wp/v2
