@@ -417,7 +417,7 @@ function ScheduledPostCell({ stat }: { stat: EnrichedSiteStat }) {
       title={formatScheduledPostTitle(stat)}
     >
       <strong>{stat.lastScheduledAt ? "예약" : "-"}</strong>
-      <small>{formatShortDate(stat.lastScheduledAt)}</small>
+      <small>{formatScheduledDate(stat.lastScheduledAt)}</small>
     </span>
   );
 }
@@ -765,6 +765,41 @@ function formatShortDate(value: string | undefined): string {
   }
 
   return new Intl.DateTimeFormat("ko-KR", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Seoul",
+  }).format(date);
+}
+
+function formatScheduledDate(value: string | undefined): string {
+  if (!value) {
+    return "-";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "-";
+  }
+
+  const now = new Date();
+  const dateYear = Number(
+    new Intl.DateTimeFormat("en", {
+      year: "numeric",
+      timeZone: "Asia/Seoul",
+    }).format(date),
+  );
+  const currentYear = Number(
+    new Intl.DateTimeFormat("en", {
+      year: "numeric",
+      timeZone: "Asia/Seoul",
+    }).format(now),
+  );
+
+  return new Intl.DateTimeFormat("ko-KR", {
+    ...(dateYear === currentYear ? {} : { year: "numeric" as const }),
     month: "2-digit",
     day: "2-digit",
     hour: "2-digit",
