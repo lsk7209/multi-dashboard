@@ -533,6 +533,7 @@ function getDefaultSortDirection(sortKey: SortKey): SortDirection {
     sortKey === "adsense" ||
     sortKey === "adsTxt" ||
     sortKey === "position" ||
+    sortKey === "sitemapCollectedAt" ||
     sortKey === "status"
   ) {
     return "asc";
@@ -694,7 +695,7 @@ function formatPosition(value: number): string {
 function getSitemapCollectionValue(
   stat: EnrichedSiteStat,
 ): string | undefined {
-  return stat.sitemapLastDownloadedAt ?? stat.sitemapLastSubmittedAt;
+  return stat.sitemapLastDownloadedAt;
 }
 
 function parseCollectionTime(value: string | undefined): number {
@@ -768,5 +769,26 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
     return "collection-missing";
   }
 
+  if (
+    isOlderThanDays(stat.sitemapLastDownloadedAt, 14) ||
+    (stat.sitemapErrors ?? 0) > 0 ||
+    (stat.sitemapWarnings ?? 0) > 0
+  ) {
+    return "collection-stale";
+  }
+
   return "collection-fresh";
+}
+
+function isOlderThanDays(value: string | undefined, days: number): boolean {
+  if (!value) {
+    return true;
+  }
+
+  const timestamp = Date.parse(value);
+  if (Number.isNaN(timestamp)) {
+    return true;
+  }
+
+  return Date.now() - timestamp > days * 24 * 60 * 60 * 1000;
 }

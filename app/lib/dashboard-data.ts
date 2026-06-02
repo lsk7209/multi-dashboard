@@ -50,10 +50,13 @@ export type ActionKind =
   | "permission"
   | "decline"
   | "monetization"
+  | "sitemap"
   | "seo"
   | "ranking"
   | "data";
-export type SegmentKey = "growth" | "decline" | "seo" | "gsc";
+export type SegmentKey = "growth" | "decline" | "seo" | "gsc" | "sitemap";
+
+const SITEMAP_COLLECTION_LAG_DAYS = 14;
 
 export interface SiteStat {
   id: string;
@@ -343,7 +346,9 @@ export function getDashboardData(): DashboardData {
       (stat) => stat.operationalStatus !== "normal",
     ).length,
     staleCount: displayStats.filter((stat) => stat.isStale).length,
-    collectionStaleCount: displayStats.filter(hasCollectionLag).length,
+    collectionStaleCount: displayStats.filter(
+      (stat) => hasCollectionLag(stat) || hasSitemapCollectionLag(stat),
+    ).length,
     totalLast1Days,
     totalLast7Days,
     totalPrevious7Days,
@@ -588,6 +593,19 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
+  if (hasSitemapCollectionLag(stat)) {
+    items.push(
+      makeAction(
+        stat,
+        "sitemap",
+        74,
+        getSitemapCollectionLabel(stat),
+        getSitemapCollectionReason(stat),
+        "Search Console에 sitemap을 재제출하고, sitemap lastmod와 robots.txt Sitemap 라인을 함께 확인하세요.",
+      ),
+    );
+  }
+
   if (gsc.impressions >= 100 && gsc.ctr < 0.02) {
     items.push(
       makeAction(
@@ -643,6 +661,7 @@ function getActionLabel(kind: ActionKind): string {
   if (kind === "permission") return "권한";
   if (kind === "decline") return "급락";
   if (kind === "monetization") return "수익화";
+  if (kind === "sitemap") return "사이트맵";
   if (kind === "seo") return "CTR";
   if (kind === "ranking") return "순위";
   return "데이터";
@@ -664,6 +683,56 @@ function hasCollectionLag(stat: EnrichedSiteStat): boolean {
     isOlderThanHours(stat.adsenseLastSuccessfulFetchAt, 48) ||
     isOlderThanHours(stat.adsTxtLastSuccessfulFetchAt, 48)
   );
+}
+
+function hasSitemapCollectionLag(stat: EnrichedSiteStat): boolean {
+  return (
+    !stat.sitemapLastDownloadedAt ||
+    isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
+    (stat.sitemapErrors ?? 0) > 0 ||
+    (stat.sitemapWarnings ?? 0) > 0
+  );
+}
+
+function getSitemapCollectionAgeDays(stat: EnrichedSiteStat): number {
+  if (!stat.sitemapLastDownloadedAt) {
+    return Number.POSITIVE_INFINITY;
+  }
+
+  const timestamp = Date.parse(stat.sitemapLastDownloadedAt);
+  if (Number.isNaN(timestamp)) {
+    return Number.POSITIVE_INFINITY;
+  }
+
+  return Math.floor((Date.now() - timestamp) / 86400000);
+}
+
+function getSitemapCollectionLabel(stat: EnrichedSiteStat): string {
+  const ageDays = getSitemapCollectionAgeDays(stat);
+  if (!Number.isFinite(ageDays)) {
+    return "수집일 없음";
+  }
+
+  return `${formatNumber(ageDays)}일 전`;
+}
+
+function getSitemapCollectionReason(stat: EnrichedSiteStat): string {
+  const parts: string[] = [];
+  if (!stat.sitemapLastDownloadedAt) {
+    parts.push("GSC sitemap 마지막 수집일이 없습니다.");
+  } else {
+    parts.push(
+      `GSC sitemap 마지막 수집일이 ${getSitemapCollectionLabel(stat)}입니다.`,
+    );
+  }
+  if ((stat.sitemapErrors ?? 0) > 0) {
+    parts.push(`오류 ${formatNumber(stat.sitemapErrors ?? 0)}개`);
+  }
+  if ((stat.sitemapWarnings ?? 0) > 0) {
+    parts.push(`경고 ${formatNumber(stat.sitemapWarnings ?? 0)}개`);
+  }
+
+  return parts.join(" ");
 }
 
 function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
@@ -709,6 +778,18 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
       stats: stats.filter(
         (stat) => stat.gscStatus !== "ok" || Boolean(stat.gscError),
       ),
+    },
+    {
+      key: "sitemap",
+      label: "사이트맵 지연",
+      description: "GSC의 sitemap 마지막 수집일이 14일 이상 지난 사이트",
+      count: 0,
+      stats: stats
+        .filter(hasSitemapCollectionLag)
+        .sort(
+          (a, b) =>
+            getSitemapCollectionAgeDays(b) - getSitemapCollectionAgeDays(a),
+        ),
     },
   ];
 
@@ -1138,6 +1219,19 @@ function isOlderThanHours(value: string | undefined, hours: number): boolean {
   }
 
   return Date.now() - timestamp > hours * 60 * 60 * 1000;
+}
+
+function isOlderThanDays(value: string | undefined, days: number): boolean {
+  if (!value) {
+    return true;
+  }
+
+  const timestamp = Date.parse(value);
+  if (Number.isNaN(timestamp)) {
+    return true;
+  }
+
+  return Date.now() - timestamp > days * 24 * 60 * 60 * 1000;
 }
 
 function emptyMetrics(): MetricSet {
