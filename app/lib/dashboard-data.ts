@@ -685,7 +685,7 @@ function hasCollectionLag(stat: EnrichedSiteStat): boolean {
   );
 }
 
-function hasSitemapCollectionLag(stat: EnrichedSiteStat): boolean {
+function hasSitemapCollectionLag(stat: SiteStat): boolean {
   return (
     !stat.sitemapLastDownloadedAt ||
     isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
@@ -694,7 +694,7 @@ function hasSitemapCollectionLag(stat: EnrichedSiteStat): boolean {
   );
 }
 
-function getSitemapCollectionAgeDays(stat: EnrichedSiteStat): number {
+function getSitemapCollectionAgeDays(stat: SiteStat): number {
   if (!stat.sitemapLastDownloadedAt) {
     return Number.POSITIVE_INFINITY;
   }
@@ -707,7 +707,7 @@ function getSitemapCollectionAgeDays(stat: EnrichedSiteStat): number {
   return Math.floor((Date.now() - timestamp) / 86400000);
 }
 
-function getSitemapCollectionLabel(stat: EnrichedSiteStat): string {
+function getSitemapCollectionLabel(stat: SiteStat): string {
   const ageDays = getSitemapCollectionAgeDays(stat);
   if (!Number.isFinite(ageDays)) {
     return "수집일 없음";
@@ -716,7 +716,7 @@ function getSitemapCollectionLabel(stat: EnrichedSiteStat): string {
   return `${formatNumber(ageDays)}일 전`;
 }
 
-function getSitemapCollectionReason(stat: EnrichedSiteStat): string {
+function getSitemapCollectionReason(stat: SiteStat): string {
   const parts: string[] = [];
   if (!stat.sitemapLastDownloadedAt) {
     parts.push("GSC sitemap 마지막 수집일이 없습니다.");
@@ -1179,6 +1179,10 @@ function getOperationalStatus(stat: SiteStat): OperationalStatus {
       : "apiError";
   }
 
+  if (hasSitemapCollectionLag(stat)) {
+    return "stale";
+  }
+
   return "normal";
 }
 
@@ -1191,6 +1195,10 @@ function getStatusLabel(status: OperationalStatus): string {
 
 function getStatusReason(stat: SiteStat, status: OperationalStatus): string {
   if (status === "stale") {
+    if (hasSitemapCollectionLag(stat)) {
+      return getSitemapCollectionReason(stat);
+    }
+
     return "GA4 최근 성공 수집이 48시간을 넘었습니다.";
   }
 
