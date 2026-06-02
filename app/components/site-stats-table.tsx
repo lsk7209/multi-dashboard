@@ -34,6 +34,8 @@ type SortKey =
   | "status";
 type SortDirection = "asc" | "desc";
 
+const SITEMAP_COLLECTION_LAG_DAYS = 5;
+
 const sortLabels: Record<SortKey, string> = {
   site: "사이트",
   priority: "우선순위",
@@ -851,7 +853,7 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
 
   if (
     stat.operationalStatus === "processing" ||
-    isOlderThanDays(stat.sitemapLastDownloadedAt, 14) ||
+    isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
     (stat.sitemapErrors ?? 0) > 0 ||
     (stat.sitemapWarnings ?? 0) > 0
   ) {
@@ -879,7 +881,7 @@ function getSitemapCollectionStatusLabel(stat: EnrichedSiteStat): string {
   if ((stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0) {
     return "오류";
   }
-  if (isOlderThanDays(stat.sitemapLastDownloadedAt, 14)) {
+  if (isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS)) {
     return "오래됨";
   }
 

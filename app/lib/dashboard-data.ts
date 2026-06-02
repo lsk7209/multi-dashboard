@@ -68,7 +68,7 @@ export type ActionKind =
   | "data";
 export type SegmentKey = "growth" | "decline" | "seo" | "gsc" | "sitemap";
 
-const SITEMAP_COLLECTION_LAG_DAYS = 14;
+const SITEMAP_COLLECTION_LAG_DAYS = 5;
 
 export interface SiteStat {
   id: string;
@@ -953,7 +953,7 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
     {
       key: "sitemap",
       label: "사이트맵 지연",
-      description: "GSC의 sitemap 마지막 수집일이 14일 이상 지난 사이트",
+      description: `GSC의 sitemap 마지막 수집일이 ${SITEMAP_COLLECTION_LAG_DAYS}일 이상 지난 사이트`,
       count: 0,
       stats: stats
         .filter(hasSitemapCollectionLag)
