@@ -391,7 +391,7 @@ sites:
     url: https://bojo24.kr/
     wpRestBase: https://bojo24.kr/wp-json/wp/v2
     ga4PropertyId: "534288708"
-    gscSiteUrl: https://bojo24.kr/
+    gscSiteUrl: https://www.bojo24.kr/
   - id: ehon365
     name: ehon365.kr
     enabled: true

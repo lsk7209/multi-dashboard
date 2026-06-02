@@ -359,13 +359,16 @@ async function fetchSitemapSummary(
 ): Promise<SitemapSummary> {
   const response = await client.sitemaps.list({ siteUrl });
   const sitemaps = response.data.sitemap ?? [];
-  const selected = sitemaps
+  const datedSitemaps = sitemaps
     .filter((sitemap) => sitemap.lastDownloaded || sitemap.lastSubmitted)
     .sort(
       (a, b) =>
         Date.parse(b.lastDownloaded ?? b.lastSubmitted ?? "") -
         Date.parse(a.lastDownloaded ?? a.lastSubmitted ?? ""),
-    )[0];
+    );
+  const selected =
+    datedSitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
+    datedSitemaps[0];
 
   if (!selected) {
     return {};
@@ -392,6 +395,19 @@ async function fetchSitemapSummary(
   }
 
   return summary;
+}
+
+function isXmlSitemapPath(path: string | null | undefined): boolean {
+  if (!path) {
+    return false;
+  }
+
+  const normalized = path.toLowerCase();
+  return (
+    normalized.includes("sitemap") &&
+    !normalized.endsWith("/feed.xml") &&
+    !normalized.endsWith("/rss.xml")
+  );
 }
 
 function toOptionalNumber(
