@@ -455,16 +455,44 @@ function summarizeSitemapDetails(details: SitemapDetail[]): SitemapSummary {
       details.length === 1 ? details[0].path : `${details.length} sitemaps`;
   }
   summary.sitemapWarnings = details.reduce(
-    (sum, detail) => sum + (detail.warnings ?? 0),
+    (sum, detail) => sum + getProcessedSitemapIssueCount(detail, "warnings"),
     0,
   );
   summary.sitemapErrors = details.reduce(
-    (sum, detail) => sum + (detail.errors ?? 0),
+    (sum, detail) => sum + getProcessedSitemapIssueCount(detail, "errors"),
     0,
   );
   summary.sitemapIsPending = details.some((detail) => detail.isPending);
 
   return summary;
+}
+
+function getProcessedSitemapIssueCount(
+  detail: SitemapDetail,
+  key: "errors" | "warnings",
+): number {
+  if (hasUnprocessedSitemapSubmission(detail)) {
+    return 0;
+  }
+
+  return detail[key] ?? 0;
+}
+
+function hasUnprocessedSitemapSubmission(detail: SitemapDetail): boolean {
+  if (!detail.lastSubmitted) {
+    return false;
+  }
+
+  const submittedAt = Date.parse(detail.lastSubmitted);
+  const downloadedAt = detail.lastDownloaded
+    ? Date.parse(detail.lastDownloaded)
+    : Number.NEGATIVE_INFINITY;
+
+  if (Number.isNaN(submittedAt) || Number.isNaN(downloadedAt)) {
+    return false;
+  }
+
+  return submittedAt > downloadedAt;
 }
 
 function isXmlSitemapPath(path: string | null | undefined): boolean {
