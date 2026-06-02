@@ -845,3 +845,11 @@ sites:
     wpRestBase: https://travel.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539747744"
     gscSiteUrl: https://travel.sellerpit.kr/
+  - id: jasamall-sellerpit
+    name: jasamall.sellerpit.kr
+    enabled: true
+    platform: wordpress
+    url: https://jasamall.sellerpit.kr/
+    wpRestBase: https://jasamall.sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "539903323"
+    gscSiteUrl: https://jasamall.sellerpit.kr/
