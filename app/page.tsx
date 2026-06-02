@@ -436,6 +436,10 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
             <code>pnpm stats:update</code>
           </div>
           <div className="command-row">
+            <span>오래된 sitemap 재제출</span>
+            <code>pnpm sitemaps:refresh-stale</code>
+          </div>
+          <div className="command-row">
             <span>사이트 재등록</span>
             <code>pnpm setup:import-ga4-sites -- --account=236349432</code>
           </div>
