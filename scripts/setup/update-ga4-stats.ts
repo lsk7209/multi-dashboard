@@ -98,7 +98,7 @@ interface DateRange {
 }
 
 interface DateRangeSummary {
-  timezone: "UTC";
+  timezone: "Asia/Seoul";
   basis: "completed_days";
   last1Days: DateRange;
   last7Days: DateRange;
@@ -131,28 +131,47 @@ function metricValue(row: unknown, index: number): number {
   return Number(values[index]?.value ?? 0);
 }
 
-function dateDaysAgo(days: number): string {
-  const date = new Date();
+function seoulDateDaysAgo(days: number): string {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .formatToParts(now)
+    .reduce<Record<string, string>>((acc, part) => {
+      acc[part.type] = part.value;
+      return acc;
+    }, {});
+  const date = new Date(
+    Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), 12),
+  );
   date.setUTCDate(date.getUTCDate() - days);
-  return date.toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
 }
 
 function buildDateRange(days: number): DateRange {
   return {
-    startDate: dateDaysAgo(days),
-    endDate: dateDaysAgo(1),
+    startDate: seoulDateDaysAgo(days),
+    endDate: seoulDateDaysAgo(1),
   };
 }
 
 function buildDateRanges(): DateRangeSummary {
   return {
-    timezone: "UTC",
+    timezone: "Asia/Seoul",
     basis: "completed_days",
     last1Days: buildDateRange(DAY_RANGE),
     last7Days: buildDateRange(RANGE_DAYS),
     previous7Days: {
-      startDate: dateDaysAgo(14),
-      endDate: dateDaysAgo(8),
+      startDate: seoulDateDaysAgo(14),
+      endDate: seoulDateDaysAgo(8),
     },
     last30Days: buildDateRange(LONG_RANGE_DAYS),
   };
@@ -289,8 +308,8 @@ async function fetchGscMetrics(
   return fetchGscMetricsForRange(
     client,
     siteUrl,
-    dateDaysAgo(days),
-    dateDaysAgo(1),
+    seoulDateDaysAgo(days),
+    seoulDateDaysAgo(1),
   );
 }
 
@@ -301,8 +320,8 @@ async function fetchPreviousGscMetrics(
   return fetchGscMetricsForRange(
     client,
     siteUrl,
-    dateDaysAgo(14),
-    dateDaysAgo(8),
+    seoulDateDaysAgo(14),
+    seoulDateDaysAgo(8),
   );
 }
 

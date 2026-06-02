@@ -14,7 +14,9 @@ export const dynamic = "force-static";
 export default function DashboardPage() {
   const data = getDashboardData();
   const updatedAt = data.generatedAt
-    ? new Date(data.generatedAt).toLocaleString("ko-KR")
+    ? new Date(data.generatedAt).toLocaleString("ko-KR", {
+        timeZone: "Asia/Seoul",
+      })
     : "아직 수집 전";
   const tabs: DashboardTabItem[] = [
     {
@@ -109,7 +111,7 @@ function TodaySection({
         <StatusCard
           label="최종 갱신"
           value={formatShortDateTime(data.generatedAt)}
-          hint={`UTC 완료일 ${formatDateRange(data.dateRanges.last7Days)}`}
+          hint={`한국시간 완료일 ${formatDateRange(data.dateRanges.last7Days)}`}
         />
       </div>
       <div className="operation-grid" aria-label="운영 우선순위">
@@ -406,7 +408,7 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
         <div className="panel-heading">
           <div>
             <h2>데이터 기준</h2>
-            <p>모든 수치는 UTC 완료일 기준이며 오늘 데이터는 제외합니다.</p>
+            <p>모든 수치는 한국시간 완료일 기준이며 오늘 데이터는 제외합니다.</p>
           </div>
         </div>
         <div className="command-list">
@@ -429,7 +431,7 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
         <div className="panel-heading">
           <div>
             <h2>갱신 명령</h2>
-            <p>기준: UTC 완료일, 오늘 제외</p>
+            <p>기준: 한국시간 완료일, 오늘 제외</p>
           </div>
         </div>
         <div className="command-list">
@@ -557,6 +559,7 @@ function formatShortDateTime(value: string | null): string {
   }
 
   return new Date(value).toLocaleString("ko-KR", {
+    timeZone: "Asia/Seoul",
     month: "2-digit",
     day: "2-digit",
     hour: "2-digit",

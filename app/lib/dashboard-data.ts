@@ -111,7 +111,7 @@ export interface DateRange {
 }
 
 export interface DateRangeSummary {
-  timezone: "UTC";
+  timezone: "Asia/Seoul";
   basis: "completed_days";
   last1Days: DateRange;
   last7Days: DateRange;
@@ -981,9 +981,7 @@ function loadSparklines(siteIds: string[]): Map<string, number[]> {
   for (const siteId of siteIds) {
     const values: number[] = [];
     for (const daysAgo of days) {
-      const date = new Date();
-      date.setUTCDate(date.getUTCDate() - daysAgo);
-      const dateStr = date.toISOString().slice(0, 10);
+      const dateStr = seoulDateDaysAgo(daysAgo);
       const historyPath = `data/history/${dateStr}.json`;
       if (existsSync(historyPath)) {
         try {
@@ -1021,19 +1019,38 @@ function readStats(path: string): StatsSnapshot {
 
 function fallbackDateRanges(): DateRangeSummary {
   return {
-    timezone: "UTC",
+    timezone: "Asia/Seoul",
     basis: "completed_days",
-    last1Days: { startDate: dateDaysAgo(1), endDate: dateDaysAgo(1) },
-    last7Days: { startDate: dateDaysAgo(7), endDate: dateDaysAgo(1) },
-    previous7Days: { startDate: dateDaysAgo(14), endDate: dateDaysAgo(8) },
-    last30Days: { startDate: dateDaysAgo(30), endDate: dateDaysAgo(1) },
+    last1Days: { startDate: seoulDateDaysAgo(1), endDate: seoulDateDaysAgo(1) },
+    last7Days: { startDate: seoulDateDaysAgo(7), endDate: seoulDateDaysAgo(1) },
+    previous7Days: { startDate: seoulDateDaysAgo(14), endDate: seoulDateDaysAgo(8) },
+    last30Days: { startDate: seoulDateDaysAgo(30), endDate: seoulDateDaysAgo(1) },
   };
 }
 
-function dateDaysAgo(days: number): string {
-  const date = new Date();
+function seoulDateDaysAgo(days: number): string {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .formatToParts(now)
+    .reduce<Record<string, string>>((acc, part) => {
+      acc[part.type] = part.value;
+      return acc;
+    }, {});
+  const date = new Date(
+    Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), 12),
+  );
   date.setUTCDate(date.getUTCDate() - days);
-  return date.toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
 }
 
 function emptySiteStat(site: Site): SiteStat {
