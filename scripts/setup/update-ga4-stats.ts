@@ -43,6 +43,17 @@ interface SitemapSummary {
   sitemapWarnings?: number;
   sitemapErrors?: number;
   sitemapIsPending?: boolean;
+  sitemapCount?: number;
+  sitemapDetails?: SitemapDetail[];
+}
+
+interface SitemapDetail {
+  path: string;
+  lastDownloaded?: string;
+  lastSubmitted?: string;
+  warnings?: number;
+  errors?: number;
+  isPending?: boolean;
 }
 
 interface SiteStat {
@@ -72,6 +83,8 @@ interface SiteStat {
   sitemapWarnings?: number;
   sitemapErrors?: number;
   sitemapIsPending?: boolean;
+  sitemapCount?: number;
+  sitemapDetails?: SitemapDetail[];
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
@@ -358,9 +371,20 @@ async function fetchGscMetricsForRange(
 async function fetchSitemapSummary(
   client: ReturnType<typeof google.searchconsole>,
   siteUrl: string,
+  sitemapUrls?: string[],
 ): Promise<SitemapSummary> {
   const response = await client.sitemaps.list({ siteUrl });
   const sitemaps = response.data.sitemap ?? [];
+  const configuredUrls = sitemapUrls?.filter(Boolean) ?? [];
+
+  if (configuredUrls.length > 0) {
+    const details = configuredUrls.map((path) => {
+      const selected = sitemaps.find((sitemap) => sitemap.path === path);
+      return toSitemapDetail(selected, path);
+    });
+    return summarizeSitemapDetails(details);
+  }
+
   const datedSitemaps = sitemaps
     .filter((sitemap) => sitemap.lastDownloaded || sitemap.lastSubmitted)
     .sort(
@@ -376,28 +400,69 @@ async function fetchSitemapSummary(
     return {};
   }
 
-  const summary: SitemapSummary = {};
-  const warnings = toOptionalNumber(selected.warnings);
-  const errors = toOptionalNumber(selected.errors);
+  return summarizeSitemapDetails([toSitemapDetail(selected)]);
+}
 
-  if (selected.lastDownloaded) {
-    summary.sitemapLastDownloadedAt = selected.lastDownloaded;
+function toSitemapDetail(
+  sitemap: { path?: string | null; lastDownloaded?: string | null; lastSubmitted?: string | null; warnings?: string | number | null; errors?: string | number | null; isPending?: boolean | null } | undefined,
+  fallbackPath?: string,
+): SitemapDetail {
+  const detail: SitemapDetail = {
+    path: sitemap?.path ?? fallbackPath ?? "",
+  };
+  if (sitemap?.lastDownloaded) {
+    detail.lastDownloaded = sitemap.lastDownloaded;
   }
-  if (selected.lastSubmitted) {
-    summary.sitemapLastSubmittedAt = selected.lastSubmitted;
+  if (sitemap?.lastSubmitted) {
+    detail.lastSubmitted = sitemap.lastSubmitted;
   }
-  if (selected.path) {
-    summary.sitemapPath = selected.path;
-  }
+  const warnings = toOptionalNumber(sitemap?.warnings);
   if (warnings !== undefined) {
-    summary.sitemapWarnings = warnings;
+    detail.warnings = warnings;
   }
+  const errors = toOptionalNumber(sitemap?.errors);
   if (errors !== undefined) {
-    summary.sitemapErrors = errors;
+    detail.errors = errors;
   }
-  if (selected.isPending !== undefined) {
-    summary.sitemapIsPending = Boolean(selected.isPending);
+  if (sitemap?.isPending !== undefined && sitemap.isPending !== null) {
+    detail.isPending = Boolean(sitemap.isPending);
   }
+  return detail;
+}
+
+function summarizeSitemapDetails(details: SitemapDetail[]): SitemapSummary {
+  const summary: SitemapSummary = {
+    sitemapCount: details.length,
+    sitemapDetails: details,
+  };
+  const downloaded = details
+    .map((detail) => detail.lastDownloaded)
+    .filter((value): value is string => Boolean(value))
+    .sort((a, b) => Date.parse(a) - Date.parse(b));
+  const submitted = details
+    .map((detail) => detail.lastSubmitted)
+    .filter((value): value is string => Boolean(value))
+    .sort((a, b) => Date.parse(b) - Date.parse(a));
+
+  if (downloaded[0]) {
+    summary.sitemapLastDownloadedAt = downloaded[0];
+  }
+  if (submitted[0]) {
+    summary.sitemapLastSubmittedAt = submitted[0];
+  }
+  if (details[0]?.path) {
+    summary.sitemapPath =
+      details.length === 1 ? details[0].path : `${details.length} sitemaps`;
+  }
+  summary.sitemapWarnings = details.reduce(
+    (sum, detail) => sum + (detail.warnings ?? 0),
+    0,
+  );
+  summary.sitemapErrors = details.reduce(
+    (sum, detail) => sum + (detail.errors ?? 0),
+    0,
+  );
+  summary.sitemapIsPending = details.some((detail) => detail.isPending);
 
   return summary;
 }
@@ -536,7 +601,11 @@ async function fetchSiteStat(
   }
 
   try {
-    sitemapSummary = await fetchSitemapSummary(gscClient, gscSiteUrl);
+    sitemapSummary = await fetchSitemapSummary(
+      gscClient,
+      gscSiteUrl,
+      site.sitemapUrls,
+    );
   } catch (searchError) {
     sitemapError = getErrorMessage(searchError);
   }

@@ -18,6 +18,16 @@ interface SiteStat {
   sitemapPath?: string;
   sitemapWarnings?: number;
   sitemapErrors?: number;
+  sitemapDetails?: SitemapDetail[];
+}
+
+interface SitemapDetail {
+  path: string;
+  lastDownloaded?: string;
+  lastSubmitted?: string;
+  warnings?: number;
+  errors?: number;
+  isPending?: boolean;
 }
 
 interface StatsSnapshot {
@@ -112,34 +122,74 @@ function dedupeTargets(targets: Target[]): Target[] {
 function selectTargets(snapshot: StatsSnapshot, args: Args): Target[] {
   const now = snapshot.generatedAt ? new Date(snapshot.generatedAt) : new Date();
   const targets = snapshot.stats.flatMap<Target>((stat) => {
-    const feedpath = stat.sitemapPath;
     const siteUrl = stat.gscSiteUrl ?? stat.url;
-    if (!feedpath || !siteUrl) {
+    const sitemapDetails =
+      stat.sitemapDetails && stat.sitemapDetails.length > 0
+        ? stat.sitemapDetails
+        : stat.sitemapPath
+          ? [
+              {
+                path: stat.sitemapPath,
+                lastDownloaded: stat.sitemapLastDownloadedAt,
+                lastSubmitted: stat.sitemapLastSubmittedAt,
+                warnings: stat.sitemapWarnings,
+                errors: stat.sitemapErrors,
+              },
+            ]
+          : [];
+    if (!siteUrl || sitemapDetails.length === 0) {
       return [];
     }
 
-    const basisDate =
-      args.basis === "submitted"
-        ? stat.sitemapLastSubmittedAt
-        : stat.sitemapLastDownloadedAt;
-    const ageDays = getCollectionAgeDays(basisDate, now);
-    const hasIssue = (stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0;
-    const selected =
-      args.all ||
-      ageDays >= args.minAgeDays ||
-      (args.includeIssues && hasIssue);
+    return sitemapDetails.flatMap<Target>((detail) => {
+      if (!detail.path || !detail.path.startsWith("http")) {
+        return [];
+      }
 
-    return selected
-      ? [
-          {
-            stat,
-            siteUrl,
-            feedpath,
-            ageDays,
-            reason: makeReason(stat, ageDays, args.basis),
-          },
-        ]
-      : [];
+      const basisDate =
+        args.basis === "submitted"
+          ? detail.lastSubmitted
+          : detail.lastDownloaded;
+      const ageDays = getCollectionAgeDays(basisDate, now);
+      const detailStat: SiteStat = {
+        id: stat.id,
+        name: stat.name,
+        url: stat.url,
+        sitemapPath: detail.path,
+      };
+      if (stat.gscSiteUrl) {
+        detailStat.gscSiteUrl = stat.gscSiteUrl;
+      }
+      if (detail.lastDownloaded) {
+        detailStat.sitemapLastDownloadedAt = detail.lastDownloaded;
+      }
+      if (detail.lastSubmitted) {
+        detailStat.sitemapLastSubmittedAt = detail.lastSubmitted;
+      }
+      if (detail.warnings !== undefined) {
+        detailStat.sitemapWarnings = detail.warnings;
+      }
+      if (detail.errors !== undefined) {
+        detailStat.sitemapErrors = detail.errors;
+      }
+      const hasIssue = (detail.errors ?? 0) > 0 || (detail.warnings ?? 0) > 0;
+      const selected =
+        args.all ||
+        ageDays >= args.minAgeDays ||
+        (args.includeIssues && hasIssue);
+
+      return selected
+        ? [
+            {
+              stat,
+              siteUrl,
+              feedpath: detail.path,
+              ageDays,
+              reason: makeReason(detailStat, ageDays, args.basis),
+            },
+          ]
+        : [];
+    });
   });
 
   return dedupeTargets(targets).slice(0, args.limit);

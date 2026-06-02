@@ -12,6 +12,7 @@ const siteSchema = z.object({
   wpRestBase: z.string().url().optional(),
   ga4PropertyId: z.string().min(1).optional(),
   gscSiteUrl: z.string().min(1).optional(),
+  sitemapUrls: z.array(z.string().url()).optional(),
 });
 
 const sitesFileSchema = z.object({

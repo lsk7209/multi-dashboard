@@ -10,6 +10,7 @@ export interface Site {
   wpRestBase?: string;
   ga4PropertyId?: string;
   gscSiteUrl?: string;
+  sitemapUrls?: string[];
 }
 
 interface SitesFile {
@@ -28,6 +29,15 @@ export interface GscMetricSet {
   impressions: number;
   ctr: number;
   position: number;
+}
+
+export interface SitemapDetail {
+  path: string;
+  lastDownloaded?: string;
+  lastSubmitted?: string;
+  warnings?: number;
+  errors?: number;
+  isPending?: boolean;
 }
 
 export type CollectionStatus =
@@ -88,6 +98,8 @@ export interface SiteStat {
   sitemapWarnings?: number;
   sitemapErrors?: number;
   sitemapIsPending?: boolean;
+  sitemapCount?: number;
+  sitemapDetails?: SitemapDetail[];
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;

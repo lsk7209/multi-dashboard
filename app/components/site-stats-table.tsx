@@ -752,7 +752,25 @@ function formatSitemapCollectionTitle(stat: EnrichedSiteStat): string {
 
   const downloadedAt = stat.sitemapLastDownloadedAt;
   const submittedAt = stat.sitemapLastSubmittedAt;
+  const sitemapDetailLines =
+    stat.sitemapDetails?.map((detail) => {
+      const status = [
+        detail.isPending ? "pending" : "",
+        detail.errors !== undefined ? `errors=${detail.errors}` : "",
+        detail.warnings !== undefined ? `warnings=${detail.warnings}` : "",
+        detail.lastDownloaded
+          ? `downloaded=${formatDateTime(detail.lastDownloaded)}`
+          : "",
+        detail.lastSubmitted
+          ? `submitted=${formatDateTime(detail.lastSubmitted)}`
+          : "",
+      ].filter(Boolean);
+
+      return `${detail.path}${status.length > 0 ? ` (${status.join(", ")})` : ""}`;
+    }) ?? [];
   const lines = [
+    stat.sitemapCount ? `sitemap count: ${stat.sitemapCount}` : "",
+    ...sitemapDetailLines,
     downloadedAt
       ? `GSC 사이트맵 마지막 수집: ${formatDateTime(downloadedAt)}`
       : "GSC 사이트맵 마지막 수집 기록 없음",
