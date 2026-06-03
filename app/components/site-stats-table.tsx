@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import type {
   DashboardSegment,
   EnrichedSiteStat,
+  CollectionSourceKey,
+  CollectionSourceState,
   OperationalStatus,
   SegmentKey,
 } from "../lib/dashboard-data.js";
@@ -15,6 +17,9 @@ type MonetizationFilter =
   | "adsense_missing"
   | "ads_txt_missing"
   | "monetization_issue";
+type CollectionFilter =
+  | "all"
+  | `${CollectionSourceKey}:${Exclude<CollectionSourceState, "ok">}`;
 type SortKey =
   | "site"
   | "priority"
@@ -74,6 +79,30 @@ const monetizationLabels: Record<MonetizationFilter, string> = {
   monetization_issue: "수익화 이슈",
 };
 
+const collectionFilterLabels: Record<CollectionFilter, string> = {
+  all: "전체",
+  "ga4:stale": "GA4 지연",
+  "ga4:error": "GA4 오류",
+  "ga4:missing": "GA4 누락",
+  "ga4:processing": "GA4 처리중",
+  "gsc:stale": "GSC 지연",
+  "gsc:error": "GSC 오류",
+  "gsc:missing": "GSC 누락",
+  "gsc:processing": "GSC 처리중",
+  "sitemap:stale": "사이트맵 지연",
+  "sitemap:error": "사이트맵 오류",
+  "sitemap:missing": "사이트맵 누락",
+  "sitemap:processing": "사이트맵 처리중",
+  "adsense:stale": "AdSense 지연",
+  "adsense:error": "AdSense 오류",
+  "adsense:missing": "AdSense 누락",
+  "adsense:processing": "AdSense 처리중",
+  "adsTxt:stale": "ads.txt 지연",
+  "adsTxt:error": "ads.txt 오류",
+  "adsTxt:missing": "ads.txt 누락",
+  "adsTxt:processing": "ads.txt 처리중",
+};
+
 const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "site", label: "사이트" },
   { key: "health", label: "점수" },
@@ -106,6 +135,8 @@ export function SiteStatsTable({
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
   const [monetizationFilter, setMonetizationFilter] =
     useState<MonetizationFilter>("all");
+  const [collectionFilter, setCollectionFilter] =
+    useState<CollectionFilter>("all");
   const [sortKey, setSortKey] = useState<SortKey>("priority");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [segmentKey, setSegmentKey] = useState<SegmentKey | "all">("all");
@@ -123,8 +154,10 @@ export function SiteStatsTable({
       .filter((stat) => matchesQuery(stat, normalizedQuery))
       .filter((stat) => matchesStatus(stat, statusFilter))
       .filter((stat) => matchesMonetization(stat, monetizationFilter))
+      .filter((stat) => matchesCollection(stat, collectionFilter))
       .sort((a, b) => compareStats(a, b, sortKey, sortDirection));
   }, [
+    collectionFilter,
     monetizationFilter,
     query,
     segmentKey,
@@ -195,6 +228,21 @@ export function SiteStatsTable({
             }
           >
             {Object.entries(monetizationLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>수집 상태</span>
+          <select
+            value={collectionFilter}
+            onChange={(event) =>
+              setCollectionFilter(event.target.value as CollectionFilter)
+            }
+          >
+            {Object.entries(collectionFilterLabels).map(([value, label]) => (
               <option key={value} value={value}>
                 {label}
               </option>
@@ -625,6 +673,23 @@ function matchesMonetization(
     stat.adsTxtStatus === "missing_config" ||
     stat.adsenseStatus === "api_error" ||
     stat.adsTxtStatus === "api_error"
+  );
+}
+
+function matchesCollection(
+  stat: EnrichedSiteStat,
+  collectionFilter: CollectionFilter,
+): boolean {
+  if (collectionFilter === "all") {
+    return true;
+  }
+
+  const [key, state] = collectionFilter.split(":") as [
+    CollectionSourceKey,
+    CollectionSourceState,
+  ];
+  return stat.collectionSources.some(
+    (source) => source.key === key && source.state === state,
   );
 }
 
