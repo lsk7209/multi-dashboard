@@ -882,11 +882,35 @@ code {
   gap: 4px;
   border-radius: 999px;
   padding: 2px 7px;
-  color: #075985;
-  background: #e0f2fe;
   font-size: 11px;
   font-weight: 700;
   line-height: 1.35;
+}
+
+.keyword-general,
+.keyword-google {
+  color: #374151;
+  background: #f3f4f6;
+}
+
+.keyword-naver {
+  color: #047857;
+  background: #d1fae5;
+}
+
+.keyword-daum {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.keyword-youtube {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.keyword-ai {
+  color: #6d28d9;
+  background: #ede9fe;
 }
 
 .keyword-chip span {
@@ -897,8 +921,9 @@ code {
 }
 
 .keyword-chip small {
-  color: #0369a1;
+  color: currentColor;
   font-size: 10px;
+  opacity: 0.78;
 }
 
 .keyword-empty {

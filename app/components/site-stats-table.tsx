@@ -451,13 +451,47 @@ function TopQueriesCell({ stat }: { stat: EnrichedSiteStat }) {
   return (
     <div className="keyword-list" title={formatTopQueriesTitle(stat)}>
       {queries.slice(0, 3).map((query) => (
-        <span className="keyword-chip" key={query.query}>
+        <span
+          className={`keyword-chip ${getKeywordPlatformClass(query.query)}`}
+          key={query.query}
+        >
           <span>{query.query}</span>
           <small>{formatNumber(query.impressions)}</small>
         </span>
       ))}
     </div>
   );
+}
+
+function getKeywordPlatformClass(query: string): string {
+  const normalized = query.toLowerCase();
+  if (normalized.includes("네이버") || normalized.includes("naver")) {
+    return "keyword-naver";
+  }
+  if (
+    normalized.includes("다음") ||
+    normalized.includes("daum") ||
+    normalized.includes("카카오") ||
+    normalized.includes("kakao")
+  ) {
+    return "keyword-daum";
+  }
+  if (normalized.includes("구글") || normalized.includes("google")) {
+    return "keyword-google";
+  }
+  if (normalized.includes("유튜브") || normalized.includes("youtube")) {
+    return "keyword-youtube";
+  }
+  if (
+    normalized.includes("chatgpt") ||
+    normalized.includes("챗gpt") ||
+    normalized.includes("openai") ||
+    normalized.includes("claude") ||
+    normalized.includes("gemini")
+  ) {
+    return "keyword-ai";
+  }
+  return "keyword-general";
 }
 
 function matchesQuery(
