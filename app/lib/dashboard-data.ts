@@ -31,6 +31,10 @@ export interface GscMetricSet {
   position: number;
 }
 
+export interface GscQueryMetric extends GscMetricSet {
+  query: string;
+}
+
 export interface SitemapDetail {
   path: string;
   lastDownloaded?: string;
@@ -92,6 +96,7 @@ export interface SiteStat {
   gscPrevious7Days?: GscMetricSet;
   gscLast28Days?: GscMetricSet;
   gscLast30Days?: GscMetricSet;
+  gscTopQueries?: GscQueryMetric[];
   ga4Status?: CollectionStatus;
   gscStatus?: CollectionStatus;
   adsenseStatus?: CollectionStatus;

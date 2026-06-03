@@ -25,6 +25,7 @@ type SortKey =
   | "change"
   | "gscClicks"
   | "gscImpressions"
+  | "topQueries"
   | "ctr"
   | "adsense"
   | "adsTxt"
@@ -46,6 +47,7 @@ const sortLabels: Record<SortKey, string> = {
   change: "증감률",
   gscClicks: "GSC 클릭",
   gscImpressions: "GSC 노출",
+  topQueries: "대표 키워드",
   ctr: "CTR",
   adsense: "AdSense",
   adsTxt: "ads.txt",
@@ -81,6 +83,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "change", label: "증감" },
   { key: "gscClicks", label: "GSC 클릭" },
   { key: "gscImpressions", label: "GSC 노출" },
+  { key: "topQueries", label: "키워드" },
   { key: "ctr", label: "CTR" },
   { key: "adsense", label: "AdSense" },
   { key: "adsTxt", label: "ads.txt" },
@@ -252,7 +255,7 @@ export function SiteStatsTable({
           <tbody>
             {visibleStats.length === 0 ? (
               <tr>
-                <td className="table-empty" colSpan={16}>
+                <td className="table-empty" colSpan={17}>
                   조건에 맞는 사이트가 없습니다.
                 </td>
               </tr>
@@ -374,6 +377,9 @@ function StatsRow({
       <td>{formatChange(stat.trend.activeUsersChange)}</td>
       <td>{formatNumber(stat.gscLast7Days?.clicks ?? 0)}</td>
       <td>{formatNumber(stat.gscLast7Days?.impressions ?? 0)}</td>
+      <td>
+        <TopQueriesCell stat={stat} />
+      </td>
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
       <td>
         <span
@@ -436,6 +442,24 @@ function SitemapCollectionCell({ stat }: { stat: EnrichedSiteStat }) {
   );
 }
 
+function TopQueriesCell({ stat }: { stat: EnrichedSiteStat }) {
+  const queries = stat.gscTopQueries ?? [];
+  if (queries.length === 0) {
+    return <span className="keyword-empty">-</span>;
+  }
+
+  return (
+    <div className="keyword-list" title={formatTopQueriesTitle(stat)}>
+      {queries.slice(0, 3).map((query) => (
+        <span className="keyword-chip" key={query.query}>
+          <span>{query.query}</span>
+          <small>{formatNumber(query.impressions)}</small>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function matchesQuery(
   stat: EnrichedSiteStat,
   normalizedQuery: string,
@@ -444,7 +468,11 @@ function matchesQuery(
     return true;
   }
 
-  return `${stat.name} ${stat.url}`.toLowerCase().includes(normalizedQuery);
+  return `${stat.name} ${stat.url} ${(stat.gscTopQueries ?? [])
+    .map((query) => query.query)
+    .join(" ")}`
+    .toLowerCase()
+    .includes(normalizedQuery);
 }
 
 function matchesStatus(
@@ -534,6 +562,9 @@ function getSortValue(
   }
   if (sortKey === "gscImpressions") {
     return stat.gscLast7Days?.impressions ?? 0;
+  }
+  if (sortKey === "topQueries") {
+    return stat.gscTopQueries?.[0]?.impressions ?? 0;
   }
   if (sortKey === "ctr") {
     return stat.gscLast7Days?.ctr ?? 0;
@@ -687,6 +718,24 @@ function formatDuplicateTitle(stat: EnrichedSiteStat): string {
     "같은 호스트의 다른 GA4 속성은 대표 항목에서 숨겼습니다.",
     ...details,
   ].join("\n");
+}
+
+function formatTopQueriesTitle(stat: EnrichedSiteStat): string {
+  const queries = stat.gscTopQueries ?? [];
+  if (queries.length === 0) {
+    return "대표 검색 키워드 없음";
+  }
+
+  return queries
+    .map(
+      (query) =>
+        `${query.query}: 노출 ${formatNumber(query.impressions)}, 클릭 ${formatNumber(
+          query.clicks,
+        )}, CTR ${formatPercent(query.ctr)}, 평균순위 ${formatPosition(
+          query.position,
+        )}`,
+    )
+    .join("\n");
 }
 
 function formatNumber(value: number): string {

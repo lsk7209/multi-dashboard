@@ -17,6 +17,8 @@ const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
 const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
+const TOP_QUERY_LIMIT = 3;
+const TOP_QUERY_MIN_IMPRESSIONS = 10;
 const DEFAULT_CONTENT_FIELDS = {
   scheduled: ["scheduledAt", "scheduled_at", "publishAt", "publish_at"],
   published: ["publishedAt", "published_at", "date", "datePublished"],
@@ -44,6 +46,10 @@ interface GscMetricSet {
   impressions: number;
   ctr: number;
   position: number;
+}
+
+interface GscQueryMetric extends GscMetricSet {
+  query: string;
 }
 
 interface SitemapSummary {
@@ -79,6 +85,7 @@ interface SiteStat {
   gscLast7Days: GscMetricSet;
   gscPrevious7Days: GscMetricSet;
   gscLast30Days: GscMetricSet;
+  gscTopQueries?: GscQueryMetric[];
   ga4Status: CollectionStatus;
   gscStatus: CollectionStatus;
   adsenseStatus?: CollectionStatus;
@@ -377,6 +384,42 @@ async function fetchGscMetricsForRange(
     ctr: row.ctr ?? 0,
     position: row.position ?? 0,
   };
+}
+
+async function fetchGscTopQueries(
+  client: ReturnType<typeof google.searchconsole>,
+  siteUrl: string,
+  days: number,
+): Promise<GscQueryMetric[]> {
+  const response = await client.searchanalytics.query({
+    siteUrl,
+    requestBody: {
+      startDate: seoulDateDaysAgo(days),
+      endDate: seoulDateDaysAgo(1),
+      dimensions: ["query"],
+      rowLimit: 25,
+    },
+  });
+
+  return (response.data.rows ?? [])
+    .map((row) => ({
+      query: String(row.keys?.[0] ?? "").trim(),
+      clicks: row.clicks ?? 0,
+      impressions: row.impressions ?? 0,
+      ctr: row.ctr ?? 0,
+      position: row.position ?? 0,
+    }))
+    .filter(
+      (row) =>
+        row.query.length > 0 && row.impressions >= TOP_QUERY_MIN_IMPRESSIONS,
+    )
+    .sort(
+      (a, b) =>
+        b.clicks - a.clicks ||
+        b.impressions - a.impressions ||
+        a.position - b.position,
+    )
+    .slice(0, TOP_QUERY_LIMIT);
 }
 
 async function fetchSitemapSummary(
@@ -864,6 +907,7 @@ async function fetchSiteStat(
   let gscLast7Days = emptyGscMetrics();
   let gscPrevious7Days = emptyGscMetrics();
   let gscLast30Days = emptyGscMetrics();
+  let gscTopQueries: GscQueryMetric[] = [];
   let sitemapSummary: SitemapSummary = {};
   let error: string | undefined;
   let gscError: string | undefined;
@@ -890,10 +934,12 @@ async function fetchSiteStat(
   const gscSiteUrl = site.gscSiteUrl ?? site.url;
 
   try {
-    [gscLast7Days, gscPrevious7Days, gscLast30Days] = await Promise.all([
+    [gscLast7Days, gscPrevious7Days, gscLast30Days, gscTopQueries] =
+      await Promise.all([
       fetchGscMetrics(gscClient, gscSiteUrl, RANGE_DAYS),
       fetchPreviousGscMetrics(gscClient, gscSiteUrl),
       fetchGscMetrics(gscClient, gscSiteUrl, LONG_RANGE_DAYS),
+      fetchGscTopQueries(gscClient, gscSiteUrl, RANGE_DAYS),
     ]);
   } catch (searchError) {
     gscError = getErrorMessage(searchError);
@@ -934,6 +980,7 @@ async function fetchSiteStat(
     gscLast7Days,
     gscPrevious7Days,
     gscLast30Days,
+    gscTopQueries,
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
     adsenseStatus: monetizationStatusFromError(adsenseError),
