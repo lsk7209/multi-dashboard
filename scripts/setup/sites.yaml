@@ -881,3 +881,19 @@ sites:
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/jasamall.sellerpit.kr
+  - id: sorimate
+    name: sorimate.com
+    enabled: true
+    platform: wordpress
+    url: https://sorimate.com/
+    wpRestBase: https://sorimate.com/wp-json/wp/v2
+    ga4PropertyId: "540102091"
+    gscSiteUrl: https://sorimate.com/
+  - id: campgogo
+    name: https://campgogo.kr
+    enabled: true
+    platform: wordpress
+    url: https://campgogo.kr/
+    wpRestBase: https://campgogo.kr/wp-json/wp/v2
+    ga4PropertyId: "540129650"
+    gscSiteUrl: https://campgogo.kr/
