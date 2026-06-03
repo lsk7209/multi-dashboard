@@ -430,7 +430,7 @@ function StatsRow({
       <td>
         <span
           className={getBadgeClass(stat.operationalStatus)}
-          title={stat.statusReason}
+          title={formatOperationalStatusTitle(stat)}
         >
           {stat.statusLabel}
         </span>
@@ -735,6 +735,24 @@ function getBadgeClass(status: EnrichedSiteStat["operationalStatus"]): string {
   }
 
   return "badge";
+}
+
+function formatOperationalStatusTitle(stat: EnrichedSiteStat): string {
+  const sourceLines = stat.collectionSources.map(
+    (source) =>
+      `${source.label}: ${getCollectionSourceStateLabel(source.state)} - ${source.reason}`,
+  );
+  return [stat.statusReason, ...sourceLines].join("\n");
+}
+
+function getCollectionSourceStateLabel(
+  state: EnrichedSiteStat["collectionSources"][number]["state"],
+): string {
+  if (state === "ok") return "정상";
+  if (state === "stale") return "지연";
+  if (state === "error") return "오류";
+  if (state === "missing") return "누락";
+  return "처리중";
 }
 
 function getAdsenseStatusLabel(

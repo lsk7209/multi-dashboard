@@ -112,6 +112,7 @@ function TodaySection({
       </div>
       <div className="operation-grid" aria-label="운영 우선순위">
         <ActionQueue actions={data.actions} />
+        <CollectionReliabilityPanel summaries={data.collectionSummary} />
         <HealthPanel data={data.healthSummary} />
       </div>
       <div className="issue-layout today-issue-layout" aria-label="오늘 문제 목록">
@@ -188,6 +189,45 @@ function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
           ))}
         </div>
       )}
+    </article>
+  );
+}
+
+function CollectionReliabilityPanel({
+  summaries,
+}: {
+  summaries: ReturnType<typeof getDashboardData>["collectionSummary"];
+}) {
+  return (
+    <article className="panel collection-reliability-panel">
+      <div className="panel-heading">
+        <div>
+          <h2>수집 신뢰도</h2>
+          <p>소스별 정상, 지연, 오류, 누락, 처리중 상태입니다.</p>
+        </div>
+      </div>
+      <div className="collection-source-list">
+        {summaries.map((summary) => (
+          <div className="collection-source-row" key={summary.key}>
+            <strong>{summary.label}</strong>
+            <div>
+              <span className="source-ok">정상 {formatNumber(summary.ok)}</span>
+              <span className="source-stale">
+                지연 {formatNumber(summary.stale)}
+              </span>
+              <span className="source-error">
+                오류 {formatNumber(summary.error)}
+              </span>
+              <span className="source-missing">
+                누락 {formatNumber(summary.missing)}
+              </span>
+              <span className="source-processing">
+                처리중 {formatNumber(summary.processing)}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </article>
   );
 }

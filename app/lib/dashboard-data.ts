@@ -83,6 +83,18 @@ export type ActionKind =
   | "ranking"
   | "data";
 export type SegmentKey = "growth" | "decline" | "seo" | "gsc" | "sitemap";
+export type CollectionSourceKey =
+  | "ga4"
+  | "gsc"
+  | "sitemap"
+  | "adsense"
+  | "adsTxt";
+export type CollectionSourceState =
+  | "ok"
+  | "stale"
+  | "error"
+  | "missing"
+  | "processing";
 
 const SITEMAP_COLLECTION_LAG_DAYS = 5;
 const CTR_OPPORTUNITY_MIN_IMPRESSIONS = 20;
@@ -227,6 +239,7 @@ export interface EnrichedSiteStat extends Omit<
   isStale: boolean;
   health: SiteHealthScore;
   seoOpportunityScore?: number;
+  collectionSources: CollectionSourceStatus[];
   sparkline: number[];
   duplicateCount?: number;
   duplicateStats?: DuplicateSiteSummary[];
@@ -263,6 +276,25 @@ export interface HealthSummary {
   criticalCount: number;
 }
 
+export interface CollectionSourceStatus {
+  key: CollectionSourceKey;
+  label: string;
+  state: CollectionSourceState;
+  reason: string;
+  checkedAt?: string;
+}
+
+export interface CollectionSourceSummary {
+  key: CollectionSourceKey;
+  label: string;
+  ok: number;
+  stale: number;
+  error: number;
+  missing: number;
+  processing: number;
+  total: number;
+}
+
 export interface DashboardData {
   generatedAt: string | null;
   dateRanges: DateRangeSummary;
@@ -276,6 +308,7 @@ export interface DashboardData {
   actions: DashboardActionItem[];
   segments: DashboardSegment[];
   healthSummary: HealthSummary;
+  collectionSummary: CollectionSourceSummary[];
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
   trafficDropStats: EnrichedSiteStat[];
@@ -328,6 +361,7 @@ export function getDashboardData(): DashboardData {
   const displayStats = dedupeResult.stats;
   const insights = buildInsights(displayStats);
   const actions = buildActionItems(displayStats).slice(0, 12);
+  const collectionSummary = buildCollectionSummary(displayStats);
   const totalLast1Days = sumMetrics(displayStats.map((stat) => stat.last1Days));
   const totalLast7Days = sumMetrics(displayStats.map((stat) => stat.last7Days));
   const totalPrevious7Days = sumMetrics(
@@ -374,6 +408,7 @@ export function getDashboardData(): DashboardData {
     actions,
     segments: buildSegments(displayStats),
     healthSummary: buildHealthSummary(displayStats),
+    collectionSummary,
     gscIssueStats: displayStats.filter((stat) => Boolean(stat.gscError)),
     dailyIssueStats: displayStats
       .filter((stat) => stat.operationalStatus !== "normal")
@@ -554,6 +589,11 @@ function enrichSiteStat(
     ga4Status,
     gscStatus,
   });
+  const collectionSources = getCollectionSources({
+    ...stat,
+    ga4Status,
+    gscStatus,
+  });
   const isStale = operationalStatus === "stale";
   const trend = {
     activeUsersChange: changeRate(
@@ -592,6 +632,7 @@ function enrichSiteStat(
     trend,
     health: getHealthScore(normalizedStat, operationalStatus),
     seoOpportunityScore: getSeoOpportunityScore(normalizedStat),
+    collectionSources,
     sparkline,
   };
 
@@ -984,6 +1025,205 @@ function getSitemapCollectionReason(stat: SiteStat): string {
   }
 
   return parts.join(" ");
+}
+
+function buildCollectionSummary(
+  stats: EnrichedSiteStat[],
+): CollectionSourceSummary[] {
+  const summaries = COLLECTION_SOURCE_DEFINITIONS.map((source) => ({
+    key: source.key,
+    label: source.label,
+    ok: 0,
+    stale: 0,
+    error: 0,
+    missing: 0,
+    processing: 0,
+    total: stats.length,
+  }));
+  const byKey = new Map(summaries.map((summary) => [summary.key, summary]));
+
+  for (const stat of stats) {
+    for (const source of stat.collectionSources) {
+      const summary = byKey.get(source.key);
+      if (summary) {
+        summary[source.state] += 1;
+      }
+    }
+  }
+
+  return summaries.sort(
+    (a, b) =>
+      getCollectionIssueCount(b) - getCollectionIssueCount(a) ||
+      a.label.localeCompare(b.label, "ko-KR"),
+  );
+}
+
+const COLLECTION_SOURCE_DEFINITIONS: Array<{
+  key: CollectionSourceKey;
+  label: string;
+}> = [
+  { key: "ga4", label: "GA4" },
+  { key: "gsc", label: "GSC" },
+  { key: "sitemap", label: "GSC sitemap" },
+  { key: "adsense", label: "AdSense" },
+  { key: "adsTxt", label: "ads.txt" },
+];
+
+function getCollectionIssueCount(summary: CollectionSourceSummary): number {
+  return (
+    summary.stale + summary.error + summary.missing + summary.processing
+  );
+}
+
+function getCollectionSources(stat: SiteStat): CollectionSourceStatus[] {
+  return [
+    getApiCollectionSource(
+      "ga4",
+      "GA4",
+      stat.ga4Status,
+      stat.ga4LastSuccessfulFetchAt,
+      stat.error,
+    ),
+    getApiCollectionSource(
+      "gsc",
+      "GSC",
+      stat.gscStatus,
+      stat.gscLastSuccessfulFetchAt,
+      stat.gscError,
+    ),
+    getSitemapCollectionSource(stat),
+    getApiCollectionSource(
+      "adsense",
+      "AdSense",
+      stat.adsenseStatus,
+      stat.adsenseLastSuccessfulFetchAt,
+      stat.adsenseError,
+    ),
+    getApiCollectionSource(
+      "adsTxt",
+      "ads.txt",
+      stat.adsTxtStatus,
+      stat.adsTxtLastSuccessfulFetchAt,
+      stat.adsTxtError,
+    ),
+  ];
+}
+
+function getApiCollectionSource(
+  key: CollectionSourceKey,
+  label: string,
+  status: CollectionStatus | undefined,
+  checkedAt: string | undefined,
+  error: string | undefined,
+): CollectionSourceStatus {
+  if (!status || status === "missing_config") {
+    return {
+      key,
+      label,
+      state: "missing",
+      reason: `${label} 설정 또는 탐지 결과가 없습니다.`,
+      ...(checkedAt ? { checkedAt } : {}),
+    };
+  }
+
+  if (status === "auth_error" || status === "api_error") {
+    return {
+      key,
+      label,
+      state: "error",
+      reason: error || `${label} 수집 또는 상태 확인에 실패했습니다.`,
+      ...(checkedAt ? { checkedAt } : {}),
+    };
+  }
+
+  if (!checkedAt || isOlderThanHours(checkedAt, 48)) {
+    return {
+      key,
+      label,
+      state: "stale",
+      reason: checkedAt
+        ? `${label} 마지막 성공 수집이 48시간을 넘었습니다.`
+        : `${label} 마지막 성공 수집일이 없습니다.`,
+      ...(checkedAt ? { checkedAt } : {}),
+    };
+  }
+
+  return {
+    key,
+    label,
+    state: "ok",
+    reason: `${label} 수집 정상`,
+    checkedAt,
+  };
+}
+
+function getSitemapCollectionSource(stat: SiteStat): CollectionSourceStatus {
+  if (stat.sitemapError) {
+    return {
+      key: "sitemap",
+      label: "GSC sitemap",
+      state: "error",
+      reason: stat.sitemapError,
+      ...(stat.sitemapLastDownloadedAt
+        ? { checkedAt: stat.sitemapLastDownloadedAt }
+        : {}),
+    };
+  }
+
+  if (hasSitemapProcessing(stat) || hasCleanPendingSitemap(stat)) {
+    return {
+      key: "sitemap",
+      label: "GSC sitemap",
+      state: "processing",
+      reason: "Search Console에 제출됐고 Google 재다운로드를 기다리는 중입니다.",
+      ...(stat.sitemapLastSubmittedAt
+        ? { checkedAt: stat.sitemapLastSubmittedAt }
+        : {}),
+    };
+  }
+
+  if (hasCurrentSitemapIssue(stat)) {
+    return {
+      key: "sitemap",
+      label: "GSC sitemap",
+      state: "error",
+      reason: getSitemapCollectionReason(stat),
+      ...(stat.sitemapLastDownloadedAt
+        ? { checkedAt: stat.sitemapLastDownloadedAt }
+        : {}),
+    };
+  }
+
+  if (!stat.sitemapLastDownloadedAt && !stat.sitemapLastSubmittedAt) {
+    return {
+      key: "sitemap",
+      label: "GSC sitemap",
+      state: "missing",
+      reason: "GSC sitemap 수집 또는 제출 이력이 없습니다.",
+    };
+  }
+
+  if (hasSitemapCollectionLag(stat)) {
+    return {
+      key: "sitemap",
+      label: "GSC sitemap",
+      state: "stale",
+      reason: getSitemapCollectionReason(stat),
+      ...(stat.sitemapLastDownloadedAt
+        ? { checkedAt: stat.sitemapLastDownloadedAt }
+        : {}),
+    };
+  }
+
+  return {
+    key: "sitemap",
+    label: "GSC sitemap",
+    state: "ok",
+    reason: "GSC sitemap 수집 정상",
+    ...(stat.sitemapLastDownloadedAt
+      ? { checkedAt: stat.sitemapLastDownloadedAt }
+      : {}),
+  };
 }
 
 function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
@@ -1457,11 +1697,12 @@ function getStatusReason(stat: SiteStat, status: OperationalStatus): string {
   }
 
   if (status === "stale") {
-    if (hasSitemapCollectionLag(stat)) {
-      return getSitemapCollectionReason(stat);
-    }
-
-    return "GA4 최근 성공 수집이 48시간을 넘었습니다.";
+    const staleSources = getCollectionSources(stat)
+      .filter((source) => source.state === "stale")
+      .map((source) => source.label);
+    return staleSources.length > 0
+      ? `${staleSources.join(", ")} 수집이 지연됐습니다.`
+      : "최근 성공 수집이 48시간을 넘었습니다.";
   }
 
   if (status === "needsPermission") {
@@ -1471,8 +1712,12 @@ function getStatusReason(stat: SiteStat, status: OperationalStatus): string {
   }
 
   if (status === "apiError") {
-    if (stat.gscError) return "GSC API 호출이 실패했습니다.";
-    return "GA4 API 호출이 실패했습니다.";
+    const errorSources = getCollectionSources(stat)
+      .filter((source) => source.state === "error")
+      .map((source) => source.label);
+    return errorSources.length > 0
+      ? `${errorSources.join(", ")} 상태 확인이 실패했습니다.`
+      : "API 호출이 실패했습니다.";
   }
 
   return "GA4/GSC 수집 정상";

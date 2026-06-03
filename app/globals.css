@@ -168,7 +168,10 @@ h2 {
 
 .operation-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.85fr) minmax(
+      220px,
+      0.45fr
+    );
   gap: 14px;
   align-items: start;
   margin-bottom: 14px;
@@ -565,6 +568,65 @@ h2 {
 .health-panel {
   display: grid;
   gap: 18px;
+}
+
+.collection-reliability-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.collection-source-list {
+  display: grid;
+  gap: 8px;
+}
+
+.collection-source-row {
+  display: grid;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfcfd;
+}
+
+.collection-source-row strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.collection-source-row div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.collection-source-row span {
+  border-radius: 999px;
+  padding: 4px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.source-ok {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.source-stale,
+.source-processing {
+  color: #7c2d12;
+  background: #ffedd5;
+}
+
+.source-error {
+  color: var(--danger);
+  background: var(--danger-weak);
+}
+
+.source-missing {
+  color: #57534e;
+  background: #f5f5f4;
 }
 
 .health-ring {
