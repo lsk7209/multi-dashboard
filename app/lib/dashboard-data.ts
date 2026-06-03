@@ -1043,7 +1043,7 @@ function buildHealthSummary(stats: EnrichedSiteStat[]): HealthSummary {
 }
 
 function getHealthScore(
-  stat: Pick<SiteStat, "gscStatus" | "last7Days"> & {
+  stat: SiteStat & {
     last30Days: MetricSet;
     gscLast7Days: GscMetricSet;
     trend: SiteTrend;
@@ -1071,6 +1071,14 @@ function getHealthScore(
   if (stat.gscStatus === "ok" && hasCtrOpportunity(stat)) {
     score -= 10;
     reasons.push("CTR 낮음");
+  }
+
+  if (hasCleanPendingSitemap(stat)) {
+    score -= 8;
+    reasons.push("GSC sitemap 처리 대기");
+  } else if (hasSitemapCollectionLag(stat)) {
+    score -= 12;
+    reasons.push("GSC sitemap 수집 지연");
   }
 
   if (stat.last30Days.activeUsers === 0) {

@@ -883,7 +883,7 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
   }
 
   if (hasCleanPendingSitemap(stat)) {
-    return "collection-fresh";
+    return "collection-processing";
   }
 
   if (
@@ -911,7 +911,7 @@ function getSitemapCollectionStatusLabel(stat: EnrichedSiteStat): string {
     return "재처리";
   }
   if (hasCleanPendingSitemap(stat)) {
-    return "정상";
+    return "처리중";
   }
   if ((stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0) {
     return "오류";
