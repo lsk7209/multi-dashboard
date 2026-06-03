@@ -69,6 +69,13 @@ export type ActionKind =
 export type SegmentKey = "growth" | "decline" | "seo" | "gsc" | "sitemap";
 
 const SITEMAP_COLLECTION_LAG_DAYS = 5;
+const CTR_OPPORTUNITY_MIN_IMPRESSIONS = 20;
+const CTR_OPPORTUNITY_MAX_CTR = 0.03;
+const CTR_OPPORTUNITY_MIN_POSITION = 1;
+const CTR_OPPORTUNITY_MAX_POSITION = 10;
+const RANKING_OPPORTUNITY_MIN_IMPRESSIONS = 50;
+const RANKING_OPPORTUNITY_MIN_POSITION = 4;
+const RANKING_OPPORTUNITY_MAX_POSITION = 20;
 
 export interface SiteStat {
   id: string;
@@ -201,6 +208,7 @@ export interface EnrichedSiteStat extends Omit<
   statusReason: string;
   isStale: boolean;
   health: SiteHealthScore;
+  seoOpportunityScore?: number;
   sparkline: number[];
   duplicateCount?: number;
   duplicateStats?: DuplicateSiteSummary[];
@@ -565,6 +573,7 @@ function enrichSiteStat(
     isStale,
     trend,
     health: getHealthScore(normalizedStat, operationalStatus),
+    seoOpportunityScore: getSeoOpportunityScore(normalizedStat),
     sparkline,
   };
 
@@ -732,20 +741,20 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (gsc.impressions >= 100 && gsc.ctr < 0.02) {
+  if (hasCtrOpportunity(stat)) {
     items.push(
       makeAction(
         stat,
         "seo",
-        70,
+        70 + Math.min(12, Math.floor(getSeoOpportunityScore(stat) / 20)),
         formatPercent(gsc.ctr),
-        "노출 대비 CTR이 낮습니다.",
-        "제목, 메타 설명, FAQ를 검색 의도에 맞춰 보강하세요.",
+        formatSeoOpportunityReason(stat),
+        "SEO title과 meta description을 상위 쿼리 기준으로 점검하세요.",
       ),
     );
   }
 
-  if (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50) {
+  if (hasRankingOpportunity(stat)) {
     items.push(
       makeAction(
         stat,
@@ -801,6 +810,59 @@ function hasMonetizationIssue(stat: EnrichedSiteStat): boolean {
     stat.adsenseStatus === "api_error" ||
     stat.adsTxtStatus === "api_error"
   );
+}
+
+function hasCtrOpportunity(stat: Pick<SiteStat, "gscLast7Days">): boolean {
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  return (
+    gsc.impressions >= CTR_OPPORTUNITY_MIN_IMPRESSIONS &&
+    gsc.position >= CTR_OPPORTUNITY_MIN_POSITION &&
+    gsc.position <= CTR_OPPORTUNITY_MAX_POSITION &&
+    gsc.ctr < CTR_OPPORTUNITY_MAX_CTR
+  );
+}
+
+function hasRankingOpportunity(stat: Pick<SiteStat, "gscLast7Days">): boolean {
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  return (
+    gsc.impressions >= RANKING_OPPORTUNITY_MIN_IMPRESSIONS &&
+    gsc.position >= RANKING_OPPORTUNITY_MIN_POSITION &&
+    gsc.position <= RANKING_OPPORTUNITY_MAX_POSITION
+  );
+}
+
+function hasSeoOpportunity(stat: Pick<SiteStat, "gscLast7Days">): boolean {
+  return hasCtrOpportunity(stat) || hasRankingOpportunity(stat);
+}
+
+function getSeoOpportunityScore(stat: Pick<SiteStat, "gscLast7Days">): number {
+  if (!hasSeoOpportunity(stat)) {
+    return 0;
+  }
+
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  const impressionScore = Math.min(60, Math.log10(gsc.impressions + 1) * 24);
+  const ctrGapScore =
+    hasCtrOpportunity(stat)
+      ? (Math.max(0, CTR_OPPORTUNITY_MAX_CTR - gsc.ctr) /
+          CTR_OPPORTUNITY_MAX_CTR) *
+        40
+      : 0;
+  const positionScore =
+    gsc.position <= CTR_OPPORTUNITY_MAX_POSITION
+      ? Math.max(0, CTR_OPPORTUNITY_MAX_POSITION + 1 - gsc.position) * 3
+      : Math.max(0, RANKING_OPPORTUNITY_MAX_POSITION + 1 - gsc.position) * 1.5;
+
+  return Math.round(impressionScore + ctrGapScore + positionScore);
+}
+
+function formatSeoOpportunityReason(
+  stat: Pick<SiteStat, "gscLast7Days">,
+): string {
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  return `최근 7일 GSC 노출 ${formatNumber(gsc.impressions)}, 평균순위 ${formatDecimal(
+    gsc.position,
+  )}, CTR ${formatPercent(gsc.ctr)}입니다.`;
 }
 
 function hasCollectionLag(stat: EnrichedSiteStat): boolean {
@@ -933,13 +995,11 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
       label: "SEO 기회",
       description: "CTR 또는 평균순위 개선 여지가 큰 사이트",
       count: 0,
-      stats: stats.filter((stat) => {
-        const gsc = stat.gscLast7Days ?? emptyGscMetrics();
-        return (
-          (gsc.impressions >= 100 && gsc.ctr < 0.02) ||
-          (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50)
-        );
-      }),
+      stats: stats
+        .filter(hasSeoOpportunity)
+        .sort(
+          (a, b) => (b.seoOpportunityScore ?? 0) - (a.seoOpportunityScore ?? 0),
+        ),
     },
     {
       key: "gsc",
@@ -1008,11 +1068,7 @@ function getHealthScore(
     reasons.push("검색 클릭 감소");
   }
 
-  if (
-    stat.gscStatus === "ok" &&
-    stat.gscLast7Days.impressions >= 100 &&
-    stat.gscLast7Days.ctr < 0.02
-  ) {
+  if (stat.gscStatus === "ok" && hasCtrOpportunity(stat)) {
     score -= 10;
     reasons.push("CTR 낮음");
   }
@@ -1137,7 +1193,7 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
       );
     }
 
-    if (gsc.impressions >= 100 && gsc.ctr < 0.02) {
+    if (hasCtrOpportunity(stat)) {
       insights.push(
         makeInsight(
           stat,
@@ -1150,7 +1206,7 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
       );
     }
 
-    if (gsc.position >= 4 && gsc.position <= 20 && gsc.impressions >= 50) {
+    if (hasRankingOpportunity(stat)) {
       insights.push(
         makeInsight(
           stat,
