@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T08:07:54.708Z",
+  "generatedAt": "2026-06-03T10:55:12.274Z",
   "rangeDays": 7,
   "previousRangeDays": 7,
   "longRangeDays": 30,
@@ -119,10 +119,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:27.023Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:27.023Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:27.023Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:27.023Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:44.827Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:44.827Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:44.827Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:44.827Z"
     },
     {
       "id": "todaypharm",
@@ -182,23 +182,23 @@
       "sitemapDetails": [
         {
           "path": "https://todaypharm.kr/sitemap-index.xml",
-          "lastDownloaded": "2026-06-03T05:30:03.581Z",
-          "lastSubmitted": "2026-06-03T05:30:01.289Z",
+          "lastDownloaded": "2026-06-03T10:23:43.219Z",
+          "lastSubmitted": "2026-06-03T10:23:37.583Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T05:30:03.581Z",
-      "sitemapLastSubmittedAt": "2026-06-03T05:30:01.289Z",
+      "sitemapLastDownloadedAt": "2026-06-03T10:23:43.219Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:23:37.583Z",
       "sitemapPath": "https://todaypharm.kr/sitemap-index.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:26.742Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:26.742Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:26.742Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:26.742Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:42.092Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:42.092Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:42.092Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:42.092Z"
     },
     {
       "id": "tennisfrens",
@@ -271,41 +271,7 @@
           "position": 5.975609756097561
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "마리 부즈코바",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 3,
-          "sessions": 3,
-          "clicks": 3,
-          "impressions": 183,
-          "sourceType": "gsc"
-        },
-        {
-          "keyword": "카밀로 우고 카라벨리",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 2,
-          "sessions": 2,
-          "clicks": 2,
-          "impressions": 41,
-          "sourceType": "gsc"
-        },
-        {
-          "keyword": "ntrp 테스트",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 7,
-          "sessions": 7,
-          "clicks": 7,
-          "impressions": 14,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -327,10 +293,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:26.895Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:26.895Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:26.895Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:26.895Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:42.767Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:42.767Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:42.767Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:42.767Z"
     },
     {
       "id": "ehon365",
@@ -389,19 +355,7 @@
           "position": 11.022222222222222
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "양육비 산정표 2026",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 45,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -410,23 +364,23 @@
       "sitemapDetails": [
         {
           "path": "https://dolbomjigi.ehon365.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-03T05:20:43.227Z",
-          "lastSubmitted": "2026-06-03T05:20:41.622Z",
+          "lastDownloaded": "2026-06-03T10:20:43.083Z",
+          "lastSubmitted": "2026-06-03T10:20:41.547Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T05:20:43.227Z",
-      "sitemapLastSubmittedAt": "2026-06-03T05:20:41.622Z",
+      "sitemapLastDownloadedAt": "2026-06-03T10:20:43.083Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:20:41.547Z",
       "sitemapPath": "https://dolbomjigi.ehon365.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:27.169Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:27.169Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:27.169Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:27.169Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:44.854Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:44.854Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:44.854Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:44.854Z"
     },
     {
       "id": "haemongdream",
@@ -486,24 +440,24 @@
       "sitemapDetails": [
         {
           "path": "https://haemongdream.com/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-03T04:45:14.126Z",
-          "lastSubmitted": "2026-06-03T04:45:11.992Z",
+          "lastDownloaded": "2026-06-03T10:30:10.671Z",
+          "lastSubmitted": "2026-06-03T10:30:08.085Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T04:45:14.126Z",
-      "sitemapLastSubmittedAt": "2026-06-03T04:45:11.992Z",
+      "sitemapLastDownloadedAt": "2026-06-03T10:30:10.671Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:30:08.085Z",
       "sitemapPath": "https://haemongdream.com/wp-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:12.440Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:12.440Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:12.440Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:12.440Z",
-      "lastPublishedAt": "2026-06-03T04:33:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:30.404Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:30.404Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:30.404Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:30.404Z",
+      "lastPublishedAt": "2026-06-03T10:18:00Z"
     },
     {
       "id": "cartain-2",
@@ -562,19 +516,7 @@
           "position": 7.5
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "자동차 유지비 계산",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 16,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -596,10 +538,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:30.973Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:30.973Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:30.973Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:30.973Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:47.856Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:47.856Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:47.856Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:47.856Z"
     },
     {
       "id": "temon",
@@ -672,17 +614,7 @@
           "position": 6.256410256410256
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "미즈케어솔루션",
-          "source": "kakao",
-          "medium": "keyword",
-          "sourceMedium": "kakao / keyword",
-          "activeUsers": 1,
-          "sessions": 1,
-          "sourceType": "ga4"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -691,23 +623,23 @@
       "sitemapDetails": [
         {
           "path": "https://temon.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T12:29:27.456Z",
+          "lastDownloaded": "2026-06-03T08:30:56.456Z",
           "lastSubmitted": "2026-06-03T08:00:40.069Z",
           "warnings": 0,
           "errors": 0,
-          "isPending": true
+          "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T12:29:27.456Z",
+      "sitemapLastDownloadedAt": "2026-06-03T08:30:56.456Z",
       "sitemapLastSubmittedAt": "2026-06-03T08:00:40.069Z",
       "sitemapPath": "https://temon.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
-      "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z"
+      "sitemapIsPending": false,
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z"
     },
     {
       "id": "luckyday",
@@ -766,25 +698,25 @@
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml",
-          "lastDownloaded": "2026-06-03T07:45:14.080Z",
-          "lastSubmitted": "2026-06-03T07:45:11.450Z",
+          "path": "https://luckyday.kr/page-sitemap.xml",
+          "lastDownloaded": "2026-06-03T08:30:21.362Z",
+          "lastSubmitted": "2026-06-03T08:30:16.475Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T07:45:14.080Z",
-      "sitemapLastSubmittedAt": "2026-06-03T07:45:11.450Z",
-      "sitemapPath": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml",
+      "sitemapLastDownloadedAt": "2026-06-03T08:30:21.362Z",
+      "sitemapLastSubmittedAt": "2026-06-03T08:30:16.475Z",
+      "sitemapPath": "https://luckyday.kr/page-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "lastPublishedAt": "2026-06-03T03:26:18Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "lastPublishedAt": "2026-06-03T08:28:10Z"
     },
     {
       "id": "picklefriend",
@@ -857,10 +789,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:45.154Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:45.154Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:45.154Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:45.154Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:03.374Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:03.374Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:03.374Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:03.374Z"
     },
     {
       "id": "klick-2",
@@ -933,10 +865,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:23.125Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:23.125Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:23.125Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:23.125Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:40.143Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:40.143Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:40.143Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:40.143Z",
       "lastPublishedAt": "2026-06-01T07:39:30Z"
     },
     {
@@ -997,23 +929,23 @@
       "sitemapDetails": [
         {
           "path": "https://spinkorea.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-03T02:33:13.991Z",
-          "lastSubmitted": "2026-06-03T02:33:11.387Z",
+          "lastDownloaded": "2026-06-03T09:22:47.516Z",
+          "lastSubmitted": "2026-06-03T09:22:44.793Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T02:33:13.991Z",
-      "sitemapLastSubmittedAt": "2026-06-03T02:33:11.387Z",
+      "sitemapLastDownloadedAt": "2026-06-03T09:22:47.516Z",
+      "sitemapLastSubmittedAt": "2026-06-03T09:22:44.793Z",
       "sitemapPath": "https://spinkorea.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:28.661Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:28.661Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:28.661Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:28.661Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:45.499Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:45.499Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:45.499Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:45.499Z"
     },
     {
       "id": "tasko-2",
@@ -1064,17 +996,7 @@
         "position": 1
       },
       "gscTopQueries": [],
-      "trafficKeywords": [
-        {
-          "keyword": "오프라인 연락",
-          "source": "bing",
-          "medium": "organic",
-          "sourceMedium": "bing / organic",
-          "activeUsers": 1,
-          "sessions": 1,
-          "sourceType": "ga4"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -1096,10 +1018,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:22.180Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:22.180Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:22.180Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:22.180Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:38.798Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:38.798Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:38.798Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:38.798Z",
       "lastPublishedAt": "2026-06-03T05:30:13Z"
     },
     {
@@ -1151,17 +1073,7 @@
         "position": 0
       },
       "gscTopQueries": [],
-      "trafficKeywords": [
-        {
-          "keyword": "오프라인 연락",
-          "source": "bing",
-          "medium": "organic",
-          "sourceMedium": "bing / organic",
-          "activeUsers": 1,
-          "sessions": 1,
-          "sourceType": "ga4"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -1171,23 +1083,23 @@
         {
           "path": "https://mbti.tasko.kr/wp-sitemap-posts-post-1.xml",
           "lastDownloaded": "2026-06-03T00:33:52.153Z",
-          "lastSubmitted": "2026-06-03T05:00:16.281Z",
+          "lastSubmitted": "2026-06-03T10:00:14.669Z",
           "warnings": 0,
           "errors": 0,
           "isPending": true
         }
       ],
       "sitemapLastDownloadedAt": "2026-06-03T00:33:52.153Z",
-      "sitemapLastSubmittedAt": "2026-06-03T05:00:16.281Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:00:14.669Z",
       "sitemapPath": "https://mbti.tasko.kr/wp-sitemap-posts-post-1.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:22.214Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:22.214Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:22.214Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:22.214Z",
-      "lastPublishedAt": "2026-06-03T05:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:39.193Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:39.193Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:39.193Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:39.193Z",
+      "lastPublishedAt": "2026-06-03T10:00:00Z"
     },
     {
       "id": "yesa",
@@ -1260,10 +1172,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:44.656Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:44.656Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:44.656Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:44.656Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:03.366Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:03.366Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:03.366Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:03.366Z",
       "lastPublishedAt": "2026-05-30T04:45:26Z"
     },
     {
@@ -1337,10 +1249,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:44.655Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:44.655Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:44.655Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:44.655Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:02.843Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:02.843Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:02.843Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:02.843Z"
     },
     {
       "id": "2mlab-2",
@@ -1413,10 +1325,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:28.316Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:28.316Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:28.316Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:28.316Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:45.393Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:45.393Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:45.393Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:45.393Z",
       "lastPublishedAt": "2026-06-03T02:20:23Z"
     },
     {
@@ -1477,24 +1389,24 @@
       "sitemapDetails": [
         {
           "path": "https://dog.klick.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-03T05:30:57.946Z",
-          "lastSubmitted": "2026-06-03T05:30:48.678Z",
+          "lastDownloaded": "2026-06-03T10:13:52.864Z",
+          "lastSubmitted": "2026-06-03T10:13:49.642Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T05:30:57.946Z",
-      "sitemapLastSubmittedAt": "2026-06-03T05:30:48.678Z",
+      "sitemapLastDownloadedAt": "2026-06-03T10:13:52.864Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:13:49.642Z",
       "sitemapPath": "https://dog.klick.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:48.572Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:48.572Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:48.572Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:48.572Z",
-      "lastPublishedAt": "2026-06-03T04:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:08.148Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:08.148Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:08.148Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:08.148Z",
+      "lastPublishedAt": "2026-06-03T09:00:00Z"
     },
     {
       "id": "fastjob",
@@ -1560,30 +1472,7 @@
           "position": 80.9
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "인스타그램 게시물이나 카드뉴스용 전문 템플릿을 제공하는 무료 온라인 도구가 있나요?",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 56,
-          "sourceType": "gsc"
-        },
-        {
-          "keyword": "geo seo 차이",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 10,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -1605,11 +1494,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "lastPublishedAt": "2026-06-03T03:33:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "lastPublishedAt": "2026-06-03T10:48:00Z"
     },
     {
       "id": "softwa",
@@ -1682,11 +1571,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:13.656Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:13.656Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:13.656Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:13.656Z",
-      "lastPublishedAt": "2026-06-03T04:18:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:31.051Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:31.051Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:31.051Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:31.051Z",
+      "lastPublishedAt": "2026-06-03T08:56:00Z"
     },
     {
       "id": "healthgotoo",
@@ -1695,16 +1584,16 @@
       "ga4PropertyId": "517066030",
       "gscSiteUrl": "https://healthgotoo.com/",
       "last1Days": {
-        "activeUsers": 3,
-        "sessions": 5,
-        "screenPageViews": 5,
-        "eventCount": 14
+        "activeUsers": 4,
+        "sessions": 6,
+        "screenPageViews": 6,
+        "eventCount": 17
       },
       "last7Days": {
-        "activeUsers": 24,
-        "sessions": 27,
-        "screenPageViews": 29,
-        "eventCount": 101
+        "activeUsers": 25,
+        "sessions": 28,
+        "screenPageViews": 30,
+        "eventCount": 104
       },
       "previous7Days": {
         "activeUsers": 19,
@@ -1713,10 +1602,10 @@
         "eventCount": 77
       },
       "last30Days": {
-        "activeUsers": 94,
-        "sessions": 108,
-        "screenPageViews": 142,
-        "eventCount": 457
+        "activeUsers": 95,
+        "sessions": 109,
+        "screenPageViews": 143,
+        "eventCount": 460
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -1759,11 +1648,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:13.514Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:13.514Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:13.514Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:13.514Z",
-      "lastPublishedAt": "2026-06-03T04:21:48Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:30.961Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:30.961Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:30.961Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:30.961Z",
+      "lastPublishedAt": "2026-06-03T10:19:48Z"
     },
     {
       "id": "notebook-klick-2",
@@ -1836,10 +1725,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:42.725Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:42.725Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:42.725Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:42.725Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:00.410Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:00.410Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:00.410Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:00.410Z",
       "lastPublishedAt": "2026-06-03T06:00:00Z"
     },
     {
@@ -1913,10 +1802,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:37.646Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:37.646Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:37.646Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:37.646Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:55.351Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:55.351Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:55.351Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:55.351Z"
     },
     {
       "id": "dogspang-2",
@@ -1989,10 +1878,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:32.555Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:32.555Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:32.555Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:32.555Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:48.745Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:48.745Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:48.745Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:48.745Z",
       "lastPublishedAt": "2026-06-03T06:54:18Z"
     },
     {
@@ -2066,10 +1955,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:36.945Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:36.945Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:36.945Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:36.945Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:53.498Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:53.498Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:53.498Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:53.498Z"
     },
     {
       "id": "dogswhere",
@@ -2128,24 +2017,24 @@
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://dogswhere.com/sitemap.xml",
-          "lastDownloaded": "2026-06-02T22:00:32.030Z",
-          "lastSubmitted": "2026-06-03T07:00:28.694Z",
+          "path": "https://www.dogswhere.com/sitemap.xml",
+          "lastDownloaded": "2026-06-03T09:25:54.813Z",
+          "lastSubmitted": "2026-06-01T05:00:08.656Z",
           "warnings": 0,
           "errors": 0,
-          "isPending": true
+          "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T22:00:32.030Z",
-      "sitemapLastSubmittedAt": "2026-06-03T07:00:28.694Z",
-      "sitemapPath": "https://dogswhere.com/sitemap.xml",
+      "sitemapLastDownloadedAt": "2026-06-03T09:25:54.813Z",
+      "sitemapLastSubmittedAt": "2026-06-01T05:00:08.656Z",
+      "sitemapPath": "https://www.dogswhere.com/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
-      "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:48.695Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:48.695Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:48.695Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:48.695Z"
+      "sitemapIsPending": false,
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:08.216Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:08.216Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:08.216Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:08.216Z"
     },
     {
       "id": "nicewomen",
@@ -2157,13 +2046,13 @@
         "activeUsers": 1,
         "sessions": 1,
         "screenPageViews": 1,
-        "eventCount": 4
+        "eventCount": 5
       },
       "last7Days": {
         "activeUsers": 13,
         "sessions": 13,
         "screenPageViews": 15,
-        "eventCount": 51
+        "eventCount": 52
       },
       "previous7Days": {
         "activeUsers": 23,
@@ -2175,7 +2064,7 @@
         "activeUsers": 83,
         "sessions": 86,
         "screenPageViews": 93,
-        "eventCount": 305
+        "eventCount": 306
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -2218,11 +2107,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:19.153Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:19.153Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:19.153Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:19.153Z",
-      "lastPublishedAt": "2026-06-02T22:05:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:35.216Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:35.216Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:35.216Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:35.216Z",
+      "lastPublishedAt": "2026-06-03T08:45:00Z"
     },
     {
       "id": "today2424",
@@ -2295,10 +2184,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:25.263Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:25.263Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:25.263Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:25.263Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:41.971Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:41.971Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:41.971Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:41.971Z"
     },
     {
       "id": "webtoon-klick",
@@ -2357,24 +2246,24 @@
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://webtoon.klick.kr/category-sitemap.xml/",
-          "lastDownloaded": "2026-06-03T08:00:17.618Z",
-          "lastSubmitted": "2026-06-03T08:00:14.760Z",
+          "path": "https://webtoon.klick.kr/page-sitemap.xml/",
+          "lastDownloaded": "2026-06-03T08:32:32.718Z",
+          "lastSubmitted": "2026-06-03T08:00:14.220Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T08:00:17.618Z",
-      "sitemapLastSubmittedAt": "2026-06-03T08:00:14.760Z",
-      "sitemapPath": "https://webtoon.klick.kr/category-sitemap.xml/",
+      "sitemapLastDownloadedAt": "2026-06-03T08:32:32.718Z",
+      "sitemapLastSubmittedAt": "2026-06-03T08:00:14.220Z",
+      "sitemapPath": "https://webtoon.klick.kr/page-sitemap.xml/",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:47.576Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:47.576Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:47.576Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:47.576Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:06.191Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:06.191Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:06.191Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:06.191Z",
       "lastPublishedAt": "2026-06-03T08:00:00Z"
     },
     {
@@ -2448,11 +2337,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:23.177Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:23.177Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:23.177Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:23.177Z",
-      "lastPublishedAt": "2026-06-02T23:44:45.000Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:41.001Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:41.001Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:41.001Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:41.001Z",
+      "lastPublishedAt": "2026-06-03T10:15:43.000Z",
       "lastScheduledAt": "2028-02-28T10:11:34.000Z"
     },
     {
@@ -2464,14 +2353,14 @@
       "last1Days": {
         "activeUsers": 1,
         "sessions": 1,
-        "screenPageViews": 0,
-        "eventCount": 1
+        "screenPageViews": 1,
+        "eventCount": 4
       },
       "last7Days": {
         "activeUsers": 11,
         "sessions": 12,
-        "screenPageViews": 14,
-        "eventCount": 44
+        "screenPageViews": 15,
+        "eventCount": 47
       },
       "previous7Days": {
         "activeUsers": 9,
@@ -2482,8 +2371,8 @@
       "last30Days": {
         "activeUsers": 50,
         "sessions": 62,
-        "screenPageViews": 96,
-        "eventCount": 264
+        "screenPageViews": 97,
+        "eventCount": 267
       },
       "gscLast7Days": {
         "clicks": 2,
@@ -2526,11 +2415,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "lastPublishedAt": "2026-06-03T04:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "lastPublishedAt": "2026-06-03T09:00:00Z"
     },
     {
       "id": "gover",
@@ -2541,14 +2430,14 @@
       "last1Days": {
         "activeUsers": 2,
         "sessions": 3,
-        "screenPageViews": 1,
-        "eventCount": 6
+        "screenPageViews": 2,
+        "eventCount": 9
       },
       "last7Days": {
         "activeUsers": 11,
         "sessions": 12,
-        "screenPageViews": 10,
-        "eventCount": 42
+        "screenPageViews": 11,
+        "eventCount": 45
       },
       "previous7Days": {
         "activeUsers": 13,
@@ -2559,8 +2448,8 @@
       "last30Days": {
         "activeUsers": 73,
         "sessions": 75,
-        "screenPageViews": 150,
-        "eventCount": 455
+        "screenPageViews": 151,
+        "eventCount": 458
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -2603,10 +2492,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:18.353Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:18.353Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:18.353Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:18.353Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:34.970Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:34.970Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:34.970Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:34.970Z",
       "lastPublishedAt": "2026-06-03T00:29:04Z"
     },
     {
@@ -2680,10 +2569,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:21.478Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:21.478Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:21.478Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:21.478Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:38.302Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:38.302Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:38.302Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:38.302Z"
     },
     {
       "id": "richyou",
@@ -2743,23 +2632,23 @@
       "sitemapDetails": [
         {
           "path": "https://richyou.kr/wp-sitemap.xml",
-          "lastDownloaded": "2026-05-26T03:54:25.880Z",
+          "lastDownloaded": "2026-06-02T13:55:16.033Z",
           "lastSubmitted": "2026-06-03T05:29:50.874Z",
           "warnings": 0,
           "errors": 0,
           "isPending": true
         }
       ],
-      "sitemapLastDownloadedAt": "2026-05-26T03:54:25.880Z",
+      "sitemapLastDownloadedAt": "2026-06-02T13:55:16.033Z",
       "sitemapLastSubmittedAt": "2026-06-03T05:29:50.874Z",
       "sitemapPath": "https://richyou.kr/wp-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:40.184Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:40.184Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:40.184Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:40.184Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:57.432Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:57.432Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:57.432Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:57.432Z",
       "lastPublishedAt": "2026-06-03T07:10:19Z"
     },
     {
@@ -2833,10 +2722,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:08.478Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:26.305Z",
       "lastPublishedAt": "2026-06-03T06:13:38Z"
     },
     {
@@ -2910,11 +2799,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:22.216Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:22.216Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:22.216Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:22.216Z",
-      "lastPublishedAt": "2026-06-03T03:17:27Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:39.312Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:39.312Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:39.312Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:39.312Z",
+      "lastPublishedAt": "2026-06-03T08:17:27Z"
     },
     {
       "id": "chatgipt-3",
@@ -2987,10 +2876,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:24.577Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:24.577Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:24.577Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:24.577Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:41.959Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:41.959Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:41.959Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:41.959Z",
       "lastPublishedAt": "2026-06-03T06:00:00Z"
     },
     {
@@ -3064,11 +2953,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:44.649Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:44.649Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:44.649Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:44.649Z",
-      "lastPublishedAt": "2026-06-03T06:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:01.777Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:01.777Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:01.777Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:01.777Z",
+      "lastPublishedAt": "2026-06-03T09:00:00Z"
     },
     {
       "id": "smart-sellerpit",
@@ -3141,10 +3030,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:45.971Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:45.971Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:45.971Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:45.971Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:03.761Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:03.761Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:03.761Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:03.761Z",
       "lastPublishedAt": "2026-06-03T06:28:51.000Z",
       "lastScheduledAt": "2026-07-27T10:28:51.000Z"
     },
@@ -3219,10 +3108,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:31.031Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:31.031Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:31.031Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:31.031Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:48.702Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:48.702Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:48.702Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:48.702Z"
     },
     {
       "id": "etique",
@@ -3295,10 +3184,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:17.187Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:17.187Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:17.187Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:17.187Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:34.175Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:34.175Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:34.175Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:34.175Z",
       "lastPublishedAt": "2026-06-03T03:26:30Z"
     },
     {
@@ -3372,10 +3261,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:29.941Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:29.941Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:29.941Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:29.941Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:46.010Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:46.010Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:46.010Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:46.010Z",
       "lastPublishedAt": "2026-06-03T04:46:00Z"
     },
     {
@@ -3449,10 +3338,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:34.288Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:34.288Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:34.288Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:34.288Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:51.514Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:51.514Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:51.514Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:51.514Z",
       "lastPublishedAt": "2026-06-03T03:25:16Z"
     },
     {
@@ -3512,19 +3401,7 @@
           "position": 11.333333333333334
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "농촌진흥청 콩나물국 레시피",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 15,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -3546,10 +3423,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:36.075Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:36.075Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:36.075Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:36.075Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:52.674Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:52.674Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:52.674Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:52.674Z",
       "lastPublishedAt": "2026-06-03T06:00:00Z"
     },
     {
@@ -3623,11 +3500,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:38.011Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:38.011Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:38.011Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:38.011Z",
-      "lastPublishedAt": "2026-06-03T08:00:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:55.744Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:55.744Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:55.744Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:55.744Z",
+      "lastPublishedAt": "2026-06-03T10:00:00Z"
     },
     {
       "id": "car-luckyday",
@@ -3700,10 +3577,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:41.895Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:41.895Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:41.895Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:41.895Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:59.456Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:59.456Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:59.456Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:59.456Z",
       "lastPublishedAt": "2026-06-03T05:37:12Z"
     },
     {
@@ -3777,10 +3654,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:48.260Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:48.260Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:48.260Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:48.260Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:06.515Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:06.515Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:06.515Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:06.515Z"
     },
     {
       "id": "educaer",
@@ -3840,23 +3717,23 @@
       "sitemapDetails": [
         {
           "path": "https://educaer.com/sitemap_index.xml",
-          "lastDownloaded": "2026-06-02T03:56:12.213Z",
+          "lastDownloaded": "2026-06-03T09:35:29.056Z",
           "lastSubmitted": "2026-06-02T03:55:58.091Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T03:56:12.213Z",
+      "sitemapLastDownloadedAt": "2026-06-03T09:35:29.056Z",
       "sitemapLastSubmittedAt": "2026-06-02T03:55:58.091Z",
       "sitemapPath": "https://educaer.com/sitemap_index.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:38.944Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:38.944Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:38.944Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:38.944Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:56.275Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:56.275Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:56.275Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:56.275Z",
       "lastPublishedAt": "2026-06-03T07:00:00Z"
     },
     {
@@ -3930,11 +3807,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:39.924Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:39.924Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:39.924Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:39.924Z",
-      "lastPublishedAt": "2026-06-03T05:19:30Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:56.736Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:56.736Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:56.736Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:56.736Z",
+      "lastPublishedAt": "2026-06-03T10:19:30Z"
     },
     {
       "id": "phone-luckyday",
@@ -3993,24 +3870,24 @@
       "sitemapCount": 1,
       "sitemapDetails": [
         {
-          "path": "https://phone.luckyday.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-02T21:28:30.334Z",
-          "lastSubmitted": "2026-06-03T05:28:40.831Z",
+          "path": "https://phone.luckyday.kr/wp-sitemap-posts-post-1.xml",
+          "lastDownloaded": "2026-06-02T21:55:18.535Z",
+          "lastSubmitted": "2026-06-03T05:28:41.340Z",
           "warnings": 0,
           "errors": 0,
           "isPending": true
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-02T21:28:30.334Z",
-      "sitemapLastSubmittedAt": "2026-06-03T05:28:40.831Z",
-      "sitemapPath": "https://phone.luckyday.kr/sitemap.xml",
+      "sitemapLastDownloadedAt": "2026-06-02T21:55:18.535Z",
+      "sitemapLastSubmittedAt": "2026-06-03T05:28:41.340Z",
+      "sitemapPath": "https://phone.luckyday.kr/wp-sitemap-posts-post-1.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:40.292Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:40.292Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:40.292Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:40.292Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:58.631Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:58.631Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:58.631Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:58.631Z",
       "lastPublishedAt": "2026-06-03T04:15:00Z"
     },
     {
@@ -4084,10 +3961,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:17.222Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:17.222Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:17.222Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:17.222Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:34.506Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:34.506Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:34.506Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:34.506Z",
       "lastPublishedAt": "2026-05-13T03:28:40Z"
     },
     {
@@ -4147,19 +4024,7 @@
           "position": 9.166666666666666
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "강아지 발톱 혈관 줄이기",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 12,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -4181,11 +4046,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:33.180Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:33.180Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:33.180Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:33.180Z",
-      "lastPublishedAt": "2026-06-03T03:09:37Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:49.610Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:49.610Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:49.610Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:49.610Z",
+      "lastPublishedAt": "2026-06-03T07:47:37Z"
     },
     {
       "id": "healfood-2",
@@ -4258,10 +4123,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:34.758Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:34.758Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:34.758Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:34.758Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:52.366Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:52.366Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:52.366Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:52.366Z",
       "lastPublishedAt": "2026-06-02T20:52:08Z"
     },
     {
@@ -4322,23 +4187,23 @@
       "sitemapDetails": [
         {
           "path": "https://certifi.kr/wp-sitemap.xml",
-          "lastDownloaded": "2026-06-03T03:33:17.502Z",
-          "lastSubmitted": "2026-06-03T03:32:57.623Z",
+          "lastDownloaded": "2026-06-03T08:07:49.846Z",
+          "lastSubmitted": "2026-06-03T08:07:45.127Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T03:33:17.502Z",
-      "sitemapLastSubmittedAt": "2026-06-03T03:32:57.623Z",
+      "sitemapLastDownloadedAt": "2026-06-03T08:07:49.846Z",
+      "sitemapLastSubmittedAt": "2026-06-03T08:07:45.127Z",
       "sitemapPath": "https://certifi.kr/wp-sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:40.190Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:40.190Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:40.190Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:40.190Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:58.044Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:58.044Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:58.044Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:58.044Z",
       "lastPublishedAt": "2026-06-03T08:05:58Z"
     },
     {
@@ -4412,10 +4277,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:51.284Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:51.284Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:51.284Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:51.284Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:09.272Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:09.272Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:09.272Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:09.272Z",
       "lastPublishedAt": "2026-06-03T06:00:00.000Z",
       "lastScheduledAt": "2026-08-06T16:00:00.000Z"
     },
@@ -4490,10 +4355,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:13.133Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:13.133Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:13.133Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:13.133Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:30.895Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:30.895Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:30.895Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:30.895Z",
       "lastPublishedAt": "2026-06-03T06:16:43Z"
     },
     {
@@ -4567,11 +4432,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:13.757Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:13.757Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:13.757Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:13.757Z",
-      "lastPublishedAt": "2026-06-03T04:53:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:31.204Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:31.204Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:31.204Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:31.204Z",
+      "lastPublishedAt": "2026-06-03T10:00:00Z"
     },
     {
       "id": "gong365",
@@ -4632,22 +4497,22 @@
         {
           "path": "https://gong365.kr/sitemap.xml",
           "lastDownloaded": "2026-06-02T22:22:47.025Z",
-          "lastSubmitted": "2026-06-03T07:14:03.438Z",
+          "lastSubmitted": "2026-06-03T10:20:22.405Z",
           "warnings": 0,
           "errors": 0,
           "isPending": true
         }
       ],
       "sitemapLastDownloadedAt": "2026-06-02T22:22:47.025Z",
-      "sitemapLastSubmittedAt": "2026-06-03T07:14:03.438Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:20:22.405Z",
       "sitemapPath": "https://gong365.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": true,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:37.094Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:37.094Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:37.094Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:37.094Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:53.736Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:53.736Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:53.736Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:53.736Z"
     },
     {
       "id": "pregnancy-ehon365",
@@ -4720,10 +4585,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:46.579Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:46.579Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:46.579Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:46.579Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:03.811Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:03.811Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:03.811Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:03.811Z"
     },
     {
       "id": "travel-sellerpit",
@@ -4796,10 +4661,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:50.543Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:50.543Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:50.543Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:50.543Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:08.712Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:08.712Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:08.712Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:08.712Z",
       "lastPublishedAt": "2026-06-03T07:00:00.000Z",
       "lastScheduledAt": "2026-07-29T18:00:00.000Z"
     },
@@ -4874,10 +4739,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:18.060Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:18.060Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:18.060Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:18.060Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:34.782Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:34.782Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:34.782Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:34.782Z",
       "lastPublishedAt": "2026-06-03T07:00:00Z"
     },
     {
@@ -4951,10 +4816,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:29.968Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:29.968Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:29.968Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:29.968Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:46.322Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:46.322Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:46.322Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:46.322Z",
       "lastPublishedAt": "2026-06-03T05:02:00Z"
     },
     {
@@ -5028,10 +4893,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:32.872Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:32.872Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:32.872Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:32.872Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:49.036Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:49.036Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:49.036Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:49.036Z"
     },
     {
       "id": "goesku",
@@ -5104,10 +4969,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:37.271Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:37.271Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:37.271Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:37.271Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:54.123Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:54.123Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:54.123Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:54.123Z"
     },
     {
       "id": "gong-luckyday",
@@ -5180,10 +5045,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:41.412Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:41.412Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:41.412Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:41.412Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:59.443Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:59.443Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:59.443Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:59.443Z",
       "lastPublishedAt": "2026-06-03T06:20:00Z"
     },
     {
@@ -5257,10 +5122,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:48.463Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:48.463Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:48.463Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:48.463Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:06.977Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:06.977Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:06.977Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:06.977Z",
       "lastPublishedAt": "2026-06-03T08:00:00Z"
     },
     {
@@ -5334,10 +5199,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:08.475Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:08.475Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:08.475Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:08.475Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:26.302Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:26.302Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:26.302Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:26.302Z",
       "lastPublishedAt": "2026-06-03T07:10:00Z"
     },
     {
@@ -5411,11 +5276,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:14.212Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:14.212Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:14.212Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:14.212Z",
-      "lastPublishedAt": "2026-06-03T04:02:40Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:31.510Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:31.510Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:31.510Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:31.510Z",
+      "lastPublishedAt": "2026-06-03T09:17:40Z"
     },
     {
       "id": "finan",
@@ -5488,11 +5353,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:15.836Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:15.836Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:15.836Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:15.836Z",
-      "lastPublishedAt": "2026-06-03T04:10:00Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:33.446Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:33.446Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:33.446Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:33.446Z",
+      "lastPublishedAt": "2026-06-03T09:10:00Z"
     },
     {
       "id": "esgyo",
@@ -5565,11 +5430,11 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:20.136Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:20.136Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:20.136Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:20.136Z",
-      "lastPublishedAt": "2026-06-03T05:15:18Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:36.811Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:36.811Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:36.811Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:36.811Z",
+      "lastPublishedAt": "2026-06-03T10:12:48Z"
     },
     {
       "id": "texturb",
@@ -5635,30 +5500,7 @@
           "position": 8.5
         }
       ],
-      "trafficKeywords": [
-        {
-          "keyword": "반각 변환",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 1,
-          "sessions": 1,
-          "clicks": 1,
-          "impressions": 18,
-          "sourceType": "gsc"
-        },
-        {
-          "keyword": "반각 전각 변환",
-          "source": "google",
-          "medium": "organic",
-          "sourceMedium": "google / organic",
-          "activeUsers": 0,
-          "sessions": 0,
-          "clicks": 0,
-          "impressions": 12,
-          "sourceType": "gsc"
-        }
-      ],
+      "trafficKeywords": [],
       "ga4Status": "ok",
       "gscStatus": "ok",
       "adsenseStatus": "ok",
@@ -5680,10 +5522,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:20.635Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:20.635Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:20.635Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:20.635Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:37.710Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:37.710Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:37.710Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:37.710Z"
     },
     {
       "id": "luxurytraver-2",
@@ -5756,10 +5598,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:33.762Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:33.762Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:33.762Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:33.762Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:54:50.608Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:54:50.608Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:54:50.608Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:54:50.608Z",
       "lastPublishedAt": "2026-06-03T07:35:11Z"
     },
     {
@@ -5833,10 +5675,10 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:43.611Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:43.611Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:43.611Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:43.611Z",
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:00.777Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:00.777Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:00.777Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:00.777Z",
       "lastPublishedAt": "2026-06-03T06:24:33Z"
     },
     {
@@ -5897,23 +5739,23 @@
       "sitemapDetails": [
         {
           "path": "https://dolbomjigi.ehon365.kr/sitemap.xml",
-          "lastDownloaded": "2026-06-03T05:20:43.227Z",
-          "lastSubmitted": "2026-06-03T05:20:41.622Z",
+          "lastDownloaded": "2026-06-03T10:20:43.083Z",
+          "lastSubmitted": "2026-06-03T10:20:41.547Z",
           "warnings": 0,
           "errors": 0,
           "isPending": false
         }
       ],
-      "sitemapLastDownloadedAt": "2026-06-03T05:20:43.227Z",
-      "sitemapLastSubmittedAt": "2026-06-03T05:20:41.622Z",
+      "sitemapLastDownloadedAt": "2026-06-03T10:20:43.083Z",
+      "sitemapLastSubmittedAt": "2026-06-03T10:20:41.547Z",
       "sitemapPath": "https://dolbomjigi.ehon365.kr/sitemap.xml",
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-06-03T08:07:48.544Z",
-      "gscLastSuccessfulFetchAt": "2026-06-03T08:07:48.544Z",
-      "adsenseLastSuccessfulFetchAt": "2026-06-03T08:07:48.544Z",
-      "adsTxtLastSuccessfulFetchAt": "2026-06-03T08:07:48.544Z"
+      "ga4LastSuccessfulFetchAt": "2026-06-03T10:55:07.183Z",
+      "gscLastSuccessfulFetchAt": "2026-06-03T10:55:07.183Z",
+      "adsenseLastSuccessfulFetchAt": "2026-06-03T10:55:07.183Z",
+      "adsTxtLastSuccessfulFetchAt": "2026-06-03T10:55:07.183Z"
     }
   ]
 }

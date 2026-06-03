@@ -20,7 +20,7 @@ const CONCURRENCY = 6;
 const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
 const TOP_QUERY_LIMIT = 3;
 const TOP_QUERY_MIN_IMPRESSIONS = 10;
-const TOP_TRAFFIC_KEYWORD_MIN_USERS = 1;
+const TOP_TRAFFIC_KEYWORD_MIN_COUNT = 10;
 const DEFAULT_CONTENT_FIELDS = {
   scheduled: ["scheduledAt", "scheduled_at", "publishAt", "publish_at"],
   published: ["publishedAt", "published_at", "date", "datePublished"],
@@ -411,7 +411,7 @@ async function fetchGa4TrafficKeywords(
     const activeUsers = metricValue(row, 0);
     const sessions = metricValue(row, 1);
 
-    if (!keyword || activeUsers < TOP_TRAFFIC_KEYWORD_MIN_USERS) {
+    if (!keyword || activeUsers < TOP_TRAFFIC_KEYWORD_MIN_COUNT) {
       continue;
     }
 
@@ -532,17 +532,20 @@ async function fetchGscTopQueries(
 function trafficKeywordsFromGscQueries(
   queries: GscQueryMetric[],
 ): TrafficKeywordMetric[] {
-  return queries.slice(0, TOP_QUERY_LIMIT).map((query) => ({
-    keyword: query.query,
-    source: "google",
-    medium: "organic",
-    sourceMedium: "google / organic",
-    activeUsers: query.clicks,
-    sessions: query.clicks,
-    clicks: query.clicks,
-    impressions: query.impressions,
-    sourceType: "gsc",
-  }));
+  return queries
+    .filter((query) => query.clicks >= TOP_TRAFFIC_KEYWORD_MIN_COUNT)
+    .slice(0, TOP_QUERY_LIMIT)
+    .map((query) => ({
+      keyword: query.query,
+      source: "google",
+      medium: "organic",
+      sourceMedium: "google / organic",
+      activeUsers: query.clicks,
+      sessions: query.clicks,
+      clicks: query.clicks,
+      impressions: query.impressions,
+      sourceType: "gsc",
+    }));
 }
 
 async function loadExternalTrafficKeywords(): Promise<
