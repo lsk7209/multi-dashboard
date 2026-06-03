@@ -19,6 +19,7 @@ const CONCURRENCY = 6;
 const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
 const TOP_QUERY_LIMIT = 3;
 const TOP_QUERY_MIN_IMPRESSIONS = 10;
+const TOP_TRAFFIC_KEYWORD_MIN_USERS = 1;
 const DEFAULT_CONTENT_FIELDS = {
   scheduled: ["scheduledAt", "scheduled_at", "publishAt", "publish_at"],
   published: ["publishedAt", "published_at", "date", "datePublished"],
@@ -50,6 +51,18 @@ interface GscMetricSet {
 
 interface GscQueryMetric extends GscMetricSet {
   query: string;
+}
+
+interface TrafficKeywordMetric {
+  keyword: string;
+  source: string;
+  medium: string;
+  sourceMedium: string;
+  activeUsers: number;
+  sessions: number;
+  clicks?: number;
+  impressions?: number;
+  sourceType: "ga4" | "gsc";
 }
 
 interface SitemapSummary {
@@ -86,6 +99,7 @@ interface SiteStat {
   gscPrevious7Days: GscMetricSet;
   gscLast30Days: GscMetricSet;
   gscTopQueries?: GscQueryMetric[];
+  trafficKeywords?: TrafficKeywordMetric[];
   ga4Status: CollectionStatus;
   gscStatus: CollectionStatus;
   adsenseStatus?: CollectionStatus;
@@ -162,6 +176,29 @@ function metricValue(row: unknown, index: number): number {
     (row as { metricValues?: Array<{ value?: string | null }> }).metricValues ??
     [];
   return Number(values[index]?.value ?? 0);
+}
+
+function dimensionValue(row: unknown, index: number): string {
+  const values =
+    (row as { dimensionValues?: Array<{ value?: string | null }> })
+      .dimensionValues ?? [];
+  return String(values[index]?.value ?? "").trim();
+}
+
+function cleanGa4Keyword(value: string): string {
+  const normalized = value.trim();
+  const lower = normalized.toLowerCase();
+  if (
+    !normalized ||
+    lower === "(not set)" ||
+    lower === "(not provided)" ||
+    lower === "(none)" ||
+    lower === "not set" ||
+    lower === "not provided"
+  ) {
+    return "";
+  }
+  return normalized;
 }
 
 function seoulDateDaysAgo(days: number): string {
@@ -333,6 +370,63 @@ async function fetchGa4MetricsForRange(
   };
 }
 
+async function fetchGa4TrafficKeywords(
+  client: BetaAnalyticsDataClient,
+  propertyId: string,
+  days: number,
+): Promise<TrafficKeywordMetric[]> {
+  const [response] = await client.runReport({
+    property: `properties/${propertyId}`,
+    dateRanges: [{ startDate: toGa4StartDate(days), endDate: "yesterday" }],
+    dimensions: [
+      { name: "sessionSource" },
+      { name: "sessionMedium" },
+      { name: "sessionManualTerm" },
+      { name: "sessionGoogleAdsKeyword" },
+    ],
+    metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+    limit: 50,
+  });
+
+  const byKey = new Map<string, TrafficKeywordMetric>();
+  for (const row of response.rows ?? []) {
+    const source = dimensionValue(row, 0) || "(direct)";
+    const medium = dimensionValue(row, 1) || "(none)";
+    const manualTerm = cleanGa4Keyword(dimensionValue(row, 2));
+    const googleAdsKeyword = cleanGa4Keyword(dimensionValue(row, 3));
+    const keyword = manualTerm || googleAdsKeyword;
+    const activeUsers = metricValue(row, 0);
+    const sessions = metricValue(row, 1);
+
+    if (!keyword || activeUsers < TOP_TRAFFIC_KEYWORD_MIN_USERS) {
+      continue;
+    }
+
+    const sourceMedium = `${source} / ${medium}`;
+    const key = `${sourceMedium}\u0000${keyword}`;
+    const existing = byKey.get(key);
+    if (existing) {
+      existing.activeUsers += activeUsers;
+      existing.sessions += sessions;
+      continue;
+    }
+
+    byKey.set(key, {
+      keyword,
+      source,
+      medium,
+      sourceMedium,
+      activeUsers,
+      sessions,
+      sourceType: "ga4",
+    });
+  }
+
+  return [...byKey.values()]
+    .sort((a, b) => b.activeUsers - a.activeUsers || b.sessions - a.sessions)
+    .slice(0, TOP_QUERY_LIMIT);
+}
+
 async function fetchGscMetrics(
   client: ReturnType<typeof google.searchconsole>,
   siteUrl: string,
@@ -420,6 +514,22 @@ async function fetchGscTopQueries(
         a.position - b.position,
     )
     .slice(0, TOP_QUERY_LIMIT);
+}
+
+function trafficKeywordsFromGscQueries(
+  queries: GscQueryMetric[],
+): TrafficKeywordMetric[] {
+  return queries.slice(0, TOP_QUERY_LIMIT).map((query) => ({
+    keyword: query.query,
+    source: "google",
+    medium: "organic",
+    sourceMedium: "google / organic",
+    activeUsers: query.clicks,
+    sessions: query.clicks,
+    clicks: query.clicks,
+    impressions: query.impressions,
+    sourceType: "gsc",
+  }));
 }
 
 async function fetchSitemapSummary(
@@ -908,6 +1018,7 @@ async function fetchSiteStat(
   let gscPrevious7Days = emptyGscMetrics();
   let gscLast30Days = emptyGscMetrics();
   let gscTopQueries: GscQueryMetric[] = [];
+  let ga4TrafficKeywords: TrafficKeywordMetric[] = [];
   let sitemapSummary: SitemapSummary = {};
   let error: string | undefined;
   let gscError: string | undefined;
@@ -928,6 +1039,16 @@ async function fetchSiteStat(
       ]);
     } catch (ga4Error) {
       error = getErrorMessage(ga4Error);
+    }
+
+    try {
+      ga4TrafficKeywords = await fetchGa4TrafficKeywords(
+        ga4Client,
+        site.ga4PropertyId,
+        RANGE_DAYS,
+      );
+    } catch {
+      ga4TrafficKeywords = [];
     }
   }
 
@@ -981,6 +1102,10 @@ async function fetchSiteStat(
     gscPrevious7Days,
     gscLast30Days,
     gscTopQueries,
+    trafficKeywords:
+      ga4TrafficKeywords.length > 0
+        ? ga4TrafficKeywords
+        : trafficKeywordsFromGscQueries(gscTopQueries),
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
     adsenseStatus: monetizationStatusFromError(adsenseError),

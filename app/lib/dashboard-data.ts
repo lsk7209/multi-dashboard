@@ -35,6 +35,18 @@ export interface GscQueryMetric extends GscMetricSet {
   query: string;
 }
 
+export interface TrafficKeywordMetric {
+  keyword: string;
+  source: string;
+  medium: string;
+  sourceMedium: string;
+  activeUsers: number;
+  sessions: number;
+  clicks?: number;
+  impressions?: number;
+  sourceType?: "ga4" | "gsc";
+}
+
 export interface SitemapDetail {
   path: string;
   lastDownloaded?: string;
@@ -97,6 +109,7 @@ export interface SiteStat {
   gscLast28Days?: GscMetricSet;
   gscLast30Days?: GscMetricSet;
   gscTopQueries?: GscQueryMetric[];
+  trafficKeywords?: TrafficKeywordMetric[];
   ga4Status?: CollectionStatus;
   gscStatus?: CollectionStatus;
   adsenseStatus?: CollectionStatus;

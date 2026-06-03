@@ -47,7 +47,7 @@ const sortLabels: Record<SortKey, string> = {
   change: "증감률",
   gscClicks: "GSC 클릭",
   gscImpressions: "GSC 노출",
-  topQueries: "GSC 대표 키워드",
+  topQueries: "대표 유입 키워드",
   ctr: "CTR",
   adsense: "AdSense",
   adsTxt: "ads.txt",
@@ -83,7 +83,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "change", label: "증감" },
   { key: "gscClicks", label: "GSC 클릭" },
   { key: "gscImpressions", label: "GSC 노출" },
-  { key: "topQueries", label: "GSC 키워드" },
+  { key: "topQueries", label: "유입 키워드" },
   { key: "ctr", label: "CTR" },
   { key: "adsense", label: "AdSense" },
   { key: "adsTxt", label: "ads.txt" },
@@ -443,21 +443,87 @@ function SitemapCollectionCell({ stat }: { stat: EnrichedSiteStat }) {
 }
 
 function TopQueriesCell({ stat }: { stat: EnrichedSiteStat }) {
-  const queries = stat.gscTopQueries ?? [];
-  if (queries.length === 0) {
+  const keywords = getTrafficKeywords(stat);
+  if (keywords.length === 0) {
     return <span className="keyword-empty">-</span>;
   }
 
   return (
     <div className="keyword-list" title={formatTopQueriesTitle(stat)}>
-      {queries.slice(0, 3).map((query) => (
-        <span className="keyword-chip" key={query.query}>
-          <span>{query.query}</span>
-          <small>{formatNumber(query.impressions)}</small>
+      {keywords.slice(0, 3).map((keyword) => (
+        <span
+          className={`keyword-chip ${getTrafficSourceClass(keyword.source)}`}
+          key={`${keyword.sourceMedium}-${keyword.keyword}`}
+        >
+          <span>{keyword.keyword}</span>
+          <small>{formatKeywordCount(keyword)}</small>
         </span>
       ))}
     </div>
   );
+}
+
+function getTrafficKeywords(stat: EnrichedSiteStat) {
+  if (stat.trafficKeywords && stat.trafficKeywords.length > 0) {
+    return stat.trafficKeywords;
+  }
+
+  return (stat.gscTopQueries ?? []).slice(0, 3).map((query) => ({
+    keyword: query.query,
+    source: "google",
+    medium: "organic",
+    sourceMedium: "google / organic",
+    activeUsers: query.clicks,
+    sessions: query.clicks,
+    clicks: query.clicks,
+    impressions: query.impressions,
+    sourceType: "gsc" as const,
+  }));
+}
+
+function getTrafficSourceClass(source: string): string {
+  const normalized = source.toLowerCase();
+  if (normalized.includes("naver") || normalized.includes("네이버")) {
+    return "keyword-naver";
+  }
+  if (
+    normalized.includes("daum") ||
+    normalized.includes("kakao") ||
+    normalized.includes("다음") ||
+    normalized.includes("카카오")
+  ) {
+    return "keyword-daum";
+  }
+  if (normalized.includes("google")) {
+    return "keyword-google";
+  }
+  if (normalized.includes("youtube")) {
+    return "keyword-youtube";
+  }
+  if (normalized.includes("bing")) {
+    return "keyword-bing";
+  }
+  if (normalized === "(direct)") {
+    return "keyword-direct";
+  }
+  return "keyword-other";
+}
+
+function formatKeywordCount(keyword: ReturnType<typeof getTrafficKeywords>[number]) {
+  if (keyword.sourceType === "gsc") {
+    return formatNumber(keyword.impressions ?? keyword.activeUsers);
+  }
+  return formatNumber(keyword.activeUsers);
+}
+
+function getKeywordSortValue(stat: EnrichedSiteStat): number {
+  const keyword = getTrafficKeywords(stat)[0];
+  if (!keyword) {
+    return 0;
+  }
+  return keyword.sourceType === "gsc"
+    ? (keyword.impressions ?? keyword.activeUsers)
+    : keyword.activeUsers;
 }
 
 function matchesQuery(
@@ -468,8 +534,8 @@ function matchesQuery(
     return true;
   }
 
-  return `${stat.name} ${stat.url} ${(stat.gscTopQueries ?? [])
-    .map((query) => query.query)
+  return `${stat.name} ${stat.url} ${getTrafficKeywords(stat)
+    .map((keyword) => `${keyword.keyword} ${keyword.sourceMedium}`)
     .join(" ")}`
     .toLowerCase()
     .includes(normalizedQuery);
@@ -564,7 +630,7 @@ function getSortValue(
     return stat.gscLast7Days?.impressions ?? 0;
   }
   if (sortKey === "topQueries") {
-    return stat.gscTopQueries?.[0]?.impressions ?? 0;
+    return getKeywordSortValue(stat);
   }
   if (sortKey === "ctr") {
     return stat.gscLast7Days?.ctr ?? 0;
@@ -721,20 +787,23 @@ function formatDuplicateTitle(stat: EnrichedSiteStat): string {
 }
 
 function formatTopQueriesTitle(stat: EnrichedSiteStat): string {
-  const queries = stat.gscTopQueries ?? [];
-  if (queries.length === 0) {
-    return "대표 검색 키워드 없음";
+  const keywords = getTrafficKeywords(stat);
+  if (keywords.length === 0) {
+    return "대표 유입 키워드 없음";
   }
 
-  return queries
-    .map(
-      (query) =>
-        `${query.query}: 노출 ${formatNumber(query.impressions)}, 클릭 ${formatNumber(
-          query.clicks,
-        )}, CTR ${formatPercent(query.ctr)}, 평균순위 ${formatPosition(
-          query.position,
-        )}`,
-    )
+  return keywords
+    .map((keyword) => {
+      const metricLabel =
+        keyword.sourceType === "gsc"
+          ? `GSC 노출 ${formatNumber(
+              keyword.impressions ?? keyword.activeUsers,
+            )}, 클릭 ${formatNumber(keyword.clicks ?? keyword.activeUsers)}`
+          : `GA4 사용자 ${formatNumber(keyword.activeUsers)}, 세션 ${formatNumber(
+              keyword.sessions,
+            )}`;
+      return `${keyword.keyword}: ${keyword.sourceMedium} · ${metricLabel}`;
+    })
     .join("\n");
 }
 

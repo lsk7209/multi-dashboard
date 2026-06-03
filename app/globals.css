@@ -882,11 +882,40 @@ code {
   gap: 4px;
   border-radius: 999px;
   padding: 2px 7px;
-  color: #374151;
-  background: #f3f4f6;
   font-size: 11px;
   font-weight: 700;
   line-height: 1.35;
+}
+
+.keyword-other,
+.keyword-google {
+  color: #374151;
+  background: #f3f4f6;
+}
+
+.keyword-naver {
+  color: #047857;
+  background: #d1fae5;
+}
+
+.keyword-daum {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.keyword-youtube {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.keyword-bing {
+  color: #0369a1;
+  background: #e0f2fe;
+}
+
+.keyword-direct {
+  color: #57534e;
+  background: #f5f5f4;
 }
 
 .keyword-chip span {
