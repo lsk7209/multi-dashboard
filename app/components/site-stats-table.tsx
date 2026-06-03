@@ -221,6 +221,8 @@ export function SiteStatsTable({
         <strong>{formatNumber(visibleStats.length)}개 표시</strong>
       </div>
 
+      <TrafficKeywordLegend />
+
       <div className="stats-table-wrap">
         <table className="stats-table">
           <thead>
@@ -268,6 +270,27 @@ export function SiteStatsTable({
         </table>
       </div>
     </article>
+  );
+}
+
+function TrafficKeywordLegend() {
+  const items = [
+    { className: "keyword-google", label: "G", text: "Google" },
+    { className: "keyword-naver", label: "N", text: "Naver" },
+    { className: "keyword-daum", label: "D/K", text: "Daum/Kakao" },
+    { className: "keyword-bing", label: "B", text: "Bing" },
+    { className: "keyword-youtube", label: "Y", text: "YouTube" },
+  ];
+
+  return (
+    <div className="keyword-legend" aria-label="유입 키워드 소스 범례">
+      {items.map((item) => (
+        <span className={`keyword-legend-item ${item.className}`} key={item.text}>
+          <b>{item.label}</b>
+          <span>{item.text}</span>
+        </span>
+      ))}
+    </div>
   );
 }
 
