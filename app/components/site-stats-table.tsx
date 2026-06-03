@@ -455,6 +455,7 @@ function TopQueriesCell({ stat }: { stat: EnrichedSiteStat }) {
           className={`keyword-chip ${getTrafficSourceClass(keyword.source)}`}
           key={`${keyword.sourceMedium}-${keyword.keyword}`}
         >
+          <b>{formatTrafficSourceLabel(keyword.source)}</b>
           <span>{keyword.keyword}</span>
           <small>{formatKeywordCount(keyword)}</small>
         </span>
@@ -509,7 +510,35 @@ function getTrafficSourceClass(source: string): string {
   return "keyword-other";
 }
 
-function formatKeywordCount(keyword: ReturnType<typeof getTrafficKeywords>[number]) {
+function formatTrafficSourceLabel(source: string): string {
+  const normalized = source.toLowerCase();
+  if (normalized.includes("naver") || normalized.includes("네이버")) {
+    return "N";
+  }
+  if (normalized.includes("daum") || normalized.includes("다음")) {
+    return "D";
+  }
+  if (normalized.includes("kakao") || normalized.includes("카카오")) {
+    return "K";
+  }
+  if (normalized.includes("google")) {
+    return "G";
+  }
+  if (normalized.includes("youtube")) {
+    return "Y";
+  }
+  if (normalized.includes("bing")) {
+    return "B";
+  }
+  if (normalized === "(direct)") {
+    return "직";
+  }
+  return "기";
+}
+
+function formatKeywordCount(
+  keyword: ReturnType<typeof getTrafficKeywords>[number],
+) {
   if (keyword.sourceType === "gsc") {
     return formatNumber(keyword.impressions ?? keyword.activeUsers);
   }

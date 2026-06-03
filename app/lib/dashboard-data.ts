@@ -44,7 +44,7 @@ export interface TrafficKeywordMetric {
   sessions: number;
   clicks?: number;
   impressions?: number;
-  sourceType?: "ga4" | "gsc";
+  sourceType?: "ga4" | "gsc" | "external";
 }
 
 export interface SitemapDetail {

@@ -1,0 +1,23 @@
+{
+  "keywords": [
+    {
+      "siteId": "example-site",
+      "url": "https://example.com/",
+      "keyword": "example keyword",
+      "source": "naver",
+      "medium": "organic",
+      "activeUsers": 12,
+      "sessions": 14,
+      "clicks": 12,
+      "impressions": 120
+    },
+    {
+      "siteId": "example-site",
+      "keyword": "example daum keyword",
+      "source": "daum",
+      "medium": "organic",
+      "clicks": 5,
+      "impressions": 80
+    }
+  ]
+}

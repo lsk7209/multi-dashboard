@@ -12,6 +12,7 @@ import { loadSites, type Site } from "./lib/sites.js";
 import { getErrorMessage } from "./lib/errors.js";
 
 const OUTPUT_PATH = "data/site-stats.json";
+const TRAFFIC_KEYWORDS_PATH = "data/traffic-keywords.json";
 const DAY_RANGE = 1;
 const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
@@ -62,7 +63,19 @@ interface TrafficKeywordMetric {
   sessions: number;
   clicks?: number;
   impressions?: number;
-  sourceType: "ga4" | "gsc";
+  sourceType: "ga4" | "gsc" | "external";
+}
+
+interface ExternalTrafficKeywordInput {
+  siteId?: string;
+  url?: string;
+  keyword: string;
+  source: string;
+  medium?: string;
+  activeUsers?: number;
+  sessions?: number;
+  clicks?: number;
+  impressions?: number;
 }
 
 interface SitemapSummary {
@@ -530,6 +543,146 @@ function trafficKeywordsFromGscQueries(
     impressions: query.impressions,
     sourceType: "gsc",
   }));
+}
+
+async function loadExternalTrafficKeywords(): Promise<
+  Map<string, TrafficKeywordMetric[]>
+> {
+  if (!existsSync(TRAFFIC_KEYWORDS_PATH)) {
+    return new Map();
+  }
+
+  const raw = await readFile(TRAFFIC_KEYWORDS_PATH, "utf8");
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw) as unknown;
+  } catch {
+    return new Map();
+  }
+  const rows = Array.isArray(parsed)
+    ? parsed
+    : (parsed as { keywords?: unknown[] }).keywords;
+  if (!Array.isArray(rows)) {
+    return new Map();
+  }
+
+  const bySite = new Map<string, TrafficKeywordMetric[]>();
+  for (const row of rows) {
+    const input = row as Partial<ExternalTrafficKeywordInput>;
+    const siteKeys = [input.siteId, normalizeSiteUrlKey(input.url)]
+      .filter((value): value is string => Boolean(value))
+      .map((value) => value.toLowerCase());
+    const keyword = cleanGa4Keyword(String(input.keyword ?? ""));
+    const source = String(input.source ?? "").trim();
+    if (siteKeys.length === 0 || !keyword || !source) {
+      continue;
+    }
+
+    const medium = String(input.medium ?? "organic").trim() || "organic";
+    const activeUsers = Number(input.activeUsers ?? input.clicks ?? 0);
+    const sessions = Number(input.sessions ?? activeUsers);
+    const metric: TrafficKeywordMetric = {
+      keyword,
+      source,
+      medium,
+      sourceMedium: `${source} / ${medium}`,
+      activeUsers: Number.isFinite(activeUsers) ? activeUsers : 0,
+      sessions: Number.isFinite(sessions) ? sessions : 0,
+      sourceType: "external",
+    };
+    const clicks = numberOrUndefined(input.clicks);
+    const impressions = numberOrUndefined(input.impressions);
+    if (clicks !== undefined) {
+      metric.clicks = clicks;
+    }
+    if (impressions !== undefined) {
+      metric.impressions = impressions;
+    }
+
+    for (const siteKey of siteKeys) {
+      const current = bySite.get(siteKey) ?? [];
+      current.push(metric);
+      bySite.set(siteKey, current);
+    }
+  }
+
+  return bySite;
+}
+
+function numberOrUndefined(value: unknown): number | undefined {
+  const numberValue = Number(value);
+  return Number.isFinite(numberValue) ? numberValue : undefined;
+}
+
+function normalizeSiteUrlKey(url: string | undefined): string | undefined {
+  if (!url) {
+    return undefined;
+  }
+  return url.trim().replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
+
+function mergeTrafficKeywords(
+  externalKeywords: TrafficKeywordMetric[],
+  ga4Keywords: TrafficKeywordMetric[],
+  gscQueries: GscQueryMetric[],
+): TrafficKeywordMetric[] {
+  const merged = [
+    ...externalKeywords,
+    ...ga4Keywords,
+    ...(ga4Keywords.length > 0 ? [] : trafficKeywordsFromGscQueries(gscQueries)),
+  ];
+  const byKey = new Map<string, TrafficKeywordMetric>();
+  for (const keyword of merged) {
+    const key = `${keyword.sourceMedium}\u0000${keyword.keyword}`;
+    const existing = byKey.get(key);
+    if (existing) {
+      existing.activeUsers += keyword.activeUsers;
+      existing.sessions += keyword.sessions;
+      if (existing.clicks !== undefined || keyword.clicks !== undefined) {
+        existing.clicks = (existing.clicks ?? 0) + (keyword.clicks ?? 0);
+      }
+      if (
+        existing.impressions !== undefined ||
+        keyword.impressions !== undefined
+      ) {
+        existing.impressions =
+          (existing.impressions ?? 0) + (keyword.impressions ?? 0);
+      }
+      continue;
+    }
+    byKey.set(key, { ...keyword });
+  }
+
+  return [...byKey.values()]
+    .sort(
+      (a, b) =>
+        getTrafficKeywordSortValue(b) - getTrafficKeywordSortValue(a) ||
+        b.sessions - a.sessions,
+    )
+    .slice(0, TOP_QUERY_LIMIT);
+}
+
+function getTrafficKeywordSortValue(keyword: TrafficKeywordMetric): number {
+  return keyword.impressions ?? keyword.activeUsers;
+}
+
+function getExternalTrafficKeywordsForSite(
+  externalTrafficKeywords: Map<string, TrafficKeywordMetric[]>,
+  site: Site,
+): TrafficKeywordMetric[] {
+  const keys = [
+    site.id.toLowerCase(),
+    normalizeSiteUrlKey(site.url)?.toLowerCase(),
+  ].filter((value): value is string => Boolean(value));
+  const byKey = new Map<string, TrafficKeywordMetric>();
+
+  for (const key of keys) {
+    for (const keyword of externalTrafficKeywords.get(key) ?? []) {
+      byKey.set(`${keyword.sourceMedium}\u0000${keyword.keyword}`, keyword);
+    }
+  }
+
+  return [...byKey.values()];
 }
 
 async function fetchSitemapSummary(
@@ -1009,6 +1162,7 @@ async function fetchSiteStat(
   ga4Client: BetaAnalyticsDataClient,
   gscClient: ReturnType<typeof google.searchconsole>,
   site: Site,
+  externalTrafficKeywords: Map<string, TrafficKeywordMetric[]>,
 ): Promise<SiteStat> {
   let last1Days = emptyMetrics();
   let last7Days = emptyMetrics();
@@ -1053,6 +1207,10 @@ async function fetchSiteStat(
   }
 
   const gscSiteUrl = site.gscSiteUrl ?? site.url;
+  const siteTrafficKeywords = getExternalTrafficKeywordsForSite(
+    externalTrafficKeywords,
+    site,
+  );
 
   try {
     [gscLast7Days, gscPrevious7Days, gscLast30Days, gscTopQueries] =
@@ -1102,10 +1260,11 @@ async function fetchSiteStat(
     gscPrevious7Days,
     gscLast30Days,
     gscTopQueries,
-    trafficKeywords:
-      ga4TrafficKeywords.length > 0
-        ? ga4TrafficKeywords
-        : trafficKeywordsFromGscQueries(gscTopQueries),
+    trafficKeywords: mergeTrafficKeywords(
+      siteTrafficKeywords,
+      ga4TrafficKeywords,
+      gscTopQueries,
+    ),
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
     adsenseStatus: monetizationStatusFromError(adsenseError),
@@ -1177,9 +1336,14 @@ async function main(): Promise<void> {
   ]);
   const gscClient = google.searchconsole({ version: "v1", auth });
   const limit = pLimit(CONCURRENCY);
+  const externalTrafficKeywords = await loadExternalTrafficKeywords();
 
   const stats = await Promise.all(
-    sites.map((site) => limit(() => fetchSiteStat(ga4Client, gscClient, site))),
+    sites.map((site) =>
+      limit(() =>
+        fetchSiteStat(ga4Client, gscClient, site, externalTrafficKeywords),
+      ),
+    ),
   );
   const snapshot: StatsSnapshot = {
     generatedAt: new Date().toISOString(),
