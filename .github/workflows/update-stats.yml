@@ -2,9 +2,9 @@ name: Update dashboard stats
 
 on:
   schedule:
-    # 주 2회(월·목). 빌드 비용 절감: GA4/GSC 스냅샷 git push(=Vercel 빌드)를 매일→주2회로 축소.
-    # GA4/GSC는 누적 데이터라 수집 주기를 늘려도 history에 일별 값이 보존됨. 즉시 갱신은 수동 실행(dispatch).
-    - cron: "20 18 * * 1,4"
+    # 하루 2회(KST 07:00 / 19:00 = UTC 22:00 / 10:00). 변경 없으면 commit 단계에서 push를 건너뛰어 Vercel 빌드가 발생하지 않음.
+    # GA4/GSC는 누적 데이터라 수집해도 history에 일별 값이 보존됨. 즉시 갱신은 수동 실행(dispatch).
+    - cron: "0 22,10 * * *"
   workflow_dispatch:
 
 permissions:
