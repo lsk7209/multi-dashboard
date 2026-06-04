@@ -1,14 +1,13 @@
 # Status | 마지막: 2026-06-04
 ## 현재 작업
-수집/설정 이슈 수습 — sorimate AdSense 제외 완료. etique/luxurytraver GSC verify 대기
+수집/설정 이슈 전부 해결 — 모든 수집 실패 0건 (GA4/GSC/sitemap/AdSense/ads.txt)
 ## 최근 변경 (최근 5개만)
+- 06-04: etique/luxurytraver GSC FILE verify 자동화(SSH 토큰 배치+insert) → siteOwner 승격, gscStatus ok
 - 06-04: monetization 플래그 추가 — sorimate(쇼핑몰) AdSense/ads.txt 수집·이슈 집계 제외
 - 06-04: 자동 갱신 cron 주2회→하루2회(KST 07/19시) 변경
 - 06-04: 로컬 수동 재수집, 신규 GA4 3개 추가(73→76), 수익화 이슈 0건
 - 05-30: 자동 갱신 워크플로우에 GA4 웹 스트림 import + history 커밋 추가
-- 05-30: GA4 import로 신규 사이트 추가, 수집 성공 (GA4/GSC 실패 0개)
 ## TODO
-- [ ] etique/luxurytraver GSC siteUnverifiedUser 해결 (둘 다 158.247.245.11=chemicloud, SSH 계정/경로 또는 GSC 콘솔 수동 필요)
 - [ ] GitHub Actions 결제/스펜딩 제한 해제 후 워크플로우 재실행
 ## 결정사항
 - 날짜 기준: UTC 완료일 기준, 오늘 제외
