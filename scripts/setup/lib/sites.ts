@@ -13,6 +13,8 @@ const siteSchema = z.object({
   ga4PropertyId: z.string().min(1).optional(),
   gscSiteUrl: z.string().min(1).optional(),
   sitemapUrls: z.array(z.string().url()).optional(),
+  // AdSense 미적용 사이트(예: 쇼핑몰)는 false. 수익화 수집·이슈 집계에서 제외된다.
+  monetization: z.boolean().default(true),
   contentSource: z
     .object({
       type: z.enum(["wordpress-ssh", "local-next", "github-next"]),
@@ -35,7 +37,9 @@ const sitesFileSchema = z.object({
 
 export type Site = z.infer<typeof siteSchema>;
 
-export async function loadSites(path = "scripts/setup/sites.yaml"): Promise<Site[]> {
+export async function loadSites(
+  path = "scripts/setup/sites.yaml",
+): Promise<Site[]> {
   if (!existsSync(path)) {
     return [];
   }

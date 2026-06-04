@@ -117,6 +117,7 @@ interface SiteStat {
   gscStatus: CollectionStatus;
   adsenseStatus?: CollectionStatus;
   adsTxtStatus?: CollectionStatus;
+  monetization?: boolean;
   ga4LastSuccessfulFetchAt?: string;
   gscLastSuccessfulFetchAt?: string;
   adsenseLastSuccessfulFetchAt?: string;
@@ -228,7 +229,12 @@ function seoulDateDaysAgo(days: number): string {
       return acc;
     }, {});
   const date = new Date(
-    Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), 12),
+    Date.UTC(
+      Number(parts.year),
+      Number(parts.month) - 1,
+      Number(parts.day),
+      12,
+    ),
   );
   date.setUTCDate(date.getUTCDate() - days);
   return new Intl.DateTimeFormat("en-CA", {
@@ -621,7 +627,10 @@ function normalizeSiteUrlKey(url: string | undefined): string | undefined {
   if (!url) {
     return undefined;
   }
-  return url.trim().replace(/^https?:\/\//, "").replace(/\/$/, "");
+  return url
+    .trim()
+    .replace(/^https?:\/\//, "")
+    .replace(/\/$/, "");
 }
 
 function mergeTrafficKeywords(
@@ -632,7 +641,9 @@ function mergeTrafficKeywords(
   const merged = [
     ...externalKeywords,
     ...ga4Keywords,
-    ...(ga4Keywords.length > 0 ? [] : trafficKeywordsFromGscQueries(gscQueries)),
+    ...(ga4Keywords.length > 0
+      ? []
+      : trafficKeywordsFromGscQueries(gscQueries)),
   ];
   const byKey = new Map<string, TrafficKeywordMetric>();
   for (const keyword of merged) {
@@ -724,7 +735,16 @@ async function fetchSitemapSummary(
 }
 
 function toSitemapDetail(
-  sitemap: { path?: string | null; lastDownloaded?: string | null; lastSubmitted?: string | null; warnings?: string | number | null; errors?: string | number | null; isPending?: boolean | null } | undefined,
+  sitemap:
+    | {
+        path?: string | null;
+        lastDownloaded?: string | null;
+        lastSubmitted?: string | null;
+        warnings?: string | number | null;
+        errors?: string | number | null;
+        isPending?: boolean | null;
+      }
+    | undefined,
   fallbackPath?: string,
 ): SitemapDetail {
   const detail: SitemapDetail = {
@@ -854,8 +874,12 @@ async function fetchWpStats(
   try {
     const restBase = site.wpRestBase.replace(/\/$/, "");
     const [publishedAt, scheduledAt] = await Promise.all([
-      fetchWpPostDate(`${restBase}/posts?per_page=1&orderby=date&order=desc&_fields=date_gmt`),
-      fetchWpPostDate(`${restBase}/posts?status=future&per_page=1&orderby=date&order=desc&_fields=date_gmt`),
+      fetchWpPostDate(
+        `${restBase}/posts?per_page=1&orderby=date&order=desc&_fields=date_gmt`,
+      ),
+      fetchWpPostDate(
+        `${restBase}/posts?status=future&per_page=1&orderby=date&order=desc&_fields=date_gmt`,
+      ),
     ]);
     return {
       ...(publishedAt ? { lastPublishedAt: publishedAt } : {}),
@@ -992,7 +1016,10 @@ async function fetchLocalNextStats(
     const publishedAt = firstDateField(parsed, publishedFields);
     const status = String(parsed.status ?? parsed.state ?? "").toLowerCase();
 
-    if (scheduledAt && (status === "future" || status === "scheduled" || !publishedAt)) {
+    if (
+      scheduledAt &&
+      (status === "future" || status === "scheduled" || !publishedAt)
+    ) {
       scheduledDates.push(scheduledAt);
       continue;
     }
@@ -1034,7 +1061,10 @@ async function collectContentFiles(root: string): Promise<string[]> {
         await walk(fullPath);
         continue;
       }
-      if (entry.isFile() && allowed.has(path.extname(entry.name).toLowerCase())) {
+      if (
+        entry.isFile() &&
+        allowed.has(path.extname(entry.name).toLowerCase())
+      ) {
         const info = await stat(fullPath);
         if (info.size <= 256 * 1024) {
           files.push(fullPath);
@@ -1132,7 +1162,9 @@ async function fetchAdsenseCodeStatus(site: Site): Promise<void> {
   const html = await response.text();
   const normalized = html.toLowerCase();
   const hasAdsenseCode =
-    normalized.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") ||
+    normalized.includes(
+      "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+    ) ||
     normalized.includes("adsbygoogle") ||
     normalized.includes("ca-pub-");
 
@@ -1218,11 +1250,11 @@ async function fetchSiteStat(
   try {
     [gscLast7Days, gscPrevious7Days, gscLast30Days, gscTopQueries] =
       await Promise.all([
-      fetchGscMetrics(gscClient, gscSiteUrl, RANGE_DAYS),
-      fetchPreviousGscMetrics(gscClient, gscSiteUrl),
-      fetchGscMetrics(gscClient, gscSiteUrl, LONG_RANGE_DAYS),
-      fetchGscTopQueries(gscClient, gscSiteUrl, RANGE_DAYS),
-    ]);
+        fetchGscMetrics(gscClient, gscSiteUrl, RANGE_DAYS),
+        fetchPreviousGscMetrics(gscClient, gscSiteUrl),
+        fetchGscMetrics(gscClient, gscSiteUrl, LONG_RANGE_DAYS),
+        fetchGscTopQueries(gscClient, gscSiteUrl, RANGE_DAYS),
+      ]);
   } catch (searchError) {
     gscError = getErrorMessage(searchError);
   }
@@ -1237,16 +1269,19 @@ async function fetchSiteStat(
     sitemapError = getErrorMessage(searchError);
   }
 
-  try {
-    await fetchAdsenseCodeStatus(site);
-  } catch (statusError) {
-    adsenseError = getErrorMessage(statusError);
-  }
+  const monetizationEnabled = site.monetization !== false;
+  if (monetizationEnabled) {
+    try {
+      await fetchAdsenseCodeStatus(site);
+    } catch (statusError) {
+      adsenseError = getErrorMessage(statusError);
+    }
 
-  try {
-    await fetchAdsTxtStatus(site);
-  } catch (statusError) {
-    adsTxtError = getErrorMessage(statusError);
+    try {
+      await fetchAdsTxtStatus(site);
+    } catch (statusError) {
+      adsTxtError = getErrorMessage(statusError);
+    }
   }
 
   const stat: SiteStat = {
@@ -1270,8 +1305,13 @@ async function fetchSiteStat(
     ),
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
-    adsenseStatus: monetizationStatusFromError(adsenseError),
-    adsTxtStatus: monetizationStatusFromError(adsTxtError),
+    adsenseStatus: monetizationEnabled
+      ? monetizationStatusFromError(adsenseError)
+      : undefined,
+    adsTxtStatus: monetizationEnabled
+      ? monetizationStatusFromError(adsTxtError)
+      : undefined,
+    ...(monetizationEnabled ? {} : { monetization: false }),
     ...sitemapSummary,
   };
 
@@ -1289,18 +1329,20 @@ async function fetchSiteStat(
     stat.gscLastSuccessfulFetchAt = collectedAt;
   }
 
-  if (adsenseError) {
-    stat.adsenseError = adsenseError;
-    stat.adsenseErrorKind = classifyError(adsenseError);
-  } else {
-    stat.adsenseLastSuccessfulFetchAt = collectedAt;
-  }
+  if (monetizationEnabled) {
+    if (adsenseError) {
+      stat.adsenseError = adsenseError;
+      stat.adsenseErrorKind = classifyError(adsenseError);
+    } else {
+      stat.adsenseLastSuccessfulFetchAt = collectedAt;
+    }
 
-  if (adsTxtError) {
-    stat.adsTxtError = adsTxtError;
-    stat.adsTxtErrorKind = classifyError(adsTxtError);
-  } else {
-    stat.adsTxtLastSuccessfulFetchAt = collectedAt;
+    if (adsTxtError) {
+      stat.adsTxtError = adsTxtError;
+      stat.adsTxtErrorKind = classifyError(adsTxtError);
+    } else {
+      stat.adsTxtLastSuccessfulFetchAt = collectedAt;
+    }
   }
 
   if (sitemapError) {
@@ -1377,8 +1419,9 @@ async function main(): Promise<void> {
 
   const ga4Failed = stats.filter((site) => site.error).length;
   const gscFailed = stats.filter((site) => site.gscError).length;
-  const adsenseCodeNotDetected = stats.filter((site) => site.adsenseError)
-    .length;
+  const adsenseCodeNotDetected = stats.filter(
+    (site) => site.adsenseError,
+  ).length;
   const adsTxtFailed = stats.filter((site) => site.adsTxtError).length;
   const sitemapChecked = stats.filter(
     (site) => site.sitemapLastDownloadedAt || site.sitemapLastSubmittedAt,

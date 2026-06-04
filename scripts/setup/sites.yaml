@@ -889,6 +889,8 @@ sites:
     wpRestBase: https://sorimate.com/wp-json/wp/v2
     ga4PropertyId: "540102091"
     gscSiteUrl: https://sorimate.com/
+    # 쇼핑몰이라 AdSense 미적용 — 수익화 수집/이슈 집계에서 제외
+    monetization: false
   - id: campgogo
     name: https://campgogo.kr
     enabled: true

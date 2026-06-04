@@ -126,6 +126,7 @@ export interface SiteStat {
   gscStatus?: CollectionStatus;
   adsenseStatus?: CollectionStatus;
   adsTxtStatus?: CollectionStatus;
+  monetization?: boolean;
   ga4LastSuccessfulFetchAt?: string;
   gscLastSuccessfulFetchAt?: string;
   adsenseLastSuccessfulFetchAt?: string;
@@ -506,8 +507,8 @@ function dedupeStatsByHost(stats: EnrichedSiteStat[]): DedupeStatsResult {
   });
 
   return {
-    stats: representatives.filter(
-      (stat): stat is EnrichedSiteStat => Boolean(stat),
+    stats: representatives.filter((stat): stat is EnrichedSiteStat =>
+      Boolean(stat),
     ),
     duplicateHostCount,
     hiddenDuplicateCount,
@@ -546,7 +547,8 @@ function compareRepresentative(
   }
 
   return (
-    getNamePreferenceScore(candidate.name) - getNamePreferenceScore(current.name)
+    getNamePreferenceScore(candidate.name) -
+    getNamePreferenceScore(current.name)
   );
 }
 
@@ -758,10 +760,7 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (
-    stat.operationalStatus === "stale" &&
-    !hasSitemapCollectionLag(stat)
-  ) {
+  if (stat.operationalStatus === "stale" && !hasSitemapCollectionLag(stat)) {
     items.push(
       makeAction(
         stat,
@@ -901,12 +900,11 @@ function getSeoOpportunityScore(stat: Pick<SiteStat, "gscLast7Days">): number {
 
   const gsc = stat.gscLast7Days ?? emptyGscMetrics();
   const impressionScore = Math.min(60, Math.log10(gsc.impressions + 1) * 24);
-  const ctrGapScore =
-    hasCtrOpportunity(stat)
-      ? (Math.max(0, CTR_OPPORTUNITY_MAX_CTR - gsc.ctr) /
-          CTR_OPPORTUNITY_MAX_CTR) *
-        40
-      : 0;
+  const ctrGapScore = hasCtrOpportunity(stat)
+    ? (Math.max(0, CTR_OPPORTUNITY_MAX_CTR - gsc.ctr) /
+        CTR_OPPORTUNITY_MAX_CTR) *
+      40
+    : 0;
   const positionScore =
     gsc.position <= CTR_OPPORTUNITY_MAX_POSITION
       ? Math.max(0, CTR_OPPORTUNITY_MAX_POSITION + 1 - gsc.position) * 3
@@ -944,7 +942,10 @@ function hasSitemapCollectionLag(stat: SiteStat): boolean {
 
   return (
     !stat.sitemapLastDownloadedAt ||
-    isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
+    isOlderThanDays(
+      stat.sitemapLastDownloadedAt,
+      SITEMAP_COLLECTION_LAG_DAYS,
+    ) ||
     hasCurrentSitemapIssue(stat)
   );
 }
@@ -1070,13 +1071,11 @@ const COLLECTION_SOURCE_DEFINITIONS: Array<{
 ];
 
 function getCollectionIssueCount(summary: CollectionSourceSummary): number {
-  return (
-    summary.stale + summary.error + summary.missing + summary.processing
-  );
+  return summary.stale + summary.error + summary.missing + summary.processing;
 }
 
 function getCollectionSources(stat: SiteStat): CollectionSourceStatus[] {
-  return [
+  const sources = [
     getApiCollectionSource(
       "ga4",
       "GA4",
@@ -1092,21 +1091,29 @@ function getCollectionSources(stat: SiteStat): CollectionSourceStatus[] {
       stat.gscError,
     ),
     getSitemapCollectionSource(stat),
-    getApiCollectionSource(
-      "adsense",
-      "AdSense",
-      stat.adsenseStatus,
-      stat.adsenseLastSuccessfulFetchAt,
-      stat.adsenseError,
-    ),
-    getApiCollectionSource(
-      "adsTxt",
-      "ads.txt",
-      stat.adsTxtStatus,
-      stat.adsTxtLastSuccessfulFetchAt,
-      stat.adsTxtError,
-    ),
   ];
+
+  // AdSense 미적용 사이트(monetization=false, 예: 쇼핑몰)는 수익화 수집 항목에서 제외한다.
+  if (stat.monetization !== false) {
+    sources.push(
+      getApiCollectionSource(
+        "adsense",
+        "AdSense",
+        stat.adsenseStatus,
+        stat.adsenseLastSuccessfulFetchAt,
+        stat.adsenseError,
+      ),
+      getApiCollectionSource(
+        "adsTxt",
+        "ads.txt",
+        stat.adsTxtStatus,
+        stat.adsTxtLastSuccessfulFetchAt,
+        stat.adsTxtError,
+      ),
+    );
+  }
+
+  return sources;
 }
 
 function getApiCollectionSource(
@@ -1175,7 +1182,8 @@ function getSitemapCollectionSource(stat: SiteStat): CollectionSourceStatus {
       key: "sitemap",
       label: "GSC sitemap",
       state: "processing",
-      reason: "Search Console에 제출됐고 Google 재다운로드를 기다리는 중입니다.",
+      reason:
+        "Search Console에 제출됐고 Google 재다운로드를 기다리는 중입니다.",
       ...(stat.sitemapLastSubmittedAt
         ? { checkedAt: stat.sitemapLastSubmittedAt }
         : {}),
@@ -1597,8 +1605,14 @@ function fallbackDateRanges(): DateRangeSummary {
     basis: "completed_days",
     last1Days: { startDate: seoulDateDaysAgo(1), endDate: seoulDateDaysAgo(1) },
     last7Days: { startDate: seoulDateDaysAgo(7), endDate: seoulDateDaysAgo(1) },
-    previous7Days: { startDate: seoulDateDaysAgo(14), endDate: seoulDateDaysAgo(8) },
-    last30Days: { startDate: seoulDateDaysAgo(30), endDate: seoulDateDaysAgo(1) },
+    previous7Days: {
+      startDate: seoulDateDaysAgo(14),
+      endDate: seoulDateDaysAgo(8),
+    },
+    last30Days: {
+      startDate: seoulDateDaysAgo(30),
+      endDate: seoulDateDaysAgo(1),
+    },
   };
 }
 
@@ -1616,7 +1630,12 @@ function seoulDateDaysAgo(days: number): string {
       return acc;
     }, {});
   const date = new Date(
-    Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), 12),
+    Date.UTC(
+      Number(parts.year),
+      Number(parts.month) - 1,
+      Number(parts.day),
+      12,
+    ),
   );
   date.setUTCDate(date.getUTCDate() - days);
   return new Intl.DateTimeFormat("en-CA", {
