@@ -1,9 +1,9 @@
-# Status | 마지막: 2026-06-05
+# Status | 마지막: 2026-06-06
 ## 현재 작업
-사이트 검토 plan(.omc/plans/registered-sites-review-2026-06-05.md) 실행 중. T1 계측복구 완료. T2 색인/T3 순위/T4 CTR/T5 정리 남음
+대시보드 오탐 검수 완료. AdSense "상태 확인 실패" 52건 = fetch 헤더 누락 415 오탐 → 헤더 추가로 수정. T2 색인/T3 순위/T4 CTR/T5 정리 남음
 ## 최근 변경 (최근 5개만)
+- 06-06: AdSense 체크 415 오탐 52건 수정 — update-ga4-stats.ts fetch 3곳에 브라우저 UA+Accept 헤더(SITE_FETCH_HEADERS). 헤더없는 undici를 호스팅 WAF가 415 차단(curl/브라우저는 통과). 8개 재검증 home=200·adsense=O·ads.txt=pub-ok. workgogo GSC auth_error는 캐시잔상(diag 실시간 정상)
 - 06-05: T1 계측끊김 3건 복구 — haemongdream(헤더 mu-plugin GA4 누락)·finan(GA4가 비활성테마 kadence에 있어 미로드→mu-plugin)·estat(실제정상,캐시오판). measurement ID GA4 API로 확보. 실페이지 출력 검증
-- 06-05: 등록 76개 전수 검토 — 미색인22·노출되나클릭0 28개. 계측의심 finan/estat 발견(GSC노출 있는데 GA4 0/극소)
 - 06-05: P1 자동수집 복구 — "결제중단"은 오진, 실제 type-check 깨짐(1425dad monetization required 누락). 타입에러 3건 수정+술어회귀 수정. 워크플로우 성공 확인
 - 06-05: P3·P4 대시보드 오탐 제거 — 급락 게이트 통일·상향(50/10), sitemap지연 stale 분리. 급락 6~7→1, 일일이슈 38→0
 - 06-05: 운영 지식 영속화 docs/OPERATIONS.md(SSOT)·site-repo-map·메모리

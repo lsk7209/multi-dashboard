@@ -18,6 +18,13 @@ const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
 const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
+// 헤더 없는 undici 기본 요청은 일부 호스팅 WAF가 415로 차단한다(curl·브라우저는 통과).
+// 홈페이지/ads.txt 체크에 브라우저 User-Agent와 Accept를 붙여 오탐을 막는다.
+const SITE_FETCH_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+  Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+} as const;
 const TOP_QUERY_LIMIT = 3;
 const TOP_QUERY_MIN_IMPRESSIONS = 10;
 const TOP_TRAFFIC_KEYWORD_MIN_COUNT = 10;
@@ -1143,7 +1150,10 @@ function newestIsoDate(values: string[]): string {
 }
 
 async function fetchWpPostDate(url: string): Promise<string | undefined> {
-  const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(8000),
+    headers: SITE_FETCH_HEADERS,
+  });
   if (!response.ok) {
     return undefined;
   }
@@ -1154,7 +1164,10 @@ async function fetchWpPostDate(url: string): Promise<string | undefined> {
 }
 
 async function fetchAdsenseCodeStatus(site: Site): Promise<void> {
-  const response = await fetch(site.url, { signal: AbortSignal.timeout(8000) });
+  const response = await fetch(site.url, {
+    signal: AbortSignal.timeout(8000),
+    headers: SITE_FETCH_HEADERS,
+  });
   if (!response.ok) {
     throw new Error(`Homepage unavailable: ${response.status}`);
   }
@@ -1177,6 +1190,7 @@ async function fetchAdsTxtStatus(site: Site): Promise<void> {
   const adsTxtUrl = new URL("/ads.txt", site.url).toString();
   const response = await fetch(adsTxtUrl, {
     signal: AbortSignal.timeout(8000),
+    headers: SITE_FETCH_HEADERS,
   });
   if (!response.ok) {
     throw new Error(`ads.txt unavailable: ${response.status}`);
