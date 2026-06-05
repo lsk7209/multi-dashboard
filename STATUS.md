@@ -1,21 +1,23 @@
-# Status | 마지막: 2026-06-04
+# Status | 마지막: 2026-06-05
 ## 현재 작업
-수집/설정 이슈 전부 해결 — 모든 수집 실패 0건 (GA4/GSC/sitemap/AdSense/ads.txt)
+멀티사이트 SEO 진단·동기화 정리 완료. temon 순위 파일럿 계획 수립(구현은 temon 레포 세션)
 ## 최근 변경 (최근 5개만)
-- 06-04: etique/luxurytraver GSC FILE verify 자동화(SSH 토큰 배치+insert) → siteOwner 승격, gscStatus ok
-- 06-04: monetization 플래그 추가 — sorimate(쇼핑몰) AdSense/ads.txt 수집·이슈 집계 제외
-- 06-04: 자동 갱신 cron 주2회→하루2회(KST 07/19시) 변경
-- 06-04: 로컬 수동 재수집, 신규 GA4 3개 추가(73→76), 수익화 이슈 0건
-- 05-30: 자동 갱신 워크플로우에 GA4 웹 스트림 import + history 커밋 추가
+- 06-05: 2대 컴퓨터 동기화 정리 — 7개 레포 origin 통일(작업 전부 stash 백업, 유실 0)
+- 06-05: 사이트→레포 지도(docs/site-repo-map) + SEO 진단 — 제목·메타는 이미 양호, 병목은 순위
+- 06-05: temon 파일럿 계획(docs/temon-ranking-pilot) — related-tests 컴포넌트 미연결이 레버
+- 06-04: etique/luxurytraver GSC FILE verify 자동화 → siteOwner 승격, 수집 실패 0건
+- 06-04: sorimate monetization:false 제외 + cron 하루2회
 ## TODO
+- [ ] temon 순위 파일럿 구현 (temon 레포 세션, docs/temon-ranking-pilot.md 참조)
+- [ ] 위험 레포 정리 — goeskucom 충돌 잔재, cartainkr·askorekr·sinhonjigi 소스 미커밋
 - [ ] GitHub Actions 결제/스펜딩 제한 해제 후 워크플로우 재실행
 ## 결정사항
 - 날짜 기준: UTC 완료일 기준, 오늘 제외
 - GSC 도메인 속성은 sc-domain: 형식 사용 (https:// 아님)
 - sorimate는 쇼핑몰이라 AdSense 미적용 — monetization:false로 수익화 체크 제외
-- 같은 도메인 인사이트는 하나로 통합 표시
+- SEO: 사이트 제목·메타는 이미 양호 → 개선 레버는 순위(콘텐츠·내부링크), 제목 아님
 ## 주의
 - repo에 실제 secret 파일 커밋 금지
-- GitHub Secret GCP_SA_KEY_JSON 등록 완료
-- GitHub Actions 결제 문제로 자동 수집 중단 상태 (수동 stats:update로 대체 중)
-- AdSense 미적용 사이트는 sites.yaml에 monetization:false 추가
+- 2대 컴퓨터 작업 → 작업 전 git pull, 후 push 필수 (안 하면 동기화 충돌)
+- 산출물(.omc·reports·tmp·.env) .gitignore 추가 권장 — 동기화 혼란 주범
+- GitHub Actions 결제 문제로 자동 수집 중단 (수동 stats:update 대체)
