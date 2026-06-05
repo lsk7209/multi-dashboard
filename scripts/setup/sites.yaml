@@ -374,7 +374,7 @@ sites:
     url: https://today2424.kr/
     wpRestBase: https://today2424.kr/wp-json/wp/v2
     ga4PropertyId: "534327620"
-    gscSiteUrl: https://today2424.kr/
+    gscSiteUrl: https://www.today2424.kr/
   - id: todaypharm
     name: todaypharm.kr
     enabled: true
@@ -382,7 +382,7 @@ sites:
     url: https://todaypharm.kr/
     wpRestBase: https://todaypharm.kr/wp-json/wp/v2
     ga4PropertyId: "534313222"
-    gscSiteUrl: https://todaypharm.kr/
+    gscSiteUrl: https://www.todaypharm.kr/
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true

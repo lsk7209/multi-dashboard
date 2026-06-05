@@ -105,6 +105,34 @@ const RANKING_OPPORTUNITY_MIN_IMPRESSIONS = 50;
 const RANKING_OPPORTUNITY_MIN_POSITION = 4;
 const RANKING_OPPORTUNITY_MAX_POSITION = 20;
 
+// 급락 판정 임계 — 절대규모가 작으면 변동률(%)이 통계적 노이즈가 되므로
+// 직전 기간 규모가 이 값 이상일 때만 "급락"으로 본다.
+const SIGNIFICANT_DROP_RATE = -0.3;
+const MIN_USERS_FOR_DROP = 50;
+const MIN_CLICKS_FOR_DROP = 10;
+
+// GA4 사용자 급락 여부 (변동률 + 절대규모 게이트). 호출부 전체가 이 기준을 공유한다.
+function isSignificantUserDrop(
+  change: number | null | undefined,
+  previousUsers: number | undefined,
+): boolean {
+  return (
+    (change ?? 0) <= SIGNIFICANT_DROP_RATE &&
+    (previousUsers ?? 0) >= MIN_USERS_FOR_DROP
+  );
+}
+
+// GSC 클릭 급락 여부 (변동률 + 절대규모 게이트).
+function isSignificantClickDrop(
+  change: number | null | undefined,
+  previousClicks: number | undefined,
+): boolean {
+  return (
+    (change ?? 0) <= SIGNIFICANT_DROP_RATE &&
+    (previousClicks ?? 0) >= MIN_CLICKS_FOR_DROP
+  );
+}
+
 export interface SiteStat {
   id: string;
   name: string;
@@ -415,10 +443,11 @@ export function getDashboardData(): DashboardData {
       .filter((stat) => stat.operationalStatus !== "normal")
       .slice(0, 20),
     trafficDropStats: displayStats
-      .filter(
-        (s) =>
-          (s.trend.activeUsersChange ?? 0) <= -0.3 &&
-          s.previous7Days.activeUsers >= 10,
+      .filter((s) =>
+        isSignificantUserDrop(
+          s.trend.activeUsersChange,
+          s.previous7Days.activeUsers,
+        ),
       )
       .sort(
         (a, b) =>
@@ -674,11 +703,7 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (
-    activeChange !== null &&
-    activeChange <= -0.3 &&
-    stat.previous7Days.activeUsers >= 10
-  ) {
+  if (isSignificantUserDrop(activeChange, stat.previous7Days.activeUsers)) {
     items.push(
       makeAction(
         stat,
@@ -691,11 +716,7 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (
-    gscChange !== null &&
-    gscChange <= -0.3 &&
-    stat.gscPrevious7Days.clicks >= 5
-  ) {
+  if (isSignificantClickDrop(gscChange, stat.gscPrevious7Days.clicks)) {
     items.push(
       makeAction(
         stat,
@@ -1324,12 +1345,22 @@ function getHealthScore(
     reasons.push("수집 상태 확인 필요");
   }
 
-  if ((stat.trend.activeUsersChange ?? 0) <= -0.3) {
+  if (
+    isSignificantUserDrop(
+      stat.trend.activeUsersChange,
+      stat.previous7Days?.activeUsers,
+    )
+  ) {
     score -= 25;
     reasons.push("사용자 급락");
   }
 
-  if ((stat.trend.gscClicksChange ?? 0) <= -0.3) {
+  if (
+    isSignificantClickDrop(
+      stat.trend.gscClicksChange,
+      stat.gscPrevious7Days?.clicks,
+    )
+  ) {
     score -= 15;
     reasons.push("검색 클릭 감소");
   }
@@ -1417,9 +1448,7 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
     }
 
     if (
-      activeUsersChange !== null &&
-      activeUsersChange <= -0.3 &&
-      stat.previous7Days.activeUsers >= 10
+      isSignificantUserDrop(activeUsersChange, stat.previous7Days.activeUsers)
     ) {
       insights.push(
         makeInsight(
@@ -1433,11 +1462,7 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
       );
     }
 
-    if (
-      gscClicksChange !== null &&
-      gscClicksChange <= -0.3 &&
-      stat.gscPrevious7Days.clicks >= 5
-    ) {
+    if (isSignificantClickDrop(gscClicksChange, stat.gscPrevious7Days.clicks)) {
       insights.push(
         makeInsight(
           stat,
@@ -1695,9 +1720,10 @@ function getOperationalStatus(stat: SiteStat): OperationalStatus {
     return "processing";
   }
 
-  if (hasSitemapCollectionLag(stat)) {
-    return "stale";
-  }
+  // sitemap 수집 지연(lastDownloaded)은 Google 크롤링 타이밍에 의존하므로
+  // 운영자가 손쓸 수 없다. 운영 상태(stale)로 표시하면 정상 사이트가
+  // 대량 오탐으로 잡힌다. 점수 감점(getHealthScore)으로만 약하게 반영한다.
+  // GA4/GSC 수집(fetch) 48h+ 지연은 위에서 여전히 stale로 잡힌다.
 
   return "normal";
 }
