@@ -8,6 +8,7 @@ sites:
     wpRestBase: https://kang4.com/wp-json/wp/v2
     ga4PropertyId: "325680688"
     gscSiteUrl: https://kang4.com/
+    monetization: true
   - id: tasko
     name: 태스코 - GA4
     enabled: false
@@ -16,6 +17,7 @@ sites:
     wpRestBase: https://tasko.kr/wp-json/wp/v2
     ga4PropertyId: "511810052"
     gscSiteUrl: https://tasko.kr/
+    monetization: true
   - id: luckyday
     name: 럭키데이 - GA4
     enabled: true
@@ -24,6 +26,7 @@ sites:
     wpRestBase: https://luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "512019715"
     gscSiteUrl: sc-domain:luckyday.kr
+    monetization: true
   - id: knewstory
     name: 케이뉴스스토리 - GA4
     enabled: true
@@ -32,6 +35,7 @@ sites:
     wpRestBase: https://knewstory.kr/wp-json/wp/v2
     ga4PropertyId: "511978714"
     gscSiteUrl: https://knewstory.kr/
+    monetization: true
   - id: 2mlab
     name: 팀하우스 - GA4
     enabled: false
@@ -40,6 +44,7 @@ sites:
     wpRestBase: https://2mlab.kr/wp-json/wp/v2
     ga4PropertyId: "511994173"
     gscSiteUrl: https://2mlab.kr/
+    monetization: true
   - id: chatgipt
     name: 블로그 - GA4
     enabled: false
@@ -48,6 +53,7 @@ sites:
     wpRestBase: https://chatgipt.kr/wp-json/wp/v2
     ga4PropertyId: "512060443"
     gscSiteUrl: https://chatgipt.kr/
+    monetization: true
   - id: chatgipt-2
     name: 블로그 - GA4
     enabled: false
@@ -56,6 +62,7 @@ sites:
     wpRestBase: https://chatgipt.kr/wp-json/wp/v2
     ga4PropertyId: "512050444"
     gscSiteUrl: https://chatgipt.kr/
+    monetization: true
   - id: fastjob
     name: 패스트잡 - GA4
     enabled: true
@@ -64,6 +71,7 @@ sites:
     wpRestBase: https://fastjob.kr/wp-json/wp/v2
     ga4PropertyId: "513769879"
     gscSiteUrl: https://fastjob.kr/
+    monetization: true
   - id: discparty
     name: 디스크파티 - GA4
     enabled: true
@@ -72,6 +80,7 @@ sites:
     wpRestBase: https://discparty.com/wp-json/wp/v2
     ga4PropertyId: "513733245"
     gscSiteUrl: https://discparty.com/
+    monetization: true
   - id: klick
     name: 블로그 - GA4
     enabled: false
@@ -80,6 +89,7 @@ sites:
     wpRestBase: https://klick.kr/wp-json/wp/v2
     ga4PropertyId: "515381693"
     gscSiteUrl: https://klick.kr/
+    monetization: true
   - id: temon
     name: 테몬_temon.kr
     enabled: true
@@ -88,6 +98,7 @@ sites:
     wpRestBase: https://temon.kr/wp-json/wp/v2
     ga4PropertyId: "516369797"
     gscSiteUrl: sc-domain:temon.kr
+    monetization: true
   - id: haemongdream
     name: 해몽드림 - GA4
     enabled: true
@@ -96,6 +107,7 @@ sites:
     wpRestBase: https://haemongdream.com/wp-json/wp/v2
     ga4PropertyId: "516256882"
     gscSiteUrl: https://haemongdream.com/
+    monetization: true
   - id: insupang
     name: insupang - GA4
     enabled: true
@@ -104,6 +116,7 @@ sites:
     wpRestBase: https://insupang.com/wp-json/wp/v2
     ga4PropertyId: "517897382"
     gscSiteUrl: https://insupang.com/
+    monetization: true
   - id: healthgotoo
     name: 건강팡팡 - GA4
     enabled: true
@@ -112,6 +125,7 @@ sites:
     wpRestBase: https://healthgotoo.com/wp-json/wp/v2
     ga4PropertyId: "517066030"
     gscSiteUrl: https://healthgotoo.com/
+    monetization: true
   - id: travelpang
     name: 여행팡 - GA4
     enabled: false
@@ -120,6 +134,7 @@ sites:
     wpRestBase: https://travelpang.kr/wp-json/wp/v2
     ga4PropertyId: "517948231"
     gscSiteUrl: https://travelpang.kr/
+    monetization: true
   - id: coinyo
     name: 코인요요 - GA4
     enabled: false
@@ -128,6 +143,7 @@ sites:
     wpRestBase: https://coinyo.kr/wp-json/wp/v2
     ga4PropertyId: "517634776"
     gscSiteUrl: https://coinyo.kr/
+    monetization: true
   - id: dogspang
     name: 정보랩 - GA4
     enabled: false
@@ -136,6 +152,7 @@ sites:
     wpRestBase: https://dogspang.kr/wp-json/wp/v2
     ga4PropertyId: "517108655"
     gscSiteUrl: https://dogspang.kr/
+    monetization: true
   - id: cartain
     name: cartain
     enabled: false
@@ -144,6 +161,7 @@ sites:
     wpRestBase: https://cartain.kr/wp-json/wp/v2
     ga4PropertyId: "518554091"
     gscSiteUrl: https://cartain.kr/
+    monetization: true
   - id: softwa
     name: 소프트와 - GA4
     enabled: true
@@ -152,6 +170,7 @@ sites:
     wpRestBase: https://softwa.kr/wp-json/wp/v2
     ga4PropertyId: "519577510"
     gscSiteUrl: https://softwa.kr/
+    monetization: true
   - id: legalser
     name: legalser - GA4
     enabled: true
@@ -160,6 +179,7 @@ sites:
     wpRestBase: https://legalser.com/wp-json/wp/v2
     ga4PropertyId: "519536919"
     gscSiteUrl: https://legalser.com/
+    monetization: true
   - id: petinsuer
     name: 펫인사이트 - GA4
     enabled: false
@@ -168,6 +188,7 @@ sites:
     wpRestBase: https://petinsuer.com/wp-json/wp/v2
     ga4PropertyId: "519578899"
     gscSiteUrl: https://petinsuer.com/
+    monetization: true
   - id: homeimer
     name: homemake - GA4
     enabled: true
@@ -176,6 +197,7 @@ sites:
     wpRestBase: https://homeimer.com/wp-json/wp/v2
     ga4PropertyId: "519582866"
     gscSiteUrl: https://homeimer.com/
+    monetization: true
   - id: healfood
     name: 건강푸드팡 - GA4
     enabled: false
@@ -184,6 +206,7 @@ sites:
     wpRestBase: https://healfood.kr/wp-json/wp/v2
     ga4PropertyId: "520249990"
     gscSiteUrl: https://healfood.kr/
+    monetization: true
   - id: finan
     name: 파이날팡 - GA4
     enabled: true
@@ -192,6 +215,7 @@ sites:
     wpRestBase: https://finan.kr/wp-json/wp/v2
     ga4PropertyId: "520579523"
     gscSiteUrl: https://finan.kr/
+    monetization: true
   - id: luxurytraver
     name: luxurytraver - GA4
     enabled: false
@@ -200,6 +224,7 @@ sites:
     wpRestBase: https://luxurytraver.com/wp-json/wp/v2
     ga4PropertyId: "521243475"
     gscSiteUrl: https://luxurytraver.com/
+    monetization: true
   - id: etique
     name: 매너팡팡 - GA4
     enabled: true
@@ -208,6 +233,7 @@ sites:
     wpRestBase: https://etique.kr/wp-json/wp/v2
     ga4PropertyId: "521236824"
     gscSiteUrl: https://etique.kr/
+    monetization: true
   - id: trave
     name: 여행브이 - GA4
     enabled: true
@@ -216,6 +242,7 @@ sites:
     wpRestBase: https://trave.kr/wp-json/wp/v2
     ga4PropertyId: "521243855"
     gscSiteUrl: https://trave.kr/
+    monetization: true
   - id: autoscares
     name: 자동차팡팡 - GA4
     enabled: false
@@ -224,6 +251,7 @@ sites:
     wpRestBase: https://autoscares.com/wp-json/wp/v2
     ga4PropertyId: "521782814"
     gscSiteUrl: https://autoscares.com/
+    monetization: true
   - id: lawer
     name: 법이람 - GA4
     enabled: true
@@ -232,6 +260,7 @@ sites:
     wpRestBase: https://lawer.kr/wp-json/wp/v2
     ga4PropertyId: "521770057"
     gscSiteUrl: https://lawer.kr/
+    monetization: true
   - id: estat
     name: 푸드팡팡 - GA4
     enabled: false
@@ -240,6 +269,7 @@ sites:
     wpRestBase: https://estat.kr/wp-json/wp/v2
     ga4PropertyId: "523324426"
     gscSiteUrl: https://estat.kr/
+    monetization: true
   - id: gover
     name: 보조금365 - GA4
     enabled: true
@@ -248,6 +278,7 @@ sites:
     wpRestBase: https://gover.kr/wp-json/wp/v2
     ga4PropertyId: "523266152"
     gscSiteUrl: https://gover.kr/
+    monetization: true
   - id: nicewomen
     name: 나이스우먼 - GA4
     enabled: true
@@ -256,6 +287,7 @@ sites:
     wpRestBase: https://nicewomen.kr/wp-json/wp/v2
     ga4PropertyId: "524548131"
     gscSiteUrl: https://nicewomen.kr/
+    monetization: true
   - id: esgyo
     name: 이에스지요 - GA4
     enabled: true
@@ -264,6 +296,7 @@ sites:
     wpRestBase: https://esgyo.kr/wp-json/wp/v2
     ga4PropertyId: "524502961"
     gscSiteUrl: https://esgyo.kr/
+    monetization: true
   - id: sellerpit
     name: 셀러핏 - GA4
     enabled: false
@@ -272,6 +305,7 @@ sites:
     wpRestBase: https://sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "525923821"
     gscSiteUrl: https://sellerpit.kr/
+    monetization: true
   - id: spinkorea
     name: 스핀코리아
     enabled: false
@@ -280,6 +314,7 @@ sites:
     wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "532855163"
     gscSiteUrl: https://spinkorea.kr/
+    monetization: true
   - id: texturb
     name: texturb.com
     enabled: true
@@ -288,6 +323,7 @@ sites:
     wpRestBase: https://texturb.com/wp-json/wp/v2
     ga4PropertyId: "532887366"
     gscSiteUrl: https://texturb.com/
+    monetization: true
   - id: runmania
     name: runmania.kr
     enabled: true
@@ -296,6 +332,7 @@ sites:
     wpRestBase: https://runmania.kr/wp-json/wp/v2
     ga4PropertyId: "533614337"
     gscSiteUrl: https://runmania.kr/
+    monetization: true
   - id: tasko-2
     name: tasko.kr
     enabled: true
@@ -304,6 +341,7 @@ sites:
     wpRestBase: https://tasko.kr/wp-json/wp/v2
     ga4PropertyId: "533744995"
     gscSiteUrl: https://tasko.kr/
+    monetization: true
   - id: mbti-tasko
     name: tasko.kr
     enabled: true
@@ -312,6 +350,7 @@ sites:
     wpRestBase: https://mbti.tasko.kr/wp-json/wp/v2
     ga4PropertyId: "533744995"
     gscSiteUrl: https://mbti.tasko.kr/
+    monetization: true
   - id: luckyday-2
     name: https://luckyday.kr
     enabled: false
@@ -320,6 +359,7 @@ sites:
     wpRestBase: https://luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "533729607"
     gscSiteUrl: sc-domain:luckyday.kr
+    monetization: true
   - id: nexttech7
     name: nexttech7.com
     enabled: true
@@ -328,6 +368,7 @@ sites:
     wpRestBase: https://nexttech7.com/wp-json/wp/v2
     ga4PropertyId: "533760772"
     gscSiteUrl: https://nexttech7.com/
+    monetization: true
   - id: klick-2
     name: klick.kr
     enabled: true
@@ -336,6 +377,7 @@ sites:
     wpRestBase: https://klick.kr/wp-json/wp/v2
     ga4PropertyId: "533748860"
     gscSiteUrl: https://klick.kr/
+    monetization: true
   - id: sellerpit-2
     name: sellerpit.kr
     enabled: true
@@ -344,6 +386,7 @@ sites:
     wpRestBase: https://sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "534005389"
     gscSiteUrl: https://sellerpit.kr/
+    monetization: true
     contentSource:
       type: wordpress-ssh
       sshHost: smart.sellerpit.kr
@@ -359,6 +402,7 @@ sites:
     wpRestBase: https://chatgipt.kr/wp-json/wp/v2
     ga4PropertyId: "534308136"
     gscSiteUrl: https://chatgipt.kr/
+    monetization: true
   - id: esgyo-2
     name: esgyo.kr
     enabled: false
@@ -367,6 +411,7 @@ sites:
     wpRestBase: https://esgyo.kr/wp-json/wp/v2
     ga4PropertyId: "534284697"
     gscSiteUrl: https://esgyo.kr/
+    monetization: true
   - id: today2424
     name: today2424.kr
     enabled: true
@@ -375,6 +420,7 @@ sites:
     wpRestBase: https://today2424.kr/wp-json/wp/v2
     ga4PropertyId: "534327620"
     gscSiteUrl: https://www.today2424.kr/
+    monetization: true
   - id: todaypharm
     name: todaypharm.kr
     enabled: true
@@ -383,6 +429,7 @@ sites:
     wpRestBase: https://todaypharm.kr/wp-json/wp/v2
     ga4PropertyId: "534313222"
     gscSiteUrl: https://www.todaypharm.kr/
+    monetization: true
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true
@@ -391,6 +438,7 @@ sites:
     wpRestBase: https://tennisfrens.com/wp-json/wp/v2
     ga4PropertyId: "534356101"
     gscSiteUrl: sc-domain:tennisfrens.com
+    monetization: true
   - id: bojo24
     name: bojo24.kr
     enabled: true
@@ -404,6 +452,7 @@ sites:
       - https://www.bojo24.kr/benefit/sitemap.xml
       - https://www.bojo24.kr/startup/sitemap.xml
       - https://www.bojo24.kr/blog/sitemap.xml
+    monetization: true
   - id: ehon365
     name: ehon365.kr
     enabled: true
@@ -412,6 +461,7 @@ sites:
     wpRestBase: https://ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "535779756"
     gscSiteUrl: sc-domain:ehon365.kr
+    monetization: true
   - id: 2mlab-2
     name: 2mlab.kr
     enabled: true
@@ -420,6 +470,7 @@ sites:
     wpRestBase: https://2mlab.kr/wp-json/wp/v2
     ga4PropertyId: "536008285"
     gscSiteUrl: https://2mlab.kr/
+    monetization: true
   - id: spinkorea-2
     name: spinkorea.kr
     enabled: true
@@ -428,6 +479,7 @@ sites:
     wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "536081634"
     gscSiteUrl: https://spinkorea.kr/
+    monetization: true
   - id: ezfunnel
     name: ezfunnel.kr
     enabled: true
@@ -436,6 +488,7 @@ sites:
     wpRestBase: https://ezfunnel.kr/wp-json/wp/v2
     ga4PropertyId: "536106465"
     gscSiteUrl: https://ezfunnel.kr/
+    monetization: true
   - id: knewstory-2
     name: knewstory.kr
     enabled: false
@@ -444,6 +497,7 @@ sites:
     wpRestBase: https://knewstory.kr/wp-json/wp/v2
     ga4PropertyId: "536122428"
     gscSiteUrl: https://knewstory.kr/
+    monetization: true
   - id: kang4-2
     name: kang4.com
     enabled: false
@@ -452,6 +506,7 @@ sites:
     wpRestBase: https://kang4.com/wp-json/wp/v2
     ga4PropertyId: "536337959"
     gscSiteUrl: https://kang4.com/
+    monetization: true
   - id: coinyo-2
     name: coinyo.kr
     enabled: true
@@ -460,6 +515,7 @@ sites:
     wpRestBase: https://coinyo.kr/wp-json/wp/v2
     ga4PropertyId: "536352221"
     gscSiteUrl: https://coinyo.kr/
+    monetization: true
   - id: fastjob-2
     name: fastjob.kr
     enabled: false
@@ -468,6 +524,7 @@ sites:
     wpRestBase: https://fastjob.kr/wp-json/wp/v2
     ga4PropertyId: "536358308"
     gscSiteUrl: https://fastjob.kr/
+    monetization: true
   - id: cartain-2
     name: cartain.kr
     enabled: true
@@ -476,6 +533,7 @@ sites:
     wpRestBase: https://cartain.kr/wp-json/wp/v2
     ga4PropertyId: "536558706"
     gscSiteUrl: https://cartain.kr/
+    monetization: true
   - id: crepika
     name: crepika.com
     enabled: true
@@ -484,6 +542,7 @@ sites:
     wpRestBase: https://crepika.com/wp-json/wp/v2
     ga4PropertyId: "536578195"
     gscSiteUrl: https://crepika.com/
+    monetization: true
   - id: insupang-2
     name: insupang.com
     enabled: false
@@ -492,6 +551,7 @@ sites:
     wpRestBase: https://insupang.com/wp-json/wp/v2
     ga4PropertyId: "536533161"
     gscSiteUrl: https://insupang.com/
+    monetization: true
   - id: healthgotoo-2
     name: healthgotoo.com
     enabled: false
@@ -500,6 +560,7 @@ sites:
     wpRestBase: https://healthgotoo.com/wp-json/wp/v2
     ga4PropertyId: "536550724"
     gscSiteUrl: https://healthgotoo.com/
+    monetization: true
   - id: dogspang-2
     name: dogspang.kr
     enabled: true
@@ -508,6 +569,7 @@ sites:
     wpRestBase: https://dogspang.kr/wp-json/wp/v2
     ga4PropertyId: "536564400"
     gscSiteUrl: https://dogspang.kr/
+    monetization: true
   - id: travelpang-2
     name: travelpang.kr
     enabled: true
@@ -516,6 +578,7 @@ sites:
     wpRestBase: https://travelpang.kr/wp-json/wp/v2
     ga4PropertyId: "536559437"
     gscSiteUrl: https://travelpang.kr/
+    monetization: true
   - id: legalser-2
     name: legalser.com
     enabled: false
@@ -524,6 +587,7 @@ sites:
     wpRestBase: https://legalser.com/wp-json/wp/v2
     ga4PropertyId: "536573278"
     gscSiteUrl: https://legalser.com/
+    monetization: true
   - id: petinsuer-2
     name: petinsuer.com
     enabled: true
@@ -532,6 +596,7 @@ sites:
     wpRestBase: https://petinsuer.com/wp-json/wp/v2
     ga4PropertyId: "536670197"
     gscSiteUrl: https://petinsuer.com/
+    monetization: true
   - id: etique-2
     name: etique.kr
     enabled: false
@@ -540,6 +605,7 @@ sites:
     wpRestBase: https://etique.kr/wp-json/wp/v2
     ga4PropertyId: "536548785"
     gscSiteUrl: https://etique.kr/
+    monetization: true
   - id: luxurytraver-2
     name: luxurytraver.com
     enabled: true
@@ -548,6 +614,7 @@ sites:
     wpRestBase: https://luxurytraver.com/wp-json/wp/v2
     ga4PropertyId: "536662292"
     gscSiteUrl: https://luxurytraver.com/
+    monetization: true
   - id: softwa-2
     name: softwa.kr
     enabled: false
@@ -556,6 +623,7 @@ sites:
     wpRestBase: https://softwa.kr/wp-json/wp/v2
     ga4PropertyId: "536668384"
     gscSiteUrl: https://softwa.kr/
+    monetization: true
   - id: autoscares-2
     name: autoscares.com
     enabled: true
@@ -564,6 +632,7 @@ sites:
     wpRestBase: https://autoscares.com/wp-json/wp/v2
     ga4PropertyId: "536651077"
     gscSiteUrl: https://autoscares.com/
+    monetization: true
   - id: healfood-2
     name: healfood.kr
     enabled: true
@@ -572,6 +641,7 @@ sites:
     wpRestBase: https://healfood.kr/wp-json/wp/v2
     ga4PropertyId: "536788301"
     gscSiteUrl: https://healfood.kr/
+    monetization: true
   - id: gover-2
     name: gover.kr
     enabled: false
@@ -580,6 +650,7 @@ sites:
     wpRestBase: https://gover.kr/wp-json/wp/v2
     ga4PropertyId: "536824904"
     gscSiteUrl: https://gover.kr/
+    monetization: true
   - id: estat-2
     name: estat.kr
     enabled: true
@@ -588,6 +659,7 @@ sites:
     wpRestBase: https://estat.kr/wp-json/wp/v2
     ga4PropertyId: "536753109"
     gscSiteUrl: https://estat.kr/
+    monetization: true
   - id: homeimer-2
     name: homeimer.com
     enabled: false
@@ -596,6 +668,7 @@ sites:
     wpRestBase: https://homeimer.com/wp-json/wp/v2
     ga4PropertyId: "536833044"
     gscSiteUrl: https://homeimer.com/
+    monetization: true
   - id: askore
     name: askore.kr
     enabled: true
@@ -604,6 +677,7 @@ sites:
     wpRestBase: https://askore.kr/wp-json/wp/v2
     ga4PropertyId: "536871374"
     gscSiteUrl: https://askore.kr/
+    monetization: true
   - id: gong365
     name: gong365.kr
     enabled: true
@@ -612,6 +686,7 @@ sites:
     wpRestBase: https://gong365.kr/wp-json/wp/v2
     ga4PropertyId: "536928839"
     gscSiteUrl: https://gong365.kr/
+    monetization: true
   - id: trave-2
     name: trave.kr
     enabled: false
@@ -620,6 +695,7 @@ sites:
     wpRestBase: https://trave.kr/wp-json/wp/v2
     ga4PropertyId: "536910323"
     gscSiteUrl: https://trave.kr/
+    monetization: true
   - id: goesku
     name: goesku.com
     enabled: true
@@ -628,6 +704,7 @@ sites:
     wpRestBase: https://goesku.com/wp-json/wp/v2
     ga4PropertyId: "536856718"
     gscSiteUrl: https://goesku.com/
+    monetization: true
   - id: roadways
     name: roadways.kr
     enabled: true
@@ -636,6 +713,7 @@ sites:
     wpRestBase: https://roadways.kr/wp-json/wp/v2
     ga4PropertyId: "536902558"
     gscSiteUrl: https://roadways.kr/
+    monetization: true
   - id: lawer-2
     name: lawer.kr
     enabled: false
@@ -644,6 +722,7 @@ sites:
     wpRestBase: https://lawer.kr/wp-json/wp/v2
     ga4PropertyId: "537125482"
     gscSiteUrl: https://lawer.kr/
+    monetization: true
   - id: sssaass
     name: sssaass.com
     enabled: true
@@ -652,6 +731,7 @@ sites:
     wpRestBase: https://sssaass.com/wp-json/wp/v2
     ga4PropertyId: "537317309"
     gscSiteUrl: https://sssaass.com/
+    monetization: true
   - id: todayshops
     name: todayshops.kr
     enabled: false
@@ -660,6 +740,7 @@ sites:
     wpRestBase: https://todayshops.kr/wp-json/wp/v2
     ga4PropertyId: "537295441"
     gscSiteUrl: https://todayshops.kr/
+    monetization: true
   - id: educaer
     name: educaer.com
     enabled: true
@@ -668,6 +749,7 @@ sites:
     wpRestBase: https://educaer.com/wp-json/wp/v2
     ga4PropertyId: "537331142"
     gscSiteUrl: https://educaer.com/
+    monetization: true
   - id: todayshops-2
     name: todayshops.kr
     enabled: true
@@ -676,6 +758,7 @@ sites:
     wpRestBase: https://todayshops.kr/wp-json/wp/v2
     ga4PropertyId: "537250213"
     gscSiteUrl: https://todayshops.kr/
+    monetization: true
   - id: richyou
     name: richyou.kr
     enabled: true
@@ -684,6 +767,7 @@ sites:
     wpRestBase: https://richyou.kr/wp-json/wp/v2
     ga4PropertyId: "537950699"
     gscSiteUrl: https://richyou.kr/
+    monetization: true
   - id: certifi
     name: certifi.kr
     enabled: true
@@ -692,6 +776,7 @@ sites:
     wpRestBase: https://certifi.kr/wp-json/wp/v2
     ga4PropertyId: "537945374"
     gscSiteUrl: https://certifi.kr/
+    monetization: true
   - id: finan-2
     name: finan.kr
     enabled: false
@@ -700,6 +785,7 @@ sites:
     wpRestBase: https://finan.kr/wp-json/wp/v2
     ga4PropertyId: "537937514"
     gscSiteUrl: https://finan.kr/
+    monetization: true
   - id: phone-luckyday
     name: phone.luckyday.kr
     enabled: true
@@ -708,6 +794,7 @@ sites:
     wpRestBase: https://phone.luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "538379576"
     gscSiteUrl: https://phone.luckyday.kr/
+    monetization: true
   - id: gong-luckyday
     name: gong.luckyday.kr
     enabled: true
@@ -716,6 +803,7 @@ sites:
     wpRestBase: https://gong.luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "538330802"
     gscSiteUrl: sc-domain:gong.luckyday.kr
+    monetization: true
   - id: car-luckyday
     name: car.luckyday.kr
     enabled: true
@@ -724,6 +812,7 @@ sites:
     wpRestBase: https://car.luckyday.kr/wp-json/wp/v2
     ga4PropertyId: "538367953"
     gscSiteUrl: sc-domain:car.luckyday.kr
+    monetization: true
   - id: notebook-klick
     name: 노트북고고
     enabled: false
@@ -732,6 +821,7 @@ sites:
     wpRestBase: https://notebook.klick.kr/wp-json/wp/v2
     ga4PropertyId: "538351492"
     gscSiteUrl: https://notebook.klick.kr/
+    monetization: true
   - id: notebook-klick-2
     name: notebook.klick.kr
     enabled: true
@@ -740,6 +830,7 @@ sites:
     wpRestBase: https://notebook.klick.kr/wp-json/wp/v2
     ga4PropertyId: "538469681"
     gscSiteUrl: https://notebook.klick.kr/
+    monetization: true
   - id: ai-tasko
     name: ai.tasko.kr
     enabled: true
@@ -748,6 +839,7 @@ sites:
     wpRestBase: https://ai.tasko.kr/wp-json/wp/v2
     ga4PropertyId: "538418068"
     gscSiteUrl: sc-domain:ai.tasko.kr
+    monetization: true
   - id: saju-tasko
     name: saju.tasko.kr
     enabled: true
@@ -756,6 +848,7 @@ sites:
     wpRestBase: https://saju.tasko.kr/wp-json/wp/v2
     ga4PropertyId: "538409598"
     gscSiteUrl: sc-domain:saju.tasko.kr
+    monetization: true
   - id: petjigi
     name: petjigi.kr
     enabled: true
@@ -764,6 +857,7 @@ sites:
     wpRestBase: https://petjigi.kr/wp-json/wp/v2
     ga4PropertyId: "538418545"
     gscSiteUrl: https://petjigi.kr/
+    monetization: true
   - id: yesa
     name: yesa.kr
     enabled: true
@@ -772,6 +866,7 @@ sites:
     wpRestBase: https://yesa.kr/wp-json/wp/v2
     ga4PropertyId: "539176876"
     gscSiteUrl: https://yesa.kr/
+    monetization: true
   - id: picklefriend
     name: picklefriend.kr
     enabled: true
@@ -780,6 +875,7 @@ sites:
     wpRestBase: https://picklefriend.kr/wp-json/wp/v2
     ga4PropertyId: "539268592"
     gscSiteUrl: https://picklefriend.kr/
+    monetization: true
   - id: smart-sellerpit
     name: smart.sellerpit.kr
     enabled: true
@@ -788,6 +884,7 @@ sites:
     wpRestBase: https://smart.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539570439"
     gscSiteUrl: https://smart.sellerpit.kr/
+    monetization: true
     contentSource:
       type: wordpress-ssh
       sshHost: smart.sellerpit.kr
@@ -803,6 +900,7 @@ sites:
     wpRestBase: https://pregnancy.ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "539600556"
     gscSiteUrl: https://pregnancy.ehon365.kr/
+    monetization: true
   - id: webtoon-klick
     name: webtoon.klick.kr
     enabled: true
@@ -811,6 +909,7 @@ sites:
     wpRestBase: https://webtoon.klick.kr/wp-json/wp/v2
     ga4PropertyId: "539606050"
     gscSiteUrl: https://webtoon.klick.kr/
+    monetization: true
   - id: sinhonjigi-ehon365
     name: sinhonjigi.ehon365.kr
     enabled: true
@@ -819,6 +918,7 @@ sites:
     wpRestBase: https://sinhonjigi.ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "539463615"
     gscSiteUrl: https://sinhonjigi.ehon365.kr/
+    monetization: true
   - id: gpt-nexttech7
     name: gpt.nexttech7.com
     enabled: true
@@ -827,6 +927,7 @@ sites:
     wpRestBase: https://gpt.nexttech7.com/wp-json/wp/v2
     ga4PropertyId: "539592261"
     gscSiteUrl: https://gpt.nexttech7.com/
+    monetization: true
   - id: dolbomjigi-ehon365
     name: dolbomjigi.ehon365.kr
     enabled: true
@@ -835,6 +936,7 @@ sites:
     wpRestBase: https://dolbomjigi.ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "539658831"
     gscSiteUrl: https://dolbomjigi.ehon365.kr/
+    monetization: true
   - id: dog-klick
     name: dog.klick.kr
     enabled: true
@@ -843,6 +945,7 @@ sites:
     wpRestBase: https://dog.klick.kr/wp-json/wp/v2
     ga4PropertyId: "539677201"
     gscSiteUrl: https://dog.klick.kr/
+    monetization: true
   - id: dogswhere
     name: dogswhere.com
     enabled: true
@@ -851,6 +954,7 @@ sites:
     wpRestBase: https://dogswhere.com/wp-json/wp/v2
     ga4PropertyId: "539684317"
     gscSiteUrl: sc-domain:dogswhere.com
+    monetization: true
   - id: travel-sellerpit
     name: travel.sellerpit.kr
     enabled: true
@@ -859,6 +963,7 @@ sites:
     wpRestBase: https://travel.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539747744"
     gscSiteUrl: https://travel.sellerpit.kr/
+    monetization: true
     contentSource:
       type: wordpress-ssh
       sshHost: smart.sellerpit.kr
@@ -874,6 +979,7 @@ sites:
     wpRestBase: https://jasamall.sellerpit.kr/wp-json/wp/v2
     ga4PropertyId: "539903323"
     gscSiteUrl: https://jasamall.sellerpit.kr/
+    monetization: true
     contentSource:
       type: wordpress-ssh
       sshHost: smart.sellerpit.kr
@@ -889,7 +995,6 @@ sites:
     wpRestBase: https://sorimate.com/wp-json/wp/v2
     ga4PropertyId: "540102091"
     gscSiteUrl: https://sorimate.com/
-    # 쇼핑몰이라 AdSense 미적용 — 수익화 수집/이슈 집계에서 제외
     monetization: false
   - id: campgogo
     name: https://campgogo.kr
@@ -899,6 +1004,7 @@ sites:
     wpRestBase: https://campgogo.kr/wp-json/wp/v2
     ga4PropertyId: "540129650"
     gscSiteUrl: https://campgogo.kr/
+    monetization: true
   - id: dullegilgogo
     name: https://dullegilgogo.kr
     enabled: true
@@ -907,3 +1013,13 @@ sites:
     wpRestBase: https://dullegilgogo.kr/wp-json/wp/v2
     ga4PropertyId: "540228738"
     gscSiteUrl: https://dullegilgogo.kr/
+    monetization: true
+  - id: workgogo
+    name: workgogo.kr
+    enabled: true
+    platform: wordpress
+    url: https://workgogo.kr/
+    wpRestBase: https://workgogo.kr/wp-json/wp/v2
+    ga4PropertyId: "540357516"
+    gscSiteUrl: https://workgogo.kr/
+    monetization: true
