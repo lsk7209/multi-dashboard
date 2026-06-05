@@ -112,10 +112,11 @@ const MIN_USERS_FOR_DROP = 50;
 const MIN_CLICKS_FOR_DROP = 10;
 
 // GA4 사용자 급락 여부 (변동률 + 절대규모 게이트). 호출부 전체가 이 기준을 공유한다.
+// 술어가 참이면 change는 반드시 number이므로 `change is number`로 narrow한다.
 function isSignificantUserDrop(
   change: number | null | undefined,
   previousUsers: number | undefined,
-): boolean {
+): change is number {
   return (
     (change ?? 0) <= SIGNIFICANT_DROP_RATE &&
     (previousUsers ?? 0) >= MIN_USERS_FOR_DROP
@@ -126,7 +127,7 @@ function isSignificantUserDrop(
 function isSignificantClickDrop(
   change: number | null | undefined,
   previousClicks: number | undefined,
-): boolean {
+): change is number {
   return (
     (change ?? 0) <= SIGNIFICANT_DROP_RATE &&
     (previousClicks ?? 0) >= MIN_CLICKS_FOR_DROP
