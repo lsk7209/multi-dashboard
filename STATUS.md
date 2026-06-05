@@ -1,16 +1,16 @@
 # Status | 마지막: 2026-06-05
 ## 현재 작업
-개선우선순위 10가지 plan(.omc/plans/improvement-priorities-2026-06-05.md) 실행 중. P1~P4 완료, P2(haemongdream GA4 태그)·P5~P10 남음
+사이트 검토 plan(.omc/plans/registered-sites-review-2026-06-05.md) 실행 중. T1 계측복구 완료. T2 색인/T3 순위/T4 CTR/T5 정리 남음
 ## 최근 변경 (최근 5개만)
-- 06-05: P1 자동수집 복구 — "결제 중단"은 오진. 실제는 1425dad가 monetization required 추가→type-check 깨짐(수집은 성공, Validate step이 commit 차단). 타입에러 3건 수정(update-ga4-stats/06-verify-readiness/import-ga4-sites)
-- 06-05: P3·P4 대시보드 오탐 제거 — 급락 게이트 통일·상향(MIN_USERS 50/CLICKS 10, 헬퍼화), sitemap지연을 stale에서 분리. 트래픽급락 6~7→1건, 일일이슈 38→0
-- 06-05: haemongdream GA4 계측 끊김 발견 — 06-03부터 일일 0·사이트 정상·HTML에 gtag 전무. 트래픽 하락 아닌 태그 유실
-- 06-05: 급락 12건 재판정 — 대부분 극소트래픽 노이즈/캐시잔상. 진짜는 haemongdream(태그유실)·temon(Google노출 반토막, 네이버는 건재)뿐
-- 06-05: 운영 지식 영속화 docs/OPERATIONS.md(SSOT) + `npm run diag`
+- 06-05: T1 계측끊김 3건 복구 — haemongdream(헤더 mu-plugin GA4 누락)·finan(GA4가 비활성테마 kadence에 있어 미로드→mu-plugin)·estat(실제정상,캐시오판). measurement ID GA4 API로 확보. 실페이지 출력 검증
+- 06-05: 등록 76개 전수 검토 — 미색인22·노출되나클릭0 28개. 계측의심 finan/estat 발견(GSC노출 있는데 GA4 0/극소)
+- 06-05: P1 자동수집 복구 — "결제중단"은 오진, 실제 type-check 깨짐(1425dad monetization required 누락). 타입에러 3건 수정+술어회귀 수정. 워크플로우 성공 확인
+- 06-05: P3·P4 대시보드 오탐 제거 — 급락 게이트 통일·상향(50/10), sitemap지연 stale 분리. 급락 6~7→1, 일일이슈 38→0
+- 06-05: 운영 지식 영속화 docs/OPERATIONS.md(SSOT)·site-repo-map·메모리
 ## TODO
-- [ ] P2: haemongdream GA4 태그 재삽입 (nexttech@158.247.212.123:/home/nexttech/haemongdream.com, WP) — measurement ID 매핑 확인 후
-- [ ] P5: diag에 계측끊김 자동탐지(30일>100 & 어제=0) 추가
-- [ ] P6 temon Google 노출 회복 / P7 Google 색인진출 / P8 GSC형식 교정확인 / P9 .gitignore / P10 위험레포
+- [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
+- [ ] T5 campgogo sitemap 에러 283건 (SSH정보 없음 — chemicloud_ssh.txt 미등록), esgyo 방치 점검
+- [ ] P5: diag에 계측끊김 자동탐지(노출≥50 & GA4<10 포함) 추가 / P9 .gitignore / P10 위험레포
 - [ ] temon 순위 파일럿 (docs/temon-ranking-pilot.md)
 ## 결정사항
 - 날짜 기준: UTC 완료일 기준, 오늘 제외

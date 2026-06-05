@@ -75,9 +75,19 @@ npm run diag
 
 ### 3-6. GA4 계측 끊김 (트래픽 하락과 구분)
 일일 활성이 **갑자기 정확히 0**으로 떨어지고 사이트는 정상(발행 지속)이면 트래픽 하락이 아니라 **GA4 태그 유실**이다.
-- 판별: `last30Days.activeUsers > 100`인데 `last1Days.activeUsers == 0` + history에서 특정일부터 일별 0 연속.
-- 확인: 사이트 HTML에 gtag/GTM 태그 존재 여부(WebFetch 또는 view-source).
-- 실제 사례: `haemongdream` 06-03부터 일일 0, HTML에 gtag 전무 → 배포 시 태그 유실. 조치는 SEO가 아니라 태그 재삽입.
+- 판별 1순위: `last30Days.activeUsers > 100`인데 `last1Days.activeUsers == 0`.
+- 판별 2순위(놓치기 쉬움): **GSC 노출은 있는데 GA4가 0/극소** (`gscLast30Days.impressions >= 50 && last30Days.activeUsers < 10`). 30일이 처음부터 낮으면 1순위 필터에 안 걸린다. 예: finan(노출161·GA4 0), estat(노출337·GA4 6).
+- **확인은 PHP 레벨로 하라(캐시·테마 함정 회피)**: WebFetch/curl은 LiteSpeed 페이지 캐시나 SSR 시점 때문에 오판한다. 서버에서 `wp eval` 또는 `wp-load.php` require 후 `ob_start(); do_action('wp_head'); ob_get_clean()`에 measurement ID가 있는지 검사.
+- measurement ID(G-XXX)는 GA4 Admin API로 조회(`docs/site-repo-map.md` 참고).
+
+**2026-06-05 복구 3사례 — 원인이 제각각이었다:**
+| 사이트 | 원인 | 조치 |
+|---|---|---|
+| haemongdream | 헤더 mu-plugin(`*-header-tags.php`)이 AdSense·네이버·Clarity만 출력, GA4 누락 | 같은 mu-plugin에 gtag 추가 |
+| estat | **실제로는 정상** — WebFetch가 옛 페이지 캐시를 봤을 뿐 | 확인만(데이터 쌓이는 중) |
+| finan | GA4가 **비활성 테마**(kadence) functions.php에 있어 미로드. 활성 테마는 generatepress | mu-plugin으로 재삽입 |
+
+**교훈**: ① GA4는 테마 functions.php(활성/비활성 헷갈림 + 업데이트 시 유실)보다 **mu-plugin**에 넣는 게 안전. ② 같은 파일의 AdSense는 나오는데 GA4만 안 나오면 활성 테마 불일치를 의심(`wp option get stylesheet/template`). ③ 캐시 때문에 실페이지가 거짓일 수 있으니 PHP 레벨로 확정.
 
 ---
 

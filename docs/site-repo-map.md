@@ -42,9 +42,18 @@ ab = origin 대비 (behind/ahead). 소스 = app/src/components/lib 미커밋 수
 | 사이트 | 접근 |
 |---|---|
 | fastjob | nexttech@158.247.212.123:/home/nexttech/fastjob.kr (haemongdream키) — 개편중 |
-| haemongdream | nexttech@158.247.212.123:/home/nexttech/haemongdream.com |
+| haemongdream | nexttech@158.247.212.123:/home/nexttech/haemongdream.com (키 haemongdream-claude_key2, 포트1988) |
+| finan | finan@158.247.245.11:/home3/finan/public_html (키 finan-chemicloud-PrivateKey-nopass, 포트1988) |
+| estat | estat@estat.kr:/home/estat/public_html (키 estat-ssh-key, 포트1988) |
 | softwa·gover·homeimer·trave | user@158.247.245.11 (각 키, 접속확인) |
 | todayshops | 245.11 — 키 복호화 실패 |
+| campgogo | SSH 정보 없음 (chemicloud_ssh.txt 미등록) — sitemap 에러 283건 조사 필요 |
+
+### GA4 measurement ID (2026-06-05 확보, GA4 Admin API)
+- haemongdream: property 516256882 → G-4DD3504NHM
+- finan: property 520579523 → G-BX75JB1MM9
+- estat: property 536753109 → G-LRJ1FE9715
+- 전체 매핑은 GA4 Admin API(`@google-analytics/admin` listDataStreamsAsync → webStreamData.measurementId)로 조회.
 
 ## 작업 원칙
 - 검증된 사이트(temon·tennisfrens) 제목·메타는 **이미 양호** → 레버는 **순위(콘텐츠·내부링크·신선도)**.
