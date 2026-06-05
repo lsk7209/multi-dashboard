@@ -1305,13 +1305,14 @@ async function fetchSiteStat(
     ),
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
-    adsenseStatus: monetizationEnabled
-      ? monetizationStatusFromError(adsenseError)
-      : undefined,
-    adsTxtStatus: monetizationEnabled
-      ? monetizationStatusFromError(adsTxtError)
-      : undefined,
-    ...(monetizationEnabled ? {} : { monetization: false }),
+    // exactOptionalPropertyTypes: monetization 비활성 사이트는 adsense/adsTxt
+    // 키를 undefined로 명시하지 않고 아예 빼서 optional 계약을 지킨다.
+    ...(monetizationEnabled
+      ? {
+          adsenseStatus: monetizationStatusFromError(adsenseError),
+          adsTxtStatus: monetizationStatusFromError(adsTxtError),
+        }
+      : { monetization: false }),
     ...sitemapSummary,
   };
 

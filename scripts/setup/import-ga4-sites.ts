@@ -24,7 +24,9 @@ interface ImportedSite {
 }
 
 function readAccountId(): string {
-  const fromArg = process.argv.find((arg) => arg.startsWith("--account="))?.slice("--account=".length);
+  const fromArg = process.argv
+    .find((arg) => arg.startsWith("--account="))
+    ?.slice("--account=".length);
   return fromArg || process.env.GA4_ACCOUNT_ID || DEFAULT_ACCOUNT_ID;
 }
 
@@ -38,7 +40,9 @@ function propertyIdOf(propertyName: string): string {
 }
 
 function normalizeUrl(rawUrl: string): string {
-  const withProtocol = /^https?:\/\//i.test(rawUrl) ? rawUrl : `https://${rawUrl}`;
+  const withProtocol = /^https?:\/\//i.test(rawUrl)
+    ? rawUrl
+    : `https://${rawUrl}`;
   const url = new URL(withProtocol);
   url.pathname = "/";
   url.search = "";
@@ -48,7 +52,11 @@ function normalizeUrl(rawUrl: string): string {
 
 function siteIdFromUrl(url: string): string {
   const host = new URL(url).hostname.replace(/^www\./, "");
-  return host.replace(/\.[^.]+$/, "").replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-|-$/g, "").toLowerCase();
+  return host
+    .replace(/\.[^.]+$/, "")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .toLowerCase();
 }
 
 function uniqueSiteId(baseId: string, existingIds: Set<string>): string {
@@ -72,7 +80,9 @@ async function listImportedSites(accountId: string): Promise<ImportedSite[]> {
   const keyJson = readSecret("GCP_SA_KEY_JSON");
 
   if (!keyJson) {
-    throw new Error("GCP_SA_KEY_JSON is missing. Add it to D:\\env\\키파일.txt or .env.setup.local.");
+    throw new Error(
+      "GCP_SA_KEY_JSON is missing. Add it to D:\\env\\키파일.txt or .env.setup.local.",
+    );
   }
 
   const client = new AnalyticsAdminServiceClient({
@@ -89,7 +99,10 @@ async function listImportedSites(accountId: string): Promise<ImportedSite[]> {
   })) {
     const propertyName = property.name ?? "";
     const propertyId = propertyIdOf(propertyName);
-    const streams = client.listDataStreamsAsync({ parent: propertyName, pageSize: 200 });
+    const streams = client.listDataStreamsAsync({
+      parent: propertyName,
+      pageSize: 200,
+    });
 
     for await (const stream of streams) {
       const defaultUri = stream.webStreamData?.defaultUri;
@@ -116,10 +129,18 @@ async function listImportedSites(accountId: string): Promise<ImportedSite[]> {
   return imported;
 }
 
-async function writeMergedSites(imported: ImportedSite[]): Promise<{ added: number; updated: number; total: number }> {
+async function writeMergedSites(
+  imported: ImportedSite[],
+): Promise<{ added: number; updated: number; total: number }> {
   const current = await loadSites(SITES_PATH);
-  const byGa4 = new Map(current.filter((site) => site.ga4PropertyId).map((site) => [site.ga4PropertyId, site]));
-  const byUrl = new Map(current.map((site) => [site.url.replace(/\/$/, ""), site]));
+  const byGa4 = new Map(
+    current
+      .filter((site) => site.ga4PropertyId)
+      .map((site) => [site.ga4PropertyId, site]),
+  );
+  const byUrl = new Map(
+    current.map((site) => [site.url.replace(/\/$/, ""), site]),
+  );
   const currentIds = new Set(current.map((site) => site.id));
   let added = 0;
   let updated = 0;
@@ -142,9 +163,11 @@ async function writeMergedSites(imported: ImportedSite[]): Promise<{ added: numb
       continue;
     }
 
-    const id = currentIds.has(site.id) ? uniqueSiteId(site.id, currentIds) : site.id;
+    const id = currentIds.has(site.id)
+      ? uniqueSiteId(site.id, currentIds)
+      : site.id;
     currentIds.add(id);
-    current.push({ ...site, id });
+    current.push({ ...site, id, monetization: true });
     added += 1;
   }
 
@@ -164,7 +187,9 @@ async function main(): Promise<void> {
   }
 
   const result = await writeMergedSites(imported);
-  console.log(`GA4 account ${accountId}: ${result.added} added, ${result.updated} updated, ${result.total} total.`);
+  console.log(
+    `GA4 account ${accountId}: ${result.added} added, ${result.updated} updated, ${result.total} total.`,
+  );
 }
 
 main().catch((error) => {

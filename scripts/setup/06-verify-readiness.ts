@@ -69,7 +69,14 @@ async function checkWp(siteId: string): Promise<void> {
 
   const admin = getWpAdmin(siteId);
   const wp = makeWpClient(
-    { id: siteId, enabled: true, platform: "wordpress", url: admin.url, wpRestBase: `${admin.url.replace(/\/$/, "")}/wp-json/wp/v2` },
+    {
+      id: siteId,
+      enabled: true,
+      monetization: true,
+      platform: "wordpress",
+      url: admin.url,
+      wpRestBase: `${admin.url.replace(/\/$/, "")}/wp-json/wp/v2`,
+    },
     { user: admin.username, password: admin.password },
   );
   await wp.findUserBySlug("dashboard-bot");
@@ -141,10 +148,19 @@ async function main(): Promise<void> {
         ctx[site.id] = result;
         task.title = `${site.id} - ${formatResult(result)}`;
         const failed = Object.values(result).includes("fail");
-        await markSiteStep("verify", site.id, failed ? "failed" : "success", failed ? compactError(result) : undefined);
+        await markSiteStep(
+          "verify",
+          site.id,
+          failed ? "failed" : "success",
+          failed ? compactError(result) : undefined,
+        );
       },
     })),
-    { concurrent: 5, exitOnError: false, rendererOptions: { collapseSubtasks: false } },
+    {
+      concurrent: 5,
+      exitOnError: false,
+      rendererOptions: { collapseSubtasks: false },
+    },
   );
 
   await tasks.run();
