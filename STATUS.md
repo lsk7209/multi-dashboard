@@ -2,6 +2,7 @@
 ## 현재 작업
 신규 등록 10개 사이트 검토 완료 — 전부 정상(siteOwner 권한+sitemap 제출됨). workgogo "auth_error/sitemap0"은 캐시잔상으로 확정. 색인 가속 실행: 신규 10개 ×12 URL = 120건 Indexing API 색인요청 성공(120/120). 3일 후 impressions 재측정 예정
 ## 최근 변경 (최근 5개만)
+- 06-06: 레포 정리 — NUL 사고파일 삭제, .gitignore에 .omc/·NUL 추가, tracked .omc 추적해제 (P9 완료)
 - 06-06: AdSense 체크 415 오탐 52건 수정 — update-ga4-stats.ts fetch 3곳에 브라우저 UA+Accept 헤더(SITE_FETCH_HEADERS). 헤더없는 undici를 호스팅 WAF가 415 차단(curl/브라우저는 통과). 8개 재검증 home=200·adsense=O·ads.txt=pub-ok. workgogo GSC auth_error는 캐시잔상(diag 실시간 정상)
 - 06-05: T1 계측끊김 3건 복구 — haemongdream(헤더 mu-plugin GA4 누락)·finan(GA4가 비활성테마 kadence에 있어 미로드→mu-plugin)·estat(실제정상,캐시오판). measurement ID GA4 API로 확보. 실페이지 출력 검증
 - 06-05: P1 자동수집 복구 — "결제중단"은 오진, 실제 type-check 깨짐(1425dad monetization required 누락). 타입에러 3건 수정+술어회귀 수정. 워크플로우 성공 확인
@@ -10,7 +11,7 @@
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
 - [ ] T5 campgogo sitemap 에러 283건 (SSH정보 없음 — chemicloud_ssh.txt 미등록), esgyo 방치 점검
-- [ ] P5: diag에 계측끊김 자동탐지(노출≥50 & GA4<10 포함) 추가 / P9 .gitignore / P10 위험레포
+- [ ] P5: diag에 계측끊김 자동탐지(노출≥50 & GA4<10 포함) 추가 / P10 위험레포
 - [ ] temon 순위 파일럿 (docs/temon-ranking-pilot.md)
 ## 결정사항
 - 날짜 기준: UTC 완료일 기준, 오늘 제외

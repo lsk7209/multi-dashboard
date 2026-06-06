@@ -13,3 +13,9 @@ setup.log
 
 .vercel
 .gstack/
+
+# OMC 산출물 (세션마다 변경 — 추적 제외)
+.omc/
+
+# Windows 예약어 사고 파일
+NUL

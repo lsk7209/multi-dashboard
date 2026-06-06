@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git -C D:\\\\web\\\\multi-dashboard status --short\",\"description\":\"변경된 파일 확인\"}",
-  "error": "Exit code 128\nfatal: cannot change to 'D:webmulti-dashboard': No such file or directory",
-  "timestamp": "2026-05-29T21:56:28.787Z",
-  "retry_count": 2
-}
