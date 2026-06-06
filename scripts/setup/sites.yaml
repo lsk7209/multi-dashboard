@@ -1032,3 +1032,30 @@ sites:
     ga4PropertyId: "540469143"
     gscSiteUrl: https://youkamap.kr/
     monetization: true
+  - id: doseogogo
+    name: http://doseogogo.kr
+    enabled: true
+    platform: wordpress
+    url: https://doseogogo.kr/
+    wpRestBase: https://doseogogo.kr/wp-json/wp/v2
+    ga4PropertyId: "540474596"
+    gscSiteUrl: https://doseogogo.kr/
+    monetization: true
+  - id: nongsusangogo
+    name: https://nongsusangogo.kr
+    enabled: true
+    platform: wordpress
+    url: https://nongsusangogo.kr/
+    wpRestBase: https://nongsusangogo.kr/wp-json/wp/v2
+    ga4PropertyId: "540392169"
+    gscSiteUrl: https://nongsusangogo.kr/
+    monetization: true
+  - id: yungyanggogo
+    name: yungyanggogo.kr
+    enabled: true
+    platform: wordpress
+    url: https://yungyanggogo.kr/
+    wpRestBase: https://yungyanggogo.kr/wp-json/wp/v2
+    ga4PropertyId: "540455691"
+    gscSiteUrl: https://yungyanggogo.kr/
+    monetization: true
