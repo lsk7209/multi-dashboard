@@ -1,6 +1,6 @@
 # Status | 마지막: 2026-06-06
 ## 현재 작업
-대시보드 오탐 검수 완료. AdSense "상태 확인 실패" 52건 = fetch 헤더 누락 415 오탐 → 헤더 추가로 수정. T2 색인/T3 순위/T4 CTR/T5 정리 남음
+신규 등록 10개 사이트 검토 완료 — 전부 정상(siteOwner 권한+sitemap 제출됨). workgogo "auth_error/sitemap0"은 캐시잔상으로 확정. 색인 가속 실행: 신규 10개 ×12 URL = 120건 Indexing API 색인요청 성공(120/120). 3일 후 impressions 재측정 예정
 ## 최근 변경 (최근 5개만)
 - 06-06: AdSense 체크 415 오탐 52건 수정 — update-ga4-stats.ts fetch 3곳에 브라우저 UA+Accept 헤더(SITE_FETCH_HEADERS). 헤더없는 undici를 호스팅 WAF가 415 차단(curl/브라우저는 통과). 8개 재검증 home=200·adsense=O·ads.txt=pub-ok. workgogo GSC auth_error는 캐시잔상(diag 실시간 정상)
 - 06-05: T1 계측끊김 3건 복구 — haemongdream(헤더 mu-plugin GA4 누락)·finan(GA4가 비활성테마 kadence에 있어 미로드→mu-plugin)·estat(실제정상,캐시오판). measurement ID GA4 API로 확보. 실페이지 출력 검증
