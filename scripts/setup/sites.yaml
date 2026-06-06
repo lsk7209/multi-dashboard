@@ -1023,3 +1023,12 @@ sites:
     ga4PropertyId: "540357516"
     gscSiteUrl: https://workgogo.kr/
     monetization: true
+  - id: youkamap
+    name: https://youkamap.kr
+    enabled: true
+    platform: wordpress
+    url: https://youkamap.kr/
+    wpRestBase: https://youkamap.kr/wp-json/wp/v2
+    ga4PropertyId: "540469143"
+    gscSiteUrl: https://youkamap.kr/
+    monetization: true
