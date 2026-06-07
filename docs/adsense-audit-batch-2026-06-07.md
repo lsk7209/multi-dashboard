@@ -364,10 +364,7 @@ Dashboard repository verification after report/script updates:
 
 Remaining user/action-required blockers after this round:
 
-- `todayshops.kr`: `/terms/` is still 404; available SSH key is encrypted OpenSSH format and no usable passphrase/nopass variant is available. Provide a nopass key, passphrase path, or WP admin credential.
-- `sssaass.com`: `/terms/` is still 404; available SSH key is encrypted OpenSSH format and no usable passphrase/nopass variant is available. Provide a nopass key, passphrase path, or WP admin credential.
-- `softwa.kr`: `/terms/` is still 404; current SSH key is readable but rejected by both candidate hosts. Provide working SSH/WP access or a nopass key with the correct server authorization.
-- `homeimer.com`: `/about/`, `/contact/`, and `/terms/` are still 404; current SSH key is readable but rejected by both candidate hosts. Provide working SSH/WP access or a nopass key with the correct server authorization.
+- None from this four-site access batch. The sites that originally looked blocked by encrypted keys or SSH authorization were reachable through the existing Paramiko/passphrase workflow and were patched on 2026-06-08.
 
 ## Follow-up Verification 2026-06-08
 
@@ -444,3 +441,39 @@ Updated readiness notes:
 Updated readiness notes:
 
 - `gpt.nexttech7.com` is no longer blocked by missing privacy/terms pages from public crawler evidence. It is ready for AdSense re-review unless the account-side rejection gives a different private reason.
+
+## Additional Production Fix 2026-06-08: Final Four WordPress Access Batch
+
+`todayshops.kr`, `sssaass.com`, `softwa.kr`, and `homeimer.com` access and trust/legal blockers:
+
+- Rechecked public crawler state before patching:
+  - `todayshops.kr`: `/terms/` returned 404.
+  - `sssaass.com`: `/terms/` returned 404.
+  - `softwa.kr`: `/terms/` returned 404.
+  - `homeimer.com`: `/about/`, `/contact/`, and `/terms/` returned 404.
+- Confirmed all four sites were reachable through the existing Paramiko SSH workflow, despite earlier OpenSSH failures:
+  - `todayshops.kr`: `/home3/todayshops/public_html`.
+  - `sssaass.com`: `/home3/sssaass/public_html`.
+  - `softwa.kr`: `/home3/softwa/public_html`.
+  - `homeimer.com`: `/home3/homeimer/public_html`.
+- Created rollback artifacts before applying changes:
+  - `todayshops.kr`: `/home3/todayshops/backups/adsense-trust-fix-20260608-024225`.
+  - `sssaass.com`: `/home3/sssaass/backups/adsense-trust-fix-20260608-024225`.
+  - `softwa.kr`: `/home3/softwa/backups/adsense-trust-fix-20260608-024225`.
+  - `homeimer.com`: `/home3/homeimer/backups/adsense-trust-fix-20260608-024225`.
+- Published the missing pages and added them to the primary WordPress menu:
+  - `todayshops.kr`: `/terms/`, page ID `5580`, menu item `5581`.
+  - `sssaass.com`: `/terms/`, page ID `3562`, menu item `3563`.
+  - `softwa.kr`: `/terms/`, page ID `5852`, menu item `5853`.
+  - `homeimer.com`: `/about/` page ID `10239`, `/contact/` page ID `10241`, `/terms/` page ID `10243`; menu items `10240`, `10242`, `10244`.
+- Flushed WordPress object cache, rewrite rules, and LiteSpeed cache after the page/menu changes.
+- Public Googlebot-style verification:
+  - `todayshops.kr`: `/terms/` 200 with 1,228 visible chars; home HTML contains `/about/`, `/contact/`, and `/terms/`.
+  - `sssaass.com`: `/terms/` 200 with 1,499 visible chars; home HTML contains `/about/`, `/contact/`, and `/terms/`; `wp-sitemap-posts-page-1.xml` contains `/terms/`.
+  - `softwa.kr`: `/terms/` 200 with 1,291 visible chars; home HTML contains `/about/`, `/contact/`, and `/terms/`; `page-sitemap.xml` contains `/terms/`.
+  - `homeimer.com`: `/about/`, `/contact/`, and `/terms/` all return 200 with 1,026 / 715 / 1,388 visible chars; home HTML and `page-sitemap.xml` contain `/about/`, `/contact/`, and `/terms/`.
+- Follow-up note: `todayshops.kr` `/terms/` is published, indexable, and linked from the homepage, but Rank Math `page-sitemap.xml` had not yet included it immediately after cache flushing. The public page/menu evidence clears the approval blocker; sitemap inclusion should be rechecked after Rank Math regeneration.
+
+Updated readiness notes:
+
+- `todayshops.kr`, `sssaass.com`, `softwa.kr`, and `homeimer.com` are no longer blocked by missing public trust/legal pages from crawler evidence. They are ready for AdSense re-review unless the account-side rejection gives a different private reason.
