@@ -511,3 +511,34 @@ Updated readiness notes:
 - `discparty.com` is no longer blocked by missing Terms/trust link evidence and is ready for AdSense re-review unless the account-side rejection gives a different private reason.
 - `ezfunnel.kr` is no longer blocked by missing public Terms/home link evidence; recheck sitemap inclusion before final batch submission if possible.
 - `educaer.com` remains blocked by a missing public `/terms/` page. User-side action needed: restore/provide working SSH access for `educaer@158.247.245.11:1988` or another WordPress admin/deploy path so the same Terms fix can be applied.
+
+## Additional Production Fix 2026-06-08: Thin SPA Homepage Batch
+
+`spinkorea.kr` and `runmania.kr` crawler-visible homepage substance/link blockers:
+
+- Rechecked public crawler state before patching:
+  - `spinkorea.kr`: home 200 but only 344 visible chars and no About/Contact/Privacy/Terms links in the initial HTML.
+  - `runmania.kr`: home 200 but only 214 visible chars and no About/Contact/Privacy/Terms links in the initial HTML.
+- `spinkorea.kr`:
+  - Updated `D:\web\spinkorea\scripts\generate-assets.mjs` so the prerendered root page includes crawler-visible site purpose text plus trailing-slash links to `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+  - Build regenerated `public/sitemap.xml`, `public/rss.xml`, and `public/llms.txt`; the generated updates reflect the newly public scheduled post for 2026-06-08.
+  - Local verification: `npm run build` passed; `npm run lint` passed; local `dist/index.html` has 1,218 visible chars and all four trust/legal links.
+  - Pushed commit `0065d9f` to `lsk7209/spinkorea`.
+  - Vercel production deployment `dpl_5dVBqLuWbaYHskhhgZXM3zYBSaeK` completed and was aliased to `https://www.spinkorea.kr`.
+  - Public Googlebot-style verification:
+    - `/` 200, 1,218 visible chars, and initial HTML contains `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+    - `/about/`, `/contact/`, `/privacy/`, and `/terms/` all return 200 with the same trust/legal link set present.
+  - Follow-up note: Vercel output still prints pre-existing API type diagnostics for `api/s/[id].ts`, `api/shorten.ts`, and `api/stats.ts`, but the production build completed and the local `npm run lint`/`tsc --noEmit` path passed.
+- `runmania.kr`:
+  - Updated `D:\web\runmania\scripts\prerender.ts` so each prerendered route injects a crawler-visible route shell into `#root`, with the homepage carrying extra site-purpose, product-information disclaimer, and policy/tool links.
+  - Local verification: `npm run build` passed; `npm run lint` passed; local `dist/index.html` has 1,367 visible chars and all four trust/legal links.
+  - Pushed commit `81255d3` to `lsk7209/runmania`.
+  - Vercel production deployment `dpl_4L6v45W9xzjBWyEdPApUx3brUhCp` completed and was aliased to `https://www.runmania.kr`.
+  - Public Googlebot-style verification:
+    - `/` 200, 1,367 visible chars, and initial HTML contains `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+    - `/about/`, `/contact/`, `/privacy/`, and `/terms/` all return 200 with the same trust/legal link set present.
+
+Updated readiness notes:
+
+- `spinkorea.kr` is no longer blocked by thin initial homepage HTML or missing home trust/legal links from crawler evidence.
+- `runmania.kr` is no longer blocked by thin initial homepage HTML or missing home trust/legal links from crawler evidence.
