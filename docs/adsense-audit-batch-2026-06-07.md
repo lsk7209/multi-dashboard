@@ -370,7 +370,6 @@ Remaining user/action-required blockers after this round:
 - `homeimer.com`: SSH permission denied with the available key; provide working access or WP admin credential.
 - `yesa.kr`: `D:\web\yesa-youunsang` has many pre-existing dirty changes; reconcile or confirm that this worktree can be modified.
 - `gpt.nexttech7.com`: still needs host/path access discovery or credentials before WP-CLI patching.
-- `crepika.com`: still needs a content/deployment path for the low-value/fallback route issue.
 
 ## Follow-up Verification 2026-06-08
 
@@ -388,4 +387,22 @@ Updated readiness notes:
 
 - `askore.kr`, `healfood.kr`, `smart.sellerpit.kr`, `jasamall.sellerpit.kr`, and `travel.sellerpit.kr` are ready for AdSense re-review from the public-site checks available here, unless the AdSense account shows a different private rejection reason.
 - `travel.sellerpit.kr` cleanup used deletion only for zero-count categories and draft status only for the WordPress default sample page; published travel articles were not removed.
-- `crepika.com` remains the main known fallback/low-value route blocker among the previously accessible sites.
+
+## Additional Production Fix 2026-06-08: Crepika
+
+`crepika.com` Vite SPA fallback/low-value route issue:
+
+- Added a build-time crawler-page generator in `D:\web\crepikacom` that creates static HTML for `/about/`, `/contact/`, `/privacy/`, `/terms/`, `/blog/`, and seven core `/tools/*/` routes before the SPA fallback is used.
+- Added `/terms` to `public/sitemap.xml`.
+- Added a substantive homepage `noscript` summary so the root URL also exposes publisher/tool/policy content before React loads.
+- Pushed repository commits `fbb5f37` and `10182fc` to `lsk7209/crepikacom`.
+- Vercel production deployment `dpl_2kposftqDL55JB7hKLgA72PKraQU` completed and was aliased to `https://www.crepika.com`.
+- Public Googlebot-style verification:
+  - `/` 200, 778 visible chars.
+  - `/about/`, `/contact/`, `/privacy/`, `/terms/`, `/blog/`, `/tools/text-counter/`, `/tools/webp-converter/` all 200 with 760-960 visible chars.
+  - `/sitemap.xml` 200 and contains `/terms`.
+- Local verification: `npm run build` passed. `npm run lint` still fails on pre-existing unrelated React/TypeScript lint errors (`no-explicit-any`, hook order, shadcn empty interface rules, CommonJS require rules).
+
+Updated readiness notes:
+
+- `crepika.com` is no longer a fallback/low-value route blocker from public crawler evidence. It is ready for AdSense re-review unless the account-side rejection gives a different private reason.
