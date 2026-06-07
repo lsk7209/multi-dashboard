@@ -1,0 +1,99 @@
+# AdSense 승인 검토·보완 이력 (SSOT)
+
+> 단일 출처. 사이트 검증/보완 1건마다 해당 행을 갱신하고 커밋한다.
+> 우선순위: 거부확정 → GSC 노출 높은순. 보완: 안전항목 자동 / 본문 수동.
+> 계획: .omc/plans/adsense-approval-pipeline.md | 최종 갱신: 2026-06-07
+
+## 상태 정의
+미신청 → 검토중 → 거부(사유) → 진단완료 → 보완완료 → 재신청 → 승인 / (본문보강필요)
+
+## ✅ 승인 완료 (11)
+
+| 도메인 | 승인일 |
+|---|---|
+| temon.kr | 2025-06-20 |
+| ehon365.kr | 2025-07-24 |
+| luckyday.kr | 2025-07-11 |
+| klick.kr | 2025-07-11 |
+| fastjob.kr | 2025-06-05 |
+| haemongdream.com | 2025-06-19 |
+| tennisfrens.com | 2025-07-24 |
+| tasko.kr | 2025-06-03 |
+| nexttech7.com | 2026-02-25 |
+| kang4.com | 2025-02-21 |
+| sellerpit.kr | 2026-02-13 |
+
+수익화 제외: sorimate.com (쇼핑몰, monetization=false)
+
+## 🔧 미승인 대상 (65) — GSC 노출 높은순
+
+| # | 도메인 | 플랫폼(등록값/실측) | GA4 30d | GSC노출 30d | 상태 | 거부사유 | 진단일 | 보완조치 | 재신청 | 결과 |
+|---|---|---|--:|--:|---|---|---|---|---|---|
+| 1 | askore.kr | wordpress | 55 | 1254 | 검토중 |  |  |  | | |
+| 2 | texturb.com | wordpress | 43 | 704 | 검토중 |  |  |  | | |
+| 3 | todayshops.kr | wordpress | 10 | 456 | 검토중 |  |  |  | | |
+| 4 | softwa.kr | wordpress | 84 | 455 | 검토중 |  |  |  | | |
+| 5 | etique.kr | wordpress | 64 | 440 | 검토중 |  |  |  | | |
+| 6 | estat.kr | wordpress | 6 | 334 | 검토중 |  |  |  | | |
+| 7 | gong365.kr | wordpress | 16 | 325 | 검토중 |  |  |  | | |
+| 8 | cartain.kr | wordpress/**Vite SPA** | 483 | 284 | 보완완료→재심사대기 | 가치없는 콘텐츠(빈 SPA·404) | 2026-06-07 | 봇 SSR(Edge Middleware) 작동확인: Googlebot/Mediapartners-Google 글 본문 1504자·JSON-LD·about 200, 사람 SPA 유지. SPA fallback로 404 해소. sitemap non-www 통일 | 대기(콘텐츠양산 30일+) | |
+| 9 | today2424.kr | wordpress | 44 | 256 | 검토중 |  |  |  | | |
+| 10 | petinsuer.com | wordpress | 21 | 249 | 검토중 |  |  |  | | |
+| 11 | discparty.com | wordpress | 46 | 174 | 검토중 |  |  |  | | |
+| 12 | bojo24.kr | wordpress | 2709 | 161 | 검토중 |  |  |  | | |
+| 13 | finan.kr | wordpress | 0 | 161 | 검토중 |  |  |  | | |
+| 14 | picklefriend.kr | wordpress | 163 | 125 | 검토중 |  |  |  | | |
+| 15 | dogspang.kr | wordpress | 104 | 119 | 검토중 |  |  |  | | |
+| 16 | dogswhere.com | wordpress | 32 | 100 | 검토중 |  |  |  | | |
+| 17 | travelpang.kr | wordpress | 19 | 89 | 검토중 |  |  |  | | |
+| 18 | goesku.com | wordpress | 20 | 79 | 검토중 |  |  |  | | |
+| 19 | insupang.com | wordpress | 17 | 63 | 검토중 |  |  |  | | |
+| 20 | gover.kr | wordpress | 73 | 59 | 검토중 |  |  |  | | |
+| 21 | legalser.com | wordpress | 24 | 43 | 검토중 |  |  |  | | |
+| 22 | chatgipt.kr | wordpress | 24 | 40 | 검토중 |  |  |  | | |
+| 23 | homeimer.com | wordpress | 3 | 27 | 검토중 |  |  |  | | |
+| 24 | sssaass.com | wordpress | 14 | 20 | 검토중 |  |  |  | | |
+| 25 | knewstory.kr | wordpress | 55 | 18 | 검토중 |  |  |  | | |
+| 26 | autoscares.com | wordpress | 26 | 17 | 검토중 |  |  |  | | |
+| 27 | trave.kr | wordpress | 111 | 11 | 검토중 |  |  |  | | |
+| 28 | richyou.kr | wordpress | 32 | 9 | 검토중 |  |  |  | | |
+| 29 | lawer.kr | wordpress | 8 | 8 | 검토중 |  |  |  | | |
+| 30 | healfood.kr | wordpress | 19 | 7 | 검토중 |  |  |  | | |
+| 31 | luxurytraver.com | wordpress | 0 | 7 | 검토중 |  |  |  | | |
+| 32 | spinkorea.kr | wordpress | 298 | 5 | 검토중 |  |  |  | | |
+| 33 | ezfunnel.kr | wordpress | 25 | 5 | 검토중 |  |  |  | | |
+| 34 | todaypharm.kr | wordpress | 2024 | 3 | 검토중 |  |  |  | | |
+| 35 | 2mlab.kr | wordpress | 185 | 3 | 검토중 |  |  |  | | |
+| 36 | petjigi.kr | wordpress | 91 | 3 | 검토중 |  |  |  | | |
+| 37 | healthgotoo.com | wordpress | 103 | 2 | 검토중 |  |  |  | | |
+| 38 | roadways.kr | wordpress | 46 | 2 | 검토중 |  |  |  | | |
+| 39 | dolbomjigi.ehon365.kr | wordpress | 0 | 2 | 검토중 |  |  |  | | |
+| 40 | yesa.kr | wordpress | 51 | 1 | 검토중 |  |  |  | | |
+| 41 | runmania.kr | wordpress | 48 | 1 | 검토중 |  |  |  | | |
+| 42 | gpt.nexttech7.com | wordpress | 4 | 1 | 검토중 |  |  |  | | |
+| 43 | educaer.com | wordpress | 9 | 1 | 검토중 |  |  |  | | |
+| 44 | mbti.tasko.kr | wordpress | 238 | 0 | 검토중 |  |  |  | | |
+| 45 | dog.klick.kr | wordpress | 40 | 0 | 검토중 |  |  |  | | |
+| 46 | notebook.klick.kr | wordpress | 56 | 0 | 검토중 |  |  |  | | |
+| 47 | webtoon.klick.kr | wordpress | 19 | 0 | 검토중 |  |  |  | | |
+| 48 | campgogo.kr | wordpress | 19 | 0 | 검토중 |  |  |  | | |
+| 49 | crepika.com | wordpress | 197 | 0 | 검토중 |  |  |  | | |
+| 50 | dullegilgogo.kr | wordpress | 14 | 0 | 검토중 |  |  |  | | |
+| 51 | smart.sellerpit.kr | wordpress | 12 | 0 | 검토중 |  |  |  | | |
+| 52 | nicewomen.kr | wordpress | 79 | 0 | 검토중 |  |  |  | | |
+| 53 | saju.tasko.kr | wordpress | 26 | 0 | 검토중 |  |  |  | | |
+| 54 | sinhonjigi.ehon365.kr | wordpress | 6 | 0 | 검토중 |  |  |  | | |
+| 55 | jasamall.sellerpit.kr | wordpress | 5 | 0 | 검토중 |  |  |  | | |
+| 56 | travel.sellerpit.kr | wordpress | 4 | 0 | 검토중 |  |  |  | | |
+| 57 | certifi.kr | wordpress | 17 | 0 | 검토중 |  |  |  | | |
+| 58 | car.luckyday.kr | wordpress | 42 | 0 | 검토중 |  |  |  | | |
+| 59 | coinyo.kr | wordpress | 12 | 0 | 검토중 |  |  |  | | |
+| 60 | pregnancy.ehon365.kr | wordpress | 2 | 0 | 검토중 |  |  |  | | |
+| 61 | phone.luckyday.kr | wordpress | 18 | 0 | 검토중 |  |  |  | | |
+| 62 | gong.luckyday.kr | wordpress | 7 | 0 | 검토중 |  |  |  | | |
+| 63 | esgyo.kr | wordpress | 0 | 0 | 검토중 |  |  |  | | |
+| 64 | ai.tasko.kr | wordpress | 5 | 0 | 검토중 |  |  |  | | |
+| 65 | workgogo.kr | wordpress | 0 | 0 | 검토중 |  |  |  | | |
+
+## 색인 진입 필요 (GSC 노출 0 — AdSense 이전 선결)
+Tier3: sitemap·Indexing API·콘텐츠로 색인부터. 위 표에서 GSC노출 0인 행들.
