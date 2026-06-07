@@ -336,6 +336,14 @@ Additional Vercel trust-page fixes:
 | dullegilgogo.kr | Cloned `lsk7209/dulekil` to `D:\web\dulekil` and added the missing `/contact` route. Sitemap already listed `/contact`. | Local `npm run build` was blocked by missing local `TURSO_DATABASE_URL`, but Vercel production env build passed. Vercel deployment `dpl_4C28SfgiDw8sgEgPRt3rH8M7efLZ` completed and was aliased to `https://dullegilgogo.kr`. Public Googlebot-style verification: `/contact/` returned 200 with expected markers; `/sitemap.xml` returned 200 and contains `/contact`. |
 | workgogo.kr | Cloned `lsk7209/workgogo.kr` to `D:\web\workgogo.kr`, added `/about` and `/contact`, and included both in `app/sitemap.ts`. | Local `npm run build` passed. Vercel deployment `dpl_3gdVNDp8x4q13vn4cJ8pkMBNo1a4` completed and was aliased to `https://workgogo.kr`. Public Googlebot-style verification: `/about/`, `/contact/`, and `/sitemap.xml` all returned 200; sitemap contains both `/about` and `/contact`. |
 
+`dogspang.kr` placeholder-content fix:
+
+- Confirmed the exposed starter post through public WP REST: post ID `244`, slug `post-3`, title `Mastering the First Impression: Your intriguing post title goes here`.
+- Used SSH/WP-CLI on `/home/dogspang/public_html` to change post ID `244` from `publish` to `draft`.
+- Flushed WordPress object cache and LiteSpeed cache.
+- Public Googlebot-style verification: `/post-3/` now returns 404; `/`, `/about/`, `/contact/`, and `/sitemap.xml` no longer expose the starter title or `intriguing post title`. Sitemap no longer contains `/post-3/`.
+- WP database follow-up query found no remaining published posts/pages containing `Mastering the First Impression`, `intriguing post title`, or `blogsample2.nexttech7.com`.
+
 Source-control preservation:
 
 - Pushed the production trust-page fixes to the matching GitHub repositories so future Git-based Vercel deployments keep the same approval fixes:
