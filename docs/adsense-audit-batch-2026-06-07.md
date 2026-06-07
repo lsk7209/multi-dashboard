@@ -368,7 +368,6 @@ Remaining user/action-required blockers after this round:
 - `sssaass.com`: `/terms/` is still 404; available SSH key is encrypted OpenSSH format and no usable passphrase/nopass variant is available. Provide a nopass key, passphrase path, or WP admin credential.
 - `softwa.kr`: `/terms/` is still 404; current SSH key is readable but rejected by both candidate hosts. Provide working SSH/WP access or a nopass key with the correct server authorization.
 - `homeimer.com`: `/about/`, `/contact/`, and `/terms/` are still 404; current SSH key is readable but rejected by both candidate hosts. Provide working SSH/WP access or a nopass key with the correct server authorization.
-- `gpt.nexttech7.com`: still needs host/path access discovery or credentials before WP-CLI patching.
 
 ## Follow-up Verification 2026-06-08
 
@@ -426,3 +425,22 @@ Updated readiness notes:
 Updated readiness notes:
 
 - `yesa.kr` is no longer blocked by missing trust/legal pages from public crawler evidence. It is ready for AdSense re-review unless the account-side rejection gives a different private reason.
+
+## Additional Production Fix 2026-06-08: GPT Nexttech7
+
+`gpt.nexttech7.com` privacy/terms blocker:
+
+- Found working SSH access with `nexttech@158.247.212.123:1988` and WordPress path `/home/nexttech/gpt.nexttech7.com`.
+- Existing About and Contact pages were already public, but `/privacy/` and `/terms/` returned 404 to crawlers.
+- Created/published English-slug pages through WP-CLI: `/privacy/` and `/terms/`.
+- Added Contact, Privacy Policy, and Terms of Use to the primary WordPress menu so the homepage exposes the core trust/legal routes.
+- Flushed WordPress object cache and LiteSpeed cache.
+- Public Googlebot-style verification:
+  - `/` 200, 749 visible chars, and the HTML contains `/contact/`, `/privacy/`, and `/terms/`.
+  - `/privacy/` 200, 1,692 visible chars, title/content markers include `Privacy Policy`.
+  - `/terms/` 200, 1,599 visible chars, title/content markers include `Terms of Use`.
+  - `/sitemap.xml` and `/wp-sitemap-posts-page-1.xml` both return 200 and contain `/privacy/` and `/terms/`.
+
+Updated readiness notes:
+
+- `gpt.nexttech7.com` is no longer blocked by missing privacy/terms pages from public crawler evidence. It is ready for AdSense re-review unless the account-side rejection gives a different private reason.
