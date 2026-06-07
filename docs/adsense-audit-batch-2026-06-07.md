@@ -542,3 +542,31 @@ Updated readiness notes:
 
 - `spinkorea.kr` is no longer blocked by thin initial homepage HTML or missing home trust/legal links from crawler evidence.
 - `runmania.kr` is no longer blocked by thin initial homepage HTML or missing home trust/legal links from crawler evidence.
+
+## Additional Production Fix 2026-06-08: Smart Sellerpit Homepage Trust Footer
+
+`smart.sellerpit.kr` crawler-visible homepage substance/link blocker:
+
+- Rechecked public crawler state before patching:
+  - Home returned 200 but only 578 visible chars.
+  - `/about/`, `/contact/`, `/privacy/`, and `/terms/` were already 200.
+  - `wp-sitemap-posts-page-1.xml` already contained the trust/legal page URLs.
+  - The homepage initial HTML did not expose About/Contact/Privacy/Terms links.
+- Confirmed SSH/WP-CLI access with `nexttech@smart.sellerpit.kr:1988` and WordPress path `/home/nexttech/smart.sellerpit.kr`.
+- Created rollback artifacts before applying the change:
+  - `/home/nexttech/smart.sellerpit.kr/_codex-backups/adsense-home-trust-fix-20260608/db-before-home-trust.sql`.
+  - `pages-before.json`, plus a previous MU plugin copy if one existed.
+- Added MU plugin `wp-content/mu-plugins/smart-sellerpit-adsense-trust-footer.php`.
+  - The plugin adds crawlable site-purpose text and trailing-slash links to `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+  - It does not edit article titles, article bodies, or in-body internal links.
+- Verification:
+  - PHP syntax check passed.
+  - WordPress object cache, rewrite rules, and LiteSpeed cache were flushed.
+  - Public Googlebot-style verification:
+    - `/` 200, 1,346 visible chars, footer marker present, and initial HTML contains `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+    - `/about/`, `/contact/`, `/privacy/`, and `/terms/` all return 200 with the trust footer and policy links present.
+    - `wp-sitemap-posts-page-1.xml` remains 200 and contains the trust/legal page URLs.
+
+Updated readiness notes:
+
+- `smart.sellerpit.kr` is no longer blocked by thin homepage HTML or missing home trust/legal links from crawler evidence.
