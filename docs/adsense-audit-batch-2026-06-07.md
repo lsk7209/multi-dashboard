@@ -370,3 +370,22 @@ Remaining user/action-required blockers after this round:
 - `homeimer.com`: SSH permission denied with the available key; provide working access or WP admin credential.
 - `yesa.kr`: `D:\web\yesa-youunsang` has many pre-existing dirty changes; reconcile or confirm that this worktree can be modified.
 - `gpt.nexttech7.com`: still needs host/path access discovery or credentials before WP-CLI patching.
+- `crepika.com`: still needs a content/deployment path for the low-value/fallback route issue.
+
+## Follow-up Verification 2026-06-08
+
+Additional Googlebot-style public checks after the production fixes:
+
+| Site | Result | Evidence |
+|---|---|---|
+| askore.kr | Reclassified from content watchlist to review-ready from public crawl evidence. | Home 200 with 21,814 visible chars. About/Contact/Privacy/Terms all 200 with 12k-17k visible chars. Sitemap sample URLs include tool/category/plant pages with 13k-33k visible chars and plant-content markers present. No repository changes were made because `D:\web\askorekr` has extensive pre-existing dirty changes. |
+| healfood.kr | Reclassified from Terms/YMYL watchlist to review-ready from public crawl evidence. | Home 200 with 114,361 visible chars. About/Contact/Privacy/Terms all 200. Sampled post sitemap URLs returned roughly 120k visible chars each, with medical disclaimer and source markers present. |
+| smart.sellerpit.kr | Trust pages remain public and content sample no longer appears thin in crawler view. | Sampled content pages returned 41k+ visible chars. Placeholder matches were CSS-only (`sticky-placeholder`), not starter content. |
+| jasamall.sellerpit.kr | Trust pages remain public and sampled posts appear content-rich in crawler view. | Sampled posts returned 33k+ visible chars. Placeholder matches were CSS-only, not starter content. |
+| travel.sellerpit.kr | Starter/default public surfaces removed. | Drafted default `/sample-page/` post ID 2; flushed WordPress and LiteSpeed cache. `/sample-page/`, `/category/uncategorized/`, `/category/money/`, and `/category/travel-info/` now return 404. Real populated category `/category/asia/` returns 200. Sitemap no longer exposes the removed sample or empty category URLs. |
+
+Updated readiness notes:
+
+- `askore.kr`, `healfood.kr`, `smart.sellerpit.kr`, `jasamall.sellerpit.kr`, and `travel.sellerpit.kr` are ready for AdSense re-review from the public-site checks available here, unless the AdSense account shows a different private rejection reason.
+- `travel.sellerpit.kr` cleanup used deletion only for zero-count categories and draft status only for the WordPress default sample page; published travel articles were not removed.
+- `crepika.com` remains the main known fallback/low-value route blocker among the previously accessible sites.
