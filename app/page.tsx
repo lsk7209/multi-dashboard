@@ -209,7 +209,10 @@ function CollectionReliabilityPanel({
       <div className="collection-source-list">
         {summaries.map((summary) => (
           <div className="collection-source-row" key={summary.key}>
-            <strong>{summary.label}</strong>
+            <strong>
+              {summary.label}
+              <small>대상 {formatNumber(summary.total)}개</small>
+            </strong>
             <div>
               <span className="source-ok">정상 {formatNumber(summary.ok)}</span>
               <span className="source-stale">

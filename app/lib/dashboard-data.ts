@@ -1093,7 +1093,7 @@ function buildCollectionSummary(
     error: 0,
     missing: 0,
     processing: 0,
-    total: stats.length,
+    total: 0,
   }));
   const byKey = new Map(summaries.map((summary) => [summary.key, summary]));
 
@@ -1101,6 +1101,7 @@ function buildCollectionSummary(
     for (const source of stat.collectionSources) {
       const summary = byKey.get(source.key);
       if (summary) {
+        summary.total += 1;
         summary[source.state] += 1;
       }
     }
