@@ -454,18 +454,18 @@ function StatsRow({
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
       <td>
         <span
-          className={getAdsenseBadgeClass(stat.adsenseStatus)}
+          className={getAdsenseBadgeClass(stat)}
           title={getAdsenseStatusTitle(stat)}
         >
-          {getAdsenseStatusLabel(stat.adsenseStatus)}
+          {getAdsenseStatusLabel(stat)}
         </span>
       </td>
       <td>
         <span
-          className={getMonetizationBadgeClass(stat.adsTxtStatus)}
+          className={getAdsTxtBadgeClass(stat)}
           title={getAdsTxtStatusTitle(stat)}
         >
-          {getAdsTxtStatusLabel(stat.adsTxtStatus)}
+          {getAdsTxtStatusLabel(stat)}
         </span>
       </td>
       <td>{formatPosition(stat.gscLast7Days?.position ?? 0)}</td>
@@ -670,9 +670,7 @@ function matchesMonetization(
   }
   return (
     stat.adsenseStatus === "missing_config" ||
-    stat.adsTxtStatus === "missing_config" ||
-    stat.adsenseStatus === "api_error" ||
-    stat.adsTxtStatus === "api_error"
+    stat.adsTxtStatus === "missing_config"
   );
 }
 
@@ -753,10 +751,10 @@ function getSortValue(
     return stat.gscLast7Days?.ctr ?? 0;
   }
   if (sortKey === "adsense") {
-    return getAdsenseStatusLabel(stat.adsenseStatus);
+    return getAdsenseStatusLabel(stat);
   }
   if (sortKey === "adsTxt") {
-    return getAdsTxtStatusLabel(stat.adsTxtStatus);
+    return getAdsTxtStatusLabel(stat);
   }
   if (sortKey === "position") {
     const position = stat.gscLast7Days?.position ?? 0;
@@ -821,21 +819,29 @@ function getCollectionSourceStateLabel(
 }
 
 function getAdsenseStatusLabel(
-  status: EnrichedSiteStat["adsenseStatus"],
+  stat: EnrichedSiteStat,
 ): string {
-  if (status === "ok") {
+  if (stat.adsenseCollectorStatus === "transient_error") {
+    return "수집 일시 오류";
+  }
+  if (stat.adsenseStatus === "ok") {
     return "정상";
   }
-  if (status === "missing_config") {
+  if (stat.adsenseStatus === "missing_config") {
     return "코드 미탐지";
   }
-  if (status === "auth_error" || status === "api_error") {
-    return "상태 확인 실패";
+  if (stat.adsenseStatus === "auth_error" || stat.adsenseStatus === "api_error") {
+    return "수집 오류";
   }
   return "미수집";
 }
 
 function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
+  if (stat.adsenseCollectorStatus === "transient_error") {
+    return stat.adsenseError
+      ? `${stat.adsenseError} 최근 정상 증거가 있으면 설치 상태는 유지됩니다.`
+      : "AdSense 수집이 일시적으로 실패했습니다. 최근 정상 증거가 있으면 설치 상태는 유지됩니다.";
+  }
   if (stat.adsenseStatus === "ok") {
     return "홈페이지에서 AdSense 코드가 확인됐습니다.";
   }
@@ -849,27 +855,38 @@ function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
 }
 
 function getAdsenseBadgeClass(
-  status: EnrichedSiteStat["adsenseStatus"],
+  stat: EnrichedSiteStat,
 ): string {
-  return getMonetizationBadgeClass(status);
+  if (stat.adsenseCollectorStatus === "transient_error") {
+    return "badge badge-warning";
+  }
+  return getMonetizationBadgeClass(stat.adsenseStatus);
 }
 
 function getAdsTxtStatusLabel(
-  status: EnrichedSiteStat["adsTxtStatus"],
+  stat: EnrichedSiteStat,
 ): string {
-  if (status === "ok") {
+  if (stat.adsTxtCollectorStatus === "transient_error") {
+    return "수집 일시 오류";
+  }
+  if (stat.adsTxtStatus === "ok") {
     return "정상";
   }
-  if (status === "missing_config") {
+  if (stat.adsTxtStatus === "missing_config") {
     return "없음";
   }
-  if (status === "auth_error" || status === "api_error") {
-    return "상태 확인 실패";
+  if (stat.adsTxtStatus === "auth_error" || stat.adsTxtStatus === "api_error") {
+    return "수집 오류";
   }
   return "미수집";
 }
 
 function getAdsTxtStatusTitle(stat: EnrichedSiteStat): string {
+  if (stat.adsTxtCollectorStatus === "transient_error") {
+    return stat.adsTxtError
+      ? `${stat.adsTxtError} 최근 정상 증거가 있으면 ads.txt 정상 상태는 유지됩니다.`
+      : "ads.txt 수집이 일시적으로 실패했습니다. 최근 정상 증거가 있으면 정상 상태는 유지됩니다.";
+  }
   if (stat.adsTxtStatus === "ok") {
     return "ads.txt에서 Google publisher 항목이 확인됐습니다.";
   }
@@ -877,6 +894,13 @@ function getAdsTxtStatusTitle(stat: EnrichedSiteStat): string {
     return stat.adsTxtError;
   }
   return "아직 ads.txt 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
+}
+
+function getAdsTxtBadgeClass(stat: EnrichedSiteStat): string {
+  if (stat.adsTxtCollectorStatus === "transient_error") {
+    return "badge badge-warning";
+  }
+  return getMonetizationBadgeClass(stat.adsTxtStatus);
 }
 
 function getMonetizationBadgeClass(

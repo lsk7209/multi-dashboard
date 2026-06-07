@@ -25,6 +25,11 @@ const SITE_FETCH_HEADERS = {
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
   Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 } as const;
+const MEDIAPARTNERS_FETCH_HEADERS = {
+  ...SITE_FETCH_HEADERS,
+  "User-Agent": "Mediapartners-Google",
+} as const;
+const MONETIZATION_LAST_GOOD_TTL_HOURS = 72;
 const TOP_QUERY_LIMIT = 3;
 const TOP_QUERY_MIN_IMPRESSIONS = 10;
 const TOP_TRAFFIC_KEYWORD_MIN_COUNT = 10;
@@ -36,6 +41,14 @@ const DEFAULT_CONTENT_FIELDS = {
 const execFileAsync = promisify(execFile);
 
 type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
+type AdsenseInstallStatus = "installed" | "not_detected" | "unknown";
+type AdsTxtValidationStatus = "valid" | "missing" | "wrong_publisher" | "unknown";
+type MonetizationCollectorStatus = "ok" | "transient_error" | "not_checked";
+type MonetizationEvidenceType =
+  | "homepage"
+  | "homepage_mediapartners"
+  | "sample_page"
+  | "ads_txt";
 type ErrorKind =
   | "permission"
   | "not_found"
@@ -71,6 +84,15 @@ interface TrafficKeywordMetric {
   clicks?: number;
   impressions?: number;
   sourceType: "ga4" | "gsc" | "external";
+}
+
+interface MonetizationEvidence {
+  type: MonetizationEvidenceType;
+  url: string;
+  checkedAt: string;
+  httpStatus?: number;
+  matchedSignal?: string;
+  error?: string;
 }
 
 interface ExternalTrafficKeywordInput {
@@ -124,6 +146,14 @@ interface SiteStat {
   gscStatus: CollectionStatus;
   adsenseStatus?: CollectionStatus;
   adsTxtStatus?: CollectionStatus;
+  adsenseInstallStatus?: AdsenseInstallStatus;
+  adsenseCollectorStatus?: MonetizationCollectorStatus;
+  adsenseEvidence?: MonetizationEvidence[];
+  adsenseLastKnownGoodAt?: string;
+  adsTxtValidationStatus?: AdsTxtValidationStatus;
+  adsTxtCollectorStatus?: MonetizationCollectorStatus;
+  adsTxtEvidence?: MonetizationEvidence[];
+  adsTxtLastKnownGoodAt?: string;
   monetization?: boolean;
   ga4LastSuccessfulFetchAt?: string;
   gscLastSuccessfulFetchAt?: string;
@@ -172,6 +202,22 @@ interface DateRangeSummary {
   last7Days: DateRange;
   previous7Days: DateRange;
   last30Days: DateRange;
+}
+
+async function loadPreviousStatsById(): Promise<Map<string, SiteStat>> {
+  if (!existsSync(OUTPUT_PATH)) {
+    return new Map();
+  }
+
+  try {
+    const raw = await readFile(OUTPUT_PATH, "utf8");
+    const snapshot = JSON.parse(raw) as Partial<StatsSnapshot>;
+    return new Map(
+      (snapshot.stats ?? []).map((stat) => [stat.id, stat] as const),
+    );
+  } catch {
+    return new Map();
+  }
 }
 
 function emptyMetrics(): MetricSet {
@@ -329,21 +375,6 @@ function statusFromError(
   }
 
   return fallback;
-}
-
-function monetizationStatusFromError(
-  error: string | undefined,
-): CollectionStatus {
-  if (!error) {
-    return "ok";
-  }
-
-  const kind = classifyError(error);
-  if (kind === "missing_config" || kind === "not_found") {
-    return "missing_config";
-  }
-
-  return "api_error";
 }
 
 async function fetchGa4Metrics(
@@ -1163,48 +1194,349 @@ async function fetchWpPostDate(url: string): Promise<string | undefined> {
   return dateGmt ? `${dateGmt}Z` : undefined;
 }
 
-async function fetchAdsenseCodeStatus(site: Site): Promise<void> {
-  const response = await fetch(site.url, {
-    signal: AbortSignal.timeout(8000),
-    headers: SITE_FETCH_HEADERS,
-  });
-  if (!response.ok) {
-    throw new Error(`Homepage unavailable: ${response.status}`);
-  }
-
-  const html = await response.text();
+function findAdsenseSignal(html: string): string | undefined {
   const normalized = html.toLowerCase();
-  const hasAdsenseCode =
+  if (
     normalized.includes(
       "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-    ) ||
-    normalized.includes("adsbygoogle") ||
-    normalized.includes("ca-pub-");
+    )
+  ) {
+    return "pagead2";
+  }
+  if (normalized.includes("adsbygoogle")) {
+    return "adsbygoogle";
+  }
+  if (normalized.includes("ca-pub-")) {
+    return "ca-pub";
+  }
+  return undefined;
+}
 
-  if (!hasAdsenseCode) {
-    throw new Error("AdSense code not detected on homepage");
+function isRecentIso(value: string | undefined, maxAgeHours: number): boolean {
+  if (!value) {
+    return false;
+  }
+  const timestamp = Date.parse(value);
+  if (Number.isNaN(timestamp)) {
+    return false;
+  }
+  return Date.now() - timestamp <= maxAgeHours * 60 * 60 * 1000;
+}
+
+function getPreviousAdsenseLastKnownGood(
+  previous: SiteStat | undefined,
+): string | undefined {
+  return previous?.adsenseLastKnownGoodAt ?? previous?.adsenseLastSuccessfulFetchAt;
+}
+
+function getPreviousAdsTxtLastKnownGood(
+  previous: SiteStat | undefined,
+): string | undefined {
+  return previous?.adsTxtLastKnownGoodAt ?? previous?.adsTxtLastSuccessfulFetchAt;
+}
+
+async function discoverSampleContentUrl(
+  site: Site,
+): Promise<string | undefined> {
+  const sitemapUrls = site.sitemapUrls?.length
+    ? site.sitemapUrls
+    : [new URL("/sitemap.xml", site.url).toString()];
+  const home = normalizeUrlForComparison(site.url);
+
+  for (const sitemapUrl of sitemapUrls) {
+    try {
+      const response = await fetch(sitemapUrl, {
+        signal: AbortSignal.timeout(8000),
+        headers: SITE_FETCH_HEADERS,
+      });
+      if (!response.ok) {
+        continue;
+      }
+      const xml = await response.text();
+      const urls = Array.from(xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/gi))
+        .map((match) => match[1]?.trim())
+        .filter((value): value is string => Boolean(value));
+      const sampleUrl = urls.find((url) => {
+        const normalized = normalizeUrlForComparison(url);
+        return (
+          normalized !== home &&
+          !normalized.endsWith(".xml") &&
+          !normalized.includes("/sitemap") &&
+          !normalized.endsWith("/privacy") &&
+          !normalized.endsWith("/privacy-policy") &&
+          !normalized.endsWith("/contact") &&
+          !normalized.endsWith("/terms")
+        );
+      });
+      if (sampleUrl) {
+        return sampleUrl;
+      }
+    } catch {
+      continue;
+    }
+  }
+
+  return undefined;
+}
+
+function normalizeUrlForComparison(url: string): string {
+  return url.replace(/\/+$/, "").toLowerCase();
+}
+
+async function collectAdsenseCodeStatus(
+  site: Site,
+  previous: SiteStat | undefined,
+  checkedAt: string,
+): Promise<
+  Pick<
+    SiteStat,
+    | "adsenseStatus"
+    | "adsenseInstallStatus"
+    | "adsenseCollectorStatus"
+    | "adsenseEvidence"
+    | "adsenseLastKnownGoodAt"
+    | "adsenseLastSuccessfulFetchAt"
+    | "adsenseError"
+    | "adsenseErrorKind"
+  >
+> {
+  const evidence: MonetizationEvidence[] = [];
+  const sampleUrl = await discoverSampleContentUrl(site);
+  const probes: Array<{
+    type: MonetizationEvidenceType;
+    url: string;
+    headers: HeadersInit;
+  }> = [
+    { type: "homepage", url: site.url, headers: SITE_FETCH_HEADERS },
+    {
+      type: "homepage_mediapartners",
+      url: site.url,
+      headers: MEDIAPARTNERS_FETCH_HEADERS,
+    },
+    ...(sampleUrl
+      ? [{ type: "sample_page" as const, url: sampleUrl, headers: SITE_FETCH_HEADERS }]
+      : []),
+  ];
+
+  for (const probe of probes) {
+    try {
+      const response = await fetch(probe.url, {
+        signal: AbortSignal.timeout(8000),
+        headers: probe.headers,
+      });
+      const item: MonetizationEvidence = {
+        type: probe.type,
+        url: probe.url,
+        checkedAt,
+        httpStatus: response.status,
+      };
+      if (response.ok) {
+        const html = await response.text();
+        const signal = findAdsenseSignal(html);
+        if (signal) {
+          item.matchedSignal = signal;
+        }
+      } else {
+        item.error = `HTTP ${response.status}`;
+      }
+      evidence.push(item);
+    } catch (error) {
+      evidence.push({
+        type: probe.type,
+        url: probe.url,
+        checkedAt,
+        error: getErrorMessage(error),
+      });
+    }
+  }
+
+  const matched = evidence.find((item) => item.matchedSignal);
+  if (matched) {
+    return {
+      adsenseStatus: "ok",
+      adsenseInstallStatus: "installed",
+      adsenseCollectorStatus: "ok",
+      adsenseEvidence: evidence,
+      adsenseLastKnownGoodAt: checkedAt,
+      adsenseLastSuccessfulFetchAt: checkedAt,
+    };
+  }
+
+  const successfulHtmlChecks = evidence.filter(
+    (item) => item.httpStatus !== undefined && item.httpStatus >= 200 && item.httpStatus < 300,
+  );
+  const transientErrors = evidence.filter(
+    (item) => item.error || (item.httpStatus !== undefined && item.httpStatus >= 400),
+  );
+  if (successfulHtmlChecks.length >= 2 && transientErrors.length === 0) {
+    const error = "AdSense code not detected on checked pages";
+    return {
+      adsenseStatus: "missing_config",
+      adsenseInstallStatus: "not_detected",
+      adsenseCollectorStatus: "ok",
+      adsenseEvidence: evidence,
+      adsenseError: error,
+      adsenseErrorKind: "missing_config",
+    };
+  }
+
+  const previousGoodAt = getPreviousAdsenseLastKnownGood(previous);
+  const preservePreviousGood = isRecentIso(
+    previousGoodAt,
+    MONETIZATION_LAST_GOOD_TTL_HOURS,
+  );
+  const error = `AdSense collection transient: ${summarizeEvidenceErrors(evidence)}`;
+  return {
+    adsenseStatus: preservePreviousGood ? "ok" : "api_error",
+    adsenseInstallStatus: preservePreviousGood ? "installed" : "unknown",
+    adsenseCollectorStatus: "transient_error",
+    adsenseEvidence: evidence,
+    ...(previousGoodAt ? { adsenseLastKnownGoodAt: previousGoodAt } : {}),
+    ...(preservePreviousGood && previousGoodAt
+      ? { adsenseLastSuccessfulFetchAt: previousGoodAt }
+      : {}),
+    adsenseError: error,
+    adsenseErrorKind: "api_error",
+  };
+}
+
+async function collectAdsTxtStatus(
+  site: Site,
+  previous: SiteStat | undefined,
+  checkedAt: string,
+): Promise<
+  Pick<
+    SiteStat,
+    | "adsTxtStatus"
+    | "adsTxtValidationStatus"
+    | "adsTxtCollectorStatus"
+    | "adsTxtEvidence"
+    | "adsTxtLastKnownGoodAt"
+    | "adsTxtLastSuccessfulFetchAt"
+    | "adsTxtError"
+    | "adsTxtErrorKind"
+  >
+> {
+  const adsTxtUrl = new URL("/ads.txt", site.url).toString();
+  const evidence: MonetizationEvidence[] = [];
+
+  try {
+    const response = await fetch(adsTxtUrl, {
+      signal: AbortSignal.timeout(8000),
+      headers: SITE_FETCH_HEADERS,
+    });
+    const item: MonetizationEvidence = {
+      type: "ads_txt",
+      url: adsTxtUrl,
+      checkedAt,
+      httpStatus: response.status,
+    };
+    evidence.push(item);
+
+    if (response.status === 404) {
+      const error = "ads.txt unavailable: 404";
+      return {
+        adsTxtStatus: "missing_config",
+        adsTxtValidationStatus: "missing",
+        adsTxtCollectorStatus: "ok",
+        adsTxtEvidence: evidence,
+        adsTxtError: error,
+        adsTxtErrorKind: "missing_config",
+      };
+    }
+
+    if (!response.ok) {
+      item.error = `HTTP ${response.status}`;
+      return preserveAdsTxtOnTransient(previous, checkedAt, evidence);
+    }
+
+    const body = await response.text();
+    const normalized = body.toLowerCase();
+    if (!normalized.includes("google.com")) {
+      const error = "Missing ads.txt Google publisher entry";
+      return {
+        adsTxtStatus: "missing_config",
+        adsTxtValidationStatus: "wrong_publisher",
+        adsTxtCollectorStatus: "ok",
+        adsTxtEvidence: evidence,
+        adsTxtError: error,
+        adsTxtErrorKind: "missing_config",
+      };
+    }
+
+    if (!normalized.includes(ADSENSE_PUBLISHER_ID)) {
+      const error = `Missing ads.txt publisher ${ADSENSE_PUBLISHER_ID}`;
+      return {
+        adsTxtStatus: "missing_config",
+        adsTxtValidationStatus: "wrong_publisher",
+        adsTxtCollectorStatus: "ok",
+        adsTxtEvidence: evidence,
+        adsTxtError: error,
+        adsTxtErrorKind: "missing_config",
+      };
+    }
+
+    item.matchedSignal = ADSENSE_PUBLISHER_ID;
+    return {
+      adsTxtStatus: "ok",
+      adsTxtValidationStatus: "valid",
+      adsTxtCollectorStatus: "ok",
+      adsTxtEvidence: evidence,
+      adsTxtLastKnownGoodAt: checkedAt,
+      adsTxtLastSuccessfulFetchAt: checkedAt,
+    };
+  } catch (error) {
+    evidence.push({
+      type: "ads_txt",
+      url: adsTxtUrl,
+      checkedAt,
+      error: getErrorMessage(error),
+    });
+    return preserveAdsTxtOnTransient(previous, checkedAt, evidence);
   }
 }
 
-async function fetchAdsTxtStatus(site: Site): Promise<void> {
-  const adsTxtUrl = new URL("/ads.txt", site.url).toString();
-  const response = await fetch(adsTxtUrl, {
-    signal: AbortSignal.timeout(8000),
-    headers: SITE_FETCH_HEADERS,
+function preserveAdsTxtOnTransient(
+  previous: SiteStat | undefined,
+  checkedAt: string,
+  evidence: MonetizationEvidence[],
+): Pick<
+  SiteStat,
+  | "adsTxtStatus"
+  | "adsTxtValidationStatus"
+  | "adsTxtCollectorStatus"
+  | "adsTxtEvidence"
+  | "adsTxtLastKnownGoodAt"
+  | "adsTxtLastSuccessfulFetchAt"
+  | "adsTxtError"
+  | "adsTxtErrorKind"
+> {
+  const previousGoodAt = getPreviousAdsTxtLastKnownGood(previous);
+  const preservePreviousGood = isRecentIso(
+    previousGoodAt,
+    MONETIZATION_LAST_GOOD_TTL_HOURS,
+  );
+  const error = `ads.txt collection transient: ${summarizeEvidenceErrors(evidence)}`;
+  return {
+    adsTxtStatus: preservePreviousGood ? "ok" : "api_error",
+    adsTxtValidationStatus: preservePreviousGood ? "valid" : "unknown",
+    adsTxtCollectorStatus: "transient_error",
+    adsTxtEvidence: evidence,
+    ...(previousGoodAt ? { adsTxtLastKnownGoodAt: previousGoodAt } : {}),
+    ...(preservePreviousGood && previousGoodAt
+      ? { adsTxtLastSuccessfulFetchAt: previousGoodAt }
+      : {}),
+    adsTxtError: error,
+    adsTxtErrorKind: "api_error",
+  };
+}
+
+function summarizeEvidenceErrors(evidence: MonetizationEvidence[]): string {
+  const details = evidence.map((item) => {
+    const status = item.httpStatus ? `HTTP ${item.httpStatus}` : item.error;
+    return `${item.type} ${status ?? "no signal"}`;
   });
-  if (!response.ok) {
-    throw new Error(`ads.txt unavailable: ${response.status}`);
-  }
-
-  const body = await response.text();
-  const normalized = body.toLowerCase();
-  if (!normalized.includes("google.com")) {
-    throw new Error("Missing ads.txt Google publisher entry");
-  }
-
-  if (!normalized.includes(ADSENSE_PUBLISHER_ID)) {
-    throw new Error(`Missing ads.txt publisher ${ADSENSE_PUBLISHER_ID}`);
-  }
+  return details.join("; ");
 }
 
 async function fetchSiteStat(
@@ -1212,6 +1544,7 @@ async function fetchSiteStat(
   gscClient: ReturnType<typeof google.searchconsole>,
   site: Site,
   externalTrafficKeywords: Map<string, TrafficKeywordMetric[]>,
+  previousStat: SiteStat | undefined,
 ): Promise<SiteStat> {
   let last1Days = emptyMetrics();
   let last7Days = emptyMetrics();
@@ -1226,8 +1559,8 @@ async function fetchSiteStat(
   let error: string | undefined;
   let gscError: string | undefined;
   let sitemapError: string | undefined;
-  let adsenseError: string | undefined;
-  let adsTxtError: string | undefined;
+  let adsenseResult: Partial<SiteStat> = {};
+  let adsTxtResult: Partial<SiteStat> = {};
   const collectedAt = new Date().toISOString();
 
   if (!site.ga4PropertyId) {
@@ -1285,17 +1618,12 @@ async function fetchSiteStat(
 
   const monetizationEnabled = site.monetization !== false;
   if (monetizationEnabled) {
-    try {
-      await fetchAdsenseCodeStatus(site);
-    } catch (statusError) {
-      adsenseError = getErrorMessage(statusError);
-    }
-
-    try {
-      await fetchAdsTxtStatus(site);
-    } catch (statusError) {
-      adsTxtError = getErrorMessage(statusError);
-    }
+    adsenseResult = await collectAdsenseCodeStatus(
+      site,
+      previousStat,
+      collectedAt,
+    );
+    adsTxtResult = await collectAdsTxtStatus(site, previousStat, collectedAt);
   }
 
   const stat: SiteStat = {
@@ -1323,8 +1651,8 @@ async function fetchSiteStat(
     // 키를 undefined로 명시하지 않고 아예 빼서 optional 계약을 지킨다.
     ...(monetizationEnabled
       ? {
-          adsenseStatus: monetizationStatusFromError(adsenseError),
-          adsTxtStatus: monetizationStatusFromError(adsTxtError),
+          ...adsenseResult,
+          ...adsTxtResult,
         }
       : { monetization: false }),
     ...sitemapSummary,
@@ -1345,19 +1673,8 @@ async function fetchSiteStat(
   }
 
   if (monetizationEnabled) {
-    if (adsenseError) {
-      stat.adsenseError = adsenseError;
-      stat.adsenseErrorKind = classifyError(adsenseError);
-    } else {
-      stat.adsenseLastSuccessfulFetchAt = collectedAt;
-    }
-
-    if (adsTxtError) {
-      stat.adsTxtError = adsTxtError;
-      stat.adsTxtErrorKind = classifyError(adsTxtError);
-    } else {
-      stat.adsTxtLastSuccessfulFetchAt = collectedAt;
-    }
+    stat.adsenseCollectorStatus ??= "not_checked";
+    stat.adsTxtCollectorStatus ??= "not_checked";
   }
 
   if (sitemapError) {
@@ -1397,11 +1714,18 @@ async function main(): Promise<void> {
   const gscClient = google.searchconsole({ version: "v1", auth });
   const limit = pLimit(CONCURRENCY);
   const externalTrafficKeywords = await loadExternalTrafficKeywords();
+  const previousStatsById = await loadPreviousStatsById();
 
   const stats = await Promise.all(
     sites.map((site) =>
       limit(() =>
-        fetchSiteStat(ga4Client, gscClient, site, externalTrafficKeywords),
+        fetchSiteStat(
+          ga4Client,
+          gscClient,
+          site,
+          externalTrafficKeywords,
+          previousStatsById.get(site.id),
+        ),
       ),
     ),
   );

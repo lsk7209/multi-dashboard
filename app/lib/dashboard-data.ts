@@ -11,6 +11,7 @@ export interface Site {
   ga4PropertyId?: string;
   gscSiteUrl?: string;
   sitemapUrls?: string[];
+  monetization?: boolean;
 }
 
 interface SitesFile {
@@ -56,11 +57,30 @@ export interface SitemapDetail {
   isPending?: boolean;
 }
 
+export interface MonetizationEvidence {
+  type: "homepage" | "homepage_mediapartners" | "sample_page" | "ads_txt";
+  url: string;
+  checkedAt: string;
+  httpStatus?: number;
+  matchedSignal?: string;
+  error?: string;
+}
+
 export type CollectionStatus =
   | "ok"
   | "auth_error"
   | "api_error"
   | "missing_config";
+export type AdsenseInstallStatus = "installed" | "not_detected" | "unknown";
+export type AdsTxtValidationStatus =
+  | "valid"
+  | "missing"
+  | "wrong_publisher"
+  | "unknown";
+export type MonetizationCollectorStatus =
+  | "ok"
+  | "transient_error"
+  | "not_checked";
 export type ErrorKind =
   | "permission"
   | "not_found"
@@ -97,6 +117,7 @@ export type CollectionSourceState =
   | "processing";
 
 const SITEMAP_COLLECTION_LAG_DAYS = 5;
+const MONETIZATION_LAST_GOOD_TTL_HOURS = 72;
 const CTR_OPPORTUNITY_MIN_IMPRESSIONS = 20;
 const CTR_OPPORTUNITY_MAX_CTR = 0.03;
 const CTR_OPPORTUNITY_MIN_POSITION = 1;
@@ -155,6 +176,14 @@ export interface SiteStat {
   gscStatus?: CollectionStatus;
   adsenseStatus?: CollectionStatus;
   adsTxtStatus?: CollectionStatus;
+  adsenseInstallStatus?: AdsenseInstallStatus;
+  adsenseCollectorStatus?: MonetizationCollectorStatus;
+  adsenseEvidence?: MonetizationEvidence[];
+  adsenseLastKnownGoodAt?: string;
+  adsTxtValidationStatus?: AdsTxtValidationStatus;
+  adsTxtCollectorStatus?: MonetizationCollectorStatus;
+  adsTxtEvidence?: MonetizationEvidence[];
+  adsTxtLastKnownGoodAt?: string;
   monetization?: boolean;
   ga4LastSuccessfulFetchAt?: string;
   gscLastSuccessfulFetchAt?: string;
@@ -756,7 +785,12 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (stat.adsenseStatus === "api_error" || stat.adsTxtStatus === "api_error") {
+  if (
+    (stat.adsenseStatus === "api_error" &&
+      stat.adsenseCollectorStatus !== "transient_error") ||
+    (stat.adsTxtStatus === "api_error" &&
+      stat.adsTxtCollectorStatus !== "transient_error")
+  ) {
     items.push(
       makeAction(
         stat,
@@ -886,9 +920,7 @@ function getActionLabel(kind: ActionKind): string {
 function hasMonetizationIssue(stat: EnrichedSiteStat): boolean {
   return (
     stat.adsenseStatus === "missing_config" ||
-    stat.adsTxtStatus === "missing_config" ||
-    stat.adsenseStatus === "api_error" ||
-    stat.adsTxtStatus === "api_error"
+    stat.adsTxtStatus === "missing_config"
   );
 }
 
@@ -1118,18 +1150,22 @@ function getCollectionSources(stat: SiteStat): CollectionSourceStatus[] {
   // AdSense 미적용 사이트(monetization=false, 예: 쇼핑몰)는 수익화 수집 항목에서 제외한다.
   if (stat.monetization !== false) {
     sources.push(
-      getApiCollectionSource(
+      getMonetizationCollectionSource(
         "adsense",
         "AdSense",
         stat.adsenseStatus,
+        stat.adsenseCollectorStatus,
         stat.adsenseLastSuccessfulFetchAt,
+        stat.adsenseLastKnownGoodAt,
         stat.adsenseError,
       ),
-      getApiCollectionSource(
+      getMonetizationCollectionSource(
         "adsTxt",
         "ads.txt",
         stat.adsTxtStatus,
+        stat.adsTxtCollectorStatus,
         stat.adsTxtLastSuccessfulFetchAt,
+        stat.adsTxtLastKnownGoodAt,
         stat.adsTxtError,
       ),
     );
@@ -1184,6 +1220,35 @@ function getApiCollectionSource(
     reason: `${label} 수집 정상`,
     checkedAt,
   };
+}
+
+function getMonetizationCollectionSource(
+  key: CollectionSourceKey,
+  label: string,
+  status: CollectionStatus | undefined,
+  collectorStatus: MonetizationCollectorStatus | undefined,
+  checkedAt: string | undefined,
+  lastKnownGoodAt: string | undefined,
+  error: string | undefined,
+): CollectionSourceStatus {
+  if (collectorStatus === "transient_error") {
+    const preserved = isRecentIso(
+      lastKnownGoodAt,
+      MONETIZATION_LAST_GOOD_TTL_HOURS,
+    );
+    const lastCheckedAt = checkedAt ?? lastKnownGoodAt;
+    return {
+      key,
+      label,
+      state: preserved ? "stale" : "error",
+      reason:
+        error ??
+        `${label} collection failed temporarily; last known good state was preserved when available.`,
+      ...(lastCheckedAt ? { checkedAt: lastCheckedAt } : {}),
+    };
+  }
+
+  return getApiCollectionSource(key, label, status, checkedAt, error);
 }
 
 function getSitemapCollectionSource(stat: SiteStat): CollectionSourceStatus {
@@ -1673,6 +1738,7 @@ function seoulDateDaysAgo(days: number): string {
 }
 
 function emptySiteStat(site: Site): SiteStat {
+  const monetizationEnabled = site.monetization !== false;
   return {
     id: site.id,
     name: site.name ?? site.id,
@@ -1688,8 +1754,16 @@ function emptySiteStat(site: Site): SiteStat {
     gscLast30Days: emptyGscMetrics(),
     ga4Status: site.ga4PropertyId ? "api_error" : "missing_config",
     gscStatus: "api_error",
-    adsenseStatus: "missing_config",
-    adsTxtStatus: "missing_config",
+    ...(monetizationEnabled
+      ? {
+          adsenseStatus: "missing_config" as const,
+          adsTxtStatus: "missing_config" as const,
+          adsenseInstallStatus: "unknown" as const,
+          adsenseCollectorStatus: "not_checked" as const,
+          adsTxtValidationStatus: "unknown" as const,
+          adsTxtCollectorStatus: "not_checked" as const,
+        }
+      : { monetization: false as const }),
     ga4ErrorKind: site.ga4PropertyId ? "api_error" : "missing_config",
     error: site.ga4PropertyId ? "통계 스냅샷 없음" : "GA4 속성 없음",
   };
@@ -1780,6 +1854,14 @@ function isOlderThanHours(value: string | undefined, hours: number): boolean {
   }
 
   return Date.now() - timestamp > hours * 60 * 60 * 1000;
+}
+
+function isRecentIso(value: string | undefined, maxAgeHours: number): boolean {
+  if (!value) {
+    return false;
+  }
+
+  return !isOlderThanHours(value, maxAgeHours);
 }
 
 function isOlderThanDays(value: string | undefined, days: number): boolean {

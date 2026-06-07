@@ -644,7 +644,7 @@ function getMonetizationIssueLabel(
 ): string {
   if (stat.adsenseStatus === "missing_config") return "코드 미탐지";
   if (stat.adsTxtStatus === "missing_config") return "ads.txt 없음";
-  return "상태 확인 실패";
+  return "확정 문제 확인 필요";
 }
 
 function getTrafficCauseLabel(
