@@ -603,3 +603,31 @@ Updated readiness notes:
 
 - `jasamall.sellerpit.kr` is no longer blocked by thin homepage HTML or missing home trust/legal links from crawler evidence.
 - After the final 65-site public rescan, the only remaining strong public blocker is `educaer.com`: `/terms/` still returns missing and the homepage still lacks a Terms link. User-side action needed: restore/provide working SSH access for `educaer@158.247.245.11:1988` or another WordPress admin/deploy path so the same Terms fix can be applied.
+
+## Additional Follow-up 2026-06-08: Sitemap Rechecks
+
+Follow-up from earlier delayed sitemap notes:
+
+- `ezfunnel.kr`:
+  - Rechecked public state: `/terms/` 200, home contains `/terms/`, but `page-sitemap.xml`, `wp-sitemap-posts-page-1.xml`, and `sitemap.xml` still did not include `/terms/`.
+  - Confirmed WP-CLI access with `nexttech@158.247.212.123:1988` and WordPress path `/home5/nexttech/ezfunnel.kr`.
+  - Created rollback artifacts before applying the sitemap fix:
+    - `/home5/nexttech/ezfunnel.kr/_codex-backups/adsense-sitemap-terms-fix-20260608/db-before-sitemap-terms.sql`.
+    - `/home5/nexttech/ezfunnel.kr/_codex-backups/adsense-sitemap-terms-fix-20260608/terms-page-before.json`.
+    - `/home5/nexttech/ezfunnel.kr/_codex-backups/adsense-sitemap-terms-fix-20260608/terms-meta-before.json`.
+  - Verified the Terms page was `publish`, indexable by Rank Math's sitemap class, and present in the Rank Math page query.
+  - Removed the temporary malformed `rank_math_robots` meta created during the first sitemap repair attempt, directly invalidated Rank Math sitemap storage, flushed WordPress/LiteSpeed cache, and rechecked public XML.
+  - Public Googlebot-style verification after repair:
+    - `/` 200, 1,300 visible chars, and contains `/terms/`.
+    - `/terms/` 200, 1,418 visible chars.
+    - `/page-sitemap.xml` 200 and now contains `https://ezfunnel.kr/terms/`.
+- `todayshops.kr`:
+  - Rechecked public state: `/terms/` 200, home contains `/terms/`, but `/page-sitemap.xml` still does not include `/terms/`.
+  - This is no longer a public trust-page approval blocker because the page is published and linked from the homepage.
+  - Could not apply a sitemap-cache follow-up because the available `D:\env\todayshops-chemicloud-PrivateKey` is passphrase-protected and the passphrase is not available in the current environment or command history.
+
+Updated readiness notes:
+
+- `ezfunnel.kr` is now clear on both public Terms/home-link evidence and page sitemap inclusion.
+- `todayshops.kr` remains clear on public Terms/home-link evidence; sitemap inclusion is a low-priority follow-up requiring the encrypted SSH key passphrase or another WordPress admin/deploy path.
+- `educaer.com` remains the only strong public AdSense approval blocker found in the latest scans.
