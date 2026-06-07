@@ -570,3 +570,36 @@ Updated readiness notes:
 Updated readiness notes:
 
 - `smart.sellerpit.kr` is no longer blocked by thin homepage HTML or missing home trust/legal links from crawler evidence.
+
+## Additional Production Fix 2026-06-08: Jasamall Sellerpit Homepage Trust Footer
+
+`jasamall.sellerpit.kr` crawler-visible homepage substance/link blocker:
+
+- Full 65-site public Googlebot-style rescan found two remaining strong public blockers:
+  - `educaer.com`: `/terms/` missing and home did not expose a Terms link.
+  - `jasamall.sellerpit.kr`: home 200 but only 621 visible chars and no About/Contact/Privacy/Terms links in the initial HTML.
+- `jasamall.sellerpit.kr` had the trust/legal pages already published:
+  - `/about/` 200.
+  - `/contact/` 200.
+  - `/privacy/` 200.
+  - `/terms/` 200.
+  - `/sitemap.xml` already contained the trust/legal URLs.
+- Confirmed SSH/WP-CLI access with `nexttech@158.247.212.123:1988` and WordPress path `/home/nexttech/jasamall.sellerpit.kr` (`/home5/nexttech/jasamall.sellerpit.kr` resolves to the same directory).
+- Created rollback artifacts before applying the change:
+  - `/home/nexttech/jasamall.sellerpit.kr/_codex-backups/adsense-home-trust-fix-20260608/db-before-home-trust.sql`.
+  - `/home/nexttech/jasamall.sellerpit.kr/_codex-backups/adsense-home-trust-fix-20260608/pages-before.json`.
+- Added MU plugin `wp-content/mu-plugins/jasamall-adsense-trust-footer.php`.
+  - The plugin appends a crawler-visible site-purpose footer and trailing-slash links to `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+  - It does not edit article titles, article bodies, or in-body internal links.
+- Verification:
+  - PHP syntax check passed.
+  - WordPress object cache, rewrite rules, and LiteSpeed cache were flushed.
+  - Public Googlebot-style verification:
+    - `/` 200, 893 visible chars, footer marker present, and initial HTML contains `/about/`, `/contact/`, `/privacy/`, and `/terms/`.
+    - `/about/`, `/contact/`, `/privacy/`, and `/terms/` all return 200 with the trust footer and policy links present.
+    - `/sitemap.xml` returns 200 and contains the trust/legal URLs.
+
+Updated readiness notes:
+
+- `jasamall.sellerpit.kr` is no longer blocked by thin homepage HTML or missing home trust/legal links from crawler evidence.
+- After the final 65-site public rescan, the only remaining strong public blocker is `educaer.com`: `/terms/` still returns missing and the homepage still lacks a Terms link. User-side action needed: restore/provide working SSH access for `educaer@158.247.245.11:1988` or another WordPress admin/deploy path so the same Terms fix can be applied.
