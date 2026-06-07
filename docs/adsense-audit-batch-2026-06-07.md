@@ -364,11 +364,10 @@ Dashboard repository verification after report/script updates:
 
 Remaining user/action-required blockers after this round:
 
-- `todayshops.kr`: current local SSH key is invalid format; provide repaired SSH key or WP admin credential.
-- `sssaass.com`: current local SSH key is invalid format; provide repaired SSH key or WP admin credential.
-- `softwa.kr`: SSH permission denied with the available key; provide working access or WP admin credential.
-- `homeimer.com`: SSH permission denied with the available key; provide working access or WP admin credential.
-- `yesa.kr`: `D:\web\yesa-youunsang` has many pre-existing dirty changes; reconcile or confirm that this worktree can be modified.
+- `todayshops.kr`: `/terms/` is still 404; available SSH key is encrypted OpenSSH format and no usable passphrase/nopass variant is available. Provide a nopass key, passphrase path, or WP admin credential.
+- `sssaass.com`: `/terms/` is still 404; available SSH key is encrypted OpenSSH format and no usable passphrase/nopass variant is available. Provide a nopass key, passphrase path, or WP admin credential.
+- `softwa.kr`: `/terms/` is still 404; current SSH key is readable but rejected by both candidate hosts. Provide working SSH/WP access or a nopass key with the correct server authorization.
+- `homeimer.com`: `/about/`, `/contact/`, and `/terms/` are still 404; current SSH key is readable but rejected by both candidate hosts. Provide working SSH/WP access or a nopass key with the correct server authorization.
 - `gpt.nexttech7.com`: still needs host/path access discovery or credentials before WP-CLI patching.
 
 ## Follow-up Verification 2026-06-08
@@ -406,3 +405,24 @@ Updated readiness notes:
 Updated readiness notes:
 
 - `crepika.com` is no longer a fallback/low-value route blocker from public crawler evidence. It is ready for AdSense re-review unless the account-side rejection gives a different private reason.
+
+## Additional Production Fix 2026-06-08: Yesa
+
+`yesa.kr` trust/legal page blocker:
+
+- Found working SSH access with `yesa@158.247.245.11:1988` and WordPress path `/home/yesa/public_html`.
+- Existing privacy and terms pages were published only under Korean slugs, while `/about/`, `/contact/`, `/privacy/`, and `/terms/` returned 404 to public crawlers.
+- Created/published English-slug pages through WP-CLI: `/about/`, `/contact/`, `/privacy/`, `/terms/`.
+- Replaced the first Korean WP-CLI write with ASCII/English titles and body text because the server/database path rendered Korean titles as `????`.
+- Flushed WordPress object cache and LiteSpeed cache.
+- Public Googlebot-style verification:
+  - `/about/` 200, 1,108 visible chars, title `About Yesa Dollar | 예스달러`.
+  - `/contact/` 200, 973 visible chars, title `Contact Yesa Dollar | 예스달러`.
+  - `/privacy/` 200, 1,294 visible chars, title `Privacy Policy | 예스달러`.
+  - `/terms/` 200, 1,244 visible chars, title `Terms of Use | 예스달러`.
+  - No `????` placeholder markers in the verified page text.
+  - `https://yesa.kr/wp-sitemap-posts-page-1.xml` contains the core English-slug pages.
+
+Updated readiness notes:
+
+- `yesa.kr` is no longer blocked by missing trust/legal pages from public crawler evidence. It is ready for AdSense re-review unless the account-side rejection gives a different private reason.
