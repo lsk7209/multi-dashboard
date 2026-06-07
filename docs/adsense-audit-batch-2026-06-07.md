@@ -477,3 +477,37 @@ Updated readiness notes:
 Updated readiness notes:
 
 - `todayshops.kr`, `sssaass.com`, `softwa.kr`, and `homeimer.com` are no longer blocked by missing public trust/legal pages from crawler evidence. They are ready for AdSense re-review unless the account-side rejection gives a different private reason.
+
+## Additional Production Fix 2026-06-08: Remaining Terms Batch
+
+`discparty.com`, `ezfunnel.kr`, and `educaer.com` follow-up from the latest public crawler rescan:
+
+- Rechecked public crawler state before patching:
+  - `discparty.com`: `/terms/` returned 404; home did not expose a Terms link.
+  - `ezfunnel.kr`: `/terms/` returned 404; home did not expose a Terms link.
+  - `educaer.com`: `/terms/` still returns 404; home does not expose a Terms link.
+- `discparty.com`:
+  - Confirmed SSH/WP-CLI access with `nexttech@158.247.212.123:1988` and WordPress path `/home5/nexttech/discparty.com`.
+  - Created rollback artifacts under `/home5/nexttech/discparty.com/_codex-backups/adsense-trust-fix-20260608-terms`.
+  - Published `/terms/` as page ID `13740`.
+  - Added Terms menu items `13741` and `13742` to the primary and footer menus.
+  - Flushed WordPress object cache, rewrite rules, and LiteSpeed cache.
+  - Public Googlebot-style verification: home 200 and contains `/terms/`; `/terms/` 200; `page-sitemap.xml` 200 and contains `/terms/`.
+- `ezfunnel.kr`:
+  - Confirmed SSH/WP-CLI access with `nexttech@158.247.212.123:1988` and WordPress path `/home5/nexttech/ezfunnel.kr`.
+  - Created rollback artifacts under `/home5/nexttech/ezfunnel.kr/_codex-backups/adsense-trust-fix-20260608-terms`.
+  - Published `/terms/` as page ID `3219`.
+  - Added Terms menu item `3220` to the primary/mobile/footer menu.
+  - Flushed WordPress object cache, rewrite rules, LiteSpeed cache, and sitemap-related transients.
+  - Public Googlebot-style verification: home 200 and contains `/terms/`; `/terms/` 200.
+  - Follow-up note: `page-sitemap.xml` and `wp-sitemap-posts-page-1.xml` still did not include `/terms/` immediately after cache/transient flush. The public page and home link clear the trust-page blocker; sitemap inclusion should be rechecked after plugin regeneration.
+- `educaer.com`:
+  - Confirmed from DNS/local project scripts that the site is on `158.247.245.11` with WordPress path `/home3/educaer/public_html`.
+  - Could not apply the Terms fix because the currently available local SSH key candidates no longer authenticate to the `educaer` account. The previous project notes also say temporary SSH files were deleted.
+  - Public Googlebot-style verification still shows `/terms/` 404 and no home Terms link.
+
+Updated readiness notes:
+
+- `discparty.com` is no longer blocked by missing Terms/trust link evidence and is ready for AdSense re-review unless the account-side rejection gives a different private reason.
+- `ezfunnel.kr` is no longer blocked by missing public Terms/home link evidence; recheck sitemap inclusion before final batch submission if possible.
+- `educaer.com` remains blocked by a missing public `/terms/` page. User-side action needed: restore/provide working SSH access for `educaer@158.247.245.11:1988` or another WordPress admin/deploy path so the same Terms fix can be applied.
