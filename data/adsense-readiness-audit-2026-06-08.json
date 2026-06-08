@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T09:33:54.488Z",
+  "generatedAt": "2026-06-08T09:43:59.121Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 24,
-    "needs_patch": 56,
+    "review": 25,
+    "needs_patch": 55,
     "blocked": 0
   },
   "sites": [
@@ -879,162 +879,6 @@
         "thin page: https://saju.tasko.kr/ visible word tokens=528"
       ],
       "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "autoscares-2",
-      "name": "autoscares.com",
-      "platform": "wordpress",
-      "url": "https://autoscares.com/",
-      "gscSiteUrl": "https://autoscares.com/",
-      "verdict": "needs_patch",
-      "score": 87,
-      "pages": [
-        {
-          "url": "https://autoscares.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "자동차팡팡 | 자동차 정보와 전기차 구매 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "자동차팡팡은 전기차, 중고차, 차량 관리, 보험과 금융 정보를 쉽게 정리하는 자동차 전문 콘텐츠 미디어입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://autoscares.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "32 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 454,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 3
-        },
-        {
-          "url": "https://autoscares.com/services/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "자동차팡팡 서비스 | 자동차 리뷰·구매·관리 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "자동차팡팡은 자동차 리뷰, 구매 가이드, 차량 유지관리, 전기차와 금융 정보를 주제별로 제공합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://autoscares.com/services/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=7, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "22 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/services/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 164,
-          "h1Count": 1,
-          "h2Count": 7,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://autoscares.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://autoscares.com/sitemap.xml lastDownloaded=2026-06-08T00:15:58.204Z"
-      },
-      "adsTxt": {
-        "state": "unknown",
-        "detail": "fetch failed"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 6 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://autoscares.com/ visible word tokens=454",
-        "thin page: https://autoscares.com/services/ visible word tokens=164"
-      ],
-      "nextActions": [
-        "Fix /ads.txt publisher authorization.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -6106,6 +5950,161 @@
       ]
     },
     {
+      "id": "autoscares-2",
+      "name": "autoscares.com",
+      "platform": "wordpress",
+      "url": "https://autoscares.com/",
+      "gscSiteUrl": "https://autoscares.com/",
+      "verdict": "needs_patch",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://autoscares.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "자동차팡팡 | 자동차 정보와 전기차 구매 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "자동차팡팡은 전기차, 중고차, 차량 관리, 보험과 금융 정보를 쉽게 정리하는 자동차 전문 콘텐츠 미디어입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://autoscares.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=3"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "32 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 454,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 3
+        },
+        {
+          "url": "https://autoscares.com/services/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "자동차팡팡 서비스 | 자동차 리뷰·구매·관리 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "자동차팡팡은 자동차 리뷰, 구매 가이드, 차량 유지관리, 전기차와 금융 정보를 주제별로 제공합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://autoscares.com/services/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "22 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/services/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 164,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://autoscares.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://autoscares.com/sitemap.xml lastDownloaded=2026-06-08T00:15:58.204Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 6 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://autoscares.com/ visible word tokens=454",
+        "thin page: https://autoscares.com/services/ visible word tokens=164"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "chatgipt-3",
       "name": "chatgipt.kr",
       "platform": "wordpress",
@@ -7940,7 +7939,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://luckyday.kr/category-sitemap.xml lastDownloaded=2026-06-08T09:22:51.069Z"
+        "detail": "https://luckyday.kr/category-sitemap.xml lastDownloaded=2026-06-08T09:43:39.518Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8733,6 +8732,214 @@
         "thin page: https://trave.kr/ visible word tokens=390",
         "thin page: https://trave.kr/travel-guide/ visible word tokens=641"
       ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "webtoon-klick",
+      "name": "webtoon.klick.kr",
+      "platform": "wordpress",
+      "url": "https://webtoon.klick.kr/",
+      "gscSiteUrl": "https://webtoon.klick.kr/",
+      "verdict": "review",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://webtoon.klick.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=15, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "53 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 887,
+          "h1Count": 1,
+          "h2Count": 15,
+          "h3Count": 0
+        },
+        {
+          "url": "https://webtoon.klick.kr/blog/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=15, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "53 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 887,
+          "h1Count": 1,
+          "h2Count": 15,
+          "h3Count": 0
+        },
+        {
+          "url": "https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "멘탈 회복용 웹툰 추천 기준 — 상처 회복 서사와 일상 힐링을 구분하는 법 | 웹툰고고"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "멘탈 회복용 웹툰 추천 기준를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=6, H3=6"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC marker found"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "12 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/webtoon-guide-029-webtoon-recommend/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 882,
+          "h1Count": 1,
+          "h2Count": 6,
+          "h3Count": 6
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://webtoon.klick.kr/sitemap_index.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T08:00:15.274Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 48 internal post-like links"
+      },
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -11673,218 +11880,6 @@
         "detail": "/blog/ canonical found, 29 internal post-like links"
       },
       "issues": [],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "webtoon-klick",
-      "name": "webtoon.klick.kr",
-      "platform": "wordpress",
-      "url": "https://webtoon.klick.kr/",
-      "gscSiteUrl": "https://webtoon.klick.kr/",
-      "verdict": "needs_patch",
-      "score": 93,
-      "pages": [
-        {
-          "url": "https://webtoon.klick.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=10, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "53 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 353,
-          "h1Count": 1,
-          "h2Count": 10,
-          "h3Count": 0
-        },
-        {
-          "url": "https://webtoon.klick.kr/blog/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=10, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "53 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/blog/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 353,
-          "h1Count": 1,
-          "h2Count": 10,
-          "h3Count": 0
-        },
-        {
-          "url": "https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "멘탈 회복용 웹툰 추천 기준 — 상처 회복 서사와 일상 힐링을 구분하는 법 | 웹툰고고"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "멘탈 회복용 웹툰 추천 기준를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "9 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/webtoon-guide-029-webtoon-recommend/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 576,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 3
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://webtoon.klick.kr/sitemap_index.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T08:00:15.274Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 48 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://webtoon.klick.kr/ visible word tokens=353",
-        "thin page: https://webtoon.klick.kr/blog/ visible word tokens=353",
-        "thin page: https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/ visible word tokens=576"
-      ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
