@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T10:15:19.597Z",
+  "generatedAt": "2026-06-08T10:21:24.568Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 29,
-    "needs_patch": 51,
+    "review": 30,
+    "needs_patch": 50,
     "blocked": 0
   },
   "sites": [
@@ -349,7 +349,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T05:20:06.043Z"
+        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T10:20:06.022Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9985,7 +9985,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T05:20:06.043Z"
+        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T10:20:06.022Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10099,161 +10099,6 @@
         "detail": "/blog/ canonical found, 16 internal post-like links"
       },
       "issues": [],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "gpt-nexttech7",
-      "name": "gpt.nexttech7.com",
-      "platform": "wordpress",
-      "url": "https://gpt.nexttech7.com/",
-      "gscSiteUrl": "https://gpt.nexttech7.com/",
-      "verdict": "needs_patch",
-      "score": 92,
-      "pages": [
-        {
-          "url": "https://gpt.nexttech7.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "AI 도구 가이드 — 모든 AI 도구 완벽 가이드 — 이미지·영상·코딩·업무 자동화까지"
-          },
-          "description": {
-            "state": "fail",
-            "detail": "missing description"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://gpt.nexttech7.com/"
-          },
-          "headings": {
-            "state": "warn",
-            "detail": "H1=0, H2=1, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "19 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 170,
-          "h1Count": 0,
-          "h2Count": 1,
-          "h3Count": 0
-        },
-        {
-          "url": "https://gpt.nexttech7.com/chatgpt-thumbnail-ctr-double/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "유튜브 썸네일 클릭률을 2배로 올린 방법 — AI 도구 가이드"
-          },
-          "description": {
-            "state": "pass",
-            "detail": "유튜브 썸네일 클릭률(CTR)을 높이는 건 단순히 시각적인 매력만으로는 부족해요. ChatGPT 카피라이팅과 A/B 테스트로 제목 공식을 찾아 클릭률을 2배로 올린 비결을 공개합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://gpt.nexttech7.com/chatgpt-thumbnail-ctr-double/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=7, H3=13"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC marker found"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "28 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "7 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/chatgpt-thumbnail-ctr-double/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 2409,
-          "h1Count": 1,
-          "h2Count": 7,
-          "h3Count": 13
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://gpt.nexttech7.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://gpt.nexttech7.com/sitemap.xml lastDownloaded=2026-06-02T09:51:45.742Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 53 internal post-like links"
-      },
-      "issues": [
-        "description: https://gpt.nexttech7.com/ missing description",
-        "thin page: https://gpt.nexttech7.com/ visible word tokens=170"
-      ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -12180,6 +12025,158 @@
       "issues": [
         "thin page: https://phone.luckyday.kr/ visible word tokens=522"
       ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "gpt-nexttech7",
+      "name": "gpt.nexttech7.com",
+      "platform": "wordpress",
+      "url": "https://gpt.nexttech7.com/",
+      "gscSiteUrl": "https://gpt.nexttech7.com/",
+      "verdict": "review",
+      "score": 95,
+      "pages": [
+        {
+          "url": "https://gpt.nexttech7.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "AI 도구 가이드 — 모든 AI 도구 완벽 가이드 — 이미지·영상·코딩·업무 자동화까지"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "AI 도구 가이드는 ChatGPT, 이미지 생성, 영상 제작, 코딩 자동화, 업무 생산성 도구를 실제 선택 기준과 활용 순서 중심으로 정리하는 한국어 AI 실무 가이드입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gpt.nexttech7.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=6, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "19 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 860,
+          "h1Count": 1,
+          "h2Count": 6,
+          "h3Count": 0
+        },
+        {
+          "url": "https://gpt.nexttech7.com/chatgpt-thumbnail-ctr-double/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "유튜브 썸네일 클릭률을 2배로 올린 방법 — AI 도구 가이드"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "유튜브 썸네일 클릭률(CTR)을 높이는 건 단순히 시각적인 매력만으로는 부족해요. ChatGPT 카피라이팅과 A/B 테스트로 제목 공식을 찾아 클릭률을 2배로 올린 비결을 공개합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gpt.nexttech7.com/chatgpt-thumbnail-ctr-double/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=13"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC marker found"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "28 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "7 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/chatgpt-thumbnail-ctr-double/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 2409,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 13
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://gpt.nexttech7.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://gpt.nexttech7.com/sitemap.xml lastDownloaded=2026-06-02T09:51:45.742Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 53 internal post-like links"
+      },
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."

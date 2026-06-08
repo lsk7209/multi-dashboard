@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T10:15:19.597Z
+Generated: 2026-06-08T10:21:24.568Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 29
-- Needs patch: 51
+- Review: 30
+- Needs patch: 50
 - Blocked: 0
 
 ## Highest Priority
@@ -81,7 +81,6 @@ Generated: 2026-06-08T10:15:19.597Z
 | dog-klick | dog.klick.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | dolbomjigi-ehon365 | dolbomjigi.ehon365.kr | wordpress | review | 92 | thin page: https://dolbomjigi.ehon365.kr/ visible word tokens=526<br>thin page: https://dolbomjigi.ehon365.kr visible word tokens=526 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | estat-2 | estat.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| gpt-nexttech7 | gpt.nexttech7.com | wordpress | needs_patch | 92 | description: https://gpt.nexttech7.com/ missing description<br>thin page: https://gpt.nexttech7.com/ visible word tokens=170 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | haemongdream | haemongdream.com | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | healthgotoo | healthgotoo.com | wordpress | needs_patch | 92 | thin page: https://healthgotoo.com/ visible word tokens=318<br>thin page: https://healthgotoo.com/disclaimer/ visible word tokens=117 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | jasamall-sellerpit | jasamall.sellerpit.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -96,6 +95,7 @@ Generated: 2026-06-08T10:15:19.597Z
 | legalser | legalser.com | wordpress | review | 93 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | educaer | educaer.com | wordpress | needs_patch | 94 | thin page: https://educaer.com/ visible word tokens=470<br>thin page: https://educaer.com/disclaimer/ visible word tokens=270<br>thin page: https://educaer.com/editorial-policy/ visible word tokens=289 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | phone-luckyday | phone.luckyday.kr | wordpress | review | 94 | thin page: https://phone.luckyday.kr/ visible word tokens=522 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| gpt-nexttech7 | gpt.nexttech7.com | wordpress | review | 95 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | mbti-tasko | mbti.tasko.kr | wordpress | review | 97 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | smart-sellerpit | smart.sellerpit.kr | wordpress | review | 97 | none | Patch technical SEO templates for meta, canonical, headings, and alt text. |
 
