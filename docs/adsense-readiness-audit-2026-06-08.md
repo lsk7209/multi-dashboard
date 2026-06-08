@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T08:39:32.918Z
+Generated: 2026-06-08T08:47:26.981Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 17
-- Needs patch: 63
+- Review: 18
+- Needs patch: 62
 - Blocked: 0
 
 ## Highest Priority
@@ -88,6 +88,7 @@ Generated: 2026-06-08T08:39:32.918Z
 | travelpang-2 | travelpang.kr | wordpress | needs_patch | 92 | thin page: https://travelpang.kr/ visible word tokens=433<br>thin page: https://travelpang.kr/services/ visible word tokens=228 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | dullegilgogo | dullegilgogo.kr | wordpress | review | 93 | thin page: https://dullegilgogo.kr/ visible word tokens=709<br>thin page: https://dullegilgogo.kr visible word tokens=709 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | homeimer | homeimer.com | wordpress | needs_patch | 93 | thin page: https://homeimer.com/ visible word tokens=468<br>thin page: https://homeimer.com/blog/ visible word tokens=648 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| insupang | insupang.com | wordpress | review | 93 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | legalser | legalser.com | wordpress | needs_patch | 93 | thin page: https://legalser.com/ visible word tokens=381<br>thin page: https://legalser.com/topic-hubs/ visible word tokens=223 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | webtoon-klick | webtoon.klick.kr | wordpress | needs_patch | 93 | thin page: https://webtoon.klick.kr/ visible word tokens=353<br>thin page: https://webtoon.klick.kr/blog/ visible word tokens=353<br>thin page: https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/ visible word tokens=576 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | dog-klick | dog.klick.kr | wordpress | needs_patch | 94 | thin page: https://dog.klick.kr/ visible word tokens=342 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -96,7 +97,6 @@ Generated: 2026-06-08T08:39:32.918Z
 | smart-sellerpit | smart.sellerpit.kr | wordpress | needs_patch | 94 | thin page: https://smart.sellerpit.kr/ visible word tokens=194 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | tasko-2 | tasko.kr | wordpress | needs_patch | 94 | thin page: https://tasko.kr/ visible word tokens=456 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | travel-sellerpit | travel.sellerpit.kr | wordpress | needs_patch | 94 | thin page: https://travel.sellerpit.kr/ visible word tokens=410 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| insupang | insupang.com | wordpress | needs_patch | 97 | thin page: https://insupang.com/ visible word tokens=636<br>thin page: https://insupang.com/services/ visible word tokens=164 | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | mbti-tasko | mbti.tasko.kr | wordpress | review | 97 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 
 ## Notes
