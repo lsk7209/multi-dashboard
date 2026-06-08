@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T13:37:53.108Z",
+  "generatedAt": "2026-06-08T13:52:44.358Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 47,
-    "needs_patch": 33,
+    "review": 48,
+    "needs_patch": 32,
     "blocked": 0
   },
   "sites": [
@@ -2857,7 +2857,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://luckyday.kr/sitemap_index.xml lastDownloaded=2026-06-08T13:26:04.651Z"
+        "detail": "https://luckyday.kr/sitemap_index.xml lastDownloaded=2026-06-08T13:50:57.671Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8197,7 +8197,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://klick.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:43.805Z"
+        "detail": "https://klick.kr/sitemap_index.xml lastDownloaded=2026-06-08T13:50:14.244Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8378,7 +8378,7 @@
       "platform": "wordpress",
       "url": "https://sellerpit.kr/",
       "gscSiteUrl": "https://sellerpit.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 90,
       "pages": [
         {
@@ -8390,7 +8390,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "마켓 입점, 상품 소싱, 마케팅, 브랜딩, 운영 노하우를 정리한 온라인 셀러 성장 가이드입니다."
+            "detail": "셀러핏은 온라인 셀러의 마켓 입점, 상품 소싱, 상세페이지, 광고, 정산, CS, 세금과 운영 기준을 실전 정보로 정리합니다."
           },
           "canonical": {
             "state": "pass",
@@ -8398,7 +8398,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=0"
+            "detail": "H1=1, H2=9, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -8409,8 +8409,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -8418,7 +8418,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "34 internal links"
+            "detail": "40 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -8432,9 +8432,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 309,
+          "wordCount": 819,
           "h1Count": 1,
-          "h2Count": 4,
+          "h2Count": 9,
           "h3Count": 0
         },
         {
@@ -8446,15 +8446,15 @@
           },
           "description": {
             "state": "warn",
-            "detail": "셀러핏이 제공하는 서비스를 소개합니다. 콘텐츠 큐레이션, 비즈니스 인사이트, 셀러 커뮤니티 등 온라인 창업자를 위한 다양한 서비스를 만나보세요."
+            "detail": "셀러핏 서비스 페이지는 마켓 입점, 상품 소싱, 마케팅, 브랜딩, 운영, 글로벌 판매 정보를 셀러 관점에서 안내합니다."
           },
           "canonical": {
             "state": "pass",
             "detail": "https://sellerpit.kr/services/"
           },
           "headings": {
-            "state": "warn",
-            "detail": "H1=2, H2=5, H3=4"
+            "state": "pass",
+            "detail": "H1=1, H2=14, H3=4"
           },
           "imageAlt": {
             "state": "pass",
@@ -8465,16 +8465,16 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
-            "state": "warn",
-            "detail": "no CTA-like text found"
+            "state": "pass",
+            "detail": "CTA-like text found"
           },
           "inlinks": {
             "state": "pass",
-            "detail": "12 internal links"
+            "detail": "16 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -8488,9 +8488,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 174,
-          "h1Count": 2,
-          "h2Count": 5,
+          "wordCount": 834,
+          "h1Count": 1,
+          "h2Count": 14,
           "h3Count": 4
         }
       ],
@@ -8518,10 +8518,7 @@
         "state": "pass",
         "detail": "/blog/ canonical found, 28 internal post-like links"
       },
-      "issues": [
-        "thin page: https://sellerpit.kr/ visible word tokens=309",
-        "thin page: https://sellerpit.kr/services/ visible word tokens=174"
-      ],
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
