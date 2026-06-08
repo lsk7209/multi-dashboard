@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T11:39:57.171Z
+Generated: 2026-06-08T11:51:16.086Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 37
-- Needs patch: 43
+- Review: 38
+- Needs patch: 42
 - Blocked: 0
 
 ## Highest Priority
@@ -20,7 +20,6 @@ Generated: 2026-06-08T11:39:57.171Z
 | --- | --- | --- | --- | ---: | --- | --- |
 | cartain-2 | cartain.kr | wordpress | review | 85 | none | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | ehon365 | ehon365.kr | wordpress | needs_patch | 85 | thin page: https://ehon365.kr/ visible word tokens=10<br>thin page: https://ehon365.kr/tools visible word tokens=10 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| ai-tasko | ai.tasko.kr | wordpress | needs_patch | 86 | description: https://ai.tasko.kr/ missing description<br>thin page: https://ai.tasko.kr/ visible word tokens=196 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | fastjob | fastjob.kr | wordpress | review | 86 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | runmania | runmania.kr | wordpress | needs_patch | 86 | thin page: https://runmania.kr/ visible word tokens=201<br>thin page: https://www.runmania.kr/ visible word tokens=201<br>thin page: https://www.runmania.kr/tools/diagnosis visible word tokens=88 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | saju-tasko | saju.tasko.kr | wordpress | review | 86 | canonical: https://saju.tasko.kr/ missing canonical<br>thin page: https://saju.tasko.kr/ visible word tokens=528 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -93,6 +92,7 @@ Generated: 2026-06-08T11:39:57.171Z
 | homeimer | homeimer.com | wordpress | needs_patch | 93 | thin page: https://homeimer.com/ visible word tokens=467<br>thin page: https://homeimer.com/blog/ visible word tokens=648 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | insupang | insupang.com | wordpress | review | 93 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | legalser | legalser.com | wordpress | review | 93 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| ai-tasko | ai.tasko.kr | wordpress | review | 94 | none | Patch technical SEO templates for meta, canonical, headings, and alt text. |
 | educaer | educaer.com | wordpress | needs_patch | 94 | thin page: https://educaer.com/ visible word tokens=470<br>thin page: https://educaer.com/disclaimer/ visible word tokens=270<br>thin page: https://educaer.com/editorial-policy/ visible word tokens=289 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | phone-luckyday | phone.luckyday.kr | wordpress | review | 94 | thin page: https://phone.luckyday.kr/ visible word tokens=526 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | gpt-nexttech7 | gpt.nexttech7.com | wordpress | review | 95 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
