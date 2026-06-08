@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T09:58:02.304Z",
+  "generatedAt": "2026-06-08T10:07:08.047Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 27,
-    "needs_patch": 53,
+    "review": 28,
+    "needs_patch": 52,
     "blocked": 0
   },
   "sites": [
@@ -2779,7 +2779,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 261,
+          "wordCount": 263,
           "h1Count": 1,
           "h2Count": 5,
           "h3Count": 0
@@ -2866,7 +2866,7 @@
         "detail": "/blog/ canonical found, 40 internal post-like links"
       },
       "issues": [
-        "thin page: https://knewstory.kr/ visible word tokens=261",
+        "thin page: https://knewstory.kr/ visible word tokens=263",
         "thin page: https://knewstory.kr/disclaimer/ visible word tokens=118"
       ],
       "nextActions": [
@@ -5866,7 +5866,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-08T05:00:34.924Z"
+        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-08T10:00:34.968Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9581,7 +9581,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-08T05:00:36.073Z"
+        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-08T10:00:35.614Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10014,7 +10014,7 @@
       "platform": "wordpress",
       "url": "https://estat.kr/",
       "gscSiteUrl": "https://estat.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 92,
       "pages": [
         {
@@ -10026,7 +10026,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 384개+"
+            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 385개+"
           },
           "canonical": {
             "state": "pass",
@@ -10034,7 +10034,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=16"
+            "detail": "H1=1, H2=9, H3=16"
           },
           "imageAlt": {
             "state": "pass",
@@ -10045,12 +10045,12 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
-            "state": "warn",
-            "detail": "no CTA-like text found"
+            "state": "pass",
+            "detail": "CTA-like text found"
           },
           "inlinks": {
             "state": "pass",
@@ -10068,9 +10068,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 399,
+          "wordCount": 860,
           "h1Count": 1,
-          "h2Count": 4,
+          "h2Count": 9,
           "h3Count": 16
         }
       ],
@@ -10098,9 +10098,7 @@
         "state": "pass",
         "detail": "/blog/ canonical found, 16 internal post-like links"
       },
-      "issues": [
-        "thin page: https://estat.kr/ visible word tokens=399"
-      ],
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -10656,7 +10654,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 36 internal post-like links"
+        "detail": "/blog/ canonical found, 35 internal post-like links"
       },
       "issues": [
         "thin page: https://jasamall.sellerpit.kr/ visible word tokens=184",
@@ -11399,7 +11397,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-08T05:01:45.246Z"
+        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-08T10:01:44.788Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -12250,7 +12248,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 10305,
+          "wordCount": 10286,
           "h1Count": 1,
           "h2Count": 111,
           "h3Count": 40
@@ -12266,7 +12264,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-08T05:00:19.280Z"
+        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-08T10:00:21.082Z"
       },
       "adsTxt": {
         "state": "pass",
