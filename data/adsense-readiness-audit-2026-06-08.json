@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T13:07:24.587Z",
+  "generatedAt": "2026-06-08T13:17:14.310Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 44,
-    "needs_patch": 36,
+    "review": 45,
+    "needs_patch": 35,
     "blocked": 0
   },
   "sites": [
@@ -2109,6 +2109,158 @@
       "blogIndex": {
         "state": "pass",
         "detail": "/blog/ canonical found, 26 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "gover",
+      "name": "보조금365 - GA4",
+      "platform": "wordpress",
+      "url": "https://gover.kr/",
+      "gscSiteUrl": "https://gover.kr/",
+      "verdict": "review",
+      "score": 87,
+      "pages": [
+        {
+          "url": "https://gover.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "보조금365 | 보조금365"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "정부지원금 신청 전 꼭 확인할 보조금365 보조금365는 생활, 복지, 청년, 소상공인, 주거, 농업 분야의 정부지원금 신청 자격과 준비 서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gover.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=8, H3=10"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "31 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 918,
+          "h1Count": 1,
+          "h2Count": 8,
+          "h3Count": 10
+        },
+        {
+          "url": "https://gover.kr/services/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "지원금 분야 | 보조금365"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "지원금 분야 보조금365는 생활 복지, 청년 일자리, 소상공인, 주거 금융, 농업 농촌, 문화 교육 지원금을 중심으로 최신 정책을 정리합니다"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gover.kr/services/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=1"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "28 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/services/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 857,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 1
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://gover.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://gover.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:42.264Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 55 internal post-like links"
       },
       "issues": [],
       "nextActions": [
@@ -4978,7 +5130,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 597,
+          "wordCount": 595,
           "h1Count": 1,
           "h2Count": 10,
           "h3Count": 0
@@ -4994,7 +5146,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://certifi.kr/wp-sitemap.xml lastDownloaded=2026-06-08T08:12:05.623Z"
+        "detail": "https://certifi.kr/wp-sitemap.xml lastDownloaded=2026-06-08T13:07:22.493Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -5009,7 +5161,7 @@
         "detail": "/blog/ has only 0 post-like links"
       },
       "issues": [
-        "thin page: https://certifi.kr/ visible word tokens=597"
+        "thin page: https://certifi.kr/ visible word tokens=595"
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
@@ -7755,161 +7907,6 @@
       },
       "issues": [
         "thin page: https://goesku.com/ visible word tokens=341"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "gover",
-      "name": "보조금365 - GA4",
-      "platform": "wordpress",
-      "url": "https://gover.kr/",
-      "gscSiteUrl": "https://gover.kr/",
-      "verdict": "needs_patch",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://gover.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "정부지원금 신청 자격과 보조금 찾기 | 보조금365"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "정부지원금 신청 자격, 지원 내용, 준비 서류를 쉽게 확인하는 보조금 정보 사이트입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://gover.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=6"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "28 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 392,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 6
-        },
-        {
-          "url": "https://gover.kr/services/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "지원금 분야 | 생활 복지 청년 소상공인 보조금"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "생활 복지, 청년, 소상공인, 주거, 농업 분야 정부지원금을 정리합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://gover.kr/services/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "21 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/services/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 147,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://gover.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://gover.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:42.264Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 55 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://gover.kr/ visible word tokens=392",
-        "thin page: https://gover.kr/services/ visible word tokens=147"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
