@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T08:47:26.981Z
+Generated: 2026-06-08T08:52:18.925Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 18
-- Needs patch: 62
+- Review: 19
+- Needs patch: 61
 - Blocked: 0
 
 ## Highest Priority
@@ -94,10 +94,10 @@ Generated: 2026-06-08T08:47:26.981Z
 | dog-klick | dog.klick.kr | wordpress | needs_patch | 94 | thin page: https://dog.klick.kr/ visible word tokens=342 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | educaer | educaer.com | wordpress | needs_patch | 94 | thin page: https://educaer.com/ visible word tokens=470<br>thin page: https://educaer.com/disclaimer/ visible word tokens=270<br>thin page: https://educaer.com/editorial-policy/ visible word tokens=289 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | phone-luckyday | phone.luckyday.kr | wordpress | review | 94 | thin page: https://phone.luckyday.kr/ visible word tokens=522 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| smart-sellerpit | smart.sellerpit.kr | wordpress | needs_patch | 94 | thin page: https://smart.sellerpit.kr/ visible word tokens=194 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | tasko-2 | tasko.kr | wordpress | needs_patch | 94 | thin page: https://tasko.kr/ visible word tokens=456 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | travel-sellerpit | travel.sellerpit.kr | wordpress | needs_patch | 94 | thin page: https://travel.sellerpit.kr/ visible word tokens=410 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | mbti-tasko | mbti.tasko.kr | wordpress | review | 97 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| smart-sellerpit | smart.sellerpit.kr | wordpress | review | 97 | none | Patch technical SEO templates for meta, canonical, headings, and alt text. |
 
 ## Notes
 
