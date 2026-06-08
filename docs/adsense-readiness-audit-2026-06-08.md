@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T14:27:43.065Z
+Generated: 2026-06-08T14:47:12.092Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 51
-- Needs patch: 29
+- Review: 52
+- Needs patch: 28
 - Blocked: 0
 
 ## Highest Priority
@@ -37,7 +37,6 @@ Generated: 2026-06-08T14:27:43.065Z
 | knewstory | knewstory.kr | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | luckyday | luckyday.kr | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | petinsuer-2 | petinsuer.com | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| roadways | roadways.kr | wordpress | needs_patch | 87 | thin page: https://roadways.kr/ visible word tokens=474<br>thin page: https://roadways.kr visible word tokens=474<br>thin page: https://roadways.kr/weekend visible word tokens=664 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | temon | temon.kr | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | todayshops-2 | todayshops.kr | wordpress | needs_patch | 87 | thin page: https://todayshops.kr/ visible word tokens=228<br>description: https://todayshops.kr/home/ missing description<br>thin page: https://todayshops.kr/home/ visible word tokens=71 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | trave | trave.kr | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -84,12 +83,13 @@ Generated: 2026-06-08T14:27:43.065Z
 | jasamall-sellerpit | jasamall.sellerpit.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | klick-2 | klick.kr | wordpress | review | 92 | thin page: https://klick.kr/blog/ visible word tokens=570 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | petjigi | petjigi.kr | wordpress | review | 92 | thin page: https://petjigi.kr/ visible word tokens=530 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| roadways | roadways.kr | wordpress | review | 92 | none | Improve /blog/ index as a crawlable card list with real post links.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | sssaass | sssaass.com | wordpress | needs_patch | 92 | thin page: https://sssaass.com/ visible word tokens=275 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | tasko-2 | tasko.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | travel-sellerpit | travel.sellerpit.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | travelpang-2 | travelpang.kr | wordpress | needs_patch | 92 | thin page: https://travelpang.kr/ visible word tokens=433<br>thin page: https://travelpang.kr/services/ visible word tokens=228 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | dullegilgogo | dullegilgogo.kr | wordpress | review | 93 | thin page: https://dullegilgogo.kr/ visible word tokens=709<br>thin page: https://dullegilgogo.kr visible word tokens=709 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| homeimer | homeimer.com | wordpress | needs_patch | 93 | thin page: https://homeimer.com/ visible word tokens=467<br>thin page: https://homeimer.com/blog/ visible word tokens=648 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| homeimer | homeimer.com | wordpress | needs_patch | 93 | thin page: https://homeimer.com/ visible word tokens=467<br>thin page: https://homeimer.com/blog/ visible word tokens=647 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | insupang | insupang.com | wordpress | review | 93 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | legalser | legalser.com | wordpress | review | 93 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | ai-tasko | ai.tasko.kr | wordpress | review | 94 | none | Patch technical SEO templates for meta, canonical, headings, and alt text. |
