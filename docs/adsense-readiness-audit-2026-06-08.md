@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T14:06:09.705Z
+Generated: 2026-06-08T14:18:42.993Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 49
-- Needs patch: 31
+- Review: 50
+- Needs patch: 30
 - Blocked: 0
 
 ## Highest Priority
@@ -21,7 +21,7 @@ Generated: 2026-06-08T14:06:09.705Z
 | cartain-2 | cartain.kr | wordpress | review | 85 | none | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | ehon365 | ehon365.kr | wordpress | needs_patch | 85 | thin page: https://ehon365.kr/ visible word tokens=10<br>thin page: https://ehon365.kr/tools visible word tokens=10 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | fastjob | fastjob.kr | wordpress | review | 86 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| runmania | runmania.kr | wordpress | needs_patch | 86 | thin page: https://runmania.kr/ visible word tokens=201<br>thin page: https://www.runmania.kr/ visible word tokens=201<br>thin page: https://www.runmania.kr/tools/diagnosis visible word tokens=88 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| runmania | runmania.kr | wordpress | review | 86 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | saju-tasko | saju.tasko.kr | wordpress | review | 86 | canonical: https://saju.tasko.kr/ missing canonical<br>thin page: https://saju.tasko.kr/ visible word tokens=528 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | 2mlab-2 | 2mlab.kr | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | autoscares-2 | autoscares.com | wordpress | review | 87 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |

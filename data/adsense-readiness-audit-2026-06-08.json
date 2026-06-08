@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T14:06:09.705Z",
+  "generatedAt": "2026-06-08T14:18:42.993Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 49,
-    "needs_patch": 31,
+    "review": 50,
+    "needs_patch": 30,
     "blocked": 0
   },
   "sites": [
@@ -587,7 +587,7 @@
       "platform": "wordpress",
       "url": "https://runmania.kr/",
       "gscSiteUrl": "https://runmania.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 86,
       "pages": [
         {
@@ -607,7 +607,7 @@
           },
           "headings": {
             "state": "warn",
-            "detail": "H1=2, H2=1, H3=0"
+            "detail": "H1=2, H2=2, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -641,9 +641,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 201,
+          "wordCount": 823,
           "h1Count": 2,
-          "h2Count": 1,
+          "h2Count": 2,
           "h3Count": 0
         },
         {
@@ -663,7 +663,7 @@
           },
           "headings": {
             "state": "warn",
-            "detail": "H1=2, H2=1, H3=0"
+            "detail": "H1=2, H2=2, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -697,9 +697,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 201,
+          "wordCount": 823,
           "h1Count": 2,
-          "h2Count": 1,
+          "h2Count": 2,
           "h3Count": 0
         },
         {
@@ -719,7 +719,7 @@
           },
           "headings": {
             "state": "warn",
-            "detail": "H1=2, H2=1, H3=0"
+            "detail": "H1=2, H2=2, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -753,9 +753,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 88,
+          "wordCount": 832,
           "h1Count": 2,
-          "h2Count": 1,
+          "h2Count": 2,
           "h3Count": 0
         }
       ],
@@ -783,11 +783,7 @@
         "state": "pass",
         "detail": "/blog/ canonical found, 4 internal post-like links"
       },
-      "issues": [
-        "thin page: https://runmania.kr/ visible word tokens=201",
-        "thin page: https://www.runmania.kr/ visible word tokens=201",
-        "thin page: https://www.runmania.kr/tools/diagnosis visible word tokens=88"
-      ],
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -7970,25 +7966,25 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 855,
+          "wordCount": 854,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 3
         },
         {
-          "url": "https://finan.kr/fiber-satiety-diet/",
+          "url": "https://finan.kr/bread-diet-guide/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "식이섬유가 포만감을 만드는 방식 — 얼마나 늘려야 할까"
+            "detail": "빵을 끊어야 살이 빠질까 — 종류와 양을 나누어 본다"
           },
           "description": {
             "state": "warn",
-            "detail": "식이섬유 다이어트, 식이섬유 포만감, 채소 다이어트을 기록·근거·유지 가능성 기준으로 정리했다."
+            "detail": "빵 다이어트, 빵 칼로리, 통밀빵 다이어트을 기록·근거·유지 가능성 기준으로 정리했다."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://finan.kr/fiber-satiety-diet/"
+            "detail": "https://finan.kr/bread-diet-guide/"
           },
           "headings": {
             "state": "pass",
@@ -8012,7 +8008,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "28 internal links"
+            "detail": "29 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -8020,13 +8016,13 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/fiber-satiety-diet/"
+            "detail": "/bread-diet-guide/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1393,
+          "wordCount": 1358,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 4
