@@ -120,6 +120,12 @@ function extractAttribute(tag: string, name: string): string | undefined {
   return match?.[1]?.trim();
 }
 
+function visibleTermCount(text: string): number {
+  const korean = text.match(/[\uAC00-\uD7A3]{2,}/g) ?? [];
+  const latin = text.match(/[A-Za-z0-9]{2,}/g) ?? [];
+  return korean.length + latin.length;
+}
+
 function extractHeadings(html: string, level: 1 | 2 | 3): string[] {
   const regex = new RegExp(`<h${level}[^>]*>([\\s\\S]*?)<\\/h${level}>`, "gi");
   return Array.from(html.matchAll(regex)).map((match) =>
@@ -150,6 +156,33 @@ function checkReadableUrl(url: string): CheckResult {
   return unreadable
     ? { state: "warn", detail: path }
     : { state: "pass", detail: path };
+}
+
+function isApprovalContentSample(url: string): boolean {
+  const path = new URL(url).pathname.toLowerCase();
+  if (path === "/" || path === "") {
+    return true;
+  }
+
+  const excludedFragments = [
+    "thank-you",
+    "thanks",
+    "confirmation",
+    "sms-landing",
+    "guide-landing",
+    "unsubscribe",
+    "preference",
+    "/cart",
+    "/checkout",
+    "/my-account",
+    "/login",
+    "/password-reset",
+    "/dashboard",
+    "/wishlist",
+    "registration",
+  ];
+
+  return !excludedFragments.some((fragment) => path.includes(fragment));
 }
 
 function hasKeywordNearFront(text: string, host: string): boolean {
@@ -207,7 +240,8 @@ async function discoverSamplePages(site: Site): Promise<string[]> {
           !path.includes("privacy") &&
           !path.includes("terms") &&
           !path.includes("contact") &&
-          !path.includes("about")
+          !path.includes("about") &&
+          isApprovalContentSample(loc)
         );
       });
       samples.push(...pageLocs.slice(0, PAGE_LIMIT - samples.length));
@@ -284,7 +318,7 @@ function auditPage(url: string, status: number | undefined, html: string): PageA
   });
   const visibleText = stripHtml(html);
   const ctaPattern = /(확인|조회|계산|신청|다운로드|비교|더 보기|바로가기|시작|예약|상담|check|start|download|compare)/i;
-  const count = wordCount(visibleText);
+  const count = visibleTermCount(visibleText);
   const headingOrderWarn = h1.length !== 1 || (h3.length > 0 && h2.length === 0);
 
   return {

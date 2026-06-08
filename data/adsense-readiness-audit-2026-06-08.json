@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-08T03:21:26.555Z",
+  "generatedAt": "2026-06-08T03:55:59.279Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 13,
-    "needs_patch": 59,
-    "blocked": 8
+    "review": 15,
+    "needs_patch": 62,
+    "blocked": 3
   },
   "sites": [
     {
@@ -909,163 +909,6 @@
       ]
     },
     {
-      "id": "yesa",
-      "name": "yesa.kr",
-      "platform": "wordpress",
-      "url": "https://yesa.kr/",
-      "gscSiteUrl": "https://yesa.kr/",
-      "verdict": "blocked",
-      "score": 85,
-      "pages": [
-        {
-          "url": "https://yesa.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "달러보험·자녀 증여·노후자금 진단 | 예스달러"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "달러보험, 자녀 증여, 환율 리스크, 노후자금 현금흐름을 유은상 FSR이 숫자로 정리합니다. 가입 권유보다 30분 자산 진단을 먼저 안내합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://yesa.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=7, H3=14"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "6 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "28 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 852,
-          "h1Count": 1,
-          "h2Count": 7,
-          "h3Count": 14
-        },
-        {
-          "url": "https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "유은상 FSR | 예스달러"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "유은상 FSR의 달러보험·환율·가족 자산 설계 관점과 검수 기준을 소개합니다. 상담 이력, 전문 분야, 콘텐츠 원칙을 확인하세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=6, H3=22"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "17 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "warn",
-            "detail": "/%ec%9c%a0%ec%9d%80%ec%83%81/"
-          },
-          "adsenseLoader": {
-            "state": "fail",
-            "detail": "loader not found"
-          },
-          "wordCount": 792,
-          "h1Count": 1,
-          "h2Count": 6,
-          "h3Count": 22
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://yesa.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://yesa.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:55.979Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "warn",
-        "detail": "/blog/ HTTP 404"
-      },
-      "issues": [
-        "AdSense loader: https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/ loader not found",
-        "thin page: https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/ visible word tokens=792"
-      ],
-      "nextActions": [
-        "Improve /blog/ index as a crawlable card list with real post links.",
-        "Insert the Auto Ads loader once site-wide without manual ad slots.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
       "id": "ai-tasko",
       "name": "ai.tasko.kr",
       "platform": "wordpress",
@@ -1260,105 +1103,6 @@
         "thin page: https://gong.luckyday.kr/ visible word tokens=125"
       ],
       "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "haemongdream",
-      "name": "해몽드림 - GA4",
-      "platform": "wordpress",
-      "url": "https://haemongdream.com/",
-      "gscSiteUrl": "https://haemongdream.com/",
-      "verdict": "blocked",
-      "score": 86,
-      "pages": [
-        {
-          "url": "https://haemongdream.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "꿈해몽 찾기 — 상황별 꿈 의미 해석 | 해몽드림"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "동물꿈, 물꿈, 사람꿈, 재물꿈, 불안한 꿈까지 상황별 꿈해몽을 빠르게 찾는 해몽드림 메인페이지입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://haemongdream.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=9, H3=9"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "17 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "83 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 879,
-          "h1Count": 1,
-          "h2Count": 9,
-          "h3Count": 9
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://haemongdream.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://haemongdream.com/wp-sitemap.xml lastDownloaded=2026-06-07T23:15:11.559Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "fail",
-        "detail": "missing privacy"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 119 internal post-like links"
-      },
-      "issues": [
-        "trust pages: missing privacy"
-      ],
-      "nextActions": [
-        "Create or expose About, Contact, Privacy, and Terms pages.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -2294,321 +2038,6 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "klick-2",
-      "name": "klick.kr",
-      "platform": "wordpress",
-      "url": "https://klick.kr/",
-      "gscSiteUrl": "https://klick.kr/",
-      "verdict": "blocked",
-      "score": 87,
-      "pages": [
-        {
-          "url": "https://klick.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "클리크 | 대한민국 생활정보 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "복지·지원금·세금·취업·의료 등 대한민국 실생활에 필요한 정보를 한곳에서 확인하세요. 정부지원금부터 생활 꿀팁까지 클리크에서 모두 찾아보세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=13"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "18 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 718,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 13
-        },
-        {
-          "url": "https://klick.kr/home/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "Home - 클리크"
-          },
-          "description": {
-            "state": "fail",
-            "detail": "missing description"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://klick.kr/home/"
-          },
-          "headings": {
-            "state": "warn",
-            "detail": "H1=0, H2=0, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "10 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/home/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 119,
-          "h1Count": 0,
-          "h2Count": 0,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://klick.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://klick.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:43.805Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "fail",
-        "detail": "missing privacy"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 15 internal post-like links"
-      },
-      "issues": [
-        "trust pages: missing privacy",
-        "thin page: https://klick.kr/ visible word tokens=718",
-        "description: https://klick.kr/home/ missing description",
-        "thin page: https://klick.kr/home/ visible word tokens=119"
-      ],
-      "nextActions": [
-        "Create or expose About, Contact, Privacy, and Terms pages.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "luckyday",
-      "name": "럭키데이 - GA4",
-      "platform": "wordpress",
-      "url": "https://luckyday.kr/",
-      "gscSiteUrl": "sc-domain:luckyday.kr",
-      "verdict": "blocked",
-      "score": 87,
-      "pages": [
-        {
-          "url": "https://luckyday.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "럭키데이 운세 가이드 | 오늘의 운세·별자리·사주"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "오늘의 운세, 별자리, 사주팔자, 꿈해몽을 읽기 쉽게 정리한 한국어 운세 콘텐츠 허브입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://luckyday.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=7, H3=2"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "37 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 569,
-          "h1Count": 1,
-          "h2Count": 7,
-          "h3Count": 2
-        },
-        {
-          "url": "https://luckyday.kr/blog/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "운세 글 모아보기 | 럭키데이"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "럭키데이의 오늘 운세, 별자리, 사주팔자, 꿈해몽 최신 글 목록입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://luckyday.kr/blog/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=9, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "24 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/blog/"
-          },
-          "adsenseLoader": {
-            "state": "fail",
-            "detail": "loader not found"
-          },
-          "wordCount": 451,
-          "h1Count": 1,
-          "h2Count": 9,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://luckyday.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-08T02:31:00.797Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 16 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://luckyday.kr/ visible word tokens=569",
-        "AdSense loader: https://luckyday.kr/blog/ loader not found",
-        "thin page: https://luckyday.kr/blog/ visible word tokens=451"
-      ],
-      "nextActions": [
-        "Insert the Auto Ads loader once site-wide without manual ad slots.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -3567,7 +2996,7 @@
       "platform": "wordpress",
       "url": "https://fastjob.kr/",
       "gscSiteUrl": "https://fastjob.kr/",
-      "verdict": "blocked",
+      "verdict": "needs_patch",
       "score": 88,
       "pages": [
         {
@@ -3683,23 +3112,23 @@
           "h3Count": 0
         },
         {
-          "url": "https://fastjob.kr/geo-checklist-thank-you/",
+          "url": "https://fastjob.kr/blog/",
           "status": 200,
           "title": {
-            "state": "pass",
-            "detail": "AI 검색 체크리스트 신청 완료 | FastJob"
+            "state": "warn",
+            "detail": "blog - 패스트잡"
           },
           "description": {
-            "state": "warn",
-            "detail": "AI 검색 노출 체크리스트 50 신청이 완료되었습니다. PDF를 바로 다운로드하고 GEO 뉴스레터를 받아보세요."
+            "state": "fail",
+            "detail": "missing description"
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://fastjob.kr/geo-checklist-thank-you/"
+            "detail": "https://fastjob.kr/blog/"
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=1, H3=0"
+            "detail": "H1=1, H2=4, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -3719,7 +3148,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "11 internal links"
+            "detail": "30 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -3727,15 +3156,15 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/geo-checklist-thank-you/"
+            "detail": "/blog/"
           },
           "adsenseLoader": {
-            "state": "fail",
-            "detail": "loader not found"
+            "state": "pass",
+            "detail": "loader with publisher id found"
           },
-          "wordCount": 78,
+          "wordCount": 118,
           "h1Count": 1,
-          "h2Count": 1,
+          "h2Count": 4,
           "h3Count": 0
         }
       ],
@@ -3766,11 +3195,10 @@
       "issues": [
         "thin page: https://fastjob.kr/ visible word tokens=412",
         "thin page: https://fastjob.kr/disclaimer/ visible word tokens=218",
-        "AdSense loader: https://fastjob.kr/geo-checklist-thank-you/ loader not found",
-        "thin page: https://fastjob.kr/geo-checklist-thank-you/ visible word tokens=78"
+        "description: https://fastjob.kr/blog/ missing description",
+        "thin page: https://fastjob.kr/blog/ visible word tokens=118"
       ],
       "nextActions": [
-        "Insert the Auto Ads loader once site-wide without manual ad slots.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -3835,7 +3263,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 262,
+          "wordCount": 261,
           "h1Count": 1,
           "h2Count": 5,
           "h3Count": 0
@@ -3922,7 +3350,7 @@
         "detail": "/blog/ canonical found, 40 internal post-like links"
       },
       "issues": [
-        "thin page: https://knewstory.kr/ visible word tokens=262",
+        "thin page: https://knewstory.kr/ visible word tokens=261",
         "thin page: https://knewstory.kr/disclaimer/ visible word tokens=118"
       ],
       "nextActions": [
@@ -4503,6 +3931,161 @@
         "thin page: https://www.today2424.kr/disclosure visible word tokens=154"
       ],
       "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "yesa",
+      "name": "yesa.kr",
+      "platform": "wordpress",
+      "url": "https://yesa.kr/",
+      "gscSiteUrl": "https://yesa.kr/",
+      "verdict": "review",
+      "score": 88,
+      "pages": [
+        {
+          "url": "https://yesa.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "달러보험·자녀 증여·노후자금 진단 | 예스달러"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "달러보험, 자녀 증여, 환율 리스크, 노후자금 현금흐름을 유은상 FSR이 숫자로 정리합니다. 가입 권유보다 30분 자산 진단을 먼저 안내합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://yesa.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=14"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "6 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "28 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 852,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 14
+        },
+        {
+          "url": "https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "유은상 FSR | 예스달러"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "유은상 FSR의 달러보험·환율·가족 자산 설계 관점과 검수 기준을 소개합니다. 상담 이력, 전문 분야, 콘텐츠 원칙을 확인하세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=6, H3=22"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "17 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "warn",
+            "detail": "/%ec%9c%a0%ec%9d%80%ec%83%81/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 792,
+          "h1Count": 1,
+          "h2Count": 6,
+          "h3Count": 22
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://yesa.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://yesa.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:55.979Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "warn",
+        "detail": "/blog/ HTTP 404"
+      },
+      "issues": [
+        "thin page: https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/ visible word tokens=792"
+      ],
+      "nextActions": [
+        "Improve /blog/ index as a crawlable card list with real post links.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -5626,7 +5209,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://spinkorea.kr/sitemap.xml lastDownloaded=2026-06-07T03:02:04.754Z"
+        "detail": "https://spinkorea.kr/sitemap.xml lastDownloaded=2026-06-08T03:31:43.700Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -7936,6 +7519,317 @@
       ]
     },
     {
+      "id": "klick-2",
+      "name": "klick.kr",
+      "platform": "wordpress",
+      "url": "https://klick.kr/",
+      "gscSiteUrl": "https://klick.kr/",
+      "verdict": "needs_patch",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://klick.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "클리크 | 대한민국 생활정보 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "복지·지원금·세금·취업·의료 등 대한민국 실생활에 필요한 정보를 한곳에서 확인하세요. 정부지원금부터 생활 꿀팁까지 클리크에서 모두 찾아보세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=4, H3=13"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "18 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 718,
+          "h1Count": 1,
+          "h2Count": 4,
+          "h3Count": 13
+        },
+        {
+          "url": "https://klick.kr/home/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Home - 클리크"
+          },
+          "description": {
+            "state": "fail",
+            "detail": "missing description"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://klick.kr/home/"
+          },
+          "headings": {
+            "state": "warn",
+            "detail": "H1=0, H2=0, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "10 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/home/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 119,
+          "h1Count": 0,
+          "h2Count": 0,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://klick.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://klick.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:43.805Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 15 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://klick.kr/ visible word tokens=718",
+        "description: https://klick.kr/home/ missing description",
+        "thin page: https://klick.kr/home/ visible word tokens=119"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "luckyday",
+      "name": "럭키데이 - GA4",
+      "platform": "wordpress",
+      "url": "https://luckyday.kr/",
+      "gscSiteUrl": "sc-domain:luckyday.kr",
+      "verdict": "needs_patch",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://luckyday.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "럭키데이 운세 가이드 | 오늘의 운세·별자리·사주"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "오늘의 운세, 별자리, 사주팔자, 꿈해몽을 읽기 쉽게 정리한 한국어 운세 콘텐츠 허브입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://luckyday.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=2"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "37 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 569,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 2
+        },
+        {
+          "url": "https://luckyday.kr/blog/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "운세 글 모아보기 | 럭키데이"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "럭키데이의 오늘 운세, 별자리, 사주팔자, 꿈해몽 최신 글 목록입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://luckyday.kr/blog/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "24 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 451,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://luckyday.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-08T02:31:00.797Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 16 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://luckyday.kr/ visible word tokens=569",
+        "thin page: https://luckyday.kr/blog/ visible word tokens=451"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "nicewomen",
       "name": "나이스우먼 - GA4",
       "platform": "wordpress",
@@ -8150,7 +8044,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 374,
+          "wordCount": 373,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 9
@@ -8237,7 +8131,7 @@
         "detail": "/blog/ canonical found, 46 internal post-like links"
       },
       "issues": [
-        "thin page: https://petinsuer.com/ visible word tokens=374",
+        "thin page: https://petinsuer.com/ visible word tokens=373",
         "thin page: https://petinsuer.com/services/ visible word tokens=151"
       ],
       "nextActions": [
@@ -9830,6 +9724,102 @@
         "description: https://gpt.nexttech7.com/ missing description",
         "thin page: https://gpt.nexttech7.com/ visible word tokens=172"
       ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "haemongdream",
+      "name": "해몽드림 - GA4",
+      "platform": "wordpress",
+      "url": "https://haemongdream.com/",
+      "gscSiteUrl": "https://haemongdream.com/",
+      "verdict": "review",
+      "score": 92,
+      "pages": [
+        {
+          "url": "https://haemongdream.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "꿈해몽 찾기 — 상황별 꿈 의미 해석 | 해몽드림"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "동물꿈, 물꿈, 사람꿈, 재물꿈, 불안한 꿈까지 상황별 꿈해몽을 빠르게 찾는 해몽드림 메인페이지입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://haemongdream.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=9"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "17 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "83 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 879,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 9
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://haemongdream.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://haemongdream.com/wp-sitemap.xml lastDownloaded=2026-06-08T03:45:39.365Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 119 internal post-like links"
+      },
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
