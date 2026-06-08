@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T10:07:08.047Z",
+  "generatedAt": "2026-06-08T10:15:19.597Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 28,
-    "needs_patch": 52,
+    "review": 29,
+    "needs_patch": 51,
     "blocked": 0
   },
   "sites": [
@@ -8189,7 +8189,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://luckyday.kr/category-sitemap.xml lastDownloaded=2026-06-08T09:43:49.738Z"
+        "detail": "https://luckyday.kr/sitemap_index.xml lastDownloaded=2026-06-08T10:10:43.984Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10516,7 +10516,7 @@
       "platform": "wordpress",
       "url": "https://jasamall.sellerpit.kr/",
       "gscSiteUrl": "https://jasamall.sellerpit.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 92,
       "pages": [
         {
@@ -10535,8 +10535,8 @@
             "detail": "https://jasamall.sellerpit.kr/"
           },
           "headings": {
-            "state": "warn",
-            "detail": "H1=2, H2=2, H3=0"
+            "state": "pass",
+            "detail": "H1=1, H2=10, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -10547,8 +10547,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -10570,9 +10570,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 184,
-          "h1Count": 2,
-          "h2Count": 2,
+          "wordCount": 923,
+          "h1Count": 1,
+          "h2Count": 10,
           "h3Count": 0
         },
         {
@@ -10592,7 +10592,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=3, H3=1"
+            "detail": "H1=1, H2=4, H3=6"
           },
           "imageAlt": {
             "state": "pass",
@@ -10604,7 +10604,7 @@
           },
           "toc": {
             "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "detail": "TOC marker found"
           },
           "cta": {
             "state": "pass",
@@ -10612,7 +10612,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "19 internal links"
+            "detail": "21 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -10626,10 +10626,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 396,
+          "wordCount": 975,
           "h1Count": 1,
-          "h2Count": 3,
-          "h3Count": 1
+          "h2Count": 4,
+          "h3Count": 6
         }
       ],
       "robots": {
@@ -10656,10 +10656,7 @@
         "state": "pass",
         "detail": "/blog/ canonical found, 35 internal post-like links"
       },
-      "issues": [
-        "thin page: https://jasamall.sellerpit.kr/ visible word tokens=184",
-        "thin page: https://jasamall.sellerpit.kr/google-shopping-jasa-mall-upload/ visible word tokens=396"
-      ],
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."

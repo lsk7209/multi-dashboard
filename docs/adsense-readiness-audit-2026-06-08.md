@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T10:07:08.047Z
+Generated: 2026-06-08T10:15:19.597Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 28
-- Needs patch: 52
+- Review: 29
+- Needs patch: 51
 - Blocked: 0
 
 ## Highest Priority
@@ -84,7 +84,7 @@ Generated: 2026-06-08T10:07:08.047Z
 | gpt-nexttech7 | gpt.nexttech7.com | wordpress | needs_patch | 92 | description: https://gpt.nexttech7.com/ missing description<br>thin page: https://gpt.nexttech7.com/ visible word tokens=170 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | haemongdream | haemongdream.com | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | healthgotoo | healthgotoo.com | wordpress | needs_patch | 92 | thin page: https://healthgotoo.com/ visible word tokens=318<br>thin page: https://healthgotoo.com/disclaimer/ visible word tokens=117 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| jasamall-sellerpit | jasamall.sellerpit.kr | wordpress | needs_patch | 92 | thin page: https://jasamall.sellerpit.kr/ visible word tokens=184<br>thin page: https://jasamall.sellerpit.kr/google-shopping-jasa-mall-upload/ visible word tokens=396 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| jasamall-sellerpit | jasamall.sellerpit.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | petjigi | petjigi.kr | wordpress | review | 92 | thin page: https://petjigi.kr/ visible word tokens=530 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | sssaass | sssaass.com | wordpress | needs_patch | 92 | thin page: https://sssaass.com/ visible word tokens=275 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | tasko-2 | tasko.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
