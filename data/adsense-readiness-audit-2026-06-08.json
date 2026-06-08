@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T13:17:14.310Z",
+  "generatedAt": "2026-06-08T13:29:22.854Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 45,
-    "needs_patch": 35,
+    "review": 46,
+    "needs_patch": 34,
     "blocked": 0
   },
   "sites": [
@@ -2857,7 +2857,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T12:40:21.071Z"
+        "detail": "https://luckyday.kr/sitemap_index.xml lastDownloaded=2026-06-08T13:26:04.651Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -2870,6 +2870,158 @@
       "blogIndex": {
         "state": "pass",
         "detail": "/blog/ canonical found, 16 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "petinsuer-2",
+      "name": "petinsuer.com",
+      "platform": "wordpress",
+      "url": "https://petinsuer.com/",
+      "gscSiteUrl": "https://petinsuer.com/",
+      "verdict": "review",
+      "score": 87,
+      "pages": [
+        {
+          "url": "https://petinsuer.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "반려견 건강·훈련·보험 정보 | 펫인사이트"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "펫인사이트는 반려견 건강, 행동, 음식, 보험과 병원비 정보를 보호자 관찰 기록과 동물병원 상담 기준으로 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://petinsuer.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=8, H3=12"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "8 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "48 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 842,
+          "h1Count": 1,
+          "h2Count": 8,
+          "h3Count": 12
+        },
+        {
+          "url": "https://petinsuer.com/services/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "반려견 정보 카테고리 | 건강·음식·훈련·보험"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "반려견 정보 카테고리는 건강 증상, 음식 영양, 행동 훈련, 견종, 병원비와 보험, 생활 안전 주제를 안내합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://petinsuer.com/services/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=11, H3=7"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "34 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/services/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 844,
+          "h1Count": 1,
+          "h2Count": 11,
+          "h3Count": 7
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://petinsuer.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://petinsuer.com/sitemap.xml lastDownloaded=2026-06-08T00:15:54.965Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 46 internal post-like links"
       },
       "issues": [],
       "nextActions": [
@@ -8225,161 +8377,6 @@
       ]
     },
     {
-      "id": "petinsuer-2",
-      "name": "petinsuer.com",
-      "platform": "wordpress",
-      "url": "https://petinsuer.com/",
-      "gscSiteUrl": "https://petinsuer.com/",
-      "verdict": "needs_patch",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://petinsuer.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "반려견 건강·훈련·보험 정보 | 펫인사이트"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "반려견 건강, 행동, 음식, 병원비와 보험 정보를 보호자 관점에서 쉽게 정리한 펫인사이트 가이드입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://petinsuer.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=9"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "8 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "44 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 371,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 9
-        },
-        {
-          "url": "https://petinsuer.com/services/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "반려견 정보 카테고리 | 건강·음식·훈련·보험"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "강아지 건강 증상, 음식, 행동 훈련, 견종, 병원비와 보험 정보를 주제별로 확인하세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://petinsuer.com/services/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=1, H3=6"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "28 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/services/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 151,
-          "h1Count": 1,
-          "h2Count": 1,
-          "h3Count": 6
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://petinsuer.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://petinsuer.com/sitemap.xml lastDownloaded=2026-06-08T00:15:54.965Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 46 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://petinsuer.com/ visible word tokens=371",
-        "thin page: https://petinsuer.com/services/ visible word tokens=151"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
       "id": "sellerpit-2",
       "name": "sellerpit.kr",
       "platform": "wordpress",
@@ -8594,7 +8591,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 263,
+          "wordCount": 262,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 3
@@ -8681,7 +8678,7 @@
         "detail": "/blog/ canonical found, 36 internal post-like links"
       },
       "issues": [
-        "thin page: https://softwa.kr/ visible word tokens=263",
+        "thin page: https://softwa.kr/ visible word tokens=262",
         "thin page: https://softwa.kr/guides/ visible word tokens=112"
       ],
       "nextActions": [
