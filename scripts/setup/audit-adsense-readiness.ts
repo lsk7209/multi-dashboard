@@ -35,6 +35,8 @@ interface PageAudit {
   canonical: CheckResult;
   headings: CheckResult;
   imageAlt: CheckResult;
+  viewport: CheckResult;
+  toc: CheckResult;
   cta: CheckResult;
   inlinks: CheckResult;
   outlinks: CheckResult;
@@ -60,6 +62,7 @@ interface SiteAudit {
   gscSitemap: CheckResult;
   adsTxt: CheckResult;
   trustPages: CheckResult;
+  blogIndex: CheckResult;
   issues: string[];
   nextActions: string[];
 }
@@ -246,6 +249,14 @@ function auditPage(url: string, status: number | undefined, html: string): PageA
   const imgTags = Array.from(html.matchAll(/<img\b[^>]*>/gi)).map(
     (match) => match[0],
   );
+  const hasViewport = /<meta[^>]+name=["']viewport["'][^>]+content=["'][^"']*width=device-width/i.test(
+    html,
+  );
+  const hasToc =
+    /class=["'][^"']*(toc|table-of-contents|ez-toc|rank-math-toc)[^"']*["']/i.test(
+      html,
+    ) ||
+    /목차|table of contents/i.test(html);
   const missingAlt = imgTags.filter((tag) => !extractAttribute(tag, "alt"));
   const anchors = Array.from(html.matchAll(/<a\b[^>]*>/gi)).map(
     (match) => match[0],
@@ -308,6 +319,15 @@ function auditPage(url: string, status: number | undefined, html: string): PageA
             state: "warn",
             detail: `${missingAlt.length}/${imgTags.length} images missing alt`,
           },
+    viewport: hasViewport
+      ? { state: "pass", detail: "responsive viewport meta found" }
+      : { state: "fail", detail: "missing responsive viewport meta" },
+    toc:
+      count >= 800 && h2.length >= 3
+        ? hasToc
+          ? { state: "pass", detail: "TOC marker found" }
+          : { state: "warn", detail: "long article without TOC marker" }
+        : { state: "pass", detail: "TOC not required for sampled page" },
     cta: ctaPattern.test(visibleText)
       ? { state: "pass", detail: "CTA-like text found" }
       : { state: "warn", detail: "no CTA-like text found" },
@@ -457,6 +477,60 @@ async function auditTrustPages(site: Site): Promise<CheckResult> {
     : { state: "fail", detail: `missing ${missing.join(", ")}` };
 }
 
+async function auditBlogIndex(site: Site): Promise<CheckResult> {
+  try {
+    const url = new URL("/blog/", site.url).toString();
+    const { status, body } = await fetchText(url);
+    if (status < 200 || status >= 300) {
+      return { state: "warn", detail: `/blog/ HTTP ${status}` };
+    }
+    const canonical =
+      textBetween(
+        body,
+        /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["'][^>]*>/i,
+      ) ??
+      textBetween(
+        body,
+        /<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["'][^>]*>/i,
+      ) ??
+      "";
+    const links = Array.from(body.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi))
+      .map((match) => match[1]?.trim())
+      .filter((href): href is string => Boolean(href));
+    const host = new URL(site.url).hostname;
+    const postLikeLinks = links.filter((href) => {
+      try {
+        const parsed = new URL(href, url);
+        return (
+          parsed.hostname === host &&
+          parsed.pathname !== "/blog/" &&
+          parsed.pathname !== "/" &&
+          !parsed.pathname.includes("privacy") &&
+          !parsed.pathname.includes("terms") &&
+          !parsed.pathname.includes("contact") &&
+          !parsed.pathname.includes("about")
+        );
+      } catch {
+        return false;
+      }
+    });
+    if (!canonical) {
+      return { state: "warn", detail: "/blog/ exists but canonical is missing" };
+    }
+    return postLikeLinks.length >= 3
+      ? {
+          state: "pass",
+          detail: `/blog/ canonical found, ${postLikeLinks.length} internal post-like links`,
+        }
+      : {
+          state: "warn",
+          detail: `/blog/ has only ${postLikeLinks.length} post-like links`,
+        };
+  } catch (error) {
+    return { state: "unknown", detail: getErrorMessage(error) };
+  }
+}
+
 async function makeGscClient():
   Promise<ReturnType<typeof google.searchconsole> | undefined> {
   loadLocalSecrets();
@@ -512,6 +586,7 @@ function collectIssues(site: SiteAudit): string[] {
     ["gsc sitemap", site.gscSitemap],
     ["ads.txt", site.adsTxt],
     ["trust pages", site.trustPages],
+    ["blog index", site.blogIndex],
   ] as const;
   for (const [label, check] of siteChecks) {
     if (check.state === "fail") {
@@ -525,6 +600,8 @@ function collectIssues(site: SiteAudit): string[] {
       ["canonical", page.canonical],
       ["headings", page.headings],
       ["image alt", page.imageAlt],
+      ["viewport", page.viewport],
+      ["TOC", page.toc],
       ["CTA", page.cta],
       ["inlinks", page.inlinks],
       ["outlinks", page.outlinks],
@@ -553,6 +630,9 @@ function makeNextActions(site: SiteAudit): string[] {
   if (site.sitemap.state !== "pass" || site.gscSitemap.state !== "pass") {
     actions.add("Fix public sitemap and submit it in GSC until downloaded without errors.");
   }
+  if (site.blogIndex.state !== "pass") {
+    actions.add("Improve /blog/ index as a crawlable card list with real post links.");
+  }
   if (site.pages.some((page) => page.adsenseLoader.state !== "pass")) {
     actions.add("Insert the Auto Ads loader once site-wide without manual ad slots.");
   }
@@ -563,7 +643,8 @@ function makeNextActions(site: SiteAudit): string[] {
         page.description.state !== "pass" ||
         page.canonical.state !== "pass" ||
         page.headings.state !== "pass" ||
-        page.imageAlt.state !== "pass",
+        page.imageAlt.state !== "pass" ||
+        page.viewport.state !== "pass",
     )
   ) {
     actions.add("Patch technical SEO templates for meta, canonical, headings, and alt text.");
@@ -574,6 +655,7 @@ function makeNextActions(site: SiteAudit): string[] {
         page.cta.state !== "pass" ||
         page.inlinks.state !== "pass" ||
         page.outlinks.state !== "pass" ||
+        page.toc.state !== "pass" ||
         page.wordCount < 800,
     )
   ) {
@@ -589,12 +671,15 @@ function scoreSite(site: SiteAudit): number {
     site.gscSitemap,
     site.adsTxt,
     site.trustPages,
+    site.blogIndex,
     ...site.pages.flatMap((page) => [
       page.title,
       page.description,
       page.canonical,
       page.headings,
       page.imageAlt,
+      page.viewport,
+      page.toc,
       page.cta,
       page.inlinks,
       page.outlinks,
@@ -630,6 +715,8 @@ function classifySite(site: SiteAudit): SiteVerdict {
         page.canonical,
         page.headings,
         page.imageAlt,
+        page.viewport,
+        page.toc,
         page.cta,
         page.inlinks,
         page.outlinks,
@@ -666,6 +753,8 @@ async function auditSite(
         outlinks: { state: "unknown", detail: getErrorMessage(error) },
         readableUrl: checkReadableUrl(url),
         adsenseLoader: { state: "unknown", detail: getErrorMessage(error) },
+        viewport: { state: "unknown", detail: getErrorMessage(error) },
+        toc: { state: "unknown", detail: getErrorMessage(error) },
         wordCount: 0,
         h1Count: 0,
         h2Count: 0,
@@ -688,6 +777,7 @@ async function auditSite(
     gscSitemap: await auditGscSitemap(gscClient, site),
     adsTxt: await auditAdsTxt(site),
     trustPages: await auditTrustPages(site),
+    blogIndex: await auditBlogIndex(site),
     issues: [],
     nextActions: [],
   };
