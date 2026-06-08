@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T09:43:59.121Z
+Generated: 2026-06-08T09:52:54.795Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 25
-- Needs patch: 55
+- Review: 26
+- Needs patch: 54
 - Blocked: 0
 
 ## Highest Priority
@@ -35,6 +35,7 @@ Generated: 2026-06-08T09:43:59.121Z
 | dogswhere | dogswhere.com | wordpress | needs_patch | 88 | thin page: https://dogswhere.com/ visible word tokens=382<br>thin page: https://dogswhere.com visible word tokens=382<br>thin page: https://dogswhere.com/test/mung-bti visible word tokens=134 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | fastjob | fastjob.kr | wordpress | needs_patch | 88 | thin page: https://fastjob.kr/ visible word tokens=412<br>thin page: https://fastjob.kr/disclaimer/ visible word tokens=217<br>description: https://fastjob.kr/blog/ missing description | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | knewstory | knewstory.kr | wordpress | needs_patch | 88 | thin page: https://knewstory.kr/ visible word tokens=261<br>thin page: https://knewstory.kr/disclaimer/ visible word tokens=118 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| lawer | lawer.kr | wordpress | review | 88 | none | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | nexttech7 | nexttech7.com | wordpress | needs_patch | 88 | thin page: https://nexttech7.com/ visible word tokens=348<br>thin page: https://nexttech7.com/services/ visible word tokens=150 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | pregnancy-ehon365 | pregnancy.ehon365.kr | wordpress | needs_patch | 88 | thin page: https://pregnancy.ehon365.kr/ visible word tokens=222<br>thin page: https://pregnancy.ehon365.kr visible word tokens=222 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | sinhonjigi-ehon365 | sinhonjigi.ehon365.kr | wordpress | needs_patch | 88 | thin page: https://sinhonjigi.ehon365.kr/ visible word tokens=394 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -83,7 +84,6 @@ Generated: 2026-06-08T09:43:59.121Z
 | haemongdream | haemongdream.com | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | healthgotoo | healthgotoo.com | wordpress | needs_patch | 92 | thin page: https://healthgotoo.com/ visible word tokens=318<br>thin page: https://healthgotoo.com/disclaimer/ visible word tokens=117 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | jasamall-sellerpit | jasamall.sellerpit.kr | wordpress | needs_patch | 92 | thin page: https://jasamall.sellerpit.kr/ visible word tokens=184<br>thin page: https://jasamall.sellerpit.kr/google-shopping-jasa-mall-upload/ visible word tokens=396 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| lawer | lawer.kr | wordpress | needs_patch | 92 | thin page: https://lawer.kr/ visible word tokens=299<br>thin page: https://lawer.kr/topics/ visible word tokens=132 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | notebook-klick-2 | notebook.klick.kr | wordpress | needs_patch | 92 | thin page: https://notebook.klick.kr/ visible word tokens=329 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | petjigi | petjigi.kr | wordpress | review | 92 | thin page: https://petjigi.kr/ visible word tokens=530 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | sssaass | sssaass.com | wordpress | needs_patch | 92 | thin page: https://sssaass.com/ visible word tokens=275 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
