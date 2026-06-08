@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T11:12:31.897Z",
+  "generatedAt": "2026-06-08T11:29:01.322Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 35,
-    "needs_patch": 45,
+    "review": 36,
+    "needs_patch": 44,
     "blocked": 0
   },
   "sites": [
@@ -1865,7 +1865,7 @@
       "platform": "wordpress",
       "url": "https://kang4.com/",
       "gscSiteUrl": "https://kang4.com/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 87,
       "pages": [
         {
@@ -1933,7 +1933,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "디지털 강의 재테크, 코인, 금융 콘텐츠는 일반적인 정보 제공을 위한 자료입니다. 특정 상품 가입, 투자, 매매, 세무·법률 판단을 권유하지 않습니다."
+            "detail": "디지털 강의 재테크, 코인, 금융 콘텐츠는 일반적인 정보 제공을 위한 자료입니다. 특정 상품 가입, 투자, 매매, 세무·법률 판단을 권유하지 않으며, 개인의 재무 상황에 맞춘 자문을 대체하지 않습니다."
           },
           "canonical": {
             "state": "pass",
@@ -1941,7 +1941,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=1, H3=0"
+            "detail": "H1=1, H2=11, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -1953,7 +1953,7 @@
           },
           "toc": {
             "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "detail": "TOC marker found"
           },
           "cta": {
             "state": "pass",
@@ -1975,9 +1975,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 119,
+          "wordCount": 813,
           "h1Count": 1,
-          "h2Count": 1,
+          "h2Count": 11,
           "h3Count": 0
         }
       ],
@@ -2005,9 +2005,7 @@
         "state": "warn",
         "detail": "/blog/ HTTP 404"
       },
-      "issues": [
-        "thin page: https://kang4.com/disclaimer/ visible word tokens=119"
-      ],
+      "issues": [],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -5042,7 +5040,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 809,
+          "wordCount": 812,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 0
@@ -8416,27 +8414,27 @@
           "h3Count": 9
         },
         {
-          "url": "https://petinsuer.com/services/",
+          "url": "https://petinsuer.com/blog-2/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "반려견 정보 카테고리 | 건강·음식·훈련·보험"
+            "detail": "반려견 건강과 생활 가이드 최신글"
           },
           "description": {
             "state": "warn",
-            "detail": "강아지 건강 증상, 음식, 행동 훈련, 견종, 병원비와 보험 정보를 주제별로 확인하세요."
+            "detail": "최근 발행된 반려견 건강, 음식, 행동, 견종, 비용 정보를 한곳에서 확인할 수 있는 펫인사이트 블로그입니다."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://petinsuer.com/services/"
+            "detail": "https://petinsuer.com/blog-2/"
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=1, H3=6"
+            "detail": "H1=1, H2=0, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "0 images"
+            "detail": "20 images"
           },
           "viewport": {
             "state": "pass",
@@ -8452,7 +8450,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "28 internal links"
+            "detail": "62 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -8460,16 +8458,16 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/services/"
+            "detail": "/blog-2/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 151,
+          "wordCount": 267,
           "h1Count": 1,
-          "h2Count": 1,
-          "h3Count": 6
+          "h2Count": 0,
+          "h3Count": 0
         }
       ],
       "robots": {
@@ -8498,7 +8496,7 @@
       },
       "issues": [
         "thin page: https://petinsuer.com/ visible word tokens=372",
-        "thin page: https://petinsuer.com/services/ visible word tokens=151"
+        "thin page: https://petinsuer.com/blog-2/ visible word tokens=267"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -9260,7 +9258,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=17, H3=0"
+            "detail": "H1=1, H2=18, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -9280,7 +9278,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "23 internal links"
+            "detail": "24 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -9294,9 +9292,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 332,
+          "wordCount": 354,
           "h1Count": 1,
-          "h2Count": 17,
+          "h2Count": 18,
           "h3Count": 0
         }
       ],
@@ -9322,11 +9320,11 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 18 internal post-like links"
+        "detail": "/blog/ canonical found, 19 internal post-like links"
       },
       "issues": [
         "thin page: https://youkamap.kr/ visible word tokens=212",
-        "thin page: https://youkamap.kr/blog/ visible word tokens=332"
+        "thin page: https://youkamap.kr/blog/ visible word tokens=354"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -9465,7 +9463,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://yungyanggogo.kr/sitemap.xml lastDownloaded=2026-06-08T06:07:05.251Z"
+        "detail": "https://yungyanggogo.kr/sitemap.xml lastDownloaded=2026-06-08T11:21:18.678Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10009,7 +10007,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 386개+"
+            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 387개+"
           },
           "canonical": {
             "state": "pass",
@@ -10051,7 +10049,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 864,
+          "wordCount": 861,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 16
