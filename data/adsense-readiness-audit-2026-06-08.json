@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T12:03:29.467Z",
+  "generatedAt": "2026-06-08T12:15:42.755Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 39,
-    "needs_patch": 41,
+    "review": 40,
+    "needs_patch": 40,
     "blocked": 0
   },
   "sites": [
@@ -887,6 +887,158 @@
         "canonical: https://saju.tasko.kr/ missing canonical",
         "thin page: https://saju.tasko.kr/ visible word tokens=528"
       ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "2mlab-2",
+      "name": "2mlab.kr",
+      "platform": "wordpress",
+      "url": "https://2mlab.kr/",
+      "gscSiteUrl": "https://2mlab.kr/",
+      "verdict": "review",
+      "score": 87,
+      "pages": [
+        {
+          "url": "https://2mlab.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "팀빌딩·워크샵 아이디어 전문 미디어 | 팀하우스"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "팀하우스는 기업 워크샵, 팀빌딩 프로그램, CSR 활동, 조직문화 교육을 준비하는 실무자를 위한 워크샵 아이디어 가이드입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://2mlab.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=11, H3=24"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "28 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 843,
+          "h1Count": 1,
+          "h2Count": 11,
+          "h3Count": 24
+        },
+        {
+          "url": "https://2mlab.kr/services/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "워크샵 기획 가이드 | 팀하우스"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "워크샵 기획 가이드는 목적, 인원, 예산, 장소, 준비물, 운영 난이도를 기준으로 팀빌딩 프로그램을 비교하도록 돕습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://2mlab.kr/services/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=14, H3=6"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "25 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/services/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 853,
+          "h1Count": 1,
+          "h2Count": 14,
+          "h3Count": 6
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://2mlab.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://2mlab.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:52.623Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 26 internal post-like links"
+      },
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -6223,161 +6375,6 @@
       "issues": [
         "thin page: https://workgogo.kr/ visible word tokens=494",
         "thin page: https://workgogo.kr visible word tokens=494"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "2mlab-2",
-      "name": "2mlab.kr",
-      "platform": "wordpress",
-      "url": "https://2mlab.kr/",
-      "gscSiteUrl": "https://2mlab.kr/",
-      "verdict": "needs_patch",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://2mlab.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "팀빌딩·워크샵 아이디어 전문 미디어 | 팀하우스"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "팀빌딩과 워크샵 아이디어를 비교하고 기업 행사 실무에 바로 적용할 수 있게 정리한 전문 미디어입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://2mlab.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=6, H3=21"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "28 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 507,
-          "h1Count": 1,
-          "h2Count": 6,
-          "h3Count": 21
-        },
-        {
-          "url": "https://2mlab.kr/services/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "워크샵 기획 가이드 | 팀하우스"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "워크샵 주제 선정, 운영 체크리스트, 조직문화 콘텐츠를 비교하기 쉽게 제공하는 팀하우스 가이드입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://2mlab.kr/services/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "22 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/services/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 104,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 3
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://2mlab.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://2mlab.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:52.623Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 26 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://2mlab.kr/ visible word tokens=507",
-        "thin page: https://2mlab.kr/services/ visible word tokens=104"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
