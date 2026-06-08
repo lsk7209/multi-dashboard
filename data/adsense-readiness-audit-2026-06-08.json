@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T13:52:44.358Z",
+  "generatedAt": "2026-06-08T14:06:09.705Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 48,
-    "needs_patch": 32,
+    "review": 49,
+    "needs_patch": 31,
     "blocked": 0
   },
   "sites": [
@@ -1564,7 +1564,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 815,
+          "wordCount": 816,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 9
@@ -3608,6 +3608,158 @@
       ]
     },
     {
+      "id": "trave",
+      "name": "여행브이 - GA4",
+      "platform": "wordpress",
+      "url": "https://trave.kr/",
+      "gscSiteUrl": "https://trave.kr/",
+      "verdict": "review",
+      "score": 87,
+      "pages": [
+        {
+          "url": "https://trave.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "국내 여행 코스와 지역별 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "국내 여행 코스와 지역별 여행 가이드 여행브이는 국내 여행지의 이동 동선, 입장 정보, 계절별 볼거리, 주변 맛집과 숙소 선택 기준을 한곳에 정리하는 여행 정보 사이트입니다. 최신 여행 글 보기 여행브이에서..."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://trave.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=5"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "30 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 815,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 5
+        },
+        {
+          "url": "https://trave.kr/travel-guide/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "여행 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "여행 가이드 목록을 읽는 방법 여행 가이드 페이지는 국내 여행 코스, 지역별 명소, 숙소, 맛집, 계절 여행 정보를 빠르게 찾는 출발점입니다. 글을 고를 때는 목적지 이름만 보지 말고 이동 방식, 동행자..."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://trave.kr/travel-guide/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=12, H3=2"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "38 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/travel-guide/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 852,
+          "h1Count": 1,
+          "h2Count": 12,
+          "h3Count": 2
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://trave.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://trave.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:47.408Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 26 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "bojo24",
       "name": "bojo24.kr",
       "platform": "wordpress",
@@ -4628,11 +4780,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=48, H3=0"
+            "detail": "H1=1, H2=49, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "48 images"
+            "detail": "49 images"
           },
           "viewport": {
             "state": "pass",
@@ -4648,7 +4800,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "55 internal links"
+            "detail": "56 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -4662,9 +4814,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1942,
+          "wordCount": 1975,
           "h1Count": 1,
-          "h2Count": 48,
+          "h2Count": 49,
           "h3Count": 0
         }
       ],
@@ -4690,7 +4842,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 51 internal post-like links"
+        "detail": "/blog/ canonical found, 52 internal post-like links"
       },
       "issues": [
         "thin page: https://pregnancy.ehon365.kr/ visible word tokens=222",
@@ -7663,7 +7815,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 257,
+          "wordCount": 268,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 3
@@ -7750,7 +7902,7 @@
         "detail": "/blog/ canonical found, 31 internal post-like links"
       },
       "issues": [
-        "thin page: https://esgyo.kr/ visible word tokens=257",
+        "thin page: https://esgyo.kr/ visible word tokens=268",
         "thin page: https://esgyo.kr/services/ visible word tokens=142"
       ],
       "nextActions": [
@@ -8060,158 +8212,6 @@
       "issues": [
         "thin page: https://goesku.com/ visible word tokens=341"
       ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "klick-2",
-      "name": "klick.kr",
-      "platform": "wordpress",
-      "url": "https://klick.kr/",
-      "gscSiteUrl": "https://klick.kr/",
-      "verdict": "review",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://klick.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "클리크 | 대한민국 생활정보 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "복지·지원금·세금·취업·의료 등 대한민국 실생활에 필요한 정보를 한곳에서 확인하세요. 정부지원금부터 생활 꿀팁까지 클리크에서 모두 찾아보세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=13"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "18 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 877,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 13
-        },
-        {
-          "url": "https://klick.kr/home/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "클리크 | 대한민국 생활정보 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "복지·지원금·세금·취업·의료 등 대한민국 실생활에 필요한 정보를 한곳에서 확인하세요. 정부지원금부터 생활 꿀팁까지 클리크에서 모두 찾아보세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=13"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "24 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/home/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 877,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 13
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://klick.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://klick.kr/sitemap_index.xml lastDownloaded=2026-06-08T13:50:14.244Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 15 internal post-like links"
-      },
-      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -8680,161 +8680,6 @@
       ]
     },
     {
-      "id": "trave",
-      "name": "여행브이 - GA4",
-      "platform": "wordpress",
-      "url": "https://trave.kr/",
-      "gscSiteUrl": "https://trave.kr/",
-      "verdict": "needs_patch",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://trave.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "국내 여행 코스와 지역별 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "국내 여행지, 계절별 코스, 주차와 동선, 맛집 정보를 한곳에 정리한 여행브이 가이드입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://trave.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "23 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 390,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 3
-        },
-        {
-          "url": "https://trave.kr/travel-guide/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "최신 국내 여행 가이드 | 여행브이"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "국내 여행지별 코스, 주차, 계절 볼거리, 주변 맛집 정보를 최신 글로 확인하세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://trave.kr/travel-guide/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=11, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "38 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/travel-guide/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 641,
-          "h1Count": 1,
-          "h2Count": 11,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://trave.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://trave.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:47.408Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 26 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://trave.kr/ visible word tokens=390",
-        "thin page: https://trave.kr/travel-guide/ visible word tokens=641"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
       "id": "webtoon-klick",
       "name": "webtoon.klick.kr",
       "platform": "wordpress",
@@ -9176,7 +9021,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://youkamap.kr/sitemap.xml lastDownloaded=2026-06-07T14:37:56.876Z"
+        "detail": "https://youkamap.kr/sitemap.xml lastDownloaded=2026-06-08T14:05:11.523Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9626,7 +9471,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-08T09:06:47.483Z"
+        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-08T14:03:52.171Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10351,6 +10196,160 @@
         "detail": "/blog/ canonical found, 36 internal post-like links"
       },
       "issues": [],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "klick-2",
+      "name": "klick.kr",
+      "platform": "wordpress",
+      "url": "https://klick.kr/",
+      "gscSiteUrl": "https://klick.kr/",
+      "verdict": "review",
+      "score": 92,
+      "pages": [
+        {
+          "url": "https://klick.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "클리크 | 대한민국 생활정보 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "복지·지원금·세금·취업·의료 등 대한민국 실생활에 필요한 정보를 한곳에서 확인하세요. 정부지원금부터 생활 꿀팁까지 클리크에서 모두 찾아보세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=5, H3=13"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "18 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 877,
+          "h1Count": 1,
+          "h2Count": 5,
+          "h3Count": 13
+        },
+        {
+          "url": "https://klick.kr/blog/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "최신 생활 정보 글 모음 - 클리크"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "복지, 세금, 주거, 금융 지원 정보를 최신 글 순서로 확인하세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://klick.kr/blog/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=12, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "20 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 570,
+          "h1Count": 1,
+          "h2Count": 12,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://klick.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://klick.kr/sitemap_index.xml lastDownloaded=2026-06-08T14:05:04.617Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 15 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://klick.kr/blog/ visible word tokens=570"
+      ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
