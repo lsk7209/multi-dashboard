@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T14:47:12.092Z",
+  "generatedAt": "2026-06-08T14:57:05.328Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 52,
-    "needs_patch": 28,
+    "review": 53,
+    "needs_patch": 27,
     "blocked": 0
   },
   "sites": [
@@ -1002,7 +1002,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 528,
+          "wordCount": 532,
           "h1Count": 1,
           "h2Count": 12,
           "h3Count": 0
@@ -1034,7 +1034,7 @@
       },
       "issues": [
         "canonical: https://saju.tasko.kr/ missing canonical",
-        "thin page: https://saju.tasko.kr/ visible word tokens=528"
+        "thin page: https://saju.tasko.kr/ visible word tokens=532"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -5000,6 +5000,217 @@
       ]
     },
     {
+      "id": "webtoon-klick",
+      "name": "webtoon.klick.kr",
+      "platform": "wordpress",
+      "url": "https://webtoon.klick.kr/",
+      "gscSiteUrl": "https://webtoon.klick.kr/",
+      "verdict": "review",
+      "score": 88,
+      "pages": [
+        {
+          "url": "https://webtoon.klick.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=15, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "53 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 885,
+          "h1Count": 1,
+          "h2Count": 15,
+          "h3Count": 0
+        },
+        {
+          "url": "https://webtoon.klick.kr/blog/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=15, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "53 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 885,
+          "h1Count": 1,
+          "h2Count": 15,
+          "h3Count": 0
+        },
+        {
+          "url": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "주말 아침 웹툰 루틴 — 커피와 함께 읽기 좋은 밝은 작품 고르는 법 | 웹툰고고"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "주말 아침 웹툰 루틴를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=5, H3=3"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "9 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/webtoon-guide-030-webtoon/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 559,
+          "h1Count": 1,
+          "h2Count": 5,
+          "h3Count": 3
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://webtoon.klick.kr/sitemap_index.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T13:00:15.194Z"
+      },
+      "adsTxt": {
+        "state": "unknown",
+        "detail": "fetch failed"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 48 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://webtoon.klick.kr/webtoon-guide-030-webtoon/ visible word tokens=559"
+      ],
+      "nextActions": [
+        "Fix /ads.txt publisher authorization.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "yesa",
       "name": "yesa.kr",
       "platform": "wordpress",
@@ -5409,7 +5620,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 903,
+          "wordCount": 904,
           "h1Count": 1,
           "h2Count": 21,
           "h3Count": 0
@@ -5465,7 +5676,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 903,
+          "wordCount": 904,
           "h1Count": 1,
           "h2Count": 21,
           "h3Count": 0
@@ -6274,218 +6485,6 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "spinkorea-2",
-      "name": "spinkorea.kr",
-      "platform": "wordpress",
-      "url": "https://spinkorea.kr/",
-      "gscSiteUrl": "https://spinkorea.kr/",
-      "verdict": "needs_patch",
-      "score": 89,
-      "pages": [
-        {
-          "url": "https://spinkorea.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "온라인 룰렛 돌리기 | 무료 원판돌리기·스핀 추첨"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "점심 메뉴, 당첨자, 벌칙을 바로 정하는 무료 온라인 룰렛입니다. 설치 없이 모바일·PC에서 공정하게 스핀 돌리기를 시작하세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://www.spinkorea.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "10 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 194,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 0
-        },
-        {
-          "url": "https://www.spinkorea.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "온라인 룰렛 돌리기 | 무료 원판돌리기·스핀 추첨"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "점심 메뉴, 당첨자, 벌칙을 바로 정하는 무료 온라인 룰렛입니다. 설치 없이 모바일·PC에서 공정하게 스핀 돌리기를 시작하세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://www.spinkorea.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "10 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 194,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 0
-        },
-        {
-          "url": "https://www.spinkorea.kr/spinflow",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "SpinFlow 룰렛 | 원판돌리기 바로가기"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "항목을 입력하고 룰렛을 돌려 무작위 결과를 확인하세요. URL 공유와 최근 결과 저장을 지원합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://www.spinkorea.kr/spinflow"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "10 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/spinflow"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 60,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://spinkorea.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://spinkorea.kr/sitemap.xml lastDownloaded=2026-06-08T03:31:43.700Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 4 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://spinkorea.kr/ visible word tokens=194",
-        "thin page: https://www.spinkorea.kr/ visible word tokens=194",
-        "thin page: https://www.spinkorea.kr/spinflow visible word tokens=60"
-      ],
-      "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -8453,216 +8452,6 @@
       "issues": [
         "thin page: https://softwa.kr/ visible word tokens=262",
         "thin page: https://softwa.kr/guides/ visible word tokens=112"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "webtoon-klick",
-      "name": "webtoon.klick.kr",
-      "platform": "wordpress",
-      "url": "https://webtoon.klick.kr/",
-      "gscSiteUrl": "https://webtoon.klick.kr/",
-      "verdict": "review",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://webtoon.klick.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=15, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "53 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 885,
-          "h1Count": 1,
-          "h2Count": 15,
-          "h3Count": 0
-        },
-        {
-          "url": "https://webtoon.klick.kr/blog/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=15, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "53 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/blog/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 885,
-          "h1Count": 1,
-          "h2Count": 15,
-          "h3Count": 0
-        },
-        {
-          "url": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "주말 아침 웹툰 루틴 — 커피와 함께 읽기 좋은 밝은 작품 고르는 법 | 웹툰고고"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "주말 아침 웹툰 루틴를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "9 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/webtoon-guide-030-webtoon/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 559,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 3
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://webtoon.klick.kr/sitemap_index.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T13:00:15.194Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 48 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://webtoon.klick.kr/webtoon-guide-030-webtoon/ visible word tokens=559"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -11958,6 +11747,213 @@
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "spinkorea-2",
+      "name": "spinkorea.kr",
+      "platform": "wordpress",
+      "url": "https://spinkorea.kr/",
+      "gscSiteUrl": "https://spinkorea.kr/",
+      "verdict": "review",
+      "score": 96,
+      "pages": [
+        {
+          "url": "https://spinkorea.kr/",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "spinkorea SpinFlow free roulette and utility tools"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "spinkorea SpinFlow provides free roulette, random draw, calculator, converter, and productivity tools with clear policies, sitemap, RSS, and Auto Ads disclosure."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://www.spinkorea.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "10 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 849,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 0
+        },
+        {
+          "url": "https://www.spinkorea.kr/",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "spinkorea SpinFlow free roulette and utility tools"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "spinkorea SpinFlow provides free roulette, random draw, calculator, converter, and productivity tools with clear policies, sitemap, RSS, and Auto Ads disclosure."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://www.spinkorea.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "10 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 849,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 0
+        },
+        {
+          "url": "https://www.spinkorea.kr/spinflow",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "spinkorea SpinFlow roulette wheel guide"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "spinkorea SpinFlow roulette helps visitors create fair random choices, compare templates, record results, and understand safe use before sharing a draw."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://www.spinkorea.kr/spinflow"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "10 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/spinflow"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 820,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://spinkorea.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://spinkorea.kr/sitemap.xml lastDownloaded=2026-06-08T03:31:43.700Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 4 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
     },
