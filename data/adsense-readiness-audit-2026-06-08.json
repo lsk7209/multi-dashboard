@@ -1,172 +1,13 @@
 {
-  "generatedAt": "2026-06-08T03:55:59.279Z",
+  "generatedAt": "2026-06-08T06:21:34.262Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
     "review": 15,
-    "needs_patch": 62,
-    "blocked": 3
+    "needs_patch": 65,
+    "blocked": 0
   },
   "sites": [
-    {
-      "id": "doseogogo",
-      "name": "http://doseogogo.kr",
-      "platform": "wordpress",
-      "url": "https://doseogogo.kr/",
-      "gscSiteUrl": "https://doseogogo.kr/",
-      "verdict": "blocked",
-      "score": 78,
-      "pages": [
-        {
-          "url": "https://doseogogo.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "도서고고 - 함께 읽힌 책을 보는 도서 탐색 서비스"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "정보나루 참여 공공도서관 기준 예시 데이터로 대출 흐름과 함께 읽힌 책을 보여주는 도서 탐색 서비스입니다."
-          },
-          "canonical": {
-            "state": "fail",
-            "detail": "missing canonical"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=3, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "18 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 190,
-          "h1Count": 1,
-          "h2Count": 3,
-          "h3Count": 3
-        },
-        {
-          "url": "https://doseogogo.kr/recommend",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "읽을 책 진단기 - 도서고고"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "좋아한 책을 입력하면 샘플 데이터 기준으로 함께 읽힌 책 후보를 보여줍니다."
-          },
-          "canonical": {
-            "state": "fail",
-            "detail": "missing canonical"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=0, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "warn",
-            "detail": "no CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "11 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/recommend"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 77,
-          "h1Count": 1,
-          "h2Count": 0,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://doseogogo.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://doseogogo.kr/sitemap.xml lastDownloaded=2026-06-07T15:35:53.043Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "fail",
-        "detail": "missing terms"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 22 internal post-like links"
-      },
-      "issues": [
-        "trust pages: missing terms",
-        "canonical: https://doseogogo.kr/ missing canonical",
-        "thin page: https://doseogogo.kr/ visible word tokens=190",
-        "canonical: https://doseogogo.kr/recommend missing canonical",
-        "thin page: https://doseogogo.kr/recommend visible word tokens=77"
-      ],
-      "nextActions": [
-        "Create or expose About, Contact, Privacy, and Terms pages.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
     {
       "id": "temon",
       "name": "테몬_temon.kr",
@@ -355,7 +196,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://temon.kr/sitemap.xml lastDownloaded=2026-06-07T22:00:29.223Z"
+        "detail": "https://temon.kr/sitemap.xml lastDownloaded=2026-06-08T04:00:28.203Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -727,7 +568,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://ehon365.kr/dynamic-sitemap.xml lastDownloaded=2026-06-08T02:27:46.150Z"
+        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T05:20:06.043Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -747,163 +588,6 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "nexttech7",
-      "name": "nexttech7.com",
-      "platform": "wordpress",
-      "url": "https://nexttech7.com/",
-      "gscSiteUrl": "https://nexttech7.com/",
-      "verdict": "blocked",
-      "score": 85,
-      "pages": [
-        {
-          "url": "https://nexttech7.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "테크노아트 | 노트북·가전제품 리뷰 비교"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "노트북, 가전, IT 제품을 가격·성능·실사용 기준으로 비교합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://nexttech7.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "29 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 348,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 0
-        },
-        {
-          "url": "https://nexttech7.com/services/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "Services - 테크노아트"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "테크노아트는 최신 가전제품에 대한 심층 리뷰를 제공합니다. 각 제품의 특징과 성능을 상세히 분석하여 소비자들이 현명한 선택을 할 수 있도록 돕습니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://nexttech7.com/services/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=0"
-          },
-          "imageAlt": {
-            "state": "warn",
-            "detail": "5/5 images missing alt"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "14 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/services/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 150,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://nexttech7.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://nexttech7.com/sitemap.xml lastDownloaded=2026-06-08T00:15:49.122Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "fail",
-        "detail": "missing privacy"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 35 internal post-like links"
-      },
-      "issues": [
-        "trust pages: missing privacy",
-        "thin page: https://nexttech7.com/ visible word tokens=348",
-        "thin page: https://nexttech7.com/services/ visible word tokens=150"
-      ],
-      "nextActions": [
-        "Create or expose About, Contact, Privacy, and Terms pages.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -1084,7 +768,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T02:30:59.575Z"
+        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T05:45:13.575Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -1570,163 +1254,6 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "discparty",
-      "name": "디스크파티 - GA4",
-      "platform": "wordpress",
-      "url": "https://discparty.com/",
-      "gscSiteUrl": "https://discparty.com/",
-      "verdict": "blocked",
-      "score": 87,
-      "pages": [
-        {
-          "url": "https://discparty.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "DISC 성격유형 가이드 | 디스크파티"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "DISC 성격유형별 특징, 대화법, 협업 팁을 정리한 한국어 가이드."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://discparty.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=6, H3=5"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "2 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "18 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 350,
-          "h1Count": 1,
-          "h2Count": 6,
-          "h3Count": 5
-        },
-        {
-          "url": "https://discparty.com/qa/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "문의하기 | 디스크파티"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "디스크파티 콘텐츠 오류 제보, 주제 제안, 광고·제휴, 사이트 운영 문의 기준을 안내합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://discparty.com/qa/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=7"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "2 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "14 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/qa/"
-          },
-          "adsenseLoader": {
-            "state": "fail",
-            "detail": "loader not found"
-          },
-          "wordCount": 250,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 7
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://discparty.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://discparty.com/sitemap.xml lastDownloaded=2026-06-08T00:15:33.448Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 35 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://discparty.com/ visible word tokens=350",
-        "AdSense loader: https://discparty.com/qa/ loader not found",
-        "thin page: https://discparty.com/qa/ visible word tokens=250"
-      ],
-      "nextActions": [
-        "Insert the Auto Ads loader once site-wide without manual ad slots.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -3106,7 +2633,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 218,
+          "wordCount": 217,
           "h1Count": 1,
           "h2Count": 7,
           "h3Count": 0
@@ -3162,7 +2689,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 118,
+          "wordCount": 117,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 0
@@ -3194,9 +2721,9 @@
       },
       "issues": [
         "thin page: https://fastjob.kr/ visible word tokens=412",
-        "thin page: https://fastjob.kr/disclaimer/ visible word tokens=218",
+        "thin page: https://fastjob.kr/disclaimer/ visible word tokens=217",
         "description: https://fastjob.kr/blog/ missing description",
-        "thin page: https://fastjob.kr/blog/ visible word tokens=118"
+        "thin page: https://fastjob.kr/blog/ visible word tokens=117"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -3359,6 +2886,161 @@
       ]
     },
     {
+      "id": "nexttech7",
+      "name": "nexttech7.com",
+      "platform": "wordpress",
+      "url": "https://nexttech7.com/",
+      "gscSiteUrl": "https://nexttech7.com/",
+      "verdict": "needs_patch",
+      "score": 88,
+      "pages": [
+        {
+          "url": "https://nexttech7.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "테크노아트 | 노트북·가전제품 리뷰 비교"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "노트북, 가전, IT 제품을 가격·성능·실사용 기준으로 비교합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://nexttech7.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=5, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "29 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 348,
+          "h1Count": 1,
+          "h2Count": 5,
+          "h3Count": 0
+        },
+        {
+          "url": "https://nexttech7.com/services/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Services - 테크노아트"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "테크노아트는 최신 가전제품에 대한 심층 리뷰를 제공합니다. 각 제품의 특징과 성능을 상세히 분석하여 소비자들이 현명한 선택을 할 수 있도록 돕습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://nexttech7.com/services/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=4, H3=0"
+          },
+          "imageAlt": {
+            "state": "warn",
+            "detail": "5/5 images missing alt"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "14 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/services/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 150,
+          "h1Count": 1,
+          "h2Count": 4,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://nexttech7.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://nexttech7.com/sitemap.xml lastDownloaded=2026-06-08T00:15:49.122Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 35 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://nexttech7.com/ visible word tokens=348",
+        "thin page: https://nexttech7.com/services/ visible word tokens=150"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "pregnancy-ehon365",
       "name": "pregnancy.ehon365.kr",
       "platform": "wordpress",
@@ -3496,11 +3178,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=46, H3=0"
+            "detail": "H1=1, H2=47, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "46 images"
+            "detail": "47 images"
           },
           "viewport": {
             "state": "pass",
@@ -3516,7 +3198,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "53 internal links"
+            "detail": "54 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -3530,9 +3212,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1875,
+          "wordCount": 1905,
           "h1Count": 1,
-          "h2Count": 46,
+          "h2Count": 47,
           "h3Count": 0
         }
       ],
@@ -3558,7 +3240,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 49 internal post-like links"
+        "detail": "/blog/ canonical found, 50 internal post-like links"
       },
       "issues": [
         "thin page: https://pregnancy.ehon365.kr/ visible word tokens=222",
@@ -3923,7 +3605,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 173 internal post-like links"
+        "detail": "/blog/ canonical found, 174 internal post-like links"
       },
       "issues": [
         "thin page: https://today2424.kr/ visible word tokens=475",
@@ -4636,7 +4318,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=17, H3=0"
+            "detail": "H1=1, H2=18, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -4656,7 +4338,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "31 internal links"
+            "detail": "32 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -4670,9 +4352,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 707,
+          "wordCount": 747,
           "h1Count": 1,
-          "h2Count": 17,
+          "h2Count": 18,
           "h3Count": 0
         }
       ],
@@ -4698,12 +4380,12 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 23 internal post-like links"
+        "detail": "/blog/ canonical found, 24 internal post-like links"
       },
       "issues": [
         "thin page: https://nongsusangogo.kr/ visible word tokens=376",
         "thin page: https://nongsusangogo.kr visible word tokens=376",
-        "thin page: https://nongsusangogo.kr/blog visible word tokens=707"
+        "thin page: https://nongsusangogo.kr/blog visible word tokens=747"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -5405,7 +5087,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 543,
+          "wordCount": 541,
           "h1Count": 1,
           "h2Count": 2,
           "h3Count": 12
@@ -5438,7 +5120,7 @@
       "issues": [
         "thin page: https://tennisfrens.com/ visible word tokens=522",
         "thin page: https://tennisfrens.com visible word tokens=522",
-        "thin page: https://tennisfrens.com/blog visible word tokens=543"
+        "thin page: https://tennisfrens.com/blog visible word tokens=541"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -5895,7 +5577,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=2, H3=23"
+            "detail": "H1=1, H2=2, H3=24"
           },
           "imageAlt": {
             "state": "pass",
@@ -5915,7 +5597,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "32 internal links"
+            "detail": "33 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -5929,10 +5611,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 781,
+          "wordCount": 811,
           "h1Count": 1,
           "h2Count": 2,
-          "h3Count": 23
+          "h3Count": 24
         }
       ],
       "robots": {
@@ -5945,7 +5627,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-08T00:00:36.086Z"
+        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-08T05:00:34.924Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -5957,12 +5639,11 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 32 internal post-like links"
+        "detail": "/blog/ canonical found, 33 internal post-like links"
       },
       "issues": [
         "thin page: https://workgogo.kr/ visible word tokens=494",
-        "thin page: https://workgogo.kr visible word tokens=494",
-        "thin page: https://workgogo.kr/blog visible word tokens=781"
+        "thin page: https://workgogo.kr visible word tokens=494"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -6494,7 +6175,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 335,
+          "wordCount": 336,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 4
@@ -6581,8 +6262,318 @@
         "detail": "/blog/ canonical found, 27 internal post-like links"
       },
       "issues": [
-        "thin page: https://chatgipt.kr/ visible word tokens=335",
+        "thin page: https://chatgipt.kr/ visible word tokens=336",
         "thin page: https://chatgipt.kr/services/ visible word tokens=113"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "discparty",
+      "name": "디스크파티 - GA4",
+      "platform": "wordpress",
+      "url": "https://discparty.com/",
+      "gscSiteUrl": "https://discparty.com/",
+      "verdict": "needs_patch",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://discparty.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "DISC 성격유형 가이드 | 디스크파티"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "DISC 성격유형별 특징, 대화법, 협업 팁을 정리한 한국어 가이드."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://discparty.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=6, H3=5"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "2 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "18 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 350,
+          "h1Count": 1,
+          "h2Count": 6,
+          "h3Count": 5
+        },
+        {
+          "url": "https://discparty.com/qa/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "문의하기 | 디스크파티"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "디스크파티 콘텐츠 오류 제보, 주제 제안, 광고·제휴, 사이트 운영 문의 기준을 안내합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://discparty.com/qa/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=5, H3=7"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "2 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "14 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/qa/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 250,
+          "h1Count": 1,
+          "h2Count": 5,
+          "h3Count": 7
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://discparty.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://discparty.com/sitemap.xml lastDownloaded=2026-06-08T00:15:33.448Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 35 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://discparty.com/ visible word tokens=350",
+        "thin page: https://discparty.com/qa/ visible word tokens=250"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "doseogogo",
+      "name": "http://doseogogo.kr",
+      "platform": "wordpress",
+      "url": "https://doseogogo.kr/",
+      "gscSiteUrl": "https://doseogogo.kr/",
+      "verdict": "needs_patch",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://doseogogo.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "도서고고 - 함께 읽힌 책을 보는 도서 탐색 서비스"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "정보나루 참여 공공도서관 기준 예시 데이터로 대출 흐름과 함께 읽힌 책을 보여주는 도서 탐색 서비스입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://doseogogo.kr"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=4, H3=5"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "21 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 297,
+          "h1Count": 1,
+          "h2Count": 4,
+          "h3Count": 5
+        },
+        {
+          "url": "https://doseogogo.kr/recommend",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "읽을 책 진단기 - 도서고고"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "좋아한 책을 입력하면 샘플 데이터 기준으로 함께 읽힌 책 후보를 보여줍니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://doseogogo.kr/recommend"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=3, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "12 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/recommend"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 186,
+          "h1Count": 1,
+          "h2Count": 3,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://doseogogo.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://doseogogo.kr/sitemap.xml lastDownloaded=2026-06-07T15:35:53.043Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 22 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://doseogogo.kr/ visible word tokens=297",
+        "thin page: https://doseogogo.kr/recommend visible word tokens=186"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -6649,7 +6640,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 256,
+          "wordCount": 257,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 3
@@ -6736,7 +6727,7 @@
         "detail": "/blog/ canonical found, 31 internal post-like links"
       },
       "issues": [
-        "thin page: https://esgyo.kr/ visible word tokens=256",
+        "thin page: https://esgyo.kr/ visible word tokens=257",
         "thin page: https://esgyo.kr/services/ visible word tokens=142"
       ],
       "nextActions": [
@@ -7734,7 +7725,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 569,
+          "wordCount": 567,
           "h1Count": 1,
           "h2Count": 7,
           "h3Count": 2
@@ -7790,7 +7781,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 451,
+          "wordCount": 453,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 0
@@ -7806,7 +7797,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-08T02:31:00.797Z"
+        "detail": "https://luckyday.kr/category-sitemap.xml lastDownloaded=2026-06-08T06:15:01.410Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -7821,8 +7812,8 @@
         "detail": "/blog/ canonical found, 16 internal post-like links"
       },
       "issues": [
-        "thin page: https://luckyday.kr/ visible word tokens=569",
-        "thin page: https://luckyday.kr/blog/ visible word tokens=451"
+        "thin page: https://luckyday.kr/ visible word tokens=567",
+        "thin page: https://luckyday.kr/blog/ visible word tokens=453"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -8686,7 +8677,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=16, H3=0"
+            "detail": "H1=1, H2=17, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -8706,7 +8697,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "25 internal links"
+            "detail": "23 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -8720,9 +8711,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 313,
+          "wordCount": 332,
           "h1Count": 1,
-          "h2Count": 16,
+          "h2Count": 17,
           "h3Count": 0
         }
       ],
@@ -8748,11 +8739,11 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 17 internal post-like links"
+        "detail": "/blog/ canonical found, 18 internal post-like links"
       },
       "issues": [
         "thin page: https://youkamap.kr/ visible word tokens=212",
-        "thin page: https://youkamap.kr/blog/ visible word tokens=313"
+        "thin page: https://youkamap.kr/blog/ visible word tokens=332"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -8891,7 +8882,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://yungyanggogo.kr/sitemap.xml lastDownloaded=2026-06-08T00:22:05.872Z"
+        "detail": "https://yungyanggogo.kr/sitemap.xml lastDownloaded=2026-06-08T06:07:05.251Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8990,7 +8981,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-08T00:00:38.167Z"
+        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-08T05:00:36.073Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9088,7 +9079,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-08T02:31:00.797Z"
+        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-08T06:06:10.004Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9298,7 +9289,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T00:20:05.830Z"
+        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-08T05:20:06.043Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9339,7 +9330,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 382개+"
+            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 383개+"
           },
           "canonical": {
             "state": "pass",
@@ -9381,7 +9372,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 396,
+          "wordCount": 395,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 16
@@ -9412,7 +9403,7 @@
         "detail": "/blog/ canonical found, 16 internal post-like links"
       },
       "issues": [
-        "thin page: https://estat.kr/ visible word tokens=396"
+        "thin page: https://estat.kr/ visible word tokens=395"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -9485,19 +9476,19 @@
           "h3Count": 0
         },
         {
-          "url": "https://finan.kr/sauce-calories-diet/",
+          "url": "https://finan.kr/bread-diet-guide/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "소스 칼로리를 무시하면 안 되는 이유 — 작은 양의 큰 오차"
+            "detail": "빵을 끊어야 살이 빠질까 — 종류와 양을 나누어 본다"
           },
           "description": {
             "state": "warn",
-            "detail": "소스 칼로리, 드레싱 칼로리, 양념 칼로리을 기록·근거·유지 가능성 기준으로 정리했다."
+            "detail": "빵 다이어트, 빵 칼로리, 통밀빵 다이어트을 기록·근거·유지 가능성 기준으로 정리했다."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://finan.kr/sauce-calories-diet/"
+            "detail": "https://finan.kr/bread-diet-guide/"
           },
           "headings": {
             "state": "pass",
@@ -9529,13 +9520,13 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/sauce-calories-diet/"
+            "detail": "/bread-diet-guide/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1411,
+          "wordCount": 1358,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 4
@@ -9805,7 +9796,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://haemongdream.com/wp-sitemap.xml lastDownloaded=2026-06-08T03:45:39.365Z"
+        "detail": "https://haemongdream.com/wp-sitemap.xml lastDownloaded=2026-06-08T04:45:12.224Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10040,29 +10031,29 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 187,
+          "wordCount": 184,
           "h1Count": 2,
           "h2Count": 2,
           "h3Count": 0
         },
         {
-          "url": "https://jasamall.sellerpit.kr/jasa-mall-open-promo-types/",
+          "url": "https://jasamall.sellerpit.kr/google-shopping-jasa-mall-upload/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "자사몰 오픈 직후 구매를 만드는 프로모션 유형 | 자사몰 셀러핏"
+            "detail": "구글 쇼핑 광고에 자사몰 상품을 올리는 절차 | 자사몰 셀러핏"
           },
           "description": {
             "state": "warn",
-            "detail": "자사몰 오픈 초기 30일 내 구매를 발생시키면 6개월 후 존속율이 2.8배 높다. 첫 구매 고객의 재구매율은 이후 유입 �…"
+            "detail": "구글 쇼핑 광고는 텍스트 광고 대비 CPC가 40% 낮고 전환율이 1.4배 높다. 카페24와 아임웹에서 구글 머천트 센터 연동…"
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://jasamall.sellerpit.kr/jasa-mall-open-promo-types/"
+            "detail": "https://jasamall.sellerpit.kr/google-shopping-jasa-mall-upload/"
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=1"
+            "detail": "H1=1, H2=3, H3=1"
           },
           "imageAlt": {
             "state": "pass",
@@ -10090,15 +10081,15 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/jasa-mall-open-promo-types/"
+            "detail": "/google-shopping-jasa-mall-upload/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 423,
+          "wordCount": 396,
           "h1Count": 1,
-          "h2Count": 4,
+          "h2Count": 3,
           "h3Count": 1
         }
       ],
@@ -10127,8 +10118,8 @@
         "detail": "/blog/ canonical found, 36 internal post-like links"
       },
       "issues": [
-        "thin page: https://jasamall.sellerpit.kr/ visible word tokens=187",
-        "thin page: https://jasamall.sellerpit.kr/jasa-mall-open-promo-types/ visible word tokens=423"
+        "thin page: https://jasamall.sellerpit.kr/ visible word tokens=184",
+        "thin page: https://jasamall.sellerpit.kr/google-shopping-jasa-mall-upload/ visible word tokens=396"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -10880,7 +10871,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=2, H3=32"
+            "detail": "H1=1, H2=2, H3=33"
           },
           "imageAlt": {
             "state": "pass",
@@ -10900,7 +10891,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "44 internal links"
+            "detail": "45 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -10914,10 +10905,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1450,
+          "wordCount": 1500,
           "h1Count": 1,
           "h2Count": 2,
-          "h3Count": 32
+          "h3Count": 33
         }
       ],
       "robots": {
@@ -10930,7 +10921,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-08T00:00:47.082Z"
+        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-08T05:01:45.246Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10942,7 +10933,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 38 internal post-like links"
+        "detail": "/blog/ canonical found, 39 internal post-like links"
       },
       "issues": [
         "thin page: https://dullegilgogo.kr/ visible word tokens=709",
@@ -11535,7 +11526,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 340,
+          "wordCount": 342,
           "h1Count": 1,
           "h2Count": 10,
           "h3Count": 0
@@ -11551,7 +11542,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-08T00:10:55.970Z"
+        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-08T05:30:54.899Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -11566,7 +11557,7 @@
         "detail": "/blog/ canonical found, 24 internal post-like links"
       },
       "issues": [
-        "thin page: https://dog.klick.kr/ visible word tokens=340"
+        "thin page: https://dog.klick.kr/ visible word tokens=342"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -11845,7 +11836,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 521,
+          "wordCount": 522,
           "h1Count": 1,
           "h2Count": 2,
           "h3Count": 0
@@ -11861,7 +11852,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://phone.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T00:00:26.269Z"
+        "detail": "https://phone.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T06:06:13.809Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -11876,7 +11867,7 @@
         "detail": "/blog/ canonical found, 37 internal post-like links"
       },
       "issues": [
-        "thin page: https://phone.luckyday.kr/ visible word tokens=521"
+        "thin page: https://phone.luckyday.kr/ visible word tokens=522"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -12391,7 +12382,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 10366,
+          "wordCount": 10305,
           "h1Count": 1,
           "h2Count": 111,
           "h3Count": 40
@@ -12407,7 +12398,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-08T00:00:20.620Z"
+        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-08T05:00:19.280Z"
       },
       "adsTxt": {
         "state": "pass",
