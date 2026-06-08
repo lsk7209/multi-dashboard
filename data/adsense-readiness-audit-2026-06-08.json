@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T08:52:18.925Z",
+  "generatedAt": "2026-06-08T09:01:59.609Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 19,
-    "needs_patch": 61,
+    "review": 20,
+    "needs_patch": 60,
     "blocked": 0
   },
   "sites": [
@@ -1751,7 +1751,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://temon.kr/sitemap.xml lastDownloaded=2026-06-08T07:04:38.600Z"
+        "detail": "https://temon.kr/sitemap.xml lastDownloaded=2026-06-08T09:00:15.872Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -3167,11 +3167,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=47, H3=0"
+            "detail": "H1=1, H2=48, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "47 images"
+            "detail": "48 images"
           },
           "viewport": {
             "state": "pass",
@@ -3187,7 +3187,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "54 internal links"
+            "detail": "55 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -3201,9 +3201,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1905,
+          "wordCount": 1942,
           "h1Count": 1,
-          "h2Count": 47,
+          "h2Count": 48,
           "h3Count": 0
         }
       ],
@@ -3229,7 +3229,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 50 internal post-like links"
+        "detail": "/blog/ canonical found, 51 internal post-like links"
       },
       "issues": [
         "thin page: https://pregnancy.ehon365.kr/ visible word tokens=222",
@@ -6319,7 +6319,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 350,
+          "wordCount": 352,
           "h1Count": 1,
           "h2Count": 6,
           "h3Count": 5
@@ -6406,7 +6406,7 @@
         "detail": "/blog/ canonical found, 35 internal post-like links"
       },
       "issues": [
-        "thin page: https://discparty.com/ visible word tokens=350",
+        "thin page: https://discparty.com/ visible word tokens=352",
         "thin page: https://discparty.com/qa/ visible word tokens=250"
       ],
       "nextActions": [
@@ -8179,7 +8179,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 312,
+          "wordCount": 309,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 0
@@ -8266,7 +8266,7 @@
         "detail": "/blog/ canonical found, 28 internal post-like links"
       },
       "issues": [
-        "thin page: https://sellerpit.kr/ visible word tokens=312",
+        "thin page: https://sellerpit.kr/ visible word tokens=309",
         "thin page: https://sellerpit.kr/services/ visible word tokens=174"
       ],
       "nextActions": [
@@ -9085,6 +9085,102 @@
       "issues": [
         "thin page: https://car.luckyday.kr/ visible word tokens=609"
       ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "dog-klick",
+      "name": "dog.klick.kr",
+      "platform": "wordpress",
+      "url": "https://dog.klick.kr/",
+      "gscSiteUrl": "https://dog.klick.kr/",
+      "verdict": "review",
+      "score": 92,
+      "pages": [
+        {
+          "url": "https://dog.klick.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "세상모든 강아지 &#8211; 강아지 품종, 건강, 훈련, 생활 관리 정보"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "강아지 품종, 건강, 훈련, 사료, 생활 관리 정보를 보호자 눈높이에 맞게 정리하는 반려견 정보 블로그입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://dog.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=16, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "20 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "49 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 876,
+          "h1Count": 1,
+          "h2Count": 16,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://dog.klick.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-08T05:30:54.899Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 24 internal post-like links"
+      },
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -11600,104 +11696,6 @@
         "thin page: https://webtoon.klick.kr/ visible word tokens=353",
         "thin page: https://webtoon.klick.kr/blog/ visible word tokens=353",
         "thin page: https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/ visible word tokens=576"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "dog-klick",
-      "name": "dog.klick.kr",
-      "platform": "wordpress",
-      "url": "https://dog.klick.kr/",
-      "gscSiteUrl": "https://dog.klick.kr/",
-      "verdict": "needs_patch",
-      "score": 94,
-      "pages": [
-        {
-          "url": "https://dog.klick.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "세상모든 강아지 &#8211; 강아지 품종, 건강, 훈련, 생활 관리 정보"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "강아지 품종, 건강, 훈련, 사료, 생활 관리 정보를 보호자 눈높이에 맞게 정리하는 반려견 정보 블로그입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://dog.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=10, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "20 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "49 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 342,
-          "h1Count": 1,
-          "h2Count": 10,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://dog.klick.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-08T05:30:54.899Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 24 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://dog.klick.kr/ visible word tokens=342"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
