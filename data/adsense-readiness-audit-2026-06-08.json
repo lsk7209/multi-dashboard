@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T11:51:16.086Z",
+  "generatedAt": "2026-06-08T12:03:29.467Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 38,
-    "needs_patch": 42,
+    "review": 39,
+    "needs_patch": 41,
     "blocked": 0
   },
   "sites": [
@@ -3097,7 +3097,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dogswhere.com/sitemap.xml lastDownloaded=2026-06-08T07:00:12.413Z"
+        "detail": "https://dogswhere.com/sitemap.xml lastDownloaded=2026-06-08T12:00:09.607Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -3280,7 +3280,7 @@
       "platform": "wordpress",
       "url": "https://nexttech7.com/",
       "gscSiteUrl": "https://nexttech7.com/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 88,
       "pages": [
         {
@@ -3292,7 +3292,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "노트북, 가전, IT 제품을 가격·성능·실사용 기준으로 비교합니다."
+            "detail": "테크노아트는 노트북, 가전, IT 제품 리뷰와 가격, 성능, 배터리, AS, 실사용 기준 비교를 제공하는 구매 가이드 허브입니다."
           },
           "canonical": {
             "state": "pass",
@@ -3300,7 +3300,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=5, H3=0"
+            "detail": "H1=1, H2=11, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -3311,8 +3311,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -3334,9 +3334,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 348,
+          "wordCount": 860,
           "h1Count": 1,
-          "h2Count": 5,
+          "h2Count": 11,
           "h3Count": 0
         },
         {
@@ -3348,7 +3348,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "테크노아트는 최신 가전제품에 대한 심층 리뷰를 제공합니다. 각 제품의 특징과 성능을 상세히 분석하여 소비자들이 현명한 선택을 할 수 있도록 돕습니다."
+            "detail": "테크노아트 서비스는 제품 리뷰, 비교 분석, 구매 가이드, 사용자 평가를 통해 노트북과 가전제품 선택 기준을 정리합니다."
           },
           "canonical": {
             "state": "pass",
@@ -3356,11 +3356,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=0"
+            "detail": "H1=1, H2=14, H3=0"
           },
           "imageAlt": {
-            "state": "warn",
-            "detail": "5/5 images missing alt"
+            "state": "pass",
+            "detail": "5 images"
           },
           "viewport": {
             "state": "pass",
@@ -3368,7 +3368,7 @@
           },
           "toc": {
             "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "detail": "TOC marker found"
           },
           "cta": {
             "state": "pass",
@@ -3376,7 +3376,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "14 internal links"
+            "detail": "18 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -3390,9 +3390,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 150,
+          "wordCount": 848,
           "h1Count": 1,
-          "h2Count": 4,
+          "h2Count": 14,
           "h3Count": 0
         }
       ],
@@ -3420,10 +3420,7 @@
         "state": "pass",
         "detail": "/blog/ canonical found, 35 internal post-like links"
       },
-      "issues": [
-        "thin page: https://nexttech7.com/ visible word tokens=348",
-        "thin page: https://nexttech7.com/services/ visible word tokens=150"
-      ],
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -7529,7 +7526,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 389,
+          "wordCount": 392,
           "h1Count": 1,
           "h2Count": 5,
           "h3Count": 6
@@ -7616,7 +7613,7 @@
         "detail": "/blog/ canonical found, 55 internal post-like links"
       },
       "issues": [
-        "thin page: https://gover.kr/ visible word tokens=389",
+        "thin page: https://gover.kr/ visible word tokens=392",
         "thin page: https://gover.kr/services/ visible word tokens=147"
       ],
       "nextActions": [
@@ -9310,11 +9307,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=10, H3=0"
+            "detail": "H1=1, H2=11, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "10 images"
+            "detail": "11 images"
           },
           "viewport": {
             "state": "pass",
@@ -9330,7 +9327,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "31 internal links"
+            "detail": "33 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -9344,9 +9341,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 411,
+          "wordCount": 450,
           "h1Count": 1,
-          "h2Count": 10,
+          "h2Count": 11,
           "h3Count": 0
         }
       ],
@@ -9372,11 +9369,11 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 26 internal post-like links"
+        "detail": "/blog/ canonical found, 28 internal post-like links"
       },
       "issues": [
         "thin page: https://yungyanggogo.kr/ visible word tokens=222",
-        "thin page: https://yungyanggogo.kr/blog visible word tokens=411"
+        "thin page: https://yungyanggogo.kr/blog visible word tokens=450"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
