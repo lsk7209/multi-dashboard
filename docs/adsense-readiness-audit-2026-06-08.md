@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T09:01:59.609Z
+Generated: 2026-06-08T09:08:38.079Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 20
-- Needs patch: 60
+- Review: 21
+- Needs patch: 59
 - Blocked: 0
 
 ## Highest Priority
@@ -86,6 +86,7 @@ Generated: 2026-06-08T09:01:59.609Z
 | notebook-klick-2 | notebook.klick.kr | wordpress | needs_patch | 92 | thin page: https://notebook.klick.kr/ visible word tokens=329 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | petjigi | petjigi.kr | wordpress | review | 92 | thin page: https://petjigi.kr/ visible word tokens=530 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | sssaass | sssaass.com | wordpress | needs_patch | 92 | thin page: https://sssaass.com/ visible word tokens=275 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| travel-sellerpit | travel.sellerpit.kr | wordpress | review | 92 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | travelpang-2 | travelpang.kr | wordpress | needs_patch | 92 | thin page: https://travelpang.kr/ visible word tokens=433<br>thin page: https://travelpang.kr/services/ visible word tokens=228 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | dullegilgogo | dullegilgogo.kr | wordpress | review | 93 | thin page: https://dullegilgogo.kr/ visible word tokens=709<br>thin page: https://dullegilgogo.kr visible word tokens=709 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | homeimer | homeimer.com | wordpress | needs_patch | 93 | thin page: https://homeimer.com/ visible word tokens=468<br>thin page: https://homeimer.com/blog/ visible word tokens=648 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -95,7 +96,6 @@ Generated: 2026-06-08T09:01:59.609Z
 | educaer | educaer.com | wordpress | needs_patch | 94 | thin page: https://educaer.com/ visible word tokens=470<br>thin page: https://educaer.com/disclaimer/ visible word tokens=270<br>thin page: https://educaer.com/editorial-policy/ visible word tokens=289 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | phone-luckyday | phone.luckyday.kr | wordpress | review | 94 | thin page: https://phone.luckyday.kr/ visible word tokens=522 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | tasko-2 | tasko.kr | wordpress | needs_patch | 94 | thin page: https://tasko.kr/ visible word tokens=456 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| travel-sellerpit | travel.sellerpit.kr | wordpress | needs_patch | 94 | thin page: https://travel.sellerpit.kr/ visible word tokens=410 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | mbti-tasko | mbti.tasko.kr | wordpress | review | 97 | none | Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | smart-sellerpit | smart.sellerpit.kr | wordpress | review | 97 | none | Patch technical SEO templates for meta, canonical, headings, and alt text. |
 
