@@ -1,21 +1,20 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T03:16:31.250Z
+Generated: 2026-06-08T03:21:26.555Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
 - Review: 13
-- Needs patch: 58
-- Blocked: 9
+- Needs patch: 59
+- Blocked: 8
 
 ## Highest Priority
 
 - doseogogo: Create or expose About, Contact, Privacy, and Terms pages.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
 - nexttech7: Create or expose About, Contact, Privacy, and Terms pages.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
 - yesa: Improve /blog/ index as a crawlable card list with real post links.; Insert the Auto Ads loader once site-wide without manual ad slots.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
-- coinyo-2: Fix public sitemap and submit it in GSC until downloaded without errors.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
 - haemongdream: Create or expose About, Contact, Privacy, and Terms pages.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
 - discparty: Insert the Auto Ads loader once site-wide without manual ad slots.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
 - klick-2: Create or expose About, Contact, Privacy, and Terms pages.; Patch technical SEO templates for meta, canonical, headings, and alt text.; Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.
@@ -33,7 +32,6 @@ Generated: 2026-06-08T03:16:31.250Z
 | nexttech7 | nexttech7.com | wordpress | blocked | 85 | trust pages: missing privacy<br>thin page: https://nexttech7.com/ visible word tokens=348<br>thin page: https://nexttech7.com/services/ visible word tokens=150 | Create or expose About, Contact, Privacy, and Terms pages.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | yesa | yesa.kr | wordpress | blocked | 85 | AdSense loader: https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/ loader not found<br>thin page: https://yesa.kr/%ec%9c%a0%ec%9d%80%ec%83%81/ visible word tokens=792 | Improve /blog/ index as a crawlable card list with real post links.<br>Insert the Auto Ads loader once site-wide without manual ad slots.<br>Patch technical SEO templates for meta, canonical, headings, and alt text. |
 | ai-tasko | ai.tasko.kr | wordpress | needs_patch | 86 | description: https://ai.tasko.kr/ missing description<br>thin page: https://ai.tasko.kr/ visible word tokens=196 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| coinyo-2 | coinyo.kr | wordpress | blocked | 86 | sitemap: no public XML sitemap found<br>thin page: https://coinyo.kr/ visible word tokens=270 | Fix public sitemap and submit it in GSC until downloaded without errors.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | gong-luckyday | gong.luckyday.kr | wordpress | needs_patch | 86 | description: https://gong.luckyday.kr/ missing description<br>thin page: https://gong.luckyday.kr/ visible word tokens=125 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | haemongdream | haemongdream.com | wordpress | blocked | 86 | trust pages: missing privacy | Create or expose About, Contact, Privacy, and Terms pages.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | runmania | runmania.kr | wordpress | needs_patch | 86 | thin page: https://runmania.kr/ visible word tokens=201<br>thin page: https://www.runmania.kr/ visible word tokens=201<br>thin page: https://www.runmania.kr/tools/diagnosis visible word tokens=88 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
@@ -47,6 +45,7 @@ Generated: 2026-06-08T03:16:31.250Z
 | roadways | roadways.kr | wordpress | needs_patch | 87 | thin page: https://roadways.kr/ visible word tokens=474<br>thin page: https://roadways.kr visible word tokens=474<br>thin page: https://roadways.kr/weekend visible word tokens=664 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | todayshops-2 | todayshops.kr | wordpress | needs_patch | 87 | thin page: https://todayshops.kr/ visible word tokens=228<br>description: https://todayshops.kr/home/ missing description<br>thin page: https://todayshops.kr/home/ visible word tokens=72 | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | bojo24 | bojo24.kr | wordpress | review | 88 | thin page: https://bojo24.kr/ visible word tokens=580<br>thin page: https://bojo24.kr visible word tokens=580<br>thin page: https://bojo24.kr/benefit visible word tokens=506 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| coinyo-2 | coinyo.kr | wordpress | needs_patch | 88 | thin page: https://coinyo.kr/ visible word tokens=270 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | dogswhere | dogswhere.com | wordpress | needs_patch | 88 | thin page: https://dogswhere.com/ visible word tokens=382<br>thin page: https://dogswhere.com visible word tokens=382<br>thin page: https://dogswhere.com/test/mung-bti visible word tokens=134 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | fastjob | fastjob.kr | wordpress | blocked | 88 | thin page: https://fastjob.kr/ visible word tokens=412<br>thin page: https://fastjob.kr/disclaimer/ visible word tokens=218<br>AdSense loader: https://fastjob.kr/geo-checklist-thank-you/ loader not found | Insert the Auto Ads loader once site-wide without manual ad slots.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | knewstory | knewstory.kr | wordpress | needs_patch | 88 | thin page: https://knewstory.kr/ visible word tokens=262<br>thin page: https://knewstory.kr/disclaimer/ visible word tokens=118 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-08T03:16:31.250Z",
+  "generatedAt": "2026-06-08T03:21:26.555Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
     "review": 13,
-    "needs_patch": 58,
-    "blocked": 9
+    "needs_patch": 59,
+    "blocked": 8
   },
   "sites": [
     {
@@ -1161,106 +1161,6 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "coinyo-2",
-      "name": "coinyo.kr",
-      "platform": "wordpress",
-      "url": "https://coinyo.kr/",
-      "gscSiteUrl": "https://coinyo.kr/",
-      "verdict": "blocked",
-      "score": 86,
-      "pages": [
-        {
-          "url": "https://coinyo.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "코인요요 | 코인 투자 리스크 체크"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "코인요요는 지갑 보안, 거래소, 온체인 지표, 세금과 정책을 초보자도 순서대로 확인하는 코인 리스크 체크 가이드입니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://coinyo.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=8, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "2 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "20 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 270,
-          "h1Count": 1,
-          "h2Count": 8,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "fail",
-        "detail": "no public XML sitemap found"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://coinyo.kr/page-sitemap.xml lastDownloaded=2026-06-02T03:56:06.817Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 3 internal post-like links"
-      },
-      "issues": [
-        "sitemap: no public XML sitemap found",
-        "thin page: https://coinyo.kr/ visible word tokens=270"
-      ],
-      "nextActions": [
-        "Fix public sitemap and submit it in GSC until downloaded without errors.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -3289,6 +3189,160 @@
         "thin page: https://bojo24.kr/ visible word tokens=580",
         "thin page: https://bojo24.kr visible word tokens=580",
         "thin page: https://bojo24.kr/benefit visible word tokens=506"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "coinyo-2",
+      "name": "coinyo.kr",
+      "platform": "wordpress",
+      "url": "https://coinyo.kr/",
+      "gscSiteUrl": "https://coinyo.kr/",
+      "verdict": "needs_patch",
+      "score": 88,
+      "pages": [
+        {
+          "url": "https://coinyo.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "코인요요 | 코인 투자 리스크 체크"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "코인요요는 지갑 보안, 거래소, 온체인 지표, 세금과 정책을 초보자도 순서대로 확인하는 코인 리스크 체크 가이드입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://coinyo.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=8, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "2 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "20 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 270,
+          "h1Count": 1,
+          "h2Count": 8,
+          "h3Count": 0
+        },
+        {
+          "url": "https://coinyo.kr/%ec%97%94%ec%97%90%ec%8a%a4ens-%ec%9d%b4%eb%8d%94%eb%a6%ac%ec%9b%80-%eb%84%a4%ec%9e%84-%ec%84%9c%eb%b9%84%ec%8a%a4%ec%9d%98-%eb%8b%b7%ec%9d%b4%eb%8d%94eth-%eb%8f%84%eb%a9%94%ec%9d%b8-%eb%93%b1/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "엔에스(ENS) 장기 보유 체크: 이더리움"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "엔에스(ENS) 장기 보유 체크: 이더리움에서 이더리움, 엔에스ens, 네임를 공식 자료와 국내 거래 기준으로 점검합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://coinyo.kr/%ec%97%94%ec%97%90%ec%8a%a4ens-%ec%9d%b4%eb%8d%94%eb%a6%ac%ec%9b%80-%eb%84%a4%ec%9e%84-%ec%84%9c%eb%b9%84%ec%8a%a4%ec%9d%98-%eb%8b%b7%ec%9d%b4%eb%8d%94eth-%eb%8f%84%eb%a9%94%ec%9d%b8-%eb%93%b1/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=13, H3=6"
+          },
+          "imageAlt": {
+            "state": "warn",
+            "detail": "1/4 images missing alt"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC marker found"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "26 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "3 external links"
+          },
+          "readableUrl": {
+            "state": "warn",
+            "detail": "/%ec%97%94%ec%97%90%ec%8a%a4ens-%ec%9d%b4%eb%8d%94%eb%a6%ac%ec%9b%80-%eb%84%a4%ec%9e%84-%ec%84%9c%eb%b9%84%ec%8a%a4%ec%9d%98-%eb%8b%b7%ec%9d%b4%eb%8d%94eth-%eb%8f%84%eb%a9%94%ec%9d%b8-%eb%93%b1/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 876,
+          "h1Count": 1,
+          "h2Count": 13,
+          "h3Count": 6
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://coinyo.kr/coinyo-sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://coinyo.kr/page-sitemap.xml lastDownloaded=2026-06-02T03:56:06.817Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 3 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://coinyo.kr/ visible word tokens=270"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",

@@ -143,6 +143,8 @@ sites:
     wpRestBase: https://coinyo.kr/wp-json/wp/v2
     ga4PropertyId: "517634776"
     gscSiteUrl: https://coinyo.kr/
+    sitemapUrls:
+      - https://coinyo.kr/coinyo-sitemap.xml
     monetization: true
   - id: dogspang
     name: 정보랩 - GA4
@@ -515,6 +517,8 @@ sites:
     wpRestBase: https://coinyo.kr/wp-json/wp/v2
     ga4PropertyId: "536352221"
     gscSiteUrl: https://coinyo.kr/
+    sitemapUrls:
+      - https://coinyo.kr/coinyo-sitemap.xml
     monetization: true
   - id: fastjob-2
     name: fastjob.kr
