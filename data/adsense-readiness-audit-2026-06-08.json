@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T13:29:22.854Z",
+  "generatedAt": "2026-06-08T13:37:53.108Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 46,
-    "needs_patch": 34,
+    "review": 47,
+    "needs_patch": 33,
     "blocked": 0
   },
   "sites": [
@@ -8071,7 +8071,7 @@
       "platform": "wordpress",
       "url": "https://klick.kr/",
       "gscSiteUrl": "https://klick.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 90,
       "pages": [
         {
@@ -8091,7 +8091,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=13"
+            "detail": "H1=1, H2=5, H3=13"
           },
           "imageAlt": {
             "state": "pass",
@@ -8102,8 +8102,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -8125,9 +8125,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 718,
+          "wordCount": 877,
           "h1Count": 1,
-          "h2Count": 4,
+          "h2Count": 5,
           "h3Count": 13
         },
         {
@@ -8135,19 +8135,19 @@
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "Home - 클리크"
+            "detail": "클리크 | 대한민국 생활정보 가이드"
           },
           "description": {
-            "state": "fail",
-            "detail": "missing description"
+            "state": "warn",
+            "detail": "복지·지원금·세금·취업·의료 등 대한민국 실생활에 필요한 정보를 한곳에서 확인하세요. 정부지원금부터 생활 꿀팁까지 클리크에서 모두 찾아보세요."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://klick.kr/home/"
+            "detail": "https://klick.kr/"
           },
           "headings": {
-            "state": "warn",
-            "detail": "H1=0, H2=0, H3=0"
+            "state": "pass",
+            "detail": "H1=1, H2=5, H3=13"
           },
           "imageAlt": {
             "state": "pass",
@@ -8158,8 +8158,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -8167,7 +8167,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "10 internal links"
+            "detail": "24 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -8181,10 +8181,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 119,
-          "h1Count": 0,
-          "h2Count": 0,
-          "h3Count": 0
+          "wordCount": 877,
+          "h1Count": 1,
+          "h2Count": 5,
+          "h3Count": 13
         }
       ],
       "robots": {
@@ -8211,11 +8211,7 @@
         "state": "pass",
         "detail": "/blog/ canonical found, 15 internal post-like links"
       },
-      "issues": [
-        "thin page: https://klick.kr/ visible word tokens=718",
-        "description: https://klick.kr/home/ missing description",
-        "thin page: https://klick.kr/home/ visible word tokens=119"
-      ],
+      "issues": [],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."

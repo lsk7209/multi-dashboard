@@ -1,13 +1,13 @@
 # AdSense Readiness Full Audit | 2026-06-08
 
-Generated: 2026-06-08T13:29:22.854Z
+Generated: 2026-06-08T13:37:53.108Z
 
 ## Summary
 
 - Targets: 80
 - Ready: 0
-- Review: 46
-- Needs patch: 34
+- Review: 47
+- Needs patch: 33
 - Blocked: 0
 
 ## Highest Priority
@@ -67,7 +67,7 @@ Generated: 2026-06-08T13:29:22.854Z
 | esgyo | esgyo.kr | wordpress | needs_patch | 90 | thin page: https://esgyo.kr/ visible word tokens=257<br>thin page: https://esgyo.kr/services/ visible word tokens=142 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | finan | finan.kr | wordpress | review | 90 | none | Improve /blog/ index as a crawlable card list with real post links.<br>Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | goesku | goesku.com | wordpress | needs_patch | 90 | thin page: https://goesku.com/ visible word tokens=341 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
-| klick-2 | klick.kr | wordpress | needs_patch | 90 | thin page: https://klick.kr/ visible word tokens=718<br>description: https://klick.kr/home/ missing description<br>thin page: https://klick.kr/home/ visible word tokens=119 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
+| klick-2 | klick.kr | wordpress | review | 90 | none | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | nicewomen | nicewomen.kr | wordpress | needs_patch | 90 | thin page: https://nicewomen.kr/ visible word tokens=461<br>thin page: https://nicewomen.kr/services/ visible word tokens=155 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | sellerpit-2 | sellerpit.kr | wordpress | needs_patch | 90 | thin page: https://sellerpit.kr/ visible word tokens=309<br>thin page: https://sellerpit.kr/services/ visible word tokens=174 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
 | softwa | softwa.kr | wordpress | needs_patch | 90 | thin page: https://softwa.kr/ visible word tokens=262<br>thin page: https://softwa.kr/guides/ visible word tokens=112 | Patch technical SEO templates for meta, canonical, headings, and alt text.<br>Queue content-quality pass: persona, TOC, CTA, internal links, credible sources. |
