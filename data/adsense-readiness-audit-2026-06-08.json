@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T14:57:05.328Z",
+  "generatedAt": "2026-06-08T15:10:19.599Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 53,
-    "needs_patch": 27,
+    "review": 54,
+    "needs_patch": 26,
     "blocked": 0
   },
   "sites": [
@@ -3210,7 +3210,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://temon.kr/sitemap.xml lastDownloaded=2026-06-08T09:00:15.872Z"
+        "detail": "https://temon.kr/sitemap.xml lastDownloaded=2026-06-08T15:00:06.661Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -4995,217 +4995,6 @@
         "thin page: https://www.today2424.kr/disclosure visible word tokens=154"
       ],
       "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "webtoon-klick",
-      "name": "webtoon.klick.kr",
-      "platform": "wordpress",
-      "url": "https://webtoon.klick.kr/",
-      "gscSiteUrl": "https://webtoon.klick.kr/",
-      "verdict": "review",
-      "score": 88,
-      "pages": [
-        {
-          "url": "https://webtoon.klick.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=15, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "53 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 885,
-          "h1Count": 1,
-          "h2Count": 15,
-          "h3Count": 0
-        },
-        {
-          "url": "https://webtoon.klick.kr/blog/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=15, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "warn",
-            "detail": "long article without TOC marker"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "53 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/blog/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 885,
-          "h1Count": 1,
-          "h2Count": 15,
-          "h3Count": 0
-        },
-        {
-          "url": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "주말 아침 웹툰 루틴 — 커피와 함께 읽기 좋은 밝은 작품 고르는 법 | 웹툰고고"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "주말 아침 웹툰 루틴를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=3"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "9 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/webtoon-guide-030-webtoon/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 559,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 3
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://webtoon.klick.kr/sitemap_index.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T13:00:15.194Z"
-      },
-      "adsTxt": {
-        "state": "unknown",
-        "detail": "fetch failed"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 48 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://webtoon.klick.kr/webtoon-guide-030-webtoon/ visible word tokens=559"
-      ],
-      "nextActions": [
-        "Fix /ads.txt publisher authorization.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -7014,217 +6803,6 @@
       ]
     },
     {
-      "id": "workgogo",
-      "name": "workgogo.kr",
-      "platform": "wordpress",
-      "url": "https://workgogo.kr/",
-      "gscSiteUrl": "https://workgogo.kr/",
-      "verdict": "needs_patch",
-      "score": 89,
-      "pages": [
-        {
-          "url": "https://workgogo.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "직종 허브 — 연봉·진입경로·전망을 한 페이지에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "간호조무사·요양보호사 등 직종별 전국 연봉 분위, 지역 격차, 신입 진입경로를 공공데이터 기반으로 무료·중립·출처표시로 제공합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://workgogo.kr"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=10, H3=4"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "30 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 494,
-          "h1Count": 1,
-          "h2Count": 10,
-          "h3Count": 4
-        },
-        {
-          "url": "https://workgogo.kr",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "직종 허브 — 연봉·진입경로·전망을 한 페이지에서"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "간호조무사·요양보호사 등 직종별 전국 연봉 분위, 지역 격차, 신입 진입경로를 공공데이터 기반으로 무료·중립·출처표시로 제공합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://workgogo.kr"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=10, H3=4"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "30 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 494,
-          "h1Count": 1,
-          "h2Count": 10,
-          "h3Count": 4
-        },
-        {
-          "url": "https://workgogo.kr/blog",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "블로그 — 데이터로 읽는 직종 | 직종 허브"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "직종 연봉·지역 격차·임금 추이·진입경로를 데이터 저널리즘 방식으로 분석합니다. 김데이터·박절약 두 에디터가 씁니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://workgogo.kr/blog"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=2, H3=26"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "35 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/blog"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 865,
-          "h1Count": 1,
-          "h2Count": 2,
-          "h3Count": 26
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://workgogo.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-08T10:00:34.968Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 35 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://workgogo.kr/ visible word tokens=494",
-        "thin page: https://workgogo.kr visible word tokens=494"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
       "id": "askore",
       "name": "askore.kr",
       "platform": "wordpress",
@@ -8459,6 +8037,216 @@
       ]
     },
     {
+      "id": "webtoon-klick",
+      "name": "webtoon.klick.kr",
+      "platform": "wordpress",
+      "url": "https://webtoon.klick.kr/",
+      "gscSiteUrl": "https://webtoon.klick.kr/",
+      "verdict": "review",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://webtoon.klick.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=15, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "53 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 885,
+          "h1Count": 1,
+          "h2Count": 15,
+          "h3Count": 0
+        },
+        {
+          "url": "https://webtoon.klick.kr/blog/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웹툰고고 - 네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "네이버·카카오·레진코믹스 최신 웹툰 추천, 리뷰, 무료 웹툰 정보를 한 곳에서"
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=15, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "53 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 885,
+          "h1Count": 1,
+          "h2Count": 15,
+          "h3Count": 0
+        },
+        {
+          "url": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "주말 아침 웹툰 루틴 — 커피와 함께 읽기 좋은 밝은 작품 고르는 법 | 웹툰고고"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "주말 아침 웹툰 루틴를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://webtoon.klick.kr/webtoon-guide-030-webtoon/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=5, H3=3"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "9 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/webtoon-guide-030-webtoon/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 559,
+          "h1Count": 1,
+          "h2Count": 5,
+          "h3Count": 3
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://webtoon.klick.kr/sitemap_index.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T13:00:15.194Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 48 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://webtoon.klick.kr/webtoon-guide-030-webtoon/ visible word tokens=559"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "youkamap",
       "name": "https://youkamap.kr",
       "platform": "wordpress",
@@ -8844,7 +8632,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-08T10:00:35.614Z"
+        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-08T15:00:35.551Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9762,7 +9550,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 36 internal post-like links"
+        "detail": "/blog/ canonical found, 35 internal post-like links"
       },
       "issues": [],
       "nextActions": [
@@ -10864,7 +10652,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-08T10:01:44.788Z"
+        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-08T15:00:47.598Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -11253,7 +11041,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 935,
+          "wordCount": 936,
           "h1Count": 1,
           "h2Count": 7,
           "h3Count": 3
@@ -11751,6 +11539,213 @@
       ]
     },
     {
+      "id": "workgogo",
+      "name": "workgogo.kr",
+      "platform": "wordpress",
+      "url": "https://workgogo.kr/",
+      "gscSiteUrl": "https://workgogo.kr/",
+      "verdict": "review",
+      "score": 94,
+      "pages": [
+        {
+          "url": "https://workgogo.kr/",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "workgogo job salary and career data hub"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "workgogo compares occupation salary ranges, regional wage gaps, entry paths, and career signals from public statistics and curated recruiting data."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://workgogo.kr"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=11, H3=4"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "30 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 939,
+          "h1Count": 1,
+          "h2Count": 11,
+          "h3Count": 4
+        },
+        {
+          "url": "https://workgogo.kr",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "workgogo job salary and career data hub"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "workgogo compares occupation salary ranges, regional wage gaps, entry paths, and career signals from public statistics and curated recruiting data."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://workgogo.kr"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=11, H3=4"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "30 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 939,
+          "h1Count": 1,
+          "h2Count": 11,
+          "h3Count": 4
+        },
+        {
+          "url": "https://workgogo.kr/blog",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "workgogo blog salary data and career analysis | 직종 허브"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "workgogo blog explains occupation salary ranges, regional wage gaps, wage trends, entry paths, and negotiation context with data-first career articles."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://workgogo.kr/blog"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=26"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "35 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 868,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 26
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://workgogo.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-08T15:08:20.412Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 35 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "spinkorea-2",
       "name": "spinkorea.kr",
       "platform": "wordpress",
@@ -12169,7 +12164,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 10286,
+          "wordCount": 10436,
           "h1Count": 1,
           "h2Count": 111,
           "h3Count": 40
@@ -12185,7 +12180,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-08T10:00:21.082Z"
+        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-08T15:00:23.697Z"
       },
       "adsTxt": {
         "state": "pass",
