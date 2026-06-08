@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T12:15:42.755Z",
+  "generatedAt": "2026-06-08T12:26:05.798Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 40,
-    "needs_patch": 40,
+    "review": 41,
+    "needs_patch": 39,
     "blocked": 0
   },
   "sites": [
@@ -1500,6 +1500,158 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "discparty",
+      "name": "디스크파티 - GA4",
+      "platform": "wordpress",
+      "url": "https://discparty.com/",
+      "gscSiteUrl": "https://discparty.com/",
+      "verdict": "review",
+      "score": 87,
+      "pages": [
+        {
+          "url": "https://discparty.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "DISC 성격유형 가이드 | 디스크파티"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "디스크파티는 DISC 성격유형의 D, I, S, C 행동 성향을 바탕으로 관계, 협업, 리더십, 갈등 대화법을 정리하는 한국어 가이드입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://discparty.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=13, H3=9"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "2 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "21 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 815,
+          "h1Count": 1,
+          "h2Count": 13,
+          "h3Count": 9
+        },
+        {
+          "url": "https://discparty.com/qa/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "문의하기 | 디스크파티"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "디스크파티 문의 페이지는 콘텐츠 오류 제보, 주제 제안, 광고·제휴 문의와 개인정보 안내 기준을 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://discparty.com/qa/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=14, H3=11"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "2 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "14 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/qa/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 840,
+          "h1Count": 1,
+          "h2Count": 14,
+          "h3Count": 11
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://discparty.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://discparty.com/sitemap.xml lastDownloaded=2026-06-08T00:15:33.448Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 35 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -6537,161 +6689,6 @@
       ]
     },
     {
-      "id": "discparty",
-      "name": "디스크파티 - GA4",
-      "platform": "wordpress",
-      "url": "https://discparty.com/",
-      "gscSiteUrl": "https://discparty.com/",
-      "verdict": "needs_patch",
-      "score": 90,
-      "pages": [
-        {
-          "url": "https://discparty.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "DISC 성격유형 가이드 | 디스크파티"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "DISC 성격유형별 특징, 대화법, 협업 팁을 정리한 한국어 가이드."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://discparty.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=6, H3=5"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "2 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "18 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 352,
-          "h1Count": 1,
-          "h2Count": 6,
-          "h3Count": 5
-        },
-        {
-          "url": "https://discparty.com/qa/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "문의하기 | 디스크파티"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "디스크파티 콘텐츠 오류 제보, 주제 제안, 광고·제휴, 사이트 운영 문의 기준을 안내합니다."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://discparty.com/qa/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=5, H3=7"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "2 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "14 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/qa/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 250,
-          "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 7
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://discparty.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://discparty.com/sitemap.xml lastDownloaded=2026-06-08T00:15:33.448Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 35 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://discparty.com/ visible word tokens=352",
-        "thin page: https://discparty.com/qa/ visible word tokens=250"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
       "id": "doseogogo",
       "name": "http://doseogogo.kr",
       "platform": "wordpress",
@@ -10732,7 +10729,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 918,
+          "wordCount": 915,
           "h1Count": 1,
           "h2Count": 16,
           "h3Count": 0
