@@ -62,7 +62,7 @@
 | 31 | luxurytraver.com | wordpress | 0 | 7 | 검토중 |  |  |  | | |
 | 32 | spinkorea.kr | wordpress | 298 | 5 | 검토중 |  |  |  | | |
 | 33 | ezfunnel.kr | wordpress | 25 | 5 | 검토중 |  |  |  | | |
-| 34 | todaypharm.kr | wordpress | 2024 | 3 | 검토중 |  |  |  | | |
+| 34 | todaypharm.kr | **Next.js**/Vercel | 2024 | 3 | 보완완료 | thin content(ai_summary없는 24k 페이지) | 2026-06-07 | generateTemplateContent() 추가(nutrition_facts·tags·additives로 자동본문), isThin noindex | 미신청 | |
 | 35 | 2mlab.kr | wordpress | 185 | 3 | 검토중 |  |  |  | | |
 | 36 | petjigi.kr | wordpress | 91 | 3 | 검토중 |  |  |  | | |
 | 37 | healthgotoo.com | wordpress | 103 | 2 | 검토중 |  |  |  | | |

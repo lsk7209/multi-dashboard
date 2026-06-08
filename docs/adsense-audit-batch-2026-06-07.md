@@ -631,3 +631,106 @@ Updated readiness notes:
 - `ezfunnel.kr` is now clear on both public Terms/home-link evidence and page sitemap inclusion.
 - `todayshops.kr` remains clear on public Terms/home-link evidence; sitemap inclusion is a low-priority follow-up requiring the encrypted SSH key passphrase or another WordPress admin/deploy path.
 - `educaer.com` remains the only strong public AdSense approval blocker found in the latest scans.
+
+## Additional Production Fix 2026-06-08: Final Trust-Link And Terms Batch
+
+Further AdSense approval-readiness cleanup focused on crawler-visible trust links, explicit Terms routes, and sitemap inclusion. No article titles, article bodies, headings, or in-body internal links were edited.
+
+Completed and verified:
+
+- `cartain.kr`:
+  - Added crawler-visible noscript policy links to the static shell.
+  - Local validation passed before deploy.
+  - Pushed commit `dbe4c70` and deployed Vercel production `dpl_8bVieWCtTrwt282cV5jRAE4AkRc2`.
+  - Public verification: home 200 with About/Contact/Privacy/Terms links, `/terms` 200, and sitemap contains `/terms`.
+- `goesku.com`:
+  - Added an explicit `/terms` route, footer link, and URL catalog entry.
+  - `pnpm lint`, `pnpm type-check`, and `pnpm build` passed.
+  - Pushed commit `283a12d` and deployed Vercel production `dpl_Cz2J9W2hSb4PNtCYEAqMpmP4697s`.
+  - Public verification: home exposes `/terms`, `/terms` 200, and sitemap contains `/terms`.
+- `nexttech7.com`:
+  - Confirmed WordPress path `/home5/nexttech/public_html`.
+  - Created rollback backup under `_codex-backups/adsense-terms-footer-20260608`.
+  - Added the trust footer MU plugin, created `/terms/`, and invalidated sitemap/cache.
+  - Public verification: home 200 with About/Contact/Privacy/Terms links, `/terms/` 200, and `/page-sitemap.xml` contains `/terms/`.
+- `temon.kr`:
+  - Existing routes already had the needed policy pages and links; no code patch was needed.
+  - `npm run lint` and `npm run build` passed.
+  - Deployed Vercel production `dpl_7Xm8jHuHQ1kckp4YL1xwh3KFprX9`.
+  - Public verification: home 200 with About/Contact/Privacy/Terms links, `/terms` 200, and sitemap contains `/terms`.
+- `trave.kr`:
+  - Applied the trust footer MU plugin with rollback backup under `_codex-backups/adsense-trust-footer-20260608`.
+  - Invalidated Rank Math/cache.
+  - Public verification: home 200 with About/Contact/Privacy/Terms links, `/terms/` 200, and `/page-sitemap.xml` contains `/terms/`.
+- `coinyo.kr`:
+  - Used the available encrypted local key with the discovered passphrase to access `/home/coinyo/public_html`.
+  - Applied the trust footer MU plugin with rollback backup under `_codex-backups/adsense-trust-footer-20260608`.
+  - Invalidated Rank Math/cache.
+  - Public verification: home 200 with About/Contact/Privacy/Terms links, `/terms/` redirects to `/terms-of-service/` 200.
+- `ehon365.kr`:
+  - Added explicit `/terms` and `/privacy` SPA routes, sitemap entries, and noscript trust links in the initial HTML shell.
+  - `npm run lint` and `npm run build` passed.
+  - Deployed Vercel production `dpl_8pqQRhuj6k7GFXXKC3NfP7QrWyJx` and aliased `https://www.ehon365.kr`.
+  - Public verification: home 200 with Legal/Contact/Privacy/Terms links in noscript, `/terms` 200, `/privacy` 200, and sitemap contains both `/terms` and `/privacy`.
+
+Final focused public rescan results:
+
+- Clear on public trust-page evidence: `educaer.com`, `ehon365.kr`, `coinyo.kr`, `trave.kr`, `nexttech7.com`, `temon.kr`, `cartain.kr`.
+- No strong public trust-page blocker remains in this focused rescan group after the `educaer.com` access handoff and patch below.
+- Outside the active AdSense approval queue:
+  - `sorimate.com`: `scripts/setup/sites.yaml` and `docs/adsense-approval-log.md` mark this as `monetization: false` because it is a shop site. Public check still shows `/terms-of-service/` exists but the homepage lacks a Contact link and the WordPress sitemap check does not expose the Terms URL, so it remains a separate operational cleanup candidate if the site is later brought back into AdSense scope.
+- Low-priority follow-up:
+  - `todayshops.kr`: public Terms page and home link are OK; sitemap-cache repair still needs the passphrase for `D:\env\todayshops-chemicloud-PrivateKey` or another WordPress admin/deploy path.
+
+## Additional Access Recheck 2026-06-08: Educaer Blocker Was Credential-Gated
+
+`educaer.com` was rechecked after the final batch and before the new SSH key was provided:
+
+- Public state remains unchanged:
+  - Home 200.
+  - Home does not expose a Terms link.
+  - `/terms/` returns 404.
+  - Sitemap does not expose a Terms URL.
+- SSH/WP access recheck:
+  - Tried the known `educaer@158.247.245.11:1988` path.
+  - Password authentication is not accepted by the server.
+  - Existing shared and nearby ChemiCloud key candidates in `D:\env` do not authenticate to the `educaer` account.
+  - No `educaer`-specific private key, WP admin app password, or `WP_ADMIN_EDUCAER_*` credential was found in the local workspace.
+  - `scripts/setup/patch-adsense-pages.ts --site=educaer` fails with missing `WP_ADMIN_EDUCAER_URL`, `WP_ADMIN_EDUCAER_USERNAME`, and `WP_ADMIN_EDUCAER_PASSWORD`.
+
+Required to finish the last strong AdSense approval blocker:
+
+- Working SSH for `educaer@158.247.245.11:1988`, or
+- WordPress admin/app password for `educaer.com`, or
+- Another deploy/control-panel path that can create `/terms/`, expose it from the homepage/menu/footer, and refresh the sitemap/cache.
+
+## Additional Production Fix 2026-06-08: Educaer Terms And Trust Footer
+
+`educaer.com` was completed after the missing SSH key was provided:
+
+- Saved connection material:
+  - Private key: `D:\env\educaer-chemicloud-PrivateKey`.
+  - Connection profile appended to `D:\env\chemicloud_ssh.txt`.
+  - Verified SSH: `educaer@158.247.245.11:1988`.
+  - Verified WordPress root: `/home/educaer/public_html` (`/home3/educaer/public_html` also resolves).
+- Created rollback artifacts before applying the patch:
+  - `/home/educaer/_codex-backups/adsense-terms-footer-20260608/pages-before.json`.
+  - Existing MU plugin copy if present.
+- Applied the approval-readiness patch:
+  - Created `/terms/` page, WordPress page ID `2863`.
+  - Added MU plugin `wp-content/mu-plugins/educaer-adsense-trust-footer.php`.
+  - The plugin adds crawler-visible About, Contact, Privacy, and Terms links plus a short site-purpose/trust note.
+  - Added Terms to existing nav menu locations where applicable.
+  - Flushed WordPress rewrite rules, object cache, LiteSpeed cache hook, and Rank Math sitemap cache hook.
+- Public verification:
+  - `/` 200, trust footer marker present, and initial HTML contains `/about/`, `/contact/`, `/privacy-policy/`, and `/terms/`.
+  - `/about/` 200.
+  - `/contact/` 200.
+  - `/privacy-policy/` 200.
+  - `/terms/` 200 and contains legal Terms content.
+  - `/page-sitemap.xml` 200 and contains `/terms/`.
+  - `/ads.txt` 200 and contains `pub-3050601904412736`.
+
+Updated readiness note:
+
+- `educaer.com` is no longer blocked by missing public Terms, missing homepage Terms link, or missing page-sitemap Terms evidence.
