@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T09:08:38.079Z",
+  "generatedAt": "2026-06-08T09:15:22.159Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 21,
-    "needs_patch": 59,
+    "review": 22,
+    "needs_patch": 58,
     "blocked": 0
   },
   "sites": [
@@ -9555,7 +9555,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 301,
+          "wordCount": 300,
           "h1Count": 1,
           "h2Count": 5,
           "h3Count": 0
@@ -9642,7 +9642,7 @@
         "detail": "/blog/ HTTP 404"
       },
       "issues": [
-        "thin page: https://finan.kr/ visible word tokens=301"
+        "thin page: https://finan.kr/ visible word tokens=300"
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
@@ -10659,6 +10659,102 @@
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "tasko-2",
+      "name": "tasko.kr",
+      "platform": "wordpress",
+      "url": "https://tasko.kr/",
+      "gscSiteUrl": "https://tasko.kr/",
+      "verdict": "review",
+      "score": 92,
+      "pages": [
+        {
+          "url": "https://tasko.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "태스코 - 건강·스마트폰·자기계발 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "건강 습관, 스마트폰 활용, 자기계발 루틴을 쉽게 정리한 생활 정보 가이드."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://tasko.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=10, H3=6"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "37 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 1014,
+          "h1Count": 1,
+          "h2Count": 10,
+          "h3Count": 6
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://tasko.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://tasko.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:51.032Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 27 internal post-like links"
+      },
+      "issues": [],
+      "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
       ]
@@ -12102,104 +12198,6 @@
       },
       "issues": [
         "thin page: https://phone.luckyday.kr/ visible word tokens=522"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "tasko-2",
-      "name": "tasko.kr",
-      "platform": "wordpress",
-      "url": "https://tasko.kr/",
-      "gscSiteUrl": "https://tasko.kr/",
-      "verdict": "needs_patch",
-      "score": 94,
-      "pages": [
-        {
-          "url": "https://tasko.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "태스코 - 건강·스마트폰·자기계발 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "건강 습관, 스마트폰 활용, 자기계발 루틴을 쉽게 정리한 생활 정보 가이드."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://tasko.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=6"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "1 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "37 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 456,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 6
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://tasko.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://tasko.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:51.032Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 27 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://tasko.kr/ visible word tokens=456"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
