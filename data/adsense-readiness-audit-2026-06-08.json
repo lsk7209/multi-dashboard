@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T07:06:06.659Z",
+  "generatedAt": "2026-06-08T08:39:32.918Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 16,
-    "needs_patch": 64,
+    "review": 17,
+    "needs_patch": 63,
     "blocked": 0
   },
   "sites": [
@@ -14,8 +14,8 @@
       "platform": "wordpress",
       "url": "https://cartain.kr/",
       "gscSiteUrl": "https://cartain.kr/",
-      "verdict": "needs_patch",
-      "score": 82,
+      "verdict": "review",
+      "score": 85,
       "pages": [
         {
           "url": "https://cartain.kr/",
@@ -29,12 +29,12 @@
             "detail": "카테인 - 자동차 구매, 유지비, 세금 계산 등 스마트한 자동차 정보를 제공합니다."
           },
           "canonical": {
-            "state": "fail",
-            "detail": "missing canonical"
+            "state": "pass",
+            "detail": "https://cartain.kr"
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=0, H3=0"
+            "detail": "H1=1, H2=12, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -45,8 +45,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -68,9 +68,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 31,
+          "wordCount": 906,
           "h1Count": 1,
-          "h2Count": 0,
+          "h2Count": 12,
           "h3Count": 0
         },
         {
@@ -85,12 +85,12 @@
             "detail": "카테인 - 자동차 구매, 유지비, 세금 계산 등 스마트한 자동차 정보를 제공합니다."
           },
           "canonical": {
-            "state": "fail",
-            "detail": "missing canonical"
+            "state": "pass",
+            "detail": "https://cartain.kr"
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=0, H3=0"
+            "detail": "H1=1, H2=12, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -101,8 +101,8 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
@@ -124,9 +124,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 31,
+          "wordCount": 906,
           "h1Count": 1,
-          "h2Count": 0,
+          "h2Count": 12,
           "h3Count": 0
         },
         {
@@ -146,7 +146,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=0, H3=0"
+            "detail": "H1=1, H2=12, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -157,16 +157,16 @@
             "detail": "responsive viewport meta found"
           },
           "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
+            "state": "warn",
+            "detail": "long article without TOC marker"
           },
           "cta": {
             "state": "pass",
             "detail": "CTA-like text found"
           },
           "inlinks": {
-            "state": "warn",
-            "detail": "1 internal links"
+            "state": "pass",
+            "detail": "4 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -180,9 +180,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 21,
+          "wordCount": 885,
           "h1Count": 1,
-          "h2Count": 0,
+          "h2Count": 12,
           "h3Count": 0
         }
       ],
@@ -210,13 +210,7 @@
         "state": "warn",
         "detail": "/blog/ HTTP 404"
       },
-      "issues": [
-        "canonical: https://cartain.kr/ missing canonical",
-        "thin page: https://cartain.kr/ visible word tokens=31",
-        "canonical: https://cartain.kr missing canonical",
-        "thin page: https://cartain.kr visible word tokens=31",
-        "thin page: https://cartain.kr/magazine visible word tokens=21"
-      ],
+      "issues": [],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -555,7 +549,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T06:45:11.156Z"
+        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T07:45:15.828Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -3328,7 +3322,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=59"
+            "detail": "H1=1, H2=4, H3=60"
           },
           "imageAlt": {
             "state": "pass",
@@ -3348,7 +3342,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "72 internal links"
+            "detail": "73 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -3362,10 +3356,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1524,
+          "wordCount": 1549,
           "h1Count": 1,
           "h2Count": 4,
-          "h3Count": 59
+          "h3Count": 60
         }
       ],
       "robots": {
@@ -3390,7 +3384,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 69 internal post-like links"
+        "detail": "/blog/ canonical found, 70 internal post-like links"
       },
       "issues": [
         "thin page: https://sinhonjigi.ehon365.kr/ visible word tokens=394"
@@ -3843,7 +3837,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://certifi.kr/wp-sitemap.xml lastDownloaded=2026-06-08T03:13:30.032Z"
+        "detail": "https://certifi.kr/wp-sitemap.xml lastDownloaded=2026-06-08T08:12:05.623Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -6015,7 +6009,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 452,
+          "wordCount": 454,
           "h1Count": 1,
           "h2Count": 2,
           "h3Count": 3
@@ -6102,7 +6096,7 @@
         "detail": "/blog/ canonical found, 6 internal post-like links"
       },
       "issues": [
-        "thin page: https://autoscares.com/ visible word tokens=452",
+        "thin page: https://autoscares.com/ visible word tokens=454",
         "thin page: https://autoscares.com/services/ visible word tokens=164"
       ],
       "nextActions": [
@@ -6564,7 +6558,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 22 internal post-like links"
+        "detail": "/blog/ canonical found, 23 internal post-like links"
       },
       "issues": [
         "thin page: https://doseogogo.kr/ visible word tokens=297",
@@ -6790,7 +6784,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 361,
+          "wordCount": 362,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 6
@@ -6877,7 +6871,7 @@
         "detail": "/blog/ canonical found, 56 internal post-like links"
       },
       "issues": [
-        "thin page: https://etique.kr/ visible word tokens=361",
+        "thin page: https://etique.kr/ visible word tokens=362",
         "thin page: https://etique.kr/categories/ visible word tokens=208"
       ],
       "nextActions": [
@@ -6945,7 +6939,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 302,
+          "wordCount": 303,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 6
@@ -7032,7 +7026,7 @@
         "detail": "/blog/ canonical found, 26 internal post-like links"
       },
       "issues": [
-        "thin page: https://ezfunnel.kr/ visible word tokens=302",
+        "thin page: https://ezfunnel.kr/ visible word tokens=303",
         "thin page: https://ezfunnel.kr/services/ visible word tokens=190"
       ],
       "nextActions": [
@@ -7720,7 +7714,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 567,
+          "wordCount": 566,
           "h1Count": 1,
           "h2Count": 7,
           "h3Count": 2
@@ -7776,7 +7770,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 453,
+          "wordCount": 451,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 0
@@ -7792,7 +7786,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://luckyday.kr/category-sitemap.xml lastDownloaded=2026-06-08T06:56:09.783Z"
+        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-08T07:45:15.828Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -7807,8 +7801,8 @@
         "detail": "/blog/ canonical found, 16 internal post-like links"
       },
       "issues": [
-        "thin page: https://luckyday.kr/ visible word tokens=567",
-        "thin page: https://luckyday.kr/blog/ visible word tokens=453"
+        "thin page: https://luckyday.kr/ visible word tokens=566",
+        "thin page: https://luckyday.kr/blog/ visible word tokens=451"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -8030,7 +8024,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 373,
+          "wordCount": 372,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 9
@@ -8117,7 +8111,7 @@
         "detail": "/blog/ canonical found, 46 internal post-like links"
       },
       "issues": [
-        "thin page: https://petinsuer.com/ visible word tokens=373",
+        "thin page: https://petinsuer.com/ visible word tokens=372",
         "thin page: https://petinsuer.com/services/ visible word tokens=151"
       ],
       "nextActions": [
@@ -8340,7 +8334,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 265,
+          "wordCount": 263,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 3
@@ -8427,7 +8421,7 @@
         "detail": "/blog/ canonical found, 36 internal post-like links"
       },
       "issues": [
-        "thin page: https://softwa.kr/ visible word tokens=265",
+        "thin page: https://softwa.kr/ visible word tokens=263",
         "thin page: https://softwa.kr/guides/ visible word tokens=112"
       ],
       "nextActions": [
@@ -9234,11 +9228,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=47, H3=0"
+            "detail": "H1=1, H2=48, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "45 images"
+            "detail": "46 images"
           },
           "viewport": {
             "state": "pass",
@@ -9254,7 +9248,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "64 internal links"
+            "detail": "65 internal links"
           },
           "outlinks": {
             "state": "pass",
@@ -9268,9 +9262,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1942,
+          "wordCount": 1979,
           "h1Count": 1,
-          "h2Count": 47,
+          "h2Count": 48,
           "h3Count": 0
         }
       ],
@@ -9296,7 +9290,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 60 internal post-like links"
+        "detail": "/blog/ canonical found, 61 internal post-like links"
       },
       "issues": [
         "thin page: https://dolbomjigi.ehon365.kr/ visible word tokens=526",
@@ -9325,7 +9319,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 383개+"
+            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 384개+"
           },
           "canonical": {
             "state": "pass",
@@ -9367,7 +9361,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 395,
+          "wordCount": 399,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 16
@@ -9398,7 +9392,7 @@
         "detail": "/blog/ canonical found, 16 internal post-like links"
       },
       "issues": [
-        "thin page: https://estat.kr/ visible word tokens=395"
+        "thin page: https://estat.kr/ visible word tokens=399"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -9620,29 +9614,29 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 172,
+          "wordCount": 170,
           "h1Count": 0,
           "h2Count": 1,
           "h3Count": 0
         },
         {
-          "url": "https://gpt.nexttech7.com/chatgpt-product-1000-tags/",
+          "url": "https://gpt.nexttech7.com/chatgpt-thumbnail-ctr-double/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "상품 설명·태그 1000개를 하루 만에 — AI 도구 가이드"
+            "detail": "유튜브 썸네일 클릭률을 2배로 올린 방법 — AI 도구 가이드"
           },
           "description": {
             "state": "pass",
-            "detail": "이커머스 상품 설명과 태그 1000개를 하루 만에 만드는 ChatGPT 자동화 전략을 소개합니다. 데이터 기반의 효율적인 프롬프트 설계부터 대량 처리 워크플로우 구축까지, AI로 이커머스 생산성을 극대화하는 실전 가이드입니다."
+            "detail": "유튜브 썸네일 클릭률(CTR)을 높이는 건 단순히 시각적인 매력만으로는 부족해요. ChatGPT 카피라이팅과 A/B 테스트로 제목 공식을 찾아 클릭률을 2배로 올린 비결을 공개합니다."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://gpt.nexttech7.com/chatgpt-product-1000-tags/"
+            "detail": "https://gpt.nexttech7.com/chatgpt-thumbnail-ctr-double/"
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=7, H3=12"
+            "detail": "H1=1, H2=7, H3=13"
           },
           "imageAlt": {
             "state": "pass",
@@ -9662,24 +9656,24 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "27 internal links"
+            "detail": "28 internal links"
           },
           "outlinks": {
             "state": "pass",
-            "detail": "13 external links"
+            "detail": "7 external links"
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/chatgpt-product-1000-tags/"
+            "detail": "/chatgpt-thumbnail-ctr-double/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 2144,
+          "wordCount": 2409,
           "h1Count": 1,
           "h2Count": 7,
-          "h3Count": 12
+          "h3Count": 13
         }
       ],
       "robots": {
@@ -9708,7 +9702,7 @@
       },
       "issues": [
         "description: https://gpt.nexttech7.com/ missing description",
-        "thin page: https://gpt.nexttech7.com/ visible word tokens=172"
+        "thin page: https://gpt.nexttech7.com/ visible word tokens=170"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -10337,7 +10331,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 330,
+          "wordCount": 329,
           "h1Count": 1,
           "h2Count": 8,
           "h3Count": 0
@@ -10368,7 +10362,7 @@
         "detail": "/blog/ exists but canonical is missing"
       },
       "issues": [
-        "thin page: https://notebook.klick.kr/ visible word tokens=330"
+        "thin page: https://notebook.klick.kr/ visible word tokens=329"
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
@@ -11371,19 +11365,19 @@
           "h3Count": 0
         },
         {
-          "url": "https://webtoon.klick.kr/webtoon-guide-028-webtoon/",
+          "url": "https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "가족과 보기 좋은 웹툰 — 폭력성·선정성·대화 소재를 함께 고려하기 | 웹툰고고"
+            "detail": "멘탈 회복용 웹툰 추천 기준 — 상처 회복 서사와 일상 힐링을 구분하는 법 | 웹툰고고"
           },
           "description": {
             "state": "warn",
-            "detail": "가족과 보기 좋은 웹툰를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
+            "detail": "멘탈 회복용 웹툰 추천 기준를 고를 때 힐링웹툰, 퇴근후웹툰, 가벼운웹툰를 함께 확인하면 실패 확률을 줄일 수 있습니다."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://webtoon.klick.kr/webtoon-guide-028-webtoon/"
+            "detail": "https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/"
           },
           "headings": {
             "state": "pass",
@@ -11415,13 +11409,13 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/webtoon-guide-028-webtoon/"
+            "detail": "/webtoon-guide-029-webtoon-recommend/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 551,
+          "wordCount": 576,
           "h1Count": 1,
           "h2Count": 5,
           "h3Count": 3
@@ -11437,7 +11431,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T03:00:17.037Z"
+        "detail": "https://webtoon.klick.kr/category-sitemap.xml/ lastDownloaded=2026-06-08T08:00:15.274Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -11454,7 +11448,7 @@
       "issues": [
         "thin page: https://webtoon.klick.kr/ visible word tokens=353",
         "thin page: https://webtoon.klick.kr/blog/ visible word tokens=353",
-        "thin page: https://webtoon.klick.kr/webtoon-guide-028-webtoon/ visible word tokens=551"
+        "thin page: https://webtoon.klick.kr/webtoon-guide-029-webtoon-recommend/ visible word tokens=576"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -12125,7 +12119,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 398,
+          "wordCount": 410,
           "h1Count": 1,
           "h2Count": 10,
           "h3Count": 0
@@ -12141,7 +12135,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://travel.sellerpit.kr/sitemap.xml lastDownloaded=2026-06-08T02:31:10.097Z"
+        "detail": "https://travel.sellerpit.kr/sitemap.xml lastDownloaded=2026-06-08T08:22:23.473Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -12156,7 +12150,7 @@
         "detail": "/blog/ canonical found, 42 internal post-like links"
       },
       "issues": [
-        "thin page: https://travel.sellerpit.kr/ visible word tokens=398"
+        "thin page: https://travel.sellerpit.kr/ visible word tokens=410"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -12223,7 +12217,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 638,
+          "wordCount": 636,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 9
@@ -12310,7 +12304,7 @@
         "detail": "/blog/ canonical found, 67 internal post-like links"
       },
       "issues": [
-        "thin page: https://insupang.com/ visible word tokens=638",
+        "thin page: https://insupang.com/ visible word tokens=636",
         "thin page: https://insupang.com/services/ visible word tokens=164"
       ],
       "nextActions": [
