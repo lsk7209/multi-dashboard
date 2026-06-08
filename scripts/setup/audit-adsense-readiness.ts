@@ -179,6 +179,8 @@ async function discoverSitemapUrls(site: Site): Promise<string[]> {
     new URL("/sitemap.xml", site.url).toString(),
     new URL("/wp-sitemap.xml", site.url).toString(),
     new URL("/sitemap_index.xml", site.url).toString(),
+    new URL("/page-sitemap.xml", site.url).toString(),
+    new URL("/post-sitemap.xml", site.url).toString(),
   ];
   return [...new Set(candidates)];
 }
