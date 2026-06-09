@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-09T14:55:36.260Z",
+  "generatedAt": "2026-06-09T18:01:22.897Z",
   "targetCount": 80,
   "summary": {
     "ready": 0,
-    "review": 56,
-    "needs_patch": 24,
+    "review": 65,
+    "needs_patch": 15,
     "blocked": 0
   },
   "sites": [
@@ -349,7 +349,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-09T10:20:05.795Z"
+        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-09T15:20:06.261Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -489,7 +489,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 898,
+          "wordCount": 899,
           "h1Count": 1,
           "h2Count": 14,
           "h3Count": 0
@@ -545,7 +545,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 862,
+          "wordCount": 863,
           "h1Count": 1,
           "h2Count": 11,
           "h3Count": 0
@@ -849,7 +849,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 543,
+          "wordCount": 542,
           "h1Count": 1,
           "h2Count": 12,
           "h3Count": 0
@@ -881,7 +881,7 @@
       },
       "issues": [
         "canonical: https://saju.tasko.kr/ missing canonical",
-        "thin page: https://saju.tasko.kr/ visible word tokens=543"
+        "thin page: https://saju.tasko.kr/ visible word tokens=542"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -948,7 +948,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 945,
+          "wordCount": 948,
           "h1Count": 2,
           "h2Count": 15,
           "h3Count": 24
@@ -1252,7 +1252,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 839,
+          "wordCount": 840,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 4
@@ -1404,7 +1404,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 818,
+          "wordCount": 817,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 9
@@ -2681,7 +2681,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 807,
+          "wordCount": 816,
           "h1Count": 1,
           "h2Count": 10,
           "h3Count": 4
@@ -2697,7 +2697,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-09T13:32:12.965Z"
+        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-09T17:32:15.351Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -3078,163 +3078,6 @@
       ]
     },
     {
-      "id": "todayshops-2",
-      "name": "todayshops.kr",
-      "platform": "wordpress",
-      "url": "https://todayshops.kr/",
-      "gscSiteUrl": "https://todayshops.kr/",
-      "verdict": "needs_patch",
-      "score": 87,
-      "pages": [
-        {
-          "url": "https://todayshops.kr/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "IT·데이터 자격증 합격 가이드"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "직장인·취준생을 위한 IT·데이터 자격증, 온라인 강의, 국비지원 과정 선택 기준."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://todayshops.kr/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "17 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 226,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 0
-        },
-        {
-          "url": "https://todayshops.kr/home/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "Home - 오늘의 합격 루트"
-          },
-          "description": {
-            "state": "fail",
-            "detail": "missing description"
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://todayshops.kr/home/"
-          },
-          "headings": {
-            "state": "warn",
-            "detail": "H1=0, H2=0, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "warn",
-            "detail": "no CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "16 internal links"
-          },
-          "outlinks": {
-            "state": "pass",
-            "detail": "1 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/home/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 68,
-          "h1Count": 0,
-          "h2Count": 0,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://todayshops.kr/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://todayshops.kr/sitemap.xml lastDownloaded=2026-06-09T01:45:49.311Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "warn",
-        "detail": "/blog/ has only 2 post-like links"
-      },
-      "issues": [
-        "thin page: https://todayshops.kr/ visible word tokens=226",
-        "description: https://todayshops.kr/home/ missing description",
-        "thin page: https://todayshops.kr/home/ visible word tokens=68"
-      ],
-      "nextActions": [
-        "Improve /blog/ index as a crawlable card list with real post links.",
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
       "id": "trave",
       "name": "여행브이 - GA4",
       "platform": "wordpress",
@@ -3604,7 +3447,7 @@
       "platform": "wordpress",
       "url": "https://coinyo.kr/",
       "gscSiteUrl": "https://coinyo.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 88,
       "pages": [
         {
@@ -3624,7 +3467,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=8, H3=0"
+            "detail": "H1=1, H2=14, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -3658,9 +3501,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 267,
+          "wordCount": 624,
           "h1Count": 1,
-          "h2Count": 8,
+          "h2Count": 14,
           "h3Count": 0
         },
         {
@@ -3745,219 +3588,7 @@
         "detail": "/blog/ canonical found, 3 internal post-like links"
       },
       "issues": [
-        "thin page: https://coinyo.kr/ visible word tokens=267"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "dogswhere",
-      "name": "dogswhere.com",
-      "platform": "wordpress",
-      "url": "https://dogswhere.com/",
-      "gscSiteUrl": "sc-domain:dogswhere.com",
-      "verdict": "needs_patch",
-      "score": 88,
-      "pages": [
-        {
-          "url": "https://dogswhere.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "어디가개 - 반려견 동반 가능 장소 검색"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "내 강아지가 100% 입장 가능한 곳만! 대형견, 실내, 오프리쉬 등 확실한 스펙 데이터로 반려견 동반 가능 카페, 펜션, 식당을 찾아보세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://dogswhere.com"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=18"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "15 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "51 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 382,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 18
-        },
-        {
-          "url": "https://dogswhere.com",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "어디가개 - 반려견 동반 가능 장소 검색"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "내 강아지가 100% 입장 가능한 곳만! 대형견, 실내, 오프리쉬 등 확실한 스펙 데이터로 반려견 동반 가능 카페, 펜션, 식당을 찾아보세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://dogswhere.com"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=4, H3=18"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "15 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "51 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 382,
-          "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 18
-        },
-        {
-          "url": "https://dogswhere.com/test/mung-bti",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "멍BTI 테스트 - 강아지 여행 성향 검사 | 어디가개 | 어디가개"
-          },
-          "description": {
-            "state": "warn",
-            "detail": "우리 강아지의 여행 성향을 알아보고 카페, 산책로, 펜션, 캠핑장 등 맞춤형 반려견 동반 장소를 추천받으세요."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://dogswhere.com/test/mung-bti"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=1, H3=2"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "warn",
-            "detail": "no CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "11 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/test/mung-bti"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 134,
-          "h1Count": 1,
-          "h2Count": 1,
-          "h3Count": 2
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://dogswhere.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://dogswhere.com/sitemap.xml lastDownloaded=2026-06-09T13:00:09.447Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 63 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://dogswhere.com/ visible word tokens=382",
-        "thin page: https://dogswhere.com visible word tokens=382",
-        "thin page: https://dogswhere.com/test/mung-bti visible word tokens=134"
+        "thin page: https://coinyo.kr/ visible word tokens=624"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -4563,7 +4194,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=24, H3=0"
+            "detail": "H1=1, H2=25, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -4583,7 +4214,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "38 internal links"
+            "detail": "39 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -4597,9 +4228,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 986,
+          "wordCount": 1036,
           "h1Count": 1,
-          "h2Count": 24,
+          "h2Count": 25,
           "h3Count": 0
         }
       ],
@@ -4625,7 +4256,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 30 internal post-like links"
+        "detail": "/blog/ canonical found, 31 internal post-like links"
       },
       "issues": [
         "thin page: https://nongsusangogo.kr/ visible word tokens=376",
@@ -4774,11 +4405,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=53, H3=0"
+            "detail": "H1=1, H2=54, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "53 images"
+            "detail": "54 images"
           },
           "viewport": {
             "state": "pass",
@@ -4794,7 +4425,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "60 internal links"
+            "detail": "61 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -4808,9 +4439,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 2122,
+          "wordCount": 2153,
           "h1Count": 1,
-          "h2Count": 53,
+          "h2Count": 54,
           "h3Count": 0
         }
       ],
@@ -4836,7 +4467,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 56 internal post-like links"
+        "detail": "/blog/ canonical found, 57 internal post-like links"
       },
       "issues": [
         "thin page: https://pregnancy.ehon365.kr/ visible word tokens=222",
@@ -5047,7 +4678,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "36 internal links"
+            "detail": "37 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -5061,7 +4692,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 463,
+          "wordCount": 466,
           "h1Count": 1,
           "h2Count": 8,
           "h3Count": 7
@@ -5103,7 +4734,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "36 internal links"
+            "detail": "37 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -5117,7 +4748,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 463,
+          "wordCount": 466,
           "h1Count": 1,
           "h2Count": 8,
           "h3Count": 7
@@ -5159,7 +4790,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "17 internal links"
+            "detail": "18 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -5173,7 +4804,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 229,
+          "wordCount": 232,
           "h1Count": 1,
           "h2Count": 0,
           "h3Count": 1
@@ -5201,12 +4832,12 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 180 internal post-like links"
+        "detail": "/blog/ canonical found, 181 internal post-like links"
       },
       "issues": [
-        "thin page: https://today2424.kr/ visible word tokens=463",
-        "thin page: https://today2424.kr visible word tokens=463",
-        "thin page: https://today2424.kr/disclosure visible word tokens=229"
+        "thin page: https://today2424.kr/ visible word tokens=466",
+        "thin page: https://today2424.kr visible word tokens=466",
+        "thin page: https://today2424.kr/disclosure visible word tokens=232"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -5468,6 +5099,218 @@
       ]
     },
     {
+      "id": "dogswhere",
+      "name": "dogswhere.com",
+      "platform": "wordpress",
+      "url": "https://dogswhere.com/",
+      "gscSiteUrl": "sc-domain:dogswhere.com",
+      "verdict": "review",
+      "score": 89,
+      "pages": [
+        {
+          "url": "https://dogswhere.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "어디가개 - 반려견 동반 가능 장소 검색"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "내 강아지가 100% 입장 가능한 곳만! 대형견, 실내, 오프리쉬 등 확실한 스펙 데이터로 반려견 동반 가능 카페, 펜션, 식당을 찾아보세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://dogswhere.com"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=29"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "15 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "51 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 728,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 29
+        },
+        {
+          "url": "https://dogswhere.com",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "어디가개 - 반려견 동반 가능 장소 검색"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "내 강아지가 100% 입장 가능한 곳만! 대형견, 실내, 오프리쉬 등 확실한 스펙 데이터로 반려견 동반 가능 카페, 펜션, 식당을 찾아보세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://dogswhere.com"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=7, H3=29"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "15 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "51 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 728,
+          "h1Count": 1,
+          "h2Count": 7,
+          "h3Count": 29
+        },
+        {
+          "url": "https://dogswhere.com/test/mung-bti",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "멍BTI 테스트 - 강아지 여행 성향 검사 | 어디가개 | 어디가개"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "우리 강아지의 여행 성향을 알아보고 카페, 산책로, 펜션, 캠핑장 등 맞춤형 반려견 동반 장소를 추천받으세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://dogswhere.com/test/mung-bti"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=6, H3=13"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "11 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/test/mung-bti"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 631,
+          "h1Count": 1,
+          "h2Count": 6,
+          "h3Count": 13
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://dogswhere.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://dogswhere.com/sitemap.xml lastDownloaded=2026-06-09T18:00:35.543Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 63 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://dogswhere.com/ visible word tokens=728",
+        "thin page: https://dogswhere.com visible word tokens=728",
+        "thin page: https://dogswhere.com/test/mung-bti visible word tokens=631"
+      ],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "gong-luckyday",
       "name": "gong.luckyday.kr",
       "platform": "wordpress",
@@ -5527,7 +5370,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 815,
+          "wordCount": 816,
           "h1Count": 1,
           "h2Count": 11,
           "h3Count": 0
@@ -5543,7 +5386,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-09T13:32:12.965Z"
+        "detail": "https://gong.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-09T17:32:15.351Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -6288,7 +6131,7 @@
       "platform": "wordpress",
       "url": "https://texturb.com/",
       "gscSiteUrl": "https://texturb.com/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 89,
       "pages": [
         {
@@ -6308,7 +6151,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=3, H3=1"
+            "detail": "H1=1, H2=5, H3=12"
           },
           "imageAlt": {
             "state": "pass",
@@ -6342,10 +6185,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 193,
+          "wordCount": 533,
           "h1Count": 1,
-          "h2Count": 3,
-          "h3Count": 1
+          "h2Count": 5,
+          "h3Count": 12
         },
         {
           "url": "https://www.texturb.com",
@@ -6364,7 +6207,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=3, H3=1"
+            "detail": "H1=1, H2=5, H3=12"
           },
           "imageAlt": {
             "state": "pass",
@@ -6398,10 +6241,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 193,
+          "wordCount": 533,
           "h1Count": 1,
-          "h2Count": 3,
-          "h3Count": 1
+          "h2Count": 5,
+          "h3Count": 12
         },
         {
           "url": "https://www.texturb.com/tools",
@@ -6470,7 +6313,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://texturb.com/sitemap.xml lastDownloaded=2026-06-02T03:55:38.566Z"
+        "detail": "https://texturb.com/sitemap.xml lastDownloaded=2026-06-09T16:30:57.716Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -6485,8 +6328,8 @@
         "detail": "/blog/ canonical found, 19 internal post-like links"
       },
       "issues": [
-        "thin page: https://texturb.com/ visible word tokens=193",
-        "thin page: https://www.texturb.com visible word tokens=193",
+        "thin page: https://texturb.com/ visible word tokens=533",
+        "thin page: https://www.texturb.com visible word tokens=533",
         "thin page: https://www.texturb.com/tools visible word tokens=707"
       ],
       "nextActions": [
@@ -6582,7 +6425,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 38 internal post-like links"
+        "detail": "/blog/ canonical found, 25 internal post-like links"
       },
       "issues": [
         "gsc sitemap: no submitted sitemap in GSC",
@@ -6600,7 +6443,7 @@
       "platform": "wordpress",
       "url": "https://askore.kr/",
       "gscSiteUrl": "https://askore.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 90,
       "pages": [
         {
@@ -6620,7 +6463,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=6, H3=10"
+            "detail": "H1=1, H2=7, H3=14"
           },
           "imageAlt": {
             "state": "pass",
@@ -6654,10 +6497,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 409,
+          "wordCount": 522,
           "h1Count": 1,
-          "h2Count": 6,
-          "h3Count": 10
+          "h2Count": 7,
+          "h3Count": 14
         },
         {
           "url": "https://askore.kr/tools/diagnose",
@@ -6676,7 +6519,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=1, H3=0"
+            "detail": "H1=1, H2=3, H3=14"
           },
           "imageAlt": {
             "state": "pass",
@@ -6710,10 +6553,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 97,
+          "wordCount": 536,
           "h1Count": 1,
-          "h2Count": 1,
-          "h3Count": 0
+          "h2Count": 3,
+          "h3Count": 14
         }
       ],
       "robots": {
@@ -6741,8 +6584,8 @@
         "detail": "/blog/ canonical found, 35 internal post-like links"
       },
       "issues": [
-        "thin page: https://askore.kr/ visible word tokens=409",
-        "thin page: https://askore.kr/tools/diagnose visible word tokens=97"
+        "thin page: https://askore.kr/ visible word tokens=522",
+        "thin page: https://askore.kr/tools/diagnose visible word tokens=536"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -6910,7 +6753,7 @@
       "platform": "wordpress",
       "url": "https://doseogogo.kr/",
       "gscSiteUrl": "https://doseogogo.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 90,
       "pages": [
         {
@@ -6930,7 +6773,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=5, H3=5"
+            "detail": "H1=1, H2=7, H3=10"
           },
           "imageAlt": {
             "state": "pass",
@@ -6964,10 +6807,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 372,
+          "wordCount": 522,
           "h1Count": 1,
-          "h2Count": 5,
-          "h3Count": 5
+          "h2Count": 7,
+          "h3Count": 10
         },
         {
           "url": "https://doseogogo.kr/recommend",
@@ -6986,7 +6829,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=3, H3=0"
+            "detail": "H1=1, H2=5, H3=12"
           },
           "imageAlt": {
             "state": "pass",
@@ -7020,10 +6863,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 186,
+          "wordCount": 532,
           "h1Count": 1,
-          "h2Count": 3,
-          "h3Count": 0
+          "h2Count": 5,
+          "h3Count": 12
         }
       ],
       "robots": {
@@ -7051,8 +6894,8 @@
         "detail": "/blog/ canonical found, 30 internal post-like links"
       },
       "issues": [
-        "thin page: https://doseogogo.kr/ visible word tokens=372",
-        "thin page: https://doseogogo.kr/recommend visible word tokens=186"
+        "thin page: https://doseogogo.kr/ visible word tokens=522",
+        "thin page: https://doseogogo.kr/recommend visible word tokens=532"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -7119,7 +6962,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 266,
+          "wordCount": 276,
           "h1Count": 1,
           "h2Count": 4,
           "h3Count": 3
@@ -7203,10 +7046,10 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 32 internal post-like links"
+        "detail": "/blog/ canonical found, 31 internal post-like links"
       },
       "issues": [
-        "thin page: https://esgyo.kr/ visible word tokens=266",
+        "thin page: https://esgyo.kr/ visible word tokens=276",
         "thin page: https://esgyo.kr/services/ visible word tokens=142"
       ],
       "nextActions": [
@@ -7274,25 +7117,25 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 856,
+          "wordCount": 857,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 3
         },
         {
-          "url": "https://finan.kr/sodium-water-weight/",
+          "url": "https://finan.kr/chicken-breast-diet/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "나트륨과 체중 증가 — 하루 만에 찐 살의 정체"
+            "detail": "닭가슴살 다이어트가 오래 가지 않는 이유 — 단백질과 질림"
           },
           "description": {
             "state": "warn",
-            "detail": "나트륨 체중 증가, 나트륨 수분, 체중 변동을 기록·근거·유지 가능성 기준으로 정리했다."
+            "detail": "닭가슴살 다이어트, 닭가슴살 단백질, 다이어트 단백질을 기록·근거·유지 가능성 기준으로 정리했다."
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://finan.kr/sodium-water-weight/"
+            "detail": "https://finan.kr/chicken-breast-diet/"
           },
           "headings": {
             "state": "pass",
@@ -7324,13 +7167,13 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/sodium-water-weight/"
+            "detail": "/chicken-breast-diet/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 1465,
+          "wordCount": 1431,
           "h1Count": 1,
           "h2Count": 13,
           "h3Count": 4
@@ -7984,6 +7827,162 @@
       ]
     },
     {
+      "id": "todayshops-2",
+      "name": "todayshops.kr",
+      "platform": "wordpress",
+      "url": "https://todayshops.kr/",
+      "gscSiteUrl": "https://todayshops.kr/",
+      "verdict": "review",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://todayshops.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "IT·데이터 자격증 합격 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "직장인·취준생을 위한 IT·데이터 자격증, 온라인 강의, 국비지원 과정 선택 기준."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://todayshops.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=11, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "17 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 629,
+          "h1Count": 1,
+          "h2Count": 11,
+          "h3Count": 0
+        },
+        {
+          "url": "https://todayshops.kr/home/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Home - 오늘의 합격 루트"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "오늘의 합격 루트 홈에 오신 것을 환영합니다. 정보처리기사·SQLD·ADsP·빅데이터 분석기사 등 IT·데이터 자격증의 출제 경향, 합격 전략, 추천 강의를 한곳에서 확인하세요."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://todayshops.kr/home/"
+          },
+          "headings": {
+            "state": "warn",
+            "detail": "H1=0, H2=11, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "16 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/home/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 563,
+          "h1Count": 0,
+          "h2Count": 11,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://todayshops.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://todayshops.kr/sitemap.xml lastDownloaded=2026-06-09T01:45:49.311Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "warn",
+        "detail": "/blog/ has only 2 post-like links"
+      },
+      "issues": [
+        "thin page: https://todayshops.kr/ visible word tokens=629",
+        "thin page: https://todayshops.kr/home/ visible word tokens=563"
+      ],
+      "nextActions": [
+        "Improve /blog/ index as a crawlable card list with real post links.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
       "id": "webtoon-klick",
       "name": "webtoon.klick.kr",
       "platform": "wordpress",
@@ -8325,7 +8324,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://youkamap.kr/sitemap.xml lastDownloaded=2026-06-08T14:05:11.523Z"
+        "detail": "https://youkamap.kr/sitemap.xml lastDownloaded=2026-06-09T16:07:29.100Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8354,7 +8353,7 @@
       "platform": "wordpress",
       "url": "https://yungyanggogo.kr/",
       "gscSiteUrl": "https://yungyanggogo.kr/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 90,
       "pages": [
         {
@@ -8374,7 +8373,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=4, H3=0"
+            "detail": "H1=1, H2=7, H3=14"
           },
           "imageAlt": {
             "state": "pass",
@@ -8408,10 +8407,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 222,
+          "wordCount": 715,
           "h1Count": 1,
-          "h2Count": 4,
-          "h3Count": 0
+          "h2Count": 7,
+          "h3Count": 14
         },
         {
           "url": "https://yungyanggogo.kr/blog",
@@ -8430,11 +8429,11 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=16, H3=0"
+            "detail": "H1=1, H2=17, H3=0"
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "16 images"
+            "detail": "17 images"
           },
           "viewport": {
             "state": "pass",
@@ -8450,7 +8449,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "43 internal links"
+            "detail": "45 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -8464,9 +8463,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 640,
+          "wordCount": 681,
           "h1Count": 1,
-          "h2Count": 16,
+          "h2Count": 17,
           "h3Count": 0
         }
       ],
@@ -8480,7 +8479,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://yungyanggogo.kr/sitemap.xml lastDownloaded=2026-06-09T12:15:58.561Z"
+        "detail": "https://yungyanggogo.kr/sitemap.xml lastDownloaded=2026-06-09T17:53:52.410Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8492,11 +8491,11 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 38 internal post-like links"
+        "detail": "/blog/ canonical found, 40 internal post-like links"
       },
       "issues": [
-        "thin page: https://yungyanggogo.kr/ visible word tokens=222",
-        "thin page: https://yungyanggogo.kr/blog visible word tokens=640"
+        "thin page: https://yungyanggogo.kr/ visible word tokens=715",
+        "thin page: https://yungyanggogo.kr/blog visible word tokens=681"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -8579,7 +8578,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-09T10:00:35.606Z"
+        "detail": "https://campgogo.kr/sitemap-blog.xml lastDownloaded=2026-06-09T15:00:35.737Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8677,7 +8676,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-09T12:12:32.469Z"
+        "detail": "https://car.luckyday.kr/wp-sitemap.xml lastDownloaded=2026-06-09T16:44:48.569Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8775,7 +8774,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-09T10:04:04.094Z"
+        "detail": "https://dog.klick.kr/sitemap.xml lastDownloaded=2026-06-09T15:42:17.335Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -8983,7 +8982,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-09T10:20:05.795Z"
+        "detail": "https://dolbomjigi.ehon365.kr/sitemap.xml lastDownloaded=2026-06-09T15:20:06.261Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9024,7 +9023,7 @@
           },
           "description": {
             "state": "warn",
-            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 400개+"
+            "detail": "푸드팡팡 — 집에서 쉽게 따라 하는 한식·홈카페 레시피 402개+"
           },
           "canonical": {
             "state": "pass",
@@ -9036,7 +9035,7 @@
           },
           "imageAlt": {
             "state": "pass",
-            "detail": "10 images"
+            "detail": "8 images"
           },
           "viewport": {
             "state": "pass",
@@ -9066,7 +9065,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 870,
+          "wordCount": 877,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 16
@@ -9162,7 +9161,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 881,
+          "wordCount": 882,
           "h1Count": 1,
           "h2Count": 9,
           "h3Count": 9
@@ -9178,7 +9177,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://haemongdream.com/wp-sitemap.xml lastDownloaded=2026-06-09T11:45:12.553Z"
+        "detail": "https://haemongdream.com/wp-sitemap.xml lastDownloaded=2026-06-09T16:45:10.295Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -9258,25 +9257,25 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 921,
+          "wordCount": 924,
           "h1Count": 1,
           "h2Count": 10,
           "h3Count": 0
         },
         {
-          "url": "https://jasamall.sellerpit.kr/jasa-mall-email-sequence-repurchase/",
+          "url": "https://jasamall.sellerpit.kr/kakao-channel-coupon-setup/",
           "status": 200,
           "title": {
             "state": "warn",
-            "detail": "자사몰 재구매를 높이는 이메일 시퀀스 구성 | 자사몰 셀러핏"
+            "detail": "카카오 채널 자사몰 쿠폰 연동, 설정 순서와 발송 시점 기준 | 자사몰 셀러핏"
           },
           "description": {
             "state": "warn",
-            "detail": "이메일 시퀀스는 행동 트리거 기반 자동 캠페인으로, 신규 광고 대비 전환율이 4~7배 높다. 자사몰 재구매율을 높이…"
+            "detail": "카카오 채널 쿠폰 사용률은 이메일 쿠폰 대비 3.4배 높다. 채널 개설부터 알림톡 프로필 등록, 카페24·아임웹 API 연�…"
           },
           "canonical": {
             "state": "pass",
-            "detail": "https://jasamall.sellerpit.kr/jasa-mall-email-sequence-repurchase/"
+            "detail": "https://jasamall.sellerpit.kr/kakao-channel-coupon-setup/"
           },
           "headings": {
             "state": "pass",
@@ -9308,13 +9307,13 @@
           },
           "readableUrl": {
             "state": "pass",
-            "detail": "/jasa-mall-email-sequence-repurchase/"
+            "detail": "/kakao-channel-coupon-setup/"
           },
           "adsenseLoader": {
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 986,
+          "wordCount": 1114,
           "h1Count": 1,
           "h2Count": 5,
           "h3Count": 1
@@ -9816,7 +9815,7 @@
       "platform": "wordpress",
       "url": "https://sssaass.com/",
       "gscSiteUrl": "https://sssaass.com/",
-      "verdict": "needs_patch",
+      "verdict": "review",
       "score": 92,
       "pages": [
         {
@@ -9836,7 +9835,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=3, H3=0"
+            "detail": "H1=1, H2=9, H3=0"
           },
           "imageAlt": {
             "state": "pass",
@@ -9870,9 +9869,9 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 275,
+          "wordCount": 653,
           "h1Count": 1,
-          "h2Count": 3,
+          "h2Count": 9,
           "h3Count": 0
         }
       ],
@@ -9901,7 +9900,7 @@
         "detail": "/blog/ HTTP 404"
       },
       "issues": [
-        "thin page: https://sssaass.com/ visible word tokens=275"
+        "thin page: https://sssaass.com/ visible word tokens=653"
       ],
       "nextActions": [
         "Improve /blog/ index as a crawlable card list with real post links.",
@@ -10065,7 +10064,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 901,
+          "wordCount": 913,
           "h1Count": 1,
           "h2Count": 16,
           "h3Count": 0
@@ -10444,7 +10443,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-09T10:00:47.074Z"
+        "detail": "https://dullegilgogo.kr/sitemap.xml lastDownloaded=2026-06-09T15:00:47.693Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -10461,161 +10460,6 @@
       "issues": [
         "thin page: https://dullegilgogo.kr/ visible word tokens=709",
         "thin page: https://dullegilgogo.kr visible word tokens=709"
-      ],
-      "nextActions": [
-        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
-        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
-      ]
-    },
-    {
-      "id": "homeimer",
-      "name": "homemake - GA4",
-      "platform": "wordpress",
-      "url": "https://homeimer.com/",
-      "gscSiteUrl": "https://homeimer.com/",
-      "verdict": "needs_patch",
-      "score": 93,
-      "pages": [
-        {
-          "url": "https://homeimer.com/",
-          "status": 200,
-          "title": {
-            "state": "warn",
-            "detail": "Home Design Inspiration for Stylish Living Spaces"
-          },
-          "description": {
-            "state": "pass",
-            "detail": "Homeimer shares interior design, smart home, decor, storage, and renovation ideas for practical, stylish living spaces."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://homeimer.com/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=9, H3=6"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "0 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "pass",
-            "detail": "CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "23 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "home"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 467,
-          "h1Count": 1,
-          "h2Count": 9,
-          "h3Count": 6
-        },
-        {
-          "url": "https://homeimer.com/blog/",
-          "status": 200,
-          "title": {
-            "state": "pass",
-            "detail": "Homeimer Blog: Interior Design and Smart Home Ideas"
-          },
-          "description": {
-            "state": "pass",
-            "detail": "Read Homeimer guides on interior design, decor, smart home upgrades, organization, and renovation planning."
-          },
-          "canonical": {
-            "state": "pass",
-            "detail": "https://homeimer.com/blog/"
-          },
-          "headings": {
-            "state": "pass",
-            "detail": "H1=1, H2=13, H3=0"
-          },
-          "imageAlt": {
-            "state": "pass",
-            "detail": "10 images"
-          },
-          "viewport": {
-            "state": "pass",
-            "detail": "responsive viewport meta found"
-          },
-          "toc": {
-            "state": "pass",
-            "detail": "TOC not required for sampled page"
-          },
-          "cta": {
-            "state": "warn",
-            "detail": "no CTA-like text found"
-          },
-          "inlinks": {
-            "state": "pass",
-            "detail": "80 internal links"
-          },
-          "outlinks": {
-            "state": "warn",
-            "detail": "0 external links"
-          },
-          "readableUrl": {
-            "state": "pass",
-            "detail": "/blog/"
-          },
-          "adsenseLoader": {
-            "state": "pass",
-            "detail": "loader with publisher id found"
-          },
-          "wordCount": 645,
-          "h1Count": 1,
-          "h2Count": 13,
-          "h3Count": 0
-        }
-      ],
-      "robots": {
-        "state": "pass",
-        "detail": "robots.txt with sitemap"
-      },
-      "sitemap": {
-        "state": "pass",
-        "detail": "https://homeimer.com/sitemap.xml"
-      },
-      "gscSitemap": {
-        "state": "pass",
-        "detail": "https://homeimer.com/sitemap.xml lastDownloaded=2026-06-09T00:25:42.568Z"
-      },
-      "adsTxt": {
-        "state": "pass",
-        "detail": "publisher line found"
-      },
-      "trustPages": {
-        "state": "pass",
-        "detail": "about/contact/privacy/terms reachable"
-      },
-      "blogIndex": {
-        "state": "pass",
-        "detail": "/blog/ canonical found, 70 internal post-like links"
-      },
-      "issues": [
-        "thin page: https://homeimer.com/ visible word tokens=467",
-        "thin page: https://homeimer.com/blog/ visible word tokens=645"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -10833,7 +10677,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 934,
+          "wordCount": 936,
           "h1Count": 1,
           "h2Count": 7,
           "h3Count": 3
@@ -11080,7 +10924,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 528,
+          "wordCount": 529,
           "h1Count": 1,
           "h2Count": 2,
           "h3Count": 0
@@ -11096,7 +10940,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://phone.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-09T11:01:47.539Z"
+        "detail": "https://phone.luckyday.kr/wp-sitemap-posts-post-1.xml lastDownloaded=2026-06-09T16:54:59.174Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -11111,7 +10955,7 @@
         "detail": "/blog/ canonical found, 37 internal post-like links"
       },
       "issues": [
-        "thin page: https://phone.luckyday.kr/ visible word tokens=528"
+        "thin page: https://phone.luckyday.kr/ visible word tokens=529"
       ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
@@ -11256,7 +11100,7 @@
           },
           "headings": {
             "state": "pass",
-            "detail": "H1=1, H2=2, H3=30"
+            "detail": "H1=1, H2=2, H3=31"
           },
           "imageAlt": {
             "state": "pass",
@@ -11276,7 +11120,7 @@
           },
           "inlinks": {
             "state": "pass",
-            "detail": "39 internal links"
+            "detail": "40 internal links"
           },
           "outlinks": {
             "state": "warn",
@@ -11290,10 +11134,10 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 977,
+          "wordCount": 1000,
           "h1Count": 1,
           "h2Count": 2,
-          "h3Count": 30
+          "h3Count": 31
         }
       ],
       "robots": {
@@ -11306,7 +11150,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-09T10:00:41.276Z"
+        "detail": "https://workgogo.kr/sitemap.xml lastDownloaded=2026-06-09T15:01:37.837Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -11318,7 +11162,7 @@
       },
       "blogIndex": {
         "state": "pass",
-        "detail": "/blog/ canonical found, 39 internal post-like links"
+        "detail": "/blog/ canonical found, 40 internal post-like links"
       },
       "issues": [],
       "nextActions": [
@@ -11472,6 +11316,161 @@
         "detail": "/blog/ canonical found, 53 internal post-like links"
       },
       "issues": [],
+      "nextActions": [
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "homeimer",
+      "name": "homemake - GA4",
+      "platform": "wordpress",
+      "url": "https://homeimer.com/",
+      "gscSiteUrl": "https://homeimer.com/",
+      "verdict": "review",
+      "score": 95,
+      "pages": [
+        {
+          "url": "https://homeimer.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Home Design Inspiration for Stylish Living Spaces"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "Homeimer shares interior design, smart home, decor, storage, and renovation ideas for practical, stylish living spaces."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://homeimer.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=12, H3=6"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "23 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 693,
+          "h1Count": 1,
+          "h2Count": 12,
+          "h3Count": 6
+        },
+        {
+          "url": "https://homeimer.com/blog/",
+          "status": 200,
+          "title": {
+            "state": "pass",
+            "detail": "Homeimer Blog: Interior Design and Smart Home Ideas"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "Read Homeimer guides on interior design, decor, smart home upgrades, organization, and renovation planning."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://homeimer.com/blog/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=13, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "10 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "80 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 643,
+          "h1Count": 1,
+          "h2Count": 13,
+          "h3Count": 0
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://homeimer.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://homeimer.com/sitemap.xml lastDownloaded=2026-06-09T00:25:42.568Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 70 internal post-like links"
+      },
+      "issues": [
+        "thin page: https://homeimer.com/ visible word tokens=693",
+        "thin page: https://homeimer.com/blog/ visible word tokens=643"
+      ],
       "nextActions": [
         "Patch technical SEO templates for meta, canonical, headings, and alt text.",
         "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
@@ -11749,7 +11748,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 908,
+          "wordCount": 918,
           "h1Count": 1,
           "h2Count": 21,
           "h3Count": 0
@@ -11805,7 +11804,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 908,
+          "wordCount": 918,
           "h1Count": 1,
           "h2Count": 21,
           "h3Count": 0
@@ -11877,7 +11876,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://gong365.kr/sitemap.xml lastDownloaded=2026-06-09T10:45:55.848Z"
+        "detail": "https://gong365.kr/sitemap.xml lastDownloaded=2026-06-09T16:13:38.355Z"
       },
       "adsTxt": {
         "state": "pass",
@@ -12165,7 +12164,7 @@
             "state": "pass",
             "detail": "loader with publisher id found"
           },
-          "wordCount": 10366,
+          "wordCount": 10329,
           "h1Count": 1,
           "h2Count": 111,
           "h3Count": 40
@@ -12181,7 +12180,7 @@
       },
       "gscSitemap": {
         "state": "pass",
-        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-09T11:00:18.647Z"
+        "detail": "https://mbti.tasko.kr/sitemap.xml lastDownloaded=2026-06-09T16:00:20.518Z"
       },
       "adsTxt": {
         "state": "pass",

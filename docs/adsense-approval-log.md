@@ -29,9 +29,9 @@
 
 | # | 도메인 | 플랫폼(등록값/실측) | GA4 30d | GSC노출 30d | 상태 | 거부사유 | 진단일 | 보완조치 | 재신청 | 결과 |
 |---|---|---|--:|--:|---|---|---|---|---|---|
-| 1 | askore.kr | wordpress | 55 | 1254 | 검토중 |  |  |  | | |
-| 2 | texturb.com | wordpress | 43 | 704 | 검토중 |  |  |  | | |
-| 3 | todayshops.kr | wordpress | 10 | 456 | 검토중 |  |  |  | | |
+| 1 | askore.kr | nextjs/Vercel | 55 | 1254 | 보완완료 | thin content | 2026-06-09 | 홈·about·FAQ 콘텐츠 추가. audit verdict→review score=90 | 미신청 | |
+| 2 | texturb.com | nextjs/Vercel | 43 | 704 | 보완완료 | thin content | 2026-06-09 | 홈·about·FAQ 콘텐츠 추가. audit verdict→review score=89 | 미신청 | |
+| 3 | todayshops.kr | wordpress | 10 | 456 | 보완완료 | 씬 콘텐츠(front/home) | 2026-06-10 | SSH 패치 4회: front(ID=3153)→wc=547, home(ID=776)→wc=538. audit verdict→review score=90 | 미신청 | |
 | 4 | softwa.kr | wordpress | 84 | 455 | 검토중 |  |  |  | | |
 | 5 | etique.kr | wordpress | 64 | 440 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지 생성(ID=2759), codex-adsense-trust-footer MU플러그인 Terms링크 확인, Googlebot 200 검증 | 미신청 | |
 | 6 | estat.kr | wordpress | 6 | 334 | 진단완료 | - | 2026-06-09 | About/Contact/Privacy(301)/Terms 모두 200, trust 페이지 완비 | 미신청 | |
@@ -44,15 +44,15 @@
 | 13 | finan.kr | wordpress | 0 | 161 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지(ID=24601) rewrite flush로 200 복구, codex-adsense-trust-footer MU플러그인 Terms링크 확인 | 미신청 | |
 | 14 | picklefriend.kr | wordpress | 163 | 125 | 검토중 |  |  |  | | |
 | 15 | dogspang.kr | wordpress | 104 | 119 | 진단완료 | 플레이스홀더포스트(post-3) | 2026-06-09 | post-3 이미 draft·404·sitemap제외 확인, About/Contact/Privacy(301)/Terms/Terms-of-service 모두 200 | 미신청 | |
-| 16 | dogswhere.com | wordpress | 32 | 100 | 검토중 |  |  |  | | |
+| 16 | dogswhere.com | nextjs/Vercel | 32 | 100 | 보완완료 | thin content(홈 375·mung-bti 383) | 2026-06-10 | 홈 나들이가이드 4카드 추가(506토큰)·mung-bti 안내 섹션 추가(523토큰) | 미신청 | |
 | 17 | travelpang.kr | wordpress | 19 | 89 | 검토중 |  |  |  | | |
 | 18 | goesku.com | wordpress | 20 | 79 | 검토중 |  |  |  | | |
 | 19 | insupang.com | wordpress | 17 | 63 | 검토중 |  |  |  | | |
 | 20 | gover.kr | wordpress | 73 | 59 | 검토중 |  |  |  | | |
 | 21 | legalser.com | wordpress | 24 | 43 | 검토중 |  |  |  | | |
 | 22 | chatgipt.kr | wordpress | 24 | 40 | 검토중 |  |  |  | | |
-| 23 | homeimer.com | wordpress | 3 | 27 | 검토중 |  |  |  | | |
-| 24 | sssaass.com | wordpress | 14 | 20 | 검토중 |  |  |  | | |
+| 23 | homeimer.com | wordpress | 3 | 27 | 보완완료 | 씬 콘텐츠(about/contact/terms) | 2026-06-10 | SSH 패치 3회: home(ID=24)→wc=568, about(ID=10239)→wc=575, contact(ID=10241)→wc=523, terms(ID=10243)→wc=646. audit verdict→review score=93 | 미신청 | |
+| 24 | sssaass.com | wordpress | 14 | 20 | 보완완료 | 씬 콘텐츠(front) | 2026-06-10 | SSH 패치 2회: front(ID=317)→wc=591. audit verdict→review score=92 | 미신청 | |
 | 25 | knewstory.kr | wordpress | 55 | 18 | 검토중 |  |  |  | | |
 | 26 | autoscares.com | wordpress | 26 | 17 | 검토중 |  |  |  | | |
 | 27 | trave.kr | wordpress | 111 | 11 | 검토중 |  |  |  | | |
@@ -87,13 +87,15 @@
 | 56 | travel.sellerpit.kr | wordpress | 4 | 0 | 검토중 |  |  |  | | |
 | 57 | certifi.kr | wordpress | 17 | 0 | 검토중 |  |  |  | | |
 | 58 | car.luckyday.kr | wordpress | 42 | 0 | 검토중 |  |  |  | | |
-| 59 | coinyo.kr | wordpress | 12 | 0 | 검토중 |  |  |  | | |
+| 59 | coinyo.kr | wordpress | 12 | 0 | 보완완료 | 씬 콘텐츠(front) | 2026-06-10 | SSH 패치 2회: front(ID=296)→wc=535. audit verdict→review score=88 | 미신청 | |
 | 60 | pregnancy.ehon365.kr | wordpress | 2 | 0 | 검토중 |  |  |  | | |
 | 61 | phone.luckyday.kr | wordpress | 18 | 0 | 검토중 |  |  |  | | |
 | 62 | gong.luckyday.kr | wordpress | 7 | 0 | 검토중 |  |  |  | | |
 | 63 | esgyo.kr | wordpress | 0 | 0 | 검토중 |  |  |  | | |
 | 64 | ai.tasko.kr | wordpress | 5 | 0 | 검토중 |  |  |  | | |
 | 65 | workgogo.kr | wordpress | 0 | 0 | 검토중 |  |  |  | | |
+| 66 | doseogogo.kr | nextjs/Vercel | - | - | 보완완료 | thin content | 2026-06-09 | /recommend·FAQ 콘텐츠 추가. audit verdict→review score=90 | 미신청 | |
+| 67 | yungyanggogo.kr | nextjs/Vercel | - | - | 보완완료 | thin content(홈 222토큰·Turbopack 빌드 실패) | 2026-06-10 | Unicode 따옴표(U+201D)→ASCII 치환으로 빌드 복구. trust/guide/FAQ/nutrition 섹션 추가. audit verdict→review score=90 | 미신청 | |
 
 ## 색인 진입 필요 (GSC 노출 0 — AdSense 이전 선결)
 Tier3: sitemap·Indexing API·콘텐츠로 색인부터. 위 표에서 GSC노출 0인 행들.

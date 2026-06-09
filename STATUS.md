@@ -1,16 +1,16 @@
-# Status | 마지막: 2026-06-09
+# Status | 마지막: 2026-06-10
 ## 현재 작업
-**AdSense 승인 파이프라인** — 미승인 65개 사이트를 이력 남기며 순차 검증·보완. 계획: `.omc/plans/adsense-approval-pipeline.md`, 이력 SSOT: `docs/adsense-approval-log.md`(11승인+65대상, GSC노출순).
-- **Tier0 cartain.kr**: 봇 SSR 배포·검증OK. 재심사 요청 대기(30일).
-- **todaypharm.kr**: thin content 수정 완료 (`80ed5d8`). 재신청 대기.
-- **gong365.kr**: ✅ verdict→review, score=96. /regions 526토큰(091e5ae). AdSense 신청 대기.
-- **다음 대상**: askore.kr (#1, GSC 1254), texturb.com (#2, 704)
+**AdSense 승인 파이프라인** — needs_patch 15개 잔여 (SSH 없음).
+
+### 🔴 막힌 사이트 (15개 needs_patch) — SSH 등록 필요
+- today2424.kr, picklefriend.kr, richyou.kr, crepika.com, goesku.com, pregnancy.ehon365.kr, sinhonjigi.ehon365.kr, ehon365.kr, campgogo.kr, softwa.kr, nongsusangogo.kr, esgyo.kr, nicewomen.kr, youkamap.kr, travelpang.kr
+- → chemicloud_ssh.txt에 SITE/HOST/USERNAME/PRIVATE_KEY_NOPASS 추가
 ## 최근 변경 (최근 5개만)
-- 06-09: gong365.kr /regions FAQ+재작성 526토큰(091e5ae) → audit verdict review score=96
-- 06-09: gong365.kr /check·/regions 콘텐츠 보강, canonical www통일, sitemap제외 (338fddf)
-- 06-09: 대시보드 stats 갱신 (2026-06-09 history 생성, `0946108`)
-- 06-09: 이력 파일 3건 커밋 push (`5a8643c`) — audit batch 2026-06-08 결과 반영
-- 06-07: todaypharm thin content 해결+커밋 완료 — `generateTemplateContent` 추가, isThin noindex
+- 06-10: yungyanggogo.kr Unicode따옴표 빌드수정+콘텐츠 추가 verdict→review score=90
+- 06-10: dogswhere.com 홈·mung-bti 콘텐츠 추가(506/523토큰) verdict→review score=89
+- 06-10: askore.kr·texturb.com·doseogogo.kr 보완완료 → review 확정
+- 06-10: todayshops.kr/coinyo.kr/homeimer.com/sssaass.com SSH패치 verdict→review
+- 06-09: healthgotoo.com/educaer.com PHP패치 verdict→review
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
 - [ ] T5 campgogo sitemap 에러 283건 (SSH정보 없음 — chemicloud_ssh.txt 미등록), esgyo 방치 점검
