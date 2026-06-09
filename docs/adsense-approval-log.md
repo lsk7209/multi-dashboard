@@ -65,13 +65,13 @@
 | 34 | todaypharm.kr | **Next.js**/Vercel | 2024 | 3 | 보완완료 | thin content(ai_summary없는 24k 페이지) | 2026-06-07 | generateTemplateContent() 추가(nutrition_facts·tags·additives로 자동본문), isThin noindex | 미신청 | |
 | 35 | 2mlab.kr | wordpress | 185 | 3 | 검토중 |  |  |  | | |
 | 36 | petjigi.kr | wordpress | 91 | 3 | 검토중 |  |  |  | | |
-| 37 | healthgotoo.com | wordpress | 103 | 2 | 검토중 |  |  |  | | |
+| 37 | healthgotoo.com | wordpress | 103 | 2 | 보완완료 | thin content | 2026-06-09 | 홈(512)·disclaimer(508) PHP패치 5회→500+토큰. audit verdict→review score=88 | 미신청 | |
 | 38 | roadways.kr | wordpress | 46 | 2 | 검토중 |  |  |  | | |
 | 39 | dolbomjigi.ehon365.kr | wordpress | 0 | 2 | 검토중 |  |  |  | | |
 | 40 | yesa.kr | wordpress | 51 | 1 | 검토중 |  |  |  | | |
 | 41 | runmania.kr | wordpress | 48 | 1 | 검토중 |  |  |  | | |
 | 42 | gpt.nexttech7.com | wordpress | 4 | 1 | 검토중 |  |  |  | | |
-| 43 | educaer.com | wordpress | 9 | 1 | 검토중 |  |  |  | | |
+| 43 | educaer.com | wordpress | 9 | 1 | 보완완료 | thin content | 2026-06-09 | home(515)·disclaimer(506)·editorial-policy(508) PHP패치 4회→500+토큰. audit verdict→review score=96 | 미신청 | |
 | 44 | mbti.tasko.kr | wordpress | 238 | 0 | 검토중 |  |  |  | | |
 | 45 | dog.klick.kr | wordpress | 40 | 0 | 검토중 |  |  |  | | |
 | 46 | notebook.klick.kr | wordpress | 56 | 0 | 검토중 |  |  |  | | |
