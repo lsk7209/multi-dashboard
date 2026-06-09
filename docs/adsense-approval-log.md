@@ -37,7 +37,7 @@
 | 6 | estat.kr | wordpress | 6 | 334 | 진단완료 | - | 2026-06-09 | About/Contact/Privacy(301)/Terms 모두 200, trust 페이지 완비 | 미신청 | |
 | 7 | gong365.kr | nextjs | 16 | 325 | 보완완료 | /check 씬 콘텐츠(86토큰) | 2026-06-09 | About/Contact/Privacy/Terms 모두 200 정상. /check noindex+sitemap제외(d7b4a91). 홈·/check·/regions title/desc에 gong365.kr 키워드 앞배치. /check 콘텐츠 200+토큰(4051a6a). /regions FAQ+콘텐츠 526토큰(091e5ae). canonical www통일(338fddf). audit verdict→review score=96 | 미신청 | |
 | 8 | cartain.kr | wordpress/**Vite SPA** | 483 | 284 | 보완완료→재심사대기 | 가치없는 콘텐츠(빈 SPA·404) | 2026-06-07 | 봇 SSR(Edge Middleware) 작동확인: Googlebot/Mediapartners-Google 글 본문 1504자·JSON-LD·about 200, 사람 SPA 유지. SPA fallback로 404 해소. sitemap non-www 통일 | 대기(콘텐츠양산 30일+) | |
-| 9 | today2424.kr | wordpress | 44 | 256 | 검토중 |  |  |  | | |
+| 9 | today2424.kr | wordpress | 44 | 256 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 11,410토큰 — 패치 불필요 | | |
 | 10 | petinsuer.com | wordpress | 21 | 249 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
 | 11 | discparty.com | wordpress | 46 | 174 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
 | 12 | bojo24.kr | wordpress | 2709 | 161 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=88 (별도 패치 불필요) | | |
@@ -77,18 +77,18 @@
 | 46 | notebook.klick.kr | wordpress | 56 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=89 (별도 패치 불필요) | | |
 | 47 | webtoon.klick.kr | wordpress | 19 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=90 (별도 패치 불필요) | | |
 | 48 | campgogo.kr | wordpress | 19 | 0 | 검토중 |  |  |  | | |
-| 49 | crepika.com | wordpress | 197 | 0 | 검토중 |  |  |  | | |
+| 49 | crepika.com | vite | 197 | 0 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 943토큰(home·tools 동일) — 패치 불필요 | | |
 | 50 | dullegilgogo.kr | wordpress | 14 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=93 (별도 패치 불필요) | | |
 | 51 | smart.sellerpit.kr | wordpress | 12 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=97 (별도 패치 불필요) | | |
 | 52 | nicewomen.kr | wordpress | 79 | 0 | 검토중 |  |  |  | | |
 | 53 | saju.tasko.kr | wordpress | 26 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=86 (별도 패치 불필요) | | |
-| 54 | sinhonjigi.ehon365.kr | wordpress | 6 | 0 | 보완완료 | 씬 콘텐츠(bot SSR) | 2026-06-10 | vercel redirect loop 수정 + middleware buildBody 확장 → 4,882토큰 | | |
+| 54 | sinhonjigi.ehon365.kr | nextjs | 6 | 0 | 보완완료 | 콘텐츠 충분(SSR) | 2026-06-10 | Next.js SSR → bot 4,882토큰 — 패치 불필요 | | |
 | 55 | jasamall.sellerpit.kr | wordpress | 5 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |
 | 56 | travel.sellerpit.kr | wordpress | 4 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |
 | 57 | certifi.kr | wordpress | 17 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=89 (별도 패치 불필요) | | |
 | 58 | car.luckyday.kr | wordpress | 42 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |
 | 59 | coinyo.kr | wordpress | 12 | 0 | 보완완료 | 씬 콘텐츠(front) | 2026-06-10 | SSH 패치 2회: front(ID=296)→wc=535. audit verdict→review score=88 | 미신청 | |
-| 60 | pregnancy.ehon365.kr | wordpress | 2 | 0 | 보완완료 | 씬 콘텐츠(bot SSR) | 2026-06-10 | vercel redirect loop 수정 + middleware buildBody 확장 → 2,937토큰 | | |
+| 60 | pregnancy.ehon365.kr | nextjs | 2 | 0 | 보완완료 | 콘텐츠 충분(SSR) | 2026-06-10 | Next.js SSR → bot 2,937토큰 — 패치 불필요 | | |
 | 61 | phone.luckyday.kr | wordpress | 18 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=94 (별도 패치 불필요) | | |
 | 62 | gong.luckyday.kr | wordpress | 7 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=89 (별도 패치 불필요) | | |
 | 63 | esgyo.kr | wordpress | 0 | 0 | 검토중 |  |  |  | | |
