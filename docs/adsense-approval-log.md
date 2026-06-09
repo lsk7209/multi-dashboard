@@ -33,17 +33,17 @@
 | 2 | texturb.com | wordpress | 43 | 704 | 검토중 |  |  |  | | |
 | 3 | todayshops.kr | wordpress | 10 | 456 | 검토중 |  |  |  | | |
 | 4 | softwa.kr | wordpress | 84 | 455 | 검토중 |  |  |  | | |
-| 5 | etique.kr | wordpress | 64 | 440 | 검토중 |  |  |  | | |
-| 6 | estat.kr | wordpress | 6 | 334 | 검토중 |  |  |  | | |
+| 5 | etique.kr | wordpress | 64 | 440 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지 생성(ID=2759), codex-adsense-trust-footer MU플러그인 Terms링크 확인, Googlebot 200 검증 | 미신청 | |
+| 6 | estat.kr | wordpress | 6 | 334 | 진단완료 | - | 2026-06-09 | About/Contact/Privacy(301)/Terms 모두 200, trust 페이지 완비 | 미신청 | |
 | 7 | gong365.kr | wordpress | 16 | 325 | 검토중 |  |  |  | | |
 | 8 | cartain.kr | wordpress/**Vite SPA** | 483 | 284 | 보완완료→재심사대기 | 가치없는 콘텐츠(빈 SPA·404) | 2026-06-07 | 봇 SSR(Edge Middleware) 작동확인: Googlebot/Mediapartners-Google 글 본문 1504자·JSON-LD·about 200, 사람 SPA 유지. SPA fallback로 404 해소. sitemap non-www 통일 | 대기(콘텐츠양산 30일+) | |
 | 9 | today2424.kr | wordpress | 44 | 256 | 검토중 |  |  |  | | |
 | 10 | petinsuer.com | wordpress | 21 | 249 | 검토중 |  |  |  | | |
 | 11 | discparty.com | wordpress | 46 | 174 | 검토중 |  |  |  | | |
 | 12 | bojo24.kr | wordpress | 2709 | 161 | 검토중 |  |  |  | | |
-| 13 | finan.kr | wordpress | 0 | 161 | 검토중 |  |  |  | | |
+| 13 | finan.kr | wordpress | 0 | 161 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지(ID=24601) rewrite flush로 200 복구, codex-adsense-trust-footer MU플러그인 Terms링크 확인 | 미신청 | |
 | 14 | picklefriend.kr | wordpress | 163 | 125 | 검토중 |  |  |  | | |
-| 15 | dogspang.kr | wordpress | 104 | 119 | 검토중 |  |  |  | | |
+| 15 | dogspang.kr | wordpress | 104 | 119 | 진단완료 | 플레이스홀더포스트(post-3) | 2026-06-09 | post-3 이미 draft·404·sitemap제외 확인, About/Contact/Privacy(301)/Terms/Terms-of-service 모두 200 | 미신청 | |
 | 16 | dogswhere.com | wordpress | 32 | 100 | 검토중 |  |  |  | | |
 | 17 | travelpang.kr | wordpress | 19 | 89 | 검토중 |  |  |  | | |
 | 18 | goesku.com | wordpress | 20 | 79 | 검토중 |  |  |  | | |
