@@ -35,7 +35,7 @@
 | 4 | softwa.kr | wordpress | 84 | 455 | 검토중 |  |  |  | | |
 | 5 | etique.kr | wordpress | 64 | 440 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지 생성(ID=2759), codex-adsense-trust-footer MU플러그인 Terms링크 확인, Googlebot 200 검증 | 미신청 | |
 | 6 | estat.kr | wordpress | 6 | 334 | 진단완료 | - | 2026-06-09 | About/Contact/Privacy(301)/Terms 모두 200, trust 페이지 완비 | 미신청 | |
-| 7 | gong365.kr | nextjs | 16 | 325 | 보완완료 | /check 씬 콘텐츠(86토큰) | 2026-06-09 | About/Contact/Privacy/Terms 모두 200 정상. /check noindex(4b67791). 홈 title/desc에 gong365.kr 키워드 삽입·/check title 중복 제거(a22e2a8) | 미신청 | |
+| 7 | gong365.kr | nextjs | 16 | 325 | 보완완료 | /check 씬 콘텐츠(86토큰) | 2026-06-09 | About/Contact/Privacy/Terms 모두 200 정상. /check noindex+sitemap제외(d7b4a91). 홈·/check·/regions title/desc에 gong365.kr 키워드 앞배치. /check 콘텐츠 200+토큰(4051a6a). /regions 200+토큰. canonical www통일(338fddf) | 미신청 | |
 | 8 | cartain.kr | wordpress/**Vite SPA** | 483 | 284 | 보완완료→재심사대기 | 가치없는 콘텐츠(빈 SPA·404) | 2026-06-07 | 봇 SSR(Edge Middleware) 작동확인: Googlebot/Mediapartners-Google 글 본문 1504자·JSON-LD·about 200, 사람 SPA 유지. SPA fallback로 404 해소. sitemap non-www 통일 | 대기(콘텐츠양산 30일+) | |
 | 9 | today2424.kr | wordpress | 44 | 256 | 검토중 |  |  |  | | |
 | 10 | petinsuer.com | wordpress | 21 | 249 | 검토중 |  |  |  | | |

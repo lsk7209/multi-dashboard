@@ -1,15 +1,16 @@
 # Status | 마지막: 2026-06-09
 ## 현재 작업
-**AdSense 승인 파이프라인** — 미승인 65개 사이트를 이력 남기며 순차 검증·보완. 계획: `.omc/plans/adsense-approval-pipeline.md`, 이력 SSOT: `docs/adsense-approval-log.md`(11승인+65대상, GSC노출순). 우선순위 거부확정→노출순, 보완 안전항목자동·본문수동.
+**AdSense 승인 파이프라인** — 미승인 65개 사이트를 이력 남기며 순차 검증·보완. 계획: `.omc/plans/adsense-approval-pipeline.md`, 이력 SSOT: `docs/adsense-approval-log.md`(11승인+65대상, GSC노출순).
 - **Tier0 cartain.kr**: 봇 SSR 배포·검증OK. 재심사 요청 대기(30일).
-- **todaypharm.kr**: thin content 수정+커밋+push 모두 완료 (`80ed5d8`). 재신청 대기.
-- **다음 대상**: gong365.kr (About/Contact/Privacy/Terms 전부 404 — 최우선 차단항목)
+- **todaypharm.kr**: thin content 수정 완료 (`80ed5d8`). 재신청 대기.
+- **gong365.kr**: score 89→94 (needs_patch). /check 콘텐츠+sitemap제외, /regions 콘텐츠+gong365 키워드, canonical www통일(338fddf) 배포 완료. audit 재검증 대기중.
+- **다음 대상**: askore.kr (#1, GSC 1254), texturb.com (#2, 704)
 ## 최근 변경 (최근 5개만)
+- 06-09: gong365.kr /check·/regions 콘텐츠 보강, canonical www통일, sitemap제외 (338fddf)
+- 06-09: 대시보드 stats 갱신 (2026-06-09 history 생성, `0946108`)
 - 06-09: 이력 파일 3건 커밋 push (`5a8643c`) — audit batch 2026-06-08 결과 반영
 - 06-07: todaypharm thin content 해결+커밋 완료 — `generateTemplateContent` 추가, isThin noindex
 - 06-07: AdSense 파이프라인 착수 — 이력SSOT·계획 생성, cartain 봇SSR 완료
-- 06-06: 레포 정리 — NUL 사고파일 삭제, .gitignore에 .omc/·NUL 추가, tracked .omc 추적해제
-- 06-06: AdSense 체크 415 오탐 52건 수정 — update-ga4-stats.ts fetch 3곳에 브라우저 UA+Accept 헤더
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
 - [ ] T5 campgogo sitemap 에러 283건 (SSH정보 없음 — chemicloud_ssh.txt 미등록), esgyo 방치 점검
