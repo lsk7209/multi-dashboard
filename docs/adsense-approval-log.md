@@ -80,7 +80,7 @@
 | 49 | crepika.com | vite | 197 | 0 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 943토큰(home·tools 동일) — 패치 불필요 | | |
 | 50 | dullegilgogo.kr | wordpress | 14 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=93 (별도 패치 불필요) | | |
 | 51 | smart.sellerpit.kr | wordpress | 12 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=97 (별도 패치 불필요) | | |
-| 52 | nicewomen.kr | wordpress | 79 | 0 | 검토중 |  |  |  | | |
+| 52 | nicewomen.kr | wordpress | 79 | 0 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 19,158토큰 — 패치 불필요 (1번서버 nexttech) | | |
 | 53 | saju.tasko.kr | wordpress | 26 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=86 (별도 패치 불필요) | | |
 | 54 | sinhonjigi.ehon365.kr | nextjs | 6 | 0 | 보완완료 | 콘텐츠 충분(SSR) | 2026-06-10 | Next.js SSR → bot 4,882토큰 — 패치 불필요 | | |
 | 55 | jasamall.sellerpit.kr | wordpress | 5 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |

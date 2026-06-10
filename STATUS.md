@@ -1,16 +1,16 @@
 ﻿# Status | 마지막: 2026-06-10
 ## 현재 작업
-**AdSense 승인 파이프라인** — needs_patch 9개 잔여 (SSH 없음).
+**AdSense 승인 파이프라인** — needs_patch 8개 잔여 (SSH 없음).
 
-### 🔴 막힌 사이트 (9개 needs_patch) — SSH 등록 필요
-- picklefriend.kr, richyou.kr, goesku.com, campgogo.kr, softwa.kr, nongsusangogo.kr, esgyo.kr, nicewomen.kr, youkamap.kr
+### 🔴 막힌 사이트 (8개 needs_patch) — SSH 등록 필요
+- picklefriend.kr, richyou.kr, goesku.com, campgogo.kr, softwa.kr, nongsusangogo.kr, esgyo.kr, youkamap.kr
 - → chemicloud_ssh.txt에 SITE/HOST/USERNAME/PRIVATE_KEY_NOPASS 추가
 ## 최근 변경 (최근 5개만)
+- 06-10: nicewomen(19158) 1번서버 확인→보완완료, needs_patch 9→8
 - 06-10: crepika(943)/today2424(11410)/pregnancy(2937)/sinhonjigi(4882) 토큰 확인→보완완료
 - 06-10: ehon365.kr 리다이렉트루프 수정+bot SSR 610토큰→보완완료
 - 06-10: yungyanggogo.kr Unicode따옴표 빌드수정+콘텐츠 추가 verdict→review score=90
 - 06-10: dogswhere.com 홈·mung-bti 콘텐츠 추가(506/523토큰) verdict→review score=89
-- 06-10: askore.kr·texturb.com·doseogogo.kr 보완완료 → review 확정
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
 - [ ] T5 campgogo sitemap 에러 283건 (SSH정보 없음 — chemicloud_ssh.txt 미등록), esgyo 방치 점검
