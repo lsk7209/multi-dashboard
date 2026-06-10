@@ -1,11 +1,8 @@
 ﻿# Status | 마지막: 2026-06-10
 ## 현재 작업
-**AdSense 승인 파이프라인** — needs_patch 6개 잔여 (SSH 없음).
-
-### 🔴 막힌 사이트 (6개 needs_patch) — SSH 등록 필요
-- goesku.com, campgogo.kr, softwa.kr, nongsusangogo.kr, esgyo.kr, youkamap.kr
-- → chemicloud_ssh.txt에 SITE/HOST/USERNAME/PRIVATE_KEY_NOPASS 추가
+**AdSense 승인 파이프라인** — needs_patch 0개. 전체 보완완료.
 ## 최근 변경 (최근 5개만)
+- 06-10: goesku/campgogo/softwa/nongsusangogo/esgyo/youkamap bot 657~15872토큰→보완완료 6→0
 - 06-10: richyou(8585)/nicewomen(19158)/picklefriend(21876) 1번서버 확인→보완완료 8→6
 - 06-10: crepika(943)/today2424(11410)/pregnancy(2937)/sinhonjigi(4882) 토큰 확인→보완완료
 - 06-10: ehon365.kr 리다이렉트루프 수정+bot SSR 610토큰→보완완료
