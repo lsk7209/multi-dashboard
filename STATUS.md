@@ -2,11 +2,11 @@
 ## 현재 작업
 **AdSense 승인 파이프라인** — needs_patch 0개. 전체 보완완료.
 ## 최근 변경 (최근 5개만)
+- 06-10: campgogo(canonical+FAQ)/softwa(홈·guides·about)/dogspang(홈·about)/saju.tasko(RM canonical+메타) SSH PHP 패치 완료, adsense-approval-log.md 정정
 - 06-10: 대시보드 "사이트맵 URL" 컬럼 추가 — GSC submitted 수 표시 (sort 지원)
 - 06-10: gover/trave 키등록+SSH검증, 2mlab/gpt.nexttech7.com/esgyo 1번서버 등록
 - 06-10: goesku/campgogo/softwa/nongsusangogo/esgyo/youkamap bot 보완완료 6→0
 - 06-10: richyou/nicewomen/picklefriend 1번서버 확인→보완완료 8→6
-- 06-10: crepika/today2424/pregnancy/sinhonjigi 토큰 확인→보완완료
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
 - [x] T5 campgogo sitemap-campsites.xml GSC 제출 완료 — 4개 사이트맵 모두 OK (5138+63+52+112)

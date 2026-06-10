@@ -32,7 +32,7 @@
 | 1 | askore.kr | nextjs/Vercel | 55 | 1254 | 보완완료 | thin content | 2026-06-09 | 홈·about·FAQ 콘텐츠 추가. audit verdict→review score=90 | 미신청 | |
 | 2 | texturb.com | nextjs/Vercel | 43 | 704 | 보완완료 | thin content | 2026-06-09 | 홈·about·FAQ 콘텐츠 추가. audit verdict→review score=89 | 미신청 | |
 | 3 | todayshops.kr | wordpress | 10 | 456 | 보완완료 | 씬 콘텐츠(front/home) | 2026-06-10 | SSH 패치 4회: front(ID=3153)→wc=547, home(ID=776)→wc=538. audit verdict→review score=90 | 미신청 | |
-| 4 | softwa.kr | wordpress | 84 | 455 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 15,872토큰 — 패치 불필요 | | |
+| 4 | softwa.kr | wordpress | 84 | 455 | 보완완료 | 씬 콘텐츠(홈/guides/about) | 2026-06-10 | SSH PHP 패치: 홈(ID=15) 카테고리 설명+FAQ 보강, guides(ID=18) 5개 카테고리 설명 추가, about(ID=16) 소개 텍스트 추가, Rank Math 메타(title/desc) 3페이지 설정 완료 | 미신청 | |
 | 5 | etique.kr | wordpress | 64 | 440 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지 생성(ID=2759), codex-adsense-trust-footer MU플러그인 Terms링크 확인, Googlebot 200 검증 | 미신청 | |
 | 6 | estat.kr | wordpress | 6 | 334 | 진단완료 | - | 2026-06-09 | About/Contact/Privacy(301)/Terms 모두 200, trust 페이지 완비 | 미신청 | |
 | 7 | gong365.kr | nextjs | 16 | 325 | 보완완료 | /check 씬 콘텐츠(86토큰) | 2026-06-09 | About/Contact/Privacy/Terms 모두 200 정상. /check noindex+sitemap제외(d7b4a91). 홈·/check·/regions title/desc에 gong365.kr 키워드 앞배치. /check 콘텐츠 200+토큰(4051a6a). /regions FAQ+콘텐츠 526토큰(091e5ae). canonical www통일(338fddf). audit verdict→review score=96 | 미신청 | |
@@ -43,7 +43,7 @@
 | 12 | bojo24.kr | nextjs/Vercel | 2709 | 161 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=88 (별도 패치 불필요) | | |
 | 13 | finan.kr | wordpress | 0 | 161 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지(ID=24601) rewrite flush로 200 복구, codex-adsense-trust-footer MU플러그인 Terms링크 확인 | 미신청 | |
 | 14 | picklefriend.kr | nextjs/Vercel | 163 | 125 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 21,876토큰 — 패치 불필요 | | |
-| 15 | dogspang.kr | wordpress | 104 | 119 | 진단완료 | 플레이스홀더포스트(post-3) | 2026-06-09 | post-3 이미 draft·404·sitemap제외 확인, About/Contact/Privacy(301)/Terms/Terms-of-service 모두 200 | 미신청 | |
+| 15 | dogspang.kr | wordpress | 104 | 119 | 보완완료 | 씬 콘텐츠(홈/about) | 2026-06-10 | SSH PHP 패치: 홈(ID=296) "도그팡이란?" 소개+FAQ 3항목 보강, about(ID=298) 소개 텍스트 추가, 블로그(ID=1650)/홈/about Rank Math 메타(title/desc) 설정 완료 | 미신청 | |
 | 16 | dogswhere.com | nextjs/Vercel | 32 | 100 | 보완완료 | thin content(홈 375·mung-bti 383) | 2026-06-10 | 홈 나들이가이드 4카드 추가(506토큰)·mung-bti 안내 섹션 추가(523토큰) | 미신청 | |
 | 17 | travelpang.kr | wordpress | 19 | 89 | 보완완료 | thin content 점검 | 2026-06-09 | 홈(433→16620토큰)·services(228→20388토큰) SSH PHP패치. audit verdict→review | | |
 | 18 | goesku.com | nextjs/Vercel | 20 | 79 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 2,493토큰 — 패치 불필요 | | |
@@ -76,12 +76,12 @@
 | 45 | dog.klick.kr | wordpress | 40 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |
 | 46 | notebook.klick.kr | wordpress | 56 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=89 (별도 패치 불필요) | | |
 | 47 | webtoon.klick.kr | wordpress | 19 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=90 (별도 패치 불필요) | | |
-| 48 | campgogo.kr | nextjs/Vercel | 19 | 0 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 5,234토큰 — 패치 불필요 | | |
+| 48 | campgogo.kr | nextjs/Vercel | 19 | 0 | 보완완료 | thin content + canonical 누락 | 2026-06-10 | page.tsx canonical URL 추가(alternates), "캠핑고고란?" 소개 섹션 + FAQ 4항목 추가, git push 완료(185165a) | 미신청 | |
 | 49 | crepika.com | vite | 197 | 0 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 943토큰(home·tools 동일) — 패치 불필요 | | |
 | 50 | dullegilgogo.kr | nextjs/Vercel | 14 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=93 (별도 패치 불필요) | | |
 | 51 | smart.sellerpit.kr | wordpress | 12 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=97 (별도 패치 불필요) | | |
 | 52 | nicewomen.kr | wordpress | 79 | 0 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 19,158토큰 — 패치 불필요 (1번서버 nexttech) | | |
-| 53 | saju.tasko.kr | wordpress | 26 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=86 (별도 패치 불필요) | | |
+| 53 | saju.tasko.kr | wordpress | 26 | 0 | 보완완료 | thin content + canonical 미활성 | 2026-06-10 | SSH PHP 패치: Rank Math canonical 모듈 활성화, about(ID=5) 사주머니 소개 텍스트 추가, 블로그(ID=389)/홈/about Rank Math 메타(title/desc) 설정 완료 | 미신청 | |
 | 54 | sinhonjigi.ehon365.kr | nextjs | 6 | 0 | 보완완료 | 콘텐츠 충분(SSR) | 2026-06-10 | Next.js SSR → bot 4,882토큰 — 패치 불필요 | | |
 | 55 | jasamall.sellerpit.kr | wordpress | 5 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |
 | 56 | travel.sellerpit.kr | wordpress | 4 | 0 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=92 (별도 패치 불필요) | | |
