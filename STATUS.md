@@ -2,13 +2,11 @@
 ## 현재 작업
 **AdSense 승인 파이프라인** — needs_patch 0개. 전체 보완완료.
 ## 최근 변경 (최근 5개만)
-- 06-10: gover/trave 키등록+SSH검증, 2mlab/gpt.nexttech7.com/esgyo 1번서버 등록 — chemicloud_ssh.txt 완료
-- 06-10: goesku/campgogo/softwa/nongsusangogo/esgyo/youkamap bot 657~15872토큰→보완완료 6→0
-- 06-10: richyou(8585)/nicewomen(19158)/picklefriend(21876) 1번서버 확인→보완완료 8→6
-- 06-10: crepika(943)/today2424(11410)/pregnancy(2937)/sinhonjigi(4882) 토큰 확인→보완완료
-- 06-10: ehon365.kr 리다이렉트루프 수정+bot SSR 610토큰→보완완료
-- 06-10: yungyanggogo.kr Unicode따옴표 빌드수정+콘텐츠 추가 verdict→review score=90
-- 06-10: dogswhere.com 홈·mung-bti 콘텐츠 추가(506/523토큰) verdict→review score=89
+- 06-10: 대시보드 "사이트맵 URL" 컬럼 추가 — GSC submitted 수 표시 (sort 지원)
+- 06-10: gover/trave 키등록+SSH검증, 2mlab/gpt.nexttech7.com/esgyo 1번서버 등록
+- 06-10: goesku/campgogo/softwa/nongsusangogo/esgyo/youkamap bot 보완완료 6→0
+- 06-10: richyou/nicewomen/picklefriend 1번서버 확인→보완완료 8→6
+- 06-10: crepika/today2424/pregnancy/sinhonjigi 토큰 확인→보완완료
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
 - [x] T5 campgogo sitemap-campsites.xml GSC 제출 완료 — 4개 사이트맵 모두 OK (5138+63+52+112)
