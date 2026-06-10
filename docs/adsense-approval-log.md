@@ -42,7 +42,7 @@
 | 11 | discparty.com | wordpress | 46 | 174 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
 | 12 | bojo24.kr | wordpress | 2709 | 161 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=88 (별도 패치 불필요) | | |
 | 13 | finan.kr | wordpress | 0 | 161 | 보완완료 | Terms 404 | 2026-06-09 | /terms 페이지(ID=24601) rewrite flush로 200 복구, codex-adsense-trust-footer MU플러그인 Terms링크 확인 | 미신청 | |
-| 14 | picklefriend.kr | wordpress | 163 | 125 | 검토중 |  |  |  | | |
+| 14 | picklefriend.kr | wordpress | 163 | 125 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 21,876토큰 — 패치 불필요 | | |
 | 15 | dogspang.kr | wordpress | 104 | 119 | 진단완료 | 플레이스홀더포스트(post-3) | 2026-06-09 | post-3 이미 draft·404·sitemap제외 확인, About/Contact/Privacy(301)/Terms/Terms-of-service 모두 200 | 미신청 | |
 | 16 | dogswhere.com | nextjs/Vercel | 32 | 100 | 보완완료 | thin content(홈 375·mung-bti 383) | 2026-06-10 | 홈 나들이가이드 4카드 추가(506토큰)·mung-bti 안내 섹션 추가(523토큰) | 미신청 | |
 | 17 | travelpang.kr | wordpress | 19 | 89 | 보완완료 | thin content 점검 | 2026-06-09 | 홈(433→16620토큰)·services(228→20388토큰) SSH PHP패치. audit verdict→review | | |
@@ -56,7 +56,7 @@
 | 25 | knewstory.kr | wordpress | 55 | 18 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
 | 26 | autoscares.com | wordpress | 26 | 17 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
 | 27 | trave.kr | wordpress | 111 | 11 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
-| 28 | richyou.kr | wordpress | 32 | 9 | 검토중 |  |  |  | | |
+| 28 | richyou.kr | wordpress | 32 | 9 | 보완완료 | 콘텐츠 충분 | 2026-06-10 | bot 8,585토큰 — 패치 불필요 (1번서버 nexttech) | | |
 | 29 | lawer.kr | wordpress | 8 | 8 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=88 (별도 패치 불필요) | | |
 | 30 | healfood.kr | wordpress | 19 | 7 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=87 (별도 패치 불필요) | | |
 | 31 | luxurytraver.com | wordpress | 0 | 7 | 보완완료 | thin content 점검 | 2026-06-09 | audit verdict→review score=89 (별도 패치 불필요) | | |
