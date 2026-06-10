@@ -22,6 +22,9 @@ interface GscSet {
   clicks: number;
   impressions: number;
 }
+interface Ga4Set {
+  activeUsers: number;
+}
 interface SiteStat {
   id: string;
   name: string;
@@ -35,6 +38,8 @@ interface SiteStat {
   sitemapLastDownloadedAt?: string;
   sitemapLastSubmittedAt?: string;
   gscLast30Days?: GscSet;
+  last1Days?: Ga4Set;
+  last30Days?: Ga4Set;
 }
 
 function hoursSince(iso?: string): number {
@@ -59,8 +64,7 @@ function operationalStatus(s: SiteStat): string {
     return s.gscStatus === "auth_error" || s.gscStatus === "missing_config"
       ? "needsPermission"
       : "apiError";
-  const sm = s.sitemapLastDownloadedAt;
-  if (sm && hoursSince(sm) > STALE_HOURS) return "stale";
+  // sitemap 수집 지연은 stale 판정 제외 (2026-06-05: Google 크롤링 타이밍 의존)
   return "normal";
 }
 
@@ -118,9 +122,37 @@ async function main(): Promise<void> {
     (s) => operationalStatus(s) !== "normal",
   );
 
+  // P5: 계측끊김 자동탐지 (전체 사이트 스캔 — 운영정상 사이트도 포함)
+  const broken = snapshot.stats.filter((s) => {
+    const imp30 = s.gscLast30Days?.impressions ?? 0;
+    const users30 = s.last30Days?.activeUsers ?? 0;
+    const users1 = s.last1Days?.activeUsers ?? 0;
+    if (users30 > 100 && users1 === 0) return true;
+    if (imp30 >= 50 && users30 < 10) return true;
+    return false;
+  });
+
   console.log(
     `[diag] site-stats 수집 ${cacheAgeH}h 전 | 운영문제 ${problems.length}개\n`,
   );
+
+  if (broken.length > 0) {
+    console.log(`[계측끊김 의심] ${broken.length}개:`);
+    for (const s of broken) {
+      const imp30 = s.gscLast30Days?.impressions ?? 0;
+      const users30 = s.last30Days?.activeUsers ?? 0;
+      const users1 = s.last1Days?.activeUsers ?? 0;
+      const reason =
+        users30 > 100 && users1 === 0
+          ? `30일사용자=${users30} 어제=0`
+          : `GSC노출30일=${imp30} GA4사용자30일=${users30}`;
+      console.log(`  - ${s.name} (${reason})`);
+    }
+    console.log(
+      "  => PHP 레벨에서 GA4 태그 존재 여부 확인 (OPERATIONS.md 3-6 참조)\n",
+    );
+  }
+
   if (problems.length === 0) {
     console.log("운영 문제 없음.");
     return;
@@ -197,7 +229,7 @@ async function main(): Promise<void> {
     }
     console.log("");
   }
-  void ga4; // GA4 클라이언트는 향후 채널 진단 확장용
+  void ga4;
 }
 
 main().catch((e) => {

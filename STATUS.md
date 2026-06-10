@@ -2,6 +2,7 @@
 ## 현재 작업
 **AdSense 승인 파이프라인** — needs_patch 0개. 전체 보완완료.
 ## 최근 변경 (최근 5개만)
+- 06-10: gover/trave 키등록+SSH검증, 2mlab/gpt.nexttech7.com/esgyo 1번서버 등록 — chemicloud_ssh.txt 완료
 - 06-10: goesku/campgogo/softwa/nongsusangogo/esgyo/youkamap bot 657~15872토큰→보완완료 6→0
 - 06-10: richyou(8585)/nicewomen(19158)/picklefriend(21876) 1번서버 확인→보완완료 8→6
 - 06-10: crepika(943)/today2424(11410)/pregnancy(2937)/sinhonjigi(4882) 토큰 확인→보완완료
@@ -10,8 +11,9 @@
 - 06-10: dogswhere.com 홈·mung-bti 콘텐츠 추가(506/523토큰) verdict→review score=89
 ## TODO
 - [ ] T2 Google 색인진출(mbti-tasko·crepika 등 네이버검증·Google노출0) / T3 순위(insupang·legalser·goesku) / T4 CTR(askore 노출1254)
-- [ ] T5 campgogo sitemap 에러 283건 (SSH정보 없음 — chemicloud_ssh.txt 미등록), esgyo 방치 점검
-- [ ] P5: diag에 계측끊김 자동탐지(노출≥50 & GA4<10 포함) 추가 / P10 위험레포
+- [x] T5 campgogo sitemap-campsites.xml GSC 제출 완료 — 4개 사이트맵 모두 OK (5138+63+52+112)
+- [x] P5: diag 계측끊김 자동탐지 구현 완료 — 파이날팡·homemake 탐지
+- [ ] P10 위험레포 (기준 미정)
 - [ ] temon 순위 파일럿 (docs/temon-ranking-pilot.md)
 ## 결정사항
 - 날짜 기준: UTC 완료일 기준, 오늘 제외
