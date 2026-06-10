@@ -30,6 +30,7 @@ type SortKey =
   | "change"
   | "gscClicks"
   | "gscImpressions"
+  | "googleIndexed"
   | "topQueries"
   | "ctr"
   | "adsense"
@@ -52,6 +53,7 @@ const sortLabels: Record<SortKey, string> = {
   change: "증감률",
   gscClicks: "GSC 클릭",
   gscImpressions: "GSC 노출",
+  googleIndexed: "사이트맵 URL",
   topQueries: "대표 유입 키워드",
   ctr: "CTR",
   adsense: "AdSense",
@@ -112,6 +114,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "change", label: "증감" },
   { key: "gscClicks", label: "GSC 클릭" },
   { key: "gscImpressions", label: "GSC 노출" },
+  { key: "googleIndexed", label: "사이트맵 URL" },
   { key: "topQueries", label: "유입 키워드" },
   { key: "ctr", label: "CTR" },
   { key: "adsense", label: "AdSense" },
@@ -311,7 +314,10 @@ export function SiteStatsTable({
               </tr>
             ) : (
               visibleStats.map((stat) => (
-                <StatsRow key={`${stat.id}-${stat.ga4PropertyId}`} stat={stat} />
+                <StatsRow
+                  key={`${stat.id}-${stat.ga4PropertyId}`}
+                  stat={stat}
+                />
               ))
             )}
           </tbody>
@@ -333,7 +339,10 @@ function TrafficKeywordLegend() {
   return (
     <div className="keyword-legend" aria-label="유입 키워드 소스 범례">
       {items.map((item) => (
-        <span className={`keyword-legend-item ${item.className}`} key={item.text}>
+        <span
+          className={`keyword-legend-item ${item.className}`}
+          key={item.text}
+        >
           <b>{item.label}</b>
           <span>{item.text}</span>
         </span>
@@ -371,7 +380,9 @@ function SortableHeader({
         type="button"
       >
         <span>{label}</span>
-        <span aria-hidden>{active ? (direction === "asc" ? "↑" : "↓") : "↕"}</span>
+        <span aria-hidden>
+          {active ? (direction === "asc" ? "↑" : "↓") : "↕"}
+        </span>
       </button>
     </th>
   );
@@ -411,11 +422,7 @@ function SegmentTabs({
   );
 }
 
-function StatsRow({
-  stat,
-}: {
-  stat: EnrichedSiteStat;
-}) {
+function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
   return (
     <tr>
       <td>
@@ -425,10 +432,7 @@ function StatsRow({
             {formatHost(stat.url)}
           </a>
           {stat.duplicateCount ? (
-            <span
-              className="duplicate-note"
-              title={formatDuplicateTitle(stat)}
-            >
+            <span className="duplicate-note" title={formatDuplicateTitle(stat)}>
               중복 {stat.duplicateCount}개 숨김
             </span>
           ) : null}
@@ -448,6 +452,13 @@ function StatsRow({
       <td>{formatChange(stat.trend.activeUsersChange)}</td>
       <td>{formatNumber(stat.gscLast7Days?.clicks ?? 0)}</td>
       <td>{formatNumber(stat.gscLast7Days?.impressions ?? 0)}</td>
+      <td>
+        {stat.googleSubmittedCount
+          ? formatNumber(stat.googleSubmittedCount)
+          : stat.googleIndexedCount
+            ? formatNumber(stat.googleIndexedCount)
+            : "—"}
+      </td>
       <td>
         <TopQueriesCell stat={stat} />
       </td>
@@ -744,6 +755,9 @@ function getSortValue(
   if (sortKey === "gscImpressions") {
     return stat.gscLast7Days?.impressions ?? 0;
   }
+  if (sortKey === "googleIndexed") {
+    return stat.googleSubmittedCount ?? stat.googleIndexedCount ?? 0;
+  }
   if (sortKey === "topQueries") {
     return getKeywordSortValue(stat);
   }
@@ -818,9 +832,7 @@ function getCollectionSourceStateLabel(
   return "처리중";
 }
 
-function getAdsenseStatusLabel(
-  stat: EnrichedSiteStat,
-): string {
+function getAdsenseStatusLabel(stat: EnrichedSiteStat): string {
   if (stat.adsenseCollectorStatus === "transient_error") {
     return "수집 일시 오류";
   }
@@ -830,7 +842,10 @@ function getAdsenseStatusLabel(
   if (stat.adsenseStatus === "missing_config") {
     return "코드 미탐지";
   }
-  if (stat.adsenseStatus === "auth_error" || stat.adsenseStatus === "api_error") {
+  if (
+    stat.adsenseStatus === "auth_error" ||
+    stat.adsenseStatus === "api_error"
+  ) {
     return "수집 오류";
   }
   return "미수집";
@@ -854,18 +869,14 @@ function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
   return "아직 AdSense 코드 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
 }
 
-function getAdsenseBadgeClass(
-  stat: EnrichedSiteStat,
-): string {
+function getAdsenseBadgeClass(stat: EnrichedSiteStat): string {
   if (stat.adsenseCollectorStatus === "transient_error") {
     return "badge badge-warning";
   }
   return getMonetizationBadgeClass(stat.adsenseStatus);
 }
 
-function getAdsTxtStatusLabel(
-  stat: EnrichedSiteStat,
-): string {
+function getAdsTxtStatusLabel(stat: EnrichedSiteStat): string {
   if (stat.adsTxtCollectorStatus === "transient_error") {
     return "수집 일시 오류";
   }
@@ -1016,9 +1027,7 @@ function formatPosition(value: number): string {
   return value === 0 ? "-" : value.toFixed(1);
 }
 
-function getSitemapCollectionValue(
-  stat: EnrichedSiteStat,
-): string | undefined {
+function getSitemapCollectionValue(stat: EnrichedSiteStat): string | undefined {
   return stat.sitemapLastDownloadedAt;
 }
 
@@ -1165,7 +1174,10 @@ function getSitemapCollectionClass(stat: EnrichedSiteStat): string {
 
   if (
     stat.operationalStatus === "processing" ||
-    isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS) ||
+    isOlderThanDays(
+      stat.sitemapLastDownloadedAt,
+      SITEMAP_COLLECTION_LAG_DAYS,
+    ) ||
     (stat.sitemapErrors ?? 0) > 0 ||
     (stat.sitemapWarnings ?? 0) > 0
   ) {
@@ -1193,7 +1205,9 @@ function getSitemapCollectionStatusLabel(stat: EnrichedSiteStat): string {
   if ((stat.sitemapErrors ?? 0) > 0 || (stat.sitemapWarnings ?? 0) > 0) {
     return "오류";
   }
-  if (isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS)) {
+  if (
+    isOlderThanDays(stat.sitemapLastDownloadedAt, SITEMAP_COLLECTION_LAG_DAYS)
+  ) {
     return "오래됨";
   }
 

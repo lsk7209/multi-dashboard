@@ -42,7 +42,11 @@ const execFileAsync = promisify(execFile);
 
 type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
 type AdsenseInstallStatus = "installed" | "not_detected" | "unknown";
-type AdsTxtValidationStatus = "valid" | "missing" | "wrong_publisher" | "unknown";
+type AdsTxtValidationStatus =
+  | "valid"
+  | "missing"
+  | "wrong_publisher"
+  | "unknown";
 type MonetizationCollectorStatus = "ok" | "transient_error" | "not_checked";
 type MonetizationEvidenceType =
   | "homepage"
@@ -116,6 +120,8 @@ interface SitemapSummary {
   sitemapIsPending?: boolean;
   sitemapCount?: number;
   sitemapDetails?: SitemapDetail[];
+  googleIndexedCount?: number;
+  googleSubmittedCount?: number;
 }
 
 interface SitemapDetail {
@@ -125,6 +131,8 @@ interface SitemapDetail {
   warnings?: number;
   errors?: number;
   isPending?: boolean;
+  indexed?: number;
+  submitted?: number;
 }
 
 interface SiteStat {
@@ -781,6 +789,11 @@ function toSitemapDetail(
         warnings?: string | number | null;
         errors?: string | number | null;
         isPending?: boolean | null;
+        contents?: Array<{
+          type?: string | null;
+          submitted?: string | null;
+          indexed?: string | null;
+        }> | null;
       }
     | undefined,
   fallbackPath?: string,
@@ -804,6 +817,20 @@ function toSitemapDetail(
   }
   if (sitemap?.isPending !== undefined && sitemap.isPending !== null) {
     detail.isPending = Boolean(sitemap.isPending);
+  }
+  const indexed = (sitemap?.contents ?? []).reduce((sum, c) => {
+    const n = parseInt(c.indexed ?? "0", 10);
+    return sum + (Number.isNaN(n) ? 0 : n);
+  }, 0);
+  if (indexed > 0) {
+    detail.indexed = indexed;
+  }
+  const submitted = (sitemap?.contents ?? []).reduce((sum, c) => {
+    const n = parseInt(c.submitted ?? "0", 10);
+    return sum + (Number.isNaN(n) ? 0 : n);
+  }, 0);
+  if (submitted > 0) {
+    detail.submitted = submitted;
   }
   return detail;
 }
@@ -841,6 +868,17 @@ function summarizeSitemapDetails(details: SitemapDetail[]): SitemapSummary {
     0,
   );
   summary.sitemapIsPending = details.some((detail) => detail.isPending);
+  const totalIndexed = details.reduce((sum, d) => sum + (d.indexed ?? 0), 0);
+  if (totalIndexed > 0) {
+    summary.googleIndexedCount = totalIndexed;
+  }
+  const totalSubmitted = details.reduce(
+    (sum, d) => sum + (d.submitted ?? 0),
+    0,
+  );
+  if (totalSubmitted > 0) {
+    summary.googleSubmittedCount = totalSubmitted;
+  }
 
   return summary;
 }
@@ -1226,13 +1264,17 @@ function isRecentIso(value: string | undefined, maxAgeHours: number): boolean {
 function getPreviousAdsenseLastKnownGood(
   previous: SiteStat | undefined,
 ): string | undefined {
-  return previous?.adsenseLastKnownGoodAt ?? previous?.adsenseLastSuccessfulFetchAt;
+  return (
+    previous?.adsenseLastKnownGoodAt ?? previous?.adsenseLastSuccessfulFetchAt
+  );
 }
 
 function getPreviousAdsTxtLastKnownGood(
   previous: SiteStat | undefined,
 ): string | undefined {
-  return previous?.adsTxtLastKnownGoodAt ?? previous?.adsTxtLastSuccessfulFetchAt;
+  return (
+    previous?.adsTxtLastKnownGoodAt ?? previous?.adsTxtLastSuccessfulFetchAt
+  );
 }
 
 async function discoverSampleContentUrl(
@@ -1314,7 +1356,13 @@ async function collectAdsenseCodeStatus(
       headers: MEDIAPARTNERS_FETCH_HEADERS,
     },
     ...(sampleUrl
-      ? [{ type: "sample_page" as const, url: sampleUrl, headers: SITE_FETCH_HEADERS }]
+      ? [
+          {
+            type: "sample_page" as const,
+            url: sampleUrl,
+            headers: SITE_FETCH_HEADERS,
+          },
+        ]
       : []),
   ];
 
@@ -1363,10 +1411,14 @@ async function collectAdsenseCodeStatus(
   }
 
   const successfulHtmlChecks = evidence.filter(
-    (item) => item.httpStatus !== undefined && item.httpStatus >= 200 && item.httpStatus < 300,
+    (item) =>
+      item.httpStatus !== undefined &&
+      item.httpStatus >= 200 &&
+      item.httpStatus < 300,
   );
   const transientErrors = evidence.filter(
-    (item) => item.error || (item.httpStatus !== undefined && item.httpStatus >= 400),
+    (item) =>
+      item.error || (item.httpStatus !== undefined && item.httpStatus >= 400),
   );
   if (successfulHtmlChecks.length >= 2 && transientErrors.length === 0) {
     const error = "AdSense code not detected on checked pages";

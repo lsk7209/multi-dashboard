@@ -7,7 +7,8 @@ import { loadSites, type Site } from "./lib/sites.js";
 import { getErrorMessage } from "./lib/errors.js";
 
 const ADSENSE_CLIENT_ID = "ca-pub-3050601904412736";
-const ADS_TXT_LINE = "google.com, pub-3050601904412736, DIRECT, f08c47fec0942fa0";
+const ADS_TXT_LINE =
+  "google.com, pub-3050601904412736, DIRECT, f08c47fec0942fa0";
 const CONCURRENCY = 8;
 const PAGE_LIMIT = 3;
 const OUTPUT_DATE = new Date().toISOString().slice(0, 10);
@@ -15,7 +16,7 @@ const JSON_OUTPUT_PATH = `data/adsense-readiness-audit-${OUTPUT_DATE}.json`;
 const MD_OUTPUT_PATH = `docs/adsense-readiness-audit-${OUTPUT_DATE}.md`;
 const FETCH_HEADERS = {
   "User-Agent":
-    "Mozilla/5.0 (compatible; MultiDashboardAdsenseAudit/1.0; +https://example.invalid)",
+    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
   Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 } as const;
 
@@ -116,7 +117,9 @@ function wordCount(text: string): number {
 
 function extractAttribute(tag: string, name: string): string | undefined {
   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const match = tag.match(new RegExp(`${escaped}\\s*=\\s*["']([^"']*)["']`, "i"));
+  const match = tag.match(
+    new RegExp(`${escaped}\\s*=\\s*["']([^"']*)["']`, "i"),
+  );
   return match?.[1]?.trim();
 }
 
@@ -136,8 +139,9 @@ function extractHeadings(html: string, level: 1 | 2 | 3): string[] {
 function pageHasAdsenseLoader(html: string): boolean {
   const normalized = html.toLowerCase();
   return (
-    normalized.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") &&
-    normalized.includes(ADSENSE_CLIENT_ID)
+    normalized.includes(
+      "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+    ) && normalized.includes(ADSENSE_CLIENT_ID)
   );
 }
 
@@ -197,7 +201,9 @@ function hasKeywordNearFront(text: string, host: string): boolean {
   return hostTokens.some((token) => normalized.slice(0, 80).includes(token));
 }
 
-async function fetchText(url: string): Promise<{ status: number; body: string }> {
+async function fetchText(
+  url: string,
+): Promise<{ status: number; body: string }> {
   const response = await fetch(url, {
     redirect: "follow",
     signal: AbortSignal.timeout(15000),
@@ -256,7 +262,11 @@ async function discoverSamplePages(site: Site): Promise<string[]> {
   return [...new Set(samples)].slice(0, PAGE_LIMIT);
 }
 
-function auditPage(url: string, status: number | undefined, html: string): PageAudit {
+function auditPage(
+  url: string,
+  status: number | undefined,
+  html: string,
+): PageAudit {
   const host = new URL(url).hostname;
   const title = textBetween(html, /<title[^>]*>([\s\S]*?)<\/title>/i) ?? "";
   const description =
@@ -285,14 +295,14 @@ function auditPage(url: string, status: number | undefined, html: string): PageA
   const imgTags = Array.from(html.matchAll(/<img\b[^>]*>/gi)).map(
     (match) => match[0],
   );
-  const hasViewport = /<meta[^>]+name=["']viewport["'][^>]+content=["'][^"']*width=device-width/i.test(
-    html,
-  );
+  const hasViewport =
+    /<meta[^>]+name=["']viewport["'][^>]+content=["'][^"']*width=device-width/i.test(
+      html,
+    );
   const hasToc =
     /class=["'][^"']*(toc|table-of-contents|ez-toc|rank-math-toc)[^"']*["']/i.test(
       html,
-    ) ||
-    /목차|table of contents/i.test(html);
+    ) || /목차|table of contents/i.test(html);
   const missingAlt = imgTags.filter((tag) => !extractAttribute(tag, "alt"));
   const anchors = Array.from(html.matchAll(/<a\b[^>]*>/gi)).map(
     (match) => match[0],
@@ -303,7 +313,9 @@ function auditPage(url: string, status: number | undefined, html: string): PageA
   const internalLinks = hrefs.filter((href) => {
     try {
       const parsed = new URL(href, url);
-      return parsed.hostname === host && parsed.pathname !== new URL(url).pathname;
+      return (
+        parsed.hostname === host && parsed.pathname !== new URL(url).pathname
+      );
     } catch {
       return false;
     }
@@ -317,9 +329,11 @@ function auditPage(url: string, status: number | undefined, html: string): PageA
     }
   });
   const visibleText = stripHtml(html);
-  const ctaPattern = /(확인|조회|계산|신청|다운로드|비교|더 보기|바로가기|시작|예약|상담|check|start|download|compare)/i;
+  const ctaPattern =
+    /(확인|조회|계산|신청|다운로드|비교|더 보기|바로가기|시작|예약|상담|check|start|download|compare)/i;
   const count = visibleTermCount(visibleText);
-  const headingOrderWarn = h1.length !== 1 || (h3.length > 0 && h2.length === 0);
+  const headingOrderWarn =
+    h1.length !== 1 || (h3.length > 0 && h2.length === 0);
 
   return {
     url,
@@ -456,7 +470,11 @@ async function auditSitemap(site: Site): Promise<CheckResult> {
   for (const sitemapUrl of sitemapUrls) {
     try {
       const { status, body } = await fetchText(sitemapUrl);
-      if (status >= 200 && status < 300 && /<(urlset|sitemapindex|rss|feed)/i.test(body)) {
+      if (
+        status >= 200 &&
+        status < 300 &&
+        /<(urlset|sitemapindex|rss|feed)/i.test(body)
+      ) {
         return { state: "pass", detail: sitemapUrl };
       }
     } catch {
@@ -530,7 +548,9 @@ async function auditBlogIndex(site: Site): Promise<CheckResult> {
         /<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["'][^>]*>/i,
       ) ??
       "";
-    const links = Array.from(body.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi))
+    const links = Array.from(
+      body.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi),
+    )
       .map((match) => match[1]?.trim())
       .filter((href): href is string => Boolean(href));
     const host = new URL(site.url).hostname;
@@ -551,7 +571,10 @@ async function auditBlogIndex(site: Site): Promise<CheckResult> {
       }
     });
     if (!canonical) {
-      return { state: "warn", detail: "/blog/ exists but canonical is missing" };
+      return {
+        state: "warn",
+        detail: "/blog/ exists but canonical is missing",
+      };
     }
     return postLikeLinks.length >= 3
       ? {
@@ -567,8 +590,9 @@ async function auditBlogIndex(site: Site): Promise<CheckResult> {
   }
 }
 
-async function makeGscClient():
-  Promise<ReturnType<typeof google.searchconsole> | undefined> {
+async function makeGscClient(): Promise<
+  ReturnType<typeof google.searchconsole> | undefined
+> {
   loadLocalSecrets();
   const keyJson = readSecret("GCP_SA_KEY_JSON");
   if (!keyJson) {
@@ -594,7 +618,9 @@ async function auditGscSitemap(
     const successful = sitemaps.find((sitemap) => {
       const errors = Number(sitemap.errors ?? 0);
       const warnings = Number(sitemap.warnings ?? 0);
-      return sitemap.path && sitemap.lastDownloaded && errors === 0 && warnings === 0;
+      return (
+        sitemap.path && sitemap.lastDownloaded && errors === 0 && warnings === 0
+      );
     });
     if (successful) {
       return {
@@ -649,7 +675,9 @@ function collectIssues(site: SiteAudit): string[] {
       }
     }
     if (page.wordCount < 800) {
-      issues.push(`thin page: ${page.url} visible word tokens=${page.wordCount}`);
+      issues.push(
+        `thin page: ${page.url} visible word tokens=${page.wordCount}`,
+      );
     }
   }
   return issues;
@@ -664,13 +692,19 @@ function makeNextActions(site: SiteAudit): string[] {
     actions.add("Create or expose About, Contact, Privacy, and Terms pages.");
   }
   if (site.sitemap.state !== "pass" || site.gscSitemap.state !== "pass") {
-    actions.add("Fix public sitemap and submit it in GSC until downloaded without errors.");
+    actions.add(
+      "Fix public sitemap and submit it in GSC until downloaded without errors.",
+    );
   }
   if (site.blogIndex.state !== "pass") {
-    actions.add("Improve /blog/ index as a crawlable card list with real post links.");
+    actions.add(
+      "Improve /blog/ index as a crawlable card list with real post links.",
+    );
   }
   if (site.pages.some((page) => page.adsenseLoader.state !== "pass")) {
-    actions.add("Insert the Auto Ads loader once site-wide without manual ad slots.");
+    actions.add(
+      "Insert the Auto Ads loader once site-wide without manual ad slots.",
+    );
   }
   if (
     site.pages.some(
@@ -683,7 +717,9 @@ function makeNextActions(site: SiteAudit): string[] {
         page.viewport.state !== "pass",
     )
   ) {
-    actions.add("Patch technical SEO templates for meta, canonical, headings, and alt text.");
+    actions.add(
+      "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+    );
   }
   if (
     site.pages.some(
@@ -695,7 +731,9 @@ function makeNextActions(site: SiteAudit): string[] {
         page.wordCount < 800,
     )
   ) {
-    actions.add("Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.");
+    actions.add(
+      "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources.",
+    );
   }
   return [...actions];
 }
@@ -735,7 +773,9 @@ function classifySite(site: SiteAudit): SiteVerdict {
   const hardFails = [site.adsTxt, site.trustPages, site.sitemap].some(
     (check) => check.state === "fail",
   );
-  const loaderFail = site.pages.some((page) => page.adsenseLoader.state === "fail");
+  const loaderFail = site.pages.some(
+    (page) => page.adsenseLoader.state === "fail",
+  );
   const thinFail = site.pages.some((page) => page.wordCount < 500);
   if (hardFails || loaderFail) {
     return "blocked";
@@ -898,7 +938,11 @@ async function main(): Promise<void> {
 
   await mkdir("data", { recursive: true });
   await mkdir("docs", { recursive: true });
-  await writeFile(JSON_OUTPUT_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  await writeFile(
+    JSON_OUTPUT_PATH,
+    `${JSON.stringify(report, null, 2)}\n`,
+    "utf8",
+  );
   await writeFile(MD_OUTPUT_PATH, renderMarkdown(report), "utf8");
   console.log(
     `AdSense readiness audit complete: targets=${report.targetCount}, ready=${summary.ready}, review=${summary.review}, needs_patch=${summary.needs_patch}, blocked=${summary.blocked}, json=${JSON_OUTPUT_PATH}, markdown=${MD_OUTPUT_PATH}`,

@@ -55,6 +55,8 @@ export interface SitemapDetail {
   warnings?: number;
   errors?: number;
   isPending?: boolean;
+  indexed?: number;
+  submitted?: number;
 }
 
 export interface MonetizationEvidence {
@@ -197,6 +199,8 @@ export interface SiteStat {
   sitemapIsPending?: boolean;
   sitemapCount?: number;
   sitemapDetails?: SitemapDetail[];
+  googleIndexedCount?: number;
+  googleSubmittedCount?: number;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
