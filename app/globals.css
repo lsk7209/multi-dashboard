@@ -393,6 +393,18 @@ h2 {
   margin: 0;
 }
 
+.insight-prompt {
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+
+.insight-review {
+  color: #5f4b00;
+  background: #fffbeb;
+  border-top-color: #fde68a;
+  padding: 8px;
+}
+
 .severity-high {
   border-left-color: #dc2626;
 }

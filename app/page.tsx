@@ -543,11 +543,15 @@ function InsightCard({ insight }: { insight: SiteInsight }) {
       </div>
       <div className="insight-detail">
         <strong>Codex/Claude 작업 지시</strong>
-        <p>{insight.operatorPrompt}</p>
+        <p className="insight-prompt">{insight.operatorPrompt}</p>
       </div>
       <div className="insight-detail">
         <strong>검증 기준</strong>
         <p>{insight.verification}</p>
+      </div>
+      <div className="insight-detail insight-review">
+        <strong>검토 메모</strong>
+        <p>{insight.reviewNote}</p>
       </div>
     </div>
   );

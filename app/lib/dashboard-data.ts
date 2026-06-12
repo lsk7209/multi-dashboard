@@ -262,6 +262,7 @@ export interface SiteInsight {
   evidence: string[];
   operatorPrompt: string;
   verification: string;
+  reviewNote: string;
 }
 
 export interface SiteTrend {
@@ -1489,7 +1490,14 @@ function groupInsightsByDomain(insights: SiteInsight[]): SiteInsight[] {
     const allValues = [...new Set(group.map((i) => i.primaryValue))].join(
       " / ",
     );
-    merged.push({ ...primary, reason: allReasons, primaryValue: allValues });
+    merged.push({
+      ...primary,
+      reason: allReasons,
+      primaryValue: allValues,
+      evidence: [
+        ...new Set(group.flatMap((insight) => insight.evidence)),
+      ].slice(0, 7),
+    });
   }
   return merged;
 }
@@ -1646,6 +1654,7 @@ function makeInsight(
     evidence: buildInsightEvidence(stat, kind, primaryValue),
     operatorPrompt: actionGuide.operatorPrompt,
     verification: actionGuide.verification,
+    reviewNote: buildInsightReviewNote(stat, kind),
   };
 }
 
@@ -1657,10 +1666,25 @@ function buildInsightEvidence(
   const gsc = stat.gscLast7Days ?? emptyGscMetrics();
   const evidence = [
     `핵심 지표: ${primaryValue}`,
+    `대상: siteId ${stat.id}, URL ${stat.url}`,
     `GA4 최근 7일 사용자 ${formatNumber(stat.last7Days.activeUsers)}명, 직전 7일 ${formatNumber(stat.previous7Days.activeUsers)}명`,
     `GSC 최근 7일 클릭 ${formatNumber(gsc.clicks)}회, 노출 ${formatNumber(gsc.impressions)}회, CTR ${formatPercent(gsc.ctr)}`,
   ];
 
+  if (stat.gscSiteUrl) {
+    evidence.push(`GSC 속성: ${stat.gscSiteUrl}`);
+  }
+  if (stat.sitemapPath) {
+    evidence.push(`Sitemap: ${stat.sitemapPath}`);
+  }
+  if (stat.googleSubmittedCount !== undefined) {
+    evidence.push(
+      `Google 제출 ${formatNumber(stat.googleSubmittedCount)}개, 색인 ${formatNumber(stat.googleIndexedCount ?? 0)}개`,
+    );
+  }
+  if (stat.sitemapLastDownloadedAt) {
+    evidence.push(`Sitemap 마지막 읽음: ${stat.sitemapLastDownloadedAt}`);
+  }
   if (stat.trend.activeUsersChange !== null) {
     evidence.push(
       `GA4 변화율 ${formatSignedPercent(stat.trend.activeUsersChange)}`,
@@ -1683,7 +1707,68 @@ function buildInsightEvidence(
     );
   }
 
-  return evidence.slice(0, 5);
+  return evidence.slice(0, 7);
+}
+
+function buildInsightReviewNote(
+  stat: EnrichedSiteStat,
+  kind: InsightKind,
+): string {
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  const notes: string[] = [];
+
+  if (stat.last7Days.activeUsers < 30) {
+    notes.push(
+      "표본이 작아 퍼센트 변화가 크게 흔들릴 수 있으므로 실제 페이지/쿼리 수를 먼저 확인하세요.",
+    );
+  }
+
+  if (
+    kind === "indexingOrPermissionIssue" &&
+    !stat.gscError &&
+    gsc.clicks === 0 &&
+    gsc.impressions === 0
+  ) {
+    notes.push(
+      "GSC 0은 권한 오류로 단정하지 말고 속성 불일치, 검색 노출 없음, sitemap/canonical 문제를 분리해서 봐야 합니다.",
+    );
+  }
+
+  if (
+    kind === "growth" &&
+    gsc.clicks === 0 &&
+    gsc.impressions === 0 &&
+    stat.last7Days.activeUsers >= 50
+  ) {
+    notes.push(
+      "GA4 성장은 확인되지만 GSC 검색 신호가 없어 검색 확장보다 유입 채널과 GSC 속성 정합성 확인이 우선입니다.",
+    );
+  }
+
+  if (
+    kind === "decline" &&
+    (stat.trend.activeUsersChange ?? 0) > 0 &&
+    (stat.trend.gscClicksChange ?? 0) < 0
+  ) {
+    notes.push(
+      "GA4 사용자는 늘고 검색 클릭만 줄어든 케이스라 전체 트래픽 하락보다 검색 쿼리/CTR 하락으로 좁혀 보세요.",
+    );
+  }
+
+  if (
+    (kind === "seoOpportunity" || kind === "rankingOpportunity") &&
+    gsc.impressions < 300
+  ) {
+    notes.push(
+      "노출 규모가 아직 작아 사이트 전체 결론보다 상위 쿼리와 URL 단위 후보 선별이 먼저입니다.",
+    );
+  }
+
+  if (notes.length === 0) {
+    return "현재 신호는 작업 후보로 볼 수 있으나, 변경 전 상위 페이지와 쿼리 단위 근거를 한 번 더 확인하세요.";
+  }
+
+  return notes.slice(0, 2).join(" ");
 }
 
 function buildInsightActionGuide(
@@ -1692,51 +1777,71 @@ function buildInsightActionGuide(
 ): Pick<SiteInsight, "operatorPrompt" | "verification"> {
   const host = normalizeUrl(stat.url);
   const base = `${stat.name}(${host})`;
+  const context = buildOperatorContext(stat);
 
   switch (kind) {
     case "indexingOrPermissionIssue":
       return {
-        operatorPrompt: `Codex: ${base}의 GSC 소유권, sitemap 제출 URL, robots.txt, canonical을 점검하고 데이터가 0으로 잡히는 원인을 수정 계획으로 정리해줘.`,
+        operatorPrompt: `Codex: ${base}의 GSC 소유권, sitemap 제출 URL, robots.txt, canonical을 점검하고 데이터가 0으로 잡히는 원인을 수정 계획으로 정리해줘. ${context}`,
         verification:
           "Search Console 속성 권한이 정상이고 sitemap 마지막 읽은 날짜가 최신이며, 다음 갱신 후 GSC 오류가 사라지는지 확인합니다.",
       };
     case "decline":
       return {
-        operatorPrompt: `Codex: ${base}의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘.`,
+        operatorPrompt: `Codex: ${base}의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. ${context}`,
         verification:
           "수정 후 7일 사용자, GSC 클릭, 상위 쿼리 CTR이 직전 갱신 대비 회복되는지 대시보드에서 비교합니다.",
       };
     case "growth":
       return {
-        operatorPrompt: `Codex: ${base}의 성장 원인을 찾고, 성과가 좋은 페이지의 내부링크, 관련 글, 제목 패턴을 확장하는 작업안을 만들어줘.`,
+        operatorPrompt: `Codex: ${base}의 성장 원인을 찾고, 성과가 좋은 페이지의 내부링크, 관련 글, 제목 패턴을 확장하는 작업안을 만들어줘. ${context}`,
         verification:
           "확장 후 성장 페이지의 세션, 내부 이동, 관련 글 노출이 유지 또는 증가하는지 확인합니다.",
       };
     case "seoOpportunity":
       return {
-        operatorPrompt: `Codex: ${base}에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘.`,
+        operatorPrompt: `Codex: ${base}에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. ${context}`,
         verification:
           "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
       };
     case "rankingOpportunity":
       return {
-        operatorPrompt: `Codex: ${base}의 평균 순위 5-20위권 페이지를 찾아 본문 보강, FAQ, 내부링크, 최신성 업데이트 계획을 작성해줘.`,
+        operatorPrompt: `Codex: ${base}의 평균 순위 5-20위권 페이지를 찾아 본문 보강, FAQ, 내부링크, 최신성 업데이트 계획을 작성해줘. ${context}`,
         verification:
           "보강 페이지의 평균 순위, 노출, 클릭이 다음 1-2회 갱신에서 개선되는지 추적합니다.",
       };
     case "trafficMismatch":
       return {
-        operatorPrompt: `Codex: ${base}의 GA4 유입 대비 GSC 클릭이 낮은 이유를 채널별로 분리하고 검색 유입 확대 가능 페이지를 골라줘.`,
+        operatorPrompt: `Codex: ${base}의 GA4 유입 대비 GSC 클릭이 낮은 이유를 채널별로 분리하고 검색 유입 확대 가능 페이지를 골라줘. ${context}`,
         verification:
           "검색 유입 대상 페이지의 색인 상태, GSC 클릭, GA4 organic 유입을 함께 확인합니다.",
       };
     case "duplicateProperty":
       return {
-        operatorPrompt: `Codex: ${base}와 중복 등록된 GA4/GSC 속성을 찾아 canonical 기준으로 유지할 항목과 정리할 항목을 제안해줘.`,
+        operatorPrompt: `Codex: ${base}와 중복 등록된 GA4/GSC 속성을 찾아 canonical 기준으로 유지할 항목과 정리할 항목을 제안해줘. ${context}`,
         verification:
           "대시보드에 같은 도메인이 중복 표시되지 않고 대표 속성의 수집 지표만 남는지 확인합니다.",
       };
   }
+}
+
+function buildOperatorContext(stat: EnrichedSiteStat): string {
+  const parts = [`siteId=${stat.id}`, `url=${stat.url}`];
+
+  if (stat.gscSiteUrl) {
+    parts.push(`gscSiteUrl=${stat.gscSiteUrl}`);
+  }
+  if (stat.sitemapPath) {
+    parts.push(`sitemap=${stat.sitemapPath}`);
+  }
+  if (stat.googleSubmittedCount !== undefined) {
+    parts.push(`submitted=${stat.googleSubmittedCount}`);
+  }
+  if (stat.googleIndexedCount !== undefined) {
+    parts.push(`indexed=${stat.googleIndexedCount}`);
+  }
+
+  return `기준 정보: ${parts.join(", ")}.`;
 }
 
 function readSites(path: string): Site[] {
