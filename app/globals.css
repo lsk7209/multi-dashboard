@@ -393,6 +393,43 @@ h2 {
   margin: 0;
 }
 
+.insight-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.insight-chip-list span {
+  border-radius: 999px;
+  padding: 3px 7px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.insight-query-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.insight-query-list li {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.insight-query-list b,
+.insight-query-list span {
+  overflow-wrap: anywhere;
+}
+
+.insight-query-list b {
+  color: var(--ink);
+  font-size: 12px;
+}
+
 .insight-prompt {
   overflow-wrap: anywhere;
   color: var(--ink);

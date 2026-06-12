@@ -541,6 +541,37 @@ function InsightCard({ insight }: { insight: SiteInsight }) {
           ))}
         </ul>
       </div>
+      {insight.relatedSignals.length > 0 ? (
+        <div className="insight-detail">
+          <strong>같이 걸린 신호</strong>
+          <div className="insight-chip-list">
+            {insight.relatedSignals.map((signal) => (
+              <span key={signal}>{signal}</span>
+            ))}
+          </div>
+        </div>
+      ) : null}
+      <div className="insight-detail">
+        <strong>GSC 진단</strong>
+        <p>{insight.gscDiagnosis}</p>
+      </div>
+      {insight.topQueries.length > 0 ? (
+        <div className="insight-detail">
+          <strong>상위 쿼리 후보</strong>
+          <ul className="insight-query-list">
+            {insight.topQueries.map((query) => (
+              <li key={query.query}>
+                <b>{query.query}</b>
+                <span>
+                  클릭 {formatNumber(query.clicks)} · 노출{" "}
+                  {formatNumber(query.impressions)} · CTR{" "}
+                  {formatPercent(query.ctr)} · {formatDecimal(query.position)}위
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
       <div className="insight-detail">
         <strong>Codex/Claude 작업 지시</strong>
         <p className="insight-prompt">{insight.operatorPrompt}</p>
@@ -594,6 +625,10 @@ function formatNumber(value: number): string {
 
 function formatPercent(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
+}
+
+function formatDecimal(value: number): string {
+  return value.toFixed(1);
 }
 
 function formatChange(value: number | null): string {

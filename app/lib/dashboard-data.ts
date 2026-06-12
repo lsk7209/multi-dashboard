@@ -36,6 +36,10 @@ export interface GscQueryMetric extends GscMetricSet {
   query: string;
 }
 
+export interface InsightQueryCandidate extends GscMetricSet {
+  query: string;
+}
+
 export interface TrafficKeywordMetric {
   keyword: string;
   source: string;
@@ -263,6 +267,9 @@ export interface SiteInsight {
   operatorPrompt: string;
   verification: string;
   reviewNote: string;
+  gscDiagnosis: string;
+  relatedSignals: string[];
+  topQueries: InsightQueryCandidate[];
 }
 
 export interface SiteTrend {
@@ -426,7 +433,7 @@ export function getDashboardData(): DashboardData {
   );
   const dedupeResult = dedupeStatsByHost(stats);
   const displayStats = dedupeResult.stats;
-  const insights = buildInsights(displayStats);
+  const insights = attachRelatedInsightSignals(buildInsights(displayStats));
   const actions = buildActionItems(displayStats).slice(0, 12);
   const collectionSummary = buildCollectionSummary(displayStats);
   const totalLast1Days = sumMetrics(displayStats.map((stat) => stat.last1Days));
@@ -1497,9 +1504,38 @@ function groupInsightsByDomain(insights: SiteInsight[]): SiteInsight[] {
       evidence: [
         ...new Set(group.flatMap((insight) => insight.evidence)),
       ].slice(0, 7),
+      relatedSignals: group
+        .map((insight) => `${formatInsightKind(insight.kind)} ${insight.primaryValue}`)
+        .filter((signal, index, signals) => signals.indexOf(signal) === index),
     });
   }
   return merged;
+}
+
+function attachRelatedInsightSignals(insights: SiteInsight[]): SiteInsight[] {
+  const byDomain = new Map<string, SiteInsight[]>();
+
+  for (const insight of insights) {
+    const domain = normalizeUrl(insight.url);
+    byDomain.set(domain, [...(byDomain.get(domain) ?? []), insight]);
+  }
+
+  return insights.map((insight) => {
+    const group = byDomain.get(normalizeUrl(insight.url)) ?? [];
+    const relatedSignals = group
+      .filter((candidate) => candidate.id !== insight.id)
+      .map(
+        (candidate) =>
+          `${formatInsightKind(candidate.kind)} ${candidate.primaryValue}`,
+      )
+      .filter((signal, index, signals) => signals.indexOf(signal) === index)
+      .slice(0, 5);
+
+    return {
+      ...insight,
+      relatedSignals,
+    };
+  });
 }
 
 function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
@@ -1655,6 +1691,9 @@ function makeInsight(
     operatorPrompt: actionGuide.operatorPrompt,
     verification: actionGuide.verification,
     reviewNote: buildInsightReviewNote(stat, kind),
+    gscDiagnosis: buildGscDiagnosis(stat),
+    relatedSignals: [],
+    topQueries: buildInsightQueryCandidates(stat, kind),
   };
 }
 
@@ -1769,6 +1808,101 @@ function buildInsightReviewNote(
   }
 
   return notes.slice(0, 2).join(" ");
+}
+
+function buildGscDiagnosis(stat: EnrichedSiteStat): string {
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  const sitemapHost = stat.sitemapPath ? hostnameOf(stat.sitemapPath) : null;
+  const siteHost = hostnameOf(stat.url);
+
+  if (stat.gscError) {
+    return `GSC API 오류가 있어 Search Console 권한 또는 속성 등록을 먼저 확인해야 합니다: ${stat.gscError}`;
+  }
+
+  if (gsc.clicks === 0 && gsc.impressions === 0) {
+    if (
+      stat.googleSubmittedCount !== undefined &&
+      stat.googleSubmittedCount > 0 &&
+      (stat.googleIndexedCount ?? 0) === 0
+    ) {
+      return "sitemap 제출 수는 있지만 색인 수가 0입니다. canonical, robots, noindex, sitemap URL의 실제 응답을 먼저 점검하세요.";
+    }
+
+    if (sitemapHost && siteHost && sitemapHost !== siteHost) {
+      return `대표 URL(${siteHost})과 sitemap 호스트(${sitemapHost})가 다릅니다. 의도한 서브도메인 추적인지 확인하세요.`;
+    }
+
+    if (stat.last7Days.activeUsers >= 50) {
+      return "GA4 유입은 있는데 GSC 노출이 0입니다. GSC 속성 불일치, 검색 유입 없음, 색인/canonical 문제를 분리해서 확인하세요.";
+    }
+
+    return "GSC 노출과 클릭이 모두 0입니다. 저유입 사이트라면 정상일 수 있어 색인 상태와 쿼리 발생 여부를 함께 확인하세요.";
+  }
+
+  if (gsc.impressions > 0 && gsc.clicks === 0) {
+    return "GSC 노출은 있으나 클릭이 없습니다. 제목, 메타 설명, 검색 의도 일치도를 우선 점검하세요.";
+  }
+
+  return "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.";
+}
+
+function buildInsightQueryCandidates(
+  stat: EnrichedSiteStat,
+  kind: InsightKind,
+): InsightQueryCandidate[] {
+  const queries = stat.gscTopQueries ?? [];
+
+  if (queries.length === 0) {
+    return [];
+  }
+
+  const filtered = queries.filter((query) => {
+    if (kind === "seoOpportunity") {
+      return query.impressions >= 20 && query.ctr <= 0.03;
+    }
+    if (kind === "rankingOpportunity") {
+      return query.position >= 4 && query.position <= 20;
+    }
+    return query.impressions > 0;
+  });
+
+  return filtered
+    .sort((a, b) => {
+      if (kind === "seoOpportunity") {
+        return b.impressions - a.impressions || a.ctr - b.ctr;
+      }
+      if (kind === "rankingOpportunity") {
+        return b.impressions - a.impressions || a.position - b.position;
+      }
+      return b.clicks - a.clicks || b.impressions - a.impressions;
+    })
+    .slice(0, 3)
+    .map((query) => ({
+      query: query.query,
+      clicks: query.clicks,
+      impressions: query.impressions,
+      ctr: query.ctr,
+      position: query.position,
+    }));
+}
+
+function formatInsightKind(kind: InsightKind): string {
+  switch (kind) {
+    case "growth":
+      return "성장";
+    case "decline":
+      return "하락";
+    case "seoOpportunity":
+      return "CTR";
+    case "rankingOpportunity":
+      return "순위";
+    case "trafficMismatch":
+      return "유입불일치";
+    case "indexingOrPermissionIssue":
+      return "GSC확인";
+    case "duplicateProperty":
+      return "중복";
+  }
 }
 
 function buildInsightActionGuide(
@@ -2159,6 +2293,14 @@ function normalizeUrl(url: string): string {
     return parsed.hostname.replace(/^www\./, "");
   } catch {
     return url;
+  }
+}
+
+function hostnameOf(url: string): string | null {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
   }
 }
 
