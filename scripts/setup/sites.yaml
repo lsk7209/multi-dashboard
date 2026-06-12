@@ -1063,3 +1063,21 @@ sites:
     ga4PropertyId: "540455691"
     gscSiteUrl: https://yungyanggogo.kr/
     monetization: true
+  - id: caregos
+    name: caregos.com
+    enabled: true
+    platform: wordpress
+    url: https://caregos.com/
+    wpRestBase: https://caregos.com/wp-json/wp/v2
+    ga4PropertyId: "540671690"
+    gscSiteUrl: https://caregos.com/
+    monetization: true
+  - id: wattbenchs
+    name: wattbenchs.com
+    enabled: true
+    platform: wordpress
+    url: https://wattbenchs.com/
+    wpRestBase: https://wattbenchs.com/wp-json/wp/v2
+    ga4PropertyId: "540673092"
+    gscSiteUrl: https://wattbenchs.com/
+    monetization: true

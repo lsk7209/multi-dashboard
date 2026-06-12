@@ -109,12 +109,6 @@ function stripHtml(html: string): string {
   );
 }
 
-function wordCount(text: string): number {
-  const korean = text.match(/[가-힣]{2,}/g) ?? [];
-  const latin = text.match(/[A-Za-z0-9]{2,}/g) ?? [];
-  return korean.length + latin.length;
-}
-
 function extractAttribute(tag: string, name: string): string | undefined {
   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const match = tag.match(
