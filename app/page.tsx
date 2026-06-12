@@ -526,13 +526,29 @@ function InsightPanel({
 function InsightCard({ insight }: { insight: SiteInsight }) {
   return (
     <div className={`insight-card severity-${insight.severity}`}>
-      <div>
+      <div className="insight-card-title">
         <strong>{insight.siteName}</strong>
         <a href={insight.url}>{formatHost(insight.url)}</a>
       </div>
-      <span>{insight.primaryValue}</span>
-      <p>{insight.reason}</p>
-      <em>{insight.recommendedAction}</em>
+      <span className="insight-value">{insight.primaryValue}</span>
+      <p className="insight-reason">{insight.reason}</p>
+      <em className="insight-action">{insight.recommendedAction}</em>
+      <div className="insight-detail">
+        <strong>작업 근거</strong>
+        <ul>
+          {insight.evidence.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="insight-detail">
+        <strong>Codex/Claude 작업 지시</strong>
+        <p>{insight.operatorPrompt}</p>
+      </div>
+      <div className="insight-detail">
+        <strong>검증 기준</strong>
+        <p>{insight.verification}</p>
+      </div>
     </div>
   );
 }

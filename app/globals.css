@@ -320,7 +320,7 @@ h2 {
   background: #fbfcfd;
 }
 
-.insight-card div {
+.insight-card-title {
   min-width: 0;
 }
 
@@ -339,7 +339,7 @@ h2 {
   text-decoration: none;
 }
 
-.insight-card span {
+.insight-value {
   align-self: start;
   border-radius: 999px;
   padding: 4px 8px;
@@ -349,29 +349,55 @@ h2 {
   font-weight: 700;
 }
 
-.insight-card p,
-.insight-card em {
+.insight-reason,
+.insight-action,
+.insight-detail {
   grid-column: 1 / -1;
   margin: 0;
   line-height: 1.5;
 }
 
-.insight-card p {
+.insight-reason {
   color: var(--ink);
   font-size: 13px;
 }
 
-.insight-card em {
+.insight-action {
   color: var(--muted);
   font-size: 12px;
   font-style: normal;
+}
+
+.insight-detail {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.insight-detail strong {
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.insight-detail ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 16px;
+}
+
+.insight-detail p {
+  margin: 0;
 }
 
 .severity-high {
   border-left-color: #dc2626;
 }
 
-.severity-high span {
+.severity-high .insight-value {
   color: #991b1b;
   background: #fee2e2;
 }
@@ -380,7 +406,7 @@ h2 {
   border-left-color: var(--warning);
 }
 
-.severity-medium span {
+.severity-medium .insight-value {
   color: var(--warning);
   background: var(--warning-weak);
 }
