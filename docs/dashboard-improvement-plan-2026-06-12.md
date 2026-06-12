@@ -132,11 +132,15 @@ Tier:
 
 Finding:
 - 31 sites have no `lastPublishedAt` in the dashboard snapshot.
+- `todaypharm.kr` was using the `www` GSC property in dashboard config while the public canonical host, redirects, robots.txt, and sitemap URLs use non-`www`.
+- `todaypharm.kr` also had both `sitemap-index.xml` and `sitemap.xml` submitted in GSC; these expose the same sitemap index shape, so counting both can look like duplicate submitted URLs.
 
 Plan:
 - Prioritize high-traffic sites without publish metadata.
 - Add or repair `contentSource` metadata where SSH/WordPress source is known.
 - Keep this as dashboard accuracy work, not production content work.
+- Keep dashboard config on canonical `https://todaypharm.kr/` and track only `https://todaypharm.kr/sitemap.xml`, matching robots.txt.
+- Remove or ignore the stale duplicate `https://todaypharm.kr/sitemap-index.xml` submission in Search Console to avoid double-counted sitemap reporting.
 
 Tier:
 - T1/T2 depending on whether the change is local dashboard config only or requires production access.

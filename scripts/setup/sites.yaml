@@ -430,7 +430,9 @@ sites:
     url: https://todaypharm.kr/
     wpRestBase: https://todaypharm.kr/wp-json/wp/v2
     ga4PropertyId: "534313222"
-    gscSiteUrl: https://www.todaypharm.kr/
+    gscSiteUrl: https://todaypharm.kr/
+    sitemapUrls:
+      - https://todaypharm.kr/sitemap.xml
     monetization: true
   - id: tennisfrens
     name: tennisfrens.com
