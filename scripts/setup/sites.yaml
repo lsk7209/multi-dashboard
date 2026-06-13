@@ -452,10 +452,10 @@ sites:
     ga4PropertyId: "534288708"
     gscSiteUrl: https://www.bojo24.kr/
     sitemapUrls:
-      - https://www.bojo24.kr/sitemap.xml
-      - https://www.bojo24.kr/benefit/sitemap.xml
-      - https://www.bojo24.kr/startup/sitemap.xml
-      - https://www.bojo24.kr/blog/sitemap.xml
+      - https://bojo24.kr/sitemap.xml
+      - https://bojo24.kr/benefit/sitemap.xml
+      - https://bojo24.kr/startup/sitemap.xml
+      - https://bojo24.kr/blog/sitemap.xml
     monetization: true
   - id: ehon365
     name: ehon365.kr
