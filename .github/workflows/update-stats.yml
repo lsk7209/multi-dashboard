@@ -48,6 +48,9 @@ jobs:
       - name: Update GA4 and GSC snapshot
         run: pnpm stats:update
 
+      - name: Generate site improvement queue
+        run: pnpm improvements:queue
+
       - name: Validate app
         run: |
           pnpm type-check
@@ -69,17 +72,31 @@ jobs:
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history; then
+          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md docs/seo-work-queue.md; then
             echo "No stats changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/setup/sites.yaml data/site-stats.json data/history
+          git add scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md docs/seo-work-queue.md
           git commit \
             -m "Keep dashboard snapshot current from scheduled collection" \
-            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history data unless the collection contract changes. Tested: pnpm stats:update; pnpm type-check; pnpm lint; pnpm build Not-tested: Manual review of every metric value."
+            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats and improvement queues are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history/improvement data unless the collection contract changes. Tested: pnpm stats:update; pnpm improvements:queue; pnpm type-check; pnpm lint; pnpm test; pnpm build Not-tested: Manual review of every metric value."
           git push
+
+      - name: Publish improvement queue issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="자동 사이트 개선 큐"
+          label="site-improvement-queue"
+          gh label create "$label" --color 1D76DB --description "Daily dashboard-driven site improvement queue" 2>/dev/null || true
+          existing=$(gh issue list --label "$label" --state open --limit 1 --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --title "$title" --body-file data/site-improvement-issue.md
+          else
+            gh issue create --title "$title" --label "$label" --body-file data/site-improvement-issue.md
+          fi
 
       - name: Alert on collection failure
         if: failure()

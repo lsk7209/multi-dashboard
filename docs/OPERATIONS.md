@@ -130,3 +130,22 @@ npm run diag
 - 공통 오류: `scripts/setup/audit-adsense-readiness.ts`의 `wordCount` 미사용 변수(`@typescript-eslint/no-unused-vars`).
 - 운영 판단: 이 유형은 대시보드 데이터 수집 실패처럼 보일 수 있지만, 실제로는 validate gate가 push를 막은 것이다. 비슷한 실패가 나오면 먼저 `stats:update` 성공 여부와 `Validate app`의 첫 lint/type/build 오류를 분리해서 본다.
 - 재발 방지: `update-stats.yml` 실패 알림과 `pnpm test` validate gate가 추가되어, 이후에는 실패 이슈와 회귀 테스트로 조기 확인한다.
+
+---
+
+## 7. 자동 사이트 개선 루프
+
+매일 07:00 KST `update-stats.yml`은 다음 순서로 움직인다.
+
+1. `pnpm setup:import-ga4-sites`
+2. `pnpm stats:update`
+3. `pnpm improvements:queue`
+4. `pnpm type-check && pnpm lint && pnpm test && pnpm build`
+5. 변경된 스냅샷, history, 개선 큐를 GitHub에 커밋
+6. `site-improvement-queue` 이슈를 생성 또는 갱신
+
+원칙:
+- 개별 사이트를 개선하기 전에는 반드시 최신 `stats:update` 결과와 `data/site-improvement-queue.json`을 먼저 확인한다.
+- T2 기술 작업은 사이트 repo/WordPress checkout, 백업, diff, 검증이 가능할 때만 Codex가 적용한다.
+- T3 콘텐츠 작업(제목, 본문, FAQ, 본문 내부링크, 최신성 보강)은 자동 직접 수정하지 않고 콘텐츠 handoff로 넘긴다.
+- 큐 생성물이 낡았거나 `generatedAt`이 36시간을 넘으면 `pnpm improvements:queue`는 실패해야 한다. 필요 시 먼저 `pnpm stats:update`를 다시 실행한다.
