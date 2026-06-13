@@ -52,6 +52,7 @@ jobs:
         run: |
           pnpm type-check
           pnpm lint
+          pnpm test
           pnpm build
 
       - name: Prune history older than 90 days

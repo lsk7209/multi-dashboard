@@ -140,7 +140,7 @@ const MIN_CLICKS_FOR_DROP = 10;
 
 // GA4 사용자 급락 여부 (변동률 + 절대규모 게이트). 호출부 전체가 이 기준을 공유한다.
 // 술어가 참이면 change는 반드시 number이므로 `change is number`로 narrow한다.
-function isSignificantUserDrop(
+export function isSignificantUserDrop(
   change: number | null | undefined,
   previousUsers: number | undefined,
 ): change is number {
@@ -151,7 +151,7 @@ function isSignificantUserDrop(
 }
 
 // GSC 클릭 급락 여부 (변동률 + 절대규모 게이트).
-function isSignificantClickDrop(
+export function isSignificantClickDrop(
   change: number | null | undefined,
   previousClicks: number | undefined,
 ): change is number {
@@ -1338,7 +1338,7 @@ function getSitemapCollectionSource(stat: SiteStat): CollectionSourceStatus {
   };
 }
 
-function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
+export function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
   const segments: Omit<DashboardSegment, "memberIds">[] = [
     {
       key: "growth",
@@ -2125,7 +2125,7 @@ function emptySiteStat(site: Site): SiteStat {
   };
 }
 
-function getOperationalStatus(stat: SiteStat): OperationalStatus {
+export function getOperationalStatus(stat: SiteStat): OperationalStatus {
   if (
     isOlderThanHours(stat.ga4LastSuccessfulFetchAt, 48) ||
     isOlderThanHours(stat.gscLastSuccessfulFetchAt, 48)
@@ -2263,7 +2263,7 @@ function sumMetrics(metrics: MetricSet[]): MetricSet {
   );
 }
 
-function sumGscMetrics(metrics: GscMetricSet[]): GscMetricSet {
+export function sumGscMetrics(metrics: GscMetricSet[]): GscMetricSet {
   const totals = metrics.reduce(
     (total, metric) => ({
       clicks: total.clicks + metric.clicks,
@@ -2286,7 +2286,7 @@ function sumGscMetrics(metrics: GscMetricSet[]): GscMetricSet {
   };
 }
 
-function changeRate(current: number, previous: number): number | null {
+export function changeRate(current: number, previous: number): number | null {
   if (previous === 0) {
     return current === 0 ? 0 : null;
   }

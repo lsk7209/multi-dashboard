@@ -8,6 +8,7 @@ Multi-site dashboard setup automation for WordPress, GitHub Actions, Vercel, GA4
 pnpm install
 pnpm type-check
 pnpm lint
+pnpm test
 pnpm setup:verify:dry
 ```
 

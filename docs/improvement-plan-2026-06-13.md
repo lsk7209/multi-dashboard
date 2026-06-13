@@ -6,6 +6,24 @@
 
 ---
 
+## 적용 완료 (2026-06-13 세션)
+
+이번 세션에서 반영한 항목 (type-check / lint / test / build 모두 통과):
+
+- **P0′ 봇 차단**: `public/robots.txt` + layout `robots: index:false`. (인증은 소유자 결정에 따라 미적용 — 공개 유지)
+- **P0-1 수집 실패 알림**: `update-stats.yml`에 `if: failure()` 시 `collection-failure` 라벨 이슈 생성/코멘트.
+- **P0-3 / P3-3 스파크라인**: 수집 누락일을 0이 아닌 `null`(선 끊김)로 표시 + history 파일을 사이트 수와 무관하게 7회만 파싱.
+- **P1 테스트 안전망**: vitest 도입, 판정 규칙 21개 테스트 작성, Validate 게이트(`pnpm test`)·README 편입.
+- **P1′ 세그먼트 버그**: `DashboardSegment.memberIds`(전체) 추가, 테이블이 절단 배열 대신 이걸로 필터. 회귀 테스트 포함.
+- **P1″ 스냅샷 파싱 가드**: `readStats`가 손상 시 명확한 메시지로 throw.
+- **P2-3 워크플로 최소권한**: `weekly-report.yml`에 `permissions: contents:read` + timeout, `update-stats.yml`에 `issues:write`.
+- **P2′ AdSense ID**: `update-ga4-stats.ts`가 `process.env.ADSENSE_PUBLISHER_ID` 우선.
+- **P3-1 history 보존**: `update-stats.yml`이 90일 초과 history 삭제.
+
+남은 항목: P0-2(diag 누락일 감지·대시보드 성공률), P0-4(06-08/06-11 실패 원인), P1-2 잔여 테스트(dedupe·sitemap 분기·health 경계), P2-1(sites.yaml 인프라 분리), P2-2(secrets.ts 하드코딩 경로), P4(파일 분할).
+
+---
+
 ## 현재 상태 요약 (검토 근거)
 
 - `pnpm type-check` / `lint` / `build` 모두 통과. 작업 트리 깨끗함.
