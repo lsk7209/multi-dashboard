@@ -48,14 +48,6 @@ jobs:
       - name: Update GA4 and GSC snapshot
         run: pnpm stats:update
 
-      - name: Generate site improvement queue
-        run: pnpm improvements:queue
-
-      - name: Dispatch improvement tasks
-        env:
-          SITE_AUTOMATION_TOKEN: ${{ secrets.SITE_AUTOMATION_TOKEN }}
-        run: pnpm improvements:dispatch
-
       - name: Validate app
         run: |
           pnpm type-check
@@ -77,31 +69,17 @@ jobs:
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md data/site-improvement-dispatch.json docs/seo-work-queue.md; then
+          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history; then
             echo "No stats changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md data/site-improvement-dispatch.json docs/seo-work-queue.md
+          git add scripts/setup/sites.yaml data/site-stats.json data/history
           git commit \
             -m "Keep dashboard snapshot current from scheduled collection" \
-            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats and improvement queues are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history/improvement data unless the collection contract changes. Tested: pnpm stats:update; pnpm improvements:queue; pnpm improvements:dispatch; pnpm type-check; pnpm lint; pnpm test; pnpm build Not-tested: Manual review of every metric value."
+            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history data unless the collection contract changes. Tested: pnpm stats:update; pnpm type-check; pnpm lint; pnpm test; pnpm build Not-tested: Manual review of every metric value."
           git push
-
-      - name: Publish improvement queue issue
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          title="자동 사이트 개선 큐"
-          label="site-improvement-queue"
-          gh label create "$label" --color 1D76DB --description "Daily dashboard-driven site improvement queue" 2>/dev/null || true
-          existing=$(gh issue list --label "$label" --state open --limit 1 --json number --jq '.[0].number')
-          if [ -n "$existing" ]; then
-            gh issue edit "$existing" --title "$title" --body-file data/site-improvement-issue.md
-          else
-            gh issue create --title "$title" --label "$label" --body-file data/site-improvement-issue.md
-          fi
 
       - name: Alert on collection failure
         if: failure()
@@ -109,8 +87,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          title="수집 실패: update-stats $(date -u +%Y-%m-%d)"
-          body="자동 수집 워크플로우가 실패했습니다.\n\n실행 로그: ${RUN_URL}\n\n점검 순서(OPERATIONS.md §4): 결제부터 의심하지 말 것 — Validate(type-check/lint/build) step이 흔한 원인입니다. \`gh run view --log-failed\`로 실패 step을 먼저 확인하세요."
+          title="Collection failed: update-stats $(date -u +%Y-%m-%d)"
+          body="The scheduled dashboard collection workflow failed.\n\nRun log: ${RUN_URL}\n\nCheck the failed step first with \`gh run view --log-failed\`. A successful stats collection can still fail later at the validate gate."
           existing=$(gh issue list --label collection-failure --state open --limit 1 --json number --jq '.[0].number')
           if [ -n "$existing" ]; then
             gh issue comment "$existing" --body "$(printf '%b' "$body")"
