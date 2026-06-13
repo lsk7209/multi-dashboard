@@ -1,9 +1,6 @@
 import { existsSync } from "node:fs";
 import { readFileSync } from "node:fs";
 
-const DEFAULT_KEY_FILE = "D:\\env\\\uD0A4\uD30C\uC77C.txt";
-const DEFAULT_GCP_SA_FILE = "D:\\env\\cursorai-451704-85a5abbe8eeb.json";
-
 export interface WpAdminCredentials {
   url: string;
   username: string;
@@ -14,8 +11,8 @@ export function loadLocalSecrets(): void {
   loadEnvFile(".env.setup.template");
   loadEnvFile(".env.setup.local");
   loadEnvFile(".env.local");
-  loadLooseKeyFile(process.env.SETUP_KEY_FILE ?? DEFAULT_KEY_FILE);
-  loadDefaultGoogleServiceAccount();
+  loadOptionalLooseKeyFile(process.env.SETUP_KEY_FILE);
+  loadGoogleServiceAccountFromFile(process.env.GCP_SA_KEY_FILE);
 }
 
 export function getWpAdmin(siteId: string): WpAdminCredentials {
@@ -52,7 +49,11 @@ function loadEnvFile(path: string): void {
   }
 }
 
-function loadLooseKeyFile(path: string): void {
+function loadOptionalLooseKeyFile(path: string | undefined): void {
+  if (!path) {
+    return;
+  }
+
   if (!existsSync(path)) {
     return;
   }
@@ -66,12 +67,12 @@ function loadLooseKeyFile(path: string): void {
   }
 }
 
-function loadDefaultGoogleServiceAccount(): void {
-  if (process.env.GCP_SA_KEY_JSON || !existsSync(DEFAULT_GCP_SA_FILE)) {
+function loadGoogleServiceAccountFromFile(path: string | undefined): void {
+  if (!path || process.env.GCP_SA_KEY_JSON || !existsSync(path)) {
     return;
   }
 
-  const raw = readFileSync(DEFAULT_GCP_SA_FILE, "utf8");
+  const raw = readFileSync(path, "utf8");
   process.env.GCP_SA_KEY_JSON = raw;
 
   if (!process.env.GCP_SA_EMAIL) {

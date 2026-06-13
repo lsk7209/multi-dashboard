@@ -17,7 +17,8 @@ const DAY_RANGE = 1;
 const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
 const CONCURRENCY = 6;
-const ADSENSE_PUBLISHER_ID = "pub-3050601904412736";
+const ADSENSE_PUBLISHER_ID =
+  process.env.ADSENSE_PUBLISHER_ID ?? "pub-3050601904412736";
 // 헤더 없는 undici 기본 요청은 일부 호스팅 WAF가 415로 차단한다(curl·브라우저는 통과).
 // 홈페이지/ads.txt 체크에 브라우저 User-Agent와 Accept를 붙여 오탐을 막는다.
 const SITE_FETCH_HEADERS = {

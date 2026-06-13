@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: "멀티 대시보드",
     description: "멀티 사이트 준비 자동화와 배포 상태를 확인하는 운영 대시보드",

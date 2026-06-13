@@ -120,3 +120,13 @@ npm run diag
 - 판정 로직이 바뀌면 §2 규칙표의 file:line을 갱신.
 - 핵심 사실은 메모리(`memory/`)에도 반영해 세션 간 유지.
 - 관련 파일: `scripts/setup/diagnose-ops.ts`(진단), `scripts/setup/update-ga4-stats.ts`(수집), `scripts/setup/sites.yaml`(설정), `docs/ASSET-MAP.md`(자산 매핑).
+
+---
+
+## 6. 2026-06-08 / 2026-06-11 수집 실패 재확인
+
+- 확인 명령: `gh run view 27172582683 --log-failed`, `gh run view 27383350428 --log-failed`
+- 결론: 두 run 모두 `setup:import-ga4-sites`와 `stats:update`는 성공했다. 실패 원인은 수집/권한/결제가 아니라 이후 `Validate app` 단계의 ESLint 실패였다.
+- 공통 오류: `scripts/setup/audit-adsense-readiness.ts`의 `wordCount` 미사용 변수(`@typescript-eslint/no-unused-vars`).
+- 운영 판단: 이 유형은 대시보드 데이터 수집 실패처럼 보일 수 있지만, 실제로는 validate gate가 push를 막은 것이다. 비슷한 실패가 나오면 먼저 `stats:update` 성공 여부와 `Validate app`의 첫 lint/type/build 오류를 분리해서 본다.
+- 재발 방지: `update-stats.yml` 실패 알림과 `pnpm test` validate gate가 추가되어, 이후에는 실패 이슈와 회귀 테스트로 조기 확인한다.
