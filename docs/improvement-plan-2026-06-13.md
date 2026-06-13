@@ -154,6 +154,50 @@ OPERATIONS.md에 기록된 과거 오탐 사례들이 그대로 테스트 케이
 기존 STATUS.md TODO(T2 Google 색인진출, T3 순위, T4 CTR, temon 파일럿)는 **사이트 운영 트랙**으로 이 계획과 병행한다.
 이 문서는 **도구(대시보드/수집기) 자체의 신뢰성 트랙**이다. 도구가 거짓말하지 않아야 운영 트랙 판단이 선다.
 
+---
+
+## 2차 검토 추가 발견 (2026-06-13 오후)
+
+테이블 컴포넌트·수집 스크립트·앱 설정을 더 파서 나온 항목. 일부는 우선순위가 위 단계보다 높다.
+
+### P0′ — 공개 노출 차단 (신규, 우선순위 P0급)
+
+`app/layout.tsx:7`의 배포 URL은 `https://multi-dashboard.vercel.app`이고, **인증/미들웨어가 전혀 없다**
+(`app/middleware.ts` 부재 확인). URL을 아는 누구나 116개 사이트의 트래픽·GSC 지표·운영 상태와
+인사이트 카드의 `operatorPrompt`(siteId·url·gscSiteUrl 포함)를 전부 본다. `public/`에 robots.txt도
+없어 검색엔진 색인 가능성도 있다.
+- [ ] 접근 제어: Vercel Password Protection(가장 간단) 또는 Edge Middleware Basic Auth
+  (`DASHBOARD_USER`/`DASHBOARD_PASS` 환경변수).
+- [ ] `public/robots.txt`에 `Disallow: /` 추가 + `layout.tsx` metadata에 `robots: { index: false }`.
+- **AC**: 인증 없이 배포 URL 접근 시 401, 검색 색인 차단.
+- **근거**: STATUS.md "repo에 실제 secret 커밋 금지" 원칙과 동일선상 — 노출면을 데이터까지 확장한 것.
+
+### P1′ — 세그먼트 필터가 8개로 잘리는 버그 (신규, 기능 버그)
+
+`buildSegments`(`dashboard-data.ts:1396-1400`)는 표시용으로 `stats: segment.stats.slice(0, 8)`,
+`count`는 절단 전 전체 길이를 쓴다. 테이블(`site-stats-table.tsx:149-156`)이 이 **8개로 잘린 배열**로
+`segmentIds`를 만들어 필터링한다. 결과적으로 탭은 "성장 20"으로 표시되지만 클릭하면 **최대 8행만** 나온다.
+- [ ] 세그먼트의 전체 멤버 id 집합과 표시용 절단 배열을 분리(예: `segment.allIds` 추가 또는
+  테이블에서 세그먼트 조건 함수를 직접 재평가).
+- **AC**: "성장 20" 탭 클릭 시 20개 모두 표시되고, 탭 카운트와 필터 결과 수가 일치한다.
+- P1 테스트 작성 시 이 케이스를 회귀 테스트로 포함.
+
+### P1″ — 메인 스냅샷 파싱 예외 미처리 (신규, 견고성)
+
+`readStats`(`dashboard-data.ts:2031`)는 `JSON.parse`를 try/catch 없이 호출한다. `loadSparklines`의
+history 파싱(`:2002`)은 try/catch로 감싸 0으로 폴백하는데, **메인 스냅샷은 손상되면 정적 빌드 전체가
+크래시**해 배포가 막힌다(원인 추적도 어려움).
+- [ ] `readStats`에 try/catch 추가 — 파싱 실패 시 명확한 에러 메시지로 throw하거나 빈 스냅샷 폴백.
+- **AC**: 손상된 site-stats.json으로 빌드 시 무엇이 깨졌는지 메시지로 식별 가능.
+
+### P2′ — AdSense publisher ID 하드코딩 (신규, 낮음)
+
+`update-ga4-stats.ts:20`에 `ADSENSE_PUBLISHER_ID = "pub-3050601904412736"`가 소스에 하드코딩.
+민감도는 낮으나(공개 가능 식별자) 계정 변경 시 코드 수정 필요.
+- [ ] 환경변수 `ADSENSE_PUBLISHER_ID`로 이동, 기본값 유지 가능.
+
+---
+
 ## 비고 (이번에 하지 않기로 한 것)
 
 - WP 비밀번호 env/stdout 전달 개선: 로컬 1회성 셋업 용도라 위험 낮음. CI에서 돌릴 계획이 생기면 그때.
