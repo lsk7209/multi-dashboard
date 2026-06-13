@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: update-dashboard-stats
@@ -53,6 +54,18 @@ jobs:
           pnpm lint
           pnpm build
 
+      - name: Prune history older than 90 days
+        run: |
+          cutoff=$(date -u -d '90 days ago' +%Y-%m-%d)
+          for f in data/history/*.json; do
+            [ -e "$f" ] || continue
+            base=$(basename "$f" .json)
+            if [[ "$base" < "$cutoff" ]]; then
+              echo "Pruning $f (older than $cutoff)"
+              rm -f "$f"
+            fi
+          done
+
       - name: Commit updated snapshot
         run: |
           if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history; then
@@ -66,3 +79,19 @@ jobs:
             -m "Keep dashboard snapshot current from scheduled collection" \
             -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history data unless the collection contract changes. Tested: pnpm stats:update; pnpm type-check; pnpm lint; pnpm build Not-tested: Manual review of every metric value."
           git push
+
+      - name: Alert on collection failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="수집 실패: update-stats $(date -u +%Y-%m-%d)"
+          body="자동 수집 워크플로우가 실패했습니다.\n\n실행 로그: ${RUN_URL}\n\n점검 순서(OPERATIONS.md §4): 결제부터 의심하지 말 것 — Validate(type-check/lint/build) step이 흔한 원인입니다. \`gh run view --log-failed\`로 실패 step을 먼저 확인하세요."
+          existing=$(gh issue list --label collection-failure --state open --limit 1 --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$(printf '%b' "$body")"
+          else
+            gh label create collection-failure --color B60205 --description "Scheduled dashboard collection failed" 2>/dev/null || true
+            gh issue create --title "$title" --label collection-failure --body "$(printf '%b' "$body")"
+          fi

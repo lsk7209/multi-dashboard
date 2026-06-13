@@ -147,9 +147,7 @@ export function SiteStatsTable({
   const visibleStats = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     const segmentIds = new Set(
-      segments
-        .find((segment) => segment.key === segmentKey)
-        ?.stats.map((stat) => stat.id) ?? [],
+      segments.find((segment) => segment.key === segmentKey)?.memberIds ?? [],
     );
 
     return stats
@@ -994,22 +992,37 @@ function formatChange(value: number | null): string {
   return `${prefix}${formatPercent(value)}`;
 }
 
-function Sparkline({ values }: { values: number[] }) {
-  if (values.length < 2 || values.every((v) => v === 0)) {
+function Sparkline({ values }: { values: (number | null)[] }) {
+  const present = values.filter((v): v is number => v !== null);
+  if (present.length < 2 || present.every((v) => v === 0)) {
     return <span className="sparkline-empty">-</span>;
   }
-  const max = Math.max(...values, 1);
+  const max = Math.max(...present, 1);
   const W = 56;
   const H = 20;
-  const pts = values
-    .map((v, i) => {
-      const x = (i / (values.length - 1)) * W;
-      const y = H - (v / max) * H;
-      return `${x},${y}`;
-    })
-    .join(" ");
-  const lastVal = values[values.length - 1] ?? 0;
-  const prevVal = values[values.length - 2] ?? 0;
+  const denom = values.length > 1 ? values.length - 1 : 1;
+
+  // 수집 누락일(null)에서 선을 끊어 별개 구간으로 그린다.
+  const segments: string[][] = [];
+  let current: string[] = [];
+  values.forEach((v, i) => {
+    if (v === null) {
+      if (current.length > 0) {
+        segments.push(current);
+        current = [];
+      }
+      return;
+    }
+    const x = (i / denom) * W;
+    const y = H - (v / max) * H;
+    current.push(`${x},${y}`);
+  });
+  if (current.length > 0) {
+    segments.push(current);
+  }
+
+  const lastVal = present[present.length - 1] ?? 0;
+  const prevVal = present[present.length - 2] ?? 0;
   const isUp = lastVal >= prevVal;
   return (
     <svg
@@ -1018,7 +1031,9 @@ function Sparkline({ values }: { values: number[] }) {
       className={`sparkline ${isUp ? "spark-up" : "spark-down"}`}
       aria-hidden
     >
-      <polyline fill="none" strokeWidth="1.5" points={pts} />
+      {segments.map((pts, index) => (
+        <polyline key={index} fill="none" strokeWidth="1.5" points={pts.join(" ")} />
+      ))}
     </svg>
   );
 }

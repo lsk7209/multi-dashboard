@@ -314,7 +314,7 @@ export interface EnrichedSiteStat extends Omit<
   health: SiteHealthScore;
   seoOpportunityScore?: number;
   collectionSources: CollectionSourceStatus[];
-  sparkline: number[];
+  sparkline: (number | null)[];
   duplicateCount?: number;
   duplicateStats?: DuplicateSiteSummary[];
   lastPublishedAt?: string;
@@ -340,6 +340,7 @@ export interface DashboardSegment {
   label: string;
   description: string;
   count: number;
+  memberIds: string[];
   stats: EnrichedSiteStat[];
 }
 
@@ -649,7 +650,7 @@ function normalizeHost(url: string): string {
 
 function enrichSiteStat(
   stat: SiteStat,
-  sparkline: number[] = [],
+  sparkline: (number | null)[] = [],
 ): EnrichedSiteStat {
   const last1Days = stat.last1Days ?? emptyMetrics();
   const previous7Days = stat.previous7Days ?? emptyMetrics();
@@ -1338,7 +1339,7 @@ function getSitemapCollectionSource(stat: SiteStat): CollectionSourceStatus {
 }
 
 function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
-  const segments: DashboardSegment[] = [
+  const segments: Omit<DashboardSegment, "memberIds">[] = [
     {
       key: "growth",
       label: "성장",
@@ -1396,6 +1397,7 @@ function buildSegments(stats: EnrichedSiteStat[]): DashboardSegment[] {
   return segments.map((segment) => ({
     ...segment,
     count: segment.stats.length,
+    memberIds: segment.stats.map((stat) => stat.id),
     stats: segment.stats.slice(0, 8),
   }));
 }
@@ -1988,30 +1990,38 @@ function readSites(path: string): Site[] {
   return parsed.sites ?? [];
 }
 
-function loadSparklines(siteIds: string[]): Map<string, number[]> {
-  const result = new Map<string, number[]>();
+// 최근 7일 일별 활성 사용자 스파크라인. 각 history 파일은 사이트 수와 무관하게 한 번만 파싱한다.
+// 수집이 없었던 날(파일 없음/손상)은 0이 아니라 null(끊김)으로 둬서 "가짜 급락"으로 보이지 않게 한다.
+// 파일은 있는데 해당 사이트가 없으면 실제 0(무트래픽)으로 본다.
+function loadSparklines(siteIds: string[]): Map<string, (number | null)[]> {
   const days: number[] = [6, 5, 4, 3, 2, 1, 0];
+  const idSet = new Set(siteIds);
 
-  for (const siteId of siteIds) {
-    const values: number[] = [];
-    for (const daysAgo of days) {
-      const dateStr = seoulDateDaysAgo(daysAgo);
-      const historyPath = `data/history/${dateStr}.json`;
-      if (existsSync(historyPath)) {
-        try {
-          const snap = JSON.parse(
-            readFileSync(historyPath, "utf8"),
-          ) as StatsSnapshot;
-          const stat = snap.stats.find((s) => s.id === siteId);
-          values.push(stat?.last1Days?.activeUsers ?? 0);
-        } catch {
-          values.push(0);
-        }
-      } else {
-        values.push(0);
-      }
+  const perDay = days.map((daysAgo) => {
+    const historyPath = `data/history/${seoulDateDaysAgo(daysAgo)}.json`;
+    if (!existsSync(historyPath)) {
+      return null;
     }
-    result.set(siteId, values);
+    try {
+      const snap = JSON.parse(readFileSync(historyPath, "utf8")) as StatsSnapshot;
+      const byId = new Map<string, number>();
+      for (const stat of snap.stats) {
+        if (idSet.has(stat.id)) {
+          byId.set(stat.id, stat.last1Days?.activeUsers ?? 0);
+        }
+      }
+      return byId;
+    } catch {
+      return null;
+    }
+  });
+
+  const result = new Map<string, (number | null)[]>();
+  for (const siteId of siteIds) {
+    result.set(
+      siteId,
+      perDay.map((day) => (day === null ? null : day.get(siteId) ?? 0)),
+    );
   }
   return result;
 }
@@ -2028,7 +2038,12 @@ function readStats(path: string): StatsSnapshot {
     };
   }
 
-  return JSON.parse(readFileSync(path, "utf8")) as StatsSnapshot;
+  try {
+    return JSON.parse(readFileSync(path, "utf8")) as StatsSnapshot;
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    throw new Error(`통계 스냅샷(${path}) 파싱에 실패했습니다: ${reason}`);
+  }
 }
 
 function fallbackDateRanges(): DateRangeSummary {
