@@ -679,6 +679,18 @@ function normalizeSiteUrlKey(url: string | undefined): string | undefined {
     .replace(/\/$/, "");
 }
 
+function getHostname(url: string | null | undefined): string | undefined {
+  if (!url) {
+    return undefined;
+  }
+
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return undefined;
+  }
+}
+
 function mergeTrafficKeywords(
   externalKeywords: TrafficKeywordMetric[],
   ga4Keywords: TrafficKeywordMetric[],
@@ -749,6 +761,7 @@ async function fetchSitemapSummary(
   client: ReturnType<typeof google.searchconsole>,
   siteUrl: string,
   sitemapUrls?: string[],
+  canonicalUrl?: string,
 ): Promise<SitemapSummary> {
   const response = await client.sitemaps.list({ siteUrl });
   const sitemaps = response.data.sitemap ?? [];
@@ -769,7 +782,15 @@ async function fetchSitemapSummary(
         Date.parse(b.lastDownloaded ?? b.lastSubmitted ?? "") -
         Date.parse(a.lastDownloaded ?? a.lastSubmitted ?? ""),
     );
+  const canonicalHost = getHostname(canonicalUrl);
+  const sameHostSitemaps = canonicalHost
+    ? datedSitemaps.filter(
+        (sitemap) => getHostname(sitemap.path) === canonicalHost,
+      )
+    : [];
   const selected =
+    sameHostSitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
+    sameHostSitemaps[0] ??
     datedSitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
     datedSitemaps[0];
 
@@ -1663,6 +1684,7 @@ async function fetchSiteStat(
       gscClient,
       gscSiteUrl,
       site.sitemapUrls,
+      site.url,
     );
   } catch (searchError) {
     sitemapError = getErrorMessage(searchError);
