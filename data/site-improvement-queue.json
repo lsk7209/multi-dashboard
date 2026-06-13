@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-13T04:22:47.450Z",
-  "dashboardGeneratedAt": "2026-06-13T02:06:50.756Z",
+  "generatedAt": "2026-06-13T04:26:56.938Z",
+  "dashboardGeneratedAt": "2026-06-13T04:26:56.211Z",
   "dateRanges": {
     "timezone": "Asia/Seoul",
     "basis": "completed_days",
@@ -35,43 +35,6 @@
   "items": [
     {
       "rank": 1,
-      "id": "luckyday-indexingOrPermissionIssue-GSC 데이터가 없거나 권한 오류가 있습니다.",
-      "siteId": "luckyday",
-      "siteName": "럭키데이 - GA4",
-      "url": "https://luckyday.kr/",
-      "host": "luckyday.kr",
-      "kind": "indexingOrPermissionIssue",
-      "severity": "high",
-      "safetyTier": "T2",
-      "automationMode": "codex_apply_after_site_checkout",
-      "primaryValue": "GSC 0",
-      "reason": "GSC 데이터가 없거나 권한 오류가 있습니다.",
-      "recommendedAction": "Search Console 소유권과 서비스 계정 권한을 확인하세요.",
-      "operatorPrompt": "Codex: 럭키데이 - GA4(luckyday.kr)의 GSC 소유권, sitemap 제출 URL, robots.txt, canonical을 점검하고 데이터가 0으로 잡히는 원인을 수정 계획으로 정리해줘. 기준 정보: siteId=luckyday, url=https://luckyday.kr/, gscSiteUrl=sc-domain:luckyday.kr, sitemap=https://luckyday.kr/page-sitemap.xml, submitted=5.",
-      "verification": "Search Console 속성 권한이 정상이고 sitemap 마지막 읽은 날짜가 최신이며, 다음 갱신 후 GSC 오류가 사라지는지 확인합니다.",
-      "evidence": [
-        "핵심 지표: GSC 0",
-        "대상: siteId luckyday, URL https://luckyday.kr/",
-        "GA4 최근 7일 사용자 261명, 직전 7일 162명",
-        "GSC 최근 7일 클릭 0회, 노출 0회, CTR 0.0%",
-        "GSC 속성: sc-domain:luckyday.kr",
-        "Sitemap: https://luckyday.kr/page-sitemap.xml",
-        "Google 제출 5개, 색인 0개"
-      ],
-      "relatedSignals": [
-        "성장 +61.1%",
-        "유입불일치 GA4 261"
-      ],
-      "topQueries": [],
-      "gscDiagnosis": "sitemap 제출 수는 있지만 색인 수가 0입니다. canonical, robots, noindex, sitemap URL의 실제 응답을 먼저 점검하세요.",
-      "reviewNote": "GSC 0은 권한 오류로 단정하지 말고 속성 불일치, 검색 노출 없음, sitemap/canonical 문제를 분리해서 봐야 합니다.",
-      "blockedBy": [
-        "needs site/repo access",
-        "must verify canonical, robots, sitemap, and analytics ownership before applying"
-      ]
-    },
-    {
-      "rank": 2,
       "id": "crepika-indexingOrPermissionIssue-GSC 데이터가 없거나 권한 오류가 있습니다.",
       "siteId": "crepika",
       "siteName": "crepika.com",
@@ -108,7 +71,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "id": "klick-2-indexingOrPermissionIssue-GSC 데이터가 없거나 권한 오류가 있습니다.",
       "siteId": "klick-2",
       "siteName": "klick.kr",
@@ -138,6 +101,40 @@
       "topQueries": [],
       "gscDiagnosis": "GA4 유입은 있는데 GSC 노출이 0입니다. GSC 속성 불일치, 검색 유입 없음, 색인/canonical 문제를 분리해서 확인하세요.",
       "reviewNote": "GSC 0은 권한 오류로 단정하지 말고 속성 불일치, 검색 노출 없음, sitemap/canonical 문제를 분리해서 봐야 합니다.",
+      "blockedBy": [
+        "needs site/repo access",
+        "must verify canonical, robots, sitemap, and analytics ownership before applying"
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "limsight-indexingOrPermissionIssue-GSC 데이터가 없거나 권한 오류가 있습니다.",
+      "siteId": "limsight",
+      "siteName": "limsight.kr",
+      "url": "https://limsight.kr/",
+      "host": "limsight.kr",
+      "kind": "indexingOrPermissionIssue",
+      "severity": "high",
+      "safetyTier": "T2",
+      "automationMode": "codex_apply_after_site_checkout",
+      "primaryValue": "GSC 0",
+      "reason": "GSC 데이터가 없거나 권한 오류가 있습니다.",
+      "recommendedAction": "Search Console 소유권과 서비스 계정 권한을 확인하세요.",
+      "operatorPrompt": "Codex: limsight.kr(limsight.kr)의 GSC 소유권, sitemap 제출 URL, robots.txt, canonical을 점검하고 데이터가 0으로 잡히는 원인을 수정 계획으로 정리해줘. 기준 정보: siteId=limsight, url=https://limsight.kr/, gscSiteUrl=https://limsight.kr/.",
+      "verification": "Search Console 속성 권한이 정상이고 sitemap 마지막 읽은 날짜가 최신이며, 다음 갱신 후 GSC 오류가 사라지는지 확인합니다.",
+      "evidence": [
+        "핵심 지표: GSC 0",
+        "대상: siteId limsight, URL https://limsight.kr/",
+        "GA4 최근 7일 사용자 0명, 직전 7일 0명",
+        "GSC 최근 7일 클릭 0회, 노출 0회, CTR 0.0%",
+        "GSC 속성: https://limsight.kr/",
+        "GA4 변화율 0.0%",
+        "GSC 클릭 변화율 0.0%"
+      ],
+      "relatedSignals": [],
+      "topQueries": [],
+      "gscDiagnosis": "GSC API 오류가 있어 Search Console 권한 또는 속성 등록을 먼저 확인해야 합니다: User does not have sufficient permission for site 'https://limsight.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "reviewNote": "표본이 작아 퍼센트 변화가 크게 흔들릴 수 있으므로 실제 페이지/쿼리 수를 먼저 확인하세요.",
       "blockedBy": [
         "needs site/repo access",
         "must verify canonical, robots, sitemap, and analytics ownership before applying"
@@ -253,7 +250,44 @@
     },
     {
       "rank": 7,
-      "id": "picklefriend-decline-GSC 클릭이 직전 7일 대비 -81.1% 변했습니다.",
+      "id": "luckyday-indexingOrPermissionIssue-GSC 데이터가 없거나 권한 오류가 있습니다.",
+      "siteId": "luckyday",
+      "siteName": "럭키데이 - GA4",
+      "url": "https://luckyday.kr/",
+      "host": "luckyday.kr",
+      "kind": "indexingOrPermissionIssue",
+      "severity": "high",
+      "safetyTier": "T2",
+      "automationMode": "codex_apply_after_site_checkout",
+      "primaryValue": "GSC 0",
+      "reason": "GSC 데이터가 없거나 권한 오류가 있습니다.",
+      "recommendedAction": "Search Console 소유권과 서비스 계정 권한을 확인하세요.",
+      "operatorPrompt": "Codex: 럭키데이 - GA4(luckyday.kr)의 GSC 소유권, sitemap 제출 URL, robots.txt, canonical을 점검하고 데이터가 0으로 잡히는 원인을 수정 계획으로 정리해줘. 기준 정보: siteId=luckyday, url=https://luckyday.kr/, gscSiteUrl=sc-domain:luckyday.kr, sitemap=https://luckyday.kr/page-sitemap.xml, submitted=5.",
+      "verification": "Search Console 속성 권한이 정상이고 sitemap 마지막 읽은 날짜가 최신이며, 다음 갱신 후 GSC 오류가 사라지는지 확인합니다.",
+      "evidence": [
+        "핵심 지표: GSC 0",
+        "대상: siteId luckyday, URL https://luckyday.kr/",
+        "GA4 최근 7일 사용자 261명, 직전 7일 162명",
+        "GSC 최근 7일 클릭 0회, 노출 0회, CTR 0.0%",
+        "GSC 속성: sc-domain:luckyday.kr",
+        "Sitemap: https://luckyday.kr/page-sitemap.xml",
+        "Google 제출 5개, 색인 0개"
+      ],
+      "relatedSignals": [
+        "성장 +61.1%",
+        "유입불일치 GA4 261"
+      ],
+      "topQueries": [],
+      "gscDiagnosis": "sitemap 제출 수는 있지만 색인 수가 0입니다. canonical, robots, noindex, sitemap URL의 실제 응답을 먼저 점검하세요.",
+      "reviewNote": "GSC 0은 권한 오류로 단정하지 말고 속성 불일치, 검색 노출 없음, sitemap/canonical 문제를 분리해서 봐야 합니다.",
+      "blockedBy": [
+        "needs site/repo access",
+        "must verify canonical, robots, sitemap, and analytics ownership before applying"
+      ]
+    },
+    {
+      "rank": 8,
+      "id": "picklefriend-decline-GSC 클릭이 직전 7일 대비 -78.4% 변했습니다.",
       "siteId": "picklefriend",
       "siteName": "picklefriend.kr",
       "url": "https://picklefriend.kr/",
@@ -262,22 +296,22 @@
       "severity": "high",
       "safetyTier": "T2",
       "automationMode": "codex_apply_after_site_checkout",
-      "primaryValue": "-81.1%",
-      "reason": "GSC 클릭이 직전 7일 대비 -81.1% 변했습니다.",
+      "primaryValue": "-78.4%",
+      "reason": "GSC 클릭이 직전 7일 대비 -78.4% 변했습니다.",
       "recommendedAction": "상위 쿼리 순위와 CTR 하락 페이지를 점검하세요.",
       "operatorPrompt": "Codex: picklefriend.kr(picklefriend.kr)의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. 기준 정보: siteId=picklefriend, url=https://picklefriend.kr/, gscSiteUrl=https://picklefriend.kr/, sitemap=https://picklefriend.kr/sitemap.xml, submitted=280.",
       "verification": "수정 후 7일 사용자, GSC 클릭, 상위 쿼리 CTR이 직전 갱신 대비 회복되는지 대시보드에서 비교합니다.",
       "evidence": [
-        "핵심 지표: -81.1%",
+        "핵심 지표: -78.4%",
         "대상: siteId picklefriend, URL https://picklefriend.kr/",
-        "GA4 최근 7일 사용자 79명, 직전 7일 72명",
-        "GSC 최근 7일 클릭 7회, 노출 103회, CTR 6.8%",
+        "GA4 최근 7일 사용자 80명, 직전 7일 72명",
+        "GSC 최근 7일 클릭 8회, 노출 139회, CTR 5.8%",
         "GSC 속성: https://picklefriend.kr/",
         "Sitemap: https://picklefriend.kr/sitemap.xml",
         "Google 제출 280개, 색인 0개"
       ],
       "relatedSignals": [
-        "순위 6.6위"
+        "순위 6.7위"
       ],
       "topQueries": [],
       "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
@@ -287,7 +321,7 @@
       ]
     },
     {
-      "rank": 8,
+      "rank": 9,
       "id": "fastjob-decline-GSC 클릭이 직전 7일 대비 -72.7% 변했습니다.",
       "siteId": "fastjob",
       "siteName": "패스트잡 - GA4",
@@ -306,15 +340,23 @@
         "핵심 지표: -72.7%",
         "대상: siteId fastjob, URL https://fastjob.kr/",
         "GA4 최근 7일 사용자 25명, 직전 7일 27명",
-        "GSC 최근 7일 클릭 3회, 노출 275회, CTR 1.1%",
+        "GSC 최근 7일 클릭 3회, 노출 333회, CTR 0.9%",
         "GSC 속성: https://fastjob.kr/",
         "Sitemap: https://fastjob.kr/sitemap.xml",
         "Google 제출 153개, 색인 0개"
       ],
       "relatedSignals": [
-        "순위 12.0위"
+        "순위 11.3위"
       ],
-      "topQueries": [],
+      "topQueries": [
+        {
+          "query": "제스트컴퍼니 geo",
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 7.928571428571429
+        }
+      ],
       "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
       "reviewNote": "표본이 작아 퍼센트 변화가 크게 흔들릴 수 있으므로 실제 페이지/쿼리 수를 먼저 확인하세요.",
       "blockedBy": [
@@ -322,7 +364,7 @@
       ]
     },
     {
-      "rank": 9,
+      "rank": 10,
       "id": "ehon365-decline-GA4 사용자가 직전 7일 대비 -70.0% 변했습니다.",
       "siteId": "ehon365",
       "siteName": "ehon365.kr",
@@ -341,22 +383,22 @@
         "핵심 지표: -70.0%",
         "대상: siteId ehon365, URL https://ehon365.kr/",
         "GA4 최근 7일 사용자 139명, 직전 7일 464명",
-        "GSC 최근 7일 클릭 1회, 노출 92회, CTR 1.1%",
+        "GSC 최근 7일 클릭 2회, 노출 102회, CTR 2.0%",
         "GSC 속성: sc-domain:ehon365.kr",
         "Sitemap: https://ehon365.kr/dynamic-sitemap.xml",
         "Google 제출 69개, 색인 0개"
       ],
       "relatedSignals": [
-        "순위 11.3위",
+        "순위 11.5위",
         "유입불일치 GA4 139"
       ],
       "topQueries": [
         {
           "query": "양육비 산정표 2026",
-          "clicks": 1,
-          "impressions": 70,
-          "ctr": 0.014285714285714285,
-          "position": 10.5
+          "clicks": 2,
+          "impressions": 73,
+          "ctr": 0.0273972602739726,
+          "position": 10.479452054794521
         }
       ],
       "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
@@ -366,8 +408,8 @@
       ]
     },
     {
-      "rank": 10,
-      "id": "tennisfrens-decline-GA4 사용자가 직전 7일 대비 -59.7% 변했습니다.",
+      "rank": 11,
+      "id": "tennisfrens-decline-GA4 사용자가 직전 7일 대비 -59.6% 변했습니다.",
       "siteId": "tennisfrens",
       "siteName": "tennisfrens.com",
       "url": "https://tennisfrens.com/",
@@ -376,23 +418,23 @@
       "severity": "high",
       "safetyTier": "T2",
       "automationMode": "codex_apply_after_site_checkout",
-      "primaryValue": "-59.7%",
-      "reason": "GA4 사용자가 직전 7일 대비 -59.7% 변했습니다.",
+      "primaryValue": "-59.6%",
+      "reason": "GA4 사용자가 직전 7일 대비 -59.6% 변했습니다.",
       "recommendedAction": "최근 발행, 색인, 유입 채널 변화를 먼저 확인하세요.",
-      "operatorPrompt": "Codex: tennisfrens.com(tennisfrens.com)의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. 기준 정보: siteId=tennisfrens, url=https://tennisfrens.com/, gscSiteUrl=sc-domain:tennisfrens.com, sitemap=https://tennisfrens.com/sitemap-naver.xml, submitted=1165.",
+      "operatorPrompt": "Codex: tennisfrens.com(tennisfrens.com)의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. 기준 정보: siteId=tennisfrens, url=https://tennisfrens.com/, gscSiteUrl=sc-domain:tennisfrens.com, sitemap=https://www.tennisfrens.com/sitemap.xml, submitted=1143.",
       "verification": "수정 후 7일 사용자, GSC 클릭, 상위 쿼리 CTR이 직전 갱신 대비 회복되는지 대시보드에서 비교합니다.",
       "evidence": [
-        "핵심 지표: -59.7%",
+        "핵심 지표: -59.6%",
         "대상: siteId tennisfrens, URL https://tennisfrens.com/",
-        "GA4 최근 7일 사용자 378명, 직전 7일 939명",
-        "GSC 최근 7일 클릭 19회, 노출 995회, CTR 1.9%",
+        "GA4 최근 7일 사용자 379명, 직전 7일 939명",
+        "GSC 최근 7일 클릭 19회, 노출 1,189회, CTR 1.6%",
         "GSC 속성: sc-domain:tennisfrens.com",
-        "Sitemap: https://tennisfrens.com/sitemap-naver.xml",
-        "Google 제출 1,165개, 색인 0개"
+        "Sitemap: https://www.tennisfrens.com/sitemap.xml",
+        "Google 제출 1,143개, 색인 0개"
       ],
       "relatedSignals": [
-        "CTR 1.9%",
-        "순위 9.8위"
+        "CTR 1.6%",
+        "순위 10.0위"
       ],
       "topQueries": [
         {
@@ -408,56 +450,6 @@
           "impressions": 14,
           "ctr": 0.07142857142857142,
           "position": 9
-        },
-        {
-          "query": "란달루세",
-          "clicks": 0,
-          "impressions": 18,
-          "ctr": 0,
-          "position": 8.444444444444445
-        }
-      ],
-      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
-      "reviewNote": "현재 신호는 작업 후보로 볼 수 있으나, 변경 전 상위 페이지와 쿼리 단위 근거를 한 번 더 확인하세요.",
-      "blockedBy": [
-        "must compare top pages and channels before changing templates or links"
-      ]
-    },
-    {
-      "rank": 11,
-      "id": "cartain-2-decline-GA4 사용자가 직전 7일 대비 -41.1% 변했습니다.",
-      "siteId": "cartain-2",
-      "siteName": "cartain.kr",
-      "url": "https://cartain.kr/",
-      "host": "cartain.kr",
-      "kind": "decline",
-      "severity": "high",
-      "safetyTier": "T2",
-      "automationMode": "codex_apply_after_site_checkout",
-      "primaryValue": "-41.1%",
-      "reason": "GA4 사용자가 직전 7일 대비 -41.1% 변했습니다.",
-      "recommendedAction": "최근 발행, 색인, 유입 채널 변화를 먼저 확인하세요.",
-      "operatorPrompt": "Codex: cartain.kr(cartain.kr)의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. 기준 정보: siteId=cartain-2, url=https://cartain.kr/, gscSiteUrl=https://cartain.kr/, sitemap=https://cartain.kr/sitemap.xml, submitted=725.",
-      "verification": "수정 후 7일 사용자, GSC 클릭, 상위 쿼리 CTR이 직전 갱신 대비 회복되는지 대시보드에서 비교합니다.",
-      "evidence": [
-        "핵심 지표: -41.1%",
-        "대상: siteId cartain-2, URL https://cartain.kr/",
-        "GA4 최근 7일 사용자 189명, 직전 7일 321명",
-        "GSC 최근 7일 클릭 8회, 노출 260회, CTR 3.1%",
-        "GSC 속성: https://cartain.kr/",
-        "Sitemap: https://cartain.kr/sitemap.xml",
-        "Google 제출 725개, 색인 0개"
-      ],
-      "relatedSignals": [
-        "순위 10.9위"
-      ],
-      "topQueries": [
-        {
-          "query": "차량 유지비 계산",
-          "clicks": 0,
-          "impressions": 11,
-          "ctr": 0,
-          "position": 7.181818181818182
         }
       ],
       "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
@@ -468,6 +460,41 @@
     },
     {
       "rank": 12,
+      "id": "cartain-2-decline-GA4 사용자가 직전 7일 대비 -39.6% 변했습니다.",
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "url": "https://cartain.kr/",
+      "host": "cartain.kr",
+      "kind": "decline",
+      "severity": "high",
+      "safetyTier": "T2",
+      "automationMode": "codex_apply_after_site_checkout",
+      "primaryValue": "-39.6%",
+      "reason": "GA4 사용자가 직전 7일 대비 -39.6% 변했습니다.",
+      "recommendedAction": "최근 발행, 색인, 유입 채널 변화를 먼저 확인하세요.",
+      "operatorPrompt": "Codex: cartain.kr(cartain.kr)의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. 기준 정보: siteId=cartain-2, url=https://cartain.kr/, gscSiteUrl=https://cartain.kr/, sitemap=https://cartain.kr/sitemap.xml, submitted=725.",
+      "verification": "수정 후 7일 사용자, GSC 클릭, 상위 쿼리 CTR이 직전 갱신 대비 회복되는지 대시보드에서 비교합니다.",
+      "evidence": [
+        "핵심 지표: -39.6%",
+        "대상: siteId cartain-2, URL https://cartain.kr/",
+        "GA4 최근 7일 사용자 194명, 직전 7일 321명",
+        "GSC 최근 7일 클릭 12회, 노출 412회, CTR 2.9%",
+        "GSC 속성: https://cartain.kr/",
+        "Sitemap: https://cartain.kr/sitemap.xml",
+        "Google 제출 725개, 색인 0개"
+      ],
+      "relatedSignals": [
+        "순위 10.1위"
+      ],
+      "topQueries": [],
+      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
+      "reviewNote": "현재 신호는 작업 후보로 볼 수 있으나, 변경 전 상위 페이지와 쿼리 단위 근거를 한 번 더 확인하세요.",
+      "blockedBy": [
+        "must compare top pages and channels before changing templates or links"
+      ]
+    },
+    {
+      "rank": 13,
       "id": "bojo24-decline-GA4 사용자가 직전 7일 대비 -35.0% 변했습니다.",
       "siteId": "bojo24",
       "siteName": "bojo24.kr",
@@ -486,7 +513,7 @@
         "핵심 지표: -35.0%",
         "대상: siteId bojo24, URL https://bojo24.kr/",
         "GA4 최근 7일 사용자 525명, 직전 7일 808명",
-        "GSC 최근 7일 클릭 0회, 노출 34회, CTR 0.0%",
+        "GSC 최근 7일 클릭 0회, 노출 35회, CTR 0.0%",
         "GSC 속성: https://www.bojo24.kr/",
         "Sitemap: 4 sitemaps",
         "GA4 변화율 -35.0%"
@@ -497,50 +524,6 @@
       "topQueries": [],
       "gscDiagnosis": "GSC 노출은 있으나 클릭이 없습니다. 제목, 메타 설명, 검색 의도 일치도를 우선 점검하세요.",
       "reviewNote": "현재 신호는 작업 후보로 볼 수 있으나, 변경 전 상위 페이지와 쿼리 단위 근거를 한 번 더 확인하세요.",
-      "blockedBy": [
-        "must compare top pages and channels before changing templates or links"
-      ]
-    },
-    {
-      "rank": 13,
-      "id": "haemongdream-decline-GSC 클릭이 직전 7일 대비 -33.3% 변했습니다.",
-      "siteId": "haemongdream",
-      "siteName": "해몽드림 - GA4",
-      "url": "https://haemongdream.com/",
-      "host": "haemongdream.com",
-      "kind": "decline",
-      "severity": "high",
-      "safetyTier": "T2",
-      "automationMode": "codex_apply_after_site_checkout",
-      "primaryValue": "-33.3%",
-      "reason": "GSC 클릭이 직전 7일 대비 -33.3% 변했습니다.",
-      "recommendedAction": "상위 쿼리 순위와 CTR 하락 페이지를 점검하세요.",
-      "operatorPrompt": "Codex: 해몽드림 - GA4(haemongdream.com)의 최근 발행물, 유입 채널, 상위 쿼리/페이지 변동을 비교해 트래픽 하락 원인과 복구 작업을 우선순위로 제안해줘. 기준 정보: siteId=haemongdream, url=https://haemongdream.com/, gscSiteUrl=https://haemongdream.com/, sitemap=https://haemongdream.com/wp-sitemap.xml, submitted=8000.",
-      "verification": "수정 후 7일 사용자, GSC 클릭, 상위 쿼리 CTR이 직전 갱신 대비 회복되는지 대시보드에서 비교합니다.",
-      "evidence": [
-        "핵심 지표: -33.3%",
-        "대상: siteId haemongdream, URL https://haemongdream.com/",
-        "GA4 최근 7일 사용자 388명, 직전 7일 241명",
-        "GSC 최근 7일 클릭 8회, 노출 208회, CTR 3.8%",
-        "GSC 속성: https://haemongdream.com/",
-        "Sitemap: https://haemongdream.com/wp-sitemap.xml",
-        "Google 제출 8,000개, 색인 0개"
-      ],
-      "relatedSignals": [
-        "성장 +61.0%",
-        "순위 9.2위"
-      ],
-      "topQueries": [
-        {
-          "query": "우산 없이 비 맞는 꿈",
-          "clicks": 0,
-          "impressions": 12,
-          "ctr": 0,
-          "position": 7.666666666666667
-        }
-      ],
-      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
-      "reviewNote": "GA4 사용자는 늘고 검색 클릭만 줄어든 케이스라 전체 트래픽 하락보다 검색 쿼리/CTR 하락으로 좁혀 보세요.",
       "blockedBy": [
         "must compare top pages and channels before changing templates or links"
       ]
@@ -583,40 +566,7 @@
     },
     {
       "rank": 15,
-      "id": "todayshops-2-seoOpportunity-노출 41회 대비 CTR이 2.4%로 낮습니다.",
-      "siteId": "todayshops-2",
-      "siteName": "todayshops.kr",
-      "url": "https://todayshops.kr/",
-      "host": "todayshops.kr",
-      "kind": "seoOpportunity",
-      "severity": "medium",
-      "safetyTier": "T3",
-      "automationMode": "content_handoff",
-      "primaryValue": "2.4%",
-      "reason": "노출 41회 대비 CTR이 2.4%로 낮습니다.",
-      "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
-      "operatorPrompt": "Codex: todayshops.kr(todayshops.kr)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=todayshops-2, url=https://todayshops.kr/, gscSiteUrl=https://todayshops.kr/, sitemap=https://todayshops.kr/sitemap.xml, submitted=183.",
-      "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
-      "evidence": [
-        "핵심 지표: 2.4%",
-        "대상: siteId todayshops-2, URL https://todayshops.kr/",
-        "GA4 최근 7일 사용자 2명, 직전 7일 3명",
-        "GSC 최근 7일 클릭 1회, 노출 41회, CTR 2.4%",
-        "GSC 속성: https://todayshops.kr/",
-        "Sitemap: https://todayshops.kr/sitemap.xml",
-        "Google 제출 183개, 색인 0개"
-      ],
-      "relatedSignals": [],
-      "topQueries": [],
-      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
-      "reviewNote": "표본이 작아 퍼센트 변화가 크게 흔들릴 수 있으므로 실제 페이지/쿼리 수를 먼저 확인하세요. 노출 규모가 아직 작아 사이트 전체 결론보다 상위 쿼리와 URL 단위 후보 선별이 먼저입니다.",
-      "blockedBy": [
-        "article titles, body text, headings, and in-body links require editorial handoff"
-      ]
-    },
-    {
-      "rank": 16,
-      "id": "texturb-seoOpportunity-노출 225회 대비 CTR이 2.2%로 낮습니다.",
+      "id": "texturb-seoOpportunity-노출 280회 대비 CTR이 2.9%로 낮습니다.",
       "siteId": "texturb",
       "siteName": "texturb.com",
       "url": "https://texturb.com/",
@@ -625,16 +575,16 @@
       "severity": "medium",
       "safetyTier": "T3",
       "automationMode": "content_handoff",
-      "primaryValue": "2.2%",
-      "reason": "노출 225회 대비 CTR이 2.2%로 낮습니다.",
+      "primaryValue": "2.9%",
+      "reason": "노출 280회 대비 CTR이 2.9%로 낮습니다.",
       "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
       "operatorPrompt": "Codex: texturb.com(texturb.com)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=texturb, url=https://texturb.com/, gscSiteUrl=https://texturb.com/, sitemap=https://texturb.com/sitemap.xml, submitted=77.",
       "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
       "evidence": [
-        "핵심 지표: 2.2%",
+        "핵심 지표: 2.9%",
         "대상: siteId texturb, URL https://texturb.com/",
         "GA4 최근 7일 사용자 20명, 직전 7일 0명",
-        "GSC 최근 7일 클릭 5회, 노출 225회, CTR 2.2%",
+        "GSC 최근 7일 클릭 8회, 노출 280회, CTR 2.9%",
         "GSC 속성: https://texturb.com/",
         "Sitemap: https://texturb.com/sitemap.xml",
         "Google 제출 77개, 색인 0개"
@@ -650,34 +600,31 @@
       ]
     },
     {
-      "rank": 17,
-      "id": "estat-2-seoOpportunity-노출 297회 대비 CTR이 2.0%로 낮습니다.",
-      "siteId": "estat-2",
-      "siteName": "estat.kr",
-      "url": "https://estat.kr/",
-      "host": "estat.kr",
+      "rank": 16,
+      "id": "todayshops-2-seoOpportunity-노출 46회 대비 CTR이 2.2%로 낮습니다.",
+      "siteId": "todayshops-2",
+      "siteName": "todayshops.kr",
+      "url": "https://todayshops.kr/",
+      "host": "todayshops.kr",
       "kind": "seoOpportunity",
       "severity": "medium",
       "safetyTier": "T3",
       "automationMode": "content_handoff",
-      "primaryValue": "2.0%",
-      "reason": "노출 297회 대비 CTR이 2.0%로 낮습니다.",
+      "primaryValue": "2.2%",
+      "reason": "노출 46회 대비 CTR이 2.2%로 낮습니다.",
       "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
-      "operatorPrompt": "Codex: estat.kr(estat.kr)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=estat-2, url=https://estat.kr/, gscSiteUrl=https://estat.kr/, sitemap=https://estat.kr/sitemap-posts.xml, submitted=443.",
+      "operatorPrompt": "Codex: todayshops.kr(todayshops.kr)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=todayshops-2, url=https://todayshops.kr/, gscSiteUrl=https://todayshops.kr/, sitemap=https://todayshops.kr/sitemap.xml, submitted=183.",
       "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
       "evidence": [
-        "핵심 지표: 2.0%",
-        "대상: siteId estat-2, URL https://estat.kr/",
-        "GA4 최근 7일 사용자 27명, 직전 7일 6명",
-        "GSC 최근 7일 클릭 6회, 노출 297회, CTR 2.0%",
-        "GSC 속성: https://estat.kr/",
-        "Sitemap: https://estat.kr/sitemap-posts.xml",
-        "Google 제출 443개, 색인 0개"
+        "핵심 지표: 2.2%",
+        "대상: siteId todayshops-2, URL https://todayshops.kr/",
+        "GA4 최근 7일 사용자 2명, 직전 7일 3명",
+        "GSC 최근 7일 클릭 1회, 노출 46회, CTR 2.2%",
+        "GSC 속성: https://todayshops.kr/",
+        "Sitemap: https://todayshops.kr/sitemap.xml",
+        "Google 제출 183개, 색인 0개"
       ],
-      "relatedSignals": [
-        "성장 +350.0%",
-        "순위 8.4위"
-      ],
+      "relatedSignals": [],
       "topQueries": [],
       "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
       "reviewNote": "표본이 작아 퍼센트 변화가 크게 흔들릴 수 있으므로 실제 페이지/쿼리 수를 먼저 확인하세요. 노출 규모가 아직 작아 사이트 전체 결론보다 상위 쿼리와 URL 단위 후보 선별이 먼저입니다.",
@@ -686,8 +633,88 @@
       ]
     },
     {
+      "rank": 17,
+      "id": "estat-2-seoOpportunity-노출 362회 대비 CTR이 1.7%로 낮습니다.",
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "url": "https://estat.kr/",
+      "host": "estat.kr",
+      "kind": "seoOpportunity",
+      "severity": "medium",
+      "safetyTier": "T3",
+      "automationMode": "content_handoff",
+      "primaryValue": "1.7%",
+      "reason": "노출 362회 대비 CTR이 1.7%로 낮습니다.",
+      "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
+      "operatorPrompt": "Codex: estat.kr(estat.kr)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=estat-2, url=https://estat.kr/, gscSiteUrl=https://estat.kr/, sitemap=https://estat.kr/sitemap-posts.xml, submitted=443.",
+      "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
+      "evidence": [
+        "핵심 지표: 1.7%",
+        "대상: siteId estat-2, URL https://estat.kr/",
+        "GA4 최근 7일 사용자 27명, 직전 7일 6명",
+        "GSC 최근 7일 클릭 6회, 노출 362회, CTR 1.7%",
+        "GSC 속성: https://estat.kr/",
+        "Sitemap: https://estat.kr/sitemap-posts.xml",
+        "Google 제출 443개, 색인 0개"
+      ],
+      "relatedSignals": [
+        "성장 +350.0%",
+        "순위 8.3위"
+      ],
+      "topQueries": [
+        {
+          "query": "냉면양념장황금레시피",
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "position": 2.8095238095238093
+        }
+      ],
+      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
+      "reviewNote": "표본이 작아 퍼센트 변화가 크게 흔들릴 수 있으므로 실제 페이지/쿼리 수를 먼저 확인하세요.",
+      "blockedBy": [
+        "article titles, body text, headings, and in-body links require editorial handoff"
+      ]
+    },
+    {
       "rank": 18,
-      "id": "softwa-seoOpportunity-노출 215회 대비 CTR이 1.9%로 낮습니다.",
+      "id": "tennisfrens-seoOpportunity-노출 1,189회 대비 CTR이 1.6%로 낮습니다.",
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "url": "https://tennisfrens.com/",
+      "host": "tennisfrens.com",
+      "kind": "seoOpportunity",
+      "severity": "medium",
+      "safetyTier": "T3",
+      "automationMode": "content_handoff",
+      "primaryValue": "1.6%",
+      "reason": "노출 1,189회 대비 CTR이 1.6%로 낮습니다.",
+      "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
+      "operatorPrompt": "Codex: tennisfrens.com(tennisfrens.com)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=tennisfrens, url=https://tennisfrens.com/, gscSiteUrl=sc-domain:tennisfrens.com, sitemap=https://www.tennisfrens.com/sitemap.xml, submitted=1143.",
+      "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
+      "evidence": [
+        "핵심 지표: 1.6%",
+        "대상: siteId tennisfrens, URL https://tennisfrens.com/",
+        "GA4 최근 7일 사용자 379명, 직전 7일 939명",
+        "GSC 최근 7일 클릭 19회, 노출 1,189회, CTR 1.6%",
+        "GSC 속성: sc-domain:tennisfrens.com",
+        "Sitemap: https://www.tennisfrens.com/sitemap.xml",
+        "Google 제출 1,143개, 색인 0개"
+      ],
+      "relatedSignals": [
+        "하락 -59.6%",
+        "순위 10.0위"
+      ],
+      "topQueries": [],
+      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
+      "reviewNote": "현재 신호는 작업 후보로 볼 수 있으나, 변경 전 상위 페이지와 쿼리 단위 근거를 한 번 더 확인하세요.",
+      "blockedBy": [
+        "article titles, body text, headings, and in-body links require editorial handoff"
+      ]
+    },
+    {
+      "rank": 19,
+      "id": "softwa-seoOpportunity-노출 250회 대비 CTR이 1.6%로 낮습니다.",
       "siteId": "softwa",
       "siteName": "소프트와 - GA4",
       "url": "https://softwa.kr/",
@@ -696,16 +723,16 @@
       "severity": "medium",
       "safetyTier": "T3",
       "automationMode": "content_handoff",
-      "primaryValue": "1.9%",
-      "reason": "노출 215회 대비 CTR이 1.9%로 낮습니다.",
+      "primaryValue": "1.6%",
+      "reason": "노출 250회 대비 CTR이 1.6%로 낮습니다.",
       "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
       "operatorPrompt": "Codex: 소프트와 - GA4(softwa.kr)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=softwa, url=https://softwa.kr/, gscSiteUrl=https://softwa.kr/, sitemap=https://softwa.kr/sitemap_index.xml, submitted=390.",
       "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
       "evidence": [
-        "핵심 지표: 1.9%",
+        "핵심 지표: 1.6%",
         "대상: siteId softwa, URL https://softwa.kr/",
         "GA4 최근 7일 사용자 34명, 직전 7일 23명",
-        "GSC 최근 7일 클릭 4회, 노출 215회, CTR 1.9%",
+        "GSC 최근 7일 클릭 4회, 노출 250회, CTR 1.6%",
         "GSC 속성: https://softwa.kr/",
         "Sitemap: https://softwa.kr/sitemap_index.xml",
         "Google 제출 390개, 색인 0개"
@@ -722,44 +749,8 @@
       ]
     },
     {
-      "rank": 19,
-      "id": "tennisfrens-seoOpportunity-노출 995회 대비 CTR이 1.9%로 낮습니다.",
-      "siteId": "tennisfrens",
-      "siteName": "tennisfrens.com",
-      "url": "https://tennisfrens.com/",
-      "host": "tennisfrens.com",
-      "kind": "seoOpportunity",
-      "severity": "medium",
-      "safetyTier": "T3",
-      "automationMode": "content_handoff",
-      "primaryValue": "1.9%",
-      "reason": "노출 995회 대비 CTR이 1.9%로 낮습니다.",
-      "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
-      "operatorPrompt": "Codex: tennisfrens.com(tennisfrens.com)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=tennisfrens, url=https://tennisfrens.com/, gscSiteUrl=sc-domain:tennisfrens.com, sitemap=https://tennisfrens.com/sitemap-naver.xml, submitted=1165.",
-      "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
-      "evidence": [
-        "핵심 지표: 1.9%",
-        "대상: siteId tennisfrens, URL https://tennisfrens.com/",
-        "GA4 최근 7일 사용자 378명, 직전 7일 939명",
-        "GSC 최근 7일 클릭 19회, 노출 995회, CTR 1.9%",
-        "GSC 속성: sc-domain:tennisfrens.com",
-        "Sitemap: https://tennisfrens.com/sitemap-naver.xml",
-        "Google 제출 1,165개, 색인 0개"
-      ],
-      "relatedSignals": [
-        "하락 -59.7%",
-        "순위 9.8위"
-      ],
-      "topQueries": [],
-      "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
-      "reviewNote": "현재 신호는 작업 후보로 볼 수 있으나, 변경 전 상위 페이지와 쿼리 단위 근거를 한 번 더 확인하세요.",
-      "blockedBy": [
-        "article titles, body text, headings, and in-body links require editorial handoff"
-      ]
-    },
-    {
       "rank": 20,
-      "id": "gong365-seoOpportunity-노출 58회 대비 CTR이 1.7%로 낮습니다.",
+      "id": "gong365-seoOpportunity-노출 95회 대비 CTR이 1.1%로 낮습니다.",
       "siteId": "gong365",
       "siteName": "gong365.kr",
       "url": "https://gong365.kr/",
@@ -768,22 +759,22 @@
       "severity": "medium",
       "safetyTier": "T3",
       "automationMode": "content_handoff",
-      "primaryValue": "1.7%",
-      "reason": "노출 58회 대비 CTR이 1.7%로 낮습니다.",
+      "primaryValue": "1.1%",
+      "reason": "노출 95회 대비 CTR이 1.1%로 낮습니다.",
       "recommendedAction": "제목과 메타 설명을 검색 의도에 맞춰 개선하세요.",
       "operatorPrompt": "Codex: gong365.kr(gong365.kr)에서 노출은 있지만 CTR이 낮은 페이지의 제목, 메타 설명, 검색 의도 일치도를 개선할 후보를 찾아줘. 기준 정보: siteId=gong365, url=https://gong365.kr/, gscSiteUrl=https://gong365.kr/, sitemap=https://gong365.kr/sitemap.xml, submitted=592.",
       "verification": "개선 대상 페이지의 CTR과 평균 순위를 다음 GSC 갱신에서 기존 값과 비교합니다.",
       "evidence": [
-        "핵심 지표: 1.7%",
+        "핵심 지표: 1.1%",
         "대상: siteId gong365, URL https://gong365.kr/",
         "GA4 최근 7일 사용자 7명, 직전 7일 3명",
-        "GSC 최근 7일 클릭 1회, 노출 58회, CTR 1.7%",
+        "GSC 최근 7일 클릭 1회, 노출 95회, CTR 1.1%",
         "GSC 속성: https://gong365.kr/",
         "Sitemap: https://gong365.kr/sitemap.xml",
         "Google 제출 592개, 색인 0개"
       ],
       "relatedSignals": [
-        "순위 7.5위"
+        "순위 7.3위"
       ],
       "topQueries": [],
       "gscDiagnosis": "GSC 데이터가 수집되고 있습니다. 상위 쿼리와 URL 단위로 수정 후보를 좁혀 진행하세요.",
@@ -807,6 +798,18 @@
       "nextStep": "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요."
     },
     {
+      "id": "limsight-541579004-permission-GSC 권한 또는 Search Console 속성 확인이 필요합니다.",
+      "siteId": "limsight",
+      "siteName": "limsight.kr",
+      "url": "https://limsight.kr/",
+      "kind": "permission",
+      "priority": 100,
+      "label": "권한",
+      "value": "권한 필요",
+      "reason": "GSC 권한 또는 Search Console 속성 확인이 필요합니다.",
+      "nextStep": "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요."
+    },
+    {
       "id": "tennisfrens-534356101-decline-GA4 사용자가 직전 7일 대비 크게 감소했습니다.",
       "siteId": "tennisfrens",
       "siteName": "tennisfrens.com",
@@ -814,7 +817,7 @@
       "kind": "decline",
       "priority": 90,
       "label": "급락",
-      "value": "-59.7%",
+      "value": "-59.6%",
       "reason": "GA4 사용자가 직전 7일 대비 크게 감소했습니다.",
       "nextStep": "최근 발행, 색인, 유입 채널 변경 여부를 확인하세요."
     },
@@ -862,7 +865,7 @@
       "kind": "decline",
       "priority": 90,
       "label": "급락",
-      "value": "-41.1%",
+      "value": "-39.6%",
       "reason": "GA4 사용자가 직전 7일 대비 크게 감소했습니다.",
       "nextStep": "최근 발행, 색인, 유입 채널 변경 여부를 확인하세요."
     },
@@ -879,18 +882,6 @@
       "nextStep": "상위 쿼리와 CTR 하락 페이지를 점검하세요."
     },
     {
-      "id": "haemongdream-516256882-decline-GSC 클릭이 직전 7일 대비 크게 감소했습니다.",
-      "siteId": "haemongdream",
-      "siteName": "해몽드림 - GA4",
-      "url": "https://haemongdream.com/",
-      "kind": "decline",
-      "priority": 85,
-      "label": "급락",
-      "value": "-33.3%",
-      "reason": "GSC 클릭이 직전 7일 대비 크게 감소했습니다.",
-      "nextStep": "상위 쿼리와 CTR 하락 페이지를 점검하세요."
-    },
-    {
       "id": "picklefriend-539268592-decline-GSC 클릭이 직전 7일 대비 크게 감소했습니다.",
       "siteId": "picklefriend",
       "siteName": "picklefriend.kr",
@@ -898,39 +889,39 @@
       "kind": "decline",
       "priority": 85,
       "label": "급락",
-      "value": "-81.1%",
+      "value": "-78.4%",
       "reason": "GSC 클릭이 직전 7일 대비 크게 감소했습니다.",
       "nextStep": "상위 쿼리와 CTR 하락 페이지를 점검하세요."
+    },
+    {
+      "id": "limsight-541579004-monetization-홈페이지 HTML에서 AdSense 코드가 감지되지 않았습니다.",
+      "siteId": "limsight",
+      "siteName": "limsight.kr",
+      "url": "https://limsight.kr/",
+      "kind": "monetization",
+      "priority": 80,
+      "label": "수익화",
+      "value": "코드 미탐지",
+      "reason": "홈페이지 HTML에서 AdSense 코드가 감지되지 않았습니다.",
+      "nextStep": "홈페이지, 글 상세, 조건부 광고 삽입, 캐시 반영 여부를 확인하세요."
+    },
+    {
+      "id": "limsight-541579004-monetization-ads.txt에서 Google publisher 항목이 확인되지 않았습니다.",
+      "siteId": "limsight",
+      "siteName": "limsight.kr",
+      "url": "https://limsight.kr/",
+      "kind": "monetization",
+      "priority": 78,
+      "label": "수익화",
+      "value": "ads.txt 없음",
+      "reason": "ads.txt에서 Google publisher 항목이 확인되지 않았습니다.",
+      "nextStep": "/ads.txt에 google.com, pub-... 항목이 있는지 확인하세요."
     },
     {
       "id": "kang4-325680688-sitemap-GSC sitemap 마지막 수집일이 5일 전입니다.",
       "siteId": "kang4",
       "siteName": "강사자판기",
       "url": "https://kang4.com/",
-      "kind": "sitemap",
-      "priority": 74,
-      "label": "사이트맵",
-      "value": "5일 전",
-      "reason": "GSC sitemap 마지막 수집일이 5일 전입니다.",
-      "nextStep": "Search Console에 sitemap을 재제출하고 sitemap lastmod와 robots.txt Sitemap 라인을 확인하세요."
-    },
-    {
-      "id": "insupang-517897382-sitemap-GSC sitemap 마지막 수집일이 5일 전입니다.",
-      "siteId": "insupang",
-      "siteName": "insupang - GA4",
-      "url": "https://insupang.com/",
-      "kind": "sitemap",
-      "priority": 74,
-      "label": "사이트맵",
-      "value": "5일 전",
-      "reason": "GSC sitemap 마지막 수집일이 5일 전입니다.",
-      "nextStep": "Search Console에 sitemap을 재제출하고 sitemap lastmod와 robots.txt Sitemap 라인을 확인하세요."
-    },
-    {
-      "id": "esgyo-524502961-sitemap-GSC sitemap 마지막 수집일이 5일 전입니다.",
-      "siteId": "esgyo",
-      "siteName": "이에스지요 - GA4",
-      "url": "https://esgyo.kr/",
       "kind": "sitemap",
       "priority": 74,
       "label": "사이트맵",

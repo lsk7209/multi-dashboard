@@ -1083,3 +1083,12 @@ sites:
     ga4PropertyId: "540673092"
     gscSiteUrl: https://wattbenchs.com/
     monetization: true
+  - id: limsight
+    name: limsight.kr
+    enabled: true
+    platform: wordpress
+    url: https://limsight.kr/
+    wpRestBase: https://limsight.kr/wp-json/wp/v2
+    ga4PropertyId: "541579004"
+    gscSiteUrl: https://limsight.kr/
+    monetization: true
