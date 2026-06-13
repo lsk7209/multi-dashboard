@@ -16,6 +16,7 @@
     "stats:update": "tsx scripts/setup/update-ga4-stats.ts",
     "adsense:readiness": "tsx scripts/setup/audit-adsense-readiness.ts",
     "improvements:queue": "tsx scripts/setup/generate-improvement-queue.ts",
+    "improvements:dispatch": "tsx scripts/setup/dispatch-improvement-tasks.ts",
     "gsc:sitemaps:verify": "tsx scripts/setup/verify-gsc-sitemaps.ts",
     "diag": "tsx scripts/setup/diagnose-ops.ts",
     "traffic-keywords:validate": "tsx scripts/setup/validate-traffic-keywords.ts",

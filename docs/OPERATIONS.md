@@ -140,12 +140,15 @@ npm run diag
 1. `pnpm setup:import-ga4-sites`
 2. `pnpm stats:update`
 3. `pnpm improvements:queue`
-4. `pnpm type-check && pnpm lint && pnpm test && pnpm build`
-5. 변경된 스냅샷, history, 개선 큐를 GitHub에 커밋
-6. `site-improvement-queue` 이슈를 생성 또는 갱신
+4. `pnpm improvements:dispatch`
+5. `pnpm type-check && pnpm lint && pnpm test && pnpm build`
+6. 변경된 스냅샷, history, 개선 큐, 배분 결과를 GitHub에 커밋
+7. `site-improvement-queue` 이슈를 생성 또는 갱신
 
 원칙:
 - 개별 사이트를 개선하기 전에는 반드시 최신 `stats:update` 결과와 `data/site-improvement-queue.json`을 먼저 확인한다.
 - T2 기술 작업은 사이트 repo/WordPress checkout, 백업, diff, 검증이 가능할 때만 Codex가 적용한다.
 - T3 콘텐츠 작업(제목, 본문, FAQ, 본문 내부링크, 최신성 보강)은 자동 직접 수정하지 않고 콘텐츠 handoff로 넘긴다.
 - 큐 생성물이 낡았거나 `generatedAt`이 36시간을 넘으면 `pnpm improvements:queue`는 실패해야 한다. 필요 시 먼저 `pnpm stats:update`를 다시 실행한다.
+- `SITE_AUTOMATION_TOKEN`이 있으면 `scripts/setup/site-repo-map.json`에 매핑된 대상 repo로 T2 기술 작업 이슈를 자동 생성/갱신한다. 토큰이 없거나 repo 매핑이 없으면 대시보드 큐에만 남긴다.
+- GitHub Actions 자체에는 Codex LLM이 내장되어 있지 않다. 이슈 배분은 Codex 창 없이 자동으로 되지만, 실제 코드 패치 자동화는 대상 repo의 별도 coding-agent/self-hosted runner 또는 명시적 Codex 실행 환경이 필요하다.

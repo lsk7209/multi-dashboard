@@ -51,6 +51,11 @@ jobs:
       - name: Generate site improvement queue
         run: pnpm improvements:queue
 
+      - name: Dispatch improvement tasks
+        env:
+          SITE_AUTOMATION_TOKEN: ${{ secrets.SITE_AUTOMATION_TOKEN }}
+        run: pnpm improvements:dispatch
+
       - name: Validate app
         run: |
           pnpm type-check
@@ -72,16 +77,16 @@ jobs:
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md docs/seo-work-queue.md; then
+          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md data/site-improvement-dispatch.json docs/seo-work-queue.md; then
             echo "No stats changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md docs/seo-work-queue.md
+          git add scripts/setup/sites.yaml data/site-stats.json data/history data/site-improvement-queue.json data/site-improvement-issue.md data/site-improvement-dispatch.json docs/seo-work-queue.md
           git commit \
             -m "Keep dashboard snapshot current from scheduled collection" \
-            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats and improvement queues are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history/improvement data unless the collection contract changes. Tested: pnpm stats:update; pnpm improvements:queue; pnpm type-check; pnpm lint; pnpm test; pnpm build Not-tested: Manual review of every metric value."
+            -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats and improvement queues are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history/improvement data unless the collection contract changes. Tested: pnpm stats:update; pnpm improvements:queue; pnpm improvements:dispatch; pnpm type-check; pnpm lint; pnpm test; pnpm build Not-tested: Manual review of every metric value."
           git push
 
       - name: Publish improvement queue issue

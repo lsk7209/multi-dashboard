@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-06-13T04:42:15.006Z",
+  "dashboardGeneratedAt": "2026-06-13T04:26:56.211Z",
+  "dryRun": false,
+  "dispatched": [
+    {
+      "siteId": "crepika",
+      "host": "crepika.com",
+      "repository": "lsk7209/crepikacom",
+      "issueNumber": 1,
+      "issueUrl": "https://github.com/lsk7209/crepikacom/issues/1",
+      "action": "created"
+    },
+    {
+      "siteId": "spinkorea-2",
+      "host": "spinkorea.kr",
+      "repository": "lsk7209/spinkorea",
+      "issueNumber": 1,
+      "issueUrl": "https://github.com/lsk7209/spinkorea/issues/1",
+      "action": "created"
+    },
+    {
+      "siteId": "todaypharm",
+      "host": "todaypharm.kr",
+      "repository": "lsk7209/today_yakuk",
+      "issueNumber": 3,
+      "issueUrl": "https://github.com/lsk7209/today_yakuk/issues/3",
+      "action": "created"
+    }
+  ],
+  "skipped": [
+    {
+      "siteId": "klick-2",
+      "host": "klick.kr",
+      "reason": "target repository is not mapped; kept in dashboard queue"
+    },
+    {
+      "siteId": "limsight",
+      "host": "limsight.kr",
+      "reason": "target repository is not mapped; kept in dashboard queue"
+    }
+  ]
+}
