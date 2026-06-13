@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import YAML from "yaml";
 
 export interface Site {
@@ -319,6 +319,7 @@ export interface EnrichedSiteStat extends Omit<
   duplicateStats?: DuplicateSiteSummary[];
   lastPublishedAt?: string;
   lastScheduledAt?: string;
+  scheduledFutureCount?: number;
   daysSincePublished?: number;
 }
 
@@ -426,12 +427,20 @@ export function getDashboardData(): DashboardData {
   const snapshot = readStats("data/site-stats.json");
   const statsById = new Map(snapshot.stats.map((stat) => [stat.id, stat]));
   const sparklines = loadSparklines(sites.map((s) => s.id));
-  const stats = sites.map((site) =>
-    enrichSiteStat(
-      statsById.get(site.id) ?? emptySiteStat(site),
-      sparklines.get(site.id) ?? [],
-    ),
-  );
+  const scheduledByHost = loadScheduledQueue();
+  const stats = sites.map((site) => {
+    const base = statsById.get(site.id) ?? emptySiteStat(site);
+    const enriched = enrichSiteStat(base, sparklines.get(site.id) ?? []);
+    // 예약글(future post)은 별도 SSH 수집(scheduled-queue)에서 host 매칭으로 병합한다.
+    const scheduled = scheduledByHost.get(scheduledHost(base.url));
+    if (scheduled) {
+      enriched.scheduledFutureCount = scheduled.future;
+      if (!enriched.lastScheduledAt && scheduled.lastScheduledAt) {
+        enriched.lastScheduledAt = scheduled.lastScheduledAt;
+      }
+    }
+    return enriched;
+  });
   const dedupeResult = dedupeStatsByHost(stats);
   const displayStats = dedupeResult.stats;
   const insights = attachRelatedInsightSignals(buildInsights(displayStats));
@@ -1507,7 +1516,10 @@ function groupInsightsByDomain(insights: SiteInsight[]): SiteInsight[] {
         ...new Set(group.flatMap((insight) => insight.evidence)),
       ].slice(0, 7),
       relatedSignals: group
-        .map((insight) => `${formatInsightKind(insight.kind)} ${insight.primaryValue}`)
+        .map(
+          (insight) =>
+            `${formatInsightKind(insight.kind)} ${insight.primaryValue}`,
+        )
         .filter((signal, index, signals) => signals.indexOf(signal) === index),
     });
   }
@@ -2003,7 +2015,9 @@ function loadSparklines(siteIds: string[]): Map<string, (number | null)[]> {
       return null;
     }
     try {
-      const snap = JSON.parse(readFileSync(historyPath, "utf8")) as StatsSnapshot;
+      const snap = JSON.parse(
+        readFileSync(historyPath, "utf8"),
+      ) as StatsSnapshot;
       const byId = new Map<string, number>();
       for (const stat of snap.stats) {
         if (idSet.has(stat.id)) {
@@ -2020,8 +2034,71 @@ function loadSparklines(siteIds: string[]): Map<string, (number | null)[]> {
   for (const siteId of siteIds) {
     result.set(
       siteId,
-      perDay.map((day) => (day === null ? null : day.get(siteId) ?? 0)),
+      perDay.map((day) => (day === null ? null : (day.get(siteId) ?? 0))),
     );
+  }
+  return result;
+}
+
+interface ScheduledQueueInfo {
+  future: number;
+  lastScheduledAt?: string;
+}
+
+// URL/사이트명을 host 키로 정규화 (scheduled-queue와 site-stats 매칭용)
+function scheduledHost(value: string | undefined): string {
+  return (value ?? "")
+    .replace(/^https?:\/\//, "")
+    .replace(/\/$/, "")
+    .replace(/^www\./, "");
+}
+
+// 예약글은 정기 stats 파이프라인이 아닌 별도 SSH 수집(scheduled-queue-*.json)으로 들어온다.
+// data/ 의 최신 scheduled-queue 파일을 읽어 host별 예약글 수/마지막 예약일을 반환한다.
+function loadScheduledQueue(): Map<string, ScheduledQueueInfo> {
+  const result = new Map<string, ScheduledQueueInfo>();
+  let entries: string[];
+  try {
+    entries = readdirSync("data");
+  } catch {
+    return result;
+  }
+  const latest = entries
+    .filter((f) => /^scheduled-queue-\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .sort()
+    .at(-1);
+  if (!latest) {
+    return result;
+  }
+  try {
+    const parsed = JSON.parse(readFileSync(`data/${latest}`, "utf8")) as {
+      sites?: Array<{
+        site?: string;
+        future?: number;
+        lastSched?: string;
+        error?: string;
+      }>;
+    };
+    for (const entry of parsed.sites ?? []) {
+      if (!entry.site || entry.error) {
+        continue;
+      }
+      let lastScheduledAt: string | undefined;
+      if (entry.lastSched) {
+        const parsedDate = new Date(
+          `${entry.lastSched.replace(" ", "T")}+09:00`,
+        );
+        if (!Number.isNaN(parsedDate.getTime())) {
+          lastScheduledAt = parsedDate.toISOString();
+        }
+      }
+      result.set(scheduledHost(entry.site), {
+        future: entry.future ?? 0,
+        lastScheduledAt,
+      });
+    }
+  } catch {
+    return result;
   }
   return result;
 }

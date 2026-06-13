@@ -1091,4 +1091,4 @@ sites:
     wpRestBase: https://limsight.kr/wp-json/wp/v2
     ga4PropertyId: "541579004"
     gscSiteUrl: https://limsight.kr/
-    monetization: true
+    monetization: false

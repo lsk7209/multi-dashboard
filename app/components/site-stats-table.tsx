@@ -497,12 +497,23 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
 }
 
 function ScheduledPostCell({ stat }: { stat: EnrichedSiteStat }) {
+  const count = stat.scheduledFutureCount;
+  // count 미수집(undefined) → "-", 소진(0) → "소진", 보유(>0) → "N편"
+  const hasData = count != null;
+  const isFresh = (count != null && count > 0) || Boolean(stat.lastScheduledAt);
+  const label = hasData
+    ? count > 0
+      ? `${count}편`
+      : "소진"
+    : stat.lastScheduledAt
+      ? "예약"
+      : "-";
   return (
     <span
-      className={`collection-cell ${stat.lastScheduledAt ? "collection-fresh" : "collection-missing"}`}
+      className={`collection-cell ${isFresh ? "collection-fresh" : "collection-missing"}`}
       title={formatScheduledPostTitle(stat)}
     >
-      <strong>{stat.lastScheduledAt ? "예약" : "-"}</strong>
+      <strong>{label}</strong>
       <small>{formatScheduledDate(stat.lastScheduledAt)}</small>
     </span>
   );
@@ -1003,8 +1014,8 @@ function Sparkline({ values }: { values: (number | null)[] }) {
   const denom = values.length > 1 ? values.length - 1 : 1;
 
   // 수집 누락일(null)에서 선을 끊어 별개 구간으로 그린다.
-  const segments: string[][] = [];
-  let current: string[] = [];
+  const segments: Point[][] = [];
+  let current: Point[] = [];
   values.forEach((v, i) => {
     if (v === null) {
       if (current.length > 0) {
@@ -1015,7 +1026,7 @@ function Sparkline({ values }: { values: (number | null)[] }) {
     }
     const x = (i / denom) * W;
     const y = H - (v / max) * H;
-    current.push(`${x},${y}`);
+    current.push({ x, y });
   });
   if (current.length > 0) {
     segments.push(current);
@@ -1032,10 +1043,46 @@ function Sparkline({ values }: { values: (number | null)[] }) {
       aria-hidden
     >
       {segments.map((pts, index) => (
-        <polyline key={index} fill="none" strokeWidth="1.5" points={pts.join(" ")} />
+        <path
+          key={index}
+          fill="none"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d={toSmoothPath(pts)}
+        />
       ))}
     </svg>
   );
+}
+
+interface Point {
+  x: number;
+  y: number;
+}
+
+// 점들을 Catmull-Rom 스플라인 기반 베지어 곡선 path로 변환해 추세선을 부드럽게 그린다.
+function toSmoothPath(points: Point[]): string {
+  if (points.length === 0) {
+    return "";
+  }
+  if (points.length === 1) {
+    // 단일 점은 짧은 가로선으로 표시 (점만 있으면 보이지 않으므로)
+    return `M ${points[0].x - 1},${points[0].y} L ${points[0].x + 1},${points[0].y}`;
+  }
+  let d = `M ${points[0].x},${points[0].y}`;
+  for (let i = 0; i < points.length - 1; i += 1) {
+    const p0 = points[i - 1] ?? points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] ?? p2;
+    const cp1x = p1.x + (p2.x - p0.x) / 6;
+    const cp1y = p1.y + (p2.y - p0.y) / 6;
+    const cp2x = p2.x - (p3.x - p1.x) / 6;
+    const cp2y = p2.y - (p3.y - p1.y) / 6;
+    d += ` C ${cp1x},${cp1y} ${cp2x},${cp2y} ${p2.x},${p2.y}`;
+  }
+  return d;
 }
 
 function formatPosition(value: number): string {
