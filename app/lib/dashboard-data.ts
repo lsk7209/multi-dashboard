@@ -2094,7 +2094,7 @@ function loadScheduledQueue(): Map<string, ScheduledQueueInfo> {
       }
       result.set(scheduledHost(entry.site), {
         future: entry.future ?? 0,
-        lastScheduledAt,
+        ...(lastScheduledAt !== undefined && { lastScheduledAt }),
       });
     }
   } catch {

@@ -1068,13 +1068,14 @@ function toSmoothPath(points: Point[]): string {
   }
   if (points.length === 1) {
     // 단일 점은 짧은 가로선으로 표시 (점만 있으면 보이지 않으므로)
-    return `M ${points[0].x - 1},${points[0].y} L ${points[0].x + 1},${points[0].y}`;
+    const pt = points[0]!;
+    return `M ${pt.x - 1},${pt.y} L ${pt.x + 1},${pt.y}`;
   }
-  let d = `M ${points[0].x},${points[0].y}`;
+  let d = `M ${points[0]!.x},${points[0]!.y}`;
   for (let i = 0; i < points.length - 1; i += 1) {
-    const p0 = points[i - 1] ?? points[i];
-    const p1 = points[i];
-    const p2 = points[i + 1];
+    const p1 = points[i]!;
+    const p2 = points[i + 1]!;
+    const p0 = points[i - 1] ?? p1;
     const p3 = points[i + 2] ?? p2;
     const cp1x = p1.x + (p2.x - p0.x) / 6;
     const cp1y = p1.y + (p2.y - p0.y) / 6;
