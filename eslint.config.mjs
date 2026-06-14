@@ -8,6 +8,21 @@ export default tseslint.config(
     ignores: ["node_modules/**", "dist/**", ".next/**"],
   },
   {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+      globals: {
+        process: "readonly",
+        console: "readonly",
+        fetch: "readonly",
+        AbortController: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly",
+        URL: "readonly",
+        Buffer: "readonly",
+      },
+    },
+  },
+  {
     files: ["scripts/**/*.ts"],
     languageOptions: {
       parserOptions: {
