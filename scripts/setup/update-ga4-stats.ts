@@ -746,28 +746,48 @@ function classifyGscEmailAlertSeverity(issue: string): GscEmailAlert["severity"]
 function parseGscEmailAlerts(markdown: string, detectedAt: string): GscEmailAlert[] {
   const alerts: GscEmailAlert[] = [];
   const linePattern =
-    /^\s*[-*]\s+`(?<time>\d{2}:\d{2})`\s+\[GSC\]\s+(?:(?<site>[^—\n]+?)\s+—\s+)?\*?\s*(?<issue>.+?)\s*$/;
+    /^\s*[-*]\s+`(?<time>\d{2}:\d{2})`\s+\[GSC\]\s+(?<rest>.+?)\s*$/;
 
   for (const line of markdown.split(/\r?\n/)) {
     const match = line.match(linePattern);
     const groups = match?.groups;
-    const issue = groups?.issue?.trim();
-    if (!issue) {
+    const parsed = parseGscEmailAlertBody(groups?.rest);
+    if (!parsed) {
       continue;
     }
 
     alerts.push({
       source: "gmail-digest",
-      site: groups?.site?.trim() ?? "",
-      issue,
+      site: parsed.site,
+      issue: parsed.issue,
       detectedAt,
       url: GMAIL_DIGEST_README_URL,
-      severity: classifyGscEmailAlertSeverity(issue),
+      severity: classifyGscEmailAlertSeverity(parsed.issue),
       ...(groups?.time ? { time: groups.time } : {}),
     });
   }
 
   return alerts;
+}
+
+function parseGscEmailAlertBody(
+  value: string | undefined,
+): { site: string; issue: string } | undefined {
+  const body = value?.trim();
+  if (!body) {
+    return undefined;
+  }
+
+  const match = body.match(
+    /^(?<site>[a-z0-9.-]+\.[a-z]{2,})(?:\s+[^a-z0-9가-힣*]+\s+|\s+-\s+)\*?\s*(?<issue>.+)$/i,
+  );
+  const site = match?.groups?.site?.trim();
+  const issue = match?.groups?.issue?.trim();
+  if (!site || !issue) {
+    return undefined;
+  }
+
+  return { site, issue };
 }
 
 async function loadGscEmailAlerts(): Promise<Map<string, GscEmailAlert[]>> {
