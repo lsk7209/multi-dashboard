@@ -36,6 +36,16 @@ export interface GscQueryMetric extends GscMetricSet {
   query: string;
 }
 
+export interface GscEmailAlert {
+  source: "gmail-digest";
+  site: string;
+  issue: string;
+  time?: string;
+  detectedAt: string;
+  url: string;
+  severity: "high" | "medium" | "low";
+}
+
 export interface InsightQueryCandidate extends GscMetricSet {
   query: string;
 }
@@ -105,6 +115,7 @@ export type ActionKind =
   | "decline"
   | "monetization"
   | "sitemap"
+  | "gscAlert"
   | "seo"
   | "ranking"
   | "data";
@@ -210,6 +221,7 @@ export interface SiteStat {
   adsenseErrorKind?: ErrorKind;
   adsTxtErrorKind?: ErrorKind;
   sitemapErrorKind?: ErrorKind;
+  gscEmailAlerts?: GscEmailAlert[];
   error?: string;
   gscError?: string;
   adsenseError?: string;
@@ -493,7 +505,9 @@ export function getDashboardData(): DashboardData {
     segments: buildSegments(displayStats),
     healthSummary: buildHealthSummary(displayStats),
     collectionSummary,
-    gscIssueStats: displayStats.filter((stat) => Boolean(stat.gscError)),
+    gscIssueStats: displayStats.filter(
+      (stat) => Boolean(stat.gscError) || (stat.gscEmailAlerts?.length ?? 0) > 0,
+    ),
     dailyIssueStats: displayStats
       .filter((stat) => stat.operationalStatus !== "normal")
       .slice(0, 20),
@@ -880,6 +894,19 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
+  for (const alert of (stat.gscEmailAlerts ?? []).slice(0, 3)) {
+    items.push(
+      makeAction(
+        stat,
+        "gscAlert",
+        getGscEmailAlertPriority(alert),
+        alert.issue,
+        `Gmail digest GSC alert${alert.time ? ` at ${alert.time}` : ""}: ${alert.issue}`,
+        "Check the affected indexed URL group in Search Console, then verify robots, noindex, canonical, redirect, and 404 handling.",
+      ),
+    );
+  }
+
   if (hasCtrOpportunity(stat)) {
     items.push(
       makeAction(
@@ -940,6 +967,16 @@ function getActionLabel(kind: ActionKind): string {
   if (kind === "seo") return "CTR";
   if (kind === "ranking") return "순위";
   return "데이터";
+}
+
+function getGscEmailAlertPriority(alert: GscEmailAlert): number {
+  if (alert.severity === "high") {
+    return 88;
+  }
+  if (alert.severity === "medium") {
+    return 82;
+  }
+  return 68;
 }
 
 function hasMonetizationIssue(stat: EnrichedSiteStat): boolean {
@@ -1575,6 +1612,22 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
           "GSC 데이터가 없거나 권한 오류가 있습니다.",
           "Search Console 소유권과 서비스 계정 권한을 확인하세요.",
           "GSC 0",
+        ),
+      );
+    }
+
+    const highPriorityGscEmailAlert = stat.gscEmailAlerts?.find(
+      (alert) => alert.severity === "high" || alert.severity === "medium",
+    );
+    if (highPriorityGscEmailAlert) {
+      insights.push(
+        makeInsight(
+          stat,
+          "indexingOrPermissionIssue",
+          highPriorityGscEmailAlert.severity === "high" ? "high" : "medium",
+          `Gmail digest GSC alert: ${highPriorityGscEmailAlert.issue}`,
+          "Open the matching Search Console issue and verify robots, noindex, canonical, redirect, or 404 handling.",
+          highPriorityGscEmailAlert.issue,
         ),
       );
     }

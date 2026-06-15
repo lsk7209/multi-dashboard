@@ -290,9 +290,9 @@ function GscIssuePanel({
               <div>
                 <strong>{stat.name}</strong>
                 <a href={stat.url}>{stat.gscSiteUrl ?? stat.url}</a>
-                <p>{stat.statusReason}</p>
+                <p>{getGscIssueDetail(stat)}</p>
               </div>
-              <span>{getErrorKindLabel(stat.gscErrorKind)}</span>
+              <span>{getGscIssueLabel(stat)}</span>
             </div>
           ))}
         </div>
@@ -671,6 +671,26 @@ function getErrorKindLabel(kind: string | undefined): string {
   if (kind === "quota") return "할당량";
   if (kind === "missing_config") return "설정 누락";
   return "API 확인";
+}
+
+function getGscIssueDetail(
+  stat: ReturnType<typeof getDashboardData>["stats"][number],
+): string {
+  const alert = stat.gscEmailAlerts?.[0];
+  if (alert) {
+    return `Gmail digest ${alert.time ? `${alert.time} ` : ""}${alert.issue}`;
+  }
+  return stat.statusReason;
+}
+
+function getGscIssueLabel(
+  stat: ReturnType<typeof getDashboardData>["stats"][number],
+): string {
+  const alert = stat.gscEmailAlerts?.[0];
+  if (alert) {
+    return alert.severity === "high" ? "GSC alert high" : "GSC alert";
+  }
+  return getErrorKindLabel(stat.gscErrorKind);
 }
 
 function getMonetizationLabel(kind: string | undefined): string {
