@@ -1092,3 +1092,30 @@ sites:
     ga4PropertyId: "541579004"
     gscSiteUrl: https://limsight.kr/
     monetization: false
+  - id: kapti
+    name: kapti.kr
+    enabled: true
+    platform: wordpress
+    url: https://kapti.kr/
+    wpRestBase: https://kapti.kr/wp-json/wp/v2
+    ga4PropertyId: "542290124"
+    gscSiteUrl: https://kapti.kr/
+    monetization: true
+  - id: coverclarityhealth
+    name: coverclarityhealth.com
+    enabled: true
+    platform: wordpress
+    url: https://coverclarityhealth.com/
+    wpRestBase: https://coverclarityhealth.com/wp-json/wp/v2
+    ga4PropertyId: "542279941"
+    gscSiteUrl: https://coverclarityhealth.com/
+    monetization: true
+  - id: solarpaybackmap
+    name: solarpaybackmap.com
+    enabled: true
+    platform: wordpress
+    url: https://solarpaybackmap.com/
+    wpRestBase: https://solarpaybackmap.com/wp-json/wp/v2
+    ga4PropertyId: "542279766"
+    gscSiteUrl: https://solarpaybackmap.com/
+    monetization: true
