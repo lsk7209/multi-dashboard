@@ -1119,3 +1119,21 @@ sites:
     ga4PropertyId: "542279766"
     gscSiteUrl: https://solarpaybackmap.com/
     monetization: true
+  - id: gradienttrail
+    name: gradienttrail.com
+    enabled: true
+    platform: wordpress
+    url: https://gradienttrail.com/
+    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
+    ga4PropertyId: "543434435"
+    gscSiteUrl: https://gradienttrail.com/
+    monetization: true
+  - id: dogbreedcost
+    name: https://dogbreedcost.com
+    enabled: true
+    platform: wordpress
+    url: https://dogbreedcost.com/
+    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
+    ga4PropertyId: "543424923"
+    gscSiteUrl: https://dogbreedcost.com/
+    monetization: true
