@@ -1137,3 +1137,21 @@ sites:
     ga4PropertyId: "543424923"
     gscSiteUrl: https://dogbreedcost.com/
     monetization: true
+  - id: patentgogo
+    name: patentgogo.com
+    enabled: true
+    platform: wordpress
+    url: https://patentgogo.com/
+    wpRestBase: https://patentgogo.com/wp-json/wp/v2
+    ga4PropertyId: "543441407"
+    gscSiteUrl: https://patentgogo.com/
+    monetization: true
+  - id: rndatlas
+    name: rndatlas.com
+    enabled: true
+    platform: wordpress
+    url: https://rndatlas.com/
+    wpRestBase: https://rndatlas.com/wp-json/wp/v2
+    ga4PropertyId: "543459196"
+    gscSiteUrl: https://rndatlas.com/
+    monetization: true
