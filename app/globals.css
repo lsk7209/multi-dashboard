@@ -1442,6 +1442,180 @@ code {
   text-decoration: none;
 }
 
+.banner-console {
+  display: grid;
+  gap: 14px;
+}
+
+.ops-notice,
+.ops-message,
+.ops-error {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.ops-notice {
+  background: #fbfcfd;
+}
+
+.ops-notice span {
+  color: var(--muted);
+}
+
+.ops-message {
+  border-color: rgba(15, 118, 110, 0.24);
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.08);
+}
+
+.ops-error {
+  border-color: rgba(185, 28, 28, 0.22);
+  color: #991b1b;
+  background: rgba(185, 28, 28, 0.07);
+}
+
+.ops-form-grid,
+.ops-table-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ops-form,
+.ops-assignment,
+.ops-table-card,
+.ops-install {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ops-form {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 12px;
+}
+
+.ops-form h3,
+.ops-assignment h3,
+.ops-table-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.ops-form label,
+.ops-assignment label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ops-form input,
+.ops-form select,
+.ops-assignment select,
+.ops-table select {
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 9px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.ops-form input:focus,
+.ops-form select:focus,
+.ops-assignment select:focus,
+.ops-table select:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent-weak);
+}
+
+.ops-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+
+.ops-button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #fff;
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ops-button-secondary {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.ops-button:disabled,
+.ops-form input:disabled,
+.ops-form select:disabled,
+.ops-assignment select:disabled,
+.ops-table select:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.ops-assignment {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(140px, 0.7fr)) auto;
+  gap: 10px;
+  align-items: end;
+  padding: 12px;
+}
+
+.ops-assignment p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ops-install {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  background: #fbfcfd;
+}
+
+.ops-install code,
+.ops-notice code {
+  overflow-wrap: anywhere;
+}
+
+.ops-table-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.ops-table-card {
+  overflow: hidden;
+}
+
+.ops-table-card h3 {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ops-table {
+  min-width: 760px;
+}
+
 @media (max-width: 860px) {
   .dashboard-shell {
     width: min(100% - 24px, 720px);
@@ -1480,6 +1654,9 @@ code {
   .stats-layout,
   .support-grid,
   .metric-grid,
+  .ops-form-grid,
+  .ops-table-grid,
+  .ops-assignment,
   .table-controls,
   .secret-grid {
     grid-template-columns: 1fr;

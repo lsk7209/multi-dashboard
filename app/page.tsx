@@ -2,6 +2,7 @@ import {
   DashboardTabs,
   type DashboardTabItem,
 } from "./components/dashboard-tabs.js";
+import { BannerManagementConsole } from "./components/banner-management-console.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
 import {
   getDashboardData,
@@ -587,6 +588,8 @@ function BannerManagementSection({
           )}
         </article>
       </div>
+
+      <BannerManagementConsole />
 
       <article className="panel workspace-table-panel">
         <div className="panel-heading">
