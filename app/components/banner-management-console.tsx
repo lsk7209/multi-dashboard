@@ -40,11 +40,29 @@ interface TrackingLinkRow {
 
 interface AssignmentRow {
   id: string;
+  placementId: string;
   placementName: string;
+  placementSiteKey: string | null;
+  placementSlotKey: string | null;
+  placementSiteUrl: string | null;
   creativeName: string | null;
   trackingSlug: string | null;
   weight: number;
   status: string;
+}
+
+interface SiteSummaryRow {
+  siteKey: string;
+  siteUrl: string | null;
+  placements: number;
+  activePlacements: number;
+  assignedPlacements: number;
+  unassignedPlacements: number;
+  requests: number;
+  imageRequests: number;
+  noAd: number;
+  clicks: number;
+  lastUpdatedAt: string;
 }
 
 interface BannerManagementState {
@@ -58,6 +76,7 @@ interface BannerManagementState {
   creatives: CreativeRow[];
   trackingLinks: TrackingLinkRow[];
   assignments: AssignmentRow[];
+  siteSummaries: SiteSummaryRow[];
 }
 
 const EMPTY_STATE: BannerManagementState = {
@@ -69,6 +88,7 @@ const EMPTY_STATE: BannerManagementState = {
   persistenceNote: "",
   publicBaseUrl: "",
   placements: [],
+  siteSummaries: [],
   trackingLinks: [],
   writable: false,
 };
@@ -120,18 +140,120 @@ export function BannerManagementConsole() {
     placementId: "",
     trackingLinkId: "",
   });
+  const [siteFilter, setSiteFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("all");
+  const [assignmentFilter, setAssignmentFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     void loadState();
   }, []);
 
+  const siteOptions = useMemo(() => {
+    const sites = new Map<string, { siteKey: string; siteUrl: string | null; placements: number }>();
+    for (const summary of state.siteSummaries) {
+      sites.set(summary.siteKey, {
+        siteKey: summary.siteKey,
+        siteUrl: summary.siteUrl,
+        placements: summary.placements,
+      });
+    }
+    for (const placement of state.placements) {
+      const siteKey = placement.siteKey || "legacy";
+      if (!sites.has(siteKey)) {
+        sites.set(siteKey, {
+          siteKey,
+          siteUrl: placement.siteUrl,
+          placements: 1,
+        });
+      }
+    }
+    return Array.from(sites.values()).sort((a, b) => a.siteKey.localeCompare(b.siteKey));
+  }, [state.placements, state.siteSummaries]);
+
+  const filteredPlacements = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return state.placements.filter((placement) => {
+      const placementSite = placement.siteKey || "legacy";
+      const isAssigned = Boolean(placement.assignedCreativeId && placement.assignedTrackingLinkId);
+      if (siteFilter !== "all" && placementSite !== siteFilter) return false;
+      if (statusFilter !== "all" && placement.status !== statusFilter) return false;
+      if (assignmentFilter === "assigned" && !isAssigned) return false;
+      if (assignmentFilter === "unassigned" && isAssigned) return false;
+      if (!query) return true;
+      return [
+        placement.id,
+        placement.name,
+        placement.siteKey,
+        placement.slotKey,
+        placement.siteUrl,
+        placement.assignedCreativeName,
+        placement.assignedTrackingSlug,
+      ]
+        .filter(Boolean)
+        .some((value) => String(value).toLowerCase().includes(query));
+    });
+  }, [assignmentFilter, searchQuery, siteFilter, state.placements, statusFilter]);
+
+  const filteredAssignments = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return state.assignments.filter((assignment) => {
+      const assignmentSite = assignment.placementSiteKey || "legacy";
+      if (siteFilter !== "all" && assignmentSite !== siteFilter) return false;
+      if (!query) return true;
+      return [
+        assignment.id,
+        assignment.placementId,
+        assignment.placementName,
+        assignment.placementSiteKey,
+        assignment.placementSlotKey,
+        assignment.placementSiteUrl,
+        assignment.creativeName,
+        assignment.trackingSlug,
+      ]
+        .filter(Boolean)
+        .some((value) => String(value).toLowerCase().includes(query));
+    });
+  }, [searchQuery, siteFilter, state.assignments]);
+
+  const selectedSiteSummary = useMemo(
+    () => (siteFilter === "all" ? null : state.siteSummaries.find((site) => site.siteKey === siteFilter) ?? null),
+    [siteFilter, state.siteSummaries],
+  );
+
+  const fleetSummary = useMemo(
+    () =>
+      state.siteSummaries.reduce(
+        (summary, site) => ({
+          activePlacements: summary.activePlacements + site.activePlacements,
+          assignedPlacements: summary.assignedPlacements + site.assignedPlacements,
+          clicks: summary.clicks + site.clicks,
+          placements: summary.placements + site.placements,
+          requests: summary.requests + site.requests,
+          unassignedPlacements: summary.unassignedPlacements + site.unassignedPlacements,
+        }),
+        {
+          activePlacements: 0,
+          assignedPlacements: 0,
+          clicks: 0,
+          placements: 0,
+          requests: 0,
+          unassignedPlacements: 0,
+        },
+      ),
+    [state.siteSummaries],
+  );
+
   useEffect(() => {
     setAssignmentForm((current) => ({
       creativeId: current.creativeId || state.creatives[0]?.id || "",
-      placementId: current.placementId || state.placements[0]?.id || "",
+      placementId:
+        current.placementId && (filteredPlacements.length === 0 || filteredPlacements.some((item) => item.id === current.placementId))
+          ? current.placementId
+          : filteredPlacements[0]?.id || state.placements[0]?.id || "",
       trackingLinkId: current.trackingLinkId || state.trackingLinks[0]?.id || "",
     }));
-  }, [state.creatives, state.placements, state.trackingLinks]);
+  }, [filteredPlacements, state.creatives, state.placements, state.trackingLinks]);
 
   const selectedPlacement = useMemo(
     () => state.placements.find((placement) => placement.id === assignmentForm.placementId),
@@ -224,6 +346,111 @@ export function BannerManagementConsole() {
 
       {message ? <p className="ops-message">{message}</p> : null}
       {error ? <p className="ops-error">{error}</p> : null}
+
+      <div className="ops-control-panel">
+        <div className="ops-control-heading">
+          <div>
+            <h3>사이트 운영 필터</h3>
+            <p>수백 개 사이트의 배너 슬롯을 사이트, 상태, 배정 여부, 키워드로 좁혀서 운영합니다.</p>
+          </div>
+          <strong>
+            {formatNumber(filteredPlacements.length)} / {formatNumber(state.placements.length)} 슬롯
+          </strong>
+        </div>
+        <div className="ops-filter-grid">
+          <label>
+            검색
+            <input
+              placeholder="siteKey, slotKey, 배너명, 제휴 링크"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+            />
+          </label>
+          <label>
+            사이트
+            <select value={siteFilter} onChange={(event) => setSiteFilter(event.target.value)}>
+              <option value="all">전체 사이트</option>
+              {siteOptions.map((site) => (
+                <option key={site.siteKey} value={site.siteKey}>
+                  {site.siteKey} ({formatNumber(site.placements)})
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            슬롯 상태
+            <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}>
+              <option value="all">전체 상태</option>
+              {STATUS_OPTIONS.map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            배정 여부
+            <select value={assignmentFilter} onChange={(event) => setAssignmentFilter(event.target.value)}>
+              <option value="all">전체 슬롯</option>
+              <option value="assigned">배정 완료</option>
+              <option value="unassigned">미배정</option>
+            </select>
+          </label>
+        </div>
+        <div className="ops-fleet-metrics">
+          <span>사이트 {formatNumber(state.siteSummaries.length)}개</span>
+          <span>전체 슬롯 {formatNumber(fleetSummary.placements)}개</span>
+          <span>활성 {formatNumber(fleetSummary.activePlacements)}개</span>
+          <span>배정 {formatNumber(fleetSummary.assignedPlacements)}개</span>
+          <span>미배정 {formatNumber(fleetSummary.unassignedPlacements)}개</span>
+          <span>클릭 {formatNumber(fleetSummary.clicks)}회</span>
+        </div>
+        {selectedSiteSummary ? (
+          <div className="ops-site-focus">
+            <strong>{selectedSiteSummary.siteKey}</strong>
+            <span>{selectedSiteSummary.siteUrl ?? "사이트 URL 미등록"}</span>
+            <span>
+              슬롯 {formatNumber(selectedSiteSummary.placements)}개 · 미배정{" "}
+              {formatNumber(selectedSiteSummary.unassignedPlacements)}개 · 클릭 {formatNumber(selectedSiteSummary.clicks)}회
+            </span>
+          </div>
+        ) : null}
+      </div>
+
+      <div className="ops-table-card ops-site-summary">
+        <h3>사이트별 배너 운영 현황</h3>
+        <div className="workspace-table-wrap">
+          <table className="workspace-table ops-table">
+            <tbody>
+              {isLoading ? (
+                <tr>
+                  <td>불러오는 중입니다.</td>
+                </tr>
+              ) : state.siteSummaries.length > 0 ? (
+                state.siteSummaries.map((site) => (
+                  <tr key={site.siteKey}>
+                    <td>
+                      <strong>{site.siteKey}</strong>
+                      <small>{site.siteUrl ?? "URL 미등록"}</small>
+                    </td>
+                    <td>슬롯 {formatNumber(site.placements)}</td>
+                    <td>활성 {formatNumber(site.activePlacements)}</td>
+                    <td>배정 {formatNumber(site.assignedPlacements)}</td>
+                    <td>미배정 {formatNumber(site.unassignedPlacements)}</td>
+                    <td>요청 {formatNumber(site.requests)}</td>
+                    <td>클릭 {formatNumber(site.clicks)}</td>
+                    <td>{formatDateTime(site.lastUpdatedAt)}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td>사이트별 배너 슬롯이 없습니다.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <div className="ops-form-grid">
         <form className="ops-form" onSubmit={createTrackingLink}>
@@ -430,9 +657,9 @@ export function BannerManagementConsole() {
           onChange={(event) => setAssignmentForm({ ...assignmentForm, placementId: event.target.value })}
         >
           <option value="">배치 위치 선택</option>
-          {state.placements.map((placement) => (
+          {filteredPlacements.map((placement) => (
             <option key={placement.id} value={placement.id}>
-              {placement.name}
+              {formatSlotLabel(placement)} · {placement.name}
             </option>
           ))}
         </select>
@@ -478,8 +705,8 @@ export function BannerManagementConsole() {
       ) : null}
 
       <div className="ops-table-grid">
-        <OpsTable title="배치 위치" isLoading={isLoading} emptyText="배치 위치가 없습니다.">
-          {state.placements.map((placement) => (
+        <OpsTable title={`배치 위치 (${formatNumber(filteredPlacements.length)})`} isLoading={isLoading} emptyText="배치 위치가 없습니다.">
+          {filteredPlacements.map((placement) => (
             <tr key={placement.id}>
               <td>
                 <strong>{placement.name}</strong>
@@ -566,11 +793,12 @@ export function BannerManagementConsole() {
           ))}
         </OpsTable>
 
-        <OpsTable title="최근 연결 이력" isLoading={isLoading} emptyText="연결 이력이 없습니다.">
-          {state.assignments.map((assignment) => (
+        <OpsTable title={`최근 연결 이력 (${formatNumber(filteredAssignments.length)})`} isLoading={isLoading} emptyText="연결 이력이 없습니다.">
+          {filteredAssignments.map((assignment) => (
             <tr key={assignment.id}>
               <td>
                 <strong>{assignment.placementName}</strong>
+                <small>{formatAssignmentSlotLabel(assignment)}</small>
                 <small>{assignment.id}</small>
               </td>
               <td>{assignment.creativeName ?? "-"}</td>
@@ -659,6 +887,13 @@ function formatSlotLabel(placement: PlacementRow): string {
   return placement.siteKey || placement.slotKey || "legacy placement";
 }
 
+function formatAssignmentSlotLabel(assignment: AssignmentRow): string {
+  if (assignment.placementSiteKey && assignment.placementSlotKey) {
+    return `${assignment.placementSiteKey}.${assignment.placementSlotKey}`;
+  }
+  return assignment.placementSiteKey || assignment.placementSlotKey || "legacy placement";
+}
+
 function numberOrNull(value: string): number | null {
   const trimmed = value.trim();
   return trimmed ? Number(trimmed) : null;
@@ -666,4 +901,14 @@ function numberOrNull(value: string): number | null {
 
 function formatNumber(value: number): string {
   return new Intl.NumberFormat("ko-KR").format(value);
+}
+
+function formatDateTime(value: string): string {
+  if (!value) return "-";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("ko-KR", {
+    dateStyle: "short",
+    timeStyle: "short",
+  }).format(date);
 }

@@ -93,8 +93,14 @@ describe("banner-management-store", () => {
     const finalState = getBannerManagementState();
     expect(finalState.writable).toBe(true);
     expect(finalState.assignments.some((assignment) => assignment.placementId === placement?.id)).toBe(true);
+    expect(finalState.assignments.find((assignment) => assignment.placementId === placement?.id)?.placementSiteKey).toBe("temon");
     expect(finalState.placements.find((item) => item.id === placement?.id)?.requests).toBe(1);
     expect(finalState.placements.find((item) => item.id === placement?.id)?.imageRequests).toBe(1);
+    const siteSummary = finalState.siteSummaries.find((site) => site.siteKey === "temon");
+    expect(siteSummary?.placements).toBeGreaterThanOrEqual(1);
+    expect(siteSummary?.assignedPlacements).toBeGreaterThanOrEqual(1);
+    expect(siteSummary?.requests).toBeGreaterThanOrEqual(1);
+    expect(siteSummary?.clicks).toBeGreaterThanOrEqual(1);
 
     const snapshotPath = process.env.MONETIZATION_BANNER_SNAPSHOT ?? "";
     expect(existsSync(snapshotPath)).toBe(true);

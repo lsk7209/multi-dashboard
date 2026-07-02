@@ -87,6 +87,9 @@ export interface BannerAssignmentRow {
   id: string;
   placementId: string;
   placementName: string;
+  placementSiteKey: string | null;
+  placementSlotKey: string | null;
+  placementSiteUrl: string | null;
   creativeId: string | null;
   creativeName: string | null;
   trackingLinkId: string | null;
@@ -95,6 +98,20 @@ export interface BannerAssignmentRow {
   status: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface BannerSiteSummaryRow {
+  siteKey: string;
+  siteUrl: string | null;
+  placements: number;
+  activePlacements: number;
+  assignedPlacements: number;
+  unassignedPlacements: number;
+  requests: number;
+  imageRequests: number;
+  noAd: number;
+  clicks: number;
+  lastUpdatedAt: string;
 }
 
 export interface ResolvedBannerPlacement {
@@ -115,6 +132,7 @@ export interface BannerManagementState {
   creatives: BannerCreativeRow[];
   trackingLinks: BannerTrackingLinkRow[];
   assignments: BannerAssignmentRow[];
+  siteSummaries: BannerSiteSummaryRow[];
 }
 
 interface BannerSnapshot {
@@ -198,6 +216,7 @@ export function getBannerManagementState(): BannerManagementState {
       creatives: listCreatives(db),
       trackingLinks: listTrackingLinks(db),
       assignments: listAssignments(db),
+      siteSummaries: listSiteSummaries(db),
     };
   } finally {
     db.close();
@@ -721,6 +740,8 @@ function ensureSchema(path: string): void {
       );
       CREATE INDEX IF NOT EXISTS idx_assignments_placement_status
         ON assignments (placement_id, status);
+      CREATE INDEX IF NOT EXISTS idx_assignments_status_updated
+        ON assignments (status, updated_at);
       CREATE TABLE IF NOT EXISTS placement_event_ledger (
         id TEXT PRIMARY KEY,
         event_type TEXT NOT NULL,
@@ -734,6 +755,8 @@ function ensureSchema(path: string): void {
       );
       CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_placement_type
         ON placement_event_ledger (placement_id, event_type);
+      CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_created_at
+        ON placement_event_ledger (created_at);
     `);
     ensureColumn(db, "placements", "site_key", "TEXT");
     ensureColumn(db, "placements", "slot_key", "TEXT");
@@ -742,6 +765,10 @@ function ensureSchema(path: string): void {
       CREATE UNIQUE INDEX IF NOT EXISTS idx_placements_site_slot
         ON placements (site_key, slot_key)
         WHERE site_key IS NOT NULL AND slot_key IS NOT NULL;
+      CREATE INDEX IF NOT EXISTS idx_placements_site_key
+        ON placements (site_key);
+      CREATE INDEX IF NOT EXISTS idx_placements_status_updated
+        ON placements (status, updated_at);
     `);
   } finally {
     db.close();
@@ -851,6 +878,60 @@ function listTrackingLinks(db: DatabaseLike): BannerTrackingLinkRow[] {
     }));
 }
 
+function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
+  return db
+    .prepare(
+      `
+      SELECT
+        COALESCE(NULLIF(p.site_key, ''), 'legacy') AS site_key,
+        MAX(p.site_url) AS site_url,
+        COUNT(*) AS placements,
+        SUM(CASE WHEN p.status = 'active' THEN 1 ELSE 0 END) AS active_placements,
+        SUM(CASE WHEN active_assignments.active_assignments > 0 THEN 1 ELSE 0 END) AS assigned_placements,
+        SUM(CASE WHEN COALESCE(active_assignments.active_assignments, 0) = 0 THEN 1 ELSE 0 END) AS unassigned_placements,
+        COALESCE(SUM(event_counts.requests), 0) AS requests,
+        COALESCE(SUM(event_counts.image_requests), 0) AS image_requests,
+        COALESCE(SUM(event_counts.no_ad), 0) AS no_ad,
+        COALESCE(SUM(event_counts.clicks), 0) AS clicks,
+        MAX(p.updated_at) AS last_updated_at
+      FROM placements p
+      LEFT JOIN (
+        SELECT placement_id, COUNT(*) AS active_assignments
+        FROM assignments
+        WHERE status = 'active'
+        GROUP BY placement_id
+      ) active_assignments ON active_assignments.placement_id = p.id
+      LEFT JOIN (
+        SELECT
+          placement_id,
+          SUM(CASE WHEN event_type = 'request' THEN 1 ELSE 0 END) AS requests,
+          SUM(CASE WHEN event_type = 'image_request' THEN 1 ELSE 0 END) AS image_requests,
+          SUM(CASE WHEN event_type = 'no_ad' THEN 1 ELSE 0 END) AS no_ad,
+          SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks
+        FROM placement_event_ledger
+        WHERE placement_id IS NOT NULL
+        GROUP BY placement_id
+      ) event_counts ON event_counts.placement_id = p.id
+      GROUP BY COALESCE(NULLIF(p.site_key, ''), 'legacy')
+      ORDER BY unassigned_placements DESC, last_updated_at DESC
+    `,
+    )
+    .all()
+    .map((row) => ({
+      siteKey: asString(row.site_key),
+      siteUrl: nullableString(row.site_url),
+      placements: asNumber(row.placements),
+      activePlacements: asNumber(row.active_placements),
+      assignedPlacements: asNumber(row.assigned_placements),
+      unassignedPlacements: asNumber(row.unassigned_placements),
+      requests: asNumber(row.requests),
+      imageRequests: asNumber(row.image_requests),
+      noAd: asNumber(row.no_ad),
+      clicks: asNumber(row.clicks),
+      lastUpdatedAt: asString(row.last_updated_at),
+    }));
+}
+
 function listAssignments(db: DatabaseLike): BannerAssignmentRow[] {
   return db
     .prepare(
@@ -859,6 +940,9 @@ function listAssignments(db: DatabaseLike): BannerAssignmentRow[] {
         a.id,
         a.placement_id,
         p.name AS placement_name,
+        p.site_key AS placement_site_key,
+        p.slot_key AS placement_slot_key,
+        p.site_url AS placement_site_url,
         a.creative_id,
         c.name AS creative_name,
         a.tracking_link_id,
@@ -880,6 +964,9 @@ function listAssignments(db: DatabaseLike): BannerAssignmentRow[] {
       id: asString(row.id),
       placementId: asString(row.placement_id),
       placementName: asString(row.placement_name),
+      placementSiteKey: nullableString(row.placement_site_key),
+      placementSlotKey: nullableString(row.placement_slot_key),
+      placementSiteUrl: nullableString(row.placement_site_url),
       creativeId: nullableString(row.creative_id),
       creativeName: nullableString(row.creative_name),
       trackingLinkId: nullableString(row.tracking_link_id),

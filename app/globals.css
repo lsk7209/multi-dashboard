@@ -1524,6 +1524,7 @@ code {
 
 .ops-form,
 .ops-assignment,
+.ops-control-panel,
 .ops-table-card,
 .ops-install {
   border: 1px solid var(--line);
@@ -1540,6 +1541,7 @@ code {
 
 .ops-form h3,
 .ops-assignment h3,
+.ops-control-panel h3,
 .ops-table-card h3 {
   margin: 0;
   color: var(--ink);
@@ -1547,7 +1549,8 @@ code {
 }
 
 .ops-form label,
-.ops-assignment label {
+.ops-assignment label,
+.ops-filter-grid label {
   display: grid;
   gap: 5px;
   color: var(--muted);
@@ -1557,6 +1560,8 @@ code {
 
 .ops-form input,
 .ops-form select,
+.ops-filter-grid input,
+.ops-filter-grid select,
 .ops-assignment select,
 .ops-table select {
   width: 100%;
@@ -1571,6 +1576,8 @@ code {
 
 .ops-form input:focus,
 .ops-form select:focus,
+.ops-filter-grid input:focus,
+.ops-filter-grid select:focus,
 .ops-assignment select:focus,
 .ops-table select:focus {
   border-color: var(--accent);
@@ -1603,10 +1610,66 @@ code {
 .ops-button:disabled,
 .ops-form input:disabled,
 .ops-form select:disabled,
+.ops-filter-grid input:disabled,
+.ops-filter-grid select:disabled,
 .ops-assignment select:disabled,
 .ops-table select:disabled {
   cursor: not-allowed;
   opacity: 0.58;
+}
+
+.ops-control-panel {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.ops-control-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.ops-control-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ops-control-heading strong {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.ops-filter-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.3fr) repeat(3, minmax(140px, 0.7fr));
+  gap: 10px;
+}
+
+.ops-fleet-metrics,
+.ops-site-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ops-fleet-metrics span,
+.ops-site-focus span,
+.ops-site-focus strong {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--muted);
+  background: #fbfcfd;
+  font-size: 12px;
+}
+
+.ops-site-focus strong {
+  color: var(--ink);
 }
 
 .ops-assignment {
@@ -1715,6 +1778,7 @@ code {
   .support-grid,
   .metric-grid,
   .ops-form-grid,
+  .ops-filter-grid,
   .ops-table-grid,
   .ops-assignment,
   .banner-page-intro,
@@ -1725,5 +1789,9 @@ code {
 
   .table-controls strong {
     justify-content: flex-start;
+  }
+
+  .ops-control-heading {
+    display: grid;
   }
 }
