@@ -66,6 +66,7 @@ interface SiteSummaryRow {
 }
 
 interface BannerManagementState {
+  adminAuthRequired: boolean;
   dbPath: string;
   dbExists: boolean;
   dbUpdatedAt: string | null;
@@ -80,6 +81,7 @@ interface BannerManagementState {
 }
 
 const EMPTY_STATE: BannerManagementState = {
+  adminAuthRequired: false,
   assignments: [],
   creatives: [],
   dbExists: false,
@@ -96,6 +98,7 @@ const EMPTY_STATE: BannerManagementState = {
 const STATUS_OPTIONS = ["active", "paused", "inactive"] as const;
 const POLICY_OPTIONS = ["approved", "review", "rejected"] as const;
 const NO_AD_OPTIONS = ["transparent", "house", "collapse"] as const;
+const BANNER_ADMIN_TOKEN_STORAGE_KEY = "multi-dashboard.bannerAdminToken";
 
 type ApiAction =
   | "createPlacement"
@@ -112,6 +115,7 @@ export function BannerManagementConsole() {
   const [isSaving, setIsSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [adminToken, setAdminToken] = useState("");
   const [placementForm, setPlacementForm] = useState({
     name: "본문 중간 배너",
     noAdPolicy: "transparent",
@@ -146,6 +150,7 @@ export function BannerManagementConsole() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
+    setAdminToken(window.localStorage.getItem(BANNER_ADMIN_TOKEN_STORAGE_KEY) ?? "");
     void loadState();
   }, []);
 
@@ -260,7 +265,8 @@ export function BannerManagementConsole() {
     [assignmentForm.placementId, state.placements],
   );
   const install = selectedPlacement ? buildInstallCode(selectedPlacement, state.publicBaseUrl) : null;
-  const controlsDisabled = isSaving || !state.writable;
+  const adminTokenMissing = state.adminAuthRequired && !adminToken.trim();
+  const controlsDisabled = isSaving || !state.writable || adminTokenMissing;
 
   async function loadState() {
     setIsLoading(true);
@@ -282,9 +288,11 @@ export function BannerManagementConsole() {
     setError(null);
     setMessage(null);
     try {
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (adminToken.trim()) headers["x-banner-admin-token"] = adminToken.trim();
       const response = await fetch("/api/banner-management", {
         body: JSON.stringify({ action, ...payload }),
-        headers: { "Content-Type": "application/json" },
+        headers,
         method: "POST",
       });
       const next = (await response.json()) as BannerManagementState | { error?: string };
@@ -296,6 +304,18 @@ export function BannerManagementConsole() {
     } finally {
       setIsSaving(false);
     }
+  }
+
+  function saveAdminToken() {
+    window.localStorage.setItem(BANNER_ADMIN_TOKEN_STORAGE_KEY, adminToken.trim());
+    setMessage("Admin token saved in this browser.");
+    setError(null);
+  }
+
+  function clearAdminToken() {
+    window.localStorage.removeItem(BANNER_ADMIN_TOKEN_STORAGE_KEY);
+    setAdminToken("");
+    setMessage("Admin token cleared.");
   }
 
   function createPlacement(event: FormEvent<HTMLFormElement>) {
@@ -343,6 +363,27 @@ export function BannerManagementConsole() {
         <span>{state.persistenceNote || "배너 DB 상태를 확인하는 중입니다."}</span>
         <code>{state.dbPath || "data/monetization/ad-manage.db"}</code>
       </div>
+
+      {state.adminAuthRequired ? (
+        <div className="ops-admin-token">
+          <label>
+            Admin token
+            <input
+              autoComplete="off"
+              placeholder="Required for create/update actions"
+              type="password"
+              value={adminToken}
+              onChange={(event) => setAdminToken(event.target.value)}
+            />
+          </label>
+          <button className="ops-button ops-button-secondary" type="button" onClick={saveAdminToken}>
+            Save token
+          </button>
+          <button className="ops-button ops-button-secondary" type="button" onClick={clearAdminToken}>
+            Clear
+          </button>
+        </div>
+      ) : null}
 
       {message ? <p className="ops-message">{message}</p> : null}
       {error ? <p className="ops-error">{error}</p> : null}

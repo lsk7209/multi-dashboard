@@ -1503,6 +1503,35 @@ code {
   color: var(--muted);
 }
 
+.ops-admin-token {
+  align-items: end;
+  background: #fbfcfd;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
+  padding: 12px;
+}
+
+.ops-admin-token label {
+  color: var(--muted);
+  display: grid;
+  font-size: 12px;
+  font-weight: 800;
+  gap: 6px;
+  text-transform: uppercase;
+}
+
+.ops-admin-token input {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font: inherit;
+  min-width: 0;
+  padding: 10px 12px;
+}
+
 .ops-message {
   border-color: rgba(15, 118, 110, 0.24);
   color: #0f766e;
@@ -1779,6 +1808,7 @@ code {
   .metric-grid,
   .ops-form-grid,
   .ops-filter-grid,
+  .ops-admin-token,
   .ops-table-grid,
   .ops-assignment,
   .banner-page-intro,

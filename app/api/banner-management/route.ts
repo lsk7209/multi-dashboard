@@ -1,9 +1,11 @@
 import {
   assignBannerPlacementAsync,
+  assertBannerAdminAuthorized,
   createBannerCreativeAsync,
   createBannerPlacementAsync,
   createBannerTrackingLinkAsync,
   getBannerManagementStateAsync,
+  isBannerAdminUnauthorizedError,
   isBannerWriteDisabledError,
   updateBannerCreativeAsync,
   updateBannerPlacementAsync,
@@ -56,6 +58,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    assertBannerAdminAuthorized(request);
     const body = (await request.json()) as BannerRequestBody;
 
     switch (body.action) {
@@ -147,7 +150,10 @@ export async function POST(request: Request) {
         return Response.json({ error: "Unknown banner management action." }, { status: 400 });
     }
   } catch (error) {
-    return Response.json({ error: errorMessage(error) }, { status: isBannerWriteDisabledError(error) ? 403 : 500 });
+    return Response.json(
+      { error: errorMessage(error) },
+      { status: isBannerAdminUnauthorizedError(error) ? 401 : isBannerWriteDisabledError(error) ? 403 : 500 },
+    );
   }
 }
 

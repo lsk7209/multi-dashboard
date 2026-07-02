@@ -124,6 +124,7 @@ export interface ResolvedBannerPlacement {
 }
 
 export interface BannerManagementState {
+  adminAuthRequired: boolean;
   dbPath: string;
   dbExists: boolean;
   dbUpdatedAt: string | null;
@@ -217,6 +218,7 @@ export function getBannerManagementState(): BannerManagementState {
   try {
     return {
       dbPath,
+      adminAuthRequired: isBannerAdminAuthRequired(),
       dbExists: existsSync(dbPath),
       dbUpdatedAt: existsSync(dbPath) ? statSync(dbPath).mtime.toISOString() : null,
       writable: canAttemptWrite(),
@@ -770,6 +772,7 @@ async function getRemoteBannerManagementState(): Promise<BannerManagementState> 
   try {
     await ensureRemoteSchema(client);
     return {
+      adminAuthRequired: isBannerAdminAuthRequired(),
       dbPath: getBannerLibsqlLabel(),
       dbExists: true,
       dbUpdatedAt: null,
@@ -1887,8 +1890,27 @@ export function isBannerWriteDisabledError(error: unknown): boolean {
   return error instanceof Error && error.message === BANNER_WRITE_DISABLED_MESSAGE;
 }
 
+export function isBannerAdminUnauthorizedError(error: unknown): boolean {
+  return error instanceof Error && error.message === BANNER_ADMIN_UNAUTHORIZED_MESSAGE;
+}
+
 const BANNER_WRITE_DISABLED_MESSAGE =
   "Banner writes are disabled in this deployment. Configure MONETIZATION_BANNER_LIBSQL_URL/TOKEN or MONETIZATION_BANNER_DB.";
+const BANNER_ADMIN_UNAUTHORIZED_MESSAGE = "Banner admin token is required for write actions.";
+
+export function isBannerAdminAuthRequired(): boolean {
+  return Boolean(process.env.MONETIZATION_BANNER_ADMIN_TOKEN) || Boolean(process.env.VERCEL);
+}
+
+export function assertBannerAdminAuthorized(request: Request): void {
+  if (!isBannerAdminAuthRequired()) return;
+  const expected = cleanOptionalText(process.env.MONETIZATION_BANNER_ADMIN_TOKEN);
+  if (!expected) throw new Error(BANNER_ADMIN_UNAUTHORIZED_MESSAGE);
+  const authorization = cleanOptionalText(request.headers.get("authorization"));
+  const bearer = authorization?.toLowerCase().startsWith("bearer ") ? authorization.slice(7).trim() : null;
+  const supplied = bearer || cleanOptionalText(request.headers.get("x-banner-admin-token"));
+  if (supplied !== expected) throw new Error(BANNER_ADMIN_UNAUTHORIZED_MESSAGE);
+}
 
 function assertWritable(): void {
   if (!canAttemptWrite()) throw new Error(BANNER_WRITE_DISABLED_MESSAGE);
