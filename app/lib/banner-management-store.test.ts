@@ -9,6 +9,9 @@ import {
   createBannerPlacement,
   createBannerTrackingLink,
   getBannerManagementState,
+  recordBannerClick,
+  recordBannerImageRequest,
+  resolveBannerPlacement,
 } from "./banner-management-store.js";
 
 let tempDir: string;
@@ -49,6 +52,9 @@ describe("banner-management-store", () => {
     state = createBannerPlacement({
       name: `Smoke placement ${stamp}`,
       noAdPolicy: "house",
+      siteKey: "temon",
+      siteUrl: "https://temon.example.com",
+      slotKey: `quiz-bottom-${stamp}`,
       type: "image_link",
     });
     const placement = state.placements.find((item) => item.name === `Smoke placement ${stamp}`);
@@ -66,10 +72,29 @@ describe("banner-management-store", () => {
     const linkedPlacement = state.placements.find((item) => item.id === placement?.id);
     expect(linkedPlacement?.assignedCreativeId).toBe(creative?.id);
     expect(linkedPlacement?.assignedTrackingLinkId).toBe(trackingLink?.id);
+    expect(linkedPlacement?.siteKey).toBe("temon");
+    expect(linkedPlacement?.slotKey).toBe(`quiz-bottom-${stamp}`);
+
+    const resolved = resolveBannerPlacement({ slot: `temon.quiz-bottom-${stamp}` });
+    expect(resolved?.creative.id).toBe(creative?.id);
+    expect(resolved?.trackingLink.id).toBe(trackingLink?.id);
+
+    recordBannerImageRequest({
+      assignmentId: resolved?.assignmentId,
+      placementId: resolved?.placement.id ?? "",
+      trackingLinkId: resolved?.trackingLink.id,
+    });
+    recordBannerClick({
+      assignmentId: resolved?.assignmentId,
+      placementId: resolved?.placement.id ?? "",
+      trackingLinkId: resolved?.trackingLink.id,
+    });
 
     const finalState = getBannerManagementState();
     expect(finalState.writable).toBe(true);
     expect(finalState.assignments.some((assignment) => assignment.placementId === placement?.id)).toBe(true);
+    expect(finalState.placements.find((item) => item.id === placement?.id)?.requests).toBe(1);
+    expect(finalState.placements.find((item) => item.id === placement?.id)?.imageRequests).toBe(1);
 
     const snapshotPath = process.env.MONETIZATION_BANNER_SNAPSHOT ?? "";
     expect(existsSync(snapshotPath)).toBe(true);

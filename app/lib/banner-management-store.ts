@@ -41,6 +41,9 @@ function getDatabaseSync(): new (path: string, options?: { readOnly?: boolean })
 
 export interface BannerPlacementRow {
   id: string;
+  siteKey: string | null;
+  slotKey: string | null;
+  siteUrl: string | null;
   name: string;
   type: string;
   noAdPolicy: string;
@@ -94,12 +97,20 @@ export interface BannerAssignmentRow {
   updatedAt: string;
 }
 
+export interface ResolvedBannerPlacement {
+  placement: BannerPlacementRow;
+  creative: BannerCreativeRow;
+  trackingLink: BannerTrackingLinkRow;
+  assignmentId: string;
+}
+
 export interface BannerManagementState {
   dbPath: string;
   dbExists: boolean;
   dbUpdatedAt: string | null;
   writable: boolean;
   persistenceNote: string;
+  publicBaseUrl: string;
   placements: BannerPlacementRow[];
   creatives: BannerCreativeRow[];
   trackingLinks: BannerTrackingLinkRow[];
@@ -130,11 +141,14 @@ interface BannerSnapshot {
     served: number;
     noAd: number;
     imageRequests: number;
+    clicks: number;
   };
   noAdRate: number | null;
   eventBreakdown: Array<{ type: string; count: number }>;
   topPlacements: Array<{
     id: string;
+    siteKey?: string | undefined;
+    slotKey?: string | undefined;
     name: string;
     status: string;
     assignedCreativeName?: string | undefined;
@@ -164,6 +178,10 @@ export function getBannerSnapshotPath(): string {
   return join(/*turbopackIgnore: true*/ process.cwd(), "data", "banner-management.json");
 }
 
+export function getBannerPublicBaseUrl(): string {
+  return (process.env.NEXT_PUBLIC_BANNER_BASE_URL || process.env.BANNER_PUBLIC_BASE_URL || "").replace(/\/+$/, "");
+}
+
 export function getBannerManagementState(): BannerManagementState {
   const dbPath = getBannerDbPath();
   ensureSchema(dbPath);
@@ -175,6 +193,7 @@ export function getBannerManagementState(): BannerManagementState {
       dbUpdatedAt: existsSync(dbPath) ? statSync(dbPath).mtime.toISOString() : null,
       writable: canAttemptWrite(),
       persistenceNote: getBannerPersistenceNote(),
+      publicBaseUrl: getBannerPublicBaseUrl(),
       placements: listPlacements(db),
       creatives: listCreatives(db),
       trackingLinks: listTrackingLinks(db),
@@ -187,12 +206,18 @@ export function getBannerManagementState(): BannerManagementState {
 
 export function createBannerPlacement(input: {
   name: string;
+  siteKey?: string | undefined;
+  slotKey?: string | undefined;
+  siteUrl?: string | null | undefined;
   type?: string | undefined;
   noAdPolicy?: string | undefined;
   status?: string | undefined;
 }): BannerManagementState {
   assertWritable();
   const name = cleanRequired(input.name, "Placement name is required.");
+  const siteKey = cleanOptionalKey(input.siteKey, "Site key");
+  const slotKey = cleanOptionalKey(input.slotKey, "Slot key");
+  const siteUrl = input.siteUrl == null ? null : cleanOptionalUrl(input.siteUrl);
   const type = cleanChoice(input.type, ["image_link", "js_slot"], "image_link");
   const noAdPolicy = cleanChoice(input.noAdPolicy, ["transparent", "house", "collapse"], "transparent");
   const status = cleanChoice(input.status, ["active", "paused", "inactive"], "active");
@@ -203,9 +228,9 @@ export function createBannerPlacement(input: {
   try {
     db.prepare(
       `INSERT INTO placements
-        (id, name, type, no_ad_policy, status, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
-    ).run(`placement_${randomUUID()}`, name, type, noAdPolicy, status, now, now);
+        (id, site_key, slot_key, site_url, name, type, no_ad_policy, status, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ).run(`placement_${randomUUID()}`, siteKey, slotKey, siteUrl, name, type, noAdPolicy, status, now, now);
   } finally {
     db.close();
   }
@@ -216,6 +241,9 @@ export function createBannerPlacement(input: {
 export function updateBannerPlacement(input: {
   id: string;
   name?: string | undefined;
+  siteKey?: string | undefined;
+  slotKey?: string | undefined;
+  siteUrl?: string | null | undefined;
   type?: string | undefined;
   noAdPolicy?: string | undefined;
   status?: string | undefined;
@@ -224,6 +252,9 @@ export function updateBannerPlacement(input: {
   const id = cleanRequired(input.id, "Placement id is required.");
   const current = getRequiredRow("placements", id);
   const name = input.name == null ? asString(current.name) : cleanRequired(input.name, "Placement name is required.");
+  const siteKey = input.siteKey === undefined ? nullableString(current.site_key) : cleanOptionalKey(input.siteKey, "Site key");
+  const slotKey = input.slotKey === undefined ? nullableString(current.slot_key) : cleanOptionalKey(input.slotKey, "Slot key");
+  const siteUrl = input.siteUrl === undefined ? nullableString(current.site_url) : cleanOptionalUrl(input.siteUrl);
   const type = cleanChoice(input.type ?? asString(current.type), ["image_link", "js_slot"], "image_link");
   const noAdPolicy = cleanChoice(
     input.noAdPolicy ?? asString(current.no_ad_policy),
@@ -235,8 +266,10 @@ export function updateBannerPlacement(input: {
   const db = openDb(dbPath, false);
   try {
     db.prepare(
-      "UPDATE placements SET name = ?, type = ?, no_ad_policy = ?, status = ?, updated_at = ? WHERE id = ?",
-    ).run(name, type, noAdPolicy, status, new Date().toISOString(), id);
+      `UPDATE placements
+       SET site_key = ?, slot_key = ?, site_url = ?, name = ?, type = ?, no_ad_policy = ?, status = ?, updated_at = ?
+       WHERE id = ?`,
+    ).run(siteKey, slotKey, siteUrl, name, type, noAdPolicy, status, new Date().toISOString(), id);
   } finally {
     db.close();
   }
@@ -446,6 +479,124 @@ export function assignBannerPlacement(input: {
   return getBannerManagementState();
 }
 
+export function resolveBannerPlacement(input: {
+  placementId?: string | undefined;
+  siteKey?: string | undefined;
+  slotKey?: string | undefined;
+  slot?: string | undefined;
+  pageUrl?: string | undefined;
+  referrer?: string | undefined;
+}): ResolvedBannerPlacement | null {
+  const lookup = normalizePlacementLookup(input);
+  const dbPath = getBannerDbPath();
+  ensureSchema(dbPath);
+  const db = openDb(dbPath, true);
+  try {
+    const row = db.prepare(
+      `
+      SELECT
+        p.id AS placement_id,
+        p.site_key,
+        p.slot_key,
+        p.site_url,
+        p.name AS placement_name,
+        p.type,
+        p.no_ad_policy,
+        p.status AS placement_status,
+        p.created_at AS placement_created_at,
+        p.updated_at AS placement_updated_at,
+        a.id AS assignment_id,
+        a.weight,
+        c.id AS creative_id,
+        c.offer_id AS creative_offer_id,
+        c.name AS creative_name,
+        c.image_url,
+        c.width,
+        c.height,
+        c.status AS creative_status,
+        c.policy_status,
+        c.created_at AS creative_created_at,
+        c.updated_at AS creative_updated_at,
+        tl.id AS tracking_link_id,
+        tl.slug,
+        tl.public_url,
+        tl.offer_id AS tracking_offer_id,
+        tl.offer_name,
+        tl.status AS tracking_status,
+        tl.created_at AS tracking_created_at,
+        tl.updated_at AS tracking_updated_at
+      FROM placements p
+      LEFT JOIN assignments a ON a.placement_id = p.id AND a.status = 'active'
+      LEFT JOIN creatives c ON c.id = a.creative_id AND c.status = 'active' AND c.policy_status = 'approved'
+      LEFT JOIN tracking_links tl ON tl.id = a.tracking_link_id AND tl.status = 'active'
+      WHERE p.status = 'active'
+        AND (
+          (? IS NOT NULL AND p.id = ?)
+          OR (? IS NOT NULL AND ? IS NOT NULL AND p.site_key = ? AND p.slot_key = ?)
+        )
+      ORDER BY a.weight DESC, a.updated_at DESC
+      LIMIT 1
+    `,
+    ).get(
+      lookup.placementId,
+      lookup.placementId,
+      lookup.siteKey,
+      lookup.slotKey,
+      lookup.siteKey,
+      lookup.slotKey,
+    );
+    if (!row || !row.assignment_id || !row.creative_id || !row.tracking_link_id) {
+      recordPlacementEvent({
+        eventType: "no_ad",
+        placementId: nullableString(row?.placement_id) ?? lookup.placementId,
+        pageUrl: input.pageUrl,
+        referrer: input.referrer,
+      });
+      return null;
+    }
+    const resolved = mapResolvedPlacement(row);
+    recordPlacementEvent({
+      assignmentId: resolved.assignmentId,
+      eventType: "request",
+      pageUrl: input.pageUrl,
+      placementId: resolved.placement.id,
+      referrer: input.referrer,
+      trackingLinkId: resolved.trackingLink.id,
+    });
+    recordPlacementEvent({
+      assignmentId: resolved.assignmentId,
+      eventType: "served",
+      pageUrl: input.pageUrl,
+      placementId: resolved.placement.id,
+      referrer: input.referrer,
+      trackingLinkId: resolved.trackingLink.id,
+    });
+    return resolved;
+  } finally {
+    db.close();
+  }
+}
+
+export function recordBannerImageRequest(input: {
+  assignmentId?: string | undefined;
+  placementId: string;
+  trackingLinkId?: string | undefined;
+  pageUrl?: string | undefined;
+  referrer?: string | undefined;
+}): void {
+  recordPlacementEvent({ ...input, eventType: "image_request" });
+}
+
+export function recordBannerClick(input: {
+  assignmentId?: string | undefined;
+  placementId: string;
+  trackingLinkId?: string | undefined;
+  pageUrl?: string | undefined;
+  referrer?: string | undefined;
+}): void {
+  recordPlacementEvent({ ...input, eventType: "click" });
+}
+
 export function refreshBannerSnapshot(): BannerSnapshot {
   const snapshot = buildBannerSnapshot();
   const path = getBannerSnapshotPath();
@@ -473,6 +624,7 @@ function buildBannerSnapshot(): BannerSnapshot {
       served: scalar(db, "SELECT COUNT(*) AS value FROM placement_event_ledger WHERE event_type = 'served'"),
       noAd: scalar(db, "SELECT COUNT(*) AS value FROM placement_event_ledger WHERE event_type = 'no_ad'"),
       imageRequests: scalar(db, "SELECT COUNT(*) AS value FROM placement_event_ledger WHERE event_type = 'image_request'"),
+      clicks: scalar(db, "SELECT COUNT(*) AS value FROM placement_event_ledger WHERE event_type = 'click'"),
     };
     const eventBreakdown = db
       .prepare("SELECT event_type AS type, COUNT(*) AS count FROM placement_event_ledger GROUP BY event_type ORDER BY count DESC")
@@ -480,6 +632,8 @@ function buildBannerSnapshot(): BannerSnapshot {
       .map((row) => ({ type: asString(row.type), count: asNumber(row.count) }));
     const topPlacements = listPlacements(db).slice(0, 12).map((placement) => ({
       id: placement.id,
+      siteKey: placement.siteKey ?? undefined,
+      slotKey: placement.slotKey ?? undefined,
       name: placement.name,
       status: placement.status,
       assignedCreativeName: placement.assignedCreativeName ?? undefined,
@@ -542,6 +696,9 @@ function ensureSchema(path: string): void {
       );
       CREATE TABLE IF NOT EXISTS placements (
         id TEXT PRIMARY KEY,
+        site_key TEXT,
+        slot_key TEXT,
+        site_url TEXT,
         name TEXT NOT NULL,
         type TEXT NOT NULL DEFAULT 'image_link',
         no_ad_policy TEXT NOT NULL DEFAULT 'transparent',
@@ -578,6 +735,14 @@ function ensureSchema(path: string): void {
       CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_placement_type
         ON placement_event_ledger (placement_id, event_type);
     `);
+    ensureColumn(db, "placements", "site_key", "TEXT");
+    ensureColumn(db, "placements", "slot_key", "TEXT");
+    ensureColumn(db, "placements", "site_url", "TEXT");
+    db.exec(`
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_placements_site_slot
+        ON placements (site_key, slot_key)
+        WHERE site_key IS NOT NULL AND slot_key IS NOT NULL;
+    `);
   } finally {
     db.close();
   }
@@ -589,6 +754,9 @@ function listPlacements(db: DatabaseLike): BannerPlacementRow[] {
       `
       SELECT
         p.id,
+        p.site_key,
+        p.slot_key,
+        p.site_url,
         p.name,
         p.type,
         p.no_ad_policy,
@@ -630,6 +798,9 @@ function listPlacements(db: DatabaseLike): BannerPlacementRow[] {
     .all()
     .map((row) => ({
       id: asString(row.id),
+      siteKey: nullableString(row.site_key),
+      slotKey: nullableString(row.slot_key),
+      siteUrl: nullableString(row.site_url),
       name: asString(row.name),
       type: asString(row.type),
       noAdPolicy: asString(row.no_ad_policy),
@@ -733,6 +904,119 @@ function getRequiredRow(table: "placements" | "creatives" | "tracking_links", id
   }
 }
 
+function ensureColumn(db: DatabaseLike, table: string, column: string, definition: string): void {
+  const columns = db.prepare(`PRAGMA table_info(${table})`).all();
+  if (columns.some((row) => asString(row.name) === column)) return;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+}
+
+function normalizePlacementLookup(input: {
+  placementId?: string | undefined;
+  siteKey?: string | undefined;
+  slotKey?: string | undefined;
+  slot?: string | undefined;
+}): { placementId: string | null; siteKey: string | null; slotKey: string | null } {
+  const placementId = cleanOptionalText(input.placementId);
+  if (placementId) return { placementId, siteKey: null, slotKey: null };
+  const directSiteKey = cleanOptionalKey(input.siteKey, "Site key");
+  const directSlotKey = cleanOptionalKey(input.slotKey, "Slot key");
+  if (directSiteKey && directSlotKey) {
+    return { placementId: null, siteKey: directSiteKey, slotKey: directSlotKey };
+  }
+  const slot = cleanOptionalText(input.slot);
+  if (slot) {
+    const [siteKey, ...slotParts] = slot.split(".");
+    const slotKey = slotParts.join(".");
+    return {
+      placementId: null,
+      siteKey: cleanOptionalKey(siteKey, "Site key"),
+      slotKey: cleanOptionalKey(slotKey, "Slot key"),
+    };
+  }
+  return { placementId: null, siteKey: null, slotKey: null };
+}
+
+function mapResolvedPlacement(row: Row): ResolvedBannerPlacement {
+  return {
+    assignmentId: asString(row.assignment_id),
+    creative: {
+      createdAt: asString(row.creative_created_at),
+      height: nullableNumber(row.height),
+      id: asString(row.creative_id),
+      imageUrl: asString(row.image_url),
+      name: asString(row.creative_name),
+      offerId: nullableString(row.creative_offer_id),
+      policyStatus: asString(row.policy_status),
+      status: asString(row.creative_status),
+      updatedAt: asString(row.creative_updated_at),
+      width: nullableNumber(row.width),
+    },
+    placement: {
+      assignedCreativeId: asString(row.creative_id),
+      assignedCreativeName: asString(row.creative_name),
+      assignedTrackingLinkId: asString(row.tracking_link_id),
+      assignedTrackingSlug: asString(row.slug),
+      createdAt: asString(row.placement_created_at),
+      id: asString(row.placement_id),
+      imageRequests: 0,
+      name: asString(row.placement_name),
+      noAd: 0,
+      noAdPolicy: asString(row.no_ad_policy),
+      requests: 0,
+      siteKey: nullableString(row.site_key),
+      siteUrl: nullableString(row.site_url),
+      slotKey: nullableString(row.slot_key),
+      status: asString(row.placement_status),
+      type: asString(row.type),
+      updatedAt: asString(row.placement_updated_at),
+    },
+    trackingLink: {
+      createdAt: asString(row.tracking_created_at),
+      id: asString(row.tracking_link_id),
+      offerId: nullableString(row.tracking_offer_id),
+      offerName: nullableString(row.offer_name),
+      publicUrl: asString(row.public_url),
+      slug: asString(row.slug),
+      status: asString(row.tracking_status),
+      updatedAt: asString(row.tracking_updated_at),
+    },
+  };
+}
+
+function recordPlacementEvent(input: {
+  assignmentId?: string | undefined;
+  eventType: "request" | "served" | "no_ad" | "image_request" | "click";
+  metadata?: unknown;
+  pageUrl?: string | undefined;
+  placementId?: string | null | undefined;
+  referrer?: string | undefined;
+  trackingLinkId?: string | undefined;
+}): void {
+  if (!canAttemptWrite()) return;
+  const dbPath = getBannerDbPath();
+  ensureSchema(dbPath);
+  const db = openDb(dbPath, false);
+  try {
+    db.prepare(
+      `INSERT INTO placement_event_ledger
+        (id, event_type, tracking_link_id, placement_id, assignment_id, page_url, referrer, metadata, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ).run(
+      `event_${randomUUID()}`,
+      input.eventType,
+      input.trackingLinkId ?? null,
+      input.placementId ?? null,
+      input.assignmentId ?? null,
+      cleanOptionalText(input.pageUrl),
+      cleanOptionalText(input.referrer),
+      input.metadata == null ? null : JSON.stringify(input.metadata),
+      new Date().toISOString(),
+    );
+  } finally {
+    db.close();
+  }
+}
+
 function scalar(db: DatabaseLike, sql: string): number {
   return asNumber(db.prepare(sql).get()?.value);
 }
@@ -782,6 +1066,21 @@ function cleanSlug(value: unknown): string {
     throw new Error("Slug must be 2-81 characters using lowercase letters, numbers, and hyphens.");
   }
   return text;
+}
+
+function cleanOptionalKey(value: unknown, label: string): string | null {
+  const text = cleanOptionalText(value)?.toLowerCase() ?? null;
+  if (!text) return null;
+  if (!/^[a-z0-9][a-z0-9._-]{0,80}$/.test(text)) {
+    throw new Error(`${label} must use lowercase letters, numbers, dots, underscores, or hyphens.`);
+  }
+  return text;
+}
+
+function cleanOptionalUrl(value: unknown): string | null {
+  const text = cleanOptionalText(value);
+  if (!text) return null;
+  return cleanUrl(text, "Valid http(s) URL is required.");
 }
 
 function cleanChoice<T extends string>(value: unknown, allowed: readonly T[], fallback: T): T {

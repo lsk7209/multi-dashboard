@@ -29,6 +29,9 @@ type BannerRequestBody = {
   creativeId?: string;
   trackingLinkId?: string;
   name?: string;
+  siteKey?: string;
+  slotKey?: string;
+  siteUrl?: string | null;
   type?: string;
   noAdPolicy?: string;
   status?: string;
@@ -61,6 +64,9 @@ export async function POST(request: Request) {
           createBannerPlacement({
             name: body.name ?? "",
             noAdPolicy: body.noAdPolicy,
+            siteKey: body.siteKey,
+            siteUrl: body.siteUrl,
+            slotKey: body.slotKey,
             status: body.status,
             type: body.type,
           }),
@@ -72,6 +78,9 @@ export async function POST(request: Request) {
             id: body.id ?? "",
             name: body.name,
             noAdPolicy: body.noAdPolicy,
+            siteKey: body.siteKey,
+            siteUrl: body.siteUrl,
+            slotKey: body.slotKey,
             status: body.status,
             type: body.type,
           }),

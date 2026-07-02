@@ -4,6 +4,9 @@ import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "re
 
 interface PlacementRow {
   id: string;
+  siteKey: string | null;
+  slotKey: string | null;
+  siteUrl: string | null;
   name: string;
   type: string;
   noAdPolicy: string;
@@ -50,6 +53,7 @@ interface BannerManagementState {
   dbUpdatedAt: string | null;
   writable: boolean;
   persistenceNote: string;
+  publicBaseUrl: string;
   placements: PlacementRow[];
   creatives: CreativeRow[];
   trackingLinks: TrackingLinkRow[];
@@ -63,6 +67,7 @@ const EMPTY_STATE: BannerManagementState = {
   dbPath: "",
   dbUpdatedAt: null,
   persistenceNote: "",
+  publicBaseUrl: "",
   placements: [],
   trackingLinks: [],
   writable: false,
@@ -90,6 +95,9 @@ export function BannerManagementConsole() {
   const [placementForm, setPlacementForm] = useState({
     name: "본문 중간 배너",
     noAdPolicy: "transparent",
+    siteKey: "temon",
+    siteUrl: "",
+    slotKey: "quiz-bottom",
     status: "active",
     type: "image_link",
   });
@@ -129,6 +137,7 @@ export function BannerManagementConsole() {
     () => state.placements.find((placement) => placement.id === assignmentForm.placementId),
     [assignmentForm.placementId, state.placements],
   );
+  const install = selectedPlacement ? buildInstallCode(selectedPlacement, state.publicBaseUrl) : null;
   const controlsDisabled = isSaving || !state.writable;
 
   async function loadState() {
@@ -341,6 +350,32 @@ export function BannerManagementConsole() {
               onChange={(event) => setPlacementForm({ ...placementForm, name: event.target.value })}
             />
           </label>
+          <div className="ops-two">
+            <label>
+              사이트 키
+              <input
+                required
+                value={placementForm.siteKey}
+                onChange={(event) => setPlacementForm({ ...placementForm, siteKey: event.target.value })}
+              />
+            </label>
+            <label>
+              슬롯 키
+              <input
+                required
+                value={placementForm.slotKey}
+                onChange={(event) => setPlacementForm({ ...placementForm, slotKey: event.target.value })}
+              />
+            </label>
+          </div>
+          <label>
+            사이트 URL
+            <input
+              type="url"
+              value={placementForm.siteUrl}
+              onChange={(event) => setPlacementForm({ ...placementForm, siteUrl: event.target.value })}
+            />
+          </label>
           <label>
             유형
             <select
@@ -432,11 +467,13 @@ export function BannerManagementConsole() {
         </button>
       </form>
 
-      {selectedPlacement ? (
+      {install ? (
         <div className="ops-install">
-          <strong>설치 코드</strong>
-          <code>{`<img src="/img/${selectedPlacement.id}" alt="" />`}</code>
-          <code>{`<a href="/go/p/${selectedPlacement.id}" rel="sponsored nofollow">배너 클릭</a>`}</code>
+          <strong>사이트 설치 코드</strong>
+          <span>{install.slotLabel}</span>
+          <code>{`<a href="${install.clickUrl}" rel="sponsored nofollow"><img src="${install.imageUrl}" alt="" loading="lazy" /></a>`}</code>
+          <code>{`image: ${install.imageUrl}`}</code>
+          <code>{`click: ${install.clickUrl}`}</code>
         </div>
       ) : null}
 
@@ -447,6 +484,7 @@ export function BannerManagementConsole() {
               <td>
                 <strong>{placement.name}</strong>
                 <small>{placement.id}</small>
+                <small>{formatSlotLabel(placement)}</small>
               </td>
               <td>{placement.type}</td>
               <td>{placement.noAdPolicy}</td>
@@ -601,6 +639,24 @@ function StatusSelect({
       ))}
     </select>
   );
+}
+
+function buildInstallCode(placement: PlacementRow, publicBaseUrl: string) {
+  const base = publicBaseUrl.replace(/\/+$/, "");
+  const slot = placement.siteKey && placement.slotKey ? `${placement.siteKey}.${placement.slotKey}` : "";
+  const query = slot
+    ? `slot=${encodeURIComponent(slot)}`
+    : `placementId=${encodeURIComponent(placement.id)}`;
+  return {
+    clickUrl: `${base}/api/banner-management/click?${query}`,
+    imageUrl: `${base}/api/banner-management/image?${query}`,
+    slotLabel: formatSlotLabel(placement),
+  };
+}
+
+function formatSlotLabel(placement: PlacementRow): string {
+  if (placement.siteKey && placement.slotKey) return `${placement.siteKey}.${placement.slotKey}`;
+  return placement.siteKey || placement.slotKey || "legacy placement";
 }
 
 function numberOrNull(value: string): number | null {
