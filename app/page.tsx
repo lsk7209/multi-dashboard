@@ -8,11 +8,13 @@ import {
   type DashboardActionItem,
   type SiteInsight,
 } from "./lib/dashboard-data.js";
+import { getMonetizationWorkspaceData } from "./lib/monetization-workspace.js";
 
 export const dynamic = "force-static";
 
 export default function DashboardPage() {
   const data = getDashboardData();
+  const monetization = getMonetizationWorkspaceData();
   const updatedAt = formatSnapshotDateTime(data.generatedAt);
   const tabs: DashboardTabItem[] = [
     {
@@ -45,6 +47,20 @@ export default function DashboardPage() {
       panelLabel: "인사이트",
       count: formatNumber(data.insights.length),
       content: <InsightsSection data={data} />,
+    },
+    {
+      id: "banners",
+      label: "배너",
+      panelLabel: "배너 관리",
+      count: formatNumber(monetization.bannerManagement.counts.placements),
+      content: <BannerManagementSection data={monetization.bannerManagement} />,
+    },
+    {
+      id: "affiliates",
+      label: "제휴",
+      panelLabel: "어필리에이트 목록",
+      count: formatNumber(monetization.affiliateInventory.programs.length),
+      content: <AffiliateInventorySection data={monetization.affiliateInventory} />,
     },
     {
       id: "settings",
@@ -488,7 +504,279 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
           </div>
         </div>
       </article>
+
     </section>
+  );
+}
+
+function BannerManagementSection({
+  data,
+}: {
+  data: ReturnType<typeof getMonetizationWorkspaceData>["bannerManagement"];
+}) {
+  return (
+    <div className="workspace-stack">
+      <div className="summary-grid" aria-label="배너 관리 요약">
+        <StatusCard
+          label="배치 위치"
+          value={formatNumber(data.counts.placements)}
+          hint={`활성 ${formatNumber(data.counts.activePlacements)}개`}
+        />
+        <StatusCard
+          label="소재"
+          value={formatNumber(data.counts.creatives)}
+          hint={`활성 ${formatNumber(data.counts.activeCreatives)}개`}
+        />
+        <StatusCard
+          label="추적 링크"
+          value={formatNumber(data.counts.trackingLinks)}
+          hint={`활성 ${formatNumber(data.counts.activeTrackingLinks)}개`}
+        />
+        <StatusCard
+          label="no_ad 비율"
+          value={data.noAdRate == null ? "-" : formatPercent(data.noAdRate)}
+          hint={`요청 ${formatNumber(data.counts.requests)}회 중 no_ad ${formatNumber(data.counts.noAd)}회`}
+        />
+      </div>
+
+      <div className="workspace-grid">
+        <article className="panel">
+          <div className="panel-heading">
+            <div>
+              <h2>배너 관리 시스템</h2>
+              <p>멀티 대시보드 내부 운영 DB를 읽기 전용 스냅샷으로 집계합니다.</p>
+            </div>
+            <span>{formatShortDateTime(data.generatedAt)}</span>
+          </div>
+          <div className="command-list">
+            <div className="command-row">
+              <span>운영 방식</span>
+              <code>{data.source.sourceKind}</code>
+            </div>
+            <div className="command-row">
+              <span>DB</span>
+              <code>{data.source.dbExists ? data.source.dbPath : "not found"}</code>
+            </div>
+            <div className="command-row">
+              <span>스냅샷 갱신</span>
+              <code>pnpm ops:monetization</code>
+            </div>
+          </div>
+        </article>
+
+        <article className="panel">
+          <div className="panel-heading">
+            <div>
+              <h2>이벤트 상태</h2>
+              <p>배너 요청, 노출 가능 여부, 이미지 요청을 이벤트 원장에서 집계합니다.</p>
+            </div>
+            <span>{formatNumber(data.counts.placementEvents)}건</span>
+          </div>
+          {data.eventBreakdown.length === 0 ? (
+            <p className="muted-text">아직 수집된 배너 이벤트가 없습니다.</p>
+          ) : (
+            <div className="metric-grid">
+              {data.eventBreakdown.map((event) => (
+                <MiniMetric
+                  key={event.type}
+                  label={event.type}
+                  value={event.count}
+                />
+              ))}
+            </div>
+          )}
+        </article>
+      </div>
+
+      <article className="panel workspace-table-panel">
+        <div className="panel-heading">
+          <div>
+            <h2>배치 위치별 성과</h2>
+            <p>활성 소재와 추적 링크 연결 여부를 함께 봅니다.</p>
+          </div>
+          <span>{formatNumber(data.topPlacements.length)}개 표시</span>
+        </div>
+        <div className="workspace-table-wrap">
+          <table className="workspace-table">
+            <thead>
+              <tr>
+                <th>배치</th>
+                <th>소재</th>
+                <th>링크</th>
+                <th>요청</th>
+                <th>이미지</th>
+                <th>no_ad</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.topPlacements.length === 0 ? (
+                <tr>
+                  <td colSpan={7}>배치 위치가 아직 없습니다.</td>
+                </tr>
+              ) : (
+                data.topPlacements.map((placement) => (
+                  <tr key={placement.id}>
+                    <td>
+                      <strong>{placement.name}</strong>
+                      <small>{placement.id}</small>
+                    </td>
+                    <td>{placement.assignedCreativeName ?? "-"}</td>
+                    <td>{placement.assignedTrackingSlug ?? "-"}</td>
+                    <td>{formatNumber(placement.requests)}</td>
+                    <td>{formatNumber(placement.imageRequests)}</td>
+                    <td>{formatNumber(placement.noAd)}</td>
+                    <td>
+                      <span className="badge">{placement.status}</span>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  );
+}
+
+function AffiliateInventorySection({
+  data,
+}: {
+  data: ReturnType<typeof getMonetizationWorkspaceData>["affiliateInventory"];
+}) {
+  const highValueCandidates = data.ripplealba.highValueCandidates.slice(0, 12);
+
+  return (
+    <div className="workspace-stack">
+      <div className="summary-grid" aria-label="어필리에이트 요약">
+        <StatusCard
+          label="프로그램"
+          value={formatNumber(data.programs.length)}
+          hint={`마지막 수동 동기화 ${data.lastManualSync || "-"}`}
+        />
+        <StatusCard
+          label="리플알바 머천트"
+          value={formatNumber(data.ripplealba.merchantTotalReported)}
+          hint={`원장 항목 ${formatNumber(data.ripplealba.merchantEntryCount)}개`}
+        />
+        <StatusCard
+          label="고단가 후보"
+          value={formatNumber(data.ripplealba.highValueCandidates.length)}
+          hint="수수료 기준 내림차순"
+        />
+        <StatusCard
+          label="카테고리"
+          value={formatNumber(data.ripplealba.categoriesSeen.length)}
+          hint={data.sourcePolicy || "metadata_only"}
+        />
+      </div>
+
+      <div className="workspace-grid">
+        <article className="panel">
+          <div className="panel-heading">
+            <div>
+              <h2>제휴 프로그램</h2>
+              <p>멀티 대시보드 내부 affiliates 원장을 직접 읽습니다.</p>
+            </div>
+            <span>{formatShortDateTime(data.generatedAt)}</span>
+          </div>
+          <div className="workspace-card-list">
+            {data.programs.length === 0 ? (
+              <p className="muted-text">등록된 제휴 프로그램이 없습니다.</p>
+            ) : (
+              data.programs.map((program) => (
+                <div className="workspace-card" key={program.id}>
+                  <div>
+                    <strong>{program.name || program.id}</strong>
+                    <span>{program.category || "uncategorized"}</span>
+                  </div>
+                  <b>{program.status}</b>
+                  <p>{program.nextAction || program.notes || "다음 액션 없음"}</p>
+                  <small>
+                    공시 필요: {program.disclosureRequired ? "yes" : "no"} · 머천트{" "}
+                    {formatNumber(program.merchantTotalReported)}
+                  </small>
+                </div>
+              ))
+            )}
+          </div>
+        </article>
+
+        <article className="panel">
+          <div className="panel-heading">
+            <div>
+              <h2>브레인 원장</h2>
+              <p>비밀값 없이 운영 메타데이터만 표시합니다.</p>
+            </div>
+          </div>
+          <div className="command-list">
+            <div className="command-row">
+              <span>운영 방식</span>
+              <code>{data.source.sourceKind}</code>
+            </div>
+            <div className="command-row">
+              <span>inventory.yml</span>
+              <code>{data.source.inventoryPath}</code>
+            </div>
+            <div className="command-row">
+              <span>ripplealba-merchants.yml</span>
+              <code>{data.source.merchantsPath}</code>
+            </div>
+            <div className="command-row">
+              <span>스냅샷 갱신</span>
+              <code>pnpm ops:monetization</code>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <article className="panel workspace-table-panel">
+        <div className="panel-heading">
+          <div>
+            <h2>리플알바 우선 후보</h2>
+            <p>수수료, 승인율, 정책 리스크 메모를 한 화면에서 봅니다.</p>
+          </div>
+          <span>{formatNumber(highValueCandidates.length)}개 표시</span>
+        </div>
+        <div className="workspace-table-wrap">
+          <table className="workspace-table">
+            <thead>
+              <tr>
+                <th>후보</th>
+                <th>카테고리</th>
+                <th>수수료</th>
+                <th>신청률</th>
+                <th>승인율</th>
+                <th>프로모션</th>
+                <th>메모</th>
+              </tr>
+            </thead>
+            <tbody>
+              {highValueCandidates.length === 0 ? (
+                <tr>
+                  <td colSpan={7}>고단가 후보가 아직 없습니다.</td>
+                </tr>
+              ) : (
+                highValueCandidates.map((candidate) => (
+                  <tr key={`${candidate.category}-${candidate.name}`}>
+                    <td>
+                      <strong>{candidate.name}</strong>
+                    </td>
+                    <td>{candidate.category}</td>
+                    <td>{formatCurrencyKrw(candidate.commissionKrw)}</td>
+                    <td>{formatNullablePercent(candidate.previousMonthApplyRatePercent)}</td>
+                    <td>{formatNullablePercent(candidate.previousMonthApprovalRatePercent)}</td>
+                    <td>{candidate.promotion ? "yes" : "no"}</td>
+                    <td>{candidate.priorityNote || "-"}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
   );
 }
 
@@ -623,8 +911,20 @@ function formatNumber(value: number): string {
   return new Intl.NumberFormat("ko-KR").format(value);
 }
 
+function formatCurrencyKrw(value: number): string {
+  return new Intl.NumberFormat("ko-KR", {
+    currency: "KRW",
+    maximumFractionDigits: 0,
+    style: "currency",
+  }).format(value);
+}
+
 function formatPercent(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
+}
+
+function formatNullablePercent(value: number | null): string {
+  return value == null ? "-" : `${value.toFixed(2)}%`;
 }
 
 function formatDecimal(value: number): string {

@@ -1,0 +1,67 @@
+# Affiliate operating inventory.
+# Store metadata only. Never store passwords, API tokens, bank details, tax IDs, or private account files.
+# Status examples: candidate, applied, approved, active, paused, rejected, terminated.
+
+source_policy: metadata_only
+last_manual_sync: "2026-06-28"
+programs:
+  - id: ripplealba
+    name: 리플알바
+    status: candidate
+    platform_url: ""
+    category: affiliate_network
+    countries:
+      - KR
+    used_by:
+      sites: []
+      appsintoss: []
+    tracking:
+      public_label: ""
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "제휴·광고성 콘텐츠 표시 필요."
+    payout:
+      threshold: ""
+      cycle: ""
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-06-28"
+      last_sync_source: "manual_user_input"
+      last_session_reflection: ""
+      digest_check_at: ""
+      digest_items_handled: []
+      next_action: "머천트 원장을 계속 수집하고 카테고리별 우선순위를 선정한다."
+    merchant_total_reported: 390
+    merchant_snapshot_file: affiliates/ripplealba-merchants.yml
+    notes: "사용자가 제공한 리플알바 머천트 목록을 별도 원장 파일로 관리한다."
+
+# Example:
+# programs:
+#   - id: coupang-partners
+#     name: Coupang Partners
+#     status: active
+#     platform_url: https://partners.coupang.com/
+#     category: ecommerce
+#     countries:
+#       - KR
+#     used_by:
+#       sites: []
+#       appsintoss: []
+#     tracking:
+#       public_label: ""
+#       secret_location: <local-secret-dir>/affiliate-account.txt
+#     disclosure:
+#       required: true
+#       note: ""
+#     payout:
+#       threshold: ""
+#       cycle: ""
+#     operations:
+#       last_reviewed: ""
+#       last_session_reflection: ""
+#       digest_check_at: ""
+#       digest_items_handled: []
+#       next_action: ""
+#     notes: ""

@@ -1,0 +1,212 @@
+# Ripplealba merchant operating ledger.
+# Metadata only. Do not store login data, tracking secrets, bank details, tax IDs, or private account files.
+
+source_policy: metadata_only
+affiliate_program_id: ripplealba
+affiliate_program_name: 리플알바
+merchant_total_reported: 390
+snapshot_started_at: "2026-06-28"
+snapshot_status: captured
+source: manual_user_input
+
+normalization_policy:
+  duplicate_handling: "동일 카테고리와 동일 상품명은 같은 머천트 후보로 합치되, 반복 노출은 priority_signal로 참고한다."
+  unavailable_rate_value: null
+  unavailable_rate_label: 산출불가
+  zero_rate_value: 0
+  commission_currency: KRW
+  promotion_value: true
+  non_promotion_value: false
+
+fields:
+  - merchant_id
+  - category
+  - name
+  - previous_month_apply_rate_percent
+  - previous_month_approval_rate_percent
+  - commission_krw
+  - promotion
+  - priority_note
+
+categories_seen:
+  - 광고/회원가입
+  - 건강/다이어트
+  - 개인회생/법률
+  - 결혼
+  - 기타
+  - 대출/금융
+  - 라이프
+  - 렌트/리스
+  - 로또
+  - 보험/상조
+  - 어린이/키성장
+  - 여성/육아
+  - 자격증/학원
+
+priority_rules:
+  - id: high_commission
+    rule: "승인시 60000원 이상이면 고단가 후보로 분류한다."
+  - id: high_approval
+    rule: "전월승인율 80% 이상이면 승인 안정 후보로 분류한다."
+  - id: high_apply
+    rule: "전월신청률 5% 이상이면 수요 신호가 있는 후보로 분류한다."
+  - id: no_rate
+    rule: "산출불가 항목은 신규/저표본 후보로 보고 단가와 카테고리 적합성만 우선 평가한다."
+  - id: sensitive_category
+    rule: "대출/금융, 보험/상조, 개인회생/법률, 건강/다이어트는 과장 표현과 정책 리스크를 별도 검토한다."
+
+current_capture_summary:
+  status: "사용자가 리플알바 머천트 목록 제공을 종료함."
+  next_action: "이번 입력분을 기준으로 고단가, 고승인율, 고신청률, 정책리스크별 실행 후보를 선정한다."
+  capture_closed_at: "2026-06-28"
+  captured_scope_note: "리플알바 전체 390개 머천트 중 사용자가 대화로 제공한 목록 스냅샷. 일부 상품은 반복 노출되었고 일부 지표는 산출불가 또는 0으로 제공됨."
+  known_repeated_names:
+    - 다타랩
+    - 동경건설 철거
+    - 동성바이오
+    - 더복력
+    - 더복력 2
+    - 무촌철거 1등 철거 플랫폼
+    - 법무법인서울 디딤돌 회생파산센터
+    - 백세청윤
+    - 부산 라모르 웨딩박람회
+    - 분양해지부동산상담 법무법인서앤율
+    - 삼성제약 바로쾌변 프리미엄 골드 6
+    - 삼성제약 혈당+눈건강 솔루션 골드 2-4
+    - 서울 롯데월드타워 대형 웨딩박람회
+    - 인터넷팡팡
+    - 주식자금대출 하이스탁론
+    - 코로솔린
+    - 탈젠플러스
+    - 혈당케어의 중심 진잠원
+    - 호관원 프리미엄 골드
+
+high_value_candidates_seen:
+  - category: 개인회생/법률
+    name: 인공관절직업병보상센터
+    commission_krw: 200000
+    previous_month_apply_rate_percent: null
+    previous_month_approval_rate_percent: null
+    promotion: true
+    priority_note: "최고 단가지만 산출불가라 정책·전환 리스크 검토 필요."
+  - category: 여성/육아
+    name: 미즈케어 솔루션
+    commission_krw: 140000
+    previous_month_apply_rate_percent: null
+    previous_month_approval_rate_percent: null
+    promotion: true
+    priority_note: "고단가 반복 상품군. 승인율 정보가 없거나 낮은 변형이 있어 검증 필요."
+  - category: 여성/육아
+    name: 미즈케어 솔루션 2
+    commission_krw: 140000
+    previous_month_apply_rate_percent: 2.68
+    previous_month_approval_rate_percent: 6.85
+    promotion: true
+    priority_note: "고단가이나 승인율이 낮아 보수적으로 평가."
+  - category: 개인회생/법률
+    name: 직업병보상전문상담센터
+    commission_krw: 90000
+    previous_month_apply_rate_percent: 2.49
+    previous_month_approval_rate_percent: 5.17
+    promotion: true
+    priority_note: "고단가이나 승인율이 낮아 보수적으로 평가."
+  - category: 건강/다이어트
+    name: 신비감 플러스 다이어트
+    commission_krw: 76000
+    previous_month_apply_rate_percent: 0.53
+    previous_month_approval_rate_percent: 54
+    promotion: true
+    priority_note: "건강/다이어트 고단가 후보."
+  - category: 개인회생/법률
+    name: 부장검사 출신 개인회생 법률사무소 청하
+    commission_krw: 72000
+    previous_month_apply_rate_percent: null
+    previous_month_approval_rate_percent: null
+    promotion: true
+    priority_note: "법률 고단가 후보."
+  - category: 개인회생/법률
+    name: 부장검사 출신 개인회생 법률사무소 청하 2
+    commission_krw: 72000
+    previous_month_apply_rate_percent: 1.15
+    previous_month_approval_rate_percent: 62.50
+    promotion: true
+    priority_note: "법률 고단가 후보. 승인율은 중간 수준."
+  - category: 개인회생/법률
+    name: 개인회생법률상담센터 동윤
+    commission_krw: 70000
+    previous_month_apply_rate_percent: 0.61
+    previous_month_approval_rate_percent: 12.20
+    promotion: true
+    priority_note: "고단가이나 승인율 낮음."
+  - category: 개인회생/법률
+    name: 변호사이정용법률사무소
+    commission_krw: 70000
+    previous_month_apply_rate_percent: null
+    previous_month_approval_rate_percent: null
+    promotion: true
+    priority_note: "법률 고단가 후보."
+  - category: 개인회생/법률
+    name: 법무법인서울 디딤돌 회생파산센터
+    commission_krw: 65000
+    previous_month_apply_rate_percent: null
+    previous_month_approval_rate_percent: null
+    promotion: false
+    priority_note: "반복 노출된 법률 고단가 후보."
+  - category: 건강/다이어트
+    name: 삼성제약 혈당+눈건강 솔루션 골드 2-4
+    commission_krw: 64000
+    previous_month_apply_rate_percent: 1.60
+    previous_month_approval_rate_percent: 88.37
+    promotion: true
+    priority_note: "고단가와 높은 승인율을 모두 가진 우선 검토 후보."
+  - category: 건강/다이어트
+    name: 삼성제약 혈당+눈건강 솔루션 골드 2-1
+    commission_krw: 64000
+    previous_month_apply_rate_percent: 2.56
+    previous_month_approval_rate_percent: 82.86
+    promotion: true
+    priority_note: "고단가와 높은 승인율을 모두 가진 우선 검토 후보."
+  - category: 건강/다이어트
+    name: 삼성제약 바로쾌변 프리미엄 골드 6
+    commission_krw: 64000
+    previous_month_apply_rate_percent: 2.54
+    previous_month_approval_rate_percent: 77.14
+    promotion: true
+    priority_note: "고단가 후보."
+  - category: 건강/다이어트
+    name: 호관원 프리미엄 골드
+    commission_krw: 64000
+    previous_month_apply_rate_percent: 1.62
+    previous_month_approval_rate_percent: 75
+    promotion: true
+    priority_note: "고단가 후보."
+  - category: 건강/다이어트
+    name: 코로솔린
+    commission_krw: 64000
+    previous_month_apply_rate_percent: 2.07
+    previous_month_approval_rate_percent: 54.35
+    promotion: true
+    priority_note: "고단가이나 승인율 중간 이하."
+  - category: 대출/금융
+    name: 주식자금대출 하이스탁론
+    commission_krw: 61000
+    previous_month_apply_rate_percent: 3.48
+    previous_month_approval_rate_percent: 70.43
+    promotion: true
+    priority_note: "금융 고단가 후보. 정책 리스크 검토 필요."
+  - category: 대출/금융
+    name: 국내해외ETF 주식담보대출 올타임스탁론
+    commission_krw: 61000
+    previous_month_apply_rate_percent: null
+    previous_month_approval_rate_percent: null
+    promotion: true
+    priority_note: "금융 고단가 후보. 정책 리스크 검토 필요."
+  - category: 개인회생/법률
+    name: 법무법인 서앤율
+    commission_krw: 60000
+    previous_month_apply_rate_percent: 0.80
+    previous_month_approval_rate_percent: 94.23
+    promotion: true
+    priority_note: "고단가와 높은 승인율을 모두 가진 우선 검토 후보."
+
+merchant_entries: []

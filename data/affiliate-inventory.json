@@ -1,0 +1,275 @@
+{
+  "generatedAt": "2026-07-02T02:39:35.580Z",
+  "source": {
+    "sourceKind": "multi-dashboard-local",
+    "workspacePath": "D:\\web\\multi-dashboard",
+    "inventoryPath": "D:\\web\\multi-dashboard\\data\\monetization\\affiliates\\inventory.yml",
+    "merchantsPath": "D:\\web\\multi-dashboard\\data\\monetization\\affiliates\\ripplealba-merchants.yml",
+    "analysisPath": "D:\\web\\multi-dashboard\\data\\monetization\\affiliates\\ripplealba-analysis.md",
+    "inventoryExists": true,
+    "merchantsExists": true,
+    "inventoryUpdatedAt": "2026-06-28T05:17:04.588Z",
+    "merchantsUpdatedAt": "2026-06-28T05:20:17.158Z",
+    "sourceNote": "Standalone affiliate operations source owned by this multi-dashboard repository."
+  },
+  "sourcePolicy": "metadata_only",
+  "lastManualSync": "2026-06-28",
+  "programs": [
+    {
+      "id": "ripplealba",
+      "name": "리플알바",
+      "status": "candidate",
+      "category": "affiliate_network",
+      "platformUrl": "",
+      "countries": [
+        "KR"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "",
+      "disclosureRequired": true,
+      "disclosureNote": "제휴·광고성 콘텐츠 표시 필요.",
+      "merchantTotalReported": 390,
+      "merchantSnapshotFile": "affiliates/ripplealba-merchants.yml",
+      "lastReviewed": "2026-06-28",
+      "nextAction": "머천트 원장을 계속 수집하고 카테고리별 우선순위를 선정한다.",
+      "notes": "사용자가 제공한 리플알바 머천트 목록을 별도 원장 파일로 관리한다."
+    }
+  ],
+  "ripplealba": {
+    "programId": "ripplealba",
+    "programName": "리플알바",
+    "merchantTotalReported": 390,
+    "snapshotStartedAt": "2026-06-28",
+    "snapshotStatus": "captured",
+    "merchantEntryCount": 0,
+    "categoriesSeen": [
+      "광고/회원가입",
+      "건강/다이어트",
+      "개인회생/법률",
+      "결혼",
+      "기타",
+      "대출/금융",
+      "라이프",
+      "렌트/리스",
+      "로또",
+      "보험/상조",
+      "어린이/키성장",
+      "여성/육아",
+      "자격증/학원"
+    ],
+    "highValueCandidates": [
+      {
+        "category": "개인회생/법률",
+        "name": "인공관절직업병보상센터",
+        "commissionKrw": 200000,
+        "previousMonthApplyRatePercent": null,
+        "previousMonthApprovalRatePercent": null,
+        "promotion": true,
+        "priorityNote": "최고 단가지만 산출불가라 정책·전환 리스크 검토 필요."
+      },
+      {
+        "category": "여성/육아",
+        "name": "미즈케어 솔루션",
+        "commissionKrw": 140000,
+        "previousMonthApplyRatePercent": null,
+        "previousMonthApprovalRatePercent": null,
+        "promotion": true,
+        "priorityNote": "고단가 반복 상품군. 승인율 정보가 없거나 낮은 변형이 있어 검증 필요."
+      },
+      {
+        "category": "여성/육아",
+        "name": "미즈케어 솔루션 2",
+        "commissionKrw": 140000,
+        "previousMonthApplyRatePercent": 2.68,
+        "previousMonthApprovalRatePercent": 6.85,
+        "promotion": true,
+        "priorityNote": "고단가이나 승인율이 낮아 보수적으로 평가."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "직업병보상전문상담센터",
+        "commissionKrw": 90000,
+        "previousMonthApplyRatePercent": 2.49,
+        "previousMonthApprovalRatePercent": 5.17,
+        "promotion": true,
+        "priorityNote": "고단가이나 승인율이 낮아 보수적으로 평가."
+      },
+      {
+        "category": "건강/다이어트",
+        "name": "신비감 플러스 다이어트",
+        "commissionKrw": 76000,
+        "previousMonthApplyRatePercent": 0.53,
+        "previousMonthApprovalRatePercent": 54,
+        "promotion": true,
+        "priorityNote": "건강/다이어트 고단가 후보."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "부장검사 출신 개인회생 법률사무소 청하",
+        "commissionKrw": 72000,
+        "previousMonthApplyRatePercent": null,
+        "previousMonthApprovalRatePercent": null,
+        "promotion": true,
+        "priorityNote": "법률 고단가 후보."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "부장검사 출신 개인회생 법률사무소 청하 2",
+        "commissionKrw": 72000,
+        "previousMonthApplyRatePercent": 1.15,
+        "previousMonthApprovalRatePercent": 62.5,
+        "promotion": true,
+        "priorityNote": "법률 고단가 후보. 승인율은 중간 수준."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "개인회생법률상담센터 동윤",
+        "commissionKrw": 70000,
+        "previousMonthApplyRatePercent": 0.61,
+        "previousMonthApprovalRatePercent": 12.2,
+        "promotion": true,
+        "priorityNote": "고단가이나 승인율 낮음."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "변호사이정용법률사무소",
+        "commissionKrw": 70000,
+        "previousMonthApplyRatePercent": null,
+        "previousMonthApprovalRatePercent": null,
+        "promotion": true,
+        "priorityNote": "법률 고단가 후보."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "법무법인서울 디딤돌 회생파산센터",
+        "commissionKrw": 65000,
+        "previousMonthApplyRatePercent": null,
+        "previousMonthApprovalRatePercent": null,
+        "promotion": false,
+        "priorityNote": "반복 노출된 법률 고단가 후보."
+      },
+      {
+        "category": "건강/다이어트",
+        "name": "삼성제약 혈당+눈건강 솔루션 골드 2-4",
+        "commissionKrw": 64000,
+        "previousMonthApplyRatePercent": 1.6,
+        "previousMonthApprovalRatePercent": 88.37,
+        "promotion": true,
+        "priorityNote": "고단가와 높은 승인율을 모두 가진 우선 검토 후보."
+      },
+      {
+        "category": "건강/다이어트",
+        "name": "삼성제약 혈당+눈건강 솔루션 골드 2-1",
+        "commissionKrw": 64000,
+        "previousMonthApplyRatePercent": 2.56,
+        "previousMonthApprovalRatePercent": 82.86,
+        "promotion": true,
+        "priorityNote": "고단가와 높은 승인율을 모두 가진 우선 검토 후보."
+      },
+      {
+        "category": "건강/다이어트",
+        "name": "삼성제약 바로쾌변 프리미엄 골드 6",
+        "commissionKrw": 64000,
+        "previousMonthApplyRatePercent": 2.54,
+        "previousMonthApprovalRatePercent": 77.14,
+        "promotion": true,
+        "priorityNote": "고단가 후보."
+      },
+      {
+        "category": "건강/다이어트",
+        "name": "호관원 프리미엄 골드",
+        "commissionKrw": 64000,
+        "previousMonthApplyRatePercent": 1.62,
+        "previousMonthApprovalRatePercent": 75,
+        "promotion": true,
+        "priorityNote": "고단가 후보."
+      },
+      {
+        "category": "건강/다이어트",
+        "name": "코로솔린",
+        "commissionKrw": 64000,
+        "previousMonthApplyRatePercent": 2.07,
+        "previousMonthApprovalRatePercent": 54.35,
+        "promotion": true,
+        "priorityNote": "고단가이나 승인율 중간 이하."
+      },
+      {
+        "category": "대출/금융",
+        "name": "주식자금대출 하이스탁론",
+        "commissionKrw": 61000,
+        "previousMonthApplyRatePercent": 3.48,
+        "previousMonthApprovalRatePercent": 70.43,
+        "promotion": true,
+        "priorityNote": "금융 고단가 후보. 정책 리스크 검토 필요."
+      },
+      {
+        "category": "대출/금융",
+        "name": "국내해외ETF 주식담보대출 올타임스탁론",
+        "commissionKrw": 61000,
+        "previousMonthApplyRatePercent": null,
+        "previousMonthApprovalRatePercent": null,
+        "promotion": true,
+        "priorityNote": "금융 고단가 후보. 정책 리스크 검토 필요."
+      },
+      {
+        "category": "개인회생/법률",
+        "name": "법무법인 서앤율",
+        "commissionKrw": 60000,
+        "previousMonthApplyRatePercent": 0.8,
+        "previousMonthApprovalRatePercent": 94.23,
+        "promotion": true,
+        "priorityNote": "고단가와 높은 승인율을 모두 가진 우선 검토 후보."
+      }
+    ],
+    "currentCaptureSummary": {
+      "status": "사용자가 리플알바 머천트 목록 제공을 종료함.",
+      "next_action": "이번 입력분을 기준으로 고단가, 고승인율, 고신청률, 정책리스크별 실행 후보를 선정한다.",
+      "capture_closed_at": "2026-06-28",
+      "captured_scope_note": "리플알바 전체 390개 머천트 중 사용자가 대화로 제공한 목록 스냅샷. 일부 상품은 반복 노출되었고 일부 지표는 산출불가 또는 0으로 제공됨.",
+      "known_repeated_names": [
+        "다타랩",
+        "동경건설 철거",
+        "동성바이오",
+        "더복력",
+        "더복력 2",
+        "무촌철거 1등 철거 플랫폼",
+        "법무법인서울 디딤돌 회생파산센터",
+        "백세청윤",
+        "부산 라모르 웨딩박람회",
+        "분양해지부동산상담 법무법인서앤율",
+        "삼성제약 바로쾌변 프리미엄 골드 6",
+        "삼성제약 혈당+눈건강 솔루션 골드 2-4",
+        "서울 롯데월드타워 대형 웨딩박람회",
+        "인터넷팡팡",
+        "주식자금대출 하이스탁론",
+        "코로솔린",
+        "탈젠플러스",
+        "혈당케어의 중심 진잠원",
+        "호관원 프리미엄 골드"
+      ]
+    },
+    "priorityRules": [
+      {
+        "id": "high_commission",
+        "rule": "승인시 60000원 이상이면 고단가 후보로 분류한다."
+      },
+      {
+        "id": "high_approval",
+        "rule": "전월승인율 80% 이상이면 승인 안정 후보로 분류한다."
+      },
+      {
+        "id": "high_apply",
+        "rule": "전월신청률 5% 이상이면 수요 신호가 있는 후보로 분류한다."
+      },
+      {
+        "id": "no_rate",
+        "rule": "산출불가 항목은 신규/저표본 후보로 보고 단가와 카테고리 적합성만 우선 평가한다."
+      },
+      {
+        "id": "sensitive_category",
+        "rule": "대출/금융, 보험/상조, 개인회생/법률, 건강/다이어트는 과장 표현과 정책 리스크를 별도 검토한다."
+      }
+    ]
+  }
+}

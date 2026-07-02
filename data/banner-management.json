@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-07-02T02:39:35.567Z",
+  "source": {
+    "sourceKind": "multi-dashboard-local",
+    "workspacePath": "D:\\web\\multi-dashboard",
+    "dbPath": "D:\\web\\multi-dashboard\\data\\monetization\\ad-manage.db",
+    "dbExists": true,
+    "dbUpdatedAt": "2026-06-28T15:31:18.606Z",
+    "sourceNote": "Standalone banner operations source owned by this multi-dashboard repository."
+  },
+  "counts": {
+    "placements": 4,
+    "activePlacements": 4,
+    "creatives": 4,
+    "activeCreatives": 4,
+    "trackingLinks": 5,
+    "activeTrackingLinks": 5,
+    "assignments": 4,
+    "activeAssignments": 4,
+    "placementEvents": 16,
+    "requests": 6,
+    "served": 1,
+    "noAd": 0,
+    "imageRequests": 2
+  },
+  "noAdRate": 0,
+  "eventBreakdown": [
+    {
+      "type": "request",
+      "count": 6
+    },
+    {
+      "type": "render",
+      "count": 6
+    },
+    {
+      "type": "image_request",
+      "count": 2
+    },
+    {
+      "type": "viewable",
+      "count": 1
+    },
+    {
+      "type": "served",
+      "count": 1
+    }
+  ],
+  "topPlacements": [
+    {
+      "id": "placement_bc01a2bb-9531-4cf2-8e4e-51e95c274c0b",
+      "name": "P1 Placement 1782659623357",
+      "status": "active",
+      "assignedCreativeName": "P1 Banner 1782659623357",
+      "assignedTrackingSlug": "p1b-1782659623357",
+      "requests": 2,
+      "imageRequests": 1,
+      "noAd": 0
+    },
+    {
+      "id": "placement_90880966-8a2e-4377-89d3-67e0dc846f4a",
+      "name": "P1 Placement 1782659593224",
+      "status": "active",
+      "assignedCreativeName": "P1 Banner 1782659593224",
+      "assignedTrackingSlug": "p1-1782659593224",
+      "requests": 2,
+      "imageRequests": 1,
+      "noAd": 0
+    },
+    {
+      "id": "placement_de09acba-d262-4478-bdda-eb4340a8f31f",
+      "name": "SDK Fixed Slot 1782660678348",
+      "status": "active",
+      "assignedCreativeName": "SDK Fixed Banner 1782660678348",
+      "assignedTrackingSlug": "sdkfix-1782660678348",
+      "requests": 1,
+      "imageRequests": 0,
+      "noAd": 0
+    },
+    {
+      "id": "placement_f8c7dd2c-4862-48ec-b7af-ebeb65693e40",
+      "name": "SDK Slot 1782660548070",
+      "status": "active",
+      "assignedCreativeName": "SDK Banner 1782660548070",
+      "assignedTrackingSlug": "sdk-1782660548070",
+      "requests": 1,
+      "imageRequests": 0,
+      "noAd": 0
+    }
+  ]
+}
