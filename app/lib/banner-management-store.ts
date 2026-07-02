@@ -202,7 +202,7 @@ export function getBannerPublicBaseUrl(): string {
 
 export function getBannerManagementState(): BannerManagementState {
   const dbPath = getBannerDbPath();
-  ensureSchema(dbPath);
+  ensureSchemaWhenWritable(dbPath);
   const db = openDb(dbPath, true);
   try {
     return {
@@ -508,7 +508,7 @@ export function resolveBannerPlacement(input: {
 }): ResolvedBannerPlacement | null {
   const lookup = normalizePlacementLookup(input);
   const dbPath = getBannerDbPath();
-  ensureSchema(dbPath);
+  ensureSchemaWhenWritable(dbPath);
   const db = openDb(dbPath, true);
   try {
     const row = db.prepare(
@@ -980,7 +980,7 @@ function listAssignments(db: DatabaseLike): BannerAssignmentRow[] {
 
 function getRequiredRow(table: "placements" | "creatives" | "tracking_links", id: string): Row {
   const dbPath = getBannerDbPath();
-  ensureSchema(dbPath);
+  ensureSchemaWhenWritable(dbPath);
   const db = openDb(dbPath, true);
   try {
     const row = db.prepare(`SELECT * FROM ${table} WHERE id = ?`).get(id);
@@ -995,6 +995,10 @@ function ensureColumn(db: DatabaseLike, table: string, column: string, definitio
   const columns = db.prepare(`PRAGMA table_info(${table})`).all();
   if (columns.some((row) => asString(row.name) === column)) return;
   db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+}
+
+function ensureSchemaWhenWritable(path: string): void {
+  if (canAttemptWrite()) ensureSchema(path);
 }
 
 function normalizePlacementLookup(input: {
