@@ -1,13 +1,13 @@
 import {
-  assignBannerPlacement,
-  createBannerCreative,
-  createBannerPlacement,
-  createBannerTrackingLink,
-  getBannerManagementState,
+  assignBannerPlacementAsync,
+  createBannerCreativeAsync,
+  createBannerPlacementAsync,
+  createBannerTrackingLinkAsync,
+  getBannerManagementStateAsync,
   isBannerWriteDisabledError,
-  updateBannerCreative,
-  updateBannerPlacement,
-  updateBannerTrackingLink,
+  updateBannerCreativeAsync,
+  updateBannerPlacementAsync,
+  updateBannerTrackingLinkAsync,
 } from "../../lib/banner-management-store.js";
 
 export const dynamic = "force-dynamic";
@@ -48,7 +48,7 @@ type BannerRequestBody = {
 
 export async function GET() {
   try {
-    return Response.json(getBannerManagementState());
+    return Response.json(await getBannerManagementStateAsync());
   } catch (error) {
     return Response.json({ error: errorMessage(error) }, { status: 500 });
   }
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     switch (body.action) {
       case "createPlacement":
         return Response.json(
-          createBannerPlacement({
+          await createBannerPlacementAsync({
             name: body.name ?? "",
             noAdPolicy: body.noAdPolicy,
             siteKey: body.siteKey,
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
         );
       case "updatePlacement":
         return Response.json(
-          updateBannerPlacement({
+          await updateBannerPlacementAsync({
             id: body.id ?? "",
             name: body.name,
             noAdPolicy: body.noAdPolicy,
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
         );
       case "createCreative":
         return Response.json(
-          createBannerCreative({
+          await createBannerCreativeAsync({
             height: body.height,
             imageUrl: body.imageUrl ?? "",
             name: body.name ?? "",
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
         );
       case "updateCreative":
         return Response.json(
-          updateBannerCreative({
+          await updateBannerCreativeAsync({
             height: body.height,
             id: body.id ?? "",
             imageUrl: body.imageUrl,
@@ -113,7 +113,7 @@ export async function POST(request: Request) {
         );
       case "createTrackingLink":
         return Response.json(
-          createBannerTrackingLink({
+          await createBannerTrackingLinkAsync({
             offerId: body.offerId,
             offerName: body.offerName,
             publicUrl: body.publicUrl ?? "",
@@ -124,7 +124,7 @@ export async function POST(request: Request) {
         );
       case "updateTrackingLink":
         return Response.json(
-          updateBannerTrackingLink({
+          await updateBannerTrackingLinkAsync({
             id: body.id ?? "",
             offerId: body.offerId,
             offerName: body.offerName,
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
         );
       case "assignPlacement":
         return Response.json(
-          assignBannerPlacement({
+          await assignBannerPlacementAsync({
             creativeId: body.creativeId ?? "",
             placementId: body.placementId ?? "",
             trackingLinkId: body.trackingLinkId ?? "",

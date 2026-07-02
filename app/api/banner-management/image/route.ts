@@ -1,6 +1,6 @@
 import {
-  recordBannerImageRequest,
-  resolveBannerPlacement,
+  recordBannerImageRequestAsync,
+  resolveBannerPlacementAsync,
 } from "../../../lib/banner-management-store.js";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +12,7 @@ const TRANSPARENT_GIF = Uint8Array.from(
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const resolved = resolveBannerPlacement({
+  const resolved = await resolveBannerPlacementAsync({
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: url.searchParams.get("placementId") ?? undefined,
     referrer: request.headers.get("referer") ?? undefined,
@@ -30,7 +30,7 @@ export async function GET(request: Request) {
     });
   }
 
-  recordBannerImageRequest({
+  await recordBannerImageRequestAsync({
     assignmentId: resolved.assignmentId,
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: resolved.placement.id,

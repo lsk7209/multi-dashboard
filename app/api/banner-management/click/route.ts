@@ -1,6 +1,6 @@
 import {
-  recordBannerClick,
-  resolveBannerPlacement,
+  recordBannerClickAsync,
+  resolveBannerPlacementAsync,
 } from "../../../lib/banner-management-store.js";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const resolved = resolveBannerPlacement({
+  const resolved = await resolveBannerPlacementAsync({
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: url.searchParams.get("placementId") ?? undefined,
     referrer: request.headers.get("referer") ?? undefined,
@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     return Response.json({ error: "No active banner is configured for this slot." }, { status: 404 });
   }
 
-  recordBannerClick({
+  await recordBannerClickAsync({
     assignmentId: resolved.assignmentId,
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: resolved.placement.id,
