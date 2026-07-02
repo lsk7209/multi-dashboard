@@ -23,7 +23,6 @@ const targets: Array<{ siteId: string; pages: PageKind[] }> = [
   { siteId: "nexttech7", pages: ["privacy"] },
   { siteId: "haemongdream", pages: ["privacy"] },
   { siteId: "klick-2", pages: ["privacy"] },
-  { siteId: "yesa", pages: ["about", "contact", "privacy", "terms"] },
 ];
 
 const pageMeta: Record<PageKind, { slug: string; title: string }> = {

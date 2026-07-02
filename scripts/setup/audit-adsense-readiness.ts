@@ -1,4 +1,12 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  statSync,
+} from "node:fs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { google } from "googleapis";
 import pLimit from "p-limit";
 import { makeGoogleAuth } from "./lib/gcp.js";
@@ -10,7 +18,139 @@ const ADSENSE_CLIENT_ID = "ca-pub-3050601904412736";
 const ADS_TXT_LINE =
   "google.com, pub-3050601904412736, DIRECT, f08c47fec0942fa0";
 const CONCURRENCY = 8;
-const PAGE_LIMIT = 3;
+const REMEDIATION_QUEUE_SITE_ALIAS = "@remediation-queue";
+const REMEDIATION_QUEUE_PREFIX = "adsense-remediation-queue-";
+
+interface AdsenseRemediationQueueArtifact {
+  collectorSnapshot?: unknown;
+  lanes?: Record<string, Array<{ siteId?: unknown }>>;
+}
+
+export interface AuditCliOptions {
+  includeNonMonetized: boolean;
+  siteIds: string[];
+  pageLimit: number;
+  fetchTimeoutMs: number;
+  sitemapDiscoveryLimit: number;
+}
+
+export function parseAuditArgs(args: string[]): AuditCliOptions {
+  const rawSiteIds = args
+    .filter((arg) => arg.startsWith("--site="))
+    .flatMap((arg) =>
+      arg
+        .slice("--site=".length)
+        .split(/[,\s]+/)
+        .map((value) => value.trim())
+        .filter(Boolean),
+    );
+  const siteIds = expandAuditSiteIds(rawSiteIds);
+  const pageLimitArg = args
+    .find((arg) => arg.startsWith("--page-limit="))
+    ?.slice("--page-limit=".length);
+  const fetchTimeoutArg = args
+    .find((arg) => arg.startsWith("--fetch-timeout-ms="))
+    ?.slice("--fetch-timeout-ms=".length);
+  const pageLimit = Math.max(
+    3,
+    Math.min(30, Number.parseInt(pageLimitArg ?? "12", 10) || 12),
+  );
+  const fetchTimeoutMs = Math.max(
+    3000,
+    Math.min(15000, Number.parseInt(fetchTimeoutArg ?? "8000", 10) || 8000),
+  );
+  return {
+    includeNonMonetized: args.includes("--include-non-monetized"),
+    siteIds,
+    pageLimit,
+    fetchTimeoutMs,
+    sitemapDiscoveryLimit: siteIds.length > 0 ? 8 : 2,
+  };
+}
+
+export function expandAuditSiteIds(siteIds: string[]): string[] {
+  if (!siteIds.includes(REMEDIATION_QUEUE_SITE_ALIAS)) {
+    return dedupeStrings(siteIds);
+  }
+  const queueSiteIds = readCurrentRemediationQueueSiteIds();
+  return dedupeStrings(
+    siteIds.flatMap((siteId) =>
+      siteId === REMEDIATION_QUEUE_SITE_ALIAS ? queueSiteIds : [siteId],
+    ),
+  );
+}
+
+export function extractRemediationQueueSiteIds(
+  artifact: AdsenseRemediationQueueArtifact,
+): string[] {
+  const siteIds: string[] = [];
+  for (const lane of Object.values(artifact.lanes ?? {})) {
+    for (const item of lane) {
+      if (typeof item.siteId === "string" && item.siteId.length > 0) {
+        siteIds.push(item.siteId);
+      }
+    }
+  }
+  return dedupeStrings(siteIds);
+}
+
+function readCurrentRemediationQueueSiteIds(): string[] {
+  const currentStats = JSON.parse(readFileSync("data/site-stats.json", "utf8")) as {
+    generatedAt?: unknown;
+  };
+  if (typeof currentStats.generatedAt !== "string") {
+    throw new Error("data/site-stats.json generatedAt is missing.");
+  }
+  const expectedSnapshot = `generatedAt=${currentStats.generatedAt}`;
+  const artifact = readLatestMatchingRemediationQueue(expectedSnapshot);
+  const siteIds = extractRemediationQueueSiteIds(artifact);
+  if (siteIds.length === 0) {
+    throw new Error("Current AdSense remediation queue has no site targets.");
+  }
+  return siteIds;
+}
+
+function readLatestMatchingRemediationQueue(
+  expectedSnapshot: string,
+): AdsenseRemediationQueueArtifact {
+  if (!existsSync("data")) {
+    throw new Error("data directory is missing; run pnpm adsense:queue first.");
+  }
+  const candidates = readdirSync("data")
+    .filter(
+      (name) =>
+        name.startsWith(REMEDIATION_QUEUE_PREFIX) && name.endsWith(".json"),
+    )
+    .map((name) => {
+      const path = join("data", name);
+      return { path, mtimeMs: statSync(path).mtimeMs };
+    })
+    .sort((a, b) => b.mtimeMs - a.mtimeMs);
+
+  for (const candidate of candidates) {
+    const artifact = JSON.parse(
+      readFileSync(candidate.path, "utf8"),
+    ) as AdsenseRemediationQueueArtifact;
+    if (
+      typeof artifact.collectorSnapshot === "string" &&
+      artifact.collectorSnapshot.includes(expectedSnapshot)
+    ) {
+      return artifact;
+    }
+  }
+  throw new Error(
+    `No AdSense remediation queue matches current snapshot ${expectedSnapshot}; run pnpm adsense:queue first.`,
+  );
+}
+
+function dedupeStrings(values: string[]): string[] {
+  return [...new Set(values)];
+}
+
+const cliOptions = parseAuditArgs(process.argv.slice(2));
+const PAGE_LIMIT = cliOptions.pageLimit;
+const FETCH_TIMEOUT_MS = cliOptions.fetchTimeoutMs;
+const SITEMAP_DISCOVERY_LIMIT = cliOptions.sitemapDiscoveryLimit;
 const OUTPUT_DATE = new Date().toISOString().slice(0, 10);
 const JSON_OUTPUT_PATH = `data/adsense-readiness-audit-${OUTPUT_DATE}.json`;
 const MD_OUTPUT_PATH = `docs/adsense-readiness-audit-${OUTPUT_DATE}.md`;
@@ -20,15 +160,15 @@ const FETCH_HEADERS = {
   Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 } as const;
 
-type CheckState = "pass" | "warn" | "fail" | "unknown";
-type SiteVerdict = "ready" | "needs_patch" | "blocked" | "review";
+export type CheckState = "pass" | "warn" | "fail" | "unknown";
+export type SiteVerdict = "ready" | "needs_patch" | "blocked" | "review";
 
-interface CheckResult {
+export interface CheckResult {
   state: CheckState;
   detail: string;
 }
 
-interface PageAudit {
+export interface PageAudit {
   url: string;
   status?: number;
   title: CheckResult;
@@ -47,9 +187,12 @@ interface PageAudit {
   h1Count: number;
   h2Count: number;
   h3Count: number;
+  internalLinkCount: number;
+  externalLinkCount: number;
+  h2Signature: string;
 }
 
-interface SiteAudit {
+export interface SiteAudit {
   id: string;
   name: string;
   platform: string;
@@ -64,12 +207,14 @@ interface SiteAudit {
   adsTxt: CheckResult;
   trustPages: CheckResult;
   blogIndex: CheckResult;
+  contentQuality: CheckResult;
   issues: string[];
   nextActions: string[];
 }
 
-interface AuditReport {
+export interface AuditReport {
   generatedAt: string;
+  collectorSnapshot: string;
   targetCount: number;
   summary: Record<SiteVerdict, number>;
   sites: SiteAudit[];
@@ -96,6 +241,18 @@ function decodeHtml(value: string): string {
     .replace(/&#39;/g, "'")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">");
+}
+
+export function filterAuditSites(
+  sites: Site[],
+  options: Pick<AuditCliOptions, "includeNonMonetized" | "siteIds">,
+): Site[] {
+  return sites.filter(
+    (site) =>
+      site.enabled !== false &&
+      (options.includeNonMonetized || site.monetization !== false) &&
+      (options.siteIds.length === 0 || options.siteIds.includes(site.id)),
+  );
 }
 
 function stripHtml(html: string): string {
@@ -200,7 +357,7 @@ async function fetchText(
 ): Promise<{ status: number; body: string }> {
   const response = await fetch(url, {
     redirect: "follow",
-    signal: AbortSignal.timeout(15000),
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     headers: FETCH_HEADERS,
   });
   return { status: response.status, body: await response.text() };
@@ -218,40 +375,60 @@ async function discoverSitemapUrls(site: Site): Promise<string[]> {
   return [...new Set(candidates)];
 }
 
-async function discoverSamplePages(site: Site): Promise<string[]> {
-  const home = site.url;
-  const sitemapUrls = await discoverSitemapUrls(site);
-  const samples: string[] = [home];
+function extractSitemapLocs(body: string): string[] {
+  return Array.from(body.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/gi))
+    .map((match) => decodeHtml(match[1]?.trim() ?? ""))
+    .filter(Boolean);
+}
 
-  for (const sitemapUrl of sitemapUrls) {
+async function discoverSitemapPageUrls(site: Site): Promise<string[]> {
+  const queue = await discoverSitemapUrls(site);
+  const seen = new Set<string>();
+  const pages: string[] = [];
+
+  while (queue.length > 0 && seen.size < SITEMAP_DISCOVERY_LIMIT) {
+    const sitemapUrl = queue.shift();
+    if (!sitemapUrl || seen.has(sitemapUrl)) {
+      continue;
+    }
+    seen.add(sitemapUrl);
+
     try {
       const { status, body } = await fetchText(sitemapUrl);
       if (status < 200 || status >= 300) {
         continue;
       }
-      const locs = Array.from(body.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/gi))
-        .map((match) => decodeHtml(match[1]?.trim() ?? ""))
-        .filter(Boolean);
-      const pageLocs = locs.filter((loc) => {
+      const locs = extractSitemapLocs(body);
+      for (const loc of locs) {
         const path = new URL(loc).pathname.toLowerCase();
-        return (
-          !path.endsWith(".xml") &&
-          !path.includes("sitemap") &&
-          !path.includes("privacy") &&
-          !path.includes("terms") &&
-          !path.includes("contact") &&
-          !path.includes("about") &&
-          isApprovalContentSample(loc)
-        );
-      });
-      samples.push(...pageLocs.slice(0, PAGE_LIMIT - samples.length));
-      if (samples.length >= PAGE_LIMIT) {
-        break;
+        if (path.endsWith(".xml") || path.includes("sitemap")) {
+          queue.push(loc);
+          continue;
+        }
+        pages.push(loc);
       }
     } catch {
       continue;
     }
   }
+
+  return [...new Set(pages)];
+}
+
+async function discoverSamplePages(site: Site): Promise<string[]> {
+  const home = site.url;
+  const samples: string[] = [home];
+  const pageLocs = (await discoverSitemapPageUrls(site)).filter((loc) => {
+    const path = new URL(loc).pathname.toLowerCase();
+    return (
+      !path.includes("privacy") &&
+      !path.includes("terms") &&
+      !path.includes("contact") &&
+      !path.includes("about") &&
+      isApprovalContentSample(loc)
+    );
+  });
+  samples.push(...pageLocs.slice(0, PAGE_LIMIT - samples.length));
 
   return [...new Set(samples)].slice(0, PAGE_LIMIT);
 }
@@ -328,6 +505,7 @@ function auditPage(
   const count = visibleTermCount(visibleText);
   const headingOrderWarn =
     h1.length !== 1 || (h3.length > 0 && h2.length === 0);
+  const h2Signature = h2.map((heading) => heading.toLowerCase()).join(" | ");
 
   return {
     url,
@@ -391,6 +569,9 @@ function auditPage(
     h1Count: h1.length,
     h2Count: h2.length,
     h3Count: h3.length,
+    internalLinkCount: internalLinks.length,
+    externalLinkCount: externalLinks.length,
+    h2Signature,
   };
 }
 
@@ -634,6 +815,129 @@ async function auditGscSitemap(
   }
 }
 
+function median(values: number[]): number {
+  if (values.length === 0) {
+    return 0;
+  }
+  const sorted = [...values].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? Math.round((sorted[middle - 1]! + sorted[middle]!) / 2)
+    : sorted[middle]!;
+}
+
+function isArticleLikePage(page: PageAudit, siteUrl: string): boolean {
+  const rawPath = new URL(page.url, siteUrl).pathname.toLowerCase();
+  let path = rawPath;
+  try {
+    path = decodeURIComponent(rawPath);
+  } catch {
+    path = rawPath;
+  }
+  if (path === "/" || path.includes("/category/") || path.includes("/tag/")) {
+    return false;
+  }
+  return ![
+    "privacy",
+    "terms",
+    "contact",
+    "about",
+    "service",
+    "blog",
+    "개인정보",
+    "처리방침",
+    "이용약관",
+    "약관",
+    "문의",
+    "상담",
+    "소개",
+  ].some((fragment) => path.includes(fragment));
+}
+
+function mostCommonRatio(values: string[]): number {
+  if (values.length === 0) {
+    return 0;
+  }
+  const counts = new Map<string, number>();
+  for (const value of values) {
+    if (!value) {
+      continue;
+    }
+    counts.set(value, (counts.get(value) ?? 0) + 1);
+  }
+  const max = Math.max(0, ...counts.values());
+  return max / values.length;
+}
+
+function normalizedTitlePattern(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/\b20\d{2}\b/g, "year")
+    .replace(/\d+/g, "number")
+    .replace(/[^\p{L}\p{N}\s:|-]+/gu, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .slice(-7)
+    .join(" ");
+}
+
+export function auditContentQuality(
+  siteUrl: string,
+  pages: PageAudit[],
+): CheckResult {
+  const articles = pages.filter((page) => isArticleLikePage(page, siteUrl));
+  if (articles.length < 5) {
+    return {
+      state: "warn",
+      detail: `only ${articles.length} article samples; low-value risk needs manual review`,
+    };
+  }
+
+  const medianWords = median(articles.map((page) => page.wordCount));
+  const repeatedH2Ratio = mostCommonRatio(
+    articles.map((page) => page.h2Signature),
+  );
+  const repeatedTitleRatio = mostCommonRatio(
+    articles.map((page) => normalizedTitlePattern(page.title.detail)),
+  );
+  const lowSourceRatio =
+    articles.filter((page) => page.externalLinkCount < 3).length /
+    articles.length;
+  const thinRatio =
+    articles.filter((page) => page.wordCount < 800).length / articles.length;
+  const signals = [
+    medianWords < 900 ? `median words ${medianWords}` : "",
+    repeatedH2Ratio >= 0.5
+      ? `repeated H2 ${(repeatedH2Ratio * 100).toFixed(0)}%`
+      : "",
+    repeatedTitleRatio >= 0.45
+      ? `repeated title tail ${(repeatedTitleRatio * 100).toFixed(0)}%`
+      : "",
+    lowSourceRatio >= 0.5
+      ? `low external sources ${(lowSourceRatio * 100).toFixed(0)}%`
+      : "",
+    thinRatio >= 0.5 ? `thin articles ${(thinRatio * 100).toFixed(0)}%` : "",
+  ].filter(Boolean);
+
+  if (signals.length >= 2) {
+    return {
+      state: "fail",
+      detail: `${articles.length} samples; ${signals.join("; ")}`,
+    };
+  }
+  if (signals.length === 1) {
+    return {
+      state: "warn",
+      detail: `${articles.length} samples; ${signals[0]}`,
+    };
+  }
+  return {
+    state: "pass",
+    detail: `${articles.length} samples; median words ${medianWords}; repeated H2 ${(repeatedH2Ratio * 100).toFixed(0)}%`,
+  };
+}
+
 function collectIssues(site: SiteAudit): string[] {
   const issues: string[] = [];
   const siteChecks = [
@@ -643,9 +947,10 @@ function collectIssues(site: SiteAudit): string[] {
     ["ads.txt", site.adsTxt],
     ["trust pages", site.trustPages],
     ["blog index", site.blogIndex],
+    ["content quality", site.contentQuality],
   ] as const;
   for (const [label, check] of siteChecks) {
-    if (check.state === "fail") {
+    if (check.state === "fail" || check.state === "unknown") {
       issues.push(`${label}: ${check.detail}`);
     }
   }
@@ -664,11 +969,11 @@ function collectIssues(site: SiteAudit): string[] {
       ["readable URL", page.readableUrl],
       ["AdSense loader", page.adsenseLoader],
     ] as const) {
-      if (check.state === "fail") {
+      if (check.state === "fail" || check.state === "unknown") {
         issues.push(`${label}: ${page.url} ${check.detail}`);
       }
     }
-    if (page.wordCount < 800) {
+    if (isArticleLikePage(page, site.url) && page.wordCount < 800) {
       issues.push(
         `thin page: ${page.url} visible word tokens=${page.wordCount}`,
       );
@@ -677,8 +982,24 @@ function collectIssues(site: SiteAudit): string[] {
   return issues;
 }
 
-function makeNextActions(site: SiteAudit): string[] {
+export function makeNextActions(site: SiteAudit): string[] {
   const actions = new Set<string>();
+  const unreachableDetail = [
+    site.robots,
+    site.sitemap,
+    site.adsTxt,
+    site.trustPages,
+    site.blogIndex,
+  ].find((check) => check.detail.includes("homepage unreachable"))?.detail;
+  if (unreachableDetail) {
+    actions.add(
+      "Restore public HTTP/HTTPS reachability for Googlebot-style crawlers before AdSense review.",
+    );
+    actions.add(
+      "Re-run AdSense readiness audit after the host responds on home, robots.txt, sitemap, and ads.txt.",
+    );
+    return [...actions];
+  }
   if (site.adsTxt.state !== "pass") {
     actions.add("Fix /ads.txt publisher authorization.");
   }
@@ -693,6 +1014,11 @@ function makeNextActions(site: SiteAudit): string[] {
   if (site.blogIndex.state !== "pass") {
     actions.add(
       "Improve /blog/ index as a crawlable card list with real post links.",
+    );
+  }
+  if (site.contentQuality.state !== "pass") {
+    actions.add(
+      "Fix low-value content signals: reduce repeated templates, expand priority articles, add credible sources, and improve hub pages.",
     );
   }
   if (site.pages.some((page) => page.adsenseLoader.state !== "pass")) {
@@ -740,6 +1066,7 @@ function scoreSite(site: SiteAudit): number {
     site.adsTxt,
     site.trustPages,
     site.blogIndex,
+    site.contentQuality,
     ...site.pages.flatMap((page) => [
       page.title,
       page.description,
@@ -763,21 +1090,27 @@ function scoreSite(site: SiteAudit): number {
   return Math.round((points / checks.length) * 100);
 }
 
-function classifySite(site: SiteAudit): SiteVerdict {
+export function classifySite(site: SiteAudit): SiteVerdict {
   const hardFails = [site.adsTxt, site.trustPages, site.sitemap].some(
-    (check) => check.state === "fail",
+    (check) => check.state === "fail" || check.state === "unknown",
   );
   const loaderFail = site.pages.some(
-    (page) => page.adsenseLoader.state === "fail",
+    (page) =>
+      page.adsenseLoader.state === "fail" ||
+      page.adsenseLoader.state === "unknown",
   );
-  const thinFail = site.pages.some((page) => page.wordCount < 500);
+  const thinFail = site.pages.some(
+    (page) => isArticleLikePage(page, site.url) && page.wordCount < 500,
+  );
+  const lowValueFail = site.contentQuality.state === "fail";
   if (hardFails || loaderFail) {
     return "blocked";
   }
-  if (thinFail || site.score < 82) {
+  if (thinFail || lowValueFail || site.score < 82) {
     return "needs_patch";
   }
   if (
+    site.contentQuality.state === "warn" ||
     site.pages.some((page) =>
       [
         page.title,
@@ -800,10 +1133,64 @@ function classifySite(site: SiteAudit): SiteVerdict {
   return "ready";
 }
 
+export function makeUnavailablePage(url: string, detail: string): PageAudit {
+  const unavailable = { state: "unknown", detail } satisfies CheckResult;
+  return {
+    url,
+    title: unavailable,
+    description: unavailable,
+    canonical: unavailable,
+    headings: unavailable,
+    imageAlt: unavailable,
+    cta: unavailable,
+    inlinks: unavailable,
+    outlinks: unavailable,
+    readableUrl: checkReadableUrl(url),
+    adsenseLoader: unavailable,
+    viewport: unavailable,
+    toc: unavailable,
+    wordCount: 0,
+    h1Count: 0,
+    h2Count: 0,
+    h3Count: 0,
+    internalLinkCount: 0,
+    externalLinkCount: 0,
+    h2Signature: "",
+  };
+}
+
 async function auditSite(
   site: Site,
   gscClient: ReturnType<typeof google.searchconsole> | undefined,
 ): Promise<SiteAudit> {
+  try {
+    await fetchText(site.url);
+  } catch (error) {
+    const detail = `homepage unreachable: ${getErrorMessage(error)}`;
+    const audit: SiteAudit = {
+      id: site.id,
+      name: site.name ?? site.id,
+      platform: site.platform,
+      url: site.url,
+      ...(site.gscSiteUrl ? { gscSiteUrl: site.gscSiteUrl } : {}),
+      verdict: "blocked",
+      score: 0,
+      pages: [makeUnavailablePage(site.url, detail)],
+      robots: { state: "unknown", detail },
+      sitemap: { state: "unknown", detail },
+      gscSitemap: await auditGscSitemap(gscClient, site),
+      adsTxt: { state: "unknown", detail },
+      trustPages: { state: "unknown", detail },
+      blogIndex: { state: "unknown", detail },
+      contentQuality: { state: "fail", detail },
+      issues: [],
+      nextActions: [],
+    };
+    audit.issues = collectIssues(audit);
+    audit.nextActions = makeNextActions(audit);
+    return audit;
+  }
+
   const sampleUrls = await discoverSamplePages(site);
   const pages: PageAudit[] = [];
   for (const url of sampleUrls) {
@@ -829,6 +1216,9 @@ async function auditSite(
         h1Count: 0,
         h2Count: 0,
         h3Count: 0,
+        internalLinkCount: 0,
+        externalLinkCount: 0,
+        h2Signature: "",
       });
     }
   }
@@ -848,6 +1238,7 @@ async function auditSite(
     adsTxt: await auditAdsTxt(site),
     trustPages: await auditTrustPages(site),
     blogIndex: await auditBlogIndex(site),
+    contentQuality: auditContentQuality(site.url, pages),
     issues: [],
     nextActions: [],
   };
@@ -902,9 +1293,7 @@ ${rows}
 }
 
 async function main(): Promise<void> {
-  const sites = (await loadSites()).filter(
-    (site) => site.enabled !== false && site.monetization !== false,
-  );
+  const sites = filterAuditSites(await loadSites(), cliOptions);
   const gscClient = await makeGscClient();
   const limit = pLimit(CONCURRENCY);
   const audits = await Promise.all(
@@ -925,6 +1314,7 @@ async function main(): Promise<void> {
 
   const report: AuditReport = {
     generatedAt: new Date().toISOString(),
+    collectorSnapshot: await readCurrentCollectorSnapshot(),
     targetCount: sorted.length,
     summary,
     sites: sorted,
@@ -943,7 +1333,24 @@ async function main(): Promise<void> {
   );
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+export function collectorSnapshotFromStats(stats: { generatedAt?: unknown }): string {
+  if (typeof stats.generatedAt !== "string" || stats.generatedAt.length === 0) {
+    throw new Error("data/site-stats.json generatedAt is missing.");
+  }
+  return `data/site-stats.json generatedAt=${stats.generatedAt}`;
+}
+
+async function readCurrentCollectorSnapshot(): Promise<string> {
+  return collectorSnapshotFromStats(
+    JSON.parse(await readFile("data/site-stats.json", "utf8")) as {
+      generatedAt?: unknown;
+    },
+  );
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

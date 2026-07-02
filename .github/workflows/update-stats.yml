@@ -45,6 +45,9 @@ jobs:
       - name: Import GA4 web streams
         run: pnpm setup:import-ga4-sites
 
+      - name: Refresh stale GSC sitemaps
+        run: pnpm sitemaps:refresh-stale -- --min-age-days=5 --limit=50
+
       - name: Update GA4 and GSC snapshot
         run: pnpm stats:update
 

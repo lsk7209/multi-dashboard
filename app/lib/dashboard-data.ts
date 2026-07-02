@@ -12,6 +12,20 @@ export interface Site {
   gscSiteUrl?: string;
   sitemapUrls?: string[];
   monetization?: boolean;
+  contentSource?: {
+    type?: string;
+    locationLabel?: string;
+    localPath?: string;
+    githubRepo?: string;
+    localPaths?: Array<{
+      locationLabel?: string;
+      path: string;
+    }>;
+    wpPath?: string;
+    sshHost?: string;
+    sshUser?: string;
+    sshPort?: number;
+  };
 }
 
 interface SitesFile {
@@ -73,6 +87,41 @@ export interface SitemapDetail {
   submitted?: number;
 }
 
+export type SearchIndexEngine = "google" | "naver" | "daum";
+
+export type SearchIndexPresenceStatus =
+  | "ok"
+  | "blocked"
+  | "fetch_error"
+  | "parse_error"
+  | "not_checked";
+
+export interface SearchIndexPresenceEngine {
+  engine: SearchIndexEngine;
+  status: SearchIndexPresenceStatus;
+  count?: number;
+  queryUrl: string;
+  checkedAt: string;
+  error?: string;
+}
+
+export interface SiteSearchIndexPresence {
+  siteId: string;
+  siteName: string;
+  url: string;
+  host: string;
+  query: string;
+  checkedAt: string;
+  engines: Record<SearchIndexEngine, SearchIndexPresenceEngine>;
+}
+
+interface SearchIndexPresenceSnapshot {
+  generatedAt: string;
+  queryPattern: "site:{host}";
+  note: string;
+  stats: SiteSearchIndexPresence[];
+}
+
 export interface MonetizationEvidence {
   type: "homepage" | "homepage_mediapartners" | "sample_page" | "ads_txt";
   url: string;
@@ -81,6 +130,156 @@ export interface MonetizationEvidence {
   matchedSignal?: string;
   error?: string;
 }
+
+export type AdsenseExternalProofDecision =
+  | "strongest_console_check_candidate"
+  | "manual_external_review_needed"
+  | "hold_for_fresh_external_proof"
+  | "live_apply_state_needed"
+  | "source_recovery_needed";
+
+export interface AdsenseExternalProof {
+  siteId: string;
+  url: string;
+  host: string;
+  externalHomepageProof: string;
+  externalHomepageEvidence: string;
+  externalAdsTxtProof: string;
+  externalLoaderProof: string;
+  currentDecision: AdsenseExternalProofDecision;
+  nextGate: string;
+  endpointRetrySummary?: string;
+  loaderRetrySummary?: string;
+  networkVantageSummary?: string;
+}
+
+export interface AdsenseExternalProofActionMeta {
+  label: string;
+  priority: number;
+}
+
+interface AdsenseLocalSourceSupplementSite {
+  siteId: string;
+  host: string;
+  localSourceStatus: string;
+  evidence: string[];
+  nextGate: string;
+}
+
+interface AdsenseEndpointRetryResult {
+  siteId: string;
+  endpoint: string;
+  result: string;
+}
+
+interface AdsenseLoaderRetryResult {
+  siteId: string;
+  result: string;
+}
+
+interface AdsenseNetworkVantageResult {
+  siteId: string;
+  host?: string;
+  addresses: string[];
+  tcp80: string;
+  tcp443: string;
+}
+
+interface AdsenseNetworkVantageSharedOrigin {
+  address: string;
+  hostCount: number;
+  tcp80Pass: number;
+  tcp443Pass: number;
+  fullTcpBlocked: number;
+}
+
+export type AdsenseRemediationLaneKey =
+  | "ordinary_adsense_proof"
+  | "approved_root_subdomain_scope"
+  | "gsc_auth_telemetry"
+  | "ga4_config_telemetry";
+
+export interface AdsenseRemediationQueueItem {
+  siteId: string;
+  host: string;
+  name: string;
+  lane: AdsenseRemediationLaneKey;
+  priority: number;
+  requiredEvidence: string[];
+  stopCondition: string;
+  notes: string[];
+}
+
+export interface AdsenseRemediationQueueSummary {
+  generatedAt: string;
+  collectorSnapshot: string;
+  productionMutationPerformed: false;
+  adsenseConsoleChecked: boolean;
+  totalRows: number;
+  reviewedRows: number;
+  adsenseOkRows: number;
+  problemRows: number;
+  ordinaryAdsenseProof: number;
+  approvedRootSubdomainScope: number;
+  gscAuthTelemetry: number;
+  ga4ConfigTelemetry: number;
+  lanes: Record<AdsenseRemediationLaneKey, AdsenseRemediationQueueItem[]>;
+}
+
+export interface AdsenseProofGateBlocker {
+  code: string;
+  severity: "blocking" | "maintenance";
+  count: number;
+  siteIds: string[];
+  requiredAction: string;
+}
+
+export interface AdsenseProofGateReadiness {
+  technicalReadiness: string;
+  consoleReadiness: string;
+  scopeReadiness: string;
+  telemetryReadiness: string;
+}
+
+export interface AdsenseProofGateSummary {
+  generatedAt: string;
+  collectorSnapshot: string;
+  productionMutationPerformed: false;
+  adsenseConsoleChecked: false;
+  verdict: string;
+  readiness: AdsenseProofGateReadiness;
+  blockers: AdsenseProofGateBlocker[];
+  summary: {
+    ordinaryAdsenseProof: number;
+    approvedRootSubdomainScope: number;
+    gscAuthTelemetry: number;
+    ga4ConfigTelemetry: number;
+    endpointRetryResultCount: number;
+    freshAdsTxtProofPass: number;
+    freshRobotsProofPass: number;
+    hostingLoaderResultCount: number;
+    freshHostingLoaderProofPass: number;
+    consoleStateResultCount?: number;
+    consoleStatePass?: number;
+    consoleStateBlocked?: number;
+    approvedRootScopeConfirmed?: number;
+  };
+  stopCondition: string;
+}
+
+export const ADSENSE_EXTERNAL_PROOF_DECISIONS = new Set<string>([
+  "strongest_console_check_candidate",
+  "manual_external_review_needed",
+  "hold_for_fresh_external_proof",
+  "live_apply_state_needed",
+  "source_recovery_needed",
+]);
+const ADSENSE_REMEDIATION_LANES: AdsenseRemediationLaneKey[] = [
+  "ordinary_adsense_proof",
+  "approved_root_subdomain_scope",
+  "gsc_auth_telemetry",
+  "ga4_config_telemetry",
+];
 
 export type CollectionStatus =
   | "ok"
@@ -110,6 +309,7 @@ export type OperationalStatus =
   | "processing"
   | "stale";
 export type ActionKind =
+  | "owner"
   | "permission"
   | "processing"
   | "decline"
@@ -142,6 +342,24 @@ const CTR_OPPORTUNITY_MAX_POSITION = 10;
 const RANKING_OPPORTUNITY_MIN_IMPRESSIONS = 50;
 const RANKING_OPPORTUNITY_MIN_POSITION = 4;
 const RANKING_OPPORTUNITY_MAX_POSITION = 20;
+const ADSENSE_APPROVED_EXACT_DOMAINS = new Set([
+  "temon.kr",
+  "ehon365.kr",
+  "luckyday.kr",
+  "klick.kr",
+  "fastjob.kr",
+  "haemongdream.com",
+  "tennisfrens.com",
+  "tasko.kr",
+  "nexttech7.com",
+  "kang4.com",
+  "sellerpit.kr",
+]);
+const ADSENSE_NON_MONETIZATION_DOMAINS = new Set([
+  "yesa.kr",
+  "sorimate.com",
+  "limsight.kr",
+]);
 
 // 급락 판정 임계 — 절대규모가 작으면 변동률(%)이 통계적 노이즈가 되므로
 // 직전 기간 규모가 이 값 이상일 때만 "급락"으로 본다.
@@ -216,6 +434,7 @@ export interface SiteStat {
   sitemapDetails?: SitemapDetail[];
   googleIndexedCount?: number;
   googleSubmittedCount?: number;
+  searchIndexPresence?: SiteSearchIndexPresence;
   ga4ErrorKind?: ErrorKind;
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
@@ -329,6 +548,16 @@ export interface EnrichedSiteStat extends Omit<
   sparkline: (number | null)[];
   duplicateCount?: number;
   duplicateStats?: DuplicateSiteSummary[];
+  developmentPath?: string;
+  developmentPathLabel?: string;
+  developmentPaths: Array<{
+    label: string;
+    path: string;
+    kind: "local" | "remote" | "github";
+  }>;
+  developmentPathKind: "local" | "remote" | "github" | "missing";
+  adsenseExternalProof?: AdsenseExternalProof;
+  adsenseRemediationQueueItem?: AdsenseRemediationQueueItem;
   lastPublishedAt?: string;
   lastScheduledAt?: string;
   scheduledFutureCount?: number;
@@ -397,6 +626,8 @@ export interface DashboardData {
   segments: DashboardSegment[];
   healthSummary: HealthSummary;
   collectionSummary: CollectionSourceSummary[];
+  adsenseRemediationQueue: AdsenseRemediationQueueSummary | null;
+  adsenseProofGate: AdsenseProofGateSummary | null;
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
   trafficDropStats: EnrichedSiteStat[];
@@ -438,11 +669,48 @@ export function getDashboardData(): DashboardData {
   );
   const snapshot = readStats("data/site-stats.json");
   const statsById = new Map(snapshot.stats.map((stat) => [stat.id, stat]));
+  const searchIndexPresenceById = loadSearchIndexPresence(
+    "data/index-presence.json",
+  );
   const sparklines = loadSparklines(sites.map((s) => s.id));
   const scheduledByHost = loadScheduledQueue();
+  const adsenseExternalProofById = loadAdsenseExternalProof(
+    "data",
+    snapshot.generatedAt,
+  );
+  const adsenseRemediationQueue = loadAdsenseRemediationQueue(
+    "data",
+    snapshot.generatedAt,
+  );
+  const adsenseProofGate = loadAdsenseProofGate("data", snapshot.generatedAt);
+  const adsenseRemediationQueueById = buildAdsenseRemediationQueueIndex(
+    adsenseRemediationQueue,
+  );
   const stats = sites.map((site) => {
     const base = statsById.get(site.id) ?? emptySiteStat(site);
     const enriched = enrichSiteStat(base, sparklines.get(site.id) ?? []);
+    const searchIndexPresence = searchIndexPresenceById.get(site.id);
+    if (searchIndexPresence) {
+      enriched.searchIndexPresence = searchIndexPresence;
+    }
+    const adsenseExternalProof = adsenseExternalProofById.get(site.id);
+    if (adsenseExternalProof) {
+      enriched.adsenseExternalProof = adsenseExternalProof;
+    }
+    const adsenseRemediationQueueItem = adsenseRemediationQueueById.get(
+      site.id,
+    );
+    if (adsenseRemediationQueueItem) {
+      enriched.adsenseRemediationQueueItem = adsenseRemediationQueueItem;
+    }
+    const developmentPaths = getDevelopmentPaths(site);
+    enriched.developmentPaths = developmentPaths.values;
+    enriched.developmentPathKind = developmentPaths.kind;
+    const firstDevelopmentPath = developmentPaths.values[0];
+    if (firstDevelopmentPath) {
+      enriched.developmentPathLabel = firstDevelopmentPath.label;
+      enriched.developmentPath = firstDevelopmentPath.path;
+    }
     // 예약글(future post)은 별도 SSH 수집(scheduled-queue)에서 host 매칭으로 병합한다.
     const scheduled = scheduledByHost.get(scheduledHost(base.url));
     if (scheduled) {
@@ -456,7 +724,7 @@ export function getDashboardData(): DashboardData {
   const dedupeResult = dedupeStatsByHost(stats);
   const displayStats = dedupeResult.stats;
   const insights = attachRelatedInsightSignals(buildInsights(displayStats));
-  const actions = buildActionItems(displayStats).slice(0, 12);
+  const actions = buildActionItems(displayStats).slice(0, 16);
   const collectionSummary = buildCollectionSummary(displayStats);
   const totalLast1Days = sumMetrics(displayStats.map((stat) => stat.last1Days));
   const totalLast7Days = sumMetrics(displayStats.map((stat) => stat.last7Days));
@@ -505,6 +773,8 @@ export function getDashboardData(): DashboardData {
     segments: buildSegments(displayStats),
     healthSummary: buildHealthSummary(displayStats),
     collectionSummary,
+    adsenseRemediationQueue,
+    adsenseProofGate,
     gscIssueStats: displayStats.filter(
       (stat) => Boolean(stat.gscError) || (stat.gscEmailAlerts?.length ?? 0) > 0,
     ),
@@ -734,6 +1004,8 @@ function enrichSiteStat(
     seoOpportunityScore: getSeoOpportunityScore(normalizedStat),
     collectionSources,
     sparkline,
+    developmentPaths: [],
+    developmentPathKind: "missing",
   };
 
   if (stat.lastPublishedAt) {
@@ -749,7 +1021,74 @@ function enrichSiteStat(
   return enriched;
 }
 
-function buildActionItems(stats: EnrichedSiteStat[]): DashboardActionItem[] {
+export function getDevelopmentPaths(site: Site): {
+  values: EnrichedSiteStat["developmentPaths"];
+  kind: EnrichedSiteStat["developmentPathKind"];
+} {
+  const source = site.contentSource;
+  if (!source) {
+    return { values: [], kind: "missing" };
+  }
+
+  const values: EnrichedSiteStat["developmentPaths"] = [];
+
+  if (source.localPath) {
+    values.push({
+      path: source.localPath,
+      label: source.locationLabel ?? "local",
+      kind: "local",
+    });
+  }
+
+  for (const pathEntry of source.localPaths ?? []) {
+    if (values.some((value) => value.path === pathEntry.path)) {
+      continue;
+    }
+    values.push({
+      path: pathEntry.path,
+      label: pathEntry.locationLabel ?? "local",
+      kind: "local",
+    });
+  }
+
+  if (
+    source.githubRepo &&
+    !values.some((value) => value.path === source.githubRepo)
+  ) {
+    values.push({
+      path: source.githubRepo,
+      label: "GitHub",
+      kind: "github",
+    });
+  }
+
+  if (values.length > 0) {
+    const kind = values.some((value) => value.kind === "local")
+      ? "local"
+      : values[0]?.kind ?? "missing";
+    return { values, kind };
+  }
+
+  if (source.type === "wordpress-ssh" && source.wpPath) {
+    const host = source.sshHost ? `${source.sshHost}:` : "";
+    return {
+      values: [
+        {
+          path: `${host}${source.wpPath}`,
+          label: source.locationLabel ?? "remote",
+          kind: "remote",
+        },
+      ],
+      kind: "remote",
+    };
+  }
+
+  return { values: [], kind: "missing" };
+}
+
+export function buildActionItems(
+  stats: EnrichedSiteStat[],
+): DashboardActionItem[] {
   return stats.flatMap(getActionItems).sort((a, b) => b.priority - a.priority);
 }
 
@@ -758,18 +1097,36 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   const activeChange = stat.trend.activeUsersChange;
   const gscChange = stat.trend.gscClicksChange;
   const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  const skipAdsenseApprovalQueue = shouldSkipAdsenseApprovalQueue(stat);
+  const needsAdsenseConsoleScopeReview =
+    hasApprovedAdsenseRoot(stat) && hasMonetizationCollectionIssue(stat);
 
   if (stat.operationalStatus === "needsPermission") {
-    items.push(
-      makeAction(
-        stat,
-        "permission",
-        100,
-        stat.statusLabel,
-        stat.statusReason,
-        "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요.",
-      ),
+    const telemetryQueueItem = getTelemetryRemediationQueueItem(
+      stat.adsenseRemediationQueueItem,
     );
+    if (telemetryQueueItem) {
+      items.push(makeAdsenseRemediationQueueAction(stat, telemetryQueueItem));
+    } else {
+      items.push(
+        makeAction(
+          stat,
+          "permission",
+          100,
+          stat.statusLabel,
+          stat.statusReason,
+          "GSC/GA4 권한과 서비스 계정 접근을 먼저 복구하세요.",
+        ),
+      );
+    }
+  }
+
+  if (
+    !skipAdsenseApprovalQueue &&
+    !needsAdsenseConsoleScopeReview &&
+    hasOwnerRequiredPublicFetchIssue(stat)
+  ) {
+    items.push(makePublicFetchAction(stat));
   }
 
   if (isSignificantUserDrop(activeChange, stat.previous7Days.activeUsers)) {
@@ -798,7 +1155,35 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (stat.adsenseStatus === "missing_config") {
+  if (needsAdsenseConsoleScopeReview) {
+    items.push(
+      makeAction(
+        stat,
+        "owner",
+        93,
+        "AdSense scope review",
+        "The root domain is already approved, so this subdomain needs an AdSense console inheritance/separate-site check before any local patch or resubmission.",
+        "Check whether AdSense treats this subdomain as inherited, separate, or unnecessary; only patch or submit if the console requires a separate site.",
+      ),
+    );
+  }
+
+  if (
+    stat.adsenseRemediationQueueItem &&
+    shouldAddAdsenseRemediationQueueAction(
+      stat.adsenseRemediationQueueItem,
+      items,
+    )
+  ) {
+    items.push(
+      makeAdsenseRemediationQueueAction(
+        stat,
+        stat.adsenseRemediationQueueItem,
+      ),
+    );
+  }
+
+  if (!skipAdsenseApprovalQueue && stat.adsenseStatus === "missing_config") {
     items.push(
       makeAction(
         stat,
@@ -811,7 +1196,7 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
     );
   }
 
-  if (stat.adsTxtStatus === "missing_config") {
+  if (!skipAdsenseApprovalQueue && stat.adsTxtStatus === "missing_config") {
     items.push(
       makeAction(
         stat,
@@ -825,10 +1210,11 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   }
 
   if (
-    (stat.adsenseStatus === "api_error" &&
+    !skipAdsenseApprovalQueue &&
+    ((stat.adsenseStatus === "api_error" &&
       stat.adsenseCollectorStatus !== "transient_error") ||
-    (stat.adsTxtStatus === "api_error" &&
-      stat.adsTxtCollectorStatus !== "transient_error")
+      (stat.adsTxtStatus === "api_error" &&
+        stat.adsTxtCollectorStatus !== "transient_error"))
   ) {
     items.push(
       makeAction(
@@ -936,6 +1322,113 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   return items;
 }
 
+function shouldAddAdsenseRemediationQueueAction(
+  item: AdsenseRemediationQueueItem,
+  items: DashboardActionItem[],
+): boolean {
+  if (item.lane === "ordinary_adsense_proof") {
+    return !items.some((action) =>
+      [
+        "Public fetch blocked",
+        "Console check candidate",
+        "External proof partial",
+        "Fresh proof needed",
+        "Live apply check needed",
+        "Source recovery needed",
+      ].includes(action.value),
+    );
+  }
+
+  if (item.lane === "approved_root_subdomain_scope") {
+    return !items.some((action) => action.value === "AdSense scope review");
+  }
+
+  return !items.some(
+    (action) =>
+      action.value === getAdsenseRemediationQueueActionValue(item.lane),
+  );
+}
+
+function getTelemetryRemediationQueueItem(
+  item: AdsenseRemediationQueueItem | undefined,
+): AdsenseRemediationQueueItem | undefined {
+  if (
+    item?.lane === "gsc_auth_telemetry" ||
+    item?.lane === "ga4_config_telemetry"
+  ) {
+    return item;
+  }
+  return undefined;
+}
+
+function makeAdsenseRemediationQueueAction(
+  stat: EnrichedSiteStat,
+  item: AdsenseRemediationQueueItem,
+): DashboardActionItem {
+  return makeAction(
+    stat,
+    getAdsenseRemediationQueueActionKind(item.lane),
+    getAdsenseRemediationQueueActionPriority(item.lane),
+    getAdsenseRemediationQueueActionValue(item.lane),
+    formatAdsenseRemediationQueueReason(item),
+    item.stopCondition,
+  );
+}
+
+function getAdsenseRemediationQueueActionKind(
+  lane: AdsenseRemediationLaneKey,
+): ActionKind {
+  if (lane === "gsc_auth_telemetry") {
+    return "permission";
+  }
+  if (lane === "ga4_config_telemetry") {
+    return "data";
+  }
+  if (lane === "ordinary_adsense_proof") {
+    return "owner";
+  }
+  return "owner";
+}
+
+function getAdsenseRemediationQueueActionPriority(
+  lane: AdsenseRemediationLaneKey,
+): number {
+  if (lane === "ordinary_adsense_proof") {
+    return 92;
+  }
+  if (lane === "approved_root_subdomain_scope") {
+    return 93;
+  }
+  if (lane === "gsc_auth_telemetry") {
+    return 100;
+  }
+  return 100;
+}
+
+function getAdsenseRemediationQueueActionValue(
+  lane: AdsenseRemediationLaneKey,
+): string {
+  if (lane === "ordinary_adsense_proof") {
+    return "AdSense proof queue";
+  }
+  if (lane === "approved_root_subdomain_scope") {
+    return "AdSense scope review";
+  }
+  if (lane === "gsc_auth_telemetry") {
+    return "GSC auth telemetry";
+  }
+  return "GA4 config telemetry";
+}
+
+function formatAdsenseRemediationQueueReason(
+  item: AdsenseRemediationQueueItem,
+): string {
+  const evidence = item.requiredEvidence[0];
+  return evidence
+    ? `${item.host}: ${evidence}.`
+    : `${item.host}: remediation queue item.`;
+}
+
 function makeAction(
   stat: EnrichedSiteStat,
   kind: ActionKind,
@@ -959,6 +1452,7 @@ function makeAction(
 }
 
 function getActionLabel(kind: ActionKind): string {
+  if (kind === "owner") return "Owner";
   if (kind === "permission") return "권한";
   if (kind === "processing") return "재처리";
   if (kind === "decline") return "급락";
@@ -980,10 +1474,137 @@ function getGscEmailAlertPriority(alert: GscEmailAlert): number {
 }
 
 function hasMonetizationIssue(stat: EnrichedSiteStat): boolean {
+  if (shouldSkipAdsenseApprovalQueue(stat)) {
+    return false;
+  }
+
+  if (hasApprovedAdsenseRoot(stat)) {
+    return hasMonetizationCollectionIssue(stat);
+  }
+
+  return hasMonetizationCollectionIssue(stat);
+}
+
+function hasMonetizationCollectionIssue(stat: EnrichedSiteStat): boolean {
   return (
     stat.adsenseStatus === "missing_config" ||
-    stat.adsTxtStatus === "missing_config"
+    stat.adsTxtStatus === "missing_config" ||
+    stat.adsenseStatus === "api_error" ||
+    stat.adsTxtStatus === "api_error"
   );
+}
+
+function shouldSkipAdsenseApprovalQueue(
+  stat: Pick<SiteStat, "url" | "monetization">,
+): boolean {
+  const host = normalizeHost(stat.url);
+  return (
+    stat.monetization === false ||
+    ADSENSE_APPROVED_EXACT_DOMAINS.has(host) ||
+    ADSENSE_NON_MONETIZATION_DOMAINS.has(host)
+  );
+}
+
+function hasApprovedAdsenseRoot(stat: Pick<SiteStat, "url">): boolean {
+  const host = normalizeHost(stat.url);
+  if (ADSENSE_APPROVED_EXACT_DOMAINS.has(host)) {
+    return false;
+  }
+
+  return [...ADSENSE_APPROVED_EXACT_DOMAINS].some((domain) =>
+    host.endsWith(`.${domain}`),
+  );
+}
+
+function hasOwnerRequiredPublicFetchIssue(stat: EnrichedSiteStat): boolean {
+  return (
+    (stat.adsenseStatus === "api_error" &&
+      stat.adsenseCollectorStatus === "transient_error") ||
+    (stat.adsTxtStatus === "api_error" &&
+      stat.adsTxtCollectorStatus === "transient_error")
+  );
+}
+
+function makePublicFetchAction(stat: EnrichedSiteStat): DashboardActionItem {
+  const proof = stat.adsenseExternalProof;
+  if (proof) {
+    const actionMeta = getAdsenseExternalProofActionMeta(
+      proof.currentDecision,
+    );
+    return makeAction(
+      stat,
+      "owner",
+      actionMeta.priority,
+      actionMeta.label,
+      formatAdsenseExternalProofReason(proof),
+      proof.nextGate,
+    );
+  }
+
+  return makeAction(
+    stat,
+    "owner",
+    92,
+    "Public fetch blocked",
+    getOwnerRequiredPublicFetchReason(stat),
+    "Restore public HTTP/HTTPS reachability or hosting/WAF access first, then rerun stats:update and adsense:readiness.",
+  );
+}
+
+function formatAdsenseExternalProofReason(proof: AdsenseExternalProof): string {
+  return [
+    proof.externalHomepageEvidence,
+    proof.endpointRetrySummary,
+    proof.loaderRetrySummary,
+    proof.networkVantageSummary,
+  ]
+    .filter((entry): entry is string => Boolean(entry))
+    .join(" ");
+}
+
+export function getAdsenseExternalProofActionMeta(
+  decision: AdsenseExternalProofDecision,
+): AdsenseExternalProofActionMeta {
+  switch (decision) {
+    case "strongest_console_check_candidate":
+      return { label: "Console check candidate", priority: 94 };
+    case "manual_external_review_needed":
+      return { label: "External proof partial", priority: 92 };
+    case "hold_for_fresh_external_proof":
+      return { label: "Fresh proof needed", priority: 91 };
+    case "live_apply_state_needed":
+      return { label: "Live apply check needed", priority: 92 };
+    case "source_recovery_needed":
+      return { label: "Source recovery needed", priority: 95 };
+    default:
+      return assertNever(decision);
+  }
+}
+
+export function getAdsenseLocalSourceProofDecision(
+  localSourceStatus: string,
+): AdsenseExternalProofDecision | null {
+  if (localSourceStatus === "source_missing_for_adsense_setup") {
+    return "source_recovery_needed";
+  }
+  if (localSourceStatus === "local_hardening_package_ready_not_live_verified") {
+    return "live_apply_state_needed";
+  }
+  return null;
+}
+
+function assertNever(value: never): never {
+  throw new Error(`Unsupported AdSense proof decision: ${String(value)}`);
+}
+
+function getOwnerRequiredPublicFetchReason(stat: EnrichedSiteStat): string {
+  const reasons = [stat.adsenseError, stat.adsTxtError].filter(
+    (reason): reason is string => Boolean(reason),
+  );
+  if (reasons.length === 0) {
+    return "Public page or ads.txt fetch failed temporarily, so local code changes cannot prove the fix.";
+  }
+  return reasons.join(" ");
 }
 
 function hasCtrOpportunity(stat: Pick<SiteStat, "gscLast7Days">): boolean {
@@ -1083,6 +1704,29 @@ function hasCurrentSitemapIssue(stat: SiteStat): boolean {
 }
 
 function hasUnprocessedSitemapSubmission(stat: SiteStat): boolean {
+  if (stat.sitemapDetails?.length) {
+    return stat.sitemapDetails.some((detail) => {
+      if (detail.isPending) {
+        return true;
+      }
+
+      if (!detail.lastSubmitted) {
+        return false;
+      }
+
+      const submittedAt = Date.parse(detail.lastSubmitted);
+      const downloadedAt = detail.lastDownloaded
+        ? Date.parse(detail.lastDownloaded)
+        : Number.NEGATIVE_INFINITY;
+
+      if (Number.isNaN(submittedAt) || Number.isNaN(downloadedAt)) {
+        return false;
+      }
+
+      return submittedAt > downloadedAt;
+    });
+  }
+
   if (stat.sitemapIsPending) {
     return true;
   }
@@ -2035,6 +2679,9 @@ function buildOperatorContext(stat: EnrichedSiteStat): string {
   if (stat.sitemapPath) {
     parts.push(`sitemap=${stat.sitemapPath}`);
   }
+  if (stat.developmentPath) {
+    parts.push(`developmentPath=${stat.developmentPath}`);
+  }
   if (stat.googleSubmittedCount !== undefined) {
     parts.push(`submitted=${stat.googleSubmittedCount}`);
   }
@@ -2174,6 +2821,753 @@ function readStats(path: string): StatsSnapshot {
     const reason = error instanceof Error ? error.message : String(error);
     throw new Error(`통계 스냅샷(${path}) 파싱에 실패했습니다: ${reason}`);
   }
+}
+
+function loadSearchIndexPresence(
+  path: string,
+): Map<string, SiteSearchIndexPresence> {
+  if (!existsSync(path)) {
+    return new Map();
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(path, "utf8"),
+    ) as Partial<SearchIndexPresenceSnapshot>;
+    return new Map(
+      (parsed.stats ?? [])
+        .filter(isSiteSearchIndexPresence)
+        .map((stat) => [stat.siteId, stat] as const),
+    );
+  } catch {
+    return new Map();
+  }
+}
+
+function isSiteSearchIndexPresence(
+  value: unknown,
+): value is SiteSearchIndexPresence {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const candidate = value as Partial<SiteSearchIndexPresence>;
+  return (
+    typeof candidate.siteId === "string" &&
+    typeof candidate.host === "string" &&
+    typeof candidate.query === "string" &&
+    typeof candidate.checkedAt === "string" &&
+    Boolean(candidate.engines)
+  );
+}
+
+export function loadAdsenseRemediationQueue(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): AdsenseRemediationQueueSummary | null {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return null;
+  }
+
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-remediation-queue-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    );
+    if (!isAdsenseRemediationQueueArtifact(parsed)) {
+      return null;
+    }
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return null;
+    }
+
+    return {
+      generatedAt: parsed.generatedAt,
+      collectorSnapshot: parsed.collectorSnapshot,
+      productionMutationPerformed: parsed.productionMutationPerformed,
+      adsenseConsoleChecked: parsed.adsenseConsoleChecked,
+      totalRows: parsed.summary.totalRows,
+      reviewedRows: parsed.summary.reviewedRows,
+      adsenseOkRows: parsed.summary.adsenseOkRows,
+      problemRows: parsed.summary.problemRows,
+      ordinaryAdsenseProof: parsed.summary.ordinaryAdsenseProof,
+      approvedRootSubdomainScope: parsed.summary.approvedRootSubdomainScope,
+      gscAuthTelemetry: parsed.summary.gscAuthTelemetry,
+      ga4ConfigTelemetry: parsed.summary.ga4ConfigTelemetry,
+      lanes: parsed.lanes,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function loadAdsenseProofGate(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): AdsenseProofGateSummary | null {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return null;
+  }
+
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-proof-gate-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    );
+    if (!isAdsenseProofGateArtifact(parsed)) {
+      return null;
+    }
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return null;
+    }
+
+    return {
+      generatedAt: parsed.generatedAt,
+      collectorSnapshot: parsed.collectorSnapshot,
+      productionMutationPerformed: parsed.productionMutationPerformed,
+      adsenseConsoleChecked: parsed.adsenseConsoleChecked,
+      verdict: parsed.verdict,
+      readiness: parsed.readiness,
+      blockers: parsed.blockers,
+      summary: parsed.summary,
+      stopCondition: parsed.stopCondition,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function buildAdsenseRemediationQueueIndex(
+  queue: AdsenseRemediationQueueSummary | null,
+): Map<string, AdsenseRemediationQueueItem> {
+  const result = new Map<string, AdsenseRemediationQueueItem>();
+  if (!queue) {
+    return result;
+  }
+
+  for (const lane of Object.values(queue.lanes)) {
+    for (const item of lane) {
+      result.set(item.siteId, item);
+    }
+  }
+  return result;
+}
+
+export function loadAdsenseExternalProof(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): Map<string, AdsenseExternalProof> {
+  const result = new Map<string, AdsenseExternalProof>();
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return result;
+  }
+
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-external-proof-continuation-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return result;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    ) as {
+      candidates?: unknown[];
+      collectorSnapshot?: unknown;
+    };
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return result;
+    }
+    for (const candidate of parsed.candidates ?? []) {
+      if (isAdsenseExternalProof(candidate)) {
+        result.set(candidate.siteId, candidate);
+      }
+    }
+    applyAdsenseLocalSourceSupplement(
+      result,
+      dataDirectory,
+      entries,
+      expectedStatsGeneratedAt,
+    );
+    applyAdsenseEndpointRetrySummary(
+      result,
+      dataDirectory,
+      entries,
+      expectedStatsGeneratedAt,
+    );
+    applyAdsenseLoaderRetrySummary(
+      result,
+      dataDirectory,
+      entries,
+      expectedStatsGeneratedAt,
+    );
+    applyAdsenseNetworkVantageSummary(
+      result,
+      dataDirectory,
+      entries,
+      expectedStatsGeneratedAt,
+    );
+  } catch {
+    return result;
+  }
+
+  return result;
+}
+
+function applyAdsenseNetworkVantageSummary(
+  proofById: Map<string, AdsenseExternalProof>,
+  dataDirectory: string,
+  entries: string[],
+  expectedStatsGeneratedAt?: string | null,
+) {
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-network-vantage-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    ) as {
+      results?: unknown[];
+      summary?: {
+        sharedOrigins?: unknown;
+      };
+      collectorSnapshot?: unknown;
+    };
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return;
+    }
+
+    for (const vantageResult of parsed.results ?? []) {
+      if (!isAdsenseNetworkVantageResult(vantageResult)) {
+        continue;
+      }
+      const proof = proofById.get(vantageResult.siteId);
+      if (!proof) {
+        continue;
+      }
+      proofById.set(vantageResult.siteId, {
+        ...proof,
+        networkVantageSummary: formatNetworkVantageSummary(
+          vantageResult,
+          findNetworkSharedOrigin(vantageResult, parsed.summary?.sharedOrigins),
+        ),
+      });
+    }
+  } catch {
+    return;
+  }
+}
+
+function formatNetworkVantageSummary(
+  result: AdsenseNetworkVantageResult,
+  sharedOrigin?: AdsenseNetworkVantageSharedOrigin,
+): string {
+  const addressText =
+    result.addresses.length > 0 ? result.addresses.join(",") : "unresolved";
+  const sharedOriginText = sharedOrigin
+    ? ` sharedOrigin=${sharedOrigin.address}/${sharedOrigin.hostCount}, originTcp80Pass=${sharedOrigin.tcp80Pass}, originTcp443Pass=${sharedOrigin.tcp443Pass}, originFullTcpBlocked=${sharedOrigin.fullTcpBlocked}.`
+    : "";
+  return `Latest network vantage: dns=${addressText}, tcp80=${result.tcp80}, tcp443=${result.tcp443}.${sharedOriginText}`;
+}
+
+function findNetworkSharedOrigin(
+  result: AdsenseNetworkVantageResult,
+  sharedOrigins: unknown,
+): AdsenseNetworkVantageSharedOrigin | undefined {
+  if (!Array.isArray(sharedOrigins)) {
+    return undefined;
+  }
+
+  for (const sharedOrigin of sharedOrigins) {
+    if (!isAdsenseNetworkVantageSharedOrigin(sharedOrigin)) {
+      continue;
+    }
+    if (result.addresses.includes(sharedOrigin.address)) {
+      return sharedOrigin;
+    }
+  }
+  return undefined;
+}
+
+function applyAdsenseEndpointRetrySummary(
+  proofById: Map<string, AdsenseExternalProof>,
+  dataDirectory: string,
+  entries: string[],
+  expectedStatsGeneratedAt?: string | null,
+) {
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-proof-endpoint-retry-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    ) as {
+      results?: unknown[];
+      collectorSnapshot?: unknown;
+    };
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return;
+    }
+
+    const endpointResultsBySite = new Map<string, AdsenseEndpointRetryResult[]>();
+    for (const retryResult of parsed.results ?? []) {
+      if (!isAdsenseEndpointRetryResult(retryResult)) {
+        continue;
+      }
+      endpointResultsBySite.set(retryResult.siteId, [
+        ...(endpointResultsBySite.get(retryResult.siteId) ?? []),
+        retryResult,
+      ]);
+    }
+
+    for (const [siteId, retryResults] of endpointResultsBySite) {
+      const proof = proofById.get(siteId);
+      if (!proof) {
+        continue;
+      }
+      proofById.set(siteId, {
+        ...proof,
+        endpointRetrySummary: formatEndpointRetrySummary(retryResults),
+      });
+    }
+  } catch {
+    return;
+  }
+}
+
+function applyAdsenseLoaderRetrySummary(
+  proofById: Map<string, AdsenseExternalProof>,
+  dataDirectory: string,
+  entries: string[],
+  expectedStatsGeneratedAt?: string | null,
+) {
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-loader-proof-retry-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    ) as {
+      results?: unknown[];
+      collectorSnapshot?: unknown;
+    };
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return;
+    }
+
+    for (const retryResult of parsed.results ?? []) {
+      if (!isAdsenseLoaderRetryResult(retryResult)) {
+        continue;
+      }
+      const proof = proofById.get(retryResult.siteId);
+      if (!proof) {
+        continue;
+      }
+      proofById.set(retryResult.siteId, {
+        ...proof,
+        loaderRetrySummary: `Latest raw loader retry: ${retryResult.result}.`,
+      });
+    }
+  } catch {
+    return;
+  }
+}
+
+function formatEndpointRetrySummary(
+  retryResults: AdsenseEndpointRetryResult[],
+): string {
+  const endpointStatuses = retryResults
+    .map((retryResult) => `${retryResult.endpoint}=${retryResult.result}`)
+    .sort()
+    .join(", ");
+  return `Latest endpoint retry: ${endpointStatuses}.`;
+}
+
+function applyAdsenseLocalSourceSupplement(
+  proofById: Map<string, AdsenseExternalProof>,
+  dataDirectory: string,
+  entries: string[],
+  expectedStatsGeneratedAt?: string | null,
+) {
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-local-source-proof-supplement-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return;
+  }
+
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${latest}`, "utf8"),
+    ) as {
+      sites?: unknown[];
+      collectorSnapshot?: unknown;
+    };
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return;
+    }
+
+    for (const site of parsed.sites ?? []) {
+      if (isAdsenseLocalSourceSupplementSite(site)) {
+        const sourceDecision = getAdsenseLocalSourceProofDecision(
+          site.localSourceStatus,
+        );
+        if (sourceDecision) {
+          proofById.set(site.siteId, {
+            ...(proofById.get(site.siteId) ?? makeLocalSourceOnlyProof(site)),
+            externalHomepageEvidence: site.evidence.join(" "),
+            externalLoaderProof: site.localSourceStatus,
+            currentDecision: sourceDecision,
+            nextGate: site.nextGate,
+          });
+        }
+      }
+    }
+  } catch {
+    return;
+  }
+}
+
+function findLatestDatedArtifact(entries: string[], pattern: RegExp) {
+  return entries.filter((entry) => pattern.test(entry)).sort().at(-1);
+}
+
+function isMatchingCollectorSnapshot(
+  collectorSnapshot: unknown,
+  expectedStatsGeneratedAt: string,
+): boolean {
+  return (
+    typeof collectorSnapshot === "string" &&
+    collectorSnapshot.includes(`generatedAt=${expectedStatsGeneratedAt}`)
+  );
+}
+
+function isAdsenseRemediationQueueArtifact(value: unknown): value is {
+  generatedAt: string;
+  collectorSnapshot: string;
+  productionMutationPerformed: false;
+  adsenseConsoleChecked: false;
+  summary: {
+    totalRows: number;
+    reviewedRows: number;
+    adsenseOkRows: number;
+    problemRows: number;
+    ordinaryAdsenseProof: number;
+    approvedRootSubdomainScope: number;
+    gscAuthTelemetry: number;
+    ga4ConfigTelemetry: number;
+  };
+  lanes: Record<AdsenseRemediationLaneKey, AdsenseRemediationQueueItem[]>;
+} {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const artifact = value as Record<string, unknown>;
+  const summary = artifact.summary as Record<string, unknown> | undefined;
+  const lanes = artifact.lanes as Record<string, unknown> | undefined;
+  return (
+    typeof artifact.generatedAt === "string" &&
+    typeof artifact.collectorSnapshot === "string" &&
+    artifact.productionMutationPerformed === false &&
+    typeof artifact.adsenseConsoleChecked === "boolean" &&
+    Boolean(summary) &&
+    typeof summary?.totalRows === "number" &&
+    typeof summary.reviewedRows === "number" &&
+    typeof summary.adsenseOkRows === "number" &&
+    typeof summary.problemRows === "number" &&
+    typeof summary.ordinaryAdsenseProof === "number" &&
+    typeof summary.approvedRootSubdomainScope === "number" &&
+    typeof summary.gscAuthTelemetry === "number" &&
+    typeof summary.ga4ConfigTelemetry === "number" &&
+    Boolean(lanes) &&
+    ADSENSE_REMEDIATION_LANES.every((lane) =>
+      Array.isArray(lanes?.[lane])
+        ? (lanes[lane] as unknown[]).every(isAdsenseRemediationQueueItem)
+        : false,
+    )
+  );
+}
+
+function isAdsenseProofGateArtifact(value: unknown): value is AdsenseProofGateSummary {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const artifact = value as Record<string, unknown>;
+  const readiness = artifact.readiness as Record<string, unknown> | undefined;
+  const summary = artifact.summary as Record<string, unknown> | undefined;
+  return (
+    typeof artifact.generatedAt === "string" &&
+    typeof artifact.collectorSnapshot === "string" &&
+    artifact.productionMutationPerformed === false &&
+    artifact.adsenseConsoleChecked === false &&
+    typeof artifact.verdict === "string" &&
+    Boolean(readiness) &&
+    typeof readiness?.technicalReadiness === "string" &&
+    typeof readiness.consoleReadiness === "string" &&
+    typeof readiness.scopeReadiness === "string" &&
+    typeof readiness.telemetryReadiness === "string" &&
+    Array.isArray(artifact.blockers) &&
+    artifact.blockers.every(isAdsenseProofGateBlocker) &&
+    Boolean(summary) &&
+    typeof summary?.ordinaryAdsenseProof === "number" &&
+    typeof summary.approvedRootSubdomainScope === "number" &&
+    typeof summary.gscAuthTelemetry === "number" &&
+    typeof summary.ga4ConfigTelemetry === "number" &&
+    typeof summary.endpointRetryResultCount === "number" &&
+    typeof summary.freshAdsTxtProofPass === "number" &&
+    typeof summary.freshRobotsProofPass === "number" &&
+    typeof summary.hostingLoaderResultCount === "number" &&
+    typeof summary.freshHostingLoaderProofPass === "number" &&
+    typeof artifact.stopCondition === "string"
+  );
+}
+
+function isAdsenseProofGateBlocker(
+  value: unknown,
+): value is AdsenseProofGateBlocker {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const blocker = value as Record<string, unknown>;
+  return (
+    typeof blocker.code === "string" &&
+    (blocker.severity === "blocking" || blocker.severity === "maintenance") &&
+    typeof blocker.count === "number" &&
+    Array.isArray(blocker.siteIds) &&
+    blocker.siteIds.every((siteId) => typeof siteId === "string") &&
+    typeof blocker.requiredAction === "string"
+  );
+}
+
+function isAdsenseRemediationQueueItem(
+  value: unknown,
+): value is AdsenseRemediationQueueItem {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const item = value as Record<string, unknown>;
+  return (
+    typeof item.siteId === "string" &&
+    typeof item.host === "string" &&
+    typeof item.name === "string" &&
+    typeof item.lane === "string" &&
+    isAdsenseRemediationLane(item.lane) &&
+    typeof item.priority === "number" &&
+    Array.isArray(item.requiredEvidence) &&
+    item.requiredEvidence.every((entry) => typeof entry === "string") &&
+    typeof item.stopCondition === "string" &&
+    Array.isArray(item.notes) &&
+    item.notes.every((entry) => typeof entry === "string")
+  );
+}
+
+function isAdsenseRemediationLane(
+  value: string,
+): value is AdsenseRemediationLaneKey {
+  return ADSENSE_REMEDIATION_LANES.includes(
+    value as AdsenseRemediationLaneKey,
+  );
+}
+
+function isAdsenseLocalSourceSupplementSite(
+  value: unknown,
+): value is AdsenseLocalSourceSupplementSite {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const site = value as Record<string, unknown>;
+  return (
+    typeof site.siteId === "string" &&
+    typeof site.host === "string" &&
+    typeof site.localSourceStatus === "string" &&
+    Array.isArray(site.evidence) &&
+    site.evidence.every((entry) => typeof entry === "string") &&
+    typeof site.nextGate === "string"
+  );
+}
+
+function isAdsenseEndpointRetryResult(
+  value: unknown,
+): value is AdsenseEndpointRetryResult {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const result = value as Record<string, unknown>;
+  return (
+    typeof result.siteId === "string" &&
+    typeof result.endpoint === "string" &&
+    typeof result.result === "string"
+  );
+}
+
+function isAdsenseLoaderRetryResult(
+  value: unknown,
+): value is AdsenseLoaderRetryResult {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const result = value as Record<string, unknown>;
+  return typeof result.siteId === "string" && typeof result.result === "string";
+}
+
+function isAdsenseNetworkVantageResult(
+  value: unknown,
+): value is AdsenseNetworkVantageResult {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const result = value as Record<string, unknown>;
+  return (
+    typeof result.siteId === "string" &&
+    (result.host === undefined || typeof result.host === "string") &&
+    Array.isArray(result.addresses) &&
+    result.addresses.every((address) => typeof address === "string") &&
+    typeof result.tcp80 === "string" &&
+    typeof result.tcp443 === "string"
+  );
+}
+
+function isAdsenseNetworkVantageSharedOrigin(
+  value: unknown,
+): value is AdsenseNetworkVantageSharedOrigin {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const origin = value as Record<string, unknown>;
+  return (
+    typeof origin.address === "string" &&
+    typeof origin.hostCount === "number" &&
+    typeof origin.tcp80Pass === "number" &&
+    typeof origin.tcp443Pass === "number" &&
+    typeof origin.fullTcpBlocked === "number"
+  );
+}
+
+function makeLocalSourceOnlyProof(
+  site: AdsenseLocalSourceSupplementSite,
+): AdsenseExternalProof {
+  return {
+    siteId: site.siteId,
+    url: `https://${site.host}/`,
+    host: site.host,
+    externalHomepageProof: "not_proven_in_this_pass",
+    externalHomepageEvidence: site.evidence.join(" "),
+    externalAdsTxtProof: "not_proven_in_this_pass",
+    externalLoaderProof: site.localSourceStatus,
+    currentDecision: "hold_for_fresh_external_proof",
+    nextGate: site.nextGate,
+  };
+}
+
+function isAdsenseExternalProof(value: unknown): value is AdsenseExternalProof {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const candidate = value as Record<string, unknown>;
+  return (
+    typeof candidate.siteId === "string" &&
+    typeof candidate.url === "string" &&
+    typeof candidate.host === "string" &&
+    typeof candidate.externalHomepageProof === "string" &&
+    typeof candidate.externalHomepageEvidence === "string" &&
+    typeof candidate.externalAdsTxtProof === "string" &&
+    typeof candidate.externalLoaderProof === "string" &&
+    typeof candidate.currentDecision === "string" &&
+    ADSENSE_EXTERNAL_PROOF_DECISIONS.has(candidate.currentDecision) &&
+    typeof candidate.nextGate === "string"
+  );
 }
 
 function fallbackDateRanges(): DateRangeSummary {

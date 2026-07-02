@@ -1,7 +1,16 @@
 import { execFile } from "node:child_process";
 import { existsSync } from "node:fs";
-import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import {
+  mkdir,
+  open,
+  readdir,
+  readFile,
+  rm,
+  stat,
+  writeFile,
+} from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 import pLimit from "p-limit";
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
@@ -19,7 +28,38 @@ const GMAIL_DIGEST_README_URL =
 const DAY_RANGE = 1;
 const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
-const CONCURRENCY = 6;
+const LOCK_PATH = "data/.stats-update.lock";
+const LOCK_STALE_MS = 6 * 60 * 60 * 1000;
+const CONCURRENCY = readPositiveInteger(
+  process.env.STATS_UPDATE_CONCURRENCY,
+  6,
+  12,
+);
+const PROGRESS_INTERVAL_MS = readPositiveInteger(
+  process.env.STATS_UPDATE_PROGRESS_INTERVAL_MS,
+  30000,
+  300000,
+);
+const SLOW_SITE_MS = readPositiveInteger(
+  process.env.STATS_UPDATE_SLOW_SITE_MS,
+  60000,
+  600000,
+);
+const GOOGLE_API_TIMEOUT_MS = readPositiveInteger(
+  process.env.STATS_UPDATE_GOOGLE_API_TIMEOUT_MS,
+  20000,
+  60000,
+);
+const SITE_TIMEOUT_MS = readPositiveInteger(
+  process.env.STATS_UPDATE_SITE_TIMEOUT_MS,
+  90000,
+  180000,
+);
+const RUN_TIMEOUT_MS = readNonNegativeInteger(
+  process.env.STATS_UPDATE_RUN_TIMEOUT_MS,
+  235000,
+  3600000,
+);
 const ADSENSE_PUBLISHER_ID =
   process.env.ADSENSE_PUBLISHER_ID ?? "pub-3050601904412736";
 // 헤더 없는 undici 기본 요청은 일부 호스팅 WAF가 415로 차단한다(curl·브라우저는 통과).
@@ -41,6 +81,178 @@ const DEFAULT_CONTENT_FIELDS = {
   scheduled: ["scheduledAt", "scheduled_at", "publishAt", "publish_at"],
   published: ["publishedAt", "published_at", "date", "datePublished"],
 };
+
+interface LockFile {
+  pid: number;
+  startedAt: string;
+  command: string;
+}
+
+interface SiteProgressState {
+  name: string;
+  phase: string;
+  startedAt: number;
+  updatedAt: number;
+}
+
+export function isIgnorableStatsUpdateStreamError(error: unknown): boolean {
+  return (error as NodeJS.ErrnoException | undefined)?.code === "EPIPE";
+}
+
+export async function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs: number,
+  label: string,
+): Promise<T> {
+  let timer: NodeJS.Timeout | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => {
+      reject(new Error(`${label} timed out after ${formatElapsed(timeoutMs)}`));
+    }, timeoutMs);
+    timer.unref();
+  });
+
+  try {
+    return await Promise.race([promise, timeout]);
+  } finally {
+    if (timer) {
+      clearTimeout(timer);
+    }
+  }
+}
+
+function installStatsUpdateStreamErrorHandler(
+  stream: NodeJS.WriteStream,
+): void {
+  stream.on("error", (error) => {
+    if (isIgnorableStatsUpdateStreamError(error)) {
+      return;
+    }
+    throw error;
+  });
+}
+
+installStatsUpdateStreamErrorHandler(process.stdout);
+installStatsUpdateStreamErrorHandler(process.stderr);
+
+function readPositiveInteger(
+  value: string | undefined,
+  fallback: number,
+  max: number,
+): number {
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 1) {
+    return fallback;
+  }
+  return Math.min(parsed, max);
+}
+
+export function readNonNegativeInteger(
+  value: string | undefined,
+  fallback: number,
+  max: number,
+): number {
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    return fallback;
+  }
+  return Math.min(parsed, max);
+}
+
+async function isProcessRunning(pid: number): Promise<boolean> {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (error) {
+    const code = (error as NodeJS.ErrnoException).code;
+    return code === "EPERM";
+  }
+}
+
+async function readExistingLock(): Promise<LockFile | undefined> {
+  try {
+    const raw = await readFile(LOCK_PATH, "utf8");
+    return JSON.parse(raw.replace(/^\uFEFF/, "")) as LockFile;
+  } catch {
+    return undefined;
+  }
+}
+
+function formatElapsed(ms: number): string {
+  return `${Math.round(ms / 1000)}s`;
+}
+
+export function summarizeInFlight(
+  inFlight: Map<string, SiteProgressState>,
+  now: number = Date.now(),
+): string {
+  if (inFlight.size === 0) {
+    return "none";
+  }
+
+  return [...inFlight.entries()]
+    .map(
+      ([id, state]) =>
+        `${id}:${state.phase}:total=${formatElapsed(
+          now - state.startedAt,
+        )}:phase=${formatElapsed(now - state.updatedAt)}`,
+    )
+    .join(", ");
+}
+
+function logStatsUpdate(message: string): void {
+  console.log(`[stats:update] ${message}`);
+}
+
+async function acquireStatsUpdateLock(): Promise<() => Promise<void>> {
+  await mkdir(path.dirname(LOCK_PATH), { recursive: true });
+  const lock: LockFile = {
+    pid: process.pid,
+    startedAt: new Date().toISOString(),
+    command: process.argv.join(" "),
+  };
+
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const handle = await open(LOCK_PATH, "wx");
+      await handle.writeFile(`${JSON.stringify(lock, null, 2)}\n`, "utf8");
+      await handle.close();
+
+      let released = false;
+      return async () => {
+        if (released) {
+          return;
+        }
+        released = true;
+        await rm(LOCK_PATH, { force: true });
+      };
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") {
+        throw error;
+      }
+
+      const existing = await readExistingLock();
+      const startedAt = existing ? Date.parse(existing.startedAt) : 0;
+      const stale =
+        !existing ||
+        Number.isNaN(startedAt) ||
+        Date.now() - startedAt > LOCK_STALE_MS ||
+        !(await isProcessRunning(existing.pid));
+
+      if (stale) {
+        await rm(LOCK_PATH, { force: true });
+        continue;
+      }
+
+      throw new Error(
+        `stats:update is already running (pid=${existing.pid}, startedAt=${existing.startedAt}). ` +
+          "Wait for it to finish instead of launching a second collector.",
+      );
+    }
+  }
+
+  throw new Error("Unable to acquire stats:update lock after removing stale lock.");
+}
 
 const execFileAsync = promisify(execFile);
 
@@ -435,6 +647,8 @@ async function fetchGa4MetricsForRange(
       { name: "screenPageViews" },
       { name: "eventCount" },
     ],
+  }, {
+    timeout: GOOGLE_API_TIMEOUT_MS,
   });
 
   const row = response.rows?.[0];
@@ -466,6 +680,8 @@ async function fetchGa4TrafficKeywords(
     ],
     metrics: [{ name: "activeUsers" }, { name: "sessions" }],
     limit: 50,
+  }, {
+    timeout: GOOGLE_API_TIMEOUT_MS,
   });
 
   const byKey = new Map<string, TrafficKeywordMetric>();
@@ -538,14 +754,17 @@ async function fetchGscMetricsForRange(
   startDate: string,
   endDate: string,
 ): Promise<GscMetricSet> {
-  const response = await client.searchanalytics.query({
-    siteUrl,
-    requestBody: {
-      startDate,
-      endDate,
-      rowLimit: 1,
+  const response = await client.searchanalytics.query(
+    {
+      siteUrl,
+      requestBody: {
+        startDate,
+        endDate,
+        rowLimit: 1,
+      },
     },
-  });
+    { timeout: GOOGLE_API_TIMEOUT_MS },
+  );
   const row = response.data.rows?.[0];
 
   if (!row) {
@@ -565,15 +784,18 @@ async function fetchGscTopQueries(
   siteUrl: string,
   days: number,
 ): Promise<GscQueryMetric[]> {
-  const response = await client.searchanalytics.query({
-    siteUrl,
-    requestBody: {
-      startDate: seoulDateDaysAgo(days),
-      endDate: seoulDateDaysAgo(1),
-      dimensions: ["query"],
-      rowLimit: 25,
+  const response = await client.searchanalytics.query(
+    {
+      siteUrl,
+      requestBody: {
+        startDate: seoulDateDaysAgo(days),
+        endDate: seoulDateDaysAgo(1),
+        dimensions: ["query"],
+        rowLimit: 25,
+      },
     },
-  });
+    { timeout: GOOGLE_API_TIMEOUT_MS },
+  );
 
   return (response.data.rows ?? [])
     .map((row) => ({
@@ -904,7 +1126,10 @@ async function fetchSitemapSummary(
   sitemapUrls?: string[],
   canonicalUrl?: string,
 ): Promise<SitemapSummary> {
-  const response = await client.sitemaps.list({ siteUrl });
+  const response = await client.sitemaps.list(
+    { siteUrl },
+    { timeout: GOOGLE_API_TIMEOUT_MS },
+  );
   const sitemaps = response.data.sitemap ?? [];
   const configuredUrls = sitemapUrls?.filter(Boolean) ?? [];
 
@@ -1141,7 +1366,8 @@ async function fetchContentStats(
 
   if (
     site.contentSource.type === "local-next" ||
-    site.contentSource.type === "github-next"
+    site.contentSource.type === "github-next" ||
+    site.contentSource.type === "local-app"
   ) {
     return fetchLocalNextStats(site);
   }
@@ -1760,6 +1986,7 @@ async function fetchSiteStat(
   externalTrafficKeywords: Map<string, TrafficKeywordMetric[]>,
   gscEmailAlertsByHost: Map<string, GscEmailAlert[]>,
   previousStat: SiteStat | undefined,
+  reportProgress: (phase: string) => void = () => undefined,
 ): Promise<SiteStat> {
   let last1Days = emptyMetrics();
   let last7Days = emptyMetrics();
@@ -1781,6 +2008,7 @@ async function fetchSiteStat(
   if (!site.ga4PropertyId) {
     error = "Missing ga4PropertyId";
   } else {
+    reportProgress("ga4-metrics");
     try {
       [last1Days, last7Days, previous7Days, last30Days] = await Promise.all([
         fetchGa4Metrics(ga4Client, site.ga4PropertyId, DAY_RANGE),
@@ -1792,6 +2020,7 @@ async function fetchSiteStat(
       error = getErrorMessage(ga4Error);
     }
 
+    reportProgress("ga4-keywords");
     try {
       ga4TrafficKeywords = await fetchGa4TrafficKeywords(
         ga4Client,
@@ -1821,6 +2050,7 @@ async function fetchSiteStat(
     site,
   );
 
+  reportProgress("gsc-metrics");
   try {
     [gscLast7Days, gscPrevious7Days, gscLast30Days, gscTopQueries] =
       await Promise.all([
@@ -1833,6 +2063,7 @@ async function fetchSiteStat(
     gscError = getErrorMessage(searchError);
   }
 
+  reportProgress("sitemap");
   try {
     sitemapSummary = await fetchSitemapSummary(
       gscClient,
@@ -1846,11 +2077,13 @@ async function fetchSiteStat(
 
   const monetizationEnabled = site.monetization !== false;
   if (monetizationEnabled) {
+    reportProgress("adsense");
     adsenseResult = await collectAdsenseCodeStatus(
       site,
       previousStat,
       collectedAt,
     );
+    reportProgress("ads-txt");
     adsTxtResult = await collectAdsTxtStatus(site, previousStat, collectedAt);
   }
 
@@ -1911,6 +2144,7 @@ async function fetchSiteStat(
     stat.sitemapErrorKind = classifyError(sitemapError);
   }
 
+  reportProgress("content");
   const wpStats = await fetchWpStats(site);
   if (wpStats.lastPublishedAt) {
     stat.lastPublishedAt = wpStats.lastPublishedAt;
@@ -1922,7 +2156,44 @@ async function fetchSiteStat(
   return stat;
 }
 
-async function main(): Promise<void> {
+export function buildFailedSiteStat(
+  site: Site,
+  previousStat: SiteStat | undefined,
+  errorMessage: string,
+): SiteStat {
+  const gscSiteUrl = site.gscSiteUrl ?? site.url;
+  const base: SiteStat = previousStat ?? {
+    id: site.id,
+    name: site.name ?? site.id,
+    url: site.url,
+    ga4PropertyId: site.ga4PropertyId ?? "",
+    gscSiteUrl,
+    last1Days: emptyMetrics(),
+    last7Days: emptyMetrics(),
+    previous7Days: emptyMetrics(),
+    last30Days: emptyMetrics(),
+    gscLast7Days: emptyGscMetrics(),
+    gscPrevious7Days: emptyGscMetrics(),
+    gscLast30Days: emptyGscMetrics(),
+    ga4Status: "api_error",
+    gscStatus: "api_error",
+  };
+  const error = `stats:update site collection failed: ${errorMessage}`;
+
+  return {
+    ...base,
+    id: site.id,
+    name: site.name ?? previousStat?.name ?? site.id,
+    url: site.url,
+    ga4PropertyId: site.ga4PropertyId ?? previousStat?.ga4PropertyId ?? "",
+    gscSiteUrl,
+    ga4Status: statusFromError(error, "api_error"),
+    error,
+    ga4ErrorKind: classifyError(error),
+  };
+}
+
+async function runStatsUpdate(): Promise<void> {
   loadLocalSecrets();
   const keyJson = readSecret("GCP_SA_KEY_JSON");
 
@@ -1932,9 +2203,7 @@ async function main(): Promise<void> {
     );
   }
 
-  const sites = (await loadSites()).filter(
-    (site) => site.enabled !== false && site.ga4PropertyId,
-  );
+  const sites = (await loadSites()).filter((site) => site.enabled !== false);
   const credentials = parseServiceAccountKey(keyJson);
   const ga4Client = new BetaAnalyticsDataClient({ credentials });
   const auth = makeGoogleAuth(keyJson, [
@@ -1945,21 +2214,101 @@ async function main(): Promise<void> {
   const externalTrafficKeywords = await loadExternalTrafficKeywords();
   const gscEmailAlertsByHost = await loadGscEmailAlerts();
   const previousStatsById = await loadPreviousStatsById();
+  const runStartedAt = Date.now();
+  let completed = 0;
+  const inFlight = new Map<string, SiteProgressState>();
+  const progressTimer = setInterval(() => {
+    logStatsUpdate(
+      `progress completed=${completed}/${sites.length}, elapsed=${formatElapsed(
+        Date.now() - runStartedAt,
+      )}, inFlight=${summarizeInFlight(inFlight)}`,
+    );
+  }, PROGRESS_INTERVAL_MS);
+  progressTimer.unref();
 
-  const stats = await Promise.all(
-    sites.map((site) =>
-      limit(() =>
-        fetchSiteStat(
-          ga4Client,
-          gscClient,
-          site,
-          externalTrafficKeywords,
-          gscEmailAlertsByHost,
-          previousStatsById.get(site.id),
-        ),
-      ),
-    ),
+  logStatsUpdate(
+    `starting sites=${sites.length}, concurrency=${CONCURRENCY}, progressIntervalMs=${PROGRESS_INTERVAL_MS}, runTimeoutMs=${RUN_TIMEOUT_MS}, siteTimeoutMs=${SITE_TIMEOUT_MS}, slowSiteMs=${SLOW_SITE_MS}, googleApiTimeoutMs=${GOOGLE_API_TIMEOUT_MS}`,
   );
+
+  let stats: SiteStat[];
+  try {
+    stats = await Promise.all(
+      sites.map((site) =>
+        limit(async () => {
+          const siteStartedAt = Date.now();
+          inFlight.set(site.id, {
+            name: site.name ?? site.id,
+            phase: "start",
+            startedAt: siteStartedAt,
+            updatedAt: siteStartedAt,
+          });
+          logStatsUpdate(
+            `site start id=${site.id}, name=${site.name ?? site.id}`,
+          );
+
+          const reportProgress = (phase: string) => {
+            const current = inFlight.get(site.id);
+            if (current) {
+              current.phase = phase;
+              current.updatedAt = Date.now();
+            }
+          };
+
+          try {
+            const stat = await withTimeout(
+              fetchSiteStat(
+                ga4Client,
+                gscClient,
+                site,
+                externalTrafficKeywords,
+                gscEmailAlertsByHost,
+                previousStatsById.get(site.id),
+                reportProgress,
+              ),
+              SITE_TIMEOUT_MS,
+              `site ${site.id}`,
+            );
+            completed += 1;
+            const elapsed = Date.now() - siteStartedAt;
+            const status =
+              `ga4=${stat.ga4Status ?? "unknown"}, ` +
+              `gsc=${stat.gscStatus ?? "unknown"}, ` +
+              `adsense=${stat.adsenseStatus ?? "disabled"}, ` +
+              `adsTxt=${stat.adsTxtStatus ?? "disabled"}`;
+            const message = `site done id=${site.id}, elapsed=${formatElapsed(
+              elapsed,
+            )}, ${status}`;
+            if (elapsed >= SLOW_SITE_MS) {
+              console.warn(`[stats:update] slow ${message}`);
+            } else {
+              logStatsUpdate(message);
+            }
+            return stat;
+          } catch (error) {
+            completed += 1;
+            const errorMessage = getErrorMessage(error);
+            console.error(
+              `[stats:update] site failed id=${site.id}, phase=${
+                inFlight.get(site.id)?.phase ?? "unknown"
+              }, elapsed=${formatElapsed(
+                Date.now() - siteStartedAt,
+              )}: ${errorMessage}`,
+            );
+            return buildFailedSiteStat(
+              site,
+              previousStatsById.get(site.id),
+              errorMessage,
+            );
+          } finally {
+            inFlight.delete(site.id);
+          }
+        }),
+      ),
+    );
+  } finally {
+    clearInterval(progressTimer);
+  }
+
   const snapshot: StatsSnapshot = {
     generatedAt: new Date().toISOString(),
     rangeDays: RANGE_DAYS,
@@ -1994,19 +2343,64 @@ async function main(): Promise<void> {
     0,
   );
   const adsenseCodeNotDetected = stats.filter(
-    (site) => site.adsenseError,
+    (site) => isCurrentAdsenseInstallFailure(site),
   ).length;
-  const adsTxtFailed = stats.filter((site) => site.adsTxtError).length;
+  const adsenseTransientErrors = stats.filter(
+    (site) => site.adsenseCollectorStatus === "transient_error",
+  ).length;
+  const adsTxtFailed = stats.filter((site) => isCurrentAdsTxtFailure(site)).length;
+  const adsTxtTransientErrors = stats.filter(
+    (site) => site.adsTxtCollectorStatus === "transient_error",
+  ).length;
   const sitemapChecked = stats.filter(
     (site) => site.sitemapLastDownloadedAt || site.sitemapLastSubmittedAt,
   ).length;
   const sitemapFailed = stats.filter((site) => site.sitemapError).length;
   console.log(
-    `Stats updated: ${stats.length} sites, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, GSC email alerts=${gscEmailAlerts}, sitemaps checked=${sitemapChecked}, sitemaps failed=${sitemapFailed}, AdSense code not detected=${adsenseCodeNotDetected}, ads.txt failed=${adsTxtFailed}, output=${OUTPUT_PATH}, history=${historyPath}`,
+    `Stats updated: ${stats.length} sites, concurrency=${CONCURRENCY}, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, GSC email alerts=${gscEmailAlerts}, sitemaps checked=${sitemapChecked}, sitemaps failed=${sitemapFailed}, AdSense code not detected=${adsenseCodeNotDetected}, AdSense transient=${adsenseTransientErrors}, ads.txt failed=${adsTxtFailed}, ads.txt transient=${adsTxtTransientErrors}, output=${OUTPUT_PATH}, history=${historyPath}`,
   );
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+export function isCurrentAdsenseInstallFailure(
+  site: Pick<SiteStat, "adsenseError" | "adsenseErrorKind" | "adsenseCollectorStatus">,
+): boolean {
+  return (
+    Boolean(site.adsenseError) &&
+    site.adsenseErrorKind === "missing_config" &&
+    site.adsenseCollectorStatus === "ok"
+  );
+}
+
+export function isCurrentAdsTxtFailure(
+  site: Pick<SiteStat, "adsTxtError" | "adsTxtErrorKind" | "adsTxtCollectorStatus">,
+): boolean {
+  return (
+    Boolean(site.adsTxtError) &&
+    site.adsTxtErrorKind === "missing_config" &&
+    site.adsTxtCollectorStatus === "ok"
+  );
+}
+
+async function main(): Promise<void> {
+  const releaseLock = await acquireStatsUpdateLock();
+  try {
+    if (RUN_TIMEOUT_MS > 0) {
+      await withTimeout(
+        runStatsUpdate(),
+        RUN_TIMEOUT_MS,
+        "stats:update full run",
+      );
+    } else {
+      await runStatsUpdate();
+    }
+  } finally {
+    await releaseLock();
+  }
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

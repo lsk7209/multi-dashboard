@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import pLimit from "p-limit";
+import { pathToFileURL } from "node:url";
 import { makeGoogleAuth } from "./lib/gcp.js";
 import { loadLocalSecrets, readSecret } from "./lib/secrets.js";
 import { loadSites, type Site } from "./lib/sites.js";
@@ -19,7 +20,7 @@ interface Args {
   limit?: number;
 }
 
-interface ListedSitemap {
+export interface ListedSitemap {
   path?: string | null;
   lastDownloaded?: string | null;
   lastSubmitted?: string | null;
@@ -28,7 +29,7 @@ interface ListedSitemap {
   isPending?: boolean | null;
 }
 
-interface ExpectedSitemap {
+export interface ExpectedSitemap {
   url: string;
   publicStatus: string;
   listed?: ListedSitemap;
@@ -37,10 +38,11 @@ interface ExpectedSitemap {
   result?: string;
 }
 
-interface SiteResult {
+export interface SiteResult {
   id: string;
   siteUrl: string;
   expected: ExpectedSitemap[];
+  error?: string;
 }
 
 function parseArgs(): Args {
@@ -106,13 +108,23 @@ function normalizeUrl(url: string): string {
   return url.replace(/\/+$/, "").toLowerCase();
 }
 
-async function verifySite(
+export async function verifySite(
   client: ReturnType<typeof google.searchconsole>,
   site: Site,
   args: Args,
 ): Promise<SiteResult> {
   const siteUrl = site.gscSiteUrl ?? site.url;
-  const response = await client.sitemaps.list({ siteUrl });
+  let response;
+  try {
+    response = await client.sitemaps.list({ siteUrl });
+  } catch (error) {
+    return {
+      id: site.id,
+      siteUrl,
+      expected: [],
+      error: getErrorMessage(error),
+    };
+  }
   const listed = (response.data.sitemap ?? []) as ListedSitemap[];
   const expectedUrls = getExpectedSitemapUrls(site);
   const expected: ExpectedSitemap[] = [];
@@ -151,6 +163,41 @@ async function verifySite(
   return { id: site.id, siteUrl, expected };
 }
 
+export interface GscSitemapSummary {
+  sites: number;
+  green: number;
+  notGreen: number;
+  failedSites: number;
+  submitActions: number;
+}
+
+export function summarizeSitemapResults(results: SiteResult[]): GscSitemapSummary {
+  let green = 0;
+  let notGreen = 0;
+  let submitActions = 0;
+  let failedSites = 0;
+  for (const result of results) {
+    if (result.error) {
+      failedSites += 1;
+      continue;
+    }
+    for (const sitemap of result.expected) {
+      if (sitemap.green) green += 1;
+      else notGreen += 1;
+      if (sitemap.result === "submitted" || sitemap.result === "dry-run") {
+        submitActions += 1;
+      }
+    }
+  }
+  return {
+    sites: results.length,
+    green,
+    notGreen,
+    failedSites,
+    submitActions,
+  };
+}
+
 async function main(): Promise<void> {
   const args = parseArgs();
   loadLocalSecrets();
@@ -172,16 +219,13 @@ async function main(): Promise<void> {
     sites.map((site) => limit(() => verifySite(client, site, args))),
   );
 
-  let green = 0;
-  let notGreen = 0;
-  let submitted = 0;
+  const summary = summarizeSitemapResults(results);
   for (const result of results) {
+    if (result.error) {
+      console.log(`ERROR ${result.id} ${result.siteUrl} ${result.error}`);
+      continue;
+    }
     for (const sitemap of result.expected) {
-      if (sitemap.green) green += 1;
-      else notGreen += 1;
-      if (sitemap.result === "submitted" || sitemap.result === "dry-run") {
-        submitted += 1;
-      }
       const status = sitemap.green ? "GREEN" : "CHECK";
       const action =
         sitemap.action === "submit" ? ` action=${sitemap.result ?? "submit"}` : "";
@@ -191,11 +235,13 @@ async function main(): Promise<void> {
     }
   }
   console.log(
-    `GSC sitemap verify complete: sites=${results.length}, green=${green}, notGreen=${notGreen}, submitActions=${submitted}, dryRun=${args.dryRun}`,
+    `GSC sitemap verify complete: sites=${summary.sites}, green=${summary.green}, notGreen=${summary.notGreen}, failedSites=${summary.failedSites}, submitActions=${summary.submitActions}, dryRun=${args.dryRun}`,
   );
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

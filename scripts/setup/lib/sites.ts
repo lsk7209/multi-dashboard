@@ -17,13 +17,23 @@ const siteSchema = z.object({
   monetization: z.boolean().default(true),
   contentSource: z
     .object({
-      type: z.enum(["wordpress-ssh", "local-next", "github-next"]),
+      type: z.enum(["wordpress-ssh", "local-next", "github-next", "local-app"]),
+      locationLabel: z.string().min(1).optional(),
       sshHost: z.string().min(1).optional(),
       sshPort: z.number().int().positive().optional(),
       sshUser: z.string().min(1).optional(),
       sshKeyPath: z.string().min(1).optional(),
       wpPath: z.string().min(1).optional(),
       localPath: z.string().min(1).optional(),
+      githubRepo: z.string().url().optional(),
+      localPaths: z
+        .array(
+          z.object({
+            locationLabel: z.string().min(1).optional(),
+            path: z.string().min(1),
+          }),
+        )
+        .optional(),
       contentGlobs: z.array(z.string().min(1)).optional(),
       scheduledFields: z.array(z.string().min(1)).optional(),
       publishedFields: z.array(z.string().min(1)).optional(),

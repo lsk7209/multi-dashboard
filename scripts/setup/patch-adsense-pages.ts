@@ -1,5 +1,7 @@
+import { pathToFileURL } from "node:url";
 import { getWpAdmin, loadLocalSecrets } from "./lib/secrets.js";
 import { loadSites, requireWordPressRestBase, type Site } from "./lib/sites.js";
+import { getWordpressSshSource, runWordpressSshCommand } from "./lib/ssh-probe.js";
 
 type PageKind = "about" | "contact" | "privacy" | "terms";
 
@@ -28,18 +30,42 @@ interface PatchResult {
   detail?: string;
 }
 
-const dryRun = process.argv.includes("--dry-run");
-const targetSiteIds = new Set(
-  process.argv
-    .filter((arg) => arg.startsWith("--site="))
-    .map((arg) => arg.slice("--site=".length))
-    .filter(Boolean),
-);
+interface BackupResult {
+  status: "created" | "confirmed" | "skipped_dry_run" | "failed";
+  detail: string;
+}
 
-const approvalTargets: PatchTarget[] = [
+export interface PatchCliOptions {
+  dryRun: boolean;
+  apply: boolean;
+  targetSiteIds: Set<string>;
+  all: boolean;
+  backupConfirmed?: string;
+}
+
+export function parsePatchArgs(args: string[]): PatchCliOptions {
+  const backupConfirmed = args
+    .find((arg) => arg.startsWith("--backup-confirmed="))
+    ?.slice("--backup-confirmed=".length);
+  return {
+    dryRun: args.includes("--dry-run"),
+    apply: args.includes("--apply"),
+    all: args.includes("--all"),
+    targetSiteIds: new Set(
+      args
+        .filter((arg) => arg.startsWith("--site="))
+        .map((arg) => arg.slice("--site=".length))
+        .filter(Boolean),
+    ),
+    ...(backupConfirmed ? { backupConfirmed } : {}),
+  };
+}
+
+const cliOptions = parsePatchArgs(process.argv.slice(2));
+
+export const approvalTargets: PatchTarget[] = [
   { siteId: "gong365", pages: ["about", "contact", "privacy", "terms"] },
   { siteId: "homeimer", pages: ["about", "contact", "terms"] },
-  { siteId: "yesa", pages: ["about", "contact", "privacy", "terms"] },
   { siteId: "gpt-nexttech7", pages: ["privacy", "terms"] },
   { siteId: "dog-klick", pages: ["about", "contact", "privacy", "terms"] },
   { siteId: "webtoon-klick", pages: ["about", "contact", "privacy", "terms"] },
@@ -52,7 +78,11 @@ const approvalTargets: PatchTarget[] = [
   { siteId: "todayshops", pages: ["terms"] },
   { siteId: "softwa", pages: ["terms"] },
   { siteId: "etique", pages: ["terms"] },
+  { siteId: "richyou", pages: ["terms"] },
+  { siteId: "2mlab-2", pages: ["terms"] },
   { siteId: "discparty", pages: ["terms"] },
+  { siteId: "nicewomen", pages: ["terms"] },
+  { siteId: "esgyo", pages: ["terms"] },
   { siteId: "finan", pages: ["terms"] },
   { siteId: "insupang", pages: ["terms"] },
   { siteId: "gover", pages: ["terms"] },
@@ -242,13 +272,17 @@ async function verifyPublicPage(url: string): Promise<{ ok: boolean; status: num
   return { ok: response.ok && text.length >= 250, status: response.status, chars: text.length };
 }
 
-async function patchPage(site: Site, page: PageKind): Promise<PatchResult> {
+export async function patchPage(
+  site: Site,
+  page: PageKind,
+  options: Pick<PatchCliOptions, "apply" | "dryRun"> = cliOptions,
+): Promise<PatchResult> {
   const domain = domainOf(site);
   const url = publicUrl(site, page);
   const meta = pageMeta[page];
 
-  if (dryRun) {
-    return { siteId: site.id, domain, page, action: "skipped", publicUrl: url, detail: "dry-run" };
+  if (!options.apply || options.dryRun) {
+    return { siteId: site.id, domain, page, action: "skipped", publicUrl: url, detail: "dry-run; pass --apply after backup gate" };
   }
 
   const admin = getWpAdmin(site.id);
@@ -285,11 +319,98 @@ async function patchPage(site: Site, page: PageKind): Promise<PatchResult> {
   };
 }
 
+export function shellSingleQuote(value: string): string {
+  return `'${value.replaceAll("'", "'\\''")}'`;
+}
+
+export async function ensureBackup(
+  site: Site,
+  options: Pick<PatchCliOptions, "apply" | "dryRun" | "backupConfirmed"> = cliOptions,
+): Promise<BackupResult> {
+  if (!options.apply || options.dryRun) {
+    return { status: "skipped_dry_run", detail: "dry-run" };
+  }
+
+  if (options.backupConfirmed) {
+    return { status: "confirmed", detail: options.backupConfirmed };
+  }
+
+  const source = getWordpressSshSource(site);
+  if (!source) {
+    return {
+      status: "failed",
+      detail: "missing wordpress-ssh contentSource; rerun with --backup-confirmed=<path> after manual backup",
+    };
+  }
+
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const wpPath = source.wpPath.replace(/\/$/, "");
+  const remoteDir = `${wpPath}/_codex-backups/adsense-pages-${stamp}`;
+  const remoteScript = [
+    "set -e",
+    `mkdir -p ${shellSingleQuote(remoteDir)}`,
+    `cd ${shellSingleQuote(wpPath)}`,
+    `wp db export ${shellSingleQuote(`${remoteDir}/db-before.sql`)} --allow-root`,
+    `wp post list --post_type=page --post_status=any --fields=ID,post_name,post_status,post_title --format=json --allow-root > ${shellSingleQuote(`${remoteDir}/pages-before.json`)}`,
+    `echo ${shellSingleQuote(remoteDir)}`,
+  ].join(" && ");
+
+  const probe = await runWordpressSshCommand(site, remoteScript, {
+    timeoutMs: 120_000,
+    connectTimeoutSeconds: 15,
+  });
+  if (probe.ok) {
+    return {
+      status: "created",
+      detail: probe.stdout.trim().split(/\r?\n/).at(-1) ?? remoteDir,
+    };
+  }
+  return { status: "failed", detail: probe.detail };
+}
+
+export function validateApplyTargetSelection(
+  options: Pick<PatchCliOptions, "apply" | "dryRun" | "targetSiteIds" | "all">,
+  knownTargetIds = new Set(approvalTargets.map((target) => target.siteId)),
+): { ok: boolean; detail: string } {
+  if (!options.apply || options.dryRun) {
+    return { ok: true, detail: "not live apply mode" };
+  }
+  if (options.all) {
+    return { ok: true, detail: "explicit --all provided" };
+  }
+  if (options.targetSiteIds.size !== 1) {
+    return {
+      ok: false,
+      detail:
+        "apply mode requires exactly one --site=<id>; use --all only for an intentional bulk apply",
+    };
+  }
+  const [siteId] = [...options.targetSiteIds];
+  if (!siteId) {
+    return {
+      ok: false,
+      detail: "apply mode requires exactly one --site=<id>",
+    };
+  }
+  if (!knownTargetIds.has(siteId)) {
+    return {
+      ok: false,
+      detail: `apply mode target is not in approvalTargets: ${siteId}`,
+    };
+  }
+  return { ok: true, detail: "single site apply target" };
+}
+
 async function main(): Promise<void> {
   loadLocalSecrets();
   const sites = await loadSites();
   const sitesById = new Map(sites.map((site) => [site.id, site]));
-  const selectedTargets = approvalTargets.filter((target) => targetSiteIds.size === 0 || targetSiteIds.has(target.siteId));
+  const selection = validateApplyTargetSelection(cliOptions);
+  if (!selection.ok) {
+    console.error(selection.detail);
+    process.exit(1);
+  }
+  const selectedTargets = approvalTargets.filter((target) => cliOptions.targetSiteIds.size === 0 || cliOptions.targetSiteIds.has(target.siteId));
   const results: PatchResult[] = [];
 
   for (const target of selectedTargets) {
@@ -308,9 +429,25 @@ async function main(): Promise<void> {
       continue;
     }
 
+    const backup = await ensureBackup(site, cliOptions);
+    if (backup.status === "failed") {
+      for (const page of target.pages) {
+        results.push({
+          siteId: target.siteId,
+          domain: domainOf(site),
+          page,
+          action: "failed",
+          publicUrl: publicUrl(site, page),
+          detail: `backup gate failed: ${backup.detail}`,
+        });
+      }
+      continue;
+    }
+    console.log(`BACKUP ${target.siteId}: ${backup.status} ${backup.detail}`);
+
     for (const page of target.pages) {
       try {
-        results.push(await patchPage(site, page));
+        results.push(await patchPage(site, page, cliOptions));
       } catch (error) {
         results.push({
           siteId: target.siteId,
@@ -336,7 +473,9 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

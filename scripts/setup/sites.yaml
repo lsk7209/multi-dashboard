@@ -9,6 +9,10 @@ sites:
     ga4PropertyId: "325680688"
     gscSiteUrl: https://kang4.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\kang4com
   - id: tasko
     name: 태스코 - GA4
     enabled: false
@@ -27,6 +31,10 @@ sites:
     ga4PropertyId: "512019715"
     gscSiteUrl: sc-domain:luckyday.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\luckydaykr
   - id: knewstory
     name: 케이뉴스스토리 - GA4
     enabled: true
@@ -36,6 +44,10 @@ sites:
     ga4PropertyId: "511978714"
     gscSiteUrl: https://knewstory.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\knewstorykr
   - id: 2mlab
     name: 팀하우스 - GA4
     enabled: false
@@ -72,6 +84,10 @@ sites:
     ga4PropertyId: "513769879"
     gscSiteUrl: https://fastjob.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\fastjob
   - id: discparty
     name: 디스크파티 - GA4
     enabled: true
@@ -81,6 +97,15 @@ sites:
     ga4PropertyId: "513733245"
     gscSiteUrl: https://discparty.com/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\discpartycom
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/discparty.com
   - id: klick
     name: 블로그 - GA4
     enabled: false
@@ -99,6 +124,10 @@ sites:
     ga4PropertyId: "516369797"
     gscSiteUrl: sc-domain:temon.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\temon
   - id: haemongdream
     name: 해몽드림 - GA4
     enabled: true
@@ -108,6 +137,15 @@ sites:
     ga4PropertyId: "516256882"
     gscSiteUrl: https://haemongdream.com/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\haemongdreamcom
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/haemongdream.com
   - id: insupang
     name: insupang - GA4
     enabled: true
@@ -117,6 +155,10 @@ sites:
     ga4PropertyId: "517897382"
     gscSiteUrl: https://insupang.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\insupangcom
   - id: healthgotoo
     name: 건강팡팡 - GA4
     enabled: true
@@ -126,6 +168,10 @@ sites:
     ga4PropertyId: "517066030"
     gscSiteUrl: https://healthgotoo.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\healthgotoocom
   - id: travelpang
     name: 여행팡 - GA4
     enabled: false
@@ -173,6 +219,10 @@ sites:
     ga4PropertyId: "519577510"
     gscSiteUrl: https://softwa.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\softwakr
   - id: legalser
     name: legalser - GA4
     enabled: true
@@ -182,6 +232,10 @@ sites:
     ga4PropertyId: "519536919"
     gscSiteUrl: https://legalser.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\legalsercom
   - id: petinsuer
     name: 펫인사이트 - GA4
     enabled: false
@@ -200,6 +254,10 @@ sites:
     ga4PropertyId: "519582866"
     gscSiteUrl: https://homeimer.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\homeimercom
   - id: healfood
     name: 건강푸드팡 - GA4
     enabled: false
@@ -218,6 +276,10 @@ sites:
     ga4PropertyId: "520579523"
     gscSiteUrl: https://finan.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\finankr
   - id: luxurytraver
     name: luxurytraver - GA4
     enabled: false
@@ -236,6 +298,10 @@ sites:
     ga4PropertyId: "521236824"
     gscSiteUrl: https://etique.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\etique-backups\adsense-20260608-113500
   - id: trave
     name: 여행브이 - GA4
     enabled: true
@@ -245,6 +311,15 @@ sites:
     ga4PropertyId: "521243855"
     gscSiteUrl: https://trave.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\travekr
+      sshHost: trave.kr
+      sshPort: 1988
+      sshUser: trave
+      sshKeyPath: D:\env\trave-chemicloud-PrivateKey-nopass
+      wpPath: /home/trave/public_html
   - id: autoscares
     name: 자동차팡팡 - GA4
     enabled: false
@@ -263,6 +338,10 @@ sites:
     ga4PropertyId: "521770057"
     gscSiteUrl: https://lawer.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\lawerkr
   - id: estat
     name: 푸드팡팡 - GA4
     enabled: false
@@ -281,6 +360,10 @@ sites:
     ga4PropertyId: "523266152"
     gscSiteUrl: https://gover.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\goverkr
   - id: nicewomen
     name: 나이스우먼 - GA4
     enabled: true
@@ -290,6 +373,15 @@ sites:
     ga4PropertyId: "524548131"
     gscSiteUrl: https://nicewomen.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\nicewomenkr
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/nicewomen.kr
   - id: esgyo
     name: 이에스지요 - GA4
     enabled: true
@@ -299,6 +391,15 @@ sites:
     ga4PropertyId: "524502961"
     gscSiteUrl: https://esgyo.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\esgyokr
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home5/nexttech/esgyo.kr
   - id: sellerpit
     name: 셀러핏 - GA4
     enabled: false
@@ -326,6 +427,10 @@ sites:
     ga4PropertyId: "532887366"
     gscSiteUrl: https://texturb.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\texturb
   - id: runmania
     name: runmania.kr
     enabled: true
@@ -335,6 +440,10 @@ sites:
     ga4PropertyId: "533614337"
     gscSiteUrl: https://runmania.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\runmania
   - id: tasko-2
     name: tasko.kr
     enabled: true
@@ -344,6 +453,10 @@ sites:
     ga4PropertyId: "533744995"
     gscSiteUrl: https://tasko.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\taskokr
   - id: mbti-tasko
     name: tasko.kr
     enabled: true
@@ -353,6 +466,10 @@ sites:
     ga4PropertyId: "533744995"
     gscSiteUrl: https://mbti.tasko.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\mbtitaskokr
   - id: luckyday-2
     name: https://luckyday.kr
     enabled: false
@@ -371,6 +488,10 @@ sites:
     ga4PropertyId: "533760772"
     gscSiteUrl: https://nexttech7.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\nexttech7com
   - id: klick-2
     name: klick.kr
     enabled: true
@@ -380,6 +501,15 @@ sites:
     ga4PropertyId: "533748860"
     gscSiteUrl: https://klick.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\klickkr
+      sshHost: 158.247.245.11
+      sshPort: 1988
+      sshUser: klick
+      sshKeyPath: D:\env\klickkr-chemicloud-PrivateKey-nopass
+      wpPath: /home/klick/public_html
   - id: sellerpit-2
     name: sellerpit.kr
     enabled: true
@@ -391,6 +521,8 @@ sites:
     monetization: true
     contentSource:
       type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\sellerpitkr
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
@@ -405,6 +537,10 @@ sites:
     ga4PropertyId: "534308136"
     gscSiteUrl: https://chatgipt.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\chatgiptkr
   - id: esgyo-2
     name: esgyo.kr
     enabled: false
@@ -421,8 +557,12 @@ sites:
     url: https://today2424.kr/
     wpRestBase: https://today2424.kr/wp-json/wp/v2
     ga4PropertyId: "534327620"
-    gscSiteUrl: https://www.today2424.kr/
+    gscSiteUrl: https://today2424.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\today2424\2424
   - id: todaypharm
     name: todaypharm.kr
     enabled: true
@@ -434,6 +574,10 @@ sites:
     sitemapUrls:
       - https://todaypharm.kr/sitemap.xml
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\todaypharm
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true
@@ -443,6 +587,10 @@ sites:
     ga4PropertyId: "534356101"
     gscSiteUrl: sc-domain:tennisfrens.com
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\tennisfrens
   - id: bojo24
     name: bojo24.kr
     enabled: true
@@ -450,13 +598,17 @@ sites:
     url: https://bojo24.kr/
     wpRestBase: https://bojo24.kr/wp-json/wp/v2
     ga4PropertyId: "534288708"
-    gscSiteUrl: https://www.bojo24.kr/
+    gscSiteUrl: https://bojo24.kr/
     sitemapUrls:
       - https://bojo24.kr/sitemap.xml
       - https://bojo24.kr/benefit/sitemap.xml
       - https://bojo24.kr/startup/sitemap.xml
       - https://bojo24.kr/blog/sitemap.xml
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\bojo24
   - id: ehon365
     name: ehon365.kr
     enabled: true
@@ -466,6 +618,10 @@ sites:
     ga4PropertyId: "535779756"
     gscSiteUrl: sc-domain:ehon365.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\ehon365\temp_clone
   - id: 2mlab-2
     name: 2mlab.kr
     enabled: true
@@ -475,6 +631,15 @@ sites:
     ga4PropertyId: "536008285"
     gscSiteUrl: https://2mlab.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\2mlabkr
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home5/nexttech/2mlab.kr
   - id: spinkorea-2
     name: spinkorea.kr
     enabled: true
@@ -484,6 +649,10 @@ sites:
     ga4PropertyId: "536081634"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\spinkorea
   - id: ezfunnel
     name: ezfunnel.kr
     enabled: true
@@ -493,6 +662,15 @@ sites:
     ga4PropertyId: "536106465"
     gscSiteUrl: https://ezfunnel.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\ezfunnelkr
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home5/nexttech/ezfunnel.kr
   - id: knewstory-2
     name: knewstory.kr
     enabled: false
@@ -522,6 +700,10 @@ sites:
     sitemapUrls:
       - https://coinyo.kr/coinyo-sitemap.xml
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\coinyokr
   - id: fastjob-2
     name: fastjob.kr
     enabled: false
@@ -540,6 +722,10 @@ sites:
     ga4PropertyId: "536558706"
     gscSiteUrl: https://cartain.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\cartainkr
   - id: crepika
     name: crepika.com
     enabled: true
@@ -549,6 +735,10 @@ sites:
     ga4PropertyId: "536578195"
     gscSiteUrl: https://crepika.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\crepikacom
   - id: insupang-2
     name: insupang.com
     enabled: false
@@ -576,6 +766,10 @@ sites:
     ga4PropertyId: "536564400"
     gscSiteUrl: https://dogspang.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: seoul
+      localPath: D:\web\dogspangkr
   - id: travelpang-2
     name: travelpang.kr
     enabled: true
@@ -585,6 +779,10 @@ sites:
     ga4PropertyId: "536559437"
     gscSiteUrl: https://travelpang.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\travelpangkr
   - id: legalser-2
     name: legalser.com
     enabled: false
@@ -603,6 +801,10 @@ sites:
     ga4PropertyId: "536670197"
     gscSiteUrl: https://petinsuer.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\petinsuercom
   - id: etique-2
     name: etique.kr
     enabled: false
@@ -621,6 +823,15 @@ sites:
     ga4PropertyId: "536662292"
     gscSiteUrl: https://luxurytraver.com/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\luxurytravercom
+      sshHost: luxurytraver.com
+      sshPort: 1988
+      sshUser: luxurytraver
+      sshKeyPath: D:\env\luxurytraver-ssh-key
+      wpPath: /home/luxurytraver/public_html
   - id: softwa-2
     name: softwa.kr
     enabled: false
@@ -639,6 +850,10 @@ sites:
     ga4PropertyId: "536651077"
     gscSiteUrl: https://autoscares.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\autoscarescom
   - id: healfood-2
     name: healfood.kr
     enabled: true
@@ -648,6 +863,10 @@ sites:
     ga4PropertyId: "536788301"
     gscSiteUrl: https://healfood.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\healfoodkr
   - id: gover-2
     name: gover.kr
     enabled: false
@@ -666,6 +885,10 @@ sites:
     ga4PropertyId: "536753109"
     gscSiteUrl: https://estat.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\estatkr
   - id: homeimer-2
     name: homeimer.com
     enabled: false
@@ -684,6 +907,10 @@ sites:
     ga4PropertyId: "536871374"
     gscSiteUrl: https://askore.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\askorekr
   - id: gong365
     name: gong365.kr
     enabled: true
@@ -693,6 +920,10 @@ sites:
     ga4PropertyId: "536928839"
     gscSiteUrl: https://gong365.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\gong365kr
   - id: trave-2
     name: trave.kr
     enabled: false
@@ -711,6 +942,10 @@ sites:
     ga4PropertyId: "536856718"
     gscSiteUrl: https://goesku.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\goeskucom
   - id: roadways
     name: roadways.kr
     enabled: true
@@ -720,6 +955,10 @@ sites:
     ga4PropertyId: "536902558"
     gscSiteUrl: https://roadways.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\roadwayskr
   - id: lawer-2
     name: lawer.kr
     enabled: false
@@ -738,6 +977,10 @@ sites:
     ga4PropertyId: "537317309"
     gscSiteUrl: https://sssaass.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\sssaasscom
   - id: todayshops
     name: todayshops.kr
     enabled: false
@@ -756,6 +999,10 @@ sites:
     ga4PropertyId: "537331142"
     gscSiteUrl: https://educaer.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\educaercom
   - id: todayshops-2
     name: todayshops.kr
     enabled: true
@@ -765,6 +1012,10 @@ sites:
     ga4PropertyId: "537250213"
     gscSiteUrl: https://todayshops.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\todayshopskr
   - id: richyou
     name: richyou.kr
     enabled: true
@@ -774,6 +1025,15 @@ sites:
     ga4PropertyId: "537950699"
     gscSiteUrl: https://richyou.kr/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\richyoukr
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/richyou.kr
   - id: certifi
     name: certifi.kr
     enabled: true
@@ -783,6 +1043,10 @@ sites:
     ga4PropertyId: "537945374"
     gscSiteUrl: https://certifi.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\certifikr
   - id: finan-2
     name: finan.kr
     enabled: false
@@ -801,6 +1065,10 @@ sites:
     ga4PropertyId: "538379576"
     gscSiteUrl: https://phone.luckyday.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\phoneluckydaykr
   - id: gong-luckyday
     name: gong.luckyday.kr
     enabled: true
@@ -810,6 +1078,10 @@ sites:
     ga4PropertyId: "538330802"
     gscSiteUrl: sc-domain:gong.luckyday.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\gongluckydaykr
   - id: car-luckyday
     name: car.luckyday.kr
     enabled: true
@@ -819,6 +1091,10 @@ sites:
     ga4PropertyId: "538367953"
     gscSiteUrl: sc-domain:car.luckyday.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\carluckydaykr
   - id: notebook-klick
     name: 노트북고고
     enabled: false
@@ -837,6 +1113,10 @@ sites:
     ga4PropertyId: "538469681"
     gscSiteUrl: https://notebook.klick.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\notebook-klick-backups\adsense-20260608-185514
   - id: ai-tasko
     name: ai.tasko.kr
     enabled: true
@@ -846,6 +1126,10 @@ sites:
     ga4PropertyId: "538418068"
     gscSiteUrl: sc-domain:ai.tasko.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: seoul
+      localPath: D:\web\aitaskokr
   - id: saju-tasko
     name: saju.tasko.kr
     enabled: true
@@ -855,6 +1139,10 @@ sites:
     ga4PropertyId: "538409598"
     gscSiteUrl: sc-domain:saju.tasko.kr
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: seoul
+      localPath: D:\web\sajutaskokr
   - id: petjigi
     name: petjigi.kr
     enabled: true
@@ -864,6 +1152,10 @@ sites:
     ga4PropertyId: "538418545"
     gscSiteUrl: https://petjigi.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\petjigi
   - id: yesa
     name: yesa.kr
     enabled: true
@@ -872,7 +1164,11 @@ sites:
     wpRestBase: https://yesa.kr/wp-json/wp/v2
     ga4PropertyId: "539176876"
     gscSiteUrl: https://yesa.kr/
-    monetization: true
+    monetization: false
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\yesa-youunsang
   - id: picklefriend
     name: picklefriend.kr
     enabled: true
@@ -882,6 +1178,10 @@ sites:
     ga4PropertyId: "539268592"
     gscSiteUrl: https://picklefriend.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\picklefriend
   - id: smart-sellerpit
     name: smart.sellerpit.kr
     enabled: true
@@ -893,6 +1193,8 @@ sites:
     monetization: true
     contentSource:
       type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\smartsellerpitkr
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
@@ -907,6 +1209,10 @@ sites:
     ga4PropertyId: "539600556"
     gscSiteUrl: https://pregnancy.ehon365.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\pregnancy
   - id: webtoon-klick
     name: webtoon.klick.kr
     enabled: true
@@ -915,7 +1221,13 @@ sites:
     wpRestBase: https://webtoon.klick.kr/wp-json/wp/v2
     ga4PropertyId: "539606050"
     gscSiteUrl: https://webtoon.klick.kr/
+    sitemapUrls:
+      - https://webtoon.klick.kr/sitemap_index.xml/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\webtoonklickkr
   - id: sinhonjigi-ehon365
     name: sinhonjigi.ehon365.kr
     enabled: true
@@ -925,6 +1237,10 @@ sites:
     ga4PropertyId: "539463615"
     gscSiteUrl: https://sinhonjigi.ehon365.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\sinhonjigi
   - id: gpt-nexttech7
     name: gpt.nexttech7.com
     enabled: true
@@ -934,6 +1250,15 @@ sites:
     ga4PropertyId: "539592261"
     gscSiteUrl: https://gpt.nexttech7.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\gpt-nexttech7-backups\adsense-20260608-102000
+      localPaths:
+        - locationLabel: kwangju
+          path: D:\web\gpt-nexttech7-backups\adsense-20260608-102000
+        - locationLabel: seoul
+          path: D:\web\gptnexttech7com
   - id: dolbomjigi-ehon365
     name: dolbomjigi.ehon365.kr
     enabled: true
@@ -943,6 +1268,10 @@ sites:
     ga4PropertyId: "539658831"
     gscSiteUrl: https://dolbomjigi.ehon365.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\dolbomjigi
   - id: dog-klick
     name: dog.klick.kr
     enabled: true
@@ -952,6 +1281,10 @@ sites:
     ga4PropertyId: "539677201"
     gscSiteUrl: https://dog.klick.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\dogklickkr
   - id: dogswhere
     name: dogswhere.com
     enabled: true
@@ -961,6 +1294,10 @@ sites:
     ga4PropertyId: "539684317"
     gscSiteUrl: sc-domain:dogswhere.com
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\dogswherecom
   - id: travel-sellerpit
     name: travel.sellerpit.kr
     enabled: true
@@ -972,6 +1309,8 @@ sites:
     monetization: true
     contentSource:
       type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\travelsellerpitkr
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
@@ -988,6 +1327,8 @@ sites:
     monetization: true
     contentSource:
       type: wordpress-ssh
+      locationLabel: kwangju
+      localPath: D:\web\jasamall-sellerpit-backups\adsense-20260608-191006
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
@@ -1002,6 +1343,10 @@ sites:
     ga4PropertyId: "540102091"
     gscSiteUrl: https://sorimate.com/
     monetization: false
+    contentSource:
+      type: local-app
+      locationLabel: seoul
+      localPath: D:\web\sorimate
   - id: campgogo
     name: https://campgogo.kr
     enabled: true
@@ -1011,6 +1356,10 @@ sites:
     ga4PropertyId: "540129650"
     gscSiteUrl: https://campgogo.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\campgogokr
   - id: dullegilgogo
     name: https://dullegilgogo.kr
     enabled: true
@@ -1020,6 +1369,10 @@ sites:
     ga4PropertyId: "540228738"
     gscSiteUrl: https://dullegilgogo.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\dullegilgogo
   - id: workgogo
     name: workgogo.kr
     enabled: true
@@ -1029,6 +1382,10 @@ sites:
     ga4PropertyId: "540357516"
     gscSiteUrl: https://workgogo.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\workgogo.kr
   - id: youkamap
     name: https://youkamap.kr
     enabled: true
@@ -1038,6 +1395,10 @@ sites:
     ga4PropertyId: "540469143"
     gscSiteUrl: https://youkamap.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\youkamap
   - id: doseogogo
     name: http://doseogogo.kr
     enabled: true
@@ -1047,6 +1408,10 @@ sites:
     ga4PropertyId: "540474596"
     gscSiteUrl: https://doseogogo.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\doseogogo.kr
   - id: nongsusangogo
     name: https://nongsusangogo.kr
     enabled: true
@@ -1056,6 +1421,10 @@ sites:
     ga4PropertyId: "540392169"
     gscSiteUrl: https://nongsusangogo.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: seoul
+      localPath: D:\web\nongsusangogo
   - id: yungyanggogo
     name: yungyanggogo.kr
     enabled: true
@@ -1065,6 +1434,10 @@ sites:
     ga4PropertyId: "540455691"
     gscSiteUrl: https://yungyanggogo.kr/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\yungyanggogo
   - id: caregos
     name: caregos.com
     enabled: true
@@ -1074,6 +1447,10 @@ sites:
     ga4PropertyId: "540671690"
     gscSiteUrl: https://caregos.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: static-local
+      localPath: D:\web\yoyangwon
   - id: wattbenchs
     name: wattbenchs.com
     enabled: true
@@ -1083,6 +1460,10 @@ sites:
     ga4PropertyId: "540673092"
     gscSiteUrl: https://wattbenchs.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: nextjs-local
+      localPath: D:\web\electonic
   - id: limsight
     name: limsight.kr
     enabled: true
@@ -1091,67 +1472,94 @@ sites:
     wpRestBase: https://limsight.kr/wp-json/wp/v2
     ga4PropertyId: "541579004"
     gscSiteUrl: https://limsight.kr/
+    sitemapUrls:
+      - https://limsight.kr/wp-sitemap.xml
     monetization: false
-  - id: kapti
-    name: kapti.kr
-    enabled: true
-    platform: wordpress
-    url: https://kapti.kr/
-    wpRestBase: https://kapti.kr/wp-json/wp/v2
-    ga4PropertyId: "542290124"
-    gscSiteUrl: https://kapti.kr/
-    monetization: true
-  - id: coverclarityhealth
-    name: coverclarityhealth.com
-    enabled: true
-    platform: wordpress
-    url: https://coverclarityhealth.com/
-    wpRestBase: https://coverclarityhealth.com/wp-json/wp/v2
-    ga4PropertyId: "542279941"
-    gscSiteUrl: https://coverclarityhealth.com/
-    monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\limsite-newletter
   - id: solarpaybackmap
     name: solarpaybackmap.com
     enabled: true
-    platform: wordpress
+    platform: nextjs
     url: https://solarpaybackmap.com/
-    wpRestBase: https://solarpaybackmap.com/wp-json/wp/v2
     ga4PropertyId: "542279766"
-    gscSiteUrl: https://solarpaybackmap.com/
+    sitemapUrls:
+      - https://solarpaybackmap.com/sitemap.xml
     monetization: true
-  - id: gradienttrail
-    name: gradienttrail.com
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\solarpaybackmap
+      githubRepo: https://github.com/lsk7209/solarpaybackmap.com
+  - id: coverclarityhealth
+    name: coverclarityhealth.com
     enabled: true
-    platform: wordpress
-    url: https://gradienttrail.com/
-    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
-    ga4PropertyId: "543434435"
-    gscSiteUrl: https://gradienttrail.com/
+    platform: nextjs
+    url: https://coverclarityhealth.com/
+    ga4PropertyId: "542279941"
+    sitemapUrls:
+      - https://coverclarityhealth.com/sitemap.xml
     monetization: true
-  - id: dogbreedcost
-    name: https://dogbreedcost.com
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\coverclarityhealth
+      githubRepo: https://github.com/lsk7209/coverclarityhealth.com
+  - id: kapti
+    name: kapti.kr
     enabled: true
-    platform: wordpress
-    url: https://dogbreedcost.com/
-    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
-    ga4PropertyId: "543424923"
-    gscSiteUrl: https://dogbreedcost.com/
+    platform: nextjs
+    url: https://kapti.kr/
+    ga4PropertyId: "542290124"
+    sitemapUrls:
+      - https://kapti.kr/sitemap.xml
     monetization: true
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\kapt
+      githubRepo: https://github.com/lsk7209/kapti.kr
   - id: patentgogo
     name: patentgogo.com
     enabled: true
-    platform: wordpress
+    platform: nextjs
     url: https://patentgogo.com/
-    wpRestBase: https://patentgogo.com/wp-json/wp/v2
-    ga4PropertyId: "543441407"
     gscSiteUrl: https://patentgogo.com/
+    sitemapUrls:
+      - https://patentgogo.com/sitemap.xml
     monetization: true
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\tukhugogo
+      githubRepo: https://github.com/lsk7209/tukhugogo
   - id: rndatlas
     name: rndatlas.com
     enabled: true
-    platform: wordpress
+    platform: nextjs
     url: https://rndatlas.com/
-    wpRestBase: https://rndatlas.com/wp-json/wp/v2
-    ga4PropertyId: "543459196"
     gscSiteUrl: https://rndatlas.com/
+    sitemapUrls:
+      - https://rndatlas.com/sitemap.xml
     monetization: true
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\rndmap
+      githubRepo: https://github.com/lsk7209/rndmap
+  - id: localgeo
+    name: localgeo.app
+    enabled: true
+    platform: static
+    url: https://localgeo.app/
+    gscSiteUrl: https://localgeo.app/
+    sitemapUrls:
+      - https://localgeo.app/sitemap.xml
+    monetization: false
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\localgeo\repo
+      githubRepo: https://github.com/lsk7209/localgeo

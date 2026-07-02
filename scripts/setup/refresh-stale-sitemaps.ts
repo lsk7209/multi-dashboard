@@ -42,6 +42,8 @@ interface Args {
   basis: RefreshBasis;
   minAgeDays: number;
   limit: number;
+  siteId?: string;
+  host?: string;
 }
 
 interface Target {
@@ -57,13 +59,14 @@ function parseArgs(): Args {
   const minAgeArg = args.find((arg) => arg.startsWith("--min-age-days="));
   const limitArg = args.find((arg) => arg.startsWith("--limit="));
   const basisArg = args.find((arg) => arg.startsWith("--basis="));
+  const siteIdArg = args.find((arg) => arg.startsWith("--site-id="));
+  const hostArg = args.find((arg) => arg.startsWith("--host="));
   const basis = basisArg?.replace("--basis=", "");
   if (basis && basis !== "downloaded" && basis !== "submitted") {
     throw new Error("--basis must be downloaded or submitted.");
   }
   const refreshBasis: RefreshBasis = basis === "submitted" ? "submitted" : "downloaded";
-
-  return {
+  const parsed: Args = {
     dryRun: args.includes("--dry-run"),
     includeIssues: args.includes("--include-issues"),
     all: args.includes("--all"),
@@ -73,6 +76,47 @@ function parseArgs(): Args {
       : DEFAULT_MIN_AGE_DAYS,
     limit: limitArg ? Number(limitArg.replace("--limit=", "")) : 50,
   };
+
+  if (siteIdArg) {
+    parsed.siteId = siteIdArg.replace("--site-id=", "");
+  }
+  if (hostArg) {
+    parsed.host = hostArg
+      .replace("--host=", "")
+      .replace(/^https?:\/\//, "")
+      .replace(/\/$/, "");
+  }
+
+  return parsed;
+}
+
+function getHost(value: string | undefined): string | undefined {
+  if (!value) {
+    return undefined;
+  }
+
+  try {
+    return new URL(value).hostname;
+  } catch {
+    return value.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  }
+}
+
+function matchesTargetFilter(stat: SiteStat, args: Args): boolean {
+  if (args.siteId && stat.id !== args.siteId) {
+    return false;
+  }
+
+  if (args.host) {
+    const hosts = [stat.url, stat.gscSiteUrl, stat.sitemapPath]
+      .map(getHost)
+      .filter(Boolean);
+    if (!hosts.includes(args.host)) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 function getCollectionAgeDays(value: string | undefined, now: Date): number {
@@ -122,6 +166,10 @@ function dedupeTargets(targets: Target[]): Target[] {
 function selectTargets(snapshot: StatsSnapshot, args: Args): Target[] {
   const now = snapshot.generatedAt ? new Date(snapshot.generatedAt) : new Date();
   const targets = snapshot.stats.flatMap<Target>((stat) => {
+    if (!matchesTargetFilter(stat, args)) {
+      return [];
+    }
+
     const siteUrl = stat.gscSiteUrl ?? stat.url;
     const sitemapDetails =
       stat.sitemapDetails && stat.sitemapDetails.length > 0

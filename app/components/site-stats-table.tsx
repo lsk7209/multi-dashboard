@@ -31,6 +31,7 @@ type SortKey =
   | "gscClicks"
   | "gscImpressions"
   | "googleIndexed"
+  | "indexPresence"
   | "topQueries"
   | "ctr"
   | "adsense"
@@ -40,6 +41,8 @@ type SortKey =
   | "sitemapCollectedAt"
   | "status";
 type SortDirection = "asc" | "desc";
+type IndexPresenceEngineResult =
+  NonNullable<EnrichedSiteStat["searchIndexPresence"]>["engines"]["google"];
 
 const SITEMAP_COLLECTION_LAG_DAYS = 5;
 
@@ -55,6 +58,7 @@ const sortLabels: Record<SortKey, string> = {
   gscImpressions: "GSC 노출",
   googleIndexed: "사이트맵 URL",
   topQueries: "대표 유입 키워드",
+  indexPresence: "site: 노출",
   ctr: "CTR",
   adsense: "AdSense",
   adsTxt: "ads.txt",
@@ -116,6 +120,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "gscImpressions", label: "GSC 노출" },
   { key: "googleIndexed", label: "사이트맵 URL" },
   { key: "topQueries", label: "유입 키워드" },
+  { key: "indexPresence", label: "site: 노출" },
   { key: "ctr", label: "CTR" },
   { key: "adsense", label: "AdSense" },
   { key: "adsTxt", label: "ads.txt" },
@@ -306,7 +311,7 @@ export function SiteStatsTable({
           <tbody>
             {visibleStats.length === 0 ? (
               <tr>
-                <td className="table-empty" colSpan={17}>
+                <td className="table-empty" colSpan={18}>
                   조건에 맞는 사이트가 없습니다.
                 </td>
               </tr>
@@ -429,6 +434,7 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
           <a href={stat.url} onClick={(event) => event.stopPropagation()}>
             {formatHost(stat.url)}
           </a>
+          <DevelopmentPaths stat={stat} />
           {stat.duplicateCount ? (
             <span className="duplicate-note" title={formatDuplicateTitle(stat)}>
               중복 {stat.duplicateCount}개 숨김
@@ -459,6 +465,9 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
       </td>
       <td>
         <TopQueriesCell stat={stat} />
+      </td>
+      <td>
+        <IndexPresenceCell stat={stat} />
       </td>
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
       <td>
@@ -496,6 +505,47 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
   );
 }
 
+function DevelopmentPaths({ stat }: { stat: EnrichedSiteStat }) {
+  if (stat.developmentPaths.length === 0) {
+    return (
+      <span
+        className="development-path development-path-missing"
+        title={formatDevelopmentPathTitle(stat)}
+      >
+        dev: path missing
+      </span>
+    );
+  }
+
+  return (
+    <>
+      {stat.developmentPaths.map((path) =>
+        path.kind === "github" ? (
+          <a
+            className="development-path development-path-github"
+            href={path.path}
+            key={`${path.label}-${path.path}`}
+            onClick={(event) => event.stopPropagation()}
+            rel="noreferrer"
+            target="_blank"
+            title={`${path.label} ${formatDevelopmentPathKind(path.kind)}: ${path.path}`}
+          >
+            {path.label}: {formatGitHubRepo(path.path)}
+          </a>
+        ) : (
+          <span
+            className={`development-path development-path-${path.kind}`}
+            key={`${path.label}-${path.path}`}
+            title={`${path.label} ${formatDevelopmentPathKind(path.kind)}: ${path.path}`}
+          >
+            {path.label}: {path.path}
+          </span>
+        ),
+      )}
+    </>
+  );
+}
+
 function ScheduledPostCell({ stat }: { stat: EnrichedSiteStat }) {
   const count = stat.scheduledFutureCount;
   // count 미수집(undefined) → "-", 소진(0) → "소진", 보유(>0) → "N편"
@@ -530,6 +580,50 @@ function SitemapCollectionCell({ stat }: { stat: EnrichedSiteStat }) {
       <strong>{getSitemapCollectionStatusLabel(stat)}</strong>
       <small>{formatShortDate(collectedAt)}</small>
     </span>
+  );
+}
+
+function IndexPresenceCell({ stat }: { stat: EnrichedSiteStat }) {
+  const presence = stat.searchIndexPresence;
+  if (!presence) {
+    return (
+      <span
+        className="index-presence-empty"
+        title="아직 site: 검색 노출 수를 수집하지 않았습니다. pnpm index-presence:update 실행 후 갱신됩니다."
+      >
+        -
+      </span>
+    );
+  }
+
+  const engines = [
+    { key: "google" as const, label: "G" },
+    { key: "naver" as const, label: "N" },
+    { key: "daum" as const, label: "D" },
+  ];
+
+  return (
+    <div
+      className="index-presence-list"
+      title={formatIndexPresenceTitle(stat)}
+    >
+      {engines.map((engine) => {
+        const result = presence.engines[engine.key];
+        return (
+          <a
+            className={`index-presence-chip index-presence-${result.status}`}
+            href={result.queryUrl}
+            key={engine.key}
+            onClick={(event) => event.stopPropagation()}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <b>{engine.label}</b>
+            <span>{formatIndexPresenceValue(result)}</span>
+          </a>
+        );
+      })}
+    </div>
   );
 }
 
@@ -646,6 +740,44 @@ function getKeywordSortValue(stat: EnrichedSiteStat): number {
     : keyword.activeUsers;
 }
 
+function getIndexPresenceSortValue(stat: EnrichedSiteStat): number {
+  const engines = stat.searchIndexPresence?.engines;
+  if (!engines) {
+    return 0;
+  }
+  return Object.values(engines).reduce(
+    (sum, result) => sum + (result.status === "ok" ? (result.count ?? 0) : 0),
+    0,
+  );
+}
+
+function formatIndexPresenceValue(result: IndexPresenceEngineResult): string {
+  if (result.status === "ok") {
+    return formatNumber(result.count ?? 0);
+  }
+  if (result.status === "not_checked") {
+    return "-";
+  }
+  return "확인";
+}
+
+function formatIndexPresenceTitle(stat: EnrichedSiteStat): string {
+  const presence = stat.searchIndexPresence;
+  if (!presence) {
+    return "site: 검색 노출 수 미수집";
+  }
+  return [
+    `${presence.query} 기준 검색 노출 추정치`,
+    `수집: ${formatShortDate(presence.checkedAt)}`,
+    ...Object.values(presence.engines).map((result) => {
+      const count =
+        result.status === "ok" ? `${formatNumber(result.count ?? 0)}개` : result.status;
+      const detail = result.error ? ` - ${result.error}` : "";
+      return `${result.engine}: ${count}${detail}`;
+    }),
+  ].join("\n");
+}
+
 function matchesQuery(
   stat: EnrichedSiteStat,
   normalizedQuery: string,
@@ -654,11 +786,21 @@ function matchesQuery(
     return true;
   }
 
-  return `${stat.name} ${stat.url} ${getTrafficKeywords(stat)
+  return `${stat.name} ${stat.url} ${formatDevelopmentPathsForSearch(stat)} ${formatIndexPresenceForSearch(stat)} ${getTrafficKeywords(stat)
     .map((keyword) => `${keyword.keyword} ${keyword.sourceMedium}`)
     .join(" ")}`
     .toLowerCase()
     .includes(normalizedQuery);
+}
+
+function formatIndexPresenceForSearch(stat: EnrichedSiteStat): string {
+  const presence = stat.searchIndexPresence;
+  if (!presence) {
+    return "";
+  }
+  return `${presence.host} ${presence.query} ${Object.values(presence.engines)
+    .map((engine) => `${engine.engine} ${engine.status} ${engine.count ?? ""}`)
+    .join(" ")}`;
 }
 
 function matchesStatus(
@@ -738,7 +880,7 @@ function getSortValue(
   sortKey: SortKey,
 ): number | string {
   if (sortKey === "site") {
-    return `${stat.name} ${formatHost(stat.url)}`;
+    return `${stat.name} ${formatHost(stat.url)} ${formatDevelopmentPathsForSearch(stat)}`;
   }
   if (sortKey === "priority") {
     return 100 - stat.health.score;
@@ -766,6 +908,9 @@ function getSortValue(
   }
   if (sortKey === "googleIndexed") {
     return stat.googleSubmittedCount ?? stat.googleIndexedCount ?? 0;
+  }
+  if (sortKey === "indexPresence") {
+    return getIndexPresenceSortValue(stat);
   }
   if (sortKey === "topQueries") {
     return getKeywordSortValue(stat);
@@ -963,6 +1108,70 @@ function formatDuplicateTitle(stat: EnrichedSiteStat): string {
     "같은 호스트의 다른 GA4 속성은 대표 항목에서 숨겼습니다.",
     ...details,
   ].join("\n");
+}
+
+function formatDevelopmentPathTitle(stat: EnrichedSiteStat): string {
+  if (stat.developmentPaths.length > 0) {
+    return stat.developmentPaths
+      .map(
+        (path) =>
+          `${path.label} ${formatDevelopmentPathKind(path.kind)}: ${path.path}`,
+      )
+      .join("\n");
+  }
+  if (stat.developmentPathKind === "local") {
+    return `${formatDevelopmentPathLabel(stat)} development folder: ${stat.developmentPath}`;
+  }
+  if (stat.developmentPathKind === "remote") {
+    return `${formatDevelopmentPathLabel(stat)} WordPress path: ${stat.developmentPath}`;
+  }
+  if (stat.developmentPathKind === "github") {
+    return `${formatDevelopmentPathLabel(stat)} GitHub repository: ${stat.developmentPath}`;
+  }
+  return "Development folder is not registered in scripts/setup/sites.yaml";
+}
+
+function formatDevelopmentPathLabel(stat: EnrichedSiteStat): string {
+  if (stat.developmentPathLabel) {
+    return stat.developmentPathLabel;
+  }
+  if (stat.developmentPathKind === "github") {
+    return "GitHub";
+  }
+  if (stat.developmentPathKind === "remote") {
+    return "remote";
+  }
+  return "dev";
+}
+
+function formatDevelopmentPathKind(
+  kind: EnrichedSiteStat["developmentPaths"][number]["kind"],
+): string {
+  if (kind === "github") {
+    return "GitHub repository";
+  }
+  if (kind === "remote") {
+    return "WordPress path";
+  }
+  return "development folder";
+}
+
+function formatGitHubRepo(value: string): string {
+  try {
+    const parsed = new URL(value);
+    return parsed.pathname.replace(/^\//, "");
+  } catch {
+    return value;
+  }
+}
+
+function formatDevelopmentPathsForSearch(stat: EnrichedSiteStat): string {
+  if (stat.developmentPaths.length > 0) {
+    return stat.developmentPaths
+      .map((path) => `${path.label} ${path.path}`)
+      .join(" ");
+  }
+  return stat.developmentPath ?? "";
 }
 
 function formatTopQueriesTitle(stat: EnrichedSiteStat): string {
