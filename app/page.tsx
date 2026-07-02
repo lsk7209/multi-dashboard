@@ -2,6 +2,7 @@ import {
   DashboardTabs,
   type DashboardTabItem,
 } from "./components/dashboard-tabs.js";
+import { AppHeader } from "./components/app-header.js";
 import { BannerManagementConsole } from "./components/banner-management-console.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
 import {
@@ -50,13 +51,6 @@ export default function DashboardPage() {
       content: <InsightsSection data={data} />,
     },
     {
-      id: "banners",
-      label: "배너",
-      panelLabel: "배너 관리",
-      count: formatNumber(monetization.bannerManagement.counts.placements),
-      content: <BannerManagementSection data={monetization.bannerManagement} />,
-    },
-    {
       id: "affiliates",
       label: "제휴",
       panelLabel: "어필리에이트 목록",
@@ -73,15 +67,12 @@ export default function DashboardPage() {
 
   return (
     <main className="dashboard-shell">
-      <header className="topbar">
-        <div>
-          <p className="eyebrow">GA4 + GSC + AdSense Multi-Site Dashboard</p>
-          <h1>사이트별 인사이트 대시보드</h1>
-        </div>
-        <div className="status-pill" aria-label="통계 스냅샷 생성 시각">
-          {updatedAt}
-        </div>
-      </header>
+      <AppHeader
+        active="dashboard"
+        eyebrow="GA4 + GSC + AdSense Multi-Site Dashboard"
+        status={updatedAt}
+        title="사이트별 인사이트 대시보드"
+      />
 
       <DashboardTabs items={tabs} />
     </main>
@@ -510,6 +501,7 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function BannerManagementSection({
   data,
 }: {

@@ -53,6 +53,43 @@ select {
   margin-bottom: 18px;
 }
 
+.topbar-title {
+  min-width: 0;
+}
+
+.topbar-actions {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.header-menu {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.header-menu a {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header-menu a:hover,
+.header-menu a.active,
+.header-menu a[aria-current="page"] {
+  border-color: rgba(15, 118, 110, 0.24);
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
 .eyebrow {
   margin: 0 0 8px;
   color: var(--accent);
@@ -1616,6 +1653,20 @@ code {
   min-width: 760px;
 }
 
+.banner-page-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.55fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.banner-page-intro p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 @media (max-width: 860px) {
   .dashboard-shell {
     width: min(100% - 24px, 720px);
@@ -1624,6 +1675,15 @@ code {
 
   .topbar {
     flex-direction: column;
+  }
+
+  .topbar-actions {
+    justify-items: stretch;
+    width: 100%;
+  }
+
+  .header-menu {
+    justify-content: flex-start;
   }
 
   h1 {
@@ -1657,6 +1717,7 @@ code {
   .ops-form-grid,
   .ops-table-grid,
   .ops-assignment,
+  .banner-page-intro,
   .table-controls,
   .secret-grid {
     grid-template-columns: 1fr;
