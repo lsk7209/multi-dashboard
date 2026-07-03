@@ -108,6 +108,24 @@ export interface AffiliateItemSummary {
   integrationSupport: AffiliateIntegrationSupport;
 }
 
+export interface AffiliateSiteRoutingEntry {
+  siteId: string;
+  name: string;
+  domain: string;
+  enabled: boolean;
+  platform: string;
+  monetization: boolean;
+  targetMarket: string;
+  primaryAudience: string;
+  activePrograms: string[];
+  blockedPrograms: string[];
+  coupangExposure: string;
+  coupangChannelStatus: CoupangChannelStatus | "not_listed";
+  coupangRegistered: boolean;
+  notes: string;
+  source: string[];
+}
+
 export interface AffiliateCandidateSummary {
   category: string;
   name: string;
@@ -166,6 +184,7 @@ export interface AffiliateInventorySnapshot {
   lastManualSync: string;
   programs: AffiliateProgramSummary[];
   affiliateItems: AffiliateItemSummary[];
+  siteRouting: AffiliateSiteRoutingEntry[];
   playbook: {
     disclosureTemplateKo: string;
     disclosureTemplateEn: string;
@@ -238,6 +257,7 @@ const EMPTY_AFFILIATES: AffiliateInventorySnapshot = {
   lastManualSync: "",
   programs: [],
   affiliateItems: [],
+  siteRouting: [],
   playbook: {
     disclosureTemplateKo:
       "이 글에는 제휴 링크가 포함되어 있으며, 링크를 통한 구매 또는 가입 시 일정액의 수수료를 받을 수 있습니다.",

@@ -4,6 +4,7 @@ import type {
   AffiliateInventorySnapshot,
   AffiliateItemSummary,
   AffiliateProgramSummary,
+  AffiliateSiteRoutingEntry,
 } from "../lib/monetization-workspace.js";
 
 interface AffiliateWorkspaceProps {
@@ -41,6 +42,7 @@ export function AffiliateWorkspace({
     compareAffiliateItems,
   );
   const programs = [...(data.programs ?? [])].sort(comparePrograms);
+  const siteRouting = [...(data.siteRouting ?? [])].sort(compareSiteRoutes);
   const playbook = data.playbook ?? {
     bannerSlotStrategy: [],
     defaultRel: "sponsored nofollow",
@@ -117,9 +119,16 @@ export function AffiliateWorkspace({
           value={formatNumber(broadFitItems.length)}
           hint="allowedSites 제한 없음"
         />
+        <SummaryCard
+          label="사이트 라우팅"
+          value={formatNumber(siteRouting.length)}
+          hint="허용/차단 운영 기준"
+        />
       </div>
 
       <CoupangChannelGate registry={coupangRegistry} />
+
+      <AffiliateSiteRoutingTable routes={siteRouting} />
 
       <AffiliateItemTable
         items={visibleAffiliateItems}
@@ -144,6 +153,85 @@ export function AffiliateWorkspace({
 
       <RippleAlbaCandidates candidates={highValueCandidates} />
     </div>
+  );
+}
+
+function AffiliateSiteRoutingTable({
+  routes,
+}: {
+  routes: AffiliateSiteRoutingEntry[];
+}) {
+  const coupangAllowed = routes.filter((route) =>
+    route.activePrograms.includes("coupang-partners"),
+  ).length;
+  const coupangBlocked = routes.filter((route) =>
+    route.blockedPrograms.includes("coupang-partners"),
+  ).length;
+
+  return (
+    <article className="panel workspace-table-panel affiliate-item-table">
+      <div className="panel-heading">
+        <div>
+          <h2>사이트별 제휴 라우팅</h2>
+          <p>
+            사이트 대상 국가와 등록 상태에 따라 쿠팡, Skimlinks 등 제휴 노출을
+            허용하거나 차단하는 운영 기준입니다.
+          </p>
+        </div>
+        <span>
+          쿠팡 허용 {formatNumber(coupangAllowed)} / 쿠팡 차단{" "}
+          {formatNumber(coupangBlocked)}
+        </span>
+      </div>
+      <div className="workspace-table-wrap">
+        <table className="workspace-table">
+          <thead>
+            <tr>
+              <th>사이트</th>
+              <th>대상</th>
+              <th>활성 제휴</th>
+              <th>차단 제휴</th>
+              <th>쿠팡 상태</th>
+              <th>소스</th>
+              <th>메모</th>
+            </tr>
+          </thead>
+          <tbody>
+            {routes.length === 0 ? (
+              <tr>
+                <td colSpan={7}>사이트별 제휴 라우팅 데이터가 없습니다.</td>
+              </tr>
+            ) : (
+              routes.map((route) => (
+                <tr key={`${route.siteId}-${route.domain}`}>
+                  <td>
+                    <strong>{route.domain}</strong>
+                    <small>
+                      {route.siteId} / {route.platform} /{" "}
+                      {route.enabled ? "활성" : "비활성"}
+                    </small>
+                  </td>
+                  <td>
+                    <strong>{formatTargetMarket(route.targetMarket)}</strong>
+                    <small>{route.primaryAudience || "-"}</small>
+                  </td>
+                  <td>{formatStringList(route.activePrograms, 4)}</td>
+                  <td>{formatStringList(route.blockedPrograms, 4)}</td>
+                  <td>
+                    <strong>{formatCoupangRouting(route)}</strong>
+                    <small>
+                      {route.coupangChannelStatus} / {route.coupangExposure}
+                    </small>
+                  </td>
+                  <td>{formatStringList(route.source, 2)}</td>
+                  <td>{route.notes || "-"}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </article>
   );
 }
 
@@ -550,6 +638,16 @@ function comparePrograms(
   );
 }
 
+function compareSiteRoutes(
+  left: AffiliateSiteRoutingEntry,
+  right: AffiliateSiteRoutingEntry,
+): number {
+  return (
+    targetMarketRank(left.targetMarket) - targetMarketRank(right.targetMarket) ||
+    left.domain.localeCompare(right.domain)
+  );
+}
+
 function compareCoupangChannels(
   left: CoupangChannelRegistryEntry,
   right: CoupangChannelRegistryEntry,
@@ -560,6 +658,34 @@ function compareCoupangChannels(
       rank(COUPANG_CHANNEL_STATUS_ORDER, right.status) ||
     left.domain.localeCompare(right.domain)
   );
+}
+
+function targetMarketRank(targetMarket: string): number {
+  if (targetMarket === "kr") return 0;
+  if (targetMarket === "global_en") return 1;
+  return 9;
+}
+
+function formatTargetMarket(targetMarket: string): string {
+  const labels: Record<string, string> = {
+    global_en: "영어권",
+    kr: "한국",
+    unclassified: "미분류",
+  };
+
+  return labels[targetMarket] ?? targetMarket;
+}
+
+function formatCoupangRouting(route: AffiliateSiteRoutingEntry): string {
+  if (route.activePrograms.includes("coupang-partners")) {
+    return "쿠팡 노출 허용";
+  }
+
+  if (route.blockedPrograms.includes("coupang-partners")) {
+    return "쿠팡 노출 차단";
+  }
+
+  return route.coupangRegistered ? "등록 채널" : "쿠팡 미연결";
 }
 
 function formatCoupangChannelStatus(status: string): string {

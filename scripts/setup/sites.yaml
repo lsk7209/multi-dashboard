@@ -258,6 +258,14 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\homeimercom
+    affiliate:
+      targetMarket: global_en
+      primaryAudience: English-speaking home decor and interior design readers
+      activePrograms: []
+      blockedPrograms:
+        - coupang-partners
+      coupangExposure: blocked_non_korean_audience
+      notes: "English-audience site. Do not serve Coupang ads unless the site strategy changes and the channel is explicitly registered for Korean promotion."
   - id: healfood
     name: 건강푸드팡 - GA4
     enabled: false
@@ -1606,3 +1614,11 @@ sites:
     ga4PropertyId: "543424923"
     gscSiteUrl: https://dogbreedcost.com/
     monetization: true
+    affiliate:
+      targetMarket: global_en
+      primaryAudience: English-speaking dog breed cost and pet ownership readers
+      activePrograms: []
+      blockedPrograms:
+        - coupang-partners
+      coupangExposure: blocked_non_korean_audience
+      notes: "English-audience site. Do not serve Coupang ads unless the site strategy changes and the channel is explicitly registered for Korean promotion."

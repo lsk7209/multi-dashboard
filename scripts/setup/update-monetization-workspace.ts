@@ -28,6 +28,11 @@ const BANNER_DB_PATH =
   process.env.MONETIZATION_BANNER_DB ?? join(SOURCE_DIR, "ad-manage.db");
 const AFFILIATE_SOURCE_DIR =
   process.env.MONETIZATION_AFFILIATE_DIR ?? join(SOURCE_DIR, "affiliates");
+const SITES_CONFIG_PATH =
+  process.env.MONETIZATION_SITES_CONFIG ?? resolve("scripts", "setup", "sites.yaml");
+const COUPANG_CHANNEL_REGISTRY_PATH =
+  process.env.COUPANG_CHANNEL_REGISTRY_PATH ??
+  resolve("data", "coupang-channel-registry.json");
 
 function asRecord(value: unknown): Row {
   return value && typeof value === "object" ? (value as Row) : {};
@@ -39,6 +44,10 @@ function asArray(value: unknown): unknown[] {
 
 function asString(value: unknown): string {
   return typeof value === "string" ? value : value == null ? "" : String(value);
+}
+
+function asBoolean(value: unknown): boolean {
+  return value === true;
 }
 
 function asOptionalString(value: unknown): string | undefined {
@@ -56,6 +65,11 @@ function asNumber(value: unknown): number {
 function readYaml(path: string): Row {
   if (!existsSync(path)) return {};
   return asRecord(YAML.parse(readFileSync(path, "utf8")));
+}
+
+function readJson(path: string): Row {
+  if (!existsSync(path)) return {};
+  return asRecord(JSON.parse(readFileSync(path, "utf8")));
 }
 
 function normalizeIntegrationSupport(value: unknown) {
@@ -329,6 +343,142 @@ export function buildAffiliateItems(programs: Array<ReturnType<typeof normalizeP
     .sort(compareAffiliateItems);
 }
 
+export function buildAffiliateSiteRouting(input: {
+  coupangRegistry?: unknown;
+  sitesConfig?: unknown;
+}) {
+  const sitesConfig = asRecord(input.sitesConfig);
+  const coupangRegistry = asRecord(input.coupangRegistry);
+  const sites = asArray(sitesConfig.sites).map(asRecord);
+  const channels = asArray(coupangRegistry.channels).map(asRecord);
+  const routeMap = new Map<string, ReturnType<typeof createSiteRoute>>();
+
+  for (const site of sites) {
+    const affiliate = asRecord(site.affiliate);
+    if (Object.keys(affiliate).length === 0) continue;
+    upsertSiteRoute(routeMap, createSiteRoute({ site }));
+  }
+
+  for (const channel of channels) {
+    const channelSiteId = asString(channel.siteId);
+    const channelDomain = normalizeDomain(asString(channel.domain));
+    const matchingSite =
+      sites.find((site) => asString(site.id) === channelSiteId) ??
+      sites.find((site) => normalizeDomain(asString(site.url)) === channelDomain);
+
+    upsertSiteRoute(routeMap, createSiteRoute({ channel, site: matchingSite }));
+  }
+
+  return [...routeMap.values()].sort(compareSiteRoutes);
+}
+
+function createSiteRoute({ channel, site }: { channel?: Row; site?: Row }) {
+  const affiliate = asRecord(site?.affiliate);
+  const channelStatus = asString(channel?.status);
+  const domain =
+    normalizeDomain(asString(site?.url)) ||
+    normalizeDomain(asString(channel?.domain)) ||
+    normalizeDomain(asString(site?.gscSiteUrl));
+  const blockedPrograms = uniqueStrings(asArray(affiliate.blockedPrograms).map(asString));
+  const activePrograms = uniqueStrings(asArray(affiliate.activePrograms).map(asString));
+  const coupangRegistered =
+    channelStatus === "approved" ||
+    channelStatus === "registered" ||
+    channelStatus === "screenshot_submitted";
+
+  if (coupangRegistered && !blockedPrograms.includes("coupang-partners")) {
+    activePrograms.push("coupang-partners");
+  }
+
+  return {
+    siteId: asString(site?.id || channel?.siteId),
+    name: asString(site?.name || channel?.domain),
+    domain,
+    enabled: site ? asBoolean(site.enabled) : true,
+    platform: asString(site?.platform || "unknown"),
+    monetization: site ? asBoolean(site.monetization) : true,
+    targetMarket: asString(
+      affiliate.targetMarket || (channel ? "kr" : "unclassified"),
+    ),
+    primaryAudience: asString(
+      affiliate.primaryAudience ||
+        (channel ? "Korean readers on registered Coupang channel" : ""),
+    ),
+    activePrograms: uniqueStrings(activePrograms),
+    blockedPrograms,
+    coupangExposure: asString(
+      affiliate.coupangExposure ||
+        (coupangRegistered ? "registered_channel_allowed" : "channel_not_registered_blocked"),
+    ),
+    coupangChannelStatus: channelStatus || "not_listed",
+    coupangRegistered,
+    notes: uniqueStrings([asString(affiliate.notes), asString(channel?.notes)])
+      .filter(Boolean)
+      .join(" "),
+    source: uniqueStrings([
+      site ? "sites.yaml" : "",
+      channel ? "coupang-channel-registry.json" : "",
+    ]),
+  };
+}
+
+function upsertSiteRoute(
+  routeMap: Map<string, ReturnType<typeof createSiteRoute>>,
+  route: ReturnType<typeof createSiteRoute>,
+) {
+  const key = route.domain || route.siteId;
+  const existing = routeMap.get(key);
+  if (!existing) {
+    routeMap.set(key, route);
+    return;
+  }
+
+  routeMap.set(key, {
+    ...existing,
+    ...route,
+    activePrograms: uniqueStrings([
+      ...existing.activePrograms,
+      ...route.activePrograms,
+    ]),
+    blockedPrograms: uniqueStrings([
+      ...existing.blockedPrograms,
+      ...route.blockedPrograms,
+    ]),
+    notes: uniqueStrings([existing.notes, route.notes]).filter(Boolean).join(" "),
+    source: uniqueStrings([...existing.source, ...route.source]),
+  });
+}
+
+function compareSiteRoutes(
+  a: ReturnType<typeof createSiteRoute>,
+  b: ReturnType<typeof createSiteRoute>,
+): number {
+  return (
+    priorityRank(targetMarketRankKey(a.targetMarket)) -
+      priorityRank(targetMarketRankKey(b.targetMarket)) ||
+    a.domain.localeCompare(b.domain)
+  );
+}
+
+function targetMarketRankKey(targetMarket: string): string {
+  if (targetMarket === "kr") return "p0";
+  if (targetMarket === "global_en") return "p1";
+  return "manual";
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+}
+
+function normalizeDomain(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/.*$/, "");
+}
+
 function compareAffiliateItems(
   a: { priority: string; risk: string; title: string },
   b: { priority: string; risk: string; title: string },
@@ -384,6 +534,10 @@ function loadAffiliateInventory() {
   const merchants = readYaml(merchantsPath);
   const programs = asArray(inventory.programs).map(normalizeProgram);
   const affiliateItems = buildAffiliateItems(programs);
+  const siteRouting = buildAffiliateSiteRouting({
+    coupangRegistry: readJson(COUPANG_CHANNEL_REGISTRY_PATH),
+    sitesConfig: readYaml(SITES_CONFIG_PATH),
+  });
   const highValueCandidates = asArray(merchants.high_value_candidates_seen)
     .map(normalizeCandidate)
     .sort((a, b) => b.commissionKrw - a.commissionKrw);
@@ -409,6 +563,7 @@ function loadAffiliateInventory() {
     lastManualSync: asString(inventory.last_manual_sync),
     programs,
     affiliateItems,
+    siteRouting,
     playbook: normalizePlaybook(inventory.playbook),
     ripplealba: {
       programId: asString(merchants.affiliate_program_id),
