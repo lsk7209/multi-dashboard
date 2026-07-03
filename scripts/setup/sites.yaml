@@ -258,14 +258,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\homeimercom
-    affiliate:
-      targetMarket: global_en
-      primaryAudience: English-speaking home decor and interior design readers
-      activePrograms: []
-      blockedPrograms:
-        - coupang-partners
-      coupangExposure: blocked_non_korean_audience
-      notes: "English-audience site. Do not serve Coupang ads unless the site strategy changes and the channel is explicitly registered for Korean promotion."
   - id: healfood
     name: 건강푸드팡 - GA4
     enabled: false
@@ -1492,7 +1484,9 @@ sites:
     enabled: true
     platform: nextjs
     url: https://solarpaybackmap.com/
+    wpRestBase: https://solarpaybackmap.com/wp-json/wp/v2
     ga4PropertyId: "542279766"
+    gscSiteUrl: https://solarpaybackmap.com/
     sitemapUrls:
       - https://solarpaybackmap.com/sitemap.xml
     monetization: true
@@ -1501,14 +1495,14 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\solarpaybackmap
       githubRepo: https://github.com/lsk7209/solarpaybackmap.com
-    wpRestBase: https://solarpaybackmap.com/wp-json/wp/v2
-    gscSiteUrl: https://solarpaybackmap.com/
   - id: coverclarityhealth
     name: coverclarityhealth.com
     enabled: true
     platform: nextjs
     url: https://coverclarityhealth.com/
+    wpRestBase: https://coverclarityhealth.com/wp-json/wp/v2
     ga4PropertyId: "542279941"
+    gscSiteUrl: https://coverclarityhealth.com/
     sitemapUrls:
       - https://coverclarityhealth.com/sitemap.xml
     monetization: true
@@ -1517,14 +1511,14 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\coverclarityhealth
       githubRepo: https://github.com/lsk7209/coverclarityhealth.com
-    wpRestBase: https://coverclarityhealth.com/wp-json/wp/v2
-    gscSiteUrl: https://coverclarityhealth.com/
   - id: kapti
     name: kapti.kr
     enabled: true
     platform: nextjs
     url: https://kapti.kr/
+    wpRestBase: https://kapti.kr/wp-json/wp/v2
     ga4PropertyId: "542290124"
+    gscSiteUrl: https://kapti.kr/
     sitemapUrls:
       - https://kapti.kr/sitemap.xml
     monetization: true
@@ -1533,13 +1527,13 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\kapt
       githubRepo: https://github.com/lsk7209/kapti.kr
-    wpRestBase: https://kapti.kr/wp-json/wp/v2
-    gscSiteUrl: https://kapti.kr/
   - id: patentgogo
     name: patentgogo.com
     enabled: true
     platform: nextjs
     url: https://patentgogo.com/
+    wpRestBase: https://patentgogo.com/wp-json/wp/v2
+    ga4PropertyId: "543441407"
     gscSiteUrl: https://patentgogo.com/
     sitemapUrls:
       - https://patentgogo.com/sitemap.xml
@@ -1549,13 +1543,13 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\tukhugogo
       githubRepo: https://github.com/lsk7209/tukhugogo
-    wpRestBase: https://patentgogo.com/wp-json/wp/v2
-    ga4PropertyId: "543441407"
   - id: rndatlas
     name: rndatlas.com
     enabled: true
     platform: nextjs
     url: https://rndatlas.com/
+    wpRestBase: https://rndatlas.com/wp-json/wp/v2
+    ga4PropertyId: "543459196"
     gscSiteUrl: https://rndatlas.com/
     sitemapUrls:
       - https://rndatlas.com/sitemap.xml
@@ -1565,8 +1559,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\rndmap
       githubRepo: https://github.com/lsk7209/rndmap
-    wpRestBase: https://rndatlas.com/wp-json/wp/v2
-    ga4PropertyId: "543459196"
   - id: localgeo
     name: localgeo.app
     enabled: true
@@ -1596,15 +1588,7 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\park-trail
       githubRepo: https://github.com/lsk7209/park-trail
-    affiliate:
-      targetMarket: global_en
-      primaryAudience: English-speaking hiking and U.S. national park readers
-      activePrograms:
-        - skimlinks
-      blockedPrograms:
-        - coupang-partners
-      coupangExposure: blocked_non_korean_audience
-      notes: "Skimlinks publisher script installed on gradienttrail.com. Do not serve Coupang ads on this English-audience site."
+    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
   - id: dogbreedcost
     name: https://dogbreedcost.com
     enabled: true
@@ -1614,11 +1598,12 @@ sites:
     ga4PropertyId: "543424923"
     gscSiteUrl: https://dogbreedcost.com/
     monetization: true
-    affiliate:
-      targetMarket: global_en
-      primaryAudience: English-speaking dog breed cost and pet ownership readers
-      activePrograms: []
-      blockedPrograms:
-        - coupang-partners
-      coupangExposure: blocked_non_korean_audience
-      notes: "English-audience site. Do not serve Coupang ads unless the site strategy changes and the channel is explicitly registered for Korean promotion."
+  - id: wedfairguide
+    name: wedfairguide.com
+    enabled: true
+    platform: wordpress
+    url: https://wedfairguide.com/
+    wpRestBase: https://wedfairguide.com/wp-json/wp/v2
+    ga4PropertyId: "544110804"
+    gscSiteUrl: https://wedfairguide.com/
+    monetization: true
