@@ -1,6 +1,7 @@
 import { createHmac } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
+
 import { createClient, type Client } from "@libsql/client";
 
 type RowValue = string | number;
@@ -31,6 +32,7 @@ const OFFERS: SiteOffer[] = [
 const DISCLOSURE =
   "이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
 const DB_PATH = "data/monetization/ad-manage.db";
+const DEFAULT_CREATIVE_BASE_URL = "https://multi-dashboard-one.vercel.app";
 
 function loadEnvFile(path: string): void {
   if (!existsSync(path)) return;
@@ -170,6 +172,21 @@ async function ensureRemoteSchema(client: Client): Promise<void> {
   );
 }
 
+function getCreativeBaseUrl(): string {
+  return (
+    process.env.COUPANG_CREATIVE_BASE_URL ||
+    process.env.NEXT_PUBLIC_BANNER_BASE_URL ||
+    process.env.BANNER_PUBLIC_BASE_URL ||
+    DEFAULT_CREATIVE_BASE_URL
+  ).replace(/\/+$/, "");
+}
+
+function buildCreativeUrl(offer: SiteOffer): string {
+  const url = new URL(`${getCreativeBaseUrl()}/api/banner-management/creative`);
+  url.searchParams.set("siteKey", offer.siteId);
+  return url.toString();
+}
+
 function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<string, Record<string, RowValue>> {
   const safeSiteId = offer.siteId.replace(/[^a-z0-9]+/gi, "_");
   const trackingId = `link_coupang_${safeSiteId}`;
@@ -177,8 +194,6 @@ function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<stri
   const placementId = `placement_coupang_${safeSiteId}_inline`;
   const assignmentId = `assignment_coupang_${safeSiteId}_inline`;
   const slug = `coupang-${offer.siteId}`;
-  const title = `${offer.label} 추천`;
-  const imageText = encodeURIComponent(`${title} | 쿠팡 파트너스`);
 
   return {
     tracking_links: {
@@ -195,7 +210,7 @@ function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<stri
       id: creativeId,
       offer_id: "coupang-partners-primary",
       name: `Coupang ${offer.domain} ${offer.label}`,
-      image_url: `https://placehold.co/728x90/fef3c7/111827/png?text=${imageText}`,
+      image_url: buildCreativeUrl(offer),
       width: 728,
       height: 90,
       status: "active",
