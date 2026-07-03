@@ -354,6 +354,11 @@ export function buildAffiliateSiteRouting(input: {
   const routeMap = new Map<string, ReturnType<typeof createSiteRoute>>();
 
   for (const site of sites) {
+    if (!shouldIncludeSiteInRouting(site)) continue;
+    upsertSiteRoute(routeMap, createSiteRoute({ site }));
+  }
+
+  for (const site of sites) {
     const affiliate = asRecord(site.affiliate);
     if (Object.keys(affiliate).length === 0) continue;
     upsertSiteRoute(routeMap, createSiteRoute({ site }));
@@ -372,6 +377,10 @@ export function buildAffiliateSiteRouting(input: {
   return [...routeMap.values()].sort(compareSiteRoutes);
 }
 
+function shouldIncludeSiteInRouting(site: Row): boolean {
+  return asBoolean(site.enabled) && asBoolean(site.monetization);
+}
+
 function createSiteRoute({ channel, site }: { channel?: Row; site?: Row }) {
   const affiliate = asRecord(site?.affiliate);
   const channelStatus = asString(channel?.status);
@@ -388,6 +397,14 @@ function createSiteRoute({ channel, site }: { channel?: Row; site?: Row }) {
 
   if (coupangRegistered && !blockedPrograms.includes("coupang-partners")) {
     activePrograms.push("coupang-partners");
+  }
+
+  if (
+    !coupangRegistered &&
+    !activePrograms.includes("coupang-partners") &&
+    !blockedPrograms.includes("coupang-partners")
+  ) {
+    blockedPrograms.push("coupang-partners");
   }
 
   return {
@@ -433,17 +450,20 @@ function upsertSiteRoute(
     return;
   }
 
+  const activePrograms = uniqueStrings([
+    ...existing.activePrograms,
+    ...route.activePrograms,
+  ]);
+  const blockedPrograms = uniqueStrings([
+    ...existing.blockedPrograms,
+    ...route.blockedPrograms,
+  ]).filter((programId) => !activePrograms.includes(programId));
+
   routeMap.set(key, {
     ...existing,
     ...route,
-    activePrograms: uniqueStrings([
-      ...existing.activePrograms,
-      ...route.activePrograms,
-    ]),
-    blockedPrograms: uniqueStrings([
-      ...existing.blockedPrograms,
-      ...route.blockedPrograms,
-    ]),
+    activePrograms,
+    blockedPrograms,
     notes: uniqueStrings([existing.notes, route.notes]).filter(Boolean).join(" "),
     source: uniqueStrings([...existing.source, ...route.source]),
   });

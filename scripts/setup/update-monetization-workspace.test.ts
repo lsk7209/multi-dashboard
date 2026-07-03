@@ -115,6 +115,14 @@ describe("update-monetization-workspace affiliate normalization", () => {
             platform: "next",
             url: "https://todaypharm.kr/",
           },
+          {
+            enabled: true,
+            id: "unclassified-site",
+            monetization: true,
+            name: "unclassified.example.com",
+            platform: "wordpress",
+            url: "https://unclassified.example.com/",
+          },
         ],
       },
     });
@@ -122,6 +130,7 @@ describe("update-monetization-workspace affiliate normalization", () => {
     expect(routes).toContainEqual(
       expect.objectContaining({
         activePrograms: ["coupang-partners"],
+        blockedPrograms: [],
         coupangChannelStatus: "registered",
         coupangExposure: "registered_channel_allowed",
         domain: "todaypharm.kr",
@@ -136,6 +145,16 @@ describe("update-monetization-workspace affiliate normalization", () => {
         coupangExposure: "blocked_non_korean_audience",
         domain: "gradienttrail.com",
         targetMarket: "global_en",
+      }),
+    );
+    expect(routes).toContainEqual(
+      expect.objectContaining({
+        activePrograms: [],
+        blockedPrograms: ["coupang-partners"],
+        coupangChannelStatus: "not_listed",
+        coupangExposure: "channel_not_registered_blocked",
+        domain: "unclassified.example.com",
+        targetMarket: "unclassified",
       }),
     );
   });
