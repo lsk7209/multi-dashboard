@@ -46,6 +46,7 @@ jobs:
         run: pnpm setup:import-ga4-sites
 
       - name: Refresh stale GSC sitemaps
+        continue-on-error: true
         run: pnpm sitemaps:refresh-stale -- --min-age-days=5 --limit=50
 
       - name: Update GA4 and GSC snapshot
