@@ -15,6 +15,7 @@ export async function GET(request: Request) {
   const resolved = await resolveBannerPlacementAsync({
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: url.searchParams.get("placementId") ?? undefined,
+    purpose: parseBannerPurpose(url.searchParams.get("purpose")),
     referrer: request.headers.get("referer") ?? undefined,
     siteKey: url.searchParams.get("siteKey") ?? undefined,
     slot: url.searchParams.get("slot") ?? undefined,
@@ -39,4 +40,10 @@ export async function GET(request: Request) {
   });
 
   return Response.redirect(resolved.creative.imageUrl, 302);
+}
+
+function parseBannerPurpose(value: string | null): "approval_screenshot" | "public" | undefined {
+  if (value === "approval_screenshot") return "approval_screenshot";
+  if (value === "public") return "public";
+  return undefined;
 }

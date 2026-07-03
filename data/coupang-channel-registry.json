@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-07-03T09:25:00.000Z",
+  "policy": {
+    "exposureMode": "approved_only",
+    "requiredDisclosureKo": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+    "notes": [
+      "Only approved channels may display Coupang Partners links or banners.",
+      "Treat this registry as the Coupang exposure allowlist; domains not listed here must be blocked.",
+      "Mark a channel as registered after adding it in Coupang Partners My Page.",
+      "Mark a channel as approved only after the approval screenshot has been uploaded and accepted.",
+      "Unregistered-channel promotion can be treated as invalid or abusive activity.",
+      "Guide 2026-06-11: final approval review starts after cumulative sales reach 150,000 KRW.",
+      "Guide 2026-06-11: performance may be tracked before final approval, but settlement and Partners API use require final approval.",
+      "Guide 2026-06-11: approval screenshots should show the active link/widget/banner and the economic relationship disclosure in the same registered channel.",
+      "Registered channels may be served only with purpose=approval_screenshot until approved; public exposure stays blocked."
+    ]
+  },
+  "channels": [
+    {
+      "siteId": "todaypharm",
+      "domain": "todaypharm.kr",
+      "status": "registered",
+      "priority": "p0",
+      "firstUse": "생활건강, 위생용품, 건강기능식품. 의약품/치료 효능 문구 금지",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "tennisfrens",
+      "domain": "tennisfrens.com",
+      "status": "registered",
+      "priority": "p0",
+      "firstUse": "테니스 라켓, 신발, 공, 보호대",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "picklefriend",
+      "domain": "picklefriend.kr",
+      "status": "registered",
+      "priority": "p0",
+      "firstUse": "피클볼 패들, 공, 운동화, 보호대",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "dogswhere",
+      "domain": "dogswhere.com",
+      "status": "registered",
+      "priority": "p0",
+      "firstUse": "반려동물 용품, 이동가방, 배변/사료/간식",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "cartain-2",
+      "domain": "cartain.kr",
+      "status": "registered",
+      "priority": "p0",
+      "firstUse": "차량용품, 세차용품, 거치대",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "temon",
+      "domain": "temon.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "쇼핑/딜/생활용품",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "notebook-klick-2",
+      "domain": "notebook.klick.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "노트북, 전자기기, 주변기기",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "softwa",
+      "domain": "softwa.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "전자기기/주변기기 보조 CTA",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "dogspang-2",
+      "domain": "dogspang.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "반려동물 용품",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "autoscares-2",
+      "domain": "autoscares.com",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "차량용품",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "roadways",
+      "domain": "roadways.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "여행용품, 차량/이동 용품",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "dullegilgogo",
+      "domain": "dullegilgogo.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "여행/등산/걷기 용품",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    },
+    {
+      "siteId": "campgogo",
+      "domain": "campgogo.kr",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "캠핑용품",
+      "registeredAt": "2026-07-03",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+    }
+  ]
+}

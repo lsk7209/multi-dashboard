@@ -31,4 +31,9 @@ test("affiliate inventory is excluded from dashboard tabs", async ({ page }) => 
     "href",
     "/affiliate",
   );
+  await expect(page.getByRole("link", { name: "배너", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "배너 콘솔" })).toHaveAttribute(
+    "href",
+    "/banner-management",
+  );
 });

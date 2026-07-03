@@ -1,10 +1,13 @@
 import type {
+  CoupangChannelRegistryEntry,
+  CoupangChannelRegistrySnapshot,
   AffiliateInventorySnapshot,
   AffiliateItemSummary,
   AffiliateProgramSummary,
 } from "../lib/monetization-workspace.js";
 
 interface AffiliateWorkspaceProps {
+  coupangRegistry: CoupangChannelRegistrySnapshot;
   data: AffiliateInventorySnapshot;
 }
 
@@ -21,7 +24,19 @@ const RISK_ORDER: Record<string, number> = {
   low: 2,
 };
 
-export function AffiliateWorkspace({ data }: AffiliateWorkspaceProps) {
+const COUPANG_CHANNEL_STATUS_ORDER: Record<string, number> = {
+  not_registered: 0,
+  registered: 1,
+  screenshot_submitted: 2,
+  rejected: 3,
+  paused: 4,
+  approved: 5,
+};
+
+export function AffiliateWorkspace({
+  coupangRegistry,
+  data,
+}: AffiliateWorkspaceProps) {
   const allAffiliateItems = [...(data.affiliateItems ?? [])].sort(
     compareAffiliateItems,
   );
@@ -103,6 +118,8 @@ export function AffiliateWorkspace({ data }: AffiliateWorkspaceProps) {
           hint="allowedSites 제한 없음"
         />
       </div>
+
+      <CoupangChannelGate registry={coupangRegistry} />
 
       <AffiliateItemTable
         items={visibleAffiliateItems}
@@ -207,6 +224,99 @@ function AffiliateItemTable({
                   <td>{item.nextAction}</td>
                 </tr>
               ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  );
+}
+
+function CoupangChannelGate({
+  registry,
+}: {
+  registry: CoupangChannelRegistrySnapshot;
+}) {
+  const channels = [...(registry.channels ?? [])].sort(compareCoupangChannels);
+  const approvedCount = channels.filter((channel) => channel.status === "approved")
+    .length;
+  const approvalScreenshotCount = channels.filter((channel) =>
+    channel.status === "registered" || channel.status === "screenshot_submitted",
+  ).length;
+  const blockedCount = channels.length - approvedCount;
+
+  return (
+    <article className="panel workspace-table-panel affiliate-item-table">
+      <div className="panel-heading">
+        <div>
+          <h2>쿠팡 채널 노출 게이트</h2>
+          <p>
+            쿠팡 파트너스 일반 노출은 승인 완료 상태인 사이트에만 허용합니다.
+            등록/스크린샷 대기 채널은 최종 승인 증빙 목적의 제한 노출만 허용합니다.
+          </p>
+        </div>
+        <span>
+          일반 허용 {formatNumber(approvedCount)} / 승인용{" "}
+          {formatNumber(approvalScreenshotCount)} / 차단 {formatNumber(blockedCount)}
+        </span>
+      </div>
+      <div className="affiliate-playbook-grid">
+        <div className="affiliate-playbook-card">
+          <strong>노출 정책</strong>
+          <p>{registry.policy?.exposureMode ?? "approved_only"}</p>
+          <small>approved 상태만 쿠팡 홍보 가능</small>
+        </div>
+        <div className="affiliate-playbook-card">
+          <strong>필수 공시</strong>
+          <p>{registry.policy?.requiredDisclosureKo || "-"}</p>
+        </div>
+      </div>
+      <div className="workspace-table-wrap">
+        <table className="workspace-table">
+          <thead>
+            <tr>
+              <th>사이트</th>
+              <th>상태</th>
+              <th>노출</th>
+              <th>우선순위</th>
+              <th>첫 적용</th>
+              <th>등록일</th>
+              <th>승인일</th>
+            </tr>
+          </thead>
+          <tbody>
+            {channels.length === 0 ? (
+              <tr>
+                <td colSpan={7}>등록 상태 파일에 쿠팡 채널이 없습니다.</td>
+              </tr>
+            ) : (
+              channels.map((channel) => {
+                const allowed = channel.status === "approved";
+
+                return (
+                  <tr key={`${channel.siteId}-${channel.domain}`}>
+                    <td>
+                      <strong>{channel.domain}</strong>
+                      <small>{channel.siteId}</small>
+                    </td>
+                    <td>
+                      <span
+                        className={`badge affiliate-channel-${channel.status}`}
+                      >
+                        {formatCoupangChannelStatus(channel.status)}
+                      </span>
+                    </td>
+                    <td>
+                      <strong>{allowed ? "노출 허용" : "노출 차단"}</strong>
+                      <small>{formatCoupangExposureHint(channel.status)}</small>
+                    </td>
+                    <td>{channel.priority}</td>
+                    <td>{channel.firstUse || "-"}</td>
+                    <td>{channel.registeredAt || "-"}</td>
+                    <td>{channel.approvedAt || "-"}</td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>
@@ -434,6 +544,41 @@ function comparePrograms(
       rank(PRIORITY_ORDER, right.priority ?? "manual") ||
     (left.name || left.id).localeCompare(right.name || right.id)
   );
+}
+
+function compareCoupangChannels(
+  left: CoupangChannelRegistryEntry,
+  right: CoupangChannelRegistryEntry,
+): number {
+  return (
+    rank(PRIORITY_ORDER, left.priority) - rank(PRIORITY_ORDER, right.priority) ||
+    rank(COUPANG_CHANNEL_STATUS_ORDER, left.status) -
+      rank(COUPANG_CHANNEL_STATUS_ORDER, right.status) ||
+    left.domain.localeCompare(right.domain)
+  );
+}
+
+function formatCoupangChannelStatus(status: string): string {
+  const labels: Record<string, string> = {
+    approved: "승인 완료",
+    not_registered: "미등록",
+    paused: "중지",
+    registered: "등록 완료",
+    rejected: "거절",
+    screenshot_submitted: "스크린샷 제출",
+  };
+
+  return labels[status] ?? status;
+}
+
+function formatCoupangExposureHint(status: string): string {
+  const hints: Record<string, string> = {
+    approved: "일반 쿠팡 링크/배너 가능",
+    registered: "승인 스크린샷용 제한 노출만 가능",
+    screenshot_submitted: "승인 대기 중, 제한 노출만 유지",
+  };
+
+  return hints[status] ?? "일반/승인용 노출 금지";
 }
 
 function isBannerReady(item: AffiliateItemSummary): boolean {

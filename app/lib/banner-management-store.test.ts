@@ -321,6 +321,51 @@ describe("banner-management-store", () => {
     expect(finalPlacement.requests).toBeGreaterThanOrEqual(2);
     expect(finalPlacement.imageRequests).toBe(1);
   });
+
+  it("gates Coupang banners to approval screenshot exposure before final approval", () => {
+    const stamp = Date.now().toString(36);
+
+    let state = createBannerTrackingLink({
+      offerId: "coupang-partners-primary",
+      offerName: "Coupang approval offer",
+      publicUrl: "https://coupa.ng/example",
+      slug: `coupang-${stamp}`,
+    });
+    const trackingLink = findRequired(state.trackingLinks, (link) => link.slug === `coupang-${stamp}`);
+
+    state = createBannerCreative({
+      height: 250,
+      imageUrl: "https://static.coupangcdn.com/image/banner.png",
+      name: `Coupang approval creative ${stamp}`,
+      offerId: "coupang-partners-primary",
+      width: 300,
+    });
+    const creative = findRequired(state.creatives, (item) => item.name === `Coupang approval creative ${stamp}`);
+
+    state = createBannerPlacement({
+      name: `Coupang approval placement ${stamp}`,
+      noAdPolicy: "collapse",
+      siteKey: "todaypharm",
+      siteUrl: "https://todaypharm.kr",
+      slotKey: `approval-${stamp}`,
+      type: "image_link",
+    });
+    const placement = findRequired(state.placements, (item) => item.name === `Coupang approval placement ${stamp}`);
+
+    assignBannerPlacement({
+      creativeId: creative.id,
+      placementId: placement.id,
+      trackingLinkId: trackingLink.id,
+    });
+
+    expect(resolveBannerPlacement({ slot: `todaypharm.approval-${stamp}` })).toBeNull();
+    expect(
+      resolveBannerPlacement({
+        purpose: "approval_screenshot",
+        slot: `todaypharm.approval-${stamp}`,
+      })?.trackingLink.id,
+    ).toBe(trackingLink.id);
+  });
 });
 
 function jsonPost(body: unknown, headers: HeadersInit = {}): Request {

@@ -118,6 +118,36 @@ export interface AffiliateCandidateSummary {
   priorityNote: string;
 }
 
+export type CoupangChannelStatus =
+  | "not_registered"
+  | "registered"
+  | "screenshot_submitted"
+  | "approved"
+  | "rejected"
+  | "paused";
+
+export interface CoupangChannelRegistryEntry {
+  siteId: string;
+  domain: string;
+  status: CoupangChannelStatus;
+  priority: string;
+  firstUse: string;
+  registeredAt: string | null;
+  approvedAt: string | null;
+  screenshotUrl: string;
+  notes: string;
+}
+
+export interface CoupangChannelRegistrySnapshot {
+  generatedAt: string | null;
+  policy: {
+    exposureMode: "approved_only";
+    requiredDisclosureKo: string;
+    notes: string[];
+  };
+  channels: CoupangChannelRegistryEntry[];
+}
+
 export interface AffiliateInventorySnapshot {
   generatedAt: string | null;
   source: {
@@ -160,6 +190,7 @@ export interface AffiliateInventorySnapshot {
 export interface MonetizationWorkspaceData {
   bannerManagement: BannerManagementSnapshot;
   affiliateInventory: AffiliateInventorySnapshot;
+  coupangChannelRegistry: CoupangChannelRegistrySnapshot;
 }
 
 const EMPTY_BANNER: BannerManagementSnapshot = {
@@ -230,11 +261,112 @@ const EMPTY_AFFILIATES: AffiliateInventorySnapshot = {
   },
 };
 
+const EMPTY_COUPANG_CHANNEL_REGISTRY: CoupangChannelRegistrySnapshot = {
+  generatedAt: null,
+  policy: {
+    exposureMode: "approved_only",
+    requiredDisclosureKo:
+      "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+    notes: [],
+  },
+  channels: [],
+};
+
 export function getMonetizationWorkspaceData(): MonetizationWorkspaceData {
   return {
     bannerManagement: readJson("data/banner-management.json", EMPTY_BANNER),
     affiliateInventory: readJson("data/affiliate-inventory.json", EMPTY_AFFILIATES),
+    coupangChannelRegistry: readJson(
+      "data/coupang-channel-registry.json",
+      EMPTY_COUPANG_CHANNEL_REGISTRY,
+    ),
   };
+}
+
+export interface CoupangExposureDecision {
+  allowed: boolean;
+  reason: string;
+  channel: CoupangChannelRegistryEntry | null;
+  purpose: CoupangExposurePurpose;
+}
+
+export type CoupangExposurePurpose = "public" | "approval_screenshot";
+
+export function decideCoupangExposure(
+  registry: CoupangChannelRegistrySnapshot,
+  input: {
+    domain?: string;
+    purpose?: CoupangExposurePurpose;
+    siteId?: string;
+  },
+): CoupangExposureDecision {
+  const purpose = input.purpose ?? "public";
+  const channel = findCoupangChannel(registry, input);
+
+  if (!channel) {
+    return {
+      allowed: false,
+      channel: null,
+      purpose,
+      reason: "channel_not_found",
+    };
+  }
+
+  if (
+    purpose === "approval_screenshot" &&
+    (channel.status === "registered" || channel.status === "screenshot_submitted")
+  ) {
+    return {
+      allowed: true,
+      channel,
+      purpose,
+      reason: `approval_${channel.status}`,
+    };
+  }
+
+  if (channel.status !== "approved") {
+    return {
+      allowed: false,
+      channel,
+      purpose,
+      reason: `channel_${channel.status}`,
+    };
+  }
+
+  return {
+    allowed: true,
+    channel,
+    purpose,
+    reason: "approved",
+  };
+}
+
+export function findCoupangChannel(
+  registry: CoupangChannelRegistrySnapshot,
+  input: { domain?: string; siteId?: string },
+): CoupangChannelRegistryEntry | null {
+  const siteId = normalizeLookupValue(input.siteId);
+  const domain = normalizeDomain(input.domain);
+
+  return (
+    registry.channels.find((channel) => {
+      return (
+        (siteId && normalizeLookupValue(channel.siteId) === siteId) ||
+        (domain && normalizeDomain(channel.domain) === domain)
+      );
+    }) ?? null
+  );
+}
+
+function normalizeLookupValue(value: string | undefined): string {
+  return (value ?? "").trim().toLowerCase();
+}
+
+function normalizeDomain(value: string | undefined): string {
+  return normalizeLookupValue(value)
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/.*$/, "");
 }
 
 function readJson<T>(path: string, fallback: T): T {

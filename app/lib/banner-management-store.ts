@@ -4,6 +4,12 @@ import { dirname, join, resolve } from "node:path";
 
 import { createClient, type Client, type InArgs, type Row as LibsqlRow } from "@libsql/client";
 
+import {
+  type CoupangExposurePurpose,
+  decideCoupangExposure,
+  getMonetizationWorkspaceData,
+} from "./monetization-workspace.js";
+
 type Row = Record<string, unknown>;
 
 type DatabaseLike = {
@@ -514,6 +520,7 @@ export function resolveBannerPlacement(input: {
   slotKey?: string | undefined;
   slot?: string | undefined;
   pageUrl?: string | undefined;
+  purpose?: CoupangExposurePurpose | undefined;
   referrer?: string | undefined;
 }): ResolvedBannerPlacement | null {
   const lookup = normalizePlacementLookup(input);
@@ -584,6 +591,21 @@ export function resolveBannerPlacement(input: {
       return null;
     }
     const resolved = mapResolvedPlacement(row);
+    if (!shouldServeResolvedBannerPlacement(resolved, input)) {
+      recordPlacementEvent({
+        assignmentId: resolved.assignmentId,
+        eventType: "no_ad",
+        metadata: {
+          reason: "coupang_channel_gate",
+          purpose: input.purpose ?? "public",
+        },
+        pageUrl: input.pageUrl,
+        placementId: resolved.placement.id,
+        referrer: input.referrer,
+        trackingLinkId: resolved.trackingLink.id,
+      });
+      return null;
+    }
     recordPlacementEvent({
       assignmentId: resolved.assignmentId,
       eventType: "request",
@@ -1084,6 +1106,21 @@ async function resolveRemoteBannerPlacement(
       return null;
     }
     const resolved = mapResolvedPlacement(row);
+    if (!shouldServeResolvedBannerPlacement(resolved, input)) {
+      await recordRemotePlacementEvent({
+        assignmentId: resolved.assignmentId,
+        eventType: "no_ad",
+        metadata: {
+          reason: "coupang_channel_gate",
+          purpose: input.purpose ?? "public",
+        },
+        pageUrl: input.pageUrl,
+        placementId: resolved.placement.id,
+        referrer: input.referrer,
+        trackingLinkId: resolved.trackingLink.id,
+      });
+      return null;
+    }
     await recordRemotePlacementEvent({
       assignmentId: resolved.assignmentId,
       eventType: "request",
@@ -1842,6 +1879,63 @@ function mapResolvedPlacement(row: Row): ResolvedBannerPlacement {
       updatedAt: asString(row.tracking_updated_at),
     },
   };
+}
+
+function shouldServeResolvedBannerPlacement(
+  resolved: ResolvedBannerPlacement,
+  input: {
+    pageUrl?: string | undefined;
+    purpose?: CoupangExposurePurpose | undefined;
+    referrer?: string | undefined;
+  },
+): boolean {
+  if (!isCoupangResolvedPlacement(resolved)) return true;
+
+  const registry = getMonetizationWorkspaceData().coupangChannelRegistry;
+  const domain =
+    resolved.placement.siteUrl ??
+    input.pageUrl ??
+    input.referrer ??
+    resolved.placement.siteKey ??
+    undefined;
+  const decisionInput: {
+    domain?: string;
+    purpose?: CoupangExposurePurpose;
+    siteId?: string;
+  } = {};
+  if (domain) decisionInput.domain = domain;
+  if (input.purpose) decisionInput.purpose = input.purpose;
+  if (resolved.placement.siteKey) {
+    decisionInput.siteId = resolved.placement.siteKey;
+  }
+  const decision = decideCoupangExposure(registry, decisionInput);
+
+  return decision.allowed;
+}
+
+function isCoupangResolvedPlacement(resolved: ResolvedBannerPlacement): boolean {
+  const values = [
+    resolved.creative.offerId,
+    resolved.creative.name,
+    resolved.creative.imageUrl,
+    resolved.trackingLink.offerId,
+    resolved.trackingLink.offerName,
+    resolved.trackingLink.publicUrl,
+    resolved.trackingLink.slug,
+  ];
+
+  return values.some((value) => {
+    const text = normalizeCoupangSignal(value);
+    return (
+      text.includes("coupang") ||
+      text.includes("coupa.ng") ||
+      text.includes("coupang-partners")
+    );
+  });
+}
+
+function normalizeCoupangSignal(value: string | null | undefined): string {
+  return (value ?? "").trim().toLowerCase();
 }
 
 function recordPlacementEvent(input: {

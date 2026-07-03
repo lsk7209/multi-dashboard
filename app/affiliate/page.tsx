@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 export const dynamic = "force-static";
 
 export default function AffiliatePage() {
-  const { affiliateInventory } = getMonetizationWorkspaceData();
+  const { affiliateInventory, coupangChannelRegistry } =
+    getMonetizationWorkspaceData();
 
   return (
     <main className="dashboard-shell">
@@ -28,7 +29,10 @@ export default function AffiliatePage() {
         title="제휴"
       />
 
-      <AffiliateWorkspace data={affiliateInventory} />
+      <AffiliateWorkspace
+        coupangRegistry={coupangChannelRegistry}
+        data={affiliateInventory}
+      />
     </main>
   );
 }

@@ -1596,6 +1596,24 @@ code {
   background: rgba(100, 116, 139, 0.12);
 }
 
+.affiliate-channel-approved {
+  color: #047857;
+  background: rgba(4, 120, 87, 0.11);
+}
+
+.affiliate-channel-registered,
+.affiliate-channel-screenshot_submitted {
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.affiliate-channel-not_registered,
+.affiliate-channel-rejected,
+.affiliate-channel-paused {
+  color: #991b1b;
+  background: rgba(220, 38, 38, 0.11);
+}
+
 .banner-console {
   display: grid;
   gap: 14px;

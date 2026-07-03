@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T03:28:32.150Z",
+  "generatedAt": "2026-07-03T09:45:00.000Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -18,7 +18,7 @@
     {
       "id": "coupang-partners",
       "name": "Coupang Partners",
-      "status": "candidate",
+      "status": "registered_final_approval_pending",
       "priority": "p0",
       "region": "KR",
       "network": "Coupang",
@@ -26,7 +26,7 @@
       "platformUrl": "https://partners.coupang.com/",
       "homepageUrl": "https://partners.coupang.com/",
       "applyUrl": "https://partners.coupang.com/",
-      "sourceUrl": "https://partners.coupangcdn.com/partners-guide/partners-guide-20240716100922.pdf",
+      "sourceUrl": "https://partners.coupangcdn.com/partners-guide/partners-guide-20260611145240.pdf",
       "countries": [
         "KR"
       ],
@@ -39,7 +39,7 @@
       "payoutModel": "CPS; official guide has stated 3% on eligible transaction amount, but verify current category terms before publishing.",
       "approvalDifficulty": "low",
       "bannerSuitability": "high",
-      "deepLinkTemplate": "Generate inside Coupang Partners; do not hand-build tracking URLs.",
+      "deepLinkTemplate": "Use Coupang Partners API deeplink endpoint or platform-generated links; do not hand-build tracking URLs.",
       "contentFit": [
         "shopping guides",
         "product reviews",
@@ -55,27 +55,35 @@
       "complianceNotes": [
         "Use clear Korean affiliate disclosure near each recommendation.",
         "Use rel=sponsored nofollow for links.",
-        "Verify current commission, cookie, prohibited traffic, and API rules in the account."
+        "Register every blog, website, mobile app, SNS page, or YouTube channel that will display Coupang Partners links or banners in My Page > account/site management before promotion.",
+        "Upload approval screenshots showing the Partners link or banner on the active page after signup.",
+        "Do not advertise through unregistered channels; Coupang can treat unregistered-channel activity as invalid or abusive activity.",
+        "Verify current commission, cookie, prohibited traffic, API rules, and the monthly payout cap in the account.",
+        "Final approval review starts after cumulative sales reach 150,000 KRW.",
+        "Activity screenshot should show the link/widget/banner and economic relationship disclosure together.",
+        "Settlement and Partners API use require final approval."
       ],
       "integrationSupport": {
-        "api": "Coupang Open API exists for commerce/seller use; Partners affiliate API access must be verified inside Partners account.",
-        "feed": "none documented for Partners public affiliate feed",
+        "api": "Coupang Partners API documented, but use only after final approval unless Coupang separately grants early access.",
+        "feed": "Use platform-generated links/banners for approval evidence; product/search/goldbox/reco API responses are post-final-approval integration surfaces.",
         "mcp": "none documented",
         "cli": "none documented",
         "notes": [
-          "Do not use seller Open API as an affiliate-link substitute without Partners terms confirmation."
+          "Access Key and Secret Key must stay server-side in local/Vercel environment variables.",
+          "Reco impressionUrl must be called only from the user device when the product is actually visible.",
+          "Reports are available for clicks, orders, cancels, commission, and ad performance."
         ]
       },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
-      "nextAction": "Apply or confirm existing account, create site/channel list, then create first product-review banner link.",
-      "notes": "Best first Korean commerce candidate for broad content sites."
+      "nextAction": "Use platform-generated links/banners only on registered channels for approval evidence, keep public exposure gated, reach cumulative 150,000 KRW sales for final review, then enable API deeplink/search/goldbox/reports after final approval.",
+      "notes": "2026-06-11 guide: performance can be tracked before final approval, but settlement and Partners API use require final approval."
     },
     {
       "id": "coupang-influencers",
       "name": "Coupang Influencers",
-      "status": "candidate",
+      "status": "manual_only",
       "priority": "p1",
       "region": "KR",
       "network": "Coupang",
@@ -128,7 +136,7 @@
     {
       "id": "naver-shopping-connect",
       "name": "Naver Shopping Connect",
-      "status": "candidate",
+      "status": "api_ready",
       "priority": "p1",
       "region": "KR",
       "network": "Naver Brand Connect",
@@ -333,7 +341,7 @@
     {
       "id": "linkprice",
       "name": "LinkPrice",
-      "status": "candidate",
+      "status": "manual_only",
       "priority": "p1",
       "region": "KR",
       "network": "LinkPrice",
@@ -354,7 +362,7 @@
       "payoutModel": "Varies by merchant and campaign; verify per offer.",
       "approvalDifficulty": "medium",
       "bannerSuitability": "high",
-      "deepLinkTemplate": "Use LinkPrice tracking/deep-link builder per merchant.",
+      "deepLinkTemplate": "Use LinkPrice manual deep-link builder or adbox creatives per approved merchant; do not assume self-serve API access.",
       "contentFit": [
         "shopping, travel, finance, education, subscription services",
         "Korea-focused comparison pages"
@@ -370,24 +378,25 @@
         "Be alert for impersonation/phishing warnings; only use official login/domain."
       ],
       "integrationSupport": {
-        "api": "Reward API, deeplink API, ad API, and open API surfaces documented by LinkPrice.",
-        "feed": "campaign/ad data can be pulled through LinkPrice API or exported after account approval",
+        "api": "No self-serve public deeplink API confirmed. LinkPrice markets Open API/deeplink API surfaces, but usable key/endpoint access appears account/1:1-gated.",
+        "feed": "Use manual merchant exports, generated ad sources, adboxes, or account-approved files until API access is explicitly confirmed.",
         "mcp": "none documented",
         "cli": "none documented",
         "notes": [
-          "Reward API is suitable for cashback-style sites; deeplink API can convert merchant URLs to affiliate links."
+          "Treat LinkPrice as manual deep-link/adbox inventory first.",
+          "Only build API ingestion after LinkPrice support confirms endpoint, auth key, rate limits, and allowed site codes."
         ]
       },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
-      "nextAction": "Apply and export merchant list by site category; avoid high-risk finance/medical offers until review.",
-      "notes": "Good network layer after first direct programs."
+      "nextAction": "Use manual deep links/adbox tests on high-fit commerce pages; open a 1:1 API access inquiry only after proof of click volume.",
+      "notes": "Good Korean network layer, but not a confirmed self-serve API provider."
     },
     {
       "id": "adpick",
       "name": "Adpick",
-      "status": "candidate",
+      "status": "pending_approval",
       "priority": "p1",
       "region": "KR",
       "network": "Adpick",
@@ -437,8 +446,8 @@
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
-      "nextAction": "Apply, request/confirm API eligibility, and build cached campaign ingestion before using in rotation.",
-      "notes": "Good domestic API-enabled network, but campaign-level compliance must be gated."
+      "nextAction": "Wait for account approval; after approval, confirm API eligibility and build cached campaign ingestion before using in rotation.",
+      "notes": "Approval is pending. Do not place live Adpick campaigns until account and campaign access are approved."
     },
     {
       "id": "tenping",
@@ -1966,7 +1975,7 @@
       "id": "coupang-partners-primary",
       "programId": "coupang-partners",
       "title": "Coupang Partners monetization item",
-      "status": "candidate",
+      "status": "registered_final_approval_pending",
       "priority": "p0",
       "region": "KR",
       "network": "Coupang",
@@ -1986,22 +1995,30 @@
       ],
       "allowedSites": [],
       "applyUrl": "https://partners.coupang.com/",
-      "sourceUrl": "https://partners.coupangcdn.com/partners-guide/partners-guide-20240716100922.pdf",
-      "nextAction": "Apply or confirm existing account, create site/channel list, then create first product-review banner link.",
+      "sourceUrl": "https://partners.coupangcdn.com/partners-guide/partners-guide-20260611145240.pdf",
+      "nextAction": "Create approval evidence pages with platform-generated Coupang link/banner plus disclosure; keep normal public exposure blocked until final approval.",
       "risk": "medium",
       "integrationSupport": {
-        "api": "Coupang Open API exists for commerce/seller use; Partners affiliate API access must be verified inside Partners account.",
-        "feed": "none documented for Partners public affiliate feed",
+        "api": "Coupang Partners API documented, but use only after final approval unless Coupang separately grants early access.",
+        "feed": "Use platform-generated links/banners before final approval; API-backed product/feed surfaces wait for final approval.",
         "mcp": "none documented",
         "cli": "none documented",
         "notes": [
-          "Do not use seller Open API as an affiliate-link substitute without Partners terms confirmation."
+          "Access Key and Secret Key must stay server-side in local/Vercel environment variables.",
+          "Reco impressionUrl must be called only from the user device when the product is actually visible.",
+          "Reports are available for clicks, orders, cancels, commission, and ad performance."
         ]
       },
       "complianceNotes": [
         "Use clear Korean affiliate disclosure near each recommendation.",
         "Use rel=sponsored nofollow for links.",
-        "Verify current commission, cookie, prohibited traffic, and API rules in the account."
+        "Register every blog, website, mobile app, SNS page, or YouTube channel that will display Coupang Partners links or banners in My Page > account/site management before promotion.",
+        "Upload approval screenshots showing the Partners link or banner on the active page after signup.",
+        "Do not advertise through unregistered channels; Coupang can treat unregistered-channel activity as invalid or abusive activity.",
+        "Verify current commission, cookie, prohibited traffic, API rules, and the monthly payout cap in the account.",
+        "Final approval review starts after cumulative sales reach 150,000 KRW.",
+        "Activity screenshot must show the link/widget/banner and economic relationship disclosure together.",
+        "Use purpose=approval_screenshot only for approval evidence pages until approved."
       ]
     },
     {
@@ -2448,7 +2465,7 @@
       "id": "linkprice-primary",
       "programId": "linkprice",
       "title": "LinkPrice monetization item",
-      "status": "candidate",
+      "status": "manual_only",
       "priority": "p1",
       "region": "KR",
       "network": "LinkPrice",
@@ -2467,15 +2484,16 @@
       "allowedSites": [],
       "applyUrl": "https://www.linkprice.com/",
       "sourceUrl": "https://www.linkprice.com/",
-      "nextAction": "Apply and export merchant list by site category; avoid high-risk finance/medical offers until review.",
+      "nextAction": "Use manual deep links/adbox tests on high-fit commerce pages; open a 1:1 API access inquiry only after proof of click volume.",
       "risk": "medium",
       "integrationSupport": {
-        "api": "Reward API, deeplink API, ad API, and open API surfaces documented by LinkPrice.",
-        "feed": "campaign/ad data can be pulled through LinkPrice API or exported after account approval",
+        "api": "No self-serve public deeplink API confirmed. LinkPrice markets Open API/deeplink API surfaces, but usable key/endpoint access appears account/1:1-gated.",
+        "feed": "Use manual merchant exports, generated ad sources, adboxes, or account-approved files until API access is explicitly confirmed.",
         "mcp": "none documented",
         "cli": "none documented",
         "notes": [
-          "Reward API is suitable for cashback-style sites; deeplink API can convert merchant URLs to affiliate links."
+          "Treat LinkPrice as manual deep-link/adbox inventory first.",
+          "Only build API ingestion after LinkPrice support confirms endpoint, auth key, rate limits, and allowed site codes."
         ]
       },
       "complianceNotes": [
@@ -2487,7 +2505,7 @@
       "id": "naver-shopping-connect-primary",
       "programId": "naver-shopping-connect",
       "title": "Naver Shopping Connect monetization item",
-      "status": "candidate",
+      "status": "pending_approval",
       "priority": "p1",
       "region": "KR",
       "network": "Naver Brand Connect",
@@ -2722,7 +2740,7 @@
       "id": "adpick-primary",
       "programId": "adpick",
       "title": "Adpick monetization item",
-      "status": "candidate",
+      "status": "pending_approval",
       "priority": "p1",
       "region": "KR",
       "network": "Adpick",
@@ -2743,7 +2761,7 @@
       "allowedSites": [],
       "applyUrl": "https://adpick.co.kr/",
       "sourceUrl": "https://adpick.co.kr/?ac=guide&md=api&tac=sdk",
-      "nextAction": "Apply, request/confirm API eligibility, and build cached campaign ingestion before using in rotation.",
+      "nextAction": "Wait for account approval; after approval, confirm API eligibility and build cached campaign ingestion before using in rotation.",
       "risk": "high",
       "integrationSupport": {
         "api": "JSON campaign list API for automatically exposing active campaigns on apps or web services.",
