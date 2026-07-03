@@ -1,0 +1,91 @@
+source_policy: metadata_and_sampled_public_pages
+last_reviewed: "2026-07-04"
+notes:
+  - Classify monetized .com sites that cannot be inferred from the domain alone.
+  - Coupang remains blocked unless the channel is listed in data/coupang-channel-registry.json.
+  - Evidence was sampled from public homepage or WordPress REST post titles on 2026-07-04.
+classifications:
+  - domain: caregos.com
+    target_market: global_en
+    primary_audience: English-speaking U.S. nursing home and CMS ratings readers
+    notes: "Homepage sample is English and U.S. CMS-focused."
+  - domain: coverclarityhealth.com
+    target_market: global_en
+    primary_audience: English-speaking U.S. ACA subsidy and health insurance readers
+    notes: "Homepage sample is English and Florida ACA-focused."
+  - domain: crepika.com
+    target_market: kr
+    primary_audience: Korean creator and browser-tool users
+    notes: "Homepage sample is Korean creator tools content."
+  - domain: discparty.com
+    target_market: kr
+    primary_audience: Korean social gathering and relationship readers
+    notes: "WordPress post sample is Korean."
+  - domain: educaer.com
+    target_market: kr
+    primary_audience: Korean education, card, and public-information readers
+    notes: "WordPress post sample is Korean."
+  - domain: goesku.com
+    target_market: kr
+    primary_audience: Korean Seoul subway station lifestyle readers
+    notes: "Homepage sample is Korean Seoul subway guide content."
+  - domain: gpt.nexttech7.com
+    target_market: kr
+    primary_audience: Korean AI productivity and Google Workspace readers
+    notes: "WordPress post sample is Korean AI software guide content."
+  - domain: haemongdream.com
+    target_market: kr
+    primary_audience: Korean dream interpretation readers
+    notes: "WordPress post sample is Korean dream interpretation content."
+  - domain: healthgotoo.com
+    target_market: kr
+    primary_audience: Korean health supplement and wellness readers
+    notes: "WordPress post sample is Korean health content."
+  - domain: insupang.com
+    target_market: global_en
+    primary_audience: English-speaking insurance document review readers
+    notes: "WordPress post sample is English insurance content."
+  - domain: kang4.com
+    target_market: kr
+    primary_audience: Korean community management and education readers
+    notes: "WordPress post sample is Korean."
+  - domain: legalser.com
+    target_market: global_en
+    primary_audience: English-speaking legal terminology and checklist readers
+    notes: "WordPress post sample is English legal content."
+  - domain: luxurytraver.com
+    target_market: global_en
+    primary_audience: English-speaking luxury travel planning readers
+    notes: "WordPress post sample is English travel content."
+  - domain: nexttech7.com
+    target_market: kr
+    primary_audience: Korean electronics and technology readers
+    notes: "WordPress post sample is Korean TV and projector content."
+  - domain: patentgogo.com
+    target_market: kr
+    primary_audience: Korean patent and battery technology data readers
+    notes: "Homepage sample is Korean patent data-room content."
+  - domain: petinsuer.com
+    target_market: kr
+    primary_audience: Korean pet-care and pet-insurance readers
+    notes: "WordPress post sample is Korean pet-care content."
+  - domain: rndatlas.com
+    target_market: kr
+    primary_audience: Korean national R&D investment data readers
+    notes: "Homepage sample is Korean R&D public-data content."
+  - domain: solarpaybackmap.com
+    target_market: global_en
+    primary_audience: English-speaking U.S. solar payback readers
+    notes: "Homepage sample is English solar estimate content."
+  - domain: sssaass.com
+    target_market: kr
+    primary_audience: Korean AI workflow and automation readers
+    notes: "WordPress post sample is Korean AI workflow content."
+  - domain: texturb.com
+    target_market: kr
+    primary_audience: Korean text utility and editing workflow users
+    notes: "Homepage sample is Korean text-tool content."
+  - domain: wattbenchs.com
+    target_market: global_en
+    primary_audience: English-speaking U.S. electricity-rate readers
+    notes: "Homepage sample is English U.S. electricity-rate content."

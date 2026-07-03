@@ -79,6 +79,16 @@ describe("update-monetization-workspace affiliate normalization", () => {
 
   it("builds site-level affiliate routing from site config and Coupang registry", () => {
     const routes = buildAffiliateSiteRouting({
+      audienceConfig: {
+        classifications: [
+          {
+            domain: "korean-dot-com.example.com",
+            notes: "Korean sample.",
+            primary_audience: "Korean readers",
+            target_market: "kr",
+          },
+        ],
+      },
       coupangRegistry: {
         channels: [
           {
@@ -123,6 +133,22 @@ describe("update-monetization-workspace affiliate normalization", () => {
             platform: "wordpress",
             url: "https://unclassified.example.com/",
           },
+          {
+            enabled: true,
+            id: "korean-kr-site",
+            monetization: true,
+            name: "korean.example.kr",
+            platform: "wordpress",
+            url: "https://korean.example.kr/",
+          },
+          {
+            enabled: true,
+            id: "korean-dot-com-site",
+            monetization: true,
+            name: "korean-dot-com.example.com",
+            platform: "wordpress",
+            url: "https://korean-dot-com.example.com/",
+          },
         ],
       },
     });
@@ -155,6 +181,23 @@ describe("update-monetization-workspace affiliate normalization", () => {
         coupangExposure: "channel_not_registered_blocked",
         domain: "unclassified.example.com",
         targetMarket: "unclassified",
+      }),
+    );
+    expect(routes).toContainEqual(
+      expect.objectContaining({
+        blockedPrograms: ["coupang-partners"],
+        domain: "korean.example.kr",
+        source: [".kr-domain-heuristic", "sites.yaml"],
+        targetMarket: "kr",
+      }),
+    );
+    expect(routes).toContainEqual(
+      expect.objectContaining({
+        blockedPrograms: ["coupang-partners"],
+        domain: "korean-dot-com.example.com",
+        primaryAudience: "Korean readers",
+        source: ["site-audience-classification.yml", "sites.yaml"],
+        targetMarket: "kr",
       }),
     );
   });

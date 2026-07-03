@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T15:21:28.242Z",
+  "generatedAt": "2026-07-03T15:33:23.825Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -3304,6 +3304,72 @@
   ],
   "siteRouting": [
     {
+      "siteId": "2mlab-2",
+      "name": "2mlab.kr",
+      "domain": "2mlab.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "ai-tasko",
+      "name": "ai.tasko.kr",
+      "domain": "ai.tasko.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "askore",
+      "name": "askore.kr",
+      "domain": "askore.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
       "siteId": "autoscares-2",
       "name": "autoscares.com",
       "domain": "autoscares.com",
@@ -3326,6 +3392,28 @@
       ]
     },
     {
+      "siteId": "bojo24",
+      "name": "bojo24.kr",
+      "domain": "bojo24.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
       "siteId": "campgogo",
       "name": "https://campgogo.kr",
       "domain": "campgogo.kr",
@@ -3343,8 +3431,31 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "car-luckyday",
+      "name": "car.luckyday.kr",
+      "domain": "car.luckyday.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
       ]
     },
     {
@@ -3365,8 +3476,141 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "certifi",
+      "name": "certifi.kr",
+      "domain": "certifi.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "chatgipt-3",
+      "name": "chatgipt.kr",
+      "domain": "chatgipt.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "coinyo-2",
+      "name": "coinyo.kr",
+      "domain": "coinyo.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "crepika",
+      "name": "crepika.com",
+      "domain": "crepika.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean creator and browser-tool users",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is Korean creator tools content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "discparty",
+      "name": "디스크파티 - GA4",
+      "domain": "discparty.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean social gathering and relationship readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "dog-klick",
+      "name": "dog.klick.kr",
+      "domain": "dog.klick.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
       ]
     },
     {
@@ -3387,6 +3631,7 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
       ]
@@ -3414,6 +3659,50 @@
       ]
     },
     {
+      "siteId": "dolbomjigi-ehon365",
+      "name": "dolbomjigi.ehon365.kr",
+      "domain": "dolbomjigi.ehon365.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "doseogogo",
+      "name": "http://doseogogo.kr",
+      "domain": "doseogogo.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
       "siteId": "dullegilgogo",
       "name": "https://dullegilgogo.kr",
       "domain": "dullegilgogo.kr",
@@ -3431,8 +3720,603 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "educaer",
+      "name": "educaer.com",
+      "domain": "educaer.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean education, card, and public-information readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "ehon365",
+      "name": "ehon365.kr",
+      "domain": "ehon365.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "esgyo",
+      "name": "이에스지요 - GA4",
+      "domain": "esgyo.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "estat-2",
+      "name": "estat.kr",
+      "domain": "estat.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "etique",
+      "name": "매너팡팡 - GA4",
+      "domain": "etique.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "ezfunnel",
+      "name": "ezfunnel.kr",
+      "domain": "ezfunnel.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "fastjob",
+      "name": "패스트잡 - GA4",
+      "domain": "fastjob.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "finan",
+      "name": "파이날팡 - GA4",
+      "domain": "finan.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "goesku",
+      "name": "goesku.com",
+      "domain": "goesku.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean Seoul subway station lifestyle readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is Korean Seoul subway guide content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "gong-luckyday",
+      "name": "gong.luckyday.kr",
+      "domain": "gong.luckyday.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "gong365",
+      "name": "gong365.kr",
+      "domain": "gong365.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "gover",
+      "name": "보조금365 - GA4",
+      "domain": "gover.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "gpt-nexttech7",
+      "name": "gpt.nexttech7.com",
+      "domain": "gpt.nexttech7.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean AI productivity and Google Workspace readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean AI software guide content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "haemongdream",
+      "name": "해몽드림 - GA4",
+      "domain": "haemongdream.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean dream interpretation readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean dream interpretation content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "healfood-2",
+      "name": "healfood.kr",
+      "domain": "healfood.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "healthgotoo",
+      "name": "건강팡팡 - GA4",
+      "domain": "healthgotoo.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean health supplement and wellness readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean health content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "jasamall-sellerpit",
+      "name": "jasamall.sellerpit.kr",
+      "domain": "jasamall.sellerpit.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "kang4",
+      "name": "강사자판기",
+      "domain": "kang4.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean community management and education readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "kapti",
+      "name": "kapti.kr",
+      "domain": "kapti.kr",
+      "enabled": true,
+      "platform": "nextjs",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "klick-2",
+      "name": "klick.kr",
+      "domain": "klick.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "knewstory",
+      "name": "케이뉴스스토리 - GA4",
+      "domain": "knewstory.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "lawer",
+      "name": "법이람 - GA4",
+      "domain": "lawer.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "luckyday",
+      "name": "럭키데이 - GA4",
+      "domain": "luckyday.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "mbti-tasko",
+      "name": "tasko.kr",
+      "domain": "mbti.tasko.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "nexttech7",
+      "name": "nexttech7.com",
+      "domain": "nexttech7.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean electronics and technology readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean TV and projector content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "nicewomen",
+      "name": "나이스우먼 - GA4",
+      "domain": "nicewomen.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "nongsusangogo",
+      "name": "https://nongsusangogo.kr",
+      "domain": "nongsusangogo.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
       ]
     },
     {
@@ -3453,8 +4337,97 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "patentgogo",
+      "name": "patentgogo.com",
+      "domain": "patentgogo.com",
+      "enabled": true,
+      "platform": "nextjs",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean patent and battery technology data readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is Korean patent data-room content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "petinsuer-2",
+      "name": "petinsuer.com",
+      "domain": "petinsuer.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean pet-care and pet-insurance readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean pet-care content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "petjigi",
+      "name": "petjigi.kr",
+      "domain": "petjigi.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "phone-luckyday",
+      "name": "phone.luckyday.kr",
+      "domain": "phone.luckyday.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
       ]
     },
     {
@@ -3475,8 +4448,75 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "pregnancy-ehon365",
+      "name": "pregnancy.ehon365.kr",
+      "domain": "pregnancy.ehon365.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "richyou",
+      "name": "richyou.kr",
+      "domain": "richyou.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "rndatlas",
+      "name": "rndatlas.com",
+      "domain": "rndatlas.com",
+      "enabled": true,
+      "platform": "nextjs",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean national R&D investment data readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is Korean R&D public-data content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
       ]
     },
     {
@@ -3497,8 +4537,119 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "runmania",
+      "name": "runmania.kr",
+      "domain": "runmania.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "saju-tasko",
+      "name": "saju.tasko.kr",
+      "domain": "saju.tasko.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "sellerpit-2",
+      "name": "sellerpit.kr",
+      "domain": "sellerpit.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "sinhonjigi-ehon365",
+      "name": "sinhonjigi.ehon365.kr",
+      "domain": "sinhonjigi.ehon365.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "smart-sellerpit",
+      "name": "smart.sellerpit.kr",
+      "domain": "smart.sellerpit.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
       ]
     },
     {
@@ -3519,8 +4670,75 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "spinkorea-2",
+      "name": "spinkorea.kr",
+      "domain": "spinkorea.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "sssaass",
+      "name": "sssaass.com",
+      "domain": "sssaass.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean AI workflow and automation readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "WordPress post sample is Korean AI workflow content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "tasko-2",
+      "name": "tasko.kr",
+      "domain": "tasko.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
       ]
     },
     {
@@ -3541,6 +4759,7 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
       ]
@@ -3568,6 +4787,50 @@
       ]
     },
     {
+      "siteId": "texturb",
+      "name": "texturb.com",
+      "domain": "texturb.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean text utility and editing workflow users",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is Korean text-tool content.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "today2424",
+      "name": "today2424.kr",
+      "domain": "today2424.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
       "siteId": "todaypharm",
       "name": "todaypharm.kr",
       "domain": "todaypharm.kr",
@@ -3585,8 +4848,229 @@
       "coupangRegistered": true,
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
+        ".kr-domain-heuristic",
         "sites.yaml",
         "coupang-channel-registry.json"
+      ]
+    },
+    {
+      "siteId": "todayshops-2",
+      "name": "todayshops.kr",
+      "domain": "todayshops.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "trave",
+      "name": "여행브이 - GA4",
+      "domain": "trave.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "travel-sellerpit",
+      "name": "travel.sellerpit.kr",
+      "domain": "travel.sellerpit.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "travelpang-2",
+      "name": "travelpang.kr",
+      "domain": "travelpang.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "webtoon-klick",
+      "name": "webtoon.klick.kr",
+      "domain": "webtoon.klick.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "workgogo",
+      "name": "workgogo.kr",
+      "domain": "workgogo.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "youkamap",
+      "name": "https://youkamap.kr",
+      "domain": "youkamap.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "yungyanggogo",
+      "name": "yungyanggogo.kr",
+      "domain": "yungyanggogo.kr",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        ".kr-domain-heuristic",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "caregos",
+      "name": "caregos.com",
+      "domain": "caregos.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking U.S. nursing home and CMS ratings readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is English and U.S. CMS-focused.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "coverclarityhealth",
+      "name": "coverclarityhealth.com",
+      "domain": "coverclarityhealth.com",
+      "enabled": true,
+      "platform": "nextjs",
+      "monetization": true,
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking U.S. ACA subsidy and health insurance readers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Homepage sample is English and Florida ACA-focused.",
+      "source": [
+        "site-audience-classification.yml",
+        "sites.yaml"
       ]
     },
     {
@@ -3655,665 +5139,14 @@
       ]
     },
     {
-      "siteId": "2mlab-2",
-      "name": "2mlab.kr",
-      "domain": "2mlab.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "ai-tasko",
-      "name": "ai.tasko.kr",
-      "domain": "ai.tasko.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "askore",
-      "name": "askore.kr",
-      "domain": "askore.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "bojo24",
-      "name": "bojo24.kr",
-      "domain": "bojo24.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "car-luckyday",
-      "name": "car.luckyday.kr",
-      "domain": "car.luckyday.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "caregos",
-      "name": "caregos.com",
-      "domain": "caregos.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "certifi",
-      "name": "certifi.kr",
-      "domain": "certifi.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "chatgipt-3",
-      "name": "chatgipt.kr",
-      "domain": "chatgipt.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "coinyo-2",
-      "name": "coinyo.kr",
-      "domain": "coinyo.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "coverclarityhealth",
-      "name": "coverclarityhealth.com",
-      "domain": "coverclarityhealth.com",
-      "enabled": true,
-      "platform": "nextjs",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "crepika",
-      "name": "crepika.com",
-      "domain": "crepika.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "discparty",
-      "name": "디스크파티 - GA4",
-      "domain": "discparty.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "dog-klick",
-      "name": "dog.klick.kr",
-      "domain": "dog.klick.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "dolbomjigi-ehon365",
-      "name": "dolbomjigi.ehon365.kr",
-      "domain": "dolbomjigi.ehon365.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "doseogogo",
-      "name": "http://doseogogo.kr",
-      "domain": "doseogogo.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "educaer",
-      "name": "educaer.com",
-      "domain": "educaer.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "ehon365",
-      "name": "ehon365.kr",
-      "domain": "ehon365.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "esgyo",
-      "name": "이에스지요 - GA4",
-      "domain": "esgyo.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "estat-2",
-      "name": "estat.kr",
-      "domain": "estat.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "etique",
-      "name": "매너팡팡 - GA4",
-      "domain": "etique.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "ezfunnel",
-      "name": "ezfunnel.kr",
-      "domain": "ezfunnel.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "fastjob",
-      "name": "패스트잡 - GA4",
-      "domain": "fastjob.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "finan",
-      "name": "파이날팡 - GA4",
-      "domain": "finan.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "goesku",
-      "name": "goesku.com",
-      "domain": "goesku.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "gong-luckyday",
-      "name": "gong.luckyday.kr",
-      "domain": "gong.luckyday.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "gong365",
-      "name": "gong365.kr",
-      "domain": "gong365.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "gover",
-      "name": "보조금365 - GA4",
-      "domain": "gover.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "gpt-nexttech7",
-      "name": "gpt.nexttech7.com",
-      "domain": "gpt.nexttech7.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "haemongdream",
-      "name": "해몽드림 - GA4",
-      "domain": "haemongdream.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "healfood-2",
-      "name": "healfood.kr",
-      "domain": "healfood.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "healthgotoo",
-      "name": "건강팡팡 - GA4",
-      "domain": "healthgotoo.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
       "siteId": "insupang",
       "name": "insupang - GA4",
       "domain": "insupang.com",
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking insurance document review readers",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
@@ -4321,134 +5154,9 @@
       "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "",
+      "notes": "WordPress post sample is English insurance content.",
       "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "jasamall-sellerpit",
-      "name": "jasamall.sellerpit.kr",
-      "domain": "jasamall.sellerpit.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "kang4",
-      "name": "강사자판기",
-      "domain": "kang4.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "kapti",
-      "name": "kapti.kr",
-      "domain": "kapti.kr",
-      "enabled": true,
-      "platform": "nextjs",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "klick-2",
-      "name": "klick.kr",
-      "domain": "klick.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "knewstory",
-      "name": "케이뉴스스토리 - GA4",
-      "domain": "knewstory.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "lawer",
-      "name": "법이람 - GA4",
-      "domain": "lawer.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
+        "site-audience-classification.yml",
         "sites.yaml"
       ]
     },
@@ -4459,8 +5167,8 @@
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking legal terminology and checklist readers",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
@@ -4468,29 +5176,9 @@
       "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "",
+      "notes": "WordPress post sample is English legal content.",
       "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "luckyday",
-      "name": "럭키데이 - GA4",
-      "domain": "luckyday.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
+        "site-audience-classification.yml",
         "sites.yaml"
       ]
     },
@@ -4501,8 +5189,8 @@
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking luxury travel planning readers",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
@@ -4510,344 +5198,9 @@
       "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "",
+      "notes": "WordPress post sample is English travel content.",
       "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "mbti-tasko",
-      "name": "tasko.kr",
-      "domain": "mbti.tasko.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "nexttech7",
-      "name": "nexttech7.com",
-      "domain": "nexttech7.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "nicewomen",
-      "name": "나이스우먼 - GA4",
-      "domain": "nicewomen.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "nongsusangogo",
-      "name": "https://nongsusangogo.kr",
-      "domain": "nongsusangogo.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "patentgogo",
-      "name": "patentgogo.com",
-      "domain": "patentgogo.com",
-      "enabled": true,
-      "platform": "nextjs",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "petinsuer-2",
-      "name": "petinsuer.com",
-      "domain": "petinsuer.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "petjigi",
-      "name": "petjigi.kr",
-      "domain": "petjigi.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "phone-luckyday",
-      "name": "phone.luckyday.kr",
-      "domain": "phone.luckyday.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "pregnancy-ehon365",
-      "name": "pregnancy.ehon365.kr",
-      "domain": "pregnancy.ehon365.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "richyou",
-      "name": "richyou.kr",
-      "domain": "richyou.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "rndatlas",
-      "name": "rndatlas.com",
-      "domain": "rndatlas.com",
-      "enabled": true,
-      "platform": "nextjs",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "runmania",
-      "name": "runmania.kr",
-      "domain": "runmania.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "saju-tasko",
-      "name": "saju.tasko.kr",
-      "domain": "saju.tasko.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "sellerpit-2",
-      "name": "sellerpit.kr",
-      "domain": "sellerpit.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "sinhonjigi-ehon365",
-      "name": "sinhonjigi.ehon365.kr",
-      "domain": "sinhonjigi.ehon365.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "smart-sellerpit",
-      "name": "smart.sellerpit.kr",
-      "domain": "smart.sellerpit.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
+        "site-audience-classification.yml",
         "sites.yaml"
       ]
     },
@@ -4858,8 +5211,8 @@
       "enabled": true,
       "platform": "nextjs",
       "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking U.S. solar payback readers",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
@@ -4867,197 +5220,9 @@
       "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "",
+      "notes": "Homepage sample is English solar estimate content.",
       "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "spinkorea-2",
-      "name": "spinkorea.kr",
-      "domain": "spinkorea.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "sssaass",
-      "name": "sssaass.com",
-      "domain": "sssaass.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "tasko-2",
-      "name": "tasko.kr",
-      "domain": "tasko.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "texturb",
-      "name": "texturb.com",
-      "domain": "texturb.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "today2424",
-      "name": "today2424.kr",
-      "domain": "today2424.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "todayshops-2",
-      "name": "todayshops.kr",
-      "domain": "todayshops.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "trave",
-      "name": "여행브이 - GA4",
-      "domain": "trave.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "travel-sellerpit",
-      "name": "travel.sellerpit.kr",
-      "domain": "travel.sellerpit.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "travelpang-2",
-      "name": "travelpang.kr",
-      "domain": "travelpang.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
+        "site-audience-classification.yml",
         "sites.yaml"
       ]
     },
@@ -5068,8 +5233,8 @@
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
+      "targetMarket": "global_en",
+      "primaryAudience": "English-speaking U.S. electricity-rate readers",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
@@ -5077,92 +5242,9 @@
       "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "",
+      "notes": "Homepage sample is English U.S. electricity-rate content.",
       "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "webtoon-klick",
-      "name": "webtoon.klick.kr",
-      "domain": "webtoon.klick.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "workgogo",
-      "name": "workgogo.kr",
-      "domain": "workgogo.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "youkamap",
-      "name": "https://youkamap.kr",
-      "domain": "youkamap.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "yungyanggogo",
-      "name": "yungyanggogo.kr",
-      "domain": "yungyanggogo.kr",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "unclassified",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
-      "source": [
+        "site-audience-classification.yml",
         "sites.yaml"
       ]
     }

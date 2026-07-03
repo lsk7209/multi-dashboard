@@ -28,6 +28,9 @@ const BANNER_DB_PATH =
   process.env.MONETIZATION_BANNER_DB ?? join(SOURCE_DIR, "ad-manage.db");
 const AFFILIATE_SOURCE_DIR =
   process.env.MONETIZATION_AFFILIATE_DIR ?? join(SOURCE_DIR, "affiliates");
+const SITE_AUDIENCE_CLASSIFICATION_PATH =
+  process.env.MONETIZATION_SITE_AUDIENCE_PATH ??
+  join(AFFILIATE_SOURCE_DIR, "site-audience-classification.yml");
 const SITES_CONFIG_PATH =
   process.env.MONETIZATION_SITES_CONFIG ?? resolve("scripts", "setup", "sites.yaml");
 const COUPANG_CHANNEL_REGISTRY_PATH =
@@ -344,24 +347,33 @@ export function buildAffiliateItems(programs: Array<ReturnType<typeof normalizeP
 }
 
 export function buildAffiliateSiteRouting(input: {
+  audienceConfig?: unknown;
   coupangRegistry?: unknown;
   sitesConfig?: unknown;
 }) {
+  const audienceConfig = asRecord(input.audienceConfig);
   const sitesConfig = asRecord(input.sitesConfig);
   const coupangRegistry = asRecord(input.coupangRegistry);
+  const classifications = asArray(audienceConfig.classifications).map(asRecord);
   const sites = asArray(sitesConfig.sites).map(asRecord);
   const channels = asArray(coupangRegistry.channels).map(asRecord);
   const routeMap = new Map<string, ReturnType<typeof createSiteRoute>>();
 
   for (const site of sites) {
     if (!shouldIncludeSiteInRouting(site)) continue;
-    upsertSiteRoute(routeMap, createSiteRoute({ site }));
+    upsertSiteRoute(
+      routeMap,
+      createSiteRoute({ classification: findSiteClassification(classifications, site), site }),
+    );
   }
 
   for (const site of sites) {
     const affiliate = asRecord(site.affiliate);
     if (Object.keys(affiliate).length === 0) continue;
-    upsertSiteRoute(routeMap, createSiteRoute({ site }));
+    upsertSiteRoute(
+      routeMap,
+      createSiteRoute({ classification: findSiteClassification(classifications, site), site }),
+    );
   }
 
   for (const channel of channels) {
@@ -371,7 +383,14 @@ export function buildAffiliateSiteRouting(input: {
       sites.find((site) => asString(site.id) === channelSiteId) ??
       sites.find((site) => normalizeDomain(asString(site.url)) === channelDomain);
 
-    upsertSiteRoute(routeMap, createSiteRoute({ channel, site: matchingSite }));
+    upsertSiteRoute(
+      routeMap,
+      createSiteRoute({
+        channel,
+        classification: findSiteClassification(classifications, matchingSite, channel),
+        site: matchingSite,
+      }),
+    );
   }
 
   return [...routeMap.values()].sort(compareSiteRoutes);
@@ -381,15 +400,44 @@ function shouldIncludeSiteInRouting(site: Row): boolean {
   return asBoolean(site.enabled) && asBoolean(site.monetization);
 }
 
-function createSiteRoute({ channel, site }: { channel?: Row; site?: Row }) {
+function findSiteClassification(
+  classifications: Row[],
+  site?: Row,
+  channel?: Row,
+): Row | undefined {
+  const siteId = asString(site?.id || channel?.siteId);
+  const domain = normalizeDomain(asString(site?.url || channel?.domain));
+  return classifications.find((classification) => {
+    return (
+      asString(classification.site_id) === siteId ||
+      normalizeDomain(asString(classification.domain)) === domain
+    );
+  });
+}
+
+function createSiteRoute({
+  channel,
+  classification,
+  site,
+}: {
+  channel?: Row;
+  classification?: Row;
+  site?: Row;
+}) {
   const affiliate = asRecord(site?.affiliate);
   const channelStatus = asString(channel?.status);
   const domain =
     normalizeDomain(asString(site?.url)) ||
     normalizeDomain(asString(channel?.domain)) ||
     normalizeDomain(asString(site?.gscSiteUrl));
-  const blockedPrograms = uniqueStrings(asArray(affiliate.blockedPrograms).map(asString));
-  const activePrograms = uniqueStrings(asArray(affiliate.activePrograms).map(asString));
+  const blockedPrograms = uniqueStrings([
+    ...asArray(classification?.blocked_programs).map(asString),
+    ...asArray(affiliate.blockedPrograms).map(asString),
+  ]);
+  const activePrograms = uniqueStrings([
+    ...asArray(classification?.active_programs).map(asString),
+    ...asArray(affiliate.activePrograms).map(asString),
+  ]);
   const coupangRegistered =
     channelStatus === "approved" ||
     channelStatus === "registered" ||
@@ -415,28 +463,42 @@ function createSiteRoute({ channel, site }: { channel?: Row; site?: Row }) {
     platform: asString(site?.platform || "unknown"),
     monetization: site ? asBoolean(site.monetization) : true,
     targetMarket: asString(
-      affiliate.targetMarket || (channel ? "kr" : "unclassified"),
+      affiliate.targetMarket ||
+        classification?.target_market ||
+        (channel ? "kr" : inferTargetMarketFromDomain(domain)),
     ),
     primaryAudience: asString(
       affiliate.primaryAudience ||
+        classification?.primary_audience ||
         (channel ? "Korean readers on registered Coupang channel" : ""),
     ),
     activePrograms: uniqueStrings(activePrograms),
     blockedPrograms,
     coupangExposure: asString(
       affiliate.coupangExposure ||
+        classification?.coupang_exposure ||
         (coupangRegistered ? "registered_channel_allowed" : "channel_not_registered_blocked"),
     ),
     coupangChannelStatus: channelStatus || "not_listed",
     coupangRegistered,
-    notes: uniqueStrings([asString(affiliate.notes), asString(channel?.notes)])
+    notes: uniqueStrings([
+      asString(classification?.notes),
+      asString(affiliate.notes),
+      asString(channel?.notes),
+    ])
       .filter(Boolean)
       .join(" "),
     source: uniqueStrings([
+      inferTargetMarketFromDomain(domain) === "kr" ? ".kr-domain-heuristic" : "",
+      classification ? "site-audience-classification.yml" : "",
       site ? "sites.yaml" : "",
       channel ? "coupang-channel-registry.json" : "",
     ]),
   };
+}
+
+function inferTargetMarketFromDomain(domain: string): string {
+  return domain.endsWith(".kr") ? "kr" : "unclassified";
 }
 
 function upsertSiteRoute(
@@ -555,6 +617,7 @@ function loadAffiliateInventory() {
   const programs = asArray(inventory.programs).map(normalizeProgram);
   const affiliateItems = buildAffiliateItems(programs);
   const siteRouting = buildAffiliateSiteRouting({
+    audienceConfig: readYaml(SITE_AUDIENCE_CLASSIFICATION_PATH),
     coupangRegistry: readJson(COUPANG_CHANNEL_REGISTRY_PATH),
     sitesConfig: readYaml(SITES_CONFIG_PATH),
   });
