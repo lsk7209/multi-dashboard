@@ -100,12 +100,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\discpartycom
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/discparty.com
+      localPath: D:\web\discpartycom
   - id: klick
     name: 블로그 - GA4
     enabled: false
@@ -140,12 +140,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\haemongdreamcom
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/haemongdream.com
+      localPath: D:\web\haemongdreamcom
   - id: insupang
     name: insupang - GA4
     enabled: true
@@ -314,12 +314,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\travekr
       sshHost: trave.kr
       sshPort: 1988
       sshUser: trave
       sshKeyPath: D:\env\trave-chemicloud-PrivateKey-nopass
       wpPath: /home/trave/public_html
+      localPath: D:\web\travekr
   - id: autoscares
     name: 자동차팡팡 - GA4
     enabled: false
@@ -376,12 +376,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\nicewomenkr
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/nicewomen.kr
+      localPath: D:\web\nicewomenkr
   - id: esgyo
     name: 이에스지요 - GA4
     enabled: true
@@ -394,12 +394,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\esgyokr
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home5/nexttech/esgyo.kr
+      localPath: D:\web\esgyokr
   - id: sellerpit
     name: 셀러핏 - GA4
     enabled: false
@@ -504,12 +504,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\klickkr
       sshHost: 158.247.245.11
       sshPort: 1988
       sshUser: klick
       sshKeyPath: D:\env\klickkr-chemicloud-PrivateKey-nopass
       wpPath: /home/klick/public_html
+      localPath: D:\web\klickkr
   - id: sellerpit-2
     name: sellerpit.kr
     enabled: true
@@ -522,12 +522,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\sellerpitkr
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/sellerpit.kr
+      localPath: D:\web\sellerpitkr
   - id: chatgipt-3
     name: chatgipt.kr
     enabled: true
@@ -634,12 +634,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\2mlabkr
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home5/nexttech/2mlab.kr
+      localPath: D:\web\2mlabkr
   - id: spinkorea-2
     name: spinkorea.kr
     enabled: true
@@ -665,12 +665,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\ezfunnelkr
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home5/nexttech/ezfunnel.kr
+      localPath: D:\web\ezfunnelkr
   - id: knewstory-2
     name: knewstory.kr
     enabled: false
@@ -826,12 +826,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\luxurytravercom
       sshHost: luxurytraver.com
       sshPort: 1988
       sshUser: luxurytraver
       sshKeyPath: D:\env\luxurytraver-ssh-key
       wpPath: /home/luxurytraver/public_html
+      localPath: D:\web\luxurytravercom
   - id: softwa-2
     name: softwa.kr
     enabled: false
@@ -1028,12 +1028,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\richyoukr
       sshHost: 158.247.212.123
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/richyou.kr
+      localPath: D:\web\richyoukr
   - id: certifi
     name: certifi.kr
     enabled: true
@@ -1194,12 +1194,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\smartsellerpitkr
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/smart.sellerpit.kr
+      localPath: D:\web\smartsellerpitkr
   - id: pregnancy-ehon365
     name: pregnancy.ehon365.kr
     enabled: true
@@ -1310,12 +1310,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\travelsellerpitkr
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/travel.sellerpit.kr
+      localPath: D:\web\travelsellerpitkr
   - id: jasamall-sellerpit
     name: jasamall.sellerpit.kr
     enabled: true
@@ -1328,12 +1328,12 @@ sites:
     contentSource:
       type: wordpress-ssh
       locationLabel: kwangju
-      localPath: D:\web\jasamall-sellerpit-backups\adsense-20260608-191006
       sshHost: smart.sellerpit.kr
       sshPort: 1988
       sshUser: nexttech
       sshKeyPath: D:\env\haemongdream-claude_key2
       wpPath: /home/nexttech/jasamall.sellerpit.kr
+      localPath: D:\web\jasamall-sellerpit-backups\adsense-20260608-191006
   - id: sorimate
     name: sorimate.com
     enabled: true
@@ -1493,6 +1493,8 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\solarpaybackmap
       githubRepo: https://github.com/lsk7209/solarpaybackmap.com
+    wpRestBase: https://solarpaybackmap.com/wp-json/wp/v2
+    gscSiteUrl: https://solarpaybackmap.com/
   - id: coverclarityhealth
     name: coverclarityhealth.com
     enabled: true
@@ -1507,6 +1509,8 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\coverclarityhealth
       githubRepo: https://github.com/lsk7209/coverclarityhealth.com
+    wpRestBase: https://coverclarityhealth.com/wp-json/wp/v2
+    gscSiteUrl: https://coverclarityhealth.com/
   - id: kapti
     name: kapti.kr
     enabled: true
@@ -1521,6 +1525,8 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\kapt
       githubRepo: https://github.com/lsk7209/kapti.kr
+    wpRestBase: https://kapti.kr/wp-json/wp/v2
+    gscSiteUrl: https://kapti.kr/
   - id: patentgogo
     name: patentgogo.com
     enabled: true
@@ -1535,6 +1541,8 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\tukhugogo
       githubRepo: https://github.com/lsk7209/tukhugogo
+    wpRestBase: https://patentgogo.com/wp-json/wp/v2
+    ga4PropertyId: "543441407"
   - id: rndatlas
     name: rndatlas.com
     enabled: true
@@ -1549,6 +1557,8 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\rndmap
       githubRepo: https://github.com/lsk7209/rndmap
+    wpRestBase: https://rndatlas.com/wp-json/wp/v2
+    ga4PropertyId: "543459196"
   - id: localgeo
     name: localgeo.app
     enabled: true
@@ -1563,3 +1573,21 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\localgeo\repo
       githubRepo: https://github.com/lsk7209/localgeo
+  - id: gradienttrail
+    name: gradienttrail.com
+    enabled: true
+    platform: wordpress
+    url: https://gradienttrail.com/
+    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
+    ga4PropertyId: "543434435"
+    gscSiteUrl: https://gradienttrail.com/
+    monetization: true
+  - id: dogbreedcost
+    name: https://dogbreedcost.com
+    enabled: true
+    platform: wordpress
+    url: https://dogbreedcost.com/
+    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
+    ga4PropertyId: "543424923"
+    gscSiteUrl: https://dogbreedcost.com/
+    monetization: true
