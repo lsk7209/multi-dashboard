@@ -18,6 +18,7 @@
     "ops:intel:public": "tsx scripts/setup/update-ops-intel.ts --public-only",
     "ops:triage": "tsx scripts/setup/update-ops-triage.ts",
     "ops:monetization": "tsx scripts/setup/update-monetization-workspace.ts",
+    "ops:coupang-banners": "tsx scripts/setup/sync-coupang-banner-placements.ts",
     "fleet:optimize:plan": "tsx scripts/setup/create-fleet-optimization-plan.ts",
     "indexnow:deploy-key": "tsx scripts/setup/deploy-indexnow-key.ts",
     "indexnow:deploy-key:dry": "tsx scripts/setup/deploy-indexnow-key.ts --dry-run",
