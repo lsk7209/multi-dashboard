@@ -58,6 +58,17 @@ function readYaml(path: string): Row {
   return asRecord(YAML.parse(readFileSync(path, "utf8")));
 }
 
+function normalizeIntegrationSupport(value: unknown) {
+  const support = asRecord(value);
+  return {
+    api: asString(support.api || "none documented"),
+    feed: asString(support.feed || "none documented"),
+    mcp: asString(support.mcp || "none documented"),
+    cli: asString(support.cli || "none documented"),
+    notes: asArray(support.notes).map(asString).filter(Boolean),
+  };
+}
+
 function scalar(db: DatabaseLike, sql: string): number {
   try {
     return asNumber(db.prepare(sql).get()?.value);
@@ -260,6 +271,7 @@ export function normalizeProgram(value: unknown) {
     allowedSites: asArray(program.allowed_sites).map(asString).filter(Boolean),
     risk: asString(program.risk || "medium"),
     complianceNotes: asArray(program.compliance_notes).map(asString).filter(Boolean),
+    integrationSupport: normalizeIntegrationSupport(program.integration_support),
     merchantTotalReported: asNumber(program.merchant_total_reported),
     merchantSnapshotFile: asString(program.merchant_snapshot_file),
     lastReviewed: asString(operations.last_reviewed),
@@ -308,6 +320,7 @@ export function buildAffiliateItems(programs: Array<ReturnType<typeof normalizeP
       sourceUrl: program.sourceUrl || program.platformUrl,
       nextAction: program.nextAction || "Verify terms, apply, then create tracking link and banner creative.",
       risk: program.risk || "medium",
+      integrationSupport: program.integrationSupport,
       complianceNotes:
         program.complianceNotes.length > 0
           ? program.complianceNotes

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T23:35:07.833Z",
+  "generatedAt": "2026-07-03T03:28:32.150Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -8,7 +8,7 @@
     "analysisPath": "D:\\web\\multi-dashboard\\data\\monetization\\affiliates\\ripplealba-analysis.md",
     "inventoryExists": true,
     "merchantsExists": true,
-    "inventoryUpdatedAt": "2026-07-02T23:34:41.550Z",
+    "inventoryUpdatedAt": "2026-07-03T03:27:45.736Z",
     "merchantsUpdatedAt": "2026-07-02T03:52:03.308Z",
     "sourceNote": "Standalone affiliate operations source owned by this multi-dashboard repository."
   },
@@ -57,6 +57,15 @@
         "Use rel=sponsored nofollow for links.",
         "Verify current commission, cookie, prohibited traffic, and API rules in the account."
       ],
+      "integrationSupport": {
+        "api": "Coupang Open API exists for commerce/seller use; Partners affiliate API access must be verified inside Partners account.",
+        "feed": "none documented for Partners public affiliate feed",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Do not use seller Open API as an affiliate-link substitute without Partners terms confirmation."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -103,6 +112,13 @@
         "Use only approved channels and generated links.",
         "Verify promotion terms before showing bonus rates."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -148,6 +164,13 @@
         "Product-level terms vary by seller.",
         "Keep recommendation content specific to the product/store being promoted."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -193,6 +216,13 @@
         "Not a general self-serve affiliate network for every owned site.",
         "Each campaign can define channel, wording, and settlement restrictions."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -238,6 +268,13 @@
         "Do not present as an open affiliate program.",
         "Remove or expire banners after event end dates."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -280,6 +317,13 @@
         "Keep separate from affiliate link management.",
         "Eligibility and revenue share are platform-controlled."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -325,11 +369,76 @@
         "Merchant terms vary; collect landing URL, allowed media, and prohibited keywords.",
         "Be alert for impersonation/phishing warnings; only use official login/domain."
       ],
+      "integrationSupport": {
+        "api": "Reward API, deeplink API, ad API, and open API surfaces documented by LinkPrice.",
+        "feed": "campaign/ad data can be pulled through LinkPrice API or exported after account approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Reward API is suitable for cashback-style sites; deeplink API can convert merchant URLs to affiliate links."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
       "nextAction": "Apply and export merchant list by site category; avoid high-risk finance/medical offers until review.",
       "notes": "Good network layer after first direct programs."
+    },
+    {
+      "id": "adpick",
+      "name": "Adpick",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "KR",
+      "network": "Adpick",
+      "category": "affiliate_network",
+      "platformUrl": "https://adpick.co.kr/",
+      "homepageUrl": "https://adpick.co.kr/",
+      "applyUrl": "https://adpick.co.kr/",
+      "sourceUrl": "https://adpick.co.kr/?ac=guide&md=api&tac=sdk",
+      "countries": [
+        "KR"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "adpick",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate/ad disclosure required near promotional content.",
+      "monetizationModel": "Korean campaign, shopping, app-install, CPA/CPI, and content promotion links.",
+      "payoutModel": "Varies by campaign; verify campaign-level settlement and invalid-conversion rules.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "deepLinkTemplate": "Use Adpick campaign tracking links or API-provided apTrackingLink values.",
+      "contentFit": [
+        "app install campaigns",
+        "shopping mate campaigns",
+        "points/reward content",
+        "Korea-focused campaign pages"
+      ],
+      "recommendedSlots": [
+        "mobile-inline-320x100",
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "high",
+      "complianceNotes": [
+        "Review each CPA/CPI campaign copy and invalid-conversion conditions.",
+        "Do not run sensitive or aggressive claims without manual review."
+      ],
+      "integrationSupport": {
+        "api": "JSON campaign list API for automatically exposing active campaigns on apps or web services.",
+        "feed": "campaign response includes titles, promo text, images, tracking links, caps, and remaining volume",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Official guide says API data should be cached to DB/file and called no more than once per minute."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply, request/confirm API eligibility, and build cached campaign ingestion before using in rotation.",
+      "notes": "Good domestic API-enabled network, but campaign-level compliance must be gated."
     },
     {
       "id": "tenping",
@@ -371,6 +480,13 @@
         "CPA campaigns can carry aggressive claims; review copy manually.",
         "Do not use sensitive offers without legal/policy review."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -420,6 +536,15 @@
         "Display Amazon-required associate disclosure where applicable.",
         "Verify use of images/prices through approved tools/API."
       ],
+      "integrationSupport": {
+        "api": "Product Advertising API 5.0; Amazon also points new API use toward Creators API where eligible.",
+        "feed": "product data only through approved API/tooling; no public bulk affiliate feed for unrestricted use",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Images, prices, and availability should come from approved Amazon tools/API, not scraped pages."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -467,6 +592,15 @@
         "Review rate caps and prohibited traffic.",
         "Avoid misleading discount/voucher claims."
       ],
+      "integrationSupport": {
+        "api": "eBay developer APIs can include EPN affiliate parameters and campaign tracking.",
+        "feed": "EPN advertises access to feeds and APIs for partner content.",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Campaign ID and custom ID should be controlled per site or placement."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -513,6 +647,15 @@
         "Do not claim unavailable discounts.",
         "Use truthful availability/ranking language."
       ],
+      "integrationSupport": {
+        "api": "Booking.com Demand API for managed affiliate partners; Transaction Reporting API is available through Booking partnerships.",
+        "feed": "widgets/search boxes and API-backed accommodation/travel content",
+        "mcp": "developer-docs helper only; no affiliate runtime MCP documented",
+        "cli": "none documented",
+        "notes": [
+          "Demand API is not the same as self-serve affiliate widget access; confirm managed affiliate eligibility first."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -560,6 +703,15 @@
         "Each advertiser has separate approval and promotional restrictions.",
         "Store advertiser IDs and terms before enabling banners."
       ],
+      "integrationSupport": {
+        "api": "impact.com REST API for accounts, campaigns, links, reports, and workflows.",
+        "feed": "advertiser assets, reports, and product/catalog data where advertiser grants access",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "API access depends on impact.com account permissions and joined advertiser terms."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -605,6 +757,15 @@
         "Expect advertiser-by-advertiser approval.",
         "Avoid unsupported coupon/voucher claims."
       ],
+      "integrationSupport": {
+        "api": "CJ Developer Portal supports publisher/advertiser APIs and reporting workflows.",
+        "feed": "product feeds and link/search data depend on advertiser approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Prepare site descriptions and traffic proof before requesting advertiser/API access."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -655,6 +816,15 @@
         "Advertiser terms vary.",
         "Confirm whether each brand supports your country/site."
       ],
+      "integrationSupport": {
+        "api": "Awin REST APIs include Link Builder, Offers, Advertiser Performance, and Publisher Performance APIs.",
+        "feed": "offers/promotions and advertiser data through API; product feeds depend on advertiser",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Awin documents a 20 API calls per minute per user throttle; plan caching."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -702,6 +872,15 @@
         "Advertiser approvals and countries differ.",
         "Collect terms before enabling banners."
       ],
+      "integrationSupport": {
+        "api": "Rakuten Advertising affiliate APIs cover advertisers, links, reports, commissions, and product search where available.",
+        "feed": "product search/feed style access depends on advertiser and publisher approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Use after advertiser-specific terms and country eligibility are confirmed."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -749,6 +928,15 @@
         "Vendor programs can close or pause.",
         "Verify allowed bidding/email/coupon terms."
       ],
+      "integrationSupport": {
+        "api": "PartnerStack API exists, but publisher marketplace automation access must be verified per account.",
+        "feed": "vendor program assets inside platform; no unrestricted public feed documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Treat as manual/vendor-specific until account API scope is confirmed."
+        ]
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -796,6 +984,13 @@
         "Do not promise income outcomes.",
         "Use current plan/pricing facts only."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -844,6 +1039,13 @@
         "Do not confuse affiliate program with HubSpot solutions partner status.",
         "Verify current recurring commission and paid-plan eligibility in account terms."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -890,6 +1092,13 @@
         "Program availability may change.",
         "Do not show payout claims unless verified in current application dashboard."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -936,6 +1145,13 @@
         "Keep pricing/features current.",
         "Avoid guaranteed ranking claims."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -982,6 +1198,13 @@
         "Use approved brand assets only.",
         "Do not publish old commission claims without verification."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
@@ -1029,11 +1252,621 @@
         "Keep feature claims current.",
         "Avoid representing the product as a replacement for professional advice."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
       "nextAction": "Use on English/AI/productivity sites with tutorial content.",
       "notes": "Fast SaaS candidate for English and productivity pages."
+    },
+    {
+      "id": "flexoffers",
+      "name": "FlexOffers",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "FlexOffers",
+      "category": "affiliate_network",
+      "platformUrl": "https://www.flexoffers.com/publishers/",
+      "homepageUrl": "https://www.flexoffers.com/publishers/",
+      "applyUrl": "https://www.flexoffers.com/publishers/",
+      "sourceUrl": "https://www.flexoffers.com/publishers/web-service-api/",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "flexoffers",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Large affiliate network with promotional feeds, product feeds, reporting, and publisher APIs.",
+      "payoutModel": "Varies by advertiser and network terms.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "deepLinkTemplate": "Use FlexOffers advertiser links, deep links, or API-provided creatives after approval.",
+      "contentFit": [
+        "commerce",
+        "coupons",
+        "software",
+        "lifestyle and shopping comparison pages"
+      ],
+      "recommendedSlots": [
+        "sidebar-300x250",
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Advertiser terms and promotional restrictions vary.",
+        "Cache API/feed data and preserve last verified offer timestamp."
+      ],
+      "integrationSupport": {
+        "api": "Web Services API for promotional feeds, product feeds, reporting, and network data.",
+        "feed": "promotional feed and product data feed",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Useful if one dashboard ingestion layer should normalize multiple advertiser/network feeds."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply and test Web Services API with cached promotional feed ingestion.",
+      "notes": "Strong global network candidate when API-first management matters."
+    },
+    {
+      "id": "skimlinks",
+      "name": "Skimlinks",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "Skimlinks",
+      "category": "commerce_content_network",
+      "platformUrl": "https://www.skimlinks.com/",
+      "homepageUrl": "https://www.skimlinks.com/",
+      "applyUrl": "https://www.skimlinks.com/publishers/",
+      "sourceUrl": "https://developers.skimlinks.com/",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "skimlinks",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required; auto-linking must not hide commercial relationship.",
+      "monetizationModel": "Automated commerce link monetization, merchant discovery, reporting, and link wrapper.",
+      "payoutModel": "Revenue share varies by merchant/network route.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "low",
+      "deepLinkTemplate": "Use Skimlinks JavaScript/link wrapper or merchant API workflows where approved.",
+      "contentFit": [
+        "commerce editorial",
+        "long-tail merchant mentions",
+        "shopping guides where direct advertiser approval is inefficient"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Avoid duplicate monetization with direct programs such as Amazon/Coupang.",
+        "Confirm site-level script and privacy requirements before installation."
+      ],
+      "integrationSupport": {
+        "api": "Merchant API, Reporting API, and link wrapper documented for publishers.",
+        "feed": "merchant metadata and reporting data through API",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Better for editorial text-link monetization than first-party banner rotation."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Evaluate separately from banner console because auto-linking can overlap direct affiliate links.",
+      "notes": "Useful fallback for merchant coverage gaps, not a primary banner network."
+    },
+    {
+      "id": "travelpayouts",
+      "name": "Travelpayouts",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "Travelpayouts",
+      "category": "travel_affiliate_network",
+      "platformUrl": "https://www.travelpayouts.com/",
+      "homepageUrl": "https://www.travelpayouts.com/",
+      "applyUrl": "https://www.travelpayouts.com/",
+      "sourceUrl": "https://support.travelpayouts.com/hc/en-us/categories/200358578-API-and-data",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "travelpayouts",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required near travel recommendations.",
+      "monetizationModel": "Travel affiliate network for flights, hotels, transfers, eSIM, tours, and travel widgets.",
+      "payoutModel": "Varies by travel brand/program.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "deepLinkTemplate": "Use Travelpayouts partner links API, widgets, white label, or brand-specific tools.",
+      "contentFit": [
+        "travel guides",
+        "flight and hotel comparison",
+        "eSIM, tours, car rental, and transfer pages"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Travel availability/pricing must be current or clearly dynamic.",
+        "Respect API rate limits and brand-specific usage restrictions."
+      ],
+      "integrationSupport": {
+        "api": "Travelpayouts documents partner links, statistics, balance/payment, Aviasales, and brand APIs.",
+        "feed": "multiple brand data feeds including travel planning, tours, eSIM, and destination data where available",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "API token is required for API/white-label/plugin workflows."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Use on travel sites; test partner-link API and one widget before broad feed ingestion.",
+      "notes": "Best API-friendly travel network layer for multiple travel verticals."
+    },
+    {
+      "id": "getyourguide-partner",
+      "name": "GetYourGuide Partner API",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "GetYourGuide",
+      "category": "travel_experiences",
+      "platformUrl": "https://partner.getyourguide.com/",
+      "homepageUrl": "https://partner.getyourguide.com/",
+      "applyUrl": "https://partner.getyourguide.com/",
+      "sourceUrl": "https://api.getyourguide.com/",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "getyourguide",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Tours and activities partner links/API integration.",
+      "payoutModel": "Commission on eligible completed experience bookings; verify current partner terms.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "deepLinkTemplate": "Use GetYourGuide partner links or API-provided product/deep-link data after approval.",
+      "contentFit": [
+        "city itineraries",
+        "tour and attraction guides",
+        "travel activity comparison"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Do not show stale availability or unsupported discount claims.",
+        "Destination pages should match the promoted experience inventory."
+      ],
+      "integrationSupport": {
+        "api": "Partner API documentation exists for GetYourGuide integrations.",
+        "feed": "experience/product data via API after access approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Use only on travel pages with destination or activity intent."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply for travel sites and validate API eligibility before building destination widgets.",
+      "notes": "Good supplemental travel experiences program."
+    },
+    {
+      "id": "viator-affiliate-api",
+      "name": "Viator Affiliate / Partner API",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "Viator",
+      "category": "travel_experiences",
+      "platformUrl": "https://partnerresources.viator.com/travel-commerce/affiliate/",
+      "homepageUrl": "https://partnerresources.viator.com/travel-commerce/affiliate/",
+      "applyUrl": "https://partnerresources.viator.com/travel-commerce/affiliate/",
+      "sourceUrl": "https://docs.viator.com/partner-api/",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "viator",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Tours and experiences affiliate links plus commerce/content API partner routes.",
+      "payoutModel": "Commission on eligible bookings; API/commercial terms depend on partner level.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "deepLinkTemplate": "Use Viator affiliate links or Partner API endpoints after approval.",
+      "contentFit": [
+        "travel activity reviews",
+        "city guides",
+        "tour comparison pages"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Availability and pricing should be dynamic or explicitly dated.",
+        "Booking/payment API flows require stronger QA than redirect-only affiliate links."
+      ],
+      "integrationSupport": {
+        "api": "Partner API supports product details, pricing, availability, booking, and post-booking workflows for partners.",
+        "feed": "product details can be ingested periodically or queried in real time through API",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Affiliate link access and commerce API access are different operating modes; do not assume booking API eligibility."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Use affiliate links first, then request API level only if travel pages justify custom inventory.",
+      "notes": "Good API-backed travel experiences candidate after basic travel affiliate pages are live."
+    },
+    {
+      "id": "klook-affiliate",
+      "name": "Klook Affiliate",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "APAC",
+      "network": "Klook",
+      "category": "travel_experiences",
+      "platformUrl": "https://affiliate.klook.com/",
+      "homepageUrl": "https://affiliate.klook.com/",
+      "applyUrl": "https://affiliate.klook.com/",
+      "sourceUrl": "https://klook.gitbook.io/openapi",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "klook",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Travel activities, tickets, transport, and experiences affiliate links/API.",
+      "payoutModel": "Commission varies by product and region; verify in Klook affiliate dashboard.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "deepLinkTemplate": "Use Klook affiliate links, data feeds, API, or white-label tools after approval.",
+      "contentFit": [
+        "Asia travel guides",
+        "attraction tickets",
+        "transport passes",
+        "travel deal pages"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "mobile-inline-320x100"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Do not show expired ticket prices or unsupported availability.",
+        "Destination pages must match the promoted product geography."
+      ],
+      "integrationSupport": {
+        "api": "Klook OpenAPI documentation is published.",
+        "feed": "affiliate page advertises data feeds/API/white-label support",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Strong APAC travel fit; localize destination and language before broad deployment."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply and map Klook destinations to travel site clusters.",
+      "notes": "High practical fit for Korea/APAC travel traffic."
+    },
+    {
+      "id": "agoda-affiliates",
+      "name": "Agoda Partners / Demand API",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "Agoda",
+      "category": "travel_accommodation",
+      "platformUrl": "https://partners.agoda.com/",
+      "homepageUrl": "https://partners.agoda.com/",
+      "applyUrl": "https://partners.agoda.com/",
+      "sourceUrl": "https://developer.agoda.com/demand/docs/getting-started",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "agoda",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Hotel/accommodation partner links, widgets, and Demand API integration.",
+      "payoutModel": "Commission on eligible bookings; verify partner contract.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "deepLinkTemplate": "Use Agoda partner links/widgets or Demand API results after approval.",
+      "contentFit": [
+        "hotel guides",
+        "city accommodation comparisons",
+        "Asia travel content"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Do not cache prices/availability beyond allowed windows.",
+        "Keep hotel rankings truthful and not pay-to-rank unless disclosed."
+      ],
+      "integrationSupport": {
+        "api": "Agoda Demand API documentation includes JSON search and partner integration workflows.",
+        "feed": "accommodation/search content via API after partner approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Best for accommodation pages where Booking.com coverage or APAC hotel inventory needs a second source."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply for travel properties and validate whether Demand API access is granted.",
+      "notes": "Strong APAC accommodation backup to Booking.com."
+    },
+    {
+      "id": "tripcom-partners",
+      "name": "Trip.com Partners",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "Trip.com",
+      "category": "travel",
+      "platformUrl": "https://www.trip.com/partners",
+      "homepageUrl": "https://www.trip.com/partners",
+      "applyUrl": "https://www.trip.com/partners",
+      "sourceUrl": "https://developers.trip.com/",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "tripcom",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Hotels, flights, trains, tours, and travel partner integration.",
+      "payoutModel": "Varies by product and partner contract.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "deepLinkTemplate": "Use Trip.com partner links or developer API/deep-link tools after approval.",
+      "contentFit": [
+        "flight and hotel guides",
+        "Asia travel",
+        "train and tour content"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Treat developer access as contract-gated.",
+        "Expire campaign banners when travel deals end."
+      ],
+      "integrationSupport": {
+        "api": "Trip.com developer portal is available for partner integrations.",
+        "feed": "travel product data through partner/developer integration where approved",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Good candidate for APAC/global travel pages after managed partner approval."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply and verify which partner surfaces are available: links, widgets, or API.",
+      "notes": "Useful travel network where Trip.com inventory matches Korean/APAC traffic."
+    },
+    {
+      "id": "admitad",
+      "name": "Admitad",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "Admitad / Mitgo",
+      "category": "affiliate_network",
+      "platformUrl": "https://www.admitad.com/",
+      "homepageUrl": "https://www.admitad.com/",
+      "applyUrl": "https://www.admitad.com/partners/",
+      "sourceUrl": "https://developers.mitgo.com/hc/en-us/categories/34481291136402-Admitad-API-for-Publishers",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "admitad",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Affiliate network for publisher offers, coupons, deeplinks, and reports.",
+      "payoutModel": "Varies by advertiser/program.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "deepLinkTemplate": "Use Admitad publisher links, deeplinks, or API endpoints after approval.",
+      "contentFit": [
+        "international commerce",
+        "coupons",
+        "SaaS and marketplace campaigns"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Advertiser terms vary by country and traffic source.",
+        "Review coupon and cashback restrictions before publishing."
+      ],
+      "integrationSupport": {
+        "api": "Admitad API for Publishers documentation is available through Mitgo developer docs.",
+        "feed": "programs, coupons, reports, and related publisher data through API where permitted",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Use as secondary global network after Impact/Awin/CJ unless target advertisers are unique."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply only if target advertiser coverage is better than existing networks.",
+      "notes": "Good long-tail global network candidate."
+    },
+    {
+      "id": "tradetracker",
+      "name": "TradeTracker",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "TradeTracker",
+      "category": "affiliate_network",
+      "platformUrl": "https://tradetracker.com/",
+      "homepageUrl": "https://tradetracker.com/",
+      "applyUrl": "https://tradetracker.com/us/publishers/",
+      "sourceUrl": "https://tradetracker.com/us/publishers/",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "tradetracker",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required.",
+      "monetizationModel": "Affiliate network with widgets, product/voucher feeds, reporting, and payment data.",
+      "payoutModel": "Varies by advertiser.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "deepLinkTemplate": "Use TradeTracker campaign links/widgets or API-provided product and voucher feeds.",
+      "contentFit": [
+        "shopping",
+        "voucher/coupon pages",
+        "EU/global merchant comparisons"
+      ],
+      "recommendedSlots": [
+        "sidebar-300x250",
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "medium",
+      "complianceNotes": [
+        "Voucher feeds need expiry handling.",
+        "Merchant-specific terms must be stored before banner activation."
+      ],
+      "integrationSupport": {
+        "api": "Publisher page documents extensive API functionality for product feeds, voucher feeds, reports, and payment info.",
+        "feed": "product and voucher feeds",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Consider for EU/global merchant coverage or feed-driven coupon/product pages."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Apply if feed-driven shopping pages are prioritized.",
+      "notes": "Useful network when product/voucher feeds are more important than manual creatives."
+    },
+    {
+      "id": "clickbank",
+      "name": "ClickBank",
+      "status": "manual_review",
+      "priority": "manual",
+      "region": "GLOBAL",
+      "network": "ClickBank",
+      "category": "digital_products",
+      "platformUrl": "https://www.clickbank.com/affiliates/",
+      "homepageUrl": "https://www.clickbank.com/affiliates/",
+      "applyUrl": "https://www.clickbank.com/affiliates/",
+      "sourceUrl": "https://support.clickbank.com/en/articles/10535400-clickbank-apis",
+      "countries": [
+        "GLOBAL"
+      ],
+      "usedBySites": [],
+      "usedByAppsInToss": [],
+      "publicTrackingLabel": "clickbank",
+      "disclosureRequired": true,
+      "disclosureNote": "Affiliate disclosure required; claims need strict review.",
+      "monetizationModel": "Digital product affiliate marketplace and API-backed account/order workflows.",
+      "payoutModel": "Commission varies by product/vendor; verify gravity/refund risk and allowed claims.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "low",
+      "deepLinkTemplate": "Use ClickBank HopLinks generated by the platform; do not hand-build claims pages.",
+      "contentFit": [
+        "digital products",
+        "course/tool reviews",
+        "only low-claim, policy-safe offers"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "risk": "high",
+      "complianceNotes": [
+        "Many offers can carry health, income, or exaggerated-benefit claims.",
+        "Require manual copy, landing page, refund, and evidence review before use."
+      ],
+      "integrationSupport": {
+        "api": "ClickBank documents APIs for account/order/shipping/ticketing and related workflows.",
+        "feed": "marketplace/catalog data availability must be verified in account; no unrestricted public feed assumed",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "High copy-risk category; keep behind manual review despite API availability."
+        ]
+      },
+      "merchantTotalReported": 0,
+      "merchantSnapshotFile": "",
+      "lastReviewed": "2026-07-03",
+      "nextAction": "Do not deploy broadly; review product claims, refund risk, and compliance before any banner.",
+      "notes": "Included for completeness, but keep as manual-review only."
     },
     {
       "id": "ripplealba",
@@ -1072,6 +1905,13 @@
         "Current merchant snapshot contains encoding damage and empty merchant_entries.",
         "Sensitive categories such as finance, legal, health, insurance require strict manual review."
       ],
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "merchantTotalReported": 390,
       "merchantSnapshotFile": "affiliates/ripplealba-merchants.yml",
       "lastReviewed": "2026-07-03",
@@ -1107,6 +1947,15 @@
       "sourceUrl": "https://affiliate-program.amazon.com/help/operating/policies",
       "nextAction": "Apply with English/global sites and add required Amazon Associate disclosure text.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "Product Advertising API 5.0; Amazon also points new API use toward Creators API where eligible.",
+        "feed": "product data only through approved API/tooling; no public bulk affiliate feed for unrestricted use",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Images, prices, and availability should come from approved Amazon tools/API, not scraped pages."
+        ]
+      },
       "complianceNotes": [
         "Do not cloak or alter Amazon links outside allowed tools.",
         "Display Amazon-required associate disclosure where applicable.",
@@ -1140,6 +1989,15 @@
       "sourceUrl": "https://partners.coupangcdn.com/partners-guide/partners-guide-20240716100922.pdf",
       "nextAction": "Apply or confirm existing account, create site/channel list, then create first product-review banner link.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "Coupang Open API exists for commerce/seller use; Partners affiliate API access must be verified inside Partners account.",
+        "feed": "none documented for Partners public affiliate feed",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Do not use seller Open API as an affiliate-link substitute without Partners terms confirmation."
+        ]
+      },
       "complianceNotes": [
         "Use clear Korean affiliate disclosure near each recommendation.",
         "Use rel=sponsored nofollow for links.",
@@ -1174,6 +2032,13 @@
       "sourceUrl": "https://www.hubspot.com/company-news/hubspot-launches-its-revamped-affiliate-program",
       "nextAction": "Apply for B2B/software sites and prepare CRM comparison CTAs after approval.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Do not confuse affiliate program with HubSpot solutions partner status.",
         "Verify current recurring commission and paid-plan eligibility in account terms."
@@ -1206,9 +2071,56 @@
       "sourceUrl": "https://www.grammarly.com/affiliates",
       "nextAction": "Use on English/AI/productivity sites with tutorial content.",
       "risk": "low",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Keep feature claims current.",
         "Avoid representing the product as a replacement for professional advice."
+      ]
+    },
+    {
+      "id": "agoda-affiliates-primary",
+      "programId": "agoda-affiliates",
+      "title": "Agoda Partners / Demand API monetization item",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "Agoda",
+      "category": "travel_accommodation",
+      "payoutModel": "Commission on eligible bookings; verify partner contract.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "contentFit": [
+        "hotel guides",
+        "city accommodation comparisons",
+        "Asia travel content"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://partners.agoda.com/",
+      "sourceUrl": "https://developer.agoda.com/demand/docs/getting-started",
+      "nextAction": "Apply for travel properties and validate whether Demand API access is granted.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Agoda Demand API documentation includes JSON search and partner integration workflows.",
+        "feed": "accommodation/search content via API after partner approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Best for accommodation pages where Booking.com coverage or APAC hotel inventory needs a second source."
+        ]
+      },
+      "complianceNotes": [
+        "Do not cache prices/availability beyond allowed windows.",
+        "Keep hotel rankings truthful and not pay-to-rank unless disclosed."
       ]
     },
     {
@@ -1238,6 +2150,15 @@
       "sourceUrl": "https://www.awin.com/us/pricing/affiliate-partners",
       "nextAction": "Apply and map advertisers to site categories; treat ShareASale legacy programs under Awin where applicable.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "Awin REST APIs include Link Builder, Offers, Advertiser Performance, and Publisher Performance APIs.",
+        "feed": "offers/promotions and advertiser data through API; product feeds depend on advertiser",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Awin documents a 20 API calls per minute per user throttle; plan caching."
+        ]
+      },
       "complianceNotes": [
         "Advertiser terms vary.",
         "Confirm whether each brand supports your country/site."
@@ -1269,6 +2190,15 @@
       "sourceUrl": "https://www.booking.com/affiliate-program/v2/index.html",
       "nextAction": "Use only on travel-intent sites/pages; configure city/deep-link templates per article.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "Booking.com Demand API for managed affiliate partners; Transaction Reporting API is available through Booking partnerships.",
+        "feed": "widgets/search boxes and API-backed accommodation/travel content",
+        "mcp": "developer-docs helper only; no affiliate runtime MCP documented",
+        "cli": "none documented",
+        "notes": [
+          "Demand API is not the same as self-serve affiliate widget access; confirm managed affiliate eligibility first."
+        ]
+      },
       "complianceNotes": [
         "Do not claim unavailable discounts.",
         "Use truthful availability/ranking language."
@@ -1299,6 +2229,15 @@
       "sourceUrl": "https://www.cj.com/publisher",
       "nextAction": "Apply after preparing traffic proof and site category descriptions.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "CJ Developer Portal supports publisher/advertiser APIs and reporting workflows.",
+        "feed": "product feeds and link/search data depend on advertiser approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Prepare site descriptions and traffic proof before requesting advertiser/API access."
+        ]
+      },
       "complianceNotes": [
         "Expect advertiser-by-advertiser approval.",
         "Avoid unsupported coupon/voucher claims."
@@ -1330,6 +2269,13 @@
       "sourceUrl": "https://influencers.coupang.com/",
       "nextAction": "Verify eligibility and whether site-owned channels can use this program.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Use only approved channels and generated links.",
         "Verify promotion terms before showing bonus rates."
@@ -1361,9 +2307,59 @@
       "sourceUrl": "https://partnernetwork.ebay.com/our-program/rate-card",
       "nextAction": "Apply for global shopping/niche product sites after Amazon/Coupang baseline.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "eBay developer APIs can include EPN affiliate parameters and campaign tracking.",
+        "feed": "EPN advertises access to feeds and APIs for partner content.",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Campaign ID and custom ID should be controlled per site or placement."
+        ]
+      },
       "complianceNotes": [
         "Review rate caps and prohibited traffic.",
         "Avoid misleading discount/voucher claims."
+      ]
+    },
+    {
+      "id": "flexoffers-primary",
+      "programId": "flexoffers",
+      "title": "FlexOffers monetization item",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "FlexOffers",
+      "category": "affiliate_network",
+      "payoutModel": "Varies by advertiser and network terms.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "contentFit": [
+        "commerce",
+        "coupons",
+        "software",
+        "lifestyle and shopping comparison pages"
+      ],
+      "recommendedSlots": [
+        "sidebar-300x250",
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://www.flexoffers.com/publishers/",
+      "sourceUrl": "https://www.flexoffers.com/publishers/web-service-api/",
+      "nextAction": "Apply and test Web Services API with cached promotional feed ingestion.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Web Services API for promotional feeds, product feeds, reporting, and network data.",
+        "feed": "promotional feed and product data feed",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Useful if one dashboard ingestion layer should normalize multiple advertiser/network feeds."
+        ]
+      },
+      "complianceNotes": [
+        "Advertiser terms and promotional restrictions vary.",
+        "Cache API/feed data and preserve last verified offer timestamp."
       ]
     },
     {
@@ -1393,9 +2389,59 @@
       "sourceUrl": "https://impact.com/partners/",
       "nextAction": "Create publisher profile and shortlist brands by site category.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "impact.com REST API for accounts, campaigns, links, reports, and workflows.",
+        "feed": "advertiser assets, reports, and product/catalog data where advertiser grants access",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "API access depends on impact.com account permissions and joined advertiser terms."
+        ]
+      },
       "complianceNotes": [
         "Each advertiser has separate approval and promotional restrictions.",
         "Store advertiser IDs and terms before enabling banners."
+      ]
+    },
+    {
+      "id": "klook-affiliate-primary",
+      "programId": "klook-affiliate",
+      "title": "Klook Affiliate monetization item",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "APAC",
+      "network": "Klook",
+      "category": "travel_experiences",
+      "payoutModel": "Commission varies by product and region; verify in Klook affiliate dashboard.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "contentFit": [
+        "Asia travel guides",
+        "attraction tickets",
+        "transport passes",
+        "travel deal pages"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "mobile-inline-320x100"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://affiliate.klook.com/",
+      "sourceUrl": "https://klook.gitbook.io/openapi",
+      "nextAction": "Apply and map Klook destinations to travel site clusters.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Klook OpenAPI documentation is published.",
+        "feed": "affiliate page advertises data feeds/API/white-label support",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Strong APAC travel fit; localize destination and language before broad deployment."
+        ]
+      },
+      "complianceNotes": [
+        "Do not show expired ticket prices or unsupported availability.",
+        "Destination pages must match the promoted product geography."
       ]
     },
     {
@@ -1423,6 +2469,15 @@
       "sourceUrl": "https://www.linkprice.com/",
       "nextAction": "Apply and export merchant list by site category; avoid high-risk finance/medical offers until review.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "Reward API, deeplink API, ad API, and open API surfaces documented by LinkPrice.",
+        "feed": "campaign/ad data can be pulled through LinkPrice API or exported after account approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Reward API is suitable for cashback-style sites; deeplink API can convert merchant URLs to affiliate links."
+        ]
+      },
       "complianceNotes": [
         "Merchant terms vary; collect landing URL, allowed media, and prohibited keywords.",
         "Be alert for impersonation/phishing warnings; only use official login/domain."
@@ -1453,6 +2508,13 @@
       "sourceUrl": "https://www.navercorp.com/media/pressReleasesDetail?seq=33116",
       "nextAction": "Confirm creator/channel eligibility and collect product-level revenue share.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Product-level terms vary by seller.",
         "Keep recommendation content specific to the product/store being promoted."
@@ -1485,6 +2547,15 @@
       "sourceUrl": "https://partnerstack.com/",
       "nextAction": "Shortlist SaaS offers that match AI/business/tool sites.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "PartnerStack API exists, but publisher marketplace automation access must be verified per account.",
+        "feed": "vendor program assets inside platform; no unrestricted public feed documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Treat as manual/vendor-specific until account API scope is confirmed."
+        ]
+      },
       "complianceNotes": [
         "Vendor programs can close or pause.",
         "Verify allowed bidding/email/coupon terms."
@@ -1516,6 +2587,13 @@
       "sourceUrl": "https://www.semrush.com/kb/97-affiliate-program",
       "nextAction": "Map to SEO/content-ops sites and avoid hard ROI promises.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Keep pricing/features current.",
         "Avoid guaranteed ranking claims."
@@ -1548,9 +2626,177 @@
       "sourceUrl": "https://help.shopify.com/en/affiliates/about",
       "nextAction": "Match to seller/ecommerce sites and create tutorial CTAs.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Do not promise income outcomes.",
         "Use current plan/pricing facts only."
+      ]
+    },
+    {
+      "id": "travelpayouts-primary",
+      "programId": "travelpayouts",
+      "title": "Travelpayouts monetization item",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "Travelpayouts",
+      "category": "travel_affiliate_network",
+      "payoutModel": "Varies by travel brand/program.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "contentFit": [
+        "travel guides",
+        "flight and hotel comparison",
+        "eSIM, tours, car rental, and transfer pages"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://www.travelpayouts.com/",
+      "sourceUrl": "https://support.travelpayouts.com/hc/en-us/categories/200358578-API-and-data",
+      "nextAction": "Use on travel sites; test partner-link API and one widget before broad feed ingestion.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Travelpayouts documents partner links, statistics, balance/payment, Aviasales, and brand APIs.",
+        "feed": "multiple brand data feeds including travel planning, tours, eSIM, and destination data where available",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "API token is required for API/white-label/plugin workflows."
+        ]
+      },
+      "complianceNotes": [
+        "Travel availability/pricing must be current or clearly dynamic.",
+        "Respect API rate limits and brand-specific usage restrictions."
+      ]
+    },
+    {
+      "id": "tripcom-partners-primary",
+      "programId": "tripcom-partners",
+      "title": "Trip.com Partners monetization item",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "GLOBAL",
+      "network": "Trip.com",
+      "category": "travel",
+      "payoutModel": "Varies by product and partner contract.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "high",
+      "contentFit": [
+        "flight and hotel guides",
+        "Asia travel",
+        "train and tour content"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://www.trip.com/partners",
+      "sourceUrl": "https://developers.trip.com/",
+      "nextAction": "Apply and verify which partner surfaces are available: links, widgets, or API.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Trip.com developer portal is available for partner integrations.",
+        "feed": "travel product data through partner/developer integration where approved",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Good candidate for APAC/global travel pages after managed partner approval."
+        ]
+      },
+      "complianceNotes": [
+        "Treat developer access as contract-gated.",
+        "Expire campaign banners when travel deals end."
+      ]
+    },
+    {
+      "id": "adpick-primary",
+      "programId": "adpick",
+      "title": "Adpick monetization item",
+      "status": "candidate",
+      "priority": "p1",
+      "region": "KR",
+      "network": "Adpick",
+      "category": "affiliate_network",
+      "payoutModel": "Varies by campaign; verify campaign-level settlement and invalid-conversion rules.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "contentFit": [
+        "app install campaigns",
+        "shopping mate campaigns",
+        "points/reward content",
+        "Korea-focused campaign pages"
+      ],
+      "recommendedSlots": [
+        "mobile-inline-320x100",
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://adpick.co.kr/",
+      "sourceUrl": "https://adpick.co.kr/?ac=guide&md=api&tac=sdk",
+      "nextAction": "Apply, request/confirm API eligibility, and build cached campaign ingestion before using in rotation.",
+      "risk": "high",
+      "integrationSupport": {
+        "api": "JSON campaign list API for automatically exposing active campaigns on apps or web services.",
+        "feed": "campaign response includes titles, promo text, images, tracking links, caps, and remaining volume",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Official guide says API data should be cached to DB/file and called no more than once per minute."
+        ]
+      },
+      "complianceNotes": [
+        "Review each CPA/CPI campaign copy and invalid-conversion conditions.",
+        "Do not run sensitive or aggressive claims without manual review."
+      ]
+    },
+    {
+      "id": "admitad-primary",
+      "programId": "admitad",
+      "title": "Admitad monetization item",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "Admitad / Mitgo",
+      "category": "affiliate_network",
+      "payoutModel": "Varies by advertiser/program.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "contentFit": [
+        "international commerce",
+        "coupons",
+        "SaaS and marketplace campaigns"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90",
+        "sidebar-300x250"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://www.admitad.com/partners/",
+      "sourceUrl": "https://developers.mitgo.com/hc/en-us/categories/34481291136402-Admitad-API-for-Publishers",
+      "nextAction": "Apply only if target advertiser coverage is better than existing networks.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Admitad API for Publishers documentation is available through Mitgo developer docs.",
+        "feed": "programs, coupons, reports, and related publisher data through API where permitted",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Use as secondary global network after Impact/Awin/CJ unless target advertisers are unique."
+        ]
+      },
+      "complianceNotes": [
+        "Advertiser terms vary by country and traffic source.",
+        "Review coupon and cashback restrictions before publishing."
       ]
     },
     {
@@ -1579,9 +2825,55 @@
       "sourceUrl": "https://www.canva.com/help/canva-affiliate-marketing-program/",
       "nextAction": "Apply where design/creator sites exist; verify current commission and asset rules.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Use approved brand assets only.",
         "Do not publish old commission claims without verification."
+      ]
+    },
+    {
+      "id": "getyourguide-partner-primary",
+      "programId": "getyourguide-partner",
+      "title": "GetYourGuide Partner API monetization item",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "GetYourGuide",
+      "category": "travel_experiences",
+      "payoutModel": "Commission on eligible completed experience bookings; verify current partner terms.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "contentFit": [
+        "city itineraries",
+        "tour and attraction guides",
+        "travel activity comparison"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://partner.getyourguide.com/",
+      "sourceUrl": "https://api.getyourguide.com/",
+      "nextAction": "Apply for travel sites and validate API eligibility before building destination widgets.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Partner API documentation exists for GetYourGuide integrations.",
+        "feed": "experience/product data via API after access approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Use only on travel pages with destination or activity intent."
+        ]
+      },
+      "complianceNotes": [
+        "Do not show stale availability or unsupported discount claims.",
+        "Destination pages should match the promoted experience inventory."
       ]
     },
     {
@@ -1611,9 +2903,136 @@
       "sourceUrl": "https://pubhelp.rakutenadvertising.com/hc/en-us/articles/360059970591-Affiliate-Marketing-101-Video",
       "nextAction": "Apply after P0/P1 networks or where a target brand exists only on Rakuten.",
       "risk": "medium",
+      "integrationSupport": {
+        "api": "Rakuten Advertising affiliate APIs cover advertisers, links, reports, commissions, and product search where available.",
+        "feed": "product search/feed style access depends on advertiser and publisher approval",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Use after advertiser-specific terms and country eligibility are confirmed."
+        ]
+      },
       "complianceNotes": [
         "Advertiser approvals and countries differ.",
         "Collect terms before enabling banners."
+      ]
+    },
+    {
+      "id": "skimlinks-primary",
+      "programId": "skimlinks",
+      "title": "Skimlinks monetization item",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "Skimlinks",
+      "category": "commerce_content_network",
+      "payoutModel": "Revenue share varies by merchant/network route.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "low",
+      "contentFit": [
+        "commerce editorial",
+        "long-tail merchant mentions",
+        "shopping guides where direct advertiser approval is inefficient"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://www.skimlinks.com/publishers/",
+      "sourceUrl": "https://developers.skimlinks.com/",
+      "nextAction": "Evaluate separately from banner console because auto-linking can overlap direct affiliate links.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Merchant API, Reporting API, and link wrapper documented for publishers.",
+        "feed": "merchant metadata and reporting data through API",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Better for editorial text-link monetization than first-party banner rotation."
+        ]
+      },
+      "complianceNotes": [
+        "Avoid duplicate monetization with direct programs such as Amazon/Coupang.",
+        "Confirm site-level script and privacy requirements before installation."
+      ]
+    },
+    {
+      "id": "tradetracker-primary",
+      "programId": "tradetracker",
+      "title": "TradeTracker monetization item",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "TradeTracker",
+      "category": "affiliate_network",
+      "payoutModel": "Varies by advertiser.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "contentFit": [
+        "shopping",
+        "voucher/coupon pages",
+        "EU/global merchant comparisons"
+      ],
+      "recommendedSlots": [
+        "sidebar-300x250",
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://tradetracker.com/us/publishers/",
+      "sourceUrl": "https://tradetracker.com/us/publishers/",
+      "nextAction": "Apply if feed-driven shopping pages are prioritized.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Publisher page documents extensive API functionality for product feeds, voucher feeds, reports, and payment info.",
+        "feed": "product and voucher feeds",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Consider for EU/global merchant coverage or feed-driven coupon/product pages."
+        ]
+      },
+      "complianceNotes": [
+        "Voucher feeds need expiry handling.",
+        "Merchant-specific terms must be stored before banner activation."
+      ]
+    },
+    {
+      "id": "viator-affiliate-api-primary",
+      "programId": "viator-affiliate-api",
+      "title": "Viator Affiliate / Partner API monetization item",
+      "status": "candidate",
+      "priority": "p2",
+      "region": "GLOBAL",
+      "network": "Viator",
+      "category": "travel_experiences",
+      "payoutModel": "Commission on eligible bookings; API/commercial terms depend on partner level.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "medium",
+      "contentFit": [
+        "travel activity reviews",
+        "city guides",
+        "tour comparison pages"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://partnerresources.viator.com/travel-commerce/affiliate/",
+      "sourceUrl": "https://docs.viator.com/partner-api/",
+      "nextAction": "Use affiliate links first, then request API level only if travel pages justify custom inventory.",
+      "risk": "medium",
+      "integrationSupport": {
+        "api": "Partner API supports product details, pricing, availability, booking, and post-booking workflows for partners.",
+        "feed": "product details can be ingested periodically or queried in real time through API",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "Affiliate link access and commerce API access are different operating modes; do not assume booking API eligibility."
+        ]
+      },
+      "complianceNotes": [
+        "Availability and pricing should be dynamic or explicitly dated.",
+        "Booking/payment API flows require stronger QA than redirect-only affiliate links."
       ]
     },
     {
@@ -1642,6 +3061,13 @@
       "sourceUrl": "https://www.notion.com/affiliates",
       "nextAction": "Verify whether new affiliate applications are open before adding banners.",
       "risk": "high",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Program availability may change.",
         "Do not show payout claims unless verified in current application dashboard."
@@ -1673,9 +3099,55 @@
       "sourceUrl": "https://tenping.kr/",
       "nextAction": "Use only after campaign compliance review and landing page quality check.",
       "risk": "high",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "CPA campaigns can carry aggressive claims; review copy manually.",
         "Do not use sensitive offers without legal/policy review."
+      ]
+    },
+    {
+      "id": "clickbank-primary",
+      "programId": "clickbank",
+      "title": "ClickBank monetization item",
+      "status": "manual_review",
+      "priority": "manual",
+      "region": "GLOBAL",
+      "network": "ClickBank",
+      "category": "digital_products",
+      "payoutModel": "Commission varies by product/vendor; verify gravity/refund risk and allowed claims.",
+      "approvalDifficulty": "medium",
+      "bannerSuitability": "low",
+      "contentFit": [
+        "digital products",
+        "course/tool reviews",
+        "only low-claim, policy-safe offers"
+      ],
+      "recommendedSlots": [
+        "after-content-728x90"
+      ],
+      "allowedSites": [],
+      "applyUrl": "https://www.clickbank.com/affiliates/",
+      "sourceUrl": "https://support.clickbank.com/en/articles/10535400-clickbank-apis",
+      "nextAction": "Do not deploy broadly; review product claims, refund risk, and compliance before any banner.",
+      "risk": "high",
+      "integrationSupport": {
+        "api": "ClickBank documents APIs for account/order/shipping/ticketing and related workflows.",
+        "feed": "marketplace/catalog data availability must be verified in account; no unrestricted public feed assumed",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": [
+          "High copy-risk category; keep behind manual review despite API availability."
+        ]
+      },
+      "complianceNotes": [
+        "Many offers can carry health, income, or exaggerated-benefit claims.",
+        "Require manual copy, landing page, refund, and evidence review before use."
       ]
     },
     {
@@ -1700,6 +3172,13 @@
       "sourceUrl": "https://help.naver.com/support/contents/contents.help?categoryNo=9418&serviceNo=726",
       "nextAction": "Track as a Naver media monetization option, but do not wire into banner redirects.",
       "risk": "high",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Keep separate from affiliate link management.",
         "Eligibility and revenue share are platform-controlled."
@@ -1730,6 +3209,13 @@
       "sourceUrl": "https://help.naver.com/service/30027/contents/23408?lang=ko&osType=COMMONOS",
       "nextAction": "Keep as manual-review campaign source; do not wire as a normal banner affiliate until campaign terms are approved.",
       "risk": "high",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Not a general self-serve affiliate network for every owned site.",
         "Each campaign can define channel, wording, and settlement restrictions."
@@ -1760,6 +3246,13 @@
       "sourceUrl": "https://help.naver.com/service/21349/contents/14570?lang=ko",
       "nextAction": "Treat as proposal-only monetization; create banners only after event approval and date validation.",
       "risk": "high",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Do not present as an open affiliate program.",
         "Remove or expire banners after event end dates."
@@ -1788,6 +3281,13 @@
       "sourceUrl": "data/monetization/affiliates/ripplealba-merchants.yml",
       "nextAction": "Re-capture merchant list in clean UTF-8 and reject sensitive/high-claim offers before banner use.",
       "risk": "high",
+      "integrationSupport": {
+        "api": "none documented",
+        "feed": "none documented",
+        "mcp": "none documented",
+        "cli": "none documented",
+        "notes": []
+      },
       "complianceNotes": [
         "Current merchant snapshot contains encoding damage and empty merchant_entries.",
         "Sensitive categories such as finance, legal, health, insurance require strict manual review."

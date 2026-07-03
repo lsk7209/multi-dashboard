@@ -1,16 +1,20 @@
+import Link from "next/link";
+
+const NAV_ITEMS = [
+  { href: "/", id: "dashboard", label: "대시보드" },
+  { href: "/affiliate", id: "affiliate", label: "제휴" },
+  { href: "/#banners", id: "banner-ops", label: "배너" },
+  { href: "/banner-management", id: "banner-management", label: "배너 콘솔" },
+] as const;
+
+type NavItemId = (typeof NAV_ITEMS)[number]["id"];
+
 interface AppHeaderProps {
-  active: "dashboard" | "banner-management" | "affiliate-items" | "banner-ops";
+  active: NavItemId;
   eyebrow: string;
   status?: string;
   title: string;
 }
-
-const NAV_ITEMS = [
-  { href: "/", id: "dashboard", label: "Dashboard" },
-  { href: "/#affiliates", id: "affiliate-items", label: "Affiliate Items" },
-  { href: "/#banners", id: "banner-ops", label: "Banner Ops" },
-  { href: "/banner-management", id: "banner-management", label: "Banner Console" },
-] as const;
 
 export function AppHeader({ active, eyebrow, status, title }: AppHeaderProps) {
   return (
@@ -20,20 +24,20 @@ export function AppHeader({ active, eyebrow, status, title }: AppHeaderProps) {
         <h1>{title}</h1>
       </div>
       <div className="topbar-actions">
-        <nav className="header-menu" aria-label="Primary menu">
+        <nav className="header-menu" aria-label="주 메뉴">
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               aria-current={active === item.id ? "page" : undefined}
               className={active === item.id ? "active" : undefined}
               href={item.href}
               key={item.id}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         {status ? (
-          <div className="status-pill" aria-label="Generated timestamp">
+          <div className="status-pill" aria-label="생성 시각">
             {status}
           </div>
         ) : null}

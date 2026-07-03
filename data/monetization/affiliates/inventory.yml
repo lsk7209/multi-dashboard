@@ -47,6 +47,13 @@ programs:
     approval_difficulty: low
     banner_suitability: high
     deep_link_template: "Generate inside Coupang Partners; do not hand-build tracking URLs."
+    integration_support:
+      api: "Coupang Open API exists for commerce/seller use; Partners affiliate API access must be verified inside Partners account."
+      feed: "none documented for Partners public affiliate feed"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Do not use seller Open API as an affiliate-link substitute without Partners terms confirmation."
     content_fit:
       - "shopping guides"
       - "product reviews"
@@ -295,6 +302,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: high
     deep_link_template: "Use LinkPrice tracking/deep-link builder per merchant."
+    integration_support:
+      api: "Reward API, deeplink API, ad API, and open API surfaces documented by LinkPrice."
+      feed: "campaign/ad data can be pulled through LinkPrice API or exported after account approval"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Reward API is suitable for cashback-style sites; deeplink API can convert merchant URLs to affiliate links."
     content_fit:
       - "shopping, travel, finance, education, subscription services"
       - "Korea-focused comparison pages"
@@ -318,6 +332,56 @@ programs:
       - "Merchant terms vary; collect landing URL, allowed media, and prohibited keywords."
       - "Be alert for impersonation/phishing warnings; only use official login/domain."
     notes: "Good network layer after first direct programs."
+
+  - id: adpick
+    name: Adpick
+    status: candidate
+    priority: p1
+    region: KR
+    network: Adpick
+    category: affiliate_network
+    platform_url: "https://adpick.co.kr/"
+    homepage_url: "https://adpick.co.kr/"
+    apply_url: "https://adpick.co.kr/"
+    source_url: "https://adpick.co.kr/?ac=guide&md=api&tac=sdk"
+    countries: [KR]
+    monetization_model: "Korean campaign, shopping, app-install, CPA/CPI, and content promotion links."
+    payout_model: "Varies by campaign; verify campaign-level settlement and invalid-conversion rules."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Adpick campaign tracking links or API-provided apTrackingLink values."
+    integration_support:
+      api: "JSON campaign list API for automatically exposing active campaigns on apps or web services."
+      feed: "campaign response includes titles, promo text, images, tracking links, caps, and remaining volume"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Official guide says API data should be cached to DB/file and called no more than once per minute."
+    content_fit:
+      - "app install campaigns"
+      - "shopping mate campaigns"
+      - "points/reward content"
+      - "Korea-focused campaign pages"
+    recommended_slots:
+      - "mobile-inline-320x100"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "adpick"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate/ad disclosure required near promotional content."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Apply, request/confirm API eligibility, and build cached campaign ingestion before using in rotation."
+    risk: high
+    compliance_notes:
+      - "Review each CPA/CPI campaign copy and invalid-conversion conditions."
+      - "Do not run sensitive or aggressive claims without manual review."
+    notes: "Good domestic API-enabled network, but campaign-level compliance must be gated."
 
   - id: tenping
     name: Tenping
@@ -378,6 +442,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: high
     deep_link_template: "Use SiteStripe or Amazon Associates link generator with correct tracking tag."
+    integration_support:
+      api: "Product Advertising API 5.0; Amazon also points new API use toward Creators API where eligible."
+      feed: "product data only through approved API/tooling; no public bulk affiliate feed for unrestricted use"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Images, prices, and availability should come from approved Amazon tools/API, not scraped pages."
     content_fit:
       - "English product reviews"
       - "software/hardware buying guides"
@@ -422,6 +493,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: medium
     deep_link_template: "Use EPN link generator or API/campaign tools."
+    integration_support:
+      api: "eBay developer APIs can include EPN affiliate parameters and campaign tracking."
+      feed: "EPN advertises access to feeds and APIs for partner content."
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Campaign ID and custom ID should be controlled per site or placement."
     content_fit:
       - "collectibles"
       - "used/refurbished products"
@@ -464,6 +542,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: high
     deep_link_template: "Use Booking.com partner tools or network tracking links."
+    integration_support:
+      api: "Booking.com Demand API for managed affiliate partners; Transaction Reporting API is available through Booking partnerships."
+      feed: "widgets/search boxes and API-backed accommodation/travel content"
+      mcp: "developer-docs helper only; no affiliate runtime MCP documented"
+      cli: "none documented"
+      notes:
+        - "Demand API is not the same as self-serve affiliate widget access; confirm managed affiliate eligibility first."
     content_fit:
       - "travel guides"
       - "city itineraries"
@@ -506,6 +591,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: high
     deep_link_template: "Use impact.com tracking link/deep-link builder per joined advertiser."
+    integration_support:
+      api: "impact.com REST API for accounts, campaigns, links, reports, and workflows."
+      feed: "advertiser assets, reports, and product/catalog data where advertiser grants access"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "API access depends on impact.com account permissions and joined advertiser terms."
     content_fit:
       - "software"
       - "commerce"
@@ -549,6 +641,13 @@ programs:
     approval_difficulty: high
     banner_suitability: high
     deep_link_template: "Use CJ deep links and advertiser creatives after approval."
+    integration_support:
+      api: "CJ Developer Portal supports publisher/advertiser APIs and reporting workflows."
+      feed: "product feeds and link/search data depend on advertiser approval"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Prepare site descriptions and traffic proof before requesting advertiser/API access."
     content_fit:
       - "established content sites"
       - "shopping, finance-safe, software, travel"
@@ -590,6 +689,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: high
     deep_link_template: "Use Awin link builder per joined advertiser."
+    integration_support:
+      api: "Awin REST APIs include Link Builder, Offers, Advertiser Performance, and Publisher Performance APIs."
+      feed: "offers/promotions and advertiser data through API; product feeds depend on advertiser"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Awin documents a 20 API calls per minute per user throttle; plan caching."
     content_fit:
       - "commerce"
       - "software"
@@ -633,6 +739,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: high
     deep_link_template: "Use Rakuten network tracking tools after approval."
+    integration_support:
+      api: "Rakuten Advertising affiliate APIs cover advertisers, links, reports, commissions, and product search where available."
+      feed: "product search/feed style access depends on advertiser and publisher approval"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Use after advertiser-specific terms and country eligibility are confirmed."
     content_fit:
       - "premium brands"
       - "shopping"
@@ -676,6 +789,13 @@ programs:
     approval_difficulty: medium
     banner_suitability: medium
     deep_link_template: "Use PartnerStack vendor-specific tracking links."
+    integration_support:
+      api: "PartnerStack API exists, but publisher marketplace automation access must be verified per account."
+      feed: "vendor program assets inside platform; no unrestricted public feed documented"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Treat as manual/vendor-specific until account API scope is confirmed."
     content_fit:
       - "AI tools"
       - "business software"
@@ -957,6 +1077,543 @@ programs:
       - "Keep feature claims current."
       - "Avoid representing the product as a replacement for professional advice."
     notes: "Fast SaaS candidate for English and productivity pages."
+
+  - id: flexoffers
+    name: FlexOffers
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: FlexOffers
+    category: affiliate_network
+    platform_url: "https://www.flexoffers.com/publishers/"
+    homepage_url: "https://www.flexoffers.com/publishers/"
+    apply_url: "https://www.flexoffers.com/publishers/"
+    source_url: "https://www.flexoffers.com/publishers/web-service-api/"
+    countries: [GLOBAL]
+    monetization_model: "Large affiliate network with promotional feeds, product feeds, reporting, and publisher APIs."
+    payout_model: "Varies by advertiser and network terms."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use FlexOffers advertiser links, deep links, or API-provided creatives after approval."
+    integration_support:
+      api: "Web Services API for promotional feeds, product feeds, reporting, and network data."
+      feed: "promotional feed and product data feed"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Useful if one dashboard ingestion layer should normalize multiple advertiser/network feeds."
+    content_fit:
+      - "commerce"
+      - "coupons"
+      - "software"
+      - "lifestyle and shopping comparison pages"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "flexoffers"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply and test Web Services API with cached promotional feed ingestion."
+    risk: medium
+    compliance_notes:
+      - "Advertiser terms and promotional restrictions vary."
+      - "Cache API/feed data and preserve last verified offer timestamp."
+    notes: "Strong global network candidate when API-first management matters."
+
+  - id: skimlinks
+    name: Skimlinks
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: Skimlinks
+    category: commerce_content_network
+    platform_url: "https://www.skimlinks.com/"
+    homepage_url: "https://www.skimlinks.com/"
+    apply_url: "https://www.skimlinks.com/publishers/"
+    source_url: "https://developers.skimlinks.com/"
+    countries: [GLOBAL]
+    monetization_model: "Automated commerce link monetization, merchant discovery, reporting, and link wrapper."
+    payout_model: "Revenue share varies by merchant/network route."
+    approval_difficulty: medium
+    banner_suitability: low
+    deep_link_template: "Use Skimlinks JavaScript/link wrapper or merchant API workflows where approved."
+    integration_support:
+      api: "Merchant API, Reporting API, and link wrapper documented for publishers."
+      feed: "merchant metadata and reporting data through API"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Better for editorial text-link monetization than first-party banner rotation."
+    content_fit:
+      - "commerce editorial"
+      - "long-tail merchant mentions"
+      - "shopping guides where direct advertiser approval is inefficient"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "skimlinks"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required; auto-linking must not hide commercial relationship."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Evaluate separately from banner console because auto-linking can overlap direct affiliate links."
+    risk: medium
+    compliance_notes:
+      - "Avoid duplicate monetization with direct programs such as Amazon/Coupang."
+      - "Confirm site-level script and privacy requirements before installation."
+    notes: "Useful fallback for merchant coverage gaps, not a primary banner network."
+
+  - id: travelpayouts
+    name: Travelpayouts
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Travelpayouts
+    category: travel_affiliate_network
+    platform_url: "https://www.travelpayouts.com/"
+    homepage_url: "https://www.travelpayouts.com/"
+    apply_url: "https://www.travelpayouts.com/"
+    source_url: "https://support.travelpayouts.com/hc/en-us/categories/200358578-API-and-data"
+    countries: [GLOBAL]
+    monetization_model: "Travel affiliate network for flights, hotels, transfers, eSIM, tours, and travel widgets."
+    payout_model: "Varies by travel brand/program."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Travelpayouts partner links API, widgets, white label, or brand-specific tools."
+    integration_support:
+      api: "Travelpayouts documents partner links, statistics, balance/payment, Aviasales, and brand APIs."
+      feed: "multiple brand data feeds including travel planning, tours, eSIM, and destination data where available"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "API token is required for API/white-label/plugin workflows."
+    content_fit:
+      - "travel guides"
+      - "flight and hotel comparison"
+      - "eSIM, tours, car rental, and transfer pages"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "travelpayouts"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required near travel recommendations."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Use on travel sites; test partner-link API and one widget before broad feed ingestion."
+    risk: medium
+    compliance_notes:
+      - "Travel availability/pricing must be current or clearly dynamic."
+      - "Respect API rate limits and brand-specific usage restrictions."
+    notes: "Best API-friendly travel network layer for multiple travel verticals."
+
+  - id: getyourguide-partner
+    name: GetYourGuide Partner API
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: GetYourGuide
+    category: travel_experiences
+    platform_url: "https://partner.getyourguide.com/"
+    homepage_url: "https://partner.getyourguide.com/"
+    apply_url: "https://partner.getyourguide.com/"
+    source_url: "https://api.getyourguide.com/"
+    countries: [GLOBAL]
+    monetization_model: "Tours and activities partner links/API integration."
+    payout_model: "Commission on eligible completed experience bookings; verify current partner terms."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use GetYourGuide partner links or API-provided product/deep-link data after approval."
+    integration_support:
+      api: "Partner API documentation exists for GetYourGuide integrations."
+      feed: "experience/product data via API after access approval"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Use only on travel pages with destination or activity intent."
+    content_fit:
+      - "city itineraries"
+      - "tour and attraction guides"
+      - "travel activity comparison"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "getyourguide"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply for travel sites and validate API eligibility before building destination widgets."
+    risk: medium
+    compliance_notes:
+      - "Do not show stale availability or unsupported discount claims."
+      - "Destination pages should match the promoted experience inventory."
+    notes: "Good supplemental travel experiences program."
+
+  - id: viator-affiliate-api
+    name: Viator Affiliate / Partner API
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: Viator
+    category: travel_experiences
+    platform_url: "https://partnerresources.viator.com/travel-commerce/affiliate/"
+    homepage_url: "https://partnerresources.viator.com/travel-commerce/affiliate/"
+    apply_url: "https://partnerresources.viator.com/travel-commerce/affiliate/"
+    source_url: "https://docs.viator.com/partner-api/"
+    countries: [GLOBAL]
+    monetization_model: "Tours and experiences affiliate links plus commerce/content API partner routes."
+    payout_model: "Commission on eligible bookings; API/commercial terms depend on partner level."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Viator affiliate links or Partner API endpoints after approval."
+    integration_support:
+      api: "Partner API supports product details, pricing, availability, booking, and post-booking workflows for partners."
+      feed: "product details can be ingested periodically or queried in real time through API"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Affiliate link access and commerce API access are different operating modes; do not assume booking API eligibility."
+    content_fit:
+      - "travel activity reviews"
+      - "city guides"
+      - "tour comparison pages"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "viator"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Use affiliate links first, then request API level only if travel pages justify custom inventory."
+    risk: medium
+    compliance_notes:
+      - "Availability and pricing should be dynamic or explicitly dated."
+      - "Booking/payment API flows require stronger QA than redirect-only affiliate links."
+    notes: "Good API-backed travel experiences candidate after basic travel affiliate pages are live."
+
+  - id: klook-affiliate
+    name: Klook Affiliate
+    status: candidate
+    priority: p1
+    region: APAC
+    network: Klook
+    category: travel_experiences
+    platform_url: "https://affiliate.klook.com/"
+    homepage_url: "https://affiliate.klook.com/"
+    apply_url: "https://affiliate.klook.com/"
+    source_url: "https://klook.gitbook.io/openapi"
+    countries: [GLOBAL]
+    monetization_model: "Travel activities, tickets, transport, and experiences affiliate links/API."
+    payout_model: "Commission varies by product and region; verify in Klook affiliate dashboard."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Klook affiliate links, data feeds, API, or white-label tools after approval."
+    integration_support:
+      api: "Klook OpenAPI documentation is published."
+      feed: "affiliate page advertises data feeds/API/white-label support"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Strong APAC travel fit; localize destination and language before broad deployment."
+    content_fit:
+      - "Asia travel guides"
+      - "attraction tickets"
+      - "transport passes"
+      - "travel deal pages"
+    recommended_slots:
+      - "after-content-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
+    tracking:
+      public_label: "klook"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply and map Klook destinations to travel site clusters."
+    risk: medium
+    compliance_notes:
+      - "Do not show expired ticket prices or unsupported availability."
+      - "Destination pages must match the promoted product geography."
+    notes: "High practical fit for Korea/APAC travel traffic."
+
+  - id: agoda-affiliates
+    name: Agoda Partners / Demand API
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Agoda
+    category: travel_accommodation
+    platform_url: "https://partners.agoda.com/"
+    homepage_url: "https://partners.agoda.com/"
+    apply_url: "https://partners.agoda.com/"
+    source_url: "https://developer.agoda.com/demand/docs/getting-started"
+    countries: [GLOBAL]
+    monetization_model: "Hotel/accommodation partner links, widgets, and Demand API integration."
+    payout_model: "Commission on eligible bookings; verify partner contract."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Agoda partner links/widgets or Demand API results after approval."
+    integration_support:
+      api: "Agoda Demand API documentation includes JSON search and partner integration workflows."
+      feed: "accommodation/search content via API after partner approval"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Best for accommodation pages where Booking.com coverage or APAC hotel inventory needs a second source."
+    content_fit:
+      - "hotel guides"
+      - "city accommodation comparisons"
+      - "Asia travel content"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "agoda"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply for travel properties and validate whether Demand API access is granted."
+    risk: medium
+    compliance_notes:
+      - "Do not cache prices/availability beyond allowed windows."
+      - "Keep hotel rankings truthful and not pay-to-rank unless disclosed."
+    notes: "Strong APAC accommodation backup to Booking.com."
+
+  - id: tripcom-partners
+    name: Trip.com Partners
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Trip.com
+    category: travel
+    platform_url: "https://www.trip.com/partners"
+    homepage_url: "https://www.trip.com/partners"
+    apply_url: "https://www.trip.com/partners"
+    source_url: "https://developers.trip.com/"
+    countries: [GLOBAL]
+    monetization_model: "Hotels, flights, trains, tours, and travel partner integration."
+    payout_model: "Varies by product and partner contract."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Trip.com partner links or developer API/deep-link tools after approval."
+    integration_support:
+      api: "Trip.com developer portal is available for partner integrations."
+      feed: "travel product data through partner/developer integration where approved"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Good candidate for APAC/global travel pages after managed partner approval."
+    content_fit:
+      - "flight and hotel guides"
+      - "Asia travel"
+      - "train and tour content"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "tripcom"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply and verify which partner surfaces are available: links, widgets, or API."
+    risk: medium
+    compliance_notes:
+      - "Treat developer access as contract-gated."
+      - "Expire campaign banners when travel deals end."
+    notes: "Useful travel network where Trip.com inventory matches Korean/APAC traffic."
+
+  - id: admitad
+    name: Admitad
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: Admitad / Mitgo
+    category: affiliate_network
+    platform_url: "https://www.admitad.com/"
+    homepage_url: "https://www.admitad.com/"
+    apply_url: "https://www.admitad.com/partners/"
+    source_url: "https://developers.mitgo.com/hc/en-us/categories/34481291136402-Admitad-API-for-Publishers"
+    countries: [GLOBAL]
+    monetization_model: "Affiliate network for publisher offers, coupons, deeplinks, and reports."
+    payout_model: "Varies by advertiser/program."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Admitad publisher links, deeplinks, or API endpoints after approval."
+    integration_support:
+      api: "Admitad API for Publishers documentation is available through Mitgo developer docs."
+      feed: "programs, coupons, reports, and related publisher data through API where permitted"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Use as secondary global network after Impact/Awin/CJ unless target advertisers are unique."
+    content_fit:
+      - "international commerce"
+      - "coupons"
+      - "SaaS and marketplace campaigns"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "admitad"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply only if target advertiser coverage is better than existing networks."
+    risk: medium
+    compliance_notes:
+      - "Advertiser terms vary by country and traffic source."
+      - "Review coupon and cashback restrictions before publishing."
+    notes: "Good long-tail global network candidate."
+
+  - id: tradetracker
+    name: TradeTracker
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: TradeTracker
+    category: affiliate_network
+    platform_url: "https://tradetracker.com/"
+    homepage_url: "https://tradetracker.com/"
+    apply_url: "https://tradetracker.com/us/publishers/"
+    source_url: "https://tradetracker.com/us/publishers/"
+    countries: [GLOBAL]
+    monetization_model: "Affiliate network with widgets, product/voucher feeds, reporting, and payment data."
+    payout_model: "Varies by advertiser."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use TradeTracker campaign links/widgets or API-provided product and voucher feeds."
+    integration_support:
+      api: "Publisher page documents extensive API functionality for product feeds, voucher feeds, reports, and payment info."
+      feed: "product and voucher feeds"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "Consider for EU/global merchant coverage or feed-driven coupon/product pages."
+    content_fit:
+      - "shopping"
+      - "voucher/coupon pages"
+      - "EU/global merchant comparisons"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "tradetracker"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply if feed-driven shopping pages are prioritized."
+    risk: medium
+    compliance_notes:
+      - "Voucher feeds need expiry handling."
+      - "Merchant-specific terms must be stored before banner activation."
+    notes: "Useful network when product/voucher feeds are more important than manual creatives."
+
+  - id: clickbank
+    name: ClickBank
+    status: manual_review
+    priority: manual
+    region: GLOBAL
+    network: ClickBank
+    category: digital_products
+    platform_url: "https://www.clickbank.com/affiliates/"
+    homepage_url: "https://www.clickbank.com/affiliates/"
+    apply_url: "https://www.clickbank.com/affiliates/"
+    source_url: "https://support.clickbank.com/en/articles/10535400-clickbank-apis"
+    countries: [GLOBAL]
+    monetization_model: "Digital product affiliate marketplace and API-backed account/order workflows."
+    payout_model: "Commission varies by product/vendor; verify gravity/refund risk and allowed claims."
+    approval_difficulty: medium
+    banner_suitability: low
+    deep_link_template: "Use ClickBank HopLinks generated by the platform; do not hand-build claims pages."
+    integration_support:
+      api: "ClickBank documents APIs for account/order/shipping/ticketing and related workflows."
+      feed: "marketplace/catalog data availability must be verified in account; no unrestricted public feed assumed"
+      mcp: "none documented"
+      cli: "none documented"
+      notes:
+        - "High copy-risk category; keep behind manual review despite API availability."
+    content_fit:
+      - "digital products"
+      - "course/tool reviews"
+      - "only low-claim, policy-safe offers"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "clickbank"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required; claims need strict review."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Do not deploy broadly; review product claims, refund risk, and compliance before any banner."
+    risk: high
+    compliance_notes:
+      - "Many offers can carry health, income, or exaggerated-benefit claims."
+      - "Require manual copy, landing page, refund, and evidence review before use."
+    notes: "Included for completeness, but keep as manual-review only."
 
   - id: ripplealba
     name: RippleAlba

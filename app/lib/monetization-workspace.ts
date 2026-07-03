@@ -69,11 +69,20 @@ export interface AffiliateProgramSummary {
   allowedSites?: string[];
   risk?: string;
   complianceNotes?: string[];
+  integrationSupport?: AffiliateIntegrationSupport;
   merchantTotalReported: number;
   merchantSnapshotFile: string;
   lastReviewed: string;
   nextAction: string;
   notes: string;
+}
+
+export interface AffiliateIntegrationSupport {
+  api: string;
+  feed: string;
+  mcp: string;
+  cli: string;
+  notes: string[];
 }
 
 export interface AffiliateItemSummary {
@@ -96,6 +105,7 @@ export interface AffiliateItemSummary {
   nextAction: string;
   risk: string;
   complianceNotes: string[];
+  integrationSupport: AffiliateIntegrationSupport;
 }
 
 export interface AffiliateCandidateSummary {

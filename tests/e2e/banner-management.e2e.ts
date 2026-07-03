@@ -3,16 +3,22 @@ import { expect, test, type Page } from "@playwright/test";
 test("dashboard hash opens banner operations with focused subtabs", async ({ page }) => {
   await page.goto("/#banners");
 
-  await expect(page.getByRole("tab", { name: /Banners/ })).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByRole("tab", { name: /배너/ })).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
   await expect(page.getByRole("heading", { name: "배너 설정 운영" })).toBeVisible();
 
   const subTabs = page.locator(".ops-subtabs");
-  await expect(subTabs.getByRole("button", { name: "Overview" })).toHaveAttribute("aria-pressed", "true");
-  await expect(subTabs.getByRole("button", { name: "Sites" })).toBeVisible();
-  await expect(subTabs.getByRole("button", { name: "Setup" })).toBeVisible();
-  await expect(subTabs.getByRole("button", { name: "Assign" })).toBeVisible();
-  await expect(subTabs.getByRole("button", { name: "Install" })).toBeVisible();
-  await expect(subTabs.getByRole("button", { name: "Diagnostics" })).toBeVisible();
+  await expect(subTabs.getByRole("button", { name: "요약" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(subTabs.getByRole("button", { name: "사이트" })).toBeVisible();
+  await expect(subTabs.getByRole("button", { name: "설정" })).toBeVisible();
+  await expect(subTabs.getByRole("button", { name: "배정" })).toBeVisible();
+  await expect(subTabs.getByRole("button", { name: "설치" })).toBeVisible();
+  await expect(subTabs.getByRole("button", { name: "진단" })).toBeVisible();
 });
 
 test("banner console stays usable with more than 100 sites", async ({ page }) => {
@@ -27,15 +33,15 @@ test("banner console stays usable with more than 100 sites", async ({ page }) =>
   await siteFilter.selectOption("site-075");
 
   const subTabs = page.locator(".ops-subtabs");
-  await subTabs.getByRole("button", { name: "Sites" }).click();
+  await subTabs.getByRole("button", { name: "사이트" }).click();
   await expect(page.locator(".ops-site-summary")).toContainText("site-075");
   await expect(page.locator(".ops-site-summary")).not.toContainText("site-074");
 
-  await subTabs.getByRole("button", { name: "Assign" }).click();
+  await subTabs.getByRole("button", { name: "배정" }).click();
   await expect(page.locator(".ops-assignment select").first().locator("option")).toHaveCount(2);
   await expect(page.locator(".ops-assignment")).toContainText("site-075.hero");
 
-  await subTabs.getByRole("button", { name: "Install" }).click();
+  await subTabs.getByRole("button", { name: "설치" }).click();
   await expect(page.locator(".ops-install-panel")).toContainText("site-075.hero");
   await expect(page.locator(".ops-install-code")).toContainText("/api/banner-management/image?slot=site-075.hero");
   await expect(page.locator(".ops-install-code")).toContainText("/api/banner-management/click?slot=site-075.hero");

@@ -1534,6 +1534,38 @@ code {
   min-width: 1180px;
 }
 
+.affiliate-rules-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.affiliate-rule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.affiliate-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fbfcfd;
+}
+
+.affiliate-rule strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.affiliate-rule p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .affiliate-item-table a,
 .workspace-card a {
   color: var(--accent);
@@ -1985,6 +2017,7 @@ code {
   .ops-exception-grid,
   .ops-install-panel,
   .affiliate-playbook-grid,
+  .affiliate-rule-grid,
   .ops-admin-token,
   .ops-table-grid,
   .ops-assignment,

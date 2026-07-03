@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 
@@ -115,12 +115,12 @@ type BannerOpsTabId = "overview" | "sites" | "setup" | "assignments" | "install"
 
 const MAX_TABLE_ROWS = 50;
 const BANNER_OPS_TABS: Array<{ id: BannerOpsTabId; label: string }> = [
-  { id: "overview", label: "Overview" },
-  { id: "sites", label: "Sites" },
-  { id: "setup", label: "Setup" },
-  { id: "assignments", label: "Assign" },
-  { id: "install", label: "Install" },
-  { id: "diagnostics", label: "Diagnostics" },
+  { id: "overview", label: "요약" },
+  { id: "sites", label: "사이트" },
+  { id: "setup", label: "설정" },
+  { id: "assignments", label: "배정" },
+  { id: "install", label: "설치" },
+  { id: "diagnostics", label: "진단" },
 ];
 
 export function BannerManagementConsole() {

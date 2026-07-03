@@ -3,9 +3,11 @@
 ## Source of truth
 - Status: Draft
 - Last refreshed: 2026-07-03
-- Primary product surfaces: multi-dashboard home tabs, banner operations console, affiliate item inventory
+- Primary product surfaces: multi-dashboard home tabs, `/affiliate` affiliate operations page, banner operations console
 - Evidence reviewed:
-  - `app/page.tsx`: top-level dashboard tabs, `BannerManagementSection`, `AffiliateInventorySection`
+  - `app/page.tsx`: top-level dashboard tabs, `BannerManagementSection`, affiliate summary tab
+  - `app/affiliate/page.tsx`: dedicated affiliate operations route
+  - `app/components/affiliate-workspace.tsx`: shared affiliate inventory workspace
   - `app/components/dashboard-tabs.tsx`: hash-synced tab component pattern
   - `app/components/banner-management-console.tsx`: banner CRUD, assignment, install code, site filters, operational tables
   - `app/globals.css`: existing panel, table, segment-tabs, form, and operations styles
@@ -40,18 +42,24 @@
 
 ## Information architecture
 - Primary navigation:
-  - Keep top-level dashboard tabs for broad domains.
-  - Merge related monetization work under a single top-level `Monetization` or keep `Banners` and `Affiliate Items` while adding strong second-level tabs inside each.
+  - `대시보드`: daily operations, site stats, insights, broad health.
+  - `제휴`: collected affiliate inventory, program readiness, banner suitability, risk, disclosure, and next actions.
+  - `배너`: dashboard-level banner operations snapshot.
+  - `배너 콘솔`: mutable placement, creative, tracking link, assignment, install, and diagnostics workflow.
+- Recommended affiliate page structure:
+  - `제휴 운영 원장`: summary, source freshness, disclosure rule, banner slot strategy.
+  - `우선순위 큐`: P0/P1/P2/manual affiliate items sorted by rollout priority.
+  - `배너 적용 준비`: high/medium banner-fit items with recommended slots.
+  - `프로그램 원장`: official application/source links, region, network, status, next action.
+  - `운영 규칙`: priority rules, disclosure, rel, compliance notes.
+  - `리플알바 고단가 후보`: high-commission candidates requiring conservative manual review.
 - Recommended banner subnavigation:
-  - `Overview`: readiness summary, site health, active problems, data source.
-  - `Sites`: site-by-site slots, assigned/unassigned state, requests/clicks/no_ad.
-  - `Affiliate Items`: monetization offers filtered by priority, risk, banner fit, next action.
-  - `Tracking Links`: link inventory, destination, affiliate item ID, status.
-  - `Creatives`: banner image assets, size, policy status, offer mapping.
-  - `Placements`: site slot definitions, type, no_ad policy, status.
-  - `Assignments`: connect placement + creative + tracking link; show current live connection and history.
-  - `Install Code`: selected placement install snippet, image URL, click URL, copy actions.
-  - `Diagnostics`: events, no_ad, data source, DB state, admin token, refresh commands.
+  - `요약`: readiness summary, site health, active problems, data source.
+  - `사이트`: site-by-site slots, assigned/unassigned state, requests/clicks/no_ad.
+  - `설정`: tracking links, creatives, and placement creation/editing.
+  - `배정`: connect placement + creative + tracking link; show current live connection and history.
+  - `설치`: selected placement install snippet, image URL, click URL, copy actions.
+  - `진단`: events, no_ad, data source, DB state, admin token, refresh commands.
 - Content hierarchy:
   - View header: title, freshness, source status.
   - Focus controls: site/search/status filters.
@@ -123,6 +131,7 @@
   - `segment-tabs`
   - existing `ops-*` form/table styles
 - New/changed components:
+  - `AffiliateWorkspace`
   - `MonetizationSubTabs` or reusable `SegmentTabs`
   - `SiteBannerMatrix`
   - `AffiliateItemPicker`
@@ -158,12 +167,14 @@
 ## Content voice
 - Tone: concise Korean operational labels.
 - Terminology:
-  - Affiliate item: `제휴 아이템`
+  - Affiliate item: `제휴 항목`
+  - Affiliate program: `제휴 프로그램`
   - Tracking link: `추적 링크`
   - Creative: `배너 소재`
   - Placement: `배치 위치`
   - Assignment: `배정`
   - Install code: `설치 코드`
+  - Disclosure: `공시 문구`
 - Microcopy rules: avoid long instructional paragraphs inside panels; prefer labels, counts, and next-action text.
 
 ## Implementation constraints
@@ -174,6 +185,6 @@
 - Test/screenshot expectations: validate typecheck/lint/tests/build; for implementation, smoke test `#banners` and key subtabs.
 
 ## Open questions
-- [ ] Should `Banners` and `Affiliate Items` remain separate top-level tabs, or become subtabs under one `Monetization` tab?
+- [x] Should `Banners` and `Affiliate Items` remain separate top-level tabs, or become subtabs under one `Monetization` tab? Decision: keep `제휴` as its own top navigation page, exclude it from dashboard tabs, and keep banner execution separate.
 - [ ] Should install-code copy actions write to clipboard, or only display code for manual copy?
 - [ ] Should affiliate item selection auto-fill tracking/creative defaults in the banner console?
