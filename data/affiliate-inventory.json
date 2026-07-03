@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T09:52:02.814Z",
+  "generatedAt": "2026-07-03T13:04:08.476Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -8,7 +8,7 @@
     "analysisPath": "D:\\web\\multi-dashboard\\data\\monetization\\affiliates\\ripplealba-analysis.md",
     "inventoryExists": true,
     "merchantsExists": true,
-    "inventoryUpdatedAt": "2026-07-03T03:27:45.736Z",
+    "inventoryUpdatedAt": "2026-07-03T13:04:00.882Z",
     "merchantsUpdatedAt": "2026-07-02T03:52:03.308Z",
     "sourceNote": "Standalone affiliate operations source owned by this multi-dashboard repository."
   },
@@ -1324,7 +1324,7 @@
     {
       "id": "skimlinks",
       "name": "Skimlinks",
-      "status": "candidate",
+      "status": "active",
       "priority": "p2",
       "region": "GLOBAL",
       "network": "Skimlinks",
@@ -1336,7 +1336,9 @@
       "countries": [
         "GLOBAL"
       ],
-      "usedBySites": [],
+      "usedBySites": [
+        "gradienttrail.com"
+      ],
       "usedByAppsInToss": [],
       "publicTrackingLabel": "skimlinks",
       "disclosureRequired": true,
@@ -1349,12 +1351,15 @@
       "contentFit": [
         "commerce editorial",
         "long-tail merchant mentions",
-        "shopping guides where direct advertiser approval is inefficient"
+        "shopping guides where direct advertiser approval is inefficient",
+        "English hiking and travel gear resource links"
       ],
       "recommendedSlots": [
         "after-content-728x90"
       ],
-      "allowedSites": [],
+      "allowedSites": [
+        "gradienttrail.com"
+      ],
       "risk": "medium",
       "complianceNotes": [
         "Avoid duplicate monetization with direct programs such as Amazon/Coupang.",
@@ -1372,7 +1377,7 @@
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
-      "nextAction": "Evaluate separately from banner console because auto-linking can overlap direct affiliate links.",
+      "nextAction": "Active on gradienttrail.com. Keep Coupang blocked there because the site targets English-speaking readers; expand Skimlinks only after site-level disclosure and privacy text are verified.",
       "notes": "Useful fallback for merchant coverage gaps, not a primary banner network."
     },
     {
@@ -2921,7 +2926,7 @@
       "id": "skimlinks-primary",
       "programId": "skimlinks",
       "title": "Skimlinks monetization item",
-      "status": "candidate",
+      "status": "active",
       "priority": "p2",
       "region": "GLOBAL",
       "network": "Skimlinks",
@@ -2932,15 +2937,18 @@
       "contentFit": [
         "commerce editorial",
         "long-tail merchant mentions",
-        "shopping guides where direct advertiser approval is inefficient"
+        "shopping guides where direct advertiser approval is inefficient",
+        "English hiking and travel gear resource links"
       ],
       "recommendedSlots": [
         "after-content-728x90"
       ],
-      "allowedSites": [],
+      "allowedSites": [
+        "gradienttrail.com"
+      ],
       "applyUrl": "https://www.skimlinks.com/publishers/",
       "sourceUrl": "https://developers.skimlinks.com/",
-      "nextAction": "Evaluate separately from banner console because auto-linking can overlap direct affiliate links.",
+      "nextAction": "Active on gradienttrail.com. Keep Coupang blocked there because the site targets English-speaking readers; expand Skimlinks only after site-level disclosure and privacy text are verified.",
       "risk": "medium",
       "integrationSupport": {
         "api": "Merchant API, Reporting API, and link wrapper documented for publishers.",

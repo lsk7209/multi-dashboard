@@ -1130,7 +1130,7 @@ programs:
 
   - id: skimlinks
     name: Skimlinks
-    status: candidate
+    status: active
     priority: p2
     region: GLOBAL
     network: Skimlinks
@@ -1156,9 +1156,14 @@ programs:
       - "commerce editorial"
       - "long-tail merchant mentions"
       - "shopping guides where direct advertiser approval is inefficient"
+      - "English hiking and travel gear resource links"
     recommended_slots:
       - "after-content-728x90"
-    allowed_sites: []
+    allowed_sites:
+      - gradienttrail.com
+    used_by:
+      sites:
+        - gradienttrail.com
     tracking:
       public_label: "skimlinks"
       secret_location: ""
@@ -1169,7 +1174,7 @@ programs:
       owner: ""
       review_interval_days: 45
       last_reviewed: "2026-07-03"
-      next_action: "Evaluate separately from banner console because auto-linking can overlap direct affiliate links."
+      next_action: "Active on gradienttrail.com. Keep Coupang blocked there because the site targets English-speaking readers; expand Skimlinks only after site-level disclosure and privacy text are verified."
     risk: medium
     compliance_notes:
       - "Avoid duplicate monetization with direct programs such as Amazon/Coupang."

@@ -1576,12 +1576,27 @@ sites:
   - id: gradienttrail
     name: gradienttrail.com
     enabled: true
-    platform: wordpress
+    platform: static
     url: https://gradienttrail.com/
-    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
     ga4PropertyId: "543434435"
     gscSiteUrl: https://gradienttrail.com/
+    sitemapUrls:
+      - https://gradienttrail.com/sitemap.xml
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\park-trail
+      githubRepo: https://github.com/lsk7209/park-trail
+    affiliate:
+      targetMarket: global_en
+      primaryAudience: English-speaking hiking and U.S. national park readers
+      activePrograms:
+        - skimlinks
+      blockedPrograms:
+        - coupang-partners
+      coupangExposure: blocked_non_korean_audience
+      notes: "Skimlinks publisher script installed on gradienttrail.com. Do not serve Coupang ads on this English-audience site."
   - id: dogbreedcost
     name: https://dogbreedcost.com
     enabled: true
