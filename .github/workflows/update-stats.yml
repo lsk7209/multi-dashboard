@@ -2,9 +2,9 @@ name: Update dashboard stats
 
 on:
   schedule:
-    # Daily dashboard refresh at 07:00 KST (22:00 UTC on the previous day).
+    # Daily dashboard refresh at 06:00 KST (21:00 UTC on the previous day).
     # If generated data is unchanged, the commit step skips push and no Vercel build is triggered.
-    - cron: "0 22 * * *"
+    - cron: "0 21 * * *"
   workflow_dispatch:
 
 permissions:

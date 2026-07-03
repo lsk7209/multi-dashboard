@@ -10,6 +10,8 @@ dev-server.*.log
 !.env.setup.local.example
 .setup-state.json
 setup.log
+test-results/
+playwright-report/
 
 .vercel
 .gstack/

@@ -22,6 +22,7 @@ interface PlacementRow {
 
 interface CreativeRow {
   id: string;
+  offerId: string | null;
   name: string;
   imageUrl: string;
   width: number | null;
@@ -34,6 +35,7 @@ interface TrackingLinkRow {
   id: string;
   slug: string;
   publicUrl: string;
+  offerId: string | null;
   offerName: string | null;
   status: string;
 }
@@ -109,6 +111,18 @@ type ApiAction =
   | "updateTrackingLink"
   | "assignPlacement";
 
+type BannerOpsTabId = "overview" | "sites" | "setup" | "assignments" | "install" | "diagnostics";
+
+const MAX_TABLE_ROWS = 50;
+const BANNER_OPS_TABS: Array<{ id: BannerOpsTabId; label: string }> = [
+  { id: "overview", label: "Overview" },
+  { id: "sites", label: "Sites" },
+  { id: "setup", label: "Setup" },
+  { id: "assignments", label: "Assign" },
+  { id: "install", label: "Install" },
+  { id: "diagnostics", label: "Diagnostics" },
+];
+
 export function BannerManagementConsole() {
   const [state, setState] = useState<BannerManagementState>(EMPTY_STATE);
   const [isLoading, setIsLoading] = useState(true);
@@ -128,12 +142,14 @@ export function BannerManagementConsole() {
   const [creativeForm, setCreativeForm] = useState({
     height: "90",
     imageUrl: "https://placehold.co/728x90/png?text=Affiliate+Banner",
+    offerId: "",
     name: "기본 728x90 배너",
     policyStatus: "approved",
     status: "active",
     width: "728",
   });
   const [trackingForm, setTrackingForm] = useState({
+    offerId: "",
     offerName: "기본 제휴 링크",
     publicUrl: "https://example.com/",
     slug: `offer-${Date.now().toString().slice(-6)}`,
@@ -143,11 +159,13 @@ export function BannerManagementConsole() {
     creativeId: "",
     placementId: "",
     trackingLinkId: "",
+    weight: "100",
   });
   const [siteFilter, setSiteFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [assignmentFilter, setAssignmentFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeTab, setActiveTab] = useState<BannerOpsTabId>("overview");
 
   useEffect(() => {
     setAdminToken(window.localStorage.getItem(BANNER_ADMIN_TOKEN_STORAGE_KEY) ?? "");
@@ -221,6 +239,17 @@ export function BannerManagementConsole() {
     });
   }, [searchQuery, siteFilter, state.assignments]);
 
+  const filteredSiteSummaries = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return state.siteSummaries.filter((site) => {
+      if (siteFilter !== "all" && site.siteKey !== siteFilter) return false;
+      if (!query) return true;
+      return [site.siteKey, site.siteUrl]
+        .filter(Boolean)
+        .some((value) => String(value).toLowerCase().includes(query));
+    });
+  }, [searchQuery, siteFilter, state.siteSummaries]);
+
   const selectedSiteSummary = useMemo(
     () => (siteFilter === "all" ? null : state.siteSummaries.find((site) => site.siteKey === siteFilter) ?? null),
     [siteFilter, state.siteSummaries],
@@ -257,6 +286,7 @@ export function BannerManagementConsole() {
           ? current.placementId
           : filteredPlacements[0]?.id || state.placements[0]?.id || "",
       trackingLinkId: current.trackingLinkId || state.trackingLinks[0]?.id || "",
+      weight: current.weight || "100",
     }));
   }, [filteredPlacements, state.creatives, state.placements, state.trackingLinks]);
 
@@ -265,6 +295,31 @@ export function BannerManagementConsole() {
     [assignmentForm.placementId, state.placements],
   );
   const install = selectedPlacement ? buildInstallCode(selectedPlacement, state.publicBaseUrl) : null;
+  const activeUnassignedPlacements = useMemo(
+    () => filteredPlacements.filter((placement) => placement.status === "active" && !isPlacementAssigned(placement)),
+    [filteredPlacements],
+  );
+  const noAdPlacements = useMemo(
+    () => filteredPlacements.filter((placement) => placement.noAd > 0).sort((a, b) => b.noAd - a.noAd),
+    [filteredPlacements],
+  );
+  const reviewCreatives = useMemo(
+    () => state.creatives.filter((creative) => creative.status !== "active" || creative.policyStatus !== "approved"),
+    [state.creatives],
+  );
+  const trackingLinkIssues = useMemo(
+    () => state.trackingLinks.filter((link) => link.status !== "active" || !link.offerId),
+    [state.trackingLinks],
+  );
+  const attentionSites = useMemo(
+    () =>
+      filteredSiteSummaries.filter(
+        (site) => site.unassignedPlacements > 0 || site.noAd > 0 || site.activePlacements === 0,
+      ),
+    [filteredSiteSummaries],
+  );
+  const attentionCount =
+    activeUnassignedPlacements.length + noAdPlacements.length + reviewCreatives.length + trackingLinkIssues.length + attentionSites.length;
   const adminTokenMissing = state.adminAuthRequired && !adminToken.trim();
   const controlsDisabled = isSaving || !state.writable || adminTokenMissing;
 
@@ -343,7 +398,14 @@ export function BannerManagementConsole() {
 
   function assignPlacement(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    void submitAction("assignPlacement", assignmentForm, "배치 위치에 소재와 추적 링크를 연결했습니다.");
+    void submitAction(
+      "assignPlacement",
+      {
+        ...assignmentForm,
+        weight: numberOrDefault(assignmentForm.weight, 100),
+      },
+      "배치 위치에 소재와 추적 링크를 연결했습니다.",
+    );
   }
 
   return (
@@ -387,6 +449,20 @@ export function BannerManagementConsole() {
 
       {message ? <p className="ops-message">{message}</p> : null}
       {error ? <p className="ops-error">{error}</p> : null}
+
+      <nav className="ops-subtabs" aria-label="배너 운영 메뉴">
+        {BANNER_OPS_TABS.map((tab) => (
+          <button
+            aria-pressed={activeTab === tab.id}
+            className={activeTab === tab.id ? "is-active" : ""}
+            key={tab.id}
+            type="button"
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
 
       <div className="ops-control-panel">
         <div className="ops-control-heading">
@@ -458,398 +534,598 @@ export function BannerManagementConsole() {
         ) : null}
       </div>
 
-      <div className="ops-table-card ops-site-summary">
-        <h3>사이트별 배너 운영 현황</h3>
-        <div className="workspace-table-wrap">
-          <table className="workspace-table ops-table">
-            <tbody>
-              {isLoading ? (
-                <tr>
-                  <td>불러오는 중입니다.</td>
+      {activeTab === "overview" ? (
+        <div className="ops-tab-panel">
+          <div className="ops-executive-grid">
+            <div className="ops-metric-card">
+              <span>운영 사이트</span>
+              <strong>{formatNumber(state.siteSummaries.length)}</strong>
+              <small>필터 결과 {formatNumber(filteredSiteSummaries.length)}개</small>
+            </div>
+            <div className="ops-metric-card">
+              <span>전체 슬롯</span>
+              <strong>{formatNumber(fleetSummary.placements)}</strong>
+              <small>활성 {formatNumber(fleetSummary.activePlacements)}개</small>
+            </div>
+            <div className="ops-metric-card">
+              <span>배정 누락</span>
+              <strong>{formatNumber(activeUnassignedPlacements.length)}</strong>
+              <small>active 상태인데 소재/링크가 비어 있음</small>
+            </div>
+            <div className="ops-metric-card">
+              <span>점검 항목</span>
+              <strong>{formatNumber(attentionCount)}</strong>
+              <small>no_ad, 검수, 추적 링크, 사이트 이슈 합산</small>
+            </div>
+          </div>
+
+          <div className="ops-exception-grid">
+            <OpsTable
+              title={`활성 미배정 슬롯 (${formatNumber(activeUnassignedPlacements.length)})`}
+              isLoading={isLoading}
+              emptyText="미배정 활성 슬롯이 없습니다."
+            >
+              {activeUnassignedPlacements.slice(0, MAX_TABLE_ROWS).map((placement) => (
+                <tr key={placement.id}>
+                  <td>
+                    <strong>{placement.name}</strong>
+                    <small>{formatSlotLabel(placement)}</small>
+                  </td>
+                  <td>{placement.assignedCreativeName ?? "소재 없음"}</td>
+                  <td>{placement.assignedTrackingSlug ?? "링크 없음"}</td>
                 </tr>
-              ) : state.siteSummaries.length > 0 ? (
-                state.siteSummaries.map((site) => (
-                  <tr key={site.siteKey}>
-                    <td>
-                      <strong>{site.siteKey}</strong>
-                      <small>{site.siteUrl ?? "URL 미등록"}</small>
-                    </td>
-                    <td>슬롯 {formatNumber(site.placements)}</td>
-                    <td>활성 {formatNumber(site.activePlacements)}</td>
-                    <td>배정 {formatNumber(site.assignedPlacements)}</td>
-                    <td>미배정 {formatNumber(site.unassignedPlacements)}</td>
-                    <td>요청 {formatNumber(site.requests)}</td>
-                    <td>클릭 {formatNumber(site.clicks)}</td>
-                    <td>{formatDateTime(site.lastUpdatedAt)}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td>사이트별 배너 슬롯이 없습니다.</td>
+              ))}
+            </OpsTable>
+
+            <OpsTable title={`no_ad 발생 슬롯 (${formatNumber(noAdPlacements.length)})`} isLoading={isLoading} emptyText="no_ad 발생 슬롯이 없습니다.">
+              {noAdPlacements.slice(0, MAX_TABLE_ROWS).map((placement) => (
+                <tr key={placement.id}>
+                  <td>
+                    <strong>{placement.name}</strong>
+                    <small>{formatSlotLabel(placement)}</small>
+                  </td>
+                  <td>{formatNumber(placement.noAd)}</td>
+                  <td>{formatPercent(getNoAdRate(placement))}</td>
                 </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="ops-form-grid">
-        <form className="ops-form" onSubmit={createTrackingLink}>
-          <h3>1. 추적 링크</h3>
-          <label>
-            슬러그
-            <input
-              required
-              value={trackingForm.slug}
-              onChange={(event) => setTrackingForm({ ...trackingForm, slug: event.target.value })}
-            />
-          </label>
-          <label>
-            목적 URL
-            <input
-              required
-              type="url"
-              value={trackingForm.publicUrl}
-              onChange={(event) => setTrackingForm({ ...trackingForm, publicUrl: event.target.value })}
-            />
-          </label>
-          <label>
-            오퍼 이름
-            <input
-              value={trackingForm.offerName}
-              onChange={(event) => setTrackingForm({ ...trackingForm, offerName: event.target.value })}
-            />
-          </label>
-          <label>
-            상태
-            <select
-              value={trackingForm.status}
-              onChange={(event) => setTrackingForm({ ...trackingForm, status: event.target.value })}
-            >
-              {STATUS_OPTIONS.map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
               ))}
-            </select>
-          </label>
-          <button className="ops-button" disabled={controlsDisabled}>
-            링크 생성
-          </button>
-        </form>
+            </OpsTable>
 
-        <form className="ops-form" onSubmit={createCreative}>
-          <h3>2. 배너 소재</h3>
-          <label>
-            소재 이름
-            <input
-              required
-              value={creativeForm.name}
-              onChange={(event) => setCreativeForm({ ...creativeForm, name: event.target.value })}
-            />
-          </label>
-          <label>
-            이미지 URL
-            <input
-              required
-              type="url"
-              value={creativeForm.imageUrl}
-              onChange={(event) => setCreativeForm({ ...creativeForm, imageUrl: event.target.value })}
-            />
-          </label>
-          <div className="ops-two">
-            <label>
-              너비
-              <input
-                inputMode="numeric"
-                value={creativeForm.width}
-                onChange={(event) => setCreativeForm({ ...creativeForm, width: event.target.value })}
-              />
-            </label>
-            <label>
-              높이
-              <input
-                inputMode="numeric"
-                value={creativeForm.height}
-                onChange={(event) => setCreativeForm({ ...creativeForm, height: event.target.value })}
-              />
-            </label>
-          </div>
-          <div className="ops-two">
-            <label>
-              상태
-              <select
-                value={creativeForm.status}
-                onChange={(event) => setCreativeForm({ ...creativeForm, status: event.target.value })}
-              >
-                {STATUS_OPTIONS.map((status) => (
-                  <option key={status} value={status}>
-                    {status}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              검수
-              <select
-                value={creativeForm.policyStatus}
-                onChange={(event) => setCreativeForm({ ...creativeForm, policyStatus: event.target.value })}
-              >
-                {POLICY_OPTIONS.map((status) => (
-                  <option key={status} value={status}>
-                    {status}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <button className="ops-button" disabled={controlsDisabled}>
-            소재 생성
-          </button>
-        </form>
-
-        <form className="ops-form" onSubmit={createPlacement}>
-          <h3>3. 배치 위치</h3>
-          <label>
-            위치 이름
-            <input
-              required
-              value={placementForm.name}
-              onChange={(event) => setPlacementForm({ ...placementForm, name: event.target.value })}
-            />
-          </label>
-          <div className="ops-two">
-            <label>
-              사이트 키
-              <input
-                required
-                value={placementForm.siteKey}
-                onChange={(event) => setPlacementForm({ ...placementForm, siteKey: event.target.value })}
-              />
-            </label>
-            <label>
-              슬롯 키
-              <input
-                required
-                value={placementForm.slotKey}
-                onChange={(event) => setPlacementForm({ ...placementForm, slotKey: event.target.value })}
-              />
-            </label>
-          </div>
-          <label>
-            사이트 URL
-            <input
-              type="url"
-              value={placementForm.siteUrl}
-              onChange={(event) => setPlacementForm({ ...placementForm, siteUrl: event.target.value })}
-            />
-          </label>
-          <label>
-            유형
-            <select
-              value={placementForm.type}
-              onChange={(event) => setPlacementForm({ ...placementForm, type: event.target.value })}
-            >
-              <option value="image_link">image_link</option>
-              <option value="js_slot">js_slot</option>
-            </select>
-          </label>
-          <label>
-            no_ad 정책
-            <select
-              value={placementForm.noAdPolicy}
-              onChange={(event) => setPlacementForm({ ...placementForm, noAdPolicy: event.target.value })}
-            >
-              {NO_AD_OPTIONS.map((policy) => (
-                <option key={policy} value={policy}>
-                  {policy}
-                </option>
+            <OpsTable title={`소재 검수/상태 (${formatNumber(reviewCreatives.length)})`} isLoading={isLoading} emptyText="검수 대기 또는 비활성 소재가 없습니다.">
+              {reviewCreatives.slice(0, MAX_TABLE_ROWS).map((creative) => (
+                <tr key={creative.id}>
+                  <td>
+                    <strong>{creative.name}</strong>
+                    <small>{creative.offerId ?? "affiliate item 없음"}</small>
+                  </td>
+                  <td>{creative.policyStatus}</td>
+                  <td>{creative.status}</td>
+                </tr>
               ))}
-            </select>
-          </label>
-          <label>
-            상태
-            <select
-              value={placementForm.status}
-              onChange={(event) => setPlacementForm({ ...placementForm, status: event.target.value })}
-            >
-              {STATUS_OPTIONS.map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
+            </OpsTable>
+
+            <OpsTable title={`추적 링크 점검 (${formatNumber(trackingLinkIssues.length)})`} isLoading={isLoading} emptyText="추적 링크 점검 항목이 없습니다.">
+              {trackingLinkIssues.slice(0, MAX_TABLE_ROWS).map((link) => (
+                <tr key={link.id}>
+                  <td>
+                    <strong>{link.slug}</strong>
+                    <small>{link.offerId ?? "affiliate item 없음"}</small>
+                  </td>
+                  <td>{link.offerName ?? "-"}</td>
+                  <td>{link.status}</td>
+                </tr>
               ))}
-            </select>
-          </label>
-          <button className="ops-button" disabled={controlsDisabled}>
-            위치 생성
-          </button>
-        </form>
-      </div>
+            </OpsTable>
 
-      <form className="ops-assignment" onSubmit={assignPlacement}>
-        <div>
-          <h3>4. 소재 연결</h3>
-          <p>선택한 배치 위치의 기존 active 연결은 inactive로 바꾸고 새 연결을 active로 저장합니다.</p>
-        </div>
-        <select
-          required
-          disabled={controlsDisabled}
-          value={assignmentForm.placementId}
-          onChange={(event) => setAssignmentForm({ ...assignmentForm, placementId: event.target.value })}
-        >
-          <option value="">배치 위치 선택</option>
-          {filteredPlacements.map((placement) => (
-            <option key={placement.id} value={placement.id}>
-              {formatSlotLabel(placement)} · {placement.name}
-            </option>
-          ))}
-        </select>
-        <select
-          required
-          disabled={controlsDisabled}
-          value={assignmentForm.creativeId}
-          onChange={(event) => setAssignmentForm({ ...assignmentForm, creativeId: event.target.value })}
-        >
-          <option value="">소재 선택</option>
-          {state.creatives.map((creative) => (
-            <option key={creative.id} value={creative.id}>
-              {creative.name}
-            </option>
-          ))}
-        </select>
-        <select
-          required
-          disabled={controlsDisabled}
-          value={assignmentForm.trackingLinkId}
-          onChange={(event) => setAssignmentForm({ ...assignmentForm, trackingLinkId: event.target.value })}
-        >
-          <option value="">추적 링크 선택</option>
-          {state.trackingLinks.map((link) => (
-            <option key={link.id} value={link.id}>
-              {link.slug}
-            </option>
-          ))}
-        </select>
-        <button className="ops-button" disabled={controlsDisabled}>
-          연결 저장
-        </button>
-      </form>
-
-      {install ? (
-        <div className="ops-install">
-          <strong>사이트 설치 코드</strong>
-          <span>{install.slotLabel}</span>
-          <code>{`<a href="${install.clickUrl}" rel="sponsored nofollow"><img src="${install.imageUrl}" alt="" loading="lazy" /></a>`}</code>
-          <code>{`image: ${install.imageUrl}`}</code>
-          <code>{`click: ${install.clickUrl}`}</code>
+            <OpsTable title={`사이트 점검 (${formatNumber(attentionSites.length)})`} isLoading={isLoading} emptyText="사이트 단위 점검 항목이 없습니다.">
+              {attentionSites.slice(0, MAX_TABLE_ROWS).map((site) => (
+                <tr key={site.siteKey}>
+                  <td>
+                    <strong>{site.siteKey}</strong>
+                    <small>{site.siteUrl ?? "URL 미등록"}</small>
+                  </td>
+                  <td>미배정 {formatNumber(site.unassignedPlacements)}</td>
+                  <td>no_ad {formatNumber(site.noAd)}</td>
+                  <td>활성 {formatNumber(site.activePlacements)}</td>
+                </tr>
+              ))}
+            </OpsTable>
+          </div>
         </div>
       ) : null}
 
-      <div className="ops-table-grid">
-        <OpsTable title={`배치 위치 (${formatNumber(filteredPlacements.length)})`} isLoading={isLoading} emptyText="배치 위치가 없습니다.">
-          {filteredPlacements.map((placement) => (
-            <tr key={placement.id}>
-              <td>
-                <strong>{placement.name}</strong>
-                <small>{placement.id}</small>
-                <small>{formatSlotLabel(placement)}</small>
-              </td>
-              <td>{placement.type}</td>
-              <td>{placement.noAdPolicy}</td>
-              <td>{placement.assignedCreativeName ?? "-"}</td>
-              <td>{placement.assignedTrackingSlug ?? "-"}</td>
-              <td>{formatNumber(placement.requests)}</td>
-              <td>{formatNumber(placement.noAd)}</td>
-              <td>
-                <StatusSelect
-                  disabled={controlsDisabled}
-                  value={placement.status}
-                  onChange={(status) =>
-                    void submitAction("updatePlacement", { id: placement.id, status }, "배치 위치 상태를 저장했습니다.")
-                  }
-                />
-              </td>
-            </tr>
-          ))}
-        </OpsTable>
+      {activeTab === "sites" ? (
+        <div className="ops-tab-panel">
+          <div className="ops-table-card ops-site-summary">
+            <h3>사이트별 배너 운영 현황 ({formatNumber(filteredSiteSummaries.length)})</h3>
+            <div className="workspace-table-wrap">
+              <table className="workspace-table ops-table">
+                <tbody>
+                  {isLoading ? (
+                    <tr>
+                      <td>불러오는 중입니다.</td>
+                    </tr>
+                  ) : filteredSiteSummaries.length > 0 ? (
+                    filteredSiteSummaries.map((site) => (
+                      <tr key={site.siteKey}>
+                        <td>
+                          <strong>{site.siteKey}</strong>
+                          <small>{site.siteUrl ?? "URL 미등록"}</small>
+                        </td>
+                        <td>슬롯 {formatNumber(site.placements)}</td>
+                        <td>활성 {formatNumber(site.activePlacements)}</td>
+                        <td>배정 {formatNumber(site.assignedPlacements)}</td>
+                        <td>미배정 {formatNumber(site.unassignedPlacements)}</td>
+                        <td>no_ad {formatNumber(site.noAd)}</td>
+                        <td>요청 {formatNumber(site.requests)}</td>
+                        <td>클릭 {formatNumber(site.clicks)}</td>
+                        <td>{formatDateTime(site.lastUpdatedAt)}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td>조건에 맞는 사이트별 배너 슬롯이 없습니다.</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
-        <OpsTable title="소재" isLoading={isLoading} emptyText="소재가 없습니다.">
-          {state.creatives.map((creative) => (
-            <tr key={creative.id}>
-              <td>
-                <strong>{creative.name}</strong>
-                <small>{creative.imageUrl}</small>
-              </td>
-              <td>{creative.width ?? "-"}x{creative.height ?? "-"}</td>
-              <td>
+      {activeTab === "setup" ? (
+        <div className="ops-tab-panel">
+          <div className="ops-form-grid">
+            <form className="ops-form" onSubmit={createTrackingLink}>
+              <h3>1. 추적 링크</h3>
+              <label>
+                슬러그
+                <input
+                  required
+                  value={trackingForm.slug}
+                  onChange={(event) => setTrackingForm({ ...trackingForm, slug: event.target.value })}
+                />
+              </label>
+              <label>
+                목적 URL
+                <input
+                  required
+                  type="url"
+                  value={trackingForm.publicUrl}
+                  onChange={(event) => setTrackingForm({ ...trackingForm, publicUrl: event.target.value })}
+                />
+              </label>
+              <label>
+                Affiliate item ID
+                <input
+                  placeholder="coupang-partners-primary"
+                  value={trackingForm.offerId}
+                  onChange={(event) => setTrackingForm({ ...trackingForm, offerId: event.target.value })}
+                />
+              </label>
+              <label>
+                오퍼 이름
+                <input
+                  value={trackingForm.offerName}
+                  onChange={(event) => setTrackingForm({ ...trackingForm, offerName: event.target.value })}
+                />
+              </label>
+              <label>
+                상태
                 <select
-                  disabled={controlsDisabled}
-                  value={creative.policyStatus}
-                  onChange={(event) =>
-                    void submitAction(
-                      "updateCreative",
-                      { id: creative.id, policyStatus: event.target.value },
-                      "소재 검수 상태를 저장했습니다.",
-                    )
-                  }
+                  value={trackingForm.status}
+                  onChange={(event) => setTrackingForm({ ...trackingForm, status: event.target.value })}
                 >
-                  {POLICY_OPTIONS.map((status) => (
+                  {STATUS_OPTIONS.map((status) => (
                     <option key={status} value={status}>
                       {status}
                     </option>
                   ))}
                 </select>
-              </td>
-              <td>
-                <StatusSelect
-                  disabled={controlsDisabled}
-                  value={creative.status}
-                  onChange={(status) =>
-                    void submitAction("updateCreative", { id: creative.id, status }, "소재 상태를 저장했습니다.")
-                  }
-                />
-              </td>
-            </tr>
-          ))}
-        </OpsTable>
+              </label>
+              <button className="ops-button" disabled={controlsDisabled}>
+                링크 생성
+              </button>
+            </form>
 
-        <OpsTable title="추적 링크" isLoading={isLoading} emptyText="추적 링크가 없습니다.">
-          {state.trackingLinks.map((link) => (
-            <tr key={link.id}>
-              <td>
-                <strong>{link.slug}</strong>
-                <small>{link.publicUrl}</small>
-              </td>
-              <td>{link.offerName ?? "-"}</td>
-              <td>
-                <StatusSelect
-                  disabled={controlsDisabled}
-                  value={link.status}
-                  onChange={(status) =>
-                    void submitAction("updateTrackingLink", { id: link.id, status }, "추적 링크 상태를 저장했습니다.")
-                  }
+            <form className="ops-form" onSubmit={createCreative}>
+              <h3>2. 배너 소재</h3>
+              <label>
+                소재 이름
+                <input
+                  required
+                  value={creativeForm.name}
+                  onChange={(event) => setCreativeForm({ ...creativeForm, name: event.target.value })}
                 />
-              </td>
-            </tr>
-          ))}
-        </OpsTable>
+              </label>
+              <label>
+                이미지 URL
+                <input
+                  required
+                  type="url"
+                  value={creativeForm.imageUrl}
+                  onChange={(event) => setCreativeForm({ ...creativeForm, imageUrl: event.target.value })}
+                />
+              </label>
+              <label>
+                Affiliate item ID
+                <input
+                  placeholder="coupang-partners-primary"
+                  value={creativeForm.offerId}
+                  onChange={(event) => setCreativeForm({ ...creativeForm, offerId: event.target.value })}
+                />
+              </label>
+              <div className="ops-two">
+                <label>
+                  너비
+                  <input
+                    inputMode="numeric"
+                    value={creativeForm.width}
+                    onChange={(event) => setCreativeForm({ ...creativeForm, width: event.target.value })}
+                  />
+                </label>
+                <label>
+                  높이
+                  <input
+                    inputMode="numeric"
+                    value={creativeForm.height}
+                    onChange={(event) => setCreativeForm({ ...creativeForm, height: event.target.value })}
+                  />
+                </label>
+              </div>
+              <div className="ops-two">
+                <label>
+                  상태
+                  <select
+                    value={creativeForm.status}
+                    onChange={(event) => setCreativeForm({ ...creativeForm, status: event.target.value })}
+                  >
+                    {STATUS_OPTIONS.map((status) => (
+                      <option key={status} value={status}>
+                        {status}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  검수
+                  <select
+                    value={creativeForm.policyStatus}
+                    onChange={(event) => setCreativeForm({ ...creativeForm, policyStatus: event.target.value })}
+                  >
+                    {POLICY_OPTIONS.map((status) => (
+                      <option key={status} value={status}>
+                        {status}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <button className="ops-button" disabled={controlsDisabled}>
+                소재 생성
+              </button>
+            </form>
 
-        <OpsTable title={`최근 연결 이력 (${formatNumber(filteredAssignments.length)})`} isLoading={isLoading} emptyText="연결 이력이 없습니다.">
-          {filteredAssignments.map((assignment) => (
-            <tr key={assignment.id}>
-              <td>
-                <strong>{assignment.placementName}</strong>
-                <small>{formatAssignmentSlotLabel(assignment)}</small>
-                <small>{assignment.id}</small>
-              </td>
-              <td>{assignment.creativeName ?? "-"}</td>
-              <td>{assignment.trackingSlug ?? "-"}</td>
-              <td>{assignment.weight}</td>
-              <td>{assignment.status}</td>
-            </tr>
-          ))}
-        </OpsTable>
-      </div>
+            <form className="ops-form" onSubmit={createPlacement}>
+              <h3>3. 배치 위치</h3>
+              <label>
+                위치 이름
+                <input
+                  required
+                  value={placementForm.name}
+                  onChange={(event) => setPlacementForm({ ...placementForm, name: event.target.value })}
+                />
+              </label>
+              <div className="ops-two">
+                <label>
+                  사이트 키
+                  <input
+                    required
+                    value={placementForm.siteKey}
+                    onChange={(event) => setPlacementForm({ ...placementForm, siteKey: event.target.value })}
+                  />
+                </label>
+                <label>
+                  슬롯 키
+                  <input
+                    required
+                    value={placementForm.slotKey}
+                    onChange={(event) => setPlacementForm({ ...placementForm, slotKey: event.target.value })}
+                  />
+                </label>
+              </div>
+              <label>
+                사이트 URL
+                <input
+                  type="url"
+                  value={placementForm.siteUrl}
+                  onChange={(event) => setPlacementForm({ ...placementForm, siteUrl: event.target.value })}
+                />
+              </label>
+              <label>
+                유형
+                <select
+                  value={placementForm.type}
+                  onChange={(event) => setPlacementForm({ ...placementForm, type: event.target.value })}
+                >
+                  <option value="image_link">image_link</option>
+                  <option value="js_slot">js_slot</option>
+                </select>
+              </label>
+              <label>
+                no_ad 정책
+                <select
+                  value={placementForm.noAdPolicy}
+                  onChange={(event) => setPlacementForm({ ...placementForm, noAdPolicy: event.target.value })}
+                >
+                  {NO_AD_OPTIONS.map((policy) => (
+                    <option key={policy} value={policy}>
+                      {policy}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                상태
+                <select
+                  value={placementForm.status}
+                  onChange={(event) => setPlacementForm({ ...placementForm, status: event.target.value })}
+                >
+                  {STATUS_OPTIONS.map((status) => (
+                    <option key={status} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button className="ops-button" disabled={controlsDisabled}>
+                위치 생성
+              </button>
+            </form>
+          </div>
+        </div>
+      ) : null}
+
+      {activeTab === "assignments" ? (
+        <div className="ops-tab-panel">
+          <form className="ops-assignment" onSubmit={assignPlacement}>
+            <div>
+              <h3>4. 소재 연결</h3>
+              <p>선택한 배치 위치의 기존 active 연결은 inactive로 바꾸고 새 연결을 active로 저장합니다.</p>
+            </div>
+            <select
+              required
+              disabled={controlsDisabled}
+              value={assignmentForm.placementId}
+              onChange={(event) => setAssignmentForm({ ...assignmentForm, placementId: event.target.value })}
+            >
+              <option value="">배치 위치 선택</option>
+              {filteredPlacements.map((placement) => (
+                <option key={placement.id} value={placement.id}>
+                  {formatSlotLabel(placement)} · {placement.name}
+                </option>
+              ))}
+            </select>
+            <select
+              required
+              disabled={controlsDisabled}
+              value={assignmentForm.creativeId}
+              onChange={(event) => setAssignmentForm({ ...assignmentForm, creativeId: event.target.value })}
+            >
+              <option value="">소재 선택</option>
+              {state.creatives.map((creative) => (
+                <option key={creative.id} value={creative.id}>
+                  {creative.name}
+                </option>
+              ))}
+            </select>
+            <select
+              required
+              disabled={controlsDisabled}
+              value={assignmentForm.trackingLinkId}
+              onChange={(event) => setAssignmentForm({ ...assignmentForm, trackingLinkId: event.target.value })}
+            >
+              <option value="">추적 링크 선택</option>
+              {state.trackingLinks.map((link) => (
+                <option key={link.id} value={link.id}>
+                  {link.slug}
+                </option>
+              ))}
+            </select>
+            <label>
+              Weight
+              <input
+                disabled={controlsDisabled}
+                inputMode="numeric"
+                min="0"
+                value={assignmentForm.weight}
+                onChange={(event) => setAssignmentForm({ ...assignmentForm, weight: event.target.value })}
+              />
+            </label>
+            <button className="ops-button" disabled={controlsDisabled}>
+              연결 저장
+            </button>
+          </form>
+
+          <OpsTable
+            title={`최근 연결 이력 (${formatNumber(filteredAssignments.length)})`}
+            isLoading={isLoading}
+            emptyText="연결 이력이 없습니다."
+          >
+            {filteredAssignments.slice(0, MAX_TABLE_ROWS).map((assignment) => (
+              <tr key={assignment.id}>
+                <td>
+                  <strong>{assignment.placementName}</strong>
+                  <small>{formatAssignmentSlotLabel(assignment)}</small>
+                  <small>{assignment.id}</small>
+                </td>
+                <td>{assignment.creativeName ?? "-"}</td>
+                <td>{assignment.trackingSlug ?? "-"}</td>
+                <td>{assignment.weight}</td>
+                <td>{assignment.status}</td>
+              </tr>
+            ))}
+          </OpsTable>
+        </div>
+      ) : null}
+
+      {activeTab === "install" ? (
+        <div className="ops-tab-panel">
+          <div className="ops-install ops-install-panel">
+            <div>
+              <strong>사이트 설치 코드</strong>
+              <span>{install ? install.slotLabel : "배치 위치를 선택하세요."}</span>
+            </div>
+            <label>
+              설치 슬롯
+              <select
+                value={assignmentForm.placementId}
+                onChange={(event) => setAssignmentForm({ ...assignmentForm, placementId: event.target.value })}
+              >
+                <option value="">배치 위치 선택</option>
+                {filteredPlacements.map((placement) => (
+                  <option key={placement.id} value={placement.id}>
+                    {formatSlotLabel(placement)} · {placement.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {install ? (
+              <div className="ops-install-code">
+                <code>{`<a href="${install.clickUrl}" rel="sponsored nofollow"><img src="${install.imageUrl}" alt="" loading="lazy" /></a>`}</code>
+                <code>{`image: ${install.imageUrl}`}</code>
+                <code>{`click: ${install.clickUrl}`}</code>
+              </div>
+            ) : (
+              <p className="ops-empty-state">설치 코드를 만들 배치 위치가 없습니다.</p>
+            )}
+          </div>
+        </div>
+      ) : null}
+
+      {activeTab === "diagnostics" ? (
+        <div className="ops-tab-panel">
+          <div className="ops-table-grid">
+            <OpsTable
+              title={`배치 위치 (${formatNumber(filteredPlacements.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
+              isLoading={isLoading}
+              emptyText="배치 위치가 없습니다."
+            >
+              {filteredPlacements.slice(0, MAX_TABLE_ROWS).map((placement) => (
+                <tr key={placement.id}>
+                  <td>
+                    <strong>{placement.name}</strong>
+                    <small>{placement.id}</small>
+                    <small>{formatSlotLabel(placement)}</small>
+                  </td>
+                  <td>{placement.type}</td>
+                  <td>{placement.noAdPolicy}</td>
+                  <td>{placement.assignedCreativeName ?? "-"}</td>
+                  <td>{placement.assignedTrackingSlug ?? "-"}</td>
+                  <td>{formatNumber(placement.requests)}</td>
+                  <td>{formatNumber(placement.noAd)}</td>
+                  <td>
+                    <StatusSelect
+                      disabled={controlsDisabled}
+                      value={placement.status}
+                      onChange={(status) =>
+                        void submitAction("updatePlacement", { id: placement.id, status }, "배치 위치 상태를 저장했습니다.")
+                      }
+                    />
+                  </td>
+                </tr>
+              ))}
+            </OpsTable>
+
+            <OpsTable title={`소재 (${formatNumber(state.creatives.length)}, 첫 ${MAX_TABLE_ROWS}개)`} isLoading={isLoading} emptyText="소재가 없습니다.">
+              {state.creatives.slice(0, MAX_TABLE_ROWS).map((creative) => (
+                <tr key={creative.id}>
+                  <td>
+                    <strong>{creative.name}</strong>
+                    <small>{creative.imageUrl}</small>
+                    <small>{creative.offerId ?? "no affiliate item"}</small>
+                  </td>
+                  <td>{creative.width ?? "-"}x{creative.height ?? "-"}</td>
+                  <td>
+                    <select
+                      disabled={controlsDisabled}
+                      value={creative.policyStatus}
+                      onChange={(event) =>
+                        void submitAction(
+                          "updateCreative",
+                          { id: creative.id, policyStatus: event.target.value },
+                          "소재 검수 상태를 저장했습니다.",
+                        )
+                      }
+                    >
+                      {POLICY_OPTIONS.map((status) => (
+                        <option key={status} value={status}>
+                          {status}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                  <td>
+                    <StatusSelect
+                      disabled={controlsDisabled}
+                      value={creative.status}
+                      onChange={(status) =>
+                        void submitAction("updateCreative", { id: creative.id, status }, "소재 상태를 저장했습니다.")
+                      }
+                    />
+                  </td>
+                </tr>
+              ))}
+            </OpsTable>
+
+            <OpsTable
+              title={`추적 링크 (${formatNumber(state.trackingLinks.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
+              isLoading={isLoading}
+              emptyText="추적 링크가 없습니다."
+            >
+              {state.trackingLinks.slice(0, MAX_TABLE_ROWS).map((link) => (
+                <tr key={link.id}>
+                  <td>
+                    <strong>{link.slug}</strong>
+                    <small>{link.publicUrl}</small>
+                    <small>{link.offerId ?? "no affiliate item"}</small>
+                  </td>
+                  <td>{link.offerName ?? "-"}</td>
+                  <td>
+                    <StatusSelect
+                      disabled={controlsDisabled}
+                      value={link.status}
+                      onChange={(status) =>
+                        void submitAction("updateTrackingLink", { id: link.id, status }, "추적 링크 상태를 저장했습니다.")
+                      }
+                    />
+                  </td>
+                </tr>
+              ))}
+            </OpsTable>
+
+            <OpsTable
+              title={`최근 연결 이력 (${formatNumber(filteredAssignments.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
+              isLoading={isLoading}
+              emptyText="연결 이력이 없습니다."
+            >
+              {filteredAssignments.slice(0, MAX_TABLE_ROWS).map((assignment) => (
+                <tr key={assignment.id}>
+                  <td>
+                    <strong>{assignment.placementName}</strong>
+                    <small>{formatAssignmentSlotLabel(assignment)}</small>
+                    <small>{assignment.id}</small>
+                  </td>
+                  <td>{assignment.creativeName ?? "-"}</td>
+                  <td>{assignment.trackingSlug ?? "-"}</td>
+                  <td>{assignment.weight}</td>
+                  <td>{assignment.status}</td>
+                </tr>
+              ))}
+            </OpsTable>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -923,6 +1199,15 @@ function buildInstallCode(placement: PlacementRow, publicBaseUrl: string) {
   };
 }
 
+function isPlacementAssigned(placement: PlacementRow): boolean {
+  return Boolean(placement.assignedCreativeId && placement.assignedTrackingLinkId);
+}
+
+function getNoAdRate(placement: PlacementRow): number {
+  if (placement.requests <= 0) return 0;
+  return placement.noAd / placement.requests;
+}
+
 function formatSlotLabel(placement: PlacementRow): string {
   if (placement.siteKey && placement.slotKey) return `${placement.siteKey}.${placement.slotKey}`;
   return placement.siteKey || placement.slotKey || "legacy placement";
@@ -940,8 +1225,20 @@ function numberOrNull(value: string): number | null {
   return trimmed ? Number(trimmed) : null;
 }
 
+function numberOrDefault(value: string, fallback: number): number {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
+
 function formatNumber(value: number): string {
   return new Intl.NumberFormat("ko-KR").format(value);
+}
+
+function formatPercent(value: number): string {
+  return new Intl.NumberFormat("ko-KR", {
+    maximumFractionDigits: 1,
+    style: "percent",
+  }).format(value);
 }
 
 function formatDateTime(value: string): string {

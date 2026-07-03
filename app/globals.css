@@ -1479,6 +1479,91 @@ code {
   text-decoration: none;
 }
 
+.affiliate-hub-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.affiliate-playbook-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.affiliate-playbook-card {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fbfcfd;
+}
+
+.affiliate-playbook-card strong,
+.affiliate-playbook-card code,
+.affiliate-playbook-card p,
+.affiliate-playbook-card small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.affiliate-playbook-card p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.affiliate-playbook-card small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.affiliate-playbook-card code {
+  border-radius: 6px;
+  padding: 6px 7px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.affiliate-item-table .workspace-table {
+  min-width: 1180px;
+}
+
+.affiliate-item-table a,
+.workspace-card a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.affiliate-priority-p0,
+.affiliate-risk-low {
+  color: #047857;
+  background: rgba(4, 120, 87, 0.11);
+}
+
+.affiliate-priority-p1,
+.affiliate-risk-medium {
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.affiliate-priority-p2,
+.affiliate-risk-high {
+  color: #991b1b;
+  background: rgba(220, 38, 38, 0.11);
+}
+
+.affiliate-priority-manual {
+  color: #475569;
+  background: rgba(100, 116, 139, 0.12);
+}
+
 .banner-console {
   display: grid;
   gap: 14px;
@@ -1532,6 +1617,34 @@ code {
   padding: 10px 12px;
 }
 
+.ops-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px;
+  background: #fbfcfd;
+}
+
+.ops-subtabs button {
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ops-subtabs button.is-active {
+  border-color: rgba(15, 118, 110, 0.22);
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.09);
+}
+
 .ops-message {
   border-color: rgba(15, 118, 110, 0.24);
   color: #0f766e;
@@ -1544,18 +1657,25 @@ code {
   background: rgba(185, 28, 28, 0.07);
 }
 
+.ops-tab-panel,
 .ops-form-grid,
-.ops-table-grid {
+.ops-table-grid,
+.ops-executive-grid,
+.ops-exception-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+}
+
+.ops-form-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .ops-form,
 .ops-assignment,
 .ops-control-panel,
 .ops-table-card,
-.ops-install {
+.ops-install,
+.ops-metric-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
@@ -1571,7 +1691,8 @@ code {
 .ops-form h3,
 .ops-assignment h3,
 .ops-control-panel h3,
-.ops-table-card h3 {
+.ops-table-card h3,
+.ops-metric-card h3 {
   margin: 0;
   color: var(--ink);
   font-size: 14px;
@@ -1579,6 +1700,7 @@ code {
 
 .ops-form label,
 .ops-assignment label,
+.ops-install label,
 .ops-filter-grid label {
   display: grid;
   gap: 5px;
@@ -1591,7 +1713,9 @@ code {
 .ops-form select,
 .ops-filter-grid input,
 .ops-filter-grid select,
+.ops-assignment input,
 .ops-assignment select,
+.ops-install select,
 .ops-table select {
   width: 100%;
   min-height: 36px;
@@ -1607,7 +1731,9 @@ code {
 .ops-form select:focus,
 .ops-filter-grid input:focus,
 .ops-filter-grid select:focus,
+.ops-assignment input:focus,
 .ops-assignment select:focus,
+.ops-install select:focus,
 .ops-table select:focus {
   border-color: var(--accent);
   outline: 2px solid var(--accent-weak);
@@ -1641,7 +1767,9 @@ code {
 .ops-form select:disabled,
 .ops-filter-grid input:disabled,
 .ops-filter-grid select:disabled,
+.ops-assignment input:disabled,
 .ops-assignment select:disabled,
+.ops-install select:disabled,
 .ops-table select:disabled {
   cursor: not-allowed;
   opacity: 0.58;
@@ -1701,9 +1829,37 @@ code {
   color: var(--ink);
 }
 
+.ops-executive-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ops-metric-card {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.ops-metric-card span,
+.ops-metric-card small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ops-metric-card strong {
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.ops-exception-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .ops-assignment {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(140px, 0.7fr)) auto;
+  grid-template-columns: minmax(220px, 1fr) repeat(4, minmax(130px, 0.7fr)) auto;
   gap: 10px;
   align-items: end;
   padding: 12px;
@@ -1721,6 +1877,23 @@ code {
   gap: 8px;
   padding: 12px;
   background: #fbfcfd;
+}
+
+.ops-install-panel {
+  grid-template-columns: minmax(220px, 0.45fr) minmax(260px, 0.55fr);
+  align-items: start;
+}
+
+.ops-install-code {
+  display: grid;
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+.ops-empty-state {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .ops-install code,
@@ -1808,6 +1981,10 @@ code {
   .metric-grid,
   .ops-form-grid,
   .ops-filter-grid,
+  .ops-executive-grid,
+  .ops-exception-grid,
+  .ops-install-panel,
+  .affiliate-playbook-grid,
   .ops-admin-token,
   .ops-table-grid,
   .ops-assignment,

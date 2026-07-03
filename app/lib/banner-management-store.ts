@@ -16,28 +16,24 @@ type DatabaseLike = {
   };
 };
 
-let cachedDatabaseSync:
-  | (new (path: string, options?: { readOnly?: boolean }) => DatabaseLike)
-  | undefined;
+type DatabaseSyncConstructor = new (path: string, options?: { readOnly?: boolean }) => DatabaseLike;
 
-function getDatabaseSync(): new (path: string, options?: { readOnly?: boolean }) => DatabaseLike {
+let cachedDatabaseSync: DatabaseSyncConstructor | undefined;
+
+function getDatabaseSync(): DatabaseSyncConstructor {
   if (cachedDatabaseSync) return cachedDatabaseSync;
   const builtinLoader = process as typeof process & {
     getBuiltinModule?: (specifier: string) => {
-      DatabaseSync: new (path: string, options?: { readOnly?: boolean }) => DatabaseLike;
+      DatabaseSync: DatabaseSyncConstructor;
     };
   };
-  if (builtinLoader.getBuiltinModule) {
-    const sqliteModule = builtinLoader.getBuiltinModule(`node:${"sqlite"}`) as unknown as {
-      DatabaseSync: new (path: string, options?: { readOnly?: boolean }) => DatabaseLike;
-    };
-    cachedDatabaseSync = sqliteModule.DatabaseSync;
-    return cachedDatabaseSync;
+  if (!builtinLoader.getBuiltinModule) {
+    throw new Error("node:sqlite is required for local banner management storage.");
   }
-  const requireBuiltin = Function("specifier", "return require(specifier)") as (specifier: string) => {
-    DatabaseSync: new (path: string, options?: { readOnly?: boolean }) => DatabaseLike;
+  const sqliteModule = builtinLoader.getBuiltinModule("node:sqlite") as unknown as {
+    DatabaseSync: DatabaseSyncConstructor;
   };
-  cachedDatabaseSync = requireBuiltin(`node:${"sqlite"}`).DatabaseSync;
+  cachedDatabaseSync = sqliteModule.DatabaseSync;
   return cachedDatabaseSync;
 }
 
@@ -181,7 +177,7 @@ interface BannerSnapshot {
 }
 
 export function getBannerDbPath(): string {
-  if (process.env.MONETIZATION_BANNER_DB) return resolve(process.env.MONETIZATION_BANNER_DB);
+  if (process.env.MONETIZATION_BANNER_DB) return resolve(/*turbopackIgnore: true*/ process.env.MONETIZATION_BANNER_DB);
   return join(/*turbopackIgnore: true*/ process.cwd(), "data", "monetization", "ad-manage.db");
 }
 
@@ -197,7 +193,7 @@ export function getBannerPersistenceNote(): string {
 
 export function getBannerSnapshotPath(): string {
   if (process.env.MONETIZATION_BANNER_SNAPSHOT) {
-    return resolve(process.env.MONETIZATION_BANNER_SNAPSHOT);
+    return resolve(/*turbopackIgnore: true*/ process.env.MONETIZATION_BANNER_SNAPSHOT);
   }
   return join(/*turbopackIgnore: true*/ process.cwd(), "data", "banner-management.json");
 }
@@ -219,8 +215,10 @@ export function getBannerManagementState(): BannerManagementState {
     return {
       dbPath,
       adminAuthRequired: isBannerAdminAuthRequired(),
-      dbExists: existsSync(dbPath),
-      dbUpdatedAt: existsSync(dbPath) ? statSync(dbPath).mtime.toISOString() : null,
+      dbExists: existsSync(/*turbopackIgnore: true*/ dbPath),
+      dbUpdatedAt: existsSync(/*turbopackIgnore: true*/ dbPath)
+        ? statSync(/*turbopackIgnore: true*/ dbPath).mtime.toISOString()
+        : null,
       writable: canAttemptWrite(),
       persistenceNote: getBannerPersistenceNote(),
       publicBaseUrl: getBannerPublicBaseUrl(),
@@ -705,8 +703,8 @@ export async function recordBannerClickAsync(input: Parameters<typeof recordBann
 export function refreshBannerSnapshot(): BannerSnapshot {
   const snapshot = buildBannerSnapshot();
   const path = getBannerSnapshotPath();
-  mkdirSync(dirname(path), { recursive: true });
-  writeFileSync(path, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+  mkdirSync(dirname(/*turbopackIgnore: true*/ path), { recursive: true });
+  writeFileSync(/*turbopackIgnore: true*/ path, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
   return snapshot;
 }
 
@@ -751,10 +749,12 @@ function buildBannerSnapshot(): BannerSnapshot {
       generatedAt: new Date().toISOString(),
       source: {
         sourceKind: "multi-dashboard-local",
-        workspacePath: process.cwd(),
+        workspacePath: /*turbopackIgnore: true*/ process.cwd(),
         dbPath,
-        dbExists: existsSync(dbPath),
-        dbUpdatedAt: existsSync(dbPath) ? statSync(dbPath).mtime.toISOString() : undefined,
+        dbExists: existsSync(/*turbopackIgnore: true*/ dbPath),
+        dbUpdatedAt: existsSync(/*turbopackIgnore: true*/ dbPath)
+          ? statSync(/*turbopackIgnore: true*/ dbPath).mtime.toISOString()
+          : undefined,
         sourceNote: "Standalone banner operations source owned by this multi-dashboard repository.",
       },
       counts,
@@ -1453,11 +1453,11 @@ function remoteRowToRecord(row: LibsqlRow): Row {
 
 function openDb(path: string, readOnly: boolean): DatabaseLike {
   const DatabaseSync = getDatabaseSync();
-  return new DatabaseSync(path, { readOnly });
+  return new DatabaseSync(/*turbopackIgnore: true*/ path, { readOnly });
 }
 
 function ensureSchema(path: string): void {
-  mkdirSync(dirname(path), { recursive: true });
+  mkdirSync(dirname(/*turbopackIgnore: true*/ path), { recursive: true });
   const db = openDb(path, false);
   try {
     db.exec(`

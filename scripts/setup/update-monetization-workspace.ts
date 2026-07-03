@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import YAML from "yaml";
 
 type Row = Record<string, unknown>;
@@ -225,7 +226,7 @@ function loadBannerManagement() {
   }
 }
 
-function normalizeProgram(value: unknown) {
+export function normalizeProgram(value: unknown) {
   const program = asRecord(value);
   const usedBy = asRecord(program.used_by);
   const tracking = asRecord(program.tracking);
@@ -235,14 +236,30 @@ function normalizeProgram(value: unknown) {
     id: asString(program.id),
     name: asString(program.name),
     status: asString(program.status),
+    priority: asString(program.priority || "manual"),
+    region: asString(program.region || "GLOBAL"),
+    network: asString(program.network || program.name),
     category: asString(program.category),
     platformUrl: asString(program.platform_url),
+    homepageUrl: asString(program.homepage_url || program.platform_url),
+    applyUrl: asString(program.apply_url || program.platform_url),
+    sourceUrl: asString(program.source_url || program.platform_url),
     countries: asArray(program.countries).map(asString).filter(Boolean),
     usedBySites: asArray(usedBy.sites).map(asString).filter(Boolean),
     usedByAppsInToss: asArray(usedBy.appsintoss).map(asString).filter(Boolean),
     publicTrackingLabel: asString(tracking.public_label),
     disclosureRequired: disclosure.required === true,
     disclosureNote: asString(disclosure.note),
+    monetizationModel: asString(program.monetization_model),
+    payoutModel: asString(program.payout_model || asRecord(program.payout).model),
+    approvalDifficulty: asString(program.approval_difficulty || "manual"),
+    bannerSuitability: asString(program.banner_suitability || "manual"),
+    deepLinkTemplate: asString(program.deep_link_template),
+    contentFit: asArray(program.content_fit).map(asString).filter(Boolean),
+    recommendedSlots: asArray(program.recommended_slots).map(asString).filter(Boolean),
+    allowedSites: asArray(program.allowed_sites).map(asString).filter(Boolean),
+    risk: asString(program.risk || "medium"),
+    complianceNotes: asArray(program.compliance_notes).map(asString).filter(Boolean),
     merchantTotalReported: asNumber(program.merchant_total_reported),
     merchantSnapshotFile: asString(program.merchant_snapshot_file),
     lastReviewed: asString(operations.last_reviewed),
@@ -270,6 +287,81 @@ function normalizeCandidate(value: unknown) {
   };
 }
 
+export function buildAffiliateItems(programs: Array<ReturnType<typeof normalizeProgram>>) {
+  return programs
+    .map((program) => ({
+      id: `${program.id}-primary`,
+      programId: program.id,
+      title: `${program.name || program.id} monetization item`,
+      status: program.status,
+      priority: program.priority || "manual",
+      region: program.region || "GLOBAL",
+      network: program.network || program.name || program.id,
+      category: program.category || "uncategorized",
+      payoutModel: program.payoutModel || "Verify manually.",
+      approvalDifficulty: program.approvalDifficulty || "manual",
+      bannerSuitability: program.bannerSuitability || "manual",
+      contentFit: program.contentFit,
+      recommendedSlots: program.recommendedSlots,
+      allowedSites: program.allowedSites,
+      applyUrl: program.applyUrl || program.platformUrl,
+      sourceUrl: program.sourceUrl || program.platformUrl,
+      nextAction: program.nextAction || "Verify terms, apply, then create tracking link and banner creative.",
+      risk: program.risk || "medium",
+      complianceNotes:
+        program.complianceNotes.length > 0
+          ? program.complianceNotes
+          : [program.disclosureNote].filter(Boolean),
+    }))
+    .sort(compareAffiliateItems);
+}
+
+function compareAffiliateItems(
+  a: { priority: string; risk: string; title: string },
+  b: { priority: string; risk: string; title: string },
+): number {
+  return (
+    priorityRank(a.priority) - priorityRank(b.priority) ||
+    riskRank(a.risk) - riskRank(b.risk) ||
+    a.title.localeCompare(b.title)
+  );
+}
+
+function priorityRank(priority: string): number {
+  if (priority === "p0") return 0;
+  if (priority === "p1") return 1;
+  if (priority === "p2") return 2;
+  return 9;
+}
+
+function riskRank(risk: string): number {
+  if (risk === "low") return 0;
+  if (risk === "medium") return 1;
+  if (risk === "high") return 2;
+  return 3;
+}
+
+function normalizePlaybook(value: unknown) {
+  const playbook = asRecord(value);
+  return {
+    disclosureTemplateKo: asString(playbook.disclosure_template_ko),
+    disclosureTemplateEn: asString(playbook.disclosure_template_en),
+    defaultRel: asString(playbook.default_rel || "sponsored nofollow"),
+    bannerSlotStrategy: asArray(playbook.banner_slot_strategy).map((strategy) => {
+      const item = asRecord(strategy);
+      return {
+        slot: asString(item.slot),
+        purpose: asString(item.purpose),
+        fit: asString(item.fit),
+      };
+    }),
+    priorityRules: asArray(playbook.priority_rules).map((rule) => {
+      const item = asRecord(rule);
+      return { id: asString(item.id), rule: asString(item.rule) };
+    }),
+  };
+}
+
 function loadAffiliateInventory() {
   const sourceDir = resolve(AFFILIATE_SOURCE_DIR);
   const inventoryPath = join(sourceDir, "inventory.yml");
@@ -278,6 +370,7 @@ function loadAffiliateInventory() {
   const inventory = readYaml(inventoryPath);
   const merchants = readYaml(merchantsPath);
   const programs = asArray(inventory.programs).map(normalizeProgram);
+  const affiliateItems = buildAffiliateItems(programs);
   const highValueCandidates = asArray(merchants.high_value_candidates_seen)
     .map(normalizeCandidate)
     .sort((a, b) => b.commissionKrw - a.commissionKrw);
@@ -302,6 +395,8 @@ function loadAffiliateInventory() {
     sourcePolicy: asString(inventory.source_policy || merchants.source_policy),
     lastManualSync: asString(inventory.last_manual_sync),
     programs,
+    affiliateItems,
+    playbook: normalizePlaybook(inventory.playbook),
     ripplealba: {
       programId: asString(merchants.affiliate_program_id),
       programName: asString(merchants.affiliate_program_name),
@@ -343,6 +438,7 @@ function main() {
         affiliateGeneratedAt: affiliate.generatedAt,
         placements: banner.counts.placements,
         affiliatePrograms: affiliate.programs.length,
+        affiliateItems: affiliate.affiliateItems.length,
         highValueCandidates: affiliate.ripplealba.highValueCandidates.length,
       },
       null,
@@ -351,4 +447,6 @@ function main() {
   );
 }
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}

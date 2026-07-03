@@ -1,4 +1,4 @@
-import {
+﻿import {
   DashboardTabs,
   type DashboardTabItem,
 } from "./components/dashboard-tabs.js";
@@ -21,46 +21,45 @@ export default function DashboardPage() {
   const tabs: DashboardTabItem[] = [
     {
       id: "overview",
-      label: "오늘",
-      panelLabel: "오늘",
-      count: formatNumber(
-        data.failedCount +
-          data.trafficDropStats.length +
-          data.monetizationIssueCount,
-      ),
+      label: "Today",
+      panelLabel: "Today",
+      count: formatNumber(data.failedCount + data.trafficDropStats.length + data.monetizationIssueCount),
       content: <TodaySection data={data} />,
     },
     {
       id: "sites",
-      label: "사이트",
-      panelLabel: "사이트",
+      label: "Sites",
+      panelLabel: "Sites",
       count: formatNumber(data.siteCount),
       content: (
-        <SiteStatsTable
-          stats={data.stats}
-          failedCount={data.failedCount}
-          segments={data.segments}
-        />
+        <SiteStatsTable stats={data.stats} failedCount={data.failedCount} segments={data.segments} />
       ),
     },
     {
       id: "insights",
-      label: "인사이트",
-      panelLabel: "인사이트",
+      label: "Insights",
+      panelLabel: "Insights",
       count: formatNumber(data.insights.length),
       content: <InsightsSection data={data} />,
     },
     {
+      id: "banners",
+      label: "Banners",
+      panelLabel: "Banner Ops",
+      count: formatNumber(monetization.bannerManagement.counts.activePlacements),
+      content: <BannerManagementSection data={monetization.bannerManagement} />,
+    },
+    {
       id: "affiliates",
-      label: "제휴",
-      panelLabel: "어필리에이트 목록",
-      count: formatNumber(monetization.affiliateInventory.programs.length),
+      label: "Affiliate Items",
+      panelLabel: "Affiliate Items",
+      count: formatNumber((monetization.affiliateInventory.affiliateItems ?? []).length),
       content: <AffiliateInventorySection data={monetization.affiliateInventory} />,
     },
     {
       id: "settings",
-      label: "설정",
-      panelLabel: "설정",
+      label: "Settings",
+      panelLabel: "Settings",
       content: <SupportPanel data={data} />,
     },
   ];
@@ -71,14 +70,13 @@ export default function DashboardPage() {
         active="dashboard"
         eyebrow="GA4 + GSC + AdSense Multi-Site Dashboard"
         status={updatedAt}
-        title="사이트별 인사이트 대시보드"
+        title="Multi-Site Operations Dashboard"
       />
 
       <DashboardTabs items={tabs} />
     </main>
   );
 }
-
 function TodaySection({
   data,
 }: {
@@ -501,7 +499,6 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function BannerManagementSection({
   data,
 }: {
@@ -640,45 +637,156 @@ function AffiliateInventorySection({
 }: {
   data: ReturnType<typeof getMonetizationWorkspaceData>["affiliateInventory"];
 }) {
+  const allAffiliateItems = data.affiliateItems ?? [];
+  const playbook = data.playbook ?? {
+    bannerSlotStrategy: [],
+    defaultRel: "sponsored nofollow",
+    disclosureTemplateEn: "This page may contain affiliate links.",
+    disclosureTemplateKo: "이 페이지에는 제휴 링크가 포함될 수 있습니다.",
+    priorityRules: [],
+  };
   const highValueCandidates = data.ripplealba.highValueCandidates.slice(0, 12);
+  const affiliateItems = allAffiliateItems.slice(0, 18);
+  const p0Items = allAffiliateItems.filter((item) => item.priority === "p0").length;
+  const bannerReadyItems = allAffiliateItems.filter((item) =>
+    ["high", "medium"].includes(item.bannerSuitability),
+  ).length;
+  const manualReviewItems = allAffiliateItems.filter((item) =>
+    item.priority === "manual" || item.risk === "high" || item.approvalDifficulty === "high",
+  ).length;
 
   return (
     <div className="workspace-stack">
-      <div className="summary-grid" aria-label="어필리에이트 요약">
+      <article className="panel affiliate-hub-panel">
+        <div className="panel-heading">
+          <div>
+            <h2>Affiliate Item Hub</h2>
+            <p>
+              Domestic and global affiliate programs are normalized into banner-ready items with
+              priority, fit, risk, disclosure, and next action fields.
+            </p>
+          </div>
+          <span>{formatNumber(allAffiliateItems.length)} items</span>
+        </div>
+        <div className="affiliate-playbook-grid">
+          <div className="affiliate-playbook-card">
+            <strong>Disclosure</strong>
+            <p>{playbook.disclosureTemplateKo || playbook.disclosureTemplateEn}</p>
+            <code>rel="{playbook.defaultRel || "sponsored nofollow"}"</code>
+          </div>
+          {playbook.bannerSlotStrategy.slice(0, 4).map((slot) => (
+            <div className="affiliate-playbook-card" key={slot.slot}>
+              <strong>{slot.slot}</strong>
+              <p>{slot.purpose}</p>
+              <small>{slot.fit}</small>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <div className="summary-grid" aria-label="Affiliate item summary">
         <StatusCard
-          label="프로그램"
+          label="Programs"
           value={formatNumber(data.programs.length)}
-          hint={`마지막 수동 동기화 ${data.lastManualSync || "-"}`}
+          hint={`Last sync ${data.lastManualSync || "-"}`}
         />
         <StatusCard
-          label="리플알바 머천트"
-          value={formatNumber(data.ripplealba.merchantTotalReported)}
-          hint={`원장 항목 ${formatNumber(data.ripplealba.merchantEntryCount)}개`}
+          label="P0 items"
+          value={formatNumber(p0Items)}
+          hint="Start here for first revenue wiring"
         />
         <StatusCard
-          label="고단가 후보"
-          value={formatNumber(data.ripplealba.highValueCandidates.length)}
-          hint="수수료 기준 내림차순"
+          label="Banner ready"
+          value={formatNumber(bannerReadyItems)}
+          hint="High or medium banner suitability"
         />
         <StatusCard
-          label="카테고리"
-          value={formatNumber(data.ripplealba.categoriesSeen.length)}
-          hint={data.sourcePolicy || "metadata_only"}
+          label="Manual review"
+          value={formatNumber(manualReviewItems)}
+          hint="High risk, high approval, or manual priority"
         />
       </div>
+
+      <article className="panel workspace-table-panel affiliate-item-table">
+        <div className="panel-heading">
+          <div>
+            <h2>Affiliate Items for Site + Banner Setup</h2>
+            <p>
+              Use these rows as the source for tracking links, banner creatives, and site-level
+              monetization settings.
+            </p>
+          </div>
+          <span>{formatNumber(affiliateItems.length)} shown</span>
+        </div>
+        <div className="workspace-table-wrap">
+          <table className="workspace-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Region</th>
+                <th>Payout</th>
+                <th>Fit</th>
+                <th>Banner</th>
+                <th>Risk</th>
+                <th>Next action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {affiliateItems.length === 0 ? (
+                <tr>
+                  <td colSpan={7}>No affiliate items have been normalized yet.</td>
+                </tr>
+              ) : (
+                affiliateItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <strong>{item.title}</strong>
+                      <small>
+                        {item.network} / {item.category}
+                      </small>
+                      <small>
+                        <a href={item.applyUrl}>Apply</a>
+                        {" / "}
+                        <a href={item.sourceUrl}>Source</a>
+                      </small>
+                    </td>
+                    <td>
+                      <span className={`badge affiliate-priority-${item.priority}`}>
+                        {item.priority}
+                      </span>
+                      <small>{item.region}</small>
+                    </td>
+                    <td>{item.payoutModel}</td>
+                    <td>{formatStringList(item.contentFit, 3)}</td>
+                    <td>
+                      <strong>{item.bannerSuitability}</strong>
+                      <small>{formatStringList(item.recommendedSlots, 2)}</small>
+                    </td>
+                    <td>
+                      <span className={`badge affiliate-risk-${item.risk}`}>{item.risk}</span>
+                      <small>{item.approvalDifficulty}</small>
+                    </td>
+                    <td>{item.nextAction}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </article>
 
       <div className="workspace-grid">
         <article className="panel">
           <div className="panel-heading">
             <div>
-              <h2>제휴 프로그램</h2>
-              <p>멀티 대시보드 내부 affiliates 원장을 직접 읽습니다.</p>
+              <h2>Program Inventory</h2>
+              <p>Official affiliate sources and application paths tracked for monetization setup.</p>
             </div>
             <span>{formatShortDateTime(data.generatedAt)}</span>
           </div>
           <div className="workspace-card-list">
             {data.programs.length === 0 ? (
-              <p className="muted-text">등록된 제휴 프로그램이 없습니다.</p>
+              <p className="muted-text">No affiliate programs are registered.</p>
             ) : (
               data.programs.map((program) => (
                 <div className="workspace-card" key={program.id}>
@@ -687,10 +795,18 @@ function AffiliateInventorySection({
                     <span>{program.category || "uncategorized"}</span>
                   </div>
                   <b>{program.status}</b>
-                  <p>{program.nextAction || program.notes || "다음 액션 없음"}</p>
+                  <p>{program.nextAction || program.notes || "No next action recorded."}</p>
                   <small>
-                    공시 필요: {program.disclosureRequired ? "yes" : "no"} · 머천트{" "}
-                    {formatNumber(program.merchantTotalReported)}
+                    {program.region || "GLOBAL"} / {program.bannerSuitability || "manual"} banner fit
+                  </small>
+                  <small>
+                    <a href={program.applyUrl || program.homepageUrl || program.platformUrl}>
+                      Apply
+                    </a>
+                    {" / "}
+                    <a href={program.sourceUrl || program.homepageUrl || program.platformUrl}>
+                      Source
+                    </a>
                   </small>
                 </div>
               ))
@@ -701,25 +817,25 @@ function AffiliateInventorySection({
         <article className="panel">
           <div className="panel-heading">
             <div>
-              <h2>브레인 원장</h2>
-              <p>비밀값 없이 운영 메타데이터만 표시합니다.</p>
+              <h2>Operations Source</h2>
+              <p>Local metadata files drive the page and banner console defaults.</p>
             </div>
           </div>
           <div className="command-list">
             <div className="command-row">
-              <span>운영 방식</span>
+              <span>Source kind</span>
               <code>{data.source.sourceKind}</code>
             </div>
             <div className="command-row">
-              <span>inventory.yml</span>
+              <span>Affiliate inventory</span>
               <code>{data.source.inventoryPath}</code>
             </div>
             <div className="command-row">
-              <span>ripplealba-merchants.yml</span>
+              <span>RippleAlba merchants</span>
               <code>{data.source.merchantsPath}</code>
             </div>
             <div className="command-row">
-              <span>스냅샷 갱신</span>
+              <span>Refresh command</span>
               <code>pnpm ops:monetization</code>
             </div>
           </div>
@@ -729,28 +845,28 @@ function AffiliateInventorySection({
       <article className="panel workspace-table-panel">
         <div className="panel-heading">
           <div>
-            <h2>리플알바 우선 후보</h2>
-            <p>수수료, 승인율, 정책 리스크 메모를 한 화면에서 봅니다.</p>
+            <h2>RippleAlba High-Value Candidates</h2>
+            <p>Commission candidates from the local RippleAlba merchant metadata snapshot.</p>
           </div>
-          <span>{formatNumber(highValueCandidates.length)}개 표시</span>
+          <span>{formatNumber(highValueCandidates.length)} shown</span>
         </div>
         <div className="workspace-table-wrap">
           <table className="workspace-table">
             <thead>
               <tr>
-                <th>후보</th>
-                <th>카테고리</th>
-                <th>수수료</th>
-                <th>신청률</th>
-                <th>승인율</th>
-                <th>프로모션</th>
-                <th>메모</th>
+                <th>Candidate</th>
+                <th>Category</th>
+                <th>Commission</th>
+                <th>Apply rate</th>
+                <th>Approval rate</th>
+                <th>Promotion</th>
+                <th>Memo</th>
               </tr>
             </thead>
             <tbody>
               {highValueCandidates.length === 0 ? (
                 <tr>
-                  <td colSpan={7}>고단가 후보가 아직 없습니다.</td>
+                  <td colSpan={7}>No high-value candidates are available yet.</td>
                 </tr>
               ) : (
                 highValueCandidates.map((candidate) => (
@@ -773,6 +889,7 @@ function AffiliateInventorySection({
       </article>
     </div>
   );
+
 }
 
 function InsightPanel({
@@ -922,6 +1039,13 @@ function formatNullablePercent(value: number | null): string {
   return value == null ? "-" : `${value.toFixed(2)}%`;
 }
 
+function formatStringList(values: string[], limit: number): string {
+  if (values.length === 0) return "-";
+  const shown = values.slice(0, limit).join(", ");
+  const hidden = values.length - limit;
+  return hidden > 0 ? `${shown} +${hidden}` : shown;
+}
+
 function formatDecimal(value: number): string {
   return value.toFixed(1);
 }
@@ -1053,3 +1177,5 @@ function getTrafficCauseDetail(
   }
   return "단기 변동입니다. 7일 추세가 이어지는지 확인하세요.";
 }
+
+

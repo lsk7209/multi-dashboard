@@ -5,7 +5,7 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ["node_modules/**", "dist/**", ".next/**"],
+    ignores: ["node_modules/**", "dist/**", ".next/**", "test-results/**", "playwright-report/**"],
   },
   {
     files: ["scripts/**/*.mjs"],

@@ -45,19 +45,57 @@ export interface AffiliateProgramSummary {
   id: string;
   name: string;
   status: string;
+  priority?: string;
+  region?: string;
+  network?: string;
   category: string;
   platformUrl: string;
+  homepageUrl?: string;
+  applyUrl?: string;
+  sourceUrl?: string;
   countries: string[];
   usedBySites: string[];
   usedByAppsInToss: string[];
   publicTrackingLabel: string;
   disclosureRequired: boolean;
   disclosureNote: string;
+  monetizationModel?: string;
+  payoutModel?: string;
+  approvalDifficulty?: string;
+  bannerSuitability?: string;
+  deepLinkTemplate?: string;
+  contentFit?: string[];
+  recommendedSlots?: string[];
+  allowedSites?: string[];
+  risk?: string;
+  complianceNotes?: string[];
   merchantTotalReported: number;
   merchantSnapshotFile: string;
   lastReviewed: string;
   nextAction: string;
   notes: string;
+}
+
+export interface AffiliateItemSummary {
+  id: string;
+  programId: string;
+  title: string;
+  status: string;
+  priority: string;
+  region: string;
+  network: string;
+  category: string;
+  payoutModel: string;
+  approvalDifficulty: string;
+  bannerSuitability: string;
+  contentFit: string[];
+  recommendedSlots: string[];
+  allowedSites: string[];
+  applyUrl: string;
+  sourceUrl: string;
+  nextAction: string;
+  risk: string;
+  complianceNotes: string[];
 }
 
 export interface AffiliateCandidateSummary {
@@ -87,6 +125,14 @@ export interface AffiliateInventorySnapshot {
   sourcePolicy: string;
   lastManualSync: string;
   programs: AffiliateProgramSummary[];
+  affiliateItems: AffiliateItemSummary[];
+  playbook: {
+    disclosureTemplateKo: string;
+    disclosureTemplateEn: string;
+    defaultRel: string;
+    bannerSlotStrategy: Array<{ slot: string; purpose: string; fit: string }>;
+    priorityRules: Array<{ id: string; rule: string }>;
+  };
   ripplealba: {
     programId: string;
     programName: string;
@@ -150,6 +196,16 @@ const EMPTY_AFFILIATES: AffiliateInventorySnapshot = {
   sourcePolicy: "metadata_only",
   lastManualSync: "",
   programs: [],
+  affiliateItems: [],
+  playbook: {
+    disclosureTemplateKo:
+      "이 글에는 제휴 링크가 포함되어 있으며, 링크를 통한 구매 또는 가입 시 일정액의 수수료를 받을 수 있습니다.",
+    disclosureTemplateEn:
+      "This content contains affiliate links. We may earn a commission when you buy or sign up through these links.",
+    defaultRel: "sponsored nofollow",
+    bannerSlotStrategy: [],
+    priorityRules: [],
+  },
   ripplealba: {
     programId: "",
     programName: "",

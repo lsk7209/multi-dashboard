@@ -1,67 +1,1002 @@
-# Affiliate operating inventory.
+﻿# Affiliate operating inventory.
 # Store metadata only. Never store passwords, API tokens, bank details, tax IDs, or private account files.
 # Status examples: candidate, applied, approved, active, paused, rejected, terminated.
 
 source_policy: metadata_only
-last_manual_sync: "2026-06-28"
+last_manual_sync: "2026-07-03"
+playbook:
+  disclosure_template_ko: "이 글에는 제휴 링크가 포함될 수 있으며, 링크를 통한 구매 또는 가입 시 일정액의 수수료를 받을 수 있습니다."
+  disclosure_template_en: "This content contains affiliate links. We may earn a commission when you buy or sign up through these links."
+  default_rel: "sponsored nofollow"
+  banner_slot_strategy:
+    - slot: "article-mid-728x90"
+      purpose: "Comparison/review articles after the first useful answer."
+      fit: "Coupang, Amazon, eBay, Booking, SaaS trials"
+    - slot: "sidebar-300x250"
+      purpose: "Evergreen tools and marketplace offers on desktop."
+      fit: "SaaS, affiliate networks, shopping category offers"
+    - slot: "after-content-728x90"
+      purpose: "Decision-stage CTA after the article has answered intent."
+      fit: "High-intent product, travel, software, finance-safe lead offers"
+    - slot: "mobile-inline-320x100"
+      purpose: "Low-height mobile placement for strong single offer."
+      fit: "Coupang, Naver Shopping Connect, Amazon, Grammarly"
+  priority_rules:
+    - id: p0
+      rule: "Start with programs that match broad site inventory, allow links/banners, and have clear public onboarding."
+    - id: p1
+      rule: "Use selective networks after site category pages, disclosure, and traffic proof are ready."
+    - id: manual
+      rule: "Do not deploy until commission, approval status, and promotional restrictions are verified inside the account."
+
 programs:
-  - id: ripplealba
-    name: 리플알바
+  - id: coupang-partners
+    name: Coupang Partners
     status: candidate
-    platform_url: ""
-    category: affiliate_network
-    countries:
-      - KR
-    used_by:
-      sites: []
-      appsintoss: []
+    priority: p0
+    region: KR
+    network: Coupang
+    category: ecommerce
+    platform_url: "https://partners.coupang.com/"
+    homepage_url: "https://partners.coupang.com/"
+    apply_url: "https://partners.coupang.com/"
+    source_url: "https://partners.coupangcdn.com/partners-guide/partners-guide-20240716100922.pdf"
+    countries: [KR]
+    monetization_model: "Product deep links, short links, and display/banner creatives."
+    payout_model: "CPS; official guide has stated 3% on eligible transaction amount, but verify current category terms before publishing."
+    approval_difficulty: low
+    banner_suitability: high
+    deep_link_template: "Generate inside Coupang Partners; do not hand-build tracking URLs."
+    content_fit:
+      - "shopping guides"
+      - "product reviews"
+      - "household, beauty, baby, electronics, seasonal deals"
+    recommended_slots:
+      - "article-mid-728x90"
+      - "after-content-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
     tracking:
-      public_label: ""
+      public_label: "coupang-partners"
       secret_location: ""
     disclosure:
       required: true
-      note: "제휴·광고성 콘텐츠 표시 필요."
-    payout:
-      threshold: ""
-      cycle: ""
+      note: "Korean economic-interest disclosure must be close to the recommendation/link."
     operations:
       owner: ""
       review_interval_days: 30
-      last_reviewed: "2026-06-28"
-      last_sync_source: "manual_user_input"
-      last_session_reflection: ""
-      digest_check_at: ""
-      digest_items_handled: []
-      next_action: "머천트 원장을 계속 수집하고 카테고리별 우선순위를 선정한다."
-    merchant_total_reported: 390
-    merchant_snapshot_file: affiliates/ripplealba-merchants.yml
-    notes: "사용자가 제공한 리플알바 머천트 목록을 별도 원장 파일로 관리한다."
+      last_reviewed: "2026-07-03"
+      next_action: "Apply or confirm existing account, create site/channel list, then create first product-review banner link."
+    risk: medium
+    compliance_notes:
+      - "Use clear Korean affiliate disclosure near each recommendation."
+      - "Use rel=sponsored nofollow for links."
+      - "Verify current commission, cookie, prohibited traffic, and API rules in the account."
+    notes: "Best first Korean commerce candidate for broad content sites."
 
-# Example:
-# programs:
-#   - id: coupang-partners
-#     name: Coupang Partners
-#     status: active
-#     platform_url: https://partners.coupang.com/
-#     category: ecommerce
-#     countries:
-#       - KR
-#     used_by:
-#       sites: []
-#       appsintoss: []
-#     tracking:
-#       public_label: ""
-#       secret_location: <local-secret-dir>/affiliate-account.txt
-#     disclosure:
-#       required: true
-#       note: ""
-#     payout:
-#       threshold: ""
-#       cycle: ""
-#     operations:
-#       last_reviewed: ""
-#       last_session_reflection: ""
-#       digest_check_at: ""
-#       digest_items_handled: []
-#       next_action: ""
-#     notes: ""
+  - id: coupang-influencers
+    name: Coupang Influencers
+    status: candidate
+    priority: p1
+    region: KR
+    network: Coupang
+    category: creator_commerce
+    platform_url: "https://influencers.coupang.com/"
+    homepage_url: "https://influencers.coupang.com/"
+    apply_url: "https://influencers.coupang.com/"
+    source_url: "https://influencers.coupang.com/"
+    countries: [KR]
+    monetization_model: "Creator storefront and recommended product links."
+    payout_model: "Base commission plus time-limited promotions may apply; verify inside program."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Coupang Influencers store/product links generated by the platform."
+    content_fit:
+      - "creator-style recommendations"
+      - "curated shopping lists"
+      - "social-friendly product collections"
+    recommended_slots:
+      - "after-content-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
+    tracking:
+      public_label: "coupang-influencers"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Show paid/affiliate relationship clearly."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Verify eligibility and whether site-owned channels can use this program."
+    risk: medium
+    compliance_notes:
+      - "Use only approved channels and generated links."
+      - "Verify promotion terms before showing bonus rates."
+    notes: "Good for shopping persona pages after basic Coupang Partners is live."
+
+  - id: naver-shopping-connect
+    name: Naver Shopping Connect
+    status: candidate
+    priority: p1
+    region: KR
+    network: Naver Brand Connect
+    category: ecommerce
+    platform_url: "https://solution.smartstore.naver.com/ko/detail/7BxhKW54rdxqi9m4N3fNcZ"
+    homepage_url: "https://solution.smartstore.naver.com/ko/detail/7BxhKW54rdxqi9m4N3fNcZ"
+    apply_url: "https://brandconnect.naver.com/"
+    source_url: "https://www.navercorp.com/media/pressReleasesDetail?seq=33116"
+    countries: [KR]
+    monetization_model: "SmartStore creator affiliate links through Brand Connect/Shopping Connect."
+    payout_model: "Revenue-share set by participating sellers/products; verify each product offer."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Shopping Connect generated links; do not replace seller/product parameters."
+    content_fit:
+      - "Naver-facing product recommendation"
+      - "beauty, living, parenting, food, local shopping"
+    recommended_slots:
+      - "article-mid-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
+    tracking:
+      public_label: "naver-shopping-connect"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Korean economic-interest disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Confirm creator/channel eligibility and collect product-level revenue share."
+    risk: medium
+    compliance_notes:
+      - "Product-level terms vary by seller."
+      - "Keep recommendation content specific to the product/store being promoted."
+    notes: "Useful where Naver search or SmartStore intent is high."
+
+  - id: naver-brand-connect
+    name: Naver Brand Connect
+    status: manual_review
+    priority: manual
+    region: KR
+    network: Naver Brand Connect
+    category: creator_campaigns
+    platform_url: "https://help.naver.com/service/30027/contents/22979?lang=ko&osType=COMMONOS"
+    homepage_url: "https://help.naver.com/service/30027/contents/22979?lang=ko&osType=COMMONOS"
+    apply_url: "https://brandconnect.naver.com/"
+    source_url: "https://help.naver.com/service/30027/contents/23408?lang=ko&osType=COMMONOS"
+    countries: [KR]
+    monetization_model: "Creator campaign and sponsored partnership flow, separate from open affiliate deep links."
+    payout_model: "Campaign or negotiated settlement; verify per campaign before publishing."
+    approval_difficulty: high
+    banner_suitability: low
+    deep_link_template: "Use campaign-provided links only after approval."
+    content_fit:
+      - "creator collaborations"
+      - "sponsored editorial"
+      - "Naver Blog, Instagram, YouTube channel campaigns"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "naver-brand-connect"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Campaign sponsorship/economic-interest disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 60
+      last_reviewed: "2026-07-03"
+      next_action: "Keep as manual-review campaign source; do not wire as a normal banner affiliate until campaign terms are approved."
+    risk: high
+    compliance_notes:
+      - "Not a general self-serve affiliate network for every owned site."
+      - "Each campaign can define channel, wording, and settlement restrictions."
+    notes: "Useful for campaign monetization, but should not be mixed with auto banner rotation."
+
+  - id: naver-shopping-live
+    name: Naver Shopping Live Partnership
+    status: manual_review
+    priority: manual
+    region: KR
+    network: Naver
+    category: live_commerce
+    platform_url: "https://help.naver.com/service/21349/contents/14569?lang=ko"
+    homepage_url: "https://help.naver.com/service/21349/contents/14569?lang=ko"
+    apply_url: "https://help.naver.com/service/21349/contents/14569?lang=ko"
+    source_url: "https://help.naver.com/service/21349/contents/14570?lang=ko"
+    countries: [KR]
+    monetization_model: "Proposal-based live-commerce partnership."
+    payout_model: "Negotiated per live event or campaign; verify manually."
+    approval_difficulty: high
+    banner_suitability: low
+    deep_link_template: "Use approved live-event URLs only."
+    content_fit:
+      - "launch events"
+      - "seasonal live deals"
+      - "brand collaboration pages"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "naver-shopping-live"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Sponsored/live-commerce relationship must be disclosed."
+    operations:
+      owner: ""
+      review_interval_days: 60
+      last_reviewed: "2026-07-03"
+      next_action: "Treat as proposal-only monetization; create banners only after event approval and date validation."
+    risk: high
+    compliance_notes:
+      - "Do not present as an open affiliate program."
+      - "Remove or expire banners after event end dates."
+    notes: "Manual live-commerce option for event pages, not evergreen affiliate inventory."
+
+  - id: naver-adpost
+    name: Naver AdPost
+    status: manual_review
+    priority: manual
+    region: KR
+    network: Naver
+    category: display_ads
+    platform_url: "https://adpost.naver.com/"
+    homepage_url: "https://adpost.naver.com/"
+    apply_url: "https://adpost.naver.com/"
+    source_url: "https://help.naver.com/support/contents/contents.help?categoryNo=9418&serviceNo=726"
+    countries: [KR]
+    monetization_model: "Naver media ad revenue share, not a normal off-site affiliate program."
+    payout_model: "Revenue share from ads shown/clicked on eligible Naver media; criteria are controlled by Naver."
+    approval_difficulty: high
+    banner_suitability: low
+    deep_link_template: "Not applicable to this dashboard's banner redirect system."
+    content_fit:
+      - "Naver Blog/Cafe media"
+      - "Naver ecosystem content"
+    recommended_slots: []
+    allowed_sites: []
+    tracking:
+      public_label: "naver-adpost"
+      secret_location: ""
+    disclosure:
+      required: false
+      note: "Ad platform disclosure differs from affiliate endorsement disclosure."
+    operations:
+      owner: ""
+      review_interval_days: 60
+      last_reviewed: "2026-07-03"
+      next_action: "Track as a Naver media monetization option, but do not wire into banner redirects."
+    risk: high
+    compliance_notes:
+      - "Keep separate from affiliate link management."
+      - "Eligibility and revenue share are platform-controlled."
+    notes: "Included for completeness; not a banner item for owned Next.js/WordPress sites."
+
+  - id: linkprice
+    name: LinkPrice
+    status: candidate
+    priority: p1
+    region: KR
+    network: LinkPrice
+    category: affiliate_network
+    platform_url: "https://www.linkprice.com/"
+    homepage_url: "https://www.linkprice.com/"
+    apply_url: "https://www.linkprice.com/"
+    source_url: "https://www.linkprice.com/"
+    countries: [KR]
+    monetization_model: "Korean affiliate network for CPS/CPL/CPC merchant campaigns."
+    payout_model: "Varies by merchant and campaign; verify per offer."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use LinkPrice tracking/deep-link builder per merchant."
+    content_fit:
+      - "shopping, travel, finance, education, subscription services"
+      - "Korea-focused comparison pages"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "linkprice"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate/ad disclosure required near promotional content."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Apply and export merchant list by site category; avoid high-risk finance/medical offers until review."
+    risk: medium
+    compliance_notes:
+      - "Merchant terms vary; collect landing URL, allowed media, and prohibited keywords."
+      - "Be alert for impersonation/phishing warnings; only use official login/domain."
+    notes: "Good network layer after first direct programs."
+
+  - id: tenping
+    name: Tenping
+    status: candidate
+    priority: p2
+    region: KR
+    network: Tenping
+    category: affiliate_network
+    platform_url: "https://tenping.kr/"
+    homepage_url: "https://tenping.kr/"
+    apply_url: "https://tenping.kr/"
+    source_url: "https://tenping.kr/"
+    countries: [KR]
+    monetization_model: "Campaign links generated from Tenping for blog/SNS promotion."
+    payout_model: "Varies by campaign; verify offer terms before publication."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Tenping generated promotion URL."
+    content_fit:
+      - "viral content"
+      - "campaign-specific CPA offers"
+      - "SNS/blog mixed traffic"
+    recommended_slots:
+      - "after-content-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
+    tracking:
+      public_label: "tenping"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Show economic-interest disclosure clearly."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Use only after campaign compliance review and landing page quality check."
+    risk: high
+    compliance_notes:
+      - "CPA campaigns can carry aggressive claims; review copy manually."
+      - "Do not use sensitive offers without legal/policy review."
+    notes: "Useful but should be gated behind stricter campaign review."
+
+  - id: amazon-associates
+    name: Amazon Associates
+    status: candidate
+    priority: p0
+    region: GLOBAL
+    network: Amazon
+    category: ecommerce
+    platform_url: "https://affiliate-program.amazon.com/"
+    homepage_url: "https://affiliate-program.amazon.com/"
+    apply_url: "https://affiliate-program.amazon.com/"
+    source_url: "https://affiliate-program.amazon.com/help/operating/policies"
+    countries: [US, GLOBAL]
+    monetization_model: "Product links, Native Shopping Ads, banners, and store/product recommendations."
+    payout_model: "Category-based standard commission income on qualifying purchases; verify current rate table."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use SiteStripe or Amazon Associates link generator with correct tracking tag."
+    content_fit:
+      - "English product reviews"
+      - "software/hardware buying guides"
+      - "global shopping posts"
+    recommended_slots:
+      - "article-mid-728x90"
+      - "after-content-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
+    tracking:
+      public_label: "amazon-associates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Amazon requires clear associate identification and legally compliant disclosure."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Apply with English/global sites and add required Amazon Associate disclosure text."
+    risk: medium
+    compliance_notes:
+      - "Do not cloak or alter Amazon links outside allowed tools."
+      - "Display Amazon-required associate disclosure where applicable."
+      - "Verify use of images/prices through approved tools/API."
+    notes: "Best global ecommerce baseline."
+
+  - id: ebay-partner-network
+    name: eBay Partner Network
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: eBay
+    category: ecommerce_marketplace
+    platform_url: "https://partnernetwork.ebay.com/"
+    homepage_url: "https://partnernetwork.ebay.com/"
+    apply_url: "https://partnernetwork.ebay.com/"
+    source_url: "https://partnernetwork.ebay.com/our-program/rate-card"
+    countries: [US, GLOBAL]
+    monetization_model: "Listing/category links, campaigns, and marketplace banners."
+    payout_model: "Percentage of qualifying transaction GMB by category; caps may apply."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use EPN link generator or API/campaign tools."
+    content_fit:
+      - "collectibles"
+      - "used/refurbished products"
+      - "parts, niche gear, comparison content"
+    recommended_slots:
+      - "article-mid-728x90"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "ebay-partner-network"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Apply for global shopping/niche product sites after Amazon/Coupang baseline."
+    risk: medium
+    compliance_notes:
+      - "Review rate caps and prohibited traffic."
+      - "Avoid misleading discount/voucher claims."
+    notes: "Strong for niche and long-tail commerce articles."
+
+  - id: booking-affiliates
+    name: Booking.com Affiliate Partner Program
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Booking.com / affiliate networks
+    category: travel
+    platform_url: "https://www.booking.com/affiliate-program/v2/index.html"
+    homepage_url: "https://www.booking.com/affiliate-program/v2/index.html"
+    apply_url: "https://www.booking.com/affiliate-program/v2/index.html"
+    source_url: "https://www.booking.com/affiliate-program/v2/index.html"
+    countries: [GLOBAL]
+    monetization_model: "Travel accommodation search boxes, links, widgets, and banners."
+    payout_model: "Commission on eligible completed travel bookings; exact rate/network terms vary."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Booking.com partner tools or network tracking links."
+    content_fit:
+      - "travel guides"
+      - "city itineraries"
+      - "hotel comparisons"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "booking-affiliates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required near travel recommendations."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Use only on travel-intent sites/pages; configure city/deep-link templates per article."
+    risk: medium
+    compliance_notes:
+      - "Do not claim unavailable discounts."
+      - "Use truthful availability/ranking language."
+    notes: "Good match for travel and local guide inventory."
+
+  - id: impact-marketplace
+    name: impact.com Marketplace
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: impact.com
+    category: affiliate_network
+    platform_url: "https://impact.com/partners/"
+    homepage_url: "https://impact.com/partners/"
+    apply_url: "https://impact.com/partners/"
+    source_url: "https://impact.com/partners/"
+    countries: [GLOBAL]
+    monetization_model: "Brand partnerships, affiliate links, promo assets, and publisher reporting."
+    payout_model: "Varies by advertiser contract."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use impact.com tracking link/deep-link builder per joined advertiser."
+    content_fit:
+      - "software"
+      - "commerce"
+      - "finance-safe comparisons"
+      - "premium brand reviews"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "impact-marketplace"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required; advertiser terms can add wording."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Create publisher profile and shortlist brands by site category."
+    risk: medium
+    compliance_notes:
+      - "Each advertiser has separate approval and promotional restrictions."
+      - "Store advertiser IDs and terms before enabling banners."
+    notes: "Best global network layer for diverse sites."
+
+  - id: cj-affiliate
+    name: CJ Affiliate
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: CJ
+    category: affiliate_network
+    platform_url: "https://www.cj.com/publisher"
+    homepage_url: "https://www.cj.com/publisher"
+    apply_url: "https://signup.cj.com/member/signup/publisher/"
+    source_url: "https://www.cj.com/publisher"
+    countries: [GLOBAL]
+    monetization_model: "Publisher network links, brand programs, widgets, and creatives."
+    payout_model: "Varies by advertiser."
+    approval_difficulty: high
+    banner_suitability: high
+    deep_link_template: "Use CJ deep links and advertiser creatives after approval."
+    content_fit:
+      - "established content sites"
+      - "shopping, finance-safe, software, travel"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "cj-affiliate"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required; advertiser terms may add restrictions."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply after preparing traffic proof and site category descriptions."
+    risk: medium
+    compliance_notes:
+      - "Expect advertiser-by-advertiser approval."
+      - "Avoid unsupported coupon/voucher claims."
+    notes: "Selective but strong once sites have traffic and clear niches."
+
+  - id: awin
+    name: Awin
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Awin
+    category: affiliate_network
+    platform_url: "https://www.awin.com/"
+    homepage_url: "https://www.awin.com/"
+    apply_url: "https://www.awin.com/us/pricing/affiliate-partners"
+    source_url: "https://www.awin.com/us/pricing/affiliate-partners"
+    countries: [US, UK, EU, GLOBAL]
+    monetization_model: "Affiliate links across brand advertisers and publisher reporting."
+    payout_model: "Varies by advertiser; publisher signup advertised as no cost."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Awin link builder per joined advertiser."
+    content_fit:
+      - "commerce"
+      - "software"
+      - "fashion/lifestyle"
+      - "international content"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "awin"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply and map advertisers to site categories; treat ShareASale legacy programs under Awin where applicable."
+    risk: medium
+    compliance_notes:
+      - "Advertiser terms vary."
+      - "Confirm whether each brand supports your country/site."
+    notes: "Broad global network for non-Korean programs."
+
+  - id: rakuten-advertising
+    name: Rakuten Advertising
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: Rakuten Advertising
+    category: affiliate_network
+    platform_url: "https://rakutenadvertising.com/publishers/"
+    homepage_url: "https://rakutenadvertising.com/publishers/"
+    apply_url: "https://rakutenadvertising.com/publishers/"
+    source_url: "https://pubhelp.rakutenadvertising.com/hc/en-us/articles/360059970591-Affiliate-Marketing-101-Video"
+    countries: [GLOBAL]
+    monetization_model: "Publisher network programs and creatives."
+    payout_model: "Varies by advertiser."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use Rakuten network tracking tools after approval."
+    content_fit:
+      - "premium brands"
+      - "shopping"
+      - "lifestyle"
+      - "global content"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "rakuten-advertising"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply after P0/P1 networks or where a target brand exists only on Rakuten."
+    risk: medium
+    compliance_notes:
+      - "Advertiser approvals and countries differ."
+      - "Collect terms before enabling banners."
+    notes: "Useful for premium brand coverage."
+
+  - id: partnerstack-marketplace
+    name: PartnerStack Marketplace
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: PartnerStack
+    category: b2b_saas
+    platform_url: "https://market.partnerstack.com/"
+    homepage_url: "https://partnerstack.com/"
+    apply_url: "https://market.partnerstack.com/"
+    source_url: "https://partnerstack.com/"
+    countries: [GLOBAL]
+    monetization_model: "B2B SaaS affiliate/referral marketplace."
+    payout_model: "Varies by vendor; may include fixed bounty and/or revenue share."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use PartnerStack vendor-specific tracking links."
+    content_fit:
+      - "AI tools"
+      - "business software"
+      - "productivity"
+      - "marketing operations"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "partnerstack"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Shortlist SaaS offers that match AI/business/tool sites."
+    risk: medium
+    compliance_notes:
+      - "Vendor programs can close or pause."
+      - "Verify allowed bidding/email/coupon terms."
+    notes: "Good for tool-review and AI/software sites."
+
+  - id: shopify-affiliates
+    name: Shopify Affiliate Program
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Shopify
+    category: ecommerce_saas
+    platform_url: "https://www.shopify.com/affiliates"
+    homepage_url: "https://www.shopify.com/affiliates"
+    apply_url: "https://www.shopify.com/affiliates"
+    source_url: "https://help.shopify.com/en/affiliates/about"
+    countries: [GLOBAL]
+    monetization_model: "Referral link for new merchants signing up for paid Shopify plans."
+    payout_model: "Commission on eligible paid merchant referrals; verify current terms."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Shopify affiliate referral link generated after approval."
+    content_fit:
+      - "online business"
+      - "smart seller"
+      - "ecommerce setup"
+      - "side-hustle guides"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "shopify-affiliates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Match to seller/ecommerce sites and create tutorial CTAs."
+    risk: medium
+    compliance_notes:
+      - "Do not promise income outcomes."
+      - "Use current plan/pricing facts only."
+    notes: "Strong SaaS affiliate for ecommerce education content."
+
+  - id: hubspot-affiliates
+    name: HubSpot Affiliate Program
+    status: candidate
+    priority: p0
+    region: GLOBAL
+    network: HubSpot
+    category: b2b_saas
+    platform_url: "https://www.hubspot.com/partners/affiliates"
+    homepage_url: "https://www.hubspot.com/partners/affiliates"
+    apply_url: "https://www.hubspot.com/partners/affiliates"
+    source_url: "https://www.hubspot.com/company-news/hubspot-launches-its-revamped-affiliate-program"
+    countries: [GLOBAL]
+    monetization_model: "Referral links for CRM, marketing, sales, and business software audiences."
+    payout_model: "Public program materials have described 30% recurring commission up to 12 months; verify current terms before publication."
+    approval_difficulty: medium
+    banner_suitability: high
+    deep_link_template: "Use HubSpot affiliate tracking link generated after approval."
+    content_fit:
+      - "CRM comparisons"
+      - "B2B marketing"
+      - "sales operations"
+      - "startup tooling"
+    recommended_slots:
+      - "sidebar-300x250"
+      - "after-content-728x90"
+      - "article-mid-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "hubspot-affiliates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required near recommendations."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply for B2B/software sites and prepare CRM comparison CTAs after approval."
+    risk: medium
+    compliance_notes:
+      - "Do not confuse affiliate program with HubSpot solutions partner status."
+      - "Verify current recurring commission and paid-plan eligibility in account terms."
+    notes: "High-value B2B SaaS candidate for CRM and marketing content."
+
+  - id: notion-affiliates
+    name: Notion Affiliate Program
+    status: manual_review
+    priority: p2
+    region: GLOBAL
+    network: Notion / PartnerStack
+    category: productivity_saas
+    platform_url: "https://www.notion.com/affiliates"
+    homepage_url: "https://www.notion.com/affiliates"
+    apply_url: "https://www.notion.com/affiliates"
+    source_url: "https://www.notion.com/affiliates"
+    countries: [GLOBAL]
+    monetization_model: "Activated signup bounty and first-year revenue share where available."
+    payout_model: "Official page states up to $50 per activated signup plus 20% of year-one revenue; verify current availability."
+    approval_difficulty: high
+    banner_suitability: medium
+    deep_link_template: "Use PartnerStack/Notion generated links only."
+    content_fit:
+      - "productivity templates"
+      - "AI workflow"
+      - "study/business organization"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "notion-affiliates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Verify whether new affiliate applications are open before adding banners."
+    risk: high
+    compliance_notes:
+      - "Program availability may change."
+      - "Do not show payout claims unless verified in current application dashboard."
+    notes: "Good content fit, but gate behind manual availability check."
+
+  - id: semrush-affiliates
+    name: Semrush Affiliate Program
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Semrush / Impact
+    category: seo_saas
+    platform_url: "https://www.semrush.com/lp/affiliate-program/en/"
+    homepage_url: "https://www.semrush.com/lp/affiliate-program/en/"
+    apply_url: "https://www.semrush.com/lp/affiliate-program/en/"
+    source_url: "https://www.semrush.com/kb/97-affiliate-program"
+    countries: [GLOBAL]
+    monetization_model: "Tracked links and creatives for SEO software referrals."
+    payout_model: "Fixed commissions for sale or trial activation; verify current table in Impact/Semrush."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Semrush/Impact tracking links and creatives."
+    content_fit:
+      - "SEO guides"
+      - "marketing tools"
+      - "blog growth and analytics"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "semrush-affiliates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Map to SEO/content-ops sites and avoid hard ROI promises."
+    risk: medium
+    compliance_notes:
+      - "Keep pricing/features current."
+      - "Avoid guaranteed ranking claims."
+    notes: "High-intent fit for SEO/operator content."
+
+  - id: canva-canvassador
+    name: Canva Canvassador / Affiliate
+    status: candidate
+    priority: p2
+    region: GLOBAL
+    network: Canva
+    category: design_saas
+    platform_url: "https://www.canva.com/help/canva-affiliate-marketing-program/"
+    homepage_url: "https://www.canva.com/help/canva-affiliate-marketing-program/"
+    apply_url: "https://www.canva.com/help/canva-affiliate-marketing-program/"
+    source_url: "https://www.canva.com/help/canva-affiliate-marketing-program/"
+    countries: [GLOBAL]
+    monetization_model: "Affiliate/ambassador referral for design users."
+    payout_model: "Verify current Canvassador/affiliate rewards after application."
+    approval_difficulty: medium
+    banner_suitability: medium
+    deep_link_template: "Use Canva-generated partner links."
+    content_fit:
+      - "design tools"
+      - "creator templates"
+      - "small business marketing"
+    recommended_slots:
+      - "after-content-728x90"
+      - "sidebar-300x250"
+    allowed_sites: []
+    tracking:
+      public_label: "canva-canvassador"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Apply where design/creator sites exist; verify current commission and asset rules."
+    risk: medium
+    compliance_notes:
+      - "Use approved brand assets only."
+      - "Do not publish old commission claims without verification."
+    notes: "Good for creator and small-business content."
+
+  - id: grammarly-affiliates
+    name: Grammarly Affiliates
+    status: candidate
+    priority: p1
+    region: GLOBAL
+    network: Grammarly
+    category: writing_saas
+    platform_url: "https://www.grammarly.com/affiliates"
+    homepage_url: "https://www.grammarly.com/affiliates"
+    apply_url: "https://www.grammarly.com/affiliates"
+    source_url: "https://www.grammarly.com/affiliates"
+    countries: [GLOBAL]
+    monetization_model: "Writing assistant referral links and creatives."
+    payout_model: "Commission structure varies by conversion type and performer tier; verify inside account."
+    approval_difficulty: low
+    banner_suitability: medium
+    deep_link_template: "Use Grammarly affiliate link/creative generated after approval."
+    content_fit:
+      - "English writing"
+      - "study"
+      - "business email"
+      - "AI productivity"
+    recommended_slots:
+      - "after-content-728x90"
+      - "mobile-inline-320x100"
+    allowed_sites: []
+    tracking:
+      public_label: "grammarly-affiliates"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 45
+      last_reviewed: "2026-07-03"
+      next_action: "Use on English/AI/productivity sites with tutorial content."
+    risk: low
+    compliance_notes:
+      - "Keep feature claims current."
+      - "Avoid representing the product as a replacement for professional advice."
+    notes: "Fast SaaS candidate for English and productivity pages."
+
+  - id: ripplealba
+    name: RippleAlba
+    status: manual_review
+    priority: manual
+    region: KR
+    network: RippleAlba
+    category: affiliate_network
+    platform_url: ""
+    homepage_url: ""
+    apply_url: ""
+    source_url: "data/monetization/affiliates/ripplealba-merchants.yml"
+    countries: [KR]
+    monetization_model: "Captured merchant pool from prior manual input."
+    payout_model: "Varies by merchant; many offers require policy review."
+    approval_difficulty: high
+    banner_suitability: medium
+    deep_link_template: "Verify inside network before generating any public links."
+    content_fit:
+      - "campaign-specific CPA/CPS"
+    recommended_slots:
+      - "after-content-728x90"
+    allowed_sites: []
+    tracking:
+      public_label: "ripplealba"
+      secret_location: ""
+    disclosure:
+      required: true
+      note: "Affiliate/ad disclosure required."
+    operations:
+      owner: ""
+      review_interval_days: 30
+      last_reviewed: "2026-07-03"
+      next_action: "Re-capture merchant list in clean UTF-8 and reject sensitive/high-claim offers before banner use."
+    merchant_total_reported: 390
+    merchant_snapshot_file: "affiliates/ripplealba-merchants.yml"
+    risk: high
+    compliance_notes:
+      - "Current merchant snapshot contains encoding damage and empty merchant_entries."
+      - "Sensitive categories such as finance, legal, health, insurance require strict manual review."
+    notes: "Keep as legacy candidate source until clean merchant data is captured."
+
+

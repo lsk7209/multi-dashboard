@@ -1,13 +1,15 @@
 interface AppHeaderProps {
-  active: "dashboard" | "banner-management";
+  active: "dashboard" | "banner-management" | "affiliate-items" | "banner-ops";
   eyebrow: string;
   status?: string;
   title: string;
 }
 
 const NAV_ITEMS = [
-  { href: "/", id: "dashboard", label: "운영 대시보드" },
-  { href: "/banner-management", id: "banner-management", label: "제휴 배너 관리" },
+  { href: "/", id: "dashboard", label: "Dashboard" },
+  { href: "/#affiliates", id: "affiliate-items", label: "Affiliate Items" },
+  { href: "/#banners", id: "banner-ops", label: "Banner Ops" },
+  { href: "/banner-management", id: "banner-management", label: "Banner Console" },
 ] as const;
 
 export function AppHeader({ active, eyebrow, status, title }: AppHeaderProps) {
@@ -18,7 +20,7 @@ export function AppHeader({ active, eyebrow, status, title }: AppHeaderProps) {
         <h1>{title}</h1>
       </div>
       <div className="topbar-actions">
-        <nav className="header-menu" aria-label="상단 메뉴">
+        <nav className="header-menu" aria-label="Primary menu">
           {NAV_ITEMS.map((item) => (
             <a
               aria-current={active === item.id ? "page" : undefined}
@@ -31,7 +33,7 @@ export function AppHeader({ active, eyebrow, status, title }: AppHeaderProps) {
           ))}
         </nav>
         {status ? (
-          <div className="status-pill" aria-label="스냅샷 생성 시각">
+          <div className="status-pill" aria-label="Generated timestamp">
             {status}
           </div>
         ) : null}
