@@ -238,12 +238,13 @@ function CoupangChannelGate({
   registry: CoupangChannelRegistrySnapshot;
 }) {
   const channels = [...(registry.channels ?? [])].sort(compareCoupangChannels);
-  const approvedCount = channels.filter((channel) => channel.status === "approved")
-    .length;
-  const approvalScreenshotCount = channels.filter((channel) =>
+  const publicAllowedCount = channels.filter((channel) =>
+    channel.status === "approved" ||
     channel.status === "registered" || channel.status === "screenshot_submitted",
   ).length;
-  const blockedCount = channels.length - approvedCount;
+  const approvedCount = channels.filter((channel) => channel.status === "approved")
+    .length;
+  const blockedCount = channels.length - publicAllowedCount;
 
   return (
     <article className="panel workspace-table-panel affiliate-item-table">
@@ -251,20 +252,20 @@ function CoupangChannelGate({
         <div>
           <h2>쿠팡 채널 노출 게이트</h2>
           <p>
-            쿠팡 파트너스 일반 노출은 승인 완료 상태인 사이트에만 허용합니다.
-            등록/스크린샷 대기 채널은 최종 승인 증빙 목적의 제한 노출만 허용합니다.
+            쿠팡 파트너스 노출은 쿠팡 마이페이지에 등록된 채널에만 허용합니다.
+            미등록, 거절, 일시중지 채널은 링크와 배너를 차단합니다.
           </p>
         </div>
         <span>
-          일반 허용 {formatNumber(approvedCount)} / 승인용{" "}
-          {formatNumber(approvalScreenshotCount)} / 차단 {formatNumber(blockedCount)}
+          일반 허용 {formatNumber(publicAllowedCount)} / 최종 승인{" "}
+          {formatNumber(approvedCount)} / 차단 {formatNumber(blockedCount)}
         </span>
       </div>
       <div className="affiliate-playbook-grid">
         <div className="affiliate-playbook-card">
           <strong>노출 정책</strong>
-          <p>{registry.policy?.exposureMode ?? "approved_only"}</p>
-          <small>approved 상태만 쿠팡 홍보 가능</small>
+          <p>{registry.policy?.exposureMode ?? "registered_channel_allowlist"}</p>
+          <small>등록 완료 이상 채널만 쿠팡 홍보 가능</small>
         </div>
         <div className="affiliate-playbook-card">
           <strong>필수 공시</strong>
@@ -291,7 +292,10 @@ function CoupangChannelGate({
               </tr>
             ) : (
               channels.map((channel) => {
-                const allowed = channel.status === "approved";
+                const allowed =
+                  channel.status === "approved" ||
+                  channel.status === "registered" ||
+                  channel.status === "screenshot_submitted";
 
                 return (
                   <tr key={`${channel.siteId}-${channel.domain}`}>
@@ -574,11 +578,11 @@ function formatCoupangChannelStatus(status: string): string {
 function formatCoupangExposureHint(status: string): string {
   const hints: Record<string, string> = {
     approved: "일반 쿠팡 링크/배너 가능",
-    registered: "승인 스크린샷용 제한 노출만 가능",
-    screenshot_submitted: "승인 대기 중, 제한 노출만 유지",
+    registered: "등록 채널이라 일반 노출 가능",
+    screenshot_submitted: "등록 채널이라 일반 노출 가능, 최종 승인 대기",
   };
 
-  return hints[status] ?? "일반/승인용 노출 금지";
+  return hints[status] ?? "쿠팡 노출 금지";
 }
 
 function isBannerReady(item: AffiliateItemSummary): boolean {

@@ -10,7 +10,7 @@ Unregistered-channel promotion can be treated as invalid or abusive activity, so
 
 ## Approval Screenshot
 
-For final approval, publish a visible page containing a Coupang Partners link or banner, then upload a screenshot from My Page after signup.
+For final approval, publish a visible page containing a Coupang Partners link or banner on a registered channel, then upload a screenshot from My Page after signup.
 
 The 2026-06-11 Coupang Partners guide says final approval is a review of whether the registered activity page follows Partners terms and policy. The guide also says cumulative sales of 150,000 KRW trigger final approval review, performance can be tracked before final approval, but settlement and Partners API use require final approval.
 
@@ -151,11 +151,11 @@ yungyanggogo.kr
 - Maintain `data/coupang-channel-registry.json` as the exposure source of truth.
 - Treat `data/coupang-channel-registry.json` as the Coupang exposure allowlist. Any domain not listed there must be blocked.
 - `not_registered`: not added in Coupang Partners My Page, so block all Coupang links and banners.
-- `registered`: added in My Page, but final approval evidence is not complete. Allow only `purpose=approval_screenshot`; keep normal public exposure blocked.
-- `screenshot_submitted`: screenshot has been uploaded, but approval is still pending. Allow only `purpose=approval_screenshot`; keep normal public exposure blocked.
-- `approved`: registration and screenshot approval are complete, so Coupang links and banners may be shown.
+- `registered`: added in My Page, so Coupang links and banners may be shown on that registered channel with the required disclosure.
+- `screenshot_submitted`: screenshot has been uploaded, and registered-channel Coupang links and banners may stay live while final approval is pending.
+- `approved`: final approval is complete, so Coupang links and banners may be shown and settlement/API readiness can proceed.
 - `rejected` or `paused`: block all Coupang links and banners until the account issue is resolved.
-- Use `purpose=approval_screenshot` only on narrow approval evidence pages. Do not use it as a general production traffic bypass.
+- Use `purpose=approval_screenshot` only when a route needs to distinguish approval evidence traffic in logs; it is not required for normal registered-channel serving.
 - Keep Coupang Access Key and Secret Key in server-side environment variables only.
 - Use registered `affiliate.subId` only when it exists in the Coupang Partners platform.
 - Use `affiliate.subParam` for internal tracking such as `siteId.slotKey.contentSlug`.

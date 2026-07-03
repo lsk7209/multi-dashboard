@@ -141,7 +141,7 @@ export interface CoupangChannelRegistryEntry {
 export interface CoupangChannelRegistrySnapshot {
   generatedAt: string | null;
   policy: {
-    exposureMode: "approved_only";
+    exposureMode: "registered_channel_allowlist";
     requiredDisclosureKo: string;
     notes: string[];
   };
@@ -264,7 +264,7 @@ const EMPTY_AFFILIATES: AffiliateInventorySnapshot = {
 const EMPTY_COUPANG_CHANNEL_REGISTRY: CoupangChannelRegistrySnapshot = {
   generatedAt: null,
   policy: {
-    exposureMode: "approved_only",
+    exposureMode: "registered_channel_allowlist",
     requiredDisclosureKo:
       "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
     notes: [],
@@ -312,15 +312,12 @@ export function decideCoupangExposure(
     };
   }
 
-  if (
-    purpose === "approval_screenshot" &&
-    (channel.status === "registered" || channel.status === "screenshot_submitted")
-  ) {
+  if (channel.status === "registered" || channel.status === "screenshot_submitted") {
     return {
       allowed: true,
       channel,
       purpose,
-      reason: `approval_${channel.status}`,
+      reason: channel.status,
     };
   }
 

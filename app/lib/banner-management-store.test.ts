@@ -322,7 +322,7 @@ describe("banner-management-store", () => {
     expect(finalPlacement.imageRequests).toBe(1);
   });
 
-  it("gates Coupang banners to approval screenshot exposure before final approval", () => {
+  it("serves Coupang banners on registered channels and blocks unregistered channels", () => {
     const stamp = Date.now().toString(36);
 
     let state = createBannerTrackingLink({
@@ -358,13 +358,30 @@ describe("banner-management-store", () => {
       trackingLinkId: trackingLink.id,
     });
 
-    expect(resolveBannerPlacement({ slot: `todaypharm.approval-${stamp}` })).toBeNull();
-    expect(
-      resolveBannerPlacement({
-        purpose: "approval_screenshot",
-        slot: `todaypharm.approval-${stamp}`,
-      })?.trackingLink.id,
-    ).toBe(trackingLink.id);
+    expect(resolveBannerPlacement({ slot: `todaypharm.approval-${stamp}` })?.trackingLink.id).toBe(
+      trackingLink.id,
+    );
+
+    state = createBannerPlacement({
+      name: `Coupang unregistered placement ${stamp}`,
+      noAdPolicy: "collapse",
+      siteKey: `unregistered-coupang-${stamp}`,
+      siteUrl: `https://unregistered-coupang-${stamp}.example.com`,
+      slotKey: "top",
+      type: "image_link",
+    });
+    const unregisteredPlacement = findRequired(
+      state.placements,
+      (item) => item.name === `Coupang unregistered placement ${stamp}`,
+    );
+
+    assignBannerPlacement({
+      creativeId: creative.id,
+      placementId: unregisteredPlacement.id,
+      trackingLinkId: trackingLink.id,
+    });
+
+    expect(resolveBannerPlacement({ slot: `${unregisteredPlacement.siteKey}.top` })).toBeNull();
   });
 });
 

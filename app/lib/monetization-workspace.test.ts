@@ -8,7 +8,7 @@ import {
 const registry: CoupangChannelRegistrySnapshot = {
   generatedAt: "2026-07-03T08:45:00.000Z",
   policy: {
-    exposureMode: "approved_only",
+    exposureMode: "registered_channel_allowlist",
     notes: [],
     requiredDisclosureKo: "required disclosure",
   },
@@ -61,7 +61,7 @@ describe("decideCoupangExposure", () => {
     });
   });
 
-  it("blocks channels until they are approved", () => {
+  it("blocks channels until they are registered", () => {
     expect(
       decideCoupangExposure(registry, { siteId: "pending-site" }),
     ).toMatchObject({
@@ -70,12 +70,12 @@ describe("decideCoupangExposure", () => {
     });
   });
 
-  it("allows registered channels only for approval screenshot exposure", () => {
+  it("allows registered channels for public exposure", () => {
     expect(
       decideCoupangExposure(registry, { siteId: "registered-site" }),
     ).toMatchObject({
-      allowed: false,
-      reason: "channel_registered",
+      allowed: true,
+      reason: "registered",
     });
 
     expect(
@@ -85,7 +85,7 @@ describe("decideCoupangExposure", () => {
       }),
     ).toMatchObject({
       allowed: true,
-      reason: "approval_registered",
+      reason: "registered",
     });
   });
 

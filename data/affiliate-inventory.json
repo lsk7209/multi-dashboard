@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T09:45:00.000Z",
+  "generatedAt": "2026-07-03T09:50:00.000Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -18,7 +18,7 @@
     {
       "id": "coupang-partners",
       "name": "Coupang Partners",
-      "status": "registered_final_approval_pending",
+      "status": "registered_channel_active_final_approval_pending",
       "priority": "p0",
       "region": "KR",
       "network": "Coupang",
@@ -53,14 +53,10 @@
       "allowedSites": [],
       "risk": "medium",
       "complianceNotes": [
-        "Use clear Korean affiliate disclosure near each recommendation.",
-        "Use rel=sponsored nofollow for links.",
-        "Register every blog, website, mobile app, SNS page, or YouTube channel that will display Coupang Partners links or banners in My Page > account/site management before promotion.",
-        "Upload approval screenshots showing the Partners link or banner on the active page after signup.",
+        "Display the required economic relationship disclosure near Coupang links and banners.",
         "Do not advertise through unregistered channels; Coupang can treat unregistered-channel activity as invalid or abusive activity.",
-        "Verify current commission, cookie, prohibited traffic, API rules, and the monthly payout cap in the account.",
-        "Final approval review starts after cumulative sales reach 150,000 KRW.",
-        "Activity screenshot should show the link/widget/banner and economic relationship disclosure together.",
+        "Final approval review starts after cumulative sales reach 150,000 KRW according to the 2026-06-11 guide.",
+        "Approval screenshots should show the active link/widget/banner and the disclosure together on the registered channel.",
         "Settlement and Partners API use require final approval."
       ],
       "integrationSupport": {
@@ -77,8 +73,8 @@
       "merchantTotalReported": 0,
       "merchantSnapshotFile": "",
       "lastReviewed": "2026-07-03",
-      "nextAction": "Use platform-generated links/banners only on registered channels for approval evidence, keep public exposure gated, reach cumulative 150,000 KRW sales for final review, then enable API deeplink/search/goldbox/reports after final approval.",
-      "notes": "2026-06-11 guide: performance can be tracked before final approval, but settlement and Partners API use require final approval."
+      "nextAction": "Run Coupang links/banners only on registered channels with the required disclosure, collect screenshot evidence for final approval, and keep unregistered domains blocked. Enable Partners API after final approval or separate Coupang approval.",
+      "notes": "2026-06-11 guide: registered-channel performance can be tracked before final approval; settlement and Partners API use require final approval."
     },
     {
       "id": "coupang-influencers",
@@ -1975,7 +1971,7 @@
       "id": "coupang-partners-primary",
       "programId": "coupang-partners",
       "title": "Coupang Partners monetization item",
-      "status": "registered_final_approval_pending",
+      "status": "registered_channel_active_final_approval_pending",
       "priority": "p0",
       "region": "KR",
       "network": "Coupang",
@@ -1996,11 +1992,11 @@
       "allowedSites": [],
       "applyUrl": "https://partners.coupang.com/",
       "sourceUrl": "https://partners.coupangcdn.com/partners-guide/partners-guide-20260611145240.pdf",
-      "nextAction": "Create approval evidence pages with platform-generated Coupang link/banner plus disclosure; keep normal public exposure blocked until final approval.",
+      "nextAction": "Serve Coupang links/banners on registered channels only, keep the disclosure visible, and collect screenshots for final approval evidence.",
       "risk": "medium",
       "integrationSupport": {
-        "api": "Coupang Partners API documented, but use only after final approval unless Coupang separately grants early access.",
-        "feed": "Use platform-generated links/banners before final approval; API-backed product/feed surfaces wait for final approval.",
+        "api": "Coupang Partners API documented, but enable after final approval unless Coupang separately grants early access.",
+        "feed": "Use platform-generated links/banners on registered channels before final approval; API-backed product/feed surfaces wait for final approval.",
         "mcp": "none documented",
         "cli": "none documented",
         "notes": [
@@ -2010,15 +2006,11 @@
         ]
       },
       "complianceNotes": [
-        "Use clear Korean affiliate disclosure near each recommendation.",
-        "Use rel=sponsored nofollow for links.",
-        "Register every blog, website, mobile app, SNS page, or YouTube channel that will display Coupang Partners links or banners in My Page > account/site management before promotion.",
-        "Upload approval screenshots showing the Partners link or banner on the active page after signup.",
+        "Display the required economic relationship disclosure near Coupang links and banners.",
         "Do not advertise through unregistered channels; Coupang can treat unregistered-channel activity as invalid or abusive activity.",
-        "Verify current commission, cookie, prohibited traffic, API rules, and the monthly payout cap in the account.",
-        "Final approval review starts after cumulative sales reach 150,000 KRW.",
-        "Activity screenshot must show the link/widget/banner and economic relationship disclosure together.",
-        "Use purpose=approval_screenshot only for approval evidence pages until approved."
+        "Final approval review starts after cumulative sales reach 150,000 KRW according to the 2026-06-11 guide.",
+        "Approval screenshots should show the active link/widget/banner and the disclosure together on the registered channel.",
+        "Settlement and Partners API use require final approval."
       ]
     },
     {

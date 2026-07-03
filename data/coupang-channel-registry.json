@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-03T09:25:00.000Z",
+  "generatedAt": "2026-07-03T09:50:00.000Z",
   "policy": {
-    "exposureMode": "approved_only",
+    "exposureMode": "registered_channel_allowlist",
     "requiredDisclosureKo": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
     "notes": [
-      "Only approved channels may display Coupang Partners links or banners.",
+      "Registered Coupang Partners channels may display Coupang links and banners with the required disclosure.",
       "Treat this registry as the Coupang exposure allowlist; domains not listed here must be blocked.",
       "Mark a channel as registered after adding it in Coupang Partners My Page.",
-      "Mark a channel as approved only after the approval screenshot has been uploaded and accepted.",
+      "Mark a channel as approved only after final approval is complete; final approval is required for settlement and Partners API use.",
       "Unregistered-channel promotion can be treated as invalid or abusive activity.",
       "Guide 2026-06-11: final approval review starts after cumulative sales reach 150,000 KRW.",
       "Guide 2026-06-11: performance may be tracked before final approval, but settlement and Partners API use require final approval.",
-      "Guide 2026-06-11: approval screenshots should show the active link/widget/banner and the economic relationship disclosure in the same registered channel.",
-      "Registered channels may be served only with purpose=approval_screenshot until approved; public exposure stays blocked."
+      "Guide 2026-06-11: screenshots should show the active link/widget/banner and the economic relationship disclosure in the same registered channel.",
+      "Rejected or paused channels must be blocked until the account issue is resolved."
     ]
   },
   "channels": [
@@ -25,7 +25,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "tennisfrens",
@@ -36,7 +36,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "picklefriend",
@@ -47,7 +47,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "dogswhere",
@@ -58,7 +58,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "cartain-2",
@@ -69,7 +69,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "temon",
@@ -80,7 +80,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "notebook-klick-2",
@@ -91,7 +91,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "softwa",
@@ -102,7 +102,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "dogspang-2",
@@ -113,7 +113,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "autoscares-2",
@@ -124,7 +124,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "roadways",
@@ -135,7 +135,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "dullegilgogo",
@@ -146,7 +146,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     },
     {
       "siteId": "campgogo",
@@ -157,7 +157,7 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; keep broad exposure blocked until screenshot approval."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
     }
   ]
 }
