@@ -463,7 +463,7 @@ sites:
     platform: wordpress
     url: https://mbti.tasko.kr/
     wpRestBase: https://mbti.tasko.kr/wp-json/wp/v2
-    ga4PropertyId: "533744995"
+    ga4PropertyId: "544155633"
     gscSiteUrl: https://mbti.tasko.kr/
     monetization: true
     contentSource:
@@ -1573,11 +1573,14 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\localgeo\repo
       githubRepo: https://github.com/lsk7209/localgeo
+    wpRestBase: https://localgeo.app/wp-json/wp/v2
+    ga4PropertyId: "544179002"
   - id: gradienttrail
     name: gradienttrail.com
     enabled: true
     platform: static
     url: https://gradienttrail.com/
+    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
     ga4PropertyId: "543434435"
     gscSiteUrl: https://gradienttrail.com/
     sitemapUrls:
@@ -1588,7 +1591,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\park-trail
       githubRepo: https://github.com/lsk7209/park-trail
-    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
   - id: dogbreedcost
     name: https://dogbreedcost.com
     enabled: true
@@ -1606,4 +1608,31 @@ sites:
     wpRestBase: https://wedfairguide.com/wp-json/wp/v2
     ga4PropertyId: "544110804"
     gscSiteUrl: https://wedfairguide.com/
+    monetization: true
+  - id: plategogo
+    name: plategogo.com
+    enabled: true
+    platform: wordpress
+    url: https://plategogo.com/
+    wpRestBase: https://plategogo.com/wp-json/wp/v2
+    ga4PropertyId: "544137483"
+    gscSiteUrl: https://plategogo.com/
+    monetization: true
+  - id: autorentlab
+    name: autorentlab.com
+    enabled: true
+    platform: wordpress
+    url: https://autorentlab.com/
+    wpRestBase: https://autorentlab.com/wp-json/wp/v2
+    ga4PropertyId: "544134188"
+    gscSiteUrl: https://autorentlab.com/
+    monetization: true
+  - id: smallhomepick
+    name: smallhomepick.com
+    enabled: true
+    platform: wordpress
+    url: https://smallhomepick.com/
+    wpRestBase: https://smallhomepick.com/wp-json/wp/v2
+    ga4PropertyId: "544124021"
+    gscSiteUrl: https://smallhomepick.com/
     monetization: true
