@@ -834,7 +834,13 @@ function isArticleLikePage(page: PageAudit, siteUrl: string): boolean {
   } catch {
     path = rawPath;
   }
-  if (path === "/" || path.includes("/category/") || path.includes("/tag/")) {
+  const normalizedPath = path.replace(/\/+$/, "") || "/";
+  if (
+    normalizedPath === "/" ||
+    normalizedPath === "/blog" ||
+    path.includes("/category/") ||
+    path.includes("/tag/")
+  ) {
     return false;
   }
   return ![
@@ -843,7 +849,6 @@ function isArticleLikePage(page: PageAudit, siteUrl: string): boolean {
     "contact",
     "about",
     "service",
-    "blog",
     "개인정보",
     "처리방침",
     "이용약관",
