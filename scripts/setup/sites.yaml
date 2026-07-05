@@ -1564,6 +1564,8 @@ sites:
     enabled: true
     platform: static
     url: https://localgeo.app/
+    wpRestBase: https://localgeo.app/wp-json/wp/v2
+    ga4PropertyId: "544179002"
     gscSiteUrl: https://localgeo.app/
     sitemapUrls:
       - https://localgeo.app/sitemap.xml
@@ -1573,8 +1575,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\localgeo\repo
       githubRepo: https://github.com/lsk7209/localgeo
-    wpRestBase: https://localgeo.app/wp-json/wp/v2
-    ga4PropertyId: "544179002"
   - id: gradienttrail
     name: gradienttrail.com
     enabled: true
@@ -1635,4 +1635,22 @@ sites:
     wpRestBase: https://smallhomepick.com/wp-json/wp/v2
     ga4PropertyId: "544124021"
     gscSiteUrl: https://smallhomepick.com/
+    monetization: true
+  - id: kdramanote
+    name: kdramanote.com
+    enabled: true
+    platform: wordpress
+    url: https://kdramanote.com/
+    wpRestBase: https://kdramanote.com/wp-json/wp/v2
+    ga4PropertyId: "544164198"
+    gscSiteUrl: https://kdramanote.com/
+    monetization: true
+  - id: pethomepick
+    name: pethomepick.com
+    enabled: true
+    platform: wordpress
+    url: https://pethomepick.com/
+    wpRestBase: https://pethomepick.com/wp-json/wp/v2
+    ga4PropertyId: "544197313"
+    gscSiteUrl: https://pethomepick.com/
     monetization: true
