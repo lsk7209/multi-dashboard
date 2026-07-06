@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-07-06T14:36:17.654Z",
+  "date": "2026-07-06",
+  "dryRun": false,
+  "skipStatsUpdate": false,
+  "skipApiDataAudit": false,
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "commands": [
+    {
+      "id": "stats-update",
+      "args": [
+        "stats:update"
+      ]
+    },
+    {
+      "id": "gsc-permission-audit",
+      "args": [
+        "gsc:permissions:audit"
+      ]
+    },
+    {
+      "id": "adsense-queue",
+      "args": [
+        "adsense:queue"
+      ]
+    },
+    {
+      "id": "vercel-api-data-inventory",
+      "args": [
+        "exec",
+        "tsx",
+        "scripts/setup/audit-vercel-api-data-sites.ts"
+      ]
+    },
+    {
+      "id": "fleet-optimize-plan",
+      "args": [
+        "exec",
+        "tsx",
+        "scripts/setup/create-fleet-optimization-plan.ts",
+        "--date=2026-07-06"
+      ]
+    },
+    {
+      "id": "t3-title-content-handoff",
+      "args": [
+        "exec",
+        "tsx",
+        "scripts/setup/create-t3-title-content-handoff.ts",
+        "--date=2026-07-06"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "stats-update",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "t=ok\n[stats:update] site start id=campgogo, name=https://campgogo.kr\n[stats:update] site done id=travel-sellerpit, elapsed=4s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=dullegilgogo, name=https://dullegilgogo.kr\n[stats:update] site done id=dogswhere, elapsed=6s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=workgogo, name=workgogo.kr\n[stats:update] site done id=kdramanote, elapsed=5s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=youkamap, name=https://youkamap.kr\n[stats:update] site done id=sorimate, elapsed=3s, ga4=ok, gsc=ok, adsense=disabled, adsTxt=disabled\n[stats:update] site start id=doseogogo, name=http://doseogogo.kr\n[stats:update] site done id=campgogo, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=nongsusangogo, name=https://nongsusangogo.kr\n[stats:update] site done id=dullegilgogo, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=yungyanggogo, name=yungyanggogo.kr\n[stats:update] site done id=workgogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=caregos, name=caregos.com\n[stats:update] site done id=youkamap, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=wattbenchs, name=wattbenchs.com\n[stats:update] site done id=jasamall-sellerpit, elapsed=7s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=limsight, name=limsight.kr\n[stats:update] site done id=doseogogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=solarpaybackmap, name=solarpaybackmap.com\n[stats:update] site done id=nongsusangogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=coverclarityhealth, name=coverclarityhealth.com\n[stats:update] site done id=wattbenchs, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=kapti, name=kapti.kr\n[stats:update] site done id=caregos, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=patentgogo, name=patentgogo.com\n[stats:update] site done id=yungyanggogo, elapsed=4s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=rndatlas, name=rndatlas.com\n[stats:update] site done id=coverclarityhealth, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=localgeo, name=localgeo.app\n[stats:update] site done id=kapti, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=autorentlab, name=autorentlab.com\n[stats:update] site done id=solarpaybackmap, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=gradienttrail, name=gradienttrail.com\n[stats:update] site done id=patentgogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=dogbreedcost, name=https://dogbreedcost.com\n[stats:update] site done id=localgeo, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=plategogo, name=plategogo.com\n[stats:update] site done id=rndatlas, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=wedfairguide, name=wedfairguide.com\n[stats:update] site done id=limsight, elapsed=5s, ga4=ok, gsc=ok, adsense=disabled, adsTxt=disabled\n[stats:update] site done id=autorentlab, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=gradienttrail, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=plategogo, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=wedfairguide, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=dogbreedcost, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\nStats updated: 98 sites, concurrency=6, GA4 failed=0, GSC failed=1, GSC email alerts=0, sitemaps checked=97, sitemaps failed=1, AdSense code not detected=0, AdSense transient=0, ads.txt failed=0, ads.txt transient=0, output=data/site-stats.json, history=data/history/2026-07-06.json\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "gsc-permission-audit",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-06.json and docs\\work-orders\\gsc-permission-audit-2026-07-06.md. snapshot=2026-07-06T14:36:12.558Z auditedRows=1 ownerAccess=0 restrictedAccess=0 unverified=1 notListed=0\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "adsense-queue",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:queue D:\\web\\multi-dashboard\n> tsx scripts/setup/create-adsense-remediation-queue.ts\n\nWrote data\\adsense-remediation-queue-2026-07-06.json and docs\\work-orders\\adsense\\remediation-queue-2026-07-06.md. snapshot=2026-07-06T14:36:12.558Z reviewedRows=84 problemRows=0 ordinaryAdsenseProof=0 approvedRootSubdomainScope=0 gscAuthTelemetry=0 ga4ConfigTelemetry=0\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "vercel-api-data-inventory",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "Wrote data/vercel-api-data-sites.json\nWrote docs/vercel-api-data-sites.md\nSites: 28 (scheduled-db=14, api-backed=11, candidate=3)\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "fleet-optimize-plan",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "Wrote data\\fleet-optimization-plan-2026-07-06.json and docs\\work-orders\\fleet-optimization-plan-2026-07-06.md. snapshot=2026-07-06T14:36:12.558Z seoCandidates=20 adsenseProblemRows=0\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "t3-title-content-handoff",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "Wrote data\\t3-title-content-handoff-2026-07-06.json and docs\\work-orders\\t3-title-content-handoff-2026-07-06.md. snapshot=2026-07-06T14:36:12.558Z sites=13 titleHandoff=10 contentHandoff=8\n",
+      "stderrTail": ""
+    }
+  ],
+  "verification": {
+    "statsSnapshot": "2026-07-06T14:36:12.558Z",
+    "planSnapshot": "2026-07-06T14:36:12.558Z",
+    "handoffSnapshot": "2026-07-06T14:36:12.558Z",
+    "refreshFailedSources": [
+      "skipped_refresh_failed:gsc:auth_error:1"
+    ],
+    "refreshFailureCount": 1,
+    "refreshFailuresBlockReadiness": true,
+    "planMatchesStats": true,
+    "handoffMatchesStats": true,
+    "handoffMutationFlagsFalse": true,
+    "handoffSiteCount": 13,
+    "titleHandoffCount": 10,
+    "contentHandoffCount": 8
+  },
+  "summary": {
+    "commands": 6,
+    "pass": 6,
+    "fail": 0,
+    "skipped": 0
+  },
+  "stopCondition": "This chain is local and non-mutating. It only refreshes dashboard evidence and handoff artifacts; it does not authorize CMS edits, title/body edits, Search Console mutation, AdSense mutation, publishing, or deployment."
+}

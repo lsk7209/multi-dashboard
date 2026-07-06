@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-07-06T14:36:27.829Z",
+  "date": "2026-07-06",
+  "dryRun": false,
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "commands": [
+    {
+      "id": "gsc-permission-audit",
+      "args": [
+        "gsc:permissions:audit"
+      ]
+    },
+    {
+      "id": "dashboard-verify",
+      "args": [
+        "dashboard:verify"
+      ]
+    },
+    {
+      "id": "dashboard-acceptance",
+      "args": [
+        "dashboard:acceptance",
+        "data\\dashboard-verification-2026-07-06.json"
+      ]
+    }
+  ],
+  "dashboardVerification": {
+    "path": "data\\dashboard-verification-2026-07-06.json",
+    "exists": true,
+    "statsSnapshot": "2026-07-06T14:36:12.558Z",
+    "verdict": "local_verified_external_blocker",
+    "expectedBlocked": 1,
+    "fail": 0,
+    "skipped": 0,
+    "externalBlockerEvidenceCount": 1,
+    "externalBlockerEvidence": [
+      {
+        "source": "gsc_permission_audit",
+        "host": "yesa.kr",
+        "siteId": "yesa",
+        "gscStatus": "auth_error",
+        "permissionLevel": "siteUnverifiedUser",
+        "accessState": "unverified"
+      }
+    ],
+    "actionabilityBlockerHosts": [
+      "yesa.kr"
+    ],
+    "surfaceBlockerHosts": [
+      "yesa.kr"
+    ],
+    "actionabilityStatus": "blocked_for_action_until_post_recovery_verify",
+    "postRecoveryAcceptance": [
+      "external_gsc_access_restored=pending_external",
+      "dashboard_verify_local_verified=pending_verification",
+      "rendered_ui_smoke_current=satisfied",
+      "dashboard_surface_current=satisfied",
+      "recommendations_safe_to_act=pending_external",
+      "mutation_boundary_clean=satisfied"
+    ]
+  },
+  "results": [
+    {
+      "id": "gsc-permission-audit",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-06.json and docs\\work-orders\\gsc-permission-audit-2026-07-06.md. snapshot=2026-07-06T14:34:25.360Z auditedRows=1 ownerAccess=0 restrictedAccess=0 unverified=1 notListed=0\n\npre_refresh_non_authoritative=true finalDashboardVerificationSnapshot=2026-07-06T14:36:12.558Z\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-verify",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard\n> tsx scripts/setup/run-dashboard-verification.ts\n\nWrote data\\dashboard-verification-2026-07-06.json and docs\\work-orders\\dashboard-verification-2026-07-06.md. snapshot=2026-07-06T14:36:12.558Z verdict=local_verified_external_blocker commands=4 pass=3 expectedBlocked=1 fail=0 skipped=0 blockers=skipped_refresh_failed:gsc:auth_error:1\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-acceptance",
+      "status": "fail",
+      "exitCode": 1,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:acceptance D:\\web\\multi-dashboard\n> tsx scripts/setup/check-dashboard-post-recovery-acceptance.ts \"data\\\\dashboard-verification-2026-07-06.json\"\n\nartifact=data\\\\dashboard-verification-2026-07-06.json ready=false pass=4 fail=6\nFAIL verdict_local_verified: verdict=local_verified_external_blocker\nFAIL summary_clean: expectedBlocked=1 fail=0 skipped=0\nFAIL external_blockers_cleared: externalBlockerEvidence=1\nFAIL dashboard_safe_to_act: status=blocked_for_action_until_post_recovery_verify blockerHosts=yesa.kr\nFAIL dashboard_surface_current: status=current blockerHosts=yesa.kr\nFAIL post_recovery_rows_satisfied: external_gsc_access_restored=pending_external,dashboard_verify_local_verified=pending_verification,rendered_ui_smoke_current=satisfied,dashboard_surface_current=satisfied,recommendations_safe_to_act=pending_external,mutation_boundary_clean=satisfied\n ELIFECYCLE  Command failed with exit code 1.\n",
+      "stderrTail": ""
+    }
+  ],
+  "artifactIntegrity": {
+    "id": "dashboard-artifact-integrity",
+    "status": "pass",
+    "exitCode": 0,
+    "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:artifact-integrity D:\\web\\multi-dashboard\n> tsx scripts/setup/check-dashboard-artifact-integrity.ts \"--date=2026-07-06\" \"--allow-missing-post-write-integrity\"\n\ndate=2026-07-06 ready=true pass=12 fail=0\n",
+    "stderrTail": ""
+  },
+  "summary": {
+    "commands": 3,
+    "pass": 2,
+    "fail": 1,
+    "skipped": 0
+  },
+  "readiness": "external_recovery_required",
+  "stopCondition": "This local chain does not authorize CMS edits, Search Console mutations, AdSense submissions, deployments, DNS changes, publishing, or title/body edits. Dashboard recommendations are executable only when readiness is ready_to_act."
+}

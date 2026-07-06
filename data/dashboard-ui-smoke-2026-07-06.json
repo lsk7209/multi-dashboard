@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:3000/?actionabilityMode=local-evidence&actionabilityToken=redacted",
+  "generatedAt": "2026-07-06T14:36:12.558Z",
+  "siteCount": 98,
+  "blockingSources": [
+    "skipped_refresh_failed:gsc:auth_error:1"
+  ],
+  "maintenanceSources": [],
+  "blockerHosts": [
+    "yesa.kr"
+  ],
+  "actionabilityStatus": "blocked_for_action_until_post_recovery_verify",
+  "actionabilityCommand": "pnpm dashboard:post-recovery",
+  "actionabilityAllowedUse": "Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.",
+  "actionabilityReason": "Blocked until pnpm dashboard:post-recovery passes for yesa.kr.",
+  "fleetChainArtifactPath": "data/fleet-optimization-chain-2026-07-06.json",
+  "gscPermissionAuditArtifactPath": "data/gsc-permission-audit-2026-07-06.json",
+  "gscPermissionAuditWorkOrderPath": "docs/work-orders/gsc-permission-audit-2026-07-06.md",
+  "gscPermissionAuditHandoffStatus": "pending_external",
+  "checks": [
+    "http-2xx",
+    "fleet-panel",
+    "site-count",
+    "blocker-maintenance-split",
+    "gsc-handoff-status-visible",
+    "hard-blocker-visible",
+    "affiliate-command-suppressed",
+    "actionability-read-only-visible",
+    "maintenance-visibility",
+    "readable-rendered-text",
+    "unauthorized-local-evidence-blocked"
+  ],
+  "artifactGeneratedAt": "2026-07-06T14:36:26.492Z",
+  "date": "2026-07-06",
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "stopCondition": "This rendered UI smoke is local and non-mutating. It opens the dashboard in a browser and records evidence only; it does not authorize CMS edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
+}

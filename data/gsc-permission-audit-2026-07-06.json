@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-06T14:36:14.972Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-06T14:36:12.558Z",
+  "handoffStatus": "pending_external",
+  "productionMutationPerformed": false,
+  "gscMutationPerformed": false,
+  "serviceAccountEmail": "id-ai-179@cursorai-451704.iam.gserviceaccount.com",
+  "summary": {
+    "auditedRows": 1,
+    "ownerAccess": 0,
+    "restrictedAccess": 0,
+    "unverified": 1,
+    "notListed": 0
+  },
+  "results": [
+    {
+      "siteId": "yesa",
+      "host": "yesa.kr",
+      "configuredGscSiteUrl": "https://yesa.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://yesa.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    }
+  ]
+}
