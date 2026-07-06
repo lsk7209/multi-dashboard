@@ -13,6 +13,8 @@ data/**
 !data/banner-management.json
 !data/coupang-channel-registry.json
 !data/site-stats.json
+!data/adsense-external-proof-continuation-*.json
+!data/adsense-remediation-queue-*.json
 !data/gsc-permission-audit-*.json
 !data/fleet-optimization-chain-*.json
 !data/dashboard-post-recovery-chain-*.json
