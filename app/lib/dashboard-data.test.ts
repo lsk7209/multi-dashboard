@@ -1511,6 +1511,20 @@ describe("getDashboardData insight copy", () => {
 
     expect(badFields).toEqual([]);
   });
+
+  it("does not label GSC-zero sites with healthy collection as permission errors", () => {
+    const data = getDashboardData();
+    const statsById = new Map(data.stats.map((stat) => [stat.id, stat]));
+    const misleadingInsights = data.insights
+      .filter((insight) => insight.kind === "indexingOrPermissionIssue")
+      .filter((insight) => {
+        const stat = statsById.get(insight.siteId);
+        return stat?.gscStatus === "ok" && insight.reason.includes("권한 오류");
+      })
+      .map((insight) => `${insight.siteId}:${insight.reason}`);
+
+    expect(misleadingInsights).toEqual([]);
+  });
 });
 
 describe("getDashboardData health and collection copy", () => {

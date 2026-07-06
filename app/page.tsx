@@ -371,9 +371,7 @@ function FleetWorkflowPanel({
             <div className="command-row">
               <span>수집 경고</span>
               <code>
-                {chain.refreshFailureCount === 0 && handoff.refreshFailedSources.length === 0
-                  ? "none"
-                  : `${formatNumber(readinessBlockingRefreshFailedSources.length)} blocking · ${formatNumber(maintenanceRefreshFailedSources.length)} maintenance`}
+                {`${formatNumber(readinessBlockingRefreshFailedSources.length)} blocking · ${formatNumber(maintenanceRefreshFailedSources.length)} maintenance`}
               </code>
             </div>
             <div className="command-row">

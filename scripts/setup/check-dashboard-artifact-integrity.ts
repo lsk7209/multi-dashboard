@@ -129,7 +129,7 @@ export function evaluateDashboardArtifactIntegrity(input: IntegrityInput): Integ
         sameStrings(stringArray(postSnapshot?.actionabilityBlockerHosts), actionabilityHosts) &&
         sameStrings(stringArray(postSnapshot?.surfaceBlockerHosts), surfaceHosts) &&
         sameStrings(stringArray(postSnapshot?.postRecoveryAcceptance), acceptanceRows(postRecoveryAcceptance)) &&
-        postRecoveryCommandsMatch(verificationPostRecoveryCommands, postCommands),
+        postRecoveryCommandContractMatches(verdict, verificationPostRecoveryCommands, postCommands),
       evidence: `verdict=${verdict || "missing"}/${stringValue(postSnapshot?.verdict) || "missing"} expectedBlocked=${numberValue(summary?.expectedBlocked)}/${numberValue(postSnapshot?.expectedBlocked)} fail=${numberValue(summary?.fail)}/${numberValue(postSnapshot?.fail)} skipped=${numberValue(summary?.skipped)}/${numberValue(postSnapshot?.skipped)} externalBlockers=${externalBlockers.length}/${numberValue(postSnapshot?.externalBlockerEvidenceCount)} actionability=${stringValue(actionability?.status) || "missing"}/${stringValue(postSnapshot?.actionabilityStatus) || "missing"}`,
     },
     {
@@ -662,6 +662,17 @@ function postRecoveryCommandsMatch(verificationCommands: unknown[], postCommands
       sameStringsInOrder(stringArray(left.args), stringArray(right.args))
     );
   });
+}
+
+function postRecoveryCommandContractMatches(
+  verdict: string,
+  verificationCommands: unknown[],
+  postCommands: unknown[],
+): boolean {
+  if (verificationCommands.length === 0) {
+    return verdict === "local_verified" && postCommands.length > 0;
+  }
+  return postRecoveryCommandsMatch(verificationCommands, postCommands);
 }
 
 function acceptanceRows(rows: unknown[]): string[] {

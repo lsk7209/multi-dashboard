@@ -2536,12 +2536,7 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
     const activeUsersChange = stat.trend.activeUsersChange;
     const gscClicksChange = stat.trend.gscClicksChange;
 
-    if (
-      stat.gscError ||
-      (gsc.clicks === 0 &&
-        gsc.impressions === 0 &&
-        stat.last7Days.activeUsers >= 50)
-    ) {
+    if (stat.gscError) {
       insights.push(
         makeInsight(
           stat,
@@ -2549,6 +2544,24 @@ function buildInsights(stats: EnrichedSiteStat[]): SiteInsight[] {
           "high",
           "GSC 데이터가 없거나 권한 오류가 있습니다.",
           "Search Console 소유권과 서비스 계정 권한을 확인하세요.",
+          "GSC 0",
+        ),
+      );
+    }
+
+    if (
+      !stat.gscError &&
+      gsc.clicks === 0 &&
+      gsc.impressions === 0 &&
+      stat.last7Days.activeUsers >= 50
+    ) {
+      insights.push(
+        makeInsight(
+          stat,
+          "indexingOrPermissionIssue",
+          "high",
+          "GSC 검색 노출 데이터가 아직 없습니다.",
+          "권한 오류로 단정하지 말고 sitemap, canonical, 색인 상태, 검색 노출 시작 여부를 확인하세요.",
           "GSC 0",
         ),
       );

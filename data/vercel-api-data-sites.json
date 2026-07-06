@@ -1,0 +1,1081 @@
+{
+  "generatedAt": "2026-07-06T23:20:27.301Z",
+  "scope": "WordPress excluded by default; Vercel/Next.js API-data sites included from dashboard and local evidence.",
+  "rules": [
+    "Do not rely only on dashboard platform labels.",
+    "Treat stale WordPress labels as reviewable only when local Next/Vercel evidence exists.",
+    "Inventory is read-only and must not call production APIs or write databases.",
+    "Run a site-specific freshness check before content generation."
+  ],
+  "summary": {
+    "total": 28,
+    "scheduled-db-ingestion": 14,
+    "api-backed-content": 11,
+    "candidate-review": 3
+  },
+  "sites": [
+    {
+      "id": "askore",
+      "url": "https://askore.kr/",
+      "localPath": "D:/web/askorekr",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "backfill-editorial-metrics.mjs",
+        "etl-kfri-sample.mjs",
+        "etl-nibr-ktsn-live.mjs",
+        "etl-nibr-live.mjs",
+        "etl-nibr-sample.mjs",
+        "etl-nihhs-flower-live.mjs",
+        "etl-nongsaro-flower-live.mjs",
+        "etl-nongsaro-garden-live.mjs",
+        "etl-plant-images.mjs",
+        "sync-local-to-turso.mjs"
+      ],
+      "scheduledWorkflows": [
+        "marketing-audit.yml",
+        "plant-data-pipeline.yml"
+      ],
+      "dbSignals": [
+        "package.json",
+        "scripts/backfill-editorial-metrics.mjs",
+        "scripts/content-quality-check.mjs",
+        "scripts/diversify-blog-posts.mjs",
+        "scripts/env-check.mjs",
+        "scripts/etl-kfri-sample.mjs",
+        "scripts/etl-nibr-ktsn-live.mjs",
+        "scripts/etl-nibr-live.mjs",
+        "scripts/etl-nibr-sample.mjs",
+        "scripts/etl-nihhs-flower-live.mjs",
+        "scripts/etl-nongsaro-flower-live.mjs",
+        "scripts/etl-nongsaro-garden-live.mjs",
+        "scripts/etl-plant-images.mjs",
+        "scripts/fix-flower-meaning-json.mjs",
+        "scripts/generate-blog-posts.mjs",
+        "scripts/generate-category-posts.mjs",
+        "scripts/generate-plant-posts.mjs",
+        "scripts/indexnow-bulk.mjs",
+        "scripts/patch-bonsai.mjs",
+        "scripts/patch-chili.mjs",
+        "scripts/patch-seoul-top10.mjs",
+        "scripts/patch-tomato.mjs",
+        "scripts/qa-site.mjs",
+        "scripts/quality-check.mjs",
+        "scripts/quality-deep-check.mjs",
+        "scripts/quality-issues.mjs",
+        "scripts/seed-sample.mjs",
+        "scripts/sync-local-to-turso.mjs"
+      ],
+      "apiSignals": [
+        "scripts/audit-marketing.mjs",
+        "scripts/etl-nibr-ktsn-live.mjs",
+        "scripts/etl-nibr-live.mjs",
+        "scripts/etl-nihhs-flower-live.mjs",
+        "scripts/etl-nongsaro-flower-live.mjs",
+        "scripts/etl-nongsaro-garden-live.mjs",
+        "scripts/etl-plant-images.mjs",
+        "scripts/generate-blog-posts.mjs",
+        "scripts/generate-category-posts.mjs",
+        "scripts/generate-plant-posts.mjs",
+        "scripts/indexnow-bulk.mjs",
+        "scripts/qa-site.mjs",
+        "vercel.json"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for askore: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "bojo24",
+      "url": "https://bojo24.kr/",
+      "localPath": "D:/web/bojo24",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [
+        "data-sync.yml",
+        "insert-articles.yml",
+        "scheduled-post-notify.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/data-sync.yml",
+        "next.config.js",
+        "package.json"
+      ],
+      "apiSignals": [],
+      "recommendedCheck": "Read-only DB freshness check for bojo24: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "campgogo",
+      "url": "https://campgogo.kr/",
+      "localPath": "D:/web/campgogokr",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "collect-bulk.ts",
+        "import-csv.ts"
+      ],
+      "scheduledWorkflows": [
+        "backup.yml",
+        "bulk-collect.yml",
+        "dedup.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/backup.yml",
+        ".github/workflows/ci.yml",
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        "package.json",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/backup-db.ts",
+        "scripts/build-matching-json.ts",
+        "scripts/check-live-costs.mjs",
+        "scripts/collect-bulk.ts",
+        "scripts/dedup-review.ts",
+        "scripts/import-csv.ts"
+      ],
+      "apiSignals": [
+        "scripts/backup-db.ts",
+        "scripts/check-live-costs.mjs",
+        "scripts/collect-bulk.ts",
+        "scripts/import-csv.ts"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for campgogo: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "coverclarityhealth",
+      "url": "https://coverclarityhealth.com/",
+      "localPath": "D:/web/coverclarityhealth",
+      "declaredPlatform": "nextjs",
+      "dashboardContentType": "github-next",
+      "githubRepo": "https://github.com/lsk7209/coverclarityhealth.com",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "dashboard platform=nextjs",
+        "dashboard contentSource=github-next",
+        "package.json depends on next",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [],
+      "apiSignals": [
+        "scripts/generate_coverclarity_batch.py",
+        "vercel.json"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "dogswhere",
+      "url": "https://dogswhere.com/",
+      "localPath": "D:/web/dogswherecom",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "import-real-data.ts",
+        "run_collector.py",
+        "sync-pet-tour.ts"
+      ],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json",
+        "scripts/check-db.ts",
+        "scripts/import-real-data.ts",
+        "scripts/reset-db.ts",
+        "scripts/run_collector.py",
+        "scripts/seed-seo-pages.ts",
+        "scripts/seed-standalone.ts",
+        "scripts/seed-test-place.ts",
+        "scripts/seed_content.ts",
+        "scripts/sync-pet-tour.ts"
+      ],
+      "apiSignals": [
+        "scripts/debug_api.py",
+        "scripts/sync-pet-tour.ts"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "dolbomjigi-ehon365",
+      "url": "https://dolbomjigi.ehon365.kr/",
+      "localPath": "D:/web/dolbomjigi",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected"
+      ],
+      "collectionScripts": [
+        "import-quality-blog-batch.mjs"
+      ],
+      "scheduledWorkflows": [
+        "etl.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/ci.yml",
+        "next.config.ts",
+        "package.json",
+        "scripts/assign-unique-blog-cover-variants.mjs",
+        "scripts/audit-blog-content-editorial.mjs",
+        "scripts/audit-future-blog-quality.mjs",
+        "scripts/enrich-future-blog-quality.mjs",
+        "scripts/generate-blog-search-gaps.mjs",
+        "scripts/import-quality-blog-batch.mjs",
+        "scripts/rewrite-blog-content-quality.mjs"
+      ],
+      "apiSignals": [],
+      "recommendedCheck": "Read-only DB freshness check for dolbomjigi-ehon365: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "doseogogo",
+      "url": "https://doseogogo.kr/",
+      "localPath": "D:/web/doseogogo.kr",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "package.json depends on next",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [],
+      "apiSignals": [
+        "scripts/verify-api.mjs"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "dullegilgogo",
+      "url": "https://dullegilgogo.kr/",
+      "localPath": "D:/web/dullegilgogo",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [
+        "bulk-collect.yml",
+        "quality-gate.yml"
+      ],
+      "dbSignals": [
+        "package.json",
+        "scripts/audit-mountain-content.ts"
+      ],
+      "apiSignals": [],
+      "recommendedCheck": "Read-only DB freshness check for dullegilgogo: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "gong365",
+      "url": "https://gong365.kr/",
+      "localPath": "D:/web/gong365kr",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "sync-bizinfo-events.ts",
+        "sync-bizinfo.ts"
+      ],
+      "scheduledWorkflows": [
+        "cron-sync.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/apply-migrations.yml",
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        "package.json",
+        "scripts/apply-facet-table.mjs",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/check-live-costs.mjs",
+        "scripts/generate-seo-assets.ts",
+        "scripts/refresh-facets.ts",
+        "scripts/sync-bizinfo-events.ts",
+        "scripts/sync-bizinfo.ts"
+      ],
+      "apiSignals": [
+        "scripts/check-live-costs.mjs"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for gong365: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "gradienttrail",
+      "url": "https://gradienttrail.com/",
+      "localPath": "D:/web/park-trail",
+      "declaredPlatform": "static",
+      "dashboardContentType": "local-app",
+      "githubRepo": "https://github.com/lsk7209/park-trail",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "collector/sync workflow or script detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "fetch-nps-data.mjs"
+      ],
+      "scheduledWorkflows": [
+        "nps-sync.yml"
+      ],
+      "dbSignals": [],
+      "apiSignals": [
+        "scripts/fetch-nps-data.mjs"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "kapti",
+      "url": "https://kapti.kr/",
+      "localPath": "D:/web/kapt",
+      "declaredPlatform": "nextjs",
+      "dashboardContentType": "github-next",
+      "githubRepo": "https://github.com/lsk7209/kapti.kr",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "dashboard platform=nextjs",
+        "dashboard contentSource=github-next",
+        "package.json depends on next",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [],
+      "apiSignals": [
+        "lib/sample-data.ts",
+        "vercel.json"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "localgeo",
+      "url": "https://localgeo.app/",
+      "localPath": "D:/web/localgeo/repo",
+      "declaredPlatform": "static",
+      "dashboardContentType": "local-app",
+      "githubRepo": "https://github.com/lsk7209/localgeo",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "local .vercel directory exists",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json",
+        "scripts/check-runtime-env.js"
+      ],
+      "apiSignals": [
+        "scripts/smoke-api.js",
+        "vercel.json"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "nongsusangogo",
+      "url": "https://nongsusangogo.kr/",
+      "localPath": "D:/web/nongsusangogo",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "batch-collect.ts"
+      ],
+      "scheduledWorkflows": [
+        "bulk-collect.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        "package.json",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/batch-build-drafts.ts",
+        "scripts/batch-build-keyword-pages.ts",
+        "scripts/batch-collect.ts",
+        "scripts/batch-enrich.ts",
+        "scripts/batch-quality-audit.ts",
+        "scripts/batch-quality-gate.ts",
+        "scripts/check-live-costs.mjs",
+        "scripts/list-gates.ts",
+        "scripts/phase1-smoke.ts",
+        "scripts/phase2-smoke.ts",
+        "scripts/probe-gate05.ts",
+        "scripts/set-gate-decision.ts",
+        "scripts/smoke-db.ts"
+      ],
+      "apiSignals": [
+        "scripts/check-live-costs.mjs"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for nongsusangogo: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "patentgogo",
+      "url": "https://patentgogo.com/",
+      "localPath": "D:/web/tukhugogo",
+      "declaredPlatform": "nextjs",
+      "dashboardContentType": "github-next",
+      "githubRepo": "https://github.com/lsk7209/tukhugogo",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "dashboard platform=nextjs",
+        "dashboard contentSource=github-next",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "fetch-kipris-snapshot.mjs",
+        "import-patent-snapshot.mjs"
+      ],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json",
+        "scripts/check-live-data.mjs",
+        "scripts/fetch-kipris-snapshot.mjs",
+        "scripts/import-patent-snapshot.mjs"
+      ],
+      "apiSignals": [
+        "scripts/fetch-kipris-snapshot.mjs"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "petjigi",
+      "url": "https://petjigi.kr/",
+      "localPath": "D:/web/petjigi",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [
+        "etl-businesses.yml",
+        "etl-insurance-alert.yml",
+        "etl-registration-agents.yml",
+        "etl-rescued-animals.yml",
+        "etl-shelters.yml"
+      ],
+      "dbSignals": [
+        "next.config.ts",
+        "package.json",
+        "scripts/add-author-credentials.ts",
+        "scripts/check-fip.ts",
+        "scripts/check-new-body.ts",
+        "scripts/check-post-body.ts",
+        "scripts/check-short-bodies.ts",
+        "scripts/fix-subtitles-batch1-24.ts",
+        "scripts/notify-published.ts",
+        "scripts/update-subtitles.ts"
+      ],
+      "apiSignals": [
+        ".github/workflows/deploy.yml",
+        ".github/workflows/etl-businesses.yml",
+        ".github/workflows/etl-insurance-alert.yml",
+        ".github/workflows/etl-registration-agents.yml",
+        ".github/workflows/etl-rescued-animals.yml",
+        ".github/workflows/etl-shelters.yml",
+        "scripts/verify-setup.ts"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for petjigi: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "picklefriend",
+      "url": "https://picklefriend.kr/",
+      "localPath": "D:/web/picklefriend",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "collect-courts.ts",
+        "collect-players.ts"
+      ],
+      "scheduledWorkflows": [
+        "ping-search.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/ci.yml",
+        "package.json",
+        "scripts/collect-courts.ts",
+        "scripts/collect-players.ts",
+        "scripts/seed-all.ts",
+        "scripts/seed-districts.ts"
+      ],
+      "apiSignals": [
+        "scripts/collect-courts.ts",
+        "scripts/ping-indexnow.ts",
+        "scripts/publish-url.ts",
+        "scripts/verify-setup.ts"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for picklefriend: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "pregnancy-ehon365",
+      "url": "https://pregnancy.ehon365.kr/",
+      "localPath": "D:/web/pregnancy",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "candidate-review",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "DB-backed data signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json"
+      ],
+      "apiSignals": [],
+      "recommendedCheck": "Review local collector/API signals before adding this site to the mandatory new-data workflow."
+    },
+    {
+      "id": "rndatlas",
+      "url": "https://rndatlas.com/",
+      "localPath": "D:/web/rndmap",
+      "declaredPlatform": "nextjs",
+      "dashboardContentType": "github-next",
+      "githubRepo": "https://github.com/lsk7209/rndmap",
+      "evidenceLevel": "candidate-review",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "dashboard platform=nextjs",
+        "dashboard contentSource=github-next",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "DB-backed data signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        ".github/workflows/ci.yml",
+        "package.json"
+      ],
+      "apiSignals": [],
+      "recommendedCheck": "Review local collector/API signals before adding this site to the mandatory new-data workflow."
+    },
+    {
+      "id": "roadways",
+      "url": "https://roadways.kr/",
+      "localPath": "D:/web/roadwayskr",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "sync-tourapi.ts"
+      ],
+      "scheduledWorkflows": [
+        "sync-tourapi.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        "package.json",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/check-live-costs.mjs",
+        "scripts/sync-tourapi.ts"
+      ],
+      "apiSignals": [
+        "scripts/adsense-readiness.ts",
+        "scripts/check-live-costs.mjs"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for roadways: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "sinhonjigi-ehon365",
+      "url": "https://sinhonjigi.ehon365.kr/",
+      "localPath": "D:/web/sinhonjigi",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "candidate-review",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "DB-backed data signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json",
+        "scripts/upsert-curated-wedding-halls.mjs",
+        "scripts/upsert-regions.mjs",
+        "src/lib/db.ts"
+      ],
+      "apiSignals": [],
+      "recommendedCheck": "Review local collector/API signals before adding this site to the mandatory new-data workflow."
+    },
+    {
+      "id": "solarpaybackmap",
+      "url": "https://solarpaybackmap.com/",
+      "localPath": "D:/web/solarpaybackmap",
+      "declaredPlatform": "nextjs",
+      "dashboardContentType": "github-next",
+      "githubRepo": "https://github.com/lsk7209/solarpaybackmap.com",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": false,
+      "evidence": [
+        "dashboard platform=nextjs",
+        "dashboard contentSource=github-next",
+        "package.json depends on next",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [],
+      "apiSignals": [
+        "lib/pvwatts.js",
+        "scripts/runtime_smoke.mjs",
+        "scripts/verify_calc.mjs",
+        "vercel.json"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "temon",
+      "url": "https://temon.kr/",
+      "localPath": "D:/web/temon",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "fix-missing-imports.js"
+      ],
+      "scheduledWorkflows": [
+        "seo-weekly-report.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        "package.json",
+        "scripts/add-100-quiz-topics.js",
+        "scripts/add-new-topics.js",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/audit-quiz-flow.js",
+        "scripts/audit-result-pages.js",
+        "scripts/audit-wave2-quiz-quality.js",
+        "scripts/check-live-costs.mjs",
+        "scripts/check-queue-status.js",
+        "scripts/check-stats.js",
+        "scripts/check-status.js",
+        "scripts/cleanup-queue.js",
+        "scripts/cleanup-wave2-result-summaries.js",
+        "scripts/clear-queue.js",
+        "scripts/compare-quizzes.js",
+        "scripts/delete-corrupted.js",
+        "scripts/enrich-published-thin-results.js",
+        "scripts/generate-quiz-batch.js",
+        "scripts/generate-wave3-quizzes.js",
+        "scripts/generate-wave4-quizzes.js",
+        "scripts/generate-wave5-quizzes.js",
+        "scripts/generate-wave6-quizzes.js",
+        "scripts/improve-published-quiz-quality.js",
+        "scripts/improve-wave2-quiz-quality.js",
+        "scripts/improve-wave2-result-summaries.js",
+        "scripts/inspect-result-json.js",
+        "scripts/inspect-test-data.js",
+        "scripts/inspect-test.js",
+        "scripts/manual-factory-test.js",
+        "scripts/manual-generate-one.js",
+        "scripts/migrate.js",
+        "scripts/normalize-test-metadata.js",
+        "scripts/polish-quiz-drafts.js",
+        "scripts/process-queue.js",
+        "scripts/publish-quiz-drafts.js",
+        "scripts/publish-test.js",
+        "scripts/refine-published-taxonomy.js",
+        "scripts/refresh-wave5-6-content.js",
+        "scripts/repair-due-draft-quality.js",
+        "scripts/repair-published-descriptions.js",
+        "scripts/score-due-drafts.js",
+        "scripts/test-connection.js",
+        "scripts/verify-db.js",
+        "scripts/verify-questions.js",
+        "scripts/verify-slug.js"
+      ],
+      "apiSignals": [
+        "scripts/audit-quiz-flow.js",
+        "scripts/check-live-costs.mjs",
+        "scripts/gsc-opportunity-report.js",
+        "scripts/gsc-sitemap-submit.js",
+        "scripts/indexnow-submit.js",
+        "scripts/test-og.js"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for temon: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "tennisfrens",
+      "url": "https://tennisfrens.com/",
+      "localPath": "D:/web/tennisfrens",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "fetch-ga4-data.mjs",
+        "fetch-gsc-data.mjs",
+        "sync-blog-posts-db.js"
+      ],
+      "scheduledWorkflows": [
+        "auto-content.yml",
+        "content-refresh.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        "next.config.ts",
+        "package.json",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/check-live-costs.mjs",
+        "scripts/sync-blog-posts-db.js"
+      ],
+      "apiSignals": [
+        "scripts/audit-ads-analytics.mjs",
+        "scripts/audit-live-seo-samples.mjs",
+        "scripts/audit-performance.mjs",
+        "scripts/audit-public-endpoints.mjs",
+        "scripts/audit-quiz-experience.mjs",
+        "scripts/audit-redirects.mjs",
+        "scripts/auto-content.js",
+        "scripts/check-live-costs.mjs",
+        "scripts/content-refresh.js",
+        "scripts/submit-indexnow.js"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for tennisfrens: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "texturb",
+      "url": "https://texturb.com/",
+      "localPath": "D:/web/texturb",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json",
+        "scripts/clear-posts.ts",
+        "scripts/init-db.ts",
+        "scripts/seed-backdate.ts",
+        "scripts/seed-final.ts",
+        "scripts/seed-posts.ts",
+        "scripts/seed-rewrite.ts",
+        "scripts/seed-v2.ts"
+      ],
+      "apiSignals": [
+        "scripts/gsc-ga4-analysis.ts"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "today2424",
+      "url": "https://today2424.kr/",
+      "localPath": "D:/web/today2424/2424",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [],
+      "dbSignals": [],
+      "apiSignals": [
+        "scripts/audit-gsc-ga4.mjs",
+        "scripts/seo-utils.mjs",
+        "scripts/submit-gsc-sitemap.mjs",
+        "scripts/submit-indexing.mjs",
+        "vercel.json"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    },
+    {
+      "id": "todaypharm",
+      "url": "https://todaypharm.kr/",
+      "localPath": "D:/web/todaypharm",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "fetch-hff-data.ts",
+        "fetch-medicines.ts",
+        "sync-pharmacies-from-json.ts",
+        "sync-pharmacies.ts",
+        "sync-public-data.ts",
+        "sync-supplements.ts"
+      ],
+      "scheduledWorkflows": [
+        "auto-enrich-supplements.yml",
+        "daily-sync.yml",
+        "generate-blog.yml",
+        "generate-content.yml",
+        "publish-content.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/apply-turso-schema.yml",
+        ".github/workflows/daily-sync.yml",
+        ".github/workflows/hosting-cost-guard.yml",
+        ".github/workflows/live-cost-watch.yml",
+        ".github/workflows/repair-blog-content-quality.yml",
+        ".github/workflows/turso-usage-monitor.yml",
+        "next.config.mjs",
+        "package.json",
+        "scripts/apply-pharmacy-images.ts",
+        "scripts/audit-hosting-costs.mjs",
+        "scripts/auto-enrich-supplements.ts",
+        "scripts/check-counts.ts",
+        "scripts/check-live-costs.mjs",
+        "scripts/check-missing-images.ts",
+        "scripts/check-supplements-count.ts",
+        "scripts/check-turso-usage.mjs",
+        "scripts/debug-tag-update.ts",
+        "scripts/delete-pending-queue.ts",
+        "scripts/enrich-from-hff-excel.ts",
+        "scripts/enrich-from-product-name.ts",
+        "scripts/fetch-hff-data.ts",
+        "scripts/fetch-medicines.ts",
+        "scripts/fill-missing-summaries.ts",
+        "scripts/finalize-images.ts",
+        "scripts/fix-supplement-tags.ts",
+        "scripts/generate-blog-post.ts",
+        "scripts/generate-gemini-summary.ts",
+        "scripts/generate-pharmacy-content.ts",
+        "scripts/generate-single-pharmacy.ts",
+        "scripts/init-turso-schema.mjs",
+        "scripts/inspect-product.ts",
+        "scripts/list-sitemap-urls.ts",
+        "scripts/migrate-supabase-to-turso.mjs",
+        "scripts/prepare-blog-campaign-v2.ts",
+        "scripts/prepare-blog-campaign-v3.ts",
+        "scripts/prepare-blog-campaign-v4.ts",
+        "scripts/prepare-blog-campaign.ts",
+        "scripts/publish-queue.ts",
+        "scripts/re-enrich-empty.ts",
+        "scripts/repair-blog-content-quality.ts",
+        "scripts/sync-pharmacies-from-json.ts",
+        "scripts/sync-pharmacies.ts",
+        "scripts/sync-supplements.ts",
+        "scripts/verify-blog-quality.ts",
+        "scripts/verify-tags.ts",
+        "src/lib/turso.ts"
+      ],
+      "apiSignals": [
+        ".github/workflows/auto-enrich-supplements.yml",
+        ".github/workflows/daily-sync.yml",
+        "scripts/auto-enrich-supplements.ts",
+        "scripts/check-gemini-api.ts",
+        "scripts/check-live-costs.mjs",
+        "scripts/check-turso-usage.mjs",
+        "scripts/fetch-hff-data.ts",
+        "scripts/fetch-medicines.ts",
+        "scripts/migrate-supabase-to-turso.mjs",
+        "scripts/sync-pharmacies.ts",
+        "scripts/sync-public-data.ts",
+        "scripts/sync-supplements.ts",
+        "scripts/test-gemini-api.ts"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for todaypharm: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "wattbenchs",
+      "url": "https://wattbenchs.com/",
+      "localPath": "D:/web/electonic",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [],
+      "scheduledWorkflows": [
+        "gsc-sitemap-submit.yml"
+      ],
+      "dbSignals": [
+        ".github/workflows/ci.yml",
+        "package.json",
+        "scripts/validate-articles.mjs"
+      ],
+      "apiSignals": [
+        "scripts/gsc-submit-sitemap.mjs"
+      ],
+      "recommendedCheck": "Read-only DB freshness check for wattbenchs: compare latest source updated_at/created_at and pending content queue counts before generating content."
+    },
+    {
+      "id": "yungyanggogo",
+      "url": "https://yungyanggogo.kr/",
+      "localPath": "D:/web/yungyanggogo",
+      "declaredPlatform": "wordpress",
+      "dashboardContentType": "local-app",
+      "evidenceLevel": "api-backed-content",
+      "staleDashboardPlatform": true,
+      "evidence": [
+        "dashboard platform label appears stale; local project has Next.js evidence",
+        "local .vercel directory exists",
+        "package.json depends on next",
+        "collector/sync workflow or script detected",
+        "DB-backed data signal detected",
+        "external API signal detected"
+      ],
+      "collectionScripts": [
+        "sync-national-nutrition.mjs"
+      ],
+      "scheduledWorkflows": [],
+      "dbSignals": [
+        "package.json",
+        "scripts/generate-phase6t-fourmonth-blog.mjs",
+        "scripts/generate-scheduled-blog-batch.mjs",
+        "scripts/sync-national-nutrition.mjs"
+      ],
+      "apiSignals": [
+        "scripts/generate-phase6t-fourmonth-blog.mjs",
+        "scripts/generate-scheduled-blog-batch.mjs",
+        "scripts/gsc-sitemap.mjs",
+        "scripts/sync-national-nutrition.mjs"
+      ],
+      "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+    }
+  ]
+}

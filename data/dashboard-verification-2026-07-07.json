@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-07-06T23:20:33.918Z",
+  "date": "2026-07-07",
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "commands": [
+    {
+      "id": "fleet-optimize",
+      "args": [
+        "fleet:optimize"
+      ]
+    },
+    {
+      "id": "dashboard-smoke",
+      "args": [
+        "dashboard:smoke"
+      ]
+    },
+    {
+      "id": "dashboard-ui-smoke",
+      "args": [
+        "dashboard:ui-smoke",
+        "--url=http://127.0.0.1:3000/?actionabilityMode=local-evidence"
+      ]
+    },
+    {
+      "id": "adsense-proof-verify",
+      "args": [
+        "adsense:proof:verify"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "fleet-optimize",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 fleet:optimize D:\\web\\multi-dashboard\n> tsx scripts/setup/run-fleet-optimization-chain.ts\n\nWrote data\\fleet-optimization-chain-2026-07-07.json and docs\\work-orders\\fleet-optimization-chain-2026-07-07.md. snapshot=2026-07-06T23:20:23.084Z commands=6 pass=6 fail=0 skipped=0 handoffSites=13\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-smoke",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:smoke D:\\web\\multi-dashboard\n> tsx scripts/setup/verify-dashboard-runtime-smoke.ts\n\nDashboard runtime smoke passed. snapshot=2026-07-06T23:20:23.084Z sites=98 actions=16 insights=77 chainStatus=current verdict=ready blockers=none checks=8\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-ui-smoke",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:ui-smoke D:\\web\\multi-dashboard\n> tsx scripts/setup/verify-dashboard-rendered-ui-smoke.ts \"--url=http://127.0.0.1:3000/?actionabilityMode=local-evidence\"\n\nDashboard rendered UI smoke passed. url=http://127.0.0.1:3000/?actionabilityMode=local-evidence&actionabilityToken=redacted snapshot=2026-07-06T23:20:23.084Z sites=98 blocking=0 maintenance=0 blockers=none checks=8 artifact=data\\dashboard-ui-smoke-2026-07-07.json\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "adsense-proof-verify",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:proof:verify D:\\web\\multi-dashboard\n> tsx scripts/setup/verify-adsense-proof-artifacts.ts\n\nAdSense proof artifacts verified. snapshot=2026-07-06T23:20:23.084Z externalProof=0 localSupplement=0 livePublic=0 endpointRetry=0 loaderRetry=0 hostingEndpointPacket=0 hostingLoaderPacket=0 hostingLoaderResult=0 consoleState=0 networkVantage=0 remediationQueue=0 checkedActions=0\n",
+      "stderrTail": ""
+    }
+  ],
+  "summary": {
+    "commands": 4,
+    "pass": 4,
+    "expectedBlocked": 0,
+    "fail": 0,
+    "skipped": 0
+  },
+  "verdict": "local_verified",
+  "blockerSources": [],
+  "maintenanceSources": [],
+  "blockerDetails": [],
+  "maintenanceDetails": [],
+  "externalBlockerEvidence": [],
+  "postRecoveryShortcutCommand": "",
+  "postRecoveryCommands": [],
+  "renderedUiSmokeEvidence": {
+    "path": "data\\dashboard-ui-smoke-2026-07-07.json",
+    "exists": true,
+    "expectedStatsSnapshot": "2026-07-06T23:20:23.084Z",
+    "statsSnapshot": "2026-07-06T23:20:23.084Z",
+    "artifactGeneratedAt": "2026-07-06T23:20:33.183Z",
+    "status": "current",
+    "productionMutationPerformed": false,
+    "cmsMutationPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false
+  },
+  "dashboardSurfaceEvidence": {
+    "sourceCommand": "dashboard-smoke",
+    "status": "current",
+    "statsSnapshot": "2026-07-06T23:20:23.084Z",
+    "siteCount": 98,
+    "actionCount": 16,
+    "insightCount": 77,
+    "chainStatus": "current",
+    "chainVerdict": "ready",
+    "blockerHosts": []
+  },
+  "dashboardActionability": {
+    "status": "safe_to_act",
+    "allowedUse": "Action and insight recommendations are locally verified against the current snapshot.",
+    "reason": "No external readiness blocker is present and dashboard surface evidence is current.",
+    "blockerHosts": [],
+    "requiredVerificationCommand": "pnpm dashboard:post-recovery"
+  },
+  "postRecoveryAcceptance": [
+    {
+      "id": "external_gsc_access_restored",
+      "status": "satisfied",
+      "requirement": "Search Console access/ownership is restored for every external GSC blocker.",
+      "evidence": "No external GSC blocker evidence remains."
+    },
+    {
+      "id": "dashboard_verify_local_verified",
+      "status": "satisfied",
+      "requirement": "`pnpm dashboard:verify` finishes with verdict `local_verified`.",
+      "evidence": "Current verdict is local_verified."
+    },
+    {
+      "id": "rendered_ui_smoke_current",
+      "status": "satisfied",
+      "requirement": "Rendered browser UI smoke exists and matches the current stats snapshot.",
+      "evidence": "Rendered UI smoke status is current."
+    },
+    {
+      "id": "dashboard_surface_current",
+      "status": "satisfied",
+      "requirement": "Dashboard runtime surface evidence matches the current stats snapshot.",
+      "evidence": "Dashboard surface status is current."
+    },
+    {
+      "id": "recommendations_safe_to_act",
+      "status": "satisfied",
+      "requirement": "Dashboard actions and insights are execution-ready, not read-only.",
+      "evidence": "Current actionability is safe_to_act."
+    },
+    {
+      "id": "mutation_boundary_clean",
+      "status": "satisfied",
+      "requirement": "Verification remains non-mutating for production, CMS, GSC, AdSense, and title/body content.",
+      "evidence": "Mutation flags: production=false, cms=false, searchConsole=false, adsense=false, titleOrBody=false."
+    }
+  ],
+  "mutationBoundaryEvidence": {
+    "localEvidenceArtifactsWritten": true,
+    "productionMutationPerformed": false,
+    "cmsMutationPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false,
+    "evidenceArtifacts": [
+      {
+        "source": "site_stats_snapshot",
+        "path": "data\\site-stats.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:23.084Z",
+        "snapshot": "2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "site_stats_history",
+        "path": "data\\history\\2026-07-06.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:23.084Z",
+        "snapshot": "2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "fleet_optimization_chain",
+        "path": "data\\fleet-optimization-chain-2026-07-07.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:28.469Z",
+        "snapshot": "2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "gsc_permission_audit",
+        "path": "data\\gsc-permission-audit-2026-07-07.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:25.856Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "adsense_remediation_queue",
+        "path": "data\\adsense-remediation-queue-2026-07-07.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:26.387Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "vercel_api_data_inventory",
+        "path": "data\\vercel-api-data-sites.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:27.301Z",
+        "snapshot": "2026-07-06T23:20:27.301Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "fleet_optimization_plan",
+        "path": "data\\fleet-optimization-plan-2026-07-07.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:27.808Z",
+        "snapshot": "2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "t3_title_content_handoff",
+        "path": "data\\t3-title-content-handoff-2026-07-07.json",
+        "exists": true,
+        "generatedAt": "2026-07-06T23:20:28.428Z",
+        "snapshot": "2026-07-06T23:20:23.084Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      }
+    ]
+  },
+  "statsSnapshot": "2026-07-06T23:20:23.084Z",
+  "stopCondition": "This verification is production/external non-mutating. It refreshes local dashboard evidence artifacts, accepts only known external readiness blockers, runs runtime smoke and proof verification, and does not authorize CMS edits, title/body edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
+}
