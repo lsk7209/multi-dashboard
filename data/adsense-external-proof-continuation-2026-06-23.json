@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-06-23T14:05:00.000Z",
+  "scope": "remaining unapproved AdSense public-fetch-blocked candidates",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-06-28T19:27:32.760Z",
+  "expectedPublisher": {
+    "adsenseClient": "ca-pub-3050601904412736",
+    "adsTxtPublisher": "pub-3050601904412736",
+    "adsTxtLine": "google.com, pub-3050601904412736, DIRECT, f08c47fec0942fa0"
+  },
+  "commonLocalCollectorFinding": {
+    "adsenseStatus": "api_error",
+    "adsTxtStatus": "api_error",
+    "collectorStatus": "transient_error",
+    "pattern": "homepage and /ads.txt timed out from the local dashboard collector",
+    "interpretation": "Do not treat local timeout alone as missing AdSense setup or confirmed global outage."
+  },
+  "candidates": [
+    {
+      "siteId": "ezfunnel",
+      "url": "https://ezfunnel.kr/",
+      "host": "ezfunnel.kr",
+      "externalHomepageProof": "not_proven_in_this_pass",
+      "externalHomepageEvidence": "Search/open attempts returned unrelated .com/.co results, not authoritative current ezfunnel.kr proof. Local hardening package exists at D:/web/ezfunnelkr/tools/ezfunnel-adsense-approval-hardening.php, but live WP root/apply state is not verified.",
+      "externalAdsTxtProof": "not_proven_in_this_pass",
+      "externalLoaderProof": "local_hardening_package_only",
+      "currentDecision": "live_apply_state_needed",
+      "nextGate": "Confirm whether the local hardening package is installed on the live WordPress root before public proof or console submission."
+    }
+  ],
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "snapshotRefresh": {
+    "refreshedAt": "2026-06-28T19:27:55.363Z",
+    "previousCollectorSnapshot": "data/site-stats.json generatedAt=2026-06-28T19:12:44.737Z",
+    "method": "Carried forward only proof evidence whose site still has a transient AdSense or ads.txt collector error in the current dashboard snapshot; resolved sites were pruned.",
+    "productionMutationPerformed": false,
+    "adsenseConsoleChecked": false
+  }
+}
