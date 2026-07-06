@@ -500,6 +500,34 @@ export function BannerManagementConsole() {
   const unassignedSiteCount = filteredSiteSummaries.filter((site) => site.unassignedPlacements > 0).length;
   const adminTokenMissing = state.adminAuthRequired && !adminToken.trim();
   const controlsDisabled = isSaving || !state.writable || adminTokenMissing;
+  const hasBannerData =
+    state.placements.length > 0 || state.creatives.length > 0 || state.trackingLinks.length > 0 || state.siteSummaries.length > 0;
+  const opsReadinessCards = [
+    {
+      detail: state.dbPath ? formatDisplayPath(state.dbPath) : "data/monetization/ad-manage.db",
+      label: "운영 DB",
+      ok: state.dbExists,
+      value: state.dbExists ? "연결됨" : "없음",
+    },
+    {
+      detail: state.persistenceNote || "쓰기 상태를 확인하는 중입니다.",
+      label: "쓰기 상태",
+      ok: state.writable,
+      value: state.writable ? "가능" : "제한",
+    },
+    {
+      detail: state.adminAuthRequired ? "브라우저 저장 토큰 기준" : "토큰 없이 조작 가능",
+      label: "관리 권한",
+      ok: !adminTokenMissing,
+      value: state.adminAuthRequired ? (adminTokenMissing ? "토큰 필요" : "확인됨") : "불필요",
+    },
+    {
+      detail: `사이트 ${formatNumber(state.siteSummaries.length)} · 슬롯 ${formatNumber(state.placements.length)}`,
+      label: "데이터 적재",
+      ok: hasBannerData,
+      value: hasBannerData ? "있음" : "비어 있음",
+    },
+  ];
   const filteredActivePlacements = filteredPlacements.filter((placement) => placement.status === "active");
   const filteredAssignedActivePlacements = filteredActivePlacements.filter(isPlacementAssigned);
   const assignmentRate =
@@ -767,6 +795,26 @@ export function BannerManagementConsole() {
         <span>{state.persistenceNote || "배너 DB 상태를 확인하는 중입니다."}</span>
         <code>{formatDisplayPath(state.dbPath || "data/monetization/ad-manage.db")}</code>
       </div>
+
+      <div className="ops-readiness-grid" aria-label="배너 운영 준비 상태">
+        {opsReadinessCards.map((card) => (
+          <div className={card.ok ? "ops-readiness-card" : "ops-readiness-card warning"} key={card.label}>
+            <span>{card.label}</span>
+            <strong>{card.value}</strong>
+            <small>{card.detail}</small>
+          </div>
+        ))}
+      </div>
+
+      {!state.dbExists ? (
+        <p className="ops-warning-message">배너 운영 DB가 아직 없습니다. 설정 탭에서 첫 배치 위치, 소재, 추적 링크를 만들면 운영 데이터가 생성됩니다.</p>
+      ) : null}
+      {adminTokenMissing ? (
+        <p className="ops-warning-message">관리 토큰이 필요합니다. 토큰을 저장하기 전까지 생성/수정 버튼은 비활성화됩니다.</p>
+      ) : null}
+      {!isLoading && state.dbExists && !hasBannerData ? (
+        <p className="ops-warning-message">현재 배너 운영 데이터가 비어 있습니다. 설정 탭에서 최소 1개 배치 위치와 소재, 추적 링크를 등록하세요.</p>
+      ) : null}
 
       {state.adminAuthRequired ? (
         <div className="ops-admin-token">

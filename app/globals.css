@@ -1840,6 +1840,54 @@ code {
   color: var(--muted);
 }
 
+.ops-readiness-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ops-readiness-card {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.ops-readiness-card.warning {
+  border-color: rgba(161, 92, 0, 0.24);
+  background: var(--warning-weak);
+}
+
+.ops-readiness-card span,
+.ops-readiness-card small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ops-readiness-card strong {
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.ops-warning-message {
+  margin: 0;
+  border: 1px solid rgba(161, 92, 0, 0.24);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #92400e;
+  background: var(--warning-weak);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
 .ops-admin-token {
   align-items: end;
   background: #fbfcfd;
@@ -2750,6 +2798,7 @@ code {
   .stats-layout,
   .support-grid,
   .metric-grid,
+  .ops-readiness-grid,
   .ops-form-grid,
   .ops-filter-grid,
   .ops-overview-layout,
