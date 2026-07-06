@@ -934,39 +934,105 @@ function BannerManagementSection({
   data: ReturnType<typeof getMonetizationWorkspaceData>["bannerManagement"];
   isReadOnlyBlocked: boolean;
 }) {
+  const funnel = [
+    {
+      label: "요청",
+      value: data.counts.requests,
+      hint: "슬롯 호출",
+    },
+    {
+      label: "렌더",
+      value: data.counts.served,
+      hint:
+        data.counts.requests > 0
+          ? `${formatPercent(data.counts.served / data.counts.requests)} 처리`
+          : "요청 없음",
+    },
+    {
+      label: "이미지",
+      value: data.counts.imageRequests,
+      hint: "실제 이미지 호출",
+    },
+    {
+      label: "no_ad",
+      value: data.counts.noAd,
+      hint: data.noAdRate == null ? "비율 없음" : `${formatPercent(data.noAdRate)} 발생`,
+      tone: data.noAdRate != null && data.noAdRate >= 0.2 ? "warning" : "normal",
+    },
+  ];
+  const unassignedPlacements = data.topPlacements.filter(
+    (placement) => !placement.assignedCreativeName || !placement.assignedTrackingSlug,
+  );
+  const noAdPlacements = data.topPlacements
+    .filter((placement) => placement.noAd > 0)
+    .sort((a, b) => b.noAd - a.noAd);
+  const attentionCount = unassignedPlacements.length + noAdPlacements.length;
+  const inventoryCards = [
+    {
+      label: "배치 위치",
+      value: data.counts.placements,
+      hint: `활성 ${formatNumber(data.counts.activePlacements)}개`,
+    },
+    {
+      label: "소재",
+      value: data.counts.creatives,
+      hint: `활성 ${formatNumber(data.counts.activeCreatives)}개`,
+    },
+    {
+      label: "추적 링크",
+      value: data.counts.trackingLinks,
+      hint: `활성 ${formatNumber(data.counts.activeTrackingLinks)}개`,
+    },
+    {
+      label: "연결",
+      value: data.counts.assignments,
+      hint: `활성 ${formatNumber(data.counts.activeAssignments)}개`,
+    },
+  ];
+
   return (
     <div className="workspace-stack">
-      <div className="summary-grid" aria-label="배너 관리 요약">
-        <StatusCard
-          label="배치 위치"
-          value={formatNumber(data.counts.placements)}
-          hint={`활성 ${formatNumber(data.counts.activePlacements)}개`}
-        />
-        <StatusCard
-          label="소재"
-          value={formatNumber(data.counts.creatives)}
-          hint={`활성 ${formatNumber(data.counts.activeCreatives)}개`}
-        />
-        <StatusCard
-          label="추적 링크"
-          value={formatNumber(data.counts.trackingLinks)}
-          hint={`활성 ${formatNumber(data.counts.activeTrackingLinks)}개`}
-        />
-        <StatusCard
-          label="no_ad 비율"
-          value={data.noAdRate == null ? "-" : formatPercent(data.noAdRate)}
-          hint={`요청 ${formatNumber(data.counts.requests)}회 중 no_ad ${formatNumber(data.counts.noAd)}회`}
-        />
-      </div>
+      <article className="panel banner-ops-overview">
+        <div className="panel-heading">
+          <div>
+            <h2>배너 운영 현황</h2>
+            <p>요청, 렌더, 이미지 호출, no_ad를 같은 흐름으로 보고 점검 대상을 바로 분리합니다.</p>
+          </div>
+          <span>{formatShortDateTime(data.generatedAt)}</span>
+        </div>
+        <div className="banner-ops-grid" aria-label="배너 운영 핵심 지표">
+          <div className="banner-ops-funnel">
+            {funnel.map((item) => (
+              <div className={item.tone === "warning" ? "banner-funnel-step warning" : "banner-funnel-step"} key={item.label}>
+                <span>{item.label}</span>
+                <strong>{formatNumber(item.value)}</strong>
+                <small>{item.hint}</small>
+              </div>
+            ))}
+          </div>
+          <div className="banner-inventory-grid">
+            {inventoryCards.map((item) => (
+              <MiniMetric key={item.label} label={item.label} value={item.value} hint={item.hint} />
+            ))}
+          </div>
+          <div className={attentionCount > 0 ? "banner-attention warning" : "banner-attention"}>
+            <span>우선 점검</span>
+            <strong>{formatNumber(attentionCount)}</strong>
+            <p>
+              미배정 {formatNumber(unassignedPlacements.length)}개 · no_ad 발생{" "}
+              {formatNumber(noAdPlacements.length)}개
+            </p>
+          </div>
+        </div>
+      </article>
 
-      <div className="workspace-grid">
+      <div className="workspace-grid banner-system-grid">
         <article className="panel">
           <div className="panel-heading">
             <div>
-              <h2>배너 관리 시스템</h2>
-              <p>멀티 대시보드 내부 운영 DB를 읽기 전용 스냅샷으로 집계합니다.</p>
+              <h2>스냅샷 기준</h2>
+              <p>운영 DB와 갱신 명령을 확인합니다.</p>
             </div>
-            <span>{formatShortDateTime(data.generatedAt)}</span>
           </div>
           <div className="command-list">
             <div className="command-row">
@@ -991,8 +1057,8 @@ function BannerManagementSection({
         <article className="panel">
           <div className="panel-heading">
             <div>
-              <h2>이벤트 상태</h2>
-              <p>배너 요청, 노출 가능 여부, 이미지 요청을 이벤트 원장에서 집계합니다.</p>
+              <h2>이벤트 원장</h2>
+              <p>수집 이벤트를 빈도순으로 표시합니다.</p>
             </div>
             <span>{formatNumber(data.counts.placementEvents)}건</span>
           </div>
@@ -1018,7 +1084,7 @@ function BannerManagementSection({
         <div className="panel-heading">
           <div>
             <h2>배치 위치별 성과</h2>
-            <p>활성 소재와 추적 링크 연결 여부를 함께 봅니다.</p>
+            <p>요청량, 이미지 호출, no_ad, 연결 누락을 한 줄에서 비교합니다.</p>
           </div>
           <span>{formatNumber(data.topPlacements.length)}개 표시</span>
         </div>
@@ -1200,10 +1266,21 @@ function StatusCard({
   );
 }
 
-function MiniMetric({ label, value }: { label: string; value: number }) {
+function MiniMetric({
+  hint,
+  label,
+  value,
+}: {
+  hint?: string;
+  label: string;
+  value: number;
+}) {
   return (
     <div className="mini-metric">
-      <span>{label}</span>
+      <div>
+        <span>{label}</span>
+        {hint ? <small>{hint}</small> : null}
+      </div>
       <strong>{formatNumber(value)}</strong>
     </div>
   );

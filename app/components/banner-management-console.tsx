@@ -346,6 +346,42 @@ export function BannerManagementConsole() {
     activeUnassignedPlacements.length + noAdPlacements.length + reviewCreatives.length + trackingLinkIssues.length + attentionSites.length;
   const adminTokenMissing = state.adminAuthRequired && !adminToken.trim();
   const controlsDisabled = isSaving || !state.writable || adminTokenMissing;
+  const filteredActivePlacements = filteredPlacements.filter((placement) => placement.status === "active");
+  const filteredAssignedActivePlacements = filteredActivePlacements.filter(isPlacementAssigned);
+  const assignmentRate =
+    filteredActivePlacements.length > 0 ? filteredAssignedActivePlacements.length / filteredActivePlacements.length : 0;
+  const noAdTotal = filteredPlacements.reduce((total, placement) => total + placement.noAd, 0);
+  const requestTotal = filteredPlacements.reduce((total, placement) => total + placement.requests, 0);
+  const filteredImageRequests = filteredPlacements.reduce((total, placement) => total + placement.imageRequests, 0);
+  const filteredFunnel = [
+    {
+      label: "활성 슬롯",
+      value: filteredActivePlacements.length,
+      detail: `전체 ${formatNumber(filteredPlacements.length)}개`,
+    },
+    {
+      label: "배정 커버리지",
+      value: formatPercent(assignmentRate),
+      detail: `${formatNumber(filteredAssignedActivePlacements.length)} / ${formatNumber(filteredActivePlacements.length)} 활성`,
+    },
+    {
+      label: "이미지 요청",
+      value: formatNumber(filteredImageRequests),
+      detail: `요청 ${formatNumber(requestTotal)}회`,
+    },
+    {
+      label: "no_ad",
+      value: formatNumber(noAdTotal),
+      detail: requestTotal > 0 ? `${formatPercent(noAdTotal / requestTotal)} 발생` : "요청 없음",
+      warning: noAdTotal > 0,
+    },
+    {
+      label: "점검 큐",
+      value: formatNumber(attentionCount),
+      detail: "미배정, no_ad, 소재, 링크, 사이트",
+      warning: attentionCount > 0,
+    },
+  ];
 
   async function loadState() {
     setIsLoading(true);
@@ -537,6 +573,15 @@ export function BannerManagementConsole() {
               <option value="unassigned">미배정</option>
             </select>
           </label>
+        </div>
+        <div className="ops-kpi-strip" aria-label="필터 기준 배너 핵심 지표">
+          {filteredFunnel.map((item) => (
+            <div className={item.warning ? "ops-kpi warning" : "ops-kpi"} key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+              <small>{item.detail}</small>
+            </div>
+          ))}
         </div>
         <div className="ops-fleet-metrics">
           <span>사이트 {formatNumber(state.siteSummaries.length)}개</span>
