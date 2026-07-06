@@ -117,6 +117,7 @@ type ApiAction =
 
 type BannerOpsTabId = "overview" | "sites" | "setup" | "assignments" | "install" | "diagnostics";
 type SortDirection = "asc" | "desc";
+type SiteQuickFilterId = "all" | "attention" | "unassigned" | "no_ad" | "inactive" | "zero_click_7d" | "recent_exposure";
 type SiteSortKey =
   | "activePlacements"
   | "assignedPlacements"
@@ -148,6 +149,15 @@ const SITE_SUMMARY_COLUMNS: Array<{ key: SiteSortKey; label: string }> = [
   { key: "clicks7d", label: "7일 클릭" },
   { key: "ctr7d", label: "7일 CTR" },
   { key: "lastUpdatedAt", label: "갱신" },
+];
+const SITE_QUICK_FILTERS: Array<{ id: SiteQuickFilterId; label: string }> = [
+  { id: "all", label: "전체" },
+  { id: "attention", label: "점검 필요" },
+  { id: "unassigned", label: "미배정 있음" },
+  { id: "no_ad", label: "no_ad 있음" },
+  { id: "inactive", label: "활성 0" },
+  { id: "zero_click_7d", label: "7일 클릭 없음" },
+  { id: "recent_exposure", label: "최근 호출 있음" },
 ];
 
 const MAX_TABLE_ROWS = 50;
@@ -203,6 +213,7 @@ export function BannerManagementConsole() {
   const [assignmentFilter, setAssignmentFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<BannerOpsTabId>("overview");
+  const [siteQuickFilter, setSiteQuickFilter] = useState<SiteQuickFilterId>("all");
   const [siteSort, setSiteSort] = useState<{ key: SiteSortKey; direction: SortDirection }>({
     direction: "desc",
     key: "imageRequests",
@@ -280,7 +291,7 @@ export function BannerManagementConsole() {
     });
   }, [searchQuery, siteFilter, state.assignments]);
 
-  const filteredSiteSummaries = useMemo(() => {
+  const baseFilteredSiteSummaries = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return state.siteSummaries.filter((site) => {
       if (siteFilter !== "all" && site.siteKey !== siteFilter) return false;
@@ -290,9 +301,27 @@ export function BannerManagementConsole() {
         .some((value) => String(value).toLowerCase().includes(query));
     });
   }, [searchQuery, siteFilter, state.siteSummaries]);
+  const filteredSiteSummaries = useMemo(
+    () => baseFilteredSiteSummaries.filter((site) => matchesSiteQuickFilter(site, siteQuickFilter)),
+    [baseFilteredSiteSummaries, siteQuickFilter],
+  );
   const sortedSiteSummaries = useMemo(
     () => sortSiteSummaries(filteredSiteSummaries, siteSort.key, siteSort.direction),
     [filteredSiteSummaries, siteSort.direction, siteSort.key],
+  );
+  const visibleSiteSummaries = useMemo(
+    () => sortedSiteSummaries.slice(0, MAX_TABLE_ROWS),
+    [sortedSiteSummaries],
+  );
+  const siteQuickFilterCounts = useMemo(
+    () =>
+      Object.fromEntries(
+        SITE_QUICK_FILTERS.map((filter) => [
+          filter.id,
+          baseFilteredSiteSummaries.filter((site) => matchesSiteQuickFilter(site, filter.id)).length,
+        ]),
+      ) as Record<SiteQuickFilterId, number>,
+    [baseFilteredSiteSummaries],
   );
 
   const selectedSiteSummary = useMemo(
@@ -812,7 +841,29 @@ export function BannerManagementConsole() {
       {activeTab === "sites" ? (
         <div className="ops-tab-panel">
           <div className="ops-table-card ops-site-summary">
-            <h3>사이트별 배너 운영 현황 ({formatNumber(filteredSiteSummaries.length)})</h3>
+            <div className="ops-table-card-heading">
+              <div>
+                <h3>사이트별 배너 운영 현황 ({formatNumber(filteredSiteSummaries.length)})</h3>
+                <p>
+                  {formatNumber(visibleSiteSummaries.length)} / {formatNumber(filteredSiteSummaries.length)}개 표시
+                  {sortedSiteSummaries.length > MAX_TABLE_ROWS ? ` · 첫 ${formatNumber(MAX_TABLE_ROWS)}개` : ""}
+                </p>
+              </div>
+              <div className="ops-quick-filters" aria-label="사이트 빠른 필터">
+                {SITE_QUICK_FILTERS.map((filter) => (
+                  <button
+                    aria-pressed={siteQuickFilter === filter.id}
+                    className={siteQuickFilter === filter.id ? "active" : ""}
+                    key={filter.id}
+                    type="button"
+                    onClick={() => setSiteQuickFilter(filter.id)}
+                  >
+                    <span>{filter.label}</span>
+                    <strong>{formatNumber(siteQuickFilterCounts[filter.id])}</strong>
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="workspace-table-wrap">
               <table className="workspace-table ops-table ops-site-summary-table">
                 <thead>
@@ -838,28 +889,37 @@ export function BannerManagementConsole() {
                     <tr>
                       <td colSpan={SITE_SUMMARY_COLUMNS.length}>불러오는 중입니다.</td>
                     </tr>
-                  ) : sortedSiteSummaries.length > 0 ? (
-                    sortedSiteSummaries.map((site) => (
-                      <tr key={site.siteKey}>
-                        <td>
-                          <strong>{site.siteKey}</strong>
-                          <small>{site.siteUrl ?? "URL 미등록"}</small>
-                        </td>
-                        <td>{formatNumber(site.placements)}</td>
-                        <td>{formatNumber(site.activePlacements)}</td>
-                        <td>{formatNumber(site.assignedPlacements)}</td>
-                        <td>{formatNumber(site.unassignedPlacements)}</td>
-                        <td>{formatNumber(site.noAd)}</td>
-                        <td>{formatNumber(site.requests)}</td>
-                        <td>{formatNumber(site.imageRequests)}</td>
-                        <td>{formatNumber(site.clicks)}</td>
-                        <td>{formatPercent(getCtrRate(site))}</td>
-                        <td>{formatNumber(site.imageRequests7d)}</td>
-                        <td>{formatNumber(site.clicks7d)}</td>
-                        <td>{formatPercent(getCtrRate7d(site))}</td>
-                        <td>{formatDateTime(site.lastUpdatedAt)}</td>
-                      </tr>
-                    ))
+                  ) : visibleSiteSummaries.length > 0 ? (
+                    visibleSiteSummaries.map((site) => {
+                      const risk = getSiteRisk(site);
+                      return (
+                        <tr
+                          className={risk.level === "none" ? undefined : `ops-risk-row ops-risk-${risk.level}`}
+                          data-risk={risk.level}
+                          data-risk-reason={risk.reason}
+                          key={site.siteKey}
+                        >
+                          <td>
+                            <strong>{site.siteKey}</strong>
+                            <small>{site.siteUrl ?? "URL 미등록"}</small>
+                            {risk.level === "none" ? null : <small className="ops-risk-label">{risk.label}</small>}
+                          </td>
+                          <td>{formatNumber(site.placements)}</td>
+                          <td>{formatNumber(site.activePlacements)}</td>
+                          <td>{formatNumber(site.assignedPlacements)}</td>
+                          <td>{formatNumber(site.unassignedPlacements)}</td>
+                          <td>{formatNumber(site.noAd)}</td>
+                          <td>{formatNumber(site.requests)}</td>
+                          <td>{formatNumber(site.imageRequests)}</td>
+                          <td>{formatNumber(site.clicks)}</td>
+                          <td>{formatPercent(getCtrRate(site))}</td>
+                          <td>{formatNumber(site.imageRequests7d)}</td>
+                          <td>{formatNumber(site.clicks7d)}</td>
+                          <td>{formatPercent(getCtrRate7d(site))}</td>
+                          <td>{formatDateTime(site.lastUpdatedAt)}</td>
+                        </tr>
+                      );
+                    })
                   ) : (
                     <tr>
                       <td colSpan={SITE_SUMMARY_COLUMNS.length}>조건에 맞는 사이트별 배너 슬롯이 없습니다.</td>
@@ -1415,6 +1475,65 @@ function getCtrRate(input: { clicks: number; imageRequests: number }): number {
 function getCtrRate7d(input: { clicks7d: number; imageRequests7d: number }): number {
   if (input.imageRequests7d <= 0) return 0;
   return input.clicks7d / input.imageRequests7d;
+}
+
+function matchesSiteQuickFilter(site: SiteSummaryRow, filter: SiteQuickFilterId): boolean {
+  switch (filter) {
+    case "all":
+      return true;
+    case "attention":
+      return getSiteRisk(site).level !== "none";
+    case "inactive":
+      return site.activePlacements === 0;
+    case "no_ad":
+      return site.noAd > 0;
+    case "recent_exposure":
+      return site.imageRequests7d > 0;
+    case "unassigned":
+      return site.unassignedPlacements > 0;
+    case "zero_click_7d":
+      return site.imageRequests7d >= 20 && site.clicks7d === 0;
+  }
+}
+
+function getSiteRisk(site: SiteSummaryRow): {
+  label: string;
+  level: "critical" | "high" | "medium" | "none";
+  reason: string;
+} {
+  if (site.activePlacements === 0) {
+    return {
+      label: "활성 슬롯 없음",
+      level: "critical",
+      reason: "inactive",
+    };
+  }
+  if (site.unassignedPlacements > 0) {
+    return {
+      label: "미배정 있음",
+      level: "high",
+      reason: "unassigned",
+    };
+  }
+  if (site.noAd > 0) {
+    return {
+      label: "no_ad 발생",
+      level: "medium",
+      reason: "no_ad",
+    };
+  }
+  if (site.imageRequests7d >= 20 && site.clicks7d === 0) {
+    return {
+      label: "7일 클릭 없음",
+      level: "medium",
+      reason: "zero_click_7d",
+    };
+  }
+  return {
+    label: "정상",
+    level: "none",
+    reason: "none",
+  };
 }
 
 function sortSiteSummaries(sites: SiteSummaryRow[], key: SiteSortKey, direction: SortDirection): SiteSummaryRow[] {
