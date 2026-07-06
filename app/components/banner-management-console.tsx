@@ -117,6 +117,7 @@ type ApiAction =
 
 type BannerOpsTabId = "overview" | "sites" | "setup" | "assignments" | "install" | "diagnostics";
 type SortDirection = "asc" | "desc";
+type OpsPriorityTone = "critical" | "warning" | "info";
 type SiteQuickFilterId = "all" | "attention" | "unassigned" | "no_ad" | "inactive" | "zero_click_7d" | "recent_exposure";
 type SiteSortKey =
   | "activePlacements"
@@ -414,6 +415,9 @@ export function BannerManagementConsole() {
   );
   const attentionCount =
     activeUnassignedPlacements.length + noAdPlacements.length + reviewCreatives.length + trackingLinkIssues.length + attentionSites.length;
+  const inactiveSiteCount = filteredSiteSummaries.filter((site) => site.activePlacements === 0).length;
+  const noAdSiteCount = filteredSiteSummaries.filter((site) => site.noAd > 0).length;
+  const unassignedSiteCount = filteredSiteSummaries.filter((site) => site.unassignedPlacements > 0).length;
   const adminTokenMissing = state.adminAuthRequired && !adminToken.trim();
   const controlsDisabled = isSaving || !state.writable || adminTokenMissing;
   const filteredActivePlacements = filteredPlacements.filter((placement) => placement.status === "active");
@@ -423,6 +427,9 @@ export function BannerManagementConsole() {
   const noAdTotal = filteredPlacements.reduce((total, placement) => total + placement.noAd, 0);
   const requestTotal = filteredPlacements.reduce((total, placement) => total + placement.requests, 0);
   const filteredImageRequests = filteredPlacements.reduce((total, placement) => total + placement.imageRequests, 0);
+  const filteredClicks = filteredSiteSummaries.reduce((total, site) => total + site.clicks, 0);
+  const filteredClicks7d = filteredSiteSummaries.reduce((total, site) => total + site.clicks7d, 0);
+  const filteredImageRequests7d = filteredSiteSummaries.reduce((total, site) => total + site.imageRequests7d, 0);
   const filteredFunnel = [
     {
       label: "활성 슬롯",
@@ -450,6 +457,87 @@ export function BannerManagementConsole() {
       value: formatNumber(attentionCount),
       detail: "미배정, no_ad, 소재, 링크, 사이트",
       warning: attentionCount > 0,
+    },
+  ];
+  const overviewHealthCards = [
+    {
+      detail: `활성 ${formatNumber(filteredActivePlacements.length)}개 중 ${formatNumber(filteredAssignedActivePlacements.length)}개`,
+      label: "배정 커버리지",
+      tone: assignmentRate < 1 ? "warning" : "normal",
+      value: formatPercent(assignmentRate),
+    },
+    {
+      detail: requestTotal > 0 ? `요청 ${formatNumber(requestTotal)}회 중 ${formatNumber(noAdTotal)}회` : "요청 없음",
+      label: "no_ad 비율",
+      tone: noAdTotal > 0 ? "warning" : "normal",
+      value: requestTotal > 0 ? formatPercent(noAdTotal / requestTotal) : "0%",
+    },
+    {
+      detail: `클릭 ${formatNumber(filteredClicks)}회 · 이미지 ${formatNumber(filteredImageRequests)}회`,
+      label: "누적 CTR",
+      tone: "normal",
+      value: formatPercent(getCtrRate({ clicks: filteredClicks, imageRequests: filteredImageRequests })),
+    },
+    {
+      detail: `클릭 ${formatNumber(filteredClicks7d)}회 · 이미지 ${formatNumber(filteredImageRequests7d)}회`,
+      label: "최근 7일 CTR",
+      tone: zeroClickExposureSites.length > 0 ? "warning" : "normal",
+      value: formatPercent(getCtrRate7d({ clicks7d: filteredClicks7d, imageRequests7d: filteredImageRequests7d })),
+    },
+  ];
+  const overviewActionQueue: Array<{
+    action: () => void;
+    count: number;
+    detail: string;
+    label: string;
+    tone: OpsPriorityTone;
+  }> = [
+    {
+      action: () => {
+        setActiveTab("sites");
+        setSiteQuickFilter("inactive");
+      },
+      count: inactiveSiteCount,
+      detail: "활성 슬롯이 없는 사이트를 먼저 분리합니다.",
+      label: "활성 슬롯 없음",
+      tone: "critical",
+    },
+    {
+      action: () => {
+        setActiveTab("assignments");
+        setAssignmentFilter("unassigned");
+      },
+      count: activeUnassignedPlacements.length,
+      detail: "active 슬롯인데 소재 또는 추적 링크가 비어 있습니다.",
+      label: "활성 미배정 슬롯",
+      tone: "critical",
+    },
+    {
+      action: () => {
+        setActiveTab("sites");
+        setSiteQuickFilter("no_ad");
+      },
+      count: noAdSiteCount,
+      detail: "no_ad 발생 사이트를 요청량 기준으로 점검합니다.",
+      label: "no_ad 발생 사이트",
+      tone: "warning",
+    },
+    {
+      action: () => {
+        setActiveTab("sites");
+        setSiteQuickFilter("zero_click_7d");
+      },
+      count: zeroClickExposureSites.length,
+      detail: "최근 7일 노출은 있지만 클릭이 없는 사이트입니다.",
+      label: "7일 클릭 없음",
+      tone: "warning",
+    },
+    {
+      action: () => setActiveTab("setup"),
+      count: reviewCreatives.length + trackingLinkIssues.length,
+      detail: "소재 정책 상태와 추적 링크 연결 상태를 확인합니다.",
+      label: "소재/링크 점검",
+      tone: "info",
     },
   ];
 
@@ -687,44 +775,72 @@ export function BannerManagementConsole() {
 
       {activeTab === "overview" ? (
         <div className="ops-tab-panel">
-          <div className="ops-executive-grid">
-            <div className="ops-metric-card">
-              <span>운영 사이트</span>
-              <strong>{formatNumber(state.siteSummaries.length)}</strong>
-              <small>필터 결과 {formatNumber(filteredSiteSummaries.length)}개</small>
-            </div>
-            <div className="ops-metric-card">
-              <span>전체 슬롯</span>
-              <strong>{formatNumber(fleetSummary.placements)}</strong>
-              <small>활성 {formatNumber(fleetSummary.activePlacements)}개</small>
-            </div>
-            <div className="ops-metric-card">
-              <span>배정 누락</span>
-              <strong>{formatNumber(activeUnassignedPlacements.length)}</strong>
-              <small>active 상태인데 소재/링크가 비어 있음</small>
-            </div>
-            <div className="ops-metric-card">
-              <span>점검 항목</span>
-              <strong>{formatNumber(attentionCount)}</strong>
-              <small>no_ad, 검수, 추적 링크, 사이트 이슈 합산</small>
-            </div>
-            <div className="ops-metric-card">
-              <span>이미지 요청</span>
-              <strong>{formatNumber(fleetSummary.imageRequests)}</strong>
-              <small>배너가 실제 호출된 횟수</small>
-            </div>
-            <div className="ops-metric-card">
-              <span>전체 CTR</span>
-              <strong>{formatPercent(getCtrRate(fleetSummary))}</strong>
-              <small>클릭 {formatNumber(fleetSummary.clicks)}회 기준</small>
-            </div>
-            <div className="ops-metric-card">
-              <span>최근 7일 CTR</span>
-              <strong>{formatPercent(getCtrRate7d(fleetSummary))}</strong>
-              <small>
-                클릭 {formatNumber(fleetSummary.clicks7d)}회 · 이미지 요청 {formatNumber(fleetSummary.imageRequests7d)}회
-              </small>
-            </div>
+          <div className="ops-overview-layout">
+            <section className="ops-overview-section">
+              <div className="ops-section-heading">
+                <div>
+                  <h3>운영 상태 요약</h3>
+                  <p>필터 기준으로 배너 커버리지, no_ad, CTR을 한 번에 비교합니다.</p>
+                </div>
+                <strong>{formatNumber(filteredSiteSummaries.length)}개 사이트</strong>
+              </div>
+              <div className="ops-executive-grid">
+                <div className="ops-metric-card">
+                  <span>운영 사이트</span>
+                  <strong>{formatNumber(state.siteSummaries.length)}</strong>
+                  <small>필터 결과 {formatNumber(filteredSiteSummaries.length)}개</small>
+                </div>
+                <div className="ops-metric-card">
+                  <span>전체 슬롯</span>
+                  <strong>{formatNumber(fleetSummary.placements)}</strong>
+                  <small>
+                    활성 {formatNumber(fleetSummary.activePlacements)}개 · 미배정{" "}
+                    {formatNumber(fleetSummary.unassignedPlacements)}개
+                  </small>
+                </div>
+                {overviewHealthCards.map((card) => (
+                  <div className={card.tone === "warning" ? "ops-metric-card warning" : "ops-metric-card"} key={card.label}>
+                    <span>{card.label}</span>
+                    <strong>{card.value}</strong>
+                    <small>{card.detail}</small>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="ops-overview-section ops-priority-section">
+              <div className="ops-section-heading">
+                <div>
+                  <h3>오늘 처리할 배너 이슈</h3>
+                  <p>운영 영향이 큰 항목부터 바로 해당 탭/필터로 이동합니다.</p>
+                </div>
+                <strong>{formatNumber(attentionCount)}건</strong>
+              </div>
+              <div className="ops-priority-list">
+                {overviewActionQueue.map((item) => (
+                  <button
+                    className={`ops-priority-row ${item.count > 0 ? `is-${item.tone}` : "is-clear"}`}
+                    key={item.label}
+                    type="button"
+                    onClick={item.action}
+                  >
+                    <span>
+                      <strong>{item.label}</strong>
+                      <small>{item.detail}</small>
+                    </span>
+                    <b>{formatNumber(item.count)}</b>
+                  </button>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <div className="ops-signal-strip" aria-label="배너 운영 신호">
+            <span>미배정 사이트 {formatNumber(unassignedSiteCount)}개</span>
+            <span>no_ad 사이트 {formatNumber(noAdSiteCount)}개</span>
+            <span>활성 0 사이트 {formatNumber(inactiveSiteCount)}개</span>
+            <span>7일 노출 {formatNumber(filteredImageRequests7d)}회</span>
+            <span>7일 클릭 {formatNumber(filteredClicks7d)}회</span>
           </div>
 
           <div className="ops-exception-grid">

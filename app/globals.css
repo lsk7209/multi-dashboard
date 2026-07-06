@@ -2115,8 +2115,53 @@ code {
   color: var(--ink);
 }
 
+.ops-overview-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
+  gap: 12px;
+}
+
+.ops-overview-section {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.ops-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ops-section-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.ops-section-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ops-section-heading > strong {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .ops-executive-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 12px;
 }
 
 .ops-metric-card {
@@ -2124,6 +2169,11 @@ code {
   gap: 4px;
   min-width: 0;
   padding: 12px;
+}
+
+.ops-metric-card.warning {
+  border-color: rgba(161, 92, 0, 0.24);
+  background: var(--warning-weak);
 }
 
 .ops-metric-card span,
@@ -2137,6 +2187,96 @@ code {
   color: var(--ink);
   font-size: 24px;
   line-height: 1.1;
+}
+
+.ops-priority-section {
+  align-self: start;
+}
+
+.ops-priority-list {
+  display: grid;
+  gap: 0;
+}
+
+.ops-priority-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 12px;
+  text-align: left;
+  background: #fff;
+  cursor: pointer;
+}
+
+.ops-priority-row:last-child {
+  border-bottom: 0;
+}
+
+.ops-priority-row:hover {
+  background: #fbfcfd;
+}
+
+.ops-priority-row span {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ops-priority-row strong {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.ops-priority-row small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.ops-priority-row b {
+  align-self: center;
+  min-width: 34px;
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--muted);
+  background: #eef2f7;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+}
+
+.ops-priority-row.is-critical b {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.ops-priority-row.is-warning b {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.ops-priority-row.is-info b {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.ops-signal-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ops-signal-strip span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--muted);
+  background: #fbfcfd;
+  font-size: 12px;
 }
 
 .ops-exception-grid {
@@ -2419,6 +2559,7 @@ code {
   .metric-grid,
   .ops-form-grid,
   .ops-filter-grid,
+  .ops-overview-layout,
   .ops-executive-grid,
   .ops-exception-grid,
   .ops-kpi-strip,
