@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
+  mkdirSync,
   mkdtempSync,
   rmSync,
   writeFileSync,
@@ -1558,6 +1559,61 @@ describe("getDashboardData health and collection copy", () => {
     }
 
     expect(badFields).toEqual([]);
+  });
+});
+
+describe("getDashboardData runtime file fallback", () => {
+  it("keeps showing snapshot sites when scripts/setup/sites.yaml is unavailable", () => {
+    const originalCwd = process.cwd();
+    const dir = mkdtempSync(join(tmpdir(), "dashboard-data-fallback-"));
+    try {
+      mkdirSync(join(dir, "data"), { recursive: true });
+      writeFileSync(
+        join(dir, "data", "site-stats.json"),
+        JSON.stringify({
+          generatedAt: "2026-07-06T07:19:52.125Z",
+          rangeDays: 7,
+          previousRangeDays: 7,
+          longRangeDays: 30,
+          dateRanges: {
+            timezone: "Asia/Seoul",
+            basis: "completed_days",
+            last1Days: { startDate: "2026-07-05", endDate: "2026-07-05" },
+            last7Days: { startDate: "2026-06-29", endDate: "2026-07-05" },
+            previous7Days: { startDate: "2026-06-22", endDate: "2026-06-28" },
+            last30Days: { startDate: "2026-06-06", endDate: "2026-07-05" },
+          },
+          stats: [
+            {
+              id: "fallback-site",
+              name: "fallback-site.com",
+              url: "https://fallback-site.com/",
+              ga4PropertyId: "123",
+              gscSiteUrl: "https://fallback-site.com/",
+              last7Days: emptyMetrics(),
+              previous7Days: emptyMetrics(),
+              last30Days: emptyMetrics(),
+              gscLast7Days: { clicks: 0, impressions: 0, ctr: 0, position: 0 },
+              gscPrevious7Days: { clicks: 0, impressions: 0, ctr: 0, position: 0 },
+              gscLast30Days: { clicks: 0, impressions: 0, ctr: 0, position: 0 },
+              ga4Status: "ok",
+              gscStatus: "ok",
+            },
+          ],
+        }),
+      );
+
+      process.chdir(dir);
+      const data = getDashboardData();
+
+      expect(data.siteCount).toBe(1);
+      expect(data.stats).toHaveLength(1);
+      expect(data.stats[0]?.id).toBe("fallback-site");
+      expect(data.segments.find((segment) => segment.key === "growth")?.count).toBe(0);
+    } finally {
+      process.chdir(originalCwd);
+      rmSync(dir, { recursive: true, force: true });
+    }
   });
 });
 

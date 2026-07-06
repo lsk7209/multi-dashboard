@@ -824,10 +824,14 @@ interface DedupeStatsResult {
 }
 
 export function getDashboardData(): DashboardData {
-  const sites = readSites("scripts/setup/sites.yaml").filter(
+  const snapshot = readStats("data/site-stats.json");
+  const configuredSites = readSites("scripts/setup/sites.yaml").filter(
     (site) => site.enabled !== false,
   );
-  const snapshot = readStats("data/site-stats.json");
+  const sites =
+    configuredSites.length > 0
+      ? configuredSites
+      : sitesFromStatsSnapshot(snapshot.stats);
   const statsById = new Map(snapshot.stats.map((stat) => [stat.id, stat]));
   const searchIndexPresenceById = loadSearchIndexPresence(
     "data/index-presence.json",
@@ -2990,6 +2994,17 @@ function readSites(path: string): Site[] {
   const raw = readFileSync(path, "utf8");
   const parsed = (YAML.parse(raw) ?? {}) as SitesFile;
   return parsed.sites ?? [];
+}
+
+function sitesFromStatsSnapshot(stats: SiteStat[]): Site[] {
+  return stats.map((stat) => ({
+    id: stat.id,
+    name: stat.name,
+    url: stat.url,
+    ga4PropertyId: stat.ga4PropertyId,
+    ...(stat.gscSiteUrl !== undefined && { gscSiteUrl: stat.gscSiteUrl }),
+    ...(stat.monetization !== undefined && { monetization: stat.monetization }),
+  }));
 }
 
 // 최근 7일 일별 활성 사용자 스파크라인. 각 history 파일은 사이트 수와 무관하게 한 번만 파싱한다.
