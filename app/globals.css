@@ -2389,6 +2389,34 @@ code {
   grid-column: 1 / -1;
 }
 
+.ops-install-checklist {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  grid-column: 1 / -1;
+}
+
+.ops-install-checklist span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  color: var(--muted);
+  background: #fff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ops-install-checklist strong {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .ops-empty-state {
   margin: 0;
   color: var(--muted);
@@ -2672,6 +2700,7 @@ code {
   .ops-assignment-candidates,
   .ops-kpi-strip,
   .ops-install-panel,
+  .ops-install-checklist,
   .affiliate-playbook-grid,
   .affiliate-rule-grid,
   .ops-admin-token,

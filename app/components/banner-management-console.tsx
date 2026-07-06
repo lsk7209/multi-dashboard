@@ -1460,6 +1460,25 @@ export function BannerManagementConsole() {
                 ))}
               </select>
             </label>
+            {selectedPlacement ? (
+              <div className="ops-install-checklist">
+                <span>
+                  상태 <strong>{selectedPlacement.status}</strong>
+                </span>
+                <span>
+                  소재 <strong>{selectedPlacement.assignedCreativeName ?? "미배정"}</strong>
+                </span>
+                <span>
+                  추적 <strong>{selectedPlacement.assignedTrackingSlug ?? "미배정"}</strong>
+                </span>
+                <span>
+                  no_ad <strong>{formatNumber(selectedPlacement.noAd)}</strong>
+                </span>
+                <span>
+                  요청 <strong>{formatNumber(selectedPlacement.requests)}</strong>
+                </span>
+              </div>
+            ) : null}
             {install ? (
               <div className="ops-install-code">
                 <code>{`<a href="${install.clickUrl}" rel="sponsored nofollow"><img src="${install.imageUrl}" alt="" loading="lazy" /></a>`}</code>
