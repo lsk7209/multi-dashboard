@@ -6,17 +6,36 @@ import { AppHeader } from "./components/app-header.js";
 import { BannerManagementConsole } from "./components/banner-management-console.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
 import {
+  getDashboardActionability,
+  type DashboardActionability,
+  type DashboardActionabilityOptions,
+} from "./lib/dashboard-actionability.js";
+import { hasValidDashboardLocalEvidenceToken } from "./lib/dashboard-local-evidence-token.js";
+import {
   getDashboardData,
   type DashboardActionItem,
+  type FleetOptimizationChainArtifactStatus,
+  type FleetOptimizationChainSummary,
+  type GscPermissionAuditSummary,
   type SiteInsight,
 } from "./lib/dashboard-data.js";
+import { formatDisplayPath } from "./lib/display-path.js";
 import { getMonetizationWorkspaceData } from "./lib/monetization-workspace.js";
+import { describeRefreshFailureSource } from "./lib/refresh-failure-details.js";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
-export default function DashboardPage() {
+type DashboardPageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export default async function DashboardPage({
+  searchParams,
+}: DashboardPageProps = {}) {
   const data = getDashboardData();
   const monetization = getMonetizationWorkspaceData();
+  const params = await searchParams;
+  const actionabilityOptions = getActionabilityOptions(params);
   const updatedAt = formatSnapshotDateTime(data.generatedAt);
   const tabs: DashboardTabItem[] = [
     {
@@ -24,7 +43,7 @@ export default function DashboardPage() {
       label: "오늘",
       panelLabel: "오늘",
       count: formatNumber(data.failedCount + data.trafficDropStats.length + data.monetizationIssueCount),
-      content: <TodaySection data={data} />,
+      content: <TodaySection data={data} actionabilityOptions={actionabilityOptions} />,
     },
     {
       id: "sites",
@@ -32,7 +51,15 @@ export default function DashboardPage() {
       panelLabel: "사이트",
       count: formatNumber(data.siteCount),
       content: (
-        <SiteStatsTable stats={data.stats} failedCount={data.failedCount} segments={data.segments} />
+        <SiteStatsTable
+          stats={data.stats}
+          failedCount={data.failedCount}
+          segments={data.segments}
+          readOnlyBlocked={
+            getDashboardActionability(data, actionabilityOptions).status ===
+            "blocked_for_action_until_post_recovery_verify"
+          }
+        />
       ),
     },
     {
@@ -40,20 +67,28 @@ export default function DashboardPage() {
       label: "인사이트",
       panelLabel: "인사이트",
       count: formatNumber(data.insights.length),
-      content: <InsightsSection data={data} />,
+      content: <InsightsSection data={data} actionabilityOptions={actionabilityOptions} />,
     },
     {
       id: "banners",
       label: "배너",
       panelLabel: "배너 운영",
       count: formatNumber(monetization.bannerManagement.counts.activePlacements),
-      content: <BannerManagementSection data={monetization.bannerManagement} />,
+      content: (
+        <BannerManagementSection
+          data={monetization.bannerManagement}
+          isReadOnlyBlocked={
+            getDashboardActionability(data, actionabilityOptions).status ===
+            "blocked_for_action_until_post_recovery_verify"
+          }
+        />
+      ),
     },
     {
       id: "settings",
       label: "설정",
       panelLabel: "설정",
-      content: <SupportPanel data={data} />,
+      content: <SupportPanel data={data} actionabilityOptions={actionabilityOptions} />,
     },
   ];
 
@@ -72,9 +107,12 @@ export default function DashboardPage() {
 }
 function TodaySection({
   data,
+  actionabilityOptions,
 }: {
   data: ReturnType<typeof getDashboardData>;
+  actionabilityOptions: DashboardActionabilityOptions;
 }) {
+  const actionability = getDashboardActionability(data, actionabilityOptions);
   return (
     <>
       <div className="summary-grid priority-summary" aria-label="오늘 확인 요약">
@@ -110,10 +148,15 @@ function TodaySection({
         />
       </div>
       <div className="operation-grid" aria-label="운영 우선순위">
-        <ActionQueue actions={data.actions} />
+        <ActionQueue
+          actions={data.actions}
+          actionability={actionability}
+          gscHandoffStatus={data.gscPermissionAudit?.handoffStatus ?? null}
+        />
         <CollectionReliabilityPanel summaries={data.collectionSummary} />
         <HealthPanel data={data.healthSummary} />
       </div>
+      <FleetWorkflowPanel data={data} actionabilityOptions={actionabilityOptions} />
       <div className="issue-layout today-issue-layout" aria-label="오늘 문제 목록">
         <DailyIssuePanel
           stats={data.dailyIssueStats}
@@ -129,59 +172,409 @@ function TodaySection({
 
 function InsightsSection({
   data,
+  actionabilityOptions,
 }: {
   data: ReturnType<typeof getDashboardData>;
+  actionabilityOptions: DashboardActionabilityOptions;
 }) {
+  const actionability = getDashboardActionability(data, actionabilityOptions);
+  const isReadOnlyBlocked =
+    actionability.status === "blocked_for_action_until_post_recovery_verify";
   return (
-    <div className="insight-grid">
-      <InsightPanel
-        title="SEO 기회"
-        description="노출 대비 CTR 또는 순위 개선 여지가 큰 사이트입니다."
-        insights={data.seoInsights}
+    <>
+      <DashboardActionabilityNotice
+        actionability={actionability}
+        gscHandoffStatus={data.gscPermissionAudit?.handoffStatus ?? null}
       />
-      <InsightPanel
-        title="성장 신호"
-        description="최근 7일 사용자 증가가 두드러진 사이트입니다."
-        insights={data.growthInsights}
-      />
-      <InsightPanel
-        title="하락 신호"
-        description="사용자나 검색 클릭이 감소한 사이트입니다."
-        insights={data.declineInsights}
-      />
-      <InsightPanel
-        title="우선 확인"
-        description="권한, 급락, 색인 의심 신호를 모았습니다."
-        insights={data.priorityInsights}
-      />
-    </div>
+      <div
+        className="insight-grid"
+        data-actionability={
+          actionability.status === "blocked_for_action_until_post_recovery_verify"
+            ? "read-only-blocked"
+            : "safe-to-act"
+        }
+      >
+        <InsightPanel
+          title="SEO 기회"
+          description={
+            isReadOnlyBlocked
+              ? "노출 대비 CTR 또는 순위 개선 여지가 큰 읽기 전용 검토 후보입니다."
+              : "노출 대비 CTR 또는 순위 개선 여지가 큰 사이트입니다."
+          }
+          insights={data.seoInsights}
+          isReadOnlyBlocked={isReadOnlyBlocked}
+        />
+        <InsightPanel
+          title="성장 신호"
+          description={
+            isReadOnlyBlocked
+              ? "최근 7일 사용자 증가가 두드러진 읽기 전용 검토 후보입니다."
+              : "최근 7일 사용자 증가가 두드러진 사이트입니다."
+          }
+          insights={data.growthInsights}
+          isReadOnlyBlocked={isReadOnlyBlocked}
+        />
+        <InsightPanel
+          title="하락 신호"
+          description={
+            isReadOnlyBlocked
+              ? "사용자나 검색 클릭이 감소한 읽기 전용 검토 후보입니다."
+              : "사용자나 검색 클릭이 감소한 사이트입니다."
+          }
+          insights={data.declineInsights}
+          isReadOnlyBlocked={isReadOnlyBlocked}
+        />
+        <InsightPanel
+          title="우선 확인"
+          description={
+            isReadOnlyBlocked
+              ? "권한, 급락, 색인 의심 신호를 읽기 전용으로 모았습니다."
+              : "권한, 급락, 색인 의심 신호를 모았습니다."
+          }
+          insights={data.priorityInsights}
+          isReadOnlyBlocked={isReadOnlyBlocked}
+        />
+      </div>
+    </>
   );
 }
 
-function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
+function FleetWorkflowPanel({
+  data,
+  actionabilityOptions,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+  actionabilityOptions: DashboardActionabilityOptions;
+}) {
+  const chain = data.fleetOptimizationChain;
+  const chainStatus = data.fleetOptimizationChainStatus;
+  const handoff = data.t3TitleContentHandoff;
+  const gscAudit = data.gscPermissionAudit;
+  const adsenseProofFreshness = data.adsenseProofFreshness;
+  const proofFreshnessReady =
+    adsenseProofFreshness.status === "current" ||
+    adsenseProofFreshness.status === "resolved";
+  const gscPermissionWorkOrderPath =
+    gscAudit?.workOrderPath ??
+    (chain ? `docs/work-orders/gsc-permission-audit-${chain.date}.md` : "");
+  const readinessBlockingRefreshFailedSources =
+    chain?.readinessBlockingRefreshFailedSources ?? [];
+  const maintenanceRefreshFailedSources =
+    chain?.maintenanceRefreshFailedSources ?? [];
+  const actionability = getDashboardActionability(data, actionabilityOptions);
+  const isReadOnlyBlocked =
+    actionability.status === "blocked_for_action_until_post_recovery_verify";
+  const isReady = Boolean(
+    chain &&
+      handoff &&
+      !chain.refreshFailuresBlockReadiness &&
+      actionability.status === "safe_to_act",
+  );
+  const chainVerdict = !chain
+    ? "missing artifact"
+    : chain.fail > 0 || chain.skipped > 0 || chain.pass !== chain.commands || chain.commands === 0
+      ? "command failed"
+      : !proofFreshnessReady
+        ? "proof refresh required"
+      : chain.refreshFailuresBlockReadiness
+        ? "readiness blocked"
+        : actionability.status === "safe_to_act"
+          ? "ready"
+          : "review required";
+
+  return (
+    <article className="panel fleet-workflow-panel">
+      <div className="panel-heading">
+        <div>
+          <h2>Fleet 최적화 체인</h2>
+          <p>대시보드 갱신, 문제 큐, 최적화 계획, T3 핸드오프를 한 번에 확인합니다.</p>
+        </div>
+        <span>{isReady ? "ready" : "check"}</span>
+      </div>
+      {["stale", "missing", "invalid"].includes(adsenseProofFreshness.status) ? (
+        <div className="fleet-blocker">
+          <strong>AdSense proof 스냅샷 점검</strong>
+          <p>{adsenseProofFreshness.reason}</p>
+          {adsenseProofFreshness.artifactPath ? (
+            <code>{adsenseProofFreshness.artifactPath}</code>
+          ) : null}
+          {adsenseProofFreshness.collectorSnapshot ? (
+            <code>{adsenseProofFreshness.collectorSnapshot}</code>
+          ) : null}
+          <code>
+            {isReadOnlyBlocked
+              ? "read-only AdSense proof evidence"
+              : adsenseProofFreshness.remediationCommand}
+          </code>
+          <code>
+            {isReadOnlyBlocked
+              ? "post-recovery required before proof refresh"
+              : "pnpm adsense:proof:verify"}
+          </code>
+        </div>
+      ) : null}
+      {!chain ? (
+        <div className="fleet-blocker">
+          <strong>{getFleetArtifactStatusTitle(chainStatus.state)}</strong>
+          <p>{getFleetArtifactStatusMessage(chainStatus)}</p>
+          {chainStatus.artifactPath ? <code>{chainStatus.artifactPath}</code> : null}
+          {chainStatus.statsSnapshot ? (
+            <code>{`artifact snapshot ${chainStatus.statsSnapshot}`}</code>
+          ) : null}
+          {chainStatus.expectedStatsGeneratedAt ? (
+            <code>{`expected snapshot ${chainStatus.expectedStatsGeneratedAt}`}</code>
+          ) : null}
+          <code>
+            {isReadOnlyBlocked ? "post-recovery required before fleet optimize" : "pnpm fleet:optimize"}
+          </code>
+        </div>
+      ) : !handoff ? (
+        <div className="fleet-blocker">
+          <strong>T3 핸드오프 미생성</strong>
+          <p>현재 stats 스냅샷과 일치하는 T3 제목/본문 핸드오프 산출물이 없습니다.</p>
+          <code>{`expected snapshot ${data.generatedAt ?? "unknown"}`}</code>
+          <code>
+            {isReadOnlyBlocked ? "post-recovery required before fleet optimize" : "pnpm fleet:optimize"}
+          </code>
+        </div>
+      ) : (
+        <>
+          <div className="command-list">
+            <div className="command-row">
+              <span>최신 실행</span>
+              <code>{formatShortDateTime(chain.generatedAt)}</code>
+            </div>
+            <div className="command-row">
+              <span>체인 결과</span>
+              <code>
+                {formatNumber(chain.pass)}/{formatNumber(chain.commands)} pass · fail {formatNumber(chain.fail)}
+              </code>
+            </div>
+            <div className="command-row">
+              <span>전체 판정</span>
+              <code>{chainVerdict}</code>
+            </div>
+            <div className="command-row">
+              <span>스냅샷 일치</span>
+              <code>{chain.planMatchesStats && chain.handoffMatchesStats ? "plan/handoff ok" : "mismatch"}</code>
+            </div>
+            <div className="command-row">
+              <span>T3 핸드오프</span>
+              <code>
+                {formatNumber(handoff.siteCount)} sites · title {formatNumber(handoff.titleHandoffCount)} · content {formatNumber(handoff.contentHandoffCount)}
+              </code>
+            </div>
+          <div className="command-row">
+            <span>안전 상태</span>
+            <code>{chain.handoffMutationFlagsFalse ? "non-mutating" : "review required"}</code>
+          </div>
+            <div className="command-row">
+              <span>수집 경고</span>
+              <code>
+                {chain.refreshFailureCount === 0 && handoff.refreshFailedSources.length === 0
+                  ? "none"
+                  : `${formatNumber(readinessBlockingRefreshFailedSources.length)} blocking · ${formatNumber(maintenanceRefreshFailedSources.length)} maintenance`}
+              </code>
+            </div>
+            <div className="command-row">
+              <span>AdSense proof</span>
+              <code>
+                {`${adsenseProofFreshness.status} · ${formatNumber(adsenseProofFreshness.candidateCount)} candidates`}
+              </code>
+            </div>
+            <div className="command-row">
+              <span>GSC handoff</span>
+              <code>{gscAudit?.handoffStatus ?? "missing"}</code>
+            </div>
+            <div className="command-row">
+              <span>작업지시</span>
+              <code>{isReadOnlyBlocked ? "read-only until post-recovery passes" : handoff.workOrderPath}</code>
+            </div>
+            <div className="command-row">
+              <span>재실행</span>
+              <code>{isReadOnlyBlocked ? "blocked until post-recovery passes" : "pnpm fleet:optimize"}</code>
+            </div>
+          </div>
+          {chain.refreshFailuresBlockReadiness ? (
+            <div className="fleet-blocker">
+              <strong>최우선 차단 사유</strong>
+              <p>
+                {getFleetReadinessBlockerMessage(chain, gscAudit)}
+              </p>
+              {readinessBlockingRefreshFailedSources.map((source) => (
+                <div className="refresh-source-detail" key={`fleet-refresh-source-${source}`}>
+                  <code>{source}</code>
+                  <p>{describeRefreshFailureSource(source).label}</p>
+                  <em>
+                    {isReadOnlyBlocked
+                      ? "post-recovery 통과 전 실행 금지. 원인 상태만 읽기 전용으로 확인하세요."
+                      : describeRefreshFailureSource(source).nextStep}
+                  </em>
+                </div>
+              ))}
+              <code>
+                {isReadOnlyBlocked ? "read-only GSC blocker evidence" : gscPermissionWorkOrderPath}
+              </code>
+              <code>{`gsc handoff ${gscAudit?.handoffStatus ?? "missing"}`}</code>
+              {gscAudit?.artifactPath ? <code>{gscAudit.artifactPath}</code> : null}
+              <code>{isReadOnlyBlocked ? "post-recovery required before action" : "pnpm dashboard:post-recovery"}</code>
+              {gscAudit && gscAudit.results.length > 0 ? (
+                <div className="issue-grid">
+                  {gscAudit.results.map((result) => (
+                    <div className="issue-row" key={`fleet-gsc-audit-${result.siteId}`}>
+                      <div>
+                        <strong>{result.host}</strong>
+                        <a href={result.configuredGscSiteUrl}>{result.configuredGscSiteUrl}</a>
+                        <p>
+                          {isReadOnlyBlocked
+                            ? "외부 권한 상태 근거만 읽기 전용으로 표시합니다."
+                            : result.requiredAction}
+                        </p>
+                        <em>
+                          {`permission ${result.permissionLevel ?? "not_listed"} · ${result.accessState}`}
+                        </em>
+                      </div>
+                      <span>{result.accessState}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : data.gscIssueStats.length > 0 ? (
+                <div className="issue-grid">
+                  {data.gscIssueStats.map((stat) => (
+                    <div className="issue-row" key={`fleet-gsc-${stat.id}`}>
+                      <div>
+                        <strong>{stat.name}</strong>
+                        <a href={stat.url}>{stat.gscSiteUrl ?? stat.url}</a>
+                        <p>{getGscIssueDetail(stat)}</p>
+                      </div>
+                      <span>{getGscIssueLabel(stat)}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+          {maintenanceRefreshFailedSources.length > 0 ? (
+            <div className="fleet-blocker fleet-maintenance">
+              <strong>텔레메트리 유지보수</strong>
+              <p>
+                GA4 설정 누락은 최신 대시보드 판단을 막는 hard blocker가 아니지만, 수집 품질을 위해 별도 정리해야 합니다.
+              </p>
+              {maintenanceRefreshFailedSources.map((source) => (
+                <div className="refresh-source-detail" key={`fleet-maintenance-source-${source}`}>
+                  <code>{source}</code>
+                  <p>{describeRefreshFailureSource(source).label}</p>
+                  <em>
+                    {isReadOnlyBlocked
+                      ? "post-recovery 통과 전 실행 금지. 유지보수 신호만 읽기 전용으로 확인하세요."
+                      : describeRefreshFailureSource(source).nextStep}
+                  </em>
+                </div>
+              ))}
+              <code>
+                {isReadOnlyBlocked ? "read-only telemetry maintenance evidence" : `docs/work-orders/adsense/remediation-queue-${chain.date}.md`}
+              </code>
+              <code>{isReadOnlyBlocked ? "post-recovery required before action" : "confirm GA4 property/config binding, then pnpm dashboard:verify"}</code>
+            </div>
+          ) : null}
+          <div className="issue-grid fleet-handoff-list">
+            {handoff.sites.map((site) => (
+              <div className="issue-row" key={site.host}>
+                <div>
+                  <strong>{site.host}</strong>
+                  <a href={site.url}>{site.topQuery || formatHost(site.url)}</a>
+                  <p>
+                    {`${formatNumber(site.gscImpressions30d)} impressions · ${formatNumber(site.gscClicks30d)} clicks · CTR ${formatPercent(site.gscCtr30d)} · ${formatDecimal(site.gscPosition30d)}위`}
+                  </p>
+                  <p>
+                    {isReadOnlyBlocked
+                      ? "읽기 전용 검토 후보입니다. post-recovery 통과 전에는 제목/본문 변경이나 배포 대상으로 사용하지 않습니다."
+                      : site.recommendedNextAction}
+                  </p>
+                  <p>
+                    {`sitemap warnings ${formatNumber(site.sitemapWarnings)} · errors ${formatNumber(site.sitemapErrors)} · AdSense ${site.adsenseStatus || "unknown"} · ads.txt ${site.adsTxtStatus || "unknown"}`}
+                  </p>
+                  <em>{site.localPath}</em>
+                </div>
+                <span>{isReadOnlyBlocked ? "read-only" : site.actions.join(" + ")}</span>
+              </div>
+            ))}
+            {handoff.hiddenSiteCount > 0 ? (
+              <div className="issue-row fleet-handoff-more">
+                <div>
+                  <strong>{formatNumber(handoff.hiddenSiteCount)}개 추가 대상</strong>
+                  <p>
+                    {isReadOnlyBlocked
+                      ? "전체 큐는 작업지시 문서에서 읽기 전용으로 확인합니다."
+                      : "전체 큐는 작업지시 문서에서 이어서 확인합니다."}
+                  </p>
+                  <em>{handoff.workOrderPath}</em>
+                </div>
+                <span>{isReadOnlyBlocked ? "read-only" : "more"}</span>
+              </div>
+            ) : null}
+          </div>
+        </>
+      )}
+    </article>
+  );
+}
+
+function ActionQueue({
+  actions,
+  actionability,
+  gscHandoffStatus,
+}: {
+  actions: DashboardActionItem[];
+  actionability: DashboardActionability;
+  gscHandoffStatus: GscPermissionAuditSummary["handoffStatus"] | null;
+}) {
+  const isReadOnlyBlocked =
+    actionability.status === "blocked_for_action_until_post_recovery_verify";
   return (
     <article className="panel action-panel">
       <div className="panel-heading">
         <div>
-          <h2>오늘의 액션</h2>
+          <h2>{isReadOnlyBlocked ? "읽기 전용 점검 후보" : "오늘의 액션"}</h2>
           <p>
-            권한, 급락, 수익화, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다.
+            {isReadOnlyBlocked
+              ? "권한, 급락, 수익화, CTR, 순위 개선 신호를 실행 전 검토용으로 정렬했습니다."
+              : "권한, 급락, 수익화, CTR, 순위 개선 순서로 실제 조치 항목을 정렬했습니다."}
           </p>
         </div>
         <span>{formatNumber(actions.length)}개</span>
       </div>
+      <DashboardActionabilityNotice
+        actionability={actionability}
+        gscHandoffStatus={gscHandoffStatus}
+      />
       {actions.length === 0 ? (
         <p className="muted-text">오늘 우선 조치할 항목이 없습니다.</p>
       ) : (
-        <div className="action-list">
+        <div
+          className="action-list"
+          data-actionability={
+            actionability.status === "blocked_for_action_until_post_recovery_verify"
+              ? "read-only-blocked"
+              : "safe-to-act"
+          }
+        >
           {actions.map((action) => (
             <div className={`action-row action-${action.kind}`} key={action.id}>
               <span>{action.label}</span>
               <div>
                 <strong>{action.siteName}</strong>
                 <a href={action.url}>{formatHost(action.url)}</a>
-                <p>{action.reason}</p>
-                <em>{action.nextStep}</em>
+                <p>
+                  {isReadOnlyBlocked
+                    ? "post-recovery 통과 전 실행 금지. 원인 상태와 근거만 읽기 전용으로 확인하세요."
+                    : action.reason}
+                </p>
+                <em>
+                  {isReadOnlyBlocked
+                    ? "post-recovery 통과 전 실행 금지. 읽기 전용 점검 메모로만 사용하세요."
+                    : action.nextStep}
+                </em>
               </div>
               <b>{action.value}</b>
             </div>
@@ -189,6 +582,31 @@ function ActionQueue({ actions }: { actions: DashboardActionItem[] }) {
         </div>
       )}
     </article>
+  );
+}
+
+function DashboardActionabilityNotice({
+  actionability,
+  gscHandoffStatus,
+}: {
+  actionability: DashboardActionability;
+  gscHandoffStatus?: GscPermissionAuditSummary["handoffStatus"] | null;
+}) {
+  if (actionability.status === "safe_to_act") {
+    return null;
+  }
+  const reason =
+    gscHandoffStatus === "pending_local_refresh"
+      ? `Search Console 권한은 owner access로 확인됐지만 최신 로컬 refresh/post-recovery 검증이 끝나지 않았습니다. pnpm dashboard:post-recovery가 통과할 때까지 권고는 읽기 전용 점검에만 사용하세요. 차단 대상: ${actionability.blockerHosts.join(", ") || "로컬 검증"}.`
+      : `Search Console 권한 복구 후 pnpm dashboard:post-recovery가 통과할 때까지 액션/인사이트 권고는 읽기 전용 점검에만 사용하세요. 차단 대상: ${actionability.blockerHosts.join(", ") || "외부 권한"}.`;
+  return (
+    <div className="actionability-notice">
+      <strong>실행 보류: Fleet readiness가 차단되어 이 목록은 실행 큐가 아닙니다.</strong>
+      <p>{reason}</p>
+      <code>{actionability.status}</code>
+      <code>{`gsc handoff ${gscHandoffStatus ?? "missing"}`}</code>
+      <code>{actionability.command}</code>
+    </div>
   );
 }
 
@@ -418,7 +836,16 @@ function DailyIssuePanel({
   );
 }
 
-function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
+function SupportPanel({
+  data,
+  actionabilityOptions,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+  actionabilityOptions: DashboardActionabilityOptions;
+}) {
+  const actionability = getDashboardActionability(data, actionabilityOptions);
+  const isReadOnlyBlocked =
+    actionability.status === "blocked_for_action_until_post_recovery_verify";
   return (
     <section className="support-grid" aria-label="보조 정보">
       <article className="panel">
@@ -469,21 +896,29 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
         <div className="panel-heading">
           <div>
             <h2>갱신 명령</h2>
-            <p>기준: 한국시간 완료일, 오늘 제외</p>
+            <p>
+              {isReadOnlyBlocked
+                ? "post-recovery 통과 전에는 외부 갱신 명령을 실행하지 않습니다."
+                : "기준: 한국시간 완료일, 오늘 제외"}
+            </p>
           </div>
         </div>
         <div className="command-list">
           <div className="command-row">
-            <span>GA4/GSC 통계 수집</span>
-            <code>pnpm stats:update</code>
+            <span>{isReadOnlyBlocked ? "현재 상태" : "GA4/GSC 통계 수집"}</span>
+            <code>{isReadOnlyBlocked ? "read-only until post-recovery passes" : "pnpm stats:update"}</code>
           </div>
           <div className="command-row">
-            <span>오래된 sitemap 재제출</span>
-            <code>pnpm sitemaps:refresh-stale</code>
+            <span>{isReadOnlyBlocked ? "필수 검증" : "오래된 sitemap 재제출"}</span>
+            <code>{isReadOnlyBlocked ? actionability.command : "pnpm sitemaps:refresh-stale"}</code>
           </div>
           <div className="command-row">
-            <span>사이트 재등록</span>
-            <code>pnpm setup:import-ga4-sites -- --account=236349432</code>
+            <span>{isReadOnlyBlocked ? "외부 갱신" : "사이트 재등록"}</span>
+            <code>
+              {isReadOnlyBlocked
+                ? "blocked until post-recovery passes"
+                : "pnpm setup:import-ga4-sites -- --account=236349432"}
+            </code>
           </div>
         </div>
       </article>
@@ -494,8 +929,10 @@ function SupportPanel({ data }: { data: ReturnType<typeof getDashboardData> }) {
 
 function BannerManagementSection({
   data,
+  isReadOnlyBlocked,
 }: {
   data: ReturnType<typeof getMonetizationWorkspaceData>["bannerManagement"];
+  isReadOnlyBlocked: boolean;
 }) {
   return (
     <div className="workspace-stack">
@@ -538,11 +975,15 @@ function BannerManagementSection({
             </div>
             <div className="command-row">
               <span>DB</span>
-              <code>{data.source.dbExists ? data.source.dbPath : "not found"}</code>
+              <code>{data.source.dbExists ? formatDisplayPath(data.source.dbPath) : "not found"}</code>
             </div>
             <div className="command-row">
-              <span>스냅샷 갱신</span>
-              <code>pnpm ops:monetization</code>
+              <span>{isReadOnlyBlocked ? "스냅샷 상태" : "스냅샷 갱신"}</span>
+              <code>
+                {isReadOnlyBlocked
+                  ? "read-only until post-recovery passes"
+                  : "pnpm ops:monetization"}
+              </code>
             </div>
           </div>
         </article>
@@ -629,10 +1070,12 @@ function InsightPanel({
   title,
   description,
   insights,
+  isReadOnlyBlocked,
 }: {
   title: string;
   description: string;
   insights: SiteInsight[];
+  isReadOnlyBlocked: boolean;
 }) {
   return (
     <article className="panel insight-panel">
@@ -648,7 +1091,11 @@ function InsightPanel({
       ) : (
         <div className="insight-list">
           {insights.map((insight) => (
-            <InsightCard key={insight.id} insight={insight} />
+            <InsightCard
+              key={insight.id}
+              insight={insight}
+              isReadOnlyBlocked={isReadOnlyBlocked}
+            />
           ))}
         </div>
       )}
@@ -656,7 +1103,13 @@ function InsightPanel({
   );
 }
 
-function InsightCard({ insight }: { insight: SiteInsight }) {
+function InsightCard({
+  insight,
+  isReadOnlyBlocked,
+}: {
+  insight: SiteInsight;
+  isReadOnlyBlocked: boolean;
+}) {
   return (
     <div className={`insight-card severity-${insight.severity}`}>
       <div className="insight-card-title">
@@ -665,7 +1118,9 @@ function InsightCard({ insight }: { insight: SiteInsight }) {
       </div>
       <span className="insight-value">{insight.primaryValue}</span>
       <p className="insight-reason">{insight.reason}</p>
-      <em className="insight-action">{insight.recommendedAction}</em>
+      <em className="insight-action">
+        {isReadOnlyBlocked ? "읽기 전용 권고 검토" : insight.recommendedAction}
+      </em>
       <div className="insight-detail">
         <strong>작업 근거</strong>
         <ul>
@@ -706,8 +1161,14 @@ function InsightCard({ insight }: { insight: SiteInsight }) {
         </div>
       ) : null}
       <div className="insight-detail">
-        <strong>Codex/Claude 작업 지시</strong>
-        <p className="insight-prompt">{insight.operatorPrompt}</p>
+        <strong>
+          {isReadOnlyBlocked ? "읽기 전용 검토 메모" : "Codex/Claude 작업 지시"}
+        </strong>
+        <p className="insight-prompt">
+          {isReadOnlyBlocked
+            ? "post-recovery 통과 전 실행 금지. 원인과 근거만 검토하고 작업 지시는 표시하지 않습니다."
+            : insight.operatorPrompt}
+        </p>
       </div>
       <div className="insight-detail">
         <strong>검증 기준</strong>
@@ -750,6 +1211,20 @@ function MiniMetric({ label, value }: { label: string; value: number }) {
 
 function formatHost(url: string): string {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
+
+function getActionabilityOptions(
+  searchParams: Record<string, string | string[] | undefined> | undefined,
+): DashboardActionabilityOptions {
+  return {
+    requirePostRecoveryChain:
+      firstSearchParam(searchParams?.actionabilityMode) !== "local-evidence" ||
+      !hasValidDashboardLocalEvidenceToken(firstSearchParam(searchParams?.actionabilityToken)),
+  };
+}
+
+function firstSearchParam(value: string | string[] | undefined): string | undefined {
+  return Array.isArray(value) ? value[0] : value;
 }
 
 function formatNumber(value: number): string {
@@ -824,6 +1299,55 @@ function getGscIssueLabel(
     return alert.severity === "high" ? "GSC alert high" : "GSC alert";
   }
   return getErrorKindLabel(stat.gscErrorKind);
+}
+
+function getFleetArtifactStatusTitle(
+  state: FleetOptimizationChainArtifactStatus["state"],
+): string {
+  switch (state) {
+    case "snapshot_mismatch":
+      return "Fleet 체인 스냅샷 불일치";
+    case "invalid":
+      return "Fleet 체인 산출물 오류";
+    case "missing":
+      return "Fleet 체인 미생성";
+    case "current":
+      return "Fleet 체인 최신";
+  }
+}
+
+function getFleetArtifactStatusMessage(
+  status: FleetOptimizationChainArtifactStatus,
+): string {
+  switch (status.state) {
+    case "snapshot_mismatch":
+      return "현재 stats 스냅샷과 다른 fleet 체인 산출물만 있어, 대시보드 판단을 보류합니다.";
+    case "invalid":
+      return "fleet 체인 산출물이 있지만 필수 검증 필드가 없거나 JSON을 읽을 수 없습니다.";
+    case "missing":
+      return "현재 stats 스냅샷에 대응하는 fleet 체인 산출물이 아직 없습니다.";
+    case "current":
+      return status.reason;
+  }
+}
+
+function getFleetReadinessBlockerMessage(
+  chain: FleetOptimizationChainSummary,
+  gscAudit: GscPermissionAuditSummary | null,
+): string {
+  const firstGscBlocker = gscAudit?.results.find(
+    (result) =>
+      result.accessState === "unverified" ||
+      result.permissionLevel === "siteUnverifiedUser" ||
+      result.gscStatus === "auth_error",
+  );
+  if (firstGscBlocker) {
+    return `${firstGscBlocker.host} Search Console 권한이 ${firstGscBlocker.permissionLevel ?? "not listed"} / ${firstGscBlocker.accessState} 상태라 최신 검색 지표 기반 판단을 완료하지 않습니다.`;
+  }
+  if (chain.readinessBlockingRefreshFailedSources.length > 0) {
+    return `차단 수집 실패 소스 ${formatNumber(chain.readinessBlockingRefreshFailedSources.length)}개가 남아 있어 최신 대시보드 판단을 완료하지 않습니다.`;
+  }
+  return "수집 실패가 남아 있어 최신 대시보드 판단을 완료하지 않습니다.";
 }
 
 function getMonetizationLabel(kind: string | undefined): string {

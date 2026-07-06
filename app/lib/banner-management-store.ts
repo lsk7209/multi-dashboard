@@ -115,6 +115,8 @@ export interface BannerSiteSummaryRow {
   imageRequests: number;
   noAd: number;
   clicks: number;
+  imageRequests7d: number;
+  clicks7d: number;
   lastUpdatedAt: string;
 }
 
@@ -1381,6 +1383,8 @@ async function listRemoteSiteSummaries(client: Client): Promise<BannerSiteSummar
         COALESCE(SUM(event_counts.image_requests), 0) AS image_requests,
         COALESCE(SUM(event_counts.no_ad), 0) AS no_ad,
         COALESCE(SUM(event_counts.clicks), 0) AS clicks,
+        COALESCE(SUM(event_counts.image_requests_7d), 0) AS image_requests_7d,
+        COALESCE(SUM(event_counts.clicks_7d), 0) AS clicks_7d,
         MAX(p.updated_at) AS last_updated_at
       FROM placements p
       LEFT JOIN (
@@ -1395,7 +1399,9 @@ async function listRemoteSiteSummaries(client: Client): Promise<BannerSiteSummar
           SUM(CASE WHEN event_type = 'request' THEN 1 ELSE 0 END) AS requests,
           SUM(CASE WHEN event_type = 'image_request' THEN 1 ELSE 0 END) AS image_requests,
           SUM(CASE WHEN event_type = 'no_ad' THEN 1 ELSE 0 END) AS no_ad,
-          SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks
+          SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks,
+          SUM(CASE WHEN event_type = 'image_request' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS image_requests_7d,
+          SUM(CASE WHEN event_type = 'click' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS clicks_7d
         FROM placement_event_ledger
         WHERE placement_id IS NOT NULL
         GROUP BY placement_id
@@ -1415,6 +1421,8 @@ async function listRemoteSiteSummaries(client: Client): Promise<BannerSiteSummar
     imageRequests: asNumber(row.image_requests),
     noAd: asNumber(row.no_ad),
     clicks: asNumber(row.clicks),
+    imageRequests7d: asNumber(row.image_requests_7d),
+    clicks7d: asNumber(row.clicks_7d),
     lastUpdatedAt: asString(row.last_updated_at),
   }));
 }
@@ -1700,6 +1708,8 @@ function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
         COALESCE(SUM(event_counts.image_requests), 0) AS image_requests,
         COALESCE(SUM(event_counts.no_ad), 0) AS no_ad,
         COALESCE(SUM(event_counts.clicks), 0) AS clicks,
+        COALESCE(SUM(event_counts.image_requests_7d), 0) AS image_requests_7d,
+        COALESCE(SUM(event_counts.clicks_7d), 0) AS clicks_7d,
         MAX(p.updated_at) AS last_updated_at
       FROM placements p
       LEFT JOIN (
@@ -1714,7 +1724,9 @@ function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
           SUM(CASE WHEN event_type = 'request' THEN 1 ELSE 0 END) AS requests,
           SUM(CASE WHEN event_type = 'image_request' THEN 1 ELSE 0 END) AS image_requests,
           SUM(CASE WHEN event_type = 'no_ad' THEN 1 ELSE 0 END) AS no_ad,
-          SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks
+          SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks,
+          SUM(CASE WHEN event_type = 'image_request' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS image_requests_7d,
+          SUM(CASE WHEN event_type = 'click' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS clicks_7d
         FROM placement_event_ledger
         WHERE placement_id IS NOT NULL
         GROUP BY placement_id
@@ -1735,6 +1747,8 @@ function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
       imageRequests: asNumber(row.image_requests),
       noAd: asNumber(row.no_ad),
       clicks: asNumber(row.clicks),
+      imageRequests7d: asNumber(row.image_requests_7d),
+      clicks7d: asNumber(row.clicks_7d),
       lastUpdatedAt: asString(row.last_updated_at),
     }));
 }

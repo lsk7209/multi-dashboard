@@ -134,10 +134,12 @@ export function SiteStatsTable({
   stats,
   failedCount,
   segments,
+  readOnlyBlocked = false,
 }: {
   stats: EnrichedSiteStat[];
   failedCount: number;
   segments: DashboardSegment[];
+  readOnlyBlocked?: boolean;
 }) {
   const [query, setQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
@@ -320,6 +322,7 @@ export function SiteStatsTable({
                 <StatsRow
                   key={`${stat.id}-${stat.ga4PropertyId}`}
                   stat={stat}
+                  readOnlyBlocked={readOnlyBlocked}
                 />
               ))
             )}
@@ -425,7 +428,13 @@ function SegmentTabs({
   );
 }
 
-function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
+function StatsRow({
+  stat,
+  readOnlyBlocked,
+}: {
+  stat: EnrichedSiteStat;
+  readOnlyBlocked: boolean;
+}) {
   return (
     <tr>
       <td>
@@ -467,13 +476,13 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
         <TopQueriesCell stat={stat} />
       </td>
       <td>
-        <IndexPresenceCell stat={stat} />
+        <IndexPresenceCell stat={stat} readOnlyBlocked={readOnlyBlocked} />
       </td>
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
       <td>
         <span
           className={getAdsenseBadgeClass(stat)}
-          title={getAdsenseStatusTitle(stat)}
+          title={getAdsenseStatusTitle(stat, readOnlyBlocked)}
         >
           {getAdsenseStatusLabel(stat)}
         </span>
@@ -481,7 +490,7 @@ function StatsRow({ stat }: { stat: EnrichedSiteStat }) {
       <td>
         <span
           className={getAdsTxtBadgeClass(stat)}
-          title={getAdsTxtStatusTitle(stat)}
+          title={getAdsTxtStatusTitle(stat, readOnlyBlocked)}
         >
           {getAdsTxtStatusLabel(stat)}
         </span>
@@ -583,13 +592,23 @@ function SitemapCollectionCell({ stat }: { stat: EnrichedSiteStat }) {
   );
 }
 
-function IndexPresenceCell({ stat }: { stat: EnrichedSiteStat }) {
+function IndexPresenceCell({
+  stat,
+  readOnlyBlocked,
+}: {
+  stat: EnrichedSiteStat;
+  readOnlyBlocked: boolean;
+}) {
   const presence = stat.searchIndexPresence;
   if (!presence) {
     return (
       <span
         className="index-presence-empty"
-        title="아직 site: 검색 노출 수를 수집하지 않았습니다. pnpm index-presence:update 실행 후 갱신됩니다."
+        title={
+          readOnlyBlocked
+            ? "post-recovery 통과 전 실행 금지. site: 노출 상태는 읽기 전용으로만 확인하세요."
+            : "아직 site: 검색 노출 수를 수집하지 않았습니다. pnpm index-presence:update 실행 후 갱신됩니다."
+        }
       >
         -
       </span>
@@ -1005,7 +1024,10 @@ function getAdsenseStatusLabel(stat: EnrichedSiteStat): string {
   return "미수집";
 }
 
-function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
+function getAdsenseStatusTitle(
+  stat: EnrichedSiteStat,
+  readOnlyBlocked = false,
+): string {
   if (stat.adsenseCollectorStatus === "transient_error") {
     return stat.adsenseError
       ? `${stat.adsenseError} 최근 정상 증거가 있으면 설치 상태는 유지됩니다.`
@@ -1020,7 +1042,9 @@ function getAdsenseStatusTitle(stat: EnrichedSiteStat): string {
       ? "홈페이지 HTML에서 AdSense 코드가 감지되지 않았습니다. 글 상세, 조건부 삽입, 캐시 상태는 별도 확인이 필요합니다."
       : stat.adsenseError;
   }
-  return "아직 AdSense 코드 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
+  return readOnlyBlocked
+    ? "post-recovery 통과 전 실행 금지. AdSense 상태는 읽기 전용으로만 확인하세요."
+    : "아직 AdSense 코드 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
 }
 
 function getAdsenseBadgeClass(stat: EnrichedSiteStat): string {
@@ -1046,7 +1070,10 @@ function getAdsTxtStatusLabel(stat: EnrichedSiteStat): string {
   return "미수집";
 }
 
-function getAdsTxtStatusTitle(stat: EnrichedSiteStat): string {
+function getAdsTxtStatusTitle(
+  stat: EnrichedSiteStat,
+  readOnlyBlocked = false,
+): string {
   if (stat.adsTxtCollectorStatus === "transient_error") {
     return stat.adsTxtError
       ? `${stat.adsTxtError} 최근 정상 증거가 있으면 ads.txt 정상 상태는 유지됩니다.`
@@ -1058,7 +1085,9 @@ function getAdsTxtStatusTitle(stat: EnrichedSiteStat): string {
   if (stat.adsTxtError) {
     return stat.adsTxtError;
   }
-  return "아직 ads.txt 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
+  return readOnlyBlocked
+    ? "post-recovery 통과 전 실행 금지. ads.txt 상태는 읽기 전용으로만 확인하세요."
+    : "아직 ads.txt 상태를 수집하지 않았습니다. pnpm stats:update 실행 후 갱신됩니다.";
 }
 
 function getAdsTxtBadgeClass(stat: EnrichedSiteStat): string {

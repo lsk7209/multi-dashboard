@@ -1,5 +1,15 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import YAML from "yaml";
+import { isMaintenanceRefreshFailureSource } from "./refresh-failure-details.js";
+
+const REQUIRED_DASHBOARD_POST_RECOVERY_ACCEPTANCE_ROWS = [
+  "external_gsc_access_restored=satisfied",
+  "dashboard_verify_local_verified=satisfied",
+  "rendered_ui_smoke_current=satisfied",
+  "dashboard_surface_current=satisfied",
+  "recommendations_safe_to_act=satisfied",
+  "mutation_boundary_clean=satisfied",
+] as const;
 
 export interface Site {
   id: string;
@@ -153,6 +163,25 @@ export interface AdsenseExternalProof {
   networkVantageSummary?: string;
 }
 
+export type AdsenseProofFreshnessStatus =
+  | "current"
+  | "resolved"
+  | "stale"
+  | "missing"
+  | "invalid";
+
+export interface AdsenseProofFreshnessSummary {
+  status: AdsenseProofFreshnessStatus;
+  artifactPath?: string;
+  generatedAt?: string;
+  collectorSnapshot?: string;
+  expectedStatsGeneratedAt?: string | null;
+  candidateSiteIds: string[];
+  candidateCount: number;
+  reason: string;
+  remediationCommand: string;
+}
+
 export interface AdsenseExternalProofActionMeta {
   label: string;
   priority: number;
@@ -265,6 +294,131 @@ export interface AdsenseProofGateSummary {
     approvedRootScopeConfirmed?: number;
   };
   stopCondition: string;
+}
+
+export interface GscPermissionAuditSummary {
+  artifactPath: string;
+  workOrderPath: string;
+  generatedAt: string;
+  collectorSnapshot: string;
+  handoffStatus: "pending_external" | "pending_local_refresh" | "resolved";
+  productionMutationPerformed: false;
+  gscMutationPerformed: false;
+  serviceAccountEmail: string | null;
+  auditedRows: number;
+  ownerAccess: number;
+  restrictedAccess: number;
+  unverified: number;
+  notListed: number;
+  results: GscPermissionAuditResult[];
+}
+
+export interface GscPermissionAuditResult {
+  siteId: string;
+  host: string;
+  configuredGscSiteUrl: string;
+  gscStatus: string;
+  listedSiteUrl: string | null;
+  permissionLevel: string | null;
+  accessState: string;
+  requiredAction: string;
+}
+
+export interface FleetOptimizationChainSummary {
+  artifactPath: string;
+  workOrderPath: string;
+  generatedAt: string;
+  date: string;
+  statsSnapshot: string;
+  planSnapshot: string;
+  handoffSnapshot: string;
+  refreshFailedSources: string[];
+  readinessBlockingRefreshFailedSources: string[];
+  maintenanceRefreshFailedSources: string[];
+  refreshFailureCount: number;
+  refreshFailuresBlockReadiness: boolean;
+  commands: number;
+  pass: number;
+  fail: number;
+  skipped: number;
+  planMatchesStats: boolean;
+  handoffMatchesStats: boolean;
+  handoffMutationFlagsFalse: boolean;
+  handoffSiteCount: number;
+  titleHandoffCount: number;
+  contentHandoffCount: number;
+}
+
+export interface DashboardPostRecoveryChainSummary {
+  artifactPath: string;
+  workOrderPath: string;
+  generatedAt: string;
+  date: string;
+  statsSnapshot: string;
+  verificationPath: string;
+  verdict: string;
+  actionabilityStatus: string;
+  postRecoveryAcceptance: string[];
+  postRecoveryAcceptanceSatisfied: boolean;
+  readiness: "ready_to_act" | "external_recovery_required" | "failed" | "dry_run";
+  artifactIntegrityStatus: "pass" | "fail" | "skipped" | "not_run";
+  commands: number;
+  pass: number;
+  fail: number;
+  skipped: number;
+}
+
+export type FleetOptimizationChainArtifactState =
+  | "current"
+  | "missing"
+  | "snapshot_mismatch"
+  | "invalid";
+
+export interface FleetOptimizationChainArtifactStatus {
+  state: FleetOptimizationChainArtifactState;
+  reason: string;
+  expectedStatsGeneratedAt: string | null;
+  artifactPath?: string;
+  workOrderPath?: string;
+  generatedAt?: string;
+  statsSnapshot?: string;
+  date?: string;
+}
+
+export interface T3TitleContentHandoffSummary {
+  artifactPath: string;
+  workOrderPath: string;
+  generatedAt: string;
+  snapshotTimestamp: string;
+  refreshFailedSources: string[];
+  siteCount: number;
+  titleHandoffCount: number;
+  contentHandoffCount: number;
+  sites: T3TitleContentHandoffSite[];
+  hiddenSiteCount: number;
+  cmsMutationPerformed: false;
+  productionDeploymentPerformed: false;
+  searchConsoleMutationPerformed: false;
+  adsenseMutationPerformed: false;
+  titleOrBodyMutationPerformed: false;
+}
+
+export interface T3TitleContentHandoffSite {
+  host: string;
+  url: string;
+  localPath: string;
+  actions: string[];
+  planRanks: number[];
+  gscImpressions30d: number;
+  gscClicks30d: number;
+  gscCtr30d: number;
+  gscPosition30d: number;
+  topQuery: string;
+  recommendedNextAction: string;
+  sitemapWarnings: number;
+  sitemapErrors: number;
+  adsenseStatus: string;
+  adsTxtStatus: string;
 }
 
 export const ADSENSE_EXTERNAL_PROOF_DECISIONS = new Set<string>([
@@ -628,6 +782,12 @@ export interface DashboardData {
   collectionSummary: CollectionSourceSummary[];
   adsenseRemediationQueue: AdsenseRemediationQueueSummary | null;
   adsenseProofGate: AdsenseProofGateSummary | null;
+  adsenseProofFreshness: AdsenseProofFreshnessSummary;
+  gscPermissionAudit: GscPermissionAuditSummary | null;
+  fleetOptimizationChain: FleetOptimizationChainSummary | null;
+  fleetOptimizationChainStatus: FleetOptimizationChainArtifactStatus;
+  dashboardPostRecoveryChain: DashboardPostRecoveryChainSummary | null;
+  t3TitleContentHandoff: T3TitleContentHandoffSummary | null;
   gscIssueStats: EnrichedSiteStat[];
   dailyIssueStats: EnrichedSiteStat[];
   trafficDropStats: EnrichedSiteStat[];
@@ -674,6 +834,10 @@ export function getDashboardData(): DashboardData {
   );
   const sparklines = loadSparklines(sites.map((s) => s.id));
   const scheduledByHost = loadScheduledQueue();
+  const adsenseProofFreshness = loadAdsenseProofFreshness(
+    "data",
+    snapshot.generatedAt,
+  );
   const adsenseExternalProofById = loadAdsenseExternalProof(
     "data",
     snapshot.generatedAt,
@@ -683,6 +847,24 @@ export function getDashboardData(): DashboardData {
     snapshot.generatedAt,
   );
   const adsenseProofGate = loadAdsenseProofGate("data", snapshot.generatedAt);
+  const gscPermissionAudit = loadGscPermissionAudit("data", snapshot.generatedAt);
+  const fleetOptimizationChain = loadFleetOptimizationChain(
+    "data",
+    snapshot.generatedAt,
+  );
+  const fleetOptimizationChainStatus = loadFleetOptimizationChainStatus(
+    "data",
+    snapshot.generatedAt,
+    fleetOptimizationChain,
+  );
+  const dashboardPostRecoveryChain = loadDashboardPostRecoveryChain(
+    "data",
+    snapshot.generatedAt,
+  );
+  const t3TitleContentHandoff = loadT3TitleContentHandoff(
+    "data",
+    snapshot.generatedAt,
+  );
   const adsenseRemediationQueueById = buildAdsenseRemediationQueueIndex(
     adsenseRemediationQueue,
   );
@@ -724,7 +906,11 @@ export function getDashboardData(): DashboardData {
   const dedupeResult = dedupeStatsByHost(stats);
   const displayStats = dedupeResult.stats;
   const insights = attachRelatedInsightSignals(buildInsights(displayStats));
-  const actions = buildActionItems(displayStats).slice(0, 16);
+  const actions = buildActionItems(
+    displayStats,
+    gscPermissionAudit,
+    adsenseProofFreshness,
+  ).slice(0, 16);
   const collectionSummary = buildCollectionSummary(displayStats);
   const totalLast1Days = sumMetrics(displayStats.map((stat) => stat.last1Days));
   const totalLast7Days = sumMetrics(displayStats.map((stat) => stat.last7Days));
@@ -775,6 +961,12 @@ export function getDashboardData(): DashboardData {
     collectionSummary,
     adsenseRemediationQueue,
     adsenseProofGate,
+    adsenseProofFreshness,
+    gscPermissionAudit,
+    fleetOptimizationChain,
+    fleetOptimizationChainStatus,
+    dashboardPostRecoveryChain,
+    t3TitleContentHandoff,
     gscIssueStats: displayStats.filter(
       (stat) => Boolean(stat.gscError) || (stat.gscEmailAlerts?.length ?? 0) > 0,
     ),
@@ -1088,11 +1280,64 @@ export function getDevelopmentPaths(site: Site): {
 
 export function buildActionItems(
   stats: EnrichedSiteStat[],
+  gscPermissionAudit?: GscPermissionAuditSummary | null,
+  adsenseProofFreshness?: AdsenseProofFreshnessSummary | null,
 ): DashboardActionItem[] {
-  return stats.flatMap(getActionItems).sort((a, b) => b.priority - a.priority);
+  const gscAuditBySite = buildGscPermissionAuditIndex(gscPermissionAudit);
+  const staleAdsenseProofSiteIds = buildStaleAdsenseProofSiteIdSet(
+    adsenseProofFreshness,
+  );
+  return stats
+    .flatMap((stat) =>
+      getActionItems(
+        stat,
+        gscAuditBySite.get(stat.id) ?? gscAuditBySite.get(normalizeHost(stat.url)),
+        staleAdsenseProofSiteIds.has(stat.id)
+          ? (adsenseProofFreshness ?? undefined)
+          : undefined,
+      ),
+    )
+    .sort((a, b) => b.priority - a.priority);
 }
 
-function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
+function buildStaleAdsenseProofSiteIdSet(
+  freshness: AdsenseProofFreshnessSummary | null | undefined,
+): Set<string> {
+  if (!freshness || freshness.status !== "stale") {
+    return new Set();
+  }
+  return new Set(freshness.candidateSiteIds);
+}
+
+function shouldSurfaceStaleAdsenseProofAction(
+  stat: EnrichedSiteStat,
+  freshness: AdsenseProofFreshnessSummary | undefined,
+): boolean {
+  if (!freshness) {
+    return false;
+  }
+  return stat.adsenseRemediationQueueItem?.lane === "ordinary_adsense_proof";
+}
+
+function buildGscPermissionAuditIndex(
+  audit: GscPermissionAuditSummary | null | undefined,
+): Map<string, GscPermissionAuditResult> {
+  const result = new Map<string, GscPermissionAuditResult>();
+  if (audit?.handoffStatus !== "pending_external") {
+    return result;
+  }
+  for (const item of audit?.results ?? []) {
+    result.set(item.siteId, item);
+    result.set(item.host, item);
+  }
+  return result;
+}
+
+function getActionItems(
+  stat: EnrichedSiteStat,
+  gscAuditResult?: GscPermissionAuditResult,
+  staleAdsenseProof?: AdsenseProofFreshnessSummary,
+): DashboardActionItem[] {
   const items: DashboardActionItem[] = [];
   const activeChange = stat.trend.activeUsersChange;
   const gscChange = stat.trend.gscClicksChange;
@@ -1101,13 +1346,24 @@ function getActionItems(stat: EnrichedSiteStat): DashboardActionItem[] {
   const needsAdsenseConsoleScopeReview =
     hasApprovedAdsenseRoot(stat) && hasMonetizationCollectionIssue(stat);
 
+  if (stat.operationalStatus === "needsPermission" && gscAuditResult) {
+    items.push(makeGscPermissionAuditAction(stat, gscAuditResult));
+  }
+
+  if (
+    shouldSurfaceStaleAdsenseProofAction(stat, staleAdsenseProof) &&
+    staleAdsenseProof
+  ) {
+    items.push(makeAdsenseProofFreshnessAction(stat, staleAdsenseProof));
+  }
+
   if (stat.operationalStatus === "needsPermission") {
     const telemetryQueueItem = getTelemetryRemediationQueueItem(
       stat.adsenseRemediationQueueItem,
     );
-    if (telemetryQueueItem) {
+    if (telemetryQueueItem && !gscAuditResult) {
       items.push(makeAdsenseRemediationQueueAction(stat, telemetryQueueItem));
-    } else {
+    } else if (!gscAuditResult) {
       items.push(
         makeAction(
           stat,
@@ -1335,8 +1591,13 @@ function shouldAddAdsenseRemediationQueueAction(
         "Fresh proof needed",
         "Live apply check needed",
         "Source recovery needed",
+        "AdSense proof snapshot stale",
       ].includes(action.value),
     );
+  }
+
+  if (item.lane === "gsc_auth_telemetry") {
+    return !items.some((action) => action.value === "GSC permission audit");
   }
 
   if (item.lane === "approved_root_subdomain_scope") {
@@ -1372,6 +1633,35 @@ function makeAdsenseRemediationQueueAction(
     getAdsenseRemediationQueueActionValue(item.lane),
     formatAdsenseRemediationQueueReason(item),
     item.stopCondition,
+  );
+}
+
+function makeGscPermissionAuditAction(
+  stat: EnrichedSiteStat,
+  result: GscPermissionAuditResult,
+): DashboardActionItem {
+  return makeAction(
+    stat,
+    "permission",
+    101,
+    "GSC permission audit",
+    `${result.host}: ${result.permissionLevel ?? "not_listed"} / ${result.accessState}. ${result.requiredAction}`,
+    `${result.requiredAction} Then run: pnpm dashboard:post-recovery.`,
+  );
+}
+
+function makeAdsenseProofFreshnessAction(
+  stat: EnrichedSiteStat,
+  freshness: AdsenseProofFreshnessSummary,
+): DashboardActionItem {
+  const artifact = freshness.artifactPath ?? "latest external proof artifact";
+  return makeAction(
+    stat,
+    "owner",
+    94,
+    "AdSense proof snapshot stale",
+    `${normalizeHost(stat.url)} proof artifact is stale: ${freshness.collectorSnapshot ?? "missing collectorSnapshot"} does not match current stats generatedAt=${freshness.expectedStatsGeneratedAt ?? "unknown"}.`,
+    `Refresh local proof snapshots with ${freshness.remediationCommand}, then rerun pnpm adsense:proof:verify. Artifact: ${artifact}.`,
   );
 }
 
@@ -2968,6 +3258,550 @@ export function loadAdsenseProofGate(
   }
 }
 
+export function loadAdsenseProofFreshness(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): AdsenseProofFreshnessSummary {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return makeAdsenseProofFreshnessSummary({
+      status: "missing",
+      expectedStatsGeneratedAt,
+      candidateSiteIds: [],
+      reason: `Cannot read ${dataDirectory}.`,
+    });
+  }
+
+  const latest = findLatestDatedArtifact(
+    entries,
+    /^adsense-external-proof-continuation-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  if (!latest) {
+    return makeAdsenseProofFreshnessSummary({
+      status: "missing",
+      expectedStatsGeneratedAt,
+      candidateSiteIds: [],
+      reason: "No external proof continuation artifact exists.",
+    });
+  }
+
+  const artifactPath = `${dataDirectory}/${latest}`;
+  try {
+    const parsed = JSON.parse(readFileSync(artifactPath, "utf8")) as {
+      generatedAt?: unknown;
+      collectorSnapshot?: unknown;
+      candidates?: unknown[];
+    };
+    const candidateSiteIds = collectAdsenseProofCandidateSiteIds(
+      parsed.candidates,
+    );
+    const collectorSnapshot =
+      typeof parsed.collectorSnapshot === "string"
+        ? parsed.collectorSnapshot
+        : undefined;
+    const generatedAt =
+      typeof parsed.generatedAt === "string" ? parsed.generatedAt : undefined;
+
+    if (!collectorSnapshot) {
+      return makeAdsenseProofFreshnessSummary({
+        status: "invalid",
+        artifactPath,
+        generatedAt,
+        expectedStatsGeneratedAt,
+        candidateSiteIds,
+        reason: "External proof artifact is missing collectorSnapshot.",
+      });
+    }
+
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(collectorSnapshot, expectedStatsGeneratedAt)
+    ) {
+      if (
+        isResolvedAdsenseProofFreshness(
+          dataDirectory,
+          expectedStatsGeneratedAt,
+          candidateSiteIds,
+        )
+      ) {
+        return makeAdsenseProofFreshnessSummary({
+          status: "resolved",
+          artifactPath,
+          generatedAt,
+          collectorSnapshot,
+          expectedStatsGeneratedAt,
+          candidateSiteIds,
+          reason:
+            "External proof artifact is older than the current snapshot, but all candidate sites are resolved in the current AdSense remediation queue.",
+        });
+      }
+      return makeAdsenseProofFreshnessSummary({
+        status: "stale",
+        artifactPath,
+        generatedAt,
+        collectorSnapshot,
+        expectedStatsGeneratedAt,
+        candidateSiteIds,
+        reason: `External proof collectorSnapshot does not match current stats generatedAt=${expectedStatsGeneratedAt}.`,
+      });
+    }
+
+    return makeAdsenseProofFreshnessSummary({
+      status: "current",
+      artifactPath,
+      generatedAt,
+      collectorSnapshot,
+      expectedStatsGeneratedAt,
+      candidateSiteIds,
+      reason: "External proof artifact matches the current dashboard snapshot.",
+    });
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    return makeAdsenseProofFreshnessSummary({
+      status: "invalid",
+      artifactPath,
+      expectedStatsGeneratedAt,
+      candidateSiteIds: [],
+      reason: `Cannot parse external proof artifact: ${reason}`,
+    });
+  }
+}
+
+function isResolvedAdsenseProofFreshness(
+  dataDirectory: string,
+  expectedStatsGeneratedAt: string,
+  candidateSiteIds: string[],
+): boolean {
+  if (candidateSiteIds.length === 0) {
+    return false;
+  }
+  const queue = loadAdsenseRemediationQueue(
+    dataDirectory,
+    expectedStatsGeneratedAt,
+  );
+  if (!queue) {
+    return false;
+  }
+  const activeProofSiteIds = new Set([
+    ...queue.lanes.ordinary_adsense_proof.map((item) => item.siteId),
+    ...queue.lanes.approved_root_subdomain_scope.map((item) => item.siteId),
+  ]);
+  return candidateSiteIds.every((siteId) => !activeProofSiteIds.has(siteId));
+}
+
+function makeAdsenseProofFreshnessSummary(input: {
+  status: AdsenseProofFreshnessStatus;
+  artifactPath?: string | undefined;
+  generatedAt?: string | undefined;
+  collectorSnapshot?: string | undefined;
+  expectedStatsGeneratedAt?: string | null | undefined;
+  candidateSiteIds: string[];
+  reason: string;
+}): AdsenseProofFreshnessSummary {
+  return {
+    status: input.status,
+    ...(input.artifactPath ? { artifactPath: input.artifactPath } : {}),
+    ...(input.generatedAt ? { generatedAt: input.generatedAt } : {}),
+    ...(input.collectorSnapshot
+      ? { collectorSnapshot: input.collectorSnapshot }
+      : {}),
+    expectedStatsGeneratedAt: input.expectedStatsGeneratedAt ?? null,
+    candidateSiteIds: input.candidateSiteIds,
+    candidateCount: input.candidateSiteIds.length,
+    reason: input.reason,
+    remediationCommand: "pnpm adsense:proof:refresh-snapshot",
+  };
+}
+
+function collectAdsenseProofCandidateSiteIds(candidates: unknown): string[] {
+  if (!Array.isArray(candidates)) {
+    return [];
+  }
+  return [
+    ...new Set(
+      candidates
+        .map((candidate) =>
+          candidate &&
+          typeof candidate === "object" &&
+          typeof (candidate as { siteId?: unknown }).siteId === "string"
+            ? (candidate as { siteId: string }).siteId
+            : undefined,
+        )
+        .filter((siteId): siteId is string => Boolean(siteId)),
+    ),
+  ].sort();
+}
+
+export function loadGscPermissionAudit(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): GscPermissionAuditSummary | null {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return null;
+  }
+
+  const candidates = findDatedArtifactsNewestFirst(
+    entries,
+    /^gsc-permission-audit-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  const candidate = candidates[0];
+  if (!candidate) {
+    return null;
+  }
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${candidate}`, "utf8"),
+    );
+    if (!isGscPermissionAuditArtifact(parsed)) {
+      return null;
+    }
+    if (
+      expectedStatsGeneratedAt &&
+      !isMatchingCollectorSnapshot(
+        parsed.collectorSnapshot,
+        expectedStatsGeneratedAt,
+      )
+    ) {
+      return null;
+    }
+
+    const date = candidate.slice(
+      "gsc-permission-audit-".length,
+      -".json".length,
+    );
+    return {
+      artifactPath: `${dataDirectory}/${candidate}`,
+      workOrderPath: `docs/work-orders/gsc-permission-audit-${date}.md`,
+      generatedAt: parsed.generatedAt,
+      collectorSnapshot: parsed.collectorSnapshot,
+      handoffStatus: parsed.handoffStatus,
+      productionMutationPerformed: parsed.productionMutationPerformed,
+      gscMutationPerformed: parsed.gscMutationPerformed,
+      serviceAccountEmail: parsed.serviceAccountEmail,
+      auditedRows: parsed.summary.auditedRows,
+      ownerAccess: parsed.summary.ownerAccess,
+      restrictedAccess: parsed.summary.restrictedAccess,
+      unverified: parsed.summary.unverified,
+      notListed: parsed.summary.notListed,
+      results: parsed.results,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function loadFleetOptimizationChain(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): FleetOptimizationChainSummary | null {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return null;
+  }
+
+  const candidates = findDatedArtifactsNewestFirst(
+    entries,
+    /^fleet-optimization-chain-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  const candidate = candidates[0];
+  if (!candidate) {
+    return null;
+  }
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${candidate}`, "utf8"),
+    );
+    if (!isFleetOptimizationChainArtifact(parsed)) {
+      return null;
+    }
+    if (
+      expectedStatsGeneratedAt &&
+      parsed.verification.statsSnapshot !== expectedStatsGeneratedAt
+    ) {
+      return null;
+    }
+
+    return {
+      artifactPath: `${dataDirectory}/${candidate}`,
+      workOrderPath: `docs/work-orders/fleet-optimization-chain-${parsed.date}.md`,
+      generatedAt: parsed.generatedAt,
+      date: parsed.date,
+      statsSnapshot: parsed.verification.statsSnapshot,
+      planSnapshot: parsed.verification.planSnapshot,
+      handoffSnapshot: parsed.verification.handoffSnapshot,
+      refreshFailedSources: parsed.verification.refreshFailedSources,
+      readinessBlockingRefreshFailedSources:
+        parsed.verification.refreshFailedSources.filter(
+          isReadinessBlockingRefreshFailure,
+        ),
+      maintenanceRefreshFailedSources:
+        parsed.verification.refreshFailedSources.filter(
+          isMaintenanceRefreshFailure,
+        ),
+      refreshFailureCount: parsed.verification.refreshFailureCount,
+      refreshFailuresBlockReadiness:
+        parsed.verification.refreshFailuresBlockReadiness,
+      commands: parsed.summary.commands,
+      pass: parsed.summary.pass,
+      fail: parsed.summary.fail,
+      skipped: parsed.summary.skipped,
+      planMatchesStats: parsed.verification.planMatchesStats,
+      handoffMatchesStats: parsed.verification.handoffMatchesStats,
+      handoffMutationFlagsFalse:
+        parsed.verification.handoffMutationFlagsFalse,
+      handoffSiteCount: parsed.verification.handoffSiteCount,
+      titleHandoffCount: parsed.verification.titleHandoffCount,
+      contentHandoffCount: parsed.verification.contentHandoffCount,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function loadDashboardPostRecoveryChain(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): DashboardPostRecoveryChainSummary | null {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return null;
+  }
+
+  const candidate = findDatedArtifactsNewestFirst(
+    entries,
+    /^dashboard-post-recovery-chain-\d{4}-\d{2}-\d{2}\.json$/,
+  )[0];
+  if (!candidate) {
+    return null;
+  }
+
+  const artifactPath = `${dataDirectory}/${candidate}`;
+  try {
+    const parsed = JSON.parse(readFileSync(artifactPath, "utf8"));
+    if (!isDashboardPostRecoveryChainArtifact(parsed)) {
+      return null;
+    }
+    if (
+      expectedStatsGeneratedAt &&
+      parsed.dashboardVerification.statsSnapshot !== expectedStatsGeneratedAt
+    ) {
+      return null;
+    }
+
+    const date = candidate.slice(
+      "dashboard-post-recovery-chain-".length,
+      -".json".length,
+    );
+    return {
+      artifactPath,
+      workOrderPath: `docs/work-orders/dashboard-post-recovery-chain-${date}.md`,
+      generatedAt: parsed.generatedAt,
+      date: parsed.date,
+      statsSnapshot: parsed.dashboardVerification.statsSnapshot,
+      verificationPath: parsed.dashboardVerification.path,
+      verdict: parsed.dashboardVerification.verdict,
+      actionabilityStatus: parsed.dashboardVerification.actionabilityStatus,
+      postRecoveryAcceptance: parsed.dashboardVerification.postRecoveryAcceptance,
+      postRecoveryAcceptanceSatisfied: dashboardPostRecoveryAcceptanceSatisfied(
+        parsed.dashboardVerification.postRecoveryAcceptance,
+      ),
+      readiness: parsed.readiness,
+      artifactIntegrityStatus: parsed.artifactIntegrity?.status ?? "not_run",
+      commands: parsed.summary.commands,
+      pass: parsed.summary.pass,
+      fail: parsed.summary.fail,
+      skipped: parsed.summary.skipped,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function loadFleetOptimizationChainStatus(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+  currentChain?: FleetOptimizationChainSummary | null,
+): FleetOptimizationChainArtifactStatus {
+  const expected = expectedStatsGeneratedAt ?? null;
+  if (currentChain) {
+    return {
+      state: "current",
+      reason: "Current fleet chain artifact matches the latest stats snapshot.",
+      expectedStatsGeneratedAt: expected,
+      artifactPath: currentChain.artifactPath,
+      workOrderPath: currentChain.workOrderPath,
+      generatedAt: currentChain.generatedAt,
+      statsSnapshot: currentChain.statsSnapshot,
+      date: currentChain.date,
+    };
+  }
+
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return {
+      state: "missing",
+      reason: "Fleet chain artifact directory is not readable.",
+      expectedStatsGeneratedAt: expected,
+    };
+  }
+
+  const candidate = findDatedArtifactsNewestFirst(
+    entries,
+    /^fleet-optimization-chain-\d{4}-\d{2}-\d{2}\.json$/,
+  )[0];
+  if (!candidate) {
+    return {
+      state: "missing",
+      reason: "No fleet chain artifact exists for the dashboard snapshot.",
+      expectedStatsGeneratedAt: expected,
+    };
+  }
+  const artifactPath = `${dataDirectory}/${candidate}`;
+  try {
+    const parsed = JSON.parse(readFileSync(artifactPath, "utf8"));
+    if (!isFleetOptimizationChainArtifact(parsed)) {
+      return {
+        state: "invalid",
+        reason:
+          "Newest fleet chain artifact is malformed or missing required verification fields.",
+        expectedStatsGeneratedAt: expected,
+        artifactPath,
+      };
+    }
+
+    const date = candidate.slice(
+      "fleet-optimization-chain-".length,
+      -".json".length,
+    );
+    const base = {
+      expectedStatsGeneratedAt: expected,
+      artifactPath,
+      workOrderPath: `docs/work-orders/fleet-optimization-chain-${date}.md`,
+      generatedAt: parsed.generatedAt,
+      statsSnapshot: parsed.verification.statsSnapshot,
+      date: parsed.date,
+    };
+    if (
+      expectedStatsGeneratedAt &&
+      parsed.verification.statsSnapshot !== expectedStatsGeneratedAt
+    ) {
+      return {
+        ...base,
+        state: "snapshot_mismatch",
+        reason:
+          "Newest fleet chain artifact exists, but it was generated from a different stats snapshot.",
+      };
+    }
+
+    return {
+      ...base,
+      state: "invalid",
+      reason:
+        "Newest fleet chain artifact exists but was not accepted by the strict loader.",
+    };
+  } catch {
+    return {
+      state: "invalid",
+      reason: "Newest fleet chain artifact cannot be parsed as JSON.",
+      expectedStatsGeneratedAt: expected,
+      artifactPath,
+    };
+  }
+}
+
+function isReadinessBlockingRefreshFailure(source: string): boolean {
+  return !isMaintenanceRefreshFailure(source);
+}
+
+function isMaintenanceRefreshFailure(source: string): boolean {
+  return isMaintenanceRefreshFailureSource(source);
+}
+
+export function loadT3TitleContentHandoff(
+  dataDirectory = "data",
+  expectedStatsGeneratedAt?: string | null,
+): T3TitleContentHandoffSummary | null {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDirectory);
+  } catch {
+    return null;
+  }
+
+  const candidates = findDatedArtifactsNewestFirst(
+    entries,
+    /^t3-title-content-handoff-\d{4}-\d{2}-\d{2}\.json$/,
+  );
+  const candidate = candidates[0];
+  if (!candidate) {
+    return null;
+  }
+  try {
+    const parsed = JSON.parse(
+      readFileSync(`${dataDirectory}/${candidate}`, "utf8"),
+    );
+    if (!isT3TitleContentHandoffArtifact(parsed)) {
+      return null;
+    }
+    if (
+      expectedStatsGeneratedAt &&
+      parsed.dashboardEvidence.snapshotTimestamp !== expectedStatsGeneratedAt
+    ) {
+      return null;
+    }
+
+    return {
+      artifactPath: `${dataDirectory}/${candidate}`,
+      workOrderPath: `docs/work-orders/t3-title-content-handoff-${candidate.slice("t3-title-content-handoff-".length, -".json".length)}.md`,
+      generatedAt: parsed.generatedAt,
+      snapshotTimestamp: parsed.dashboardEvidence.snapshotTimestamp,
+      refreshFailedSources: parsed.dashboardEvidence.refreshFailedSources,
+      siteCount: parsed.summary.siteCount,
+      titleHandoffCount: parsed.summary.titleHandoffCount,
+      contentHandoffCount: parsed.summary.contentHandoffCount,
+      sites: parsed.sites.slice(0, 6).map((site) => ({
+        host: site.host,
+        url: site.url,
+        localPath: site.localPath,
+        actions: site.actions,
+        planRanks: site.planRanks,
+        gscImpressions30d: site.metrics.gscImpressions30d,
+        gscClicks30d: site.metrics.gscClicks30d,
+        gscCtr30d: site.metrics.gscCtr30d,
+        gscPosition30d: site.metrics.gscPosition30d,
+        topQuery: site.topQueries[0]?.query ?? "",
+        recommendedNextAction: site.recommendedNextAction,
+        sitemapWarnings: site.technicalStatus.sitemapWarnings,
+        sitemapErrors: site.technicalStatus.sitemapErrors,
+        adsenseStatus: site.technicalStatus.adsenseStatus,
+        adsTxtStatus: site.technicalStatus.adsTxtStatus,
+      })),
+      hiddenSiteCount: Math.max(0, parsed.sites.length - 6),
+      cmsMutationPerformed: parsed.mutationStatus.cmsMutationPerformed,
+      productionDeploymentPerformed:
+        parsed.mutationStatus.productionDeploymentPerformed,
+      searchConsoleMutationPerformed:
+        parsed.mutationStatus.searchConsoleMutationPerformed,
+      adsenseMutationPerformed: parsed.mutationStatus.adsenseMutationPerformed,
+      titleOrBodyMutationPerformed:
+        parsed.mutationStatus.titleOrBodyMutationPerformed,
+    };
+  } catch {
+    return null;
+  }
+}
+
 function buildAdsenseRemediationQueueIndex(
   queue: AdsenseRemediationQueueSummary | null,
 ): Map<string, AdsenseRemediationQueueItem> {
@@ -3314,13 +4148,17 @@ function findLatestDatedArtifact(entries: string[], pattern: RegExp) {
   return entries.filter((entry) => pattern.test(entry)).sort().at(-1);
 }
 
+function findDatedArtifactsNewestFirst(entries: string[], pattern: RegExp) {
+  return entries.filter((entry) => pattern.test(entry)).sort().reverse();
+}
+
 function isMatchingCollectorSnapshot(
   collectorSnapshot: unknown,
   expectedStatsGeneratedAt: string,
 ): boolean {
   return (
     typeof collectorSnapshot === "string" &&
-    collectorSnapshot.includes(`generatedAt=${expectedStatsGeneratedAt}`)
+    collectorSnapshot === `data/site-stats.json generatedAt=${expectedStatsGeneratedAt}`
   );
 }
 
@@ -3421,6 +4259,359 @@ function isAdsenseProofGateBlocker(
     Array.isArray(blocker.siteIds) &&
     blocker.siteIds.every((siteId) => typeof siteId === "string") &&
     typeof blocker.requiredAction === "string"
+  );
+}
+
+function isGscPermissionAuditArtifact(value: unknown): value is {
+  generatedAt: string;
+  collectorSnapshot: string;
+  handoffStatus: GscPermissionAuditSummary["handoffStatus"];
+  productionMutationPerformed: false;
+  gscMutationPerformed: false;
+  serviceAccountEmail: string | null;
+  summary: {
+    auditedRows: number;
+    ownerAccess: number;
+    restrictedAccess: number;
+    unverified: number;
+    notListed: number;
+  };
+  results: GscPermissionAuditResult[];
+} {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const artifact = value as Record<string, unknown>;
+  const summary = artifact.summary as Record<string, unknown> | undefined;
+  return (
+    typeof artifact.generatedAt === "string" &&
+    typeof artifact.collectorSnapshot === "string" &&
+    isGscPermissionAuditHandoffStatus(artifact.handoffStatus) &&
+    artifact.productionMutationPerformed === false &&
+    artifact.gscMutationPerformed === false &&
+    (artifact.serviceAccountEmail === null ||
+      typeof artifact.serviceAccountEmail === "string") &&
+    Boolean(summary) &&
+    typeof summary?.auditedRows === "number" &&
+    typeof summary.ownerAccess === "number" &&
+    typeof summary.restrictedAccess === "number" &&
+    typeof summary.unverified === "number" &&
+    typeof summary.notListed === "number" &&
+    Array.isArray(artifact.results) &&
+    artifact.results.every(isGscPermissionAuditResult) &&
+    isGscPermissionAuditHandoffStatusConsistent(
+      artifact.handoffStatus,
+      artifact.results,
+    )
+  );
+}
+
+function isGscPermissionAuditHandoffStatus(
+  value: unknown,
+): value is GscPermissionAuditSummary["handoffStatus"] {
+  return (
+    value === "pending_external" ||
+    value === "pending_local_refresh" ||
+    value === "resolved"
+  );
+}
+
+function isGscPermissionAuditHandoffStatusConsistent(
+  handoffStatus: GscPermissionAuditSummary["handoffStatus"],
+  results: GscPermissionAuditResult[],
+): boolean {
+  if (handoffStatus === "resolved") {
+    return results.length === 0;
+  }
+  if (handoffStatus === "pending_local_refresh") {
+    return (
+      results.length > 0 &&
+      results.every((result) => result.accessState === "owner_access")
+    );
+  }
+  return (
+    results.length > 0 &&
+    results.some((result) => result.accessState !== "owner_access")
+  );
+}
+
+function isGscPermissionAuditResult(
+  value: unknown,
+): value is GscPermissionAuditResult {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const result = value as Record<string, unknown>;
+  return (
+    typeof result.siteId === "string" &&
+    typeof result.host === "string" &&
+    typeof result.configuredGscSiteUrl === "string" &&
+    typeof result.gscStatus === "string" &&
+    (result.listedSiteUrl === null ||
+      typeof result.listedSiteUrl === "string") &&
+    (result.permissionLevel === null ||
+      typeof result.permissionLevel === "string") &&
+    typeof result.accessState === "string" &&
+    typeof result.requiredAction === "string"
+  );
+}
+
+function isFleetOptimizationChainArtifact(value: unknown): value is {
+  generatedAt: string;
+  date: string;
+  productionMutationPerformed: false;
+  cmsMutationPerformed: false;
+  searchConsoleMutationPerformed: false;
+  adsenseMutationPerformed: false;
+  titleOrBodyMutationPerformed: false;
+  summary: {
+    commands: number;
+    pass: number;
+    fail: number;
+    skipped: number;
+  };
+  verification: {
+    statsSnapshot: string;
+    planSnapshot: string;
+    handoffSnapshot: string;
+    refreshFailedSources: string[];
+    refreshFailureCount: number;
+    refreshFailuresBlockReadiness: boolean;
+    planMatchesStats: boolean;
+    handoffMatchesStats: boolean;
+    handoffMutationFlagsFalse: boolean;
+    handoffSiteCount: number;
+    titleHandoffCount: number;
+    contentHandoffCount: number;
+  };
+} {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const artifact = value as Record<string, unknown>;
+  const summary = artifact.summary as Record<string, unknown> | undefined;
+  const verification = artifact.verification as
+    | Record<string, unknown>
+    | undefined;
+  return (
+    typeof artifact.generatedAt === "string" &&
+    typeof artifact.date === "string" &&
+    artifact.productionMutationPerformed === false &&
+    artifact.cmsMutationPerformed === false &&
+    artifact.searchConsoleMutationPerformed === false &&
+    artifact.adsenseMutationPerformed === false &&
+    artifact.titleOrBodyMutationPerformed === false &&
+    Boolean(summary) &&
+    typeof summary?.commands === "number" &&
+    typeof summary.pass === "number" &&
+    typeof summary.fail === "number" &&
+    typeof summary.skipped === "number" &&
+    Boolean(verification) &&
+    typeof verification?.statsSnapshot === "string" &&
+    typeof verification.planSnapshot === "string" &&
+    typeof verification.handoffSnapshot === "string" &&
+    Array.isArray(verification.refreshFailedSources) &&
+    verification.refreshFailedSources.every(
+      (source) => typeof source === "string",
+    ) &&
+    typeof verification.refreshFailureCount === "number" &&
+    typeof verification.refreshFailuresBlockReadiness === "boolean" &&
+    typeof verification.planMatchesStats === "boolean" &&
+    typeof verification.handoffMatchesStats === "boolean" &&
+    typeof verification.handoffMutationFlagsFalse === "boolean" &&
+    typeof verification.handoffSiteCount === "number" &&
+    typeof verification.titleHandoffCount === "number" &&
+    typeof verification.contentHandoffCount === "number"
+  );
+}
+
+function isDashboardPostRecoveryChainArtifact(value: unknown): value is {
+  generatedAt: string;
+  date: string;
+  productionMutationPerformed: false;
+  cmsMutationPerformed: false;
+  searchConsoleMutationPerformed: false;
+  adsenseMutationPerformed: false;
+  titleOrBodyMutationPerformed: false;
+  dashboardVerification: {
+    path: string;
+    statsSnapshot: string;
+    verdict: string;
+    actionabilityStatus: string;
+    postRecoveryAcceptance: string[];
+  };
+  artifactIntegrity: { status: "pass" | "fail" | "skipped" } | null;
+  summary: {
+    commands: number;
+    pass: number;
+    fail: number;
+    skipped: number;
+  };
+  readiness: "ready_to_act" | "external_recovery_required" | "failed" | "dry_run";
+} {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const artifact = value as Record<string, unknown>;
+  const verification = artifact.dashboardVerification as
+    | Record<string, unknown>
+    | undefined;
+  const artifactIntegrity = artifact.artifactIntegrity as
+    | Record<string, unknown>
+    | null
+    | undefined;
+  const summary = artifact.summary as Record<string, unknown> | undefined;
+  return (
+    typeof artifact.generatedAt === "string" &&
+    typeof artifact.date === "string" &&
+    artifact.productionMutationPerformed === false &&
+    artifact.cmsMutationPerformed === false &&
+    artifact.searchConsoleMutationPerformed === false &&
+    artifact.adsenseMutationPerformed === false &&
+    artifact.titleOrBodyMutationPerformed === false &&
+    Boolean(verification) &&
+    typeof verification?.path === "string" &&
+    typeof verification.statsSnapshot === "string" &&
+    typeof verification.verdict === "string" &&
+    typeof verification.actionabilityStatus === "string" &&
+    Array.isArray(verification.postRecoveryAcceptance) &&
+    verification.postRecoveryAcceptance.every((row) => typeof row === "string") &&
+    (artifactIntegrity === null ||
+      (Boolean(artifactIntegrity) &&
+        (artifactIntegrity?.status === "pass" ||
+          artifactIntegrity?.status === "fail" ||
+          artifactIntegrity?.status === "skipped"))) &&
+    Boolean(summary) &&
+    typeof summary?.commands === "number" &&
+    typeof summary.pass === "number" &&
+    typeof summary.fail === "number" &&
+    typeof summary.skipped === "number" &&
+    (artifact.readiness === "ready_to_act" ||
+      artifact.readiness === "external_recovery_required" ||
+      artifact.readiness === "failed" ||
+      artifact.readiness === "dry_run") &&
+    (artifact.readiness !== "ready_to_act" ||
+      dashboardPostRecoveryAcceptanceSatisfied(verification.postRecoveryAcceptance))
+  );
+}
+
+function dashboardPostRecoveryAcceptanceSatisfied(rows: string[]): boolean {
+  return (
+    rows.length === REQUIRED_DASHBOARD_POST_RECOVERY_ACCEPTANCE_ROWS.length &&
+    new Set(rows).size === rows.length &&
+    REQUIRED_DASHBOARD_POST_RECOVERY_ACCEPTANCE_ROWS.every((row) => rows.includes(row))
+  );
+}
+
+function isT3TitleContentHandoffArtifact(value: unknown): value is {
+  generatedAt: string;
+  dashboardEvidence: {
+    snapshotTimestamp: string;
+    refreshFailedSources: string[];
+  };
+  summary: {
+    siteCount: number;
+    titleHandoffCount: number;
+    contentHandoffCount: number;
+  };
+  sites: Array<{
+    host: string;
+    url: string;
+    localPath: string;
+    actions: string[];
+    planRanks: number[];
+    metrics: {
+      gscImpressions30d: number;
+      gscClicks30d: number;
+      gscCtr30d: number;
+      gscPosition30d: number;
+    };
+    topQueries: Array<{ query: string }>;
+    recommendedNextAction: string;
+    technicalStatus: {
+      sitemapWarnings: number;
+      sitemapErrors: number;
+      adsenseStatus: string;
+      adsTxtStatus: string;
+    };
+  }>;
+  mutationStatus: {
+    cmsMutationPerformed: false;
+    productionDeploymentPerformed: false;
+    searchConsoleMutationPerformed: false;
+    adsenseMutationPerformed: false;
+    titleOrBodyMutationPerformed: false;
+  };
+} {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const artifact = value as Record<string, unknown>;
+  const dashboardEvidence = artifact.dashboardEvidence as
+    | Record<string, unknown>
+    | undefined;
+  const summary = artifact.summary as Record<string, unknown> | undefined;
+  const mutationStatus = artifact.mutationStatus as
+    | Record<string, unknown>
+    | undefined;
+  return (
+    typeof artifact.generatedAt === "string" &&
+    Boolean(dashboardEvidence) &&
+    typeof dashboardEvidence?.snapshotTimestamp === "string" &&
+    Array.isArray(dashboardEvidence.refreshFailedSources) &&
+    dashboardEvidence.refreshFailedSources.every(
+      (source) => typeof source === "string",
+    ) &&
+    Boolean(summary) &&
+    typeof summary?.siteCount === "number" &&
+    typeof summary.titleHandoffCount === "number" &&
+    typeof summary.contentHandoffCount === "number" &&
+    Array.isArray(artifact.sites) &&
+    artifact.sites.every(isT3TitleContentHandoffSite) &&
+    Boolean(mutationStatus) &&
+    mutationStatus?.cmsMutationPerformed === false &&
+    mutationStatus.productionDeploymentPerformed === false &&
+    mutationStatus.searchConsoleMutationPerformed === false &&
+    mutationStatus.adsenseMutationPerformed === false &&
+    mutationStatus.titleOrBodyMutationPerformed === false
+  );
+}
+
+function isT3TitleContentHandoffSite(value: unknown): boolean {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const site = value as Record<string, unknown>;
+  const metrics = site.metrics as Record<string, unknown> | undefined;
+  const technicalStatus = site.technicalStatus as
+    | Record<string, unknown>
+    | undefined;
+  return (
+    typeof site.host === "string" &&
+    typeof site.url === "string" &&
+    typeof site.localPath === "string" &&
+    Array.isArray(site.actions) &&
+    site.actions.every((action) => typeof action === "string") &&
+    Array.isArray(site.planRanks) &&
+    site.planRanks.every((rank) => typeof rank === "number") &&
+    Boolean(metrics) &&
+    typeof metrics?.gscImpressions30d === "number" &&
+    typeof metrics.gscClicks30d === "number" &&
+    typeof metrics.gscCtr30d === "number" &&
+    typeof metrics.gscPosition30d === "number" &&
+    Array.isArray(site.topQueries) &&
+    site.topQueries.every(
+      (query) =>
+        Boolean(query) &&
+        typeof query === "object" &&
+        typeof (query as { query?: unknown }).query === "string",
+    ) &&
+    typeof site.recommendedNextAction === "string" &&
+    Boolean(technicalStatus) &&
+    typeof technicalStatus?.sitemapWarnings === "number" &&
+    typeof technicalStatus.sitemapErrors === "number" &&
+    typeof technicalStatus.adsenseStatus === "string" &&
+    typeof technicalStatus.adsTxtStatus === "string"
   );
 }
 

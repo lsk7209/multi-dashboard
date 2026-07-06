@@ -5,7 +5,8 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ["node_modules/**", "dist/**", ".next/**", "test-results/**", "playwright-report/**"],
+    // Root tmp-*.mjs files are ad-hoc local inspection scripts, not source.
+    ignores: ["node_modules/**", "dist/**", ".next/**", "test-results/**", "playwright-report/**", "tmp/**", "tmp-*.mjs"],
   },
   {
     files: ["scripts/**/*.mjs"],

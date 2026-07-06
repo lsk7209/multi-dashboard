@@ -1,0 +1,17 @@
+.codex/
+.goal-harness/
+.next/
+.next-dev-logs/
+.omc/
+.omx/
+output/
+tmp/
+test-results/
+
+data/**
+!data/affiliate-inventory.json
+!data/banner-management.json
+!data/coupang-channel-registry.json
+!data/site-stats.json
+!data/monetization/
+!data/monetization/ad-manage.db

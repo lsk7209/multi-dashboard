@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T15:33:23.825Z",
+  "generatedAt": "2026-07-05T11:10:14.439Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -5246,6 +5246,112 @@
       "source": [
         "site-audience-classification.yml",
         "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "autorentlab",
+      "name": "autorentlab.com",
+      "domain": "autorentlab.com",
+      "enabled": true,
+      "platform": "nextjs",
+      "monetization": true,
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "kdramanote",
+      "name": "kdramanote.com",
+      "domain": "kdramanote.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "korean",
+      "primaryAudience": "Korean drama search users looking for recaps, ending explanations, character maps, and OTT viewing notes",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "no_product_affiliate_surface",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Korea-facing drama information site. AdSense auto ads only; no manual ad slots.",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "localgeo",
+      "name": "localgeo.app",
+      "domain": "localgeo.app",
+      "enabled": true,
+      "platform": "static",
+      "monetization": true,
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "pethomepick",
+      "name": "pethomepick.com",
+      "domain": "pethomepick.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "korean",
+      "primaryAudience": "Korean pet owners choosing indoor living supplies for small homes and apartments",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "Korea-facing pet indoor product guide. AdSense auto ads only; no manual ad slots. Register pethomepick.com in affiliate programs before serving product links.",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "smallhomepick",
+      "name": "스몰홈픽 - 작은집 살림템 가이드",
+      "domain": "smallhomepick.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "korean",
+      "primaryAudience": "Korean one-person household and newlywed home goods buyers",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_registered",
+      "coupangRegistered": false,
+      "notes": "Korea-facing product-intent site. Register smallhomepick.com in Coupang Partners My Page before serving Coupang links or banners. Korea-facing product-intent site. Register smallhomepick.com in Coupang Partners My Page before serving Coupang links or banners. Korea-facing product-intent site. Block Coupang exposure until the domain is registered in Coupang Partners My Page.",
+      "source": [
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     }
   ],

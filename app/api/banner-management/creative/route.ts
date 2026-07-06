@@ -7,6 +7,14 @@ type CreativeCopy = {
 };
 
 const COPY_BY_SITE: Record<string, CreativeCopy> = {
+  smallhomepick: { eyebrow: "COUPANG PARTNERS", title: "\uc790\ucde8 \uc0b4\ub9bc\uc6a9\ud488 \ucd94\ucc9c", subtitle: "\uc791\uc740\uc9d1 \uc815\ub9ac\uc640 \uc0dd\ud65c\uc5d0 \ud544\uc694\ud55c \uc0c1\ud488 \ubcf4\uae30" },
+  nexttech7: { eyebrow: "COUPANG PARTNERS", title: "\ube54\ud504\ub85c\uc81d\ud130 \ucd94\ucc9c", subtitle: "\uae30\uc220 \uc81c\ud488 \uc120\ud0dd\uc5d0 \uc720\uc6a9\ud55c \uc0c1\ud488 \ubcf4\uae30" },
+  "petinsuer-2": { eyebrow: "COUPANG PARTNERS", title: "\ubc18\ub824\ub3d9\ubb3c \uc6a9\ud488 \ucd94\ucc9c", subtitle: "\ubc18\ub824\ub3d9\ubb3c \uad00\ub9ac\uc5d0 \ud544\uc694\ud55c \uc0c1\ud488 \ubcf4\uae30" },
+  "healfood-2": { eyebrow: "COUPANG PARTNERS", title: "\uac74\uac15\uc2dd\ud488 \ucd94\ucc9c", subtitle: "\uc77c\uc0c1 \uac74\uac15 \uad00\ub9ac\uc5d0 \ud544\uc694\ud55c \uc0c1\ud488 \ubcf4\uae30" },
+  yungyanggogo: { eyebrow: "COUPANG PARTNERS", title: "\uc601\uc591\uc81c \ucd94\ucc9c", subtitle: "\uc601\uc591 \uad00\ub9ac\uc5d0 \ucc38\uace0\ud560 \uc0c1\ud488 \ubcf4\uae30" },
+  "estat-2": { eyebrow: "COUPANG PARTNERS", title: "\uc11c\ub958 \uc815\ub9ac\ud568 \ucd94\ucc9c", subtitle: "\uc5c5\ubb34\uc640 \uc790\ub8cc \uc815\ub9ac\uc5d0 \uc720\uc6a9\ud55c \uc0c1\ud488 \ubcf4\uae30" },
+  "pregnancy-ehon365": { eyebrow: "COUPANG PARTNERS", title: "\uc784\uc0b0\ubd80 \uc6a9\ud488 \ucd94\ucc9c", subtitle: "\uc784\uc2e0 \uae30\uac04 \uc900\ube44\uc5d0 \ud544\uc694\ud55c \uc0c1\ud488 \ubcf4\uae30" },
+  plategogo: { eyebrow: "COUPANG PARTNERS", title: "\uc8fc\ubc29\uc6a9\ud488 \ucd94\ucc9c", subtitle: "\uc2dd\uae30\uc640 \ud14c\uc774\ube14\uc6e8\uc5b4 \uc120\ud0dd\uc5d0 \uc720\uc6a9\ud55c \uc0c1\ud488 \ubcf4\uae30" },
   "autoscares-2": { eyebrow: "COUPANG PARTNERS", title: "자동차 세차용품 추천", subtitle: "차량 관리에 필요한 인기 상품 보기" },
   campgogo: { eyebrow: "COUPANG PARTNERS", title: "캠핑 랜턴 추천", subtitle: "야외 활동에 어울리는 캠핑 장비 보기" },
   "cartain-2": { eyebrow: "COUPANG PARTNERS", title: "차량용 거치대 추천", subtitle: "운전 중 편리한 자동차 용품 보기" },

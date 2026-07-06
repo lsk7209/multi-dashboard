@@ -577,6 +577,33 @@ h2 {
   min-height: 380px;
 }
 
+.actionability-notice {
+  display: grid;
+  gap: 7px;
+  border: 1px solid #f4b84a;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #fff9eb;
+}
+
+.actionability-notice strong {
+  color: #92400e;
+  font-size: 13px;
+}
+
+.actionability-notice p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.actionability-notice code {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
 .action-row {
   align-items: flex-start;
   border-left: 4px solid var(--accent);
@@ -685,6 +712,34 @@ h2 {
 .collection-reliability-panel {
   display: grid;
   gap: 12px;
+}
+
+.fleet-workflow-panel {
+  margin-bottom: 14px;
+}
+
+.fleet-handoff-list {
+  margin-top: 12px;
+}
+
+.fleet-blocker {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  border: 1px solid #f4b84a;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff9eb;
+}
+
+.fleet-blocker strong {
+  color: #92400e;
+}
+
+.fleet-blocker p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .collection-source-list {

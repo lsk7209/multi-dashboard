@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 
+import { formatDisplayPath } from "../lib/display-path.js";
+
 interface PlacementRow {
   id: string;
   siteKey: string | null;
@@ -64,6 +66,8 @@ interface SiteSummaryRow {
   imageRequests: number;
   noAd: number;
   clicks: number;
+  imageRequests7d: number;
+  clicks7d: number;
   lastUpdatedAt: string;
 }
 
@@ -262,6 +266,9 @@ export function BannerManagementConsole() {
           activePlacements: summary.activePlacements + site.activePlacements,
           assignedPlacements: summary.assignedPlacements + site.assignedPlacements,
           clicks: summary.clicks + site.clicks,
+          clicks7d: summary.clicks7d + site.clicks7d,
+          imageRequests: summary.imageRequests + site.imageRequests,
+          imageRequests7d: summary.imageRequests7d + site.imageRequests7d,
           placements: summary.placements + site.placements,
           requests: summary.requests + site.requests,
           unassignedPlacements: summary.unassignedPlacements + site.unassignedPlacements,
@@ -270,6 +277,9 @@ export function BannerManagementConsole() {
           activePlacements: 0,
           assignedPlacements: 0,
           clicks: 0,
+          clicks7d: 0,
+          imageRequests: 0,
+          imageRequests7d: 0,
           placements: 0,
           requests: 0,
           unassignedPlacements: 0,
@@ -316,6 +326,20 @@ export function BannerManagementConsole() {
       filteredSiteSummaries.filter(
         (site) => site.unassignedPlacements > 0 || site.noAd > 0 || site.activePlacements === 0,
       ),
+    [filteredSiteSummaries],
+  );
+  const topEffectSites = useMemo(
+    () =>
+      filteredSiteSummaries
+        .filter((site) => site.imageRequests7d > 0)
+        .sort((a, b) => getCtrRate7d(b) - getCtrRate7d(a) || b.clicks7d - a.clicks7d || b.imageRequests7d - a.imageRequests7d),
+    [filteredSiteSummaries],
+  );
+  const zeroClickExposureSites = useMemo(
+    () =>
+      filteredSiteSummaries
+        .filter((site) => site.imageRequests7d >= 20 && site.clicks7d === 0)
+        .sort((a, b) => b.imageRequests7d - a.imageRequests7d),
     [filteredSiteSummaries],
   );
   const attentionCount =
@@ -423,7 +447,7 @@ export function BannerManagementConsole() {
       <div className="ops-notice">
         <strong>{state.writable ? "쓰기 가능" : "쓰기 제한 가능"}</strong>
         <span>{state.persistenceNote || "배너 DB 상태를 확인하는 중입니다."}</span>
-        <code>{state.dbPath || "data/monetization/ad-manage.db"}</code>
+        <code>{formatDisplayPath(state.dbPath || "data/monetization/ad-manage.db")}</code>
       </div>
 
       {state.adminAuthRequired ? (
@@ -520,7 +544,10 @@ export function BannerManagementConsole() {
           <span>활성 {formatNumber(fleetSummary.activePlacements)}개</span>
           <span>배정 {formatNumber(fleetSummary.assignedPlacements)}개</span>
           <span>미배정 {formatNumber(fleetSummary.unassignedPlacements)}개</span>
+          <span>이미지 요청 {formatNumber(fleetSummary.imageRequests)}회</span>
           <span>클릭 {formatNumber(fleetSummary.clicks)}회</span>
+          <span>CTR {formatPercent(getCtrRate(fleetSummary))}</span>
+          <span>7일 CTR {formatPercent(getCtrRate7d(fleetSummary))}</span>
         </div>
         {selectedSiteSummary ? (
           <div className="ops-site-focus">
@@ -528,7 +555,9 @@ export function BannerManagementConsole() {
             <span>{selectedSiteSummary.siteUrl ?? "사이트 URL 미등록"}</span>
             <span>
               슬롯 {formatNumber(selectedSiteSummary.placements)}개 · 미배정{" "}
-              {formatNumber(selectedSiteSummary.unassignedPlacements)}개 · 클릭 {formatNumber(selectedSiteSummary.clicks)}회
+              {formatNumber(selectedSiteSummary.unassignedPlacements)}개 · 이미지 요청{" "}
+              {formatNumber(selectedSiteSummary.imageRequests)}회 · 클릭 {formatNumber(selectedSiteSummary.clicks)}회 · CTR{" "}
+              {formatPercent(getCtrRate(selectedSiteSummary))} · 7일 CTR {formatPercent(getCtrRate7d(selectedSiteSummary))}
             </span>
           </div>
         ) : null}
@@ -557,9 +586,63 @@ export function BannerManagementConsole() {
               <strong>{formatNumber(attentionCount)}</strong>
               <small>no_ad, 검수, 추적 링크, 사이트 이슈 합산</small>
             </div>
+            <div className="ops-metric-card">
+              <span>이미지 요청</span>
+              <strong>{formatNumber(fleetSummary.imageRequests)}</strong>
+              <small>배너가 실제 호출된 횟수</small>
+            </div>
+            <div className="ops-metric-card">
+              <span>전체 CTR</span>
+              <strong>{formatPercent(getCtrRate(fleetSummary))}</strong>
+              <small>클릭 {formatNumber(fleetSummary.clicks)}회 기준</small>
+            </div>
+            <div className="ops-metric-card">
+              <span>최근 7일 CTR</span>
+              <strong>{formatPercent(getCtrRate7d(fleetSummary))}</strong>
+              <small>
+                클릭 {formatNumber(fleetSummary.clicks7d)}회 · 이미지 요청 {formatNumber(fleetSummary.imageRequests7d)}회
+              </small>
+            </div>
           </div>
 
           <div className="ops-exception-grid">
+            <OpsTable
+              title={`최근 7일 CTR 상위 사이트 (${formatNumber(topEffectSites.length)})`}
+              isLoading={isLoading}
+              emptyText="아직 최근 7일 이미지 요청이 있는 사이트가 없습니다."
+            >
+              {topEffectSites.slice(0, 10).map((site) => (
+                <tr key={site.siteKey}>
+                  <td>
+                    <strong>{site.siteKey}</strong>
+                    <small>{site.siteUrl ?? "URL 미등록"}</small>
+                  </td>
+                  <td>7일 CTR {formatPercent(getCtrRate7d(site))}</td>
+                  <td>7일 클릭 {formatNumber(site.clicks7d)}</td>
+                  <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
+                  <td>누적 CTR {formatPercent(getCtrRate(site))}</td>
+                </tr>
+              ))}
+            </OpsTable>
+
+            <OpsTable
+              title={`최근 7일 노출 대비 클릭 없음 (${formatNumber(zeroClickExposureSites.length)})`}
+              isLoading={isLoading}
+              emptyText="최근 7일 이미지 요청 20회 이상인데 클릭 0회인 사이트가 없습니다."
+            >
+              {zeroClickExposureSites.slice(0, 10).map((site) => (
+                <tr key={site.siteKey}>
+                  <td>
+                    <strong>{site.siteKey}</strong>
+                    <small>{site.siteUrl ?? "URL 미등록"}</small>
+                  </td>
+                  <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
+                  <td>7일 클릭 {formatNumber(site.clicks7d)}</td>
+                  <td>7일 CTR {formatPercent(getCtrRate7d(site))}</td>
+                </tr>
+              ))}
+            </OpsTable>
+
             <OpsTable
               title={`활성 미배정 슬롯 (${formatNumber(activeUnassignedPlacements.length)})`}
               isLoading={isLoading}
@@ -657,7 +740,12 @@ export function BannerManagementConsole() {
                         <td>미배정 {formatNumber(site.unassignedPlacements)}</td>
                         <td>no_ad {formatNumber(site.noAd)}</td>
                         <td>요청 {formatNumber(site.requests)}</td>
+                        <td>이미지 {formatNumber(site.imageRequests)}</td>
                         <td>클릭 {formatNumber(site.clicks)}</td>
+                        <td>CTR {formatPercent(getCtrRate(site))}</td>
+                        <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
+                        <td>7일 클릭 {formatNumber(site.clicks7d)}</td>
+                        <td>7일 CTR {formatPercent(getCtrRate7d(site))}</td>
                         <td>{formatDateTime(site.lastUpdatedAt)}</td>
                       </tr>
                     ))
@@ -1206,6 +1294,16 @@ function isPlacementAssigned(placement: PlacementRow): boolean {
 function getNoAdRate(placement: PlacementRow): number {
   if (placement.requests <= 0) return 0;
   return placement.noAd / placement.requests;
+}
+
+function getCtrRate(input: { clicks: number; imageRequests: number }): number {
+  if (input.imageRequests <= 0) return 0;
+  return input.clicks / input.imageRequests;
+}
+
+function getCtrRate7d(input: { clicks7d: number; imageRequests7d: number }): number {
+  if (input.imageRequests7d <= 0) return 0;
+  return input.clicks7d / input.imageRequests7d;
 }
 
 function formatSlotLabel(placement: PlacementRow): string {

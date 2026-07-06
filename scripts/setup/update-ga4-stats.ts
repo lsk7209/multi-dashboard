@@ -1148,17 +1148,7 @@ async function fetchSitemapSummary(
         Date.parse(b.lastDownloaded ?? b.lastSubmitted ?? "") -
         Date.parse(a.lastDownloaded ?? a.lastSubmitted ?? ""),
     );
-  const canonicalHost = getHostname(canonicalUrl);
-  const sameHostSitemaps = canonicalHost
-    ? datedSitemaps.filter(
-        (sitemap) => getHostname(sitemap.path) === canonicalHost,
-      )
-    : [];
-  const selected =
-    sameHostSitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
-    sameHostSitemaps[0] ??
-    datedSitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
-    datedSitemaps[0];
+  const selected = selectRepresentativeSitemap(datedSitemaps, canonicalUrl);
 
   if (!selected) {
     return {};
@@ -1309,6 +1299,42 @@ function isXmlSitemapPath(path: string | null | undefined): boolean {
     !normalized.endsWith("/feed.xml") &&
     !normalized.endsWith("/rss.xml")
   );
+}
+
+export function selectRepresentativeSitemap<
+  T extends { path?: string | null },
+>(sitemaps: T[], canonicalUrl?: string): T | undefined {
+  const canonicalHost = getHostname(canonicalUrl);
+  const sameHostSitemaps = canonicalHost
+    ? sitemaps.filter((sitemap) => getHostname(sitemap.path) === canonicalHost)
+    : [];
+
+  return (
+    sameHostSitemaps.find((sitemap) => isRootSitemapPath(sitemap.path)) ??
+    sameHostSitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
+    sameHostSitemaps[0] ??
+    sitemaps.find((sitemap) => isRootSitemapPath(sitemap.path)) ??
+    sitemaps.find((sitemap) => isXmlSitemapPath(sitemap.path)) ??
+    sitemaps[0]
+  );
+}
+
+function isRootSitemapPath(path: string | null | undefined): boolean {
+  if (!path) {
+    return false;
+  }
+
+  try {
+    const url = new URL(path);
+    const pathname = url.pathname.replace(/\/+$/, "").toLowerCase();
+    return (
+      url.search === "" &&
+      (pathname.endsWith("/sitemap.xml") ||
+        pathname.endsWith("/sitemap_index.xml"))
+    );
+  } catch {
+    return false;
+  }
 }
 
 function toOptionalNumber(
@@ -2188,8 +2214,16 @@ export function buildFailedSiteStat(
     ga4PropertyId: site.ga4PropertyId ?? previousStat?.ga4PropertyId ?? "",
     gscSiteUrl,
     ga4Status: statusFromError(error, "api_error"),
+    gscStatus: statusFromError(error, "api_error"),
+    adsenseStatus: site.monetization === false ? undefined : statusFromError(error, "api_error"),
+    adsTxtStatus: site.monetization === false ? undefined : statusFromError(error, "api_error"),
+    adsenseCollectorStatus: site.monetization === false ? undefined : "transient_error",
+    adsTxtCollectorStatus: site.monetization === false ? undefined : "transient_error",
     error,
     ga4ErrorKind: classifyError(error),
+    gscErrorKind: classifyError(error),
+    adsenseErrorKind: site.monetization === false ? undefined : classifyError(error),
+    adsTxtErrorKind: site.monetization === false ? undefined : classifyError(error),
   };
 }
 

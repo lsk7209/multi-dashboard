@@ -10,6 +10,7 @@ import type {
 interface AffiliateWorkspaceProps {
   coupangRegistry: CoupangChannelRegistrySnapshot;
   data: AffiliateInventorySnapshot;
+  isReadOnlyBlocked?: boolean;
 }
 
 const PRIORITY_ORDER: Record<string, number> = {
@@ -37,6 +38,7 @@ const COUPANG_CHANNEL_STATUS_ORDER: Record<string, number> = {
 export function AffiliateWorkspace({
   coupangRegistry,
   data,
+  isReadOnlyBlocked = false,
 }: AffiliateWorkspaceProps) {
   const allAffiliateItems = [...(data.affiliateItems ?? [])].sort(
     compareAffiliateItems,
@@ -146,7 +148,7 @@ export function AffiliateWorkspace({
 
       <div className="workspace-grid">
         <ProgramInventory programs={programs} generatedAt={data.generatedAt} />
-        <OperationsSource data={data} />
+      <OperationsSource data={data} isReadOnlyBlocked={isReadOnlyBlocked} />
       </div>
 
       <RulesPanel data={data} />
@@ -480,7 +482,13 @@ function ProgramInventory({
   );
 }
 
-function OperationsSource({ data }: { data: AffiliateInventorySnapshot }) {
+function OperationsSource({
+  data,
+  isReadOnlyBlocked,
+}: {
+  data: AffiliateInventorySnapshot;
+  isReadOnlyBlocked: boolean;
+}) {
   return (
     <article className="panel">
       <div className="panel-heading">
@@ -503,8 +511,12 @@ function OperationsSource({ data }: { data: AffiliateInventorySnapshot }) {
           <code>{data.source.merchantsPath}</code>
         </div>
         <div className="command-row">
-          <span>갱신 명령</span>
-          <code>pnpm ops:monetization</code>
+          <span>{isReadOnlyBlocked ? "갱신 상태" : "갱신 명령"}</span>
+          <code>
+            {isReadOnlyBlocked
+              ? "read-only until post-recovery passes"
+              : "pnpm ops:monetization"}
+          </code>
         </div>
       </div>
     </article>

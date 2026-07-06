@@ -14,6 +14,7 @@ type SiteOffer = {
 };
 
 const OFFERS: SiteOffer[] = [
+  { domain: "smallhomepick.com", label: "\uc790\ucde8 \uc0b4\ub9bc\uc6a9\ud488", query: "\uc790\ucde8 \uc0b4\ub9bc\uc6a9\ud488", siteId: "smallhomepick" },
   { domain: "todaypharm.kr", label: "건강기능식품", query: "건강기능식품", siteId: "todaypharm" },
   { domain: "tennisfrens.com", label: "테니스 라켓", query: "테니스 라켓", siteId: "tennisfrens" },
   { domain: "picklefriend.kr", label: "피클볼 패들", query: "피클볼 패들", siteId: "picklefriend" },
@@ -27,6 +28,13 @@ const OFFERS: SiteOffer[] = [
   { domain: "roadways.kr", label: "차량용 여행용품", query: "차량용 여행용품", siteId: "roadways" },
   { domain: "dullegilgogo.kr", label: "등산 스틱", query: "등산 스틱", siteId: "dullegilgogo" },
   { domain: "campgogo.kr", label: "캠핑 랜턴", query: "캠핑 랜턴", siteId: "campgogo" },
+  { domain: "nexttech7.com", label: "\ube54\ud504\ub85c\uc81d\ud130", query: "\ube54\ud504\ub85c\uc81d\ud130", siteId: "nexttech7" },
+  { domain: "petinsuer.com", label: "\ubc18\ub824\ub3d9\ubb3c \uc6a9\ud488", query: "\ubc18\ub824\ub3d9\ubb3c \uc6a9\ud488", siteId: "petinsuer-2" },
+  { domain: "healfood.kr", label: "\uac74\uac15\uc2dd\ud488", query: "\uac74\uac15\uc2dd\ud488", siteId: "healfood-2" },
+  { domain: "yungyanggogo.kr", label: "\uc601\uc591\uc81c", query: "\uc601\uc591\uc81c", siteId: "yungyanggogo" },
+  { domain: "estat.kr", label: "\uc11c\ub958 \uc815\ub9ac\ud568", query: "\uc11c\ub958 \uc815\ub9ac\ud568", siteId: "estat-2" },
+  { domain: "pregnancy.ehon365.kr", label: "\uc784\uc0b0\ubd80 \uc6a9\ud488", query: "\uc784\uc0b0\ubd80 \uc6a9\ud488", siteId: "pregnancy-ehon365" },
+  { domain: "plategogo.com", label: "\uc8fc\ubc29\uc6a9\ud488", query: "\uc8fc\ubc29\uc6a9\ud488", siteId: "plategogo" },
 ];
 
 const DISCLOSURE =
@@ -82,25 +90,32 @@ async function makeDeepLinks(urls: string[]): Promise<Map<string, string>> {
     throw new Error("Coupang Partners API keys are missing.");
   }
 
+  const result = new Map<string, string>();
   const method = "POST";
   const uri = "/v2/providers/affiliate_open_api/apis/openapi/v1/deeplink";
-  const response = await fetch(`https://api-gateway.coupang.com${uri}`, {
-    body: JSON.stringify({ coupangUrls: urls }),
-    headers: {
-      Authorization: hmac(method, uri, secretKey, accessKey),
-      "content-type": "application/json",
-    },
-    method,
-  });
-  const json = (await response.json()) as {
-    data?: Array<{ originalUrl: string; shortenUrl: string }>;
-    rCode?: string;
-    rMessage?: string;
-  };
-  if (!response.ok || json.rCode !== "0" || !Array.isArray(json.data)) {
-    throw new Error(`Coupang deeplink failed: ${response.status} ${json.rCode ?? ""} ${json.rMessage ?? ""}`);
+  for (let offset = 0; offset < urls.length; offset += 20) {
+    const batch = urls.slice(offset, offset + 20);
+    const response = await fetch(`https://api-gateway.coupang.com${uri}`, {
+      body: JSON.stringify({ coupangUrls: batch }),
+      headers: {
+        Authorization: hmac(method, uri, secretKey, accessKey),
+        "content-type": "application/json",
+      },
+      method,
+    });
+    const json = (await response.json()) as {
+      data?: Array<{ originalUrl: string; shortenUrl: string }>;
+      rCode?: string;
+      rMessage?: string;
+    };
+    if (!response.ok || json.rCode !== "0" || !Array.isArray(json.data)) {
+      throw new Error(`Coupang deeplink failed: ${response.status} ${json.rCode ?? ""} ${json.rMessage ?? ""}`);
+    }
+    for (const item of json.data) {
+      result.set(item.originalUrl, item.shortenUrl);
+    }
   }
-  return new Map(json.data.map((item) => [item.originalUrl, item.shortenUrl]));
+  return result;
 }
 
 function upsert(db: DatabaseSync, table: string, row: Record<string, RowValue>): void {

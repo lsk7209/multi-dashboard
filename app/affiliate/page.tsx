@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import { AffiliateWorkspace } from "../components/affiliate-workspace.js";
 import { AppHeader } from "../components/app-header.js";
+import { getDashboardActionability } from "../lib/dashboard-actionability.js";
+import { getDashboardData } from "../lib/dashboard-data.js";
 import { getMonetizationWorkspaceData } from "../lib/monetization-workspace.js";
 
 export const metadata: Metadata = {
@@ -14,11 +16,15 @@ export const metadata: Metadata = {
   },
 };
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export default function AffiliatePage() {
   const { affiliateInventory, coupangChannelRegistry } =
     getMonetizationWorkspaceData();
+  const dashboardData = getDashboardData();
+  const isReadOnlyBlocked =
+    getDashboardActionability(dashboardData).status ===
+    "blocked_for_action_until_post_recovery_verify";
 
   return (
     <main className="dashboard-shell">
@@ -32,6 +38,7 @@ export default function AffiliatePage() {
       <AffiliateWorkspace
         coupangRegistry={coupangChannelRegistry}
         data={affiliateInventory}
+        isReadOnlyBlocked={isReadOnlyBlocked}
       />
     </main>
   );

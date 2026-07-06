@@ -1,5 +1,11 @@
 # Project Rules
 
+## GA4 Naming Convention
+
+- When creating or registering any GA4 property, web data stream, Google tag, or dashboard GA4 label for a site, use the bare domain as the name, such as `smallhomepick.com`.
+- Do not use Korean names or marketing aliases for GA4 registration labels.
+- If a UI requires multiple related names, keep the domain first and add only a short technical suffix when needed, such as `smallhomepick.com Web`.
+
 ## Dashboard Freshness Before Site Work
 
 - Before using dashboard insights to inspect, improve, or deploy any individual site, refresh the dashboard snapshot first.

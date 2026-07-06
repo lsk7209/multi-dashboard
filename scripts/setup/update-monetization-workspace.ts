@@ -140,6 +140,7 @@ function loadBannerManagement() {
       served: 0,
       noAd: 0,
       imageRequests: 0,
+      clicks: 0,
     },
     noAdRate: null as number | null,
     eventBreakdown: [] as Array<{ type: string; count: number }>,
@@ -152,6 +153,7 @@ function loadBannerManagement() {
       requests: number;
       imageRequests: number;
       noAd: number;
+      clicks: number;
     }>,
   };
 
@@ -196,6 +198,9 @@ function loadBannerManagement() {
       imageRequests: hasPlacementEvents
         ? scalar(db, "SELECT COUNT(*) AS value FROM placement_event_ledger WHERE event_type = 'image_request'")
         : 0,
+      clicks: hasPlacementEvents
+        ? scalar(db, "SELECT COUNT(*) AS value FROM placement_event_ledger WHERE event_type = 'click'")
+        : 0,
     };
     const eventBreakdown = hasPlacementEvents
       ? db
@@ -218,7 +223,8 @@ function loadBannerManagement() {
                 tl.slug AS assignedTrackingSlug,
                 SUM(CASE WHEN e.event_type = 'request' THEN 1 ELSE 0 END) AS requests,
                 SUM(CASE WHEN e.event_type = 'image_request' THEN 1 ELSE 0 END) AS imageRequests,
-                SUM(CASE WHEN e.event_type = 'no_ad' THEN 1 ELSE 0 END) AS noAd
+                SUM(CASE WHEN e.event_type = 'no_ad' THEN 1 ELSE 0 END) AS noAd,
+                SUM(CASE WHEN e.event_type = 'click' THEN 1 ELSE 0 END) AS clicks
               FROM placements p
               LEFT JOIN assignments a ON a.placement_id = p.id AND a.status = 'active'
               LEFT JOIN creatives c ON c.id = a.creative_id
@@ -239,6 +245,7 @@ function loadBannerManagement() {
               requests: asNumber(row.requests),
               imageRequests: asNumber(row.imageRequests),
               noAd: asNumber(row.noAd),
+              clicks: asNumber(row.clicks),
             }))
         : [];
 

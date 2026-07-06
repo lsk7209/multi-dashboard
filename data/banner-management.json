@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-03T09:52:02.761Z",
+  "generatedAt": "2026-07-05T11:10:14.347Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
     "dbPath": "D:\\web\\multi-dashboard\\data\\monetization\\ad-manage.db",
     "dbExists": true,
-    "dbUpdatedAt": "2026-07-03T09:51:53.422Z",
+    "dbUpdatedAt": "2026-07-05T11:03:34.757Z",
     "sourceNote": "Standalone banner operations source owned by this multi-dashboard repository."
   },
   "counts": {
@@ -17,36 +17,56 @@
     "activeTrackingLinks": 18,
     "assignments": 17,
     "activeAssignments": 17,
-    "placementEvents": 16,
-    "requests": 6,
-    "served": 1,
-    "noAd": 0,
-    "imageRequests": 2
+    "placementEvents": 32,
+    "requests": 10,
+    "served": 5,
+    "noAd": 4,
+    "imageRequests": 4,
+    "clicks": 2
   },
-  "noAdRate": 0,
+  "noAdRate": 0.4,
   "eventBreakdown": [
     {
       "type": "request",
-      "count": 6
+      "count": 10
     },
     {
       "type": "render",
       "count": 6
     },
     {
+      "type": "served",
+      "count": 5
+    },
+    {
+      "type": "no_ad",
+      "count": 4
+    },
+    {
       "type": "image_request",
+      "count": 4
+    },
+    {
+      "type": "click",
       "count": 2
     },
     {
       "type": "viewable",
       "count": 1
-    },
-    {
-      "type": "served",
-      "count": 1
     }
   ],
   "topPlacements": [
+    {
+      "id": "placement_coupang_autoscares_2_inline",
+      "name": "Coupang inline autoscares.com",
+      "status": "active",
+      "assignedCreativeName": "Coupang autoscares.com 자동차 세차용품",
+      "assignedTrackingSlug": "coupang-autoscares-2",
+      "requests": 4,
+      "imageRequests": 2,
+      "noAd": 0,
+      "clicks": 2
+    },
     {
       "id": "placement_bc01a2bb-9531-4cf2-8e4e-51e95c274c0b",
       "name": "P1 Placement 1782659623357",
@@ -55,7 +75,8 @@
       "assignedTrackingSlug": "p1b-1782659623357",
       "requests": 2,
       "imageRequests": 1,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_90880966-8a2e-4377-89d3-67e0dc846f4a",
@@ -65,7 +86,8 @@
       "assignedTrackingSlug": "p1-1782659593224",
       "requests": 2,
       "imageRequests": 1,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_de09acba-d262-4478-bdda-eb4340a8f31f",
@@ -75,7 +97,8 @@
       "assignedTrackingSlug": "sdkfix-1782660678348",
       "requests": 1,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_f8c7dd2c-4862-48ec-b7af-ebeb65693e40",
@@ -85,87 +108,85 @@
       "assignedTrackingSlug": "sdk-1782660548070",
       "requests": 1,
       "imageRequests": 0,
-      "noAd": 0
-    },
-    {
-      "id": "placement_coupang_autoscares_2_inline",
-      "name": "Coupang inline autoscares.com",
-      "status": "active",
-      "assignedCreativeName": "Coupang autoscares.com 자동차용품",
-      "assignedTrackingSlug": "coupang-autoscares-2",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_campgogo_inline",
       "name": "Coupang inline campgogo.kr",
       "status": "active",
-      "assignedCreativeName": "Coupang campgogo.kr 캠핑용품",
+      "assignedCreativeName": "Coupang campgogo.kr 캠핑 랜턴",
       "assignedTrackingSlug": "coupang-campgogo",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_cartain_2_inline",
       "name": "Coupang inline cartain.kr",
       "status": "active",
-      "assignedCreativeName": "Coupang cartain.kr 차량용품",
+      "assignedCreativeName": "Coupang cartain.kr 차량용 거치대",
       "assignedTrackingSlug": "coupang-cartain-2",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_dogspang_2_inline",
       "name": "Coupang inline dogspang.kr",
       "status": "active",
-      "assignedCreativeName": "Coupang dogspang.kr 반려견 용품",
+      "assignedCreativeName": "Coupang dogspang.kr 강아지 간식",
       "assignedTrackingSlug": "coupang-dogspang-2",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_dogswhere_inline",
       "name": "Coupang inline dogswhere.com",
       "status": "active",
-      "assignedCreativeName": "Coupang dogswhere.com 반려견 외출용품",
+      "assignedCreativeName": "Coupang dogswhere.com 강아지 이동가방",
       "assignedTrackingSlug": "coupang-dogswhere",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_dullegilgogo_inline",
       "name": "Coupang inline dullegilgogo.kr",
       "status": "active",
-      "assignedCreativeName": "Coupang dullegilgogo.kr 등산용품",
+      "assignedCreativeName": "Coupang dullegilgogo.kr 등산 스틱",
       "assignedTrackingSlug": "coupang-dullegilgogo",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_notebook_klick_2_inline",
       "name": "Coupang inline notebook.klick.kr",
       "status": "active",
-      "assignedCreativeName": "Coupang notebook.klick.kr 노트북 주변기기",
+      "assignedCreativeName": "Coupang notebook.klick.kr 노트북 거치대",
       "assignedTrackingSlug": "coupang-notebook-klick-2",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     },
     {
       "id": "placement_coupang_picklefriend_inline",
       "name": "Coupang inline picklefriend.kr",
       "status": "active",
-      "assignedCreativeName": "Coupang picklefriend.kr 피클볼 용품",
+      "assignedCreativeName": "Coupang picklefriend.kr 피클볼 패들",
       "assignedTrackingSlug": "coupang-picklefriend",
       "requests": 0,
       "imageRequests": 0,
-      "noAd": 0
+      "noAd": 0,
+      "clicks": 0
     }
   ]
 }

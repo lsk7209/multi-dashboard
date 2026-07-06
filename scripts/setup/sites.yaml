@@ -6,7 +6,7 @@ sites:
     platform: wordpress
     url: https://kang4.com/
     wpRestBase: https://kang4.com/wp-json/wp/v2
-    ga4PropertyId: "325680688"
+    ga4PropertyId: "536337959"
     gscSiteUrl: https://kang4.com/
     monetization: true
     contentSource:
@@ -165,7 +165,7 @@ sites:
     platform: wordpress
     url: https://healthgotoo.com/
     wpRestBase: https://healthgotoo.com/wp-json/wp/v2
-    ga4PropertyId: "517066030"
+    ga4PropertyId: "536550724"
     gscSiteUrl: https://healthgotoo.com/
     monetization: true
     contentSource:
@@ -1298,6 +1298,67 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\dogswherecom
+  - id: smallhomepick
+    name: 스몰홈픽 - 작은집 살림템 가이드
+    enabled: true
+    platform: wordpress
+    url: https://smallhomepick.com/
+    wpRestBase: https://smallhomepick.com/wp-json/wp/v2
+    ga4PropertyId: "544124021"
+    gscSiteUrl: https://smallhomepick.com/
+    sitemapUrls:
+      - https://smallhomepick.com/wp-sitemap.xml
+    monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      sshHost: travel.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/smallhomepick.com
+      localPath: D:\web\multi-dashboard\output\wp-jachi-sinhon-salim
+  - id: kdramanote
+    name: kdramanote.com
+    enabled: true
+    platform: wordpress
+    url: https://kdramanote.com/
+    wpRestBase: https://kdramanote.com/wp-json/wp/v2
+    ga4PropertyId: "544164198"
+    gscSiteUrl: https://kdramanote.com/
+    sitemapUrls:
+      - https://kdramanote.com/sitemap.xml
+      - https://kdramanote.com/wp-sitemap.xml
+    monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      sshHost: travel.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/kdramanote.com
+      localPath: D:\web\multi-dashboard\output\wp-drama
+  - id: pethomepick
+    name: pethomepick.com
+    enabled: true
+    platform: wordpress
+    url: https://pethomepick.com/
+    wpRestBase: https://pethomepick.com/wp-json/wp/v2
+    ga4PropertyId: "544197313"
+    gscSiteUrl: sc-domain:pethomepick.com
+    sitemapUrls:
+      - https://pethomepick.com/wp-sitemap.xml
+    monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: kwangju
+      sshHost: travel.sellerpit.kr
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/pethomepick.com
+      localPath: D:\web\multi-dashboard\output\wp-pet-indoor-affiliate
   - id: travel-sellerpit
     name: travel.sellerpit.kr
     enabled: true
@@ -1564,23 +1625,38 @@ sites:
     enabled: true
     platform: static
     url: https://localgeo.app/
-    wpRestBase: https://localgeo.app/wp-json/wp/v2
     ga4PropertyId: "544179002"
     gscSiteUrl: https://localgeo.app/
     sitemapUrls:
       - https://localgeo.app/sitemap.xml
-    monetization: false
+    monetization: true
     contentSource:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\localgeo\repo
       githubRepo: https://github.com/lsk7209/localgeo
+    wpRestBase: https://localgeo.app/wp-json/wp/v2
+  - id: autorentlab
+    name: autorentlab.com
+    enabled: true
+    platform: nextjs
+    url: https://autorentlab.com/
+    ga4PropertyId: "544134188"
+    gscSiteUrl: https://autorentlab.com/
+    sitemapUrls:
+      - https://autorentlab.com/sitemap.xml
+    monetization: true
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\autorentlab
+      githubRepo: https://github.com/lsk7209/autorentlab
+    wpRestBase: https://autorentlab.com/wp-json/wp/v2
   - id: gradienttrail
     name: gradienttrail.com
     enabled: true
     platform: static
     url: https://gradienttrail.com/
-    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
     ga4PropertyId: "543434435"
     gscSiteUrl: https://gradienttrail.com/
     sitemapUrls:
@@ -1591,6 +1667,7 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\park-trail
       githubRepo: https://github.com/lsk7209/park-trail
+    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
   - id: dogbreedcost
     name: https://dogbreedcost.com
     enabled: true
@@ -1600,6 +1677,22 @@ sites:
     ga4PropertyId: "543424923"
     gscSiteUrl: https://dogbreedcost.com/
     monetization: true
+  - id: plategogo
+    name: plategogo.com
+    enabled: true
+    platform: nextjs
+    url: https://plategogo.com/
+    gscSiteUrl: https://plategogo.com/
+    sitemapUrls:
+      - https://plategogo.com/sitemap.xml
+    monetization: true
+    contentSource:
+      type: github-next
+      locationLabel: kwangju
+      localPath: D:\web\plategogocom
+      githubRepo: https://github.com/lsk7209/plategogo
+    wpRestBase: https://plategogo.com/wp-json/wp/v2
+    ga4PropertyId: "544137483"
   - id: wedfairguide
     name: wedfairguide.com
     enabled: true
@@ -1608,49 +1701,4 @@ sites:
     wpRestBase: https://wedfairguide.com/wp-json/wp/v2
     ga4PropertyId: "544110804"
     gscSiteUrl: https://wedfairguide.com/
-    monetization: true
-  - id: plategogo
-    name: plategogo.com
-    enabled: true
-    platform: wordpress
-    url: https://plategogo.com/
-    wpRestBase: https://plategogo.com/wp-json/wp/v2
-    ga4PropertyId: "544137483"
-    gscSiteUrl: https://plategogo.com/
-    monetization: true
-  - id: autorentlab
-    name: autorentlab.com
-    enabled: true
-    platform: wordpress
-    url: https://autorentlab.com/
-    wpRestBase: https://autorentlab.com/wp-json/wp/v2
-    ga4PropertyId: "544134188"
-    gscSiteUrl: https://autorentlab.com/
-    monetization: true
-  - id: smallhomepick
-    name: smallhomepick.com
-    enabled: true
-    platform: wordpress
-    url: https://smallhomepick.com/
-    wpRestBase: https://smallhomepick.com/wp-json/wp/v2
-    ga4PropertyId: "544124021"
-    gscSiteUrl: https://smallhomepick.com/
-    monetization: true
-  - id: kdramanote
-    name: kdramanote.com
-    enabled: true
-    platform: wordpress
-    url: https://kdramanote.com/
-    wpRestBase: https://kdramanote.com/wp-json/wp/v2
-    ga4PropertyId: "544164198"
-    gscSiteUrl: https://kdramanote.com/
-    monetization: true
-  - id: pethomepick
-    name: pethomepick.com
-    enabled: true
-    platform: wordpress
-    url: https://pethomepick.com/
-    wpRestBase: https://pethomepick.com/wp-json/wp/v2
-    ga4PropertyId: "544197313"
-    gscSiteUrl: https://pethomepick.com/
     monetization: true

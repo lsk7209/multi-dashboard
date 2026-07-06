@@ -14,10 +14,17 @@ import {
   sumGscMetrics,
   buildSegments,
   getDevelopmentPaths,
+  getDashboardData,
   buildActionItems,
   loadAdsenseExternalProof,
+  loadAdsenseProofFreshness,
   loadAdsenseProofGate,
   loadAdsenseRemediationQueue,
+  loadDashboardPostRecoveryChain,
+  loadFleetOptimizationChain,
+  loadFleetOptimizationChainStatus,
+  loadGscPermissionAudit,
+  loadT3TitleContentHandoff,
   type EnrichedSiteStat,
   type GscMetricSet,
   type MetricSet,
@@ -25,6 +32,7 @@ import {
   type SiteStat,
   type SiteTrend,
 } from "./dashboard-data";
+import { looksGarbledText } from "./text-readability";
 
 // OPERATIONS.md §3-5: 급락은 변동률과 절대규모를 함께 봐야 한다.
 // 변동률만 보면 극소 트래픽(주 3명 → -73%)이 오탐이 된다.
@@ -512,6 +520,215 @@ describe("buildActionItems (owner-required public fetch blockers)", () => {
       "certifi.kr: GSC credential/property access restored.",
     );
   });
+
+  it("prefers GSC permission audit details for permission actions", () => {
+    const actions = buildActionItems(
+      [
+        makeEnriched({
+          id: "yesa",
+          name: "yesa.kr",
+          url: "https://yesa.kr/",
+          operationalStatus: "needsPermission",
+          statusLabel: "권한 필요",
+          statusReason: "GSC 권한 또는 Search Console 속성 확인이 필요합니다.",
+          gscStatus: "auth_error",
+          adsenseRemediationQueueItem: makeRemediationQueueItem({
+            siteId: "yesa",
+            host: "yesa.kr",
+            lane: "gsc_auth_telemetry",
+          }),
+        }),
+      ],
+      makeGscPermissionAuditSummary("2026-07-05T01:00:00.000Z"),
+    );
+
+    expect(actions[0]).toMatchObject({
+      siteId: "yesa",
+      kind: "permission",
+      priority: 101,
+      value: "GSC permission audit",
+    });
+    expect(actions[0]?.reason).toContain("siteUnverifiedUser / unverified");
+    expect(actions[0]?.nextStep).toContain("pnpm dashboard:post-recovery");
+    expect(actions[0]?.nextStep).not.toContain("pnpm fleet:optimize");
+    expect(actions.some((action) => action.value === "GSC auth telemetry")).toBe(false);
+  });
+
+  it("does not surface external GSC permission actions for pending local refresh audits", () => {
+    const actions = buildActionItems(
+      [
+        makeEnriched({
+          id: "yesa",
+          name: "yesa.kr",
+          url: "https://yesa.kr/",
+          operationalStatus: "needsPermission",
+          statusLabel: "沅뚰븳 ?꾩슂",
+          statusReason: "GSC 沅뚰븳 ?먮뒗 Search Console ?띿꽦 ?뺤씤???꾩슂?⑸땲??",
+          gscStatus: "auth_error",
+          adsenseRemediationQueueItem: makeRemediationQueueItem({
+            siteId: "yesa",
+            host: "yesa.kr",
+            lane: "gsc_auth_telemetry",
+          }),
+        }),
+      ],
+      {
+        ...makeGscPermissionAuditSummary("2026-07-05T01:00:00.000Z"),
+        handoffStatus: "pending_local_refresh",
+        ownerAccess: 1,
+        unverified: 0,
+        results: [
+          {
+            siteId: "yesa",
+            host: "yesa.kr",
+            configuredGscSiteUrl: "https://yesa.kr/",
+            gscStatus: "auth_error",
+            listedSiteUrl: "https://yesa.kr/",
+            permissionLevel: "siteOwner",
+            accessState: "owner_access",
+            requiredAction:
+              "Re-run stats collection; current auth failure may be transient or property-specific.",
+          },
+        ],
+      },
+    );
+
+    expect(actions.some((action) => action.value === "GSC permission audit")).toBe(false);
+    expect(actions.some((action) => action.value === "GSC auth telemetry")).toBe(true);
+  });
+
+  it("surfaces stale AdSense proof snapshots before the generic proof queue", () => {
+    const actions = buildActionItems(
+      [
+        makeEnriched({
+          id: "richyou",
+          name: "richyou.kr",
+          url: "https://richyou.kr/",
+          adsenseRemediationQueueItem: makeRemediationQueueItem({
+            siteId: "richyou",
+            host: "richyou.kr",
+            lane: "ordinary_adsense_proof",
+          }),
+        }),
+      ],
+      null,
+      {
+        status: "stale",
+        artifactPath: "data/adsense-external-proof-continuation-2026-06-23.json",
+        collectorSnapshot:
+          "data/site-stats.json generatedAt=2026-06-23T00:05:08.480Z",
+        expectedStatsGeneratedAt: "2026-07-05T12:44:46.344Z",
+        candidateSiteIds: ["richyou"],
+        candidateCount: 1,
+        reason: "External proof collectorSnapshot does not match current stats.",
+        remediationCommand: "pnpm adsense:proof:refresh-snapshot",
+      },
+    );
+
+    expect(actions[0]).toMatchObject({
+      siteId: "richyou",
+      priority: 94,
+      value: "AdSense proof snapshot stale",
+    });
+    expect(actions.some((action) => action.value === "AdSense proof queue")).toBe(false);
+    expect(actions[0]?.nextStep).toContain("pnpm adsense:proof:refresh-snapshot");
+  });
+
+  it("does not surface stale AdSense proof for sites no longer in the proof queue", () => {
+    const actions = buildActionItems(
+      [
+        makeEnriched({
+          id: "ezfunnel",
+          name: "ezfunnel.kr",
+          url: "https://ezfunnel.kr/",
+          adsenseStatus: "ok",
+          adsenseCollectorStatus: "ok",
+          adsTxtStatus: "ok",
+          adsTxtCollectorStatus: "ok",
+        }),
+      ],
+      null,
+      {
+        status: "stale",
+        artifactPath: "data/adsense-external-proof-continuation-2026-06-23.json",
+        collectorSnapshot:
+          "data/site-stats.json generatedAt=2026-06-28T19:27:32.760Z",
+        expectedStatsGeneratedAt: "2026-07-05T12:44:46.344Z",
+        candidateSiteIds: ["ezfunnel"],
+        candidateCount: 1,
+        reason: "External proof collectorSnapshot does not match current stats.",
+        remediationCommand: "pnpm adsense:proof:refresh-snapshot",
+      },
+    );
+
+    expect(actions.some((action) => action.value === "AdSense proof snapshot stale")).toBe(false);
+  });
+
+  it("keeps common action labels and instructions readable", () => {
+    const actions = buildActionItems([
+      makeEnriched({
+        id: "permission",
+        name: "permission.example",
+        url: "https://permission.example/",
+        operationalStatus: "needsPermission",
+        statusLabel: "권한 필요",
+        statusReason: "GSC 권한 확인이 필요합니다.",
+      }),
+      makeEnriched({
+        id: "adsense",
+        name: "adsense.example",
+        url: "https://adsense.example/",
+        adsenseStatus: "missing_config",
+      }),
+      makeEnriched({
+        id: "adstxt",
+        name: "adstxt.example",
+        url: "https://adstxt.example/",
+        adsTxtStatus: "missing_config",
+      }),
+      makeEnriched({
+        id: "decline",
+        name: "decline.example",
+        url: "https://decline.example/",
+        previous7Days: { ...emptyMetrics(), activeUsers: 100 },
+        trend: {
+          activeUsersChange: -0.5,
+          sessionsChange: 0,
+          gscClicksChange: 0,
+        },
+      }),
+    ]);
+
+    expect(actions).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          siteId: "permission",
+          label: "권한",
+          nextStep: expect.stringContaining("GSC/GA4"),
+        }),
+        expect.objectContaining({
+          siteId: "adsense",
+          label: "수익화",
+          value: "코드 미탐지",
+        }),
+        expect.objectContaining({
+          siteId: "adstxt",
+          label: "수익화",
+          value: "ads.txt 없음",
+        }),
+        expect.objectContaining({
+          siteId: "decline",
+          label: "급락",
+          reason: "GA4 사용자가 직전 7일 대비 크게 감소했습니다.",
+        }),
+      ]),
+    );
+    for (const action of actions) {
+      expect(`${action.label} ${action.value} ${action.reason} ${action.nextStep}`).not.toMatch(
+        /[�沅뚰븳肄붾뱶湲됰씫섏쭛곹깭쒖쐞怨꾩젙묎렐]/,
+      );
+    }
+  });
 });
 
 describe("loadAdsenseExternalProof", () => {
@@ -626,6 +843,123 @@ describe("loadAdsenseExternalProof", () => {
       expect(
         loadAdsenseExternalProof(dir, "2026-06-23T12:49:49.029Z").size,
       ).toBe(0);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("summarizes stale proof freshness with affected site ids", () => {
+    const dir = mkdtempSync(join(tmpdir(), "adsense-proof-freshness-"));
+    try {
+      writeFileSync(
+        join(dir, "adsense-external-proof-continuation-2026-06-23.json"),
+        JSON.stringify({
+          generatedAt: "2026-06-23T00:00:00.000Z",
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-06-23T00:05:08.480Z",
+          candidates: [
+            {
+              siteId: "richyou",
+              url: "https://richyou.kr/",
+              host: "richyou.kr",
+              externalHomepageProof: "pass",
+              externalHomepageEvidence: "old proof",
+              externalAdsTxtProof: "pass",
+              externalLoaderProof: "pass",
+              currentDecision: "strongest_console_check_candidate",
+              nextGate: "console check",
+            },
+          ],
+        }),
+      );
+
+      const freshness = loadAdsenseProofFreshness(
+        dir,
+        "2026-06-23T12:49:49.029Z",
+      );
+
+      expect(freshness).toMatchObject({
+        status: "stale",
+        candidateSiteIds: ["richyou"],
+        candidateCount: 1,
+        remediationCommand: "pnpm adsense:proof:refresh-snapshot",
+      });
+      expect(freshness.reason).toContain("does not match current stats");
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("summarizes current proof freshness when collector snapshots match", () => {
+    const dir = mkdtempSync(join(tmpdir(), "adsense-proof-current-"));
+    try {
+      writeFileSync(
+        join(dir, "adsense-external-proof-continuation-2026-06-23.json"),
+        JSON.stringify({
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-06-23T12:49:49.029Z",
+          candidates: [{ siteId: "richyou" }],
+        }),
+      );
+
+      const freshness = loadAdsenseProofFreshness(
+        dir,
+        "2026-06-23T12:49:49.029Z",
+      );
+
+      expect(freshness.status).toBe("current");
+      expect(freshness.candidateSiteIds).toEqual(["richyou"]);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("summarizes stale proof as resolved when current proof lanes are empty", () => {
+    const dir = mkdtempSync(join(tmpdir(), "adsense-proof-resolved-"));
+    try {
+      writeFileSync(
+        join(dir, "adsense-external-proof-continuation-2026-06-23.json"),
+        JSON.stringify({
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-06-28T19:27:32.760Z",
+          candidates: [{ siteId: "ezfunnel" }],
+        }),
+      );
+      writeFileSync(
+        join(dir, "adsense-remediation-queue-2026-07-05.json"),
+        JSON.stringify({
+          generatedAt: "2026-07-05T12:45:00.000Z",
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-07-05T12:44:46.344Z",
+          productionMutationPerformed: false,
+          adsenseConsoleChecked: false,
+          summary: {
+            totalRows: 1,
+            reviewedRows: 1,
+            adsenseOkRows: 1,
+            problemRows: 0,
+            ordinaryAdsenseProof: 0,
+            approvedRootSubdomainScope: 0,
+            gscAuthTelemetry: 0,
+            ga4ConfigTelemetry: 0,
+          },
+          lanes: {
+            ordinary_adsense_proof: [],
+            approved_root_subdomain_scope: [],
+            gsc_auth_telemetry: [],
+            ga4_config_telemetry: [],
+          },
+        }),
+      );
+
+      const freshness = loadAdsenseProofFreshness(
+        dir,
+        "2026-07-05T12:44:46.344Z",
+      );
+
+      expect(freshness.status).toBe("resolved");
+      expect(freshness.candidateSiteIds).toEqual(["ezfunnel"]);
+      expect(freshness.reason).toContain("resolved");
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -1101,6 +1435,29 @@ describe("loadAdsenseRemediationQueue", () => {
     }
   });
 
+  it("rejects remediation queue artifacts with polluted collector snapshots", () => {
+    const dir = mkdtempSync(join(tmpdir(), "adsense-queue-polluted-"));
+    try {
+      writeFileSync(
+        join(dir, "adsense-remediation-queue-2026-06-24.json"),
+        JSON.stringify(
+          makeRemediationQueueArtifact({
+            collectorSnapshot:
+              "data/site-stats.json generatedAt=2026-06-24T01:02:03.000Z stale",
+            siteId: "richyou",
+            problemRows: 15,
+          }),
+        ),
+      );
+
+      expect(
+        loadAdsenseRemediationQueue(dir, "2026-06-24T01:02:03.000Z"),
+      ).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   it("ignores malformed remediation queue artifacts", () => {
     const dir = mkdtempSync(join(tmpdir(), "adsense-queue-bad-"));
     try {
@@ -1123,6 +1480,84 @@ describe("loadAdsenseRemediationQueue", () => {
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
+  });
+});
+
+describe("getDashboardData insight copy", () => {
+  it("keeps the shared mojibake detector narrow enough for Korean question copy", () => {
+    expect(looksGarbledText("Search Console 권한을 확인했나요?")).toBe(false);
+    expect(looksGarbledText("Search Console \u6C85\uB69C\uBE10 recovery")).toBe(true);
+    expect(looksGarbledText("Search Console ì‹¤í–‰ ë³´ë¥˜")).toBe(true);
+    expect(looksGarbledText("Search Console Ã¬Â‹Â¤Ã­â€“â€°")).toBe(true);
+  });
+
+  it("does not expose garbled text in current insight card fields", () => {
+    const data = getDashboardData();
+    const fields = [
+      "reason",
+      "recommendedAction",
+      "operatorPrompt",
+      "verification",
+      "reviewNote",
+      "gscDiagnosis",
+    ] as const;
+
+    const badFields = data.insights.flatMap((insight) =>
+      fields
+        .filter((field) => looksGarbledText(String(insight[field] ?? "")))
+        .map((field) => `${insight.siteId}:${insight.kind}:${field}`),
+    );
+
+    expect(badFields).toEqual([]);
+  });
+});
+
+describe("getDashboardData health and collection copy", () => {
+  it("does not expose garbled text in health or collection reliability fields", () => {
+    const data = getDashboardData();
+    const badFields: string[] = [];
+
+    for (const stat of data.stats) {
+      for (const [field, value] of Object.entries({
+        grade: stat.health.grade,
+        reason: stat.health.reason,
+        statusLabel: stat.statusLabel,
+        statusReason: stat.statusReason,
+      })) {
+        if (looksGarbledText(String(value ?? ""))) {
+          badFields.push(`${stat.id}:health:${field}`);
+        }
+      }
+      for (const source of stat.collectionSources) {
+        for (const [field, value] of Object.entries({
+          label: source.label,
+          reason: source.reason,
+        })) {
+          if (looksGarbledText(String(value ?? ""))) {
+            badFields.push(`${stat.id}:collection:${source.key}:${field}`);
+          }
+        }
+      }
+    }
+
+    for (const summary of data.collectionSummary) {
+      if (looksGarbledText(summary.label)) {
+        badFields.push(`collectionSummary:${summary.key}:label`);
+      }
+    }
+
+    for (const segment of data.segments) {
+      for (const [field, value] of Object.entries({
+        label: segment.label,
+        description: segment.description,
+      })) {
+        if (looksGarbledText(String(value ?? ""))) {
+          badFields.push(`segment:${segment.key}:${field}`);
+        }
+      }
+    }
+
+    expect(badFields).toEqual([]);
   });
 });
 
@@ -1206,6 +1641,527 @@ describe("loadAdsenseProofGate", () => {
       );
 
       expect(loadAdsenseProofGate(dir, "2026-06-24T01:02:03.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("rejects proof gate artifacts with polluted collector snapshots", () => {
+    const dir = mkdtempSync(join(tmpdir(), "adsense-proof-gate-polluted-"));
+    try {
+      writeFileSync(
+        join(dir, "adsense-proof-gate-2026-06-24.json"),
+        JSON.stringify(
+          makeProofGateArtifact({
+            collectorSnapshot:
+              "data/site-stats.json generatedAt=2026-06-24T01:02:03.000Z stale",
+            verdict: "ready_for_console_review",
+            blockers: 0,
+          }),
+        ),
+      );
+
+      expect(loadAdsenseProofGate(dir, "2026-06-24T01:02:03.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("loadFleetOptimizationChain", () => {
+  it("loads the latest matching fleet chain artifact", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-04.json"),
+        JSON.stringify(makeFleetChainArtifact({ snapshot: "2026-07-04T01:00:00.000Z", sites: 3 })),
+      );
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(makeFleetChainArtifact({ snapshot: "2026-07-05T01:00:00.000Z", sites: 13 })),
+      );
+
+      const chain = loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(chain?.artifactPath).toBe(`${dir}/fleet-optimization-chain-2026-07-05.json`);
+      expect(chain?.workOrderPath).toBe("docs/work-orders/fleet-optimization-chain-2026-07-05.md");
+      expect(chain?.handoffSiteCount).toBe(13);
+      expect(chain?.planMatchesStats).toBe(true);
+      expect(chain?.handoffMatchesStats).toBe(true);
+      expect(chain?.refreshFailureCount).toBe(0);
+      expect(chain?.refreshFailuresBlockReadiness).toBe(false);
+      expect(chain?.readinessBlockingRefreshFailedSources).toEqual([]);
+      expect(chain?.maintenanceRefreshFailedSources).toEqual([]);
+      expect(chain?.handoffMutationFlagsFalse).toBe(true);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("rejects mutating fleet chain artifacts", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-mutating-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify({
+          ...makeFleetChainArtifact({ snapshot: "2026-07-05T01:00:00.000Z", sites: 13 }),
+          productionMutationPerformed: true,
+        }),
+      );
+
+      const chain = loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(chain).toBeNull();
+      expect(loadFleetOptimizationChainStatus(dir, "2026-07-05T01:00:00.000Z", chain)).toMatchObject({
+        state: "invalid",
+        artifactPath: `${dir}/fleet-optimization-chain-2026-07-05.json`,
+      });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("separates telemetry maintenance from readiness-blocking refresh failures", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-sources-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(
+          makeFleetChainArtifact({
+            snapshot: "2026-07-05T01:00:00.000Z",
+            sites: 13,
+            refreshFailedSources: [
+              "skipped_refresh_failed:ga4:missing_config:1",
+              "skipped_refresh_failed:adsense_collector:transient_error:1",
+              "skipped_refresh_failed:ads_txt_collector:transient_error:1",
+              "skipped_refresh_failed:gsc:auth_error:1",
+            ],
+            refreshFailuresBlockReadiness: true,
+          }),
+        ),
+      );
+
+      const chain = loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(chain?.maintenanceRefreshFailedSources).toEqual([
+        "skipped_refresh_failed:ga4:missing_config:1",
+        "skipped_refresh_failed:adsense_collector:transient_error:1",
+        "skipped_refresh_failed:ads_txt_collector:transient_error:1",
+      ]);
+      expect(chain?.readinessBlockingRefreshFailedSources).toEqual([
+        "skipped_refresh_failed:gsc:auth_error:1",
+      ]);
+      expect(chain?.refreshFailuresBlockReadiness).toBe(true);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("ignores stale or malformed fleet chain artifacts", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-stale-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(makeFleetChainArtifact({ snapshot: "2026-07-04T01:00:00.000Z", sites: 13 })),
+      );
+
+      expect(loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-06.json"),
+        JSON.stringify({ generatedAt: "2026-07-06T01:00:00.000Z", verification: {} }),
+      );
+
+      expect(loadFleetOptimizationChain(dir, "2026-07-06T01:00:00.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("fails closed instead of falling back when the newest fleet chain is invalid", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-shadow-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(makeFleetChainArtifact({ snapshot: "2026-07-05T01:00:00.000Z", sites: 13 })),
+      );
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-06.json"),
+        JSON.stringify({ generatedAt: "2026-07-06T01:00:00.000Z", verification: {} }),
+      );
+
+      const chain = loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(chain).toBeNull();
+      expect(loadFleetOptimizationChainStatus(dir, "2026-07-05T01:00:00.000Z", chain)).toMatchObject({
+        state: "invalid",
+        artifactPath: `${dir}/fleet-optimization-chain-2026-07-06.json`,
+      });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("loadFleetOptimizationChainStatus", () => {
+  it("reports current when a strict matching chain is loaded", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-status-current-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(makeFleetChainArtifact({ snapshot: "2026-07-05T01:00:00.000Z", sites: 13 })),
+      );
+
+      const chain = loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z");
+      const status = loadFleetOptimizationChainStatus(
+        dir,
+        "2026-07-05T01:00:00.000Z",
+        chain,
+      );
+
+      expect(status).toMatchObject({
+        state: "current",
+        expectedStatsGeneratedAt: "2026-07-05T01:00:00.000Z",
+        statsSnapshot: "2026-07-05T01:00:00.000Z",
+      });
+      expect(status.artifactPath).toBe(`${dir}/fleet-optimization-chain-2026-07-05.json`);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("reports snapshot mismatch when the newest chain targets an older snapshot", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-status-stale-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(makeFleetChainArtifact({ snapshot: "2026-07-04T01:00:00.000Z", sites: 13 })),
+      );
+
+      const status = loadFleetOptimizationChainStatus(
+        dir,
+        "2026-07-05T01:00:00.000Z",
+        null,
+      );
+
+      expect(status).toMatchObject({
+        state: "snapshot_mismatch",
+        expectedStatsGeneratedAt: "2026-07-05T01:00:00.000Z",
+        statsSnapshot: "2026-07-04T01:00:00.000Z",
+        artifactPath: `${dir}/fleet-optimization-chain-2026-07-05.json`,
+      });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("reports missing or invalid chain status distinctly", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-status-invalid-"));
+    try {
+      expect(loadFleetOptimizationChainStatus(dir, "2026-07-05T01:00:00.000Z")).toMatchObject({
+        state: "missing",
+      });
+
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify({ generatedAt: "2026-07-05T01:00:00.000Z", verification: {} }),
+      );
+
+      expect(loadFleetOptimizationChainStatus(dir, "2026-07-05T01:00:00.000Z")).toMatchObject({
+        state: "invalid",
+        artifactPath: `${dir}/fleet-optimization-chain-2026-07-05.json`,
+      });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("loadDashboardPostRecoveryChain", () => {
+  it("loads only the current post-recovery chain artifact", () => {
+    const dir = mkdtempSync(join(tmpdir(), "dashboard-post-recovery-"));
+    try {
+      writeFileSync(
+        join(dir, "dashboard-post-recovery-chain-2026-07-05.json"),
+        JSON.stringify(
+          makeDashboardPostRecoveryChainArtifact({
+            snapshot: "2026-07-05T01:00:00.000Z",
+          }),
+        ),
+      );
+
+      expect(loadDashboardPostRecoveryChain(dir, "2026-07-05T01:00:00.000Z")).toMatchObject({
+        artifactPath: `${dir}/dashboard-post-recovery-chain-2026-07-05.json`,
+        workOrderPath: "docs/work-orders/dashboard-post-recovery-chain-2026-07-05.md",
+        statsSnapshot: "2026-07-05T01:00:00.000Z",
+        readiness: "ready_to_act",
+        artifactIntegrityStatus: "pass",
+        commands: 3,
+        pass: 3,
+        fail: 0,
+        skipped: 0,
+        postRecoveryAcceptanceSatisfied: true,
+      });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("fails closed for stale, malformed, or mutating post-recovery artifacts", () => {
+    const dir = mkdtempSync(join(tmpdir(), "dashboard-post-recovery-stale-"));
+    try {
+      writeFileSync(
+        join(dir, "dashboard-post-recovery-chain-2026-07-05.json"),
+        JSON.stringify(
+          makeDashboardPostRecoveryChainArtifact({
+            snapshot: "2026-07-04T01:00:00.000Z",
+          }),
+        ),
+      );
+      expect(loadDashboardPostRecoveryChain(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "dashboard-post-recovery-chain-2026-07-06.json"),
+        JSON.stringify({ generatedAt: "2026-07-06T01:00:00.000Z" }),
+      );
+      expect(loadDashboardPostRecoveryChain(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "dashboard-post-recovery-chain-2026-07-07.json"),
+        JSON.stringify({
+          ...makeDashboardPostRecoveryChainArtifact({
+            snapshot: "2026-07-05T01:00:00.000Z",
+          }),
+          titleOrBodyMutationPerformed: true,
+        }),
+      );
+      expect(loadDashboardPostRecoveryChain(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "dashboard-post-recovery-chain-2026-07-08.json"),
+        JSON.stringify({
+          ...makeDashboardPostRecoveryChainArtifact({
+            snapshot: "2026-07-05T01:00:00.000Z",
+          }),
+          dashboardVerification: {
+            ...makeDashboardPostRecoveryChainArtifact({
+              snapshot: "2026-07-05T01:00:00.000Z",
+            }).dashboardVerification,
+            postRecoveryAcceptance: ["external_gsc_access_restored=satisfied"],
+          },
+        }),
+      );
+      expect(loadDashboardPostRecoveryChain(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("loadGscPermissionAudit", () => {
+  it("loads the latest matching non-mutating GSC permission audit artifact", () => {
+    const dir = mkdtempSync(join(tmpdir(), "gsc-permission-audit-"));
+    try {
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-04.json"),
+        JSON.stringify(makeGscPermissionAuditArtifact({ snapshot: "2026-07-04T01:00:00.000Z" })),
+      );
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-05.json"),
+        JSON.stringify(makeGscPermissionAuditArtifact({ snapshot: "2026-07-05T01:00:00.000Z" })),
+      );
+
+      const audit = loadGscPermissionAudit(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(audit?.artifactPath).toBe(`${dir}/gsc-permission-audit-2026-07-05.json`);
+      expect(audit?.workOrderPath).toBe("docs/work-orders/gsc-permission-audit-2026-07-05.md");
+    expect(audit?.productionMutationPerformed).toBe(false);
+    expect(audit?.gscMutationPerformed).toBe(false);
+    expect(audit?.handoffStatus).toBe("pending_external");
+    expect(audit?.auditedRows).toBe(1);
+      expect(audit?.unverified).toBe(1);
+      expect(audit?.results[0]).toMatchObject({
+        host: "yesa.kr",
+        permissionLevel: "siteUnverifiedUser",
+        accessState: "unverified",
+      });
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("ignores stale, malformed, or mutating GSC permission audit artifacts", () => {
+    const dir = mkdtempSync(join(tmpdir(), "gsc-permission-audit-stale-"));
+    try {
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-05.json"),
+        JSON.stringify(makeGscPermissionAuditArtifact({ snapshot: "2026-07-04T01:00:00.000Z" })),
+      );
+
+      expect(loadGscPermissionAudit(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-06.json"),
+        JSON.stringify({
+          ...makeGscPermissionAuditArtifact({ snapshot: "2026-07-06T01:00:00.000Z" }),
+          gscMutationPerformed: true,
+        }),
+      );
+
+      expect(loadGscPermissionAudit(dir, "2026-07-06T01:00:00.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("rejects GSC permission audits with polluted collector snapshots", () => {
+    const dir = mkdtempSync(join(tmpdir(), "gsc-permission-audit-polluted-"));
+    try {
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-05.json"),
+        JSON.stringify({
+          ...makeGscPermissionAuditArtifact({ snapshot: "2026-07-05T01:00:00.000Z" }),
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-07-05T01:00:00.000Z stale",
+        }),
+      );
+
+      expect(loadGscPermissionAudit(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("rejects GSC permission audits with missing or inconsistent handoff status", () => {
+    const dir = mkdtempSync(join(tmpdir(), "gsc-permission-audit-status-"));
+    try {
+      const base = makeGscPermissionAuditArtifact({ snapshot: "2026-07-05T01:00:00.000Z" });
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-05.json"),
+        JSON.stringify({
+          ...base,
+          handoffStatus: undefined,
+        }),
+      );
+
+      expect(loadGscPermissionAudit(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-06.json"),
+        JSON.stringify({
+          ...base,
+          handoffStatus: "resolved",
+        }),
+      );
+
+      expect(loadGscPermissionAudit(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("fails closed instead of falling back when the newest GSC audit is mutating", () => {
+    const dir = mkdtempSync(join(tmpdir(), "gsc-permission-audit-shadow-"));
+    try {
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-05.json"),
+        JSON.stringify(makeGscPermissionAuditArtifact({ snapshot: "2026-07-05T01:00:00.000Z" })),
+      );
+      writeFileSync(
+        join(dir, "gsc-permission-audit-2026-07-06.json"),
+        JSON.stringify({
+          ...makeGscPermissionAuditArtifact({ snapshot: "2026-07-05T01:00:00.000Z" }),
+          gscMutationPerformed: true,
+        }),
+      );
+
+      const audit = loadGscPermissionAudit(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(audit).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("loadT3TitleContentHandoff", () => {
+  it("loads the latest matching non-mutating T3 handoff artifact", () => {
+    const dir = mkdtempSync(join(tmpdir(), "t3-handoff-"));
+    try {
+      writeFileSync(
+        join(dir, "t3-title-content-handoff-2026-07-04.json"),
+        JSON.stringify(makeT3HandoffArtifact({ snapshot: "2026-07-04T01:00:00.000Z", sites: 3 })),
+      );
+      writeFileSync(
+        join(dir, "t3-title-content-handoff-2026-07-05.json"),
+        JSON.stringify(makeT3HandoffArtifact({ snapshot: "2026-07-05T01:00:00.000Z", sites: 13 })),
+      );
+
+      const handoff = loadT3TitleContentHandoff(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(handoff?.artifactPath).toBe(`${dir}/t3-title-content-handoff-2026-07-05.json`);
+      expect(handoff?.workOrderPath).toBe("docs/work-orders/t3-title-content-handoff-2026-07-05.md");
+      expect(handoff?.siteCount).toBe(13);
+      expect(handoff?.titleHandoffCount).toBe(10);
+      expect(handoff?.contentHandoffCount).toBe(8);
+      expect(handoff?.refreshFailedSources).toEqual([]);
+      expect(handoff?.sites).toHaveLength(6);
+      expect(handoff?.hiddenSiteCount).toBe(7);
+      expect(handoff?.sites[0]).toMatchObject({
+        host: "site-1.example",
+        actions: ["title_handoff"],
+        topQuery: "query 1",
+        recommendedNextAction: "Title workflow only; do not directly edit live titles from this handoff.",
+        sitemapWarnings: 0,
+        adsenseStatus: "approved",
+      });
+      expect(handoff?.titleOrBodyMutationPerformed).toBe(false);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("ignores stale, malformed, or mutating T3 handoff artifacts", () => {
+    const dir = mkdtempSync(join(tmpdir(), "t3-handoff-stale-"));
+    try {
+      writeFileSync(
+        join(dir, "t3-title-content-handoff-2026-07-05.json"),
+        JSON.stringify(makeT3HandoffArtifact({ snapshot: "2026-07-04T01:00:00.000Z", sites: 13 })),
+      );
+
+      expect(loadT3TitleContentHandoff(dir, "2026-07-05T01:00:00.000Z")).toBeNull();
+
+      writeFileSync(
+        join(dir, "t3-title-content-handoff-2026-07-06.json"),
+        JSON.stringify({
+          ...makeT3HandoffArtifact({ snapshot: "2026-07-06T01:00:00.000Z", sites: 13 }),
+          mutationStatus: {
+            cmsMutationPerformed: true,
+          },
+        }),
+      );
+
+      expect(loadT3TitleContentHandoff(dir, "2026-07-06T01:00:00.000Z")).toBeNull();
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("fails closed instead of falling back when the newest T3 handoff is stale", () => {
+    const dir = mkdtempSync(join(tmpdir(), "t3-handoff-shadow-"));
+    try {
+      writeFileSync(
+        join(dir, "t3-title-content-handoff-2026-07-05.json"),
+        JSON.stringify(makeT3HandoffArtifact({ snapshot: "2026-07-05T01:00:00.000Z", sites: 13 })),
+      );
+      writeFileSync(
+        join(dir, "t3-title-content-handoff-2026-07-06.json"),
+        JSON.stringify(makeT3HandoffArtifact({ snapshot: "2026-07-06T01:00:00.000Z", sites: 2 })),
+      );
+
+      const handoff = loadT3TitleContentHandoff(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(handoff).toBeNull();
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -1328,6 +2284,213 @@ function makeProofGateArtifact({
       freshHostingLoaderProofPass: 0,
     },
     stopCondition: "Do not submit yet.",
+  };
+}
+
+function makeFleetChainArtifact({
+  snapshot,
+  sites,
+  refreshFailedSources = [],
+  refreshFailuresBlockReadiness = false,
+}: {
+  snapshot: string;
+  sites: number;
+  refreshFailedSources?: string[];
+  refreshFailuresBlockReadiness?: boolean;
+}) {
+  return {
+    generatedAt: "2026-07-05T01:05:00.000Z",
+    date: "2026-07-05",
+    productionMutationPerformed: false,
+    cmsMutationPerformed: false,
+    searchConsoleMutationPerformed: false,
+    adsenseMutationPerformed: false,
+    titleOrBodyMutationPerformed: false,
+    summary: {
+      commands: 5,
+      pass: 5,
+      fail: 0,
+      skipped: 0,
+    },
+      verification: {
+        statsSnapshot: snapshot,
+        planSnapshot: snapshot,
+        handoffSnapshot: snapshot,
+        refreshFailedSources,
+        refreshFailureCount: refreshFailedSources.length,
+        refreshFailuresBlockReadiness,
+        planMatchesStats: true,
+      handoffMatchesStats: true,
+      handoffMutationFlagsFalse: true,
+      handoffSiteCount: sites,
+      titleHandoffCount: 10,
+      contentHandoffCount: 8,
+    },
+  };
+}
+
+function makeDashboardPostRecoveryChainArtifact({ snapshot }: { snapshot: string }) {
+  return {
+    generatedAt: "2026-07-05T01:10:00.000Z",
+    date: "2026-07-05",
+    dryRun: false,
+    productionMutationPerformed: false,
+    cmsMutationPerformed: false,
+    searchConsoleMutationPerformed: false,
+    adsenseMutationPerformed: false,
+    titleOrBodyMutationPerformed: false,
+    commands: [
+      { id: "gsc-permission-audit", args: ["gsc:permissions:audit"] },
+      { id: "dashboard-verify", args: ["dashboard:verify"] },
+      {
+        id: "dashboard-acceptance",
+        args: ["dashboard:acceptance", "data/dashboard-verification-2026-07-05.json"],
+      },
+    ],
+    dashboardVerification: {
+      path: "data/dashboard-verification-2026-07-05.json",
+      exists: true,
+      statsSnapshot: snapshot,
+      verdict: "local_verified",
+      expectedBlocked: 0,
+      fail: 0,
+      skipped: 0,
+      externalBlockerEvidenceCount: 0,
+      externalBlockerEvidence: [],
+      actionabilityBlockerHosts: [],
+      surfaceBlockerHosts: [],
+      actionabilityStatus: "safe_to_act",
+      postRecoveryAcceptance: [
+        "external_gsc_access_restored=satisfied",
+        "dashboard_verify_local_verified=satisfied",
+        "rendered_ui_smoke_current=satisfied",
+        "dashboard_surface_current=satisfied",
+        "recommendations_safe_to_act=satisfied",
+        "mutation_boundary_clean=satisfied",
+      ],
+    },
+    results: [
+      { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+      { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+      { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+    ],
+    artifactIntegrity: {
+      id: "dashboard-artifact-integrity",
+      status: "pass",
+      exitCode: 0,
+      stdoutTail: "",
+      stderrTail: "",
+    },
+    summary: {
+      commands: 3,
+      pass: 3,
+      fail: 0,
+      skipped: 0,
+    },
+    readiness: "ready_to_act",
+    stopCondition: "Dashboard recommendations are executable only when readiness is ready_to_act.",
+  };
+}
+
+function makeGscPermissionAuditArtifact({ snapshot }: { snapshot: string }) {
+  return {
+    generatedAt: "2026-07-05T01:05:00.000Z",
+    collectorSnapshot: `data/site-stats.json generatedAt=${snapshot}`,
+    handoffStatus: "pending_external",
+    productionMutationPerformed: false,
+    gscMutationPerformed: false,
+    serviceAccountEmail: "dashboard@example.iam.gserviceaccount.com",
+    summary: {
+      auditedRows: 1,
+      ownerAccess: 0,
+      restrictedAccess: 0,
+      unverified: 1,
+      notListed: 0,
+    },
+    results: [
+      {
+        siteId: "yesa",
+        host: "yesa.kr",
+        configuredGscSiteUrl: "https://yesa.kr/",
+        gscStatus: "auth_error",
+        listedSiteUrl: "https://yesa.kr/",
+        permissionLevel: "siteUnverifiedUser",
+        accessState: "unverified",
+        requiredAction:
+          "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection.",
+      },
+    ],
+  };
+}
+
+function makeGscPermissionAuditSummary(snapshot: string) {
+  const artifact = makeGscPermissionAuditArtifact({ snapshot });
+  return {
+    artifactPath: "data/gsc-permission-audit-2026-07-05.json",
+    workOrderPath: "docs/work-orders/gsc-permission-audit-2026-07-05.md",
+    generatedAt: artifact.generatedAt,
+    collectorSnapshot: artifact.collectorSnapshot,
+    handoffStatus: artifact.handoffStatus,
+    productionMutationPerformed: artifact.productionMutationPerformed,
+    gscMutationPerformed: artifact.gscMutationPerformed,
+    serviceAccountEmail: artifact.serviceAccountEmail,
+    auditedRows: artifact.summary.auditedRows,
+    ownerAccess: artifact.summary.ownerAccess,
+    restrictedAccess: artifact.summary.restrictedAccess,
+    unverified: artifact.summary.unverified,
+    notListed: artifact.summary.notListed,
+    results: artifact.results,
+  };
+}
+
+function makeT3HandoffArtifact({
+  snapshot,
+  sites,
+}: {
+  snapshot: string;
+  sites: number;
+}) {
+  return {
+    generatedAt: "2026-07-05T01:05:00.000Z",
+    mutationStatus: {
+      cmsMutationPerformed: false,
+      productionDeploymentPerformed: false,
+      searchConsoleMutationPerformed: false,
+      adsenseMutationPerformed: false,
+      titleOrBodyMutationPerformed: false,
+    },
+    dashboardEvidence: {
+      snapshotTimestamp: snapshot,
+      refreshFailedSources: [],
+      statsPath: "data/site-stats.json",
+      planPath: "data/fleet-optimization-plan-2026-07-05.json",
+    },
+    summary: {
+      siteCount: sites,
+      titleHandoffCount: 10,
+      contentHandoffCount: 8,
+    },
+    sites: Array.from({ length: sites }, (_, index) => ({
+      host: `site-${index + 1}.example`,
+      url: `https://site-${index + 1}.example/`,
+      localPath: `D:\\web\\site-${index + 1}`,
+      actions: index % 2 === 0 ? ["title_handoff"] : ["content_handoff"],
+      planRanks: [index + 1],
+      metrics: {
+        gscImpressions30d: 100 + index,
+        gscClicks30d: 10 + index,
+        gscCtr30d: 0.01,
+        gscPosition30d: 8 + index,
+      },
+      topQueries: [{ query: `query ${index + 1}` }],
+      technicalStatus: {
+        sitemapWarnings: index,
+        sitemapErrors: 0,
+        adsenseStatus: "approved",
+        adsTxtStatus: "ok",
+      },
+      recommendedNextAction: "Title workflow only; do not directly edit live titles from this handoff.",
+    })),
   };
 }
 

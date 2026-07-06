@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T09:50:00.000Z",
+  "generatedAt": "2026-07-05T11:48:44.795Z",
   "policy": {
     "exposureMode": "registered_channel_allowlist",
     "requiredDisclosureKo": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
@@ -17,6 +17,18 @@
   },
   "channels": [
     {
+      "siteId": "smallhomepick",
+      "domain": "smallhomepick.com",
+      "status": "registered",
+      "priority": "p0",
+      "firstUse": "자취방·신혼집 살림템, 소형가전, 수납·청소·욕실 생활용품",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
+    },
+    {
       "siteId": "todaypharm",
       "domain": "todaypharm.kr",
       "status": "registered",
@@ -25,7 +37,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "tennisfrens",
@@ -36,7 +49,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "picklefriend",
@@ -47,7 +61,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "dogswhere",
@@ -58,7 +73,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "cartain-2",
@@ -69,7 +85,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "temon",
@@ -80,7 +97,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "notebook-klick-2",
@@ -91,7 +109,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "softwa",
@@ -102,7 +121,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "dogspang-2",
@@ -113,7 +133,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "autoscares-2",
@@ -124,7 +145,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "roadways",
@@ -135,7 +157,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "dullegilgogo",
@@ -146,7 +169,8 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
-      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
     },
     {
       "siteId": "campgogo",
@@ -157,7 +181,164 @@
       "registeredAt": "2026-07-03",
       "approvedAt": null,
       "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "channelType": "website"
+    },
+    {
+      "siteId": "nexttech7",
+      "domain": "nexttech7.com",
+      "channelUrl": "https://nexttech7.com/",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "Korean electronics and technology product recommendations",
+      "channelType": "website",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
       "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "instagram-hanipworld",
+      "domain": "instagram.com",
+      "channelUrl": "https://www.instagram.com/hanipworld/",
+      "status": "registered",
+      "priority": "social",
+      "firstUse": "Coupang Partners social channel registration",
+      "channelType": "social",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "threads-hanipworld",
+      "domain": "threads.net",
+      "channelUrl": "https://www.threads.net/@hanipworld",
+      "status": "registered",
+      "priority": "social",
+      "firstUse": "Coupang Partners social channel registration",
+      "channelType": "social",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "youtube-hanip-tamgu",
+      "domain": "youtube.com",
+      "channelUrl": "https://www.youtube.com/@%ED%95%9C%EC%9E%85%ED%83%90%EA%B5%AC",
+      "status": "registered",
+      "priority": "social",
+      "firstUse": "Coupang Partners YouTube channel registration",
+      "channelType": "social",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "naver-blog-bitetok",
+      "domain": "blog.naver.com",
+      "channelUrl": "https://blog.naver.com/bitetok",
+      "status": "registered",
+      "priority": "social",
+      "firstUse": "Coupang Partners Naver Blog channel registration",
+      "channelType": "blog",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "x-lio420410436312",
+      "domain": "x.com",
+      "channelUrl": "https://x.com/lio420410436312",
+      "status": "registered",
+      "priority": "social",
+      "firstUse": "Coupang Partners X channel registration",
+      "channelType": "social",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "petinsuer-2",
+      "domain": "petinsuer.com",
+      "channelUrl": "https://petinsuer.com/",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "Korean pet-care and pet-insurance reader product recommendations",
+      "channelType": "website",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "healfood-2",
+      "domain": "healfood.kr",
+      "channelUrl": "https://healfood.kr/",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "Korean health food and wellness product recommendations",
+      "channelType": "website",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "yungyanggogo",
+      "domain": "yungyanggogo.kr",
+      "channelUrl": "https://yungyanggogo.kr/",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "Korean supplement and nutrition product recommendations",
+      "channelType": "website",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "estat-2",
+      "domain": "estat.kr",
+      "channelUrl": "https://estat.kr/",
+      "status": "registered",
+      "priority": "p2",
+      "firstUse": "Korean estate and household-adjacent product recommendations",
+      "channelType": "website",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "pregnancy-ehon365",
+      "domain": "pregnancy.ehon365.kr",
+      "channelUrl": "https://pregnancy.ehon365.kr/",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "Korean pregnancy and parenting product recommendations",
+      "channelType": "website",
+      "registeredAt": "2026-07-05",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure."
+    },
+    {
+      "siteId": "plategogo",
+      "domain": "plategogo.com",
+      "channelUrl": "https://plategogo.com/",
+      "status": "registered",
+      "priority": "p1",
+      "firstUse": "주방용품, 접시, 식기, 테이블웨어 추천",
+      "channelType": "website",
+      "registeredAt": "2026-07-06",
+      "approvedAt": null,
+      "screenshotUrl": "",
+      "notes": "Activated after user go-ahead on 2026-07-06. Public exposure is now allowed through the registered channel gate."
     }
   ]
 }
