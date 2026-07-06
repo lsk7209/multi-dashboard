@@ -2429,6 +2429,40 @@ code {
   text-align: right;
 }
 
+.ops-site-summary-table th:last-child,
+.ops-site-summary-table td:last-child {
+  min-width: 112px;
+  width: 112px;
+}
+
+.ops-site-summary-table th:last-child {
+  text-align: center;
+}
+
+.ops-site-actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ops-site-actions button {
+  display: inline-flex;
+  margin-left: 5px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ops-site-actions button:hover,
+.ops-site-actions button:focus-visible {
+  border-color: rgba(15, 118, 110, 0.38);
+  outline: none;
+}
+
 .ops-site-summary-table .ops-risk-row td:first-child {
   box-shadow:
     inset 3px 0 0 rgba(161, 92, 0, 0.65),

@@ -541,6 +541,35 @@ export function BannerManagementConsole() {
     },
   ];
 
+  function getPreferredPlacementForSite(siteKey: string) {
+    const sitePlacements = state.placements.filter((placement) => (placement.siteKey || "legacy") === siteKey);
+    return (
+      sitePlacements.find((placement) => placement.status === "active" && !isPlacementAssigned(placement)) ??
+      sitePlacements.find((placement) => placement.status === "active" && placement.noAd > 0) ??
+      sitePlacements.find((placement) => placement.status === "active") ??
+      sitePlacements[0] ??
+      null
+    );
+  }
+
+  function openSiteWorkflow(site: SiteSummaryRow, tab: "assignments" | "install") {
+    const placement = getPreferredPlacementForSite(site.siteKey);
+    setSiteFilter(site.siteKey);
+    setSearchQuery("");
+    setSiteQuickFilter("all");
+    setStatusFilter(tab === "assignments" ? "active" : "all");
+    setAssignmentFilter(tab === "assignments" && site.unassignedPlacements > 0 ? "unassigned" : "all");
+    if (placement) {
+      setAssignmentForm((current) => ({
+        creativeId: current.creativeId || placement.assignedCreativeId || state.creatives[0]?.id || "",
+        placementId: placement.id,
+        trackingLinkId: current.trackingLinkId || placement.assignedTrackingLinkId || state.trackingLinks[0]?.id || "",
+        weight: current.weight || "100",
+      }));
+    }
+    setActiveTab(tab);
+  }
+
   async function loadState() {
     setIsLoading(true);
     setError(null);
@@ -998,14 +1027,15 @@ export function BannerManagementConsole() {
                         </button>
                       </th>
                     ))}
+                    <th>조치</th>
                   </tr>
                 </thead>
                 <tbody>
                   {isLoading ? (
-                    <tr>
-                      <td colSpan={SITE_SUMMARY_COLUMNS.length}>불러오는 중입니다.</td>
-                    </tr>
-                  ) : visibleSiteSummaries.length > 0 ? (
+                        <tr>
+                          <td colSpan={SITE_SUMMARY_COLUMNS.length + 1}>불러오는 중입니다.</td>
+                        </tr>
+                      ) : visibleSiteSummaries.length > 0 ? (
                     visibleSiteSummaries.map((site) => {
                       const risk = getSiteRisk(site);
                       return (
@@ -1033,12 +1063,20 @@ export function BannerManagementConsole() {
                           <td>{formatNumber(site.clicks7d)}</td>
                           <td>{formatPercent(getCtrRate7d(site))}</td>
                           <td>{formatDateTime(site.lastUpdatedAt)}</td>
+                          <td className="ops-site-actions">
+                            <button type="button" onClick={() => openSiteWorkflow(site, "assignments")}>
+                              배정
+                            </button>
+                            <button type="button" onClick={() => openSiteWorkflow(site, "install")}>
+                              설치
+                            </button>
+                          </td>
                         </tr>
                       );
                     })
                   ) : (
                     <tr>
-                      <td colSpan={SITE_SUMMARY_COLUMNS.length}>조건에 맞는 사이트별 배너 슬롯이 없습니다.</td>
+                      <td colSpan={SITE_SUMMARY_COLUMNS.length + 1}>조건에 맞는 사이트별 배너 슬롯이 없습니다.</td>
                     </tr>
                   )}
                 </tbody>
