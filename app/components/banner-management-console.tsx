@@ -116,6 +116,39 @@ type ApiAction =
   | "assignPlacement";
 
 type BannerOpsTabId = "overview" | "sites" | "setup" | "assignments" | "install" | "diagnostics";
+type SortDirection = "asc" | "desc";
+type SiteSortKey =
+  | "activePlacements"
+  | "assignedPlacements"
+  | "clicks"
+  | "clicks7d"
+  | "ctr"
+  | "ctr7d"
+  | "imageRequests"
+  | "imageRequests7d"
+  | "lastUpdatedAt"
+  | "noAd"
+  | "placements"
+  | "requests"
+  | "siteKey"
+  | "unassignedPlacements";
+
+const SITE_SUMMARY_COLUMNS: Array<{ key: SiteSortKey; label: string }> = [
+  { key: "siteKey", label: "사이트" },
+  { key: "placements", label: "슬롯" },
+  { key: "activePlacements", label: "활성" },
+  { key: "assignedPlacements", label: "배정" },
+  { key: "unassignedPlacements", label: "미배정" },
+  { key: "noAd", label: "no_ad" },
+  { key: "requests", label: "요청" },
+  { key: "imageRequests", label: "이미지" },
+  { key: "clicks", label: "클릭" },
+  { key: "ctr", label: "CTR" },
+  { key: "imageRequests7d", label: "7일 이미지" },
+  { key: "clicks7d", label: "7일 클릭" },
+  { key: "ctr7d", label: "7일 CTR" },
+  { key: "lastUpdatedAt", label: "갱신" },
+];
 
 const MAX_TABLE_ROWS = 50;
 const BANNER_OPS_TABS: Array<{ id: BannerOpsTabId; label: string }> = [
@@ -170,6 +203,10 @@ export function BannerManagementConsole() {
   const [assignmentFilter, setAssignmentFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<BannerOpsTabId>("overview");
+  const [siteSort, setSiteSort] = useState<{ key: SiteSortKey; direction: SortDirection }>({
+    direction: "desc",
+    key: "imageRequests",
+  });
 
   useEffect(() => {
     setAdminToken(window.localStorage.getItem(BANNER_ADMIN_TOKEN_STORAGE_KEY) ?? "");
@@ -253,6 +290,10 @@ export function BannerManagementConsole() {
         .some((value) => String(value).toLowerCase().includes(query));
     });
   }, [searchQuery, siteFilter, state.siteSummaries]);
+  const sortedSiteSummaries = useMemo(
+    () => sortSiteSummaries(filteredSiteSummaries, siteSort.key, siteSort.direction),
+    [filteredSiteSummaries, siteSort.direction, siteSort.key],
+  );
 
   const selectedSiteSummary = useMemo(
     () => (siteFilter === "all" ? null : state.siteSummaries.find((site) => site.siteKey === siteFilter) ?? null),
@@ -466,6 +507,13 @@ export function BannerManagementConsole() {
       },
       "배치 위치에 소재와 추적 링크를 연결했습니다.",
     );
+  }
+
+  function toggleSiteSort(key: SiteSortKey) {
+    setSiteSort((current) => ({
+      direction: current.key === key && current.direction === "desc" ? "asc" : "desc",
+      key,
+    }));
   }
 
   return (
@@ -766,37 +814,55 @@ export function BannerManagementConsole() {
           <div className="ops-table-card ops-site-summary">
             <h3>사이트별 배너 운영 현황 ({formatNumber(filteredSiteSummaries.length)})</h3>
             <div className="workspace-table-wrap">
-              <table className="workspace-table ops-table">
+              <table className="workspace-table ops-table ops-site-summary-table">
+                <thead>
+                  <tr>
+                    {SITE_SUMMARY_COLUMNS.map((column) => (
+                      <th key={column.key}>
+                        <button
+                          aria-label={`${column.label} 기준 정렬`}
+                          aria-pressed={siteSort.key === column.key}
+                          className={siteSort.key === column.key ? "ops-sort-button active" : "ops-sort-button"}
+                          type="button"
+                          onClick={() => toggleSiteSort(column.key)}
+                        >
+                          <span>{column.label}</span>
+                          <span>{siteSort.key === column.key ? (siteSort.direction === "desc" ? "↓" : "↑") : "↕"}</span>
+                        </button>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
                 <tbody>
                   {isLoading ? (
                     <tr>
-                      <td>불러오는 중입니다.</td>
+                      <td colSpan={SITE_SUMMARY_COLUMNS.length}>불러오는 중입니다.</td>
                     </tr>
-                  ) : filteredSiteSummaries.length > 0 ? (
-                    filteredSiteSummaries.map((site) => (
+                  ) : sortedSiteSummaries.length > 0 ? (
+                    sortedSiteSummaries.map((site) => (
                       <tr key={site.siteKey}>
                         <td>
                           <strong>{site.siteKey}</strong>
                           <small>{site.siteUrl ?? "URL 미등록"}</small>
                         </td>
-                        <td>슬롯 {formatNumber(site.placements)}</td>
-                        <td>활성 {formatNumber(site.activePlacements)}</td>
-                        <td>배정 {formatNumber(site.assignedPlacements)}</td>
-                        <td>미배정 {formatNumber(site.unassignedPlacements)}</td>
-                        <td>no_ad {formatNumber(site.noAd)}</td>
-                        <td>요청 {formatNumber(site.requests)}</td>
-                        <td>이미지 {formatNumber(site.imageRequests)}</td>
-                        <td>클릭 {formatNumber(site.clicks)}</td>
-                        <td>CTR {formatPercent(getCtrRate(site))}</td>
-                        <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
-                        <td>7일 클릭 {formatNumber(site.clicks7d)}</td>
-                        <td>7일 CTR {formatPercent(getCtrRate7d(site))}</td>
+                        <td>{formatNumber(site.placements)}</td>
+                        <td>{formatNumber(site.activePlacements)}</td>
+                        <td>{formatNumber(site.assignedPlacements)}</td>
+                        <td>{formatNumber(site.unassignedPlacements)}</td>
+                        <td>{formatNumber(site.noAd)}</td>
+                        <td>{formatNumber(site.requests)}</td>
+                        <td>{formatNumber(site.imageRequests)}</td>
+                        <td>{formatNumber(site.clicks)}</td>
+                        <td>{formatPercent(getCtrRate(site))}</td>
+                        <td>{formatNumber(site.imageRequests7d)}</td>
+                        <td>{formatNumber(site.clicks7d)}</td>
+                        <td>{formatPercent(getCtrRate7d(site))}</td>
                         <td>{formatDateTime(site.lastUpdatedAt)}</td>
                       </tr>
                     ))
                   ) : (
                     <tr>
-                      <td>조건에 맞는 사이트별 배너 슬롯이 없습니다.</td>
+                      <td colSpan={SITE_SUMMARY_COLUMNS.length}>조건에 맞는 사이트별 배너 슬롯이 없습니다.</td>
                     </tr>
                   )}
                 </tbody>
@@ -1349,6 +1415,33 @@ function getCtrRate(input: { clicks: number; imageRequests: number }): number {
 function getCtrRate7d(input: { clicks7d: number; imageRequests7d: number }): number {
   if (input.imageRequests7d <= 0) return 0;
   return input.clicks7d / input.imageRequests7d;
+}
+
+function sortSiteSummaries(sites: SiteSummaryRow[], key: SiteSortKey, direction: SortDirection): SiteSummaryRow[] {
+  const multiplier = direction === "desc" ? -1 : 1;
+  return [...sites].sort((a, b) => {
+    const first = getSiteSortValue(a, key);
+    const second = getSiteSortValue(b, key);
+    if (typeof first === "string" && typeof second === "string") {
+      return first.localeCompare(second, "ko-KR", { numeric: true, sensitivity: "base" }) * multiplier;
+    }
+    return ((first as number) - (second as number)) * multiplier;
+  });
+}
+
+function getSiteSortValue(site: SiteSummaryRow, key: SiteSortKey): number | string {
+  switch (key) {
+    case "ctr":
+      return getCtrRate(site);
+    case "ctr7d":
+      return getCtrRate7d(site);
+    case "lastUpdatedAt":
+      return Date.parse(site.lastUpdatedAt) || 0;
+    case "siteKey":
+      return site.siteKey;
+    default:
+      return site[key];
+  }
 }
 
 function formatSlotLabel(placement: PlacementRow): string {

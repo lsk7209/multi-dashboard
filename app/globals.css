@@ -2204,6 +2204,45 @@ code {
   min-width: 760px;
 }
 
+.ops-site-summary-table {
+  min-width: 1180px;
+}
+
+.ops-site-summary-table th {
+  white-space: nowrap;
+}
+
+.ops-sort-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ops-sort-button span:last-child {
+  color: #8b98ab;
+  font-size: 11px;
+}
+
+.ops-sort-button.active {
+  color: var(--accent);
+}
+
+.ops-sort-button:hover,
+.ops-sort-button:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
 .banner-page-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.55fr);
