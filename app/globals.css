@@ -2283,6 +2283,79 @@ code {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.ops-assignment-queue {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.ops-assignment-candidates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+}
+
+.ops-assignment-candidate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfcfd;
+}
+
+.ops-assignment-candidate.is-unassigned {
+  border-color: rgba(161, 92, 0, 0.24);
+  background: var(--warning-weak);
+}
+
+.ops-assignment-candidate div:first-child {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ops-assignment-candidate strong {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.ops-assignment-candidate small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ops-candidate-actions {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.ops-candidate-actions button {
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ops-candidate-actions button:hover,
+.ops-candidate-actions button:focus-visible {
+  border-color: rgba(15, 118, 110, 0.38);
+  outline: none;
+}
+
 .ops-assignment {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) repeat(4, minmax(130px, 0.7fr)) auto;
@@ -2596,6 +2669,7 @@ code {
   .ops-overview-layout,
   .ops-executive-grid,
   .ops-exception-grid,
+  .ops-assignment-candidates,
   .ops-kpi-strip,
   .ops-install-panel,
   .affiliate-playbook-grid,

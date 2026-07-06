@@ -384,6 +384,16 @@ export function BannerManagementConsole() {
     () => filteredPlacements.filter((placement) => placement.noAd > 0).sort((a, b) => b.noAd - a.noAd),
     [filteredPlacements],
   );
+  const assignmentCandidatePlacements = useMemo(() => {
+    const candidates = new Map<string, PlacementRow>();
+    for (const placement of activeUnassignedPlacements) {
+      candidates.set(placement.id, placement);
+    }
+    for (const placement of noAdPlacements) {
+      candidates.set(placement.id, placement);
+    }
+    return Array.from(candidates.values()).slice(0, 8);
+  }, [activeUnassignedPlacements, noAdPlacements]);
   const reviewCreatives = useMemo(
     () => state.creatives.filter((creative) => creative.status !== "active" || creative.policyStatus !== "approved"),
     [state.creatives],
@@ -552,6 +562,21 @@ export function BannerManagementConsole() {
     );
   }
 
+  function selectPlacementWorkflow(placement: PlacementRow, tab: "assignments" | "install" = "assignments") {
+    setSiteFilter(placement.siteKey || "legacy");
+    setSearchQuery("");
+    setSiteQuickFilter("all");
+    setStatusFilter(tab === "assignments" ? "active" : "all");
+    setAssignmentFilter(tab === "assignments" && !isPlacementAssigned(placement) ? "unassigned" : "all");
+    setAssignmentForm((current) => ({
+      creativeId: current.creativeId || placement.assignedCreativeId || state.creatives[0]?.id || "",
+      placementId: placement.id,
+      trackingLinkId: current.trackingLinkId || placement.assignedTrackingLinkId || state.trackingLinks[0]?.id || "",
+      weight: current.weight || "100",
+    }));
+    setActiveTab(tab);
+  }
+
   function openSiteWorkflow(site: SiteSummaryRow, tab: "assignments" | "install") {
     const placement = getPreferredPlacementForSite(site.siteKey);
     setSiteFilter(site.siteKey);
@@ -559,14 +584,7 @@ export function BannerManagementConsole() {
     setSiteQuickFilter("all");
     setStatusFilter(tab === "assignments" ? "active" : "all");
     setAssignmentFilter(tab === "assignments" && site.unassignedPlacements > 0 ? "unassigned" : "all");
-    if (placement) {
-      setAssignmentForm((current) => ({
-        creativeId: current.creativeId || placement.assignedCreativeId || state.creatives[0]?.id || "",
-        placementId: placement.id,
-        trackingLinkId: current.trackingLinkId || placement.assignedTrackingLinkId || state.trackingLinks[0]?.id || "",
-        weight: current.weight || "100",
-      }));
-    }
+    if (placement) selectPlacementWorkflow(placement, tab);
     setActiveTab(tab);
   }
 
@@ -1301,6 +1319,45 @@ export function BannerManagementConsole() {
 
       {activeTab === "assignments" ? (
         <div className="ops-tab-panel">
+          <div className="ops-assignment-queue">
+            <div className="ops-section-heading">
+              <div>
+                <h3>배정 후보 큐</h3>
+                <p>미배정 active 슬롯과 no_ad 발생 슬롯을 먼저 보여줍니다.</p>
+              </div>
+              <strong>{formatNumber(assignmentCandidatePlacements.length)}개</strong>
+            </div>
+            {assignmentCandidatePlacements.length > 0 ? (
+              <div className="ops-assignment-candidates">
+                {assignmentCandidatePlacements.map((placement) => {
+                  const assigned = isPlacementAssigned(placement);
+                  return (
+                    <div className={assigned ? "ops-assignment-candidate" : "ops-assignment-candidate is-unassigned"} key={placement.id}>
+                      <div>
+                        <strong>{formatSlotLabel(placement)}</strong>
+                        <small>{placement.name}</small>
+                        <small>
+                          {assigned ? "배정됨" : "미배정"} · no_ad {formatNumber(placement.noAd)} · 요청{" "}
+                          {formatNumber(placement.requests)}
+                        </small>
+                      </div>
+                      <div className="ops-candidate-actions">
+                        <button type="button" onClick={() => selectPlacementWorkflow(placement, "assignments")}>
+                          선택
+                        </button>
+                        <button type="button" onClick={() => selectPlacementWorkflow(placement, "install")}>
+                          설치
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <p className="ops-empty-state">현재 필터 조건에서 우선 배정할 슬롯이 없습니다.</p>
+            )}
+          </div>
+
           <form className="ops-assignment" onSubmit={assignPlacement}>
             <div>
               <h3>4. 소재 연결</h3>
