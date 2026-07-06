@@ -118,6 +118,7 @@ type ApiAction =
 type BannerOpsTabId = "overview" | "sites" | "setup" | "assignments" | "install" | "diagnostics";
 type SortDirection = "asc" | "desc";
 type OpsPriorityTone = "critical" | "warning" | "info";
+type DiagnosticFocusId = "all" | "unassigned" | "no_ad" | "inactive_placements" | "creative_issues" | "tracking_issues";
 type SiteQuickFilterId = "all" | "attention" | "unassigned" | "no_ad" | "inactive" | "zero_click_7d" | "recent_exposure";
 type SiteSortKey =
   | "activePlacements"
@@ -214,6 +215,7 @@ export function BannerManagementConsole() {
   const [assignmentFilter, setAssignmentFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<BannerOpsTabId>("overview");
+  const [diagnosticFocus, setDiagnosticFocus] = useState<DiagnosticFocusId>("all");
   const [siteQuickFilter, setSiteQuickFilter] = useState<SiteQuickFilterId>("all");
   const [siteSort, setSiteSort] = useState<{ key: SiteSortKey; direction: SortDirection }>({
     direction: "desc",
@@ -384,6 +386,10 @@ export function BannerManagementConsole() {
     () => filteredPlacements.filter((placement) => placement.noAd > 0).sort((a, b) => b.noAd - a.noAd),
     [filteredPlacements],
   );
+  const inactivePlacements = useMemo(
+    () => filteredPlacements.filter((placement) => placement.status !== "active"),
+    [filteredPlacements],
+  );
   const assignmentCandidatePlacements = useMemo(() => {
     const candidates = new Map<string, PlacementRow>();
     for (const placement of activeUnassignedPlacements) {
@@ -402,6 +408,70 @@ export function BannerManagementConsole() {
     () => state.trackingLinks.filter((link) => link.status !== "active" || !link.offerId),
     [state.trackingLinks],
   );
+  const diagnosticPlacementRows = useMemo(() => {
+    if (diagnosticFocus === "unassigned") return activeUnassignedPlacements;
+    if (diagnosticFocus === "no_ad") return noAdPlacements;
+    if (diagnosticFocus === "inactive_placements") return inactivePlacements;
+    return filteredPlacements;
+  }, [activeUnassignedPlacements, diagnosticFocus, filteredPlacements, inactivePlacements, noAdPlacements]);
+  const diagnosticCreativeRows = useMemo(
+    () => (diagnosticFocus === "creative_issues" ? reviewCreatives : state.creatives),
+    [diagnosticFocus, reviewCreatives, state.creatives],
+  );
+  const diagnosticTrackingLinkRows = useMemo(
+    () => (diagnosticFocus === "tracking_issues" ? trackingLinkIssues : state.trackingLinks),
+    [diagnosticFocus, state.trackingLinks, trackingLinkIssues],
+  );
+  const diagnosticFocusCards: Array<{
+    detail: string;
+    id: DiagnosticFocusId;
+    label: string;
+    tone: OpsPriorityTone;
+    value: number;
+  }> = [
+    {
+      detail: "전체 진단 테이블",
+      id: "all",
+      label: "전체",
+      tone: "info",
+      value: filteredPlacements.length + state.creatives.length + state.trackingLinks.length,
+    },
+    {
+      detail: "active인데 소재/링크 없음",
+      id: "unassigned",
+      label: "미배정 슬롯",
+      tone: "critical",
+      value: activeUnassignedPlacements.length,
+    },
+    {
+      detail: "요청 대비 광고 없음",
+      id: "no_ad",
+      label: "no_ad 슬롯",
+      tone: "warning",
+      value: noAdPlacements.length,
+    },
+    {
+      detail: "paused/inactive 슬롯",
+      id: "inactive_placements",
+      label: "비활성 슬롯",
+      tone: "info",
+      value: inactivePlacements.length,
+    },
+    {
+      detail: "비활성 또는 검수 미승인",
+      id: "creative_issues",
+      label: "소재 이슈",
+      tone: "warning",
+      value: reviewCreatives.length,
+    },
+    {
+      detail: "비활성 또는 offerId 없음",
+      id: "tracking_issues",
+      label: "추적 링크 이슈",
+      tone: "warning",
+      value: trackingLinkIssues.length,
+    },
+  ];
   const attentionSites = useMemo(
     () =>
       filteredSiteSummaries.filter(
@@ -1494,13 +1564,38 @@ export function BannerManagementConsole() {
 
       {activeTab === "diagnostics" ? (
         <div className="ops-tab-panel">
+          <div className="ops-diagnostic-board">
+            <div className="ops-section-heading">
+              <div>
+                <h3>진단 우선순위</h3>
+                <p>배치, 소재, 추적 링크의 위험 항목을 그룹별로 좁혀서 확인합니다.</p>
+              </div>
+              <strong>{diagnosticFocusCards.find((card) => card.id === diagnosticFocus)?.label ?? "전체"}</strong>
+            </div>
+            <div className="ops-diagnostic-filters" aria-label="진단 필터">
+              {diagnosticFocusCards.map((card) => (
+                <button
+                  aria-pressed={diagnosticFocus === card.id}
+                  className={diagnosticFocus === card.id ? `active is-${card.tone}` : `is-${card.tone}`}
+                  key={card.id}
+                  type="button"
+                  onClick={() => setDiagnosticFocus(card.id)}
+                >
+                  <span>{card.label}</span>
+                  <strong>{formatNumber(card.value)}</strong>
+                  <small>{card.detail}</small>
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="ops-table-grid">
             <OpsTable
-              title={`배치 위치 (${formatNumber(filteredPlacements.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
+              title={`배치 위치 (${formatNumber(diagnosticPlacementRows.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
               isLoading={isLoading}
               emptyText="배치 위치가 없습니다."
             >
-              {filteredPlacements.slice(0, MAX_TABLE_ROWS).map((placement) => (
+              {diagnosticPlacementRows.slice(0, MAX_TABLE_ROWS).map((placement) => (
                 <tr key={placement.id}>
                   <td>
                     <strong>{placement.name}</strong>
@@ -1526,8 +1621,8 @@ export function BannerManagementConsole() {
               ))}
             </OpsTable>
 
-            <OpsTable title={`소재 (${formatNumber(state.creatives.length)}, 첫 ${MAX_TABLE_ROWS}개)`} isLoading={isLoading} emptyText="소재가 없습니다.">
-              {state.creatives.slice(0, MAX_TABLE_ROWS).map((creative) => (
+            <OpsTable title={`소재 (${formatNumber(diagnosticCreativeRows.length)}, 첫 ${MAX_TABLE_ROWS}개)`} isLoading={isLoading} emptyText="소재가 없습니다.">
+              {diagnosticCreativeRows.slice(0, MAX_TABLE_ROWS).map((creative) => (
                 <tr key={creative.id}>
                   <td>
                     <strong>{creative.name}</strong>
@@ -1568,11 +1663,11 @@ export function BannerManagementConsole() {
             </OpsTable>
 
             <OpsTable
-              title={`추적 링크 (${formatNumber(state.trackingLinks.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
+              title={`추적 링크 (${formatNumber(diagnosticTrackingLinkRows.length)}, 첫 ${MAX_TABLE_ROWS}개)`}
               isLoading={isLoading}
               emptyText="추적 링크가 없습니다."
             >
-              {state.trackingLinks.slice(0, MAX_TABLE_ROWS).map((link) => (
+              {diagnosticTrackingLinkRows.slice(0, MAX_TABLE_ROWS).map((link) => (
                 <tr key={link.id}>
                   <td>
                     <strong>{link.slug}</strong>

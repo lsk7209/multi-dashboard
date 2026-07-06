@@ -2428,6 +2428,64 @@ code {
   overflow-wrap: anywhere;
 }
 
+.ops-diagnostic-board {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.ops-diagnostic-filters {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px;
+}
+
+.ops-diagnostic-filters button {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  background: #fbfcfd;
+  cursor: pointer;
+}
+
+.ops-diagnostic-filters button.active {
+  border-color: rgba(15, 118, 110, 0.28);
+  background: var(--accent-weak);
+}
+
+.ops-diagnostic-filters button.active.is-critical {
+  border-color: rgba(153, 27, 27, 0.26);
+  background: #fee2e2;
+}
+
+.ops-diagnostic-filters button.active.is-warning {
+  border-color: rgba(146, 64, 14, 0.26);
+  background: #fef3c7;
+}
+
+.ops-diagnostic-filters span,
+.ops-diagnostic-filters small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ops-diagnostic-filters strong {
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
 .ops-table-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
@@ -2701,6 +2759,7 @@ code {
   .ops-kpi-strip,
   .ops-install-panel,
   .ops-install-checklist,
+  .ops-diagnostic-filters,
   .affiliate-playbook-grid,
   .affiliate-rule-grid,
   .ops-admin-token,
