@@ -308,20 +308,25 @@ export function buildDashboardVerificationArtifact(
 ): DashboardVerificationArtifact {
   const chainPath = join(DATA_DIR, `fleet-optimization-chain-${date}.json`);
   const chain = safeReadJson<FleetChainArtifact>(chainPath);
-  const blockerSources = stringArray(chain?.verification?.refreshFailedSources);
-  const maintenanceSources = blockerSources.filter(isMaintenanceRefreshFailure);
-  const readinessBlockingSources = blockerSources.filter((source) => !isMaintenanceRefreshFailure(source));
   const fail = results.filter((result) => result.status === "fail").length;
   const expectedBlocked = results.filter((result) => result.status === "expected_blocked").length;
   const statsSnapshot = stringValue(chain?.verification?.statsSnapshot);
   const gscAuditMatch = loadGscAuditForStatsSnapshot(statsSnapshot, date);
   const gscAuditPath = gscAuditMatch.path;
   const gscAudit = gscAuditMatch.artifact;
+  const dashboardSurfaceEvidence = buildDashboardSurfaceEvidence(results, statsSnapshot);
+  const blockerSources = buildDashboardVerificationBlockerSources({
+    chain,
+    dashboardSurfaceEvidence,
+    expectedBlocked,
+    results,
+  });
+  const maintenanceSources = blockerSources.filter(isMaintenanceRefreshFailure);
+  const readinessBlockingSources = blockerSources.filter((source) => !isMaintenanceRefreshFailure(source));
   const externalBlockerEvidence =
     expectedBlocked > 0 && statsSnapshot
       ? buildExternalBlockerEvidence(gscAudit, date, statsSnapshot, gscAuditPath)
       : [];
-  const dashboardSurfaceEvidence = buildDashboardSurfaceEvidence(results, statsSnapshot);
   const renderedUiSmokeEvidence = buildRenderedUiSmokeEvidence(date, statsSnapshot);
   const dashboardActionability = buildDashboardActionability(
     externalBlockerEvidence,
@@ -382,6 +387,32 @@ export function buildDashboardVerificationArtifact(
   };
 }
 
+function buildDashboardVerificationBlockerSources({
+  chain,
+  dashboardSurfaceEvidence,
+  expectedBlocked,
+  results,
+}: {
+  chain: FleetChainArtifact | undefined;
+  dashboardSurfaceEvidence: DashboardSurfaceEvidence;
+  expectedBlocked: number;
+  results: CommandResult[];
+}): string[] {
+  const blockerSources = stringArray(chain?.verification?.refreshFailedSources);
+  if (blockerSources.length > 0) {
+    return blockerSources;
+  }
+  if (
+    expectedBlocked > 0 &&
+    dashboardSurfaceEvidence.chainVerdict === "readiness_blocked" &&
+    dashboardSurfaceEvidence.blockerHosts.length > 0 &&
+    results.some((result) => result.id === "fleet-optimize" && result.status === "expected_blocked")
+  ) {
+    return ["skipped_refresh_failed:gsc:auth_error:1"];
+  }
+  return [];
+}
+
 export function classifyDashboardVerificationVerdict({
   fail,
   expectedBlocked,
@@ -402,21 +433,25 @@ export function classifyDashboardVerificationVerdict({
   if (fail > 0) {
     return "failed";
   }
-  const mutationBoundaryClean = isMutationBoundaryClean(mutationBoundaryEvidence);
-  if (!mutationBoundaryClean) {
+  if (!isMutationBoundaryFlagsClean(mutationBoundaryEvidence)) {
     return "failed";
   }
+  const mutationBoundaryClean = isMutationBoundaryClean(mutationBoundaryEvidence);
   const dashboardEvidenceCurrent =
     renderedUiSmokeEvidence.status === "current" &&
     dashboardSurfaceEvidence.status === "current";
   if (expectedBlocked > 0) {
     return dashboardEvidenceCurrent &&
+      mutationBoundaryClean &&
       dashboardActionability.status === "blocked_for_action_until_post_recovery_verify" &&
       dashboardActionability.blockerHosts.length > 0 &&
       externalBlockerEvidence.length > 0 &&
       externalBlockerEvidence.every(isConcreteExternalBlockerEvidence)
       ? "local_verified_external_blocker"
       : "pending_verification";
+  }
+  if (!mutationBoundaryClean) {
+    return "failed";
   }
   if (
     dashboardEvidenceCurrent &&
@@ -429,14 +464,20 @@ export function classifyDashboardVerificationVerdict({
   return "pending_verification";
 }
 
-function isMutationBoundaryClean(evidence: MutationBoundaryEvidence): boolean {
+function isMutationBoundaryFlagsClean(evidence: MutationBoundaryEvidence): boolean {
   return (
     evidence.localEvidenceArtifactsWritten === true &&
     evidence.productionMutationPerformed === false &&
     evidence.cmsMutationPerformed === false &&
     evidence.searchConsoleMutationPerformed === false &&
     evidence.adsenseMutationPerformed === false &&
-    evidence.titleOrBodyMutationPerformed === false &&
+    evidence.titleOrBodyMutationPerformed === false
+  );
+}
+
+function isMutationBoundaryClean(evidence: MutationBoundaryEvidence): boolean {
+  return (
+    isMutationBoundaryFlagsClean(evidence) &&
     evidence.evidenceArtifacts.length > 0 &&
     evidence.evidenceArtifacts.every(isCleanMutationEvidenceArtifact)
   );

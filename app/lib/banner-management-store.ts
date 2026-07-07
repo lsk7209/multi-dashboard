@@ -523,9 +523,11 @@ export function resolveBannerPlacement(input: {
   slot?: string | undefined;
   pageUrl?: string | undefined;
   purpose?: CoupangExposurePurpose | undefined;
+  recordResolutionEvents?: boolean | undefined;
   referrer?: string | undefined;
 }): ResolvedBannerPlacement | null {
   const lookup = normalizePlacementLookup(input);
+  const recordEvents = input.recordResolutionEvents !== false;
   const dbPath = getBannerDbPath();
   ensureSchemaWhenWritable(dbPath);
   const db = openDb(dbPath, true);
@@ -584,46 +586,52 @@ export function resolveBannerPlacement(input: {
       lookup.slotKey,
     );
     if (!row || !row.assignment_id || !row.creative_id || !row.tracking_link_id) {
-      recordPlacementEvent({
-        eventType: "no_ad",
-        placementId: nullableString(row?.placement_id) ?? lookup.placementId,
-        pageUrl: input.pageUrl,
-        referrer: input.referrer,
-      });
+      if (recordEvents) {
+        recordPlacementEvent({
+          eventType: "no_ad",
+          placementId: nullableString(row?.placement_id) ?? lookup.placementId,
+          pageUrl: input.pageUrl,
+          referrer: input.referrer,
+        });
+      }
       return null;
     }
     const resolved = mapResolvedPlacement(row);
     if (!shouldServeResolvedBannerPlacement(resolved, input)) {
+      if (recordEvents) {
+        recordPlacementEvent({
+          assignmentId: resolved.assignmentId,
+          eventType: "no_ad",
+          metadata: {
+            reason: "coupang_channel_gate",
+            purpose: input.purpose ?? "public",
+          },
+          pageUrl: input.pageUrl,
+          placementId: resolved.placement.id,
+          referrer: input.referrer,
+          trackingLinkId: resolved.trackingLink.id,
+        });
+      }
+      return null;
+    }
+    if (recordEvents) {
       recordPlacementEvent({
         assignmentId: resolved.assignmentId,
-        eventType: "no_ad",
-        metadata: {
-          reason: "coupang_channel_gate",
-          purpose: input.purpose ?? "public",
-        },
+        eventType: "request",
         pageUrl: input.pageUrl,
         placementId: resolved.placement.id,
         referrer: input.referrer,
         trackingLinkId: resolved.trackingLink.id,
       });
-      return null;
+      recordPlacementEvent({
+        assignmentId: resolved.assignmentId,
+        eventType: "served",
+        pageUrl: input.pageUrl,
+        placementId: resolved.placement.id,
+        referrer: input.referrer,
+        trackingLinkId: resolved.trackingLink.id,
+      });
     }
-    recordPlacementEvent({
-      assignmentId: resolved.assignmentId,
-      eventType: "request",
-      pageUrl: input.pageUrl,
-      placementId: resolved.placement.id,
-      referrer: input.referrer,
-      trackingLinkId: resolved.trackingLink.id,
-    });
-    recordPlacementEvent({
-      assignmentId: resolved.assignmentId,
-      eventType: "served",
-      pageUrl: input.pageUrl,
-      placementId: resolved.placement.id,
-      referrer: input.referrer,
-      trackingLinkId: resolved.trackingLink.id,
-    });
     return resolved;
   } finally {
     db.close();
@@ -1047,6 +1055,7 @@ async function resolveRemoteBannerPlacement(
   input: Parameters<typeof resolveBannerPlacement>[0],
 ): Promise<ResolvedBannerPlacement | null> {
   const lookup = normalizePlacementLookup(input);
+  const recordEvents = input.recordResolutionEvents !== false;
   const client = createBannerLibsqlClient();
   try {
     await ensureRemoteSchema(client);
@@ -1099,46 +1108,52 @@ async function resolveRemoteBannerPlacement(
       [lookup.placementId, lookup.placementId, lookup.siteKey, lookup.slotKey, lookup.siteKey, lookup.slotKey],
     );
     if (!row || !row.assignment_id || !row.creative_id || !row.tracking_link_id) {
-      await recordRemotePlacementEvent({
-        eventType: "no_ad",
-        placementId: nullableString(row?.placement_id) ?? lookup.placementId,
-        pageUrl: input.pageUrl,
-        referrer: input.referrer,
-      });
+      if (recordEvents) {
+        await recordRemotePlacementEvent({
+          eventType: "no_ad",
+          placementId: nullableString(row?.placement_id) ?? lookup.placementId,
+          pageUrl: input.pageUrl,
+          referrer: input.referrer,
+        });
+      }
       return null;
     }
     const resolved = mapResolvedPlacement(row);
     if (!shouldServeResolvedBannerPlacement(resolved, input)) {
+      if (recordEvents) {
+        await recordRemotePlacementEvent({
+          assignmentId: resolved.assignmentId,
+          eventType: "no_ad",
+          metadata: {
+            reason: "coupang_channel_gate",
+            purpose: input.purpose ?? "public",
+          },
+          pageUrl: input.pageUrl,
+          placementId: resolved.placement.id,
+          referrer: input.referrer,
+          trackingLinkId: resolved.trackingLink.id,
+        });
+      }
+      return null;
+    }
+    if (recordEvents) {
       await recordRemotePlacementEvent({
         assignmentId: resolved.assignmentId,
-        eventType: "no_ad",
-        metadata: {
-          reason: "coupang_channel_gate",
-          purpose: input.purpose ?? "public",
-        },
+        eventType: "request",
         pageUrl: input.pageUrl,
         placementId: resolved.placement.id,
         referrer: input.referrer,
         trackingLinkId: resolved.trackingLink.id,
       });
-      return null;
+      await recordRemotePlacementEvent({
+        assignmentId: resolved.assignmentId,
+        eventType: "served",
+        pageUrl: input.pageUrl,
+        placementId: resolved.placement.id,
+        referrer: input.referrer,
+        trackingLinkId: resolved.trackingLink.id,
+      });
     }
-    await recordRemotePlacementEvent({
-      assignmentId: resolved.assignmentId,
-      eventType: "request",
-      pageUrl: input.pageUrl,
-      placementId: resolved.placement.id,
-      referrer: input.referrer,
-      trackingLinkId: resolved.trackingLink.id,
-    });
-    await recordRemotePlacementEvent({
-      assignmentId: resolved.assignmentId,
-      eventType: "served",
-      pageUrl: input.pageUrl,
-      placementId: resolved.placement.id,
-      referrer: input.referrer,
-      trackingLinkId: resolved.trackingLink.id,
-    });
     return resolved;
   } finally {
     client.close();

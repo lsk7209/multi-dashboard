@@ -12,6 +12,7 @@ export async function GET(request: Request) {
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: url.searchParams.get("placementId") ?? undefined,
     purpose: parseBannerPurpose(url.searchParams.get("purpose")),
+    recordResolutionEvents: false,
     referrer: request.headers.get("referer") ?? undefined,
     siteKey: url.searchParams.get("siteKey") ?? undefined,
     slot: url.searchParams.get("slot") ?? undefined,

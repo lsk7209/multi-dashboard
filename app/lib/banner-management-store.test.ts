@@ -335,7 +335,7 @@ describe("banner-management-store", () => {
       getBannerManagementState().placements,
       (item) => item.id === placement.id,
     );
-    expect(finalPlacement.requests).toBeGreaterThanOrEqual(2);
+    expect(finalPlacement.requests).toBe(1);
     expect(finalPlacement.imageRequests).toBe(1);
   });
 
