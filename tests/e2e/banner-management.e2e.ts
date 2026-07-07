@@ -1,12 +1,9 @@
 import { expect, test, type Page } from "@playwright/test";
 
-test("dashboard hash opens banner operations with focused subtabs", async ({ page }) => {
-  await page.goto("/#banners");
+test("banner console opens operations with focused subtabs", async ({ page }) => {
+  await page.goto("/banner-management");
 
-  await expect(page.getByRole("tab", { name: /배너/ })).toHaveAttribute(
-    "aria-selected",
-    "true",
-  );
+  await expect(page).toHaveURL(/\/banner-management$/);
   await expect(page.getByRole("heading", { name: "배너 설정 운영" })).toBeVisible();
 
   const subTabs = page.locator(".ops-subtabs");
@@ -23,10 +20,10 @@ test("dashboard hash opens banner operations with focused subtabs", async ({ pag
 
 test("banner console stays usable with more than 100 sites", async ({ page }) => {
   await mockBannerManagementState(page, createLargeBannerState(120));
-  await page.goto("/#banners");
+  await page.goto("/banner-management");
 
   await expect(page.locator(".ops-metric-card").filter({ hasText: "운영 사이트" })).toContainText("120");
-  await expect(page.locator(".ops-metric-card").filter({ hasText: "배정 누락" })).toContainText("12");
+  await expect(page.locator(".ops-metric-card").filter({ hasText: "배정 커버리지" })).toContainText("90%");
 
   const siteFilter = page.locator(".ops-filter-grid").getByRole("combobox").first();
   await expect(siteFilter.locator("option")).toHaveCount(121);
