@@ -3,7 +3,6 @@
   type DashboardTabItem,
 } from "./components/dashboard-tabs.js";
 import { AppHeader } from "./components/app-header.js";
-import { BannerManagementConsole } from "./components/banner-management-console.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
 import {
   getDashboardActionability,
@@ -19,8 +18,6 @@ import {
   type GscPermissionAuditSummary,
   type SiteInsight,
 } from "./lib/dashboard-data.js";
-import { formatDisplayPath } from "./lib/display-path.js";
-import { getMonetizationWorkspaceData } from "./lib/monetization-workspace.js";
 import { describeRefreshFailureSource } from "./lib/refresh-failure-details.js";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +30,6 @@ export default async function DashboardPage({
   searchParams,
 }: DashboardPageProps = {}) {
   const data = getDashboardData();
-  const monetization = getMonetizationWorkspaceData();
   const params = await searchParams;
   const actionabilityOptions = getActionabilityOptions(params);
   const updatedAt = formatSnapshotDateTime(data.generatedAt);
@@ -68,21 +64,6 @@ export default async function DashboardPage({
       panelLabel: "인사이트",
       count: formatNumber(data.insights.length),
       content: <InsightsSection data={data} actionabilityOptions={actionabilityOptions} />,
-    },
-    {
-      id: "banners",
-      label: "배너",
-      panelLabel: "배너 운영",
-      count: formatNumber(monetization.bannerManagement.counts.activePlacements),
-      content: (
-        <BannerManagementSection
-          data={monetization.bannerManagement}
-          isReadOnlyBlocked={
-            getDashboardActionability(data, actionabilityOptions).status ===
-            "blocked_for_action_until_post_recovery_verify"
-          }
-        />
-      ),
     },
     {
       id: "settings",
@@ -922,211 +903,6 @@ function SupportPanel({
       </article>
 
     </section>
-  );
-}
-
-function BannerManagementSection({
-  data,
-  isReadOnlyBlocked,
-}: {
-  data: ReturnType<typeof getMonetizationWorkspaceData>["bannerManagement"];
-  isReadOnlyBlocked: boolean;
-}) {
-  const funnel = [
-    {
-      label: "요청",
-      value: data.counts.requests,
-      hint: "슬롯 호출",
-    },
-    {
-      label: "렌더",
-      value: data.counts.served,
-      hint:
-        data.counts.requests > 0
-          ? `${formatPercent(data.counts.served / data.counts.requests)} 처리`
-          : "요청 없음",
-    },
-    {
-      label: "이미지",
-      value: data.counts.imageRequests,
-      hint: "실제 이미지 호출",
-    },
-    {
-      label: "no_ad",
-      value: data.counts.noAd,
-      hint: data.noAdRate == null ? "비율 없음" : `${formatPercent(data.noAdRate)} 발생`,
-      tone: data.noAdRate != null && data.noAdRate >= 0.2 ? "warning" : "normal",
-    },
-  ];
-  const unassignedPlacements = data.topPlacements.filter(
-    (placement) => !placement.assignedCreativeName || !placement.assignedTrackingSlug,
-  );
-  const noAdPlacements = data.topPlacements
-    .filter((placement) => placement.noAd > 0)
-    .sort((a, b) => b.noAd - a.noAd);
-  const attentionCount = unassignedPlacements.length + noAdPlacements.length;
-  const inventoryCards = [
-    {
-      label: "배치 위치",
-      value: data.counts.placements,
-      hint: `활성 ${formatNumber(data.counts.activePlacements)}개`,
-    },
-    {
-      label: "소재",
-      value: data.counts.creatives,
-      hint: `활성 ${formatNumber(data.counts.activeCreatives)}개`,
-    },
-    {
-      label: "추적 링크",
-      value: data.counts.trackingLinks,
-      hint: `활성 ${formatNumber(data.counts.activeTrackingLinks)}개`,
-    },
-    {
-      label: "연결",
-      value: data.counts.assignments,
-      hint: `활성 ${formatNumber(data.counts.activeAssignments)}개`,
-    },
-  ];
-
-  return (
-    <div className="workspace-stack">
-      <article className="panel banner-ops-overview">
-        <div className="panel-heading">
-          <div>
-            <h2>배너 운영 현황</h2>
-            <p>요청, 렌더, 이미지 호출, no_ad를 같은 흐름으로 보고 점검 대상을 바로 분리합니다.</p>
-          </div>
-          <span>{formatShortDateTime(data.generatedAt)}</span>
-        </div>
-        <div className="banner-ops-grid" aria-label="배너 운영 핵심 지표">
-          <div className="banner-ops-funnel">
-            {funnel.map((item) => (
-              <div className={item.tone === "warning" ? "banner-funnel-step warning" : "banner-funnel-step"} key={item.label}>
-                <span>{item.label}</span>
-                <strong>{formatNumber(item.value)}</strong>
-                <small>{item.hint}</small>
-              </div>
-            ))}
-          </div>
-          <div className="banner-inventory-grid">
-            {inventoryCards.map((item) => (
-              <MiniMetric key={item.label} label={item.label} value={item.value} hint={item.hint} />
-            ))}
-          </div>
-          <div className={attentionCount > 0 ? "banner-attention warning" : "banner-attention"}>
-            <span>우선 점검</span>
-            <strong>{formatNumber(attentionCount)}</strong>
-            <p>
-              미배정 {formatNumber(unassignedPlacements.length)}개 · no_ad 발생{" "}
-              {formatNumber(noAdPlacements.length)}개
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <div className="workspace-grid banner-system-grid">
-        <article className="panel">
-          <div className="panel-heading">
-            <div>
-              <h2>스냅샷 기준</h2>
-              <p>운영 DB와 갱신 명령을 확인합니다.</p>
-            </div>
-          </div>
-          <div className="command-list">
-            <div className="command-row">
-              <span>운영 방식</span>
-              <code>{data.source.sourceKind}</code>
-            </div>
-            <div className="command-row">
-              <span>DB</span>
-              <code>{data.source.dbExists ? formatDisplayPath(data.source.dbPath) : "not found"}</code>
-            </div>
-            <div className="command-row">
-              <span>{isReadOnlyBlocked ? "스냅샷 상태" : "스냅샷 갱신"}</span>
-              <code>
-                {isReadOnlyBlocked
-                  ? "read-only until post-recovery passes"
-                  : "pnpm ops:monetization"}
-              </code>
-            </div>
-          </div>
-        </article>
-
-        <article className="panel">
-          <div className="panel-heading">
-            <div>
-              <h2>이벤트 원장</h2>
-              <p>수집 이벤트를 빈도순으로 표시합니다.</p>
-            </div>
-            <span>{formatNumber(data.counts.placementEvents)}건</span>
-          </div>
-          {data.eventBreakdown.length === 0 ? (
-            <p className="muted-text">아직 수집된 배너 이벤트가 없습니다.</p>
-          ) : (
-            <div className="metric-grid">
-              {data.eventBreakdown.map((event) => (
-                <MiniMetric
-                  key={event.type}
-                  label={event.type}
-                  value={event.count}
-                />
-              ))}
-            </div>
-          )}
-        </article>
-      </div>
-
-      <BannerManagementConsole />
-
-      <article className="panel workspace-table-panel">
-        <div className="panel-heading">
-          <div>
-            <h2>배치 위치별 성과</h2>
-            <p>요청량, 이미지 호출, no_ad, 연결 누락을 한 줄에서 비교합니다.</p>
-          </div>
-          <span>{formatNumber(data.topPlacements.length)}개 표시</span>
-        </div>
-        <div className="workspace-table-wrap">
-          <table className="workspace-table">
-            <thead>
-              <tr>
-                <th>배치</th>
-                <th>소재</th>
-                <th>링크</th>
-                <th>요청</th>
-                <th>이미지</th>
-                <th>no_ad</th>
-                <th>상태</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.topPlacements.length === 0 ? (
-                <tr>
-                  <td colSpan={7}>배치 위치가 아직 없습니다.</td>
-                </tr>
-              ) : (
-                data.topPlacements.map((placement) => (
-                  <tr key={placement.id}>
-                    <td>
-                      <strong>{placement.name}</strong>
-                      <small>{placement.id}</small>
-                    </td>
-                    <td>{placement.assignedCreativeName ?? "-"}</td>
-                    <td>{placement.assignedTrackingSlug ?? "-"}</td>
-                    <td>{formatNumber(placement.requests)}</td>
-                    <td>{formatNumber(placement.imageRequests)}</td>
-                    <td>{formatNumber(placement.noAd)}</td>
-                    <td>
-                      <span className="badge">{placement.status}</span>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-      </article>
-    </div>
   );
 }
 

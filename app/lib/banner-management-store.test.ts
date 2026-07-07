@@ -255,6 +255,23 @@ describe("banner-management-store", () => {
     expect(state.trackingLinks.some((link) => link.slug === body.slug)).toBe(true);
   });
 
+  it("does not require an admin token on Vercel unless one is configured", async () => {
+    process.env.VERCEL = "1";
+    delete process.env.MONETIZATION_BANNER_ADMIN_TOKEN;
+
+    const body = {
+      action: "createTrackingLink",
+      offerName: "Vercel no-token offer",
+      publicUrl: "https://example.com/vercel-no-token",
+      slug: `vercel-no-token-${Date.now().toString(36)}`,
+    };
+
+    const response = await postBannerManagement(jsonPost(body));
+    expect(response.status).toBe(201);
+    const state = (await response.json()) as BannerManagementState;
+    expect(state.trackingLinks.some((link) => link.slug === body.slug)).toBe(true);
+  });
+
   it("returns stable image and click route responses for missing and active slots", async () => {
     const stamp = Date.now().toString(36);
     const imageUrl = "https://placehold.co/728x90/png";
