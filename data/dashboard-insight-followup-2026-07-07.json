@@ -1,0 +1,380 @@
+{
+  "date": "2026-07-07",
+  "generatedAt": "2026-07-07T09:36:28.064Z",
+  "sourceSnapshot": {
+    "generatedAt": "2026-07-07T09:11:22.092Z",
+    "siteCount": 98,
+    "actionCount": 16,
+    "insightCount": 78,
+    "connectorStatus": {
+      "ga4Failed": 0,
+      "gscFailed": 0,
+      "adsenseFailed": 0,
+      "sitemapFailed": 0
+    }
+  },
+  "counts": {
+    "byKind": {
+      "indexingOrPermissionIssue": 8,
+      "decline": 8,
+      "rankingOpportunity": 17,
+      "seoOpportunity": 12,
+      "growth": 18,
+      "trafficMismatch": 15
+    },
+    "byCause": {
+      "gsc_zero": 8,
+      "gsc_drop": 2,
+      "ga4_drop": 5,
+      "mixed_decline": 1,
+      "ranking": 17,
+      "ctr": 12,
+      "growth": 18,
+      "traffic_mismatch": 15
+    },
+    "bySeverity": {
+      "high": 16,
+      "medium": 47,
+      "low": 15
+    },
+    "bySampleSize": {
+      "high": 26,
+      "medium": 28,
+      "low": 24
+    }
+  },
+  "topRollups": [
+    {
+      "siteId": "todaypharm",
+      "siteName": "todaypharm.kr",
+      "url": "https://todaypharm.kr/",
+      "insightCount": 3,
+      "highCount": 2,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "ga4_drop",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "2mlab-2",
+      "siteName": "2mlab.kr",
+      "url": "https://2mlab.kr/",
+      "insightCount": 3,
+      "highCount": 2,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "ga4_drop",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "dullegilgogo",
+      "siteName": "dullegilgogo.kr",
+      "url": "https://dullegilgogo.kr/",
+      "insightCount": 3,
+      "highCount": 2,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "ga4_drop",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "dogspang-2",
+      "siteName": "dogspang.kr",
+      "url": "https://dogspang.kr/",
+      "insightCount": 3,
+      "highCount": 1,
+      "primaryCause": "mixed_decline",
+      "primaryReason": "GSC 클릭이 직전 7일 대비 -81.8% 변했습니다.",
+      "nextGate": "Split GA4 channel decline and GSC query decline together.",
+      "causes": [
+        "mixed_decline",
+        "ctr",
+        "ranking"
+      ]
+    },
+    {
+      "siteId": "notebook-klick-2",
+      "siteName": "notebook.klick.kr",
+      "url": "https://notebook.klick.kr/",
+      "insightCount": 3,
+      "highCount": 1,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "growth",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "saju-tasko",
+      "siteName": "saju.tasko.kr",
+      "url": "https://saju.tasko.kr/",
+      "insightCount": 3,
+      "highCount": 1,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "growth",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "luckyday",
+      "siteName": "luckyday.kr",
+      "url": "https://luckyday.kr/",
+      "insightCount": 2,
+      "highCount": 1,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "temon",
+      "siteName": "temon.kr",
+      "url": "https://temon.kr/",
+      "insightCount": 2,
+      "highCount": 1,
+      "primaryCause": "gsc_drop",
+      "primaryReason": "GSC 클릭이 직전 7일 대비 -46.7% 변했습니다.",
+      "nextGate": "Review top queries, CTR, and ranking drop pages.",
+      "causes": [
+        "gsc_drop",
+        "ranking"
+      ]
+    },
+    {
+      "siteId": "softwa",
+      "siteName": "softwa.kr",
+      "url": "https://softwa.kr/",
+      "insightCount": 2,
+      "highCount": 1,
+      "primaryCause": "gsc_drop",
+      "primaryReason": "GSC 클릭이 직전 7일 대비 -58.8% 변했습니다.",
+      "nextGate": "Review top queries, CTR, and ranking drop pages.",
+      "causes": [
+        "gsc_drop",
+        "ranking"
+      ]
+    },
+    {
+      "siteId": "klick-2",
+      "siteName": "klick.kr",
+      "url": "https://klick.kr/",
+      "insightCount": 2,
+      "highCount": 1,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "roadways",
+      "siteName": "roadways.kr",
+      "url": "https://roadways.kr/",
+      "insightCount": 2,
+      "highCount": 1,
+      "primaryCause": "gsc_zero",
+      "primaryReason": "GSC 검색 노출 데이터가 아직 없습니다.",
+      "nextGate": "Check GSC property, sitemap, canonical, and robots first.",
+      "causes": [
+        "gsc_zero",
+        "traffic_mismatch"
+      ]
+    },
+    {
+      "siteId": "dogswhere",
+      "siteName": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "insightCount": 2,
+      "highCount": 1,
+      "primaryCause": "ga4_drop",
+      "primaryReason": "GA4 사용자가 직전 7일 대비 -40.0% 변했습니다.",
+      "nextGate": "Check recent publishing, collection, API, and channel changes.",
+      "causes": [
+        "ga4_drop",
+        "ranking"
+      ]
+    }
+  ],
+  "topActions": [
+    {
+      "siteId": "nicewomen",
+      "siteName": "nicewomen.kr",
+      "url": "https://nicewomen.kr/",
+      "kind": "sitemap",
+      "priority": 96,
+      "reason": "GSC sitemap freshness warning.",
+      "nextStep": "Verify sitemap freshness and robots reference before any Search Console action."
+    },
+    {
+      "siteId": "ezfunnel",
+      "siteName": "ezfunnel.kr",
+      "url": "https://ezfunnel.kr/",
+      "kind": "sitemap",
+      "priority": 96,
+      "reason": "GSC sitemap freshness warning.",
+      "nextStep": "Verify sitemap freshness and robots reference before any Search Console action."
+    },
+    {
+      "siteId": "autorentlab",
+      "siteName": "autorentlab.com",
+      "url": "https://autorentlab.com/",
+      "kind": "sitemap",
+      "priority": 96,
+      "reason": "GSC sitemap freshness warning.",
+      "nextStep": "Verify sitemap freshness and robots reference before any Search Console action."
+    },
+    {
+      "siteId": "tasko-2",
+      "siteName": "tasko.kr",
+      "url": "https://tasko.kr/",
+      "kind": "decline",
+      "priority": 90,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "todaypharm",
+      "siteName": "todaypharm.kr",
+      "url": "https://todaypharm.kr/",
+      "kind": "decline",
+      "priority": 90,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "2mlab-2",
+      "siteName": "2mlab.kr",
+      "url": "https://2mlab.kr/",
+      "kind": "decline",
+      "priority": 90,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "dogswhere",
+      "siteName": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "kind": "decline",
+      "priority": 90,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "dullegilgogo",
+      "siteName": "dullegilgogo.kr",
+      "url": "https://dullegilgogo.kr/",
+      "kind": "decline",
+      "priority": 90,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "temon",
+      "siteName": "temon.kr",
+      "url": "https://temon.kr/",
+      "kind": "decline",
+      "priority": 85,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "softwa",
+      "siteName": "softwa.kr",
+      "url": "https://softwa.kr/",
+      "kind": "decline",
+      "priority": 85,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "dogspang-2",
+      "siteName": "dogspang.kr",
+      "url": "https://dogspang.kr/",
+      "kind": "decline",
+      "priority": 85,
+      "reason": "Traffic or search decline requires review.",
+      "nextStep": "Compare recent publishing, channel, and indexability changes."
+    },
+    {
+      "siteId": "travelpang-2",
+      "siteName": "travelpang.kr",
+      "url": "https://travelpang.kr/",
+      "kind": "seo",
+      "priority": 75,
+      "reason": "CTR improvement candidate.",
+      "nextStep": "Use fresh GSC queries before title or meta work."
+    },
+    {
+      "siteId": "fastjob",
+      "siteName": "fastjob.kr",
+      "url": "https://fastjob.kr/",
+      "kind": "sitemap",
+      "priority": 74,
+      "reason": "GSC sitemap freshness warning.",
+      "nextStep": "Verify sitemap freshness and robots reference before any Search Console action."
+    },
+    {
+      "siteId": "discparty",
+      "siteName": "discparty.com",
+      "url": "https://discparty.com/",
+      "kind": "sitemap",
+      "priority": 74,
+      "reason": "GSC sitemap freshness warning.",
+      "nextStep": "Verify sitemap freshness and robots reference before any Search Console action."
+    },
+    {
+      "siteId": "texturb",
+      "siteName": "texturb.com",
+      "url": "https://texturb.com/",
+      "kind": "seo",
+      "priority": 74,
+      "reason": "CTR improvement candidate.",
+      "nextStep": "Use fresh GSC queries before title or meta work."
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "url": "https://cartain.kr/",
+      "kind": "seo",
+      "priority": 74,
+      "reason": "CTR improvement candidate.",
+      "nextStep": "Use fresh GSC queries before title or meta work."
+    }
+  ],
+  "safety": {
+    "mode": "read_only_dashboard_report",
+    "productionMutationPerformed": false,
+    "forbiddenWithoutExplicitApproval": [
+      "Vercel production deploy",
+      "Git push",
+      "WordPress publish/update/schedule",
+      "Search Console sitemap submission or indexing request",
+      "production DB write/backfill/migration",
+      "AdSense console change"
+    ]
+  }
+}

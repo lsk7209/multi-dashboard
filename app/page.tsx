@@ -3,6 +3,8 @@
   type DashboardTabItem,
 } from "./components/dashboard-tabs.js";
 import { AppHeader } from "./components/app-header.js";
+import { BannerManagementConsole } from "./components/banner-management-console.js";
+import { InsightExplorer } from "./components/insight-explorer.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
 import {
   getDashboardActionability,
@@ -16,7 +18,6 @@ import {
   type FleetOptimizationChainArtifactStatus,
   type FleetOptimizationChainSummary,
   type GscPermissionAuditSummary,
-  type SiteInsight,
 } from "./lib/dashboard-data.js";
 import { describeRefreshFailureSource } from "./lib/refresh-failure-details.js";
 
@@ -32,6 +33,7 @@ export default async function DashboardPage({
   const data = getDashboardData();
   const params = await searchParams;
   const actionabilityOptions = getActionabilityOptions(params);
+  const actionability = getDashboardActionability(data, actionabilityOptions);
   const updatedAt = formatSnapshotDateTime(data.generatedAt);
   const tabs: DashboardTabItem[] = [
     {
@@ -52,8 +54,7 @@ export default async function DashboardPage({
           failedCount={data.failedCount}
           segments={data.segments}
           readOnlyBlocked={
-            getDashboardActionability(data, actionabilityOptions).status ===
-            "blocked_for_action_until_post_recovery_verify"
+            actionability.status === "blocked_for_action_until_post_recovery_verify"
           }
         />
       ),
@@ -64,6 +65,12 @@ export default async function DashboardPage({
       panelLabel: "인사이트",
       count: formatNumber(data.insights.length),
       content: <InsightsSection data={data} actionabilityOptions={actionabilityOptions} />,
+    },
+    {
+      id: "banners",
+      label: "배너",
+      panelLabel: "배너",
+      content: <BannerSection data={data} actionabilityOptions={actionabilityOptions} />,
     },
     {
       id: "settings",
@@ -82,10 +89,52 @@ export default async function DashboardPage({
         title="멀티 사이트 운영 대시보드"
       />
 
+      <DashboardReadinessBanner
+        data={data}
+        actionability={actionability}
+        gscHandoffStatus={data.gscPermissionAudit?.handoffStatus ?? null}
+      />
+
       <DashboardTabs items={tabs} />
     </main>
   );
 }
+
+function DashboardReadinessBanner({
+  data,
+  actionability,
+  gscHandoffStatus,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+  actionability: DashboardActionability;
+  gscHandoffStatus: GscPermissionAuditSummary["handoffStatus"] | null;
+}) {
+  const isReady = actionability.status === "safe_to_act";
+
+  return (
+    <section
+      className={`readiness-banner ${isReady ? "readiness-ready" : "readiness-blocked"}`}
+      data-actionability={isReady ? "safe-to-act" : "read-only-blocked"}
+      aria-label="대시보드 실행 준비 상태"
+    >
+      <div>
+        <strong>{isReady ? "실행 가능 상태" : "읽기 전용 상태"}</strong>
+        <p>
+          {isReady
+            ? "현재 스냅샷과 post-recovery 검증이 맞아 대시보드 권고를 실행 후보로 사용할 수 있습니다."
+            : "post-recovery 검증이 통과하기 전까지 권고는 원인 확인용으로만 사용합니다."}
+        </p>
+      </div>
+      <div className="readiness-banner-meta">
+        <code>{actionability.status}</code>
+        <code>{`snapshot ${data.generatedAt ?? "missing"}`}</code>
+        <code>{`gsc handoff ${gscHandoffStatus ?? "missing"}`}</code>
+        <code>{actionability.command}</code>
+      </div>
+    </section>
+  );
+}
+
 function TodaySection({
   data,
   actionabilityOptions,
@@ -167,56 +216,61 @@ function InsightsSection({
         actionability={actionability}
         gscHandoffStatus={data.gscPermissionAudit?.handoffStatus ?? null}
       />
-      <div
-        className="insight-grid"
-        data-actionability={
-          actionability.status === "blocked_for_action_until_post_recovery_verify"
-            ? "read-only-blocked"
-            : "safe-to-act"
-        }
-      >
-        <InsightPanel
-          title="SEO 기회"
-          description={
-            isReadOnlyBlocked
-              ? "노출 대비 CTR 또는 순위 개선 여지가 큰 읽기 전용 검토 후보입니다."
-              : "노출 대비 CTR 또는 순위 개선 여지가 큰 사이트입니다."
-          }
-          insights={data.seoInsights}
-          isReadOnlyBlocked={isReadOnlyBlocked}
-        />
-        <InsightPanel
-          title="성장 신호"
-          description={
-            isReadOnlyBlocked
-              ? "최근 7일 사용자 증가가 두드러진 읽기 전용 검토 후보입니다."
-              : "최근 7일 사용자 증가가 두드러진 사이트입니다."
-          }
-          insights={data.growthInsights}
-          isReadOnlyBlocked={isReadOnlyBlocked}
-        />
-        <InsightPanel
-          title="하락 신호"
-          description={
-            isReadOnlyBlocked
-              ? "사용자나 검색 클릭이 감소한 읽기 전용 검토 후보입니다."
-              : "사용자나 검색 클릭이 감소한 사이트입니다."
-          }
-          insights={data.declineInsights}
-          isReadOnlyBlocked={isReadOnlyBlocked}
-        />
-        <InsightPanel
-          title="우선 확인"
-          description={
-            isReadOnlyBlocked
-              ? "권한, 급락, 색인 의심 신호를 읽기 전용으로 모았습니다."
-              : "권한, 급락, 색인 의심 신호를 모았습니다."
-          }
-          insights={data.priorityInsights}
-          isReadOnlyBlocked={isReadOnlyBlocked}
-        />
-      </div>
+      <InsightExplorer
+        allInsights={data.insights}
+        seoInsights={data.seoInsights}
+        growthInsights={data.growthInsights}
+        declineInsights={data.declineInsights}
+        priorityInsights={data.priorityInsights}
+        isReadOnlyBlocked={isReadOnlyBlocked}
+      />
     </>
+  );
+}
+
+function BannerSection({
+  data,
+  actionabilityOptions,
+}: {
+  data: ReturnType<typeof getDashboardData>;
+  actionabilityOptions: DashboardActionabilityOptions;
+}) {
+  const actionability = getDashboardActionability(data, actionabilityOptions);
+  const isReadOnlyBlocked =
+    actionability.status === "blocked_for_action_until_post_recovery_verify";
+
+  if (!isReadOnlyBlocked) {
+    return <BannerManagementConsole />;
+  }
+
+  return (
+    <article className="panel">
+      <div className="panel-heading">
+        <div>
+          <h2>읽기 전용 배너 점검</h2>
+          <p>post-recovery 통과 전에는 배너 등록, 실제 제출, 외부 갱신 명령을 숨깁니다.</p>
+        </div>
+        <span>read-only</span>
+      </div>
+      <DashboardActionabilityNotice
+        actionability={actionability}
+        gscHandoffStatus={data.gscPermissionAudit?.handoffStatus ?? null}
+      />
+      <div className="command-list">
+        <div className="command-row">
+          <span>현재 상태</span>
+          <code>read-only until post-recovery passes</code>
+        </div>
+        <div className="command-row">
+          <span>필수 검증</span>
+          <code>{actionability.command}</code>
+        </div>
+        <div className="command-row">
+          <span>외부 작업</span>
+          <code>read-only until post-recovery passes</code>
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -546,7 +600,7 @@ function ActionQueue({
                 <a href={action.url}>{formatHost(action.url)}</a>
                 <p>
                   {isReadOnlyBlocked
-                    ? "post-recovery 통과 전 실행 금지. 원인 상태와 근거만 읽기 전용으로 확인하세요."
+                    ? "읽기 전용 점검 후보입니다. 원본 실행 사유는 post-recovery 통과 후 표시합니다."
                     : action.reason}
                 </p>
                 <em>
@@ -554,6 +608,11 @@ function ActionQueue({
                     ? "post-recovery 통과 전 실행 금지. 읽기 전용 점검 메모로만 사용하세요."
                     : action.nextStep}
                 </em>
+                {isReadOnlyBlocked ? (
+                  <small className="action-readonly-note">
+                    post-recovery 통과 전에는 위 근거를 점검 메모로만 사용합니다.
+                  </small>
+                ) : null}
               </div>
               <b>{action.value}</b>
             </div>
@@ -903,122 +962,6 @@ function SupportPanel({
       </article>
 
     </section>
-  );
-}
-
-function InsightPanel({
-  title,
-  description,
-  insights,
-  isReadOnlyBlocked,
-}: {
-  title: string;
-  description: string;
-  insights: SiteInsight[];
-  isReadOnlyBlocked: boolean;
-}) {
-  return (
-    <article className="panel insight-panel">
-      <div className="panel-heading">
-        <div>
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-        <span>{formatNumber(insights.length)}</span>
-      </div>
-      {insights.length === 0 ? (
-        <p className="muted-text">현재 조건에 맞는 항목이 없습니다.</p>
-      ) : (
-        <div className="insight-list">
-          {insights.map((insight) => (
-            <InsightCard
-              key={insight.id}
-              insight={insight}
-              isReadOnlyBlocked={isReadOnlyBlocked}
-            />
-          ))}
-        </div>
-      )}
-    </article>
-  );
-}
-
-function InsightCard({
-  insight,
-  isReadOnlyBlocked,
-}: {
-  insight: SiteInsight;
-  isReadOnlyBlocked: boolean;
-}) {
-  return (
-    <div className={`insight-card severity-${insight.severity}`}>
-      <div className="insight-card-title">
-        <strong>{insight.siteName}</strong>
-        <a href={insight.url}>{formatHost(insight.url)}</a>
-      </div>
-      <span className="insight-value">{insight.primaryValue}</span>
-      <p className="insight-reason">{insight.reason}</p>
-      <em className="insight-action">
-        {isReadOnlyBlocked ? "읽기 전용 권고 검토" : insight.recommendedAction}
-      </em>
-      <div className="insight-detail">
-        <strong>작업 근거</strong>
-        <ul>
-          {insight.evidence.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
-      {insight.relatedSignals.length > 0 ? (
-        <div className="insight-detail">
-          <strong>같이 걸린 신호</strong>
-          <div className="insight-chip-list">
-            {insight.relatedSignals.map((signal) => (
-              <span key={signal}>{signal}</span>
-            ))}
-          </div>
-        </div>
-      ) : null}
-      <div className="insight-detail">
-        <strong>GSC 진단</strong>
-        <p>{insight.gscDiagnosis}</p>
-      </div>
-      {insight.topQueries.length > 0 ? (
-        <div className="insight-detail">
-          <strong>상위 쿼리 후보</strong>
-          <ul className="insight-query-list">
-            {insight.topQueries.map((query) => (
-              <li key={query.query}>
-                <b>{query.query}</b>
-                <span>
-                  클릭 {formatNumber(query.clicks)} · 노출{" "}
-                  {formatNumber(query.impressions)} · CTR{" "}
-                  {formatPercent(query.ctr)} · {formatDecimal(query.position)}위
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-      <div className="insight-detail">
-        <strong>
-          {isReadOnlyBlocked ? "읽기 전용 검토 메모" : "Codex/Claude 작업 지시"}
-        </strong>
-        <p className="insight-prompt">
-          {isReadOnlyBlocked
-            ? "post-recovery 통과 전 실행 금지. 원인과 근거만 검토하고 작업 지시는 표시하지 않습니다."
-            : insight.operatorPrompt}
-        </p>
-      </div>
-      <div className="insight-detail">
-        <strong>검증 기준</strong>
-        <p>{insight.verification}</p>
-      </div>
-      <div className="insight-detail insight-review">
-        <strong>검토 메모</strong>
-        <p>{insight.reviewNote}</p>
-      </div>
-    </div>
   );
 }
 

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-06T23:20:28.469Z",
+  "generatedAt": "2026-07-07T09:24:15.263Z",
   "date": "2026-07-07",
   "dryRun": false,
-  "skipStatsUpdate": false,
+  "skipStatsUpdate": true,
   "skipApiDataAudit": false,
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,
@@ -10,12 +10,6 @@
   "adsenseMutationPerformed": false,
   "titleOrBodyMutationPerformed": false,
   "commands": [
-    {
-      "id": "stats-update",
-      "args": [
-        "stats:update"
-      ]
-    },
     {
       "id": "gsc-permission-audit",
       "args": [
@@ -57,24 +51,17 @@
   ],
   "results": [
     {
-      "id": "stats-update",
-      "status": "pass",
-      "exitCode": 0,
-      "stdoutTail": "c=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=workgogo, name=workgogo.kr\n[stats:update] site done id=sorimate, elapsed=4s, ga4=ok, gsc=ok, adsense=disabled, adsTxt=disabled\n[stats:update] site start id=youkamap, name=https://youkamap.kr\n[stats:update] site done id=campgogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=doseogogo, name=http://doseogogo.kr\n[stats:update] site done id=jasamall-sellerpit, elapsed=5s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=nongsusangogo, name=https://nongsusangogo.kr\n[stats:update] site done id=dullegilgogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=yungyanggogo, name=yungyanggogo.kr\n[stats:update] site done id=workgogo, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=caregos, name=caregos.com\n[stats:update] site done id=saju-tasko, elapsed=18s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=wattbenchs, name=wattbenchs.com\n[stats:update] progress completed=80/98, elapsed=60s, inFlight=youkamap:adsense:total=3s:phase=0s, doseogogo:sitemap:total=2s:phase=0s, nongsusangogo:adsense:total=2s:phase=0s, yungyanggogo:sitemap:total=2s:phase=0s, caregos:gsc-metrics:total=2s:phase=0s, wattbenchs:gsc-metrics:total=1s:phase=0s\n[stats:update] site done id=youkamap, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=limsight, name=limsight.kr\n[stats:update] site done id=doseogogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=solarpaybackmap, name=solarpaybackmap.com\n[stats:update] site done id=nongsusangogo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=coverclarityhealth, name=coverclarityhealth.com\n[stats:update] site done id=wattbenchs, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=kapti, name=kapti.kr\n[stats:update] site done id=caregos, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=patentgogo, name=patentgogo.com\n[stats:update] site done id=yungyanggogo, elapsed=4s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=rndatlas, name=rndatlas.com\n[stats:update] site done id=kapti, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=localgeo, name=localgeo.app\n[stats:update] site done id=coverclarityhealth, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=autorentlab, name=autorentlab.com\n[stats:update] site done id=limsight, elapsed=4s, ga4=ok, gsc=ok, adsense=disabled, adsTxt=disabled\n[stats:update] site start id=gradienttrail, name=gradienttrail.com\n[stats:update] site done id=solarpaybackmap, elapsed=4s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=dogbreedcost, name=https://dogbreedcost.com\n[stats:update] site done id=patentgogo, elapsed=4s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=plategogo, name=plategogo.com\n[stats:update] site done id=localgeo, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site start id=wedfairguide, name=wedfairguide.com\n[stats:update] site done id=rndatlas, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=autorentlab, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=gradienttrail, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=dogbreedcost, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=plategogo, elapsed=2s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\n[stats:update] site done id=wedfairguide, elapsed=3s, ga4=ok, gsc=ok, adsense=ok, adsTxt=ok\nStats updated: 98 sites, concurrency=6, GA4 failed=0, GSC failed=0, GSC email alerts=0, sitemaps checked=98, sitemaps failed=0, AdSense code not detected=0, AdSense transient=0, ads.txt failed=0, ads.txt transient=0, output=data/site-stats.json, history=data/history/2026-07-06.json\n",
-      "stderrTail": ""
-    },
-    {
       "id": "gsc-permission-audit",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-07.json and docs\\work-orders\\gsc-permission-audit-2026-07-07.md. snapshot=2026-07-06T23:20:23.084Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-07.json and docs\\work-orders\\gsc-permission-audit-2026-07-07.md. snapshot=2026-07-07T09:11:22.092Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
       "stderrTail": ""
     },
     {
       "id": "adsense-queue",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:queue D:\\web\\multi-dashboard\n> tsx scripts/setup/create-adsense-remediation-queue.ts\n\nWrote data\\adsense-remediation-queue-2026-07-07.json and docs\\work-orders\\adsense\\remediation-queue-2026-07-07.md. snapshot=2026-07-06T23:20:23.084Z reviewedRows=84 problemRows=0 ordinaryAdsenseProof=0 approvedRootSubdomainScope=0 gscAuthTelemetry=0 ga4ConfigTelemetry=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:queue D:\\web\\multi-dashboard\n> tsx scripts/setup/create-adsense-remediation-queue.ts\n\nWrote data\\adsense-remediation-queue-2026-07-07.json and docs\\work-orders\\adsense\\remediation-queue-2026-07-07.md. snapshot=2026-07-07T09:11:22.092Z reviewedRows=84 problemRows=0 ordinaryAdsenseProof=0 approvedRootSubdomainScope=0 gscAuthTelemetry=0 ga4ConfigTelemetry=0\n",
       "stderrTail": ""
     },
     {
@@ -88,21 +75,21 @@
       "id": "fleet-optimize-plan",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "Wrote data\\fleet-optimization-plan-2026-07-07.json and docs\\work-orders\\fleet-optimization-plan-2026-07-07.md. snapshot=2026-07-06T23:20:23.084Z seoCandidates=20 adsenseProblemRows=0\n",
+      "stdoutTail": "Wrote data\\fleet-optimization-plan-2026-07-07.json and docs\\work-orders\\fleet-optimization-plan-2026-07-07.md. snapshot=2026-07-07T09:11:22.092Z seoCandidates=20 adsenseProblemRows=0\n",
       "stderrTail": ""
     },
     {
       "id": "t3-title-content-handoff",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "Wrote data\\t3-title-content-handoff-2026-07-07.json and docs\\work-orders\\t3-title-content-handoff-2026-07-07.md. snapshot=2026-07-06T23:20:23.084Z sites=13 titleHandoff=10 contentHandoff=8\n",
+      "stdoutTail": "Wrote data\\t3-title-content-handoff-2026-07-07.json and docs\\work-orders\\t3-title-content-handoff-2026-07-07.md. snapshot=2026-07-07T09:11:22.092Z sites=13 titleHandoff=10 contentHandoff=8\n",
       "stderrTail": ""
     }
   ],
   "verification": {
-    "statsSnapshot": "2026-07-06T23:20:23.084Z",
-    "planSnapshot": "2026-07-06T23:20:23.084Z",
-    "handoffSnapshot": "2026-07-06T23:20:23.084Z",
+    "statsSnapshot": "2026-07-07T09:11:22.092Z",
+    "planSnapshot": "2026-07-07T09:11:22.092Z",
+    "handoffSnapshot": "2026-07-07T09:11:22.092Z",
     "refreshFailedSources": [],
     "refreshFailureCount": 0,
     "refreshFailuresBlockReadiness": false,
@@ -114,8 +101,8 @@
     "contentHandoffCount": 8
   },
   "summary": {
-    "commands": 6,
-    "pass": 6,
+    "commands": 5,
+    "pass": 5,
     "fail": 0,
     "skipped": 0
   },

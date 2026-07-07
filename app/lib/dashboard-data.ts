@@ -637,6 +637,19 @@ export type InsightKind =
   | "duplicateProperty";
 
 export type InsightSeverity = "high" | "medium" | "low";
+export type InsightCause =
+  | "ga4_drop"
+  | "gsc_drop"
+  | "mixed_decline"
+  | "gsc_zero"
+  | "gsc_error"
+  | "ctr"
+  | "ranking"
+  | "growth"
+  | "traffic_mismatch"
+  | "duplicate";
+export type InsightConfidence = "high" | "medium" | "low";
+export type InsightSampleSize = "high" | "medium" | "low";
 
 export interface SiteInsight {
   id: string;
@@ -648,6 +661,9 @@ export interface SiteInsight {
   reason: string;
   recommendedAction: string;
   primaryValue: string;
+  cause: InsightCause;
+  confidence: InsightConfidence;
+  sampleSize: InsightSampleSize;
   evidence: string[];
   operatorPrompt: string;
   verification: string;
@@ -2705,6 +2721,9 @@ function makeInsight(
     reason,
     recommendedAction,
     primaryValue,
+    cause: buildInsightCause(stat, kind),
+    confidence: buildInsightConfidence(stat, kind, severity),
+    sampleSize: buildInsightSampleSize(stat, kind),
     evidence: buildInsightEvidence(stat, kind, primaryValue),
     operatorPrompt: actionGuide.operatorPrompt,
     verification: actionGuide.verification,
@@ -2713,6 +2732,103 @@ function makeInsight(
     relatedSignals: [],
     topQueries: buildInsightQueryCandidates(stat, kind),
   };
+}
+
+function buildInsightCause(
+  stat: EnrichedSiteStat,
+  kind: InsightKind,
+): InsightCause {
+  const ga4Drop = (stat.trend.activeUsersChange ?? 0) <= -0.3;
+  const gscDrop = (stat.trend.gscClicksChange ?? 0) <= -0.3;
+
+  switch (kind) {
+    case "indexingOrPermissionIssue":
+      if (stat.gscError) {
+        return "gsc_error";
+      }
+      return "gsc_zero";
+    case "decline":
+      if (ga4Drop && gscDrop) {
+        return "mixed_decline";
+      }
+      if (gscDrop) {
+        return "gsc_drop";
+      }
+      return "ga4_drop";
+    case "seoOpportunity":
+      return "ctr";
+    case "rankingOpportunity":
+      return "ranking";
+    case "growth":
+      return "growth";
+    case "trafficMismatch":
+      return "traffic_mismatch";
+    case "duplicateProperty":
+      return "duplicate";
+  }
+}
+
+function buildInsightSampleSize(
+  stat: EnrichedSiteStat,
+  kind: InsightKind,
+): InsightSampleSize {
+  const gsc = stat.gscLast7Days ?? emptyGscMetrics();
+  const previousGsc = stat.gscPrevious7Days ?? emptyGscMetrics();
+  const userSample =
+    stat.last7Days.activeUsers + stat.previous7Days.activeUsers;
+  const searchSample = gsc.impressions + previousGsc.impressions;
+  const clickSample = gsc.clicks + previousGsc.clicks;
+
+  if (
+    kind === "seoOpportunity" ||
+    kind === "rankingOpportunity" ||
+    (kind === "decline" && (stat.trend.gscClicksChange ?? 0) <= -0.3)
+  ) {
+    if (searchSample >= 500 || clickSample >= 40) {
+      return "high";
+    }
+    if (searchSample >= 100 || clickSample >= 10) {
+      return "medium";
+    }
+    return "low";
+  }
+
+  if (kind === "indexingOrPermissionIssue") {
+    if ((stat.googleSubmittedCount ?? 0) >= 1000 || userSample >= 500) {
+      return "high";
+    }
+    if ((stat.googleSubmittedCount ?? 0) >= 100 || userSample >= 100) {
+      return "medium";
+    }
+    return "low";
+  }
+
+  if (userSample >= 500) {
+    return "high";
+  }
+  if (userSample >= 100) {
+    return "medium";
+  }
+  return "low";
+}
+
+function buildInsightConfidence(
+  stat: EnrichedSiteStat,
+  kind: InsightKind,
+  severity: InsightSeverity,
+): InsightConfidence {
+  if (stat.gscError) {
+    return severity === "high" ? "high" : "medium";
+  }
+
+  const sampleSize = buildInsightSampleSize(stat, kind);
+  if (sampleSize === "low") {
+    return "low";
+  }
+  if (severity === "high" && sampleSize === "high") {
+    return "high";
+  }
+  return "medium";
 }
 
 function buildInsightEvidence(

@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-07-07T08:56:47.874Z",
+  "statsSnapshot": "2026-07-07T00:04:23.401Z",
+  "source": "getDashboardData plus data/vercel-api-data-sites.json and local package.json inspection",
+  "productionMutationPerformed": false,
+  "operationsForbidden": [
+    "WordPress publish/update/schedule",
+    "Search Console sitemap submit or indexing request",
+    "production DB writes, backfills, migrations, imports",
+    "Vercel deploy/env/domain changes",
+    "AdSense console changes",
+    "GitHub Actions dispatches",
+    "broad sitemap resubmission"
+  ],
+  "diagnostics": [
+    {
+      "siteId": "todaypharm",
+      "status": "classified",
+      "name": "todaypharm.kr",
+      "host": "todaypharm.kr",
+      "url": "https://todaypharm.kr/",
+      "gscSiteUrl": "https://todaypharm.kr/",
+      "localPath": "D:/web/todaypharm",
+      "targetResolutionNote": "Exact host target resolved from dashboard siteId.",
+      "relatedSubdomainRows": [],
+      "metrics": {
+        "activeUsers7d": 1112,
+        "previousUsers7d": 3637,
+        "activeUsersChange": -0.6942535056365136,
+        "gscClicks7d": 0,
+        "gscPreviousClicks7d": 0,
+        "gscImpressions7d": 0,
+        "gscClicks30d": 0,
+        "gscImpressions30d": 0
+      },
+      "sitemap": {
+        "path": "https://todaypharm.kr/sitemap.xml",
+        "warnings": 0,
+        "errors": 0,
+        "isPending": false,
+        "submitted": 49457,
+        "indexed": null,
+        "lastDownloadedAt": "2026-07-03T02:40:02.694Z"
+      },
+      "apiDataInventory": {
+        "evidenceLevel": "scheduled-db-ingestion",
+        "recommendedCheck": "Read-only DB freshness check for todaypharm: compare latest source updated_at/created_at and pending content queue counts before generating content.",
+        "collectionScripts": [
+          "fetch-hff-data.ts",
+          "fetch-medicines.ts",
+          "sync-pharmacies-from-json.ts",
+          "sync-pharmacies.ts",
+          "sync-public-data.ts",
+          "sync-supplements.ts"
+        ],
+        "scheduledWorkflows": [
+          "auto-enrich-supplements.yml",
+          "daily-sync.yml",
+          "generate-blog.yml",
+          "generate-content.yml",
+          "publish-content.yml"
+        ]
+      },
+      "packageScripts": {
+        "path": "D:\\web\\todaypharm\\package.json",
+        "readOnly": [
+          "lint"
+        ],
+        "avoid": [
+          "sync",
+          "sync:public-data",
+          "sync:json",
+          "sync:supplements",
+          "publish:queue",
+          "prepare:blog-campaign",
+          "prepare:blog-campaign:v2",
+          "prepare:blog-campaign:v3",
+          "prepare:blog-campaign:v4",
+          "repair:blog-content",
+          "generate:content",
+          "generate:single"
+        ]
+      },
+      "cause": "submitted_sitemap_but_no_gsc_visibility",
+      "nextReadOnlyStep": "Read-only DB freshness check for todaypharm: compare latest source updated_at/created_at and pending content queue counts before generating content.",
+      "mutationGate": "Do not publish, backfill, submit sitemaps, request indexing, deploy, or write DB/content until this site's read-only cause is confirmed."
+    },
+    {
+      "siteId": "2mlab-2",
+      "status": "classified",
+      "name": "2mlab.kr",
+      "host": "2mlab.kr",
+      "url": "https://2mlab.kr/",
+      "gscSiteUrl": "https://2mlab.kr/",
+      "localPath": "D:\\web\\2mlabkr",
+      "targetResolutionNote": "Exact host target resolved from dashboard siteId.",
+      "relatedSubdomainRows": [],
+      "metrics": {
+        "activeUsers7d": 132,
+        "previousUsers7d": 756,
+        "activeUsersChange": -0.8253968253968254,
+        "gscClicks7d": 0,
+        "gscPreviousClicks7d": 0,
+        "gscImpressions7d": 0,
+        "gscClicks30d": 0,
+        "gscImpressions30d": 3
+      },
+      "sitemap": {
+        "path": "https://2mlab.kr/sitemap_index.xml",
+        "warnings": 0,
+        "errors": 0,
+        "isPending": false,
+        "submitted": 2702,
+        "indexed": null,
+        "lastDownloadedAt": "2026-07-06T14:33:21.552Z"
+      },
+      "apiDataInventory": null,
+      "packageScripts": {
+        "path": "D:\\web\\2mlabkr\\package.json",
+        "readOnly": [],
+        "avoid": []
+      },
+      "cause": "ga4_decline_needs_channel_split",
+      "nextReadOnlyStep": "Inspect property, sitemap response, robots, canonical, noindex, and whether this root host has any clean query/page evidence.",
+      "mutationGate": "Do not publish, backfill, submit sitemaps, request indexing, deploy, or write DB/content until this site's read-only cause is confirmed."
+    },
+    {
+      "siteId": "tasko-2",
+      "status": "classified",
+      "name": "tasko.kr",
+      "host": "tasko.kr",
+      "url": "https://tasko.kr/",
+      "gscSiteUrl": "https://tasko.kr/",
+      "localPath": "D:\\web\\taskokr",
+      "targetResolutionNote": "Use this exact root host target; related tasko subdomains are listed separately.",
+      "relatedSubdomainRows": [
+        {
+          "siteId": "mbti-tasko",
+          "host": "mbti.tasko.kr",
+          "url": "https://mbti.tasko.kr/",
+          "activeUsers7d": 0
+        },
+        {
+          "siteId": "ai-tasko",
+          "host": "ai.tasko.kr",
+          "url": "https://ai.tasko.kr/",
+          "activeUsers7d": 0
+        },
+        {
+          "siteId": "saju-tasko",
+          "host": "saju.tasko.kr",
+          "url": "https://saju.tasko.kr/",
+          "activeUsers7d": 58
+        }
+      ],
+      "metrics": {
+        "activeUsers7d": 32,
+        "previousUsers7d": 53,
+        "activeUsersChange": -0.39622641509433965,
+        "gscClicks7d": 0,
+        "gscPreviousClicks7d": 0,
+        "gscImpressions7d": 0,
+        "gscClicks30d": 0,
+        "gscImpressions30d": 0
+      },
+      "sitemap": {
+        "path": "https://tasko.kr/sitemap_index.xml",
+        "warnings": 0,
+        "errors": 0,
+        "isPending": false,
+        "submitted": null,
+        "indexed": null,
+        "lastDownloadedAt": "2026-07-03T03:12:56.578Z"
+      },
+      "apiDataInventory": null,
+      "packageScripts": {
+        "path": "D:\\web\\taskokr\\package.json",
+        "readOnly": [],
+        "avoid": []
+      },
+      "cause": "ga4_decline_needs_channel_split",
+      "nextReadOnlyStep": "Inspect property, sitemap response, robots, canonical, noindex, and whether this root host has any clean query/page evidence.",
+      "mutationGate": "Do not publish, backfill, submit sitemaps, request indexing, deploy, or write DB/content until this site's read-only cause is confirmed."
+    },
+    {
+      "siteId": "dogswhere",
+      "status": "classified",
+      "name": "dogswhere.com",
+      "host": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "gscSiteUrl": "sc-domain:dogswhere.com",
+      "localPath": "D:/web/dogswherecom",
+      "targetResolutionNote": "Exact host target resolved from dashboard siteId.",
+      "relatedSubdomainRows": [],
+      "metrics": {
+        "activeUsers7d": 289,
+        "previousUsers7d": 485,
+        "activeUsersChange": -0.4041237113402062,
+        "gscClicks7d": 6,
+        "gscPreviousClicks7d": 3,
+        "gscImpressions7d": 294,
+        "gscClicks30d": 15,
+        "gscImpressions30d": 832
+      },
+      "sitemap": {
+        "path": "https://dogswhere.com/sitemap.xml",
+        "warnings": 0,
+        "errors": 0,
+        "isPending": false,
+        "submitted": 346,
+        "indexed": null,
+        "lastDownloadedAt": "2026-07-06T18:17:49.372Z"
+      },
+      "apiDataInventory": {
+        "evidenceLevel": "api-backed-content",
+        "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded.",
+        "collectionScripts": [
+          "import-real-data.ts",
+          "run_collector.py",
+          "sync-pet-tour.ts"
+        ],
+        "scheduledWorkflows": []
+      },
+      "packageScripts": {
+        "path": "D:\\web\\dogswherecom\\package.json",
+        "readOnly": [
+          "lint"
+        ],
+        "avoid": []
+      },
+      "cause": "ga4_channel_drop_likely_not_search_drop",
+      "nextReadOnlyStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded.",
+      "mutationGate": "Do not publish, backfill, submit sitemaps, request indexing, deploy, or write DB/content until this site's read-only cause is confirmed."
+    },
+    {
+      "siteId": "dullegilgogo",
+      "status": "classified",
+      "name": "https://dullegilgogo.kr",
+      "host": "dullegilgogo.kr",
+      "url": "https://dullegilgogo.kr/",
+      "gscSiteUrl": "https://dullegilgogo.kr/",
+      "localPath": "D:/web/dullegilgogo",
+      "targetResolutionNote": "Exact host target resolved from dashboard siteId.",
+      "relatedSubdomainRows": [],
+      "metrics": {
+        "activeUsers7d": 78,
+        "previousUsers7d": 161,
+        "activeUsersChange": -0.515527950310559,
+        "gscClicks7d": 0,
+        "gscPreviousClicks7d": 0,
+        "gscImpressions7d": 0,
+        "gscClicks30d": 1,
+        "gscImpressions30d": 45
+      },
+      "sitemap": {
+        "path": "https://dullegilgogo.kr/sitemap.xml",
+        "warnings": 0,
+        "errors": 0,
+        "isPending": false,
+        "submitted": 727,
+        "indexed": null,
+        "lastDownloadedAt": "2026-07-06T15:01:23.116Z"
+      },
+      "apiDataInventory": {
+        "evidenceLevel": "scheduled-db-ingestion",
+        "recommendedCheck": "Read-only DB freshness check for dullegilgogo: compare latest source updated_at/created_at and pending content queue counts before generating content.",
+        "collectionScripts": [],
+        "scheduledWorkflows": [
+          "bulk-collect.yml",
+          "quality-gate.yml"
+        ]
+      },
+      "packageScripts": {
+        "path": "D:\\web\\dullegilgogo\\package.json",
+        "readOnly": [
+          "lint",
+          "audit:seo",
+          "audit:mountains"
+        ],
+        "avoid": [
+          "db:generate",
+          "collect:seed",
+          "collect:mountain",
+          "collect:durunubi",
+          "enrich",
+          "collect:forest"
+        ]
+      },
+      "cause": "scheduled_api_data_freshness_check_required",
+      "nextReadOnlyStep": "Read-only DB freshness check for dullegilgogo: compare latest source updated_at/created_at and pending content queue counts before generating content.",
+      "mutationGate": "Do not publish, backfill, submit sitemaps, request indexing, deploy, or write DB/content until this site's read-only cause is confirmed."
+    }
+  ]
+}

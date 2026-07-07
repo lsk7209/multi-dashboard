@@ -1525,6 +1525,31 @@ describe("getDashboardData insight copy", () => {
 
     expect(misleadingInsights).toEqual([]);
   });
+
+  it("adds cause, confidence, and sample-size labels to every insight", () => {
+    const data = getDashboardData();
+    const missingFields = data.insights
+      .filter(
+        (insight) =>
+          !insight.cause || !insight.confidence || !insight.sampleSize,
+      )
+      .map((insight) => `${insight.siteId}:${insight.kind}`);
+
+    expect(missingFields).toEqual([]);
+  });
+
+  it("distinguishes GA4 decline from search-click decline", () => {
+    const data = getDashboardData();
+    const declineInsights = data.insights.filter(
+      (insight) => insight.kind === "decline",
+    );
+
+    expect(
+      declineInsights.every((insight) =>
+        ["ga4_drop", "gsc_drop", "mixed_decline"].includes(insight.cause),
+      ),
+    ).toBe(true);
+  });
 });
 
 describe("getDashboardData health and collection copy", () => {

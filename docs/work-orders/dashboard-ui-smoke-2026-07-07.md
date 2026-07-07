@@ -4,14 +4,14 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 
 ## Summary
 
-- URL: `http://127.0.0.1:3000/?actionabilityMode=local-evidence&actionabilityToken=redacted`
-- Stats snapshot: `2026-07-06T23:20:23.084Z`
+- URL: `http://127.0.0.1:3000/`
+- Stats snapshot: `2026-07-07T09:11:22.092Z`
 - Sites: 98
 - Blocking sources: 0
 - Maintenance sources: 0
 - Blocker hosts: `none`
-- Actionability: `safe_to_act`
-- Checks: 8
+- Actionability: `blocked_for_action_until_post_recovery_verify`
+- Checks: 9
 
 ## Refresh Sources
 
@@ -20,10 +20,10 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 
 ## Actionability
 
-- Status: `safe_to_act`
+- Status: `blocked_for_action_until_post_recovery_verify`
 - Required command: `pnpm dashboard:post-recovery`
-- Allowed use: Dashboard recommendations may be used as executable local work after standard verification.
-- Reason: All dashboard readiness evidence is current and unblocked.
+- Allowed use: Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.
+- Reason: Blocked until pnpm dashboard:post-recovery passes for post_recovery_chain.
 
 ## Evidence Paths
 

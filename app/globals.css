@@ -184,6 +184,59 @@ h2 {
   min-width: 0;
 }
 
+.readiness-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.readiness-ready {
+  border-color: rgba(15, 118, 110, 0.28);
+  background: #f2fbf9;
+}
+
+.readiness-blocked {
+  border-color: #f4b84a;
+  background: #fff9eb;
+}
+
+.readiness-banner strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.readiness-banner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.readiness-banner-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.readiness-banner-meta code {
+  max-width: 280px;
+  overflow-wrap: anywhere;
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.74);
+  font-size: 11px;
+}
+
 .tab-panel {
   display: none;
 }
@@ -219,6 +272,111 @@ h2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-bottom: 18px;
+}
+
+.insight-explorer {
+  display: grid;
+  gap: 18px;
+}
+
+.insight-control-panel,
+.insight-rollup-panel {
+  margin-bottom: 0;
+}
+
+.insight-filter-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(4, minmax(130px, 0.7fr));
+  gap: 10px;
+}
+
+.insight-filter-grid label {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.insight-filter-grid label span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.insight-filter-grid input,
+.insight-filter-grid select {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.insight-filter-grid input:focus,
+.insight-filter-grid select:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.22);
+  outline-offset: 1px;
+  border-color: rgba(15, 118, 110, 0.45);
+}
+
+.insight-rollup-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.insight-rollup-card {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px;
+  background: #fbfcfd;
+}
+
+.insight-rollup-card div:first-child {
+  min-width: 0;
+}
+
+.insight-rollup-card strong,
+.insight-rollup-card a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.insight-rollup-card a {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.insight-rollup-card > span {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.insight-rollup-card p,
+.insight-rollup-card em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.insight-rollup-card em {
+  color: var(--ink);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .status-card,
@@ -346,6 +504,27 @@ h2 {
   min-height: 320px;
 }
 
+.insight-panel-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -4px 0 10px;
+}
+
+.insight-panel-meta span,
+.insight-meta-row span,
+.action-readonly-note {
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.insight-panel-meta span {
+  color: var(--muted);
+  background: #f2f4f7;
+}
+
 .insight-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -384,6 +563,19 @@ h2 {
   background: var(--accent-weak);
   font-size: 12px;
   font-weight: 700;
+}
+
+.insight-meta-row {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.insight-meta-row span {
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
 }
 
 .insight-reason,
@@ -656,6 +848,13 @@ h2 {
 .action-row em {
   color: var(--muted);
   font-style: normal;
+}
+
+.action-readonly-note {
+  display: inline-block;
+  margin-top: 7px;
+  color: #92400e;
+  background: #fff7ed;
 }
 
 .action-row b {
@@ -2792,8 +2991,11 @@ code {
 
   .summary-grid,
   .operation-grid,
+  .readiness-banner,
   .workspace-grid,
+  .insight-filter-grid,
   .insight-grid,
+  .insight-rollup-list,
   .issue-layout,
   .stats-layout,
   .support-grid,
