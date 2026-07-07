@@ -127,6 +127,23 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
     });
   }, [drafts, kind, query, report.findings, severity, status]);
 
+  const openCount = useMemo(
+    () =>
+      report.findings.filter((finding) => {
+        const reviewStatus = drafts[finding.id]?.status ?? finding.reviewStatus;
+        return reviewStatus === "open" || reviewStatus === "reviewing";
+      }).length,
+    [drafts, report.findings],
+  );
+
+  useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent("dashboard-tab-count", {
+        detail: { id: "mail", count: formatNumber(openCount) },
+      }),
+    );
+  }, [openCount]);
+
   function updateDraft(id: string, draft: Partial<ReviewDraft>) {
     setDrafts((current) => ({
       ...current,
@@ -212,7 +229,7 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
               GSC, AdSense, GA4, Vercel, GitHub Actions 알림을 같은 큐에서 확인합니다.
             </p>
           </div>
-          <span>{formatNumber(report.openCount)} open</span>
+          <span>{formatNumber(openCount)} open</span>
         </div>
         <div className="ops-kpi-strip">
           <MailKpi label="전체" value={report.totalCount} />

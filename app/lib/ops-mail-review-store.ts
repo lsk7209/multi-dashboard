@@ -173,7 +173,10 @@ export async function upsertOpsMailReviewEntryAsync(input: {
 }
 
 export function assertOpsMailReviewAuthorized(request: Request): void {
-  const expected = cleanText(process.env.OPS_MAIL_REVIEW_ADMIN_TOKEN);
+  const expected = getOpsMailAdminToken();
+  if (!expected && process.env.VERCEL && isOpsMailLibsqlEnabled()) {
+    throw new Error(OPS_MAIL_ADMIN_UNAUTHORIZED_MESSAGE);
+  }
   if (!expected) {
     return;
   }
@@ -187,6 +190,13 @@ export function assertOpsMailReviewAuthorized(request: Request): void {
   if (supplied !== expected) {
     throw new Error(OPS_MAIL_ADMIN_UNAUTHORIZED_MESSAGE);
   }
+}
+
+function getOpsMailAdminToken(): string {
+  return (
+    cleanText(process.env.OPS_MAIL_REVIEW_ADMIN_TOKEN) ||
+    cleanText(process.env.MONETIZATION_BANNER_ADMIN_TOKEN)
+  );
 }
 
 export function isOpsMailReviewUnauthorizedError(error: unknown): boolean {

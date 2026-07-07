@@ -5,6 +5,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { GET, POST } from "../api/ops-mail-review/route.js";
 
 const ORIGINAL_ENV = {
+  MONETIZATION_BANNER_ADMIN_TOKEN: process.env.MONETIZATION_BANNER_ADMIN_TOKEN,
   MONETIZATION_BANNER_LIBSQL_AUTH_TOKEN: process.env.MONETIZATION_BANNER_LIBSQL_AUTH_TOKEN,
   MONETIZATION_BANNER_LIBSQL_URL: process.env.MONETIZATION_BANNER_LIBSQL_URL,
   OPS_MAIL_REVIEW_ADMIN_TOKEN: process.env.OPS_MAIL_REVIEW_ADMIN_TOKEN,
@@ -20,6 +21,7 @@ describe("ops-mail-review route", () => {
   beforeEach(() => {
     tempDir = mkdtempSync(join(tmpdir(), "ops-mail-review-"));
     process.env.OPS_MAIL_REVIEW_STATE = join(tempDir, "state.json");
+    delete process.env.MONETIZATION_BANNER_ADMIN_TOKEN;
     delete process.env.MONETIZATION_BANNER_LIBSQL_AUTH_TOKEN;
     delete process.env.MONETIZATION_BANNER_LIBSQL_URL;
     delete process.env.OPS_MAIL_REVIEW_ADMIN_TOKEN;
@@ -75,9 +77,48 @@ describe("ops-mail-review route", () => {
 
     expect(response.status).toBe(401);
   });
+
+  it("accepts the banner admin token as a fallback write token", async () => {
+    process.env.MONETIZATION_BANNER_ADMIN_TOKEN = "banner-secret";
+
+    const response = await POST(
+      new Request("http://localhost/api/ops-mail-review", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-ops-mail-review-token": "banner-secret",
+        },
+        body: JSON.stringify({
+          findingId: "gsc-site",
+          status: "reviewing",
+        }),
+      }),
+    );
+
+    expect(response.status).toBe(200);
+  });
+
+  it("blocks production remote writes when no admin token is configured", async () => {
+    process.env.VERCEL = "1";
+    process.env.MONETIZATION_BANNER_LIBSQL_URL = "libsql://example.turso.io";
+
+    const response = await POST(
+      new Request("http://localhost/api/ops-mail-review", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          findingId: "public-write",
+          status: "fixed",
+        }),
+      }),
+    );
+
+    expect(response.status).toBe(401);
+  });
 });
 
 function restoreEnv() {
+  restoreOptionalEnv("MONETIZATION_BANNER_ADMIN_TOKEN", ORIGINAL_ENV.MONETIZATION_BANNER_ADMIN_TOKEN);
   restoreOptionalEnv("MONETIZATION_BANNER_LIBSQL_AUTH_TOKEN", ORIGINAL_ENV.MONETIZATION_BANNER_LIBSQL_AUTH_TOKEN);
   restoreOptionalEnv("MONETIZATION_BANNER_LIBSQL_URL", ORIGINAL_ENV.MONETIZATION_BANNER_LIBSQL_URL);
   restoreOptionalEnv("OPS_MAIL_REVIEW_ADMIN_TOKEN", ORIGINAL_ENV.OPS_MAIL_REVIEW_ADMIN_TOKEN);
