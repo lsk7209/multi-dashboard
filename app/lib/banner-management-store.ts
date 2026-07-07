@@ -2022,7 +2022,11 @@ const BANNER_WRITE_DISABLED_MESSAGE =
 const BANNER_ADMIN_UNAUTHORIZED_MESSAGE = "Banner admin token is required for write actions.";
 
 export function isBannerAdminAuthRequired(): boolean {
-  return Boolean(cleanOptionalText(process.env.MONETIZATION_BANNER_ADMIN_TOKEN));
+  return (
+    Boolean(cleanOptionalText(process.env.MONETIZATION_BANNER_ADMIN_TOKEN)) ||
+    Boolean(process.env.VERCEL) ||
+    isBannerLibsqlEnabled()
+  );
 }
 
 export function assertBannerAdminAuthorized(request: Request): void {

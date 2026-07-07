@@ -255,7 +255,7 @@ describe("banner-management-store", () => {
     expect(state.trackingLinks.some((link) => link.slug === body.slug)).toBe(true);
   });
 
-  it("does not require an admin token on Vercel unless one is configured", async () => {
+  it("requires an admin token for Vercel write actions even when no token is configured", async () => {
     process.env.VERCEL = "1";
     delete process.env.MONETIZATION_BANNER_ADMIN_TOKEN;
 
@@ -267,9 +267,10 @@ describe("banner-management-store", () => {
     };
 
     const response = await postBannerManagement(jsonPost(body));
-    expect(response.status).toBe(201);
-    const state = (await response.json()) as BannerManagementState;
-    expect(state.trackingLinks.some((link) => link.slug === body.slug)).toBe(true);
+    expect(response.status).toBe(401);
+    await expect(response.json()).resolves.toMatchObject({
+      error: "Banner admin token is required for write actions.",
+    });
   });
 
   it("returns stable image and click route responses for missing and active slots", async () => {
