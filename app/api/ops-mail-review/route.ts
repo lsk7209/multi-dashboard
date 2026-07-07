@@ -2,10 +2,10 @@ import {
   assertOpsMailReviewAuthorized,
   getOpsMailPersistenceNote,
   getOpsMailReviewPath,
-  getOpsMailReviewState,
+  getOpsMailReviewStateAsync,
   isOpsMailReviewUnauthorizedError,
   isOpsMailReviewWriteDisabledError,
-  upsertOpsMailReviewEntry,
+  upsertOpsMailReviewEntryAsync,
   type OpsMailReviewStatus,
 } from "../../lib/ops-mail-review-store.js";
 
@@ -18,9 +18,9 @@ type OpsMailReviewRequestBody = {
   note?: string;
 };
 
-export function GET() {
+export async function GET() {
   return Response.json({
-    ...getOpsMailReviewState(),
+    ...(await getOpsMailReviewStateAsync()),
     path: getOpsMailReviewPath(),
     persistenceNote: getOpsMailPersistenceNote(),
   });
@@ -31,11 +31,11 @@ export async function POST(request: Request) {
     assertOpsMailReviewAuthorized(request);
     const body = (await request.json()) as OpsMailReviewRequestBody;
     return Response.json({
-      ...upsertOpsMailReviewEntry({
+      ...(await upsertOpsMailReviewEntryAsync({
         findingId: body.findingId ?? "",
         status: body.status ?? "open",
         ...(body.note !== undefined ? { note: body.note } : {}),
-      }),
+      })),
       path: getOpsMailReviewPath(),
       persistenceNote: getOpsMailPersistenceNote(),
     });

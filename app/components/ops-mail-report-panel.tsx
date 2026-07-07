@@ -14,6 +14,20 @@ type ReviewDraft = {
   note: string;
 };
 
+type OpsMailReviewApiState = {
+  updatedAt: string | null;
+  entries: Record<
+    string,
+    {
+      findingId: string;
+      status: OpsMailReviewStatus;
+      note: string;
+      updatedAt: string;
+    }
+  >;
+  persistenceNote?: string;
+};
+
 const KIND_OPTIONS: Array<"all" | OpsMailKind> = [
   "all",
   "gsc",
@@ -49,6 +63,7 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [savingId, setSavingId] = useState<string | null>(null);
+  const [persistenceNote, setPersistenceNote] = useState(report.persistenceNote);
   const [drafts, setDrafts] = useState<Record<string, ReviewDraft>>(() =>
     Object.fromEntries(
       report.findings.map((finding) => [
@@ -63,6 +78,28 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
 
   useEffect(() => {
     setToken(window.localStorage.getItem(TOKEN_STORAGE_KEY) ?? "");
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadReviewState() {
+      try {
+        const response = await fetch("/api/ops-mail-review", { cache: "no-store" });
+        const body = (await response.json()) as OpsMailReviewApiState;
+        if (!response.ok || cancelled) return;
+        mergeReviewState(body);
+        if (body.persistenceNote) {
+          setPersistenceNote(body.persistenceNote);
+        }
+      } catch {
+        // Keep the bundled dashboard state usable when the review API is unavailable.
+      }
+    }
+
+    loadReviewState();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const visibleFindings = useMemo(() => {
@@ -107,6 +144,19 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
     setError(null);
   }
 
+  function mergeReviewState(state: OpsMailReviewApiState) {
+    setDrafts((current) => {
+      const next = { ...current };
+      for (const entry of Object.values(state.entries ?? {})) {
+        next[entry.findingId] = {
+          status: entry.status,
+          note: entry.note,
+        };
+      }
+      return next;
+    });
+  }
+
   async function saveReview(finding: OpsMailFinding) {
     const draft = drafts[finding.id] ?? {
       status: finding.reviewStatus,
@@ -132,11 +182,15 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
           note: draft.note,
         }),
       });
-      const body = (await response.json()) as { error?: string };
+      const body = (await response.json()) as OpsMailReviewApiState & { error?: string };
       if (!response.ok) {
         throw new Error(body.error ?? "메일 처리 상태 저장에 실패했습니다.");
       }
       setMessage(`${finding.title} 처리 상태를 저장했습니다.`);
+      mergeReviewState(body);
+      if (body.persistenceNote) {
+        setPersistenceNote(body.persistenceNote);
+      }
     } catch (saveError) {
       setError(
         saveError instanceof Error
@@ -170,7 +224,7 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
         <div className="mail-source-meta">
           <span>{`digest ${formatDateTime(report.digestUpdatedAt ?? report.generatedAt)}`}</span>
           <span>{report.digestUrl ?? report.path}</span>
-          <span>{report.persistenceNote}</span>
+          <span>{persistenceNote}</span>
         </div>
       </article>
 
