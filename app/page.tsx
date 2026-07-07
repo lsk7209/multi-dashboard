@@ -128,7 +128,7 @@ function DashboardReadinessBanner({
       <div className="readiness-banner-meta">
         <code>{actionability.status}</code>
         <code>{`snapshot ${data.generatedAt ?? "missing"}`}</code>
-        <code>{`gsc handoff ${gscHandoffStatus ?? "missing"}`}</code>
+        <code>{formatReadinessBlockerLabel(actionability, gscHandoffStatus)}</code>
         <code>{actionability.command}</code>
       </div>
     </section>
@@ -329,7 +329,7 @@ function FleetWorkflowPanel({
       {["stale", "missing", "invalid"].includes(adsenseProofFreshness.status) ? (
         <div className="fleet-blocker">
           <strong>AdSense proof 스냅샷 점검</strong>
-          <p>{adsenseProofFreshness.reason}</p>
+          <p>{formatAdsenseProofFreshnessMessage(adsenseProofFreshness)}</p>
           {adsenseProofFreshness.artifactPath ? (
             <code>{adsenseProofFreshness.artifactPath}</code>
           ) : null}
@@ -633,19 +633,95 @@ function DashboardActionabilityNotice({
   if (actionability.status === "safe_to_act") {
     return null;
   }
-  const reason =
-    gscHandoffStatus === "pending_local_refresh"
-      ? `Search Console 권한은 owner access로 확인됐지만 최신 로컬 refresh/post-recovery 검증이 끝나지 않았습니다. pnpm dashboard:post-recovery가 통과할 때까지 권고는 읽기 전용 점검에만 사용하세요. 차단 대상: ${actionability.blockerHosts.join(", ") || "로컬 검증"}.`
-      : `Search Console 권한 복구 후 pnpm dashboard:post-recovery가 통과할 때까지 액션/인사이트 권고는 읽기 전용 점검에만 사용하세요. 차단 대상: ${actionability.blockerHosts.join(", ") || "외부 권한"}.`;
+  const reason = getActionabilityNoticeReason(actionability, gscHandoffStatus);
   return (
     <div className="actionability-notice">
-      <strong>실행 보류: Fleet readiness가 차단되어 이 목록은 실행 큐가 아닙니다.</strong>
+      <strong>실행 보류: 현재 목록은 검토용이며 실행 큐가 아닙니다.</strong>
       <p>{reason}</p>
       <code>{actionability.status}</code>
-      <code>{`gsc handoff ${gscHandoffStatus ?? "missing"}`}</code>
+      <code>{formatReadinessBlockerLabel(actionability, gscHandoffStatus)}</code>
       <code>{actionability.command}</code>
     </div>
   );
+}
+
+function getActionabilityNoticeReason(
+  actionability: DashboardActionability,
+  gscHandoffStatus?: GscPermissionAuditSummary["handoffStatus"] | null,
+): string {
+  const blockerLabel = formatBlockerList(actionability.blockerHosts);
+
+  if (gscHandoffStatus === "pending_external") {
+    return `Search Console 외부 권한 확인이 끝나지 않았습니다. ${actionability.command}가 통과할 때까지 권고는 읽기 전용 점검에만 사용하세요. 확인 대상: ${blockerLabel}.`;
+  }
+
+  if (gscHandoffStatus === "pending_local_refresh") {
+    return `Search Console 권한은 확인됐지만 최신 로컬 refresh/post-recovery 검증이 끝나지 않았습니다. ${actionability.command}가 통과할 때까지 권고는 읽기 전용 점검에만 사용하세요. 확인 대상: ${blockerLabel}.`;
+  }
+
+  return `현재 스냅샷 기준 후속 검증이나 실행 근거 산출물이 아직 준비되지 않았습니다. ${actionability.command}가 통과할 때까지 권고는 원인 확인과 우선순위 정리에만 사용하세요. 확인 대상: ${blockerLabel}.`;
+}
+
+function formatAdsenseProofFreshnessMessage(
+  freshness: ReturnType<typeof getDashboardData>["adsenseProofFreshness"],
+): string {
+  if (freshness.status === "stale") {
+    return `AdSense proof 산출물이 현재 대시보드 스냅샷과 일치하지 않습니다. proof는 읽기 전용 근거로만 보고, ${freshness.remediationCommand} 재검증은 post-recovery 통과 후 진행하세요.`;
+  }
+  if (freshness.status === "missing") {
+    return `현재 스냅샷에 맞는 AdSense proof 산출물이 없습니다. post-recovery 통과 전에는 proof 보강 작업을 실행하지 말고 상태 확인용으로만 보세요.`;
+  }
+  if (freshness.status === "invalid") {
+    return `AdSense proof 산출물 형식이나 스냅샷 정보가 유효하지 않습니다. 현재 화면에서는 실행 근거가 아니라 점검 신호로만 사용하세요.`;
+  }
+  return freshness.reason;
+}
+
+function formatReadinessBlockerLabel(
+  actionability: DashboardActionability,
+  gscHandoffStatus?: GscPermissionAuditSummary["handoffStatus"] | null,
+): string {
+  if (actionability.status === "safe_to_act") {
+    return "ready to act";
+  }
+  if (gscHandoffStatus === "pending_external") {
+    return `external GSC handoff pending`;
+  }
+  if (gscHandoffStatus === "pending_local_refresh") {
+    return `local post-recovery pending`;
+  }
+  if (gscHandoffStatus === "resolved") {
+    return `post-recovery evidence pending`;
+  }
+  return `readiness evidence missing`;
+}
+
+function formatBlockerList(blockers: string[]): string {
+  if (blockers.length === 0) {
+    return "post_recovery_chain";
+  }
+  return blockers.map(formatBlockerLabel).join(", ");
+}
+
+function formatBlockerLabel(blocker: string): string {
+  switch (blocker) {
+    case "gsc_permission_audit_missing":
+      return "GSC 권한 감사 산출물 없음";
+    case "gsc_permission_audit_pending_local_refresh":
+      return "로컬 refresh/post-recovery 대기";
+    case "gsc_permission_audit_invalid":
+      return "GSC 권한 감사 상태 확인 필요";
+    case "post_recovery_chain":
+      return "post-recovery 검증 대기";
+    case "missing":
+      return "Fleet 체인 산출물 없음";
+    case "stale":
+      return "Fleet 체인 스냅샷 불일치";
+    case "invalid":
+      return "Fleet 체인 산출물 오류";
+    default:
+      return blocker;
+  }
 }
 
 function CollectionReliabilityPanel({

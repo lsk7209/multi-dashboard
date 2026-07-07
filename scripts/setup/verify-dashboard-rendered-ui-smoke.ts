@@ -20,7 +20,7 @@ const DATA_DIR = "data";
 const DOCS_DIR = join("docs", "work-orders");
 export const LOCAL_EVIDENCE_TOKEN_PATH = DASHBOARD_LOCAL_EVIDENCE_TOKEN_PATH;
 const ACTIONABILITY_HOLD_TEXT = "실행 보류";
-const ACTIONABILITY_READ_ONLY_TEXT = "읽기 전용 점검";
+const ACTIONABILITY_READ_ONLY_TEXT = "원인 확인과 우선순위 정리";
 const BLOCKED_ACTION_ROW_NOTE =
   "post-recovery 통과 전 실행 금지. 읽기 전용 점검 메모로만 사용하세요.";
 const BLOCKED_ACTION_ROW_FORBIDDEN_PATTERNS = [

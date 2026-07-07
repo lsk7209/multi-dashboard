@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-06T23:20:23.084Z
+# Fleet Optimization Plan - 2026-07-07T09:48:17.883Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-06T23:20:23.084Z`
+- Snapshot: `2026-07-07T09:48:17.883Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `none`
@@ -50,26 +50,26 @@ Source: `data\adsense-remediation-queue-2026-07-07.json`
 
 | Rank | Site | Action | Tier | Evidence | Next action |
 |---:|---|---|---|---|---|
-| 1 | `tennisfrens.com` | `title_handoff` | T3 | 7841 impr / 1.40% CTR / pos 10.57 / 1521 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 2 | `cartain.kr` | `title_handoff` | T3 | 2229 impr / 1.75% CTR / pos 10.08 / 932 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 3 | `estat.kr` | `title_handoff` | T3 | 2393 impr / 0.63% CTR / pos 7.95 / 63 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 4 | `estat.kr` | `content_handoff` | T3 | 2393 impr / 0.63% CTR / pos 7.95 / 63 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 5 | `gong365.kr` | `title_handoff` | T3 | 1580 impr / 1.20% CTR / pos 8.18 / 56 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 6 | `dogswhere.com` | `title_handoff` | T3 | 832 impr / 1.80% CTR / pos 13.02 / 1396 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 7 | `gong365.kr` | `content_handoff` | T3 | 1580 impr / 1.20% CTR / pos 8.18 / 56 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 8 | `homeimer.com` | `technical_seo` | T2 | 1149 impr / 0.00% CTR / pos 66.73 / 7 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
-| 9 | `petinsuer.com` | `title_handoff` | T3 | 1180 impr / 1.44% CTR / pos 9.86 / 87 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 10 | `fastjob.kr` | `title_handoff` | T3 | 849 impr / 1.41% CTR / pos 14.94 / 683 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 11 | `petinsuer.com` | `content_handoff` | T3 | 1180 impr / 1.44% CTR / pos 9.86 / 87 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 12 | `ehon365.kr` | `title_handoff` | T3 | 736 impr / 1.90% CTR / pos 14.26 / 661 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 13 | `homeimer.com` | `content_handoff` | T3 | 1149 impr / 0.00% CTR / pos 66.73 / 7 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 14 | `dogspang.kr` | `title_handoff` | T3 | 972 impr / 1.75% CTR / pos 10.02 / 88 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 15 | `dogspang.kr` | `content_handoff` | T3 | 972 impr / 1.75% CTR / pos 10.02 / 88 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 16 | `today2424.kr` | `content_handoff` | T3 | 726 impr / 3.44% CTR / pos 9.56 / 91 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 17 | `legalser.com` | `technical_seo` | T2 | 549 impr / 0.18% CTR / pos 68.06 / 16 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
-| 18 | `nexttech7.com` | `title_handoff` | T3 | 566 impr / 2.47% CTR / pos 10.81 / 58 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 19 | `nexttech7.com` | `content_handoff` | T3 | 566 impr / 2.47% CTR / pos 10.81 / 58 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 20 | `legalser.com` | `content_handoff` | T3 | 549 impr / 0.18% CTR / pos 68.06 / 16 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 1 | `tennisfrens.com` | `title_handoff` | T3 | 8378 impr / 1.36% CTR / pos 10.49 / 1524 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 2 | `cartain.kr` | `title_handoff` | T3 | 2611 impr / 1.57% CTR / pos 9.85 / 932 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 3 | `estat.kr` | `title_handoff` | T3 | 2509 impr / 0.68% CTR / pos 7.97 / 63 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 4 | `estat.kr` | `content_handoff` | T3 | 2509 impr / 0.68% CTR / pos 7.97 / 63 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 5 | `gong365.kr` | `title_handoff` | T3 | 1883 impr / 1.27% CTR / pos 8.29 / 56 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 6 | `gong365.kr` | `content_handoff` | T3 | 1883 impr / 1.27% CTR / pos 8.29 / 56 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 7 | `dogswhere.com` | `title_handoff` | T3 | 883 impr / 1.70% CTR / pos 13.08 / 1398 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 8 | `petinsuer.com` | `title_handoff` | T3 | 1238 impr / 1.45% CTR / pos 9.82 / 87 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 9 | `homeimer.com` | `technical_seo` | T2 | 1151 impr / 0.00% CTR / pos 66.76 / 10 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
+| 10 | `fastjob.kr` | `title_handoff` | T3 | 883 impr / 1.59% CTR / pos 14.76 / 684 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 11 | `petinsuer.com` | `content_handoff` | T3 | 1238 impr / 1.45% CTR / pos 9.82 / 87 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 12 | `ehon365.kr` | `title_handoff` | T3 | 783 impr / 2.17% CTR / pos 14.22 / 661 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 13 | `dogspang.kr` | `title_handoff` | T3 | 1022 impr / 1.66% CTR / pos 9.95 / 90 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 14 | `homeimer.com` | `content_handoff` | T3 | 1151 impr / 0.00% CTR / pos 66.76 / 10 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 15 | `dogspang.kr` | `content_handoff` | T3 | 1022 impr / 1.66% CTR / pos 9.95 / 90 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 16 | `today2424.kr` | `content_handoff` | T3 | 784 impr / 3.44% CTR / pos 9.51 / 91 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 17 | `nexttech7.com` | `title_handoff` | T3 | 615 impr / 2.28% CTR / pos 12.03 / 58 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 18 | `legalser.com` | `technical_seo` | T2 | 561 impr / 0.18% CTR / pos 66.94 / 16 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
+| 19 | `nexttech7.com` | `content_handoff` | T3 | 615 impr / 2.28% CTR / pos 12.03 / 58 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 20 | `legalser.com` | `content_handoff` | T3 | 561 impr / 0.18% CTR / pos 66.94 / 16 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 
 ## Stop Conditions
 

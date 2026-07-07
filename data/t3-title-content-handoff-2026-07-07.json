@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T23:20:28.428Z",
+  "generatedAt": "2026-07-07T09:52:08.905Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,7 +8,7 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-06T23:20:23.084Z",
+    "snapshotTimestamp": "2026-07-07T09:48:17.883Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-07.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
@@ -35,26 +35,26 @@
         1
       ],
       "metrics": {
-        "gscImpressions30d": 7841,
-        "gscClicks30d": 110,
-        "gscCtr30d": 0.014028822854227777,
-        "gscPosition30d": 10.5654890957786,
-        "ga4ActiveUsers30d": 1521
+        "gscImpressions30d": 8378,
+        "gscClicks30d": 114,
+        "gscCtr30d": 0.01360706612556696,
+        "gscPosition30d": 10.492360945333015,
+        "ga4ActiveUsers30d": 1524
       },
       "topQueries": [
         {
           "query": "ntrp 테스트",
-          "clicks": 8,
-          "impressions": 11,
-          "ctr": 0.7272727272727273,
-          "position": 1.8181818181818183
+          "clicks": 9,
+          "impressions": 12,
+          "ctr": 0.75,
+          "position": 1.75
         },
         {
           "query": "아르튀르 랭데르크네슈",
           "clicks": 6,
-          "impressions": 751,
-          "ctr": 0.007989347536617843,
-          "position": 10.33022636484687
+          "impressions": 762,
+          "ctr": 0.007874015748031496,
+          "position": 10.333333333333334
         },
         {
           "query": "알렉산더 블록스",
@@ -87,19 +87,19 @@
         2
       ],
       "metrics": {
-        "gscImpressions30d": 2229,
-        "gscClicks30d": 39,
-        "gscCtr30d": 0.017496635262449527,
-        "gscPosition30d": 10.075818752803947,
+        "gscImpressions30d": 2611,
+        "gscClicks30d": 41,
+        "gscCtr30d": 0.015702795863653772,
+        "gscPosition30d": 9.847184986595174,
         "ga4ActiveUsers30d": 932
       },
       "topQueries": [
         {
           "query": "2026년 신차 출시 일정",
           "clicks": 1,
-          "impressions": 24,
-          "ctr": 0.041666666666666664,
-          "position": 6.875
+          "impressions": 26,
+          "ctr": 0.038461538461538464,
+          "position": 6.884615384615385
         }
       ],
       "technicalStatus": {
@@ -127,28 +127,13 @@
         4
       ],
       "metrics": {
-        "gscImpressions30d": 2393,
-        "gscClicks30d": 15,
-        "gscCtr30d": 0.0062682824905975765,
-        "gscPosition30d": 7.948182198077727,
+        "gscImpressions30d": 2509,
+        "gscClicks30d": 17,
+        "gscCtr30d": 0.006775607811877242,
+        "gscPosition30d": 7.967716221602232,
         "ga4ActiveUsers30d": 63
       },
-      "topQueries": [
-        {
-          "query": "라조기",
-          "clicks": 0,
-          "impressions": 43,
-          "ctr": 0,
-          "position": 5.395348837209302
-        },
-        {
-          "query": "라조기 레시피",
-          "clicks": 0,
-          "impressions": 11,
-          "ctr": 0,
-          "position": 3.272727272727273
-        }
-      ],
+      "topQueries": [],
       "technicalStatus": {
         "sitemapPath": "https://estat.kr/sitemap.xml",
         "sitemapWarnings": 0,
@@ -171,16 +156,24 @@
       ],
       "planRanks": [
         5,
-        7
+        6
       ],
       "metrics": {
-        "gscImpressions30d": 1580,
-        "gscClicks30d": 19,
-        "gscCtr30d": 0.012025316455696202,
-        "gscPosition30d": 8.175949367088608,
+        "gscImpressions30d": 1883,
+        "gscClicks30d": 24,
+        "gscCtr30d": 0.012745618693574084,
+        "gscPosition30d": 8.288369622942113,
         "ga4ActiveUsers30d": 56
       },
-      "topQueries": [],
+      "topQueries": [
+        {
+          "query": "전남 2026 기업 지원사업 공고",
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 7
+        }
+      ],
       "technicalStatus": {
         "sitemapPath": "https://gong365.kr/sitemap.xml",
         "sitemapWarnings": 0,
@@ -201,16 +194,31 @@
         "title_handoff"
       ],
       "planRanks": [
-        6
+        7
       ],
       "metrics": {
-        "gscImpressions30d": 832,
+        "gscImpressions30d": 883,
         "gscClicks30d": 15,
-        "gscCtr30d": 0.018028846153846152,
-        "gscPosition30d": 13.015625,
-        "ga4ActiveUsers30d": 1396
+        "gscCtr30d": 0.01698754246885617,
+        "gscPosition30d": 13.075877689694224,
+        "ga4ActiveUsers30d": 1398
       },
-      "topQueries": [],
+      "topQueries": [
+        {
+          "query": "강아지 맡길 곳",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 34.27272727272727
+        },
+        {
+          "query": "부산 지하철 근처 애견 유치원",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 40.27272727272727
+        }
+      ],
       "technicalStatus": {
         "sitemapPath": "https://dogswhere.com/sitemap.xml",
         "sitemapWarnings": 0,
@@ -232,19 +240,19 @@
         "content_handoff"
       ],
       "planRanks": [
-        9,
+        8,
         11
       ],
       "metrics": {
-        "gscImpressions30d": 1180,
-        "gscClicks30d": 17,
-        "gscCtr30d": 0.01440677966101695,
-        "gscPosition30d": 9.855084745762712,
+        "gscImpressions30d": 1238,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.014539579967689823,
+        "gscPosition30d": 9.819870759289175,
         "ga4ActiveUsers30d": 87
       },
       "topQueries": [],
       "technicalStatus": {
-        "sitemapPath": "https://petinsuer.com/sitemap.xml",
+        "sitemapPath": "https://petinsuer.com/sitemap_index.xml",
         "sitemapWarnings": 0,
         "sitemapErrors": 0,
         "adsenseStatus": "ok",
@@ -266,11 +274,11 @@
         10
       ],
       "metrics": {
-        "gscImpressions30d": 849,
-        "gscClicks30d": 12,
-        "gscCtr30d": 0.014134275618374558,
-        "gscPosition30d": 14.944640753828033,
-        "ga4ActiveUsers30d": 683
+        "gscImpressions30d": 883,
+        "gscClicks30d": 14,
+        "gscCtr30d": 0.015855039637599093,
+        "gscPosition30d": 14.755379388448471,
+        "ga4ActiveUsers30d": 684
       },
       "topQueries": [
         {
@@ -304,10 +312,10 @@
         12
       ],
       "metrics": {
-        "gscImpressions30d": 736,
-        "gscClicks30d": 14,
-        "gscCtr30d": 0.019021739130434784,
-        "gscPosition30d": 14.26086956521739,
+        "gscImpressions30d": 783,
+        "gscClicks30d": 17,
+        "gscCtr30d": 0.021711366538952746,
+        "gscPosition30d": 14.217113665389528,
         "ga4ActiveUsers30d": 661
       },
       "topQueries": [],
@@ -321,36 +329,6 @@
       "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
     },
     {
-      "host": "homeimer.com",
-      "siteId": "homeimer",
-      "url": "https://homeimer.com/",
-      "localPath": "D:\\web\\homeimercom",
-      "platform": "wordpress",
-      "wpRestBase": "https://homeimer.com/wp-json/wp/v2",
-      "actions": [
-        "content_handoff"
-      ],
-      "planRanks": [
-        13
-      ],
-      "metrics": {
-        "gscImpressions30d": 1149,
-        "gscClicks30d": 0,
-        "gscCtr30d": 0,
-        "gscPosition30d": 66.7319408181027,
-        "ga4ActiveUsers30d": 7
-      },
-      "topQueries": [],
-      "technicalStatus": {
-        "sitemapPath": "https://homeimer.com/sitemap_index.xml",
-        "sitemapWarnings": 0,
-        "sitemapErrors": 0,
-        "adsenseStatus": "ok",
-        "adsTxtStatus": "ok"
-      },
-      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
-    },
-    {
       "host": "dogspang.kr",
       "siteId": "dogspang-2",
       "url": "https://dogspang.kr/",
@@ -362,23 +340,23 @@
         "content_handoff"
       ],
       "planRanks": [
-        14,
+        13,
         15
       ],
       "metrics": {
-        "gscImpressions30d": 972,
+        "gscImpressions30d": 1022,
         "gscClicks30d": 17,
-        "gscCtr30d": 0.01748971193415638,
-        "gscPosition30d": 10.018518518518519,
-        "ga4ActiveUsers30d": 88
+        "gscCtr30d": 0.016634050880626222,
+        "gscPosition30d": 9.954990215264187,
+        "ga4ActiveUsers30d": 90
       },
       "topQueries": [
         {
           "query": "강아지 발바닥 각화증",
           "clicks": 0,
-          "impressions": 17,
+          "impressions": 20,
           "ctr": 0,
-          "position": 7.588235294117647
+          "position": 7.65
         }
       ],
       "technicalStatus": {
@@ -389,6 +367,36 @@
         "adsTxtStatus": "ok"
       },
       "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "homeimer.com",
+      "siteId": "homeimer",
+      "url": "https://homeimer.com/",
+      "localPath": "D:\\web\\homeimercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://homeimer.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        14
+      ],
+      "metrics": {
+        "gscImpressions30d": 1151,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 66.7619461337967,
+        "ga4ActiveUsers30d": 10
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://homeimer.com/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
     },
     {
       "host": "today2424.kr",
@@ -404,19 +412,19 @@
         16
       ],
       "metrics": {
-        "gscImpressions30d": 726,
-        "gscClicks30d": 25,
-        "gscCtr30d": 0.03443526170798898,
-        "gscPosition30d": 9.56060606060606,
+        "gscImpressions30d": 784,
+        "gscClicks30d": 27,
+        "gscCtr30d": 0.03443877551020408,
+        "gscPosition30d": 9.512755102040817,
         "ga4ActiveUsers30d": 91
       },
       "topQueries": [
         {
           "query": "월세 계약해지 통보 문자 예시",
           "clicks": 0,
-          "impressions": 17,
+          "impressions": 21,
           "ctr": 0,
-          "position": 5.764705882352941
+          "position": 5.761904761904762
         }
       ],
       "technicalStatus": {
@@ -440,14 +448,14 @@
         "content_handoff"
       ],
       "planRanks": [
-        18,
+        17,
         19
       ],
       "metrics": {
-        "gscImpressions30d": 566,
+        "gscImpressions30d": 615,
         "gscClicks30d": 14,
-        "gscCtr30d": 0.024734982332155476,
-        "gscPosition30d": 10.80565371024735,
+        "gscCtr30d": 0.022764227642276424,
+        "gscPosition30d": 12.03089430894309,
         "ga4ActiveUsers30d": 58
       },
       "topQueries": [],
@@ -474,13 +482,21 @@
         20
       ],
       "metrics": {
-        "gscImpressions30d": 549,
+        "gscImpressions30d": 561,
         "gscClicks30d": 1,
-        "gscCtr30d": 0.0018214936247723133,
-        "gscPosition30d": 68.06193078324226,
+        "gscCtr30d": 0.0017825311942959,
+        "gscPosition30d": 66.93761140819964,
         "ga4ActiveUsers30d": 16
       },
-      "topQueries": [],
+      "topQueries": [
+        {
+          "query": "legalser",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 9.5
+        }
+      ],
       "technicalStatus": {
         "sitemapPath": "https://legalser.com/sitemap.xml",
         "sitemapWarnings": 0,

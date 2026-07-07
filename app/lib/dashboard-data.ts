@@ -890,7 +890,11 @@ export function getDashboardData(): DashboardData {
   );
   const stats = sites.map((site) => {
     const base = statsById.get(site.id) ?? emptySiteStat(site);
-    const enriched = enrichSiteStat(base, sparklines.get(site.id) ?? []);
+    const displayBase = {
+      ...base,
+      name: formatSiteDisplayName(base.name, base.url, site.id),
+    };
+    const enriched = enrichSiteStat(displayBase, sparklines.get(site.id) ?? []);
     const searchIndexPresence = searchIndexPresenceById.get(site.id);
     if (searchIndexPresence) {
       enriched.searchIndexPresence = searchIndexPresence;
@@ -1151,6 +1155,21 @@ function normalizeHost(url: string): string {
       .replace(/^www\./, "")
       .toLowerCase();
   }
+}
+
+function formatSiteDisplayName(
+  name: string | undefined,
+  url: string,
+  fallback: string,
+): string {
+  const trimmed = name?.trim();
+  if (!trimmed) {
+    return normalizeHost(url) || fallback;
+  }
+  if (/^https?:\/\//i.test(trimmed)) {
+    return normalizeHost(trimmed);
+  }
+  return trimmed;
 }
 
 function enrichSiteStat(
