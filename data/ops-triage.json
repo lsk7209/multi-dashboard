@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T10:48:46.391Z",
+  "generatedAt": "2026-07-07T15:31:41.130Z",
   "digestUrl": "https://raw.githubusercontent.com/lsk7209/gmail-digest/main/README.md",
-  "digestUpdatedAt": "2026-07-07 18:13 KST",
+  "digestUpdatedAt": "2026-07-07 23:28 KST",
   "owner": "lsk7209",
   "summary": {
     "critical": 3,
@@ -22,14 +22,28 @@
       "id": "gha-gong365kr-i6fmuh",
       "kind": "github-actions",
       "severity": "critical",
-      "priority": 112,
+      "priority": 114,
       "repo": "gong365kr",
       "workflow": "StartupMoneyMap cron",
       "category": "시스템",
-      "count": 12,
+      "count": 14,
       "commit": "27a1589",
-      "sourceLine": "| gong365kr | StartupMoneyMap cron | 시스템 | 12 | 27a1589 |",
-      "title": "gong365kr: StartupMoneyMap cron failed 12 times",
+      "sourceLine": "| gong365kr | StartupMoneyMap cron | 시스템 | 14 | 27a1589 |",
+      "title": "gong365kr: StartupMoneyMap cron failed 14 times",
+      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause."
+    },
+    {
+      "id": "gha-gungangbohum-f50lnn",
+      "kind": "github-actions",
+      "severity": "critical",
+      "priority": 111,
+      "repo": "gungangbohum",
+      "workflow": "Publish scheduled content",
+      "category": "기타",
+      "count": 11,
+      "commit": "d805895",
+      "sourceLine": "| gungangbohum | Publish scheduled content | 기타 | 11 | d805895 |",
+      "title": "gungangbohum: Publish scheduled content failed 11 times",
       "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause."
     },
     {
@@ -44,20 +58,6 @@
       "commit": "6db29ce",
       "sourceLine": "| gmail-digest | Gmail Digest | 배포 | 10 | 6db29ce |",
       "title": "gmail-digest: Gmail Digest failed 10 times",
-      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause."
-    },
-    {
-      "id": "gha-gungangbohum-f50lnn",
-      "kind": "github-actions",
-      "severity": "critical",
-      "priority": 110,
-      "repo": "gungangbohum",
-      "workflow": "Publish scheduled content",
-      "category": "기타",
-      "count": 10,
-      "commit": "d805895",
-      "sourceLine": "| gungangbohum | Publish scheduled content | 기타 | 10 | d805895 |",
-      "title": "gungangbohum: Publish scheduled content failed 10 times",
       "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause."
     },
     {

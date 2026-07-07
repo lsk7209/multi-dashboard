@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T10:59:45.132Z",
+  "generatedAt": "2026-07-07T15:47:48.999Z",
   "scope": "WordPress excluded by default; Vercel/Next.js API-data sites included from dashboard and local evidence.",
   "rules": [
     "Do not rely only on dashboard platform labels.",
@@ -1077,5 +1077,10 @@
       ],
       "recommendedCheck": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
     }
-  ]
+  ],
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false
 }

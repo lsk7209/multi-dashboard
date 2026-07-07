@@ -1,8 +1,8 @@
 # Ops Triage
 
-Generated: 2026-07-07T10:48:46.391Z
+Generated: 2026-07-07T15:31:41.130Z
 Digest: https://raw.githubusercontent.com/lsk7209/gmail-digest/main/README.md
-Digest updated: 2026-07-07 18:13 KST
+Digest updated: 2026-07-07 23:28 KST
 
 ## Summary
 
@@ -20,9 +20,9 @@ Digest updated: 2026-07-07 18:13 KST
 
 | Priority | Severity | Kind | Target | Title | Action |
 |---:|---|---|---|---|---|
-| 112 | critical | github-actions | gong365kr | gong365kr: StartupMoneyMap cron failed 12 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
+| 114 | critical | github-actions | gong365kr | gong365kr: StartupMoneyMap cron failed 14 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
+| 111 | critical | github-actions | gungangbohum | gungangbohum: Publish scheduled content failed 11 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
 | 110 | critical | github-actions | gmail-digest | gmail-digest: Gmail Digest failed 10 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
-| 110 | critical | github-actions | gungangbohum | gungangbohum: Publish scheduled content failed 10 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
 | 84 | high | github-actions | askorekr | askorekr: plant-data-pipeline failed 4 times | Inspect the latest Actions logs, identify missing credentials or upstream API failures, then add explicit gates or retries. |
 | 81 | high | github-actions | crepikacom | crepikacom: Quality Gates failed 1 time | Run the repo quality gate locally and repair the failing build, lint, SEO, or schema check. |
 | 81 | high | github-actions | park-trail | park-trail: NPS official data sync failed 1 time | Inspect the latest Actions logs, identify missing credentials or upstream API failures, then add explicit gates or retries. |
