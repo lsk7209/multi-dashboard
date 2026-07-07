@@ -1,5 +1,10 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import YAML from "yaml";
+import {
+  getOpsMailPersistenceNote,
+  getOpsMailReviewState,
+  type OpsMailReviewStatus,
+} from "./ops-mail-review-store.js";
 import { isMaintenanceRefreshFailureSource } from "./refresh-failure-details.js";
 
 const REQUIRED_DASHBOARD_POST_RECOVERY_ACCEPTANCE_ROWS = [
@@ -782,6 +787,51 @@ export interface CollectionSourceSummary {
   total: number;
 }
 
+export type OpsMailKind =
+  | "github-actions"
+  | "gsc"
+  | "adsense"
+  | "ga4"
+  | "vercel"
+  | "other";
+export type OpsMailSeverity = "critical" | "high" | "medium" | "low";
+
+export interface OpsMailFinding {
+  id: string;
+  kind: OpsMailKind;
+  severity: OpsMailSeverity;
+  priority: number;
+  title: string;
+  recommendedAction: string;
+  sourceLine: string;
+  repo?: string;
+  site?: string;
+  workflow?: string;
+  category?: string;
+  count?: number;
+  commit?: string;
+  issueUrl?: string;
+  reviewStatus: OpsMailReviewStatus;
+  reviewNote: string;
+  reviewUpdatedAt?: string;
+}
+
+export interface OpsMailReport {
+  generatedAt: string | null;
+  digestUrl: string | null;
+  digestUpdatedAt?: string;
+  owner?: string;
+  path: string;
+  reviewUpdatedAt: string | null;
+  persistenceNote: string;
+  totalCount: number;
+  openCount: number;
+  siteRelatedCount: number;
+  summary: Record<OpsMailSeverity, number>;
+  counts: Record<OpsMailKind, number>;
+  findings: OpsMailFinding[];
+}
+
 export interface DashboardData {
   generatedAt: string | null;
   dateRanges: DateRangeSummary;
@@ -796,6 +846,7 @@ export interface DashboardData {
   segments: DashboardSegment[];
   healthSummary: HealthSummary;
   collectionSummary: CollectionSourceSummary[];
+  opsMailReport: OpsMailReport;
   adsenseRemediationQueue: AdsenseRemediationQueueSummary | null;
   adsenseProofGate: AdsenseProofGateSummary | null;
   adsenseProofFreshness: AdsenseProofFreshnessSummary;
@@ -885,6 +936,7 @@ export function getDashboardData(): DashboardData {
     "data",
     snapshot.generatedAt,
   );
+  const opsMailReport = loadOpsMailReport("data/ops-triage.json");
   const adsenseRemediationQueueById = buildAdsenseRemediationQueueIndex(
     adsenseRemediationQueue,
   );
@@ -983,6 +1035,7 @@ export function getDashboardData(): DashboardData {
     segments: buildSegments(displayStats),
     healthSummary: buildHealthSummary(displayStats),
     collectionSummary,
+    opsMailReport,
     adsenseRemediationQueue,
     adsenseProofGate,
     adsenseProofFreshness,
@@ -3274,6 +3327,199 @@ function readStats(path: string): StatsSnapshot {
     const reason = error instanceof Error ? error.message : String(error);
     throw new Error(`통계 스냅샷(${path}) 파싱에 실패했습니다: ${reason}`);
   }
+}
+
+function loadOpsMailReport(path: string): OpsMailReport {
+  const empty = emptyOpsMailReport(path);
+  if (!existsSync(path)) {
+    return empty;
+  }
+
+  try {
+    const parsed = JSON.parse(readFileSync(path, "utf8")) as {
+      generatedAt?: unknown;
+      digestUrl?: unknown;
+      digestUpdatedAt?: unknown;
+      owner?: unknown;
+      summary?: Partial<Record<OpsMailSeverity, unknown>>;
+      counts?: Partial<Record<OpsMailKind, unknown>>;
+      findings?: unknown[];
+    };
+    const reviewState = getOpsMailReviewState();
+    const findings = (parsed.findings ?? [])
+      .map((finding) => normalizeOpsMailFinding(finding, reviewState.entries))
+      .filter((finding): finding is OpsMailFinding => Boolean(finding))
+      .sort((a, b) => b.priority - a.priority || a.title.localeCompare(b.title));
+    const summary = summarizeOpsMailFindings(findings);
+    const counts = countOpsMailKinds(findings);
+
+    return {
+      generatedAt:
+        typeof parsed.generatedAt === "string" ? parsed.generatedAt : null,
+      digestUrl: typeof parsed.digestUrl === "string" ? parsed.digestUrl : null,
+      ...(typeof parsed.digestUpdatedAt === "string"
+        ? { digestUpdatedAt: parsed.digestUpdatedAt }
+        : {}),
+      ...(typeof parsed.owner === "string" ? { owner: parsed.owner } : {}),
+      path,
+      reviewUpdatedAt: reviewState.updatedAt,
+      persistenceNote: getOpsMailPersistenceNote(),
+      totalCount: findings.length,
+      openCount: findings.filter(
+        (finding) =>
+          finding.reviewStatus === "open" ||
+          finding.reviewStatus === "reviewing",
+      ).length,
+      siteRelatedCount: findings.filter(isSiteRelatedOpsMailFinding).length,
+      summary,
+      counts,
+      findings,
+    };
+  } catch {
+    return empty;
+  }
+}
+
+function emptyOpsMailReport(path: string): OpsMailReport {
+  return {
+    generatedAt: null,
+    digestUrl: null,
+    path,
+    reviewUpdatedAt: getOpsMailReviewState().updatedAt,
+    persistenceNote: getOpsMailPersistenceNote(),
+    totalCount: 0,
+    openCount: 0,
+    siteRelatedCount: 0,
+    summary: { critical: 0, high: 0, medium: 0, low: 0 },
+    counts: {
+      "github-actions": 0,
+      gsc: 0,
+      adsense: 0,
+      ga4: 0,
+      vercel: 0,
+      other: 0,
+    },
+    findings: [],
+  };
+}
+
+function normalizeOpsMailFinding(
+  value: unknown,
+  reviewEntries: Record<string, { status: OpsMailReviewStatus; note: string; updatedAt: string }>,
+): OpsMailFinding | null {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+  const candidate = value as Record<string, unknown>;
+  const id = cleanString(candidate.id);
+  const kind = normalizeOpsMailKind(candidate.kind);
+  const severity = normalizeOpsMailSeverity(candidate.severity);
+  const title = cleanString(candidate.title);
+  const recommendedAction = cleanString(candidate.recommendedAction);
+  const sourceLine = cleanString(candidate.sourceLine);
+  if (!id || !kind || !severity || !title || !recommendedAction) {
+    return null;
+  }
+
+  const review = reviewEntries[id];
+  return {
+    id,
+    kind,
+    severity,
+    priority: typeof candidate.priority === "number" ? candidate.priority : 0,
+    title,
+    recommendedAction,
+    sourceLine,
+    ...(cleanString(candidate.repo) ? { repo: cleanString(candidate.repo) } : {}),
+    ...(cleanString(candidate.site) ? { site: cleanString(candidate.site) } : {}),
+    ...(cleanString(candidate.workflow)
+      ? { workflow: cleanString(candidate.workflow) }
+      : {}),
+    ...(cleanString(candidate.category)
+      ? { category: cleanString(candidate.category) }
+      : {}),
+    ...(typeof candidate.count === "number" ? { count: candidate.count } : {}),
+    ...(cleanString(candidate.commit)
+      ? { commit: cleanString(candidate.commit) }
+      : {}),
+    ...(cleanString(candidate.issueUrl)
+      ? { issueUrl: cleanString(candidate.issueUrl) }
+      : {}),
+    reviewStatus: review?.status ?? "open",
+    reviewNote: review?.note ?? "",
+    ...(review?.updatedAt ? { reviewUpdatedAt: review.updatedAt } : {}),
+  };
+}
+
+function normalizeOpsMailKind(value: unknown): OpsMailKind | null {
+  if (
+    value === "github-actions" ||
+    value === "gsc" ||
+    value === "adsense" ||
+    value === "ga4" ||
+    value === "vercel" ||
+    value === "other"
+  ) {
+    return value;
+  }
+  return null;
+}
+
+function normalizeOpsMailSeverity(value: unknown): OpsMailSeverity | null {
+  if (
+    value === "critical" ||
+    value === "high" ||
+    value === "medium" ||
+    value === "low"
+  ) {
+    return value;
+  }
+  return null;
+}
+
+function summarizeOpsMailFindings(
+  findings: OpsMailFinding[],
+): Record<OpsMailSeverity, number> {
+  return findings.reduce<Record<OpsMailSeverity, number>>(
+    (summary, finding) => {
+      summary[finding.severity] += 1;
+      return summary;
+    },
+    { critical: 0, high: 0, medium: 0, low: 0 },
+  );
+}
+
+function countOpsMailKinds(
+  findings: OpsMailFinding[],
+): Record<OpsMailKind, number> {
+  return findings.reduce<Record<OpsMailKind, number>>(
+    (counts, finding) => {
+      counts[finding.kind] += 1;
+      return counts;
+    },
+    {
+      "github-actions": 0,
+      gsc: 0,
+      adsense: 0,
+      ga4: 0,
+      vercel: 0,
+      other: 0,
+    },
+  );
+}
+
+function isSiteRelatedOpsMailFinding(finding: OpsMailFinding): boolean {
+  return (
+    Boolean(finding.site) ||
+    finding.kind === "gsc" ||
+    finding.kind === "adsense" ||
+    finding.kind === "ga4" ||
+    finding.kind === "vercel"
+  );
+}
+
+function cleanString(value: unknown): string {
+  return typeof value === "string" ? value.trim() : "";
 }
 
 function loadSearchIndexPresence(

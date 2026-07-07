@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-07T09:48:17.883Z
+# T3 Title/Content Handoff - 2026-07-07T10:59:39.378Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-07T09:48:17.883Z`
+- Snapshot: `2026-07-07T10:59:39.378Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-07.json`
 - Sites path: `scripts\setup\sites.yaml`
@@ -35,7 +35,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `homeimer.com` | 14 | `content_handoff` | 1151 impr / 0 clicks / 0.00% CTR / pos 66.76 | 10 | `missing` | `D:\web\homeimercom` |
 | `today2424.kr` | 16 | `content_handoff` | 784 impr / 27 clicks / 3.44% CTR / pos 9.51 | 91 | `월세 계약해지 통보 문자 예시` (21 impr, pos 5.76) | `D:\web\today2424\2424` |
 | `nexttech7.com` | 17, 19 | `title_handoff`, `content_handoff` | 615 impr / 14 clicks / 2.28% CTR / pos 12.03 | 58 | `missing` | `D:\web\nexttech7com` |
-| `legalser.com` | 20 | `content_handoff` | 561 impr / 1 clicks / 0.18% CTR / pos 66.94 | 16 | `legalser` (10 impr, pos 9.50) | `D:\web\legalsercom` |
+| `legalser.com` | 20 | `content_handoff` | 561 impr / 1 clicks / 0.18% CTR / pos 66.94 | 17 | `legalser` (10 impr, pos 9.50) | `D:\web\legalsercom` |
 
 ## Technical Status
 

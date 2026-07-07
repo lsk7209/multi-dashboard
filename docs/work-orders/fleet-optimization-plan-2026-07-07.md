@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-07T09:48:17.883Z
+# Fleet Optimization Plan - 2026-07-07T10:59:39.378Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-07T09:48:17.883Z`
+- Snapshot: `2026-07-07T10:59:39.378Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `none`
@@ -67,9 +67,9 @@ Source: `data\adsense-remediation-queue-2026-07-07.json`
 | 15 | `dogspang.kr` | `content_handoff` | T3 | 1022 impr / 1.66% CTR / pos 9.95 / 90 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 16 | `today2424.kr` | `content_handoff` | T3 | 784 impr / 3.44% CTR / pos 9.51 / 91 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 17 | `nexttech7.com` | `title_handoff` | T3 | 615 impr / 2.28% CTR / pos 12.03 / 58 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 18 | `legalser.com` | `technical_seo` | T2 | 561 impr / 0.18% CTR / pos 66.94 / 16 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
+| 18 | `legalser.com` | `technical_seo` | T2 | 561 impr / 0.18% CTR / pos 66.94 / 17 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
 | 19 | `nexttech7.com` | `content_handoff` | T3 | 615 impr / 2.28% CTR / pos 12.03 / 58 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 20 | `legalser.com` | `content_handoff` | T3 | 561 impr / 0.18% CTR / pos 66.94 / 16 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 20 | `legalser.com` | `content_handoff` | T3 | 561 impr / 0.18% CTR / pos 66.94 / 17 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 
 ## Stop Conditions
 

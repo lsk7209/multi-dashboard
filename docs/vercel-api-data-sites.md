@@ -1,6 +1,6 @@
 # Vercel API Data Sites
 
-Generated: 2026-07-06T23:20:27.301Z
+Generated: 2026-07-07T10:59:45.132Z
 
 This inventory is read-only. It identifies Vercel/Next.js sites that appear to collect or depend on API data and therefore need a new-data check before content enrichment/generation.
 

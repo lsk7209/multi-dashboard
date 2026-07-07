@@ -5,6 +5,7 @@
 import { AppHeader } from "./components/app-header.js";
 import { BannerManagementConsole } from "./components/banner-management-console.js";
 import { InsightExplorer } from "./components/insight-explorer.js";
+import { OpsMailReportPanel } from "./components/ops-mail-report-panel.js";
 import { SiteStatsTable } from "./components/site-stats-table.js";
 import {
   getDashboardActionability,
@@ -71,6 +72,13 @@ export default async function DashboardPage({
       label: "배너",
       panelLabel: "배너",
       content: <BannerSection data={data} actionabilityOptions={actionabilityOptions} />,
+    },
+    {
+      id: "mail",
+      label: "메일",
+      panelLabel: "메일 리포트",
+      count: formatNumber(data.opsMailReport.openCount),
+      content: <OpsMailReportPanel report={data.opsMailReport} />,
     },
     {
       id: "settings",
@@ -1019,8 +1027,8 @@ function SupportPanel({
         </div>
         <div className="command-list">
           <div className="command-row">
-            <span>{isReadOnlyBlocked ? "현재 상태" : "GA4/GSC 통계 수집"}</span>
-            <code>{isReadOnlyBlocked ? "read-only until post-recovery passes" : "pnpm stats:update"}</code>
+            <span>{isReadOnlyBlocked ? "현재 상태" : "대시보드 전체 갱신"}</span>
+            <code>{isReadOnlyBlocked ? "read-only until post-recovery passes" : "pnpm dashboard:refresh"}</code>
           </div>
           <div className="command-row">
             <span>{isReadOnlyBlocked ? "필수 검증" : "오래된 sitemap 재제출"}</span>

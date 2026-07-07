@@ -2156,6 +2156,141 @@ code {
   background: rgba(185, 28, 28, 0.07);
 }
 
+.mail-report {
+  display: grid;
+  gap: 14px;
+}
+
+.mail-source-meta,
+.mail-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mail-source-meta {
+  margin-top: 12px;
+}
+
+.mail-source-meta span,
+.mail-chip-row span,
+.mail-status {
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--muted);
+  background: #f2f4f7;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mail-finding-list {
+  display: grid;
+  gap: 10px;
+}
+
+.mail-finding-card {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.mail-critical {
+  border-left-color: #991b1b;
+}
+
+.mail-high {
+  border-left-color: #dc2626;
+}
+
+.mail-medium {
+  border-left-color: var(--warning);
+}
+
+.mail-finding-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.mail-finding-main strong {
+  display: block;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.mail-finding-main p {
+  margin: 5px 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.mail-status-open,
+.mail-status-reviewing {
+  color: #92400e;
+  background: var(--warning-weak);
+}
+
+.mail-status-fixed {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.mail-status-ignored {
+  color: #475569;
+  background: #e5e7eb;
+}
+
+.mail-review-controls {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.mail-review-controls label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mail-review-controls select,
+.mail-review-controls textarea,
+.mail-token-row input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 9px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.mail-review-controls textarea {
+  min-height: 78px;
+  resize: vertical;
+}
+
+.mail-finding-card > a {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .ops-tab-panel,
 .ops-form-grid,
 .ops-table-grid,
@@ -3016,6 +3151,7 @@ code {
   .ops-admin-token,
   .ops-table-grid,
   .ops-assignment,
+  .mail-review-controls,
   .banner-page-intro,
   .banner-ops-grid,
   .banner-ops-funnel,

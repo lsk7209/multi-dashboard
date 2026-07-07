@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T23:20:34.480Z",
+  "generatedAt": "2026-07-07T10:59:55.765Z",
   "date": "2026-07-07",
   "dryRun": false,
   "productionMutationPerformed": false,
@@ -31,7 +31,7 @@
   "dashboardVerification": {
     "path": "data\\dashboard-verification-2026-07-07.json",
     "exists": true,
-    "statsSnapshot": "2026-07-06T23:20:23.084Z",
+    "statsSnapshot": "2026-07-07T10:59:39.378Z",
     "verdict": "local_verified",
     "expectedBlocked": 0,
     "fail": 0,
@@ -55,14 +55,14 @@
       "id": "gsc-permission-audit",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-07.json and docs\\work-orders\\gsc-permission-audit-2026-07-07.md. snapshot=2026-07-06T22:51:55.050Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n\npre_refresh_non_authoritative=true finalDashboardVerificationSnapshot=2026-07-06T23:20:23.084Z\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-07.json and docs\\work-orders\\gsc-permission-audit-2026-07-07.md. snapshot=2026-07-07T10:57:33.218Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n\npre_refresh_non_authoritative=true finalDashboardVerificationSnapshot=2026-07-07T10:59:39.378Z\n",
       "stderrTail": ""
     },
     {
       "id": "dashboard-verify",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard\n> tsx scripts/setup/run-dashboard-verification.ts\n\nWrote data\\dashboard-verification-2026-07-07.json and docs\\work-orders\\dashboard-verification-2026-07-07.md. snapshot=2026-07-06T23:20:23.084Z verdict=local_verified commands=4 pass=4 expectedBlocked=0 fail=0 skipped=0 blockers=none\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard\n> tsx scripts/setup/run-dashboard-verification.ts\n\nWrote data\\dashboard-verification-2026-07-07.json and docs\\work-orders\\dashboard-verification-2026-07-07.md. snapshot=2026-07-07T10:59:39.378Z verdict=local_verified commands=4 pass=4 expectedBlocked=0 fail=0 skipped=0 blockers=none\n",
       "stderrTail": ""
     },
     {
