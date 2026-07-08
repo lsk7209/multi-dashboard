@@ -1,0 +1,193 @@
+{
+  "generatedAt": "2026-07-08T02:05:00.000Z",
+  "mutationStatus": {
+    "cmsMutationPerformed": false,
+    "productionDeploymentPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false
+  },
+  "dashboardEvidence": {
+    "statsPath": "data/site-stats.json",
+    "snapshotTimestamp": "2026-07-08T01:11:20.285Z",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": [],
+    "directGscWindow": {
+      "startDate": "2026-06-08",
+      "endDate": "2026-07-07"
+    },
+    "sourcePolicy": "direct project/dashboard/GSC/public collection only; no gmail-digest signal used"
+  },
+  "summary": {
+    "siteCount": 3,
+    "workItemCount": 7,
+    "implementationAuthorized": false
+  },
+  "workItems": [
+    {
+      "priority": "P1",
+      "siteId": "temon",
+      "host": "temon.kr",
+      "url": "https://temon.kr/",
+      "problem": "High impressions with low CTR on the main test hub.",
+      "evidence": {
+        "clicks": 89,
+        "impressions": 3606,
+        "ctr": 0.0247,
+        "position": 8.36,
+        "queries": [
+          "테스트 모음",
+          "재밌는 테스트",
+          "mbti 테스트"
+        ]
+      },
+      "recommendedAction": "Refresh home title/meta and above-fold copy around a clear test hub promise. Add internal links to strongest test categories.",
+      "candidateTitleDirections": [
+        "테스트 모음, 재미있는 MBTI·연애·아이돌 테스트",
+        "재밌는 테스트 모음: MBTI부터 아이돌 포지션까지"
+      ],
+      "implementationGate": "Confirm current title, meta, H1, internal links, and duplicate test-hub titles before mutation."
+    },
+    {
+      "priority": "P1",
+      "siteId": "today2424",
+      "host": "today2424.kr",
+      "url": "https://today2424.kr/blog/lease-end-notice-template",
+      "problem": "Best opportunity page has page-one position but underpowered snippet.",
+      "evidence": {
+        "clicks": 13,
+        "impressions": 315,
+        "ctr": 0.0413,
+        "position": 7.69,
+        "queries": [
+          "월세 계약해지 통보 문자 예시",
+          "전세 계약 해지 통보 문자 예시",
+          "원룸 방 뺄때 문자"
+        ]
+      },
+      "recommendedAction": "Improve title/meta to match template/example intent for 월세/전세 해지 통보 문자. Confirm snippet includes timing and proof angle.",
+      "candidateTitleDirections": [
+        "월세 계약해지 통보 문자 예시와 발송 시점",
+        "전세·월세 계약 해지 통보 문자 예시 정리"
+      ],
+      "implementationGate": "Confirm current copy avoids legal-advice overclaims and maps to actual template content."
+    },
+    {
+      "priority": "P1",
+      "siteId": "softwa",
+      "host": "softwa.kr",
+      "url": "https://softwa.kr/microsoft-powertoys-trouble-068/",
+      "problem": "Low CTR near page one.",
+      "evidence": {
+        "clicks": 2,
+        "impressions": 116,
+        "ctr": 0.0172,
+        "position": 8.2,
+        "queries": []
+      },
+      "recommendedAction": "Refresh title/meta around PowerToys error, setup, and troubleshooting intent. Add internal links from Windows utility posts if available.",
+      "candidateTitleDirections": [
+        "PowerToys 오류 해결: 설치·실행·설정 문제 점검"
+      ],
+      "implementationGate": "Confirm exact query rows and current article scope before adding specific troubleshooting claims."
+    },
+    {
+      "priority": "P2",
+      "siteId": "softwa",
+      "host": "softwa.kr",
+      "url": "https://softwa.kr/%EB%A1%A4lol-%EB%A6%AC%ED%94%8C%EB%A0%88%EC%9D%B4-%EC%A0%80%EC%9E%A5-%EB%B0%8F-%EB%B3%B4%EB%8A%94-%EB%B2%95-%EB%A6%AC%EA%B7%B8-%EC%98%A4%EB%B8%8C-%EB%A0%88%EC%A0%84%EB%93%9C-%ED%95%98%EC%9D%B4/",
+      "problem": "Good CTR but ranking sits outside top ten.",
+      "evidence": {
+        "clicks": 12,
+        "impressions": 110,
+        "ctr": 0.1091,
+        "position": 12.95,
+        "queries": [
+          "rofl 파일 재생",
+          "롤 리플레이 재생",
+          ".rofl 파일 보는 법",
+          "rofl 파일 mp4 변환"
+        ]
+      },
+      "recommendedAction": "Refresh title/meta and intro angle around ROFL replay playback, storage, and conversion checks.",
+      "candidateTitleDirections": [
+        "ROFL 파일 재생 방법: 롤 리플레이 저장·보는 법",
+        "롤 리플레이 ROFL 파일 보는 법과 MP4 변환 전 확인"
+      ],
+      "implementationGate": "Avoid MP4 conversion claims unless the article supports the workflow."
+    },
+    {
+      "priority": "P2",
+      "siteId": "temon",
+      "host": "temon.kr",
+      "url": "https://temon.kr/tests/kpop-idol",
+      "problem": "Residual www GSC row plus split CTR between historical and apex URLs.",
+      "evidence": {
+        "historicalWww": {
+          "clicks": 21,
+          "impressions": 259,
+          "ctr": 0.0811,
+          "position": 6.57
+        },
+        "apex": {
+          "clicks": 3,
+          "impressions": 90,
+          "ctr": 0.0333,
+          "position": 7.24
+        },
+        "queries": [
+          "아이돌 테스트",
+          "아이돌 포지션 테스트"
+        ]
+      },
+      "recommendedAction": "Confirm canonical/meta consistency after www 308 to apex. Refresh title/meta only if current live title underplays idol-position intent.",
+      "candidateTitleDirections": [
+        "아이돌 포지션 테스트: 나는 무대에서 어떤 역할일까"
+      ],
+      "implementationGate": "Do not change URL or create a duplicate idol test page."
+    },
+    {
+      "priority": "P2",
+      "siteId": "today2424",
+      "host": "today2424.kr",
+      "url": "https://today2424.kr/blog/cross-ventilation-window-timing",
+      "problem": "Page-one-ish position with low CTR.",
+      "evidence": {
+        "clicks": 2,
+        "impressions": 50,
+        "ctr": 0.04,
+        "position": 9.8,
+        "queries": []
+      },
+      "recommendedAction": "Align snippet with 원룸 환기, 맞통풍 시간대, and 창문 여는 순서 intent.",
+      "candidateTitleDirections": [
+        "원룸 맞통풍 시간대와 창문 여는 순서"
+      ],
+      "implementationGate": "Confirm page actually covers timing and sequence details."
+    },
+    {
+      "priority": "P3",
+      "siteId": "today2424",
+      "host": "today2424.kr",
+      "url": "https://today2424.kr/blog/sunlight-window-direction-check",
+      "problem": "Ranking improvement candidate after the stronger lease and ventilation pages.",
+      "evidence": {
+        "clicks": 2,
+        "impressions": 27,
+        "ctr": 0.0741,
+        "position": 13.19,
+        "queries": []
+      },
+      "recommendedAction": "Consider title/meta refresh around 햇빛, 창문 방향, and 집 보기 체크 intent after P1/P2 rows.",
+      "candidateTitleDirections": [
+        "원룸 햇빛과 창문 방향 확인 체크리스트"
+      ],
+      "implementationGate": "Re-check exact query/page mapping before implementation because sample size is small."
+    }
+  ],
+  "stopConditions": [
+    "Do not edit article bodies, headings, titles, slugs, or in-body internal links directly from this planning packet.",
+    "Do not publish drafts, schedule posts, submit sitemaps, request indexing, ping IndexNow, deploy, or mutate CMS/API state from this packet.",
+    "Re-run pnpm stats:update before using this packet after the next dashboard data window."
+  ]
+}
