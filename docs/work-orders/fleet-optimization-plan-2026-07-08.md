@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-07T15:47:44.194Z
+# Fleet Optimization Plan - 2026-07-07T23:39:59.111Z
 
 ## Verdict
 
@@ -6,10 +6,10 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-07T15:47:44.194Z`
+- Snapshot: `2026-07-07T23:39:59.111Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `none`
+- Refresh failed sources: `skipped_refresh_failed:adsense_queue:missing_current:1`
 
 ## Connector Status
 
@@ -40,7 +40,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## AdSense Approval Queue
 
-Source: `data\adsense-remediation-queue-2026-07-08.json`
+Source: `missing`
 
 | Priority | Site | Lane | Action | Stop condition |
 |---:|---|---|---|---|
@@ -50,7 +50,7 @@ Source: `data\adsense-remediation-queue-2026-07-08.json`
 
 | Rank | Site | Action | Tier | Evidence | Next action |
 |---:|---|---|---|---|---|
-| 1 | `tennisfrens.com` | `title_handoff` | T3 | 8195 impr / 1.37% CTR / pos 10.48 / 1492 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 1 | `tennisfrens.com` | `title_handoff` | T3 | 8195 impr / 1.37% CTR / pos 10.48 / 1496 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 2 | `cartain.kr` | `title_handoff` | T3 | 2564 impr / 1.52% CTR / pos 9.82 / 949 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 3 | `estat.kr` | `title_handoff` | T3 | 2454 impr / 0.65% CTR / pos 7.96 / 48 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 4 | `estat.kr` | `content_handoff` | T3 | 2454 impr / 0.65% CTR / pos 7.96 / 48 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |

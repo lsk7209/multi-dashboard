@@ -1,17 +1,39 @@
 import { describe, expect, it } from "vitest";
-import { buildOpsTriageReport } from "./update-ops-triage.js";
+import { buildOpsTriageReportFromIntel } from "./update-ops-triage.js";
 
 describe("update-ops-triage", () => {
-  it("parses site-related AdSense and GA4 digest alerts", () => {
-    const report = buildOpsTriageReport(
-      [
-        "# Gmail Digest",
-        "",
-        "- `10:00` [AdSense] yesa.kr policy issue needs attention",
-        "- `10:01` [GA4] todaypharm.kr data collection stopped",
-      ].join("\n"),
-    );
+  it("builds triage from direct ops intel instead of gmail digest", () => {
+    const report = buildOpsTriageReportFromIntel({
+      generatedAt: "2026-07-08T00:00:00.000Z",
+      source: "direct",
+      owner: "lsk7209",
+      findings: [
+        {
+          id: "adsense-yesa",
+          kind: "adsense",
+          severity: "high",
+          priority: 80,
+          site: "yesa.kr",
+          sourceLine: "direct:dashboard site=yesa.kr kind=adsense status=policy",
+          title: "yesa.kr: AdSense direct collector signal policy",
+          recommendedAction: "Verify AdSense direct evidence.",
+        },
+        {
+          id: "ga4-todaypharm",
+          kind: "ga4",
+          severity: "medium",
+          priority: 50,
+          site: "todaypharm.kr",
+          sourceLine: "direct:dashboard site=todaypharm.kr kind=ga4 status=api_error",
+          title: "todaypharm.kr: GA4 direct collector signal api_error",
+          recommendedAction: "Verify GA4 direct evidence.",
+        },
+      ],
+    });
 
+    expect(report.source).toBe("direct");
+    expect(report.sourcePath).toBe("test://ops-intel");
+    expect(report.digestUrl).toBeNull();
     expect(report.counts.adsense).toBe(1);
     expect(report.counts.ga4).toBe(1);
     expect(report.findings).toEqual(
