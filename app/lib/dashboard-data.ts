@@ -3338,6 +3338,8 @@ function loadOpsMailReport(path: string): OpsMailReport {
   try {
     const parsed = JSON.parse(readFileSync(path, "utf8")) as {
       generatedAt?: unknown;
+      sourcePath?: unknown;
+      sourceUpdatedAt?: unknown;
       digestUrl?: unknown;
       digestUpdatedAt?: unknown;
       owner?: unknown;
@@ -3356,9 +3358,16 @@ function loadOpsMailReport(path: string): OpsMailReport {
     return {
       generatedAt:
         typeof parsed.generatedAt === "string" ? parsed.generatedAt : null,
-      digestUrl: typeof parsed.digestUrl === "string" ? parsed.digestUrl : null,
-      ...(typeof parsed.digestUpdatedAt === "string"
-        ? { digestUpdatedAt: parsed.digestUpdatedAt }
+      digestUrl:
+        typeof parsed.sourcePath === "string"
+          ? parsed.sourcePath
+          : typeof parsed.digestUrl === "string"
+            ? parsed.digestUrl
+            : null,
+      ...(typeof parsed.sourceUpdatedAt === "string"
+        ? { digestUpdatedAt: parsed.sourceUpdatedAt }
+        : typeof parsed.digestUpdatedAt === "string"
+          ? { digestUpdatedAt: parsed.digestUpdatedAt }
         : {}),
       ...(typeof parsed.owner === "string" ? { owner: parsed.owner } : {}),
       path,

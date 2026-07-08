@@ -1,15 +1,15 @@
-# T3 Title/Content Handoff - 2026-07-07T15:47:44.194Z
+# T3 Title/Content Handoff - 2026-07-07T23:39:59.111Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-07T15:47:44.194Z`
+- Snapshot: `2026-07-07T23:39:59.111Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-08.json`
 - Sites path: `scripts\setup\sites.yaml`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `none`
+- Refresh failed sources: `skipped_refresh_failed:adsense_queue:missing_current:1`
 
 ## Summary
 
@@ -23,7 +23,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 
 | Site | Plan ranks | Actions | 30d GSC | 30d users | Top queries | Local source |
 |---|---:|---|---:|---:|---|---|
-| `tennisfrens.com` | 1 | `title_handoff` | 8195 impr / 112 clicks / 1.37% CTR / pos 10.48 | 1492 | `ntrp 테스트` (10 impr, pos 1.80)<br>`아르튀르 랭데르크네슈` (755 impr, pos 10.32)<br>`알렉산더 블록스` (127 impr, pos 11.03) | `D:\web\tennisfrens` |
+| `tennisfrens.com` | 1 | `title_handoff` | 8195 impr / 112 clicks / 1.37% CTR / pos 10.48 | 1496 | `ntrp 테스트` (10 impr, pos 1.80)<br>`아르튀르 랭데르크네슈` (755 impr, pos 10.32)<br>`알렉산더 블록스` (127 impr, pos 11.03) | `D:\web\tennisfrens` |
 | `cartain.kr` | 2 | `title_handoff` | 2564 impr / 39 clicks / 1.52% CTR / pos 9.82 | 949 | `2026년 신차 출시 일정` (24 impr, pos 6.88) | `D:\web\cartainkr` |
 | `estat.kr` | 3, 4 | `title_handoff`, `content_handoff` | 2454 impr / 16 clicks / 0.65% CTR / pos 7.96 | 48 | `라조기` (43 impr, pos 5.72)<br>`라조기 레시피` (11 impr, pos 3.27) | `D:\web\estatkr` |
 | `gong365.kr` | 5, 6 | `title_handoff`, `content_handoff` | 1876 impr / 24 clicks / 1.28% CTR / pos 8.30 | 63 | `전남 2026 기업 지원사업 공고` (13 impr, pos 7.23)<br>`충남 충북 2026 기업 지원사업 공고` (10 impr, pos 9.20) | `D:\web\gong365kr` |

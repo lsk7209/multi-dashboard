@@ -3,39 +3,24 @@ import { pathToFileURL } from "node:url";
 import { Octokit } from "@octokit/rest";
 import { getErrorMessage } from "./lib/errors.js";
 
-const DEFAULT_DIGEST_URL =
-  process.env.GMAIL_DIGEST_README_URL ??
-  "https://raw.githubusercontent.com/lsk7209/gmail-digest/main/README.md";
+const DEFAULT_INTEL_PATH = "data/ops-intel.json";
 const DEFAULT_OUTPUT_PATH = "data/ops-triage.json";
 const DEFAULT_MARKDOWN_PATH = "docs/ops-triage.md";
 const DEFAULT_OWNER = process.env.GITHUB_OWNER ?? "lsk7209";
 
-type FindingKind =
-  | "github-actions"
-  | "gsc"
-  | "adsense"
-  | "ga4"
-  | "vercel"
-  | "other";
+type FindingKind = "github-actions" | "gsc" | "adsense" | "ga4" | "vercel" | "other";
 type FindingSeverity = "critical" | "high" | "medium" | "low";
+type OpsSource = "direct" | "legacy-digest" | "test";
 
 interface CliOptions {
   input?: string;
-  url: string;
+  intel: string;
   output: string;
   markdown: string;
   owner: string;
   repoFilter?: string;
   limit?: number;
   createIssues: boolean;
-}
-
-interface GitHubActionFailure {
-  repo: string;
-  workflow: string;
-  category: string;
-  count: number;
-  commit: string;
 }
 
 interface OpsFinding {
@@ -53,11 +38,15 @@ interface OpsFinding {
   title: string;
   recommendedAction: string;
   issueUrl?: string;
+  evidenceUrl?: string;
 }
 
 interface OpsTriageReport {
   generatedAt: string;
-  digestUrl: string;
+  source: OpsSource;
+  sourcePath: string;
+  sourceUpdatedAt?: string;
+  digestUrl: string | null;
   digestUpdatedAt?: string;
   owner: string;
   summary: Record<FindingSeverity, number>;
@@ -65,9 +54,16 @@ interface OpsTriageReport {
   findings: OpsFinding[];
 }
 
+interface OpsIntelArtifact {
+  generatedAt?: unknown;
+  source?: unknown;
+  owner?: unknown;
+  findings?: unknown;
+}
+
 function parseArgs(argv: string[]): CliOptions {
   const options: CliOptions = {
-    url: DEFAULT_DIGEST_URL,
+    intel: DEFAULT_INTEL_PATH,
     output: DEFAULT_OUTPUT_PATH,
     markdown: DEFAULT_MARKDOWN_PATH,
     owner: DEFAULT_OWNER,
@@ -83,8 +79,8 @@ function parseArgs(argv: string[]): CliOptions {
       options.input = arg.slice("--input=".length);
       continue;
     }
-    if (arg.startsWith("--url=")) {
-      options.url = arg.slice("--url=".length);
+    if (arg.startsWith("--intel=")) {
+      options.intel = arg.slice("--intel=".length);
       continue;
     }
     if (arg.startsWith("--output=")) {
@@ -114,264 +110,74 @@ function parseArgs(argv: string[]): CliOptions {
   return options;
 }
 
-async function loadDigest(options: CliOptions): Promise<string> {
-  if (options.input) {
-    return readFile(options.input, "utf8");
+function normalizeFinding(value: unknown): OpsFinding | null {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+  const candidate = value as Record<string, unknown>;
+  const kind = normalizeKind(candidate.kind);
+  const severity = normalizeSeverity(candidate.severity);
+  const id = stringValue(candidate.id);
+  const title = stringValue(candidate.title);
+  const recommendedAction = stringValue(candidate.recommendedAction);
+  if (!kind || !severity || !id || !title || !recommendedAction) {
+    return null;
   }
 
-  const response = await fetch(options.url, {
-    signal: AbortSignal.timeout(15_000),
-    headers: { Accept: "text/markdown,text/plain,*/*" },
-  });
-  if (!response.ok) {
-    throw new Error(`Gmail digest fetch failed: HTTP ${response.status}`);
-  }
-  return response.text();
-}
-
-function extractDigestUpdatedAt(markdown: string): string | undefined {
-  const match = markdown.match(/last update|last updated|마지막 업데이트/i);
-  if (!match) {
-    const fallback = markdown.match(/(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}\s+KST)/);
-    return fallback?.[1];
-  }
-
-  const start = Math.max(0, match.index ?? 0);
-  const line = markdown.slice(start).split(/\r?\n/, 1)[0] ?? "";
-  return line.match(/(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}\s+KST)/)?.[1];
-}
-
-function parseCount(value: string): number {
-  const match = value.replace(/\*/g, "").match(/\d+/);
-  return match ? Number.parseInt(match[0], 10) : 1;
-}
-
-function cleanCell(value: string): string {
-  return value.replace(/`/g, "").replace(/\*/g, "").trim();
-}
-
-function parseGitHubActionFailures(markdown: string): GitHubActionFailure[] {
-  const lines = markdown.split(/\r?\n/);
-  const headingIndex = lines.findIndex((line) => /GitHub Actions/i.test(line));
-  if (headingIndex < 0) {
-    return [];
-  }
-
-  const failures: GitHubActionFailure[] = [];
-  for (const line of lines.slice(headingIndex + 1)) {
-    const trimmed = line.trim();
-    if (!trimmed) {
-      if (failures.length > 0) {
-        break;
-      }
-      continue;
-    }
-    if (!trimmed.startsWith("|")) {
-      if (failures.length > 0) {
-        break;
-      }
-      continue;
-    }
-    if (/^\|\s*-+/.test(trimmed) || /레포|repo/i.test(trimmed)) {
-      continue;
-    }
-
-    const cells = trimmed.split("|").slice(1, -1).map(cleanCell);
-    if (cells.length < 5) {
-      continue;
-    }
-
-    const [repo, workflow, category, count, commit] = cells;
-    if (!repo || !workflow || !category || !count || !commit) {
-      continue;
-    }
-
-    failures.push({
-      repo,
-      workflow,
-      category,
-      count: parseCount(count),
-      commit,
-    });
-  }
-
-  return failures;
-}
-
-function parseDigestBulletAlerts(markdown: string, kind: FindingKind): OpsFinding[] {
-  const sourceTag = getDigestTag(kind);
-  if (!sourceTag) {
-    return [];
-  }
-  return markdown
-    .split(/\r?\n/)
-    .filter((line) => new RegExp(`\\[${sourceTag}\\]`, "i").test(line))
-    .map((line, index) => {
-      const time = line.match(/`(?<time>\d{2}:\d{2})`/)?.groups?.time;
-      const site = extractSiteFromDigestLine(line);
-      const issue = line.replace(/^\s*[-*]\s*/, "").replace(/`[^`]+`\s*/, "").trim();
-      const severity = classifyBulletSeverity(issue);
-      return {
-        id: `${kind}-${site ?? "global"}-${index}-${hashText(issue)}`,
-        kind,
-        severity,
-        priority: severityToPriority(severity),
-        ...(site ? { site } : {}),
-        sourceLine: line.trim(),
-        title: `${sourceTag} alert${site ? ` for ${site}` : ""}${time ? ` at ${time}` : ""}`,
-        recommendedAction: recommendBulletAction(kind, issue),
-      };
-    });
-}
-
-function getDigestTag(kind: FindingKind): string | null {
-  if (kind === "gsc") return "GSC";
-  if (kind === "adsense") return "AdSense";
-  if (kind === "ga4") return "GA4";
-  if (kind === "vercel") return "Vercel";
-  return null;
-}
-
-function extractSiteFromDigestLine(line: string): string | undefined {
-  const afterTag = line.split("]").slice(1).join("]");
-  return (
-    afterTag.match(/(?<site>[a-z0-9.-]+\.[a-z]{2,})/i)?.groups?.site ??
-    line.match(/https?:\/\/(?:www\.)?(?<site>[a-z0-9.-]+\.[a-z]{2,})/i)?.groups?.site
-  );
-}
-
-function classifyActionFailureSeverity(failure: GitHubActionFailure): FindingSeverity {
-  const text = `${failure.workflow} ${failure.category}`.toLowerCase();
-  if (failure.count >= 8) {
-    return "critical";
-  }
-  if (failure.count >= 3) {
-    return "high";
-  }
-  if (text.includes("quality") || text.includes("deploy") || text.includes("turso")) {
-    return "high";
-  }
-  if (text.includes("etl") || text.includes("sync") || text.includes("pipeline")) {
-    return "high";
-  }
-  if (failure.count >= 2) {
-    return "medium";
-  }
-  return "medium";
-}
-
-function classifyBulletSeverity(issue: string): FindingSeverity {
-  const normalized = issue.toLowerCase();
-  if (
-    normalized.includes("adsense") ||
-    normalized.includes("policy") ||
-    normalized.includes("payment") ||
-    normalized.includes("site needs attention")
-  ) {
-    return "high";
-  }
-  if (
-    normalized.includes("ga4") ||
-    normalized.includes("analytics") ||
-    normalized.includes("data collection")
-  ) {
-    return "medium";
-  }
-  if (normalized.includes("404") || normalized.includes("noindex") || normalized.includes("robots")) {
-    return "high";
-  }
-  if (normalized.includes("deployment") || normalized.includes("vercel") || issue.includes("배포")) {
-    return "high";
-  }
-  if (normalized.includes("canonical") || normalized.includes("duplicate") || issue.includes("중복")) {
-    return "medium";
-  }
-  return "low";
-}
-
-function severityToPriority(severity: FindingSeverity): number {
-  if (severity === "critical") {
-    return 100;
-  }
-  if (severity === "high") {
-    return 80;
-  }
-  if (severity === "medium") {
-    return 50;
-  }
-  return 20;
-}
-
-function recommendActionFailure(failure: GitHubActionFailure): string {
-  const text = `${failure.workflow} ${failure.category}`.toLowerCase();
-  if (text.includes("turso")) {
-    return "Check Turso quota and monitor gating. Prefer skip-with-evidence when quota or credentials are unavailable.";
-  }
-  if (text.includes("etl") || text.includes("sync") || text.includes("pipeline")) {
-    return "Inspect the latest Actions logs, identify missing credentials or upstream API failures, then add explicit gates or retries.";
-  }
-  if (text.includes("auto publish") || text.includes("release") || text.includes("scheduled publish")) {
-    return "Inspect content queue/shards and publish script assumptions. Add validation for missing source files before failing the workflow.";
-  }
-  if (text.includes("quality") || text.includes("gate")) {
-    return "Run the repo quality gate locally and repair the failing build, lint, SEO, or schema check.";
-  }
-  if (text.includes("deploy")) {
-    return "Inspect build logs and required deployment secrets. Do not run direct Vercel deploys from this dashboard.";
-  }
-  return "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.";
-}
-
-function recommendBulletAction(kind: FindingKind, issue: string): string {
-  if (kind === "vercel") {
-    return "Inspect the failed deployment through GitHub/Vercel logs and fix the source repo. Keep deployment through the GitHub integration path.";
-  }
-  if (kind === "adsense") {
-    return "Open the AdSense alert, map it to the affected site, then verify ads.txt, policy status, approval scope, and ad code evidence before reapplying.";
-  }
-  if (kind === "ga4") {
-    return "Open GA4 Admin/Data Streams for the affected property, verify tag collection, property binding, and dashboard site mapping.";
-  }
-  if (issue.includes("404")) {
-    return "Check sitemap/canonical source for removed URLs, then redirect, restore, or let the URL drop intentionally.";
-  }
-  if (/noindex/i.test(issue) || issue.includes("NOINDEX")) {
-    return "Verify whether noindex is intentional. If not, remove the tag and request revalidation after deployment.";
-  }
-  if (/robots/i.test(issue)) {
-    return "Review robots.txt and page-level robots meta before requesting revalidation.";
-  }
-  if (/canonical|중복/i.test(issue)) {
-    return "Review canonical tags and duplicate URL variants. Keep one indexable canonical target.";
-  }
-  return "Open the source alert and map it to the affected site before making changes.";
-}
-
-function toActionFinding(failure: GitHubActionFailure): OpsFinding {
-  const severity = classifyActionFailureSeverity(failure);
-  const title = `${failure.repo}: ${failure.workflow} failed ${failure.count} time${failure.count === 1 ? "" : "s"}`;
+  const priority = numberValue(candidate.priority) ?? severityToPriority(severity);
   return {
-    id: `gha-${failure.repo}-${hashText(`${failure.workflow}-${failure.commit}`)}`,
-    kind: "github-actions",
+    id,
+    kind,
     severity,
-    priority: severityToPriority(severity) + Math.min(15, failure.count),
-    repo: failure.repo,
-    workflow: failure.workflow,
-    category: failure.category,
-    count: failure.count,
-    commit: failure.commit,
-    sourceLine: `| ${failure.repo} | ${failure.workflow} | ${failure.category} | ${failure.count} | ${failure.commit} |`,
+    priority,
+    ...(stringValue(candidate.repo) ? { repo: stringValue(candidate.repo) } : {}),
+    ...(stringValue(candidate.site) ? { site: stringValue(candidate.site) } : {}),
+    ...(stringValue(candidate.workflow) ? { workflow: stringValue(candidate.workflow) } : {}),
+    ...(stringValue(candidate.category) ? { category: stringValue(candidate.category) } : {}),
+    ...(numberValue(candidate.count) !== null ? { count: numberValue(candidate.count) ?? undefined } : {}),
+    ...(stringValue(candidate.commit) ? { commit: stringValue(candidate.commit) } : {}),
+    sourceLine: stringValue(candidate.sourceLine) ?? `direct:${kind}:${id}`,
     title,
-    recommendedAction: recommendActionFailure(failure),
+    recommendedAction,
+    ...(stringValue(candidate.issueUrl) ? { issueUrl: stringValue(candidate.issueUrl) } : {}),
+    ...(stringValue(candidate.evidenceUrl) ? { evidenceUrl: stringValue(candidate.evidenceUrl) } : {}),
   };
 }
 
-function hashText(value: string): string {
-  let hash = 0;
-  for (const char of value) {
-    hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+function normalizeKind(value: unknown): FindingKind | null {
+  if (
+    value === "github-actions" ||
+    value === "gsc" ||
+    value === "adsense" ||
+    value === "ga4" ||
+    value === "vercel" ||
+    value === "other"
+  ) {
+    return value;
   }
-  return hash.toString(36);
+  return null;
+}
+
+function normalizeSeverity(value: unknown): FindingSeverity | null {
+  if (value === "critical" || value === "high" || value === "medium" || value === "low") {
+    return value;
+  }
+  return null;
+}
+
+function stringValue(value: unknown): string | undefined {
+  return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function numberValue(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function severityToPriority(severity: FindingSeverity): number {
+  if (severity === "critical") return 100;
+  if (severity === "high") return 80;
+  if (severity === "medium") return 50;
+  return 20;
 }
 
 function summarize(findings: OpsFinding[]): Record<FindingSeverity, number> {
@@ -390,57 +196,116 @@ function countKinds(findings: OpsFinding[]): Record<FindingKind, number> {
       counts[finding.kind] += 1;
       return counts;
     },
-    {
-      "github-actions": 0,
-      gsc: 0,
-      adsense: 0,
-      ga4: 0,
-      vercel: 0,
-      other: 0,
-    },
+    { "github-actions": 0, gsc: 0, adsense: 0, ga4: 0, vercel: 0, other: 0 },
   );
 }
 
-function buildReport(markdown: string, options: CliOptions): OpsTriageReport {
-  let findings = [
-    ...parseGitHubActionFailures(markdown).map(toActionFinding),
-    ...parseDigestBulletAlerts(markdown, "gsc"),
-    ...parseDigestBulletAlerts(markdown, "adsense"),
-    ...parseDigestBulletAlerts(markdown, "ga4"),
-    ...parseDigestBulletAlerts(markdown, "vercel"),
-  ];
-
-  if (options.repoFilter) {
-    findings = findings.filter((finding) => finding.repo === options.repoFilter);
+function finalizeReport(input: {
+  source: OpsSource;
+  sourcePath: string;
+  sourceUpdatedAt?: string;
+  owner: string;
+  findings: OpsFinding[];
+  repoFilter?: string;
+  limit?: number;
+}): OpsTriageReport {
+  let findings = input.findings;
+  if (input.repoFilter) {
+    findings = findings.filter((finding) => finding.repo === input.repoFilter);
   }
-
   findings = findings
     .sort((a, b) => b.priority - a.priority || a.title.localeCompare(b.title))
-    .slice(0, options.limit ?? Number.POSITIVE_INFINITY);
+    .slice(0, input.limit ?? Number.POSITIVE_INFINITY);
 
-  const digestUpdatedAt = extractDigestUpdatedAt(markdown);
   return {
     generatedAt: new Date().toISOString(),
-    digestUrl: options.input ?? options.url,
-    ...(digestUpdatedAt ? { digestUpdatedAt } : {}),
-    owner: options.owner,
+    source: input.source,
+    sourcePath: input.sourcePath,
+    ...(input.sourceUpdatedAt ? { sourceUpdatedAt: input.sourceUpdatedAt } : {}),
+    digestUrl: null,
+    owner: input.owner,
     summary: summarize(findings),
     counts: countKinds(findings),
     findings,
   };
 }
 
+async function buildReportFromIntel(options: CliOptions): Promise<OpsTriageReport> {
+  const raw = await readFile(options.intel, "utf8");
+  const parsed = JSON.parse(raw) as OpsIntelArtifact;
+  const findings = Array.isArray(parsed.findings)
+    ? parsed.findings.map(normalizeFinding).filter((finding): finding is OpsFinding => Boolean(finding))
+    : [];
+  return finalizeReport({
+    source: "direct",
+    sourcePath: options.intel,
+    sourceUpdatedAt: stringValue(parsed.generatedAt),
+    owner: stringValue(parsed.owner) ?? options.owner,
+    findings,
+    ...(options.repoFilter ? { repoFilter: options.repoFilter } : {}),
+    ...(options.limit ? { limit: options.limit } : {}),
+  });
+}
+
+function parseLegacyDigest(markdown: string): OpsFinding[] {
+  return markdown
+    .split(/\r?\n/)
+    .filter((line) => /^\s*[-*]\s+`?\d{0,2}:?\d{0,2}`?\s*\[(GSC|AdSense|GA4|Vercel)\]/i.test(line))
+    .map((line, index) => {
+      const kind = legacyKind(line);
+      const site = extractSite(line);
+      const severity = kind === "adsense" || kind === "vercel" ? "high" : "medium";
+      return {
+        id: `legacy-${kind}-${site ?? "global"}-${index}`,
+        kind,
+        severity,
+        priority: severityToPriority(severity),
+        ...(site ? { site } : {}),
+        sourceLine: line.trim(),
+        title: `Legacy ${kind} alert${site ? ` for ${site}` : ""}`,
+        recommendedAction: "Legacy digest input was provided explicitly; verify against direct dashboard evidence before acting.",
+      };
+    });
+}
+
+function legacyKind(line: string): FindingKind {
+  if (/\[AdSense\]/i.test(line)) return "adsense";
+  if (/\[GA4\]/i.test(line)) return "ga4";
+  if (/\[Vercel\]/i.test(line)) return "vercel";
+  return "gsc";
+}
+
+function extractSite(line: string): string | undefined {
+  return line.match(/(?<site>[a-z0-9.-]+\.[a-z]{2,})/i)?.groups?.site;
+}
+
+export function buildOpsTriageReportFromIntel(
+  artifact: OpsIntelArtifact,
+  options: Partial<CliOptions> = {},
+): OpsTriageReport {
+  const findings = Array.isArray(artifact.findings)
+    ? artifact.findings.map(normalizeFinding).filter((finding): finding is OpsFinding => Boolean(finding))
+    : [];
+  return finalizeReport({
+    source: "direct",
+    sourcePath: options.intel ?? "test://ops-intel",
+    sourceUpdatedAt: stringValue(artifact.generatedAt),
+    owner: stringValue(artifact.owner) ?? options.owner ?? DEFAULT_OWNER,
+    findings,
+    ...(options.repoFilter ? { repoFilter: options.repoFilter } : {}),
+    ...(options.limit ? { limit: options.limit } : {}),
+  });
+}
+
 export function buildOpsTriageReport(
   markdown: string,
   options: Partial<CliOptions> = {},
 ): OpsTriageReport {
-  return buildReport(markdown, {
-    url: options.url ?? "test://gmail-digest",
-    output: options.output ?? DEFAULT_OUTPUT_PATH,
-    markdown: options.markdown ?? DEFAULT_MARKDOWN_PATH,
+  return finalizeReport({
+    source: "legacy-digest",
+    sourcePath: options.input ?? "test://legacy-digest",
     owner: options.owner ?? DEFAULT_OWNER,
-    createIssues: false,
-    ...(options.input ? { input: options.input } : {}),
+    findings: parseLegacyDigest(markdown),
     ...(options.repoFilter ? { repoFilter: options.repoFilter } : {}),
     ...(options.limit ? { limit: options.limit } : {}),
   });
@@ -448,13 +313,14 @@ export function buildOpsTriageReport(
 
 function issueBody(report: OpsTriageReport, finding: OpsFinding): string {
   const lines = [
-    "Automated ops triage from gmail-digest.",
+    "Automated ops triage from direct multi-dashboard collection.",
     "",
     `Generated: ${report.generatedAt}`,
-    `Digest: ${report.digestUrl}`,
+    `Source: ${report.sourcePath}`,
     finding.workflow ? `Workflow: ${finding.workflow}` : undefined,
     finding.commit ? `Commit: ${finding.commit}` : undefined,
     finding.count ? `Occurrences: ${finding.count}` : undefined,
+    finding.evidenceUrl ? `Evidence: ${finding.evidenceUrl}` : undefined,
     "",
     "Recommended action:",
     finding.recommendedAction,
@@ -507,8 +373,9 @@ function renderMarkdown(report: OpsTriageReport): string {
     "# Ops Triage",
     "",
     `Generated: ${report.generatedAt}`,
-    `Digest: ${report.digestUrl}`,
-    report.digestUpdatedAt ? `Digest updated: ${report.digestUpdatedAt}` : undefined,
+    `Source: ${report.source}`,
+    `Source path: ${report.sourcePath}`,
+    report.sourceUpdatedAt ? `Source updated: ${report.sourceUpdatedAt}` : undefined,
     "",
     "## Summary",
     "",
@@ -553,8 +420,9 @@ async function writeReport(report: OpsTriageReport, options: CliOptions): Promis
 
 async function main(): Promise<void> {
   const options = parseArgs(process.argv.slice(2));
-  const markdown = await loadDigest(options);
-  const report = buildReport(markdown, options);
+  const report = options.input
+    ? buildOpsTriageReport(await readFile(options.input, "utf8"), options)
+    : await buildReportFromIntel(options);
 
   if (options.createIssues) {
     await createGitHubIssues(report);

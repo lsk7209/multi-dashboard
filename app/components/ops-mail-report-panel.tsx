@@ -239,7 +239,7 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
           <MailKpi label="GA4" value={report.counts.ga4} />
         </div>
         <div className="mail-source-meta">
-          <span>{`digest ${formatDateTime(report.digestUpdatedAt ?? report.generatedAt)}`}</span>
+          <span>{`direct ops ${formatDateTime(report.digestUpdatedAt ?? report.generatedAt)}`}</span>
           <span>{report.digestUrl ?? report.path}</span>
           <span>{persistenceNote}</span>
         </div>

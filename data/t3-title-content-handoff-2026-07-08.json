@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T15:47:50.382Z",
+  "generatedAt": "2026-07-07T23:41:57.897Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,12 +8,14 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-07T15:47:44.194Z",
+    "snapshotTimestamp": "2026-07-07T23:39:59.111Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-08.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
     "refreshCommand": "pnpm stats:update",
-    "refreshFailedSources": []
+    "refreshFailedSources": [
+      "skipped_refresh_failed:adsense_queue:missing_current:1"
+    ]
   },
   "summary": {
     "siteCount": 13,
@@ -39,7 +41,7 @@
         "gscClicks30d": 112,
         "gscCtr30d": 0.01366687004270897,
         "gscPosition30d": 10.482489322757779,
-        "ga4ActiveUsers30d": 1492
+        "ga4ActiveUsers30d": 1496
       },
       "topQueries": [
         {

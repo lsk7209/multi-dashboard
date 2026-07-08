@@ -14,7 +14,7 @@
     "setup:preflight:dashboard": "tsx scripts/setup/preflight.ts --scope=dashboard",
     "setup:import-ga4-sites": "tsx scripts/setup/import-ga4-sites.ts",
     "stats:update": "tsx scripts/setup/update-ga4-stats.ts",
-    "dashboard:refresh": "pnpm stats:update && pnpm ops:triage",
+    "dashboard:refresh": "pnpm stats:update && pnpm ops:intel && pnpm ops:triage",
     "ops:intel": "tsx scripts/setup/update-ops-intel.ts",
     "ops:intel:public": "tsx scripts/setup/update-ops-intel.ts --public-only",
     "ops:triage": "tsx scripts/setup/update-ops-triage.ts",

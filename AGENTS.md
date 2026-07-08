@@ -14,11 +14,22 @@
 - This rule applies before work based on the Insights menu, action queue, GSC issues, sitemap status, traffic drops, growth signals, or SEO opportunities.
 - After refreshing, use the updated dashboard data as the source of truth for prioritizing site fixes.
 
-## Gmail Digest Startup Prompt
+## Evidence-First Work Progression
 
-- At the start of a new multi-dashboard work session, proactively mention that `lsk7209/gmail-digest` collects Gmail/GitHub operations signals and ask whether to review the latest GitHub-related errors before site work.
-- Suggested wording: `GitHub에 반영된 에러들을 gmail-digest 기준으로 먼저 검토해서 수정할까요?`
-- Do not automatically mutate dashboard data from gmail-digest. Refresh or import dashboard state only when the user asks for it.
+- This project should be operated from current first-party evidence, not from stale helper outputs, old queues, or habit.
+- Before prioritizing, implementing, or reporting, identify the current source of truth for the task and verify it is fresh enough.
+- If a legacy script, artifact, or external helper conflicts with the project direction, treat it as technical debt to repair instead of adapting the plan around it.
+- When a user corrects a workflow assumption, record the correction in the project rules before continuing related work.
+- For sequential work, finish the current evidence and verification loop before moving to the next site or subsystem.
+
+## Direct Ops Collection, Not Gmail Digest
+
+- Do not use `lsk7209/gmail-digest` as the source of truth for multi-dashboard operations triage.
+- Do not recommend fixing `gmail-digest` before site work. The project direction is to collect operational signals directly inside `multi-dashboard`.
+- For GitHub Actions failures, collect from GitHub APIs or repo-local workflow evidence directly.
+- For GA4, GSC, sitemap, AdSense code, and ads.txt signals, use the current `pnpm stats:update` output and dashboard artifacts.
+- If a script still reads `gmail-digest`, treat that as legacy technical debt to replace with direct collection, not as a user workflow requirement.
+- When planning site fixes, explicitly separate direct dashboard evidence from any stale legacy digest-derived artifact.
 
 ## Vercel API Data Content Follow-Up
 
