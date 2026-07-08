@@ -31,6 +31,13 @@
 - If a script still reads `gmail-digest`, treat that as legacy technical debt to replace with direct collection, not as a user workflow requirement.
 - When planning site fixes, explicitly separate direct dashboard evidence from any stale legacy digest-derived artifact.
 
+## No Cloudflare Service Usage
+
+- The managed sites do not use Cloudflare services as an active hosting, worker, database, proxy, or deployment layer.
+- When reviewing any site, treat active Cloudflare artifacts as cleanup targets: `wrangler*` config, Cloudflare Pages/Workers/Functions code, D1/KV/R2 bindings, Cloudflare-specific docs, dependencies, scripts, dashboard instructions, and GitHub status/check references.
+- Prefer the actual stack shown by repo evidence, usually GitHub plus Vercel and the site's current database/API providers.
+- If a failing `Cloudflare Pages` GitHub status appears, distinguish repo cleanup from external Cloudflare GitHub App/Page integration. Remove repo-side artifacts first, then record that the external integration must be disconnected from the account or repository settings.
+
 ## Vercel API Data Content Follow-Up
 
 - This rule applies across Vercel-hosted / Next.js sites that collect external API data into a DB or use API-backed datasets for SEO content. It is not limited to `todaypharm`.
