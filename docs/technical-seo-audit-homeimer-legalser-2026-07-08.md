@@ -10,7 +10,7 @@
 
 ## homeimer.com
 
-Status: needs T2 patch plan before production change.
+Status: T2 canonical patch applied and verified.
 
 Evidence:
 
@@ -30,17 +30,27 @@ Evidence:
 
 Findings:
 
-- T2: Post canonical/permalink mismatch. This can dilute indexing signals because Google sees sitemap URL and canonical URL disagree.
-- T2: Confirm SEO plugin/permalink ownership in WordPress before changing canonical output.
+- T2 fixed 2026-07-08: Post canonical/permalink mismatch. This could dilute indexing signals because Google saw sitemap URLs and canonical URLs disagreeing.
+- T2 evidence: Rank Math `rank_math_canonical_url` post meta contained exact `https://homeimer.com/?p=<post_id>` values while WordPress permalink structure was `/%postname%/`.
 - T3/content: no article body or title edits from this audit.
 
-Patch plan:
+Applied patch:
 
-1. Take WordPress backup before apply: database, active theme, plugins, and mu-plugins.
-2. Inspect canonical source: Rank Math/Yoast/custom theme/mu-plugin/permalink settings.
-3. Fix canonical to emit `get_permalink()` pretty URL for posts.
-4. Purge cache, fetch two sampled posts, confirm canonical equals final URL.
-5. Resubmit sitemap or request recrawl for changed sample URLs after verification.
+1. Backup created before apply: `/home/homeimer/backups/site-optimizer-canonical-20260708-102458`.
+   - Included DB export, active plugin list, active theme list, `theme_mods_astra`, `wp-content/mu-plugins`, and active `astra` theme archive.
+2. Updated Rank Math canonical meta only where the old value exactly matched `https://homeimer.com/?p=<post_id>`.
+   - Published posts updated: 272.
+   - Scheduled posts updated: 28, using slug URL because WordPress returns query permalinks for future posts before publication.
+   - Remaining query canonical meta after patch: 0.
+3. Flushed WordPress cache and LiteSpeed cache.
+4. Public HTML verification after cache purge:
+   - `https://homeimer.com/low-maintenance-seasonal-decor-rotation-comparison-mixed-materials-or-flexible-storage/` canonical now equals the pretty permalink.
+   - `https://homeimer.com/sustainable-indoor-plant-focal-wall-case-study-a-practical-room-refresh/` canonical now equals the pretty permalink.
+
+Follow-up:
+
+1. Monitor GSC discovery/indexing deltas for `homeimer.com` after the next crawl cycle.
+2. If impressions remain flat, pull GSC query/page deltas before doing content/title work.
 
 ## legalser.com
 
