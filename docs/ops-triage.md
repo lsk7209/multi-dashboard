@@ -1,9 +1,9 @@
 # Ops Triage
 
-Generated: 2026-07-08T00:09:27.229Z
+Generated: 2026-07-08T01:14:11.697Z
 Source: direct
 Source path: data/ops-intel.json
-Source updated: 2026-07-08T00:09:18.923Z
+Source updated: 2026-07-08T01:14:04.517Z
 
 ## Summary
 
@@ -21,10 +21,10 @@ Source updated: 2026-07-08T00:09:18.923Z
 
 | Priority | Severity | Kind | Target | Title | Action |
 |---:|---|---|---|---|---|
-| 115 | critical | github-actions | coverclarityhealth.com | coverclarityhealth.com: Publish scheduled content failed 64 times | Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow. |
+| 115 | critical | github-actions | coverclarityhealth.com | coverclarityhealth.com: Publish scheduled content failed 65 times | Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow. |
 | 115 | critical | github-actions | crepikacom | crepikacom: Auto Publish Blog Post failed 62 times | Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow. |
 | 115 | critical | github-actions | crepikacom | crepikacom: Auto Publish Utility Tool failed 42 times | Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow. |
-| 115 | critical | github-actions | gong365kr | gong365kr: StartupMoneyMap cron failed 113 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
+| 115 | critical | github-actions | gong365kr | gong365kr: StartupMoneyMap cron failed 114 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |
 | 115 | critical | github-actions | gungangbohum | gungangbohum: Publish scheduled content failed 65 times | Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow. |
 | 109 | critical | github-actions | askorekr | askorekr: plant-data-pipeline failed 9 times | Inspect the latest workflow logs, then add explicit gates, retries, or upstream API fallback handling. |
 | 87 | high | github-actions | 2424 | 2424: Live Cost Watch failed 7 times | Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause. |

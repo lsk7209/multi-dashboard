@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-08T00:09:27.229Z",
+  "generatedAt": "2026-07-08T01:14:11.697Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-07-08T00:09:18.923Z",
+  "sourceUpdatedAt": "2026-07-08T01:14:04.517Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
@@ -28,12 +28,12 @@
       "repo": "coverclarityhealth.com",
       "workflow": "Publish scheduled content",
       "category": "content",
-      "count": 64,
+      "count": 65,
       "commit": "276d18e",
-      "sourceLine": "direct:github-actions repo=coverclarityhealth.com workflow=Publish scheduled content count=64 commit=276d18e",
-      "title": "coverclarityhealth.com: Publish scheduled content failed 64 times",
+      "sourceLine": "direct:github-actions repo=coverclarityhealth.com workflow=Publish scheduled content count=65 commit=276d18e",
+      "title": "coverclarityhealth.com: Publish scheduled content failed 65 times",
       "recommendedAction": "Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow.",
-      "evidenceUrl": "https://github.com/lsk7209/coverclarityhealth.com/actions/runs/28905373899"
+      "evidenceUrl": "https://github.com/lsk7209/coverclarityhealth.com/actions/runs/28907889452"
     },
     {
       "id": "gha-crepikacom-11sfwsk",
@@ -66,19 +66,19 @@
       "evidenceUrl": "https://github.com/lsk7209/crepikacom/actions/runs/28770970764"
     },
     {
-      "id": "gha-gong365kr-i6fmuh",
+      "id": "gha-gong365kr-1pri3w3",
       "kind": "github-actions",
       "severity": "critical",
       "priority": 115,
       "repo": "gong365kr",
       "workflow": "StartupMoneyMap cron",
       "category": "system",
-      "count": 113,
-      "commit": "27a1589",
-      "sourceLine": "direct:github-actions repo=gong365kr workflow=StartupMoneyMap cron count=113 commit=27a1589",
-      "title": "gong365kr: StartupMoneyMap cron failed 113 times",
+      "count": 114,
+      "commit": "56ae770",
+      "sourceLine": "direct:github-actions repo=gong365kr workflow=StartupMoneyMap cron count=114 commit=56ae770",
+      "title": "gong365kr: StartupMoneyMap cron failed 114 times",
       "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.",
-      "evidenceUrl": "https://github.com/lsk7209/gong365kr/actions/runs/28907074349"
+      "evidenceUrl": "https://github.com/lsk7209/gong365kr/actions/runs/28907727149"
     },
     {
       "id": "gha-gungangbohum-f50lnn",
