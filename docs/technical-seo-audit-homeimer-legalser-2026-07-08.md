@@ -3,8 +3,8 @@
 ## Evidence
 
 - Dashboard refresh command: `pnpm stats:update`
-- Refresh result: failed, `GCP_SA_KEY_JSON` missing from readable setup sources.
-- Fallback snapshot: `data/site-stats.json`, `generatedAt=2026-07-07T23:39:59.111Z`
+- Refresh result: success after local `GCP_SA_KEY_FILE` mapping to the existing service-account JSON.
+- Fresh snapshot: `data/site-stats.json`, `generatedAt=2026-07-08T01:11:20.285Z`
 - Public HTTP checks: direct fetch of home, `robots.txt`, sitemap, sitemap children, RSS candidates, `ads.txt`, and sample post URLs.
 - Source policy: direct project/dashboard/public collection only. No gmail-digest signal used.
 
@@ -23,6 +23,7 @@ Evidence:
 - RSS: `/feed/` 200 with items; `/feed.xml` and `/rss.xml` 404, acceptable for WordPress if RSS discovery points to `/feed/`.
 - AdSense/ads.txt: loader detected, `ads.txt` 200 with default publisher.
 - GA4: detected on sampled pages.
+- Dashboard metrics: GA4 7d users 4, 7d views 5; GSC 7d clicks 0, impressions 3; submitted URLs 538; sitemap warnings/errors 0/0.
 - Sample post issue: sitemap URLs are pretty permalinks, but canonical outputs query IDs:
   - `https://homeimer.com/low-maintenance-seasonal-decor-rotation-comparison-mixed-materials-or-flexible-storage/` canonical `https://homeimer.com/?p=4936`
   - `https://homeimer.com/sustainable-indoor-plant-focal-wall-case-study-a-practical-room-refresh/` canonical `https://homeimer.com/?p=4938`
@@ -56,6 +57,7 @@ Evidence:
 - RSS: `/feed/` 200 with items; `/feed.xml` and `/rss.xml` 404, acceptable for WordPress if RSS discovery points to `/feed/`.
 - AdSense/ads.txt: loader detected, `ads.txt` 200 with default publisher.
 - GA4: detected on sampled pages.
+- Dashboard metrics: GA4 7d users 6, 7d views 8; GSC 7d clicks 1, impressions 44; submitted URLs 485; sitemap warnings/errors 0/0.
 - Sample posts: canonical equals pretty permalink, indexable robots, meta descriptions present.
 
 Findings:
