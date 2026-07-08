@@ -7,6 +7,7 @@
 - Fresh snapshot: `data/site-stats.json`, `generatedAt=2026-07-08T01:11:20.285Z`
 - Public HTTP checks: direct fetch of home, `robots.txt`, sitemap, sitemap children, RSS candidates, `ads.txt`, and sample post URLs.
 - Source policy: direct project/dashboard/public collection only. No gmail-digest signal used.
+- Cloudflare policy: the user does not use Cloudflare; public headers and local paths were checked for Cloudflare residue before closing the audit.
 
 ## homeimer.com
 
@@ -27,6 +28,12 @@ Evidence:
 - Sample post issue: sitemap URLs are pretty permalinks, but canonical outputs query IDs:
   - `https://homeimer.com/low-maintenance-seasonal-decor-rotation-comparison-mixed-materials-or-flexible-storage/` canonical `https://homeimer.com/?p=4936`
   - `https://homeimer.com/sustainable-indoor-plant-focal-wall-case-study-a-practical-room-refresh/` canonical `https://homeimer.com/?p=4938`
+- Cloudflare residue check:
+  - Public headers show `Server: LiteSpeed`, `X-Powered-By: PHP/8.0.30`, and LiteSpeed cache headers.
+  - No public `cf-ray` or Cloudflare response-header signal was observed.
+  - Local path checked: `D:\web\homeimercom`.
+  - No `cf*.txt` verification token files found.
+  - No local matches for `Cloudflare`, `cloudflare`, `wrangler`, `pages.dev`, `@cloudflare`, `CLOUDFLARE`, `D1`, `cdn-cgi`, or `cf[a-f0-9]{32}` outside ignored cache/dependency folders.
 
 Findings:
 
@@ -69,6 +76,12 @@ Evidence:
 - GA4: detected on sampled pages.
 - Dashboard metrics: GA4 7d users 6, 7d views 8; GSC 7d clicks 1, impressions 44; submitted URLs 485; sitemap warnings/errors 0/0.
 - Sample posts: canonical equals pretty permalink, indexable robots, meta descriptions present.
+- Cloudflare residue check:
+  - Public headers show `Server: LiteSpeed`, `X-Powered-By: PHP/8.0.30`, and LiteSpeed cache headers.
+  - No public `cf-ray` or Cloudflare response-header signal was observed.
+  - Local path checked: `D:\web\legalsercom`.
+  - No `cf*.txt` verification token files found.
+  - No local matches for `Cloudflare`, `cloudflare`, `wrangler`, `pages.dev`, `@cloudflare`, `CLOUDFLARE`, `D1`, `cdn-cgi`, or `cf[a-f0-9]{32}` outside ignored cache/dependency folders.
 
 Findings:
 
