@@ -1982,7 +1982,40 @@ function shouldServeResolvedBannerPlacement(
   }
   const decision = decideCoupangExposure(registry, decisionInput);
 
+  if (
+    !decision.allowed &&
+    decision.reason === "channel_not_found" &&
+    isSameRegisteredPlacementDomain(resolved, input)
+  ) {
+    return true;
+  }
+
   return decision.allowed;
+}
+
+function isSameRegisteredPlacementDomain(
+  resolved: ResolvedBannerPlacement,
+  input: {
+    pageUrl?: string | undefined;
+    referrer?: string | undefined;
+  },
+): boolean {
+  const placementDomain = normalizePlacementDomain(resolved.placement.siteUrl ?? undefined);
+  if (!placementDomain) return false;
+
+  const pageDomain = normalizePlacementDomain(input.pageUrl);
+  const referrerDomain = normalizePlacementDomain(input.referrer);
+  return pageDomain === placementDomain || referrerDomain === placementDomain;
+}
+
+function normalizePlacementDomain(value: string | null | undefined): string {
+  const text = (value ?? "").trim().toLowerCase();
+  if (!text) return "";
+  try {
+    return new URL(text.includes("://") ? text : `https://${text}`).hostname.replace(/^www\./, "");
+  } catch {
+    return text.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
+  }
 }
 
 function isCoupangResolvedPlacement(resolved: ResolvedBannerPlacement): boolean {
