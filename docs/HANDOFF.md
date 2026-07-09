@@ -17,7 +17,10 @@
 - Coupang A/B/C banner settings were synced on 2026-07-09 with `pnpm ops:coupang-banners`.
 - Remote libSQL verification after sync: 21 `coupang-inline` sites, 63 active assignments, min/max 3 active assignments per site.
 - `temon` remote state after sync: `assignment_coupang_temon_inline_a` weight 34, `_b` weight 33, `_c` weight 33 active; legacy single assignment and `quiz-bottom` placeholder inactive.
-- Live Vercel check after the DB sync still returned the old creative renderer for `https://multi-dashboard-one.vercel.app/api/banner-management/creative?siteKey=temon&variant=a`: it still contained `COUPANG PARTNERS`, had no variant copy, and did not include the new theme asset. The remote DB settings are ready, but the improved creative code must be deployed before the live banner visual changes take effect.
+- Live Vercel deployment completed on 2026-07-09 after the creative/resolver changes.
+- Live Vercel checks now show the new creative renderer for `https://multi-dashboard-one.vercel.app/api/banner-management/creative?siteKey=temon&variant=a`: it returns `image/svg+xml`, no longer contains `COUPANG PARTNERS`, and uses image-led Korean copy.
+- Live `temon` serving checks now work through both slot and placement paths: `/api/banner-management/image` returns 302 to the variant creative URL, and `/api/banner-management/click` returns 302 to the Coupang short URL.
+- Runtime fallback added on 2026-07-09: if the Coupang channel registry lookup is stale/missing but the resolved DB placement domain matches the request page/referrer domain, the registered placement can still serve. This prevents valid remote DB placements from falling back to the transparent GIF.
 - Runtime banner assets:
   - `public/assets/affiliate/coupang-theme-household-728x90.png`
   - `public/assets/affiliate/coupang-theme-pet-728x90.png`
@@ -35,7 +38,9 @@
 - Later remote libSQL check after the refresh/sync showed `temon` 7-day `image_request=1216` and internal `click=245`.
 - `pnpm ops:coupang-banners` completed with `synced=21 remote=yes`.
 - Placeholder/example assignment cleanup set 4 local and 5 remote active test assignments inactive; final remote check found no active placeholder/example assignments.
-- Live Vercel creative check after sync confirmed the production deployment was still serving the old SVG implementation, so code deployment is the remaining step for live visual rollout.
+- Live Vercel creative check after deployment: `variant=a` returned `200 image/svg+xml`, `COUPANG PARTNERS` was absent.
+- Live Vercel image checks after deployment: `siteKey=temon&slotKey=coupang-inline` and `placementId=placement_coupang_temon_inline` both returned `302` to `/api/banner-management/creative?siteKey=temon&variant=c`.
+- Live Vercel click checks after deployment: both slot and placement paths returned `302` to `https://link.coupang.com/a/feHs6hGHQG`.
 
 ## Next Steps
 
@@ -44,4 +49,4 @@
 - For a stronger click-through version, add impression/click-rate based weight updates so weak variants are automatically reduced and winning variants are promoted.
 - Consider adding separate health and sports image themes after the first A/B/C performance window; those topics currently use the closest household or car/outdoor theme.
 - Add a separate "Coupang accepted clicks" import/report if exact partner-side performance needs to appear in the dashboard. Internal redirect counts should not be used as revenue-performance proof.
-- Deploy the current creative/resolver changes, then re-check the live creative URL for `variant=a|b|c` and confirm the old `COUPANG PARTNERS` copy is gone.
+- Monitor internal redirect counts against Coupang Partners accepted clicks; the dashboard now represents redirect-call activity, not partner-side approved click/reporting truth.

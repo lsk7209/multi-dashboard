@@ -24,4 +24,8 @@
 - Result: remote libSQL has 21 `coupang-inline` sites with 63 active assignments; each site has exactly three active variants (`a`, `b`, `c`).
 - Cleanup: placeholder/example/localhost active assignments were deactivated locally and remotely; remote verification returned no active placeholder/example assignments.
 - Verification: remote `temon` now has active `assignment_coupang_temon_inline_a` weight 34, `_b` weight 33, and `_c` weight 33; legacy `assignment_coupang_temon_inline` and `quiz-bottom` placeholder are inactive.
-- Remaining: live Vercel still serves the old creative renderer for the variant URL until these code changes are deployed. A post-sync live check still found old `COUPANG PARTNERS` copy, no variant hook copy, and no new theme asset.
+- State: creative/resolver changes deployed to production.
+- Deployment: `git push origin main` triggered Vercel production deployment `https://multi-dashboard-mw1eqmba1-limsubs-projects.vercel.app`, which reached Ready in 23s.
+- Fix: `app/lib/banner-management-store.ts` now allows a registered Coupang DB placement to serve when channel registry lookup returns `channel_not_found` but the placement domain matches the request page/referrer domain.
+- Verification: `pnpm type-check` passed; targeted Vitest passed with 3 files and 16 tests; `pnpm build` passed.
+- Live verification: `variant=a` returned `200 image/svg+xml` without `COUPANG PARTNERS`; `temon` image slot and placement paths returned `302` to a variant creative URL; click slot and placement paths returned `302` to `https://link.coupang.com/a/feHs6hGHQG`.
