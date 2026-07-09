@@ -137,6 +137,28 @@ async function remoteUpsert(client: Client, table: string, row: Record<string, R
   });
 }
 
+function deactivateLegacySingleVariant(db: DatabaseSync, safeSiteId: string, now: string): void {
+  db.prepare("UPDATE assignments SET status = 'inactive', updated_at = ? WHERE id = ?").run(
+    now,
+    `assignment_coupang_${safeSiteId}_inline`,
+  );
+  db.prepare("UPDATE creatives SET status = 'inactive', updated_at = ? WHERE id = ?").run(
+    now,
+    `creative_coupang_${safeSiteId}`,
+  );
+}
+
+async function remoteDeactivateLegacySingleVariant(client: Client, safeSiteId: string, now: string): Promise<void> {
+  await client.execute({
+    sql: "UPDATE assignments SET status = 'inactive', updated_at = ? WHERE id = ?",
+    args: [now, `assignment_coupang_${safeSiteId}_inline`],
+  });
+  await client.execute({
+    sql: "UPDATE creatives SET status = 'inactive', updated_at = ? WHERE id = ?",
+    args: [now, `creative_coupang_${safeSiteId}`],
+  });
+}
+
 async function ensureRemoteSchema(client: Client): Promise<void> {
   await client.execute(`CREATE TABLE IF NOT EXISTS tracking_links (
     id TEXT PRIMARY KEY,
@@ -196,22 +218,29 @@ function getCreativeBaseUrl(): string {
   ).replace(/\/+$/, "");
 }
 
-function buildCreativeUrl(offer: SiteOffer): string {
+type CreativeVariant = "a" | "b" | "c";
+
+const CREATIVE_VARIANTS: Array<{ variant: CreativeVariant; weight: number }> = [
+  { variant: "a", weight: 34 },
+  { variant: "b", weight: 33 },
+  { variant: "c", weight: 33 },
+];
+
+function buildCreativeUrl(offer: SiteOffer, variant: CreativeVariant): string {
   const url = new URL(`${getCreativeBaseUrl()}/api/banner-management/creative`);
   url.searchParams.set("siteKey", offer.siteId);
+  url.searchParams.set("variant", variant);
   return url.toString();
 }
 
-function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<string, Record<string, RowValue>> {
+function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<string, Array<Record<string, RowValue>>> {
   const safeSiteId = offer.siteId.replace(/[^a-z0-9]+/gi, "_");
   const trackingId = `link_coupang_${safeSiteId}`;
-  const creativeId = `creative_coupang_${safeSiteId}`;
   const placementId = `placement_coupang_${safeSiteId}_inline`;
-  const assignmentId = `assignment_coupang_${safeSiteId}_inline`;
   const slug = `coupang-${offer.siteId}`;
 
   return {
-    tracking_links: {
+    tracking_links: [{
       id: trackingId,
       slug,
       public_url: shortUrl,
@@ -220,20 +249,20 @@ function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<stri
       status: "active",
       created_at: now,
       updated_at: now,
-    },
-    creatives: {
-      id: creativeId,
+    }],
+    creatives: CREATIVE_VARIANTS.map(({ variant }) => ({
+      id: `creative_coupang_${safeSiteId}_${variant}`,
       offer_id: "coupang-partners-primary",
-      name: `Coupang ${offer.domain} ${offer.label}`,
-      image_url: buildCreativeUrl(offer),
+      name: `Coupang ${offer.domain} ${offer.label} ${variant.toUpperCase()}`,
+      image_url: buildCreativeUrl(offer, variant),
       width: 728,
       height: 90,
       status: "active",
       policy_status: "approved",
       created_at: now,
       updated_at: now,
-    },
-    placements: {
+    })),
+    placements: [{
       id: placementId,
       name: `Coupang inline ${offer.domain}`,
       type: "image_link",
@@ -244,17 +273,17 @@ function buildRows(offer: SiteOffer, shortUrl: string, now: string): Record<stri
       site_key: offer.siteId,
       slot_key: "coupang-inline",
       site_url: `https://${offer.domain}`,
-    },
-    assignments: {
-      id: assignmentId,
+    }],
+    assignments: CREATIVE_VARIANTS.map(({ variant, weight }) => ({
+      id: `assignment_coupang_${safeSiteId}_inline_${variant}`,
       placement_id: placementId,
-      creative_id: creativeId,
+      creative_id: `creative_coupang_${safeSiteId}_${variant}`,
       tracking_link_id: trackingId,
-      weight: 100,
+      weight,
       status: "active",
       created_at: now,
       updated_at: now,
-    },
+    })),
   };
 }
 
@@ -273,10 +302,16 @@ async function main(): Promise<void> {
       const shortUrl = deepLinks.get(originalUrl);
       if (!shortUrl) throw new Error(`Missing deeplink for ${offer.siteId}`);
       const rows = buildRows(offer, shortUrl, now);
+      const safeSiteId = offer.siteId.replace(/[^a-z0-9]+/gi, "_");
 
-      for (const [table, row] of Object.entries(rows)) {
-        upsert(db, table, row);
-        if (remoteClient) await remoteUpsert(remoteClient, table, row);
+      deactivateLegacySingleVariant(db, safeSiteId, now);
+      if (remoteClient) await remoteDeactivateLegacySingleVariant(remoteClient, safeSiteId, now);
+
+      for (const [table, tableRows] of Object.entries(rows)) {
+        for (const row of tableRows) {
+          upsert(db, table, row);
+          if (remoteClient) await remoteUpsert(remoteClient, table, row);
+        }
       }
     }
   } finally {

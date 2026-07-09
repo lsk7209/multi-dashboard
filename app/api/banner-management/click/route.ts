@@ -25,6 +25,7 @@ export async function GET(request: Request) {
 
   await recordBannerClickAsync({
     assignmentId: resolved.assignmentId,
+    metadata: buildClickMetadata(request),
     pageUrl: url.searchParams.get("pageUrl") ?? undefined,
     placementId: resolved.placement.id,
     referrer: request.headers.get("referer") ?? undefined,
@@ -38,4 +39,14 @@ function parseBannerPurpose(value: string | null): "approval_screenshot" | "publ
   if (value === "approval_screenshot") return "approval_screenshot";
   if (value === "public") return "public";
   return undefined;
+}
+
+function buildClickMetadata(request: Request): Record<string, string | null> {
+  return {
+    accept: request.headers.get("accept"),
+    secFetchDest: request.headers.get("sec-fetch-dest"),
+    secFetchMode: request.headers.get("sec-fetch-mode"),
+    secFetchSite: request.headers.get("sec-fetch-site"),
+    userAgent: request.headers.get("user-agent"),
+  };
 }

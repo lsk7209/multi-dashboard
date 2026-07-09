@@ -145,11 +145,11 @@ const SITE_SUMMARY_COLUMNS: Array<{ key: SiteSortKey; label: string }> = [
   { key: "noAd", label: "no_ad" },
   { key: "requests", label: "요청" },
   { key: "imageRequests", label: "이미지" },
-  { key: "clicks", label: "클릭" },
-  { key: "ctr", label: "CTR" },
+  { key: "clicks", label: "리다이렉트" },
+  { key: "ctr", label: "리다이렉트율" },
   { key: "imageRequests7d", label: "7일 이미지" },
-  { key: "clicks7d", label: "7일 클릭" },
-  { key: "ctr7d", label: "7일 CTR" },
+  { key: "clicks7d", label: "7일 리다이렉트" },
+  { key: "ctr7d", label: "7일 리다이렉트율" },
   { key: "lastUpdatedAt", label: "갱신" },
 ];
 const SITE_QUICK_FILTERS: Array<{ id: SiteQuickFilterId; label: string }> = [
@@ -158,7 +158,7 @@ const SITE_QUICK_FILTERS: Array<{ id: SiteQuickFilterId; label: string }> = [
   { id: "unassigned", label: "미배정 있음" },
   { id: "no_ad", label: "no_ad 있음" },
   { id: "inactive", label: "활성 0" },
-  { id: "zero_click_7d", label: "7일 클릭 없음" },
+  { id: "zero_click_7d", label: "7일 리다이렉트 없음" },
   { id: "recent_exposure", label: "최근 호출 있음" },
 ];
 
@@ -581,14 +581,14 @@ export function BannerManagementConsole() {
       value: requestTotal > 0 ? formatPercent(noAdTotal / requestTotal) : "0%",
     },
     {
-      detail: `클릭 ${formatNumber(filteredClicks)}회 · 이미지 ${formatNumber(filteredImageRequests)}회`,
-      label: "누적 CTR",
+      detail: `리다이렉트 ${formatNumber(filteredClicks)}회 · 이미지 ${formatNumber(filteredImageRequests)}회`,
+      label: "누적 리다이렉트율",
       tone: "normal",
       value: formatPercent(getCtrRate({ clicks: filteredClicks, imageRequests: filteredImageRequests })),
     },
     {
-      detail: `클릭 ${formatNumber(filteredClicks7d)}회 · 이미지 ${formatNumber(filteredImageRequests7d)}회`,
-      label: "최근 7일 CTR",
+      detail: `리다이렉트 ${formatNumber(filteredClicks7d)}회 · 이미지 ${formatNumber(filteredImageRequests7d)}회`,
+      label: "최근 7일 리다이렉트율",
       tone: zeroClickExposureSites.length > 0 ? "warning" : "normal",
       value: formatPercent(getCtrRate7d({ clicks7d: filteredClicks7d, imageRequests7d: filteredImageRequests7d })),
     },
@@ -636,8 +636,8 @@ export function BannerManagementConsole() {
         setSiteQuickFilter("zero_click_7d");
       },
       count: zeroClickExposureSites.length,
-      detail: "최근 7일 노출은 있지만 클릭이 없는 사이트입니다.",
-      label: "7일 클릭 없음",
+      detail: "최근 7일 노출은 있지만 리다이렉트 호출이 없는 사이트입니다.",
+      label: "7일 리다이렉트 없음",
       tone: "warning",
     },
     {
@@ -920,9 +920,9 @@ export function BannerManagementConsole() {
           <span>배정 {formatNumber(fleetSummary.assignedPlacements)}개</span>
           <span>미배정 {formatNumber(fleetSummary.unassignedPlacements)}개</span>
           <span>이미지 요청 {formatNumber(fleetSummary.imageRequests)}회</span>
-          <span>클릭 {formatNumber(fleetSummary.clicks)}회</span>
-          <span>CTR {formatPercent(getCtrRate(fleetSummary))}</span>
-          <span>7일 CTR {formatPercent(getCtrRate7d(fleetSummary))}</span>
+          <span>리다이렉트 {formatNumber(fleetSummary.clicks)}회</span>
+          <span>리다이렉트율 {formatPercent(getCtrRate(fleetSummary))}</span>
+          <span>7일 리다이렉트율 {formatPercent(getCtrRate7d(fleetSummary))}</span>
         </div>
         {selectedSiteSummary ? (
           <div className="ops-site-focus">
@@ -931,8 +931,9 @@ export function BannerManagementConsole() {
             <span>
               슬롯 {formatNumber(selectedSiteSummary.placements)}개 · 미배정{" "}
               {formatNumber(selectedSiteSummary.unassignedPlacements)}개 · 이미지 요청{" "}
-              {formatNumber(selectedSiteSummary.imageRequests)}회 · 클릭 {formatNumber(selectedSiteSummary.clicks)}회 · CTR{" "}
-              {formatPercent(getCtrRate(selectedSiteSummary))} · 7일 CTR {formatPercent(getCtrRate7d(selectedSiteSummary))}
+              {formatNumber(selectedSiteSummary.imageRequests)}회 · 리다이렉트 {formatNumber(selectedSiteSummary.clicks)}회 ·
+              리다이렉트율 {formatPercent(getCtrRate(selectedSiteSummary))} · 7일 리다이렉트율{" "}
+              {formatPercent(getCtrRate7d(selectedSiteSummary))}
             </span>
           </div>
         ) : null}
@@ -945,7 +946,7 @@ export function BannerManagementConsole() {
               <div className="ops-section-heading">
                 <div>
                   <h3>운영 상태 요약</h3>
-                  <p>필터 기준으로 배너 커버리지, no_ad, CTR을 한 번에 비교합니다.</p>
+                  <p>필터 기준으로 배너 커버리지, no_ad, 내부 리다이렉트율을 한 번에 비교합니다.</p>
                 </div>
                 <strong>{formatNumber(filteredSiteSummaries.length)}개 사이트</strong>
               </div>
@@ -1005,12 +1006,12 @@ export function BannerManagementConsole() {
             <span>no_ad 사이트 {formatNumber(noAdSiteCount)}개</span>
             <span>활성 0 사이트 {formatNumber(inactiveSiteCount)}개</span>
             <span>7일 노출 {formatNumber(filteredImageRequests7d)}회</span>
-            <span>7일 클릭 {formatNumber(filteredClicks7d)}회</span>
+            <span>7일 리다이렉트 {formatNumber(filteredClicks7d)}회</span>
           </div>
 
           <div className="ops-exception-grid">
             <OpsTable
-              title={`최근 7일 CTR 상위 사이트 (${formatNumber(topEffectSites.length)})`}
+              title={`최근 7일 리다이렉트율 상위 사이트 (${formatNumber(topEffectSites.length)})`}
               isLoading={isLoading}
               emptyText="아직 최근 7일 이미지 요청이 있는 사이트가 없습니다."
             >
@@ -1020,18 +1021,18 @@ export function BannerManagementConsole() {
                     <strong>{site.siteKey}</strong>
                     <small>{site.siteUrl ?? "URL 미등록"}</small>
                   </td>
-                  <td>7일 CTR {formatPercent(getCtrRate7d(site))}</td>
-                  <td>7일 클릭 {formatNumber(site.clicks7d)}</td>
+                  <td>7일 리다이렉트율 {formatPercent(getCtrRate7d(site))}</td>
+                  <td>7일 리다이렉트 {formatNumber(site.clicks7d)}</td>
                   <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
-                  <td>누적 CTR {formatPercent(getCtrRate(site))}</td>
+                  <td>누적 리다이렉트율 {formatPercent(getCtrRate(site))}</td>
                 </tr>
               ))}
             </OpsTable>
 
             <OpsTable
-              title={`최근 7일 노출 대비 클릭 없음 (${formatNumber(zeroClickExposureSites.length)})`}
+              title={`최근 7일 노출 대비 리다이렉트 없음 (${formatNumber(zeroClickExposureSites.length)})`}
               isLoading={isLoading}
-              emptyText="최근 7일 이미지 요청 20회 이상인데 클릭 0회인 사이트가 없습니다."
+              emptyText="최근 7일 이미지 요청 20회 이상인데 리다이렉트 0회인 사이트가 없습니다."
             >
               {zeroClickExposureSites.slice(0, 10).map((site) => (
                 <tr key={site.siteKey}>
@@ -1040,8 +1041,8 @@ export function BannerManagementConsole() {
                     <small>{site.siteUrl ?? "URL 미등록"}</small>
                   </td>
                   <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
-                  <td>7일 클릭 {formatNumber(site.clicks7d)}</td>
-                  <td>7일 CTR {formatPercent(getCtrRate7d(site))}</td>
+                  <td>7일 리다이렉트 {formatNumber(site.clicks7d)}</td>
+                  <td>7일 리다이렉트율 {formatPercent(getCtrRate7d(site))}</td>
                 </tr>
               ))}
             </OpsTable>
@@ -1897,7 +1898,7 @@ function getSiteRisk(site: SiteSummaryRow): {
   }
   if (site.imageRequests7d >= 20 && site.clicks7d === 0) {
     return {
-      label: "7일 클릭 없음",
+      label: "7일 리다이렉트 없음",
       level: "medium",
       reason: "zero_click_7d",
     };

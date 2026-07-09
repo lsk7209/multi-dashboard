@@ -1,6 +1,7 @@
 import { copyFileSync, existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { DatabaseSync } from "node:sqlite";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { GET as getBannerManagement, POST as postBannerManagement } from "../api/banner-management/route.js";
@@ -135,6 +136,72 @@ describe("banner-management-store", () => {
     const snapshotPath = process.env.MONETIZATION_BANNER_SNAPSHOT ?? "";
     expect(existsSync(snapshotPath)).toBe(true);
     expect(readFileSync(snapshotPath, "utf8")).toContain(`Smoke placement ${stamp}`);
+  });
+
+  it("bucket-selects among multiple active assignments for A/B/C banners", () => {
+    const stamp = Date.now().toString().slice(-8);
+
+    let state = createBannerTrackingLink({
+      offerName: "ABC offer",
+      publicUrl: "https://example.com/abc",
+      slug: `abc-${stamp}`,
+    });
+    const trackingLink = findRequired(state.trackingLinks, (link) => link.slug === `abc-${stamp}`);
+
+    state = createBannerPlacement({
+      name: `ABC placement ${stamp}`,
+      siteKey: "temon",
+      siteUrl: "https://temon.example.com",
+      slotKey: `abc-${stamp}`,
+      type: "image_link",
+    });
+    const placement = findRequired(state.placements, (item) => item.name === `ABC placement ${stamp}`);
+
+    const creativeIds: string[] = [];
+    for (const variant of ["a", "b", "c"] as const) {
+      state = createBannerCreative({
+        height: 90,
+        imageUrl: `https://example.com/creative-${variant}.svg`,
+        name: `ABC creative ${stamp} ${variant}`,
+        width: 728,
+      });
+      const creative = findRequired(state.creatives, (item) => item.name === `ABC creative ${stamp} ${variant}`);
+      creativeIds.push(creative.id);
+    }
+
+    state = assignBannerPlacement({
+      creativeId: creativeIds[0],
+      placementId: placement.id,
+      trackingLinkId: trackingLink.id,
+      weight: 1,
+    });
+
+    const db = new DatabaseSync(process.env.MONETIZATION_BANNER_DB ?? "");
+    try {
+      const now = new Date().toISOString();
+      for (const [index, creativeId] of creativeIds.slice(1).entries()) {
+        db.prepare(
+          `INSERT INTO assignments
+            (id, placement_id, creative_id, tracking_link_id, weight, status, created_at, updated_at)
+           VALUES (?, ?, ?, ?, 1, 'active', ?, ?)`,
+        ).run(`assignment_abc_${stamp}_${index}`, placement.id, creativeId, trackingLink.id, now, now);
+      }
+    } finally {
+      db.close();
+    }
+
+    const servedCreativeIds = new Set<string>();
+    for (let index = 0; index < 120; index += 1) {
+      const resolved = resolveBannerPlacement({
+        pageUrl: `https://temon.example.com/post-${index}`,
+        slot: `temon.abc-${stamp}`,
+      });
+      if (resolved) servedCreativeIds.add(resolved.creative.id);
+    }
+
+    expect(servedCreativeIds.size).toBeGreaterThan(1);
+    expect([...servedCreativeIds].every((creativeId) => creativeIds.includes(creativeId))).toBe(true);
+    expect(state.assignments.some((assignment) => assignment.placementId === placement.id)).toBe(true);
   });
 
   it("keeps site summaries and resolution usable above 100 managed sites", () => {

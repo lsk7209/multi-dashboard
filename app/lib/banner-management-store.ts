@@ -532,7 +532,7 @@ export function resolveBannerPlacement(input: {
   ensureSchemaWhenWritable(dbPath);
   const db = openDb(dbPath, true);
   try {
-    const row = db.prepare(
+    const rows = db.prepare(
       `
       SELECT
         p.id AS placement_id,
@@ -575,9 +575,8 @@ export function resolveBannerPlacement(input: {
           OR (? IS NOT NULL AND ? IS NOT NULL AND p.site_key = ? AND p.slot_key = ?)
         )
       ORDER BY a.weight DESC, a.updated_at DESC
-      LIMIT 1
     `,
-    ).get(
+    ).all(
       lookup.placementId,
       lookup.placementId,
       lookup.siteKey,
@@ -585,11 +584,12 @@ export function resolveBannerPlacement(input: {
       lookup.siteKey,
       lookup.slotKey,
     );
+    const row = selectWeightedResolvedRow(rows, input, lookup);
     if (!row || !row.assignment_id || !row.creative_id || !row.tracking_link_id) {
       if (recordEvents) {
         recordPlacementEvent({
           eventType: "no_ad",
-          placementId: nullableString(row?.placement_id) ?? lookup.placementId,
+          placementId: nullableString(rows[0]?.placement_id) ?? lookup.placementId,
           pageUrl: input.pageUrl,
           referrer: input.referrer,
         });
@@ -650,6 +650,7 @@ export function recordBannerImageRequest(input: {
 
 export function recordBannerClick(input: {
   assignmentId?: string | undefined;
+  metadata?: unknown;
   placementId: string;
   trackingLinkId?: string | undefined;
   pageUrl?: string | undefined;
@@ -1059,7 +1060,7 @@ async function resolveRemoteBannerPlacement(
   const client = createBannerLibsqlClient();
   try {
     await ensureRemoteSchema(client);
-    const row = await remoteGet(
+    const rows = await remoteAll(
       client,
       `
       SELECT
@@ -1103,15 +1104,15 @@ async function resolveRemoteBannerPlacement(
           OR (? IS NOT NULL AND ? IS NOT NULL AND p.site_key = ? AND p.slot_key = ?)
         )
       ORDER BY a.weight DESC, a.updated_at DESC
-      LIMIT 1
     `,
       [lookup.placementId, lookup.placementId, lookup.siteKey, lookup.slotKey, lookup.siteKey, lookup.slotKey],
     );
+    const row = selectWeightedResolvedRow(rows, input, lookup);
     if (!row || !row.assignment_id || !row.creative_id || !row.tracking_link_id) {
       if (recordEvents) {
         await recordRemotePlacementEvent({
           eventType: "no_ad",
-          placementId: nullableString(row?.placement_id) ?? lookup.placementId,
+          placementId: nullableString(rows[0]?.placement_id) ?? lookup.placementId,
           pageUrl: input.pageUrl,
           referrer: input.referrer,
         });
@@ -1861,6 +1862,48 @@ function normalizePlacementLookup(input: {
     };
   }
   return { placementId: null, siteKey: null, slotKey: null };
+}
+
+function selectWeightedResolvedRow(
+  rows: Row[],
+  input: {
+    pageUrl?: string | undefined;
+    referrer?: string | undefined;
+  },
+  lookup: { placementId: string | null; siteKey: string | null; slotKey: string | null },
+): Row | undefined {
+  const candidates = rows.filter((row) => row.assignment_id && row.creative_id && row.tracking_link_id);
+  if (candidates.length <= 1) return candidates[0];
+
+  const totalWeight = candidates.reduce((sum, row) => sum + Math.max(1, asNumber(row.weight)), 0);
+  const bucket = stableHash(
+    [
+      input.pageUrl,
+      input.referrer,
+      lookup.placementId,
+      lookup.siteKey,
+      lookup.slotKey,
+      candidates.map((row) => row.assignment_id).join(","),
+    ]
+      .filter(Boolean)
+      .join("|"),
+  ) % totalWeight;
+
+  let cursor = 0;
+  for (const row of candidates) {
+    cursor += Math.max(1, asNumber(row.weight));
+    if (bucket < cursor) return row;
+  }
+  return candidates[candidates.length - 1];
+}
+
+function stableHash(value: string): number {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
 }
 
 function mapResolvedPlacement(row: Row): ResolvedBannerPlacement {
