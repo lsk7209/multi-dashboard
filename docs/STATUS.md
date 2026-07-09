@@ -29,3 +29,6 @@
 - Fix: `app/lib/banner-management-store.ts` now allows a registered Coupang DB placement to serve when channel registry lookup returns `channel_not_found` but the placement domain matches the request page/referrer domain.
 - Verification: `pnpm type-check` passed; targeted Vitest passed with 3 files and 16 tests; `pnpm build` passed.
 - Live verification: `variant=a` returned `200 image/svg+xml` without `COUPANG PARTNERS`; `temon` image slot and placement paths returned `302` to a variant creative URL; click slot and placement paths returned `302` to `https://link.coupang.com/a/feHs6hGHQG`.
+- State: Coupang A/B/C weight optimizer added.
+- Change: `scripts/setup/optimize-coupang-banner-weights.ts` reads recent assignment-level impressions and redirects, applies Bayesian smoothing, bounds variant weights between 10 and 80, requires minimum placement impressions and redirects, and defaults to dry-run unless `--apply` is passed.
+- Verification: optimizer tests passed; live remote dry-run returned `changedPlacements=0` because current samples are too small or have insufficient redirect calls for safe reweighting.

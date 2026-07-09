@@ -20,6 +20,7 @@
     "ops:triage": "tsx scripts/setup/update-ops-triage.ts",
     "ops:monetization": "tsx scripts/setup/update-monetization-workspace.ts",
     "ops:coupang-banners": "tsx scripts/setup/sync-coupang-banner-placements.ts",
+    "ops:coupang-optimize": "tsx scripts/setup/optimize-coupang-banner-weights.ts",
     "ops:coupang-screenshots": "tsx scripts/setup/capture-coupang-screenshots.ts",
     "fleet:optimize": "tsx scripts/setup/run-fleet-optimization-chain.ts",
     "fleet:optimize:plan": "tsx scripts/setup/create-fleet-optimization-plan.ts",

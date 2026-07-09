@@ -21,6 +21,7 @@
 - Live Vercel checks now show the new creative renderer for `https://multi-dashboard-one.vercel.app/api/banner-management/creative?siteKey=temon&variant=a`: it returns `image/svg+xml`, no longer contains `COUPANG PARTNERS`, and uses image-led Korean copy.
 - Live `temon` serving checks now work through both slot and placement paths: `/api/banner-management/image` returns 302 to the variant creative URL, and `/api/banner-management/click` returns 302 to the Coupang short URL.
 - Runtime fallback added on 2026-07-09: if the Coupang channel registry lookup is stale/missing but the resolved DB placement domain matches the request page/referrer domain, the registered placement can still serve. This prevents valid remote DB placements from falling back to the transparent GIF.
+- Coupang A/B/C weight optimizer was added on 2026-07-09 as `pnpm ops:coupang-optimize`. It reads recent assignment-level image requests and redirect calls, recommends bounded weights, and only writes when run with `--apply`.
 - Runtime banner assets:
   - `public/assets/affiliate/coupang-theme-household-728x90.png`
   - `public/assets/affiliate/coupang-theme-pet-728x90.png`
@@ -41,12 +42,14 @@
 - Live Vercel creative check after deployment: `variant=a` returned `200 image/svg+xml`, `COUPANG PARTNERS` was absent.
 - Live Vercel image checks after deployment: `siteKey=temon&slotKey=coupang-inline` and `placementId=placement_coupang_temon_inline` both returned `302` to `/api/banner-management/creative?siteKey=temon&variant=c`.
 - Live Vercel click checks after deployment: both slot and placement paths returned `302` to `https://link.coupang.com/a/feHs6hGHQG`.
+- `pnpm ops:coupang-optimize` dry-run on 2026-07-09 read the remote banner DB and returned `changedPlacements=0`. Current samples are still too small or have too few redirects for safe automatic reweighting.
 
 ## Next Steps
 
 - Use the refreshed `data/site-stats.json` as the source of truth for dashboard-driven site prioritization.
 - Before the next refresh in a non-interactive Codex session, keep `pnpm-workspace.yaml` so approved build scripts for `esbuild`, `protobufjs`, and `sharp` do not block dependency restore.
 - For a stronger click-through version, add impression/click-rate based weight updates so weak variants are automatically reduced and winning variants are promoted.
+- Run `pnpm ops:coupang-optimize` daily as a dry-run until at least one placement has enough impressions and redirects. Use `pnpm ops:coupang-optimize -- --apply` only when the dry-run recommends changes backed by sufficient sample.
 - Consider adding separate health and sports image themes after the first A/B/C performance window; those topics currently use the closest household or car/outdoor theme.
 - Add a separate "Coupang accepted clicks" import/report if exact partner-side performance needs to appear in the dashboard. Internal redirect counts should not be used as revenue-performance proof.
 - Monitor internal redirect counts against Coupang Partners accepted clicks; the dashboard now represents redirect-call activity, not partner-side approved click/reporting truth.
