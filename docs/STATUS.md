@@ -7,6 +7,7 @@
 - Next.js 16 runtime module resolution repaired for local App Router TypeScript/TSX imports. `pnpm type-check`, dashboard-focused Vitest (112 tests), `pnpm build`, and the 9-check rendered UI smoke passed.
 - Current direct triage: three low GSC sitemap warnings only (`nicewomen`, `autorentlab`, `ezfunnel`); public site checks are clean and GSC resubmission requires external action authority.
 - Known validation gap: `pnpm lint` has 7 existing errors in untracked content-generation scripts outside this dashboard runtime scope.
+- Git deployment completed: commit `30930aa` is deployed to Vercel production (`dpl_68vCyzgoi5h3pfkjxwN1pKE5axyS`); `https://multi-dashboard-one.vercel.app` returned HTTP 200 with the current 98-site dashboard.
 
 ## 2026-07-10
 
