@@ -2,13 +2,62 @@
 
 ## Current State
 
-- Dashboard snapshot refresh completed on 2026-07-09 12:13 KST.
+- Content quality polish for the 2026-07-10 scheduled top-up batches is complete for known recurring Korean wording defects. Harness: `.goal-harness/content-quality-polish-2026-07-10/`.
+- Local artifacts were corrected with `scripts/content-quality-polish-2026-07-10.mjs`: `data/content-polish/local-apply-2026-07-10.json` reports 458 replacements across 55 files; `data/content-polish/local-scan-after-2026-07-10.json` reports hitCount 0.
+- Remote scheduled WordPress posts were corrected only when `post_status='future'`: dry-run `data/content-polish/remote-dry-run-targeted-2026-07-10.json` found 434 replacements across 208 future posts; live ledger `data/content-polish/remote-apply-2026-07-10.json` updated 208 future posts with errors 0; verification `data/content-polish/remote-verify-after-2026-07-10.json` reports hitCount 0 and errors 0.
+- Post-polish queue coverage remains intact. `data/scheduled-queue-2026-07-10-under30-after-content-polish.json` shows all 8 target sites have neededPosts 0; target under30Count is 0.
+- Important limitation: this pass corrected grammar/particle defects. It did not resolve broader SEO/helpful-content structural risks flagged by read-only review: repeated outlines, repeated source bundles, and keyword-pattern overuse, especially in `pethomepick`, `kdramanote`, and `kang4`. Treat that as the next editorial diversification pass before generating more similar batches.
+- 2026-07-10 under-30-day scheduled queue top-up is complete for all 8 direct-evidence target sites. Final audit: `data/scheduled-queue-2026-07-10-under30-after-kdramanote-topup.json`, generated `2026-07-10T08:03:38.148Z`; target-site under-30 list is empty.
+- Final coverage: `smallhomepick.com` futureCount 152, `plategogo.com` 192, `kdramanote.com` 145, `pethomepick.com` 145, `kang4.com` 143, `travel.sellerpit.kr` 145, `ezfunnel.kr` 94, `jasamall.sellerpit.kr` 94. Each target has `neededPosts=0` from the final 30-day calculation.
+- Additional completed live ledgers after the earlier partial handoff: `data/schedule-ledger/pethomepick-html-export-live-2026-07-10.json` inserted 87, `data/schedule-ledger/ezfunnel-html-export-live-2026-07-10.json` inserted 34, `data/schedule-ledger/kang4-topup-live-2026-07-10-b.json` inserted 51, and `data/schedule-ledger/kdramanote-html-export-live-2026-07-10.json` inserted 89. All reported errors 0.
+- Quality reports for the final four generated batches all passed at score 95: `output/pethomepick-topup-2026-07-10/docs/quality-report.json`, `output/ezfunnel-topup-2026-07-10/docs/quality-report.json`, `output/kang4-topup-2026-07-10/docs/quality-report.json`, and `output/kdramanote-topup-2026-07-10/docs/quality-report.json`.
+- 2026-07-10 scheduled-queue top-up completed for the safe 90+ quality sources found during the under-30-day audit.
+- Freshness gate was rerun with `pnpm stats:update`; `data/site-stats.json` generated at `2026-07-10T06:44:30.884Z`, and the refresh summary reported 98 sites with zero GA4, GSC, sitemap, AdSense-code, or ads.txt failures.
+- Full SSH/local scheduled-queue audit found 8 sites below 30 days of future coverage: `smallhomepick.com`, `plategogo.com`, `kdramanote.com`, `pethomepick.com`, `kang4.com`, `travel.sellerpit.kr`, `ezfunnel.kr`, and `jasamall.sellerpit.kr`.
+- Quality gate for this run: schedule only research-backed articles with quality score >= 90, remote duplicate-slug checks, and 5-hour future intervals from the current last scheduled post.
+- `smallhomepick.com`: scheduled 79 new articles from the 92-point research/QA manifest `output/wp-jachi-sinhon-salim/docs/smallhomepick-additional-articles-022-100-manifest.json`. Live ledger: `data/schedule-ledger/smallhomepick-md-manifest-live-2026-07-10.json`, inserted=79, skippedExisting=0, errors=0.
+- `travel.sellerpit.kr`: scheduled 51 new articles from the 97-point deepened travel export `D:\web\travelsellerpitkr\content-runs\travel-100-20260601-221305\exports\wp-posts-deepened.json`. Live ledger: `data/schedule-ledger/travel-sellerpit-html-export-live-2026-07-10.json`, inserted=51, skippedExisting=0, errors=0.
+- Post-top-up SSH queue audit: `data/scheduled-queue-2026-07-10-smallhomepick-travel-after-topup.json`. It confirms `smallhomepick.com` futureCount=115 and lastScheduledAt=`2026-08-01T23:13:00+09:00`; `travel.sellerpit.kr` futureCount=145 and lastScheduledAt=`2026-08-09T18:00:00+09:00`.
+- `kdramanote.com`: local quality report score=94 passed, but remote duplicate-slug preflight found all 100 eligible manifest rows already exist, so no new posts were inserted.
+- `ezfunnel.kr` and `kang4.com`: existing local HTML top-up drafts were attempted safely and skipped as duplicates, with inserted=0 and errors=0.
+- Remaining content work should not publish old unmatched drafts. `plategogo.com`, `pethomepick.com`, `kang4.com`, `ezfunnel.kr`, `jasamall.sellerpit.kr`, plus the remaining `smallhomepick.com` shortfall require fresh research-first generation, duplicate/cannibalization checks, and 90+ QA before scheduling.
+- Dashboard snapshot refresh completed on 2026-07-10 with `pnpm stats:update`; 98 sites refreshed and the refresh summary reported zero GA4, GSC, sitemap, AdSense-code, or ads.txt failures.
+- Latest dashboard snapshot for the current API-data triage: `data/site-stats.json` generated at `2026-07-10T05:25:30.576Z`.
+- Ops triage was regenerated from direct evidence after the refresh. Current triage has 3 low-severity GSC sitemap-warning findings only: `nicewomen`, `autorentlab`, and `ezfunnel`.
+- Ops finding quality was improved in `scripts/setup/update-ops-intel.ts`: sitemap warning findings now include exact sitemap path, warning/error count, submitted URL count, last downloaded time, and last submitted time in `sourceLine` and `recommendedAction`.
+- Public read-only checks for those 3 sitemap-warning sites found homepage 200, sitemap 200, robots.txt 200 with matching Sitemap entries, canonical present, and no homepage noindex. The remaining warning should be inspected in GSC or resubmitted only after explicit external Search Console action authority.
+- Vercel/API-data inventory refreshed with `pnpm exec tsx scripts/setup/audit-vercel-api-data-sites.ts`; current inventory is total=28, scheduled-db-ingestion=14, api-backed-content=11, candidate-review=3.
+- API-data freshness triage added as `pnpm ops:api-data-freshness`; outputs are `data/vercel-api-data-freshness.json` and `docs/vercel-api-data-freshness.md`.
+- Latest API-data freshness summary: content-followup=13, source-check-first=14, pipeline-repair-first=0, manual-review=1.
+- Work order: `docs/work-orders/vercel-api-data-freshness-2026-07-10.md`.
+- Todaypharm was checked first because it ranked high and has strong traffic. Direct GitHub evidence showed the scheduled public data sync, pharmacy content generator, and publish queue are currently healthy; content generation reported all pharmacies already covered.
+- Dogswhere was checked next with read-only evidence. Public sitemap/feed were fresh on 2026-07-10, but Turso showed stale source place data (`places_latest_updated_at=2026-05-30T23:30:05.172Z`) and a content queue mismatch: blog_total=770, draft=741, published=28, scheduled=1.
+- Dogswhere follow-up added `pnpm content:audit-queue` in `D:\web\dogswherecom`; it generated a local queue audit and review-only SQL with 511 draft-to-scheduled candidates, without applying live DB writes.
+- Dogswhere live queue repair was later authorized and completed. Final audit in `D:\web\dogswherecom` showed futureDrafts=0, repairCandidates=0, scheduledFuture=512.
+- Dogswhere post-repair cron verification is green. After the first scheduled time, `pnpm content:verify-publish` at `2026-07-10T05:01:40.869Z` showed draft=230, published=29, scheduled=511, dueScheduled=0, and the first scheduled slug `cheonan-city-park-dog-guide-2026-237` present in sitemap, feed, and `/blog/{slug}`.
+- Dogswhere queue audit at `2026-07-10T05:00:59.617Z` showed futureDrafts=0, repairCandidates=0, scheduledFuture=511.
+- Dogswhere place-source tooling was improved after queue repair. Added read-only `pnpm places:audit-source`, dry-run/live sync package commands, local `tsx` runner, and `--dry-run` support in `scripts/sync-pet-tour.ts`.
+- Dogswhere place-source audit at `2026-07-10T05:12:56.187Z` confirmed the next blocker: totalPlaces=212, openPlaces=212, latestUpdatedAt=`2026-05-30T23:30:05.172Z`, ageDays=40, status=`stale-fail`, public `/api/places` 200. Dry-run source sync with area=1/maxTotal=1 succeeded with wouldSave=1 and no DB write.
+- Current next target: treat the `dogswhere` queue repair as complete; if continuing this site, run a small live source sync sample only with explicit DB-write authorization, then audit the DB delta before considering a production cron/deploy.
+- Guardrail: the initial API-data triage performed no live writes. The later authorized `dogswhere` queue repair performed only the draft-to-scheduled DB state update; it did not run publishing jobs, production deploys, Search Console writes, AdSense writes, or title/body mutations.
+- Guardrail: the place-source improvement performed only read-only audit and API dry-run. It did not run live source sync, add a production cron, or deploy.
+- Dashboard snapshot refresh completed on 2026-07-09 21:26 KST.
 - Source command: `pnpm stats:update`.
 - Latest snapshot files:
   - `data/site-stats.json`
   - `data/history/2026-07-09.json`
-- Snapshot `generatedAt`: `2026-07-09T03:13:23.974Z`.
+- Snapshot `generatedAt`: `2026-07-09T12:26:40.789Z`.
 - Covered date ranges use `Asia/Seoul` completed-day basis through 2026-07-08.
+- Affiliate workspace refreshed on 2026-07-09 21:27 KST with `pnpm ops:monetization`; output reported 35 affiliate programs, 35 affiliate items, and 18 high-value candidates.
+- User correction applied on 2026-07-09: exclude site topics that already exist in the fleet.
+- Current recommended affiliate WordPress topic is `남성 그루밍·면도·두피케어 제품 비교 가이드`, prepared as local package `output/wp-launch/groomingpicklab` for site name `그루밍픽랩`.
+- Domain finalist selected on 2026-07-10: `groompicklab.com`. Dynadot production search reported available, non-premium, registration `10.88 USD`, renewal `10.88 USD`; account balance check reported `73.22 USD`.
+- `groompicklab.com` deep reputation check found no DNS resolution, zero Internet Archive 200 captures, no helper-detected trademark hints, and risk score 0. Spamhaus DBL and AdSense monetization trace remain manual-review flags.
+- SSH preflight found the intended ChemiCloud target through direct credentials because local alias `server-1` did not resolve: `rs6-kor.serverhostgroup.com`, user `nexttech`, WP-CLI `/usr/local/bin/wp`, PHP `/usr/local/bin/php`, MySQL `/usr/bin/mysql`, and starter root `/home/nexttech/blogsample2.nexttech7.com/wp-config.php`.
+- Launch work order: `docs/work-orders/groompicklab-launch-2026-07-10.md`.
+- Duplicate-topic exclusions from the refreshed dashboard snapshot include pet/dog, travel/camping, car, health/insurance, legal, AI/software, seller/shopping, wedding/family, education/certification, public-data/map, and broad beauty. The earlier `output/wp-launch/dogoutinglab` package is superseded because the fleet already has several pet/dog sites.
+- Topic selection evidence: updated affiliate inventory favored low/medium-risk banner-capable programs such as Coupang Partners, Naver Shopping Connect, LinkPrice, and Korean shopping/product affiliate surfaces; updated site stats showed no dedicated male grooming/shaving/scalp-care site in the current fleet.
+- External program checks were limited to official/public sources; live affiliate account eligibility, exact commission, allowed channels, API access, and generated tracking links remain gated.
 - Coupang creative SVG was revised on 2026-07-09 to use AI-generated image-led banners instead of obvious text-heavy ad banners.
 - Creative routing now maps site topics to banner themes: household, pet, car/outdoor, and tech/work.
 - Creative URLs support `variant=a|b|c`; the banner resolver can bucket multiple active assignments by stable weighted selection for A/B/C tests.
@@ -30,8 +79,30 @@
 
 ## Verification Evidence
 
-- `pnpm stats:update` completed successfully for 98 sites.
+- Content quality polish follow-up on 2026-07-10 completed grammar, structure, and queue-drift corrections for the scheduled-content top-up work.
+- Harness: `.goal-harness/content-quality-polish-2026-07-10/` is complete.
+- Grammar polish: `scripts/content-quality-polish-2026-07-10.mjs` applied 458 local artifact corrections and 434 remote future-post replacements across 208 scheduled posts; final verify `data/content-polish/remote-verify-after-2026-07-10.json` reported hitCount 0 and errors 0.
+- Structural polish: `scripts/content-structural-diversify-2026-07-10.mjs` diversified repeated H2/source-note structure for `pethomepick.com`, `kdramanote.com`, and `kang4.com`; `data/content-polish/structural-local-apply-2026-07-10-c.json` showed outlineSignatureUniqueRatio 1.0, duplicateSourceNoteRatio 0, and topH2Share <= 0.35 for all three.
+- Remote structural verify: `data/content-polish/structural-remote-verify-after-2026-07-10-final.json` checked 227 future posts and reported postsNeedingUpdate 0, errors 0.
+- Queue drift repair: one additional `ezfunnel.kr` article was generated in `output/ezfunnel-extension-2026-07-10/` and scheduled with `data/schedule-ledger/ezfunnel-extension-live-2026-07-10.json` (`inserted=1`, errors 0).
+- Final queue state: `data/scheduled-queue-2026-07-10-under30-after-final-polish.json` shows direct evidence for the 8 target sites; extracted check found under30Count 0. `ezfunnel.kr` is now futureCount 95, lastScheduledAt `2026-08-09T22:00:00+09:00`.
+- Content queue top-up on 2026-07-10 used refreshed dashboard evidence from `data/site-stats.json` generated `2026-07-10T06:44:30.884Z`.
+- `jasamall.sellerpit.kr`: generated 13 research-backed articles with quality report `output/jasamall-topup-2026-07-10/docs/quality-report.json` (`score=94`, pass, min sources 4) and scheduled them with `data/schedule-ledger/jasamall-html-export-live-2026-07-10.json` (`inserted=13`, errors 0). Reaudit `data/scheduled-queue-2026-07-10-under30-after-jasamall-topup.json` showed futureCount 94, lastScheduledAt `2026-08-09T18:00:00+09:00`.
+- `smallhomepick.com`: generated 38 research-backed articles with quality report `output/smallhomepick-topup-2026-07-10/docs/quality-report.json` (`score=95`, pass, min article score 95, min sources 5, min body 4545 chars) and scheduled them with ledgers `data/schedule-ledger/smallhomepick-html-export-live-2026-07-10-b.json` (`inserted=37`) and `data/schedule-ledger/smallhomepick-html-export-live-2026-07-10-c.json` (`inserted=1`). Reaudit `data/scheduled-queue-2026-07-10-under30-after-smallhomepick-c-topup.json` showed futureCount 152, lastScheduledAt `2026-08-09T21:13:00+09:00`.
+- `plategogo.com`: generated 92 research-backed static scheduled articles in `D:\web\plategogocom` with quality report `docs/content-topup-2026-07-10/quality-report.json` (`score=95`, pass, min article score 94, min body 4481 chars), committed as `6f20949`, pushed to GitHub, and verified Vercel production deployment `plategogo-pppeplopx-limsubs-projects.vercel.app` reached Ready from commit `6f20949`.
+- Current 30-day queue status from `data/scheduled-queue-2026-07-10-under30-after-plategogo-topup.json`: complete for `smallhomepick.com`, `travel.sellerpit.kr`, `jasamall.sellerpit.kr`, and `plategogo.com`; remaining direct-evidence shortfalls are `kdramanote.com` 89, `pethomepick.com` 87, `kang4.com` 51, and `ezfunnel.kr` 34.
+- `pnpm stats:update` completed successfully for 98 sites on the latest run, generating `data/site-stats.json` at `2026-07-10T05:25:30.576Z`.
 - Summary: GA4 failed=0, GSC failed=0, GSC email alerts=0, sitemaps failed=0, AdSense code not detected=0, AdSense transient=0, ads.txt failed=0, ads.txt transient=0.
+- `pnpm ops:intel` completed and regenerated `data/ops-intel.json` with detailed sitemap warning evidence.
+- `pnpm ops:triage` completed and regenerated `data/ops-triage.json` plus `docs/ops-triage.md`.
+- `pnpm test -- scripts/setup/update-ops-intel.test.ts scripts/setup/update-ops-triage.test.ts` passed.
+- `pnpm type-check` passed.
+- `pnpm lint` passed.
+- `pnpm ops:monetization` completed successfully and regenerated `data/affiliate-inventory.json` and `data/banner-management.json`.
+- `python C:\Users\dlatj\.codex\skills\wordpress-one-click-generator\scripts\wp-launch-package.py --target output\wp-launch\groomingpicklab --mode validate-only` returned `status: pass`, `errors: []`, `warnings: []`.
+- `python C:\Users\dlatj\.codex\skills\wordpress-one-click-generator\scripts\wp_launch\export_writer_csv.py --seed output\wp-launch\groomingpicklab\docs\wp-content-seed.json --out output\wp-launch\groomingpicklab\docs\wp-writer-titles.csv` exported 100 rows.
+- `python C:\Users\dlatj\.codex\skills\wordpress-one-click-generator\scripts\wp-launch-package.py --target output\wp-launch\dogoutinglab --mode validate-only` returned `status: pass`, `errors: []`, `warnings: []`.
+- `python C:\Users\dlatj\.codex\skills\wordpress-one-click-generator\scripts\wp_launch\export_writer_csv.py --seed output\wp-launch\dogoutinglab\docs\wp-content-seed.json --out output\wp-launch\dogoutinglab\docs\wp-writer-titles.csv` exported 100 rows.
 - `pnpm type-check` passed after the Coupang creative and A/B/C resolver changes.
 - `pnpm test -- app/api/banner-management/creative/route.test.ts app/lib/banner-management-store.test.ts` completed with 96 test files and 642 tests passing.
 - Visual sample grid checked at `tmp/coupang-preview-grid.png`.
@@ -47,9 +118,22 @@
 ## Next Steps
 
 - Use the refreshed `data/site-stats.json` as the source of truth for dashboard-driven site prioritization.
+- For `그루밍픽랩`, review `output/wp-launch/groomingpicklab/docs/wp-site-brief.md`, `wp-persona.md`, `wp-content-seed.json`, `wp-domain-candidates.json`, and `wp-launch-manifest.json` before any live domain, SSH, WordPress admin, affiliate dashboard, or publishing action.
+- Current blocker: live Dynadot registration requires exact final confirmation for `groompicklab.com`, max/all-in price and currency, duration, and production account authority.
+- Treat `output/wp-launch/dogoutinglab` as superseded unless the user explicitly asks to revive a pet/dog topic despite existing-site overlap.
+- Keep publication blocked until persona review, 10-row contract audit, 5-draft dry run, affiliate channel/account approval, search visibility review, rollback review, and explicit live authorization are complete.
 - Before the next refresh in a non-interactive Codex session, keep `pnpm-workspace.yaml` so approved build scripts for `esbuild`, `protobufjs`, and `sharp` do not block dependency restore.
 - For a stronger click-through version, add impression/click-rate based weight updates so weak variants are automatically reduced and winning variants are promoted.
 - Run `pnpm ops:coupang-optimize` daily as a dry-run until at least one placement has enough impressions and redirects. Use `pnpm ops:coupang-optimize -- --apply` only when the dry-run recommends changes backed by sufficient sample.
 - Consider adding separate health and sports image themes after the first A/B/C performance window; those topics currently use the closest household or car/outdoor theme.
 - Add a separate "Coupang accepted clicks" import/report if exact partner-side performance needs to appear in the dashboard. Internal redirect counts should not be used as revenue-performance proof.
 - Monitor internal redirect counts against Coupang Partners accepted clicks; the dashboard now represents redirect-call activity, not partner-side approved click/reporting truth.
+
+## 2026-07-10 Dashboard Refresh and Runtime Recovery
+
+- Freshness: `pnpm dashboard:refresh` completed for 98 sites. The snapshot is `data/site-stats.json` generated at `2026-07-10T08:51:36.848Z`; GA4, GSC, sitemap, AdSense, and ads.txt collector failures were all 0.
+- Direct operations triage has only three low-severity GSC sitemap warnings (`nicewomen`, `autorentlab`, `ezfunnel`). Public homepage, sitemap, robots, canonical, and noindex checks are clean; any resubmission remains an external Search Console action.
+- Recovery: regenerated the current non-mutating fleet chain with `pnpm fleet:optimize -- --skip-stats-update --skip-api-data-audit`. It produced `data/fleet-optimization-chain-2026-07-10.json` with 4/4 commands passed and a matching snapshot.
+- Runtime fix: Next.js 16/Turbopack could not resolve local TypeScript/TSX modules when App Router source imports used NodeNext `.js` specifiers. App source imports now omit local extensions and `tsconfig.json` uses `module=ESNext` with `moduleResolution=Bundler`.
+- Verification: `pnpm type-check`, targeted Vitest (112 tests), `pnpm build`, and `pnpm dashboard:ui-smoke -- --url=http://127.0.0.1:3004/` passed. The browser smoke checked the current 98-site snapshot with 9 checks.
+- Validation gap: repository-wide `pnpm lint` still reports 7 existing unused-variable errors in untracked content-generation scripts (`generate-jasamall-topup-articles.mjs`, `schedule-wp-html-manifest.mjs`, `schedule-wp-md-manifest.mjs`, and `topup-wordpress-drafts.mjs`); these are outside the dashboard runtime change.

@@ -1,0 +1,618 @@
+{
+  "generatedAt": "2026-07-10T08:54:33.526Z",
+  "dashboardEvidence": {
+    "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
+    "snapshotTimestamp": "2026-07-10T08:51:36.848Z",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": [],
+    "connectorStatus": {
+      "ga4Status": {
+        "ok": 98
+      },
+      "gscStatus": {
+        "ok": 98
+      },
+      "adsenseStatus": {
+        "ok": 95,
+        "disabled": 3
+      },
+      "adsenseCollectorStatus": {
+        "ok": 95,
+        "disabled": 3
+      },
+      "adsTxtStatus": {
+        "ok": 95,
+        "disabled": 3
+      },
+      "adsTxtCollectorStatus": {
+        "ok": 95,
+        "disabled": 3
+      }
+    },
+    "insightFields": [
+      "stats[].gscLast30Days",
+      "stats[].last30Days",
+      "stats[].adsenseStatus",
+      "stats[].adsenseCollectorStatus",
+      "stats[].adsTxtStatus",
+      "stats[].adsTxtCollectorStatus",
+      "stats[].gscStatus",
+      "stats[].ga4Status",
+      "stats[].sitemapWarnings",
+      "data/adsense-remediation-queue-*.json"
+    ]
+  },
+  "summary": {
+    "siteCount": 98,
+    "adsenseProblemRows": 0,
+    "seoCandidateCount": 20,
+    "titleHandoffCount": 10,
+    "indexingCount": 1,
+    "technicalSeoCount": 2,
+    "contentHandoffCount": 7
+  },
+  "adsenseQueue": {
+    "artifactPath": "data\\adsense-remediation-queue-2026-07-10.json",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T08:51:36.848Z",
+    "summary": {
+      "totalRows": 98,
+      "reviewedRows": 84,
+      "adsenseOkRows": 84,
+      "problemRows": 0,
+      "ordinaryAdsenseProof": 0,
+      "approvedRootSubdomainScope": 0,
+      "gscAuthTelemetry": 0,
+      "ga4ConfigTelemetry": 0
+    },
+    "nextItems": []
+  },
+  "seoCandidates": [
+    {
+      "rank": 1,
+      "siteId": "tennisfrens",
+      "host": "tennisfrens.com",
+      "url": "https://tennisfrens.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 11684 impressions, 0.98% CTR, average position 10.01.",
+      "metrics": {
+        "gscImpressions30d": 11684,
+        "gscClicks30d": 114,
+        "gscCtr30d": 0.009756932557343376,
+        "gscPosition30d": 10.00770284149264,
+        "ga4ActiveUsers30d": 1439
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 2,
+      "siteId": "cartain-2",
+      "host": "cartain.kr",
+      "url": "https://cartain.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 3621 impressions, 1.77% CTR, average position 9.43.",
+      "metrics": {
+        "gscImpressions30d": 3621,
+        "gscClicks30d": 64,
+        "gscCtr30d": 0.01767467550400442,
+        "gscPosition30d": 9.431372549019608,
+        "ga4ActiveUsers30d": 979
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 3,
+      "siteId": "gong365",
+      "host": "gong365.kr",
+      "url": "https://gong365.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 2732 impressions, 1.17% CTR, average position 8.14.",
+      "metrics": {
+        "gscImpressions30d": 2732,
+        "gscClicks30d": 32,
+        "gscCtr30d": 0.01171303074670571,
+        "gscPosition30d": 8.140556368960468,
+        "ga4ActiveUsers30d": 77
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 4,
+      "siteId": "estat-2",
+      "host": "estat.kr",
+      "url": "https://estat.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 2686 impressions, 0.52% CTR, average position 7.92.",
+      "metrics": {
+        "gscImpressions30d": 2686,
+        "gscClicks30d": 14,
+        "gscCtr30d": 0.0052122114668652275,
+        "gscPosition30d": 7.920699925539836,
+        "ga4ActiveUsers30d": 42
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 5,
+      "siteId": "gong365",
+      "host": "gong365.kr",
+      "url": "https://gong365.kr/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 2732 impressions and 77 users.",
+      "metrics": {
+        "gscImpressions30d": 2732,
+        "gscClicks30d": 32,
+        "gscCtr30d": 0.01171303074670571,
+        "gscPosition30d": 8.140556368960468,
+        "ga4ActiveUsers30d": 77
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 6,
+      "siteId": "estat-2",
+      "host": "estat.kr",
+      "url": "https://estat.kr/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 2686 impressions and 42 users.",
+      "metrics": {
+        "gscImpressions30d": 2686,
+        "gscClicks30d": 14,
+        "gscCtr30d": 0.0052122114668652275,
+        "gscPosition30d": 7.920699925539836,
+        "ga4ActiveUsers30d": 42
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 7,
+      "siteId": "dogswhere",
+      "host": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 985 impressions, 1.93% CTR, average position 13.27.",
+      "metrics": {
+        "gscImpressions30d": 985,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.019289340101522844,
+        "gscPosition30d": 13.268020304568529,
+        "ga4ActiveUsers30d": 1384
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 8,
+      "siteId": "petinsuer-2",
+      "host": "petinsuer.com",
+      "url": "https://petinsuer.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 1288 impressions, 1.40% CTR, average position 9.62.",
+      "metrics": {
+        "gscImpressions30d": 1288,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.013975155279503106,
+        "gscPosition30d": 9.618012422360248,
+        "ga4ActiveUsers30d": 96
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 9,
+      "siteId": "petinsuer-2",
+      "host": "petinsuer.com",
+      "url": "https://petinsuer.com/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 1288 impressions and 96 users.",
+      "metrics": {
+        "gscImpressions30d": 1288,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.013975155279503106,
+        "gscPosition30d": 9.618012422360248,
+        "ga4ActiveUsers30d": 96
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 10,
+      "siteId": "dogspang-2",
+      "host": "dogspang.kr",
+      "url": "https://dogspang.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 1084 impressions, 1.66% CTR, average position 10.01.",
+      "metrics": {
+        "gscImpressions30d": 1084,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.016605166051660517,
+        "gscPosition30d": 10.005535055350553,
+        "ga4ActiveUsers30d": 87
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 11,
+      "siteId": "homeimer",
+      "host": "homeimer.com",
+      "url": "https://homeimer.com/",
+      "actionType": "technical_seo",
+      "tier": "T2",
+      "confidence": "medium",
+      "reason": "Impressions exist but average position is weak: 1005 impressions at position 66.74.",
+      "metrics": {
+        "gscImpressions30d": 1005,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 66.73532338308458,
+        "ga4ActiveUsers30d": 10
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability."
+    },
+    {
+      "rank": 12,
+      "siteId": "ehon365",
+      "host": "ehon365.kr",
+      "url": "https://ehon365.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 769 impressions, 2.47% CTR, average position 14.41.",
+      "metrics": {
+        "gscImpressions30d": 769,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.0247074122236671,
+        "gscPosition30d": 14.40962288686606,
+        "ga4ActiveUsers30d": 650
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 13,
+      "siteId": "dogspang-2",
+      "host": "dogspang.kr",
+      "url": "https://dogspang.kr/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 1084 impressions and 87 users.",
+      "metrics": {
+        "gscImpressions30d": 1084,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.016605166051660517,
+        "gscPosition30d": 10.005535055350553,
+        "ga4ActiveUsers30d": 87
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 14,
+      "siteId": "homeimer",
+      "host": "homeimer.com",
+      "url": "https://homeimer.com/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 1005 impressions and 10 users.",
+      "metrics": {
+        "gscImpressions30d": 1005,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 66.73532338308458,
+        "ga4ActiveUsers30d": 10
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 15,
+      "siteId": "today2424",
+      "host": "today2424.kr",
+      "url": "https://today2424.kr/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 906 impressions and 94 users.",
+      "metrics": {
+        "gscImpressions30d": 906,
+        "gscClicks30d": 35,
+        "gscCtr30d": 0.03863134657836645,
+        "gscPosition30d": 9.407284768211921,
+        "ga4ActiveUsers30d": 94
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 16,
+      "siteId": "nexttech7",
+      "host": "nexttech7.com",
+      "url": "https://nexttech7.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 794 impressions, 2.02% CTR, average position 12.63.",
+      "metrics": {
+        "gscImpressions30d": 794,
+        "gscClicks30d": 16,
+        "gscCtr30d": 0.020151133501259445,
+        "gscPosition30d": 12.6272040302267,
+        "ga4ActiveUsers30d": 133
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 17,
+      "siteId": "legalser",
+      "host": "legalser.com",
+      "url": "https://legalser.com/",
+      "actionType": "technical_seo",
+      "tier": "T2",
+      "confidence": "medium",
+      "reason": "Impressions exist but average position is weak: 619 impressions at position 61.77.",
+      "metrics": {
+        "gscImpressions30d": 619,
+        "gscClicks30d": 2,
+        "gscCtr30d": 0.0032310177705977385,
+        "gscPosition30d": 61.76575121163167,
+        "ga4ActiveUsers30d": 18
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability."
+    },
+    {
+      "rank": 18,
+      "siteId": "legalser",
+      "host": "legalser.com",
+      "url": "https://legalser.com/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 619 impressions and 18 users.",
+      "metrics": {
+        "gscImpressions30d": 619,
+        "gscClicks30d": 2,
+        "gscCtr30d": 0.0032310177705977385,
+        "gscPosition30d": 61.76575121163167,
+        "ga4ActiveUsers30d": 18
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 19,
+      "siteId": "healfood-2",
+      "host": "healfood.kr",
+      "url": "https://healfood.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 493 impressions, 0.81% CTR, average position 8.85.",
+      "metrics": {
+        "gscImpressions30d": 493,
+        "gscClicks30d": 4,
+        "gscCtr30d": 0.008113590263691683,
+        "gscPosition30d": 8.85395537525355,
+        "ga4ActiveUsers30d": 29
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 20,
+      "siteId": "ezfunnel",
+      "host": "ezfunnel.kr",
+      "url": "https://ezfunnel.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=1, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions30d": 63,
+        "gscClicks30d": 1,
+        "gscCtr30d": 0.015873015873015872,
+        "gscPosition30d": 11.333333333333334,
+        "ga4ActiveUsers30d": 42
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T08:51:36.848Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=1",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    }
+  ],
+  "stopConditions": [
+    "Do not submit AdSense review while console state is unknown or raw loader proof is missing.",
+    "Do not treat local collector timeout as proof of site-level AdSense breakage.",
+    "Do not edit article titles or bodies from this technical plan; route those to title/content handoff.",
+    "Do not use this plan as fresh prioritization if pnpm stats:update has not completed cleanly.",
+    "Do not run sitemap submission, production deployment, or WordPress mutations from this plan without an explicit apply step and rollback path."
+  ]
+}

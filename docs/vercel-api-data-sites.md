@@ -1,6 +1,6 @@
 # Vercel/API Data Sites
 
-- Generated at: `2026-07-07T15:47:48.999Z`
+- Generated at: `2026-07-10T08:51:56.409Z`
 - Scope: WordPress excluded by default; Vercel/Next.js API-data sites included from dashboard and local evidence.
 - Production mutation: `false`
 

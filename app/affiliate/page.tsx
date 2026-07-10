@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-import { AffiliateWorkspace } from "../components/affiliate-workspace.js";
-import { AppHeader } from "../components/app-header.js";
-import { getDashboardActionability } from "../lib/dashboard-actionability.js";
-import { getDashboardData } from "../lib/dashboard-data.js";
-import { getMonetizationWorkspaceData } from "../lib/monetization-workspace.js";
+import { AffiliateWorkspace } from "../components/affiliate-workspace";
+import { AppHeader } from "../components/app-header";
+import { getDashboardActionability } from "../lib/dashboard-actionability";
+import { getDashboardData } from "../lib/dashboard-data";
+import { getMonetizationWorkspaceData } from "../lib/monetization-workspace";
 
 export const metadata: Metadata = {
   title: "제휴 | 멀티 대시보드",

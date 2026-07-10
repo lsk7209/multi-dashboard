@@ -7,7 +7,7 @@ import {
   isOpsMailReviewWriteDisabledError,
   upsertOpsMailReviewEntryAsync,
   type OpsMailReviewStatus,
-} from "../../lib/ops-mail-review-store.js";
+} from "../../lib/ops-mail-review-store";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";

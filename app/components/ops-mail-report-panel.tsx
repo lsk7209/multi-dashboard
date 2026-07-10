@@ -6,8 +6,8 @@ import type {
   OpsMailKind,
   OpsMailReport,
   OpsMailSeverity,
-} from "../lib/dashboard-data.js";
-import type { OpsMailReviewStatus } from "../lib/ops-mail-review-store.js";
+} from "../lib/dashboard-data";
+import type { OpsMailReviewStatus } from "../lib/ops-mail-review-store";
 
 type ReviewDraft = {
   status: OpsMailReviewStatus;

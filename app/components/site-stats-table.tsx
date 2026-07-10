@@ -8,7 +8,7 @@ import type {
   CollectionSourceState,
   OperationalStatus,
   SegmentKey,
-} from "../lib/dashboard-data.js";
+} from "../lib/dashboard-data";
 
 type StatusFilter = "all" | OperationalStatus;
 type MonetizationFilter =

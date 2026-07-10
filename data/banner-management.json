@@ -1,42 +1,46 @@
 {
-  "generatedAt": "2026-07-05T11:10:14.347Z",
+  "generatedAt": "2026-07-10T08:53:13.155Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
     "dbPath": "D:\\web\\multi-dashboard\\data\\monetization\\ad-manage.db",
     "dbExists": true,
-    "dbUpdatedAt": "2026-07-05T11:03:34.757Z",
+    "dbUpdatedAt": "2026-07-09T03:57:23.680Z",
     "sourceNote": "Standalone banner operations source owned by this multi-dashboard repository."
   },
   "counts": {
-    "placements": 17,
-    "activePlacements": 17,
-    "creatives": 17,
-    "activeCreatives": 17,
-    "trackingLinks": 18,
-    "activeTrackingLinks": 18,
-    "assignments": 17,
-    "activeAssignments": 17,
-    "placementEvents": 32,
-    "requests": 10,
-    "served": 5,
+    "placements": 25,
+    "activePlacements": 25,
+    "creatives": 25,
+    "activeCreatives": 25,
+    "trackingLinks": 26,
+    "activeTrackingLinks": 26,
+    "assignments": 25,
+    "activeAssignments": 25,
+    "placementEvents": 74,
+    "requests": 24,
+    "served": 19,
     "noAd": 4,
     "imageRequests": 4,
-    "clicks": 2
+    "clicks": 16
   },
-  "noAdRate": 0.4,
+  "noAdRate": 0.16666666666666666,
   "eventBreakdown": [
     {
       "type": "request",
-      "count": 10
+      "count": 24
+    },
+    {
+      "type": "served",
+      "count": 19
+    },
+    {
+      "type": "click",
+      "count": 16
     },
     {
       "type": "render",
       "count": 6
-    },
-    {
-      "type": "served",
-      "count": 5
     },
     {
       "type": "no_ad",
@@ -45,10 +49,6 @@
     {
       "type": "image_request",
       "count": 4
-    },
-    {
-      "type": "click",
-      "count": 2
     },
     {
       "type": "viewable",
@@ -64,6 +64,83 @@
       "assignedTrackingSlug": "coupang-autoscares-2",
       "requests": 4,
       "imageRequests": 2,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_estat_2_inline",
+      "name": "Coupang inline estat.kr",
+      "status": "active",
+      "assignedCreativeName": "Coupang estat.kr 서류 정리함",
+      "assignedTrackingSlug": "coupang-estat-2",
+      "requests": 2,
+      "imageRequests": 0,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_healfood_2_inline",
+      "name": "Coupang inline healfood.kr",
+      "status": "active",
+      "assignedCreativeName": "Coupang healfood.kr 건강식품",
+      "assignedTrackingSlug": "coupang-healfood-2",
+      "requests": 2,
+      "imageRequests": 0,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_nexttech7_inline",
+      "name": "Coupang inline nexttech7.com",
+      "status": "active",
+      "assignedCreativeName": "Coupang nexttech7.com 빔프로젝터",
+      "assignedTrackingSlug": "coupang-nexttech7",
+      "requests": 2,
+      "imageRequests": 0,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_petinsuer_2_inline",
+      "name": "Coupang inline petinsuer.com",
+      "status": "active",
+      "assignedCreativeName": "Coupang petinsuer.com 반려동물 용품",
+      "assignedTrackingSlug": "coupang-petinsuer-2",
+      "requests": 2,
+      "imageRequests": 0,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_pregnancy_ehon365_inline",
+      "name": "Coupang inline pregnancy.ehon365.kr",
+      "status": "active",
+      "assignedCreativeName": "Coupang pregnancy.ehon365.kr 임산부 용품",
+      "assignedTrackingSlug": "coupang-pregnancy-ehon365",
+      "requests": 2,
+      "imageRequests": 0,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_smallhomepick_inline",
+      "name": "Coupang inline smallhomepick.com",
+      "status": "active",
+      "assignedCreativeName": "Coupang smallhomepick.com 자취 살림용품",
+      "assignedTrackingSlug": "coupang-smallhomepick",
+      "requests": 2,
+      "imageRequests": 0,
+      "noAd": 0,
+      "clicks": 2
+    },
+    {
+      "id": "placement_coupang_yungyanggogo_inline",
+      "name": "Coupang inline yungyanggogo.kr",
+      "status": "active",
+      "assignedCreativeName": "Coupang yungyanggogo.kr 영양제",
+      "assignedTrackingSlug": "coupang-yungyanggogo",
+      "requests": 2,
+      "imageRequests": 0,
       "noAd": 0,
       "clicks": 2
     },
@@ -107,83 +184,6 @@
       "assignedCreativeName": "SDK Banner 1782660548070",
       "assignedTrackingSlug": "sdk-1782660548070",
       "requests": 1,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_campgogo_inline",
-      "name": "Coupang inline campgogo.kr",
-      "status": "active",
-      "assignedCreativeName": "Coupang campgogo.kr 캠핑 랜턴",
-      "assignedTrackingSlug": "coupang-campgogo",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_cartain_2_inline",
-      "name": "Coupang inline cartain.kr",
-      "status": "active",
-      "assignedCreativeName": "Coupang cartain.kr 차량용 거치대",
-      "assignedTrackingSlug": "coupang-cartain-2",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_dogspang_2_inline",
-      "name": "Coupang inline dogspang.kr",
-      "status": "active",
-      "assignedCreativeName": "Coupang dogspang.kr 강아지 간식",
-      "assignedTrackingSlug": "coupang-dogspang-2",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_dogswhere_inline",
-      "name": "Coupang inline dogswhere.com",
-      "status": "active",
-      "assignedCreativeName": "Coupang dogswhere.com 강아지 이동가방",
-      "assignedTrackingSlug": "coupang-dogswhere",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_dullegilgogo_inline",
-      "name": "Coupang inline dullegilgogo.kr",
-      "status": "active",
-      "assignedCreativeName": "Coupang dullegilgogo.kr 등산 스틱",
-      "assignedTrackingSlug": "coupang-dullegilgogo",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_notebook_klick_2_inline",
-      "name": "Coupang inline notebook.klick.kr",
-      "status": "active",
-      "assignedCreativeName": "Coupang notebook.klick.kr 노트북 거치대",
-      "assignedTrackingSlug": "coupang-notebook-klick-2",
-      "requests": 0,
-      "imageRequests": 0,
-      "noAd": 0,
-      "clicks": 0
-    },
-    {
-      "id": "placement_coupang_picklefriend_inline",
-      "name": "Coupang inline picklefriend.kr",
-      "status": "active",
-      "assignedCreativeName": "Coupang picklefriend.kr 피클볼 패들",
-      "assignedTrackingSlug": "coupang-picklefriend",
-      "requests": 0,
       "imageRequests": 0,
       "noAd": 0,
       "clicks": 0

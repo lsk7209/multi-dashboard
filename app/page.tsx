@@ -1,26 +1,26 @@
 ﻿import {
   DashboardTabs,
   type DashboardTabItem,
-} from "./components/dashboard-tabs.js";
-import { AppHeader } from "./components/app-header.js";
-import { BannerManagementConsole } from "./components/banner-management-console.js";
-import { InsightExplorer } from "./components/insight-explorer.js";
-import { OpsMailReportPanel } from "./components/ops-mail-report-panel.js";
-import { SiteStatsTable } from "./components/site-stats-table.js";
+} from "./components/dashboard-tabs";
+import { AppHeader } from "./components/app-header";
+import { BannerManagementConsole } from "./components/banner-management-console";
+import { InsightExplorer } from "./components/insight-explorer";
+import { OpsMailReportPanel } from "./components/ops-mail-report-panel";
+import { SiteStatsTable } from "./components/site-stats-table";
 import {
   getDashboardActionability,
   type DashboardActionability,
   type DashboardActionabilityOptions,
-} from "./lib/dashboard-actionability.js";
-import { hasValidDashboardLocalEvidenceToken } from "./lib/dashboard-local-evidence-token.js";
+} from "./lib/dashboard-actionability";
+import { hasValidDashboardLocalEvidenceToken } from "./lib/dashboard-local-evidence-token";
 import {
   getDashboardData,
   type DashboardActionItem,
   type FleetOptimizationChainArtifactStatus,
   type FleetOptimizationChainSummary,
   type GscPermissionAuditSummary,
-} from "./lib/dashboard-data.js";
-import { describeRefreshFailureSource } from "./lib/refresh-failure-details.js";
+} from "./lib/dashboard-data";
+import { describeRefreshFailureSource } from "./lib/refresh-failure-details";
 
 export const dynamic = "force-dynamic";
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-import { AppHeader } from "../components/app-header.js";
-import { BannerManagementConsole } from "../components/banner-management-console.js";
-import { getMonetizationWorkspaceData } from "../lib/monetization-workspace.js";
+import { AppHeader } from "../components/app-header";
+import { BannerManagementConsole } from "../components/banner-management-console";
+import { getMonetizationWorkspaceData } from "../lib/monetization-workspace";
 
 export const metadata: Metadata = {
   title: "제휴 배너 관리 | 멀티 대시보드",

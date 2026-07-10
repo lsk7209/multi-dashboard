@@ -4,8 +4,8 @@ import {
   getOpsMailPersistenceNote,
   getOpsMailReviewState,
   type OpsMailReviewStatus,
-} from "./ops-mail-review-store.js";
-import { isMaintenanceRefreshFailureSource } from "./refresh-failure-details.js";
+} from "./ops-mail-review-store";
+import { isMaintenanceRefreshFailureSource } from "./refresh-failure-details";
 
 const REQUIRED_DASHBOARD_POST_RECOVERY_ACCEPTANCE_ROWS = [
   "external_gsc_access_restored=satisfied",

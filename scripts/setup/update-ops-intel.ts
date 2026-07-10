@@ -96,12 +96,23 @@ interface StatsSnapshot {
     adsTxtCollectorStatus?: string;
     sitemapWarnings?: number;
     sitemapErrors?: number;
+    sitemapDetails?: SitemapDetail[];
     ga4Error?: string;
     gscError?: string;
     adsenseError?: string;
     adsTxtError?: string;
     sitemapError?: string;
   }>;
+}
+
+interface SitemapDetail {
+  path?: string;
+  warnings?: number;
+  errors?: number;
+  submitted?: number;
+  lastDownloaded?: string;
+  lastSubmitted?: string;
+  isPending?: boolean;
 }
 
 interface WorkflowRunFailure {
@@ -450,14 +461,17 @@ function collectDashboardFindings(stats: StatsSnapshot | null): { state: Collect
     }
     const sitemapProblems = (site.sitemapErrors ?? 0) + (site.sitemapWarnings ?? 0);
     if (sitemapProblems > 0) {
+      const sitemapDetail = summarizeSitemapDetails(site.sitemapDetails);
+      const status = `sitemap warnings=${site.sitemapWarnings ?? 0} errors=${site.sitemapErrors ?? 0}`;
       findings.push(
         dashboardFinding(
           "gsc",
           site.sitemapErrors && site.sitemapErrors > 0 ? "high" : "low",
           siteId,
           siteName,
-          `sitemap warnings=${site.sitemapWarnings ?? 0} errors=${site.sitemapErrors ?? 0}`,
+          status,
           site.sitemapError,
+          sitemapDetail,
         ),
       );
     }
@@ -481,31 +495,60 @@ function dashboardFinding(
   siteName: string,
   status: string,
   error: string | undefined,
+  detail?: string,
 ): OpsFinding {
   const title = `${siteName}: ${kind.toUpperCase()} direct collector signal ${status}`;
+  const sourceDetail = detail ? ` detail=${detail}` : "";
   return {
     id: `${kind}-${siteId}-${hashText(`${status}-${error ?? ""}`)}`,
     kind,
     severity,
     priority: severityToPriority(severity),
     site: siteId,
-    sourceLine: `direct:dashboard site=${siteId} kind=${kind} status=${status}${error ? ` error=${error}` : ""}`,
+    sourceLine: `direct:dashboard site=${siteId} kind=${kind} status=${status}${sourceDetail}${error ? ` error=${error}` : ""}`,
     title,
-    recommendedAction: recommendDashboardAction(kind, status),
+    recommendedAction: recommendDashboardAction(kind, status, detail),
   };
 }
 
-function recommendDashboardAction(kind: FindingKind, status: string): string {
+function recommendDashboardAction(kind: FindingKind, status: string, detail?: string): string {
   if (kind === "ga4") {
     return "Verify GA4 property binding, tag collection, and dashboard site mapping from current first-party telemetry.";
   }
   if (kind === "gsc") {
+    if (status.startsWith("sitemap") && detail) {
+      return `Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: ${detail}.`;
+    }
     return "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence.";
   }
   if (kind === "adsense") {
     return `Verify AdSense code, ads.txt, approval scope, and collector evidence for status ${status}.`;
   }
   return "Inspect the direct dashboard artifact and repair the underlying collector or site signal.";
+}
+
+function summarizeSitemapDetails(details: SitemapDetail[] | undefined): string | undefined {
+  const problemDetails = (details ?? []).filter(
+    (detail) => (detail.errors ?? 0) > 0 || (detail.warnings ?? 0) > 0 || detail.isPending,
+  );
+  if (problemDetails.length === 0) {
+    return undefined;
+  }
+  return problemDetails
+    .slice(0, 3)
+    .map((detail) => {
+      const parts = [
+        detail.path ?? "unknown-sitemap",
+        `warnings=${detail.warnings ?? 0}`,
+        `errors=${detail.errors ?? 0}`,
+        detail.submitted !== undefined ? `submitted=${detail.submitted}` : undefined,
+        detail.lastDownloaded ? `downloaded=${detail.lastDownloaded}` : undefined,
+        detail.lastSubmitted ? `submittedAt=${detail.lastSubmitted}` : undefined,
+        detail.isPending ? "pending=true" : undefined,
+      ].filter((part): part is string => Boolean(part));
+      return parts.join(" ");
+    })
+    .join("; ");
 }
 
 function summarize(findings: OpsFinding[]): Record<FindingSeverity, number> {

@@ -5,7 +5,7 @@ import type {
   AffiliateItemSummary,
   AffiliateProgramSummary,
   AffiliateSiteRoutingEntry,
-} from "../lib/monetization-workspace.js";
+} from "../lib/monetization-workspace";
 
 interface AffiliateWorkspaceProps {
   coupangRegistry: CoupangChannelRegistrySnapshot;

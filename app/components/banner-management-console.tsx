@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 
-import { formatDisplayPath } from "../lib/display-path.js";
+import { formatDisplayPath } from "../lib/display-path";
 
 interface PlacementRow {
   id: string;

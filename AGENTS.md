@@ -14,6 +14,12 @@
 - This rule applies before work based on the Insights menu, action queue, GSC issues, sitemap status, traffic drops, growth signals, or SEO opportunities.
 - After refreshing, use the updated dashboard data as the source of truth for prioritizing site fixes.
 
+## Dashboard Refresh Deployment Contract
+
+- User shorthand: `대시보드 갱신` includes Git deployment.
+- Complete a dashboard refresh by running `pnpm dashboard:refresh`, verifying the resulting snapshot and relevant dashboard checks, committing the coherent dashboard code and generated artifacts, pushing the default branch, then confirming the Git-connected Vercel production deployment and a live check.
+- Do not include unrelated, historical, or untracked work in the deployment commit.
+
 ## Evidence-First Work Progression
 
 - This project should be operated from current first-party evidence, not from stale helper outputs, old queues, or habit.

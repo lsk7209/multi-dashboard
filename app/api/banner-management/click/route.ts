@@ -1,7 +1,7 @@
 import {
   recordBannerClickAsync,
   resolveBannerPlacementAsync,
-} from "../../../lib/banner-management-store.js";
+} from "../../../lib/banner-management-store";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";

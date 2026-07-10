@@ -1,0 +1,490 @@
+{
+  "generatedAt": "2026-07-10T08:54:34.188Z",
+  "mutationStatus": {
+    "cmsMutationPerformed": false,
+    "productionDeploymentPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false
+  },
+  "dashboardEvidence": {
+    "snapshotTimestamp": "2026-07-10T08:51:36.848Z",
+    "statsPath": "data\\site-stats.json",
+    "planPath": "data\\fleet-optimization-plan-2026-07-10.json",
+    "sitesPath": "scripts\\setup\\sites.yaml",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": []
+  },
+  "summary": {
+    "siteCount": 13,
+    "titleHandoffCount": 10,
+    "contentHandoffCount": 7
+  },
+  "sites": [
+    {
+      "host": "tennisfrens.com",
+      "siteId": "tennisfrens",
+      "url": "https://tennisfrens.com/",
+      "localPath": "D:\\web\\tennisfrens",
+      "platform": "wordpress",
+      "wpRestBase": "https://tennisfrens.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        1
+      ],
+      "metrics": {
+        "gscImpressions30d": 11684,
+        "gscClicks30d": 114,
+        "gscCtr30d": 0.009756932557343376,
+        "gscPosition30d": 10.00770284149264,
+        "ga4ActiveUsers30d": 1439
+      },
+      "topQueries": [
+        {
+          "query": "ntrp 테스트",
+          "clicks": 9,
+          "impressions": 12,
+          "ctr": 0.75,
+          "position": 2.5
+        },
+        {
+          "query": "아르튀르 랭데르크네슈",
+          "clicks": 5,
+          "impressions": 531,
+          "ctr": 0.009416195856873822,
+          "position": 10.195856873822976
+        },
+        {
+          "query": "이알라",
+          "clicks": 1,
+          "impressions": 65,
+          "ctr": 0.015384615384615385,
+          "position": 10.861538461538462
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://www.tennisfrens.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "cartain.kr",
+      "siteId": "cartain-2",
+      "url": "https://cartain.kr/",
+      "localPath": "D:\\web\\cartainkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://cartain.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        2
+      ],
+      "metrics": {
+        "gscImpressions30d": 3621,
+        "gscClicks30d": 64,
+        "gscCtr30d": 0.01767467550400442,
+        "gscPosition30d": 9.431372549019608,
+        "ga4ActiveUsers30d": 979
+      },
+      "topQueries": [
+        {
+          "query": "2026년 신차 출시 일정",
+          "clicks": 0,
+          "impressions": 22,
+          "ctr": 0,
+          "position": 7.5
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://cartain.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "gong365.kr",
+      "siteId": "gong365",
+      "url": "https://gong365.kr/",
+      "localPath": "D:\\web\\gong365kr",
+      "platform": "wordpress",
+      "wpRestBase": "https://gong365.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        3,
+        5
+      ],
+      "metrics": {
+        "gscImpressions30d": 2732,
+        "gscClicks30d": 32,
+        "gscCtr30d": 0.01171303074670571,
+        "gscPosition30d": 8.140556368960468,
+        "ga4ActiveUsers30d": 77
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://gong365.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "estat.kr",
+      "siteId": "estat-2",
+      "url": "https://estat.kr/",
+      "localPath": "D:\\web\\estatkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://estat.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        4,
+        6
+      ],
+      "metrics": {
+        "gscImpressions30d": 2686,
+        "gscClicks30d": 14,
+        "gscCtr30d": 0.0052122114668652275,
+        "gscPosition30d": 7.920699925539836,
+        "ga4ActiveUsers30d": 42
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://estat.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "dogswhere.com",
+      "siteId": "dogswhere",
+      "url": "https://dogswhere.com/",
+      "localPath": "D:\\web\\dogswherecom",
+      "platform": "wordpress",
+      "wpRestBase": "https://dogswhere.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        7
+      ],
+      "metrics": {
+        "gscImpressions30d": 985,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.019289340101522844,
+        "gscPosition30d": 13.268020304568529,
+        "ga4ActiveUsers30d": 1384
+      },
+      "topQueries": [
+        {
+          "query": "부산 지하철 근처 애견 유치원",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 40.583333333333336
+        },
+        {
+          "query": "강아지 맡길 곳",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 32.36363636363636
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://dogswhere.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "petinsuer.com",
+      "siteId": "petinsuer-2",
+      "url": "https://petinsuer.com/",
+      "localPath": "D:\\web\\petinsuercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://petinsuer.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        8,
+        9
+      ],
+      "metrics": {
+        "gscImpressions30d": 1288,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.013975155279503106,
+        "gscPosition30d": 9.618012422360248,
+        "ga4ActiveUsers30d": 96
+      },
+      "topQueries": [
+        {
+          "query": "노견 기준",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 6.75
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://petinsuer.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "dogspang.kr",
+      "siteId": "dogspang-2",
+      "url": "https://dogspang.kr/",
+      "localPath": "D:\\web\\dogspangkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://dogspang.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        10,
+        13
+      ],
+      "metrics": {
+        "gscImpressions30d": 1084,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.016605166051660517,
+        "gscPosition30d": 10.005535055350553,
+        "ga4ActiveUsers30d": 87
+      },
+      "topQueries": [
+        {
+          "query": "강아지 발바닥 각화증",
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 7.7368421052631575
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://dogspang.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "ehon365.kr",
+      "siteId": "ehon365",
+      "url": "https://ehon365.kr/",
+      "localPath": "D:\\web\\ehon365\\temp_clone",
+      "platform": "wordpress",
+      "wpRestBase": "https://ehon365.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        12
+      ],
+      "metrics": {
+        "gscImpressions30d": 769,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.0247074122236671,
+        "gscPosition30d": 14.40962288686606,
+        "ga4ActiveUsers30d": 650
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://www.ehon365.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "homeimer.com",
+      "siteId": "homeimer",
+      "url": "https://homeimer.com/",
+      "localPath": "D:\\web\\homeimercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://homeimer.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        14
+      ],
+      "metrics": {
+        "gscImpressions30d": 1005,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 66.73532338308458,
+        "ga4ActiveUsers30d": 10
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://homeimer.com/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "today2424.kr",
+      "siteId": "today2424",
+      "url": "https://today2424.kr/",
+      "localPath": "D:\\web\\today2424\\2424",
+      "platform": "wordpress",
+      "wpRestBase": "https://today2424.kr/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        15
+      ],
+      "metrics": {
+        "gscImpressions30d": 906,
+        "gscClicks30d": 35,
+        "gscCtr30d": 0.03863134657836645,
+        "gscPosition30d": 9.407284768211921,
+        "ga4ActiveUsers30d": 94
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://today2424.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "nexttech7.com",
+      "siteId": "nexttech7",
+      "url": "https://nexttech7.com/",
+      "localPath": "D:\\web\\nexttech7com",
+      "platform": "wordpress",
+      "wpRestBase": "https://nexttech7.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        16
+      ],
+      "metrics": {
+        "gscImpressions30d": 794,
+        "gscClicks30d": 16,
+        "gscCtr30d": 0.020151133501259445,
+        "gscPosition30d": 12.6272040302267,
+        "ga4ActiveUsers30d": 133
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://nexttech7.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "legalser.com",
+      "siteId": "legalser",
+      "url": "https://legalser.com/",
+      "localPath": "D:\\web\\legalsercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://legalser.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        18
+      ],
+      "metrics": {
+        "gscImpressions30d": 619,
+        "gscClicks30d": 2,
+        "gscCtr30d": 0.0032310177705977385,
+        "gscPosition30d": 61.76575121163167,
+        "ga4ActiveUsers30d": 18
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://legalser.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "healfood.kr",
+      "siteId": "healfood-2",
+      "url": "https://healfood.kr/",
+      "localPath": "D:\\web\\healfoodkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://healfood.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        19
+      ],
+      "metrics": {
+        "gscImpressions30d": 493,
+        "gscClicks30d": 4,
+        "gscCtr30d": 0.008113590263691683,
+        "gscPosition30d": 8.85395537525355,
+        "ga4ActiveUsers30d": 29
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://healfood.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    }
+  ],
+  "stopConditions": [
+    "Do not edit WordPress titles, slugs, article bodies, headings, or in-body internal links from this handoff.",
+    "Do not publish drafts, schedule posts, submit sitemaps, ping IndexNow, deploy, or mutate CMS/API state without an explicit apply step and rollback path.",
+    "If localPath is missing or dirty, collect evidence only and do not create content in production.",
+    "Re-run pnpm stats:update and pnpm fleet:optimize:plan before using this handoff after the next dashboard data window."
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T11:10:14.439Z",
+  "generatedAt": "2026-07-10T08:53:13.231Z",
   "source": {
     "sourceKind": "multi-dashboard-local",
     "workspacePath": "D:\\web\\multi-dashboard",
@@ -3392,6 +3392,27 @@
       ]
     },
     {
+      "siteId": "naver-blog-bitetok",
+      "name": "blog.naver.com",
+      "domain": "blog.naver.com",
+      "enabled": true,
+      "platform": "unknown",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "source": [
+        "coupang-channel-registry.json"
+      ]
+    },
+    {
       "siteId": "bojo24",
       "name": "bojo24.kr",
       "domain": "bojo24.kr",
@@ -3799,18 +3820,19 @@
       "platform": "wordpress",
       "monetization": true,
       "targetMarket": "kr",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
         ".kr-domain-heuristic",
-        "sites.yaml"
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4041,18 +4063,19 @@
       "platform": "wordpress",
       "monetization": true,
       "targetMarket": "kr",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
         ".kr-domain-heuristic",
-        "sites.yaml"
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4075,6 +4098,27 @@
       "source": [
         "site-audience-classification.yml",
         "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "instagram-hanipworld",
+      "name": "instagram.com",
+      "domain": "instagram.com",
+      "enabled": true,
+      "platform": "unknown",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "source": [
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4262,17 +4306,18 @@
       "monetization": true,
       "targetMarket": "kr",
       "primaryAudience": "Korean electronics and technology readers",
-      "activePrograms": [],
-      "blockedPrograms": [
+      "activePrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "WordPress post sample is Korean TV and projector content.",
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "WordPress post sample is Korean TV and projector content. WordPress post sample is Korean TV and projector content. Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
         "site-audience-classification.yml",
-        "sites.yaml"
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4373,17 +4418,18 @@
       "monetization": true,
       "targetMarket": "kr",
       "primaryAudience": "Korean pet-care and pet-insurance readers",
-      "activePrograms": [],
-      "blockedPrograms": [
+      "activePrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "WordPress post sample is Korean pet-care content.",
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "WordPress post sample is Korean pet-care content. WordPress post sample is Korean pet-care content. Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
         "site-audience-classification.yml",
-        "sites.yaml"
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4454,6 +4500,28 @@
       ]
     },
     {
+      "siteId": "plategogo",
+      "name": "plategogo.com",
+      "domain": "plategogo.com",
+      "enabled": true,
+      "platform": "nextjs",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Activated after user go-ahead on 2026-07-06. Public exposure is now allowed through the registered channel gate.",
+      "source": [
+        "sites.yaml",
+        "coupang-channel-registry.json"
+      ]
+    },
+    {
       "siteId": "pregnancy-ehon365",
       "name": "pregnancy.ehon365.kr",
       "domain": "pregnancy.ehon365.kr",
@@ -4461,18 +4529,19 @@
       "platform": "wordpress",
       "monetization": true,
       "targetMarket": "kr",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
         ".kr-domain-heuristic",
-        "sites.yaml"
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4628,6 +4697,28 @@
       "source": [
         ".kr-domain-heuristic",
         "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "smallhomepick",
+      "name": "스몰홈픽 - 작은집 살림템 가이드",
+      "domain": "smallhomepick.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "source": [
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -4809,6 +4900,27 @@
       ]
     },
     {
+      "siteId": "threads-hanipworld",
+      "name": "threads.net",
+      "domain": "threads.net",
+      "enabled": true,
+      "platform": "unknown",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "source": [
+        "coupang-channel-registry.json"
+      ]
+    },
+    {
       "siteId": "today2424",
       "name": "today2424.kr",
       "domain": "today2424.kr",
@@ -4986,6 +5098,27 @@
       ]
     },
     {
+      "siteId": "x-lio420410436312",
+      "name": "x.com",
+      "domain": "x.com",
+      "enabled": true,
+      "platform": "unknown",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "source": [
+        "coupang-channel-registry.json"
+      ]
+    },
+    {
       "siteId": "youkamap",
       "name": "https://youkamap.kr",
       "domain": "youkamap.kr",
@@ -5008,6 +5141,27 @@
       ]
     },
     {
+      "siteId": "youtube-hanip-tamgu",
+      "name": "youtube.com",
+      "domain": "youtube.com",
+      "enabled": true,
+      "platform": "unknown",
+      "monetization": true,
+      "targetMarket": "kr",
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
+        "coupang-partners"
+      ],
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
+      "source": [
+        "coupang-channel-registry.json"
+      ]
+    },
+    {
       "siteId": "yungyanggogo",
       "name": "yungyanggogo.kr",
       "domain": "yungyanggogo.kr",
@@ -5015,18 +5169,19 @@
       "platform": "wordpress",
       "monetization": true,
       "targetMarket": "kr",
-      "primaryAudience": "",
-      "activePrograms": [],
-      "blockedPrograms": [
+      "primaryAudience": "Korean readers on registered Coupang channel",
+      "activePrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "",
+      "blockedPrograms": [],
+      "coupangExposure": "registered_channel_allowed",
+      "coupangChannelStatus": "registered",
+      "coupangRegistered": true,
+      "notes": "Registered in Coupang Partners My Page; public exposure is allowed on this registered channel with required disclosure.",
       "source": [
         ".kr-domain-heuristic",
-        "sites.yaml"
+        "sites.yaml",
+        "coupang-channel-registry.json"
       ]
     },
     {
@@ -5070,71 +5225,6 @@
       "notes": "Homepage sample is English and Florida ACA-focused.",
       "source": [
         "site-audience-classification.yml",
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "dogbreedcost",
-      "name": "https://dogbreedcost.com",
-      "domain": "dogbreedcost.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "global_en",
-      "primaryAudience": "English-speaking dog breed cost and pet ownership readers",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "blocked_non_korean_audience",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "English-audience site. Do not serve Coupang ads unless the site strategy changes and the channel is explicitly registered for Korean promotion.",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "gradienttrail",
-      "name": "gradienttrail.com",
-      "domain": "gradienttrail.com",
-      "enabled": true,
-      "platform": "static",
-      "monetization": true,
-      "targetMarket": "global_en",
-      "primaryAudience": "English-speaking hiking and U.S. national park readers",
-      "activePrograms": [
-        "skimlinks"
-      ],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "blocked_non_korean_audience",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "Skimlinks publisher script installed on gradienttrail.com. Do not serve Coupang ads on this English-audience site.",
-      "source": [
-        "sites.yaml"
-      ]
-    },
-    {
-      "siteId": "homeimer",
-      "name": "homemake - GA4",
-      "domain": "homeimer.com",
-      "enabled": true,
-      "platform": "wordpress",
-      "monetization": true,
-      "targetMarket": "global_en",
-      "primaryAudience": "English-speaking home decor and interior design readers",
-      "activePrograms": [],
-      "blockedPrograms": [
-        "coupang-partners"
-      ],
-      "coupangExposure": "blocked_non_korean_audience",
-      "coupangChannelStatus": "not_listed",
-      "coupangRegistered": false,
-      "notes": "English-audience site. Do not serve Coupang ads unless the site strategy changes and the channel is explicitly registered for Korean promotion.",
-      "source": [
         "sites.yaml"
       ]
     },
@@ -5270,22 +5360,85 @@
       ]
     },
     {
+      "siteId": "dogbreedcost",
+      "name": "https://dogbreedcost.com",
+      "domain": "dogbreedcost.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "gradienttrail",
+      "name": "gradienttrail.com",
+      "domain": "gradienttrail.com",
+      "enabled": true,
+      "platform": "static",
+      "monetization": true,
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
+      "siteId": "homeimer",
+      "name": "homemake - GA4",
+      "domain": "homeimer.com",
+      "enabled": true,
+      "platform": "wordpress",
+      "monetization": true,
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
+      "activePrograms": [],
+      "blockedPrograms": [
+        "coupang-partners"
+      ],
+      "coupangExposure": "channel_not_registered_blocked",
+      "coupangChannelStatus": "not_listed",
+      "coupangRegistered": false,
+      "notes": "",
+      "source": [
+        "sites.yaml"
+      ]
+    },
+    {
       "siteId": "kdramanote",
       "name": "kdramanote.com",
       "domain": "kdramanote.com",
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "korean",
-      "primaryAudience": "Korean drama search users looking for recaps, ending explanations, character maps, and OTT viewing notes",
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
       ],
-      "coupangExposure": "no_product_affiliate_surface",
+      "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "Korea-facing drama information site. AdSense auto ads only; no manual ad slots.",
+      "notes": "",
       "source": [
         "sites.yaml"
       ]
@@ -5318,8 +5471,8 @@
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "korean",
-      "primaryAudience": "Korean pet owners choosing indoor living supplies for small homes and apartments",
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
@@ -5327,31 +5480,30 @@
       "coupangExposure": "channel_not_registered_blocked",
       "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "Korea-facing pet indoor product guide. AdSense auto ads only; no manual ad slots. Register pethomepick.com in affiliate programs before serving product links.",
+      "notes": "",
       "source": [
         "sites.yaml"
       ]
     },
     {
-      "siteId": "smallhomepick",
-      "name": "스몰홈픽 - 작은집 살림템 가이드",
-      "domain": "smallhomepick.com",
+      "siteId": "wedfairguide",
+      "name": "wedfairguide.com",
+      "domain": "wedfairguide.com",
       "enabled": true,
       "platform": "wordpress",
       "monetization": true,
-      "targetMarket": "korean",
-      "primaryAudience": "Korean one-person household and newlywed home goods buyers",
+      "targetMarket": "unclassified",
+      "primaryAudience": "",
       "activePrograms": [],
       "blockedPrograms": [
         "coupang-partners"
       ],
       "coupangExposure": "channel_not_registered_blocked",
-      "coupangChannelStatus": "not_registered",
+      "coupangChannelStatus": "not_listed",
       "coupangRegistered": false,
-      "notes": "Korea-facing product-intent site. Register smallhomepick.com in Coupang Partners My Page before serving Coupang links or banners. Korea-facing product-intent site. Register smallhomepick.com in Coupang Partners My Page before serving Coupang links or banners. Korea-facing product-intent site. Block Coupang exposure until the domain is registered in Coupang Partners My Page.",
+      "notes": "",
       "source": [
-        "sites.yaml",
-        "coupang-channel-registry.json"
+        "sites.yaml"
       ]
     }
   ],

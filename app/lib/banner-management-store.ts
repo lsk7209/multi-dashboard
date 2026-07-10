@@ -8,7 +8,7 @@ import {
   type CoupangExposurePurpose,
   decideCoupangExposure,
   getMonetizationWorkspaceData,
-} from "./monetization-workspace.js";
+} from "./monetization-workspace";
 
 type Row = Record<string, unknown>;
 

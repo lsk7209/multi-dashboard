@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-07-10T08:54:32.433Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T08:51:36.848Z",
+  "handoffStatus": "resolved",
+  "productionMutationPerformed": false,
+  "gscMutationPerformed": false,
+  "serviceAccountEmail": "id-ai-179@cursorai-451704.iam.gserviceaccount.com",
+  "summary": {
+    "auditedRows": 0,
+    "ownerAccess": 0,
+    "restrictedAccess": 0,
+    "unverified": 0,
+    "notListed": 0
+  },
+  "results": []
+}

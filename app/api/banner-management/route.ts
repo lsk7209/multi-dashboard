@@ -10,7 +10,7 @@ import {
   updateBannerCreativeAsync,
   updateBannerPlacementAsync,
   updateBannerTrackingLinkAsync,
-} from "../../lib/banner-management-store.js";
+} from "../../lib/banner-management-store";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { SiteInsight } from "../lib/dashboard-data.js";
+import type { SiteInsight } from "../lib/dashboard-data";
 
 type InsightKindFilter = "all" | SiteInsight["kind"];
 type InsightCauseFilter = "all" | SiteInsight["cause"];

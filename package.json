@@ -18,6 +18,7 @@
     "ops:intel": "tsx scripts/setup/update-ops-intel.ts",
     "ops:intel:public": "tsx scripts/setup/update-ops-intel.ts --public-only",
     "ops:triage": "tsx scripts/setup/update-ops-triage.ts",
+    "ops:api-data-freshness": "tsx scripts/setup/check-vercel-api-data-freshness.ts",
     "ops:monetization": "tsx scripts/setup/update-monetization-workspace.ts",
     "ops:coupang-banners": "tsx scripts/setup/sync-coupang-banner-placements.ts",
     "ops:coupang-optimize": "tsx scripts/setup/optimize-coupang-banner-weights.ts",

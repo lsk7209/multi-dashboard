@@ -1,4 +1,4 @@
-import type { DashboardData } from "./dashboard-data.js";
+import type { DashboardData } from "./dashboard-data";
 
 export interface DashboardActionability {
   status: "safe_to_act" | "blocked_for_action_until_post_recovery_verify";
