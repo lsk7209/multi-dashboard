@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2026-07-10T08:54:33.526Z",
+  "generatedAt": "2026-07-10T11:41:01.806Z",
   "dashboardEvidence": {
     "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
-    "snapshotTimestamp": "2026-07-10T08:51:36.848Z",
+    "snapshotTimestamp": "2026-07-10T11:33:59.439Z",
     "refreshCommand": "pnpm stats:update",
-    "refreshFailedSources": [],
+    "refreshFailedSources": [
+      "skipped_refresh_failed:ga4:api_error:40"
+    ],
     "connectorStatus": {
       "ga4Status": {
-        "ok": 98
+        "ok": 58,
+        "api_error": 40
       },
       "gscStatus": {
         "ok": 98
@@ -44,27 +47,324 @@
   },
   "summary": {
     "siteCount": 98,
-    "adsenseProblemRows": 0,
+    "adsenseProblemRows": 37,
     "seoCandidateCount": 20,
     "titleHandoffCount": 10,
-    "indexingCount": 1,
+    "indexingCount": 0,
     "technicalSeoCount": 2,
-    "contentHandoffCount": 7
+    "contentHandoffCount": 8
   },
   "adsenseQueue": {
     "artifactPath": "data\\adsense-remediation-queue-2026-07-10.json",
-    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T08:51:36.848Z",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T11:33:59.439Z",
     "summary": {
       "totalRows": 98,
       "reviewedRows": 84,
-      "adsenseOkRows": 84,
-      "problemRows": 0,
+      "adsenseOkRows": 47,
+      "problemRows": 37,
       "ordinaryAdsenseProof": 0,
       "approvedRootSubdomainScope": 0,
       "gscAuthTelemetry": 0,
-      "ga4ConfigTelemetry": 0
+      "ga4ConfigTelemetry": 37
     },
-    "nextItems": []
+    "nextItems": [
+      {
+        "priority": 3999015,
+        "siteId": "dogswhere",
+        "host": "dogswhere.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999758,
+        "siteId": "picklefriend",
+        "host": "picklefriend.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999763,
+        "siteId": "dolbomjigi-ehon365",
+        "host": "dolbomjigi.ehon365.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999827,
+        "siteId": "yungyanggogo",
+        "host": "yungyanggogo.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999869,
+        "siteId": "coverclarityhealth",
+        "host": "coverclarityhealth.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999869,
+        "siteId": "smart-sellerpit",
+        "host": "smart.sellerpit.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999900,
+        "siteId": "youkamap",
+        "host": "youkamap.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999926,
+        "siteId": "campgogo",
+        "host": "campgogo.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999929,
+        "siteId": "nongsusangogo",
+        "host": "nongsusangogo.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999931,
+        "siteId": "patentgogo",
+        "host": "patentgogo.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999932,
+        "siteId": "solarpaybackmap",
+        "host": "solarpaybackmap.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999939,
+        "siteId": "doseogogo",
+        "host": "doseogogo.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999949,
+        "siteId": "gradienttrail",
+        "host": "gradienttrail.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999955,
+        "siteId": "dullegilgogo",
+        "host": "dullegilgogo.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999958,
+        "siteId": "plategogo",
+        "host": "plategogo.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999959,
+        "siteId": "wedfairguide",
+        "host": "wedfairguide.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999964,
+        "siteId": "kdramanote",
+        "host": "kdramanote.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999967,
+        "siteId": "dogbreedcost",
+        "host": "dogbreedcost.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999968,
+        "siteId": "workgogo",
+        "host": "workgogo.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999971,
+        "siteId": "caregos",
+        "host": "caregos.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999974,
+        "siteId": "kapti",
+        "host": "kapti.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999981,
+        "siteId": "petjigi",
+        "host": "petjigi.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999986,
+        "siteId": "smallhomepick",
+        "host": "smallhomepick.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999988,
+        "siteId": "gpt-nexttech7",
+        "host": "gpt.nexttech7.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999990,
+        "siteId": "rndatlas",
+        "host": "rndatlas.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999990,
+        "siteId": "wattbenchs",
+        "host": "wattbenchs.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999991,
+        "siteId": "pethomepick",
+        "host": "pethomepick.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999996,
+        "siteId": "travel-sellerpit",
+        "host": "travel.sellerpit.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999997,
+        "siteId": "autorentlab",
+        "host": "autorentlab.com",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 3999999,
+        "siteId": "jasamall-sellerpit",
+        "host": "jasamall.sellerpit.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "ai-tasko",
+        "host": "ai.tasko.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "dog-klick",
+        "host": "dog.klick.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "localgeo",
+        "host": "localgeo.app",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "phone-luckyday",
+        "host": "phone.luckyday.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "pregnancy-ehon365",
+        "host": "pregnancy.ehon365.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "sinhonjigi-ehon365",
+        "host": "sinhonjigi.ehon365.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      },
+      {
+        "priority": 4000000,
+        "siteId": "webtoon-klick",
+        "host": "webtoon.klick.kr",
+        "lane": "ga4_config_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
+      }
+    ]
   },
   "seoCandidates": [
     {
@@ -81,11 +381,11 @@
         "gscClicks30d": 114,
         "gscCtr30d": 0.009756932557343376,
         "gscPosition30d": 10.00770284149264,
-        "ga4ActiveUsers30d": 1439
+        "ga4ActiveUsers30d": 1440
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -112,7 +412,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -139,7 +439,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -166,7 +466,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -193,7 +493,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -220,7 +520,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -231,33 +531,6 @@
     },
     {
       "rank": 7,
-      "siteId": "dogswhere",
-      "host": "dogswhere.com",
-      "url": "https://dogswhere.com/",
-      "actionType": "title_handoff",
-      "tier": "T3",
-      "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 985 impressions, 1.93% CTR, average position 13.27.",
-      "metrics": {
-        "gscImpressions30d": 985,
-        "gscClicks30d": 19,
-        "gscCtr30d": 0.019289340101522844,
-        "gscPosition30d": 13.268020304568529,
-        "ga4ActiveUsers30d": 1384
-      },
-      "evidence": [
-        "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
-        "gscStatus=ok",
-        "adsenseStatus=ok",
-        "adsTxtStatus=ok",
-        "sitemapWarnings=0",
-        "sitemapErrors=0"
-      ],
-      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
-    },
-    {
-      "rank": 8,
       "siteId": "petinsuer-2",
       "host": "petinsuer.com",
       "url": "https://petinsuer.com/",
@@ -274,7 +547,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -284,7 +557,7 @@
       "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
     },
     {
-      "rank": 9,
+      "rank": 8,
       "siteId": "petinsuer-2",
       "host": "petinsuer.com",
       "url": "https://petinsuer.com/",
@@ -301,7 +574,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -311,7 +584,7 @@
       "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
     },
     {
-      "rank": 10,
+      "rank": 9,
       "siteId": "dogspang-2",
       "host": "dogspang.kr",
       "url": "https://dogspang.kr/",
@@ -324,11 +597,11 @@
         "gscClicks30d": 18,
         "gscCtr30d": 0.016605166051660517,
         "gscPosition30d": 10.005535055350553,
-        "ga4ActiveUsers30d": 87
+        "ga4ActiveUsers30d": 88
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -338,7 +611,7 @@
       "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
     },
     {
-      "rank": 11,
+      "rank": 10,
       "siteId": "homeimer",
       "host": "homeimer.com",
       "url": "https://homeimer.com/",
@@ -355,7 +628,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -365,7 +638,7 @@
       "nextAction": "Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability."
     },
     {
-      "rank": 12,
+      "rank": 11,
       "siteId": "ehon365",
       "host": "ehon365.kr",
       "url": "https://ehon365.kr/",
@@ -382,7 +655,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -392,24 +665,24 @@
       "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
     },
     {
-      "rank": 13,
+      "rank": 12,
       "siteId": "dogspang-2",
       "host": "dogspang.kr",
       "url": "https://dogspang.kr/",
       "actionType": "content_handoff",
       "tier": "T3",
       "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 1084 impressions and 87 users.",
+      "reason": "Search exposure is present but GA4 users are low: 1084 impressions and 88 users.",
       "metrics": {
         "gscImpressions30d": 1084,
         "gscClicks30d": 18,
         "gscCtr30d": 0.016605166051660517,
         "gscPosition30d": 10.005535055350553,
-        "ga4ActiveUsers30d": 87
+        "ga4ActiveUsers30d": 88
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -417,6 +690,33 @@
         "sitemapErrors=0"
       ],
       "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 13,
+      "siteId": "dogswhere",
+      "host": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 985 impressions, 1.93% CTR, average position 13.27.",
+      "metrics": {
+        "gscImpressions30d": 985,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.019289340101522844,
+        "gscPosition30d": 13.268020304568529,
+        "ga4ActiveUsers30d": 0
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T11:33:59.439Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
     },
     {
       "rank": 14,
@@ -436,7 +736,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -447,6 +747,33 @@
     },
     {
       "rank": 15,
+      "siteId": "dogswhere",
+      "host": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 985 impressions and 0 users.",
+      "metrics": {
+        "gscImpressions30d": 985,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.019289340101522844,
+        "gscPosition30d": 13.268020304568529,
+        "ga4ActiveUsers30d": 0
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-10T11:33:59.439Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 16,
       "siteId": "today2424",
       "host": "today2424.kr",
       "url": "https://today2424.kr/",
@@ -463,7 +790,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -473,7 +800,7 @@
       "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
     },
     {
-      "rank": 16,
+      "rank": 17,
       "siteId": "nexttech7",
       "host": "nexttech7.com",
       "url": "https://nexttech7.com/",
@@ -490,7 +817,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -500,7 +827,7 @@
       "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
     },
     {
-      "rank": 17,
+      "rank": 18,
       "siteId": "legalser",
       "host": "legalser.com",
       "url": "https://legalser.com/",
@@ -517,7 +844,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -527,7 +854,7 @@
       "nextAction": "Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability."
     },
     {
-      "rank": 18,
+      "rank": 19,
       "siteId": "legalser",
       "host": "legalser.com",
       "url": "https://legalser.com/",
@@ -544,7 +871,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -554,7 +881,7 @@
       "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
     },
     {
-      "rank": 19,
+      "rank": 20,
       "siteId": "healfood-2",
       "host": "healfood.kr",
       "url": "https://healfood.kr/",
@@ -571,7 +898,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
+        "snapshot=2026-07-10T11:33:59.439Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -579,33 +906,6 @@
         "sitemapErrors=0"
       ],
       "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
-    },
-    {
-      "rank": 20,
-      "siteId": "ezfunnel",
-      "host": "ezfunnel.kr",
-      "url": "https://ezfunnel.kr/",
-      "actionType": "indexing",
-      "tier": "T2",
-      "confidence": "high",
-      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=1, sitemapErrors=0, sitemapPending=false.",
-      "metrics": {
-        "gscImpressions30d": 63,
-        "gscClicks30d": 1,
-        "gscCtr30d": 0.015873015873015872,
-        "gscPosition30d": 11.333333333333334,
-        "ga4ActiveUsers30d": 42
-      },
-      "evidence": [
-        "data/site-stats.json",
-        "snapshot=2026-07-10T08:51:36.848Z",
-        "gscStatus=ok",
-        "adsenseStatus=ok",
-        "adsTxtStatus=ok",
-        "sitemapWarnings=1",
-        "sitemapErrors=0"
-      ],
-      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
     }
   ],
   "stopConditions": [

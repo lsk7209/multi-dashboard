@@ -1,4 +1,4 @@
-# GSC Permission Audit - 2026-07-10T08:51:36.848Z
+# GSC Permission Audit - 2026-07-10T11:33:59.439Z
 
 This is a non-mutating permission recovery packet. It does not change Search Console, GA4, DNS, or site files.
 
@@ -9,7 +9,7 @@ This is a non-mutating permission recovery packet. It does not change Search Con
 ## Summary
 
 - Handoff status: `resolved`
-- Snapshot: `data/site-stats.json generatedAt=2026-07-10T08:51:36.848Z`
+- Snapshot: `data/site-stats.json generatedAt=2026-07-10T11:33:59.439Z`
 - Audited rows: 0
 - Owner access: 0
 - Restricted access: 0
@@ -39,3 +39,4 @@ pnpm dashboard:acceptance data\dashboard-verification-<YYYY-MM-DD>.json
 ```
 
 Success condition: the fresh permission packet has no `unverified` or `not_listed` row for the target site, `data/site-stats.json` reports `gscStatus=ok`, `dashboard:post-recovery` reports `ready_to_act`, `dashboard:artifact-integrity` reports `ready=true`, and `dashboard:acceptance` reports `ready=true`.
+
