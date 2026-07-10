@@ -181,6 +181,36 @@ describe("banner-management-store", () => {
     expect(response.status).toBe(404);
   });
 
+  it("accepts a registered browser origin and rejects another origin for qualified impressions", async () => {
+    process.env.MONETIZATION_BANNER_EVENT_SECRET = "test-event-secret";
+    const stamp = Date.now().toString(36);
+    const siteKey = `event-${stamp}`;
+    const siteUrl = `https://${siteKey}.example.com`;
+    let state = createBannerTrackingLink({ offerName: "Event offer", publicUrl: "https://example.com/event", slug: `event-${stamp}` });
+    const link = findRequired(state.trackingLinks, (item) => item.slug === `event-${stamp}`);
+    state = createBannerCreative({ height: 90, imageUrl: "https://example.com/event.png", name: `Event creative ${stamp}`, width: 728 });
+    const creative = findRequired(state.creatives, (item) => item.name === `Event creative ${stamp}`);
+    state = createBannerPlacement({ name: `Event placement ${stamp}`, siteKey, siteUrl, slotKey: "inline", type: "image_link" });
+    const placement = findRequired(state.placements, (item) => item.name === `Event placement ${stamp}`);
+    assignBannerPlacement({ creativeId: creative.id, placementId: placement.id, trackingLinkId: link.id });
+
+    const body = JSON.stringify({ eventType: "impression", sessionId: "b".repeat(32), siteKey, slotKey: "inline" });
+    const accepted = await postBannerEvent(new Request("http://localhost/api/banner-management/event", {
+      body,
+      headers: { "content-type": "application/json", origin: siteUrl },
+      method: "POST",
+    }));
+    expect(accepted.status).toBe(200);
+    await expect(accepted.json()).resolves.toEqual({ recorded: true });
+
+    const rejected = await postBannerEvent(new Request("http://localhost/api/banner-management/event", {
+      body: JSON.stringify({ eventType: "impression", sessionId: "c".repeat(32), siteKey, slotKey: "inline" }),
+      headers: { "content-type": "application/json", origin: "https://unregistered.example.com" },
+      method: "POST",
+    }));
+    expect(rejected.status).toBe(403);
+  });
+
   it("bucket-selects among multiple active assignments for A/B/C banners", () => {
     const stamp = Date.now().toString().slice(-8);
 
