@@ -15,5 +15,5 @@
 ## Remaining production gate
 
 - Set `MONETIZATION_BANNER_EVENT_SECRET` in the Git-connected Vercel production project without exposing its value.
-- Add loader markup to 12 Next/Vite repos and the tracked WordPress MU-plugin installer for 9 WordPress sites.
+- Commit the ten clean app-installation changes; review the two untracked app banner components before modifying them. The tracked WordPress MU-plugin installer now passes a no-write dry-run for all nine targets.
 - Deploy a Next/Vite canary, then a WordPress canary; verify browser events and remote LibSQL rows before full fleet rollout.

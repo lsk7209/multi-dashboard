@@ -32,7 +32,7 @@
   };
 
   const decorateClickLinks = (element) => {
-    element.querySelectorAll("a[data-banner-click]").forEach((link) => {
+    element.querySelectorAll('a[data-banner-click], a[href*="/api/banner-management/click"]').forEach((link) => {
       try {
         const target = new URL(link.href, window.location.href);
         target.searchParams.set("sid", sessionId);
