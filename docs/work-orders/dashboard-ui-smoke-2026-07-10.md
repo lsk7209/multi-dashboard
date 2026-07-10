@@ -5,17 +5,17 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 ## Summary
 
 - URL: `https://multi-dashboard-one.vercel.app/`
-- Stats snapshot: `2026-07-10T11:33:59.439Z`
+- Stats snapshot: `2026-07-10T12:19:48.332Z`
 - Sites: 98
-- Blocking sources: 1
+- Blocking sources: 0
 - Maintenance sources: 0
 - Blocker hosts: `none`
 - Actionability: `blocked_for_action_until_post_recovery_verify`
-- Checks: 11
+- Checks: 10
 
 ## Refresh Sources
 
-- Blocking: `skipped_refresh_failed:ga4:api_error:40`
+- Blocking: `none`
 - Maintenance: `none`
 
 ## Actionability
@@ -23,7 +23,7 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 - Status: `blocked_for_action_until_post_recovery_verify`
 - Required command: `pnpm dashboard:post-recovery`
 - Allowed use: Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.
-- Reason: Blocked until pnpm dashboard:post-recovery passes for current.
+- Reason: Blocked until pnpm dashboard:post-recovery passes for post_recovery_chain.
 
 ## Evidence Paths
 

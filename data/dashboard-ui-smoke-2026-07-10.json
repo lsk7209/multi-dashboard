@@ -1,18 +1,16 @@
 {
   "url": "https://multi-dashboard-one.vercel.app/",
-  "generatedAt": "2026-07-10T11:33:59.439Z",
+  "generatedAt": "2026-07-10T12:19:48.332Z",
   "siteCount": 98,
-  "blockingSources": [
-    "skipped_refresh_failed:ga4:api_error:40"
-  ],
+  "blockingSources": [],
   "maintenanceSources": [],
   "blockerHosts": [],
   "actionabilityStatus": "blocked_for_action_until_post_recovery_verify",
   "actionabilityCommand": "pnpm dashboard:post-recovery",
   "actionabilityAllowedUse": "Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.",
-  "actionabilityReason": "Blocked until pnpm dashboard:post-recovery passes for current.",
-  "blockedActionReason": "phone.luckyday.kr: GA4 property binding returns ok in the next stats refresh..",
-  "hasSuppressedBlockedAction": false,
+  "actionabilityReason": "Blocked until pnpm dashboard:post-recovery passes for post_recovery_chain.",
+  "blockedActionReason": "GSC sitemap 마지막 수집일이 2일 전입니다. 경고 1개",
+  "hasSuppressedBlockedAction": true,
   "fleetChainArtifactPath": "data/fleet-optimization-chain-2026-07-10.json",
   "gscPermissionAuditArtifactPath": "data/gsc-permission-audit-2026-07-10.json",
   "gscPermissionAuditWorkOrderPath": "docs/work-orders/gsc-permission-audit-2026-07-10.md",
@@ -26,12 +24,12 @@
     {
       "key": "dashboardArtifacts",
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-10T11:33:59.439Z."
+      "detail": "Read dashboard artifact snapshot=2026-07-10T12:19:48.332Z."
     },
     {
       "key": "ga4",
-      "status": "error",
-      "detail": "GA4 Data API quota limited collection for 40 sites; per-site GA4 findings were suppressed."
+      "status": "ok",
+      "detail": "Read GA4 collector status for 98 sites."
     }
   ],
   "checks": [
@@ -40,14 +38,13 @@
     "site-count",
     "blocker-maintenance-split",
     "gsc-handoff-status-visible",
-    "hard-blocker-visible",
     "affiliate-command-suppressed",
     "actionability-read-only-visible",
     "maintenance-visibility",
     "collector-availability-visible",
     "readable-rendered-text"
   ],
-  "artifactGeneratedAt": "2026-07-10T11:51:35.772Z",
+  "artifactGeneratedAt": "2026-07-10T12:28:28.714Z",
   "date": "2026-07-10",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,

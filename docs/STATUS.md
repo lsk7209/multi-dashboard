@@ -7,6 +7,7 @@
 - Current direct triage: 3 low GSC sitemap warnings only (`nicewomen`, `autorentlab`, `ezfunnel`); critical/high/medium findings are zero.
 - GitHub Actions direct collection is still skipped because no effective `GITHUB_TOKEN` or `GH_TOKEN` is available from the approved local secret sources. This is an external credential blocker, not a clean collector result.
 - Verification: `scripts/setup/update-ga4-stats.test.ts` 15/15 and `pnpm type-check` passed.
+- Production verification: Vercel deployment `dpl_CHQVDFg9jhp2My5zEZXZK26QC31R` is Ready for Git commit `c00458f`; the default dashboard domain returned HTTP 200 and the rendered UI smoke passed 10 checks with 98 sites, 0 blocking, and 0 maintenance sources.
 
 ## 2026-07-10 Collector Coverage and GA4 Quota Triage
 

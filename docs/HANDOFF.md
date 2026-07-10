@@ -8,6 +8,7 @@
 - GitHub Actions collection remains intentionally skipped: local secret files contain only the `GH_TOKEN` template key and no effective `GITHUB_TOKEN`/`GH_TOKEN` was loaded. Do not treat this as a zero-failure result; configure the token in an approved local secret source before relying on GitHub Actions signals.
 - Validation: `pnpm exec vitest run scripts/setup/update-ga4-stats.test.ts` passed (15 tests), `pnpm type-check` passed, and the full live collector refresh completed successfully.
 - Next operator action: inspect the three low GSC sitemap warnings with Search Console authority. After any dashboard refresh, Git-push the generated snapshot and wait for the Git-connected Vercel deployment before reporting it current.
+- Production verification: GitHub commits `889e5e8`, `ac70a5f`, and `c00458f` are deployed through Vercel production deployment `dpl_CHQVDFg9jhp2My5zEZXZK26QC31R` (`https://multi-dashboard-q1avj26xb-limsubs-projects.vercel.app`). `https://multi-dashboard-one.vercel.app` returned HTTP 200 and the 10-check rendered UI smoke passed with the 98-site, zero-blocking snapshot.
 
 - Content quality polish for the 2026-07-10 scheduled top-up batches is complete for known recurring Korean wording defects. Harness: `.goal-harness/content-quality-polish-2026-07-10/`.
 - Local artifacts were corrected with `scripts/content-quality-polish-2026-07-10.mjs`: `data/content-polish/local-apply-2026-07-10.json` reports 458 replacements across 55 files; `data/content-polish/local-scan-after-2026-07-10.json` reports hitCount 0.
