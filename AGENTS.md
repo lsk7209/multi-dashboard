@@ -28,6 +28,11 @@
 - When a user corrects a workflow assumption, record the correction in the project rules before continuing related work.
 - For sequential work, finish the current evidence and verification loop before moving to the next site or subsystem.
 
+## Confirmed Site Fix Authority
+
+- A dashboard `read-only` or post-recovery state restricts dashboard-triggered automatic actions only; it does not remove Codex authority to implement a user-confirmed, evidence-backed fix in an individual site repository.
+- Once a site fix is confirmed from fresh evidence, apply it, validate it, and use that site's Git-connected deployment flow unless the user explicitly says to hold site changes.
+
 ## Direct Ops Collection, Not Gmail Digest
 
 - Do not use `lsk7209/gmail-digest` as the source of truth for multi-dashboard operations triage.
