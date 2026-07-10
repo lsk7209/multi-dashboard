@@ -1,5 +1,11 @@
 # Status
 
+## 2026-07-11 Dashboard Navigation
+
+- State: removed the top-level dashboard `배너` menu after its unintended reintroduction.
+- Scope: `/banner-management` remains available; only the dashboard tab and its now-unused panel code were removed.
+- Verification: `pnpm type-check` and `pnpm build` passed.
+
 ## 2026-07-10 Sitemap Read-Only Review
 
 - Snapshot `2026-07-10T13:09:12.180Z`: 98 sites refreshed; GSC and sitemap collection succeeded. `runmania` alone recorded a transient GA4 `DEADLINE_EXCEEDED` response.

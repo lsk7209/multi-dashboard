@@ -3,7 +3,6 @@
   type DashboardTabItem,
 } from "./components/dashboard-tabs";
 import { AppHeader } from "./components/app-header";
-import { BannerManagementConsole } from "./components/banner-management-console";
 import { InsightExplorer } from "./components/insight-explorer";
 import { OpsMailReportPanel } from "./components/ops-mail-report-panel";
 import { SiteStatsTable } from "./components/site-stats-table";
@@ -67,12 +66,6 @@ export default async function DashboardPage({
       panelLabel: "인사이트",
       count: formatNumber(data.insights.length),
       content: <InsightsSection data={data} actionabilityOptions={actionabilityOptions} />,
-    },
-    {
-      id: "banners",
-      label: "배너",
-      panelLabel: "배너",
-      content: <BannerSection data={data} actionabilityOptions={actionabilityOptions} />,
     },
     {
       id: "mail",
@@ -234,52 +227,6 @@ function InsightsSection({
         isReadOnlyBlocked={isReadOnlyBlocked}
       />
     </>
-  );
-}
-
-function BannerSection({
-  data,
-  actionabilityOptions,
-}: {
-  data: ReturnType<typeof getDashboardData>;
-  actionabilityOptions: DashboardActionabilityOptions;
-}) {
-  const actionability = getDashboardActionability(data, actionabilityOptions);
-  const isReadOnlyBlocked =
-    actionability.status === "blocked_for_action_until_post_recovery_verify";
-
-  if (!isReadOnlyBlocked) {
-    return <BannerManagementConsole />;
-  }
-
-  return (
-    <article className="panel">
-      <div className="panel-heading">
-        <div>
-          <h2>읽기 전용 배너 점검</h2>
-          <p>post-recovery 통과 전에는 배너 등록, 실제 제출, 외부 갱신 명령을 숨깁니다.</p>
-        </div>
-        <span>read-only</span>
-      </div>
-      <DashboardActionabilityNotice
-        actionability={actionability}
-        gscHandoffStatus={data.gscPermissionAudit?.handoffStatus ?? null}
-      />
-      <div className="command-list">
-        <div className="command-row">
-          <span>현재 상태</span>
-          <code>read-only until post-recovery passes</code>
-        </div>
-        <div className="command-row">
-          <span>필수 검증</span>
-          <code>{actionability.command}</code>
-        </div>
-        <div className="command-row">
-          <span>외부 작업</span>
-          <code>read-only until post-recovery passes</code>
-        </div>
-      </div>
-    </article>
   );
 }
 
