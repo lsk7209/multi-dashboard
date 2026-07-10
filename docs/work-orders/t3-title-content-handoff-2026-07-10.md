@@ -1,15 +1,15 @@
-# T3 Title/Content Handoff - 2026-07-10T11:33:59.439Z
+# T3 Title/Content Handoff - 2026-07-10T12:19:48.332Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-10T11:33:59.439Z`
+- Snapshot: `2026-07-10T12:19:48.332Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-10.json`
 - Sites path: `scripts\setup\sites.yaml`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:ga4:api_error:40`
+- Refresh failed sources: `none`
 
 ## Summary
 
@@ -17,7 +17,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 |---|---:|
 | Sites | 13 |
 | Title handoff rows | 10 |
-| Content handoff rows | 8 |
+| Content handoff rows | 7 |
 
 ## Handoff Queue
 
@@ -27,15 +27,15 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `cartain.kr` | 2 | `title_handoff` | 3621 impr / 64 clicks / 1.77% CTR / pos 9.43 | 979 | `2026년 신차 출시 일정` (22 impr, pos 7.50) | `D:\web\cartainkr` |
 | `gong365.kr` | 3, 5 | `title_handoff`, `content_handoff` | 2732 impr / 32 clicks / 1.17% CTR / pos 8.14 | 77 | `missing` | `D:\web\gong365kr` |
 | `estat.kr` | 4, 6 | `title_handoff`, `content_handoff` | 2686 impr / 14 clicks / 0.52% CTR / pos 7.92 | 42 | `missing` | `D:\web\estatkr` |
-| `petinsuer.com` | 7, 8 | `title_handoff`, `content_handoff` | 1288 impr / 18 clicks / 1.40% CTR / pos 9.62 | 96 | `노견 기준` (12 impr, pos 6.75) | `D:\web\petinsuercom` |
-| `dogspang.kr` | 9, 12 | `title_handoff`, `content_handoff` | 1084 impr / 18 clicks / 1.66% CTR / pos 10.01 | 88 | `강아지 발바닥 각화증` (19 impr, pos 7.74) | `D:\web\dogspangkr` |
-| `ehon365.kr` | 11 | `title_handoff` | 769 impr / 19 clicks / 2.47% CTR / pos 14.41 | 650 | `missing` | `D:\web\ehon365\temp_clone` |
-| `dogswhere.com` | 13, 15 | `title_handoff`, `content_handoff` | 985 impr / 19 clicks / 1.93% CTR / pos 13.27 | 0 | `부산 지하철 근처 애견 유치원` (12 impr, pos 40.58)<br>`강아지 맡길 곳` (11 impr, pos 32.36) | `D:\web\dogswherecom` |
+| `dogswhere.com` | 7 | `title_handoff` | 985 impr / 19 clicks / 1.93% CTR / pos 13.27 | 1384 | `부산 지하철 근처 애견 유치원` (12 impr, pos 40.58)<br>`강아지 맡길 곳` (11 impr, pos 32.36) | `D:\web\dogswherecom` |
+| `petinsuer.com` | 8, 9 | `title_handoff`, `content_handoff` | 1288 impr / 18 clicks / 1.40% CTR / pos 9.62 | 96 | `노견 기준` (12 impr, pos 6.75) | `D:\web\petinsuercom` |
+| `dogspang.kr` | 10, 13 | `title_handoff`, `content_handoff` | 1084 impr / 18 clicks / 1.66% CTR / pos 10.01 | 88 | `강아지 발바닥 각화증` (19 impr, pos 7.74) | `D:\web\dogspangkr` |
+| `ehon365.kr` | 12 | `title_handoff` | 769 impr / 19 clicks / 2.47% CTR / pos 14.41 | 650 | `missing` | `D:\web\ehon365\temp_clone` |
 | `homeimer.com` | 14 | `content_handoff` | 1005 impr / 0 clicks / 0.00% CTR / pos 66.74 | 10 | `missing` | `D:\web\homeimercom` |
-| `today2424.kr` | 16 | `content_handoff` | 906 impr / 35 clicks / 3.86% CTR / pos 9.41 | 94 | `missing` | `D:\web\today2424\2424` |
-| `nexttech7.com` | 17 | `title_handoff` | 794 impr / 16 clicks / 2.02% CTR / pos 12.63 | 133 | `missing` | `D:\web\nexttech7com` |
-| `legalser.com` | 19 | `content_handoff` | 619 impr / 2 clicks / 0.32% CTR / pos 61.77 | 18 | `missing` | `D:\web\legalsercom` |
-| `healfood.kr` | 20 | `title_handoff` | 493 impr / 4 clicks / 0.81% CTR / pos 8.85 | 29 | `missing` | `D:\web\healfoodkr` |
+| `today2424.kr` | 15 | `content_handoff` | 906 impr / 35 clicks / 3.86% CTR / pos 9.41 | 94 | `missing` | `D:\web\today2424\2424` |
+| `nexttech7.com` | 16 | `title_handoff` | 794 impr / 16 clicks / 2.02% CTR / pos 12.63 | 133 | `missing` | `D:\web\nexttech7com` |
+| `legalser.com` | 18 | `content_handoff` | 619 impr / 2 clicks / 0.32% CTR / pos 61.77 | 18 | `missing` | `D:\web\legalsercom` |
+| `healfood.kr` | 19 | `title_handoff` | 493 impr / 4 clicks / 0.81% CTR / pos 8.85 | 29 | `missing` | `D:\web\healfoodkr` |
 
 ## Technical Status
 
@@ -45,10 +45,10 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `cartain.kr` | `wordpress` | `https://cartain.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `gong365.kr` | `wordpress` | `https://gong365.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `estat.kr` | `wordpress` | `https://estat.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
+| `dogswhere.com` | `wordpress` | `https://dogswhere.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `petinsuer.com` | `wordpress` | `https://petinsuer.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `dogspang.kr` | `wordpress` | `https://dogspang.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `ehon365.kr` | `wordpress` | `https://www.ehon365.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
-| `dogswhere.com` | `wordpress` | `https://dogswhere.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `homeimer.com` | `wordpress` | `https://homeimer.com/sitemap_index.xml`, warnings=0, errors=0 | `ok` | `ok` | Persona/content workflow only; do not directly edit article bodies from this handoff. |
 | `today2424.kr` | `wordpress` | `https://today2424.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Persona/content workflow only; do not directly edit article bodies from this handoff. |
 | `nexttech7.com` | `wordpress` | `https://nexttech7.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |

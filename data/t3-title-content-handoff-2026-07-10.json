@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T11:41:02.421Z",
+  "generatedAt": "2026-07-10T12:23:21.833Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,19 +8,17 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-10T11:33:59.439Z",
+    "snapshotTimestamp": "2026-07-10T12:19:48.332Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-10.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
     "refreshCommand": "pnpm stats:update",
-    "refreshFailedSources": [
-      "skipped_refresh_failed:ga4:api_error:40"
-    ]
+    "refreshFailedSources": []
   },
   "summary": {
     "siteCount": 13,
     "titleHandoffCount": 10,
-    "contentHandoffCount": 8
+    "contentHandoffCount": 7
   },
   "sites": [
     {
@@ -178,6 +176,51 @@
       "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
     },
     {
+      "host": "dogswhere.com",
+      "siteId": "dogswhere",
+      "url": "https://dogswhere.com/",
+      "localPath": "D:\\web\\dogswherecom",
+      "platform": "wordpress",
+      "wpRestBase": "https://dogswhere.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        7
+      ],
+      "metrics": {
+        "gscImpressions30d": 985,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.019289340101522844,
+        "gscPosition30d": 13.268020304568529,
+        "ga4ActiveUsers30d": 1384
+      },
+      "topQueries": [
+        {
+          "query": "부산 지하철 근처 애견 유치원",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 40.583333333333336
+        },
+        {
+          "query": "강아지 맡길 곳",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 32.36363636363636
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://dogswhere.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
       "host": "petinsuer.com",
       "siteId": "petinsuer-2",
       "url": "https://petinsuer.com/",
@@ -189,8 +232,8 @@
         "content_handoff"
       ],
       "planRanks": [
-        7,
-        8
+        8,
+        9
       ],
       "metrics": {
         "gscImpressions30d": 1288,
@@ -229,8 +272,8 @@
         "content_handoff"
       ],
       "planRanks": [
-        9,
-        12
+        10,
+        13
       ],
       "metrics": {
         "gscImpressions30d": 1084,
@@ -268,7 +311,7 @@
         "title_handoff"
       ],
       "planRanks": [
-        11
+        12
       ],
       "metrics": {
         "gscImpressions30d": 769,
@@ -286,53 +329,6 @@
         "adsTxtStatus": "ok"
       },
       "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
-    },
-    {
-      "host": "dogswhere.com",
-      "siteId": "dogswhere",
-      "url": "https://dogswhere.com/",
-      "localPath": "D:\\web\\dogswherecom",
-      "platform": "wordpress",
-      "wpRestBase": "https://dogswhere.com/wp-json/wp/v2",
-      "actions": [
-        "title_handoff",
-        "content_handoff"
-      ],
-      "planRanks": [
-        13,
-        15
-      ],
-      "metrics": {
-        "gscImpressions30d": 985,
-        "gscClicks30d": 19,
-        "gscCtr30d": 0.019289340101522844,
-        "gscPosition30d": 13.268020304568529,
-        "ga4ActiveUsers30d": 0
-      },
-      "topQueries": [
-        {
-          "query": "부산 지하철 근처 애견 유치원",
-          "clicks": 0,
-          "impressions": 12,
-          "ctr": 0,
-          "position": 40.583333333333336
-        },
-        {
-          "query": "강아지 맡길 곳",
-          "clicks": 0,
-          "impressions": 11,
-          "ctr": 0,
-          "position": 32.36363636363636
-        }
-      ],
-      "technicalStatus": {
-        "sitemapPath": "https://dogswhere.com/sitemap.xml",
-        "sitemapWarnings": 0,
-        "sitemapErrors": 0,
-        "adsenseStatus": "ok",
-        "adsTxtStatus": "ok"
-      },
-      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
     },
     {
       "host": "homeimer.com",
@@ -375,7 +371,7 @@
         "content_handoff"
       ],
       "planRanks": [
-        16
+        15
       ],
       "metrics": {
         "gscImpressions30d": 906,
@@ -405,7 +401,7 @@
         "title_handoff"
       ],
       "planRanks": [
-        17
+        16
       ],
       "metrics": {
         "gscImpressions30d": 794,
@@ -435,7 +431,7 @@
         "content_handoff"
       ],
       "planRanks": [
-        19
+        18
       ],
       "metrics": {
         "gscImpressions30d": 619,
@@ -465,7 +461,7 @@
         "title_handoff"
       ],
       "planRanks": [
-        20
+        19
       ],
       "metrics": {
         "gscImpressions30d": 493,

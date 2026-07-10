@@ -162,7 +162,7 @@ export async function verifyDashboardRenderedUiSmoke(
     );
     checks.push("site-count");
 
-    const splitText = `${formatNumber(expectations.blockingSources.length)} blocking · ${formatNumber(expectations.maintenanceSources.length)} maintenance`;
+    const splitText = `${formatNumber(expectations.blockingSources.length)} blocking \u00b7 ${formatNumber(expectations.maintenanceSources.length)} maintenance`;
     await assertVisible(
       fleetPanel.locator("code", { hasText: splitText }),
       `Fleet blocker/maintenance split is not rendered as "${splitText}".`,
