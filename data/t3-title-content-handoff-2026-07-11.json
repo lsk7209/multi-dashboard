@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T23:00:40.856Z",
+  "generatedAt": "2026-07-10T23:15:34.403Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,7 +8,7 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-10T22:58:31.347Z",
+    "snapshotTimestamp": "2026-07-10T23:13:31.297Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-11.json",
     "sitesPath": "scripts\\setup\\sites.yaml",

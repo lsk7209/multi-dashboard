@@ -2,6 +2,10 @@
 
 ## Current State
 
+- Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-10T23:13:31.297Z`; 98 sites completed with zero GA4, GSC, sitemap, AdSense-code, and ads.txt failures. The matching post-recovery chain is `ready_to_act` with artifact integrity passed.
+- `dogbreedcost.com` inventory was corrected to `platform: static` with the source repository `D:\web\dog-breed\repo` / `lsk7209/dog-breed`. Do not use WordPress REST or WordPress deployment routes for this site.
+- Current sitemap warnings for `nicewomen.kr`, `ezfunnel.kr`, and `autorentlab.com` have no verified public or source defect. Preserve them for exact GSC warning-detail review; do not mutate sitemap submission or generators merely from the warning count.
+
 - Dashboard post-recovery evidence is current for snapshot `2026-07-10T22:58:31.347Z`: `data/dashboard-post-recovery-chain-2026-07-11.json` reports `readiness=ready_to_act`, 3/3 commands passed, and artifact integrity passed. The current GSC permission audit reports zero access findings.
 - Root cause of the prior read-only banner: after `stats:update`, the dated GSC audit/Fleet/T3 artifacts still referenced the older `2026-07-10T15:12:35.317Z` snapshot. Strict loaders correctly rejected them, but the surface message called the stale audit "missing". Post-recovery now uses `dashboard:verify --skip-stats-update` so it validates the already-current snapshot without invalidating it through a nested collector refresh.
 - Before the next site action, use the current `ready_to_act` evidence and then refresh only when new dashboard source data is required. A new `stats:update` necessarily requires a new Fleet/post-recovery evidence chain before actionability is reported again.

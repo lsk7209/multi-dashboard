@@ -1671,12 +1671,16 @@ sites:
   - id: dogbreedcost
     name: https://dogbreedcost.com
     enabled: true
-    platform: wordpress
+    platform: static
     url: https://dogbreedcost.com/
-    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
     ga4PropertyId: "543424923"
     gscSiteUrl: https://dogbreedcost.com/
     monetization: true
+    contentSource:
+      type: local-app
+      locationLabel: kwangju
+      localPath: D:\web\dog-breed\repo
+      githubRepo: https://github.com/lsk7209/dog-breed
   - id: plategogo
     name: plategogo.com
     enabled: true

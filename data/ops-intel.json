@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-07-10T13:09:12.813Z",
+  "generatedAt": "2026-07-10T23:13:41.452Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-10T13:09:12.180Z",
+  "statsSnapshot": "2026-07-10T23:13:31.297Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-10T13:09:12.807Z",
+      "checkedAt": "2026-07-10T23:13:41.446Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-10T13:09:12.180Z.",
-      "checkedAt": "2026-07-10T13:09:12.806Z",
-      "count": 4
+      "detail": "Read dashboard artifact snapshot=2026-07-10T23:13:31.297Z.",
+      "checkedAt": "2026-07-10T23:13:41.445Z",
+      "count": 3
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-10T13:09:12.806Z",
+      "checkedAt": "2026-07-10T23:13:41.445Z",
       "count": 98
     }
   },
@@ -30,27 +30,17 @@
     "github-actions": 0,
     "gsc": 3,
     "adsense": 0,
-    "ga4": 1,
+    "ga4": 0,
     "vercel": 0,
     "other": 0
   },
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 3
   },
   "findings": [
-    {
-      "id": "ga4-runmania-pwwgru",
-      "kind": "ga4",
-      "severity": "high",
-      "priority": 80,
-      "site": "runmania",
-      "sourceLine": "direct:dashboard site=runmania kind=ga4 status=api_error",
-      "title": "runmania.kr: GA4 direct collector signal api_error",
-      "recommendedAction": "Verify GA4 property binding, tag collection, and dashboard site mapping from current first-party telemetry."
-    },
     {
       "id": "gsc-nicewomen-t1o7t1",
       "kind": "gsc",

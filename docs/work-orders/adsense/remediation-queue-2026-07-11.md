@@ -1,6 +1,6 @@
-# AdSense Remediation Queue - 2026-07-10T23:00:39.678Z
+# AdSense Remediation Queue - 2026-07-10T23:15:33.171Z
 
-- Collector snapshot: `data/site-stats.json generatedAt=2026-07-10T22:58:31.347Z`
+- Collector snapshot: `data/site-stats.json generatedAt=2026-07-10T23:13:31.297Z`
 - Production mutation: `false`
 - AdSense console checked: `false`
 

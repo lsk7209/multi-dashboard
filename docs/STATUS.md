@@ -1,5 +1,11 @@
 # Status
 
+## 2026-07-11 Fresh Snapshot and Inventory Repair
+
+- Fresh collection: `pnpm stats:update` completed for 98 sites at `2026-07-10T23:13:31.297Z`; GA4, GSC, sitemap, AdSense-code, and ads.txt failures are all zero.
+- `dogbreedcost.com`: corrected the dashboard inventory from a WordPress site with a WP REST endpoint to the actual static Git/Vercel repository at `D:\web\dog-breed\repo`. This prevents the site from being routed into WordPress-only investigation or mutation paths.
+- Verification: Fleet evidence passed 4/4, post-recovery passed 3/3, dashboard artifact integrity passed 12/12, and readiness is `ready_to_act`.
+
 ## 2026-07-11 Post-Recovery Evidence
 
 - State: dashboard actionability is restored for the current snapshot `2026-07-10T22:58:31.347Z`; `pnpm dashboard:post-recovery` finished `ready_to_act` with 3/3 commands passing and artifact integrity passing.

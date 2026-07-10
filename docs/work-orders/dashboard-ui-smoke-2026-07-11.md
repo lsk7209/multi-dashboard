@@ -5,7 +5,7 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 ## Summary
 
 - URL: `http://127.0.0.1:3101/?actionabilityMode=local-evidence&actionabilityToken=redacted`
-- Stats snapshot: `2026-07-10T22:58:31.347Z`
+- Stats snapshot: `2026-07-10T23:13:31.297Z`
 - Sites: 98
 - Blocking sources: 0
 - Maintenance sources: 0

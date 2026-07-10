@@ -1,6 +1,6 @@
 {
   "url": "http://127.0.0.1:3101/?actionabilityMode=local-evidence&actionabilityToken=redacted",
-  "generatedAt": "2026-07-10T22:58:31.347Z",
+  "generatedAt": "2026-07-10T23:13:31.297Z",
   "siteCount": 98,
   "blockingSources": [],
   "maintenanceSources": [],
@@ -24,7 +24,7 @@
     {
       "key": "dashboardArtifacts",
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-10T13:09:12.180Z."
+      "detail": "Read dashboard artifact snapshot=2026-07-10T23:13:31.297Z."
     },
     {
       "key": "ga4",
@@ -43,7 +43,7 @@
     "readable-rendered-text",
     "unauthorized-local-evidence-blocked"
   ],
-  "artifactGeneratedAt": "2026-07-10T23:00:45.224Z",
+  "artifactGeneratedAt": "2026-07-10T23:15:39.895Z",
   "date": "2026-07-11",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,
