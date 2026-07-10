@@ -1,5 +1,13 @@
 # Status
 
+## 2026-07-10 GA4 Collection Pacing
+
+- Added a global GA4 request queue in `scripts/setup/update-ga4-stats.ts`: default concurrency=1 and minimum interval=250ms. This isolates GA4 pacing from the six-site collector concurrency and covers both metric and traffic-keyword reports. The default full-run timeout is 10 minutes.
+- Fresh verification: `pnpm dashboard:refresh` completed for 98 sites at `2026-07-10T12:19:48.153Z`; GA4 failed=0 and GSC failed=0. The preceding 40-site GA4 429 quota condition is no longer present.
+- Current direct triage: 3 low GSC sitemap warnings only (`nicewomen`, `autorentlab`, `ezfunnel`); critical/high/medium findings are zero.
+- GitHub Actions direct collection is still skipped because no effective `GITHUB_TOKEN` or `GH_TOKEN` is available from the approved local secret sources. This is an external credential blocker, not a clean collector result.
+- Verification: `scripts/setup/update-ga4-stats.test.ts` 15/15 and `pnpm type-check` passed.
+
 ## 2026-07-10 Collector Coverage and GA4 Quota Triage
 
 - Fresh partial snapshot: `data/site-stats.json` generated at `2026-07-10T11:33:59.439Z` for 98 sites. GSC completed; GA4 reached Data API 429 quota limits for 40 sites.

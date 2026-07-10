@@ -35,6 +35,16 @@ const CONCURRENCY = readPositiveInteger(
   6,
   12,
 );
+const GA4_CONCURRENCY = readPositiveInteger(
+  process.env.STATS_UPDATE_GA4_CONCURRENCY,
+  1,
+  4,
+);
+const GA4_MIN_INTERVAL_MS = readNonNegativeInteger(
+  process.env.STATS_UPDATE_GA4_MIN_INTERVAL_MS,
+  250,
+  10000,
+);
 const PROGRESS_INTERVAL_MS = readPositiveInteger(
   process.env.STATS_UPDATE_PROGRESS_INTERVAL_MS,
   30000,
@@ -57,11 +67,13 @@ const SITE_TIMEOUT_MS = readPositiveInteger(
 );
 const RUN_TIMEOUT_MS = readNonNegativeInteger(
   process.env.STATS_UPDATE_RUN_TIMEOUT_MS,
-  235000,
+  600000,
   3600000,
 );
 const ADSENSE_PUBLISHER_ID =
   process.env.ADSENSE_PUBLISHER_ID ?? "pub-3050601904412736";
+const ga4RequestLimit = pLimit(GA4_CONCURRENCY);
+let nextGa4RequestAt = 0;
 // 헤더 없는 undici 기본 요청은 일부 호스팅 WAF가 415로 차단한다(curl·브라우저는 통과).
 // 홈페이지/ads.txt 체크에 브라우저 User-Agent와 Accept를 붙여 오탐을 막는다.
 const SITE_FETCH_HEADERS = {
@@ -612,6 +624,29 @@ function statusFromError(
   return fallback;
 }
 
+export function getGa4RequestDelay(
+  nextRequestAt: number,
+  now: number,
+): number {
+  return Math.max(0, nextRequestAt - now);
+}
+
+async function runGa4Request<T>(
+  request: () => Promise<T>,
+): Promise<T> {
+  return ga4RequestLimit(async () => {
+    const now = Date.now();
+    const delay = getGa4RequestDelay(nextGa4RequestAt, now);
+    nextGa4RequestAt = Math.max(nextGa4RequestAt, now) + GA4_MIN_INTERVAL_MS;
+
+    if (delay > 0) {
+      await new Promise<void>((resolve) => setTimeout(resolve, delay));
+    }
+
+    return request();
+  });
+}
+
 async function fetchGa4Metrics(
   client: BetaAnalyticsDataClient,
   propertyId: string,
@@ -638,18 +673,20 @@ async function fetchGa4MetricsForRange(
   startDate: string,
   endDate: string,
 ): Promise<MetricSet> {
-  const [response] = await client.runReport({
-    property: `properties/${propertyId}`,
-    dateRanges: [{ startDate, endDate }],
-    metrics: [
-      { name: "activeUsers" },
-      { name: "sessions" },
-      { name: "screenPageViews" },
-      { name: "eventCount" },
-    ],
-  }, {
-    timeout: GOOGLE_API_TIMEOUT_MS,
-  });
+  const [response] = await runGa4Request(() =>
+    client.runReport({
+      property: `properties/${propertyId}`,
+      dateRanges: [{ startDate, endDate }],
+      metrics: [
+        { name: "activeUsers" },
+        { name: "sessions" },
+        { name: "screenPageViews" },
+        { name: "eventCount" },
+      ],
+    }, {
+      timeout: GOOGLE_API_TIMEOUT_MS,
+    }),
+  );
 
   const row = response.rows?.[0];
   if (!row) {
@@ -669,20 +706,22 @@ async function fetchGa4TrafficKeywords(
   propertyId: string,
   days: number,
 ): Promise<TrafficKeywordMetric[]> {
-  const [response] = await client.runReport({
-    property: `properties/${propertyId}`,
-    dateRanges: [{ startDate: toGa4StartDate(days), endDate: "yesterday" }],
-    dimensions: [
-      { name: "sessionSource" },
-      { name: "sessionMedium" },
-      { name: "sessionManualTerm" },
-      { name: "sessionGoogleAdsKeyword" },
-    ],
-    metrics: [{ name: "activeUsers" }, { name: "sessions" }],
-    limit: 50,
-  }, {
-    timeout: GOOGLE_API_TIMEOUT_MS,
-  });
+  const [response] = await runGa4Request(() =>
+    client.runReport({
+      property: `properties/${propertyId}`,
+      dateRanges: [{ startDate: toGa4StartDate(days), endDate: "yesterday" }],
+      dimensions: [
+        { name: "sessionSource" },
+        { name: "sessionMedium" },
+        { name: "sessionManualTerm" },
+        { name: "sessionGoogleAdsKeyword" },
+      ],
+      metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+      limit: 50,
+    }, {
+      timeout: GOOGLE_API_TIMEOUT_MS,
+    }),
+  );
 
   const byKey = new Map<string, TrafficKeywordMetric>();
   for (const row of response.rows ?? []) {
@@ -2261,7 +2300,7 @@ async function runStatsUpdate(): Promise<void> {
   progressTimer.unref();
 
   logStatsUpdate(
-    `starting sites=${sites.length}, concurrency=${CONCURRENCY}, progressIntervalMs=${PROGRESS_INTERVAL_MS}, runTimeoutMs=${RUN_TIMEOUT_MS}, siteTimeoutMs=${SITE_TIMEOUT_MS}, slowSiteMs=${SLOW_SITE_MS}, googleApiTimeoutMs=${GOOGLE_API_TIMEOUT_MS}`,
+    `starting sites=${sites.length}, concurrency=${CONCURRENCY}, ga4Concurrency=${GA4_CONCURRENCY}, ga4MinIntervalMs=${GA4_MIN_INTERVAL_MS}, progressIntervalMs=${PROGRESS_INTERVAL_MS}, runTimeoutMs=${RUN_TIMEOUT_MS}, siteTimeoutMs=${SITE_TIMEOUT_MS}, slowSiteMs=${SLOW_SITE_MS}, googleApiTimeoutMs=${GOOGLE_API_TIMEOUT_MS}`,
   );
 
   let stats: SiteStat[];

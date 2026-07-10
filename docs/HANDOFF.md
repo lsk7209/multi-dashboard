@@ -2,12 +2,12 @@
 
 ## Current State
 
-- Dashboard collector coverage and GA4 quota triage were updated on 2026-07-10. The fresh partial 98-site snapshot is `data/site-stats.json` generated at `2026-07-10T11:33:59.439Z`.
-- `pnpm ops:intel` and `pnpm ops:triage` now coalesce the shared GA4 Data API 429 condition into one collector-level high finding (`affected_sites=40`) instead of 40 site-level repairs. Current direct triage is 4 findings: one GA4 quota condition and three low GSC sitemap warnings.
-- The Mail panel exposes collector coverage with status and evidence: GitHub Actions is skipped because `GITHUB_TOKEN`/`GH_TOKEN` is absent, dashboard artifacts are readable, and GA4 is quota-limited. Treat a skipped collector as unavailable evidence, not a clean zero-finding result.
-- Validation evidence: focused Vitest 99 passed, `pnpm type-check` passed, `pnpm build` passed, and rendered UI smoke passed with 11 checks against `http://127.0.0.1:3004/`.
-- Next operator action: restore GA4 Data API quota capacity or add collection pacing, then run `pnpm dashboard:refresh`, `pnpm ops:intel`, `pnpm ops:triage`, and the dashboard UI smoke. Configure a GitHub token separately before relying on GitHub Actions failure counts.
-- Production verification: Vercel deployment `dpl_8iLBz5rp7BDoezNQuraVHLYv5cBC` for GitHub commit `4cf75b7` is Ready. The production dashboard returned HTTP 200 and rendered GitHub Actions skipped, dashboard artifacts ok, and GA4 quota-limited for 40 sites.
+- GA4 collection pacing was added on 2026-07-10. All Data API reports now pass through a global default-one-request queue with a 250ms minimum interval; environment overrides are `STATS_UPDATE_GA4_CONCURRENCY` (1-4) and `STATS_UPDATE_GA4_MIN_INTERVAL_MS` (0-10000). The default full-run timeout is now 10 minutes to cover a paced 98-site refresh.
+- Fresh direct snapshot: `pnpm dashboard:refresh` completed at `2026-07-10T12:19:48.153Z` for 98 sites. GA4 failed=0, GSC failed=0, sitemap failures=0, AdSense failures=0, and ads.txt failures=0. The prior GA4 429 condition affecting 40 sites is cleared.
+- Current direct ops triage has only three low GSC sitemap warnings (`nicewomen`, `autorentlab`, `ezfunnel`). They are not deployment or collector failures.
+- GitHub Actions collection remains intentionally skipped: local secret files contain only the `GH_TOKEN` template key and no effective `GITHUB_TOKEN`/`GH_TOKEN` was loaded. Do not treat this as a zero-failure result; configure the token in an approved local secret source before relying on GitHub Actions signals.
+- Validation: `pnpm exec vitest run scripts/setup/update-ga4-stats.test.ts` passed (15 tests), `pnpm type-check` passed, and the full live collector refresh completed successfully.
+- Next operator action: inspect the three low GSC sitemap warnings with Search Console authority. After any dashboard refresh, Git-push the generated snapshot and wait for the Git-connected Vercel deployment before reporting it current.
 
 - Content quality polish for the 2026-07-10 scheduled top-up batches is complete for known recurring Korean wording defects. Harness: `.goal-harness/content-quality-polish-2026-07-10/`.
 - Local artifacts were corrected with `scripts/content-quality-polish-2026-07-10.mjs`: `data/content-polish/local-apply-2026-07-10.json` reports 458 replacements across 55 files; `data/content-polish/local-scan-after-2026-07-10.json` reports hitCount 0.

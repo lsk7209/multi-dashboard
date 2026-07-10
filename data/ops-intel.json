@@ -1,56 +1,46 @@
 {
-  "generatedAt": "2026-07-10T11:40:07.118Z",
+  "generatedAt": "2026-07-10T12:19:48.964Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-10T11:33:59.439Z",
+  "statsSnapshot": "2026-07-10T12:19:48.332Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-10T11:40:07.113Z",
+      "checkedAt": "2026-07-10T12:19:48.958Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-10T11:33:59.439Z.",
-      "checkedAt": "2026-07-10T11:40:07.112Z",
-      "count": 4
+      "detail": "Read dashboard artifact snapshot=2026-07-10T12:19:48.332Z.",
+      "checkedAt": "2026-07-10T12:19:48.957Z",
+      "count": 3
     },
     "ga4": {
-      "status": "error",
-      "detail": "GA4 Data API quota limited collection for 40 sites; per-site GA4 findings were suppressed.",
-      "checkedAt": "2026-07-10T11:40:07.112Z",
-      "count": 40
+      "status": "ok",
+      "detail": "Read GA4 collector status for 98 sites.",
+      "checkedAt": "2026-07-10T12:19:48.957Z",
+      "count": 98
     }
   },
   "counts": {
     "github-actions": 0,
     "gsc": 3,
     "adsense": 0,
-    "ga4": 1,
+    "ga4": 0,
     "vercel": 0,
     "other": 0
   },
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 3
   },
   "findings": [
-    {
-      "id": "ga4-collector-quota-40",
-      "kind": "ga4",
-      "severity": "high",
-      "priority": 80,
-      "count": 40,
-      "sourceLine": "direct:dashboard collector=ga4 status=quota_limited affected_sites=40",
-      "title": "GA4 direct collector quota limited for 40 sites",
-      "recommendedAction": "Restore GA4 Data API quota capacity or collection pacing, then refresh the dashboard before treating per-site GA4 signals as actionable."
-    },
     {
       "id": "gsc-nicewomen-t1o7t1",
       "kind": "gsc",
