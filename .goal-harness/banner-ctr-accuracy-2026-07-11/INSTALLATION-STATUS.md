@@ -2,7 +2,7 @@
 
 ## Ready for deployment after dashboard release
 
-- Next/Vite loader markup added locally: `campgogo`, `cartain-2`, `dogswhere`, `dullegilgogo`, `picklefriend`, `plategogo`, `roadways`, `temon`, `tennisfrens`, `todaypharm`.
+- Next/Vite loader markup committed locally: `campgogo` `824a4ba`, `cartain-2` `480b493`, `dogswhere` `9dd8c90`, `dullegilgogo` `d635d28`, `picklefriend` `a2c3b0e`, `plategogo` `2ff81a6`, `roadways` `b4d12f3`, `temon` `3210a2e`, `tennisfrens` `6ff38b0`, `todaypharm` `bfdf336`.
 - WordPress MU-plugin installer: 9 targets pass dry-run (`nexttech7`, `smallhomepick`, `petinsuer-2`, `healfood-2`, `estat-2`, `autoscares-2`, `dogspang-2`, `notebook-klick-2`, `softwa`). The script only writes with `--apply` and creates a timestamped remote backup.
 
 ## Held to preserve existing local work
