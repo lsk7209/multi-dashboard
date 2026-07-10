@@ -43,6 +43,10 @@
     });
   };
 
+  const banners = [...document.querySelectorAll(selector)];
+  banners.forEach(decorateClickLinks);
+  if (!("IntersectionObserver" in window)) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
@@ -64,8 +68,5 @@
     });
   }, { threshold: [0.5] });
 
-  document.querySelectorAll(selector).forEach((element) => {
-    decorateClickLinks(element);
-    observer.observe(element);
-  });
+  banners.forEach((element) => observer.observe(element));
 })();
