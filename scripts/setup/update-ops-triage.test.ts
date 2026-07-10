@@ -7,6 +7,9 @@ describe("update-ops-triage", () => {
       generatedAt: "2026-07-08T00:00:00.000Z",
       source: "direct",
       owner: "lsk7209",
+      collection: {
+        githubActions: { status: "skipped", detail: "Token unavailable.", count: 0 },
+      },
       findings: [
         {
           id: "adsense-yesa",
@@ -34,6 +37,9 @@ describe("update-ops-triage", () => {
     expect(report.source).toBe("direct");
     expect(report.sourcePath).toBe("test://ops-intel");
     expect(report.digestUrl).toBeNull();
+    expect(report.collection).toEqual({
+      githubActions: { status: "skipped", detail: "Token unavailable.", count: 0 },
+    });
     expect(report.counts.adsense).toBe(1);
     expect(report.counts.ga4).toBe(1);
     expect(report.findings).toEqual(

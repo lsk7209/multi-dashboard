@@ -20,18 +20,18 @@
   "collectorAvailability": [
     {
       "key": "githubActions",
-      "status": "missing",
-      "detail": "Collector availability was not recorded in this report."
+      "status": "skipped",
+      "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped."
     },
     {
       "key": "dashboardArtifacts",
-      "status": "missing",
-      "detail": "Collector availability was not recorded in this report."
+      "status": "ok",
+      "detail": "Read dashboard artifact snapshot=2026-07-10T11:33:59.439Z."
     },
     {
       "key": "ga4",
-      "status": "missing",
-      "detail": "Collector availability was not recorded in this report."
+      "status": "error",
+      "detail": "GA4 Data API quota limited collection for 40 sites; per-site GA4 findings were suppressed."
     }
   ],
   "checks": [
@@ -47,7 +47,7 @@
     "collector-availability-visible",
     "readable-rendered-text"
   ],
-  "artifactGeneratedAt": "2026-07-10T11:44:07.859Z",
+  "artifactGeneratedAt": "2026-07-10T11:50:27.331Z",
   "date": "2026-07-10",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,

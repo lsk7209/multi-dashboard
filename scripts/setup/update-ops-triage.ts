@@ -51,6 +51,7 @@ interface OpsTriageReport {
   owner: string;
   summary: Record<FindingSeverity, number>;
   counts: Record<FindingKind, number>;
+  collection?: Record<string, unknown>;
   findings: OpsFinding[];
 }
 
@@ -58,6 +59,7 @@ interface OpsIntelArtifact {
   generatedAt?: unknown;
   source?: unknown;
   owner?: unknown;
+  collection?: unknown;
   findings?: unknown;
 }
 
@@ -206,6 +208,7 @@ function finalizeReport(input: {
   sourceUpdatedAt?: string;
   owner: string;
   findings: OpsFinding[];
+  collection?: Record<string, unknown>;
   repoFilter?: string;
   limit?: number;
 }): OpsTriageReport {
@@ -226,6 +229,7 @@ function finalizeReport(input: {
     owner: input.owner,
     summary: summarize(findings),
     counts: countKinds(findings),
+    ...(input.collection ? { collection: input.collection } : {}),
     findings,
   };
 }
@@ -242,6 +246,7 @@ async function buildReportFromIntel(options: CliOptions): Promise<OpsTriageRepor
     sourceUpdatedAt: stringValue(parsed.generatedAt),
     owner: stringValue(parsed.owner) ?? options.owner,
     findings,
+    ...(asRecord(parsed.collection) ? { collection: asRecord(parsed.collection) } : {}),
     ...(options.repoFilter ? { repoFilter: options.repoFilter } : {}),
     ...(options.limit ? { limit: options.limit } : {}),
   });
@@ -279,6 +284,12 @@ function extractSite(line: string): string | undefined {
   return line.match(/(?<site>[a-z0-9.-]+\.[a-z]{2,})/i)?.groups?.site;
 }
 
+function asRecord(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? value as Record<string, unknown>
+    : null;
+}
+
 export function buildOpsTriageReportFromIntel(
   artifact: OpsIntelArtifact,
   options: Partial<CliOptions> = {},
@@ -292,6 +303,7 @@ export function buildOpsTriageReportFromIntel(
     sourceUpdatedAt: stringValue(artifact.generatedAt),
     owner: stringValue(artifact.owner) ?? options.owner ?? DEFAULT_OWNER,
     findings,
+    ...(asRecord(artifact.collection) ? { collection: asRecord(artifact.collection) } : {}),
     ...(options.repoFilter ? { repoFilter: options.repoFilter } : {}),
     ...(options.limit ? { limit: options.limit } : {}),
   });

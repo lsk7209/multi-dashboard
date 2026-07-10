@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T11:40:07.685Z",
+  "generatedAt": "2026-07-10T11:50:13.203Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
   "sourceUpdatedAt": "2026-07-10T11:40:07.118Z",
@@ -18,6 +18,26 @@
     "ga4": 1,
     "vercel": 0,
     "other": 0
+  },
+  "collection": {
+    "githubActions": {
+      "status": "skipped",
+      "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
+      "checkedAt": "2026-07-10T11:40:07.113Z",
+      "count": 0
+    },
+    "dashboardArtifacts": {
+      "status": "ok",
+      "detail": "Read dashboard artifact snapshot=2026-07-10T11:33:59.439Z.",
+      "checkedAt": "2026-07-10T11:40:07.112Z",
+      "count": 4
+    },
+    "ga4": {
+      "status": "error",
+      "detail": "GA4 Data API quota limited collection for 40 sites; per-site GA4 findings were suppressed.",
+      "checkedAt": "2026-07-10T11:40:07.112Z",
+      "count": 40
+    }
   },
   "findings": [
     {
