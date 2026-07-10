@@ -1,0 +1,446 @@
+{
+  "generatedAt": "2026-07-10T23:21:15.106Z",
+  "dateRange": {
+    "startDate": "2026-06-12",
+    "endDate": "2026-07-10"
+  },
+  "targets": [
+    "estat-2",
+    "cartain-2",
+    "texturb",
+    "tennisfrens"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexandra-eala",
+      "query": "알렉산드라 이알라",
+      "clicks": 0,
+      "impressions": 1297,
+      "ctr": 0,
+      "position": 8.049344641480339
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marta-kostyuk-legacy",
+      "query": "마르타 코스튜크",
+      "clicks": 0,
+      "impressions": 1071,
+      "ctr": 0,
+      "position": 8.591970121381886
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/arthur-landercknech",
+      "query": "아르튀르 랭데르크네슈",
+      "clicks": 6,
+      "impressions": 829,
+      "ctr": 0.007237635705669481,
+      "position": 10.375150784077201
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/martin-landaluce",
+      "query": "마르틴 란달루세",
+      "clicks": 7,
+      "impressions": 785,
+      "ctr": 0.008917197452229299,
+      "position": 9.509554140127388
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/alexandra-eala",
+      "query": "알렉산드라 이알라",
+      "clicks": 0,
+      "impressions": 633,
+      "ctr": 0,
+      "position": 9.510268562401263
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/iva-jovic",
+      "query": "이바 조비크",
+      "clicks": 0,
+      "impressions": 389,
+      "ctr": 0,
+      "position": 7.5424164524421595
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexander-blockx",
+      "query": "알렉산더 블록스",
+      "clicks": 2,
+      "impressions": 388,
+      "ctr": 0.005154639175257732,
+      "position": 10.3840206185567
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/martin-landaluce",
+      "query": "란달루세",
+      "clicks": 4,
+      "impressions": 339,
+      "ctr": 0.011799410029498525,
+      "position": 10.03244837758112
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marie-bouzkova",
+      "query": "마리 부즈코바",
+      "clicks": 0,
+      "impressions": 293,
+      "ctr": 0,
+      "position": 9.10580204778157
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marta-kostyuk",
+      "query": "마르타 코스튜크",
+      "clicks": 0,
+      "impressions": 292,
+      "ctr": 0,
+      "position": 8.75
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/jiri-lehecka",
+      "query": "이르지 레헤치카",
+      "clicks": 0,
+      "impressions": 150,
+      "ctr": 0,
+      "position": 9.793333333333333
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/yannick-hanfmann",
+      "query": "야닉 한프만",
+      "clicks": 0,
+      "impressions": 126,
+      "ctr": 0,
+      "position": 9.095238095238095
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/nuno-borges",
+      "query": "누누 보르즈스",
+      "clicks": 1,
+      "impressions": 126,
+      "ctr": 0.007936507936507936,
+      "position": 8.984126984126984
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/giovanni-mpetshi-perricard",
+      "query": "지오바니 음페치 페리카르",
+      "clicks": 0,
+      "impressions": 118,
+      "ctr": 0,
+      "position": 9.211864406779661
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/lazoji-spicy-fried-chicken-vegetable-stir-fry-chinese-recipe/",
+      "query": "라조기",
+      "clicks": 0,
+      "impressions": 114,
+      "ctr": 0,
+      "position": 5.947368421052632
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/karolina-muchova",
+      "query": "카롤리나 무초바",
+      "clicks": 0,
+      "impressions": 113,
+      "ctr": 0,
+      "position": 11.230088495575222
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/elise-mertens",
+      "query": "엘리제 메르텐스",
+      "clicks": 0,
+      "impressions": 85,
+      "ctr": 0,
+      "position": 11.211764705882352
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/sara-bejlek",
+      "query": "사라 베일렉",
+      "clicks": 0,
+      "impressions": 80,
+      "ctr": 0,
+      "position": 6.15
+    },
+    {
+      "siteId": "texturb",
+      "siteName": "texturb.com",
+      "page": "https://texturb.com/tools/fullwidth-halfwidth-converter/",
+      "query": "전각 반각 변환",
+      "clicks": 0,
+      "impressions": 70,
+      "ctr": 0,
+      "position": 9.285714285714286
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/botic-van-de-zandschulp",
+      "query": "보틱 판더잔츠휠프",
+      "clicks": 0,
+      "impressions": 69,
+      "ctr": 0,
+      "position": 10.869565217391305
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/dino-prizmic",
+      "query": "디노 프리즈미치",
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": 0,
+      "position": 9.651515151515152
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/alexandra-eala",
+      "query": "이알라",
+      "clicks": 1,
+      "impressions": 64,
+      "ctr": 0.015625,
+      "position": 10.578125
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/new-car-release-schedule-2026-second-half",
+      "query": "2026년 신차 출시 일정",
+      "clicks": 1,
+      "impressions": 55,
+      "ctr": 0.01818181818181818,
+      "position": 6.927272727272728
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/mackenzie-mcdonald",
+      "query": "맥켄지 맥도날드",
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 12.245283018867925
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/elina-svitolina",
+      "query": "엘리나 스비톨리나",
+      "clicks": 0,
+      "impressions": 52,
+      "ctr": 0,
+      "position": 11.057692307692308
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/francisco-comesana",
+      "query": "프란시스코 코메사나",
+      "clicks": 1,
+      "impressions": 51,
+      "ctr": 0.0196078431372549,
+      "position": 5.882352941176471
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/giovanni-mpetshi-perricard",
+      "query": "페리카르",
+      "clicks": 0,
+      "impressions": 47,
+      "ctr": 0,
+      "position": 9.02127659574468
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/blueberry-cheong-sugar-ratio-refrigerator-storage-period-home-recipe/",
+      "query": "블루베리청 만들기",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 4.533333333333333
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/utility/reaction-test",
+      "query": "반응속도 테스트",
+      "clicks": 1,
+      "impressions": 43,
+      "ctr": 0.023255813953488372,
+      "position": 24.41860465116279
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexander-blockx",
+      "query": "알렉산더 블록 스",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 10.368421052631579
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/karolina-pliskova",
+      "query": "카롤리나 플리스코바",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 9.972222222222221
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/tallon-griekspoor",
+      "query": "탈론 그리에크스푸르",
+      "clicks": 0,
+      "impressions": 35,
+      "ctr": 0,
+      "position": 9.257142857142858
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/sara-errani",
+      "query": "사라 에라니",
+      "clicks": 0,
+      "impressions": 35,
+      "ctr": 0,
+      "position": 10.685714285714285
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/utility/ntrp-test",
+      "query": "ntrp 테스트",
+      "clicks": 22,
+      "impressions": 35,
+      "ctr": 0.6285714285714286,
+      "position": 1.657142857142857
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexander-shevchenko",
+      "query": "알렉산드르 솁첸코",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 8.575757575757576
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/",
+      "query": "자동차 유지비 계산기",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 6.75
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/roberto-bautista-agut",
+      "query": "로베르토 바우티스타 아굿",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 11.464285714285714
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/%EB%B9%84%EB%B9%94%EB%83%89%EB%A9%B4-%EC%96%91%EB%85%90%EC%9E%A5-%ED%99%A9%EA%B8%88%EB%B9%84%EC%9C%A8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B2%95-%EC%82%AC%EA%B3%BC-%EA%B0%88%EA%B8%B0-%EC%8B%9C%ED%8C%90/",
+      "query": "냉면 양념장 황금 레시피",
+      "clicks": 1,
+      "impressions": 28,
+      "ctr": 0.03571428571428571,
+      "position": 3.857142857142857
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/blueberry-cheong-sugar-ratio-refrigerator-storage-period-home-recipe/",
+      "query": "블루베리 청 만들기",
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 4.37037037037037
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/",
+      "query": "자동차 유지비 계산",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 8.708333333333332
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/paula-badosa",
+      "query": "폴라 바도사 기버트",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 9.75
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/%ED%8F%AC%EB%A5%B4%EC%89%90-%EC%B9%B4%EC%9D%B4%EC%97%94-%EC%9B%94-%EC%9C%A0%EC%A7%80%EB%B9%84-2026",
+      "query": "카이엔 유지비",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 8.130434782608695
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/blog/tennis-ntrp-25-to-30-guide",
+      "query": "ntrp 2.5",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 9.4
+    }
+  ]
+}

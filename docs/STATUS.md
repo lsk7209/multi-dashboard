@@ -1,5 +1,11 @@
 # Status
 
+## 2026-07-11 Page/Query CTR Evidence
+
+- Added `scripts/setup/collect-gsc-page-query-opportunities.ts`, a read-only 28-day GSC collector for page/query title and meta opportunities.
+- Generated `data/gsc-page-query-opportunities-2026-07-11.json` for `estat-2`, `cartain-2`, `texturb`, and `tennisfrens` (43 qualifying rows). This separates page-level evidence from site-level CTR signals before external content changes.
+- Verification: `pnpm type-check` passed. The collector performs no site, GSC, or production writes.
+
 ## 2026-07-11 Fresh Snapshot and Inventory Repair
 
 - Fresh collection: `pnpm stats:update` completed for 98 sites at `2026-07-10T23:13:31.297Z`; GA4, GSC, sitemap, AdSense-code, and ads.txt failures are all zero.

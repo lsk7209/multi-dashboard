@@ -2,6 +2,9 @@
 
 ## Current State
 
+- Page/query CTR evidence is now collected directly with `pnpm exec tsx scripts/setup/collect-gsc-page-query-opportunities.ts`. The 2026-07-11 artifact covers `estat-2`, `cartain-2`, `texturb`, and `tennisfrens` over the preceding 28 days and is the source for page-level title/meta work; do not infer a specific page/query pair from site-level CTR alone.
+- Confirmed follow-up completed from this evidence: `tennisfrens` player title updates were pushed to its GitHub `main`; `texturb` fullwidth/halfwidth tool metadata duplication was fixed and pushed to its GitHub `main`. Await each Vercel deployment's live metadata verification before recording final impact.
+- `estat`'s exact candidate already leads with `라조기 만들기`; defer title mutation until the page/query collector proves a title-specific gap. `cartain` has a safe title/excerpt-only Turso update path but requires a deliberate content mutation and post-change SSR verification.
 - Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-10T23:13:31.297Z`; 98 sites completed with zero GA4, GSC, sitemap, AdSense-code, and ads.txt failures. The matching post-recovery chain is `ready_to_act` with artifact integrity passed.
 - `dogbreedcost.com` inventory was corrected to `platform: static` with the source repository `D:\web\dog-breed\repo` / `lsk7209/dog-breed`. Do not use WordPress REST or WordPress deployment routes for this site.
 - Current sitemap warnings for `nicewomen.kr`, `ezfunnel.kr`, and `autorentlab.com` have no verified public or source defect. Preserve them for exact GSC warning-detail review; do not mutate sitemap submission or generators merely from the warning count.
