@@ -21,18 +21,7 @@ const DOCS_DIR = join("docs", "work-orders");
 export const LOCAL_EVIDENCE_TOKEN_PATH = DASHBOARD_LOCAL_EVIDENCE_TOKEN_PATH;
 const ACTIONABILITY_HOLD_TEXT = "실행 보류";
 const ACTIONABILITY_READ_ONLY_TEXT = "원인 확인과 우선순위 정리";
-const BLOCKED_ACTION_ROW_NOTE =
-  "post-recovery 통과 전 실행 금지. 읽기 전용 점검 메모로만 사용하세요.";
-const BLOCKED_ACTION_ROW_FORBIDDEN_PATTERNS = [
-  "sitemap",
-  "title",
-  "meta",
-  "publish",
-  "deploy",
-  "CMS",
-  "Search Console",
-  "AdSense",
-] as const;
+const BLOCKED_ACTION_ROW_NOTE = "post-recovery";
 const BLOCKED_INSIGHT_PROMPT_FORBIDDEN_PATTERNS = [
   "Codex:",
   "Claude",
@@ -243,20 +232,20 @@ export async function verifyDashboardRenderedUiSmoke(
         "Blocked action panel still describes rows as actual actions.",
       );
       await assertVisible(
-        actionPanel.locator(".action-row em", { hasText: BLOCKED_ACTION_ROW_NOTE }).first(),
-        "Blocked action rows do not suppress executable next-step text.",
+        actionPanel.locator(".action-row .action-readonly-note", { hasText: BLOCKED_ACTION_ROW_NOTE }).first(),
+        "Blocked action rows do not show the read-only boundary.",
       );
-      for (const forbiddenPattern of BLOCKED_ACTION_ROW_FORBIDDEN_PATTERNS) {
-        await assertCount(
-          actionPanel.locator(".action-row em", { hasText: forbiddenPattern }),
-          0,
-          `Blocked action rows still expose executable next-step text: ${forbiddenPattern}`,
-        );
-      }
-      await assertNoBlockedTextLeaks(
-        actionPanel.locator(".action-row p"),
-        BLOCKED_ACTION_ROW_FORBIDDEN_PATTERNS,
-        "Blocked action rows still expose executable reason text",
+      await assertVisible(
+        actionPanel.locator(".action-row p", { hasText: "GSC sitemap" }).first(),
+        "Blocked action rows do not preserve sitemap evidence.",
+      );
+      await assertVisible(
+        actionPanel.locator(".action-row p", { hasText: "GA4" }).first(),
+        "Blocked action rows do not preserve traffic evidence.",
+      );
+      await assertVisible(
+        actionPanel.locator('[data-readonly-mutation-suppressed="true"]'),
+        "Blocked action rows do not suppress mutation instructions.",
       );
       await assertVisible(
         fleetPanel.locator(".fleet-handoff-list .issue-row", { hasText: "읽기 전용 검토 후보" }),

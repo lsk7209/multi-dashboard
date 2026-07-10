@@ -13,6 +13,7 @@ import {
   type DashboardActionabilityOptions,
 } from "./lib/dashboard-actionability";
 import { hasValidDashboardLocalEvidenceToken } from "./lib/dashboard-local-evidence-token";
+import { getReadOnlyActionPresentation } from "./lib/dashboard-action-readonly";
 import {
   getDashboardData,
   type DashboardActionItem,
@@ -601,29 +602,11 @@ function ActionQueue({
           }
         >
           {actions.map((action) => (
-            <div className={`action-row action-${action.kind}`} key={action.id}>
-              <span>{action.label}</span>
-              <div>
-                <strong>{action.siteName}</strong>
-                <a href={action.url}>{formatHost(action.url)}</a>
-                <p>
-                  {isReadOnlyBlocked
-                    ? "읽기 전용 점검 후보입니다. 원본 실행 사유는 post-recovery 통과 후 표시합니다."
-                    : action.reason}
-                </p>
-                <em>
-                  {isReadOnlyBlocked
-                    ? "post-recovery 통과 전 실행 금지. 읽기 전용 점검 메모로만 사용하세요."
-                    : action.nextStep}
-                </em>
-                {isReadOnlyBlocked ? (
-                  <small className="action-readonly-note">
-                    post-recovery 통과 전에는 위 근거를 점검 메모로만 사용합니다.
-                  </small>
-                ) : null}
-              </div>
-              <b>{action.value}</b>
-            </div>
+            <ActionQueueRow
+              action={action}
+              isReadOnlyBlocked={isReadOnlyBlocked}
+              key={action.id}
+            />
           ))}
         </div>
       )}
@@ -649,6 +632,40 @@ function DashboardActionabilityNotice({
       <code>{actionability.status}</code>
       <code>{formatReadinessBlockerLabel(actionability, gscHandoffStatus)}</code>
       <code>{actionability.command}</code>
+    </div>
+  );
+}
+
+function ActionQueueRow({
+  action,
+  isReadOnlyBlocked,
+}: {
+  action: DashboardActionItem;
+  isReadOnlyBlocked: boolean;
+}) {
+  const presentation = isReadOnlyBlocked
+    ? getReadOnlyActionPresentation(action)
+    : null;
+
+  return (
+    <div className={`action-row action-${action.kind}`}>
+      <span>{action.label}</span>
+      <div>
+        <strong>{action.siteName}</strong>
+        <a href={action.url}>{formatHost(action.url)}</a>
+        <p>{presentation?.reason ?? action.reason}</p>
+        <em
+          data-readonly-mutation-suppressed={
+            presentation?.mutatingInstructionSuppressed ? "true" : undefined
+          }
+        >
+          {presentation?.nextStep ?? action.nextStep}
+        </em>
+        {presentation ? (
+          <small className="action-readonly-note">{presentation.note}</small>
+        ) : null}
+      </div>
+      <b>{action.value}</b>
     </div>
   );
 }
