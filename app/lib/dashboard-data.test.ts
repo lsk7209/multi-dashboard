@@ -1572,7 +1572,12 @@ describe("getDashboardData insight copy", () => {
 
     expect(
       declineInsights.every((insight) =>
-        ["ga4_drop", "gsc_drop", "mixed_decline"].includes(insight.cause),
+        [
+          "ga4_drop",
+          "ga4_low_sample_channel_unknown",
+          "gsc_drop",
+          "mixed_decline",
+        ].includes(insight.cause),
       ),
     ).toBe(true);
   });

@@ -644,6 +644,7 @@ export type InsightKind =
 export type InsightSeverity = "high" | "medium" | "low";
 export type InsightCause =
   | "ga4_drop"
+  | "ga4_low_sample_channel_unknown"
   | "gsc_drop"
   | "mixed_decline"
   | "gsc_zero"
@@ -2823,7 +2824,9 @@ function buildInsightCause(
   kind: InsightKind,
 ): InsightCause {
   const ga4Drop = (stat.trend.activeUsersChange ?? 0) <= -0.3;
-  const gscDrop = (stat.trend.gscClicksChange ?? 0) <= -0.3;
+  const gscDrop =
+    (stat.trend.gscClicksChange ?? 0) <= -0.3 &&
+    stat.gscPrevious7Days.clicks >= 10;
 
   switch (kind) {
     case "indexingOrPermissionIssue":
@@ -2832,6 +2835,9 @@ function buildInsightCause(
       }
       return "gsc_zero";
     case "decline":
+      if (ga4Drop && (stat.trend.gscClicksChange ?? 0) <= -0.3 && !gscDrop) {
+        return "ga4_low_sample_channel_unknown";
+      }
       if (ga4Drop && gscDrop) {
         return "mixed_decline";
       }
@@ -2866,7 +2872,9 @@ function buildInsightSampleSize(
   if (
     kind === "seoOpportunity" ||
     kind === "rankingOpportunity" ||
-    (kind === "decline" && (stat.trend.gscClicksChange ?? 0) <= -0.3)
+    (kind === "decline" &&
+      (stat.trend.gscClicksChange ?? 0) <= -0.3 &&
+      previousGsc.clicks >= 10)
   ) {
     if (searchSample >= 500 || clickSample >= 40) {
       return "high";

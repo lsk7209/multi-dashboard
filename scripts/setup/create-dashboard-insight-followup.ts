@@ -288,6 +288,9 @@ function getNextGate(insights: SiteInsight[]): string {
   if (insights.some((insight) => insight.cause === "ga4_drop")) {
     return "Check recent publishing, collection, API, and channel changes.";
   }
+  if (insights.some((insight) => insight.cause === "ga4_low_sample_channel_unknown")) {
+    return "Review GA4 source/medium and landing pages before SEO changes.";
+  }
   if (insights.some((insight) => insight.cause === "ctr")) {
     return "Use fresh GSC queries for title/meta review.";
   }
@@ -297,6 +300,7 @@ function getNextGate(insights: SiteInsight[]): string {
 function formatCause(cause: SiteInsight["cause"]): string {
   const labels: Record<SiteInsight["cause"], string> = {
     ga4_drop: "GA4 drop",
+    ga4_low_sample_channel_unknown: "GA4 low-sample channel unknown",
     gsc_drop: "GSC drop",
     mixed_decline: "Mixed decline",
     gsc_zero: "GSC zero",

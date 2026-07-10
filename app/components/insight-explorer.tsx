@@ -500,6 +500,8 @@ function getInsightCauseLabel(cause: SiteInsight["cause"]): string {
   switch (cause) {
     case "ga4_drop":
       return "GA4 하락";
+    case "ga4_low_sample_channel_unknown":
+      return "GA4 low-sample";
     case "gsc_drop":
       return "GSC 하락";
     case "mixed_decline":
