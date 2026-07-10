@@ -138,7 +138,7 @@ export function buildDashboardPostRecoveryChainPlan(
 ): ChainPlan {
   const commands: ChainCommand[] = [
     { id: "gsc-permission-audit", args: ["gsc:permissions:audit"] },
-    { id: "dashboard-verify", args: ["dashboard:verify"] },
+    { id: "dashboard-verify", args: ["dashboard:verify", "--skip-stats-update"] },
     {
       id: "dashboard-acceptance",
       args: ["dashboard:acceptance", join(DATA_DIR, `dashboard-verification-${input.date}.json`)],

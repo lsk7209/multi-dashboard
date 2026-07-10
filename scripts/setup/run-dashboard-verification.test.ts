@@ -38,6 +38,13 @@ describe("run-dashboard-verification", () => {
     ]);
   });
 
+  it("reuses the current snapshot when post-recovery verification skips collection", () => {
+    expect(buildDashboardVerificationCommands({ skipStatsUpdate: true })[0]).toEqual({
+      id: "fleet-optimize",
+      args: ["fleet:optimize", "--skip-stats-update", "--skip-api-data-audit"],
+    });
+  });
+
   it("withholds local verification for external blockers when surface evidence is not current", () => {
     const commands = buildDashboardVerificationCommands();
     const artifact = buildDashboardVerificationArtifact(

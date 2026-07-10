@@ -2,6 +2,10 @@
 
 ## Current State
 
+- Dashboard post-recovery evidence is current for snapshot `2026-07-10T22:58:31.347Z`: `data/dashboard-post-recovery-chain-2026-07-11.json` reports `readiness=ready_to_act`, 3/3 commands passed, and artifact integrity passed. The current GSC permission audit reports zero access findings.
+- Root cause of the prior read-only banner: after `stats:update`, the dated GSC audit/Fleet/T3 artifacts still referenced the older `2026-07-10T15:12:35.317Z` snapshot. Strict loaders correctly rejected them, but the surface message called the stale audit "missing". Post-recovery now uses `dashboard:verify --skip-stats-update` so it validates the already-current snapshot without invalidating it through a nested collector refresh.
+- Before the next site action, use the current `ready_to_act` evidence and then refresh only when new dashboard source data is required. A new `stats:update` necessarily requires a new Fleet/post-recovery evidence chain before actionability is reported again.
+
 - Dashboard top-level `배너` tab was removed on 2026-07-11. The dedicated `/banner-management` route remains available for banner operations.
 - Banner console metric labels now describe internal redirect-call to image-request ratios, not CTR. The 7-day ranking requires at least 100 image requests; lower-volume sites appear separately as sample-insufficient.
 - Read-only sitemap review on 2026-07-10 after snapshot `2026-07-10T13:09:12.180Z`: `nicewomen.kr` and `ezfunnel.kr` returned homepage/robots/sitemap HTTP 200, self-canonical URLs, index-follow metadata, and valid sitemap index structures. Their single GSC sitemap warnings require Search Console's internal warning detail before a safe mutation.

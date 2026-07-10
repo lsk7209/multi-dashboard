@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T15:12:54.223Z",
+  "generatedAt": "2026-07-10T23:00:40.856Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,7 +8,7 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-10T15:12:35.317Z",
+    "snapshotTimestamp": "2026-07-10T22:58:31.347Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-11.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
@@ -39,7 +39,7 @@
         "gscClicks30d": 111,
         "gscCtr30d": 0.009638763459534561,
         "gscPosition30d": 10.016151441472733,
-        "ga4ActiveUsers30d": 1462
+        "ga4ActiveUsers30d": 1463
       },
       "topQueries": [
         {
@@ -91,7 +91,7 @@
         "gscClicks30d": 62,
         "gscCtr30d": 0.017524024872809497,
         "gscPosition30d": 9.420011305822499,
-        "ga4ActiveUsers30d": 1002
+        "ga4ActiveUsers30d": 1004
       },
       "topQueries": [
         {
@@ -193,7 +193,7 @@
         "gscClicks30d": 18,
         "gscCtr30d": 0.01867219917012448,
         "gscPosition30d": 13.235477178423237,
-        "ga4ActiveUsers30d": 1389
+        "ga4ActiveUsers30d": 1391
       },
       "topQueries": [
         {

@@ -192,7 +192,7 @@ interface DashboardVerificationArtifact {
 
 function main(): void {
   const date = seoulDate(new Date());
-  const commands = buildDashboardVerificationCommands();
+  const commands = buildDashboardVerificationCommands(parseCliOptions(process.argv.slice(2)));
   const results = runDashboardVerificationCommands(commands, date);
   const artifact = buildDashboardVerificationArtifact(date, commands, results);
   const jsonPath = join(DATA_DIR, `dashboard-verification-${date}.json`);
@@ -226,9 +226,34 @@ export function dashboardVerificationExitCode(
   return verdict === "local_verified" || verdict === "local_verified_external_blocker" ? 0 : 1;
 }
 
-export function buildDashboardVerificationCommands(): VerificationCommand[] {
+interface DashboardVerificationOptions {
+  skipStatsUpdate: boolean;
+}
+
+function parseCliOptions(args: string[]): DashboardVerificationOptions {
+  const options: DashboardVerificationOptions = { skipStatsUpdate: false };
+
+  for (const arg of args) {
+    if (arg === "--skip-stats-update") {
+      options.skipStatsUpdate = true;
+      continue;
+    }
+    throw new Error(`Unknown option: ${arg}`);
+  }
+
+  return options;
+}
+
+export function buildDashboardVerificationCommands(
+  options: DashboardVerificationOptions = { skipStatsUpdate: false },
+): VerificationCommand[] {
   return [
-    { id: "fleet-optimize", args: ["fleet:optimize"] },
+    {
+      id: "fleet-optimize",
+      args: options.skipStatsUpdate
+        ? ["fleet:optimize", "--skip-stats-update", "--skip-api-data-audit"]
+        : ["fleet:optimize"],
+    },
     { id: "dashboard-smoke", args: ["dashboard:smoke"] },
     { id: "dashboard-ui-smoke", args: ["dashboard:ui-smoke", `--url=${verificationDashboardUrl()}`] },
     { id: "adsense-proof-verify", args: ["adsense:proof:verify"] },

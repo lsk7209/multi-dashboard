@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-10T15:12:35.317Z
+# T3 Title/Content Handoff - 2026-07-10T22:58:31.347Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-10T15:12:35.317Z`
+- Snapshot: `2026-07-10T22:58:31.347Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-11.json`
 - Sites path: `scripts\setup\sites.yaml`
@@ -23,11 +23,11 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 
 | Site | Plan ranks | Actions | 30d GSC | 30d users | Top queries | Local source |
 |---|---:|---|---:|---:|---|---|
-| `tennisfrens.com` | 1 | `title_handoff` | 11516 impr / 111 clicks / 0.96% CTR / pos 10.02 | 1462 | `ntrp 테스트` (10 impr, pos 2.10)<br>`아르튀르 랭데르크네슈` (61 impr, pos 10.56)<br>`이알라` (58 impr, pos 11.62) | `D:\web\tennisfrens` |
-| `cartain.kr` | 2 | `title_handoff` | 3538 impr / 62 clicks / 1.75% CTR / pos 9.42 | 1002 | `2026년 신차 출시 일정` (18 impr, pos 7.33) | `D:\web\cartainkr` |
+| `tennisfrens.com` | 1 | `title_handoff` | 11516 impr / 111 clicks / 0.96% CTR / pos 10.02 | 1463 | `ntrp 테스트` (10 impr, pos 2.10)<br>`아르튀르 랭데르크네슈` (61 impr, pos 10.56)<br>`이알라` (58 impr, pos 11.62) | `D:\web\tennisfrens` |
+| `cartain.kr` | 2 | `title_handoff` | 3538 impr / 62 clicks / 1.75% CTR / pos 9.42 | 1004 | `2026년 신차 출시 일정` (18 impr, pos 7.33) | `D:\web\cartainkr` |
 | `gong365.kr` | 3, 5 | `title_handoff`, `content_handoff` | 2702 impr / 32 clicks / 1.18% CTR / pos 8.15 | 79 | `missing` | `D:\web\gong365kr` |
 | `estat.kr` | 4, 6 | `title_handoff`, `content_handoff` | 2616 impr / 13 clicks / 0.50% CTR / pos 7.92 | 40 | `missing` | `D:\web\estatkr` |
-| `dogswhere.com` | 7 | `title_handoff` | 964 impr / 18 clicks / 1.87% CTR / pos 13.24 | 1389 | `부산 지하철 근처 애견 유치원` (10 impr, pos 40.10) | `D:\web\dogswherecom` |
+| `dogswhere.com` | 7 | `title_handoff` | 964 impr / 18 clicks / 1.87% CTR / pos 13.24 | 1391 | `부산 지하철 근처 애견 유치원` (10 impr, pos 40.10) | `D:\web\dogswherecom` |
 | `petinsuer.com` | 8 | `title_handoff` | 1255 impr / 17 clicks / 1.35% CTR / pos 9.61 | 101 | `노견 기준` (10 impr, pos 7.10) | `D:\web\petinsuercom` |
 | `dogspang.kr` | 9, 11 | `title_handoff`, `content_handoff` | 1052 impr / 18 clicks / 1.71% CTR / pos 9.99 | 88 | `강아지 발바닥 각화증` (15 impr, pos 7.67) | `D:\web\dogspangkr` |
 | `nexttech7.com` | 12 | `title_handoff` | 789 impr / 15 clicks / 1.90% CTR / pos 12.62 | 164 | `missing` | `D:\web\nexttech7com` |

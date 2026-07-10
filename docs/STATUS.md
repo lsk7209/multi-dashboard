@@ -1,5 +1,12 @@
 # Status
 
+## 2026-07-11 Post-Recovery Evidence
+
+- State: dashboard actionability is restored for the current snapshot `2026-07-10T22:58:31.347Z`; `pnpm dashboard:post-recovery` finished `ready_to_act` with 3/3 commands passing and artifact integrity passing.
+- Root cause: `stats:update` refreshed the collector snapshot after the GSC audit/Fleet/T3 evidence had been generated, so strict snapshot matching correctly invalidated those artifacts. The UI then rendered this as a missing GSC audit even though the prior audit had resolved with zero access issues.
+- Fix: post-recovery now invokes `dashboard:verify --skip-stats-update`, which rebuilds Fleet evidence against the already-current snapshot instead of triggering another collection refresh that invalidates the evidence being verified.
+- Verification: focused Vitest tests passed (33/33); current GSC audit has `auditedRows=0`, `restrictedAccess=0`, `unverified=0`, and `notListed=0`.
+
 ## 2026-07-11 Dashboard Navigation
 
 - State: removed the top-level dashboard `배너` menu after its unintended reintroduction.

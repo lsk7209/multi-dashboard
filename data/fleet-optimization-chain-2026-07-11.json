@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T15:12:54.270Z",
+  "generatedAt": "2026-07-10T23:00:40.898Z",
   "date": "2026-07-11",
   "dryRun": false,
   "skipStatsUpdate": true,
@@ -46,35 +46,35 @@
       "id": "gsc-permission-audit",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-11.json and docs\\work-orders\\gsc-permission-audit-2026-07-11.md. snapshot=2026-07-10T15:12:35.317Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard-refresh-temp\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-11.json and docs\\work-orders\\gsc-permission-audit-2026-07-11.md. snapshot=2026-07-10T22:58:31.347Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
       "stderrTail": ""
     },
     {
       "id": "adsense-queue",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:queue D:\\web\\multi-dashboard\n> tsx scripts/setup/create-adsense-remediation-queue.ts\n\nWrote data\\adsense-remediation-queue-2026-07-11.json and docs\\work-orders\\adsense\\remediation-queue-2026-07-11.md. snapshot=2026-07-10T15:12:35.317Z reviewedRows=84 problemRows=0 ordinaryAdsenseProof=0 approvedRootSubdomainScope=0 gscAuthTelemetry=0 ga4ConfigTelemetry=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:queue D:\\web\\multi-dashboard-refresh-temp\n> tsx scripts/setup/create-adsense-remediation-queue.ts\n\nWrote data\\adsense-remediation-queue-2026-07-11.json and docs\\work-orders\\adsense\\remediation-queue-2026-07-11.md. snapshot=2026-07-10T22:58:31.347Z reviewedRows=84 problemRows=0 ordinaryAdsenseProof=0 approvedRootSubdomainScope=0 gscAuthTelemetry=0 ga4ConfigTelemetry=0\n",
       "stderrTail": ""
     },
     {
       "id": "fleet-optimize-plan",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "Wrote data\\fleet-optimization-plan-2026-07-11.json and docs\\work-orders\\fleet-optimization-plan-2026-07-11.md. snapshot=2026-07-10T15:12:35.317Z seoCandidates=20 adsenseProblemRows=0\n",
+      "stdoutTail": "Wrote data\\fleet-optimization-plan-2026-07-11.json and docs\\work-orders\\fleet-optimization-plan-2026-07-11.md. snapshot=2026-07-10T22:58:31.347Z seoCandidates=20 adsenseProblemRows=0\n",
       "stderrTail": ""
     },
     {
       "id": "t3-title-content-handoff",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "Wrote data\\t3-title-content-handoff-2026-07-11.json and docs\\work-orders\\t3-title-content-handoff-2026-07-11.md. snapshot=2026-07-10T15:12:35.317Z sites=12 titleHandoff=9 contentHandoff=6\n",
+      "stdoutTail": "Wrote data\\t3-title-content-handoff-2026-07-11.json and docs\\work-orders\\t3-title-content-handoff-2026-07-11.md. snapshot=2026-07-10T22:58:31.347Z sites=12 titleHandoff=9 contentHandoff=6\n",
       "stderrTail": ""
     }
   ],
   "verification": {
-    "statsSnapshot": "2026-07-10T15:12:35.317Z",
-    "planSnapshot": "2026-07-10T15:12:35.317Z",
-    "handoffSnapshot": "2026-07-10T15:12:35.317Z",
+    "statsSnapshot": "2026-07-10T22:58:31.347Z",
+    "planSnapshot": "2026-07-10T22:58:31.347Z",
+    "handoffSnapshot": "2026-07-10T22:58:31.347Z",
     "refreshFailedSources": [],
     "refreshFailureCount": 0,
     "refreshFailuresBlockReadiness": false,

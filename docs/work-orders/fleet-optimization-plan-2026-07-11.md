@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-10T15:12:35.317Z
+# Fleet Optimization Plan - 2026-07-10T22:58:31.347Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-10T15:12:35.317Z`
+- Snapshot: `2026-07-10T22:58:31.347Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `none`
@@ -50,13 +50,13 @@ Source: `data\adsense-remediation-queue-2026-07-11.json`
 
 | Rank | Site | Action | Tier | Evidence | Next action |
 |---:|---|---|---|---|---|
-| 1 | `tennisfrens.com` | `title_handoff` | T3 | 11516 impr / 0.96% CTR / pos 10.02 / 1462 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 2 | `cartain.kr` | `title_handoff` | T3 | 3538 impr / 1.75% CTR / pos 9.42 / 1002 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 1 | `tennisfrens.com` | `title_handoff` | T3 | 11516 impr / 0.96% CTR / pos 10.02 / 1463 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 2 | `cartain.kr` | `title_handoff` | T3 | 3538 impr / 1.75% CTR / pos 9.42 / 1004 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 3 | `gong365.kr` | `title_handoff` | T3 | 2702 impr / 1.18% CTR / pos 8.15 / 79 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 4 | `estat.kr` | `title_handoff` | T3 | 2616 impr / 0.50% CTR / pos 7.92 / 40 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 5 | `gong365.kr` | `content_handoff` | T3 | 2702 impr / 1.18% CTR / pos 8.15 / 79 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 6 | `estat.kr` | `content_handoff` | T3 | 2616 impr / 0.50% CTR / pos 7.92 / 40 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 7 | `dogswhere.com` | `title_handoff` | T3 | 964 impr / 1.87% CTR / pos 13.24 / 1389 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 7 | `dogswhere.com` | `title_handoff` | T3 | 964 impr / 1.87% CTR / pos 13.24 / 1391 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 8 | `petinsuer.com` | `title_handoff` | T3 | 1255 impr / 1.35% CTR / pos 9.61 / 101 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 9 | `dogspang.kr` | `title_handoff` | T3 | 1052 impr / 1.71% CTR / pos 9.99 / 88 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 10 | `homeimer.com` | `technical_seo` | T2 | 951 impr / 0.00% CTR / pos 66.67 / 10 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
