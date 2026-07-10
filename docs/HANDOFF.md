@@ -156,3 +156,10 @@
 - `app/page.tsx` now preserves each action's reason and read-only-safe inspection guidance. The known mutation instruction, Search Console sitemap resubmission, is replaced with a read-only status/lastmod/robots inspection until post-recovery passes.
 - Regression evidence: focused ESLint passed; focused Vitest passed (4 files, 108 tests); `pnpm type-check`, `pnpm build`, and the 9-check rendered UI smoke passed for the current 98-site snapshot.
 - Deployment: commit `084b414` reached Vercel production deployment `dpl_EVpN3PnWk6dJgZCzEaU5hoLRRfWo`. The production alias returned HTTP 200 with sitemap and GA4 evidence visible, resubmission text absent, and the read-only mutation-suppression marker present.
+
+## 2026-07-11 Read-Only Candidate Confirmation
+
+- Fresh snapshot: `data/site-stats.json` was regenerated at `2026-07-10T15:12:35.317Z`; all 98 GA4/GSC/sitemap collections completed normally.
+- Confirmed candidates: only `softwa` has a meaningful GSC ranking/CTR signal, and only the `tennisfrens` Arthur Rinderknech page has page-query-backed title evidence. Both remain pending because the dashboard is read-only.
+- Hold sitemap generator changes for `nicewomen`, `ezfunnel`, and `autorentlab`: public robots/sitemaps are healthy, while GSC submitted URL counts diverge from current public inventories. Exact Search Console warning details are required before a repair.
+- `ezfunnel` and `dogbreedcost` remain GA4 low-sample/channel-unknown cases, not confirmed SEO declines.

@@ -148,5 +148,10 @@
 - Verification: `pnpm type-check` passed; targeted Vitest passed with 3 files and 16 tests; `pnpm build` passed.
 - Live verification: `variant=a` returned `200 image/svg+xml` without `COUPANG PARTNERS`; `temon` image slot and placement paths returned `302` to a variant creative URL; click slot and placement paths returned `302` to `https://link.coupang.com/a/feHs6hGHQG`.
 - State: Coupang A/B/C weight optimizer added.
+
+## 2026-07-11 Read-Only Candidate Confirmation
+
+- Snapshot `2026-07-10T15:12:35.317Z`: 98/98 GA4 and GSC collections healthy.
+- No individual site mutation approved. The next evidence gate is exact GSC sitemap warning detail and page-query data for the two confirmed content candidates.
 - Change: `scripts/setup/optimize-coupang-banner-weights.ts` reads recent assignment-level impressions and redirects, applies Bayesian smoothing, bounds variant weights between 10 and 80, requires minimum placement impressions and redirects, and defaults to dry-run unless `--apply` is passed.
 - Verification: optimizer tests passed; live remote dry-run returned `changedPlacements=0` because current samples are too small or have insufficient redirect calls for safe reweighting.
