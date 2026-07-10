@@ -13,6 +13,7 @@ data/**
 !data/banner-management.json
 !data/coupang-channel-registry.json
 !data/site-stats.json
+!data/ops-intel.json
 !data/ops-triage.json
 !data/adsense-external-proof-continuation-*.json
 !data/adsense-remediation-queue-*.json
