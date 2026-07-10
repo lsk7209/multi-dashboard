@@ -5,17 +5,17 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 ## Summary
 
 - URL: `http://127.0.0.1:3004/`
-- Stats snapshot: `2026-07-10T08:51:36.848Z`
+- Stats snapshot: `2026-07-10T11:33:59.439Z`
 - Sites: 98
-- Blocking sources: 0
+- Blocking sources: 1
 - Maintenance sources: 0
 - Blocker hosts: `none`
 - Actionability: `blocked_for_action_until_post_recovery_verify`
-- Checks: 9
+- Checks: 11
 
 ## Refresh Sources
 
-- Blocking: `none`
+- Blocking: `skipped_refresh_failed:ga4:api_error:40`
 - Maintenance: `none`
 
 ## Actionability
@@ -23,7 +23,7 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 - Status: `blocked_for_action_until_post_recovery_verify`
 - Required command: `pnpm dashboard:post-recovery`
 - Allowed use: Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.
-- Reason: Blocked until pnpm dashboard:post-recovery passes for post_recovery_chain.
+- Reason: Blocked until pnpm dashboard:post-recovery passes for current.
 
 ## Evidence Paths
 

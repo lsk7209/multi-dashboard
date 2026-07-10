@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-10T08:51:38.125Z",
+  "generatedAt": "2026-07-10T11:40:07.685Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-07-10T08:51:37.535Z",
+  "sourceUpdatedAt": "2026-07-10T11:40:07.118Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 3
   },
@@ -15,11 +15,21 @@
     "github-actions": 0,
     "gsc": 3,
     "adsense": 0,
-    "ga4": 0,
+    "ga4": 1,
     "vercel": 0,
     "other": 0
   },
   "findings": [
+    {
+      "id": "ga4-collector-quota-40",
+      "kind": "ga4",
+      "severity": "high",
+      "priority": 80,
+      "count": 40,
+      "sourceLine": "direct:dashboard collector=ga4 status=quota_limited affected_sites=40",
+      "title": "GA4 direct collector quota limited for 40 sites",
+      "recommendedAction": "Restore GA4 Data API quota capacity or collection pacing, then refresh the dashboard before treating per-site GA4 signals as actionable."
+    },
     {
       "id": "gsc-nicewomen-t1o7t1",
       "kind": "gsc",

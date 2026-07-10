@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { chromium } from "@playwright/test";
 import { getDashboardActionability } from "../../app/lib/dashboard-actionability.js";
+import { getReadOnlyActionPresentation } from "../../app/lib/dashboard-action-readonly.js";
 import {
   createDashboardLocalEvidenceToken,
   DASHBOARD_LOCAL_EVIDENCE_TOKEN_PATH,
@@ -81,10 +82,13 @@ interface RenderedDashboardUiExpectations {
   actionabilityCommand: string;
   actionabilityAllowedUse: string;
   actionabilityReason: string;
+  blockedActionReason: string | null;
+  hasSuppressedBlockedAction: boolean;
   fleetChainArtifactPath: string;
   gscPermissionAuditArtifactPath: string | null;
   gscPermissionAuditWorkOrderPath: string | null;
   gscPermissionAuditHandoffStatus: string | null;
+  collectorAvailability: Array<{ key: string; status: string; detail: string }>;
 }
 
 interface RenderedDashboardUiSmokeResult extends RenderedDashboardUiExpectations {
@@ -235,18 +239,18 @@ export async function verifyDashboardRenderedUiSmoke(
         actionPanel.locator(".action-row .action-readonly-note", { hasText: BLOCKED_ACTION_ROW_NOTE }).first(),
         "Blocked action rows do not show the read-only boundary.",
       );
-      await assertVisible(
-        actionPanel.locator(".action-row p", { hasText: "GSC sitemap" }).first(),
-        "Blocked action rows do not preserve sitemap evidence.",
-      );
-      await assertVisible(
-        actionPanel.locator(".action-row p", { hasText: "GA4" }).first(),
-        "Blocked action rows do not preserve traffic evidence.",
-      );
-      await assertVisible(
-        actionPanel.locator('[data-readonly-mutation-suppressed="true"]'),
-        "Blocked action rows do not suppress mutation instructions.",
-      );
+      if (expectations.blockedActionReason) {
+        await assertVisible(
+          actionPanel.locator(".action-row p", { hasText: expectations.blockedActionReason }).first(),
+          "Blocked action rows do not preserve current action evidence.",
+        );
+      }
+      if (expectations.hasSuppressedBlockedAction) {
+        await assertVisible(
+          actionPanel.locator('[data-readonly-mutation-suppressed="true"]'),
+          "Blocked action rows do not suppress mutation instructions.",
+        );
+      }
       await assertVisible(
         fleetPanel.locator(".fleet-handoff-list .issue-row", { hasText: "읽기 전용 검토 후보" }),
         "Blocked fleet handoff rows do not use read-only copy.",
@@ -380,6 +384,23 @@ export async function verifyDashboardRenderedUiSmoke(
     }
     checks.push("maintenance-visibility");
 
+    await page.locator("#tab-mail").click();
+    const mailPanel = page.locator("#panel-mail");
+    for (const collector of expectations.collectorAvailability) {
+      const collectorStatus = mailPanel.locator(
+        `[data-collector-key="${collector.key}"][data-collector-status="${collector.status}"]`,
+      );
+      await assertVisible(
+        collectorStatus,
+        `Direct collector availability is not visible for ${collector.key}: ${collector.status}.`,
+      );
+      await assertVisible(
+        collectorStatus.locator("span", { hasText: collector.detail }),
+        `Direct collector detail is not visible for ${collector.key}.`,
+      );
+    }
+    checks.push("collector-availability-visible");
+
     const bodyText = await page.locator("body").innerText();
     assert(!bodyText.includes("\uFFFD"), "Rendered dashboard contains replacement characters.");
     assert(!looksGarbledText(bodyText), "Rendered dashboard contains mojibake text.");
@@ -442,14 +463,17 @@ export function buildRenderedDashboardUiExpectations(
   );
 
   const blockerHosts = getGscBlockerHosts(data);
+  const hasGscReadinessBlocker = blockingSources.some((source) => source.includes(":gsc:"));
   if (chain.refreshFailuresBlockReadiness) {
     assert(blockingSources.length > 0, "Readiness is blocked but no blocking source exists.");
+  }
+  if (hasGscReadinessBlocker) {
     assert(blockerHosts.length > 0, "Readiness is blocked but no GSC blocker host exists.");
   }
   const actionability = getDashboardActionability(data, actionabilityOptions);
   if (
     actionability.status === "blocked_for_action_until_post_recovery_verify" &&
-    chain.refreshFailuresBlockReadiness
+    hasGscReadinessBlocker
   ) {
     assert(
       actionability.blockerHosts.length > 0 &&
@@ -474,10 +498,19 @@ export function buildRenderedDashboardUiExpectations(
       actionability.status === "safe_to_act"
         ? "All dashboard readiness evidence is current and unblocked."
         : `Blocked until ${actionability.command} passes for ${actionability.blockerHosts.join(", ") || "external readiness evidence"}.`,
+    blockedActionReason: data.actions?.[0]?.reason ?? null,
+    hasSuppressedBlockedAction: (data.actions ?? []).some(
+      (action) => getReadOnlyActionPresentation(action).mutatingInstructionSuppressed,
+    ),
     fleetChainArtifactPath: chain.artifactPath,
     gscPermissionAuditArtifactPath: data.gscPermissionAudit?.artifactPath ?? null,
     gscPermissionAuditWorkOrderPath: data.gscPermissionAudit?.workOrderPath ?? null,
     gscPermissionAuditHandoffStatus: data.gscPermissionAudit?.handoffStatus ?? null,
+    collectorAvailability: (data.opsMailReport?.collection ?? []).map((collector) => ({
+      key: collector.key,
+      status: collector.status,
+      detail: collector.detail,
+    })),
   };
 }
 
@@ -714,10 +747,12 @@ function seoulDate(date: Date): string {
   }).format(date);
 }
 
-function getArgValue(name: string): string | null {
+export function getArgValue(name: string, args: readonly string[] = process.argv): string | null {
   const prefix = `${name}=`;
-  const match = process.argv.find((arg) => arg.startsWith(prefix));
-  return match ? match.slice(prefix.length) : null;
+  const inline = args.find((arg) => arg.startsWith(prefix));
+  if (inline) return inline.slice(prefix.length);
+  const index = args.indexOf(name);
+  return index >= 0 && typeof args[index + 1] === "string" ? args[index + 1] : null;
 }
 
 function assert(condition: unknown, message: string): asserts condition {

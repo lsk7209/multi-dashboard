@@ -56,6 +56,7 @@ interface OpsIntelReport {
   collection: {
     githubActions: CollectionState;
     dashboardArtifacts: CollectionState;
+    ga4: CollectionState;
   };
   counts: Record<FindingKind, number>;
   summary: Record<FindingSeverity, number>;
@@ -98,6 +99,7 @@ interface StatsSnapshot {
     sitemapErrors?: number;
     sitemapDetails?: SitemapDetail[];
     ga4Error?: string;
+    ga4ErrorKind?: string;
     gscError?: string;
     adsenseError?: string;
     adsTxtError?: string;
@@ -429,11 +431,19 @@ function recommendGithubAction(failure: WorkflowRunFailure): string {
   return "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.";
 }
 
-function collectDashboardFindings(stats: StatsSnapshot | null): { state: CollectionState; findings: OpsFinding[] } {
+function collectDashboardFindings(
+  stats: StatsSnapshot | null,
+): { state: CollectionState; ga4: CollectionState; findings: OpsFinding[] } {
   const checkedAt = new Date().toISOString();
   if (!stats?.stats) {
     return {
       state: {
+        status: "error",
+        detail: "Missing or invalid data/site-stats.json.",
+        checkedAt,
+        count: 0,
+      },
+      ga4: {
         status: "error",
         detail: "Missing or invalid data/site-stats.json.",
         checkedAt,
@@ -444,10 +454,11 @@ function collectDashboardFindings(stats: StatsSnapshot | null): { state: Collect
   }
 
   const findings: OpsFinding[] = [];
+  const ga4QuotaSites = stats.stats.filter(isGa4QuotaLimited);
   for (const site of stats.stats) {
     const siteId = site.id ?? site.url ?? "unknown";
     const siteName = site.name ?? siteId;
-    if (site.ga4Status && site.ga4Status !== "ok") {
+    if (site.ga4Status && site.ga4Status !== "ok" && !isGa4QuotaLimited(site)) {
       findings.push(dashboardFinding("ga4", "high", siteId, siteName, site.ga4Status, site.ga4Error));
     }
     if (site.gscStatus && site.gscStatus !== "ok") {
@@ -477,6 +488,34 @@ function collectDashboardFindings(stats: StatsSnapshot | null): { state: Collect
     }
   }
 
+  const ga4 = ga4QuotaSites.length > 0
+    ? {
+        status: "error" as const,
+        detail: `GA4 Data API quota limited collection for ${ga4QuotaSites.length} sites; per-site GA4 findings were suppressed.`,
+        checkedAt,
+        count: ga4QuotaSites.length,
+      }
+    : {
+        status: "ok" as const,
+        detail: `Read GA4 collector status for ${stats.stats.length} sites.`,
+        checkedAt,
+        count: stats.stats.length,
+      };
+
+  if (ga4QuotaSites.length > 0) {
+    findings.push({
+      id: `ga4-collector-quota-${ga4QuotaSites.length}`,
+      kind: "ga4",
+      severity: "high",
+      priority: severityToPriority("high"),
+      count: ga4QuotaSites.length,
+      sourceLine: `direct:dashboard collector=ga4 status=quota_limited affected_sites=${ga4QuotaSites.length}`,
+      title: `GA4 direct collector quota limited for ${ga4QuotaSites.length} sites`,
+      recommendedAction:
+        "Restore GA4 Data API quota capacity or collection pacing, then refresh the dashboard before treating per-site GA4 signals as actionable.",
+    });
+  }
+
   return {
     state: {
       status: "ok",
@@ -484,8 +523,15 @@ function collectDashboardFindings(stats: StatsSnapshot | null): { state: Collect
       checkedAt,
       count: findings.length,
     },
+    ga4,
     findings,
   };
+}
+
+function isGa4QuotaLimited(site: NonNullable<StatsSnapshot["stats"]>[number]): boolean {
+  if (site.ga4Status !== "api_error") return false;
+  const evidence = `${site.ga4ErrorKind ?? ""} ${site.ga4Error ?? ""}`;
+  return /quota|429|too many requests/i.test(evidence);
 }
 
 function dashboardFinding(
@@ -635,6 +681,7 @@ export async function buildOpsIntelReport(options: CliOptions): Promise<OpsIntel
     collection: {
       githubActions: github.state,
       dashboardArtifacts: dashboard.state,
+      ga4: dashboard.ga4,
     },
     counts: countKinds(findings),
     summary: summarize(findings),

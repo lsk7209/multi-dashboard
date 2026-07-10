@@ -1,30 +1,53 @@
 {
   "url": "http://127.0.0.1:3004/",
-  "generatedAt": "2026-07-10T08:51:36.848Z",
+  "generatedAt": "2026-07-10T11:33:59.439Z",
   "siteCount": 98,
-  "blockingSources": [],
+  "blockingSources": [
+    "skipped_refresh_failed:ga4:api_error:40"
+  ],
   "maintenanceSources": [],
   "blockerHosts": [],
   "actionabilityStatus": "blocked_for_action_until_post_recovery_verify",
   "actionabilityCommand": "pnpm dashboard:post-recovery",
   "actionabilityAllowedUse": "Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.",
-  "actionabilityReason": "Blocked until pnpm dashboard:post-recovery passes for post_recovery_chain.",
+  "actionabilityReason": "Blocked until pnpm dashboard:post-recovery passes for current.",
+  "blockedActionReason": "phone.luckyday.kr: GA4 property binding returns ok in the next stats refresh..",
+  "hasSuppressedBlockedAction": false,
   "fleetChainArtifactPath": "data/fleet-optimization-chain-2026-07-10.json",
   "gscPermissionAuditArtifactPath": "data/gsc-permission-audit-2026-07-10.json",
   "gscPermissionAuditWorkOrderPath": "docs/work-orders/gsc-permission-audit-2026-07-10.md",
   "gscPermissionAuditHandoffStatus": "resolved",
+  "collectorAvailability": [
+    {
+      "key": "githubActions",
+      "status": "missing",
+      "detail": "Collector availability was not recorded in this report."
+    },
+    {
+      "key": "dashboardArtifacts",
+      "status": "missing",
+      "detail": "Collector availability was not recorded in this report."
+    },
+    {
+      "key": "ga4",
+      "status": "missing",
+      "detail": "Collector availability was not recorded in this report."
+    }
+  ],
   "checks": [
     "http-2xx",
     "fleet-panel",
     "site-count",
     "blocker-maintenance-split",
     "gsc-handoff-status-visible",
+    "hard-blocker-visible",
     "affiliate-command-suppressed",
     "actionability-read-only-visible",
     "maintenance-visibility",
+    "collector-availability-visible",
     "readable-rendered-text"
   ],
-  "artifactGeneratedAt": "2026-07-10T10:51:53.268Z",
+  "artifactGeneratedAt": "2026-07-10T11:44:07.859Z",
   "date": "2026-07-10",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,

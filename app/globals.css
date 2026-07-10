@@ -2172,6 +2172,38 @@ code {
   margin-top: 12px;
 }
 
+.ops-collector-status {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.ops-collector-status-item {
+  display: grid;
+  gap: 2px;
+  border-left: 3px solid #0f766e;
+  padding: 7px 9px;
+  color: var(--muted);
+  background: #f2f4f7;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.ops-collector-status-item strong {
+  color: var(--ink);
+}
+
+.ops-collector-status-item.is-skipped {
+  border-left-color: var(--warning);
+  background: rgba(245, 158, 11, 0.09);
+}
+
+.ops-collector-status-item.is-error,
+.ops-collector-status-item.is-missing {
+  border-left-color: #dc2626;
+  background: rgba(220, 38, 38, 0.07);
+}
+
 .mail-source-meta span,
 .mail-chip-row span,
 .mail-status {

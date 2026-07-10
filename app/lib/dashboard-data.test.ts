@@ -26,6 +26,7 @@ import {
   loadFleetOptimizationChainStatus,
   loadGscPermissionAudit,
   loadT3TitleContentHandoff,
+  normalizeOpsCollectorAvailability,
   type EnrichedSiteStat,
   type GscMetricSet,
   type MetricSet,
@@ -34,6 +35,31 @@ import {
   type SiteTrend,
 } from "./dashboard-data";
 import { looksGarbledText } from "./text-readability";
+
+describe("normalizeOpsCollectorAvailability", () => {
+  it("preserves direct collector status and marks missing collectors explicitly", () => {
+    expect(
+      normalizeOpsCollectorAvailability({
+        githubActions: {
+          status: "skipped",
+          detail: "Token is unavailable.",
+          checkedAt: "2026-07-10T00:00:00.000Z",
+          count: 0,
+        },
+        dashboardArtifacts: {
+          status: "ok",
+          detail: "Artifact read.",
+          checkedAt: "2026-07-10T00:00:00.000Z",
+          count: 3,
+        },
+      }),
+    ).toEqual([
+      expect.objectContaining({ key: "githubActions", status: "skipped", count: 0 }),
+      expect.objectContaining({ key: "dashboardArtifacts", status: "ok", count: 3 }),
+      expect.objectContaining({ key: "ga4", status: "missing", count: 0 }),
+    ]);
+  });
+});
 
 // OPERATIONS.md §3-5: 급락은 변동률과 절대규모를 함께 봐야 한다.
 // 변동률만 보면 극소 트래픽(주 3명 → -73%)이 오탐이 된다.

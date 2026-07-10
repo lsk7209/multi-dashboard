@@ -243,6 +243,19 @@ export function OpsMailReportPanel({ report }: { report: OpsMailReport }) {
           <span>{report.digestUrl ?? report.path}</span>
           <span>{persistenceNote}</span>
         </div>
+        <div className="ops-collector-status" aria-label="Direct collector availability">
+          {report.collection.map((collector) => (
+            <div
+              className={`ops-collector-status-item is-${collector.status}`}
+              data-collector-key={collector.key}
+              data-collector-status={collector.status}
+              key={collector.key}
+            >
+              <strong>{`${collector.label}: ${collector.status}`}</strong>
+              <span>{collector.detail}</span>
+            </div>
+          ))}
+        </div>
       </article>
 
       <article className="ops-control-panel">

@@ -795,6 +795,17 @@ export type OpsMailKind =
   | "vercel"
   | "other";
 export type OpsMailSeverity = "critical" | "high" | "medium" | "low";
+export type OpsCollectorKey = "githubActions" | "dashboardArtifacts" | "ga4";
+export type OpsCollectorAvailabilityStatus = "ok" | "skipped" | "error" | "missing";
+
+export interface OpsCollectorAvailability {
+  key: OpsCollectorKey;
+  label: string;
+  status: OpsCollectorAvailabilityStatus;
+  detail: string;
+  checkedAt: string | null;
+  count: number;
+}
 
 export interface OpsMailFinding {
   id: string;
@@ -829,6 +840,7 @@ export interface OpsMailReport {
   siteRelatedCount: number;
   summary: Record<OpsMailSeverity, number>;
   counts: Record<OpsMailKind, number>;
+  collection: OpsCollectorAvailability[];
   findings: OpsMailFinding[];
 }
 
@@ -3345,6 +3357,7 @@ function loadOpsMailReport(path: string): OpsMailReport {
       owner?: unknown;
       summary?: Partial<Record<OpsMailSeverity, unknown>>;
       counts?: Partial<Record<OpsMailKind, unknown>>;
+      collection?: unknown;
       findings?: unknown[];
     };
     const reviewState = getOpsMailReviewState();
@@ -3382,6 +3395,7 @@ function loadOpsMailReport(path: string): OpsMailReport {
       siteRelatedCount: findings.filter(isSiteRelatedOpsMailFinding).length,
       summary,
       counts,
+      collection: normalizeOpsCollectorAvailability(parsed.collection),
       findings,
     };
   } catch {
@@ -3408,8 +3422,45 @@ function emptyOpsMailReport(path: string): OpsMailReport {
       vercel: 0,
       other: 0,
     },
+    collection: normalizeOpsCollectorAvailability(undefined),
     findings: [],
   };
+}
+
+const OPS_COLLECTOR_DEFINITIONS: Array<{ key: OpsCollectorKey; label: string }> = [
+  { key: "githubActions", label: "GitHub Actions" },
+  { key: "dashboardArtifacts", label: "Dashboard artifacts" },
+  { key: "ga4", label: "GA4" },
+];
+
+export function normalizeOpsCollectorAvailability(value: unknown): OpsCollectorAvailability[] {
+  const collection = value && typeof value === "object" ? value as Record<string, unknown> : {};
+  return OPS_COLLECTOR_DEFINITIONS.map(({ key, label }) => {
+    const candidate = collection[key];
+    if (!candidate || typeof candidate !== "object") {
+      return {
+        key,
+        label,
+        status: "missing",
+        detail: "Collector availability was not recorded in this report.",
+        checkedAt: null,
+        count: 0,
+      };
+    }
+    const state = candidate as Record<string, unknown>;
+    return {
+      key,
+      label,
+      status: normalizeOpsCollectorAvailabilityStatus(state.status),
+      detail: cleanString(state.detail) || "Collector did not provide a status detail.",
+      checkedAt: cleanString(state.checkedAt) || null,
+      count: typeof state.count === "number" && Number.isFinite(state.count) ? state.count : 0,
+    };
+  });
+}
+
+function normalizeOpsCollectorAvailabilityStatus(value: unknown): OpsCollectorAvailabilityStatus {
+  return value === "ok" || value === "skipped" || value === "error" ? value : "missing";
 }
 
 function normalizeOpsMailFinding(

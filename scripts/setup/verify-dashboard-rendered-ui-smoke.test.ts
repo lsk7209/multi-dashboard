@@ -5,6 +5,7 @@ import { looksGarbledText } from "../../app/lib/text-readability.js";
 import {
   buildRenderedDashboardUiExpectations,
   buildRenderedDashboardUiSmokeArtifact,
+  getArgValue,
   hasValidLocalEvidenceToken,
   isLocalEvidenceActionabilityUrl,
   LOCAL_EVIDENCE_TOKEN_PATH,
@@ -16,6 +17,15 @@ import {
 } from "./verify-dashboard-rendered-ui-smoke.js";
 
 describe("verify-dashboard-rendered-ui-smoke", () => {
+  it("accepts both supported command-line option forms", () => {
+    expect(getArgValue("--url", ["node", "smoke", "--url=http://127.0.0.1:3004/"])).toBe(
+      "http://127.0.0.1:3004/",
+    );
+    expect(getArgValue("--url", ["node", "smoke", "--url", "http://127.0.0.1:3004/"])).toBe(
+      "http://127.0.0.1:3004/",
+    );
+  });
+
   it("builds expectations for the current hard-blocker/no-maintenance split", () => {
     const result = buildRenderedDashboardUiExpectations(makeDashboardData());
 
@@ -48,6 +58,26 @@ describe("verify-dashboard-rendered-ui-smoke", () => {
         }),
       ),
     ).toThrow("Fleet refresh split does not add up to refreshFailureCount.");
+  });
+
+  it("accepts a collector-level GA4 blocker without inventing a GSC host", () => {
+    expect(
+      buildRenderedDashboardUiExpectations(
+        makeDashboardData({
+          fleetOptimizationChain: {
+            ...makeChain(),
+            refreshFailedSources: ["skipped_refresh_failed:ga4:api_error:40"],
+            readinessBlockingRefreshFailedSources: ["skipped_refresh_failed:ga4:api_error:40"],
+          },
+          gscPermissionAudit: {
+            ...makeDashboardData().gscPermissionAudit,
+            handoffStatus: "current",
+            unverified: 0,
+            results: [],
+          },
+        } as Partial<DashboardData>),
+      ).blockerHosts,
+    ).toEqual([]);
   });
 
   it("builds blocked expectations when local evidence blocks actionability without an external readiness blocker", () => {

@@ -2,6 +2,12 @@
 
 ## Current State
 
+- Dashboard collector coverage and GA4 quota triage were updated on 2026-07-10. The fresh partial 98-site snapshot is `data/site-stats.json` generated at `2026-07-10T11:33:59.439Z`.
+- `pnpm ops:intel` and `pnpm ops:triage` now coalesce the shared GA4 Data API 429 condition into one collector-level high finding (`affected_sites=40`) instead of 40 site-level repairs. Current direct triage is 4 findings: one GA4 quota condition and three low GSC sitemap warnings.
+- The Mail panel exposes collector coverage with status and evidence: GitHub Actions is skipped because `GITHUB_TOKEN`/`GH_TOKEN` is absent, dashboard artifacts are readable, and GA4 is quota-limited. Treat a skipped collector as unavailable evidence, not a clean zero-finding result.
+- Validation evidence: focused Vitest 99 passed, `pnpm type-check` passed, `pnpm build` passed, and rendered UI smoke passed with 11 checks against `http://127.0.0.1:3004/`.
+- Next operator action: restore GA4 Data API quota capacity or add collection pacing, then run `pnpm dashboard:refresh`, `pnpm ops:intel`, `pnpm ops:triage`, and the dashboard UI smoke. Configure a GitHub token separately before relying on GitHub Actions failure counts.
+
 - Content quality polish for the 2026-07-10 scheduled top-up batches is complete for known recurring Korean wording defects. Harness: `.goal-harness/content-quality-polish-2026-07-10/`.
 - Local artifacts were corrected with `scripts/content-quality-polish-2026-07-10.mjs`: `data/content-polish/local-apply-2026-07-10.json` reports 458 replacements across 55 files; `data/content-polish/local-scan-after-2026-07-10.json` reports hitCount 0.
 - Remote scheduled WordPress posts were corrected only when `post_status='future'`: dry-run `data/content-polish/remote-dry-run-targeted-2026-07-10.json` found 434 replacements across 208 future posts; live ledger `data/content-polish/remote-apply-2026-07-10.json` updated 208 future posts with errors 0; verification `data/content-polish/remote-verify-after-2026-07-10.json` reports hitCount 0 and errors 0.

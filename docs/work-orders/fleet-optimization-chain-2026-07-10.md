@@ -2,18 +2,18 @@
 
 Mutation status: no CMS, database, Search Console, AdSense, title/body, publishing, or deployment mutation performed.
 
-- Generated at: `2026-07-10T08:54:34.235Z`
-- Stats snapshot: `2026-07-10T08:51:36.848Z`
-- Plan snapshot: `2026-07-10T08:51:36.848Z`
-- T3 handoff snapshot: `2026-07-10T08:51:36.848Z`
+- Generated at: `2026-07-10T11:41:02.464Z`
+- Stats snapshot: `2026-07-10T11:33:59.439Z`
+- Plan snapshot: `2026-07-10T11:33:59.439Z`
+- T3 handoff snapshot: `2026-07-10T11:33:59.439Z`
 - Plan matches stats: `true`
 - T3 handoff matches stats: `true`
-- Refresh failures block readiness: `false`
-- Refresh failed sources: `none`
+- Refresh failures block readiness: `true`
+- Refresh failed sources: `skipped_refresh_failed:ga4:api_error:40`
 - T3 mutation flags false: `true`
 - T3 sites: `13`
 - Title handoff rows: `10`
-- Content handoff rows: `7`
+- Content handoff rows: `8`
 
 ## Commands
 
