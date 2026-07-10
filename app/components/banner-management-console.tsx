@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "re
 
 import {
   MIN_RELIABLE_IMAGE_REQUESTS,
+  getQualifiedCtr,
   getInternalRedirectImageRatio,
   hasReliableImageSample,
 } from "../lib/banner-reporting";
@@ -73,6 +74,11 @@ interface SiteSummaryRow {
   clicks: number;
   imageRequests7d: number;
   clicks7d: number;
+  qualifiedImpressions: number;
+  qualifiedClicks: number;
+  qualifiedImpressions7d: number;
+  qualifiedClicks7d: number;
+  invalidQualifiedClicks7d: number;
   lastUpdatedAt: string;
 }
 
@@ -347,6 +353,10 @@ export function BannerManagementConsole() {
           clicks7d: summary.clicks7d + site.clicks7d,
           imageRequests: summary.imageRequests + site.imageRequests,
           imageRequests7d: summary.imageRequests7d + site.imageRequests7d,
+          qualifiedImpressions: summary.qualifiedImpressions + site.qualifiedImpressions,
+          qualifiedClicks: summary.qualifiedClicks + site.qualifiedClicks,
+          qualifiedImpressions7d: summary.qualifiedImpressions7d + site.qualifiedImpressions7d,
+          qualifiedClicks7d: summary.qualifiedClicks7d + site.qualifiedClicks7d,
           placements: summary.placements + site.placements,
           requests: summary.requests + site.requests,
           unassignedPlacements: summary.unassignedPlacements + site.unassignedPlacements,
@@ -358,6 +368,10 @@ export function BannerManagementConsole() {
           clicks7d: 0,
           imageRequests: 0,
           imageRequests7d: 0,
+          qualifiedImpressions: 0,
+          qualifiedClicks: 0,
+          qualifiedImpressions7d: 0,
+          qualifiedClicks7d: 0,
           placements: 0,
           requests: 0,
           unassignedPlacements: 0,
@@ -556,7 +570,17 @@ export function BannerManagementConsole() {
   const filteredClicks = filteredSiteSummaries.reduce((total, site) => total + site.clicks, 0);
   const filteredClicks7d = filteredSiteSummaries.reduce((total, site) => total + site.clicks7d, 0);
   const filteredImageRequests7d = filteredSiteSummaries.reduce((total, site) => total + site.imageRequests7d, 0);
+  const filteredQualifiedImpressions7d = filteredSiteSummaries.reduce((total, site) => total + site.qualifiedImpressions7d, 0);
+  const filteredQualifiedClicks7d = filteredSiteSummaries.reduce((total, site) => total + site.qualifiedClicks7d, 0);
   const filteredFunnel = [
+    {
+      detail: `가시 노출 ${formatNumber(filteredQualifiedImpressions7d)}회 · 귀속 클릭 ${formatNumber(filteredQualifiedClicks7d)}회`,
+      label: "최근 7일 실측 CTR",
+      tone: "normal",
+      value: filteredQualifiedImpressions7d > 0
+        ? formatPercent(getQualifiedCtr({ clicks: filteredQualifiedClicks7d, impressions: filteredQualifiedImpressions7d }))
+        : "수집 대기",
+    },
     {
       label: "활성 슬롯",
       value: filteredActivePlacements.length,
@@ -941,6 +965,7 @@ export function BannerManagementConsole() {
           <span>리다이렉트 {formatNumber(fleetSummary.clicks)}회</span>
           <span>내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: fleetSummary.clicks, imageRequests: fleetSummary.imageRequests }))}</span>
           <span>7일 내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: fleetSummary.clicks7d, imageRequests: fleetSummary.imageRequests7d }))}</span>
+          <span>7일 실측 CTR {fleetSummary.qualifiedImpressions7d > 0 ? formatPercent(getQualifiedCtr({ clicks: fleetSummary.qualifiedClicks7d, impressions: fleetSummary.qualifiedImpressions7d })) : "수집 대기"}</span>
         </div>
         {selectedSiteSummary ? (
           <div className="ops-site-focus">
@@ -1636,9 +1661,10 @@ export function BannerManagementConsole() {
             ) : null}
             {install ? (
               <div className="ops-install-code">
-                <code>{`<a href="${install.clickUrl}" rel="sponsored nofollow"><img src="${install.imageUrl}" alt="" loading="lazy" /></a>`}</code>
+                <code>{`<aside data-banner-measurement data-banner-measurement-base="${state.publicBaseUrl}" data-banner-site-key="${selectedPlacement?.siteKey ?? ""}" data-banner-slot-key="${selectedPlacement?.slotKey ?? ""}"><a data-banner-click href="${install.clickUrl}" rel="sponsored nofollow"><img src="${install.imageUrl}" alt="" loading="lazy" /></a></aside><script src="${install.measurementScriptUrl}" defer></script>`}</code>
                 <code>{`image: ${install.imageUrl}`}</code>
                 <code>{`click: ${install.clickUrl}`}</code>
+                <code>{`measurement: ${install.measurementScriptUrl}`}</code>
               </div>
             ) : (
               <p className="ops-empty-state">설치 코드를 만들 배치 위치가 없습니다.</p>
@@ -1864,6 +1890,7 @@ function buildInstallCode(placement: PlacementRow, publicBaseUrl: string) {
   return {
     clickUrl: `${base}/api/banner-management/click?${query}`,
     imageUrl: `${base}/api/banner-management/image?${query}`,
+    measurementScriptUrl: `${base}/banner-measurement.js`,
     slotLabel: formatSlotLabel(placement),
   };
 }

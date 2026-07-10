@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { createHmac, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
@@ -117,6 +117,11 @@ export interface BannerSiteSummaryRow {
   clicks: number;
   imageRequests7d: number;
   clicks7d: number;
+  qualifiedImpressions: number;
+  qualifiedClicks: number;
+  qualifiedImpressions7d: number;
+  qualifiedClicks7d: number;
+  invalidQualifiedClicks7d: number;
   lastUpdatedAt: string;
 }
 
@@ -733,6 +738,43 @@ export async function recordBannerClickAsync(input: Parameters<typeof recordBann
   recordBannerClick(input);
 }
 
+export type QualifiedBannerEventType = "impression" | "click";
+
+export interface QualifiedBannerEventInput {
+  assignmentId: string;
+  eventType: QualifiedBannerEventType;
+  placementId: string;
+  sessionId: string;
+  trackingLinkId: string;
+}
+
+/**
+ * Records a privacy-preserving, de-duplicated measurement event.  This is
+ * deliberately separate from image/click redirect logs: only a visible
+ * impression and a click attributed to that impression are eligible for CTR.
+ */
+export async function recordQualifiedBannerEventAsync(input: QualifiedBannerEventInput): Promise<boolean> {
+  const normalizedSessionId = cleanQualifiedSessionId(input.sessionId);
+  const secret = getQualifiedEventSecret();
+  if (!normalizedSessionId || !secret) return false;
+
+  const sessionHash = hashQualifiedValue(secret, normalizedSessionId);
+  const now = new Date();
+  const eventKey = hashQualifiedValue(
+    secret,
+    `${input.assignmentId}:${input.eventType}:${sessionHash}:${now.toISOString().slice(0, 10)}`,
+  );
+
+  if (isBannerLibsqlEnabled()) {
+    return recordRemoteQualifiedBannerEvent({ ...input, eventKey, now: now.toISOString(), sessionHash });
+  }
+  return recordQualifiedBannerEvent({ ...input, eventKey, now: now.toISOString(), sessionHash });
+}
+
+export function isQualifiedBannerMeasurementEnabled(): boolean {
+  return Boolean(getQualifiedEventSecret());
+}
+
 export function refreshBannerSnapshot(): BannerSnapshot {
   const snapshot = buildBannerSnapshot();
   const path = getBannerSnapshotPath();
@@ -1195,6 +1237,48 @@ async function recordRemotePlacementEvent(input: {
   }
 }
 
+async function recordRemoteQualifiedBannerEvent(
+  input: QualifiedBannerEventInput & { eventKey: string; now: string; sessionHash: string },
+): Promise<boolean> {
+  if (!isBannerLibsqlEnabled()) return false;
+  const client = createBannerLibsqlClient();
+  try {
+    await ensureRemoteSchema(client);
+    const eventType = input.eventType === "impression" ? "qualified_impression" : "qualified_click";
+    let eligible = 1;
+    if (input.eventType === "click") {
+      const view = await remoteGet(
+        client,
+        `SELECT id FROM placement_event_ledger
+         WHERE event_type = 'qualified_impression' AND assignment_id = ? AND session_hash = ?
+           AND created_at >= datetime(?, '-1 day')
+         LIMIT 1`,
+        [input.assignmentId, input.sessionHash, input.now],
+      );
+      eligible = view ? 1 : 0;
+    }
+    const inserted = await client.execute({
+      sql: `INSERT OR IGNORE INTO placement_event_ledger
+        (id, event_type, tracking_link_id, placement_id, assignment_id, session_hash, event_key, is_eligible, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      args: [
+        `event_${randomUUID()}`,
+        eligible ? eventType : "qualified_click_invalid",
+        input.trackingLinkId,
+        input.placementId,
+        input.assignmentId,
+        input.sessionHash,
+        eligible ? input.eventKey : `${input.eventKey}:invalid`,
+        eligible,
+        input.now,
+      ],
+    });
+    return eligible === 1 && Number(inserted.rowsAffected ?? 0) > 0;
+  } finally {
+    client.close();
+  }
+}
+
 async function ensureRemoteSchema(client: Client): Promise<void> {
   await client.batch(
     [
@@ -1256,6 +1340,9 @@ async function ensureRemoteSchema(client: Client): Promise<void> {
         page_url TEXT,
         referrer TEXT,
         metadata TEXT,
+        session_hash TEXT,
+        event_key TEXT,
+        is_eligible INTEGER NOT NULL DEFAULT 1,
         created_at TEXT NOT NULL
       )`,
       `CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_placement_type
@@ -1268,6 +1355,9 @@ async function ensureRemoteSchema(client: Client): Promise<void> {
   await ensureRemoteColumn(client, "placements", "site_key", "TEXT");
   await ensureRemoteColumn(client, "placements", "slot_key", "TEXT");
   await ensureRemoteColumn(client, "placements", "site_url", "TEXT");
+  await ensureRemoteColumn(client, "placement_event_ledger", "session_hash", "TEXT");
+  await ensureRemoteColumn(client, "placement_event_ledger", "event_key", "TEXT");
+  await ensureRemoteColumn(client, "placement_event_ledger", "is_eligible", "INTEGER NOT NULL DEFAULT 1");
   await client.batch(
     [
       `CREATE UNIQUE INDEX IF NOT EXISTS idx_placements_site_slot
@@ -1275,6 +1365,10 @@ async function ensureRemoteSchema(client: Client): Promise<void> {
         WHERE site_key IS NOT NULL AND slot_key IS NOT NULL`,
       `CREATE INDEX IF NOT EXISTS idx_placements_site_key ON placements (site_key)`,
       `CREATE INDEX IF NOT EXISTS idx_placements_status_updated ON placements (status, updated_at)`,
+      `CREATE UNIQUE INDEX IF NOT EXISTS idx_placement_event_ledger_event_key
+        ON placement_event_ledger (event_key) WHERE event_key IS NOT NULL`,
+      `CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_qualified_session
+        ON placement_event_ledger (assignment_id, session_hash, event_type, created_at)`,
     ],
     "write",
   );
@@ -1401,6 +1495,11 @@ async function listRemoteSiteSummaries(client: Client): Promise<BannerSiteSummar
         COALESCE(SUM(event_counts.clicks), 0) AS clicks,
         COALESCE(SUM(event_counts.image_requests_7d), 0) AS image_requests_7d,
         COALESCE(SUM(event_counts.clicks_7d), 0) AS clicks_7d,
+        COALESCE(SUM(event_counts.qualified_impressions), 0) AS qualified_impressions,
+        COALESCE(SUM(event_counts.qualified_clicks), 0) AS qualified_clicks,
+        COALESCE(SUM(event_counts.qualified_impressions_7d), 0) AS qualified_impressions_7d,
+        COALESCE(SUM(event_counts.qualified_clicks_7d), 0) AS qualified_clicks_7d,
+        COALESCE(SUM(event_counts.invalid_qualified_clicks_7d), 0) AS invalid_qualified_clicks_7d,
         MAX(p.updated_at) AS last_updated_at
       FROM placements p
       LEFT JOIN (
@@ -1416,8 +1515,13 @@ async function listRemoteSiteSummaries(client: Client): Promise<BannerSiteSummar
           SUM(CASE WHEN event_type = 'image_request' THEN 1 ELSE 0 END) AS image_requests,
           SUM(CASE WHEN event_type = 'no_ad' THEN 1 ELSE 0 END) AS no_ad,
           SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks,
+          SUM(CASE WHEN event_type = 'qualified_impression' AND is_eligible = 1 THEN 1 ELSE 0 END) AS qualified_impressions,
+          SUM(CASE WHEN event_type = 'qualified_click' AND is_eligible = 1 THEN 1 ELSE 0 END) AS qualified_clicks,
           SUM(CASE WHEN event_type = 'image_request' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS image_requests_7d,
-          SUM(CASE WHEN event_type = 'click' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS clicks_7d
+          SUM(CASE WHEN event_type = 'click' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS clicks_7d,
+          SUM(CASE WHEN event_type = 'qualified_impression' AND is_eligible = 1 AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS qualified_impressions_7d,
+          SUM(CASE WHEN event_type = 'qualified_click' AND is_eligible = 1 AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS qualified_clicks_7d,
+          SUM(CASE WHEN event_type = 'qualified_click_invalid' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS invalid_qualified_clicks_7d
         FROM placement_event_ledger
         WHERE placement_id IS NOT NULL
         GROUP BY placement_id
@@ -1439,6 +1543,11 @@ async function listRemoteSiteSummaries(client: Client): Promise<BannerSiteSummar
     clicks: asNumber(row.clicks),
     imageRequests7d: asNumber(row.image_requests_7d),
     clicks7d: asNumber(row.clicks_7d),
+    qualifiedImpressions: asNumber(row.qualified_impressions),
+    qualifiedClicks: asNumber(row.qualified_clicks),
+    qualifiedImpressions7d: asNumber(row.qualified_impressions_7d),
+    qualifiedClicks7d: asNumber(row.qualified_clicks_7d),
+    invalidQualifiedClicks7d: asNumber(row.invalid_qualified_clicks_7d),
     lastUpdatedAt: asString(row.last_updated_at),
   }));
 }
@@ -1582,6 +1691,9 @@ function ensureSchema(path: string): void {
         page_url TEXT,
         referrer TEXT,
         metadata TEXT,
+        session_hash TEXT,
+        event_key TEXT,
+        is_eligible INTEGER NOT NULL DEFAULT 1,
         created_at TEXT NOT NULL
       );
       CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_placement_type
@@ -1592,6 +1704,9 @@ function ensureSchema(path: string): void {
     ensureColumn(db, "placements", "site_key", "TEXT");
     ensureColumn(db, "placements", "slot_key", "TEXT");
     ensureColumn(db, "placements", "site_url", "TEXT");
+    ensureColumn(db, "placement_event_ledger", "session_hash", "TEXT");
+    ensureColumn(db, "placement_event_ledger", "event_key", "TEXT");
+    ensureColumn(db, "placement_event_ledger", "is_eligible", "INTEGER NOT NULL DEFAULT 1");
     db.exec(`
       CREATE UNIQUE INDEX IF NOT EXISTS idx_placements_site_slot
         ON placements (site_key, slot_key)
@@ -1600,6 +1715,10 @@ function ensureSchema(path: string): void {
         ON placements (site_key);
       CREATE INDEX IF NOT EXISTS idx_placements_status_updated
         ON placements (status, updated_at);
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_placement_event_ledger_event_key
+        ON placement_event_ledger (event_key) WHERE event_key IS NOT NULL;
+      CREATE INDEX IF NOT EXISTS idx_placement_event_ledger_qualified_session
+        ON placement_event_ledger (assignment_id, session_hash, event_type, created_at);
     `);
   } finally {
     db.close();
@@ -1726,6 +1845,11 @@ function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
         COALESCE(SUM(event_counts.clicks), 0) AS clicks,
         COALESCE(SUM(event_counts.image_requests_7d), 0) AS image_requests_7d,
         COALESCE(SUM(event_counts.clicks_7d), 0) AS clicks_7d,
+        COALESCE(SUM(event_counts.qualified_impressions), 0) AS qualified_impressions,
+        COALESCE(SUM(event_counts.qualified_clicks), 0) AS qualified_clicks,
+        COALESCE(SUM(event_counts.qualified_impressions_7d), 0) AS qualified_impressions_7d,
+        COALESCE(SUM(event_counts.qualified_clicks_7d), 0) AS qualified_clicks_7d,
+        COALESCE(SUM(event_counts.invalid_qualified_clicks_7d), 0) AS invalid_qualified_clicks_7d,
         MAX(p.updated_at) AS last_updated_at
       FROM placements p
       LEFT JOIN (
@@ -1741,8 +1865,13 @@ function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
           SUM(CASE WHEN event_type = 'image_request' THEN 1 ELSE 0 END) AS image_requests,
           SUM(CASE WHEN event_type = 'no_ad' THEN 1 ELSE 0 END) AS no_ad,
           SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks,
+          SUM(CASE WHEN event_type = 'qualified_impression' AND is_eligible = 1 THEN 1 ELSE 0 END) AS qualified_impressions,
+          SUM(CASE WHEN event_type = 'qualified_click' AND is_eligible = 1 THEN 1 ELSE 0 END) AS qualified_clicks,
           SUM(CASE WHEN event_type = 'image_request' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS image_requests_7d,
-          SUM(CASE WHEN event_type = 'click' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS clicks_7d
+          SUM(CASE WHEN event_type = 'click' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS clicks_7d,
+          SUM(CASE WHEN event_type = 'qualified_impression' AND is_eligible = 1 AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS qualified_impressions_7d,
+          SUM(CASE WHEN event_type = 'qualified_click' AND is_eligible = 1 AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS qualified_clicks_7d,
+          SUM(CASE WHEN event_type = 'qualified_click_invalid' AND created_at >= strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-7 days') THEN 1 ELSE 0 END) AS invalid_qualified_clicks_7d
         FROM placement_event_ledger
         WHERE placement_id IS NOT NULL
         GROUP BY placement_id
@@ -1765,6 +1894,11 @@ function listSiteSummaries(db: DatabaseLike): BannerSiteSummaryRow[] {
       clicks: asNumber(row.clicks),
       imageRequests7d: asNumber(row.image_requests_7d),
       clicks7d: asNumber(row.clicks_7d),
+      qualifiedImpressions: asNumber(row.qualified_impressions),
+      qualifiedClicks: asNumber(row.qualified_clicks),
+      qualifiedImpressions7d: asNumber(row.qualified_impressions_7d),
+      qualifiedClicks7d: asNumber(row.qualified_clicks_7d),
+      invalidQualifiedClicks7d: asNumber(row.invalid_qualified_clicks_7d),
       lastUpdatedAt: asString(row.last_updated_at),
     }));
 }
@@ -2077,12 +2211,65 @@ function recordPlacementEvent(input: {
   }
 }
 
+function recordQualifiedBannerEvent(
+  input: QualifiedBannerEventInput & { eventKey: string; now: string; sessionHash: string },
+): boolean {
+  if (!canAttemptWrite()) return false;
+  const dbPath = getBannerDbPath();
+  ensureSchema(dbPath);
+  const db = openDb(dbPath, false);
+  try {
+    let eligible = 1;
+    if (input.eventType === "click") {
+      const view = db.prepare(
+        `SELECT id FROM placement_event_ledger
+         WHERE event_type = 'qualified_impression' AND assignment_id = ? AND session_hash = ?
+           AND created_at >= datetime(?, '-1 day')
+         LIMIT 1`,
+      ).get(input.assignmentId, input.sessionHash, input.now);
+      eligible = view ? 1 : 0;
+    }
+    const eventType = input.eventType === "impression" ? "qualified_impression" : "qualified_click";
+    const result = db.prepare(
+      `INSERT OR IGNORE INTO placement_event_ledger
+        (id, event_type, tracking_link_id, placement_id, assignment_id, session_hash, event_key, is_eligible, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ).run(
+      `event_${randomUUID()}`,
+      eligible ? eventType : "qualified_click_invalid",
+      input.trackingLinkId,
+      input.placementId,
+      input.assignmentId,
+      input.sessionHash,
+      eligible ? input.eventKey : `${input.eventKey}:invalid`,
+      eligible,
+      input.now,
+    );
+    return eligible === 1 && result.changes > 0;
+  } finally {
+    db.close();
+  }
+}
+
 function scalar(db: DatabaseLike, sql: string): number {
   return asNumber(db.prepare(sql).get()?.value);
 }
 
 function canAttemptWrite(): boolean {
   return isBannerLibsqlEnabled() || !process.env.VERCEL || Boolean(process.env.MONETIZATION_BANNER_DB);
+}
+
+function getQualifiedEventSecret(): string | null {
+  return cleanOptionalText(process.env.MONETIZATION_BANNER_EVENT_SECRET);
+}
+
+function cleanQualifiedSessionId(value: string): string | null {
+  const normalized = value.trim();
+  return /^[a-zA-Z0-9_-]{24,128}$/.test(normalized) ? normalized : null;
+}
+
+function hashQualifiedValue(secret: string, value: string): string {
+  return createHmac("sha256", secret).update(value).digest("base64url");
 }
 
 export function isBannerWriteDisabledError(error: unknown): boolean {

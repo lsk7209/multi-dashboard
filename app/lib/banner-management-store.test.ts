@@ -6,6 +6,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { GET as getBannerManagement, POST as postBannerManagement } from "../api/banner-management/route.js";
 import { GET as getBannerClick } from "../api/banner-management/click/route.js";
+import { POST as postBannerEvent } from "../api/banner-management/event/route.js";
 import { GET as getBannerImage } from "../api/banner-management/image/route.js";
 import {
   assignBannerPlacement,
@@ -17,6 +18,7 @@ import {
   getBannerManagementState,
   recordBannerClick,
   recordBannerImageRequest,
+  recordQualifiedBannerEventAsync,
   resolveBannerPlacement,
 } from "./banner-management-store.js";
 
@@ -25,6 +27,7 @@ let tempDir: string;
 const MUTABLE_ENV_KEYS = [
   "MONETIZATION_BANNER_ADMIN_TOKEN",
   "MONETIZATION_BANNER_DB",
+  "MONETIZATION_BANNER_EVENT_SECRET",
   "MONETIZATION_BANNER_LIBSQL_AUTH_TOKEN",
   "MONETIZATION_BANNER_LIBSQL_URL",
   "MONETIZATION_BANNER_SNAPSHOT",
@@ -136,6 +139,46 @@ describe("banner-management-store", () => {
     const snapshotPath = process.env.MONETIZATION_BANNER_SNAPSHOT ?? "";
     expect(existsSync(snapshotPath)).toBe(true);
     expect(readFileSync(snapshotPath, "utf8")).toContain(`Smoke placement ${stamp}`);
+  });
+
+  it("records only visible-session-attributed clicks as qualified CTR events", async () => {
+    process.env.MONETIZATION_BANNER_EVENT_SECRET = "test-event-secret";
+    const stamp = Date.now().toString(36);
+    let state = createBannerTrackingLink({ offerName: "Qualified offer", publicUrl: "https://example.com/q", slug: `q-${stamp}` });
+    const link = findRequired(state.trackingLinks, (item) => item.slug === `q-${stamp}`);
+    state = createBannerCreative({ height: 90, imageUrl: "https://example.com/q.png", name: `Qualified creative ${stamp}`, width: 728 });
+    const creative = findRequired(state.creatives, (item) => item.name === `Qualified creative ${stamp}`);
+    state = createBannerPlacement({ name: `Qualified placement ${stamp}`, siteKey: `qualified-${stamp}`, siteUrl: `https://qualified-${stamp}.example.com`, slotKey: "inline", type: "image_link" });
+    const placement = findRequired(state.placements, (item) => item.name === `Qualified placement ${stamp}`);
+    state = assignBannerPlacement({ creativeId: creative.id, placementId: placement.id, trackingLinkId: link.id });
+    const resolved = resolveBannerPlacement({ slot: `${placement.siteKey}.${placement.slotKey}` });
+    expect(resolved).toBeTruthy();
+    const sessionId = "a".repeat(32);
+    const input = {
+      assignmentId: resolved?.assignmentId ?? "",
+      placementId: placement.id,
+      sessionId,
+      trackingLinkId: link.id,
+    };
+
+    expect(await recordQualifiedBannerEventAsync({ ...input, eventType: "click" })).toBe(false);
+    expect(await recordQualifiedBannerEventAsync({ ...input, eventType: "impression" })).toBe(true);
+    expect(await recordQualifiedBannerEventAsync({ ...input, eventType: "impression" })).toBe(false);
+    expect(await recordQualifiedBannerEventAsync({ ...input, eventType: "click" })).toBe(true);
+
+    const summary = getBannerManagementState().siteSummaries.find((item) => item.siteKey === placement.siteKey);
+    expect(summary?.qualifiedImpressions).toBe(1);
+    expect(summary?.qualifiedClicks).toBe(1);
+  });
+
+  it("does not accept qualified impressions for an unknown placement", async () => {
+    process.env.MONETIZATION_BANNER_EVENT_SECRET = "test-event-secret";
+    const response = await postBannerEvent(new Request("http://localhost/api/banner-management/event", {
+      body: JSON.stringify({ eventType: "impression", sessionId: "a".repeat(32), siteKey: "temon", slotKey: "missing" }),
+      headers: { "content-type": "application/json", origin: "https://unregistered.example.com" },
+      method: "POST",
+    }));
+    expect(response.status).toBe(404);
   });
 
   it("bucket-selects among multiple active assignments for A/B/C banners", () => {

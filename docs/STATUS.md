@@ -6,6 +6,13 @@
 - Post-recovery passed 3/3 with artifact integrity passing and readiness `ready_to_act` when rendered UI smoke used the current owned dashboard server.
 - `dashboard:verify` now requires `DASHBOARD_URL`; it no longer silently treats an arbitrary service on `localhost:3000` as dashboard evidence. Focused verification tests passed (19/19), along with `pnpm type-check` and `pnpm build`.
 
+## 2026-07-11 Qualified Banner CTR (local implementation)
+
+- Added a separate qualified-CTR measurement path: a browser loader records only 50%-visible, one-second impressions; clicks count only when the same anonymous HMAC-hashed session has a qualified impression in the previous 24 hours.
+- Legacy image-request and redirect-call statistics remain intact and are not used as CTR.
+- Local verification: `pnpm lint`, `pnpm type-check`, and the focused banner Vitest suite (13 tests) passed.
+- Production remains gated on the Vercel event-secret and canary rollout across 12 Next/Vite and 9 WordPress installs.
+
 ## 2026-07-11 Page/Query CTR Evidence
 
 - Added `scripts/setup/collect-gsc-page-query-opportunities.ts`, a read-only 28-day GSC collector for page/query title and meta opportunities.

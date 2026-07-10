@@ -1,5 +1,6 @@
 import {
   recordBannerClickAsync,
+  recordQualifiedBannerEventAsync,
   resolveBannerPlacementAsync,
 } from "../../../lib/banner-management-store";
 
@@ -32,7 +33,22 @@ export async function GET(request: Request) {
     trackingLinkId: resolved.trackingLink.id,
   });
 
+  const sessionId = url.searchParams.get("sid");
+  if (sessionId && !isAutomatedRequest(request)) {
+    await recordQualifiedBannerEventAsync({
+      assignmentId: resolved.assignmentId,
+      eventType: "click",
+      placementId: resolved.placement.id,
+      sessionId,
+      trackingLinkId: resolved.trackingLink.id,
+    });
+  }
+
   return Response.redirect(resolved.trackingLink.publicUrl, 302);
+}
+
+function isAutomatedRequest(request: Request): boolean {
+  return /bot|crawler|spider|headless|lighthouse|prerender|curl|wget/i.test(request.headers.get("user-agent") ?? "");
 }
 
 function parseBannerPurpose(value: string | null): "approval_screenshot" | "public" | undefined {
