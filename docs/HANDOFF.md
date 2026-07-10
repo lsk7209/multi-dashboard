@@ -138,3 +138,10 @@
 - Verification: `pnpm type-check`, targeted Vitest (112 tests), `pnpm build`, and `pnpm dashboard:ui-smoke -- --url=http://127.0.0.1:3004/` passed. The browser smoke checked the current 98-site snapshot with 9 checks.
 - Validation gap: repository-wide `pnpm lint` still reports 7 existing unused-variable errors in untracked content-generation scripts (`generate-jasamall-topup-articles.mjs`, `schedule-wp-html-manifest.mjs`, `schedule-wp-md-manifest.mjs`, and `topup-wordpress-drafts.mjs`); these are outside the dashboard runtime change.
 - Deployment: GitHub `main` commit `30930aa` triggered Vercel production deployment `dpl_68vCyzgoi5h3pfkjxwN1pKE5axyS`. It is Ready at `https://multi-dashboard-one.vercel.app`; the deployment URL and production alias both returned HTTP 200 and rendered the 98-site dashboard.
+
+## 2026-07-10 Read-Only Action Evidence Improvement
+
+- Current dashboard review found that read-only mode replaced all 16 action rows with generic text, hiding distinct sitemap, traffic-drop, and CTR evidence.
+- `app/page.tsx` now preserves each action's reason and read-only-safe inspection guidance. The known mutation instruction, Search Console sitemap resubmission, is replaced with a read-only status/lastmod/robots inspection until post-recovery passes.
+- Regression evidence: focused ESLint passed; focused Vitest passed (4 files, 108 tests); `pnpm type-check`, `pnpm build`, and the 9-check rendered UI smoke passed for the current 98-site snapshot.
+- Deployment: commit `084b414` reached Vercel production deployment `dpl_EVpN3PnWk6dJgZCzEaU5hoLRRfWo`. The production alias returned HTTP 200 with sitemap and GA4 evidence visible, resubmission text absent, and the read-only mutation-suppression marker present.

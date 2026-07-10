@@ -8,6 +8,7 @@
 - Current direct triage: three low GSC sitemap warnings only (`nicewomen`, `autorentlab`, `ezfunnel`); public site checks are clean and GSC resubmission requires external action authority.
 - Known validation gap: `pnpm lint` has 7 existing errors in untracked content-generation scripts outside this dashboard runtime scope.
 - Git deployment completed: commit `30930aa` is deployed to Vercel production (`dpl_68vCyzgoi5h3pfkjxwN1pKE5axyS`); `https://multi-dashboard-one.vercel.app` returned HTTP 200 with the current 98-site dashboard.
+- Read-only action evidence improvement completed: action rows now retain their distinct reason and safe inspection next step while replacing sitemap resubmission with read-only status/lastmod/robots checks. Commit `084b414` is live on Vercel production (`dpl_EVpN3PnWk6dJgZCzEaU5hoLRRfWo`) and passed production HTTP/render assertions.
 
 ## 2026-07-10
 

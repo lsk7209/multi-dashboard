@@ -14,6 +14,8 @@ Level: 4
 | `pnpm eslint app/page.tsx app/lib/dashboard-action-readonly.ts app/lib/dashboard-action-readonly.test.ts scripts/setup/verify-dashboard-rendered-ui-smoke.ts` | PASS | Focused lint passed. |
 | `pnpm dashboard:ui-smoke -- --url=http://127.0.0.1:3004/` | PASS | Current 98-site snapshot and 9 rendered checks passed. |
 | `pnpm build` | PASS | Next.js production build completed. |
+| Vercel production deployment | PASS | `dpl_EVpN3PnWk6dJgZCzEaU5hoLRRfWo` is Ready for Git commit `084b414`. |
+| `Invoke-WebRequest https://multi-dashboard-one.vercel.app` | PASS | HTTP 200; sitemap and traffic evidence visible, sitemap resubmission absent, read-only inspection and mutation marker present. |
 
 ## Test Results
 
@@ -29,3 +31,6 @@ Level: 4
 - Kept the existing post-recovery gate and replaced only sitemap resubmission wording until it passes.
 
 ## Completion Evidence
+
+- Production URL: `https://multi-dashboard-one.vercel.app`
+- Deployment URL: `https://multi-dashboard-oojl498j7-limsubs-projects.vercel.app`

@@ -25,12 +25,14 @@
 
 ## Completion Gate
 
-- [ ] Acceptance criteria are satisfied or explicitly marked N/A with reasons.
-- [ ] Validation evidence exists in `EVIDENCE.md`.
-- [ ] Failed checks are fixed or clearly documented.
-- [ ] Regression risks were considered.
-- [ ] Security and risky-operation notes were recorded when applicable.
-- [ ] Known limitations are stated in the final report.
-- [ ] It is accurate to set `STATUS.md` to `DONE`.
+- [x] Acceptance criteria are satisfied or explicitly marked N/A with reasons.
+- [x] Validation evidence exists in `EVIDENCE.md`.
+- [x] Failed checks are fixed or clearly documented.
+- [x] Regression risks were considered.
+- [x] Security and risky-operation notes were recorded when applicable.
+- [x] Known limitations are stated in the final report.
+- [x] It is accurate to set `STATUS.md` to `DONE`.
 
 ## Remaining Limitations
+
+- The dashboard remains read-only until the existing post-recovery gate is satisfied; this change intentionally does not alter authorization or external GSC state.
