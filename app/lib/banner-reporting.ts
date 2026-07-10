@@ -1,0 +1,13 @@
+export const MIN_RELIABLE_IMAGE_REQUESTS = 100;
+
+export function getInternalRedirectImageRatio(input: {
+  redirects: number;
+  imageRequests: number;
+}): number {
+  if (input.imageRequests <= 0) return 0;
+  return input.redirects / input.imageRequests;
+}
+
+export function hasReliableImageSample(input: { imageRequests: number }): boolean {
+  return input.imageRequests >= MIN_RELIABLE_IMAGE_REQUESTS;
+}

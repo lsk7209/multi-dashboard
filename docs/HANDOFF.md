@@ -3,6 +3,7 @@
 ## Current State
 
 - Dashboard top-level `배너` tab was removed on 2026-07-11. The dedicated `/banner-management` route remains available for banner operations.
+- Banner console metric labels now describe internal redirect-call to image-request ratios, not CTR. The 7-day ranking requires at least 100 image requests; lower-volume sites appear separately as sample-insufficient.
 - Read-only sitemap review on 2026-07-10 after snapshot `2026-07-10T13:09:12.180Z`: `nicewomen.kr` and `ezfunnel.kr` returned homepage/robots/sitemap HTTP 200, self-canonical URLs, index-follow metadata, and valid sitemap index structures. Their single GSC sitemap warnings require Search Console's internal warning detail before a safe mutation.
 - `autorentlab.com` has a concrete sitemap defect: 26 public sitemap URLs have future `lastmod` values through `2026-07-16`. Repo evidence in `D:\web\autorentlab\lib\blog-articles.ts` marks those future `publishAt` items as `published`, and `getPublicBlogArticles()` exposes every published item without checking its publish time. This is a post-recovery code-fix candidate; no site mutation or deployment was made while dashboard actionability remains read-only.
 - Fresh dashboard collection otherwise completed for all 98 sites: GSC and sitemap collection succeeded, while `runmania` has one transient GA4 `DEADLINE_EXCEEDED` error. Do not use that one GA4 row for traffic-priority decisions until a later refresh succeeds.
@@ -92,6 +93,7 @@
 ## Verification Evidence
 
 - 2026-07-11: `pnpm type-check` and `pnpm build` passed after removing the dashboard tab. A source guard confirmed no dashboard `banners` tab or banner-console reference remains in `app/page.tsx`.
+- 2026-07-11: banner metric helper tests and banner store tests passed (10 assertions); targeted ESLint, TypeScript, and production build passed after the low-sample ranking fix.
 
 - Content quality polish follow-up on 2026-07-10 completed grammar, structure, and queue-drift corrections for the scheduled-content top-up work.
 - Harness: `.goal-harness/content-quality-polish-2026-07-10/` is complete.

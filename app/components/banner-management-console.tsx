@@ -2,6 +2,11 @@
 
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 
+import {
+  MIN_RELIABLE_IMAGE_REQUESTS,
+  getInternalRedirectImageRatio,
+  hasReliableImageSample,
+} from "../lib/banner-reporting";
 import { formatDisplayPath } from "../lib/display-path";
 
 interface PlacementRow {
@@ -146,10 +151,10 @@ const SITE_SUMMARY_COLUMNS: Array<{ key: SiteSortKey; label: string }> = [
   { key: "requests", label: "요청" },
   { key: "imageRequests", label: "이미지" },
   { key: "clicks", label: "리다이렉트" },
-  { key: "ctr", label: "리다이렉트율" },
+  { key: "ctr", label: "내부 호출 비율" },
   { key: "imageRequests7d", label: "7일 이미지" },
   { key: "clicks7d", label: "7일 리다이렉트" },
-  { key: "ctr7d", label: "7일 리다이렉트율" },
+  { key: "ctr7d", label: "7일 내부 호출 비율" },
   { key: "lastUpdatedAt", label: "갱신" },
 ];
 const SITE_QUICK_FILTERS: Array<{ id: SiteQuickFilterId; label: string }> = [
@@ -482,8 +487,21 @@ export function BannerManagementConsole() {
   const topEffectSites = useMemo(
     () =>
       filteredSiteSummaries
-        .filter((site) => site.imageRequests7d > 0)
-        .sort((a, b) => getCtrRate7d(b) - getCtrRate7d(a) || b.clicks7d - a.clicks7d || b.imageRequests7d - a.imageRequests7d),
+        .filter((site) => hasReliableImageSample({ imageRequests: site.imageRequests7d }))
+        .sort(
+          (a, b) =>
+            getInternalRedirectImageRatio({ redirects: b.clicks7d, imageRequests: b.imageRequests7d }) -
+              getInternalRedirectImageRatio({ redirects: a.clicks7d, imageRequests: a.imageRequests7d }) ||
+            b.clicks7d - a.clicks7d ||
+            b.imageRequests7d - a.imageRequests7d,
+        ),
+    [filteredSiteSummaries],
+  );
+  const lowSampleExposureSites = useMemo(
+    () =>
+      filteredSiteSummaries
+        .filter((site) => site.imageRequests7d > 0 && !hasReliableImageSample({ imageRequests: site.imageRequests7d }))
+        .sort((a, b) => b.imageRequests7d - a.imageRequests7d),
     [filteredSiteSummaries],
   );
   const zeroClickExposureSites = useMemo(
@@ -582,15 +600,15 @@ export function BannerManagementConsole() {
     },
     {
       detail: `리다이렉트 ${formatNumber(filteredClicks)}회 · 이미지 ${formatNumber(filteredImageRequests)}회`,
-      label: "누적 리다이렉트율",
+      label: "누적 내부 호출 비율",
       tone: "normal",
-      value: formatPercent(getCtrRate({ clicks: filteredClicks, imageRequests: filteredImageRequests })),
+      value: formatPercent(getInternalRedirectImageRatio({ redirects: filteredClicks, imageRequests: filteredImageRequests })),
     },
     {
       detail: `리다이렉트 ${formatNumber(filteredClicks7d)}회 · 이미지 ${formatNumber(filteredImageRequests7d)}회`,
-      label: "최근 7일 리다이렉트율",
+      label: "최근 7일 내부 호출 비율",
       tone: zeroClickExposureSites.length > 0 ? "warning" : "normal",
-      value: formatPercent(getCtrRate7d({ clicks7d: filteredClicks7d, imageRequests7d: filteredImageRequests7d })),
+      value: formatPercent(getInternalRedirectImageRatio({ redirects: filteredClicks7d, imageRequests: filteredImageRequests7d })),
     },
   ];
   const overviewActionQueue: Array<{
@@ -636,7 +654,7 @@ export function BannerManagementConsole() {
         setSiteQuickFilter("zero_click_7d");
       },
       count: zeroClickExposureSites.length,
-      detail: "최근 7일 노출은 있지만 리다이렉트 호출이 없는 사이트입니다.",
+      detail: "최근 7일 이미지 요청은 있지만 내부 리다이렉트 호출이 없는 사이트입니다.",
       label: "7일 리다이렉트 없음",
       tone: "warning",
     },
@@ -921,8 +939,8 @@ export function BannerManagementConsole() {
           <span>미배정 {formatNumber(fleetSummary.unassignedPlacements)}개</span>
           <span>이미지 요청 {formatNumber(fleetSummary.imageRequests)}회</span>
           <span>리다이렉트 {formatNumber(fleetSummary.clicks)}회</span>
-          <span>리다이렉트율 {formatPercent(getCtrRate(fleetSummary))}</span>
-          <span>7일 리다이렉트율 {formatPercent(getCtrRate7d(fleetSummary))}</span>
+          <span>내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: fleetSummary.clicks, imageRequests: fleetSummary.imageRequests }))}</span>
+          <span>7일 내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: fleetSummary.clicks7d, imageRequests: fleetSummary.imageRequests7d }))}</span>
         </div>
         {selectedSiteSummary ? (
           <div className="ops-site-focus">
@@ -932,8 +950,8 @@ export function BannerManagementConsole() {
               슬롯 {formatNumber(selectedSiteSummary.placements)}개 · 미배정{" "}
               {formatNumber(selectedSiteSummary.unassignedPlacements)}개 · 이미지 요청{" "}
               {formatNumber(selectedSiteSummary.imageRequests)}회 · 리다이렉트 {formatNumber(selectedSiteSummary.clicks)}회 ·
-              리다이렉트율 {formatPercent(getCtrRate(selectedSiteSummary))} · 7일 리다이렉트율{" "}
-              {formatPercent(getCtrRate7d(selectedSiteSummary))}
+              내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: selectedSiteSummary.clicks, imageRequests: selectedSiteSummary.imageRequests }))} · 7일 내부 호출 비율{" "}
+              {formatPercent(getInternalRedirectImageRatio({ redirects: selectedSiteSummary.clicks7d, imageRequests: selectedSiteSummary.imageRequests7d }))}
             </span>
           </div>
         ) : null}
@@ -946,7 +964,7 @@ export function BannerManagementConsole() {
               <div className="ops-section-heading">
                 <div>
                   <h3>운영 상태 요약</h3>
-                  <p>필터 기준으로 배너 커버리지, no_ad, 내부 리다이렉트율을 한 번에 비교합니다.</p>
+                  <p>필터 기준으로 배너 커버리지, no_ad, 내부 리다이렉트 호출/이미지 요청 비율을 한 번에 비교합니다.</p>
                 </div>
                 <strong>{formatNumber(filteredSiteSummaries.length)}개 사이트</strong>
               </div>
@@ -1005,15 +1023,15 @@ export function BannerManagementConsole() {
             <span>미배정 사이트 {formatNumber(unassignedSiteCount)}개</span>
             <span>no_ad 사이트 {formatNumber(noAdSiteCount)}개</span>
             <span>활성 0 사이트 {formatNumber(inactiveSiteCount)}개</span>
-            <span>7일 노출 {formatNumber(filteredImageRequests7d)}회</span>
+            <span>7일 이미지 요청 {formatNumber(filteredImageRequests7d)}회</span>
             <span>7일 리다이렉트 {formatNumber(filteredClicks7d)}회</span>
           </div>
 
           <div className="ops-exception-grid">
             <OpsTable
-              title={`최근 7일 리다이렉트율 상위 사이트 (${formatNumber(topEffectSites.length)})`}
+              title={`최근 7일 내부 호출 비율 참고 (${formatNumber(topEffectSites.length)})`}
               isLoading={isLoading}
-              emptyText="아직 최근 7일 이미지 요청이 있는 사이트가 없습니다."
+              emptyText={`최근 7일 이미지 요청 ${formatNumber(MIN_RELIABLE_IMAGE_REQUESTS)}회 이상인 사이트가 없습니다.`}
             >
               {topEffectSites.slice(0, 10).map((site) => (
                 <tr key={site.siteKey}>
@@ -1021,16 +1039,34 @@ export function BannerManagementConsole() {
                     <strong>{site.siteKey}</strong>
                     <small>{site.siteUrl ?? "URL 미등록"}</small>
                   </td>
-                  <td>7일 리다이렉트율 {formatPercent(getCtrRate7d(site))}</td>
+                  <td>7일 내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: site.clicks7d, imageRequests: site.imageRequests7d }))}</td>
                   <td>7일 리다이렉트 {formatNumber(site.clicks7d)}</td>
                   <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
-                  <td>누적 리다이렉트율 {formatPercent(getCtrRate(site))}</td>
+                  <td>누적 내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: site.clicks, imageRequests: site.imageRequests }))}</td>
                 </tr>
               ))}
             </OpsTable>
 
             <OpsTable
-              title={`최근 7일 노출 대비 리다이렉트 없음 (${formatNumber(zeroClickExposureSites.length)})`}
+              title={`최근 7일 표본 부족 사이트 (${formatNumber(lowSampleExposureSites.length)})`}
+              isLoading={isLoading}
+              emptyText="최근 7일 이미지 요청이 있지만 표본 부족인 사이트가 없습니다."
+            >
+              {lowSampleExposureSites.slice(0, 10).map((site) => (
+                <tr key={site.siteKey}>
+                  <td>
+                    <strong>{site.siteKey}</strong>
+                    <small>{site.siteUrl ?? "URL 미등록"}</small>
+                  </td>
+                  <td>7일 이미지 {formatNumber(site.imageRequests7d)} / 기준 {formatNumber(MIN_RELIABLE_IMAGE_REQUESTS)}</td>
+                  <td>7일 리다이렉트 {formatNumber(site.clicks7d)}</td>
+                  <td>내부 호출 비율은 순위 제외</td>
+                </tr>
+              ))}
+            </OpsTable>
+
+            <OpsTable
+              title={`최근 7일 이미지 요청 대비 리다이렉트 없음 (${formatNumber(zeroClickExposureSites.length)})`}
               isLoading={isLoading}
               emptyText="최근 7일 이미지 요청 20회 이상인데 리다이렉트 0회인 사이트가 없습니다."
             >
@@ -1042,7 +1078,7 @@ export function BannerManagementConsole() {
                   </td>
                   <td>7일 이미지 {formatNumber(site.imageRequests7d)}</td>
                   <td>7일 리다이렉트 {formatNumber(site.clicks7d)}</td>
-                  <td>7일 리다이렉트율 {formatPercent(getCtrRate7d(site))}</td>
+                  <td>7일 내부 호출 비율 {formatPercent(getInternalRedirectImageRatio({ redirects: site.clicks7d, imageRequests: site.imageRequests7d }))}</td>
                 </tr>
               ))}
             </OpsTable>
@@ -1195,10 +1231,10 @@ export function BannerManagementConsole() {
                           <td>{formatNumber(site.requests)}</td>
                           <td>{formatNumber(site.imageRequests)}</td>
                           <td>{formatNumber(site.clicks)}</td>
-                          <td>{formatPercent(getCtrRate(site))}</td>
+                          <td>{formatPercent(getInternalRedirectImageRatio({ redirects: site.clicks, imageRequests: site.imageRequests }))}</td>
                           <td>{formatNumber(site.imageRequests7d)}</td>
                           <td>{formatNumber(site.clicks7d)}</td>
-                          <td>{formatPercent(getCtrRate7d(site))}</td>
+                          <td>{formatPercent(getInternalRedirectImageRatio({ redirects: site.clicks7d, imageRequests: site.imageRequests7d }))}</td>
                           <td>{formatDateTime(site.lastUpdatedAt)}</td>
                           <td className="ops-site-actions">
                             <button type="button" onClick={() => openSiteWorkflow(site, "assignments")}>
@@ -1841,16 +1877,6 @@ function getNoAdRate(placement: PlacementRow): number {
   return placement.noAd / placement.requests;
 }
 
-function getCtrRate(input: { clicks: number; imageRequests: number }): number {
-  if (input.imageRequests <= 0) return 0;
-  return input.clicks / input.imageRequests;
-}
-
-function getCtrRate7d(input: { clicks7d: number; imageRequests7d: number }): number {
-  if (input.imageRequests7d <= 0) return 0;
-  return input.clicks7d / input.imageRequests7d;
-}
-
 function matchesSiteQuickFilter(site: SiteSummaryRow, filter: SiteQuickFilterId): boolean {
   switch (filter) {
     case "all":
@@ -1925,9 +1951,9 @@ function sortSiteSummaries(sites: SiteSummaryRow[], key: SiteSortKey, direction:
 function getSiteSortValue(site: SiteSummaryRow, key: SiteSortKey): number | string {
   switch (key) {
     case "ctr":
-      return getCtrRate(site);
+      return getInternalRedirectImageRatio({ redirects: site.clicks, imageRequests: site.imageRequests });
     case "ctr7d":
-      return getCtrRate7d(site);
+      return getInternalRedirectImageRatio({ redirects: site.clicks7d, imageRequests: site.imageRequests7d });
     case "lastUpdatedAt":
       return Date.parse(site.lastUpdatedAt) || 0;
     case "siteKey":

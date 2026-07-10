@@ -6,6 +6,12 @@
 - Scope: `/banner-management` remains available; only the dashboard tab and its now-unused panel code were removed.
 - Verification: `pnpm type-check` and `pnpm build` passed.
 
+## 2026-07-11 Banner Metric Accuracy
+
+- Change: renamed dashboard labels from redirect rate to internal redirect-call/image-request ratio; this is not a user CTR.
+- Change: the 7-day ratio ranking now requires 100 image requests. Lower-volume sites, including one-image samples, are shown in a separate sample-insufficient table and cannot rank above measured traffic.
+- Verification: `app/lib/banner-reporting.test.ts` and `app/lib/banner-management-store.test.ts` passed with 10 assertions; targeted ESLint, `pnpm type-check`, and `pnpm build` passed.
+
 ## 2026-07-10 Sitemap Read-Only Review
 
 - Snapshot `2026-07-10T13:09:12.180Z`: 98 sites refreshed; GSC and sitemap collection succeeded. `runmania` alone recorded a transient GA4 `DEADLINE_EXCEEDED` response.
