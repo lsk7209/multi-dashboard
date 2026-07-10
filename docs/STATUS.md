@@ -7,6 +7,7 @@
 - Dashboard Mail now renders direct collector availability and evidence for GitHub Actions, dashboard artifacts, and GA4. Current state: GitHub Actions skipped because no token is available, dashboard artifacts ok, GA4 error for 40 quota-limited sites.
 - Verification: 99 focused Vitest tests, `pnpm type-check`, `pnpm build`, and 11-check `pnpm dashboard:ui-smoke -- --url http://127.0.0.1:3004/` passed.
 - Remaining operational blocker: restore GA4 Data API quota capacity or collection pacing before treating per-site GA4 telemetry as actionable. GitHub Actions collection remains unavailable until a token is configured.
+- Production evidence: GitHub commit `4cf75b7` was deployed through the Git integration as Vercel production deployment `dpl_8iLBz5rp7BDoezNQuraVHLYv5cBC`. `https://multi-dashboard-one.vercel.app` returned HTTP 200 and the rendered collector rows matched the current direct evidence.
 
 ## 2026-07-10 Dashboard Runtime
 

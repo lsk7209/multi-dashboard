@@ -7,6 +7,7 @@
 - The Mail panel exposes collector coverage with status and evidence: GitHub Actions is skipped because `GITHUB_TOKEN`/`GH_TOKEN` is absent, dashboard artifacts are readable, and GA4 is quota-limited. Treat a skipped collector as unavailable evidence, not a clean zero-finding result.
 - Validation evidence: focused Vitest 99 passed, `pnpm type-check` passed, `pnpm build` passed, and rendered UI smoke passed with 11 checks against `http://127.0.0.1:3004/`.
 - Next operator action: restore GA4 Data API quota capacity or add collection pacing, then run `pnpm dashboard:refresh`, `pnpm ops:intel`, `pnpm ops:triage`, and the dashboard UI smoke. Configure a GitHub token separately before relying on GitHub Actions failure counts.
+- Production verification: Vercel deployment `dpl_8iLBz5rp7BDoezNQuraVHLYv5cBC` for GitHub commit `4cf75b7` is Ready. The production dashboard returned HTTP 200 and rendered GitHub Actions skipped, dashboard artifacts ok, and GA4 quota-limited for 40 sites.
 
 - Content quality polish for the 2026-07-10 scheduled top-up batches is complete for known recurring Korean wording defects. Harness: `.goal-harness/content-quality-polish-2026-07-10/`.
 - Local artifacts were corrected with `scripts/content-quality-polish-2026-07-10.mjs`: `data/content-polish/local-apply-2026-07-10.json` reports 458 replacements across 55 files; `data/content-polish/local-scan-after-2026-07-10.json` reports hitCount 0.

@@ -1,5 +1,5 @@
 {
-  "url": "http://127.0.0.1:3004/",
+  "url": "https://multi-dashboard-one.vercel.app/",
   "generatedAt": "2026-07-10T11:33:59.439Z",
   "siteCount": 98,
   "blockingSources": [
@@ -47,7 +47,7 @@
     "collector-availability-visible",
     "readable-rendered-text"
   ],
-  "artifactGeneratedAt": "2026-07-10T11:50:27.331Z",
+  "artifactGeneratedAt": "2026-07-10T11:51:35.772Z",
   "date": "2026-07-10",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,

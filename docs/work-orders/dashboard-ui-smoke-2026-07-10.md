@@ -4,7 +4,7 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 
 ## Summary
 
-- URL: `http://127.0.0.1:3004/`
+- URL: `https://multi-dashboard-one.vercel.app/`
 - Stats snapshot: `2026-07-10T11:33:59.439Z`
 - Sites: 98
 - Blocking sources: 1
