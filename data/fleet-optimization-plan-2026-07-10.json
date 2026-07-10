@@ -1,16 +1,13 @@
 {
-  "generatedAt": "2026-07-10T13:12:32.262Z",
+  "generatedAt": "2026-07-10T13:54:56.763Z",
   "dashboardEvidence": {
     "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
-    "snapshotTimestamp": "2026-07-10T13:09:12.180Z",
+    "snapshotTimestamp": "2026-07-10T13:53:48.934Z",
     "refreshCommand": "pnpm stats:update",
-    "refreshFailedSources": [
-      "skipped_refresh_failed:ga4:api_error:1"
-    ],
+    "refreshFailedSources": [],
     "connectorStatus": {
       "ga4Status": {
-        "ok": 97,
-        "api_error": 1
+        "ok": 98
       },
       "gscStatus": {
         "ok": 98
@@ -47,7 +44,7 @@
   },
   "summary": {
     "siteCount": 98,
-    "adsenseProblemRows": 1,
+    "adsenseProblemRows": 0,
     "seoCandidateCount": 20,
     "titleHandoffCount": 10,
     "indexingCount": 1,
@@ -56,27 +53,18 @@
   },
   "adsenseQueue": {
     "artifactPath": "data\\adsense-remediation-queue-2026-07-10.json",
-    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T13:09:12.180Z",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T13:53:48.934Z",
     "summary": {
       "totalRows": 98,
       "reviewedRows": 84,
-      "adsenseOkRows": 83,
-      "problemRows": 1,
+      "adsenseOkRows": 84,
+      "problemRows": 0,
       "ordinaryAdsenseProof": 0,
       "approvedRootSubdomainScope": 0,
       "gscAuthTelemetry": 0,
-      "ga4ConfigTelemetry": 1
+      "ga4ConfigTelemetry": 0
     },
-    "nextItems": [
-      {
-        "priority": 3999991,
-        "siteId": "runmania",
-        "host": "runmania.kr",
-        "lane": "ga4_config_telemetry",
-        "actionType": "telemetry",
-        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site."
-      }
-    ]
+    "nextItems": []
   },
   "seoCandidates": [
     {
@@ -97,7 +85,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -124,7 +112,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -151,7 +139,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -178,7 +166,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -205,7 +193,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -232,7 +220,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -259,7 +247,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -286,7 +274,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -313,7 +301,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -340,7 +328,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -367,7 +355,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -394,7 +382,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -421,7 +409,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -448,7 +436,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -475,7 +463,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -502,7 +490,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -529,7 +517,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -556,7 +544,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -583,7 +571,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -610,7 +598,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-10T13:09:12.180Z",
+        "snapshot=2026-07-10T13:53:48.934Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",

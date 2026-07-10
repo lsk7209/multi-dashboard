@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-10T13:09:12.180Z
+# Fleet Optimization Plan - 2026-07-10T13:53:48.934Z
 
 ## Verdict
 
@@ -6,17 +6,16 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-10T13:09:12.180Z`
+- Snapshot: `2026-07-10T13:53:48.934Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:ga4:api_error:1`
+- Refresh failed sources: `none`
 
 ## Connector Status
 
 | Connector | Status | Count |
 |---|---|---:|
-| `ga4Status` | `api_error` | 1 |
-| `ga4Status` | `ok` | 97 |
+| `ga4Status` | `ok` | 98 |
 | `gscStatus` | `ok` | 98 |
 | `adsenseStatus` | `disabled` | 3 |
 | `adsenseStatus` | `ok` | 95 |
@@ -32,7 +31,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 | Metric | Count |
 |---|---:|
 | Sites | 98 |
-| AdSense problem rows | 1 |
+| AdSense problem rows | 0 |
 | SEO candidates | 20 |
 | Title handoff | 10 |
 | Indexing | 1 |
@@ -45,7 +44,7 @@ Source: `data\adsense-remediation-queue-2026-07-10.json`
 
 | Priority | Site | Lane | Action | Stop condition |
 |---:|---|---|---|---|
-| 3999991 | `runmania.kr` | `ga4_config_telemetry` | `telemetry` | Rerun pnpm stats:update and confirm ga4Status=ok for this site. |
+
 
 ## Google Search / Content Queue
 

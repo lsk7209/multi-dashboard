@@ -1,6 +1,6 @@
-# AdSense Remediation Queue - 2026-07-10T13:12:31.776Z
+# AdSense Remediation Queue - 2026-07-10T13:54:56.268Z
 
-- Collector snapshot: `data/site-stats.json generatedAt=2026-07-10T13:09:12.180Z`
+- Collector snapshot: `data/site-stats.json generatedAt=2026-07-10T13:53:48.934Z`
 - Production mutation: `false`
 - AdSense console checked: `false`
 
@@ -10,12 +10,12 @@
 |---|---:|
 | Total rows | 98 |
 | Reviewed rows | 84 |
-| AdSense OK rows | 83 |
-| Problem rows | 1 |
+| AdSense OK rows | 84 |
+| Problem rows | 0 |
 | Ordinary AdSense proof | 0 |
 | Approved-root/subdomain scope | 0 |
 | GSC auth telemetry | 0 |
-| GA4 config telemetry | 1 |
+| GA4 config telemetry | 0 |
 
 ## Queue
 
@@ -33,6 +33,4 @@
 
 ### ga4_config_telemetry
 
-| Priority | Site | Host | Stop condition |
-|---:|---|---|---|
-| 3999991 | `runmania` | runmania.kr | Rerun pnpm stats:update and confirm ga4Status=ok for this site. |
+- none

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T13:12:32.864Z",
+  "generatedAt": "2026-07-10T13:54:57.387Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,14 +8,12 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-10T13:09:12.180Z",
+    "snapshotTimestamp": "2026-07-10T13:53:48.934Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-10.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
     "refreshCommand": "pnpm stats:update",
-    "refreshFailedSources": [
-      "skipped_refresh_failed:ga4:api_error:1"
-    ]
+    "refreshFailedSources": []
   },
   "summary": {
     "siteCount": 13,
