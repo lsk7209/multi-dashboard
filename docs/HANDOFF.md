@@ -2,6 +2,9 @@
 
 ## Current State
 
+- Read-only sitemap review on 2026-07-10 after snapshot `2026-07-10T13:09:12.180Z`: `nicewomen.kr` and `ezfunnel.kr` returned homepage/robots/sitemap HTTP 200, self-canonical URLs, index-follow metadata, and valid sitemap index structures. Their single GSC sitemap warnings require Search Console's internal warning detail before a safe mutation.
+- `autorentlab.com` has a concrete sitemap defect: 26 public sitemap URLs have future `lastmod` values through `2026-07-16`. Repo evidence in `D:\web\autorentlab\lib\blog-articles.ts` marks those future `publishAt` items as `published`, and `getPublicBlogArticles()` exposes every published item without checking its publish time. This is a post-recovery code-fix candidate; no site mutation or deployment was made while dashboard actionability remains read-only.
+- Fresh dashboard collection otherwise completed for all 98 sites: GSC and sitemap collection succeeded, while `runmania` has one transient GA4 `DEADLINE_EXCEEDED` error. Do not use that one GA4 row for traffic-priority decisions until a later refresh succeeds.
 - GA4 collection pacing was added on 2026-07-10. All Data API reports now pass through a global default-one-request queue with a 250ms minimum interval; environment overrides are `STATS_UPDATE_GA4_CONCURRENCY` (1-4) and `STATS_UPDATE_GA4_MIN_INTERVAL_MS` (0-10000). The default full-run timeout is now 10 minutes to cover a paced 98-site refresh.
 - Fresh direct snapshot: `pnpm dashboard:refresh` completed at `2026-07-10T12:19:48.153Z` for 98 sites. GA4 failed=0, GSC failed=0, sitemap failures=0, AdSense failures=0, and ads.txt failures=0. The prior GA4 429 condition affecting 40 sites is cleared.
 - Current direct ops triage has only three low GSC sitemap warnings (`nicewomen`, `autorentlab`, `ezfunnel`). They are not deployment or collector failures.

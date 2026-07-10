@@ -1,5 +1,11 @@
 # Status
 
+## 2026-07-10 Sitemap Read-Only Review
+
+- Snapshot `2026-07-10T13:09:12.180Z`: 98 sites refreshed; GSC and sitemap collection succeeded. `runmania` alone recorded a transient GA4 `DEADLINE_EXCEEDED` response.
+- `nicewomen.kr` and `ezfunnel.kr`: homepage, robots, sitemap index, canonical, and indexability checks are publicly clean. Preserve the GSC warnings as read-only evidence until the Search Console warning detail is available.
+- `autorentlab.com`: sitemap structure is reachable and valid XML, but 26 URLs have future `lastmod` timestamps through `2026-07-16`. The linked Next.js repo exposes future `publishAt` articles when their status is `published`; apply the date gate only after post-recovery actionability allows a production change.
+
 ## 2026-07-10 GA4 Collection Pacing
 
 - Added a global GA4 request queue in `scripts/setup/update-ga4-stats.ts`: default concurrency=1 and minimum interval=250ms. This isolates GA4 pacing from the six-site collector concurrency and covers both metric and traffic-keyword reports. The default full-run timeout is 10 minutes.

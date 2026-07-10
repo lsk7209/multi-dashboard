@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-07-10T12:19:48.964Z",
+  "generatedAt": "2026-07-10T13:09:12.813Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-10T12:19:48.332Z",
+  "statsSnapshot": "2026-07-10T13:09:12.180Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-10T12:19:48.958Z",
+      "checkedAt": "2026-07-10T13:09:12.807Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-10T12:19:48.332Z.",
-      "checkedAt": "2026-07-10T12:19:48.957Z",
-      "count": 3
+      "detail": "Read dashboard artifact snapshot=2026-07-10T13:09:12.180Z.",
+      "checkedAt": "2026-07-10T13:09:12.806Z",
+      "count": 4
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-10T12:19:48.957Z",
+      "checkedAt": "2026-07-10T13:09:12.806Z",
       "count": 98
     }
   },
@@ -30,17 +30,27 @@
     "github-actions": 0,
     "gsc": 3,
     "adsense": 0,
-    "ga4": 0,
+    "ga4": 1,
     "vercel": 0,
     "other": 0
   },
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 3
   },
   "findings": [
+    {
+      "id": "ga4-runmania-pwwgru",
+      "kind": "ga4",
+      "severity": "high",
+      "priority": 80,
+      "site": "runmania",
+      "sourceLine": "direct:dashboard site=runmania kind=ga4 status=api_error",
+      "title": "runmania.kr: GA4 direct collector signal api_error",
+      "recommendedAction": "Verify GA4 property binding, tag collection, and dashboard site mapping from current first-party telemetry."
+    },
     {
       "id": "gsc-nicewomen-t1o7t1",
       "kind": "gsc",
@@ -67,9 +77,9 @@
       "severity": "low",
       "priority": 20,
       "site": "ezfunnel",
-      "sourceLine": "direct:dashboard site=ezfunnel kind=gsc status=sitemap warnings=1 errors=0 detail=https://ezfunnel.kr/sitemap_index.xml warnings=1 errors=0 submitted=481 downloaded=2026-07-09T04:27:04.328Z submittedAt=2026-06-02T03:55:40.377Z",
+      "sourceLine": "direct:dashboard site=ezfunnel kind=gsc status=sitemap warnings=1 errors=0 detail=https://ezfunnel.kr/sitemap_index.xml warnings=1 errors=0 submitted=484 downloaded=2026-07-09T04:27:04.328Z submittedAt=2026-06-02T03:55:40.377Z",
       "title": "ezfunnel.kr: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://ezfunnel.kr/sitemap_index.xml warnings=1 errors=0 submitted=481 downloaded=2026-07-09T04:27:04.328Z submittedAt=2026-06-02T03:55:40.377Z."
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://ezfunnel.kr/sitemap_index.xml warnings=1 errors=0 submitted=484 downloaded=2026-07-09T04:27:04.328Z submittedAt=2026-06-02T03:55:40.377Z."
     }
   ]
 }

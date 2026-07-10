@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-10T12:23:20.716Z",
-  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T12:19:48.332Z",
+  "generatedAt": "2026-07-10T13:12:31.776Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-10T13:09:12.180Z",
   "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
   "productionMutationPerformed": false,
   "adsenseConsoleChecked": false,
@@ -25,17 +25,32 @@
   "summary": {
     "totalRows": 98,
     "reviewedRows": 84,
-    "adsenseOkRows": 84,
-    "problemRows": 0,
+    "adsenseOkRows": 83,
+    "problemRows": 1,
     "ordinaryAdsenseProof": 0,
     "approvedRootSubdomainScope": 0,
     "gscAuthTelemetry": 0,
-    "ga4ConfigTelemetry": 0
+    "ga4ConfigTelemetry": 1
   },
   "lanes": {
     "ordinary_adsense_proof": [],
     "approved_root_subdomain_scope": [],
     "gsc_auth_telemetry": [],
-    "ga4_config_telemetry": []
+    "ga4_config_telemetry": [
+      {
+        "siteId": "runmania",
+        "host": "runmania.kr",
+        "name": "runmania.kr",
+        "lane": "ga4_config_telemetry",
+        "priority": 3999991,
+        "requiredEvidence": [
+          "GA4 property binding returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm ga4Status=ok for this site.",
+        "notes": [
+          "ga4Status=api_error"
+        ]
+      }
+    ]
   }
 }
