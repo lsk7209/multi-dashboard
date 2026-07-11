@@ -568,9 +568,8 @@ sites:
   - id: todaypharm
     name: todaypharm.kr
     enabled: true
-    platform: wordpress
+    platform: nextjs
     url: https://todaypharm.kr/
-    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
     ga4PropertyId: "534313222"
     gscSiteUrl: https://todaypharm.kr/
     sitemapUrls:
