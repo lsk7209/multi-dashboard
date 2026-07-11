@@ -6,7 +6,7 @@
 - The dashboard records HMAC-hashed anonymous sessions, one event per assignment/session/day, and uses a 24-hour impression-to-click eligibility window.
 - The Git-connected Vercel dashboard production deployment serves the event endpoint and loader.
 - Headed-Chrome verification passed on Temon and Smallhomepick: browser POST event returned 200 with origin-specific CORS; Temon's qualified-impression count increased.
-- WordPress MU plugins were applied with timestamped backups to every target except Healfood.
+- WordPress MU plugins were applied with timestamped backups to every target. Healfood's stale configured path was corrected to `/home/healfood/public_html`, and its LiteSpeed cache was purged after installation.
 
 ## Verification
 
@@ -15,6 +15,5 @@
 
 ## Remaining rollout work
 
-- `healfood.kr`: configured SSH private-key file is invalid, so no remote write was attempted.
 - `pregnancy-ehon365` and `yungyanggogo`: banner components are untracked user work and remain untouched.
 - Recheck app deployments/cache for Cartain, Tennisfrens, Todaypharm, and Dogswhere. Confirm Notebook serves the loader as well as the marker.
