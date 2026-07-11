@@ -188,6 +188,13 @@
 
 ## 2026-07-11 Read-Only Candidate Confirmation
 
+### Dashboard verification and Cartain title experiment
+
+- Dashboard snapshot refreshed at `2026-07-11T03:35:08.164Z`, 98 sites, with zero collector failures.
+- Post-recovery verification now requires an owned `DASHBOARD_URL`; verified against the current dashboard server, not an unrelated local service.
+- Cartain candidate `new-car-release-schedule-2026-second-half` was updated and deployed with title-only scope. API and public SSR verification passed, including canonical and indexability checks.
+- Remaining dashboard candidates still require their own first-party evidence loops; no blanket fleet-wide mutation was performed.
+
 - Snapshot `2026-07-10T15:12:35.317Z`: 98/98 GA4 and GSC collections healthy.
 - No individual site mutation approved. The next evidence gate is exact GSC sitemap warning detail and page-query data for the two confirmed content candidates.
 - Change: `scripts/setup/optimize-coupang-banner-weights.ts` reads recent assignment-level impressions and redirects, applies Bayesian smoothing, bounds variant weights between 10 and 80, requires minimum placement impressions and redirects, and defaults to dry-run unless `--apply` is passed.

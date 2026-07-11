@@ -105,6 +105,14 @@
 
 ## Verification Evidence
 
+## 2026-07-11 Dashboard Verification and Cartain Title Experiment
+
+- Fresh dashboard snapshot: `pnpm stats:update` completed at `2026-07-11T03:35:08.164Z` for 98 sites. GA4, GSC, sitemap, AdSense, and ads.txt failures were all 0.
+- Verification guard: `scripts/setup/run-dashboard-verification.ts` now requires an explicit `DASHBOARD_URL` for rendered UI verification. This prevents `dashboard:post-recovery` from validating an unrelated service on port 3000. Targeted Vitest (19 tests), `pnpm type-check`, `pnpm build`, and `DASHBOARD_URL=http://127.0.0.1:3102/ pnpm dashboard:post-recovery` passed.
+- Cartain title experiment: current GSC page/query evidence selected only the existing 2026 new-car release-schedule article. The title was updated without changing slug, body, excerpt, thumbnail, or publish date.
+- Cartain API repair: `lsk7209/cartainkr` commit `a8197b0` makes the admin update route parse JSON string bodies, reject missing IDs, verify affected rows, and return success only after a real DB update. Lint and production build passed; Vercel deployment reached Ready.
+- Live Cartain verification: cache-MISS API read confirmed the target ID/slug, exact updated title, intact excerpt/content/thumbnail fields, and `updatedAt=2026-07-11T03:49:58.324Z`. The public SSR page rendered the new title and `og:title`, canonical `https://cartain.kr/magazine/new-car-release-schedule-2026-second-half`, and index/follow robots metadata.
+
 - 2026-07-11: `pnpm type-check` and `pnpm build` passed after removing the dashboard tab. A source guard confirmed no dashboard `banners` tab or banner-console reference remains in `app/page.tsx`.
 - 2026-07-11: banner metric helper tests and banner store tests passed (10 assertions); targeted ESLint, TypeScript, and production build passed after the low-sample ranking fix.
 
