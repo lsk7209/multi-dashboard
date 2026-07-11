@@ -1,7 +1,7 @@
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import {
   buildExternalBlockerEvidence,
   buildDashboardActionability,
@@ -13,9 +13,31 @@ import {
   isExpectedFleetReadinessBlockArtifact,
   loadGscAuditForStatsSnapshot,
   renderMarkdown,
+  verificationDashboardUrl,
 } from "./run-dashboard-verification.js";
 
 describe("run-dashboard-verification", () => {
+  const originalDashboardUrl = process.env.DASHBOARD_URL;
+
+  beforeEach(() => {
+    process.env.DASHBOARD_URL = "http://127.0.0.1:3000/";
+  });
+
+  afterAll(() => {
+    if (originalDashboardUrl === undefined) {
+      delete process.env.DASHBOARD_URL;
+      return;
+    }
+    process.env.DASHBOARD_URL = originalDashboardUrl;
+  });
+
+  it("requires an explicit owned dashboard URL for rendered UI verification", () => {
+    delete process.env.DASHBOARD_URL;
+    expect(() => verificationDashboardUrl()).toThrow(
+      "DASHBOARD_URL is required for rendered UI verification.",
+    );
+  });
+
   it("returns nonzero exit codes for failed or pending verification verdicts", () => {
     expect(dashboardVerificationExitCode("local_verified")).toBe(0);
     expect(dashboardVerificationExitCode("local_verified_external_blocker")).toBe(0);
@@ -666,7 +688,7 @@ describe("run-dashboard-verification", () => {
       },
     ], "2026-07-05");
     expect(postRecoveryCommands.find((command) => command.id === "dashboard-verify")?.requires).toEqual([
-      "A local dashboard dev server is running at http://127.0.0.1:3000/; start it with `pnpm dev --hostname 127.0.0.1 --port 3000` or set DASHBOARD_URL/--url.",
+      "Set DASHBOARD_URL to an owned current multi-dashboard server URL before running `pnpm dashboard:verify`.",
     ]);
     expect(postRecoveryCommands.find((command) => command.id === "dashboard-acceptance")?.requires).toEqual([
       "Run after `pnpm dashboard:verify` has written `data\\dashboard-verification-2026-07-05.json`.",
@@ -780,9 +802,7 @@ describe("run-dashboard-verification", () => {
     expect(markdown).toContain("2. `pnpm dashboard:verify`");
     expect(markdown).toContain("3. `pnpm dashboard:acceptance data\\dashboard-verification-2026-07-05.json`");
     expect(markdown).toContain("Run after `pnpm dashboard:verify` has written `data\\dashboard-verification-2026-07-05.json`.");
-    expect(markdown).toContain("Requires: A local dashboard dev server is running at http://127.0.0.1:3000/");
-    expect(markdown).toContain("pnpm dev --hostname 127.0.0.1 --port 3000");
-    expect(markdown).toContain("DASHBOARD_URL/--url");
+    expect(markdown).toContain("Requires: Set DASHBOARD_URL to an owned current multi-dashboard server URL");
     expect(markdown).toContain("## Rendered UI Smoke Evidence");
     expect(markdown).toContain("- Status: `stale`");
     expect(markdown).toContain("- Expected stats snapshot: `2026-07-05T14:30:00.000Z`");

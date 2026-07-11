@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T23:15:34.403Z",
+  "generatedAt": "2026-07-11T03:42:43.421Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,7 +8,7 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-10T23:13:31.297Z",
+    "snapshotTimestamp": "2026-07-11T03:35:08.164Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-11.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
@@ -399,7 +399,7 @@
         "gscClicks30d": 2,
         "gscCtr30d": 0.003278688524590164,
         "gscPosition30d": 61.795081967213115,
-        "ga4ActiveUsers30d": 18
+        "ga4ActiveUsers30d": 17
       },
       "topQueries": [],
       "technicalStatus": {

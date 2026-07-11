@@ -4,8 +4,8 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 
 ## Summary
 
-- URL: `http://127.0.0.1:3101/?actionabilityMode=local-evidence&actionabilityToken=redacted`
-- Stats snapshot: `2026-07-10T23:13:31.297Z`
+- URL: `http://127.0.0.1:3102/?actionabilityMode=local-evidence&actionabilityToken=redacted`
+- Stats snapshot: `2026-07-11T03:35:08.164Z`
 - Sites: 98
 - Blocking sources: 0
 - Maintenance sources: 0

@@ -260,8 +260,13 @@ export function buildDashboardVerificationCommands(
   ];
 }
 
-function verificationDashboardUrl(): string {
-  const rawUrl = process.env.DASHBOARD_URL || "http://127.0.0.1:3000/";
+export function verificationDashboardUrl(): string {
+  const rawUrl = process.env.DASHBOARD_URL?.trim();
+  if (!rawUrl) {
+    throw new Error(
+      "DASHBOARD_URL is required for rendered UI verification. Set it to an owned current multi-dashboard server URL.",
+    );
+  }
   try {
     const url = new URL(rawUrl);
     url.searchParams.set("actionabilityMode", "local-evidence");
@@ -813,7 +818,7 @@ export function buildDashboardPostRecoveryCommands(
       reason:
         "Refresh the dashboard snapshot and run the full local verification gate, including rendered browser evidence.",
       requires: [
-        "A local dashboard dev server is running at http://127.0.0.1:3000/; start it with `pnpm dev --hostname 127.0.0.1 --port 3000` or set DASHBOARD_URL/--url.",
+        "Set DASHBOARD_URL to an owned current multi-dashboard server URL before running `pnpm dashboard:verify`.",
       ],
     },
     {

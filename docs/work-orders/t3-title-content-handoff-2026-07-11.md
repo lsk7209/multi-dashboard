@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-10T23:13:31.297Z
+# T3 Title/Content Handoff - 2026-07-11T03:35:08.164Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-10T23:13:31.297Z`
+- Snapshot: `2026-07-11T03:35:08.164Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-11.json`
 - Sites path: `scripts\setup\sites.yaml`
@@ -33,7 +33,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `nexttech7.com` | 12 | `title_handoff` | 789 impr / 15 clicks / 1.90% CTR / pos 12.62 | 164 | `missing` | `D:\web\nexttech7com` |
 | `homeimer.com` | 13 | `content_handoff` | 951 impr / 0 clicks / 0.00% CTR / pos 66.67 | 10 | `missing` | `D:\web\homeimercom` |
 | `today2424.kr` | 14 | `content_handoff` | 888 impr / 34 clicks / 3.83% CTR / pos 9.43 | 93 | `missing` | `D:\web\today2424\2424` |
-| `legalser.com` | 16 | `content_handoff` | 610 impr / 2 clicks / 0.33% CTR / pos 61.80 | 18 | `missing` | `D:\web\legalsercom` |
+| `legalser.com` | 16 | `content_handoff` | 610 impr / 2 clicks / 0.33% CTR / pos 61.80 | 17 | `missing` | `D:\web\legalsercom` |
 | `healfood.kr` | 17 | `title_handoff` | 493 impr / 4 clicks / 0.81% CTR / pos 8.85 | 29 | `missing` | `D:\web\healfoodkr` |
 
 ## Technical Status

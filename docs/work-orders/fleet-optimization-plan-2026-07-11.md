@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-10T23:13:31.297Z
+# Fleet Optimization Plan - 2026-07-11T03:35:08.164Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-10T23:13:31.297Z`
+- Snapshot: `2026-07-11T03:35:08.164Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `none`
@@ -64,11 +64,11 @@ Source: `data\adsense-remediation-queue-2026-07-11.json`
 | 12 | `nexttech7.com` | `title_handoff` | T3 | 789 impr / 1.90% CTR / pos 12.62 / 164 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 13 | `homeimer.com` | `content_handoff` | T3 | 951 impr / 0.00% CTR / pos 66.67 / 10 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 14 | `today2424.kr` | `content_handoff` | T3 | 888 impr / 3.83% CTR / pos 9.43 / 93 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 15 | `legalser.com` | `technical_seo` | T2 | 610 impr / 0.33% CTR / pos 61.80 / 18 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
-| 16 | `legalser.com` | `content_handoff` | T3 | 610 impr / 0.33% CTR / pos 61.80 / 18 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 15 | `legalser.com` | `technical_seo` | T2 | 610 impr / 0.33% CTR / pos 61.80 / 17 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
+| 16 | `legalser.com` | `content_handoff` | T3 | 610 impr / 0.33% CTR / pos 61.80 / 17 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 17 | `healfood.kr` | `title_handoff` | T3 | 493 impr / 0.81% CTR / pos 8.85 / 29 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 18 | `ezfunnel.kr` | `indexing` | T2 | 63 impr / 1.59% CTR / pos 11.33 / 42 users | Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed. |
-| 19 | `nicewomen.kr` | `indexing` | T2 | 13 impr / 0.00% CTR / pos 5.92 / 71 users | Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed. |
+| 19 | `nicewomen.kr` | `indexing` | T2 | 13 impr / 0.00% CTR / pos 5.92 / 70 users | Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed. |
 | 20 | `autorentlab.com` | `indexing` | T2 | 3 impr / 0.00% CTR / pos 7.33 / 61 users | Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed. |
 
 ## Stop Conditions

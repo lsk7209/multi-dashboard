@@ -1,5 +1,11 @@
 # Status
 
+## 2026-07-11 Fresh Snapshot and Verification URL Guard
+
+- `pnpm stats:update` completed at `2026-07-11T03:35:08.164Z` for 98 sites: GA4, GSC, sitemap, AdSense-code, and ads.txt failures are all zero.
+- Post-recovery passed 3/3 with artifact integrity passing and readiness `ready_to_act` when rendered UI smoke used the current owned dashboard server.
+- `dashboard:verify` now requires `DASHBOARD_URL`; it no longer silently treats an arbitrary service on `localhost:3000` as dashboard evidence. Focused verification tests passed (19/19), along with `pnpm type-check` and `pnpm build`.
+
 ## 2026-07-11 Page/Query CTR Evidence
 
 - Added `scripts/setup/collect-gsc-page-query-opportunities.ts`, a read-only 28-day GSC collector for page/query title and meta opportunities.
