@@ -18,3 +18,4 @@
 - Pregnancy, Yungyang, and Dogswhere are deployed and their public pages expose both the measurement marker and loader.
 - Cartain's client-rendered banner is present on the public home page. The updated mutation-aware loader recorded a real-browser event with HTTP 200.
 - Notebook LiteSpeed JavaScript optimization now excludes `banner-measurement.js`; cache purge exposed the loader and a real-browser event returned HTTP 200.
+- The console includes a qualified-CTR action queue: fewer than 100 visible impressions is `수집 중`; sufficient samples with zero attributed clicks are replacement candidates; CTR below 1% is marked for review.
