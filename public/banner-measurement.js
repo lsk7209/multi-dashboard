@@ -1,4 +1,4 @@
-/* global IntersectionObserver, URL, document, fetch, window */
+/* global IntersectionObserver, MutationObserver, URL, document, fetch, window */
 
 (() => {
   const selector = "[data-banner-measurement]";
@@ -43,9 +43,10 @@
     });
   };
 
-  const banners = [...document.querySelectorAll(selector)];
-  banners.forEach(decorateClickLinks);
-  if (!("IntersectionObserver" in window)) return;
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll(selector).forEach(decorateClickLinks);
+    return;
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -68,5 +69,15 @@
     });
   }, { threshold: [0.5] });
 
-  banners.forEach((element) => observer.observe(element));
+  const initializeBanners = () => {
+    document.querySelectorAll(selector).forEach((element) => {
+      if (element.dataset.bannerMeasurementInitialized === "true") return;
+      element.dataset.bannerMeasurementInitialized = "true";
+      decorateClickLinks(element);
+      observer.observe(element);
+    });
+  };
+
+  initializeBanners();
+  new MutationObserver(initializeBanners).observe(document.documentElement, { childList: true, subtree: true });
 })();
