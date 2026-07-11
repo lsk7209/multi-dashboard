@@ -17,4 +17,4 @@
 
 - Pregnancy, Yungyang, and Dogswhere are deployed and their public pages expose both the measurement marker and loader.
 - Cartain's client-rendered banner is present on the public home page. The updated mutation-aware loader recorded a real-browser event with HTTP 200.
-- Notebook exposes the marker but its optimization layer removes the external loader. The installer now uses WordPress enqueue registration; inspect the site's script-optimization rule before a further production change.
+- Notebook LiteSpeed JavaScript optimization now excludes `banner-measurement.js`; cache purge exposed the loader and a real-browser event returned HTTP 200.
