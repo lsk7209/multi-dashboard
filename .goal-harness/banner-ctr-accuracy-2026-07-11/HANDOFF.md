@@ -15,5 +15,6 @@
 
 ## Remaining rollout work
 
-- `pregnancy-ehon365` and `yungyanggogo`: banner components are untracked user work and remain untouched.
-- Recheck app deployments/cache for Cartain, Tennisfrens, Todaypharm, and Dogswhere. Confirm Notebook serves the loader as well as the marker.
+- Pregnancy, Yungyang, and Dogswhere are deployed and their public pages expose both the measurement marker and loader.
+- Cartain's pushed component is not exposed on the public routes checked; map its live placement before changing its layout.
+- Notebook exposes the marker but its optimization layer removes the external loader. The installer now uses WordPress enqueue registration; inspect the site's script-optimization rule before a further production change.

@@ -57,6 +57,9 @@ const CODEX_BANNER_BASE = '${DASHBOARD_BASE}';
 const CODEX_BANNER_SITE = '${target.siteKey}';
 const CODEX_BANNER_SLOT = '${SLOT_KEY}';
 const CODEX_BANNER_PAGE_BASE = '${target.pageUrlBase}';
+function codex_banner_enqueue(): void {
+  wp_enqueue_script('codex-banner-measurement', CODEX_BANNER_BASE . '/banner-measurement.js', array(), null, true);
+}
 function codex_banner_render(): void {
   if (is_admin() || wp_doing_ajax() || is_feed() || is_404()) { return; }
   $path = isset($_SERVER['REQUEST_URI']) ? strtok((string) $_SERVER['REQUEST_URI'], '?') : '/';
@@ -66,8 +69,9 @@ function codex_banner_render(): void {
   echo '<aside data-banner-measurement data-banner-measurement-base="' . esc_attr(CODEX_BANNER_BASE) . '" data-banner-site-key="' . esc_attr(CODEX_BANNER_SITE) . '" data-banner-slot-key="' . esc_attr(CODEX_BANNER_SLOT) . '" style="margin:24px auto;max-width:960px;padding:0 16px">';
   echo '<a href="' . esc_url($click) . '" target="_blank" rel="sponsored nofollow noopener" style="display:flex;align-items:center;justify-content:center;min-height:92px">';
   echo '<img src="' . esc_url($image) . '" alt="Coupang Partners" width="728" height="90" loading="lazy" style="height:auto;max-width:100%">';
-  echo '</a></aside><script src="' . esc_url(CODEX_BANNER_BASE . '/banner-measurement.js') . '" defer></script>';
+  echo '</a></aside>';
 }
+add_action('wp_enqueue_scripts', 'codex_banner_enqueue');
 add_action('wp_footer', 'codex_banner_render', 20);
 `;
 }
