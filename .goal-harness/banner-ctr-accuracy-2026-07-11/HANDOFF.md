@@ -16,5 +16,5 @@
 ## Remaining rollout work
 
 - Pregnancy, Yungyang, and Dogswhere are deployed and their public pages expose both the measurement marker and loader.
-- Cartain's pushed component is not exposed on the public routes checked; map its live placement before changing its layout.
+- Cartain's client-rendered banner is present on the public home page. The updated mutation-aware loader recorded a real-browser event with HTTP 200.
 - Notebook exposes the marker but its optimization layer removes the external loader. The installer now uses WordPress enqueue registration; inspect the site's script-optimization rule before a further production change.
