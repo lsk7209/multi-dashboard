@@ -6,6 +6,7 @@
 - `discparty` required 102 seconds for a complete collection. The refresh used a one-run 120-second site timeout and completed successfully without changing the collector default.
 - AdSense and ads.txt transient collector timeouts retain valid installed/valid evidence. They are now classified consistently as maintenance-only across the remediation queue, runtime actionability, and dashboard verification; they do not suppress a verified dashboard refresh.
 - Validation: focused Vitest 42/42, `pnpm type-check`, `pnpm build`, `pnpm dashboard:verify --skip-stats-update` (`local_verified`, 4/4), and `pnpm dashboard:acceptance data/dashboard-verification-2026-07-12.json` (`ready=true`, 10/10) passed.
+- Deployment: commit `9f853c5` is Ready on Git-connected Vercel production deployment `dpl_GAZEMC7Ns9g7rPweWmeMQLpwMGtY`; `https://multi-dashboard-one.vercel.app` returned HTTP 200 with the current snapshot marker.
 
 ## 2026-07-11 Sitemap Warning Closure
 

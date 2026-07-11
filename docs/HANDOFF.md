@@ -6,7 +6,7 @@
 - `discparty` exceeded the normal 90-second site timeout but completed in 102 seconds under the one-run recovery limit. No collector default was changed.
 - Durable fix: valid AdSense installation and ads.txt evidence now keeps matching transient collector timeouts in the maintenance lane. The remediation queue, runtime actionability, and dashboard verifier now agree that these rows are not readiness blockers.
 - Evidence: focused Vitest 42/42, `pnpm type-check`, `pnpm build`, dashboard verification `local_verified` (4/4), and acceptance `ready=true` (10/10). The rendered local production UI smoke matches this exact snapshot.
-- Deployment handoff: push the coherent refresh commit to `origin/main`, wait for the Git-connected Vercel production deployment, then verify `https://multi-dashboard-one.vercel.app` responds and serves the current snapshot.
+- Deployment: commit `9f853c5` is live through Git-connected Vercel production deployment `dpl_GAZEMC7Ns9g7rPweWmeMQLpwMGtY`. `https://multi-dashboard-one.vercel.app` returned HTTP 200 with the current snapshot marker.
 
 ## Current State
 
