@@ -9,7 +9,7 @@ const TARGETS = {
   nexttech7: { pageUrlBase: "https://nexttech7.com", siteKey: "nexttech7", ssh: { host: "158.247.212.123", key: "D:/env/haemongdream-claude_key2", port: "1988", user: "nexttech", wpp: "/home/nexttech/public_html" } },
   smallhomepick: { pageUrlBase: "https://smallhomepick.com", siteKey: "smallhomepick", ssh: { host: "travel.sellerpit.kr", key: "D:/env/haemongdream-claude_key2", port: "1988", user: "nexttech", wpp: "/home/nexttech/smallhomepick.com" } },
   "petinsuer-2": { pageUrlBase: "https://petinsuer.com", siteKey: "petinsuer-2" },
-  "healfood-2": { pageUrlBase: "https://healfood.kr", siteKey: "healfood-2" },
+  "healfood-2": { pageUrlBase: "https://healfood.kr", siteKey: "healfood-2", ssh: { host: "158.247.245.11", key: "D:/env/healfood-chemicloud-PrivateKey-nopass", port: "1988", user: "healfood", wpp: "/home/healfood/public_html" } },
   "estat-2": { pageUrlBase: "https://estat.kr", siteKey: "estat-2" },
   "autoscares-2": { pageUrlBase: "https://autoscares.com", siteKey: "autoscares-2" },
   "dogspang-2": { pageUrlBase: "https://dogspang.kr", siteKey: "dogspang-2" },
