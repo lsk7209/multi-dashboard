@@ -32,6 +32,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid banner measurement payload." }, { status: 400 });
   }
   const resolved = await resolveBannerPlacementAsync({
+    pageUrl: request.headers.get("origin") ?? undefined,
     recordResolutionEvents: false,
     siteKey: isText(payload.siteKey) ? payload.siteKey : undefined,
     slotKey: isText(payload.slotKey) ? payload.slotKey : undefined,
