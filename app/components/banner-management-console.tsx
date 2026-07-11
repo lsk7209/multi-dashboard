@@ -4,9 +4,11 @@ import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "re
 
 import {
   MIN_RELIABLE_IMAGE_REQUESTS,
+  MIN_RELIABLE_QUALIFIED_IMPRESSIONS,
   getQualifiedCtr,
   getInternalRedirectImageRatio,
   hasReliableImageSample,
+  hasReliableQualifiedSample,
 } from "../lib/banner-reporting";
 import { formatDisplayPath } from "../lib/display-path";
 
@@ -523,6 +525,26 @@ export function BannerManagementConsole() {
       filteredSiteSummaries
         .filter((site) => site.imageRequests7d >= 20 && site.clicks7d === 0)
         .sort((a, b) => b.imageRequests7d - a.imageRequests7d),
+    [filteredSiteSummaries],
+  );
+  const qualifiedCtrActionQueue = useMemo(
+    () =>
+      filteredSiteSummaries
+        .filter((site) => site.qualifiedImpressions7d > 0)
+        .map((site) => {
+          const ctr = getQualifiedCtr({ clicks: site.qualifiedClicks7d, impressions: site.qualifiedImpressions7d });
+          if (!hasReliableQualifiedSample({ impressions: site.qualifiedImpressions7d })) {
+            return { action: "수집 중", ctr, priority: 2, site };
+          }
+          if (site.qualifiedClicks7d === 0) {
+            return { action: "소재·배치 교체 후보", ctr, priority: 0, site };
+          }
+          if (ctr < 0.01) {
+            return { action: "저성과 검토", ctr, priority: 1, site };
+          }
+          return { action: "유지", ctr, priority: 3, site };
+        })
+        .sort((a, b) => a.priority - b.priority || a.ctr - b.ctr || b.site.qualifiedImpressions7d - a.site.qualifiedImpressions7d),
     [filteredSiteSummaries],
   );
   const attentionCount =
@@ -1053,6 +1075,25 @@ export function BannerManagementConsole() {
           </div>
 
           <div className="ops-exception-grid">
+            <OpsTable
+              title={`실측 CTR 액션 큐 (${formatNumber(qualifiedCtrActionQueue.length)})`}
+              isLoading={isLoading}
+              emptyText="가시 노출 데이터가 아직 수집되지 않았습니다."
+            >
+              {qualifiedCtrActionQueue.slice(0, 10).map(({ action, ctr, site }) => (
+                <tr key={site.siteKey}>
+                  <td>
+                    <strong>{site.siteKey}</strong>
+                    <small>{site.siteUrl ?? "URL 미등록"}</small>
+                  </td>
+                  <td>{action}</td>
+                  <td>실측 CTR {formatPercent(ctr)}</td>
+                  <td>가시 노출 {formatNumber(site.qualifiedImpressions7d)} / 기준 {formatNumber(MIN_RELIABLE_QUALIFIED_IMPRESSIONS)}</td>
+                  <td>귀속 클릭 {formatNumber(site.qualifiedClicks7d)}</td>
+                </tr>
+              ))}
+            </OpsTable>
+
             <OpsTable
               title={`최근 7일 내부 호출 비율 참고 (${formatNumber(topEffectSites.length)})`}
               isLoading={isLoading}

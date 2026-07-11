@@ -1,4 +1,5 @@
 export const MIN_RELIABLE_IMAGE_REQUESTS = 100;
+export const MIN_RELIABLE_QUALIFIED_IMPRESSIONS = 100;
 
 export function getInternalRedirectImageRatio(input: {
   redirects: number;
@@ -10,6 +11,10 @@ export function getInternalRedirectImageRatio(input: {
 
 export function hasReliableImageSample(input: { imageRequests: number }): boolean {
   return input.imageRequests >= MIN_RELIABLE_IMAGE_REQUESTS;
+}
+
+export function hasReliableQualifiedSample(input: { impressions: number }): boolean {
+  return input.impressions >= MIN_RELIABLE_QUALIFIED_IMPRESSIONS;
 }
 
 export function getQualifiedCtr(input: { clicks: number; impressions: number }): number {
