@@ -3,6 +3,7 @@
 ## Current State
 
 - Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-11T07:04:23.041Z` for 98 sites; GA4, GSC, sitemap, AdSense-code, and ads.txt collector failures are all zero.
+- Matching post-recovery evidence is `ready_to_act`: GSC permission audit, dashboard verification, and acceptance passed 3/3 with artifact integrity passing. The rendered UI smoke used the locally built dashboard with this exact snapshot before its evidence artifacts were deployed.
 - GA4 source/medium and landing-page current-vs-previous 7-day breakdowns are now collected and shown in the site table. Coverage is 86/98 properties for both breakdowns; remaining zero-data properties are not treated as collector failures.
 - Cause evidence is now concrete: `tasko.kr` is down in `m.search.naver.com / referral` (1 from 31 users), `todaypharm.kr` is down in Naver referral/organic, and `dogbreedcost.com` is down in direct traffic (27 from 65). Do not apply generic SEO mutations to those drops without site-specific evidence.
 - `nicewomen.kr` sitemap XML was serving stale LiteSpeed cache content. Rank Math generated current post sitemap lastmod values, and a WordPress cache purge restored the public sitemap index to `2026-07-09` post/category lastmod values. The unchanged page sitemap lastmod is valid because that page was not modified.

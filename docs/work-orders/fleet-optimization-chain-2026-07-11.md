@@ -2,10 +2,10 @@
 
 Mutation status: no CMS, database, Search Console, AdSense, title/body, publishing, or deployment mutation performed.
 
-- Generated at: `2026-07-11T03:42:43.461Z`
-- Stats snapshot: `2026-07-11T03:35:08.164Z`
-- Plan snapshot: `2026-07-11T03:35:08.164Z`
-- T3 handoff snapshot: `2026-07-11T03:35:08.164Z`
+- Generated at: `2026-07-11T07:14:31.177Z`
+- Stats snapshot: `2026-07-11T07:04:23.041Z`
+- Plan snapshot: `2026-07-11T07:04:23.041Z`
+- T3 handoff snapshot: `2026-07-11T07:04:23.041Z`
 - Plan matches stats: `true`
 - T3 handoff matches stats: `true`
 - Refresh failures block readiness: `false`
@@ -13,7 +13,7 @@ Mutation status: no CMS, database, Search Console, AdSense, title/body, publishi
 - T3 mutation flags false: `true`
 - T3 sites: `12`
 - Title handoff rows: `9`
-- Content handoff rows: `6`
+- Content handoff rows: `7`
 
 ## Commands
 

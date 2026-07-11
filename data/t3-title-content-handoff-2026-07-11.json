@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T03:42:43.421Z",
+  "generatedAt": "2026-07-11T07:14:31.133Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,7 +8,7 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-11T03:35:08.164Z",
+    "snapshotTimestamp": "2026-07-11T07:04:23.041Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-11.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
@@ -18,7 +18,7 @@
   "summary": {
     "siteCount": 12,
     "titleHandoffCount": 9,
-    "contentHandoffCount": 6
+    "contentHandoffCount": 7
   },
   "sites": [
     {
@@ -35,10 +35,10 @@
         1
       ],
       "metrics": {
-        "gscImpressions30d": 11516,
-        "gscClicks30d": 111,
-        "gscCtr30d": 0.009638763459534561,
-        "gscPosition30d": 10.016151441472733,
+        "gscImpressions30d": 13978,
+        "gscClicks30d": 115,
+        "gscCtr30d": 0.008227214193733009,
+        "gscPosition30d": 9.703391043067677,
         "ga4ActiveUsers30d": 1463
       },
       "topQueries": [
@@ -52,16 +52,16 @@
         {
           "query": "아르튀르 랭데르크네슈",
           "clicks": 1,
-          "impressions": 61,
-          "ctr": 0.01639344262295082,
-          "position": 10.557377049180328
+          "impressions": 62,
+          "ctr": 0.016129032258064516,
+          "position": 10.596774193548388
         },
         {
           "query": "이알라",
           "clicks": 1,
-          "impressions": 58,
-          "ctr": 0.017241379310344827,
-          "position": 11.620689655172415
+          "impressions": 60,
+          "ctr": 0.016666666666666666,
+          "position": 11.8
         }
       ],
       "technicalStatus": {
@@ -87,13 +87,20 @@
         2
       ],
       "metrics": {
-        "gscImpressions30d": 3538,
-        "gscClicks30d": 62,
-        "gscCtr30d": 0.017524024872809497,
-        "gscPosition30d": 9.420011305822499,
+        "gscImpressions30d": 3833,
+        "gscClicks30d": 71,
+        "gscCtr30d": 0.01852334985650926,
+        "gscPosition30d": 9.425515262196713,
         "ga4ActiveUsers30d": 1004
       },
       "topQueries": [
+        {
+          "query": "그랜저 세금",
+          "clicks": 2,
+          "impressions": 10,
+          "ctr": 0.2,
+          "position": 4.7
+        },
         {
           "query": "2026년 신차 출시 일정",
           "clicks": 0,
@@ -127,10 +134,10 @@
         5
       ],
       "metrics": {
-        "gscImpressions30d": 2702,
-        "gscClicks30d": 32,
-        "gscCtr30d": 0.011843079200592153,
-        "gscPosition30d": 8.14877868245744,
+        "gscImpressions30d": 2947,
+        "gscClicks30d": 35,
+        "gscCtr30d": 0.011876484560570071,
+        "gscPosition30d": 8.084153376314896,
         "ga4ActiveUsers30d": 79
       },
       "topQueries": [],
@@ -159,10 +166,10 @@
         6
       ],
       "metrics": {
-        "gscImpressions30d": 2616,
+        "gscImpressions30d": 2734,
         "gscClicks30d": 13,
-        "gscCtr30d": 0.004969418960244648,
-        "gscPosition30d": 7.919724770642202,
+        "gscCtr30d": 0.004754937820043892,
+        "gscPosition30d": 7.8913679590343815,
         "ga4ActiveUsers30d": 40
       },
       "topQueries": [],
@@ -189,19 +196,26 @@
         7
       ],
       "metrics": {
-        "gscImpressions30d": 964,
-        "gscClicks30d": 18,
-        "gscCtr30d": 0.01867219917012448,
-        "gscPosition30d": 13.235477178423237,
+        "gscImpressions30d": 1013,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.018756169792694965,
+        "gscPosition30d": 13.206317867719644,
         "ga4ActiveUsers30d": 1391
       },
       "topQueries": [
         {
           "query": "부산 지하철 근처 애견 유치원",
           "clicks": 0,
-          "impressions": 10,
+          "impressions": 12,
           "ctr": 0,
-          "position": 40.1
+          "position": 41.416666666666664
+        },
+        {
+          "query": "강아지 맡길 곳",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 31.09090909090909
         }
       ],
       "technicalStatus": {
@@ -227,19 +241,19 @@
         8
       ],
       "metrics": {
-        "gscImpressions30d": 1255,
-        "gscClicks30d": 17,
-        "gscCtr30d": 0.013545816733067729,
-        "gscPosition30d": 9.60796812749004,
+        "gscImpressions30d": 1331,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.014274981217129978,
+        "gscPosition30d": 9.551465063861759,
         "ga4ActiveUsers30d": 101
       },
       "topQueries": [
         {
           "query": "노견 기준",
           "clicks": 0,
-          "impressions": 10,
+          "impressions": 12,
           "ctr": 0,
-          "position": 7.1
+          "position": 7
         }
       ],
       "technicalStatus": {
@@ -264,22 +278,22 @@
       ],
       "planRanks": [
         9,
-        11
+        10
       ],
       "metrics": {
-        "gscImpressions30d": 1052,
-        "gscClicks30d": 18,
-        "gscCtr30d": 0.017110266159695818,
-        "gscPosition30d": 9.994296577946768,
+        "gscImpressions30d": 1109,
+        "gscClicks30d": 19,
+        "gscCtr30d": 0.017132551848512173,
+        "gscPosition30d": 9.936880072137061,
         "ga4ActiveUsers30d": 88
       },
       "topQueries": [
         {
           "query": "강아지 발바닥 각화증",
           "clicks": 0,
-          "impressions": 15,
+          "impressions": 24,
           "ctr": 0,
-          "position": 7.666666666666667
+          "position": 7.791666666666667
         }
       ],
       "technicalStatus": {
@@ -305,10 +319,10 @@
         12
       ],
       "metrics": {
-        "gscImpressions30d": 789,
-        "gscClicks30d": 15,
-        "gscCtr30d": 0.019011406844106463,
-        "gscPosition30d": 12.623574144486692,
+        "gscImpressions30d": 834,
+        "gscClicks30d": 16,
+        "gscCtr30d": 0.019184652278177457,
+        "gscPosition30d": 12.856115107913668,
         "ga4ActiveUsers30d": 164
       },
       "topQueries": [],
@@ -322,36 +336,6 @@
       "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
     },
     {
-      "host": "homeimer.com",
-      "siteId": "homeimer",
-      "url": "https://homeimer.com/",
-      "localPath": "D:\\web\\homeimercom",
-      "platform": "wordpress",
-      "wpRestBase": "https://homeimer.com/wp-json/wp/v2",
-      "actions": [
-        "content_handoff"
-      ],
-      "planRanks": [
-        13
-      ],
-      "metrics": {
-        "gscImpressions30d": 951,
-        "gscClicks30d": 0,
-        "gscCtr30d": 0,
-        "gscPosition30d": 66.67087276550998,
-        "ga4ActiveUsers30d": 10
-      },
-      "topQueries": [],
-      "technicalStatus": {
-        "sitemapPath": "https://homeimer.com/sitemap_index.xml",
-        "sitemapWarnings": 0,
-        "sitemapErrors": 0,
-        "adsenseStatus": "ok",
-        "adsTxtStatus": "ok"
-      },
-      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
-    },
-    {
       "host": "today2424.kr",
       "siteId": "today2424",
       "url": "https://today2424.kr/",
@@ -362,18 +346,48 @@
         "content_handoff"
       ],
       "planRanks": [
-        14
+        13
       ],
       "metrics": {
-        "gscImpressions30d": 888,
-        "gscClicks30d": 34,
-        "gscCtr30d": 0.038288288288288286,
-        "gscPosition30d": 9.434684684684685,
+        "gscImpressions30d": 931,
+        "gscClicks30d": 37,
+        "gscCtr30d": 0.0397422126745435,
+        "gscPosition30d": 9.344790547798066,
         "ga4ActiveUsers30d": 93
       },
       "topQueries": [],
       "technicalStatus": {
         "sitemapPath": "https://today2424.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "homeimer.com",
+      "siteId": "homeimer",
+      "url": "https://homeimer.com/",
+      "localPath": "D:\\web\\homeimercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://homeimer.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        14
+      ],
+      "metrics": {
+        "gscImpressions30d": 952,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 66.64600840336135,
+        "ga4ActiveUsers30d": 10
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://homeimer.com/sitemap_index.xml",
         "sitemapWarnings": 0,
         "sitemapErrors": 0,
         "adsenseStatus": "ok",
@@ -395,10 +409,10 @@
         16
       ],
       "metrics": {
-        "gscImpressions30d": 610,
+        "gscImpressions30d": 642,
         "gscClicks30d": 2,
-        "gscCtr30d": 0.003278688524590164,
-        "gscPosition30d": 61.795081967213115,
+        "gscCtr30d": 0.003115264797507788,
+        "gscPosition30d": 59.75077881619938,
         "ga4ActiveUsers30d": 17
       },
       "topQueries": [],
@@ -419,16 +433,18 @@
       "platform": "wordpress",
       "wpRestBase": "https://healfood.kr/wp-json/wp/v2",
       "actions": [
-        "title_handoff"
+        "title_handoff",
+        "content_handoff"
       ],
       "planRanks": [
-        17
+        17,
+        18
       ],
       "metrics": {
-        "gscImpressions30d": 493,
+        "gscImpressions30d": 500,
         "gscClicks30d": 4,
-        "gscCtr30d": 0.008113590263691683,
-        "gscPosition30d": 8.85395537525355,
+        "gscCtr30d": 0.008,
+        "gscPosition30d": 8.862,
         "ga4ActiveUsers30d": 29
       },
       "topQueries": [],
@@ -439,7 +455,7 @@
         "adsenseStatus": "ok",
         "adsTxtStatus": "ok"
       },
-      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
     }
   ],
   "stopConditions": [

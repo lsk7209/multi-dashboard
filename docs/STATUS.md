@@ -6,6 +6,7 @@
 - Public sitemap repair completed for `nicewomen.kr` (stale LiteSpeed cache purge) and `ezfunnel.kr` (Rank Math sitemap regeneration through SSH port 1988). `autorentlab.com` has no public-file sitemap defect. The three GSC warnings are pending Google reprocessing, not grounds for further blind sitemap writes.
 - TennisFrens canonical repair was committed/pushed as `ada2363` and publicly verified on production: legacy Marta Kostyuk URL returns `308`, sitemap and AI index no longer include it.
 - Dashboard verification: `pnpm type-check`, `pnpm lint`, and `pnpm build` passed after the new breakdown fields and table column.
+- Post-recovery verification passed 3/3 with artifact integrity passing and readiness `ready_to_act` against the exact `2026-07-11T07:04:23.041Z` snapshot.
 
 ## 2026-07-11 Remediation Harness
 

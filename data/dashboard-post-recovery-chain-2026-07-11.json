@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T03:42:48.261Z",
+  "generatedAt": "2026-07-11T07:14:36.332Z",
   "date": "2026-07-11",
   "dryRun": false,
   "productionMutationPerformed": false,
@@ -32,7 +32,7 @@
   "dashboardVerification": {
     "path": "data\\dashboard-verification-2026-07-11.json",
     "exists": true,
-    "statsSnapshot": "2026-07-11T03:35:08.164Z",
+    "statsSnapshot": "2026-07-11T07:04:23.041Z",
     "verdict": "local_verified",
     "expectedBlocked": 0,
     "fail": 0,
@@ -56,14 +56,14 @@
       "id": "gsc-permission-audit",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard-refresh-temp\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-11.json and docs\\work-orders\\gsc-permission-audit-2026-07-11.md. snapshot=2026-07-11T03:35:08.164Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard-refresh-temp\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-11.json and docs\\work-orders\\gsc-permission-audit-2026-07-11.md. snapshot=2026-07-11T07:04:23.041Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
       "stderrTail": ""
     },
     {
       "id": "dashboard-verify",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard-refresh-temp\n> tsx scripts/setup/run-dashboard-verification.ts \"--skip-stats-update\"\n\nWrote data\\dashboard-verification-2026-07-11.json and docs\\work-orders\\dashboard-verification-2026-07-11.md. snapshot=2026-07-11T03:35:08.164Z verdict=local_verified commands=4 pass=4 expectedBlocked=0 fail=0 skipped=0 blockers=none\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard-refresh-temp\n> tsx scripts/setup/run-dashboard-verification.ts \"--skip-stats-update\"\n\nWrote data\\dashboard-verification-2026-07-11.json and docs\\work-orders\\dashboard-verification-2026-07-11.md. snapshot=2026-07-11T07:04:23.041Z verdict=local_verified commands=4 pass=4 expectedBlocked=0 fail=0 skipped=0 blockers=none\n",
       "stderrTail": ""
     },
     {
