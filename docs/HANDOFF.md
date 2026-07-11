@@ -2,6 +2,12 @@
 
 ## Current State
 
+- Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-11T07:04:23.041Z` for 98 sites; GA4, GSC, sitemap, AdSense-code, and ads.txt collector failures are all zero.
+- GA4 source/medium and landing-page current-vs-previous 7-day breakdowns are now collected and shown in the site table. Coverage is 86/98 properties for both breakdowns; remaining zero-data properties are not treated as collector failures.
+- Cause evidence is now concrete: `tasko.kr` is down in `m.search.naver.com / referral` (1 from 31 users), `todaypharm.kr` is down in Naver referral/organic, and `dogbreedcost.com` is down in direct traffic (27 from 65). Do not apply generic SEO mutations to those drops without site-specific evidence.
+- `nicewomen.kr` sitemap XML was serving stale LiteSpeed cache content. Rank Math generated current post sitemap lastmod values, and a WordPress cache purge restored the public sitemap index to `2026-07-09` post/category lastmod values. The unchanged page sitemap lastmod is valid because that page was not modified.
+- `ezfunnel.kr` sitemap generator was run through the configured SSH port `1988`; public post sitemap duplicate checks are clean. Its GSC warning remains an observation until Google reprocesses the already-correct sitemap.
+- `tennisfrens.com` commit `ada2363` is live on Vercel: `/players/marta-kostyuk-legacy` returns `308` to `/players/marta-kostyuk`, and the legacy URL is absent from sitemap and AI index.
 - Fresh snapshot: `data/site-stats.json` generated at `2026-07-11T04:59:29.505Z` for 98 sites; direct collection rebuilt `ops-intel` and `ops-triage` with 3 low-severity sitemap findings.
 - Parallel remediation audit: `ezfunnel.kr` has 5 duplicate public sitemap URLs, while `nicewomen.kr` has sitemap-index lastmod drift and `autorentlab.com` has no public-file defect. Ezfunnel's WordPress SSH endpoint currently refuses port 22, so do not claim a sitemap repair until remote access is restored.
 - Traffic drops reviewed across 8 sites do not have enough GA4 channel or GSC page/query evidence for SEO mutations. Add source/medium and landing-page comparisons before content changes.

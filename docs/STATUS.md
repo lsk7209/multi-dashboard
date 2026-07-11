@@ -1,5 +1,12 @@
 # Status
 
+## 2026-07-11 GA4 Diagnosis and Sitemap Repair
+
+- Added GA4 source/medium and landing-page 7-day comparison data to the collector and site table. A fresh 98-site snapshot at `2026-07-11T07:04:23.041Z` has 86 populated source/medium and landing-page breakdowns; collection health remains zero failures across GA4, GSC, sitemap, AdSense, and ads.txt.
+- Public sitemap repair completed for `nicewomen.kr` (stale LiteSpeed cache purge) and `ezfunnel.kr` (Rank Math sitemap regeneration through SSH port 1988). `autorentlab.com` has no public-file sitemap defect. The three GSC warnings are pending Google reprocessing, not grounds for further blind sitemap writes.
+- TennisFrens canonical repair was committed/pushed as `ada2363` and publicly verified on production: legacy Marta Kostyuk URL returns `308`, sitemap and AI index no longer include it.
+- Dashboard verification: `pnpm type-check`, `pnpm lint`, and `pnpm build` passed after the new breakdown fields and table column.
+
 ## 2026-07-11 Remediation Harness
 
 - Fresh 98-site snapshot generated at `2026-07-11T04:59:29.505Z`; `pnpm ops:intel` and `pnpm ops:triage` reported only 3 low-severity direct GSC sitemap findings.

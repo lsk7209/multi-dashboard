@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type {
   DashboardSegment,
   EnrichedSiteStat,
+  TrafficBreakdownMetric,
   CollectionSourceKey,
   CollectionSourceState,
   OperationalStatus,
@@ -33,6 +34,7 @@ type SortKey =
   | "googleIndexed"
   | "indexPresence"
   | "topQueries"
+  | "trafficBreakdown"
   | "ctr"
   | "adsense"
   | "adsTxt"
@@ -58,6 +60,7 @@ const sortLabels: Record<SortKey, string> = {
   gscImpressions: "GSC 노출",
   googleIndexed: "사이트맵 URL",
   topQueries: "대표 유입 키워드",
+  trafficBreakdown: "GA4 breakdown",
   indexPresence: "site: 노출",
   ctr: "CTR",
   adsense: "AdSense",
@@ -120,6 +123,7 @@ const sortableHeaders: Array<{ key: SortKey; label: string }> = [
   { key: "gscImpressions", label: "GSC 노출" },
   { key: "googleIndexed", label: "사이트맵 URL" },
   { key: "topQueries", label: "유입 키워드" },
+  { key: "trafficBreakdown", label: "GA4 breakdown" },
   { key: "indexPresence", label: "site: 노출" },
   { key: "ctr", label: "CTR" },
   { key: "adsense", label: "AdSense" },
@@ -476,6 +480,9 @@ function StatsRow({
         <TopQueriesCell stat={stat} />
       </td>
       <td>
+        <TrafficBreakdownCell stat={stat} />
+      </td>
+      <td>
         <IndexPresenceCell stat={stat} readOnlyBlocked={readOnlyBlocked} />
       </td>
       <td>{formatPercent(stat.gscLast7Days?.ctr ?? 0)}</td>
@@ -664,6 +671,33 @@ function TopQueriesCell({ stat }: { stat: EnrichedSiteStat }) {
           <small>{formatKeywordCount(keyword)}</small>
         </span>
       ))}
+    </div>
+  );
+}
+
+function TrafficBreakdownCell({ stat }: { stat: EnrichedSiteStat }) {
+  const source = stat.ga4SourceMedium?.[0];
+  const landing = stat.ga4LandingPages?.[0];
+  if (!source && !landing) {
+    return <span className="keyword-empty">-</span>;
+  }
+
+  return (
+    <div className="keyword-list" title={formatTrafficBreakdownTitle(stat)}>
+      {source ? (
+        <span className="keyword-chip keyword-direct">
+          <b>src</b>
+          <span>{source.dimension}</span>
+          <small>{formatChange(source.activeUsersChange)}</small>
+        </span>
+      ) : null}
+      {landing ? (
+        <span className="keyword-chip keyword-other">
+          <b>page</b>
+          <span>{landing.dimension}</span>
+          <small>{formatChange(landing.activeUsersChange)}</small>
+        </span>
+      ) : null}
     </div>
   );
 }
@@ -933,6 +967,9 @@ function getSortValue(
   }
   if (sortKey === "topQueries") {
     return getKeywordSortValue(stat);
+  }
+  if (sortKey === "trafficBreakdown") {
+    return stat.ga4SourceMedium?.[0]?.activeUsers ?? 0;
   }
   if (sortKey === "ctr") {
     return stat.gscLast7Days?.ctr ?? 0;
@@ -1222,6 +1259,22 @@ function formatTopQueriesTitle(stat: EnrichedSiteStat): string {
       return `${keyword.keyword}: ${keyword.sourceMedium} · ${metricLabel}`;
     })
     .join("\n");
+}
+
+function formatTrafficBreakdownTitle(stat: EnrichedSiteStat): string {
+  const sections: string[] = [];
+  const append = (label: string, rows: TrafficBreakdownMetric[] | undefined) => {
+    if (!rows?.length) return;
+    sections.push(label);
+    for (const row of rows) {
+      sections.push(
+        `${row.dimension}: users ${formatNumber(row.activeUsers)} (${formatChange(row.activeUsersChange)}), sessions ${formatNumber(row.sessions)}`,
+      );
+    }
+  };
+  append("GA4 source / medium", stat.ga4SourceMedium);
+  append("GA4 landing pages", stat.ga4LandingPages);
+  return sections.join("\n");
 }
 
 function formatNumber(value: number): string {

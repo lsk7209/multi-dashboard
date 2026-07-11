@@ -91,6 +91,15 @@ export interface TrafficKeywordMetric {
   sourceType?: "ga4" | "gsc" | "external";
 }
 
+export interface TrafficBreakdownMetric {
+  dimension: string;
+  activeUsers: number;
+  sessions: number;
+  previousActiveUsers: number;
+  previousSessions: number;
+  activeUsersChange: number | null;
+}
+
 export interface SitemapDetail {
   path: string;
   lastDownloaded?: string;
@@ -566,6 +575,8 @@ export interface SiteStat {
   gscLast30Days?: GscMetricSet;
   gscTopQueries?: GscQueryMetric[];
   trafficKeywords?: TrafficKeywordMetric[];
+  ga4SourceMedium?: TrafficBreakdownMetric[];
+  ga4LandingPages?: TrafficBreakdownMetric[];
   ga4Status?: CollectionStatus;
   gscStatus?: CollectionStatus;
   adsenseStatus?: CollectionStatus;

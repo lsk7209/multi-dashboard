@@ -328,6 +328,15 @@ interface TrafficKeywordMetric {
   sourceType: "ga4" | "gsc" | "external";
 }
 
+interface TrafficBreakdownMetric {
+  dimension: string;
+  activeUsers: number;
+  sessions: number;
+  previousActiveUsers: number;
+  previousSessions: number;
+  activeUsersChange: number | null;
+}
+
 interface MonetizationEvidence {
   type: MonetizationEvidenceType;
   url: string;
@@ -388,6 +397,8 @@ interface SiteStat {
   gscLast30Days: GscMetricSet;
   gscTopQueries?: GscQueryMetric[];
   trafficKeywords?: TrafficKeywordMetric[];
+  ga4SourceMedium?: TrafficBreakdownMetric[];
+  ga4LandingPages?: TrafficBreakdownMetric[];
   ga4Status: CollectionStatus;
   gscStatus: CollectionStatus;
   adsenseStatus?: CollectionStatus;
@@ -760,6 +771,68 @@ async function fetchGa4TrafficKeywords(
   return [...byKey.values()]
     .sort((a, b) => b.activeUsers - a.activeUsers || b.sessions - a.sessions)
     .slice(0, TOP_QUERY_LIMIT);
+}
+
+async function fetchGa4TrafficBreakdown(
+  client: BetaAnalyticsDataClient,
+  propertyId: string,
+  dimensionName: "sourceMedium" | "landingPage",
+): Promise<TrafficBreakdownMetric[]> {
+  const dimensions =
+    dimensionName === "sourceMedium"
+      ? [{ name: "sessionSource" }, { name: "sessionMedium" }]
+      : [{ name: "landingPagePlusQueryString" }];
+  const formatDimension = (row: { dimensionValues?: Array<{ value?: string }> }) => {
+    if (dimensionName === "sourceMedium") {
+      const source = row.dimensionValues?.[0]?.value || "(direct)";
+      const medium = row.dimensionValues?.[1]?.value || "(none)";
+      return `${source} / ${medium}`;
+    }
+    return row.dimensionValues?.[0]?.value || "/";
+  };
+  const fetchRange = async (startDate: string, endDate: string) => {
+    const [response] = await runGa4Request(() =>
+      client.runReport({
+        property: `properties/${propertyId}`,
+        dateRanges: [{ startDate, endDate }],
+        dimensions,
+        metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+        limit: 10,
+      }, {
+        timeout: GOOGLE_API_TIMEOUT_MS,
+      }),
+    );
+    return new Map(
+      (response.rows ?? []).map((row) => [
+        formatDimension(row),
+        {
+          activeUsers: metricValue(row, 0),
+          sessions: metricValue(row, 1),
+        },
+      ]),
+    );
+  };
+
+  const [current, previous] = await Promise.all([
+    fetchRange(toGa4StartDate(RANGE_DAYS), "yesterday"),
+    fetchRange(toGa4StartDate(RANGE_DAYS * 2), toGa4StartDate(RANGE_DAYS + 1)),
+  ]);
+
+  return [...current.entries()]
+    .map(([dimension, metrics]) => {
+      const prior = previous.get(dimension) ?? { activeUsers: 0, sessions: 0 };
+      return {
+        dimension,
+        ...metrics,
+        previousActiveUsers: prior.activeUsers,
+        previousSessions: prior.sessions,
+        activeUsersChange:
+          prior.activeUsers > 0
+            ? (metrics.activeUsers - prior.activeUsers) / prior.activeUsers
+            : null,
+      };
+    })
+    .sort((a, b) => b.activeUsers - a.activeUsers || b.sessions - a.sessions);
 }
 
 async function fetchGscMetrics(
@@ -2062,6 +2135,8 @@ async function fetchSiteStat(
   let gscLast30Days = emptyGscMetrics();
   let gscTopQueries: GscQueryMetric[] = [];
   let ga4TrafficKeywords: TrafficKeywordMetric[] = [];
+  let ga4SourceMedium: TrafficBreakdownMetric[] = [];
+  let ga4LandingPages: TrafficBreakdownMetric[] = [];
   let sitemapSummary: SitemapSummary = {};
   let error: string | undefined;
   let gscError: string | undefined;
@@ -2094,6 +2169,17 @@ async function fetchSiteStat(
       );
     } catch {
       ga4TrafficKeywords = [];
+    }
+
+    reportProgress("ga4-breakdown");
+    try {
+      [ga4SourceMedium, ga4LandingPages] = await Promise.all([
+        fetchGa4TrafficBreakdown(ga4Client, site.ga4PropertyId, "sourceMedium"),
+        fetchGa4TrafficBreakdown(ga4Client, site.ga4PropertyId, "landingPage"),
+      ]);
+    } catch {
+      ga4SourceMedium = [];
+      ga4LandingPages = [];
     }
   }
 
@@ -2171,6 +2257,8 @@ async function fetchSiteStat(
       ga4TrafficKeywords,
       gscTopQueries,
     ),
+    ga4SourceMedium,
+    ga4LandingPages,
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
     ...(gscEmailAlerts.length > 0 ? { gscEmailAlerts } : {}),
