@@ -1,19 +1,20 @@
 # Handoff
 
-## Completed locally
+## Completed in production
 
-- Added qualified-impression and attributed-click persistence to the existing banner ledger without mutating historical raw records.
-- Added HMAC hashing for anonymous session IDs, one event per assignment/session/day, bot rejection, and a 24-hour click-to-impression eligibility window.
-- Added `POST /api/banner-management/event`, `/banner-measurement.js`, and a console KPI labelled `실측 CTR`.
+- Qualified impressions and attributed clicks are separate from legacy endpoint-call statistics.
+- The dashboard records HMAC-hashed anonymous sessions, one event per assignment/session/day, and uses a 24-hour impression-to-click eligibility window.
+- The Git-connected Vercel dashboard production deployment serves the event endpoint and loader.
+- Headed-Chrome verification passed on Temon and Smallhomepick: browser POST event returned 200 with origin-specific CORS; Temon's qualified-impression count increased.
+- WordPress MU plugins were applied with timestamped backups to every target except Healfood.
 
 ## Verification
 
-- `pnpm lint` passed.
-- `pnpm type-check` passed.
-- Focused banner Vitest suite passed: 13 tests.
+- `pnpm lint`, `pnpm type-check`, and focused banner Vitest (14 tests) passed.
+- Public marker audit confirms the loader on Campgogo, Dullegilgogo, Picklefriend, Plategogo, Roadways, Temon, Nexttech7, Smallhomepick, Petinsuer, Estat, Autoscares, Dogspang, and Softwa.
 
-## Remaining production gate
+## Remaining rollout work
 
-- Set `MONETIZATION_BANNER_EVENT_SECRET` in the Git-connected Vercel production project without exposing its value. Read-only Vercel inspection confirmed it is currently absent.
-- Commit the ten clean app-installation changes; review the two untracked app banner components before modifying them. The tracked WordPress MU-plugin installer now passes a no-write dry-run for all nine targets.
-- Deploy a Next/Vite canary, then a WordPress canary; verify browser events and remote LibSQL rows before full fleet rollout.
+- `healfood.kr`: configured SSH private-key file is invalid, so no remote write was attempted.
+- `pregnancy-ehon365` and `yungyanggogo`: banner components are untracked user work and remain untouched.
+- Recheck app deployments/cache for Cartain, Tennisfrens, Todaypharm, and Dogswhere. Confirm Notebook serves the loader as well as the marker.
