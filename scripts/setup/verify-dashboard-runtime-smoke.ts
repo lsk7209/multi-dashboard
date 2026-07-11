@@ -134,7 +134,10 @@ function validateReadinessBlocker(
   actionability: ReturnType<typeof getDashboardActionability>,
 ): string[] {
   if (!chain.refreshFailuresBlockReadiness) {
-    assert(chain.refreshFailedSources.length === 0, "Ready chain still has failed refresh sources.");
+    assert(
+      chain.readinessBlockingRefreshFailedSources.length === 0,
+      "Ready chain still has readiness-blocking refresh sources.",
+    );
     assert(
       actionability.status === "safe_to_act",
       "Dashboard actionability is blocked by local evidence, not an external readiness blocker.",

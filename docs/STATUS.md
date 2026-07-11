@@ -1,5 +1,12 @@
 # Status
 
+## 2026-07-12 Dashboard Refresh
+
+- Fresh 98-site snapshot: `data/site-stats.json` generated at `2026-07-11T16:18:45.043Z`; GA4, GSC, and sitemap failures are all zero. `pnpm ops:intel` and `pnpm ops:triage` both report zero direct findings.
+- `discparty` required 102 seconds for a complete collection. The refresh used a one-run 120-second site timeout and completed successfully without changing the collector default.
+- AdSense and ads.txt transient collector timeouts retain valid installed/valid evidence. They are now classified consistently as maintenance-only across the remediation queue, runtime actionability, and dashboard verification; they do not suppress a verified dashboard refresh.
+- Validation: focused Vitest 42/42, `pnpm type-check`, `pnpm build`, `pnpm dashboard:verify --skip-stats-update` (`local_verified`, 4/4), and `pnpm dashboard:acceptance data/dashboard-verification-2026-07-12.json` (`ready=true`, 10/10) passed.
+
 ## 2026-07-11 Sitemap Warning Closure
 
 - Search Console resubmission completed for `nicewomen.kr` sitemap index, `ezfunnel.kr` sitemap index, and `autorentlab.com` sitemap after public XML validation.

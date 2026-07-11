@@ -703,7 +703,9 @@ function isFleetChainArtifactSafeToAct(chain: FleetChainArtifact | undefined): b
     pass === commands &&
     fail === 0 &&
     skipped === 0 &&
-    stringArray(chain.verification.refreshFailedSources).length === 0 &&
+    stringArray(chain.verification.refreshFailedSources).every(
+      isMaintenanceRefreshFailure,
+    ) &&
     chain.verification.refreshFailuresBlockReadiness === false &&
     chain.verification.planMatchesStats === true &&
     chain.verification.handoffMatchesStats === true &&

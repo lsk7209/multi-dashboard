@@ -299,6 +299,24 @@ describe("run-dashboard-verification", () => {
       status: "safe_to_act",
       blockerHosts: [],
     });
+
+    expect(
+      buildDashboardActionability(
+        [],
+        surfaceEvidence,
+        makeFleetChainArtifact({
+          verification: {
+            refreshFailedSources: [
+              "skipped_refresh_failed:adsense_collector:transient_error:18",
+            ],
+            refreshFailuresBlockReadiness: false,
+          },
+        }),
+      ),
+    ).toMatchObject({
+      status: "safe_to_act",
+      blockerHosts: [],
+    });
   });
 
   it("does not mark actionability safe when smoke reports blocker hosts with an unexpected verdict token", () => {

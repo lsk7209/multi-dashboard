@@ -111,6 +111,8 @@ describe("verify-dashboard-runtime-smoke", () => {
         fleetOptimizationChain: {
           ...base.fleetOptimizationChain,
           refreshFailedSources: [],
+          readinessBlockingRefreshFailedSources: [],
+          maintenanceRefreshFailedSources: [],
           refreshFailureCount: 0,
           refreshFailuresBlockReadiness: false,
         },
@@ -130,10 +132,10 @@ describe("verify-dashboard-runtime-smoke", () => {
       actions: [],
       fleetOptimizationChain: {
         ...base.fleetOptimizationChain,
-        refreshFailedSources: [],
+        refreshFailedSources: ["skipped_refresh_failed:adsense_collector:transient_error:18"],
         readinessBlockingRefreshFailedSources: [],
-        maintenanceRefreshFailedSources: [],
-        refreshFailureCount: 0,
+        maintenanceRefreshFailedSources: ["skipped_refresh_failed:adsense_collector:transient_error:18"],
+        refreshFailureCount: 1,
         refreshFailuresBlockReadiness: false,
       },
       gscPermissionAudit: {
@@ -142,6 +144,10 @@ describe("verify-dashboard-runtime-smoke", () => {
         unverified: 0,
         notListed: 0,
         results: [],
+      },
+      t3TitleContentHandoff: {
+        ...base.t3TitleContentHandoff,
+        refreshFailedSources: ["skipped_refresh_failed:adsense_collector:transient_error:18"],
       },
       dashboardPostRecoveryChain: null,
     } as DashboardData);

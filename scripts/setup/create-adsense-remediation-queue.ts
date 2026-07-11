@@ -38,8 +38,10 @@ interface StatsRow {
   gscStatus?: unknown;
   adsenseStatus?: unknown;
   adsenseCollectorStatus?: unknown;
+  adsenseInstallStatus?: unknown;
   adsTxtStatus?: unknown;
   adsTxtCollectorStatus?: unknown;
+  adsTxtValidationStatus?: unknown;
   last30Days?: {
     activeUsers?: unknown;
   };
@@ -199,11 +201,21 @@ function isAdsenseHealthy(row: StatsRow): boolean {
 }
 
 function isAdsenseTelemetryHealthy(row: StatsRow): boolean {
-  return (
+  const collectorStatusesAreHealthy =
     isStatusOk(row.adsenseStatus) &&
     isStatusOk(row.adsenseCollectorStatus) &&
     isStatusOk(row.adsTxtStatus) &&
-    isStatusOk(row.adsTxtCollectorStatus)
+    isStatusOk(row.adsTxtCollectorStatus);
+
+  if (collectorStatusesAreHealthy) {
+    return true;
+  }
+
+  return (
+    row.adsenseCollectorStatus === "transient_error" &&
+    row.adsTxtCollectorStatus === "transient_error" &&
+    row.adsenseInstallStatus === "installed" &&
+    row.adsTxtValidationStatus === "valid"
   );
 }
 

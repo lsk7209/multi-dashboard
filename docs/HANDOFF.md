@@ -1,5 +1,13 @@
 # Handoff
 
+## 2026-07-12 Dashboard Refresh
+
+- Current snapshot: `data/site-stats.json` generated at `2026-07-11T16:18:45.043Z` for 98 sites. GA4, GSC, and sitemap failures are zero; direct ops intelligence and triage both report 0 findings.
+- `discparty` exceeded the normal 90-second site timeout but completed in 102 seconds under the one-run recovery limit. No collector default was changed.
+- Durable fix: valid AdSense installation and ads.txt evidence now keeps matching transient collector timeouts in the maintenance lane. The remediation queue, runtime actionability, and dashboard verifier now agree that these rows are not readiness blockers.
+- Evidence: focused Vitest 42/42, `pnpm type-check`, `pnpm build`, dashboard verification `local_verified` (4/4), and acceptance `ready=true` (10/10). The rendered local production UI smoke matches this exact snapshot.
+- Deployment handoff: push the coherent refresh commit to `origin/main`, wait for the Git-connected Vercel production deployment, then verify `https://multi-dashboard-one.vercel.app` responds and serves the current snapshot.
+
 ## Current State
 
 - Sitemap follow-up complete: `nicewomen.kr`, `ezfunnel.kr`, and `autorentlab.com` were resubmitted through Search Console after public XML verification. The fresh `2026-07-11T07:54:16.328Z` 98-site snapshot reports warnings=0 and errors=0 for all three; direct ops findings and triage are both 0.
