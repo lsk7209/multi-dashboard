@@ -370,6 +370,8 @@ sites:
     platform: wordpress
     url: https://nicewomen.kr/
     wpRestBase: https://nicewomen.kr/wp-json/wp/v2
+    sitemapUrls:
+      - https://nicewomen.kr/sitemap_index.xml
     ga4PropertyId: "524548131"
     gscSiteUrl: https://nicewomen.kr/
     monetization: true
@@ -659,6 +661,8 @@ sites:
     platform: wordpress
     url: https://ezfunnel.kr/
     wpRestBase: https://ezfunnel.kr/wp-json/wp/v2
+    sitemapUrls:
+      - https://ezfunnel.kr/sitemap_index.xml
     ga4PropertyId: "536106465"
     gscSiteUrl: https://ezfunnel.kr/
     monetization: true

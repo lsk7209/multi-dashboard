@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-11T07:04:42.979Z",
+  "generatedAt": "2026-07-11T07:54:33.341Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-07-11T07:04:42.413Z",
+  "sourceUpdatedAt": "2026-07-11T07:54:32.790Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 3
+    "low": 0
   },
   "counts": {
     "github-actions": 0,
-    "gsc": 3,
+    "gsc": 0,
     "adsense": 0,
     "ga4": 0,
     "vercel": 0,
@@ -23,52 +23,21 @@
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-11T07:04:42.407Z",
+      "checkedAt": "2026-07-11T07:54:32.790Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-11T07:04:23.041Z.",
-      "checkedAt": "2026-07-11T07:04:42.406Z",
-      "count": 3
+      "detail": "Read dashboard artifact snapshot=2026-07-11T07:54:16.328Z.",
+      "checkedAt": "2026-07-11T07:54:32.790Z",
+      "count": 0
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-11T07:04:42.406Z",
+      "checkedAt": "2026-07-11T07:54:32.790Z",
       "count": 98
     }
   },
-  "findings": [
-    {
-      "id": "gsc-nicewomen-t1o7t1",
-      "kind": "gsc",
-      "severity": "low",
-      "priority": 20,
-      "site": "nicewomen",
-      "sourceLine": "direct:dashboard site=nicewomen kind=gsc status=sitemap warnings=1 errors=0 detail=https://nicewomen.kr/sitemap_index.xml warnings=1 errors=0 submitted=510 downloaded=2026-07-08T03:40:37.839Z submittedAt=2026-06-02T03:55:33.220Z",
-      "title": "나이스우먼 - GA4: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://nicewomen.kr/sitemap_index.xml warnings=1 errors=0 submitted=510 downloaded=2026-07-08T03:40:37.839Z submittedAt=2026-06-02T03:55:33.220Z."
-    },
-    {
-      "id": "gsc-autorentlab-t1o7t1",
-      "kind": "gsc",
-      "severity": "low",
-      "priority": 20,
-      "site": "autorentlab",
-      "sourceLine": "direct:dashboard site=autorentlab kind=gsc status=sitemap warnings=1 errors=0 detail=https://autorentlab.com/sitemap.xml warnings=1 errors=0 submitted=125 downloaded=2026-07-09T03:48:40.603Z submittedAt=2026-07-04T03:32:15.268Z",
-      "title": "autorentlab.com: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://autorentlab.com/sitemap.xml warnings=1 errors=0 submitted=125 downloaded=2026-07-09T03:48:40.603Z submittedAt=2026-07-04T03:32:15.268Z."
-    },
-    {
-      "id": "gsc-ezfunnel-t1o7t1",
-      "kind": "gsc",
-      "severity": "low",
-      "priority": 20,
-      "site": "ezfunnel",
-      "sourceLine": "direct:dashboard site=ezfunnel kind=gsc status=sitemap warnings=1 errors=0 detail=https://ezfunnel.kr/sitemap_index.xml warnings=1 errors=0 submitted=484 downloaded=2026-07-09T04:27:04.328Z submittedAt=2026-06-02T03:55:40.377Z",
-      "title": "ezfunnel.kr: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://ezfunnel.kr/sitemap_index.xml warnings=1 errors=0 submitted=484 downloaded=2026-07-09T04:27:04.328Z submittedAt=2026-06-02T03:55:40.377Z."
-    }
-  ]
+  "findings": []
 }

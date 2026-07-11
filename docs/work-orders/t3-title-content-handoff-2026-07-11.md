@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-11T07:04:23.041Z
+# T3 Title/Content Handoff - 2026-07-11T07:54:16.328Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-11T07:04:23.041Z`
+- Snapshot: `2026-07-11T07:54:16.328Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-11.json`
 - Sites path: `scripts\setup\sites.yaml`
@@ -29,7 +29,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `estat.kr` | 4, 6 | `title_handoff`, `content_handoff` | 2734 impr / 13 clicks / 0.48% CTR / pos 7.89 | 40 | `missing` | `D:\web\estatkr` |
 | `dogswhere.com` | 7 | `title_handoff` | 1013 impr / 19 clicks / 1.88% CTR / pos 13.21 | 1391 | `부산 지하철 근처 애견 유치원` (12 impr, pos 41.42)<br>`강아지 맡길 곳` (11 impr, pos 31.09) | `D:\web\dogswherecom` |
 | `petinsuer.com` | 8 | `title_handoff` | 1331 impr / 19 clicks / 1.43% CTR / pos 9.55 | 101 | `노견 기준` (12 impr, pos 7.00) | `D:\web\petinsuercom` |
-| `dogspang.kr` | 9, 10 | `title_handoff`, `content_handoff` | 1109 impr / 19 clicks / 1.71% CTR / pos 9.94 | 88 | `강아지 발바닥 각화증` (24 impr, pos 7.79) | `D:\web\dogspangkr` |
+| `dogspang.kr` | 9, 10 | `title_handoff`, `content_handoff` | 1109 impr / 19 clicks / 1.71% CTR / pos 9.94 | 86 | `강아지 발바닥 각화증` (24 impr, pos 7.79) | `D:\web\dogspangkr` |
 | `nexttech7.com` | 12 | `title_handoff` | 834 impr / 16 clicks / 1.92% CTR / pos 12.86 | 164 | `missing` | `D:\web\nexttech7com` |
 | `today2424.kr` | 13 | `content_handoff` | 931 impr / 37 clicks / 3.97% CTR / pos 9.34 | 93 | `missing` | `D:\web\today2424\2424` |
 | `homeimer.com` | 14 | `content_handoff` | 952 impr / 0 clicks / 0.00% CTR / pos 66.65 | 10 | `missing` | `D:\web\homeimercom` |
@@ -45,7 +45,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `gong365.kr` | `wordpress` | `https://gong365.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `estat.kr` | `wordpress` | `https://estat.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `dogswhere.com` | `wordpress` | `https://dogswhere.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
-| `petinsuer.com` | `wordpress` | `https://petinsuer.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
+| `petinsuer.com` | `wordpress` | `https://petinsuer.com/sitemap_index.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `dogspang.kr` | `wordpress` | `https://dogspang.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `nexttech7.com` | `wordpress` | `https://nexttech7.com/sitemap_index.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `today2424.kr` | `wordpress` | `https://today2424.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Persona/content workflow only; do not directly edit article bodies from this handoff. |

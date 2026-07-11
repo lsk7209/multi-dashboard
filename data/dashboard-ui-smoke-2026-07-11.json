@@ -1,6 +1,6 @@
 {
-  "url": "http://127.0.0.1:3104/?actionabilityMode=local-evidence&actionabilityToken=redacted",
-  "generatedAt": "2026-07-11T07:04:23.041Z",
+  "url": "http://127.0.0.1:3105/?actionabilityMode=local-evidence&actionabilityToken=redacted",
+  "generatedAt": "2026-07-11T07:54:16.328Z",
   "siteCount": 98,
   "blockingSources": [],
   "maintenanceSources": [],
@@ -9,7 +9,7 @@
   "actionabilityCommand": "pnpm dashboard:post-recovery",
   "actionabilityAllowedUse": "Dashboard recommendations may be used as executable local work after standard verification.",
   "actionabilityReason": "All dashboard readiness evidence is current and unblocked.",
-  "blockedActionReason": "GSC sitemap 마지막 수집일이 3일 전입니다. 경고 1개",
+  "blockedActionReason": "GA4 사용자가 직전 7일 대비 크게 감소했습니다.",
   "hasSuppressedBlockedAction": true,
   "fleetChainArtifactPath": "data/fleet-optimization-chain-2026-07-11.json",
   "gscPermissionAuditArtifactPath": "data/gsc-permission-audit-2026-07-11.json",
@@ -24,7 +24,7 @@
     {
       "key": "dashboardArtifacts",
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-11T07:04:23.041Z."
+      "detail": "Read dashboard artifact snapshot=2026-07-11T07:54:16.328Z."
     },
     {
       "key": "ga4",
@@ -43,7 +43,7 @@
     "readable-rendered-text",
     "unauthorized-local-evidence-blocked"
   ],
-  "artifactGeneratedAt": "2026-07-11T07:14:35.240Z",
+  "artifactGeneratedAt": "2026-07-11T07:55:35.365Z",
   "date": "2026-07-11",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,

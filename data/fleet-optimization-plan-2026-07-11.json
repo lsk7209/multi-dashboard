@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-11T07:14:30.509Z",
+  "generatedAt": "2026-07-11T07:55:30.414Z",
   "dashboardEvidence": {
     "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
-    "snapshotTimestamp": "2026-07-11T07:04:23.041Z",
+    "snapshotTimestamp": "2026-07-11T07:54:16.328Z",
     "refreshCommand": "pnpm stats:update",
     "refreshFailedSources": [],
     "connectorStatus": {
@@ -45,15 +45,15 @@
   "summary": {
     "siteCount": 98,
     "adsenseProblemRows": 0,
-    "seoCandidateCount": 20,
+    "seoCandidateCount": 18,
     "titleHandoffCount": 9,
-    "indexingCount": 2,
+    "indexingCount": 0,
     "technicalSeoCount": 2,
     "contentHandoffCount": 7
   },
   "adsenseQueue": {
     "artifactPath": "data\\adsense-remediation-queue-2026-07-11.json",
-    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-11T07:04:23.041Z",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-11T07:54:16.328Z",
     "summary": {
       "totalRows": 98,
       "reviewedRows": 84,
@@ -85,7 +85,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -112,7 +112,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -139,7 +139,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -166,7 +166,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -193,7 +193,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -220,7 +220,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -247,7 +247,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -274,7 +274,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -297,11 +297,11 @@
         "gscClicks30d": 19,
         "gscCtr30d": 0.017132551848512173,
         "gscPosition30d": 9.936880072137061,
-        "ga4ActiveUsers30d": 88
+        "ga4ActiveUsers30d": 86
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -318,17 +318,17 @@
       "actionType": "content_handoff",
       "tier": "T3",
       "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 1109 impressions and 88 users.",
+      "reason": "Search exposure is present but GA4 users are low: 1109 impressions and 86 users.",
       "metrics": {
         "gscImpressions30d": 1109,
         "gscClicks30d": 19,
         "gscCtr30d": 0.017132551848512173,
         "gscPosition30d": 9.936880072137061,
-        "ga4ActiveUsers30d": 88
+        "ga4ActiveUsers30d": 86
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -355,7 +355,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -382,7 +382,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -409,7 +409,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -436,7 +436,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -463,7 +463,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -490,7 +490,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -517,7 +517,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -544,7 +544,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
+        "snapshot=2026-07-11T07:54:16.328Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -552,60 +552,6 @@
         "sitemapErrors=0"
       ],
       "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
-    },
-    {
-      "rank": 19,
-      "siteId": "ezfunnel",
-      "host": "ezfunnel.kr",
-      "url": "https://ezfunnel.kr/",
-      "actionType": "indexing",
-      "tier": "T2",
-      "confidence": "high",
-      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=1, sitemapErrors=0, sitemapPending=false.",
-      "metrics": {
-        "gscImpressions30d": 66,
-        "gscClicks30d": 1,
-        "gscCtr30d": 0.015151515151515152,
-        "gscPosition30d": 11.196969696969697,
-        "ga4ActiveUsers30d": 42
-      },
-      "evidence": [
-        "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
-        "gscStatus=ok",
-        "adsenseStatus=ok",
-        "adsTxtStatus=ok",
-        "sitemapWarnings=1",
-        "sitemapErrors=0"
-      ],
-      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
-    },
-    {
-      "rank": 20,
-      "siteId": "nicewomen",
-      "host": "nicewomen.kr",
-      "url": "https://nicewomen.kr/",
-      "actionType": "indexing",
-      "tier": "T2",
-      "confidence": "high",
-      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=1, sitemapErrors=0, sitemapPending=false.",
-      "metrics": {
-        "gscImpressions30d": 14,
-        "gscClicks30d": 0,
-        "gscCtr30d": 0,
-        "gscPosition30d": 6.285714285714286,
-        "ga4ActiveUsers30d": 70
-      },
-      "evidence": [
-        "data/site-stats.json",
-        "snapshot=2026-07-11T07:04:23.041Z",
-        "gscStatus=ok",
-        "adsenseStatus=ok",
-        "adsTxtStatus=ok",
-        "sitemapWarnings=1",
-        "sitemapErrors=0"
-      ],
-      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
     }
   ],
   "stopConditions": [

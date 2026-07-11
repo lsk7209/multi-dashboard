@@ -2,6 +2,7 @@
 
 ## Current State
 
+- Sitemap follow-up complete: `nicewomen.kr`, `ezfunnel.kr`, and `autorentlab.com` were resubmitted through Search Console after public XML verification. The fresh `2026-07-11T07:54:16.328Z` 98-site snapshot reports warnings=0 and errors=0 for all three; direct ops findings and triage are both 0.
 - Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-11T07:04:23.041Z` for 98 sites; GA4, GSC, sitemap, AdSense-code, and ads.txt collector failures are all zero.
 - Matching post-recovery evidence is `ready_to_act`: GSC permission audit, dashboard verification, and acceptance passed 3/3 with artifact integrity passing. The rendered UI smoke used the locally built dashboard with this exact snapshot before its evidence artifacts were deployed.
 - GA4 source/medium and landing-page current-vs-previous 7-day breakdowns are now collected and shown in the site table. Coverage is 86/98 properties for both breakdowns; remaining zero-data properties are not treated as collector failures.

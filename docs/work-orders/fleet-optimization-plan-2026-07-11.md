@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-11T07:04:23.041Z
+# Fleet Optimization Plan - 2026-07-11T07:54:16.328Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-11T07:04:23.041Z`
+- Snapshot: `2026-07-11T07:54:16.328Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `none`
@@ -32,9 +32,9 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 |---|---:|
 | Sites | 98 |
 | AdSense problem rows | 0 |
-| SEO candidates | 20 |
+| SEO candidates | 18 |
 | Title handoff | 9 |
-| Indexing | 2 |
+| Indexing | 0 |
 | Technical SEO | 2 |
 | Content handoff | 7 |
 
@@ -58,8 +58,8 @@ Source: `data\adsense-remediation-queue-2026-07-11.json`
 | 6 | `estat.kr` | `content_handoff` | T3 | 2734 impr / 0.48% CTR / pos 7.89 / 40 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 7 | `dogswhere.com` | `title_handoff` | T3 | 1013 impr / 1.88% CTR / pos 13.21 / 1391 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 8 | `petinsuer.com` | `title_handoff` | T3 | 1331 impr / 1.43% CTR / pos 9.55 / 101 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 9 | `dogspang.kr` | `title_handoff` | T3 | 1109 impr / 1.71% CTR / pos 9.94 / 88 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 10 | `dogspang.kr` | `content_handoff` | T3 | 1109 impr / 1.71% CTR / pos 9.94 / 88 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 9 | `dogspang.kr` | `title_handoff` | T3 | 1109 impr / 1.71% CTR / pos 9.94 / 86 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 10 | `dogspang.kr` | `content_handoff` | T3 | 1109 impr / 1.71% CTR / pos 9.94 / 86 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 11 | `homeimer.com` | `technical_seo` | T2 | 952 impr / 0.00% CTR / pos 66.65 / 10 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
 | 12 | `nexttech7.com` | `title_handoff` | T3 | 834 impr / 1.92% CTR / pos 12.86 / 164 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 13 | `today2424.kr` | `content_handoff` | T3 | 931 impr / 3.97% CTR / pos 9.34 / 93 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
@@ -68,8 +68,6 @@ Source: `data\adsense-remediation-queue-2026-07-11.json`
 | 16 | `legalser.com` | `content_handoff` | T3 | 642 impr / 0.31% CTR / pos 59.75 / 17 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 17 | `healfood.kr` | `title_handoff` | T3 | 500 impr / 0.80% CTR / pos 8.86 / 29 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 18 | `healfood.kr` | `content_handoff` | T3 | 500 impr / 0.80% CTR / pos 8.86 / 29 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 19 | `ezfunnel.kr` | `indexing` | T2 | 66 impr / 1.52% CTR / pos 11.20 / 42 users | Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed. |
-| 20 | `nicewomen.kr` | `indexing` | T2 | 14 impr / 0.00% CTR / pos 6.29 / 70 users | Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed. |
 
 ## Stop Conditions
 

@@ -1,5 +1,10 @@
 # Status
 
+## 2026-07-11 Sitemap Warning Closure
+
+- Search Console resubmission completed for `nicewomen.kr` sitemap index, `ezfunnel.kr` sitemap index, and `autorentlab.com` sitemap after public XML validation.
+- The follow-up 98-site snapshot at `2026-07-11T07:54:16.328Z` shows warnings=0, errors=0, and refreshed submitted/downloaded timestamps for all three. `pnpm ops:intel` and `pnpm ops:triage` both report 0 findings.
+
 ## 2026-07-11 GA4 Diagnosis and Sitemap Repair
 
 - Added GA4 source/medium and landing-page 7-day comparison data to the collector and site table. A fresh 98-site snapshot at `2026-07-11T07:04:23.041Z` has 86 populated source/medium and landing-page breakdowns; collection health remains zero failures across GA4, GSC, sitemap, AdSense, and ads.txt.
