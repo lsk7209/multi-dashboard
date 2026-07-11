@@ -1243,7 +1243,6 @@ async function recordRemoteQualifiedBannerEvent(
   if (!isBannerLibsqlEnabled()) return false;
   const client = createBannerLibsqlClient();
   try {
-    await ensureRemoteSchema(client);
     const eventType = input.eventType === "impression" ? "qualified_impression" : "qualified_click";
     let eligible = 1;
     if (input.eventType === "click") {
