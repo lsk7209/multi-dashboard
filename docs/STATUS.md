@@ -1,5 +1,11 @@
 # Status
 
+## 2026-07-11 Remediation Harness
+
+- Fresh 98-site snapshot generated at `2026-07-11T04:59:29.505Z`; `pnpm ops:intel` and `pnpm ops:triage` reported only 3 low-severity direct GSC sitemap findings.
+- Independent sitemap, traffic, and metadata reviews completed. Texturb had a verified metadata terminology defect and was fixed/deployed in `985adfe`.
+- Ezfunnel's 5 sitemap duplicates remain pending remote WordPress access; current SSH port 22 is refused. Traffic-drop candidates remain monitoring-only until GA4 channel/landing-page evidence is collected.
+
 ## 2026-07-11 Fresh Snapshot and Verification URL Guard
 
 - `pnpm stats:update` completed at `2026-07-11T03:35:08.164Z` for 98 sites: GA4, GSC, sitemap, AdSense-code, and ads.txt failures are all zero.

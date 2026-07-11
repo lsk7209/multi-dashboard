@@ -2,6 +2,11 @@
 
 ## Current State
 
+- Fresh snapshot: `data/site-stats.json` generated at `2026-07-11T04:59:29.505Z` for 98 sites; direct collection rebuilt `ops-intel` and `ops-triage` with 3 low-severity sitemap findings.
+- Parallel remediation audit: `ezfunnel.kr` has 5 duplicate public sitemap URLs, while `nicewomen.kr` has sitemap-index lastmod drift and `autorentlab.com` has no public-file defect. Ezfunnel's WordPress SSH endpoint currently refuses port 22, so do not claim a sitemap repair until remote access is restored.
+- Traffic drops reviewed across 8 sites do not have enough GA4 channel or GSC page/query evidence for SEO mutations. Add source/medium and landing-page comparisons before content changes.
+- Texturb: public `/tools/fullwidth-halfwidth-converter/` metadata was corrected from `반각(Fullwidth)` to `반각(Halfwidth)`, committed as `985adfe`, and verified on Vercel production with a cache-MISS response.
+
 - Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-11T03:35:08.164Z`; all 98 GA4, GSC, sitemap, AdSense-code, and ads.txt collector checks completed without failures. Post-recovery is `ready_to_act` (3/3, artifact integrity passed).
 - Rendered UI verification now requires `DASHBOARD_URL` to point to an owned, current multi-dashboard server. Do not rely on an ambient localhost port; after a build, restart that server before running `pnpm dashboard:post-recovery`.
 - Page/query CTR evidence is now collected directly with `pnpm exec tsx scripts/setup/collect-gsc-page-query-opportunities.ts`. The 2026-07-11 artifact covers `estat-2`, `cartain-2`, `texturb`, and `tennisfrens` over the preceding 28 days and is the source for page-level title/meta work; do not infer a specific page/query pair from site-level CTR alone.

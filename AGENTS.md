@@ -60,3 +60,17 @@
 - Only when the user explicitly indicates they are ending or closing the work session after work that touched dashboard priorities, Vercel API-data sites, DB sync, SEO, or content, ask:
   - `워드프레스 제외 Vercel API 수집형 사이트들 중 신규 API 데이터가 있는지 확인하고, 새 데이터 기반 콘텐츠 보완/생성 작업을 추가할까요?`
 - Checking for new data is read-only by default. Do not run production DB writes, live API backfills, publishing jobs, or deployments solely because of this reminder.
+
+## Harness Workflow
+
+For complex coding tasks, use the Goal-Harness workflow.
+
+1. Define the goal and done condition before coding.
+2. Create or read the harness documents.
+3. Follow PLAN.md in order.
+4. Update STATUS.md after each major step.
+5. Run available lint, test, build, and smoke checks.
+6. Record validation evidence in EVIDENCE.md.
+7. Do not claim completion until ACCEPTANCE.md is satisfied.
+8. If the same failure repeats three times, enter Failure Analysis Mode.
+9. Do not expose secrets, modify production data, or run destructive commands without explicit approval.
