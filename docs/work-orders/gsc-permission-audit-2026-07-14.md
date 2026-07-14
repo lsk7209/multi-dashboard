@@ -1,15 +1,14 @@
-# GSC Permission Audit - 2026-07-14T00:43:04.577Z
-
+# GSC Permission Audit - 2026-07-14T03:14:43.553Z
 This is a non-mutating permission recovery packet. It does not change Search Console, GA4, DNS, or site files.
 
 ## Service Account
 
-- Email to grant or verify: `id-ai-179@cursorai-451704.iam.gserviceaccount.com`
+- Email to grant or verify: `unknown`
 
 ## Summary
 
 - Handoff status: `resolved`
-- Snapshot: `data/site-stats.json generatedAt=2026-07-14T00:43:04.577Z`
+- Snapshot: `data/site-stats.json generatedAt=2026-07-14T03:14:43.553Z`
 - Audited rows: 0
 - Owner access: 0
 - Restricted access: 0
