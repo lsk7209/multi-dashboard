@@ -989,19 +989,19 @@ function collectIssues(site: SiteAudit): string[] {
 
 export function makeNextActions(site: SiteAudit): string[] {
   const actions = new Set<string>();
-  const unreachableDetail = [
+  const localFetchDetail = [
     site.robots,
     site.sitemap,
     site.adsTxt,
     site.trustPages,
     site.blogIndex,
-  ].find((check) => check.detail.includes("homepage unreachable"))?.detail;
-  if (unreachableDetail) {
+  ].find((check) => check.detail.includes("local fetch unavailable"))?.detail;
+  if (localFetchDetail) {
     actions.add(
-      "Restore public HTTP/HTTPS reachability for Googlebot-style crawlers before AdSense review.",
+      "Recheck public reachability from an independent network before classifying this as a site defect.",
     );
     actions.add(
-      "Re-run AdSense readiness audit after the host responds on home, robots.txt, sitemap, and ads.txt.",
+      "Re-run the readiness audit after local network access recovers; do not request AdSense review from this evidence alone.",
     );
     return [...actions];
   }
@@ -1171,14 +1171,14 @@ async function auditSite(
   try {
     await fetchText(site.url);
   } catch (error) {
-    const detail = `homepage unreachable: ${getErrorMessage(error)}`;
+    const detail = `local fetch unavailable: ${getErrorMessage(error)}`;
     const audit: SiteAudit = {
       id: site.id,
       name: site.name ?? site.id,
       platform: site.platform,
       url: site.url,
       ...(site.gscSiteUrl ? { gscSiteUrl: site.gscSiteUrl } : {}),
-      verdict: "blocked",
+      verdict: "review",
       score: 0,
       pages: [makeUnavailablePage(site.url, detail)],
       robots: { state: "unknown", detail },
@@ -1187,7 +1187,7 @@ async function auditSite(
       adsTxt: { state: "unknown", detail },
       trustPages: { state: "unknown", detail },
       blogIndex: { state: "unknown", detail },
-      contentQuality: { state: "fail", detail },
+      contentQuality: { state: "unknown", detail },
       issues: [],
       nextActions: [],
     };
