@@ -296,8 +296,8 @@ function buildVerification(date: string): ChainVerification {
   const planSnapshot = stringValue(plan?.dashboardEvidence?.snapshotTimestamp);
   const handoffSnapshot = stringValue(handoff?.dashboardEvidence?.snapshotTimestamp);
   const refreshFailedSources = stringArray(handoff?.dashboardEvidence?.refreshFailedSources);
-  const readinessBlockingRefreshFailedSources = refreshFailedSources.filter(
-    isReadinessBlockingRefreshFailure,
+  const readinessBlockingRefreshFailedSources = readinessBlockingRefreshFailures(
+    refreshFailedSources,
   );
   return {
     statsSnapshot,
@@ -317,6 +317,21 @@ function buildVerification(date: string): ChainVerification {
 
 export function isReadinessBlockingRefreshFailure(source: string): boolean {
   return !isMaintenanceRefreshFailure(source);
+}
+
+export function readinessBlockingRefreshFailures(sources: string[]): string[] {
+  const hasTransientAdsense = sources.some((source) =>
+    source.includes("adsense_collector:transient_error"),
+  );
+  const hasTransientAdsTxt = sources.some((source) =>
+    source.includes("ads_txt_collector:transient_error"),
+  );
+
+  return sources.filter((source) => {
+    if (hasTransientAdsense && source.includes("adsense:api_error")) return false;
+    if (hasTransientAdsTxt && source.includes("ads_txt:api_error")) return false;
+    return isReadinessBlockingRefreshFailure(source);
+  });
 }
 
 function isMaintenanceRefreshFailure(source: string): boolean {

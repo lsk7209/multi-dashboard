@@ -208,6 +208,23 @@ describe("getDashboardActionability", () => {
     ).toBe("safe_to_act");
   });
 
+  it("allows legacy API errors only when their paired collector errors are transient", () => {
+    expect(
+      getDashboardActionability(
+        makeActionabilityInput({
+          t3TitleContentHandoff: {
+            refreshFailedSources: [
+              "skipped_refresh_failed:adsense:api_error:18",
+              "skipped_refresh_failed:adsense_collector:transient_error:18",
+              "skipped_refresh_failed:ads_txt:api_error:18",
+              "skipped_refresh_failed:ads_txt_collector:transient_error:18",
+            ],
+          },
+        }),
+      ).status,
+    ).toBe("safe_to_act");
+  });
+
   it("blocks when the fleet chain command summary is not fully successful", () => {
     for (const fleetOptimizationChain of [
       { ...makeChain(), fail: 1 },

@@ -5,7 +5,10 @@ import {
   getOpsMailReviewState,
   type OpsMailReviewStatus,
 } from "./ops-mail-review-store";
-import { isMaintenanceRefreshFailureSource } from "./refresh-failure-details";
+import {
+  isMaintenanceRefreshFailureSource,
+  readinessBlockingRefreshFailureSources,
+} from "./refresh-failure-details";
 
 const REQUIRED_DASHBOARD_POST_RECOVERY_ACCEPTANCE_ROWS = [
   "external_gsc_access_restored=satisfied",
@@ -4025,10 +4028,9 @@ export function loadFleetOptimizationChain(
       planSnapshot: parsed.verification.planSnapshot,
       handoffSnapshot: parsed.verification.handoffSnapshot,
       refreshFailedSources: parsed.verification.refreshFailedSources,
-      readinessBlockingRefreshFailedSources:
-        parsed.verification.refreshFailedSources.filter(
-          isReadinessBlockingRefreshFailure,
-        ),
+      readinessBlockingRefreshFailedSources: readinessBlockingRefreshFailureSources(
+        parsed.verification.refreshFailedSources,
+      ),
       maintenanceRefreshFailedSources:
         parsed.verification.refreshFailedSources.filter(
           isMaintenanceRefreshFailure,
@@ -4206,10 +4208,6 @@ export function loadFleetOptimizationChainStatus(
       artifactPath,
     };
   }
-}
-
-function isReadinessBlockingRefreshFailure(source: string): boolean {
-  return !isMaintenanceRefreshFailure(source);
 }
 
 function isMaintenanceRefreshFailure(source: string): boolean {

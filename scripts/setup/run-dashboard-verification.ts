@@ -5,6 +5,7 @@ import { pathToFileURL } from "node:url";
 import {
   describeRefreshFailureSources,
   isMaintenanceRefreshFailureSource,
+  readinessBlockingRefreshFailureSources,
   type RefreshFailureDetail,
 } from "../../app/lib/refresh-failure-details.js";
 
@@ -853,9 +854,8 @@ export function isExpectedFleetReadinessBlockArtifact(
   const pass = finiteNumber(chain.summary.pass);
   const skipped = finiteNumber(chain.summary.skipped);
   const refreshFailedSources = stringArray(chain.verification.refreshFailedSources);
-  const readinessBlockingRefreshFailedSources = refreshFailedSources.filter(
-    (source) => !isMaintenanceRefreshFailure(source),
-  );
+  const readinessBlockingRefreshFailedSources =
+    readinessBlockingRefreshFailureSources(refreshFailedSources);
   return (
     commands !== null &&
     pass !== null &&
