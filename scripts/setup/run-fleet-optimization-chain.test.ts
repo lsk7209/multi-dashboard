@@ -4,6 +4,7 @@ import {
   buildFleetOptimizationChainPlan,
   isReadinessBlockingRefreshFailure,
   parseCliOptions,
+  readinessBlockingRefreshFailures,
 } from "./run-fleet-optimization-chain.js";
 
 describe("run-fleet-optimization-chain", () => {
@@ -131,5 +132,19 @@ describe("run-fleet-optimization-chain", () => {
     ).toBe(false);
     expect(isReadinessBlockingRefreshFailure("skipped_refresh_failed:gsc:auth_error:1")).toBe(true);
     expect(isReadinessBlockingRefreshFailure("skipped_refresh_failed:sitemap:error:1")).toBe(true);
+  });
+
+  it("suppresses legacy AdSense error summaries when the same refresh recorded only transient probes", () => {
+    expect(
+      readinessBlockingRefreshFailures([
+        "skipped_refresh_failed:adsense:api_error:18",
+        "skipped_refresh_failed:adsense_collector:transient_error:18",
+        "skipped_refresh_failed:ads_txt:api_error:18",
+        "skipped_refresh_failed:ads_txt_collector:transient_error:18",
+      ]),
+    ).toEqual([]);
+    expect(
+      readinessBlockingRefreshFailures(["skipped_refresh_failed:adsense:api_error:1"]),
+    ).toEqual(["skipped_refresh_failed:adsense:api_error:1"]);
   });
 });

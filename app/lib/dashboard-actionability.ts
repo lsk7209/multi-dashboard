@@ -1,5 +1,5 @@
 import type { DashboardData } from "./dashboard-data";
-import { isMaintenanceRefreshFailureSource } from "./refresh-failure-details";
+import { readinessBlockingRefreshFailureSources } from "./refresh-failure-details";
 
 export interface DashboardActionability {
   status: "safe_to_act" | "blocked_for_action_until_post_recovery_verify";
@@ -52,9 +52,9 @@ export function getDashboardActionability(
       chain.planMatchesStats &&
       chain.handoffMatchesStats &&
       chain.handoffMutationFlagsFalse &&
-      data.t3TitleContentHandoff.refreshFailedSources.every(
-        isMaintenanceRefreshFailureSource,
-      ) &&
+      readinessBlockingRefreshFailureSources(
+        data.t3TitleContentHandoff.refreshFailedSources,
+      ).length === 0 &&
       proofFreshnessReady,
   );
   const postRecoveryChainReady = Boolean(

@@ -1,5 +1,13 @@
 # Handoff
 
+## 2026-07-15 AdSense Proof Freshness Repair
+
+- Repaired the dangling `pnpm adsense:proof:refresh-snapshot` command by adding a non-mutating continuation refresher. It carries only previously recorded candidates that remain in the current proof queue; it never invents external proof, upgrades a candidate, checks the AdSense console, or mutates a site.
+- The current continuation artifact matches snapshot `2026-07-14T22:35:38.563Z` and retains `ezfunnel` as unresolved. It is current evidence, not approval evidence.
+- Legacy `adsense:api_error` / `ads_txt:api_error` entries are now ignored only when their paired collector failures are explicitly transient. Unpaired API errors remain readiness blockers.
+- Validation: focused Vitest 122/122, `pnpm type-check`, and `pnpm dashboard:smoke` passed (`98` sites, `8` checks, readiness `ready`).
+- Remaining production work: Travelpang live WordPress remediation still requires administrator, Application Password, or SSH/WP-CLI authority; no WordPress, AdSense, GSC, or deployment mutation was performed by this repair.
+
 ## 2026-07-15 Dashboard Refresh
 
 - Fresh 98-site snapshot generated at `2026-07-14T22:35:38.563Z` (2026-07-15 07:35 KST). GA4, GSC, and sitemap failures are zero.

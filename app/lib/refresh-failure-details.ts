@@ -96,3 +96,21 @@ export function describeRefreshFailureSources(sources: string[]): RefreshFailure
 export function isMaintenanceRefreshFailureSource(source: string): boolean {
   return describeRefreshFailureSource(source).severity === "maintenance";
 }
+
+export function readinessBlockingRefreshFailureSources(sources: string[]): string[] {
+  const hasTransientAdsense = sources.some((source) =>
+    source.includes("adsense_collector:transient_error"),
+  );
+  const hasTransientAdsTxt = sources.some((source) =>
+    source.includes("ads_txt_collector:transient_error"),
+  );
+  return sources.filter((source) => {
+    if (hasTransientAdsense && source.includes("adsense:api_error")) {
+      return false;
+    }
+    if (hasTransientAdsTxt && source.includes("ads_txt:api_error")) {
+      return false;
+    }
+    return !isMaintenanceRefreshFailureSource(source);
+  });
+}

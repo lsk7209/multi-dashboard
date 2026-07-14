@@ -1,5 +1,10 @@
 # Status
 
+## 2026-07-15 AdSense Proof Freshness Repair
+
+- Local dashboard readiness is restored for the current 98-site snapshot. The proof-refresh command now has a real non-mutating implementation and will fail closed if the current queue or a valid predecessor artifact is unavailable.
+- `pnpm dashboard:smoke` passes after the repair. The unresolved candidate queue remains visible; this is not an AdSense approval or resubmission claim.
+
 ## 2026-07-15 Dashboard Refresh
 
 - Fresh 98-site snapshot: `data/site-stats.json` generated at `2026-07-14T22:35:38.563Z` (2026-07-15 07:35 KST). GA4, GSC, and sitemap failures are zero.

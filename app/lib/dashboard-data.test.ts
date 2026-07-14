@@ -1883,6 +1883,38 @@ describe("loadFleetOptimizationChain", () => {
     }
   });
 
+  it("does not turn legacy AdSense API errors into blockers when the paired collector error is transient", () => {
+    const dir = mkdtempSync(join(tmpdir(), "fleet-chain-legacy-adsense-"));
+    try {
+      writeFileSync(
+        join(dir, "fleet-optimization-chain-2026-07-05.json"),
+        JSON.stringify(
+          makeFleetChainArtifact({
+            snapshot: "2026-07-05T01:00:00.000Z",
+            sites: 13,
+            refreshFailedSources: [
+              "skipped_refresh_failed:adsense:api_error:1",
+              "skipped_refresh_failed:adsense_collector:transient_error:1",
+              "skipped_refresh_failed:ads_txt:api_error:1",
+              "skipped_refresh_failed:ads_txt_collector:transient_error:1",
+            ],
+            refreshFailuresBlockReadiness: false,
+          }),
+        ),
+      );
+
+      const chain = loadFleetOptimizationChain(dir, "2026-07-05T01:00:00.000Z");
+
+      expect(chain?.readinessBlockingRefreshFailedSources).toEqual([]);
+      expect(chain?.maintenanceRefreshFailedSources).toEqual([
+        "skipped_refresh_failed:adsense_collector:transient_error:1",
+        "skipped_refresh_failed:ads_txt_collector:transient_error:1",
+      ]);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   it("ignores stale or malformed fleet chain artifacts", () => {
     const dir = mkdtempSync(join(tmpdir(), "fleet-chain-stale-"));
     try {
