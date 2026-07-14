@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T00:53:58.627Z",
+  "generatedAt": "2026-07-14T03:26:44.043Z",
   "date": "2026-07-14",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,
@@ -25,7 +25,7 @@
       "id": "dashboard-ui-smoke",
       "args": [
         "dashboard:ui-smoke",
-        "--url=http://127.0.0.1:3102/?actionabilityMode=local-evidence"
+        "--url=https://multi-dashboard-one.vercel.app/?actionabilityMode=local-evidence"
       ]
     },
     {
@@ -40,28 +40,28 @@
       "id": "fleet-optimize",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 fleet:optimize D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/run-fleet-optimization-chain.ts \"--skip-stats-update\" \"--skip-api-data-audit\"\n\nWrote data\\fleet-optimization-chain-2026-07-14.json and docs\\work-orders\\fleet-optimization-chain-2026-07-14.md. snapshot=2026-07-14T00:43:04.577Z commands=4 pass=4 fail=0 skipped=0 handoffSites=12\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 fleet:optimize D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/run-fleet-optimization-chain.ts \"--skip-stats-update\" \"--skip-api-data-audit\"\n\nWrote data\\fleet-optimization-chain-2026-07-14.json and docs\\work-orders\\fleet-optimization-chain-2026-07-14.md. snapshot=2026-07-14T03:14:43.553Z commands=4 pass=4 fail=0 skipped=0 handoffSites=12\n",
       "stderrTail": ""
     },
     {
       "id": "dashboard-smoke",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:smoke D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/verify-dashboard-runtime-smoke.ts\n\nDashboard runtime smoke passed. snapshot=2026-07-14T00:43:04.577Z sites=98 actions=16 insights=81 chainStatus=current verdict=ready blockers=none checks=8\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:smoke D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/verify-dashboard-runtime-smoke.ts\n\nDashboard runtime smoke passed. snapshot=2026-07-14T03:14:43.553Z sites=98 actions=16 insights=82 chainStatus=current verdict=ready blockers=none checks=8\n",
       "stderrTail": ""
     },
     {
       "id": "dashboard-ui-smoke",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:ui-smoke D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/verify-dashboard-rendered-ui-smoke.ts \"--url=http://127.0.0.1:3102/?actionabilityMode=local-evidence\"\n\nDashboard rendered UI smoke passed. url=http://127.0.0.1:3102/?actionabilityMode=local-evidence&actionabilityToken=redacted snapshot=2026-07-14T00:43:04.577Z sites=98 blocking=0 maintenance=2 blockers=none checks=9 artifact=data\\dashboard-ui-smoke-2026-07-14.json\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:ui-smoke D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/verify-dashboard-rendered-ui-smoke.ts \"--url=https://multi-dashboard-one.vercel.app/?actionabilityMode=local-evidence\"\n\nDashboard rendered UI smoke passed. url=https://multi-dashboard-one.vercel.app/?actionabilityMode=local-evidence&actionabilityToken=redacted snapshot=2026-07-14T03:14:43.553Z sites=98 blocking=0 maintenance=2 blockers=none checks=9 artifact=data\\dashboard-ui-smoke-2026-07-14.json\n",
       "stderrTail": ""
     },
     {
       "id": "adsense-proof-verify",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:proof:verify D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/verify-adsense-proof-artifacts.ts\n\nAdSense proof artifacts verified. snapshot=2026-07-14T00:43:04.577Z externalProof=0 localSupplement=0 livePublic=0 endpointRetry=0 loaderRetry=0 hostingEndpointPacket=0 hostingLoaderPacket=0 hostingLoaderResult=0 consoleState=0 networkVantage=0 remediationQueue=0 checkedActions=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:proof:verify D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/verify-adsense-proof-artifacts.ts\n\nAdSense proof artifacts verified. snapshot=2026-07-14T03:14:43.553Z externalProof=0 localSupplement=0 livePublic=0 endpointRetry=0 loaderRetry=0 hostingEndpointPacket=0 hostingLoaderPacket=0 hostingLoaderResult=0 consoleState=0 networkVantage=0 remediationQueue=0 checkedActions=0\n",
       "stderrTail": ""
     }
   ],
@@ -74,17 +74,17 @@
   },
   "verdict": "local_verified",
   "blockerSources": [
-    "skipped_refresh_failed:adsense_collector:transient_error:17",
-    "skipped_refresh_failed:ads_txt_collector:transient_error:17"
+    "skipped_refresh_failed:adsense_collector:transient_error:18",
+    "skipped_refresh_failed:ads_txt_collector:transient_error:18"
   ],
   "maintenanceSources": [
-    "skipped_refresh_failed:adsense_collector:transient_error:17",
-    "skipped_refresh_failed:ads_txt_collector:transient_error:17"
+    "skipped_refresh_failed:adsense_collector:transient_error:18",
+    "skipped_refresh_failed:ads_txt_collector:transient_error:18"
   ],
   "blockerDetails": [],
   "maintenanceDetails": [
     {
-      "source": "skipped_refresh_failed:adsense_collector:transient_error:17",
+      "source": "skipped_refresh_failed:adsense_collector:transient_error:18",
       "category": "adsense_collector_transient",
       "severity": "maintenance",
       "label": "AdSense collector transient failure",
@@ -92,7 +92,7 @@
       "nextStep": "Rerun dashboard:verify after the network or source endpoint stabilizes and check whether the source repeats."
     },
     {
-      "source": "skipped_refresh_failed:ads_txt_collector:transient_error:17",
+      "source": "skipped_refresh_failed:ads_txt_collector:transient_error:18",
       "category": "ads_txt_collector_transient",
       "severity": "maintenance",
       "label": "ads.txt collector transient failure",
@@ -106,9 +106,9 @@
   "renderedUiSmokeEvidence": {
     "path": "data\\dashboard-ui-smoke-2026-07-14.json",
     "exists": true,
-    "expectedStatsSnapshot": "2026-07-14T00:43:04.577Z",
-    "statsSnapshot": "2026-07-14T00:43:04.577Z",
-    "artifactGeneratedAt": "2026-07-14T00:53:58.068Z",
+    "expectedStatsSnapshot": "2026-07-14T03:14:43.553Z",
+    "statsSnapshot": "2026-07-14T03:14:43.553Z",
+    "artifactGeneratedAt": "2026-07-14T03:26:43.278Z",
     "status": "current",
     "productionMutationPerformed": false,
     "cmsMutationPerformed": false,
@@ -119,10 +119,10 @@
   "dashboardSurfaceEvidence": {
     "sourceCommand": "dashboard-smoke",
     "status": "current",
-    "statsSnapshot": "2026-07-14T00:43:04.577Z",
+    "statsSnapshot": "2026-07-14T03:14:43.553Z",
     "siteCount": 98,
     "actionCount": 16,
-    "insightCount": 81,
+    "insightCount": 82,
     "chainStatus": "current",
     "chainVerdict": "ready",
     "blockerHosts": []
@@ -184,8 +184,8 @@
         "source": "site_stats_snapshot",
         "path": "data\\site-stats.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:43:04.577Z",
-        "snapshot": "2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:14:43.553Z",
+        "snapshot": "2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -196,8 +196,8 @@
         "source": "site_stats_history",
         "path": "data\\history\\2026-07-14.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:43:04.577Z",
-        "snapshot": "2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:14:43.553Z",
+        "snapshot": "2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -208,8 +208,8 @@
         "source": "fleet_optimization_chain",
         "path": "data\\fleet-optimization-chain-2026-07-14.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:53:53.593Z",
-        "snapshot": "2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:26:34.090Z",
+        "snapshot": "2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -220,8 +220,8 @@
         "source": "gsc_permission_audit",
         "path": "data\\gsc-permission-audit-2026-07-14.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:53:52.041Z",
-        "snapshot": "data/site-stats.json generatedAt=2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:26:31.747Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -232,8 +232,8 @@
         "source": "adsense_remediation_queue",
         "path": "data\\adsense-remediation-queue-2026-07-14.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:53:52.509Z",
-        "snapshot": "data/site-stats.json generatedAt=2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:26:32.463Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -244,8 +244,8 @@
         "source": "vercel_api_data_inventory",
         "path": "data\\vercel-api-data-sites.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:32:30.169Z",
-        "snapshot": "2026-07-14T00:32:30.169Z",
+        "generatedAt": "2026-07-14T01:54:38.665Z",
+        "snapshot": "2026-07-14T01:54:38.665Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -256,8 +256,8 @@
         "source": "fleet_optimization_plan",
         "path": "data\\fleet-optimization-plan-2026-07-14.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:53:52.965Z",
-        "snapshot": "2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:26:33.112Z",
+        "snapshot": "2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -268,8 +268,8 @@
         "source": "t3_title_content_handoff",
         "path": "data\\t3-title-content-handoff-2026-07-14.json",
         "exists": true,
-        "generatedAt": "2026-07-14T00:53:53.551Z",
-        "snapshot": "2026-07-14T00:43:04.577Z",
+        "generatedAt": "2026-07-14T03:26:34.032Z",
+        "snapshot": "2026-07-14T03:14:43.553Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -278,6 +278,6 @@
       }
     ]
   },
-  "statsSnapshot": "2026-07-14T00:43:04.577Z",
+  "statsSnapshot": "2026-07-14T03:14:43.553Z",
   "stopCondition": "This verification is production/external non-mutating. It refreshes local dashboard evidence artifacts, accepts only known external readiness blockers, runs runtime smoke and proof verification, and does not authorize CMS edits, title/body edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
 }

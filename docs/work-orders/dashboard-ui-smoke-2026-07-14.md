@@ -4,8 +4,8 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 
 ## Summary
 
-- URL: `http://127.0.0.1:3102/?actionabilityMode=local-evidence&actionabilityToken=redacted`
-- Stats snapshot: `2026-07-14T00:43:04.577Z`
+- URL: `https://multi-dashboard-one.vercel.app/?actionabilityMode=local-evidence&actionabilityToken=redacted`
+- Stats snapshot: `2026-07-14T03:14:43.553Z`
 - Sites: 98
 - Blocking sources: 0
 - Maintenance sources: 2
@@ -16,7 +16,7 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 ## Refresh Sources
 
 - Blocking: `none`
-- Maintenance: `skipped_refresh_failed:adsense_collector:transient_error:17`, `skipped_refresh_failed:ads_txt_collector:transient_error:17`
+- Maintenance: `skipped_refresh_failed:adsense_collector:transient_error:18`, `skipped_refresh_failed:ads_txt_collector:transient_error:18`
 
 ## Actionability
 
