@@ -1,5 +1,10 @@
 # Status
 
+## 2026-07-14 Ops Collector Classification Repair
+
+- Local repair complete: transient AdSense/ads.txt collector timeouts no longer create site-remediation findings; confirmed collector-success failures remain actionable.
+- Pending GitHub/Vercel review and deployment.
+
 ## 2026-07-14 Dashboard Refresh
 
 - Fresh 98-site snapshot: `data/site-stats.json` generated at `2026-07-14T03:14:43.553Z`; GA4, GSC, and sitemap failures are zero.
