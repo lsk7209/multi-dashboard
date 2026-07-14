@@ -1,5 +1,12 @@
 # Handoff
 
+## 2026-07-15 Dashboard Refresh
+
+- Fresh 98-site snapshot generated at `2026-07-14T22:35:38.563Z` (2026-07-15 07:35 KST). GA4, GSC, and sitemap failures are zero.
+- The 18 AdSense/ads.txt timeout rows are collector-transient, not site defects. Regenerating operations artifacts from current `main` (`8c2eb19` included) produced zero direct findings and zero triage findings.
+- Do not run dashboard operations from the dirty, 42-commits-behind `D:\web\multi-dashboard` checkout: it predates the transient-state guard and fabricates 36 false high/medium alerts. Use a current clean worktree.
+- Validation before handoff: `pnpm exec vitest run scripts/setup/update-ops-intel.test.ts scripts/setup/update-ops-triage.test.ts` (6/6) and `pnpm type-check` passed.
+
 ## 2026-07-14 Fleet Growth / AdSense Quality Review
 
 ## 2026-07-14 Ops Collector Classification Repair
