@@ -478,10 +478,18 @@ function collectDashboardFindings(
     if (site.gscStatus && site.gscStatus !== "ok") {
       findings.push(dashboardFinding("gsc", "high", siteId, siteName, site.gscStatus, site.gscError));
     }
-    if (site.adsenseStatus && !["ok", "disabled"].includes(site.adsenseStatus)) {
+    if (
+      site.adsenseStatus &&
+      !["ok", "disabled"].includes(site.adsenseStatus) &&
+      site.adsenseCollectorStatus !== "transient_error"
+    ) {
       findings.push(dashboardFinding("adsense", "high", siteId, siteName, site.adsenseStatus, site.adsenseError));
     }
-    if (site.adsTxtStatus && !["ok", "disabled"].includes(site.adsTxtStatus)) {
+    if (
+      site.adsTxtStatus &&
+      !["ok", "disabled"].includes(site.adsTxtStatus) &&
+      site.adsTxtCollectorStatus !== "transient_error"
+    ) {
       findings.push(dashboardFinding("adsense", "medium", siteId, siteName, `ads.txt ${site.adsTxtStatus}`, site.adsTxtError));
     }
     const sitemapProblems = (site.sitemapErrors ?? 0) + (site.sitemapWarnings ?? 0);

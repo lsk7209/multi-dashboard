@@ -170,4 +170,48 @@ describe("update-ops-intel", () => {
       }),
     ]);
   });
+
+  it("does not turn transient AdSense collection failures into site remediation findings", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "ops-intel-"));
+    const statsPath = join(dir, "site-stats.json");
+    const sitesPath = join(dir, "sites.yaml");
+    await writeFile(
+      statsPath,
+      JSON.stringify({
+        generatedAt: "2026-07-10T00:00:00.000Z",
+        stats: [
+          {
+            id: "transient",
+            adsenseStatus: "api_error",
+            adsenseCollectorStatus: "transient_error",
+            adsenseError: "The operation was aborted due to timeout",
+            adsTxtStatus: "api_error",
+            adsTxtCollectorStatus: "transient_error",
+            adsTxtError: "The operation was aborted due to timeout",
+          },
+          {
+            id: "confirmed",
+            adsenseStatus: "missing_config",
+            adsenseCollectorStatus: "ok",
+            adsenseError: "AdSense loader missing",
+          },
+        ],
+      }),
+      "utf8",
+    );
+    await writeFile(sitesPath, "sites: []\n", "utf8");
+
+    const report = await buildOpsIntelReport({
+      owner: "lsk7209",
+      output: "test://ops-intel",
+      statsPath,
+      sitesPath,
+      lookbackDays: 7,
+      publicOnly: true,
+    });
+
+    expect(report.findings.filter((finding) => finding.kind === "adsense")).toEqual([
+      expect.objectContaining({ site: "confirmed", severity: "high" }),
+    ]);
+  });
 });

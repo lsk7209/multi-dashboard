@@ -2,6 +2,12 @@
 
 ## 2026-07-14 Fleet Growth / AdSense Quality Review
 
+## 2026-07-14 Ops Collector Classification Repair
+
+- Fresh snapshot `2026-07-14T11:15:12.559Z` completed for 98 sites. Network timeouts affected 18 AdSense/ads.txt probes, but these are collector-transient states rather than confirmed missing configurations.
+- `update-ops-intel.ts` now keeps those transient probe failures out of the site-remediation queue while retaining confirmed `adsenseCollectorStatus: ok` failures. Focused regression coverage is in `scripts/setup/update-ops-intel.test.ts`.
+- Validation against the fresh snapshot: direct AdSense findings changed from 36 false high/medium findings to 0; the only remaining ops finding is a non-high GitHub signal.
+
 ## 2026-07-14 Dashboard Refresh
 
 - Fresh direct collection completed for all 98 sites at `2026-07-14T03:14:43.553Z`. GA4/GSC/sitemap failures are zero; direct ops intelligence and triage are both zero findings.
