@@ -9,7 +9,7 @@
 | Search, content, AdSense, and monetization follow-up is ranked | PASS | `data/fleet-optimization-plan-2026-07-14.json`, `data/t3-title-content-handoff-2026-07-14.json`, and fleet work order |
 | API-source data is gated before content work | PASS | `data/vercel-api-data-freshness.json`: 28 sites, zero source measurements, explicit read-only next steps |
 | Local application validation | PASS | Focused Vitest 7/7, typecheck, build, dashboard verification 4/4 `local_verified` |
-| Git-connected production deployment serves committed snapshot | PENDING | Complete after task-only commit, push, Vercel Ready, and live HTTP/snapshot check |
+| Git-connected production deployment serves committed snapshot | PASS | Commit `89f380c`; Vercel production Ready; `https://multi-dashboard-one.vercel.app` returned HTTP 200 with snapshot `2026-07-14T00:43:04.577Z` |
 
 ## User Flow Criteria
 

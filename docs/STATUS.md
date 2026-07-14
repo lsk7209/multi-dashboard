@@ -240,8 +240,9 @@
 - Verification: optimizer tests passed; live remote dry-run returned `changedPlacements=0` because current samples are too small or have insufficient redirect calls for safe reweighting.
 # 2026-07-14 — Fleet Growth / AdSense Quality Review
 
-- State: local dashboard refresh, evidence review, and validation complete; Git/Vercel deployment pending.
+- State: dashboard refresh, evidence review, validation, Git push, and Vercel production deployment complete.
 - Snapshot: `2026-07-14T00:43:04.577Z`, 98 sites. Service probe health is current; `discparty` has one later content-collection timeout, classified as maintenance rather than four false service defects.
 - Output: current fleet optimization plan, title/content handoff, GSC permission audit, AdSense remediation queue, Vercel/API inventory and freshness gate, and `docs/work-orders/fleet-growth-adsense-2026-07-14.md`.
 - Safety: no individual site title/body, CMS, database, Search Console, AdSense, publishing, or deployment mutation was performed.
 - Verification: focused Vitest 7/7, typecheck, production build, and dashboard verification 4/4 `local_verified`.
+- Deployment: GitHub `main` commit `89f380c` is Ready on Git-connected Vercel production; the production alias returned HTTP 200 with the current snapshot marker and collection-timeout signal.
