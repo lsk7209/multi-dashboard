@@ -1,5 +1,12 @@
 # Status
 
+## 2026-07-14 Dashboard Refresh
+
+- Fresh 98-site snapshot: `data/site-stats.json` generated at `2026-07-14T03:14:43.553Z`; GA4, GSC, and sitemap failures are zero.
+- `pnpm ops:intel` and `pnpm ops:triage` both report zero direct findings. Eighteen AdSense/ads.txt collector timeouts retain valid previous evidence and are correctly classified as transient, not approval or site-quality failures.
+- Collector execution used one-run bounded concurrency (`sites=8`, `GA4=2`) and a 30-minute run limit because the default 10-minute single-GA4-worker configuration cannot finish the current 98-site fleet within the local command window.
+- Next: deploy this snapshot, then run the rendered production dashboard verification against the new live snapshot.
+
 ## 2026-07-12 Dashboard Refresh
 
 - Fresh 98-site snapshot: `data/site-stats.json` generated at `2026-07-11T16:18:45.043Z`; GA4, GSC, and sitemap failures are all zero. `pnpm ops:intel` and `pnpm ops:triage` both report zero direct findings.

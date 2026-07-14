@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-07-14T00:53:00.647Z",
+  "generatedAt": "2026-07-14T03:15:12.867Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-14T00:43:04.577Z",
+  "statsSnapshot": "2026-07-14T03:14:43.553Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-14T00:53:00.647Z",
+      "checkedAt": "2026-07-14T03:15:12.867Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-14T00:43:04.577Z.",
-      "checkedAt": "2026-07-14T00:53:00.646Z",
-      "count": 1
+      "detail": "Read dashboard artifact snapshot=2026-07-14T03:14:43.553Z.",
+      "checkedAt": "2026-07-14T03:15:12.865Z",
+      "count": 0
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-14T00:53:00.646Z",
+      "checkedAt": "2026-07-14T03:15:12.865Z",
       "count": 98
     }
   },
@@ -32,24 +32,13 @@
     "adsense": 0,
     "ga4": 0,
     "vercel": 0,
-    "other": 1
+    "other": 0
   },
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0
   },
-  "findings": [
-    {
-      "id": "other-discparty-sao828",
-      "kind": "other",
-      "severity": "high",
-      "priority": 80,
-      "site": "discparty",
-      "sourceLine": "direct:dashboard site=discparty kind=other status=collection_timeout error=stats:update site collection failed: site discparty timed out after 90s",
-      "title": "디스크파티 - GA4: OTHER direct collector signal collection_timeout",
-      "recommendedAction": "Inspect the timed-out site collection phase and its content endpoint before retrying collection; do not treat service-specific telemetry as a confirmed site defect."
-    }
-  ]
+  "findings": []
 }
