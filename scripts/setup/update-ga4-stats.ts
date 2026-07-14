@@ -428,6 +428,7 @@ interface SiteStat {
   gscErrorKind?: ErrorKind;
   adsenseErrorKind?: ErrorKind;
   adsTxtErrorKind?: ErrorKind;
+  collectionFailurePhase?: string;
   sitemapErrorKind?: ErrorKind;
   gscEmailAlerts?: GscEmailAlert[];
   error?: string;
@@ -2313,6 +2314,7 @@ export function buildFailedSiteStat(
   site: Site,
   previousStat: SiteStat | undefined,
   errorMessage: string,
+  failedPhase?: string,
 ): SiteStat {
   const gscSiteUrl = site.gscSiteUrl ?? site.url;
   const base: SiteStat = previousStat ?? {
@@ -2333,6 +2335,31 @@ export function buildFailedSiteStat(
   };
   const error = `stats:update site collection failed: ${errorMessage}`;
 
+  if (failedPhase === "content" && previousStat) {
+    return {
+      ...base,
+      id: site.id,
+      name: site.name ?? previousStat.name ?? site.id,
+      url: site.url,
+      ga4PropertyId: site.ga4PropertyId ?? previousStat.ga4PropertyId ?? "",
+      gscSiteUrl,
+      // Content collection runs after GA4, GSC, and monetization probes. Its
+      // timeout must not turn completed probes into synthetic API failures.
+      ga4Status: "ok",
+      gscStatus: "ok",
+      ...(site.monetization === false
+        ? { monetization: false }
+        : {
+            adsenseStatus: "ok" as const,
+            adsTxtStatus: "ok" as const,
+            adsenseCollectorStatus: "ok" as const,
+            adsTxtCollectorStatus: "ok" as const,
+          }),
+      error,
+      collectionFailurePhase: failedPhase,
+    };
+  }
+
   return {
     ...base,
     id: site.id,
@@ -2351,6 +2378,7 @@ export function buildFailedSiteStat(
     gscErrorKind: classifyError(error),
     adsenseErrorKind: site.monetization === false ? undefined : classifyError(error),
     adsTxtErrorKind: site.monetization === false ? undefined : classifyError(error),
+    ...(failedPhase ? { collectionFailurePhase: failedPhase } : {}),
   };
 }
 
@@ -2448,9 +2476,10 @@ async function runStatsUpdate(): Promise<void> {
           } catch (error) {
             completed += 1;
             const errorMessage = getErrorMessage(error);
+            const failedPhase = inFlight.get(site.id)?.phase;
             console.error(
               `[stats:update] site failed id=${site.id}, phase=${
-                inFlight.get(site.id)?.phase ?? "unknown"
+                failedPhase ?? "unknown"
               }, elapsed=${formatElapsed(
                 Date.now() - siteStartedAt,
               )}: ${errorMessage}`,
@@ -2459,6 +2488,7 @@ async function runStatsUpdate(): Promise<void> {
               site,
               previousStatsById.get(site.id),
               errorMessage,
+              failedPhase,
             );
           } finally {
             inFlight.delete(site.id);

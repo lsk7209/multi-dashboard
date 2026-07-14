@@ -91,4 +91,83 @@ describe("update-ops-intel", () => {
       expect.objectContaining({ count: 2, sourceLine: expect.stringContaining("quota_limited") }),
     );
   });
+
+  it("coalesces a site collection timeout instead of emitting false service incidents", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "ops-intel-"));
+    const statsPath = join(dir, "site-stats.json");
+    const sitesPath = join(dir, "sites.yaml");
+    await writeFile(
+      statsPath,
+      JSON.stringify({
+        generatedAt: "2026-07-14T00:31:37.699Z",
+        stats: [
+          {
+            id: "discparty",
+            name: "discparty.com",
+            ga4Status: "ok",
+            gscStatus: "ok",
+            adsenseStatus: "ok",
+            adsTxtStatus: "ok",
+            collectionFailurePhase: "content",
+            error:
+              "stats:update site collection failed: site discparty timed out after 90s",
+          },
+        ],
+      }),
+      "utf8",
+    );
+    await writeFile(sitesPath, "sites: []\n", "utf8");
+
+    const report = await buildOpsIntelReport({
+      owner: "lsk7209",
+      output: "test://ops-intel",
+      statsPath,
+      sitesPath,
+      lookbackDays: 7,
+      publicOnly: true,
+    });
+
+    expect(report.findings).toEqual([
+      expect.objectContaining({
+        kind: "other",
+        severity: "high",
+        site: "discparty",
+        sourceLine: expect.stringContaining("status=collection_timeout"),
+        recommendedAction: expect.stringContaining("content endpoint"),
+      }),
+    ]);
+  });
+
+  it("keeps a non-content timeout attributable to the failing service", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "ops-intel-"));
+    const statsPath = join(dir, "site-stats.json");
+    const sitesPath = join(dir, "sites.yaml");
+    await writeFile(
+      statsPath,
+      JSON.stringify({
+        generatedAt: "2026-07-14T00:31:37.699Z",
+        stats: [{
+          id: "ga4-timeout",
+          ga4Status: "api_error",
+          gscStatus: "ok",
+          collectionFailurePhase: "ga4",
+          error: "stats:update site collection failed: site ga4-timeout timed out after 90s",
+        }],
+      }),
+      "utf8",
+    );
+    await writeFile(sitesPath, "sites: []\n", "utf8");
+
+    const report = await buildOpsIntelReport({
+      owner: "lsk7209", output: "test://ops-intel", statsPath, sitesPath, lookbackDays: 7, publicOnly: true,
+    });
+
+    expect(report.findings).toEqual([
+      expect.objectContaining({
+        kind: "ga4",
+        site: "ga4-timeout",
+        sourceLine: expect.stringContaining("status=api_error"),
+      }),
+    ]);
+  });
 });

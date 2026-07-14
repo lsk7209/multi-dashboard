@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-07-14T00:53:52.509Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-14T00:43:04.577Z",
+  "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "approvedExactDomainsExcluded": [
+    "ehon365.kr",
+    "fastjob.kr",
+    "haemongdream.com",
+    "kang4.com",
+    "klick.kr",
+    "luckyday.kr",
+    "nexttech7.com",
+    "sellerpit.kr",
+    "tasko.kr",
+    "temon.kr",
+    "tennisfrens.com"
+  ],
+  "nonMonetizedExactDomainsExcluded": [
+    "limsight.kr",
+    "sorimate.com",
+    "yesa.kr"
+  ],
+  "summary": {
+    "totalRows": 98,
+    "reviewedRows": 84,
+    "adsenseOkRows": 84,
+    "problemRows": 0,
+    "ordinaryAdsenseProof": 0,
+    "approvedRootSubdomainScope": 0,
+    "gscAuthTelemetry": 0,
+    "ga4ConfigTelemetry": 0
+  },
+  "lanes": {
+    "ordinary_adsense_proof": [],
+    "approved_root_subdomain_scope": [],
+    "gsc_auth_telemetry": [],
+    "ga4_config_telemetry": []
+  }
+}

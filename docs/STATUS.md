@@ -238,3 +238,10 @@
 - No individual site mutation approved. The next evidence gate is exact GSC sitemap warning detail and page-query data for the two confirmed content candidates.
 - Change: `scripts/setup/optimize-coupang-banner-weights.ts` reads recent assignment-level impressions and redirects, applies Bayesian smoothing, bounds variant weights between 10 and 80, requires minimum placement impressions and redirects, and defaults to dry-run unless `--apply` is passed.
 - Verification: optimizer tests passed; live remote dry-run returned `changedPlacements=0` because current samples are too small or have insufficient redirect calls for safe reweighting.
+# 2026-07-14 — Fleet Growth / AdSense Quality Review
+
+- State: local dashboard refresh, evidence review, and validation complete; Git/Vercel deployment pending.
+- Snapshot: `2026-07-14T00:43:04.577Z`, 98 sites. Service probe health is current; `discparty` has one later content-collection timeout, classified as maintenance rather than four false service defects.
+- Output: current fleet optimization plan, title/content handoff, GSC permission audit, AdSense remediation queue, Vercel/API inventory and freshness gate, and `docs/work-orders/fleet-growth-adsense-2026-07-14.md`.
+- Safety: no individual site title/body, CMS, database, Search Console, AdSense, publishing, or deployment mutation was performed.
+- Verification: focused Vitest 7/7, typecheck, production build, and dashboard verification 4/4 `local_verified`.

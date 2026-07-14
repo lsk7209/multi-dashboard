@@ -1,5 +1,14 @@
 # Handoff
 
+## 2026-07-14 Fleet Growth / AdSense Quality Review
+
+- Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-14T00:43:04.577Z` for 98 sites. All GA4, GSC, sitemap, AdSense-install, and ads.txt service probe statuses are `ok`; the only direct operational finding is the `discparty` content-phase collection timeout.
+- Collector classification repair: a timeout after service probes complete now preserves the completed GA4/GSC/AdSense/ads.txt statuses and emits one `collection_timeout` maintenance finding instead of false service incidents. Focused regression coverage exists in `scripts/setup/update-ga4-stats.test.ts` and `scripts/setup/update-ops-intel.test.ts`.
+- Fleet growth evidence: `data/fleet-optimization-plan-2026-07-14.json` has 18 evidence-qualified SEO candidates (9 title, 2 technical SEO, 7 content); `docs/work-orders/fleet-growth-adsense-2026-07-14.md` provides the site-level gates. No title/body, CMS, DB, Search Console, AdSense, or individual-site deployment mutation was performed.
+- Vercel/API data gate restored: `pnpm ops:api-data-freshness` now produces a non-mutating report. Of 28 sites, 14 need a read-only DB/queue freshness probe, 11 need an upstream source-date check, and 3 need implementation review. Do not create or publish content from those rows until source evidence is measured.
+- Local verification: focused Vitest 7/7, `pnpm type-check`, `pnpm build`, and `DASHBOARD_URL=http://127.0.0.1:3102/ pnpm dashboard:verify --skip-stats-update` all passed. Verification result is `local_verified` (4/4), matching snapshot `2026-07-14T00:43:04.577Z`.
+- Deployment handoff: commit and push this isolated worktree only, then confirm the Git-connected Vercel production deployment and that `https://multi-dashboard-one.vercel.app` serves the new snapshot marker.
+
 ## 2026-07-12 Dashboard Refresh
 
 - Current snapshot: `data/site-stats.json` generated at `2026-07-11T16:18:45.043Z` for 98 sites. GA4, GSC, and sitemap failures are zero; direct ops intelligence and triage both report 0 findings.

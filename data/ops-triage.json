@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-11T16:19:26.553Z",
+  "generatedAt": "2026-07-14T00:53:01.163Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-07-11T16:19:26.065Z",
+  "sourceUpdatedAt": "2026-07-14T00:53:00.647Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0
   },
@@ -17,27 +17,38 @@
     "adsense": 0,
     "ga4": 0,
     "vercel": 0,
-    "other": 0
+    "other": 1
   },
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-11T16:19:26.065Z",
+      "checkedAt": "2026-07-14T00:53:00.647Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-11T16:18:45.043Z.",
-      "checkedAt": "2026-07-11T16:19:26.064Z",
-      "count": 0
+      "detail": "Read dashboard artifact snapshot=2026-07-14T00:43:04.577Z.",
+      "checkedAt": "2026-07-14T00:53:00.646Z",
+      "count": 1
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-11T16:19:26.064Z",
+      "checkedAt": "2026-07-14T00:53:00.646Z",
       "count": 98
     }
   },
-  "findings": []
+  "findings": [
+    {
+      "id": "other-discparty-sao828",
+      "kind": "other",
+      "severity": "high",
+      "priority": 80,
+      "site": "discparty",
+      "sourceLine": "direct:dashboard site=discparty kind=other status=collection_timeout error=stats:update site collection failed: site discparty timed out after 90s",
+      "title": "디스크파티 - GA4: OTHER direct collector signal collection_timeout",
+      "recommendedAction": "Inspect the timed-out site collection phase and its content endpoint before retrying collection; do not treat service-specific telemetry as a confirmed site defect."
+    }
+  ]
 }

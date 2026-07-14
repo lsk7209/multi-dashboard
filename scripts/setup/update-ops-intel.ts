@@ -95,6 +95,7 @@ interface StatsSnapshot {
     adsenseCollectorStatus?: string;
     adsTxtStatus?: string;
     adsTxtCollectorStatus?: string;
+    collectionFailurePhase?: string;
     sitemapWarnings?: number;
     sitemapErrors?: number;
     sitemapDetails?: SitemapDetail[];
@@ -458,6 +459,19 @@ function collectDashboardFindings(
   for (const site of stats.stats) {
     const siteId = site.id ?? site.url ?? "unknown";
     const siteName = site.name ?? siteId;
+    if (isSiteCollectionTimeout(site)) {
+      findings.push(
+        dashboardFinding(
+          "other",
+          "high",
+          siteId,
+          siteName,
+          "collection_timeout",
+          site.error,
+        ),
+      );
+      continue;
+    }
     if (site.ga4Status && site.ga4Status !== "ok" && !isGa4QuotaLimited(site)) {
       findings.push(dashboardFinding("ga4", "high", siteId, siteName, site.ga4Status, site.ga4Error));
     }
@@ -534,6 +548,15 @@ function isGa4QuotaLimited(site: NonNullable<StatsSnapshot["stats"]>[number]): b
   return /quota|429|too many requests/i.test(evidence);
 }
 
+function isSiteCollectionTimeout(
+  site: NonNullable<StatsSnapshot["stats"]>[number],
+): boolean {
+  return (
+    site.collectionFailurePhase === "content" &&
+    /stats:update site collection failed: site .+ timed out after \d+s/i.test(site.error ?? "")
+  );
+}
+
 function dashboardFinding(
   kind: FindingKind,
   severity: FindingSeverity,
@@ -569,6 +592,9 @@ function recommendDashboardAction(kind: FindingKind, status: string, detail?: st
   }
   if (kind === "adsense") {
     return `Verify AdSense code, ads.txt, approval scope, and collector evidence for status ${status}.`;
+  }
+  if (status === "collection_timeout") {
+    return "Inspect the timed-out site collection phase and its content endpoint before retrying collection; do not treat service-specific telemetry as a confirmed site defect.";
   }
   return "Inspect the direct dashboard artifact and repair the underlying collector or site signal.";
 }
