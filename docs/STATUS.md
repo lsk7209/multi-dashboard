@@ -5,7 +5,8 @@
 - Fresh 98-site snapshot: `data/site-stats.json` generated at `2026-07-14T03:14:43.553Z`; GA4, GSC, and sitemap failures are zero.
 - `pnpm ops:intel` and `pnpm ops:triage` both report zero direct findings. Eighteen AdSense/ads.txt collector timeouts retain valid previous evidence and are correctly classified as transient, not approval or site-quality failures.
 - Collector execution used one-run bounded concurrency (`sites=8`, `GA4=2`) and a 30-minute run limit because the default 10-minute single-GA4-worker configuration cannot finish the current 98-site fleet within the local command window.
-- Next: deploy this snapshot, then run the rendered production dashboard verification against the new live snapshot.
+- Deployment: GitHub `main` merge commits `2ba17a2` and `f6f2b89` reached Git-connected Vercel production deployment `dpl_2BT6wb1zfK2ZK5raFaGma2CniD7v` (Ready); the production alias now renders the same snapshot and current Fleet chain.
+- Validation: rendered production UI smoke passed with 98 sites, `0 blocking · 2 maintenance`, and 9 checks. `pnpm dashboard:post-recovery` passed 3/3 with artifact integrity passing and readiness `ready_to_act`; `pnpm dashboard:acceptance data/dashboard-verification-2026-07-14.json` returned `ready=true` with 10/10 checks.
 
 ## 2026-07-12 Dashboard Refresh
 

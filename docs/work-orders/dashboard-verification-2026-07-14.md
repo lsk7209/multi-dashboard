@@ -2,19 +2,19 @@
 
 Mutation status: production/external systems were not mutated; local dashboard evidence artifacts were refreshed.
 
-- Generated at: `2026-07-14T00:53:58.627Z`
-- Stats snapshot: `2026-07-14T00:43:04.577Z`
+- Generated at: `2026-07-14T03:26:44.043Z`
+- Stats snapshot: `2026-07-14T03:14:43.553Z`
 - Verdict: `local_verified`
-- External blocker sources: `skipped_refresh_failed:adsense_collector:transient_error:17`, `skipped_refresh_failed:ads_txt_collector:transient_error:17`
-- Maintenance sources: `skipped_refresh_failed:adsense_collector:transient_error:17`, `skipped_refresh_failed:ads_txt_collector:transient_error:17`
+- External blocker sources: `skipped_refresh_failed:adsense_collector:transient_error:18`, `skipped_refresh_failed:ads_txt_collector:transient_error:18`
+- Maintenance sources: `skipped_refresh_failed:adsense_collector:transient_error:18`, `skipped_refresh_failed:ads_txt_collector:transient_error:18`
 - External blocker evidence: `none`
 
 ## Refresh Failure Details
 
 | Severity | Label | Source | Next step |
 |---|---|---|---|
-| `maintenance` | AdSense collector transient failure | `skipped_refresh_failed:adsense_collector:transient_error:17` | Rerun dashboard:verify after the network or source endpoint stabilizes and check whether the source repeats. |
-| `maintenance` | ads.txt collector transient failure | `skipped_refresh_failed:ads_txt_collector:transient_error:17` | Check the source /ads.txt response and cache state, then rerun dashboard:verify. |
+| `maintenance` | AdSense collector transient failure | `skipped_refresh_failed:adsense_collector:transient_error:18` | Rerun dashboard:verify after the network or source endpoint stabilizes and check whether the source repeats. |
+| `maintenance` | ads.txt collector transient failure | `skipped_refresh_failed:ads_txt_collector:transient_error:18` | Check the source /ads.txt response and cache state, then rerun dashboard:verify. |
 
 ## External Blocker Evidence
 
@@ -30,18 +30,18 @@ Mutation status: production/external systems were not mutated; local dashboard e
 - Path: `data\dashboard-ui-smoke-2026-07-14.json`
 - Exists: `true`
 - Status: `current`
-- Expected stats snapshot: `2026-07-14T00:43:04.577Z`
-- UI smoke stats snapshot: `2026-07-14T00:43:04.577Z`
-- Artifact generated at: `2026-07-14T00:53:58.068Z`
+- Expected stats snapshot: `2026-07-14T03:14:43.553Z`
+- UI smoke stats snapshot: `2026-07-14T03:14:43.553Z`
+- Artifact generated at: `2026-07-14T03:26:43.278Z`
 
 ## Dashboard Surface Evidence
 
 - Source command: `dashboard-smoke`
 - Status: `current`
-- Stats snapshot: `2026-07-14T00:43:04.577Z`
+- Stats snapshot: `2026-07-14T03:14:43.553Z`
 - Sites: `98`
 - Actions: `16`
-- Insights: `81`
+- Insights: `82`
 - Fleet chain status: `current`
 - Fleet verdict: `ready`
 - Blocker hosts: `none`
@@ -78,14 +78,14 @@ Mutation status: production/external systems were not mutated; local dashboard e
 
 | Source | Path | Exists | Snapshot | Production | CMS | GSC | AdSense | Title/body |
 |---|---|---:|---|---:|---:|---:|---:|---:|
-| `site_stats_snapshot` | `data\site-stats.json` | `true` | `2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
-| `site_stats_history` | `data\history\2026-07-14.json` | `true` | `2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
-| `fleet_optimization_chain` | `data\fleet-optimization-chain-2026-07-14.json` | `true` | `2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
-| `gsc_permission_audit` | `data\gsc-permission-audit-2026-07-14.json` | `true` | `data/site-stats.json generatedAt=2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
-| `adsense_remediation_queue` | `data\adsense-remediation-queue-2026-07-14.json` | `true` | `data/site-stats.json generatedAt=2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
-| `vercel_api_data_inventory` | `data\vercel-api-data-sites.json` | `true` | `2026-07-14T00:32:30.169Z` | `false` | `false` | `false` | `false` | `false` |
-| `fleet_optimization_plan` | `data\fleet-optimization-plan-2026-07-14.json` | `true` | `2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
-| `t3_title_content_handoff` | `data\t3-title-content-handoff-2026-07-14.json` | `true` | `2026-07-14T00:43:04.577Z` | `false` | `false` | `false` | `false` | `false` |
+| `site_stats_snapshot` | `data\site-stats.json` | `true` | `2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
+| `site_stats_history` | `data\history\2026-07-14.json` | `true` | `2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
+| `fleet_optimization_chain` | `data\fleet-optimization-chain-2026-07-14.json` | `true` | `2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
+| `gsc_permission_audit` | `data\gsc-permission-audit-2026-07-14.json` | `true` | `data/site-stats.json generatedAt=2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
+| `adsense_remediation_queue` | `data\adsense-remediation-queue-2026-07-14.json` | `true` | `data/site-stats.json generatedAt=2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
+| `vercel_api_data_inventory` | `data\vercel-api-data-sites.json` | `true` | `2026-07-14T01:54:38.665Z` | `false` | `false` | `false` | `false` | `false` |
+| `fleet_optimization_plan` | `data\fleet-optimization-plan-2026-07-14.json` | `true` | `2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
+| `t3_title_content_handoff` | `data\t3-title-content-handoff-2026-07-14.json` | `true` | `2026-07-14T03:14:43.553Z` | `false` | `false` | `false` | `false` | `false` |
 
 ## Commands
 

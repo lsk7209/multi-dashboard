@@ -6,7 +6,8 @@
 
 - Fresh direct collection completed for all 98 sites at `2026-07-14T03:14:43.553Z`. GA4/GSC/sitemap failures are zero; direct ops intelligence and triage are both zero findings.
 - The full fleet needed a bounded one-run execution configuration (`STATS_UPDATE_CONCURRENCY=8`, `STATS_UPDATE_GA4_CONCURRENCY=2`, `STATS_UPDATE_RUN_TIMEOUT_MS=1800000`). This is runtime-only; no collector source default was changed.
-- Verification before deployment is intentionally incomplete because the current production dashboard still contains the prior snapshot. After deployment, run `DASHBOARD_URL=https://multi-dashboard-one.vercel.app pnpm dashboard:post-recovery` with the approved local GCP credential path loaded.
+- Deployment and post-recovery are complete. GitHub `main` merge commits `2ba17a2` and `f6f2b89` reached Git-connected Vercel production deployment `dpl_2BT6wb1zfK2ZK5raFaGma2CniD7v` (Ready), and `https://multi-dashboard-one.vercel.app` renders the matching current Fleet chain.
+- Production evidence: rendered UI smoke passed for the exact snapshot with 98 sites, `0 blocking · 2 maintenance`, and 9 checks. `pnpm dashboard:post-recovery` passed 3/3 with artifact integrity passing and readiness `ready_to_act`; dashboard acceptance is `ready=true` with 10/10 checks.
 
 - Fresh dashboard snapshot: `data/site-stats.json` generated at `2026-07-14T00:43:04.577Z` for 98 sites. All GA4, GSC, sitemap, AdSense-install, and ads.txt service probe statuses are `ok`; the only direct operational finding is the `discparty` content-phase collection timeout.
 - Collector classification repair: a timeout after service probes complete now preserves the completed GA4/GSC/AdSense/ads.txt statuses and emits one `collection_timeout` maintenance finding instead of false service incidents. Focused regression coverage exists in `scripts/setup/update-ga4-stats.test.ts` and `scripts/setup/update-ops-intel.test.ts`.

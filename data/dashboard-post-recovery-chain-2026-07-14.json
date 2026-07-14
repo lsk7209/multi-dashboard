@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-07-14T03:26:44.858Z",
+  "date": "2026-07-14",
+  "dryRun": false,
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "commands": [
+    {
+      "id": "gsc-permission-audit",
+      "args": [
+        "gsc:permissions:audit"
+      ]
+    },
+    {
+      "id": "dashboard-verify",
+      "args": [
+        "dashboard:verify",
+        "--skip-stats-update"
+      ]
+    },
+    {
+      "id": "dashboard-acceptance",
+      "args": [
+        "dashboard:acceptance",
+        "data\\dashboard-verification-2026-07-14.json"
+      ]
+    }
+  ],
+  "dashboardVerification": {
+    "path": "data\\dashboard-verification-2026-07-14.json",
+    "exists": true,
+    "statsSnapshot": "2026-07-14T03:14:43.553Z",
+    "verdict": "local_verified",
+    "expectedBlocked": 0,
+    "fail": 0,
+    "skipped": 0,
+    "externalBlockerEvidenceCount": 0,
+    "externalBlockerEvidence": [],
+    "actionabilityBlockerHosts": [],
+    "surfaceBlockerHosts": [],
+    "actionabilityStatus": "safe_to_act",
+    "postRecoveryAcceptance": [
+      "external_gsc_access_restored=satisfied",
+      "dashboard_verify_local_verified=satisfied",
+      "rendered_ui_smoke_current=satisfied",
+      "dashboard_surface_current=satisfied",
+      "recommendations_safe_to_act=satisfied",
+      "mutation_boundary_clean=satisfied"
+    ]
+  },
+  "results": [
+    {
+      "id": "gsc-permission-audit",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-14.json and docs\\work-orders\\gsc-permission-audit-2026-07-14.md. snapshot=2026-07-14T03:14:43.553Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-verify",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/run-dashboard-verification.ts \"--skip-stats-update\"\n\nWrote data\\dashboard-verification-2026-07-14.json and docs\\work-orders\\dashboard-verification-2026-07-14.md. snapshot=2026-07-14T03:14:43.553Z verdict=local_verified commands=4 pass=4 expectedBlocked=0 fail=0 skipped=0 blockers=skipped_refresh_failed:adsense_collector:transient_error:18,skipped_refresh_failed:ads_txt_collector:transient_error:18\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-acceptance",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:acceptance D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/check-dashboard-post-recovery-acceptance.ts \"data\\\\dashboard-verification-2026-07-14.json\"\n\nartifact=data\\\\dashboard-verification-2026-07-14.json ready=true pass=10 fail=0\n",
+      "stderrTail": ""
+    }
+  ],
+  "artifactIntegrity": {
+    "id": "dashboard-artifact-integrity",
+    "status": "pass",
+    "exitCode": 0,
+    "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:artifact-integrity D:\\web\\multi-dashboard-refresh-20260714\n> tsx scripts/setup/check-dashboard-artifact-integrity.ts \"--date=2026-07-14\" \"--allow-missing-post-write-integrity\"\n\ndate=2026-07-14 ready=true pass=12 fail=0\n",
+    "stderrTail": ""
+  },
+  "summary": {
+    "commands": 3,
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0
+  },
+  "readiness": "ready_to_act",
+  "stopCondition": "This local chain does not authorize CMS edits, Search Console mutations, AdSense submissions, deployments, DNS changes, publishing, or title/body edits. Dashboard recommendations are executable only when readiness is ready_to_act."
+}
