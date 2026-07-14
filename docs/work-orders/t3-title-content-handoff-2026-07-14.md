@@ -1,15 +1,15 @@
-# T3 Title/Content Handoff - 2026-07-14T00:43:04.577Z
+# T3 Title/Content Handoff - 2026-07-14T03:14:43.553Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-14T00:43:04.577Z`
+- Snapshot: `2026-07-14T03:14:43.553Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-14.json`
 - Sites path: `scripts\setup\sites.yaml`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:17`, `skipped_refresh_failed:ads_txt_collector:transient_error:17`
+- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:18`, `skipped_refresh_failed:ads_txt_collector:transient_error:18`
 
 ## Summary
 
@@ -27,7 +27,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `cartain.kr` | 2 | `title_handoff` | 3955 impr / 78 clicks / 1.97% CTR / pos 9.58 | 1070 | `missing` | `D:\web\cartainkr` |
 | `gong365.kr` | 3, 4 | `title_handoff`, `content_handoff` | 3052 impr / 37 clicks / 1.21% CTR / pos 8.13 | 89 | `전남 2026 기업 지원사업 공고` (37 impr, pos 8.19)<br>`충남 충북 2026 기업 지원사업 공고` (25 impr, pos 9.00) | `D:\web\gong365kr` |
 | `estat.kr` | 5, 6 | `title_handoff`, `content_handoff` | 2779 impr / 13 clicks / 0.47% CTR / pos 7.85 | 43 | `missing` | `D:\web\estatkr` |
-| `dogswhere.com` | 7 | `title_handoff` | 1124 impr / 21 clicks / 1.87% CTR / pos 12.96 | 1574 | `missing` | `D:\web\dogswherecom` |
+| `dogswhere.com` | 7 | `title_handoff` | 1124 impr / 21 clicks / 1.87% CTR / pos 12.96 | 1575 | `missing` | `D:\web\dogswherecom` |
 | `petinsuer.com` | 8 | `title_handoff` | 1368 impr / 18 clicks / 1.32% CTR / pos 9.45 | 119 | `노견 기준` (10 impr, pos 6.90) | `D:\web\petinsuercom` |
 | `dogspang.kr` | 9, 11 | `title_handoff`, `content_handoff` | 1106 impr / 20 clicks / 1.81% CTR / pos 9.92 | 92 | `강아지 발바닥 각화증` (20 impr, pos 7.90) | `D:\web\dogspangkr` |
 | `nexttech7.com` | 10 | `title_handoff` | 965 impr / 19 clicks / 1.97% CTR / pos 13.41 | 194 | `missing` | `D:\web\nexttech7com` |
@@ -45,7 +45,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `gong365.kr` | `wordpress` | `https://gong365.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `estat.kr` | `wordpress` | `https://estat.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `dogswhere.com` | `wordpress` | `https://dogswhere.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
-| `petinsuer.com` | `wordpress` | `https://petinsuer.com/sitemap_index.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
+| `petinsuer.com` | `wordpress` | `https://petinsuer.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `dogspang.kr` | `wordpress` | `https://dogspang.kr/sitemap_index.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `nexttech7.com` | `wordpress` | `https://nexttech7.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `today2424.kr` | `wordpress` | `https://today2424.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Persona/content workflow only; do not directly edit article bodies from this handoff. |

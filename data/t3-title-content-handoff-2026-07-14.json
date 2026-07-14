@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T00:53:53.551Z",
+  "generatedAt": "2026-07-14T03:20:33.830Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,14 +8,14 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-14T00:43:04.577Z",
+    "snapshotTimestamp": "2026-07-14T03:14:43.553Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-14.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
     "refreshCommand": "pnpm stats:update",
     "refreshFailedSources": [
-      "skipped_refresh_failed:adsense_collector:transient_error:17",
-      "skipped_refresh_failed:ads_txt_collector:transient_error:17"
+      "skipped_refresh_failed:adsense_collector:transient_error:18",
+      "skipped_refresh_failed:ads_txt_collector:transient_error:18"
     ]
   },
   "summary": {
@@ -196,7 +196,7 @@
         "gscClicks30d": 21,
         "gscCtr30d": 0.018683274021352312,
         "gscPosition30d": 12.957295373665481,
-        "ga4ActiveUsers30d": 1574
+        "ga4ActiveUsers30d": 1575
       },
       "topQueries": [],
       "technicalStatus": {
@@ -238,7 +238,7 @@
         }
       ],
       "technicalStatus": {
-        "sitemapPath": "https://petinsuer.com/sitemap_index.xml",
+        "sitemapPath": "https://petinsuer.com/sitemap.xml",
         "sitemapWarnings": 0,
         "sitemapErrors": 0,
         "adsenseStatus": "ok",

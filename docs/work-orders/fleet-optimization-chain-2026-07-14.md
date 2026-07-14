@@ -2,14 +2,14 @@
 
 Mutation status: no CMS, database, Search Console, AdSense, title/body, publishing, or deployment mutation performed.
 
-- Generated at: `2026-07-14T00:53:53.593Z`
-- Stats snapshot: `2026-07-14T00:43:04.577Z`
-- Plan snapshot: `2026-07-14T00:43:04.577Z`
-- T3 handoff snapshot: `2026-07-14T00:43:04.577Z`
+- Generated at: `2026-07-14T03:20:33.891Z`
+- Stats snapshot: `2026-07-14T03:14:43.553Z`
+- Plan snapshot: `2026-07-14T03:14:43.553Z`
+- T3 handoff snapshot: `2026-07-14T03:14:43.553Z`
 - Plan matches stats: `true`
 - T3 handoff matches stats: `true`
 - Refresh failures block readiness: `false`
-- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:17`, `skipped_refresh_failed:ads_txt_collector:transient_error:17`
+- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:18`, `skipped_refresh_failed:ads_txt_collector:transient_error:18`
 - T3 mutation flags false: `true`
 - T3 sites: `12`
 - Title handoff rows: `9`

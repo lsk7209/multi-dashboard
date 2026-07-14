@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-14T00:43:04.577Z
+# Fleet Optimization Plan - 2026-07-14T03:14:43.553Z
 
 ## Verdict
 
@@ -6,10 +6,10 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-14T00:43:04.577Z`
+- Snapshot: `2026-07-14T03:14:43.553Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:17`, `skipped_refresh_failed:ads_txt_collector:transient_error:17`
+- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:18`, `skipped_refresh_failed:ads_txt_collector:transient_error:18`
 
 ## Connector Status
 
@@ -20,13 +20,13 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 | `adsenseStatus` | `disabled` | 3 |
 | `adsenseStatus` | `ok` | 95 |
 | `adsenseCollectorStatus` | `disabled` | 3 |
-| `adsenseCollectorStatus` | `ok` | 78 |
-| `adsenseCollectorStatus` | `transient_error` | 17 |
+| `adsenseCollectorStatus` | `ok` | 77 |
+| `adsenseCollectorStatus` | `transient_error` | 18 |
 | `adsTxtStatus` | `disabled` | 3 |
 | `adsTxtStatus` | `ok` | 95 |
 | `adsTxtCollectorStatus` | `disabled` | 3 |
-| `adsTxtCollectorStatus` | `ok` | 78 |
-| `adsTxtCollectorStatus` | `transient_error` | 17 |
+| `adsTxtCollectorStatus` | `ok` | 77 |
+| `adsTxtCollectorStatus` | `transient_error` | 18 |
 
 ## Summary
 
@@ -58,7 +58,7 @@ Source: `data\adsense-remediation-queue-2026-07-14.json`
 | 4 | `gong365.kr` | `content_handoff` | T3 | 3052 impr / 1.21% CTR / pos 8.13 / 89 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 5 | `estat.kr` | `title_handoff` | T3 | 2779 impr / 0.47% CTR / pos 7.85 / 43 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 6 | `estat.kr` | `content_handoff` | T3 | 2779 impr / 0.47% CTR / pos 7.85 / 43 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
-| 7 | `dogswhere.com` | `title_handoff` | T3 | 1124 impr / 1.87% CTR / pos 12.96 / 1574 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 7 | `dogswhere.com` | `title_handoff` | T3 | 1124 impr / 1.87% CTR / pos 12.96 / 1575 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 8 | `petinsuer.com` | `title_handoff` | T3 | 1368 impr / 1.32% CTR / pos 9.45 / 119 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 9 | `dogspang.kr` | `title_handoff` | T3 | 1106 impr / 1.81% CTR / pos 9.92 / 92 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 10 | `nexttech7.com` | `title_handoff` | T3 | 965 impr / 1.97% CTR / pos 13.41 / 194 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
