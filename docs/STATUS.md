@@ -4,6 +4,7 @@
 
 - Local dashboard readiness is restored for the current 98-site snapshot. The proof-refresh command now has a real non-mutating implementation and will fail closed if the current queue or a valid predecessor artifact is unavailable.
 - `pnpm dashboard:smoke` passes after the repair. The unresolved candidate queue remains visible; this is not an AdSense approval or resubmission claim.
+- The readiness auditor now fails safely on local fetch timeouts: it requests independent reachability confirmation rather than calling every timed-out site blocked.
 
 ## 2026-07-15 Dashboard Refresh
 

@@ -7,6 +7,7 @@
 - Legacy `adsense:api_error` / `ads_txt:api_error` entries are now ignored only when their paired collector failures are explicitly transient. Unpaired API errors remain readiness blockers.
 - Validation: focused Vitest 122/122, `pnpm type-check`, and `pnpm dashboard:smoke` passed (`98` sites, `8` checks, readiness `ready`).
 - Remaining production work: Travelpang live WordPress remediation still requires administrator, Application Password, or SSH/WP-CLI authority; no WordPress, AdSense, GSC, or deployment mutation was performed by this repair.
+- Readiness-audit follow-up: a shared local-network timeout across the 13 transient-collector targets is now reported as `review`, not a fabricated public-site outage. Recheck from an independent network before classifying site accessibility or content quality.
 
 ## 2026-07-15 Dashboard Refresh
 
