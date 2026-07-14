@@ -1,4 +1,5 @@
 # GSC Permission Audit - 2026-07-14T03:14:43.553Z
+
 This is a non-mutating permission recovery packet. It does not change Search Console, GA4, DNS, or site files.
 
 ## Service Account
