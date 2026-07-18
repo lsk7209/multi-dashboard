@@ -2,10 +2,10 @@
 
 Mutation status: no CMS, database, Search Console, AdSense, title/body, publishing, or deployment mutation performed.
 
-- Generated at: `2026-07-18T23:02:10.691Z`
-- Stats snapshot: `2026-07-18T23:02:05.961Z`
-- Plan snapshot: `2026-07-18T23:02:05.961Z`
-- T3 handoff snapshot: `2026-07-18T23:02:05.961Z`
+- Generated at: `2026-07-18T23:49:24.396Z`
+- Stats snapshot: `2026-07-18T23:47:49.406Z`
+- Plan snapshot: `2026-07-18T23:47:49.406Z`
+- T3 handoff snapshot: `2026-07-18T23:47:49.406Z`
 - Plan matches stats: `true`
 - T3 handoff matches stats: `true`
 - Refresh failures block readiness: `true`
@@ -19,10 +19,8 @@ Mutation status: no CMS, database, Search Console, AdSense, title/body, publishi
 
 | Step | Status | Exit |
 |---|---|---:|
-| `stats-update` | `pass` | 0 |
 | `gsc-permission-audit` | `pass` | 0 |
 | `adsense-queue` | `pass` | 0 |
-| `vercel-api-data-inventory` | `pass` | 0 |
 | `fleet-optimize-plan` | `pass` | 0 |
 | `t3-title-content-handoff` | `pass` | 0 |
 

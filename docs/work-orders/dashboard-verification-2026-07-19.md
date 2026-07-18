@@ -2,8 +2,8 @@
 
 Mutation status: production/external systems were not mutated; local dashboard evidence artifacts were refreshed.
 
-- Generated at: `2026-07-18T23:02:10.752Z`
-- Stats snapshot: `2026-07-18T23:02:05.961Z`
+- Generated at: `2026-07-18T23:49:24.441Z`
+- Stats snapshot: `2026-07-18T23:47:49.406Z`
 - Verdict: `failed`
 - External blocker sources: `skipped_refresh_failed:adsense:missing_config:1`, `skipped_refresh_failed:adsense_collector:transient_error:1`, `skipped_refresh_failed:ads_txt:missing_config:1`, `skipped_refresh_failed:sitemap:errors:1`
 - Maintenance sources: `skipped_refresh_failed:adsense_collector:transient_error:1`
@@ -32,7 +32,7 @@ Mutation status: production/external systems were not mutated; local dashboard e
 - Path: `data\dashboard-ui-smoke-2026-07-19.json`
 - Exists: `false`
 - Status: `missing`
-- Expected stats snapshot: `2026-07-18T23:02:05.961Z`
+- Expected stats snapshot: `2026-07-18T23:47:49.406Z`
 - UI smoke stats snapshot: `unavailable`
 - Artifact generated at: `unavailable`
 
@@ -80,14 +80,14 @@ Mutation status: production/external systems were not mutated; local dashboard e
 
 | Source | Path | Exists | Snapshot | Production | CMS | GSC | AdSense | Title/body |
 |---|---|---:|---|---:|---:|---:|---:|---:|
-| `site_stats_snapshot` | `data\site-stats.json` | `true` | `2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
-| `site_stats_history` | `data\history\2026-07-18.json` | `true` | `2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
-| `fleet_optimization_chain` | `data\fleet-optimization-chain-2026-07-19.json` | `true` | `2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
-| `gsc_permission_audit` | `data\gsc-permission-audit-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
-| `adsense_remediation_queue` | `data\adsense-remediation-queue-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
+| `site_stats_snapshot` | `data\site-stats.json` | `true` | `2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
+| `site_stats_history` | `data\history\2026-07-18.json` | `true` | `2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
+| `fleet_optimization_chain` | `data\fleet-optimization-chain-2026-07-19.json` | `true` | `2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
+| `gsc_permission_audit` | `data\gsc-permission-audit-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
+| `adsense_remediation_queue` | `data\adsense-remediation-queue-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
 | `vercel_api_data_inventory` | `data\vercel-api-data-sites.json` | `true` | `2026-07-18T23:02:09.537Z` | `false` | `false` | `false` | `false` | `false` |
-| `fleet_optimization_plan` | `data\fleet-optimization-plan-2026-07-19.json` | `true` | `2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
-| `t3_title_content_handoff` | `data\t3-title-content-handoff-2026-07-19.json` | `true` | `2026-07-18T23:02:05.961Z` | `false` | `false` | `false` | `false` | `false` |
+| `fleet_optimization_plan` | `data\fleet-optimization-plan-2026-07-19.json` | `true` | `2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
+| `t3_title_content_handoff` | `data\t3-title-content-handoff-2026-07-19.json` | `true` | `2026-07-18T23:47:49.406Z` | `false` | `false` | `false` | `false` | `false` |
 
 ## Commands
 

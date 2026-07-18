@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-18T23:02:05.961Z
+# Fleet Optimization Plan - 2026-07-18T23:47:49.406Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-18T23:02:05.961Z`
+- Snapshot: `2026-07-18T23:47:49.406Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `skipped_refresh_failed:adsense:missing_config:1`, `skipped_refresh_failed:adsense_collector:transient_error:1`, `skipped_refresh_failed:ads_txt:missing_config:1`, `skipped_refresh_failed:sitemap:errors:1`

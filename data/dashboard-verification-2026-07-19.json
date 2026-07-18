@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T23:02:10.752Z",
+  "generatedAt": "2026-07-18T23:49:24.441Z",
   "date": "2026-07-19",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,
@@ -10,7 +10,9 @@
     {
       "id": "fleet-optimize",
       "args": [
-        "fleet:optimize"
+        "fleet:optimize",
+        "--skip-stats-update",
+        "--skip-api-data-audit"
       ]
     },
     {
@@ -38,7 +40,7 @@
       "id": "fleet-optimize",
       "status": "fail",
       "exitCode": 1,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 fleet:optimize D:\\web\\multi-dashboard\n> tsx scripts/setup/run-fleet-optimization-chain.ts\n\nWrote data\\fleet-optimization-chain-2026-07-19.json and docs\\work-orders\\fleet-optimization-chain-2026-07-19.md. snapshot=2026-07-18T23:02:05.961Z commands=6 pass=6 fail=0 skipped=0 handoffSites=12\n ELIFECYCLE  Command failed with exit code 1.\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 fleet:optimize D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/run-fleet-optimization-chain.ts \"--skip-stats-update\" \"--skip-api-data-audit\"\n\nWrote data\\fleet-optimization-chain-2026-07-19.json and docs\\work-orders\\fleet-optimization-chain-2026-07-19.md. snapshot=2026-07-18T23:47:49.406Z commands=4 pass=4 fail=0 skipped=0 handoffSites=12\n ELIFECYCLE  Command failed with exit code 1.\n",
       "stderrTail": ""
     },
     {
@@ -122,7 +124,7 @@
   "renderedUiSmokeEvidence": {
     "path": "data\\dashboard-ui-smoke-2026-07-19.json",
     "exists": false,
-    "expectedStatsSnapshot": "2026-07-18T23:02:05.961Z",
+    "expectedStatsSnapshot": "2026-07-18T23:47:49.406Z",
     "statsSnapshot": "",
     "artifactGeneratedAt": "",
     "status": "missing",
@@ -200,8 +202,8 @@
         "source": "site_stats_snapshot",
         "path": "data\\site-stats.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:05.961Z",
-        "snapshot": "2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:47:49.406Z",
+        "snapshot": "2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -212,8 +214,8 @@
         "source": "site_stats_history",
         "path": "data\\history\\2026-07-18.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:05.961Z",
-        "snapshot": "2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:47:49.406Z",
+        "snapshot": "2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -224,8 +226,8 @@
         "source": "fleet_optimization_chain",
         "path": "data\\fleet-optimization-chain-2026-07-19.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:10.691Z",
-        "snapshot": "2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:49:24.396Z",
+        "snapshot": "2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -236,8 +238,8 @@
         "source": "gsc_permission_audit",
         "path": "data\\gsc-permission-audit-2026-07-19.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:08.567Z",
-        "snapshot": "data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:49:22.770Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -248,8 +250,8 @@
         "source": "adsense_remediation_queue",
         "path": "data\\adsense-remediation-queue-2026-07-19.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:09.099Z",
-        "snapshot": "data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:49:23.292Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -272,8 +274,8 @@
         "source": "fleet_optimization_plan",
         "path": "data\\fleet-optimization-plan-2026-07-19.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:10.044Z",
-        "snapshot": "2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:49:23.766Z",
+        "snapshot": "2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -284,8 +286,8 @@
         "source": "t3_title_content_handoff",
         "path": "data\\t3-title-content-handoff-2026-07-19.json",
         "exists": true,
-        "generatedAt": "2026-07-18T23:02:10.652Z",
-        "snapshot": "2026-07-18T23:02:05.961Z",
+        "generatedAt": "2026-07-18T23:49:24.358Z",
+        "snapshot": "2026-07-18T23:47:49.406Z",
         "productionMutationPerformed": false,
         "cmsMutationPerformed": false,
         "searchConsoleMutationPerformed": false,
@@ -294,6 +296,6 @@
       }
     ]
   },
-  "statsSnapshot": "2026-07-18T23:02:05.961Z",
+  "statsSnapshot": "2026-07-18T23:47:49.406Z",
   "stopCondition": "This verification is production/external non-mutating. It refreshes local dashboard evidence artifacts, accepts only known external readiness blockers, runs runtime smoke and proof verification, and does not authorize CMS edits, title/body edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
 }

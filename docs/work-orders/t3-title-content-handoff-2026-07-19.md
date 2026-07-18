@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-18T23:02:05.961Z
+# T3 Title/Content Handoff - 2026-07-18T23:47:49.406Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-18T23:02:05.961Z`
+- Snapshot: `2026-07-18T23:47:49.406Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-19.json`
 - Sites path: `scripts\setup\sites.yaml`
