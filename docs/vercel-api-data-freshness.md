@@ -1,55 +1,37 @@
 # Vercel/API Data Freshness
 
-- Generated at: `2026-07-14T00:47:59.207Z`
-- Dashboard stats snapshot: `2026-07-14T00:43:04.577Z`
-- Inventory generated at: `2026-07-14T00:32:30.169Z`
-- Source-data measurement: `not_collected`
+- Generated at: `2026-07-18T22:55:46.477Z`
+- Recent window: 14 days
 - Production mutation: `false`
 
 ## Summary
 
-| Decision | Count |
+| Recommendation | Count |
 |---|---:|
-| total | 28 |
-| sourceDataMeasured | 0 |
-| dashboard_evidence_blocked | 0 |
-| site_probe_required | 14 |
-| source_check_required | 11 |
-| manual_review | 3 |
+| content-followup | 8 |
+| source-check-first | 18 |
+| pipeline-repair-first | 1 |
+| manual-review | 1 |
 
-## Site Freshness Gate
+## Priority Sites
 
-| Site | Decision | Dashboard evidence | Source measured | Next step |
-|---|---|---|---|---|
-| `askore` | `site_probe_required` | current | no | Read-only DB freshness check for askore: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `bojo24` | `site_probe_required` | current | no | Read-only DB freshness check for bojo24: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `campgogo` | `site_probe_required` | current | no | Read-only DB freshness check for campgogo: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `coverclarityhealth` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `dogswhere` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `dolbomjigi-ehon365` | `site_probe_required` | current | no | Read-only DB freshness check for dolbomjigi-ehon365: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `doseogogo` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `dullegilgogo` | `site_probe_required` | current | no | Read-only DB freshness check for dullegilgogo: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `gong365` | `site_probe_required` | current | no | Read-only DB freshness check for gong365: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `gradienttrail` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `kapti` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `localgeo` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `nongsusangogo` | `site_probe_required` | current | no | Read-only DB freshness check for nongsusangogo: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `patentgogo` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `petjigi` | `site_probe_required` | current | no | Read-only DB freshness check for petjigi: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `picklefriend` | `site_probe_required` | current | no | Read-only DB freshness check for picklefriend: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `pregnancy-ehon365` | `manual_review` | current | no | Review local project evidence before adding this site to a source-data freshness workflow. |
-| `rndatlas` | `manual_review` | current | no | Review local project evidence before adding this site to a source-data freshness workflow. |
-| `roadways` | `site_probe_required` | current | no | Read-only DB freshness check for roadways: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `sinhonjigi-ehon365` | `manual_review` | current | no | Review local project evidence before adding this site to a source-data freshness workflow. |
-| `solarpaybackmap` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `temon` | `site_probe_required` | current | no | Read-only DB freshness check for temon: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `tennisfrens` | `site_probe_required` | current | no | Read-only DB freshness check for tennisfrens: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `texturb` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `today2424` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
-| `todaypharm` | `site_probe_required` | current | no | Read-only DB freshness check for todaypharm: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `wattbenchs` | `site_probe_required` | current | no | Read-only DB freshness check for wattbenchs: compare latest source updated_at/created_at and pending content queue counts before generating content. |
-| `yungyanggogo` | `source_check_required` | current | no | Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded. |
+| Site | Recommendation | Score | Freshness evidence | Blockers |
+|---|---|---:|---|---|
+| `todaypharm` | content-followup | 100 | sitemap 2026-07-18T22:51:46.823Z; local 2026-07-08T01:42:52.623Z; 7d users 552 | - |
+| `dogswhere` | content-followup | 95 | sitemap 2026-07-18T22:55:34.820Z; feed 2026-07-18T22:00:00.000Z; local 2026-07-16T05:21:10.819Z; 7d users 478 | - |
+| `bojo24` | content-followup | 65 | sitemap 2026-07-18T00:00:00.000Z; 7d users 56 | - |
+| `dullegilgogo` | content-followup | 65 | sitemap 2026-07-18T21:48:47.050Z; feed 2026-06-13T00:00:00.000Z; 7d users 50 | - |
+| `picklefriend` | content-followup | 65 | sitemap 2026-07-11T00:00:00.000Z; feed 2026-07-11T00:00:00.000Z; 7d users 393 | - |
+| `roadways` | content-followup | 65 | sitemap 2026-07-17T20:07:47.967Z; feed 2026-07-17T20:07:47.000Z; 7d users 93 | - |
+| `tennisfrens` | content-followup | 65 | sitemap 2026-07-16T12:41:12.308Z; 7d users 288 | - |
+| `texturb` | content-followup | 60 | sitemap 2026-07-11T05:02:56.515Z; feed 2026-07-16T00:00:00.000Z; 7d users 149 | - |
+| `sinhonjigi-ehon365` | source-check-first | 55 | sitemap 2026-07-18T22:55:45.873Z; feed 2026-07-18T18:00:00.000Z; 7d users 91 | - |
+| `askore` | source-check-first | 45 | sitemap 2026-07-18T20:46:51.524Z; feed 2026-07-18T20:00:46.000Z; 7d users 32 | - |
+| `campgogo` | source-check-first | 45 | sitemap 2026-07-18T00:00:00.000Z; feed 2026-07-18T00:00:00.000Z; 7d users 6 | - |
+| `dolbomjigi-ehon365` | source-check-first | 45 | sitemap 2026-06-27T07:12:22.509Z; feed 2026-07-18T22:09:15.000Z; 7d users 0 | - |
 
-## Stop Condition
+## Next Action
 
-This report does not measure a production database or upstream API. Do not generate or publish content from these rows until a site-specific read-only source-data probe records a current source timestamp and queue state.
+- Start with `content-followup` sites that have recent public/source evidence and no high-severity ops blocker.
+- For `source-check-first`, inspect the source API/DB table dates before creating or refreshing articles.
+- For `pipeline-repair-first`, repair the collector/publisher workflow before any content generation.

@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-07-18T23:02:09.099Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z",
+  "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "approvedExactDomainsExcluded": [
+    "ehon365.kr",
+    "fastjob.kr",
+    "haemongdream.com",
+    "kang4.com",
+    "klick.kr",
+    "luckyday.kr",
+    "nexttech7.com",
+    "sellerpit.kr",
+    "tasko.kr",
+    "temon.kr",
+    "tennisfrens.com"
+  ],
+  "nonMonetizedExactDomainsExcluded": [
+    "limsight.kr",
+    "sorimate.com",
+    "yesa.kr"
+  ],
+  "summary": {
+    "totalRows": 98,
+    "reviewedRows": 84,
+    "adsenseOkRows": 83,
+    "problemRows": 1,
+    "ordinaryAdsenseProof": 1,
+    "approvedRootSubdomainScope": 0,
+    "gscAuthTelemetry": 0,
+    "ga4ConfigTelemetry": 0
+  },
+  "lanes": {
+    "ordinary_adsense_proof": [
+      {
+        "siteId": "ezfunnel",
+        "host": "ezfunnel.kr",
+        "name": "ezfunnel.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999829,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=ok",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=missing_config",
+          "adsTxtCollectorStatus=ok"
+        ]
+      }
+    ],
+    "approved_root_subdomain_scope": [],
+    "gsc_auth_telemetry": [],
+    "ga4_config_telemetry": []
+  }
+}

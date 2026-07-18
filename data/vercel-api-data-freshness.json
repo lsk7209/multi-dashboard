@@ -1,358 +1,2088 @@
 {
-  "generatedAt": "2026-07-14T00:47:59.207Z",
-  "statsSnapshot": "2026-07-14T00:43:04.577Z",
-  "inventoryGeneratedAt": "2026-07-14T00:32:30.169Z",
+  "generatedAt": "2026-07-18T22:55:46.477Z",
+  "sourceInventory": "data\\vercel-api-data-sites.json",
+  "sourceStats": "data\\site-stats.json",
+  "sourceOpsTriage": "data\\ops-triage.json",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,
   "searchConsoleMutationPerformed": false,
   "adsenseMutationPerformed": false,
   "titleOrBodyMutationPerformed": false,
-  "sourceDataMeasurement": "not_collected",
+  "recentDays": 14,
   "summary": {
-    "total": 28,
-    "sourceDataMeasured": 0,
-    "dashboard_evidence_blocked": 0,
-    "site_probe_required": 14,
-    "source_check_required": 11,
-    "manual_review": 3
+    "content-followup": 8,
+    "source-check-first": 18,
+    "pipeline-repair-first": 1,
+    "manual-review": 1
   },
   "sites": [
     {
-      "id": "askore",
-      "url": "https://askore.kr/",
+      "id": "todaypharm",
+      "url": "https://todaypharm.kr/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 10,
-      "scheduledWorkflowCount": 2,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for askore: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "bojo24",
-      "url": "https://bojo24.kr/",
-      "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 3,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for bojo24: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "campgogo",
-      "url": "https://campgogo.kr/",
-      "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 2,
-      "scheduledWorkflowCount": 3,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for campgogo: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "coverclarityhealth",
-      "url": "https://coverclarityhealth.com/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+      "localPath": "D:\\web\\todaypharm",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 100,
+      "reasons": [
+        "local data/queue/db files changed within 14 days",
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [
+          {
+            "path": "public/llms-full.txt",
+            "modifiedAt": "2026-07-08T01:42:52.623Z",
+            "ageDays": 11
+          },
+          {
+            "path": "public/llms.txt",
+            "modifiedAt": "2026-07-08T01:42:52.623Z",
+            "ageDays": 11
+          },
+          {
+            "path": "public/ai-index.json",
+            "modifiedAt": "2026-07-08T01:42:52.622Z",
+            "ageDays": 11
+          }
+        ],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "content/blog-campaign-2026-05-05-v4.json",
+            "modifiedAt": "2026-05-05T01:56:00.463Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/title-candidates-2026-05-05-v4.csv",
+            "modifiedAt": "2026-05-05T01:56:00.459Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/blog-campaign-2026-05-05-v3.json",
+            "modifiedAt": "2026-05-05T00:26:43.243Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/blog-campaign-2026-05-04-v2.json",
+            "modifiedAt": "2026-05-05T00:26:43.242Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/blog-campaign-2026-05-04.json",
+            "modifiedAt": "2026-05-05T00:26:43.242Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/title-candidates-2026-05-05-v3.csv",
+            "modifiedAt": "2026-05-05T00:05:39.481Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/title-candidates-2026-05-04.csv",
+            "modifiedAt": "2026-05-04T23:44:45.897Z",
+            "ageDays": 75
+          },
+          {
+            "path": "content/title-candidates-2026-05-04-v2.csv",
+            "modifiedAt": "2026-05-04T13:03:48.060Z",
+            "ageDays": 75
+          }
+        ],
+        "collectionScripts": [
+          "fetch-hff-data.ts",
+          "fetch-medicines.ts",
+          "sync-pharmacies-from-json.ts",
+          "sync-pharmacies.ts",
+          "sync-public-data.ts",
+          "sync-supplements.ts"
+        ],
+        "scheduledWorkflows": [
+          "auto-enrich-supplements.yml",
+          "daily-sync.yml",
+          "generate-blog.yml",
+          "generate-content.yml",
+          "publish-content.yml"
+        ],
+        "packageScripts": [
+          "audit:source-freshness: ts-node --project tsconfig.sync.json scripts/check-counts.ts",
+          "sync: ts-node --project tsconfig.sync.json scripts/sync-pharmacies.ts",
+          "sync:public-data: ts-node --project tsconfig.sync.json scripts/sync-public-data.ts",
+          "sync:json: ts-node --project tsconfig.sync.json scripts/sync-pharmacies-from-json.ts",
+          "sync:supplements: ts-node --project tsconfig.sync.json scripts/sync-supplements.ts",
+          "publish:queue: ts-node --project tsconfig.sync.json scripts/publish-queue.ts",
+          "prepare:blog-campaign: ts-node --project tsconfig.sync.json scripts/prepare-blog-campaign.ts",
+          "prepare:blog-campaign:v2: ts-node --project tsconfig.sync.json scripts/prepare-blog-campaign-v2.ts",
+          "prepare:blog-campaign:v3: ts-node --project tsconfig.sync.json scripts/prepare-blog-campaign-v3.ts",
+          "prepare:blog-campaign:v4: ts-node --project tsconfig.sync.json scripts/prepare-blog-campaign-v4.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:44.783Z",
+          "sitemapUrl": "https://todaypharm.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:51:46.823Z",
+          "sitemapUrlCount": 81,
+          "feedUrl": "https://todaypharm.kr/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 88,
+          "activeUsers7d": 552,
+          "views7d": 42995,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 0,
+          "sitemapSubmitted": 76359
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "dogswhere",
       "url": "https://dogswhere.com/",
       "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 3,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+      "localPath": "D:\\web\\dogswherecom",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 95,
+      "reasons": [
+        "local data/queue/db files changed within 14 days",
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [
+          {
+            "path": "data/dogswhere-queue-audit-2026-07-16.json",
+            "modifiedAt": "2026-07-16T05:21:10.819Z",
+            "ageDays": 3
+          },
+          {
+            "path": "docs/work-orders/dogswhere-queue-audit-2026-07-16.md",
+            "modifiedAt": "2026-07-16T05:21:10.819Z",
+            "ageDays": 3
+          },
+          {
+            "path": "data/dogswhere-place-source-audit-2026-07-16.json",
+            "modifiedAt": "2026-07-16T05:21:09.986Z",
+            "ageDays": 3
+          },
+          {
+            "path": "data/dogswhere-place-source-audit-2026-07-15.json",
+            "modifiedAt": "2026-07-15T11:58:59.062Z",
+            "ageDays": 3
+          },
+          {
+            "path": "data/dogswhere-place-source-audit-2026-07-10.json",
+            "modifiedAt": "2026-07-10T05:12:56.468Z",
+            "ageDays": 9
+          },
+          {
+            "path": "data/dogswhere-publish-verify-2026-07-10.json",
+            "modifiedAt": "2026-07-10T05:01:43.563Z",
+            "ageDays": 9
+          },
+          {
+            "path": "data/dogswhere-queue-audit-2026-07-10.json",
+            "modifiedAt": "2026-07-10T05:01:00.801Z",
+            "ageDays": 9
+          },
+          {
+            "path": "docs/work-orders/dogswhere-queue-audit-2026-07-10.md",
+            "modifiedAt": "2026-07-10T05:01:00.801Z",
+            "ageDays": 9
+          },
+          {
+            "path": "docs/work-orders/dogswhere-queue-apply-2026-07-10.md",
+            "modifiedAt": "2026-07-10T03:11:54.677Z",
+            "ageDays": 9
+          }
+        ],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "data/dogswhere-queue-audit-2026-07-16.json",
+            "modifiedAt": "2026-07-16T05:21:10.819Z",
+            "ageDays": 3
+          },
+          {
+            "path": "docs/work-orders/dogswhere-queue-audit-2026-07-16.md",
+            "modifiedAt": "2026-07-16T05:21:10.819Z",
+            "ageDays": 3
+          },
+          {
+            "path": "data/dogswhere-queue-audit-2026-07-10.json",
+            "modifiedAt": "2026-07-10T05:01:00.801Z",
+            "ageDays": 9
+          },
+          {
+            "path": "docs/work-orders/dogswhere-queue-audit-2026-07-10.md",
+            "modifiedAt": "2026-07-10T05:01:00.801Z",
+            "ageDays": 9
+          },
+          {
+            "path": "docs/work-orders/dogswhere-queue-apply-2026-07-10.md",
+            "modifiedAt": "2026-07-10T03:11:54.677Z",
+            "ageDays": 9
+          },
+          {
+            "path": "scripts/content/repair-drafts/backups/publish-adsense-recovery-posts-2026-06-26T06-31-19-306Z.json",
+            "modifiedAt": "2026-06-26T06:31:19.640Z",
+            "ageDays": 23
+          },
+          {
+            "path": "scripts/content/repair-drafts/backups/publish-adsense-recovery-posts-2026-06-26T06-29-54-174Z.json",
+            "modifiedAt": "2026-06-26T06:29:54.472Z",
+            "ageDays": 23
+          },
+          {
+            "path": "scripts/content/repair-drafts/backups/publish-adsense-recovery-posts-2026-06-26T06-29-24-671Z.json",
+            "modifiedAt": "2026-06-26T06:29:24.974Z",
+            "ageDays": 23
+          }
+        ],
+        "collectionScripts": [
+          "import-real-data.ts",
+          "run_collector.py",
+          "sync-pet-tour.ts"
+        ],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "content:audit-queue: node scripts/content/audit-queue-state.mjs",
+          "content:apply-queue: node scripts/content/apply-queue-state.mjs",
+          "content:verify-publish: node scripts/content/verify-publish-state.mjs",
+          "places:audit-source: node scripts/content/audit-place-source-state.mjs",
+          "places:sync-pet-tour: tsx scripts/sync-pet-tour.ts",
+          "places:sync-pet-tour:dry-run: tsx scripts/sync-pet-tour.ts --dry-run"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:29.594Z",
+          "sitemapUrl": "https://dogswhere.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:55:34.820Z",
+          "sitemapUrlCount": 396,
+          "feedUrl": "https://dogswhere.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T22:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 91,
+          "activeUsers7d": 478,
+          "views7d": 592,
+          "gscClicks7d": 8,
+          "gscImpressions7d": 335,
+          "sitemapSubmitted": 396
+        },
+        "opsFindings": []
+      }
     },
     {
-      "id": "dolbomjigi-ehon365",
-      "url": "https://dolbomjigi.ehon365.kr/",
+      "id": "bojo24",
+      "url": "https://bojo24.kr/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 1,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for dolbomjigi-ehon365: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "doseogogo",
-      "url": "https://doseogogo.kr/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+      "localPath": "D:\\web\\bojo24",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 65,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": ".article-cache/progress.json",
+            "modifiedAt": "2026-06-02T03:40:38.983Z",
+            "ageDays": 47
+          },
+          {
+            "path": "UNIQUE_CONTENT_GUIDE.md",
+            "modifiedAt": "2026-04-23T12:27:51.314Z",
+            "ageDays": 86
+          },
+          {
+            "path": "CONTENT_GENERATION_SUMMARY.md",
+            "modifiedAt": "2026-04-23T12:27:51.296Z",
+            "ageDays": 86
+          },
+          {
+            "path": "CONTENT_STRATEGY.md",
+            "modifiedAt": "2026-04-23T12:27:51.296Z",
+            "ageDays": 86
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [
+          "data-sync.yml",
+          "insert-articles.yml",
+          "scheduled-post-notify.yml"
+        ],
+        "packageScripts": [
+          "fetch:benefits: tsx src/scripts/fetchBenefits.ts",
+          "fetch:benefits:incremental: tsx src/scripts/fetchBenefitsIncremental.ts",
+          "fetch:welfare: tsx src/scripts/fetchWelfareBenefits.ts",
+          "fetch:welfare:private: tsx src/scripts/fetchPrivateWelfareBenefits.ts",
+          "fetch:startup: tsx src/scripts/fetchStartupData.ts",
+          "fetch:youth: tsx src/scripts/fetchYouthPolicies.ts",
+          "gen:content: tsx src/scripts/externalGenerationDisabled.ts",
+          "content:plan: tsx src/scripts/planScheduledPosts.ts --dry-run --posts 200",
+          "content:schedule: tsx src/scripts/planScheduledPosts.ts --posts 200 --interval-hours 5",
+          "content:audit: tsx src/scripts/auditScheduledPosts.ts --posts 200"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:27.746Z",
+          "sitemapUrl": "https://bojo24.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T00:00:00.000Z",
+          "sitemapUrlCount": 10,
+          "feedUrl": "https://bojo24.kr/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 2,
+          "activeUsers7d": 56,
+          "views7d": 114,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 16,
+          "sitemapSubmitted": 11756
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "dullegilgogo",
       "url": "https://dullegilgogo.kr/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 2,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for dullegilgogo: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "gong365",
-      "url": "https://gong365.kr/",
-      "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 2,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for gong365: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "gradienttrail",
-      "url": "https://gradienttrail.com/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 1,
-      "scheduledWorkflowCount": 1,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
-    },
-    {
-      "id": "kapti",
-      "url": "https://kapti.kr/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
-    },
-    {
-      "id": "localgeo",
-      "url": "https://localgeo.app/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
-    },
-    {
-      "id": "nongsusangogo",
-      "url": "https://nongsusangogo.kr/",
-      "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 1,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for nongsusangogo: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "patentgogo",
-      "url": "https://patentgogo.com/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 2,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
-    },
-    {
-      "id": "petjigi",
-      "url": "https://petjigi.kr/",
-      "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 5,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for petjigi: compare latest source updated_at/created_at and pending content queue counts before generating content."
+      "localPath": "D:\\web\\dullegilgogo",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 65,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [],
+        "scheduledWorkflows": [
+          "bulk-collect.yml",
+          "quality-gate.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "audit:seo: tsx scripts/audit-seo-content.ts",
+          "audit:mountains: tsx scripts/audit-mountain-content.ts",
+          "collect:seed: tsx scripts/collect/seed-top100.ts",
+          "collect:mountain: tsx scripts/collect/parse-mountain-zip.ts",
+          "collect:durunubi: tsx scripts/collect/collect-durunubi.ts",
+          "enrich: tsx scripts/collect/enrich-mountains.ts",
+          "collect:forest: tsx scripts/collect/collect-forest-api.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:33.534Z",
+          "sitemapUrl": "https://dullegilgogo.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T21:48:47.050Z",
+          "sitemapUrlCount": 878,
+          "feedUrl": "https://dullegilgogo.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-06-13T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 4,
+          "activeUsers7d": 50,
+          "views7d": 121,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 0,
+          "sitemapSubmitted": 874
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "picklefriend",
       "url": "https://picklefriend.kr/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 2,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for picklefriend: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "pregnancy-ehon365",
-      "url": "https://pregnancy.ehon365.kr/",
-      "evidenceLevel": "candidate-review",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "manual_review",
-      "reason": "Inventory classification is still candidate-review and cannot support a data freshness conclusion.",
-      "nextStep": "Review local project evidence before adding this site to a source-data freshness workflow."
-    },
-    {
-      "id": "rndatlas",
-      "url": "https://rndatlas.com/",
-      "evidenceLevel": "candidate-review",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "manual_review",
-      "reason": "Inventory classification is still candidate-review and cannot support a data freshness conclusion.",
-      "nextStep": "Review local project evidence before adding this site to a source-data freshness workflow."
+      "localPath": "D:\\web\\picklefriend",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 65,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [
+          "collect-courts.ts",
+          "collect-players.ts"
+        ],
+        "scheduledWorkflows": [
+          "ping-search.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "seed: tsx scripts/seed-all.ts",
+          "seed:districts: tsx scripts/seed-districts.ts",
+          "collect:courts: tsx scripts/collect-courts.ts",
+          "collect:players: tsx scripts/collect-players.ts",
+          "publish:url: tsx scripts/publish-url.ts",
+          "lighthouse:mobile: lhci autorun --collect.settings.preset=mobile --collect.settings.formFactor=mobile"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:37.533Z",
+          "sitemapUrl": "https://picklefriend.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-11T00:00:00.000Z",
+          "sitemapUrlCount": 311,
+          "feedUrl": "https://picklefriend.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-11T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 63,
+          "activeUsers7d": 393,
+          "views7d": 1256,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 3,
+          "sitemapSubmitted": 311
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "roadways",
       "url": "https://roadways.kr/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 1,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for roadways: compare latest source updated_at/created_at and pending content queue counts before generating content."
-    },
-    {
-      "id": "sinhonjigi-ehon365",
-      "url": "https://sinhonjigi.ehon365.kr/",
-      "evidenceLevel": "candidate-review",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "manual_review",
-      "reason": "Inventory classification is still candidate-review and cannot support a data freshness conclusion.",
-      "nextStep": "Review local project evidence before adding this site to a source-data freshness workflow."
-    },
-    {
-      "id": "solarpaybackmap",
-      "url": "https://solarpaybackmap.com/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
-    },
-    {
-      "id": "temon",
-      "url": "https://temon.kr/",
-      "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 1,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for temon: compare latest source updated_at/created_at and pending content queue counts before generating content."
+      "localPath": "D:\\web\\roadwayskr",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 65,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [
+          {
+            "path": "local.db",
+            "modifiedAt": "2026-05-09T16:43:44.198Z",
+            "ageDays": 70
+          }
+        ],
+        "localQueueFiles": [],
+        "collectionScripts": [
+          "sync-tourapi.ts"
+        ],
+        "scheduledWorkflows": [
+          "sync-tourapi.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "db:push: node --import ./scripts/load-env.mjs ./node_modules/drizzle-kit/bin.cjs push",
+          "db:studio: node --import ./scripts/load-env.mjs ./node_modules/drizzle-kit/bin.cjs studio",
+          "sync:tourapi: node --import ./scripts/load-env.mjs --import tsx scripts/sync-tourapi.ts",
+          "sync:tourapi:full: node --import ./scripts/load-env.mjs --import tsx scripts/sync-tourapi.ts --mode=full",
+          "sync:tourapi:sample: node --import ./scripts/load-env.mjs --import tsx scripts/sync-tourapi.ts --mode=full --limit=20",
+          "adsense:check: node --import ./scripts/load-env.mjs --import tsx scripts/adsense-readiness.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:39.482Z",
+          "sitemapUrl": "https://roadways.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-17T20:07:47.967Z",
+          "sitemapUrlCount": 520,
+          "feedUrl": "https://roadways.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-17T20:07:47.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 7,
+          "activeUsers7d": 93,
+          "views7d": 139,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 0,
+          "sitemapSubmitted": 520
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "tennisfrens",
       "url": "https://tennisfrens.com/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 3,
-      "scheduledWorkflowCount": 2,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for tennisfrens: compare latest source updated_at/created_at and pending content queue counts before generating content."
+      "localPath": "D:\\web\\tennisfrens",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 65,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "docs/reports/site-content-design-review-latest.md",
+            "modifiedAt": "2026-07-03T10:14:27.189Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/site-content-design-review-latest.json",
+            "modifiedAt": "2026-07-03T10:14:27.185Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/generated-content-quality-audit-latest.json",
+            "modifiedAt": "2026-07-03T10:14:27.183Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/content-link-coverage-audit-latest.json",
+            "modifiedAt": "2026-07-03T10:14:27.182Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/content-link-coverage-audit-latest.md",
+            "modifiedAt": "2026-07-03T10:14:27.182Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/content-opportunities-latest.json",
+            "modifiedAt": "2026-07-03T10:14:27.182Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/content-opportunities-latest.md",
+            "modifiedAt": "2026-07-03T10:14:27.182Z",
+            "ageDays": 16
+          },
+          {
+            "path": "docs/reports/article-experience-audit-latest.json",
+            "modifiedAt": "2026-07-03T10:14:27.181Z",
+            "ageDays": 16
+          }
+        ],
+        "collectionScripts": [
+          "fetch-ga4-data.mjs",
+          "fetch-gsc-data.mjs",
+          "sync-blog-posts-db.js"
+        ],
+        "scheduledWorkflows": [
+          "auto-content.yml",
+          "content-refresh.yml"
+        ],
+        "packageScripts": [
+          "prebuild: node scripts/generate-ai-index.js",
+          "audit:active-content-encoding: node scripts/audit-active-content-encoding.mjs",
+          "audit:content-links: node scripts/audit-content-link-coverage.mjs",
+          "audit:generated-content-quality: node scripts/audit-generated-content-quality.mjs",
+          "audit:content-opportunities: node scripts/audit-content-opportunities.mjs",
+          "audit:site-content-design-review: node scripts/audit-site-content-design-review.mjs",
+          "audit:ops: npm run verify && npm run audit:blog-quality && npm run audit:content-links && npm run audit:analytics && npm run audit:ads-analytics && npm run audit:quiz-experience && npm run audit:performance && npm run audit:public-endpoints && npm run audit:live-seo && npm run audit:redirects && npm run audit:search-notify",
+          "verify: npm run audit:url-consistency && npm run audit:search-artifacts && npm run audit:search-automation && npm run audit:redirect-config && npm run audit:sitemap-coverage && npm run audit:analytics && npm run audit:ads-analytics:source && npm run audit:persona-profile && npm run audit:metadata-coverage && npm run audit:schema-coverage && npm run audit:korean-ux-text && npm run audit:source-encoding && npm run audit:active-content-encoding && npm run audit:utility-experience && npm run audit:quiz-experience:source && npm run audit:internal-links && npm run audit:article-experience && npm run audit:blog-index-experience && npm run audit:player-search-seo && npm run audit:blog-quality && npm run audit:blog-schedule && npm run audit:content-links && npm run audit:generated-content-quality && npm run audit:content-opportunities && npm run audit:performance-config && npm run audit:visual-layout-risk && npm run audit:site-content-design-review && npm run lint && npm run type-check && npm run build",
+          "search:collect: node scripts/fetch-gsc-data.mjs && node scripts/fetch-ga4-data.mjs",
+          "publish:vercel: vercel --prod && npm run search:notify"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:43.826Z",
+          "sitemapUrl": "https://tennisfrens.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-16T12:41:12.308Z",
+          "sitemapUrlCount": 1326,
+          "feedUrl": "https://tennisfrens.com/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 46,
+          "activeUsers7d": 288,
+          "views7d": 1230,
+          "gscClicks7d": 23,
+          "gscImpressions7d": 1509,
+          "sitemapSubmitted": 1326
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "texturb",
       "url": "https://texturb.com/",
       "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+      "localPath": "D:\\web\\texturb",
+      "localPathExists": true,
+      "recommendation": "content-followup",
+      "score": 60,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "docs/content-quality-audit.md",
+            "modifiedAt": "2026-06-09T23:39:06.451Z",
+            "ageDays": 39
+          },
+          {
+            "path": "docs/superpowers/specs/2026-04-14-auto-content-design.md",
+            "modifiedAt": "2026-04-14T04:31:46.352Z",
+            "ageDays": 96
+          },
+          {
+            "path": "GUIDE-BLOG-CONTENT-PLAN.md",
+            "modifiedAt": "2026-04-13T23:31:11.517Z",
+            "ageDays": 96
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "audit:content: npx tsx scripts/audit-content-quality.ts",
+          "seed:posts: npx tsx scripts/seed-posts.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:43.984Z",
+          "sitemapUrl": "https://texturb.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-11T05:02:56.515Z",
+          "sitemapUrlCount": 322,
+          "feedUrl": "https://texturb.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-16T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 12,
+          "activeUsers7d": 149,
+          "views7d": 217,
+          "gscClicks7d": 5,
+          "gscImpressions7d": 33,
+          "sitemapSubmitted": 322
+        },
+        "opsFindings": []
+      }
     },
     {
-      "id": "today2424",
-      "url": "https://today2424.kr/",
-      "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+      "id": "sinhonjigi-ehon365",
+      "url": "https://sinhonjigi.ehon365.kr/",
+      "evidenceLevel": "candidate-review",
+      "localPath": "D:\\web\\sinhonjigi",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 55,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "src/data/seed/wedding-halls.curated.json",
+            "modifiedAt": "2026-05-31T09:44:44.610Z",
+            "ageDays": 49
+          },
+          {
+            "path": "src/data/seed/cpa-offers.json",
+            "modifiedAt": "2026-05-29T23:58:16.166Z",
+            "ageDays": 50
+          },
+          {
+            "path": "src/data/seed/jicha-subsidies.json",
+            "modifiedAt": "2026-05-29T23:58:08.506Z",
+            "ageDays": 50
+          },
+          {
+            "path": "src/data/seed/regions.json",
+            "modifiedAt": "2026-05-29T23:57:35.863Z",
+            "ageDays": 50
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:41.435Z",
+          "sitemapUrl": "https://sinhonjigi.ehon365.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:55:45.873Z",
+          "sitemapUrlCount": 310,
+          "feedUrl": "https://sinhonjigi.ehon365.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T18:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 16,
+          "activeUsers7d": 91,
+          "views7d": 104,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 0,
+          "sitemapSubmitted": 310
+        },
+        "opsFindings": []
+      }
     },
     {
-      "id": "todaypharm",
-      "url": "https://todaypharm.kr/",
+      "id": "askore",
+      "url": "https://askore.kr/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 6,
-      "scheduledWorkflowCount": 5,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for todaypharm: compare latest source updated_at/created_at and pending content queue counts before generating content."
+      "localPath": "D:\\web\\askorekr",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [
+          {
+            "path": "local.db",
+            "modifiedAt": "2026-06-10T09:53:48.372Z",
+            "ageDays": 39
+          }
+        ],
+        "localQueueFiles": [],
+        "collectionScripts": [
+          "backfill-editorial-metrics.mjs",
+          "etl-kfri-sample.mjs",
+          "etl-nibr-ktsn-live.mjs",
+          "etl-nibr-live.mjs",
+          "etl-nibr-sample.mjs",
+          "etl-nihhs-flower-live.mjs",
+          "etl-nongsaro-flower-live.mjs",
+          "etl-nongsaro-garden-live.mjs",
+          "etl-plant-images.mjs",
+          "sync-local-to-turso.mjs"
+        ],
+        "scheduledWorkflows": [
+          "marketing-audit.yml",
+          "plant-data-pipeline.yml"
+        ],
+        "packageScripts": [
+          "etl:nongsaro: node scripts/etl-nongsaro-garden-live.mjs",
+          "etl:seed: node scripts/seed-sample.mjs",
+          "seed:sample: node scripts/seed-sample.mjs",
+          "db:generate: drizzle-kit generate"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:26.086Z",
+          "sitemapUrl": "https://askore.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T20:46:51.524Z",
+          "sitemapUrlCount": 789,
+          "feedUrl": "https://askore.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T20:00:46.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 3,
+          "activeUsers7d": 32,
+          "views7d": 36,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 7,
+          "sitemapSubmitted": 777
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "campgogo",
+      "url": "https://campgogo.kr/",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "localPath": "D:\\web\\campgogokr",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "blog-drafts/441-reservation-check-regional-camping-20261019.json",
+            "modifiedAt": "2026-06-21T13:41:18.278Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/442-meal-prep-regional-camping-20261020.json",
+            "modifiedAt": "2026-06-21T13:41:18.278Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/443-public-campground-regional-camping-20261021.json",
+            "modifiedAt": "2026-06-21T13:41:18.278Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/438-autumn-route-regional-camping-20261016.json",
+            "modifiedAt": "2026-06-21T13:41:18.277Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/439-ocean-wind-regional-camping-20261017.json",
+            "modifiedAt": "2026-06-21T13:41:18.277Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/440-forest-rest-regional-camping-20261018.json",
+            "modifiedAt": "2026-06-21T13:41:18.277Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/434-car-camping-regional-camping-20261012.json",
+            "modifiedAt": "2026-06-21T13:41:18.276Z",
+            "ageDays": 27
+          },
+          {
+            "path": "blog-drafts/435-dog-friendly-regional-camping-20261013.json",
+            "modifiedAt": "2026-06-21T13:41:18.276Z",
+            "ageDays": 27
+          }
+        ],
+        "collectionScripts": [
+          "collect-bulk.ts",
+          "import-csv.ts"
+        ],
+        "scheduledWorkflows": [
+          "backup.yml",
+          "bulk-collect.yml",
+          "dedup.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "collect: tsx scripts/collect-bulk.ts",
+          "collect:dry: tsx scripts/collect-bulk.ts --dry-run",
+          "import:csv: tsx scripts/import-csv.ts",
+          "db:seed-blog: npx tsx src/scripts/seed-blog.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:27.938Z",
+          "sitemapUrl": "https://campgogo.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T00:00:00.000Z",
+          "sitemapUrlCount": 2,
+          "feedUrl": "https://campgogo.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 6,
+          "views7d": 47,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 3,
+          "sitemapSubmitted": 230
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "dolbomjigi-ehon365",
+      "url": "https://dolbomjigi.ehon365.kr/",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "localPath": "D:\\web\\dolbomjigi",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "scripts/blog-generated-2026-quality-batch-02-enriched.json",
+            "modifiedAt": "2026-06-01T02:28:10.156Z",
+            "ageDays": 48
+          },
+          {
+            "path": "scripts/blog-generated-2026-quality-batch-02-enriched.manifest.json",
+            "modifiedAt": "2026-06-01T02:28:10.156Z",
+            "ageDays": 48
+          },
+          {
+            "path": "scripts/blog-generated-2026-quality-batch-02.manifest.json",
+            "modifiedAt": "2026-06-01T02:08:25.311Z",
+            "ageDays": 48
+          },
+          {
+            "path": "scripts/blog-generated-2026-quality-batch-02.json",
+            "modifiedAt": "2026-06-01T02:08:25.310Z",
+            "ageDays": 48
+          },
+          {
+            "path": "scripts/blog-generated-2026-quality-batch.json",
+            "modifiedAt": "2026-05-31T21:47:32.113Z",
+            "ageDays": 48
+          },
+          {
+            "path": "scripts/blog-generated-2026-quality-batch.manifest.json",
+            "modifiedAt": "2026-05-31T21:47:32.113Z",
+            "ageDays": 48
+          },
+          {
+            "path": "scripts/blog-generated-2026-search-gaps.json",
+            "modifiedAt": "2026-05-31T09:45:55.548Z",
+            "ageDays": 49
+          },
+          {
+            "path": "docs/dolbomjigi-content-guide.md",
+            "modifiedAt": "2026-05-31T09:16:47.785Z",
+            "ageDays": 49
+          }
+        ],
+        "collectionScripts": [
+          "import-quality-blog-batch.mjs"
+        ],
+        "scheduledWorkflows": [
+          "etl.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "db:seed: tsx src/db/seed/index.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:31.166Z",
+          "sitemapUrl": "https://dolbomjigi.ehon365.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-06-27T07:12:22.509Z",
+          "sitemapUrlCount": 262,
+          "feedUrl": "https://dolbomjigi.ehon365.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T22:09:15.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 0,
+          "views7d": 0,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 9,
+          "sitemapSubmitted": 262
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "gong365",
+      "url": "https://gong365.kr/",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "localPath": "D:\\web\\gong365kr",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [
+          "sync-bizinfo-events.ts",
+          "sync-bizinfo.ts"
+        ],
+        "scheduledWorkflows": [
+          "cron-sync.yml"
+        ],
+        "packageScripts": [
+          "generate-seo-assets: tsx scripts/generate-seo-assets.ts",
+          "db:generate: drizzle-kit generate"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:34.301Z",
+          "sitemapUrl": "https://gong365.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:08:08.000Z",
+          "sitemapUrlCount": 1013,
+          "feedUrl": "https://gong365.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-17T19:07:31.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 18,
+          "views7d": 19,
+          "gscClicks7d": 3,
+          "gscImpressions7d": 357,
+          "sitemapSubmitted": 1013
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "nongsusangogo",
+      "url": "https://nongsusangogo.kr/",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "localPath": "D:\\web\\nongsusangogo",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [
+          "batch-collect.ts"
+        ],
+        "scheduledWorkflows": [
+          "bulk-collect.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "batch:collect: tsx scripts/batch-collect.ts",
+          "editorial:audit: tsx scripts/audit-editorial-content.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:35.420Z",
+          "sitemapUrl": "https://nongsusangogo.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapUrlCount": 179,
+          "feedUrl": "https://nongsusangogo.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T21:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 0,
+          "views7d": 0,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 44,
+          "sitemapSubmitted": 179
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "petjigi",
+      "url": "https://petjigi.kr/",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "localPath": "D:\\web\\petjigi",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "docs/petjigi-legal-content-guide.md",
+            "modifiedAt": "2026-06-17T10:51:14.879Z",
+            "ageDays": 32
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [
+          "etl-businesses.yml",
+          "etl-insurance-alert.yml",
+          "etl-registration-agents.yml",
+          "etl-rescued-animals.yml",
+          "etl-shelters.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "db:seed:regions: tsx --env-file=.env.local db/seeds/regions.ts",
+          "db:seed:ad-policies: tsx --env-file=.env.local db/seeds/ad-policies.ts",
+          "db:seed:contents: tsx --env-file=.env.local db/seeds/contents.ts",
+          "db:seed:blog: tsx --env-file=.env.local db/seeds/blog-posts.ts",
+          "db:seed:blog-2: tsx --env-file=.env.local db/seeds/blog-posts-2.ts",
+          "db:seed:blog-3: tsx --env-file=.env.local db/seeds/blog-posts-3.ts",
+          "db:seed:blog-4: tsx --env-file=.env.local db/seeds/blog-posts-4.ts",
+          "db:seed:blog-5: tsx --env-file=.env.local db/seeds/blog-posts-5.ts",
+          "db:seed:blog-6: tsx --env-file=.env.local db/seeds/blog-posts-6.ts"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:36.706Z",
+          "sitemapUrl": "https://petjigi.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapUrlCount": 2,
+          "feedUrl": "https://petjigi.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T11:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 2,
+          "activeUsers7d": 10,
+          "views7d": 12,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 2,
+          "sitemapSubmitted": 1008
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "wattbenchs",
       "url": "https://wattbenchs.com/",
       "evidenceLevel": "scheduled-db-ingestion",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 0,
-      "scheduledWorkflowCount": 1,
-      "decision": "site_probe_required",
-      "reason": "Inventory shows scheduled ingestion evidence, but no current database source timestamp or content-queue state was measured.",
-      "nextStep": "Read-only DB freshness check for wattbenchs: compare latest source updated_at/created_at and pending content queue counts before generating content."
+      "localPath": "D:\\web\\electonic",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 45,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [],
+        "scheduledWorkflows": [
+          "gsc-sitemap-submit.yml"
+        ],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:45.137Z",
+          "sitemapUrl": "https://wattbenchs.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:54:39.465Z",
+          "sitemapUrlCount": 145,
+          "feedUrl": "https://wattbenchs.com/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 3,
+          "views7d": 3,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 1,
+          "sitemapSubmitted": 145
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "doseogogo",
+      "url": "https://doseogogo.kr/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\doseogogo.kr",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 40,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "content/blog/articles.json",
+            "modifiedAt": "2026-06-21T14:44:52.020Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog/data4library-cache.json",
+            "modifiedAt": "2026-06-08T10:34:04.074Z",
+            "ageDays": 41
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "blog:collect: node ./scripts/blog/collect-data4library.mjs",
+          "blog:generate: node ./scripts/blog/generate-articles.mjs",
+          "blog:generate-new: node ./scripts/blog/generate-new-articles.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:33.222Z",
+          "sitemapUrl": "https://doseogogo.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:55:37.678Z",
+          "sitemapUrlCount": 271,
+          "feedUrl": "https://doseogogo.kr/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 2,
+          "views7d": 2,
+          "gscClicks7d": 1,
+          "gscImpressions7d": 30,
+          "sitemapSubmitted": 246
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "gradienttrail",
+      "url": "https://gradienttrail.com/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\park-trail",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 40,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "data/site-content.json",
+            "modifiedAt": "2026-06-26T07:42:21.651Z",
+            "ageDays": 23
+          }
+        ],
+        "collectionScripts": [
+          "fetch-nps-data.mjs"
+        ],
+        "scheduledWorkflows": [
+          "nps-sync.yml"
+        ],
+        "packageScripts": [
+          "nps:fetch: node scripts/fetch-nps-data.mjs",
+          "nps:sync: node scripts/fetch-nps-data.mjs && node scripts/build-static-pages.mjs && node scripts/validate-static.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:34.716Z",
+          "sitemapUrl": "https://gradienttrail.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-16T00:00:00.000Z",
+          "sitemapUrlCount": 218,
+          "feedUrl": "https://gradienttrail.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-06-12T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 2,
+          "activeUsers7d": 17,
+          "views7d": 19,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 43,
+          "sitemapSubmitted": 218
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "patentgogo",
+      "url": "https://patentgogo.com/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\tukhugogo",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 40,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "content/posts/rd-decision-situation.md",
+            "modifiedAt": "2026-06-28T10:38:40.221Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/rd-decision-comparison.md",
+            "modifiedAt": "2026-06-28T10:38:40.220Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/rd-decision-workflow.md",
+            "modifiedAt": "2026-06-28T10:38:40.220Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/rd-decision-mistake.md",
+            "modifiedAt": "2026-06-28T10:38:40.219Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/rd-decision-criteria.md",
+            "modifiedAt": "2026-06-28T10:38:40.218Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/monitoring-situation.md",
+            "modifiedAt": "2026-06-28T10:38:40.217Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/monitoring-workflow.md",
+            "modifiedAt": "2026-06-28T10:38:40.217Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/posts/monitoring-comparison.md",
+            "modifiedAt": "2026-06-28T10:38:40.216Z",
+            "ageDays": 21
+          }
+        ],
+        "collectionScripts": [
+          "fetch-kipris-snapshot.mjs",
+          "import-patent-snapshot.mjs"
+        ],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "content:generate: node scripts/generate-content-batch.mjs",
+          "content:check: node scripts/validate-content-batch.mjs",
+          "data:fetch-kipris: node scripts/fetch-kipris-snapshot.mjs",
+          "data:import: node scripts/import-patent-snapshot.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:36.273Z",
+          "sitemapUrl": "https://patentgogo.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-04T15:00:00.000Z",
+          "sitemapUrlCount": 46,
+          "feedUrl": "https://patentgogo.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T17:47:18.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 1,
+          "activeUsers7d": 4,
+          "views7d": 4,
+          "gscClicks7d": 1,
+          "gscImpressions7d": 134,
+          "sitemapSubmitted": 46
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "today2424",
+      "url": "https://today2424.kr/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\today2424\\2424",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 40,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "CONTENT_IMPROVEMENT_PRIORITY.md",
+            "modifiedAt": "2026-04-23T12:59:50.602Z",
+            "ageDays": 86
+          },
+          {
+            "path": "CONTENT_MASTER_PLAN.md",
+            "modifiedAt": "2026-04-23T07:06:01.014Z",
+            "ageDays": 87
+          },
+          {
+            "path": "ADDITIONAL_CONTENT_IDEAS.md",
+            "modifiedAt": "2026-04-23T07:06:01.013Z",
+            "ageDays": 87
+          },
+          {
+            "path": "CONTENT_IDEAS.md",
+            "modifiedAt": "2026-04-23T07:06:01.013Z",
+            "ageDays": 87
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "validate:content: node scripts/validate-content.mjs",
+          "score:content: node scripts/score-blog-expansion-quality.mjs",
+          "score:all-content: node scripts/score-all-content-quality.mjs",
+          "generate:ai-index: node scripts/generate-ai-index.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:44.451Z",
+          "sitemapUrl": "https://today2424.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-09T02:00:00.000Z",
+          "sitemapUrlCount": 408,
+          "feedUrl": "https://today2424.kr/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 7,
+          "views7d": 0,
+          "gscClicks7d": 3,
+          "gscImpressions7d": 52,
+          "sitemapSubmitted": 408
+        },
+        "opsFindings": []
+      }
     },
     {
       "id": "yungyanggogo",
       "url": "https://yungyanggogo.kr/",
       "evidenceLevel": "api-backed-content",
-      "dashboardEvidenceCurrent": true,
-      "sourceDataMeasured": false,
-      "collectionScriptCount": 1,
-      "scheduledWorkflowCount": 0,
-      "decision": "source_check_required",
-      "reason": "Inventory identifies an API-backed content surface, but no current upstream source-date evidence was measured.",
-      "nextStep": "Check whether upstream API/reference data changed, then create or refresh SEO content only after source-date evidence is recorded."
+      "localPath": "D:\\web\\yungyanggogo",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 40,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "content/blog/scheduled-2026-10-10-phase6t.json",
+            "modifiedAt": "2026-06-21T18:47:36.673Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog-batch-manifest-2026-10-10-phase6t.json",
+            "modifiedAt": "2026-06-21T18:47:36.673Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog-batch-manifest-2026-09-19-phase6t.json",
+            "modifiedAt": "2026-06-21T18:47:36.665Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog/scheduled-2026-09-19-phase6t.json",
+            "modifiedAt": "2026-06-21T18:47:36.664Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog/scheduled-2026-08-29-phase6t.json",
+            "modifiedAt": "2026-06-21T18:47:36.654Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog-batch-manifest-2026-08-29-phase6t.json",
+            "modifiedAt": "2026-06-21T18:47:36.654Z",
+            "ageDays": 27
+          },
+          {
+            "path": "content/blog-batch-manifest-2026-08-08.json",
+            "modifiedAt": "2026-06-07T03:32:59.542Z",
+            "ageDays": 42
+          },
+          {
+            "path": "content/blog/scheduled-2026-08-08.json",
+            "modifiedAt": "2026-06-07T03:32:59.541Z",
+            "ageDays": 42
+          }
+        ],
+        "collectionScripts": [
+          "sync-national-nutrition.mjs"
+        ],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "content:generate: node scripts/generate-scheduled-blog-batch.mjs",
+          "content:generate:phase6t: node scripts/generate-phase6t-fourmonth-blog.mjs",
+          "content:audit: node scripts/audit-blog-batch.mjs",
+          "nutrition:sync: node scripts/sync-national-nutrition.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:46.041Z",
+          "sitemapUrl": "https://yungyanggogo.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-06-07T00:00:00.000Z",
+          "sitemapUrlCount": 2685,
+          "feedUrl": "https://yungyanggogo.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-16T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 3,
+          "activeUsers7d": 33,
+          "views7d": 38,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 61,
+          "sitemapSubmitted": 2685
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "pregnancy-ehon365",
+      "url": "https://pregnancy.ehon365.kr/",
+      "evidenceLevel": "candidate-review",
+      "localPath": "D:\\web\\pregnancy",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 35,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "collector, sync, or content-generation surface is present"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [
+          {
+            "path": "dev.db",
+            "modifiedAt": "2026-05-30T04:00:29.957Z",
+            "ageDays": 50
+          }
+        ],
+        "localQueueFiles": [
+          {
+            "path": "content/content-audit-report.json",
+            "modifiedAt": "2026-05-30T11:14:57.923Z",
+            "ageDays": 49
+          },
+          {
+            "path": "content/title-map.json",
+            "modifiedAt": "2026-05-30T11:13:39.099Z",
+            "ageDays": 49
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "db:generate: drizzle-kit generate",
+          "db:seed: tsx src/db/seed/index.ts",
+          "content:thumbs: tsx scripts/generate-blog-thumbnails.ts",
+          "content:audit: tsx scripts/audit-blog-content.ts",
+          "postpublish: npm run notify:indexing"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:38.301Z",
+          "sitemapUrl": "https://pregnancy.ehon365.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:55:42.769Z",
+          "sitemapUrlCount": 260,
+          "feedUrl": "https://pregnancy.ehon365.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T19:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 2,
+          "views7d": 2,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 0,
+          "sitemapSubmitted": 260
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "localgeo",
+      "url": "https://localgeo.app/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\localgeo\\repo",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 30,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:35.351Z",
+          "sitemapUrl": "https://localgeo.app/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-05T00:00:00.000Z",
+          "sitemapUrlCount": 11,
+          "feedUrl": "https://localgeo.app/feed.xml",
+          "feedStatus": 404
+        },
+        "dashboard": {
+          "activeUsers1d": 1,
+          "activeUsers7d": 6,
+          "views7d": 8,
+          "gscClicks7d": 1,
+          "gscImpressions7d": 17,
+          "sitemapSubmitted": 11
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "solarpaybackmap",
+      "url": "https://solarpaybackmap.com/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\solarpaybackmap",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 30,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:42.407Z",
+          "sitemapUrl": "https://solarpaybackmap.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-09T00:00:00.000Z",
+          "sitemapUrlCount": 143,
+          "feedUrl": "https://solarpaybackmap.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-09T16:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 3,
+          "activeUsers7d": 14,
+          "views7d": 14,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 17,
+          "sitemapSubmitted": 143
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "kapti",
+      "url": "https://kapti.kr/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\kapt",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 15,
+      "reasons": [
+        "collector, sync, or content-generation surface is present",
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-061-fourmonth-061.md",
+            "modifiedAt": "2026-06-21T14:10:38.812Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-060-fourmonth-060.md",
+            "modifiedAt": "2026-06-21T14:10:38.811Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-059-fourmonth-059.md",
+            "modifiedAt": "2026-06-21T14:10:38.809Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-058-fourmonth-058.md",
+            "modifiedAt": "2026-06-21T14:10:38.808Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-056-fourmonth-056.md",
+            "modifiedAt": "2026-06-21T14:10:38.806Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-057-fourmonth-057.md",
+            "modifiedAt": "2026-06-21T14:10:38.806Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-053-fourmonth-053.md",
+            "modifiedAt": "2026-06-21T14:10:38.805Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/kapti-20260621-fourmonth61/drafts/kapti-fourmonth-054-fourmonth-054.md",
+            "modifiedAt": "2026-06-21T14:10:38.805Z",
+            "ageDays": 27
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "content:audit: node scripts/content/audit-kapt-drafts.mjs",
+          "content:generate:new100: node scripts/content/generate-kapti-new100.mjs",
+          "content:audit:new100: node scripts/content/audit-kapti-package.mjs kapti-20260619-new100",
+          "content:generate:extra100: node scripts/content/generate-kapti-extra100.mjs",
+          "content:audit:extra100: node scripts/content/audit-kapti-package.mjs kapti-20260619-extra100",
+          "content:generate:deep100: node scripts/content/generate-kapti-deep100.mjs",
+          "content:audit:deep100: node scripts/content/audit-kapti-package.mjs kapti-20260619-deep100",
+          "content:generate:fourmonth61: node scripts/content/generate-kapti-fourmonth61.mjs",
+          "content:audit:fourmonth61: node scripts/content/audit-kapti-package.mjs kapti-20260621-fourmonth61",
+          "seo:changed: node scripts/seo/changed-content-urls.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:35.057Z",
+          "sitemapUrl": "https://kapti.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-06-20T15:48:33.782Z",
+          "sitemapUrlCount": 19,
+          "feedUrl": "https://kapti.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-06-06T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 0,
+          "views7d": 0,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 10,
+          "sitemapSubmitted": 19
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "rndatlas",
+      "url": "https://rndatlas.com/",
+      "evidenceLevel": "candidate-review",
+      "localPath": "D:\\web\\rndmap",
+      "localPathExists": true,
+      "recommendation": "source-check-first",
+      "score": 10,
+      "reasons": [
+        "collector, sync, or content-generation surface is present"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "content/data/public-rnd/ntis-evidence-packet.json",
+            "modifiedAt": "2026-06-28T11:02:53.893Z",
+            "ageDays": 20
+          },
+          {
+            "path": "content/batches/rndatlas-quality-v2/qa/ntis-project-search-investment-flow.json",
+            "modifiedAt": "2026-06-28T07:13:38.430Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/batches/rndatlas-quality-v2/research/ntis-project-search-investment-flow.json",
+            "modifiedAt": "2026-06-28T07:13:38.427Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/batches/rndatlas-100/manifest.json",
+            "modifiedAt": "2026-06-28T05:08:56.397Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/batches/rndatlas-100/title-contract-map.json",
+            "modifiedAt": "2026-06-28T05:08:56.396Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/batches/rndatlas-100/qa/a100.json",
+            "modifiedAt": "2026-06-28T05:08:56.394Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/batches/rndatlas-100/research/a100.json",
+            "modifiedAt": "2026-06-28T05:08:56.394Z",
+            "ageDays": 21
+          },
+          {
+            "path": "content/batches/rndatlas-100/qa/a099.json",
+            "modifiedAt": "2026-06-28T05:08:56.393Z",
+            "ageDays": 21
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [
+          "check: npm run content:check && npm run content:links:check && npm run content:schedule:check && npm run content:data:packet:fixture && npm run content:public-data:check && npm run content:public-leak:check && npm run routes:check && npm run docs:check && npm run db:sync-content:dry && npm run lint && npm run typecheck && npm run build && npm run seo:check && npm audit --omit=dev",
+          "ops:check: npm run env:check && npm run ntis:check:dry && npm run ntis:collect:fixture && npm run ntis:summarize:fixture && npm run ntis:validate:fixture && npm run analytics:check && npm run gsc:sitemap:check:dry && npm run content:public-leak:check && npm run db:sync-content:dry && npm run postpublish:index:dry",
+          "ntis:collect: node tools/ntis-collect.mjs",
+          "ntis:collect:fixture: node tools/ntis-collect.mjs --fixture fixtures/ntis/project-sample.xml --out data/ntis/fixture",
+          "content:data:packet: node tools/ntis-content-packet.mjs",
+          "content:data:packet:fixture: node tools/ntis-content-packet.mjs --input data/ntis/fixture/field-summary.json --allow-fixture",
+          "content:generate: node tools/content-generate.mjs",
+          "content:publish: node tools/content-publish.mjs",
+          "content:publish:dry: node tools/content-publish.mjs --dry-run",
+          "content:validate: node tools/content-validate.mjs"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:38.836Z",
+          "sitemapUrl": "https://rndatlas.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-06-06T00:00:00.000Z",
+          "sitemapUrlCount": 10,
+          "feedUrl": "https://rndatlas.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-06-28T00:00:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 0,
+          "activeUsers7d": 10,
+          "views7d": 11,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 4,
+          "sitemapSubmitted": 10
+        },
+        "opsFindings": []
+      }
+    },
+    {
+      "id": "temon",
+      "url": "https://temon.kr/",
+      "evidenceLevel": "scheduled-db-ingestion",
+      "localPath": "D:\\web\\temon",
+      "localPathExists": true,
+      "recommendation": "pipeline-repair-first",
+      "score": 65,
+      "reasons": [
+        "public sitemap/feed has dates within 14 days",
+        "dashboard shows current traffic demand",
+        "collector, sync, or content-generation surface is present",
+        "classified as scheduled DB ingestion"
+      ],
+      "blockers": [
+        "high ops finding: 테몬_temon.kr: ADSENSE direct collector signal missing_config"
+      ],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [
+          {
+            "path": "local.db",
+            "modifiedAt": "2026-05-17T23:54:43.572Z",
+            "ageDays": 62
+          }
+        ],
+        "localQueueFiles": [
+          {
+            "path": "reports/content-quality-review-2026-06-02.md",
+            "modifiedAt": "2026-06-02T03:20:38.759Z",
+            "ageDays": 47
+          },
+          {
+            "path": "reports/content-quality-review-2026-06-02.json",
+            "modifiedAt": "2026-06-02T03:20:38.757Z",
+            "ageDays": 47
+          },
+          {
+            "path": "reports/content-review-2026-06-02.md",
+            "modifiedAt": "2026-06-01T23:31:47.398Z",
+            "ageDays": 47
+          },
+          {
+            "path": "reports/due-draft-quality-backup-2026-06-01T23-30-56-802Z.json",
+            "modifiedAt": "2026-06-01T23:30:56.805Z",
+            "ageDays": 47
+          },
+          {
+            "path": "reports/draft-thin-results-backup-2026-06-01T23-24-39-690Z.json",
+            "modifiedAt": "2026-06-01T23:24:39.693Z",
+            "ageDays": 47
+          },
+          {
+            "path": "reports/draft-thin-results-backup-2026-06-01T23-19-15-406Z.json",
+            "modifiedAt": "2026-06-01T23:19:15.428Z",
+            "ageDays": 47
+          },
+          {
+            "path": "CONTENT_AUDIT.md",
+            "modifiedAt": "2026-06-01T23:01:34.377Z",
+            "ageDays": 47
+          },
+          {
+            "path": "reports/site-optimizer-2026-05-27-production-psi-postdeploy-summary.json",
+            "modifiedAt": "2026-05-27T06:54:30.564Z",
+            "ageDays": 53
+          }
+        ],
+        "collectionScripts": [
+          "fix-missing-imports.js"
+        ],
+        "scheduledWorkflows": [
+          "seo-weekly-report.yml"
+        ],
+        "packageScripts": [
+          "audit:content: npm run audit:static-polish && npm run audit:static-descriptions && npm run audit:results && npm run audit:quiz-flow",
+          "wave3:generate: node scripts/generate-wave3-quizzes.js",
+          "wave3:verify: node scripts/generate-wave3-quizzes.js --verify",
+          "wave3:apply-db: node scripts/generate-wave3-quizzes.js --apply-db"
+        ],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:43.069Z",
+          "sitemapUrl": "https://temon.kr/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-07-18T22:50:15.111Z",
+          "sitemapUrlCount": 651,
+          "feedUrl": "https://temon.kr/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-07-18T20:00:27.849Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 31,
+          "activeUsers7d": 378,
+          "views7d": 2089,
+          "gscClicks7d": 79,
+          "gscImpressions7d": 1409,
+          "sitemapSubmitted": 650
+        },
+        "opsFindings": [
+          {
+            "severity": "high",
+            "kind": "adsense",
+            "title": "테몬_temon.kr: ADSENSE direct collector signal missing_config",
+            "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+          }
+        ]
+      }
+    },
+    {
+      "id": "coverclarityhealth",
+      "url": "https://coverclarityhealth.com/",
+      "evidenceLevel": "api-backed-content",
+      "localPath": "D:\\web\\coverclarityhealth",
+      "localPathExists": true,
+      "recommendation": "manual-review",
+      "score": 5,
+      "reasons": [
+        "classified as API-backed content"
+      ],
+      "blockers": [],
+      "signals": {
+        "localRecentFiles": [],
+        "localDbFiles": [],
+        "localQueueFiles": [
+          {
+            "path": "output/coverclarityhealth/audits/phase6ab-a301-a600-draft-sample.json",
+            "modifiedAt": "2026-06-21T20:14:57.802Z",
+            "ageDays": 27
+          },
+          {
+            "path": "output/coverclarityhealth/audits/third-a201-a300-draft-sample.json",
+            "modifiedAt": "2026-06-21T03:39:11.601Z",
+            "ageDays": 28
+          },
+          {
+            "path": "output/coverclarityhealth/audits/followup-a101-a200-draft-sample.json",
+            "modifiedAt": "2026-06-21T03:29:38.788Z",
+            "ageDays": 28
+          },
+          {
+            "path": "output/coverclarityhealth/research/a145-postpartum-medicaid-ending-with-a-marketplace-sep-and-new-premium-estimate.json",
+            "modifiedAt": "2026-06-21T03:29:38.706Z",
+            "ageDays": 28
+          },
+          {
+            "path": "output/coverclarityhealth/research/a130-post-appeal-decision-review-before-relying-on-a-coverage-correction-or-premium-credit-adjustment.json",
+            "modifiedAt": "2026-06-21T03:29:38.692Z",
+            "ageDays": 28
+          }
+        ],
+        "collectionScripts": [],
+        "scheduledWorkflows": [],
+        "packageScripts": [],
+        "publicFreshness": {
+          "checkedAt": "2026-07-18T22:55:29.179Z",
+          "sitemapUrl": "https://coverclarityhealth.com/sitemap.xml",
+          "sitemapStatus": 200,
+          "sitemapLastmod": "2026-06-20T00:00:00.000Z",
+          "sitemapUrlCount": 63,
+          "feedUrl": "https://coverclarityhealth.com/feed.xml",
+          "feedStatus": 200,
+          "feedLatestDate": "2026-06-19T00:23:00.000Z"
+        },
+        "dashboard": {
+          "activeUsers1d": 2,
+          "activeUsers7d": 8,
+          "views7d": 9,
+          "gscClicks7d": 0,
+          "gscImpressions7d": 63,
+          "sitemapSubmitted": 63
+        },
+        "opsFindings": []
+      }
     }
-  ],
-  "stopCondition": "This report does not measure a production database or upstream API. Do not generate or publish content from these rows until a site-specific read-only source-data probe records a current source timestamp and queue state."
+  ]
 }

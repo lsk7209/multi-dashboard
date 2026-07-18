@@ -1,0 +1,299 @@
+{
+  "generatedAt": "2026-07-18T23:02:10.752Z",
+  "date": "2026-07-19",
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "commands": [
+    {
+      "id": "fleet-optimize",
+      "args": [
+        "fleet:optimize"
+      ]
+    },
+    {
+      "id": "dashboard-smoke",
+      "args": [
+        "dashboard:smoke"
+      ]
+    },
+    {
+      "id": "dashboard-ui-smoke",
+      "args": [
+        "dashboard:ui-smoke",
+        "--url=http://127.0.0.1:3000/?actionabilityMode=local-evidence"
+      ]
+    },
+    {
+      "id": "adsense-proof-verify",
+      "args": [
+        "adsense:proof:verify"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "fleet-optimize",
+      "status": "fail",
+      "exitCode": 1,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 fleet:optimize D:\\web\\multi-dashboard\n> tsx scripts/setup/run-fleet-optimization-chain.ts\n\nWrote data\\fleet-optimization-chain-2026-07-19.json and docs\\work-orders\\fleet-optimization-chain-2026-07-19.md. snapshot=2026-07-18T23:02:05.961Z commands=6 pass=6 fail=0 skipped=0 handoffSites=12\n ELIFECYCLE  Command failed with exit code 1.\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-smoke",
+      "status": "skipped",
+      "exitCode": null,
+      "stdoutTail": "not run after failed command",
+      "stderrTail": ""
+    },
+    {
+      "id": "dashboard-ui-smoke",
+      "status": "skipped",
+      "exitCode": null,
+      "stdoutTail": "not run after failed command",
+      "stderrTail": ""
+    },
+    {
+      "id": "adsense-proof-verify",
+      "status": "skipped",
+      "exitCode": null,
+      "stdoutTail": "not run after failed command",
+      "stderrTail": ""
+    }
+  ],
+  "summary": {
+    "commands": 4,
+    "pass": 0,
+    "expectedBlocked": 0,
+    "fail": 1,
+    "skipped": 3
+  },
+  "verdict": "failed",
+  "blockerSources": [
+    "skipped_refresh_failed:adsense:missing_config:1",
+    "skipped_refresh_failed:adsense_collector:transient_error:1",
+    "skipped_refresh_failed:ads_txt:missing_config:1",
+    "skipped_refresh_failed:sitemap:errors:1"
+  ],
+  "maintenanceSources": [
+    "skipped_refresh_failed:adsense_collector:transient_error:1"
+  ],
+  "blockerDetails": [
+    {
+      "source": "skipped_refresh_failed:adsense:missing_config:1",
+      "category": "unknown",
+      "severity": "blocking",
+      "label": "Unclassified refresh failure",
+      "description": "An unclassified refresh failure is kept fail-closed until it is classified.",
+      "nextStep": "Inspect the raw source, classify it as blocker or maintenance explicitly, then rerun dashboard:verify."
+    },
+    {
+      "source": "skipped_refresh_failed:ads_txt:missing_config:1",
+      "category": "unknown",
+      "severity": "blocking",
+      "label": "Unclassified refresh failure",
+      "description": "An unclassified refresh failure is kept fail-closed until it is classified.",
+      "nextStep": "Inspect the raw source, classify it as blocker or maintenance explicitly, then rerun dashboard:verify."
+    },
+    {
+      "source": "skipped_refresh_failed:sitemap:errors:1",
+      "category": "sitemap",
+      "severity": "blocking",
+      "label": "Sitemap collection blocked",
+      "description": "Sitemap collection or validation is blocking the fresh readiness chain.",
+      "nextStep": "Check robots.txt Sitemap lines, sitemap URL status, and Search Console submission state, then rerun fleet:optimize."
+    }
+  ],
+  "maintenanceDetails": [
+    {
+      "source": "skipped_refresh_failed:adsense_collector:transient_error:1",
+      "category": "adsense_collector_transient",
+      "severity": "maintenance",
+      "label": "AdSense collector transient failure",
+      "description": "AdSense evidence collection failed transiently and is treated as telemetry maintenance, not a hard readiness blocker.",
+      "nextStep": "Rerun dashboard:verify after the network or source endpoint stabilizes and check whether the source repeats."
+    }
+  ],
+  "externalBlockerEvidence": [],
+  "postRecoveryShortcutCommand": "",
+  "postRecoveryCommands": [],
+  "renderedUiSmokeEvidence": {
+    "path": "data\\dashboard-ui-smoke-2026-07-19.json",
+    "exists": false,
+    "expectedStatsSnapshot": "2026-07-18T23:02:05.961Z",
+    "statsSnapshot": "",
+    "artifactGeneratedAt": "",
+    "status": "missing",
+    "productionMutationPerformed": null,
+    "cmsMutationPerformed": null,
+    "searchConsoleMutationPerformed": null,
+    "adsenseMutationPerformed": null,
+    "titleOrBodyMutationPerformed": null
+  },
+  "dashboardSurfaceEvidence": {
+    "sourceCommand": "dashboard-smoke",
+    "status": "missing",
+    "statsSnapshot": "",
+    "siteCount": null,
+    "actionCount": null,
+    "insightCount": null,
+    "chainStatus": "",
+    "chainVerdict": "",
+    "blockerHosts": []
+  },
+  "dashboardActionability": {
+    "status": "unknown",
+    "allowedUse": "Read-only inspection only until dashboard surface evidence is current.",
+    "reason": "Dashboard surface evidence is missing or not matched to the current stats snapshot.",
+    "blockerHosts": [],
+    "requiredVerificationCommand": "pnpm dashboard:post-recovery"
+  },
+  "postRecoveryAcceptance": [
+    {
+      "id": "external_gsc_access_restored",
+      "status": "pending_verification",
+      "requirement": "Search Console access/ownership is restored for every external GSC blocker.",
+      "evidence": "Current verdict is failed; external blocker evidence is unavailable or not current."
+    },
+    {
+      "id": "dashboard_verify_local_verified",
+      "status": "failed",
+      "requirement": "`pnpm dashboard:verify` finishes with verdict `local_verified`.",
+      "evidence": "Current verdict is failed."
+    },
+    {
+      "id": "rendered_ui_smoke_current",
+      "status": "pending_verification",
+      "requirement": "Rendered browser UI smoke exists and matches the current stats snapshot.",
+      "evidence": "Rendered UI smoke status is missing."
+    },
+    {
+      "id": "dashboard_surface_current",
+      "status": "pending_verification",
+      "requirement": "Dashboard runtime surface evidence matches the current stats snapshot.",
+      "evidence": "Dashboard surface status is missing."
+    },
+    {
+      "id": "recommendations_safe_to_act",
+      "status": "pending_verification",
+      "requirement": "Dashboard actions and insights are execution-ready, not read-only.",
+      "evidence": "Current actionability is unknown."
+    },
+    {
+      "id": "mutation_boundary_clean",
+      "status": "satisfied",
+      "requirement": "Verification remains non-mutating for production, CMS, GSC, AdSense, and title/body content.",
+      "evidence": "Mutation flags: production=false, cms=false, searchConsole=false, adsense=false, titleOrBody=false."
+    }
+  ],
+  "mutationBoundaryEvidence": {
+    "localEvidenceArtifactsWritten": true,
+    "productionMutationPerformed": false,
+    "cmsMutationPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false,
+    "evidenceArtifacts": [
+      {
+        "source": "site_stats_snapshot",
+        "path": "data\\site-stats.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:05.961Z",
+        "snapshot": "2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "site_stats_history",
+        "path": "data\\history\\2026-07-18.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:05.961Z",
+        "snapshot": "2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "fleet_optimization_chain",
+        "path": "data\\fleet-optimization-chain-2026-07-19.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:10.691Z",
+        "snapshot": "2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "gsc_permission_audit",
+        "path": "data\\gsc-permission-audit-2026-07-19.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:08.567Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "adsense_remediation_queue",
+        "path": "data\\adsense-remediation-queue-2026-07-19.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:09.099Z",
+        "snapshot": "data/site-stats.json generatedAt=2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "vercel_api_data_inventory",
+        "path": "data\\vercel-api-data-sites.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:09.537Z",
+        "snapshot": "2026-07-18T23:02:09.537Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "fleet_optimization_plan",
+        "path": "data\\fleet-optimization-plan-2026-07-19.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:10.044Z",
+        "snapshot": "2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      },
+      {
+        "source": "t3_title_content_handoff",
+        "path": "data\\t3-title-content-handoff-2026-07-19.json",
+        "exists": true,
+        "generatedAt": "2026-07-18T23:02:10.652Z",
+        "snapshot": "2026-07-18T23:02:05.961Z",
+        "productionMutationPerformed": false,
+        "cmsMutationPerformed": false,
+        "searchConsoleMutationPerformed": false,
+        "adsenseMutationPerformed": false,
+        "titleOrBodyMutationPerformed": false
+      }
+    ]
+  },
+  "statsSnapshot": "2026-07-18T23:02:05.961Z",
+  "stopCondition": "This verification is production/external non-mutating. It refreshes local dashboard evidence artifacts, accepts only known external readiness blockers, runs runtime smoke and proof verification, and does not authorize CMS edits, title/body edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
+}
