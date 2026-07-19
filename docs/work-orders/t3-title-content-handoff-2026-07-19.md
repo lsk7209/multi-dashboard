@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-19T08:19:34.233Z
+# T3 Title/Content Handoff - 2026-07-19T10:08:53.627Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-19T08:19:34.233Z`
+- Snapshot: `2026-07-19T10:08:53.627Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-19.json`
 - Sites path: `scripts\setup\sites.yaml`
@@ -44,7 +44,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `cartain.kr` | `wordpress` | `https://cartain.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `gong365.kr` | `wordpress` | `https://gong365.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
 | `estat.kr` | `wordpress` | `https://estat.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title + content workflow; do not directly edit live titles or article bodies from this handoff. |
-| `dogswhere.com` | `wordpress` | `https://dogswhere.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
+| `dogswhere.com` | `nextjs` | `https://dogswhere.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `petinsuer.com` | `wordpress` | `https://petinsuer.com/sitemap_index.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `nexttech7.com` | `wordpress` | `https://nexttech7.com/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Title workflow only; do not directly edit live titles from this handoff. |
 | `dogspang.kr` | `wordpress` | `https://dogspang.kr/sitemap.xml`, warnings=0, errors=0 | `ok` | `ok` | Evidence collection only: no controlled local content source is registered; do not create or edit production content. |

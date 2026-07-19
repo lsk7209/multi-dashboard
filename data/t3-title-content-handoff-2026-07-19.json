@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T08:25:17.826Z",
+  "generatedAt": "2026-07-19T10:12:42.434Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,7 +8,7 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-19T08:19:34.233Z",
+    "snapshotTimestamp": "2026-07-19T10:08:53.627Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-19.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
@@ -175,8 +175,8 @@
       "siteId": "dogswhere",
       "url": "https://dogswhere.com/",
       "localPath": "D:\\web\\dogswherecom",
-      "platform": "wordpress",
-      "wpRestBase": "https://dogswhere.com/wp-json/wp/v2",
+      "platform": "nextjs",
+      "wpRestBase": "",
       "actions": [
         "title_handoff"
       ],
