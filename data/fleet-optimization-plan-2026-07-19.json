@@ -1,13 +1,11 @@
 {
-  "generatedAt": "2026-07-19T04:14:23.610Z",
+  "generatedAt": "2026-07-19T05:38:07.655Z",
   "dashboardEvidence": {
     "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
-    "snapshotTimestamp": "2026-07-19T04:14:09.951Z",
+    "snapshotTimestamp": "2026-07-19T05:31:20.047Z",
     "refreshCommand": "pnpm stats:update",
     "refreshFailedSources": [
-      "skipped_refresh_failed:adsense_collector:transient_error:1",
-      "skipped_refresh_failed:sitemap:errors:1",
-      "skipped_refresh_failed:adsense_queue:missing_current:1"
+      "skipped_refresh_failed:adsense_collector:transient_error:1"
     ],
     "connectorStatus": {
       "ga4Status": {
@@ -57,9 +55,18 @@
     "contentHandoffCount": 7
   },
   "adsenseQueue": {
-    "artifactPath": null,
-    "collectorSnapshot": "",
-    "summary": {},
+    "artifactPath": "data\\adsense-remediation-queue-2026-07-19.json",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-19T05:31:20.047Z",
+    "summary": {
+      "totalRows": 98,
+      "reviewedRows": 84,
+      "adsenseOkRows": 84,
+      "problemRows": 0,
+      "ordinaryAdsenseProof": 0,
+      "approvedRootSubdomainScope": 0,
+      "gscAuthTelemetry": 0,
+      "ga4ConfigTelemetry": 0
+    },
     "nextItems": []
   },
   "seoCandidates": [
@@ -81,7 +88,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -108,7 +115,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -135,7 +142,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -162,7 +169,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -189,7 +196,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -216,7 +223,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -243,7 +250,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -270,7 +277,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -297,7 +304,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -324,7 +331,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -351,7 +358,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -378,7 +385,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -405,7 +412,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -432,7 +439,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -459,7 +466,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -486,7 +493,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -513,7 +520,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -540,7 +547,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -567,7 +574,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -594,7 +601,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T04:14:09.951Z",
+        "snapshot=2026-07-19T05:31:20.047Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",

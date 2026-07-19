@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-19T04:14:09.951Z
+# Fleet Optimization Plan - 2026-07-19T05:31:20.047Z
 
 ## Verdict
 
@@ -6,10 +6,10 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-19T04:14:09.951Z`
+- Snapshot: `2026-07-19T05:31:20.047Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:1`, `skipped_refresh_failed:sitemap:errors:1`, `skipped_refresh_failed:adsense_queue:missing_current:1`
+- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:1`
 
 ## Connector Status
 
@@ -41,7 +41,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## AdSense Approval Queue
 
-Source: `missing`
+Source: `data\adsense-remediation-queue-2026-07-19.json`
 
 | Priority | Site | Lane | Action | Stop condition |
 |---:|---|---|---|---|
