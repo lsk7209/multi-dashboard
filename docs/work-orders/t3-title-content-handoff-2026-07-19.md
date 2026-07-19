@@ -1,15 +1,15 @@
-# T3 Title/Content Handoff - 2026-07-19T04:14:09.951Z
+# T3 Title/Content Handoff - 2026-07-19T05:31:20.047Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-19T04:14:09.951Z`
+- Snapshot: `2026-07-19T05:31:20.047Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-19.json`
 - Sites path: `scripts\setup\sites.yaml`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:1`, `skipped_refresh_failed:sitemap:errors:1`, `skipped_refresh_failed:adsense_queue:missing_current:1`
+- Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:1`
 
 ## Summary
 
