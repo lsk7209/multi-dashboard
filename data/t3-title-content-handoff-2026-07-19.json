@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T00:23:57.479Z",
+  "generatedAt": "2026-07-19T04:29:46.444Z",
   "mutationStatus": {
     "cmsMutationPerformed": false,
     "productionDeploymentPerformed": false,
@@ -8,13 +8,15 @@
     "titleOrBodyMutationPerformed": false
   },
   "dashboardEvidence": {
-    "snapshotTimestamp": "2026-07-19T00:23:10.487Z",
+    "snapshotTimestamp": "2026-07-19T04:14:09.951Z",
     "statsPath": "data\\site-stats.json",
     "planPath": "data\\fleet-optimization-plan-2026-07-19.json",
     "sitesPath": "scripts\\setup\\sites.yaml",
     "refreshCommand": "pnpm stats:update",
     "refreshFailedSources": [
-      "skipped_refresh_failed:sitemap:errors:1"
+      "skipped_refresh_failed:adsense_collector:transient_error:1",
+      "skipped_refresh_failed:sitemap:errors:1",
+      "skipped_refresh_failed:adsense_queue:missing_current:1"
     ]
   },
   "summary": {
@@ -37,11 +39,11 @@
         1
       ],
       "metrics": {
-        "gscImpressions30d": 14995,
-        "gscClicks30d": 123,
-        "gscCtr30d": 0.00820273424474825,
-        "gscPosition30d": 9.733644548182728,
-        "ga4ActiveUsers30d": 1636
+        "gscImpressions30d": 15175,
+        "gscClicks30d": 124,
+        "gscCtr30d": 0.008171334431630971,
+        "gscPosition30d": 9.768566721581548,
+        "ga4ActiveUsers30d": 1637
       },
       "topQueries": [
         {
@@ -75,19 +77,26 @@
         2
       ],
       "metrics": {
-        "gscImpressions30d": 4925,
-        "gscClicks30d": 105,
-        "gscCtr30d": 0.02131979695431472,
-        "gscPosition30d": 9.367715736040608,
+        "gscImpressions30d": 5141,
+        "gscClicks30d": 109,
+        "gscCtr30d": 0.021202100758607276,
+        "gscPosition30d": 9.333398171561953,
         "ga4ActiveUsers30d": 1157
       },
       "topQueries": [
         {
           "query": "레이 보험료",
           "clicks": 1,
-          "impressions": 10,
-          "ctr": 0.1,
+          "impressions": 11,
+          "ctr": 0.09090909090909091,
           "position": 9
+        },
+        {
+          "query": "가장 가까운 lpg 충전소",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 10.1
         }
       ],
       "technicalStatus": {
@@ -112,13 +121,13 @@
       ],
       "planRanks": [
         3,
-        4
+        5
       ],
       "metrics": {
-        "gscImpressions30d": 3308,
+        "gscImpressions30d": 3310,
         "gscClicks30d": 37,
-        "gscCtr30d": 0.011185006045949214,
-        "gscPosition30d": 8.057436517533253,
+        "gscCtr30d": 0.011178247734138972,
+        "gscPosition30d": 8.053776435045318,
         "ga4ActiveUsers30d": 89
       },
       "topQueries": [],
@@ -143,15 +152,15 @@
         "content_handoff"
       ],
       "planRanks": [
-        5,
+        4,
         6
       ],
       "metrics": {
-        "gscImpressions30d": 2940,
-        "gscClicks30d": 12,
-        "gscCtr30d": 0.004081632653061225,
-        "gscPosition30d": 7.778231292517007,
-        "ga4ActiveUsers30d": 54
+        "gscImpressions30d": 3058,
+        "gscClicks30d": 13,
+        "gscCtr30d": 0.004251144538914323,
+        "gscPosition30d": 7.754087638979725,
+        "ga4ActiveUsers30d": 55
       },
       "topQueries": [],
       "technicalStatus": {
@@ -177,26 +186,26 @@
         7
       ],
       "metrics": {
-        "gscImpressions30d": 1355,
-        "gscClicks30d": 27,
-        "gscCtr30d": 0.01992619926199262,
-        "gscPosition30d": 12.142435424354243,
-        "ga4ActiveUsers30d": 1782
+        "gscImpressions30d": 1426,
+        "gscClicks30d": 31,
+        "gscCtr30d": 0.021739130434782608,
+        "gscPosition30d": 12.020336605890604,
+        "ga4ActiveUsers30d": 1784
       },
       "topQueries": [
+        {
+          "query": "강아지 맡길 곳",
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 32
+        },
         {
           "query": "best dog parks near me",
           "clicks": 0,
           "impressions": 13,
           "ctr": 0,
           "position": 6.6923076923076925
-        },
-        {
-          "query": "강아지 맡길 곳",
-          "clicks": 0,
-          "impressions": 12,
-          "ctr": 0,
-          "position": 32.75
         }
       ],
       "technicalStatus": {
@@ -222,19 +231,26 @@
         8
       ],
       "metrics": {
-        "gscImpressions30d": 1455,
-        "gscClicks30d": 16,
-        "gscCtr30d": 0.010996563573883162,
-        "gscPosition30d": 8.960824742268041,
+        "gscImpressions30d": 1513,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.011896893588896233,
+        "gscPosition30d": 8.945142101784533,
         "ga4ActiveUsers30d": 137
       },
       "topQueries": [
         {
+          "query": "강아지 발톱 혈관 줄이기",
+          "clicks": 1,
+          "impressions": 12,
+          "ctr": 0.08333333333333333,
+          "position": 7.916666666666667
+        },
+        {
           "query": "강아지 요플레 먹어도 되나요",
           "clicks": 0,
-          "impressions": 10,
+          "impressions": 13,
           "ctr": 0,
-          "position": 9.7
+          "position": 9.538461538461538
         }
       ],
       "technicalStatus": {
@@ -260,10 +276,10 @@
         9
       ],
       "metrics": {
-        "gscImpressions30d": 1333,
-        "gscClicks30d": 28,
-        "gscCtr30d": 0.021005251312828207,
-        "gscPosition30d": 14.103525881470368,
+        "gscImpressions30d": 1427,
+        "gscClicks30d": 31,
+        "gscCtr30d": 0.021723896285914507,
+        "gscPosition30d": 14.048353188507358,
         "ga4ActiveUsers30d": 198
       },
       "topQueries": [],
@@ -280,7 +296,7 @@
       "host": "dogspang.kr",
       "siteId": "dogspang-2",
       "url": "https://dogspang.kr/",
-      "localPath": "D:\\web\\dogspangkr",
+      "localPath": "",
       "platform": "wordpress",
       "wpRestBase": "https://dogspang.kr/wp-json/wp/v2",
       "actions": [
@@ -306,7 +322,7 @@
         "adsenseStatus": "ok",
         "adsTxtStatus": "ok"
       },
-      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+      "recommendedNextAction": "Evidence collection only: no controlled local content source is registered; do not create or edit production content."
     },
     {
       "host": "today2424.kr",
@@ -349,16 +365,24 @@
         "content_handoff"
       ],
       "planRanks": [
-        15
+        14
       ],
       "metrics": {
-        "gscImpressions30d": 696,
+        "gscImpressions30d": 728,
         "gscClicks30d": 2,
-        "gscCtr30d": 0.0028735632183908046,
-        "gscPosition30d": 40.19252873563219,
+        "gscCtr30d": 0.0027472527472527475,
+        "gscPosition30d": 39.51510989010989,
         "ga4ActiveUsers30d": 23
       },
-      "topQueries": [],
+      "topQueries": [
+        {
+          "query": "legalser",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 9.545454545454545
+        }
+      ],
       "technicalStatus": {
         "sitemapPath": "https://legalser.com/sitemap.xml",
         "sitemapWarnings": 0,
@@ -384,10 +408,10 @@
         19
       ],
       "metrics": {
-        "gscImpressions30d": 511,
+        "gscImpressions30d": 515,
         "gscClicks30d": 4,
-        "gscCtr30d": 0.007827788649706457,
-        "gscPosition30d": 9.033268101761253,
+        "gscCtr30d": 0.007766990291262136,
+        "gscPosition30d": 9.025242718446602,
         "ga4ActiveUsers30d": 37
       },
       "topQueries": [],
@@ -414,15 +438,15 @@
         18
       ],
       "metrics": {
-        "gscImpressions30d": 537,
+        "gscImpressions30d": 538,
         "gscClicks30d": 0,
         "gscCtr30d": 0,
-        "gscPosition30d": 66.29422718808193,
+        "gscPosition30d": 66.2081784386617,
         "ga4ActiveUsers30d": 13
       },
       "topQueries": [],
       "technicalStatus": {
-        "sitemapPath": "https://homeimer.com/sitemap.xml",
+        "sitemapPath": "https://homeimer.com/sitemap_index.xml",
         "sitemapWarnings": 0,
         "sitemapErrors": 0,
         "adsenseStatus": "ok",

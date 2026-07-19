@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-07-19T04:20:10.548Z",
+  "dateRange": {
+    "startDate": "2026-06-20",
+    "endDate": "2026-07-18"
+  },
+  "targets": [
+    "estat-2"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/lazoji-spicy-fried-chicken-vegetable-stir-fry-chinese-recipe/",
+      "query": "라조기",
+      "clicks": 0,
+      "impressions": 203,
+      "ctr": 0,
+      "position": 5.783251231527093
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/blueberry-cheong-sugar-ratio-refrigerator-storage-period-home-recipe/",
+      "query": "블루베리청 만들기",
+      "clicks": 0,
+      "impressions": 59,
+      "ctr": 0,
+      "position": 4.474576271186441
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/%EA%B7%B8%EB%A6%AD-%EC%83%90%EB%9F%AC%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%8E%98%ED%83%80%EC%B9%98%EC%A6%88-%EC%98%AC%EB%A6%AC%EB%B8%8C-%EC%9E%AC%EB%A3%8C-%EA%B5%AC%EC%84%B1-%EB%93%9C/",
+      "query": "콥샐러드 뜻",
+      "clicks": 1,
+      "impressions": 34,
+      "ctr": 0.029411764705882353,
+      "position": 9.117647058823529
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/lazoji-spicy-fried-chicken-vegetable-stir-fry-chinese-recipe/",
+      "query": "라조기 레시피",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 3.5454545454545454
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/blueberry-cheong-sugar-ratio-refrigerator-storage-period-home-recipe/",
+      "query": "블루베리 청 만들기",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 4.566666666666666
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/blueberry-cheong-sugar-ratio-refrigerator-storage-period-home-recipe/",
+      "query": "블루베리청",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 4.5600000000000005
+    },
+    {
+      "siteId": "estat-2",
+      "siteName": "estat.kr",
+      "page": "https://estat.kr/%EC%95%84%EC%9D%B8%EC%8A%88%ED%8E%98%EB%84%88-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B2%95-%EC%83%9D%ED%81%AC%EB%A6%BC-%EB%86%8D%EB%8F%84-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0-%EC%A7%84%ED%95%9C-%EC%95%84/",
+      "query": "아인슈페너",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 7.782608695652174
+    }
+  ]
+}

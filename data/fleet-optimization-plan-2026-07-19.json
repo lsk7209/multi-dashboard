@@ -1,11 +1,13 @@
 {
-  "generatedAt": "2026-07-19T00:23:56.819Z",
+  "generatedAt": "2026-07-19T04:14:23.610Z",
   "dashboardEvidence": {
     "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
-    "snapshotTimestamp": "2026-07-19T00:23:10.487Z",
+    "snapshotTimestamp": "2026-07-19T04:14:09.951Z",
     "refreshCommand": "pnpm stats:update",
     "refreshFailedSources": [
-      "skipped_refresh_failed:sitemap:errors:1"
+      "skipped_refresh_failed:adsense_collector:transient_error:1",
+      "skipped_refresh_failed:sitemap:errors:1",
+      "skipped_refresh_failed:adsense_queue:missing_current:1"
     ],
     "connectorStatus": {
       "ga4Status": {
@@ -19,7 +21,8 @@
         "disabled": 3
       },
       "adsenseCollectorStatus": {
-        "ok": 95,
+        "ok": 94,
+        "transient_error": 1,
         "disabled": 3
       },
       "adsTxtStatus": {
@@ -54,18 +57,9 @@
     "contentHandoffCount": 7
   },
   "adsenseQueue": {
-    "artifactPath": "data\\adsense-remediation-queue-2026-07-19.json",
-    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-19T00:23:10.487Z",
-    "summary": {
-      "totalRows": 98,
-      "reviewedRows": 84,
-      "adsenseOkRows": 84,
-      "problemRows": 0,
-      "ordinaryAdsenseProof": 0,
-      "approvedRootSubdomainScope": 0,
-      "gscAuthTelemetry": 0,
-      "ga4ConfigTelemetry": 0
-    },
+    "artifactPath": null,
+    "collectorSnapshot": "",
+    "summary": {},
     "nextItems": []
   },
   "seoCandidates": [
@@ -77,17 +71,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 14995 impressions, 0.82% CTR, average position 9.73.",
+      "reason": "High-impression low-CTR opportunity: 15175 impressions, 0.82% CTR, average position 9.77.",
       "metrics": {
-        "gscImpressions30d": 14995,
-        "gscClicks30d": 123,
-        "gscCtr30d": 0.00820273424474825,
-        "gscPosition30d": 9.733644548182728,
-        "ga4ActiveUsers30d": 1636
+        "gscImpressions30d": 15175,
+        "gscClicks30d": 124,
+        "gscCtr30d": 0.008171334431630971,
+        "gscPosition30d": 9.768566721581548,
+        "ga4ActiveUsers30d": 1637
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -104,17 +98,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 4925 impressions, 2.13% CTR, average position 9.37.",
+      "reason": "High-impression low-CTR opportunity: 5141 impressions, 2.12% CTR, average position 9.33.",
       "metrics": {
-        "gscImpressions30d": 4925,
-        "gscClicks30d": 105,
-        "gscCtr30d": 0.02131979695431472,
-        "gscPosition30d": 9.367715736040608,
+        "gscImpressions30d": 5141,
+        "gscClicks30d": 109,
+        "gscCtr30d": 0.021202100758607276,
+        "gscPosition30d": 9.333398171561953,
         "ga4ActiveUsers30d": 1157
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -131,17 +125,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 3308 impressions, 1.12% CTR, average position 8.06.",
+      "reason": "High-impression low-CTR opportunity: 3310 impressions, 1.12% CTR, average position 8.05.",
       "metrics": {
-        "gscImpressions30d": 3308,
+        "gscImpressions30d": 3310,
         "gscClicks30d": 37,
-        "gscCtr30d": 0.011185006045949214,
-        "gscPosition30d": 8.057436517533253,
+        "gscCtr30d": 0.011178247734138972,
+        "gscPosition30d": 8.053776435045318,
         "ga4ActiveUsers30d": 89
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -152,50 +146,23 @@
     },
     {
       "rank": 4,
-      "siteId": "gong365",
-      "host": "gong365.kr",
-      "url": "https://gong365.kr/",
-      "actionType": "content_handoff",
-      "tier": "T3",
-      "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 3308 impressions and 89 users.",
-      "metrics": {
-        "gscImpressions30d": 3308,
-        "gscClicks30d": 37,
-        "gscCtr30d": 0.011185006045949214,
-        "gscPosition30d": 8.057436517533253,
-        "ga4ActiveUsers30d": 89
-      },
-      "evidence": [
-        "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
-        "gscStatus=ok",
-        "adsenseStatus=ok",
-        "adsTxtStatus=ok",
-        "sitemapWarnings=0",
-        "sitemapErrors=0"
-      ],
-      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
-    },
-    {
-      "rank": 5,
       "siteId": "estat-2",
       "host": "estat.kr",
       "url": "https://estat.kr/",
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 2940 impressions, 0.41% CTR, average position 7.78.",
+      "reason": "High-impression low-CTR opportunity: 3058 impressions, 0.43% CTR, average position 7.75.",
       "metrics": {
-        "gscImpressions30d": 2940,
-        "gscClicks30d": 12,
-        "gscCtr30d": 0.004081632653061225,
-        "gscPosition30d": 7.778231292517007,
-        "ga4ActiveUsers30d": 54
+        "gscImpressions30d": 3058,
+        "gscClicks30d": 13,
+        "gscCtr30d": 0.004251144538914323,
+        "gscPosition30d": 7.754087638979725,
+        "ga4ActiveUsers30d": 55
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -205,6 +172,33 @@
       "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
     },
     {
+      "rank": 5,
+      "siteId": "gong365",
+      "host": "gong365.kr",
+      "url": "https://gong365.kr/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 3310 impressions and 89 users.",
+      "metrics": {
+        "gscImpressions30d": 3310,
+        "gscClicks30d": 37,
+        "gscCtr30d": 0.011178247734138972,
+        "gscPosition30d": 8.053776435045318,
+        "ga4ActiveUsers30d": 89
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-19T04:14:09.951Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
       "rank": 6,
       "siteId": "estat-2",
       "host": "estat.kr",
@@ -212,17 +206,17 @@
       "actionType": "content_handoff",
       "tier": "T3",
       "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 2940 impressions and 54 users.",
+      "reason": "Search exposure is present but GA4 users are low: 3058 impressions and 55 users.",
       "metrics": {
-        "gscImpressions30d": 2940,
-        "gscClicks30d": 12,
-        "gscCtr30d": 0.004081632653061225,
-        "gscPosition30d": 7.778231292517007,
-        "ga4ActiveUsers30d": 54
+        "gscImpressions30d": 3058,
+        "gscClicks30d": 13,
+        "gscCtr30d": 0.004251144538914323,
+        "gscPosition30d": 7.754087638979725,
+        "ga4ActiveUsers30d": 55
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -239,17 +233,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 1355 impressions, 1.99% CTR, average position 12.14.",
+      "reason": "High-impression low-CTR opportunity: 1426 impressions, 2.17% CTR, average position 12.02.",
       "metrics": {
-        "gscImpressions30d": 1355,
-        "gscClicks30d": 27,
-        "gscCtr30d": 0.01992619926199262,
-        "gscPosition30d": 12.142435424354243,
-        "ga4ActiveUsers30d": 1782
+        "gscImpressions30d": 1426,
+        "gscClicks30d": 31,
+        "gscCtr30d": 0.021739130434782608,
+        "gscPosition30d": 12.020336605890604,
+        "ga4ActiveUsers30d": 1784
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -266,17 +260,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 1455 impressions, 1.10% CTR, average position 8.96.",
+      "reason": "High-impression low-CTR opportunity: 1513 impressions, 1.19% CTR, average position 8.95.",
       "metrics": {
-        "gscImpressions30d": 1455,
-        "gscClicks30d": 16,
-        "gscCtr30d": 0.010996563573883162,
-        "gscPosition30d": 8.960824742268041,
+        "gscImpressions30d": 1513,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.011896893588896233,
+        "gscPosition30d": 8.945142101784533,
         "ga4ActiveUsers30d": 137
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -293,17 +287,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 1333 impressions, 2.10% CTR, average position 14.10.",
+      "reason": "High-impression low-CTR opportunity: 1427 impressions, 2.17% CTR, average position 14.05.",
       "metrics": {
-        "gscImpressions30d": 1333,
-        "gscClicks30d": 28,
-        "gscCtr30d": 0.021005251312828207,
-        "gscPosition30d": 14.103525881470368,
+        "gscImpressions30d": 1427,
+        "gscClicks30d": 31,
+        "gscCtr30d": 0.021723896285914507,
+        "gscPosition30d": 14.048353188507358,
         "ga4ActiveUsers30d": 198
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -330,7 +324,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -357,7 +351,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -374,17 +368,17 @@
       "actionType": "technical_seo",
       "tier": "T2",
       "confidence": "medium",
-      "reason": "Impressions exist but average position is weak: 696 impressions at position 40.19.",
+      "reason": "Impressions exist but average position is weak: 728 impressions at position 39.52.",
       "metrics": {
-        "gscImpressions30d": 696,
+        "gscImpressions30d": 728,
         "gscClicks30d": 2,
-        "gscCtr30d": 0.0028735632183908046,
-        "gscPosition30d": 40.19252873563219,
+        "gscCtr30d": 0.0027472527472527475,
+        "gscPosition30d": 39.51510989010989,
         "ga4ActiveUsers30d": 23
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -411,7 +405,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -422,50 +416,23 @@
     },
     {
       "rank": 14,
-      "siteId": "spinkorea-2",
-      "host": "spinkorea.kr",
-      "url": "https://spinkorea.kr/",
-      "actionType": "technical_seo",
-      "tier": "T2",
-      "confidence": "medium",
-      "reason": "Impressions exist but average position is weak: 326 impressions at position 43.26.",
-      "metrics": {
-        "gscImpressions30d": 326,
-        "gscClicks30d": 0,
-        "gscCtr30d": 0,
-        "gscPosition30d": 43.25766871165644,
-        "ga4ActiveUsers30d": 554
-      },
-      "evidence": [
-        "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
-        "gscStatus=ok",
-        "adsenseStatus=ok",
-        "adsTxtStatus=ok",
-        "sitemapWarnings=0",
-        "sitemapErrors=0"
-      ],
-      "nextAction": "Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability."
-    },
-    {
-      "rank": 15,
       "siteId": "legalser",
       "host": "legalser.com",
       "url": "https://legalser.com/",
       "actionType": "content_handoff",
       "tier": "T3",
       "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 696 impressions and 23 users.",
+      "reason": "Search exposure is present but GA4 users are low: 728 impressions and 23 users.",
       "metrics": {
-        "gscImpressions30d": 696,
+        "gscImpressions30d": 728,
         "gscClicks30d": 2,
-        "gscCtr30d": 0.0028735632183908046,
-        "gscPosition30d": 40.19252873563219,
+        "gscCtr30d": 0.0027472527472527475,
+        "gscPosition30d": 39.51510989010989,
         "ga4ActiveUsers30d": 23
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -475,6 +442,33 @@
       "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
     },
     {
+      "rank": 15,
+      "siteId": "spinkorea-2",
+      "host": "spinkorea.kr",
+      "url": "https://spinkorea.kr/",
+      "actionType": "technical_seo",
+      "tier": "T2",
+      "confidence": "medium",
+      "reason": "Impressions exist but average position is weak: 339 impressions at position 43.68.",
+      "metrics": {
+        "gscImpressions30d": 339,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 43.67551622418879,
+        "ga4ActiveUsers30d": 554
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-07-19T04:14:09.951Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0"
+      ],
+      "nextAction": "Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability."
+    },
+    {
       "rank": 16,
       "siteId": "homeimer",
       "host": "homeimer.com",
@@ -482,17 +476,17 @@
       "actionType": "technical_seo",
       "tier": "T2",
       "confidence": "medium",
-      "reason": "Impressions exist but average position is weak: 537 impressions at position 66.29.",
+      "reason": "Impressions exist but average position is weak: 538 impressions at position 66.21.",
       "metrics": {
-        "gscImpressions30d": 537,
+        "gscImpressions30d": 538,
         "gscClicks30d": 0,
         "gscCtr30d": 0,
-        "gscPosition30d": 66.29422718808193,
+        "gscPosition30d": 66.2081784386617,
         "ga4ActiveUsers30d": 13
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -509,17 +503,17 @@
       "actionType": "title_handoff",
       "tier": "T3",
       "confidence": "high",
-      "reason": "High-impression low-CTR opportunity: 511 impressions, 0.78% CTR, average position 9.03.",
+      "reason": "High-impression low-CTR opportunity: 515 impressions, 0.78% CTR, average position 9.03.",
       "metrics": {
-        "gscImpressions30d": 511,
+        "gscImpressions30d": 515,
         "gscClicks30d": 4,
-        "gscCtr30d": 0.007827788649706457,
-        "gscPosition30d": 9.033268101761253,
+        "gscCtr30d": 0.007766990291262136,
+        "gscPosition30d": 9.025242718446602,
         "ga4ActiveUsers30d": 37
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -536,17 +530,17 @@
       "actionType": "content_handoff",
       "tier": "T3",
       "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 537 impressions and 13 users.",
+      "reason": "Search exposure is present but GA4 users are low: 538 impressions and 13 users.",
       "metrics": {
-        "gscImpressions30d": 537,
+        "gscImpressions30d": 538,
         "gscClicks30d": 0,
         "gscCtr30d": 0,
-        "gscPosition30d": 66.29422718808193,
+        "gscPosition30d": 66.2081784386617,
         "ga4ActiveUsers30d": 13
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -563,17 +557,17 @@
       "actionType": "content_handoff",
       "tier": "T3",
       "confidence": "medium",
-      "reason": "Search exposure is present but GA4 users are low: 511 impressions and 37 users.",
+      "reason": "Search exposure is present but GA4 users are low: 515 impressions and 37 users.",
       "metrics": {
-        "gscImpressions30d": 511,
+        "gscImpressions30d": 515,
         "gscClicks30d": 4,
-        "gscCtr30d": 0.007827788649706457,
-        "gscPosition30d": 9.033268101761253,
+        "gscCtr30d": 0.007766990291262136,
+        "gscPosition30d": 9.025242718446602,
         "ga4ActiveUsers30d": 37
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -600,7 +594,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T00:23:10.487Z",
+        "snapshot=2026-07-19T04:14:09.951Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
