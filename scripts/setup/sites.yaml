@@ -415,9 +415,8 @@ sites:
   - id: spinkorea
     name: 스핀코리아
     enabled: false
-    platform: wordpress
+    platform: static
     url: https://spinkorea.kr/
-    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "532855163"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
@@ -645,9 +644,8 @@ sites:
   - id: spinkorea-2
     name: spinkorea.kr
     enabled: true
-    platform: wordpress
+    platform: static
     url: https://spinkorea.kr/
-    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "536081634"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
