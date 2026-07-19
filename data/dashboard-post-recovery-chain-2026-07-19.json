@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T23:49:24.503Z",
+  "generatedAt": "2026-07-19T05:41:34.695Z",
   "date": "2026-07-19",
   "dryRun": false,
   "productionMutationPerformed": false,
@@ -32,22 +32,22 @@
   "dashboardVerification": {
     "path": "data\\dashboard-verification-2026-07-19.json",
     "exists": true,
-    "statsSnapshot": "2026-07-18T23:47:49.406Z",
-    "verdict": "failed",
+    "statsSnapshot": "2026-07-19T05:31:20.047Z",
+    "verdict": "local_verified",
     "expectedBlocked": 0,
-    "fail": 1,
-    "skipped": 3,
+    "fail": 0,
+    "skipped": 0,
     "externalBlockerEvidenceCount": 0,
     "externalBlockerEvidence": [],
     "actionabilityBlockerHosts": [],
     "surfaceBlockerHosts": [],
-    "actionabilityStatus": "unknown",
+    "actionabilityStatus": "safe_to_act",
     "postRecoveryAcceptance": [
-      "external_gsc_access_restored=pending_verification",
-      "dashboard_verify_local_verified=failed",
-      "rendered_ui_smoke_current=pending_verification",
-      "dashboard_surface_current=pending_verification",
-      "recommendations_safe_to_act=pending_verification",
+      "external_gsc_access_restored=satisfied",
+      "dashboard_verify_local_verified=satisfied",
+      "rendered_ui_smoke_current=satisfied",
+      "dashboard_surface_current=satisfied",
+      "recommendations_safe_to_act=satisfied",
       "mutation_boundary_clean=satisfied"
     ]
   },
@@ -56,37 +56,37 @@
       "id": "gsc-permission-audit",
       "status": "pass",
       "exitCode": 0,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-19.json and docs\\work-orders\\gsc-permission-audit-2026-07-19.md. snapshot=2026-07-18T23:47:49.406Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-07-19.json and docs\\work-orders\\gsc-permission-audit-2026-07-19.md. snapshot=2026-07-19T05:31:20.047Z auditedRows=0 ownerAccess=0 restrictedAccess=0 unverified=0 notListed=0\n",
       "stderrTail": ""
     },
     {
       "id": "dashboard-verify",
-      "status": "fail",
-      "exitCode": 1,
-      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/run-dashboard-verification.ts \"--skip-stats-update\"\n\nWrote data\\dashboard-verification-2026-07-19.json and docs\\work-orders\\dashboard-verification-2026-07-19.md. snapshot=2026-07-18T23:47:49.406Z verdict=failed commands=4 pass=0 expectedBlocked=0 fail=1 skipped=3 blockers=skipped_refresh_failed:adsense:missing_config:1,skipped_refresh_failed:adsense_collector:transient_error:1,skipped_refresh_failed:ads_txt:missing_config:1,skipped_refresh_failed:sitemap:errors:1\n ELIFECYCLE  Command failed with exit code 1.\n",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:verify D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/run-dashboard-verification.ts \"--skip-stats-update\"\n\nWrote data\\dashboard-verification-2026-07-19.json and docs\\work-orders\\dashboard-verification-2026-07-19.md. snapshot=2026-07-19T05:31:20.047Z verdict=local_verified commands=4 pass=4 expectedBlocked=0 fail=0 skipped=0 blockers=skipped_refresh_failed:adsense_collector:transient_error:1\n",
       "stderrTail": ""
     },
     {
       "id": "dashboard-acceptance",
-      "status": "skipped",
-      "exitCode": null,
-      "stdoutTail": "dry-run or skipped after failed command",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:acceptance D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/check-dashboard-post-recovery-acceptance.ts \"data\\\\dashboard-verification-2026-07-19.json\"\n\nartifact=data\\\\dashboard-verification-2026-07-19.json ready=true pass=10 fail=0\n",
       "stderrTail": ""
     }
   ],
   "artifactIntegrity": {
     "id": "dashboard-artifact-integrity",
-    "status": "fail",
-    "exitCode": 1,
-    "stdoutTail": "ed=missing surface=missing ui=missing post=2026-07-18T23:47:49.406Z\nFAIL post_recovery_matches_verification: verdict=failed/failed expectedBlocked=0/0 fail=1/1 skipped=3/3 externalBlockers=0/0 actionability=unknown/unknown\nFAIL commands_and_tails_consistent: commands=gsc-permission-audit>dashboard-verify>dashboard-acceptance results=gsc-permission-audit>dashboard-verify>dashboard-acceptance summary=commands=3/pass=1/fail=1/skipped=1 tailSnapshots=gsc-permission-audit:2026-07-18T23:47:49.406Z,dashboard-verify:2026-07-18T23:47:49.406Z,dashboard-acceptance:none\nFAIL markdown_mirrors_json: verificationMd=true uiSmokeMd=false postRecoveryMd=true snapshot=2026-07-18T23:47:49.406Z verdict=failed hosts=none\nFAIL verdict_state_consistent: verdict=failed expectedBlocked=0 externalBlockers=0 actionability=unknown actionabilityHosts=none surfaceHosts=none readiness=failed\nFAIL mutation_boundary_clean: verification=production=false/cms=false/gsc=false/adsense=false/titleOrBody=false uiSmoke=production=missing/cms=missing/gsc=missing/adsense=missing/titleOrBody=missing postRecovery=production=false/cms=false/gsc=false/adsense=false/titleOrBody=false\n ELIFECYCLE  Command failed with exit code 1.\n",
+    "status": "pass",
+    "exitCode": 0,
+    "stdoutTail": "\n> multi-dashboard@0.1.0 dashboard:artifact-integrity D:\\web\\multi-dashboard-deploy-20260719\n> tsx scripts/setup/check-dashboard-artifact-integrity.ts \"--date=2026-07-19\" \"--allow-missing-post-write-integrity\"\n\ndate=2026-07-19 ready=true pass=12 fail=0\n",
     "stderrTail": ""
   },
   "summary": {
     "commands": 3,
-    "pass": 1,
-    "fail": 1,
-    "skipped": 1
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0
   },
-  "readiness": "failed",
+  "readiness": "ready_to_act",
   "stopCondition": "This local chain does not authorize CMS edits, Search Console mutations, AdSense submissions, deployments, DNS changes, publishing, or title/body edits. Dashboard recommendations are executable only when readiness is ready_to_act."
 }

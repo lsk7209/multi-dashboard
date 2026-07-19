@@ -1,0 +1,56 @@
+{
+  "url": "https://multi-dashboard-one.vercel.app/?actionabilityMode=local-evidence&actionabilityToken=redacted",
+  "generatedAt": "2026-07-19T05:31:20.047Z",
+  "siteCount": 98,
+  "blockingSources": [],
+  "maintenanceSources": [
+    "skipped_refresh_failed:adsense_collector:transient_error:1"
+  ],
+  "blockerHosts": [],
+  "actionabilityStatus": "safe_to_act",
+  "actionabilityCommand": "pnpm dashboard:post-recovery",
+  "actionabilityAllowedUse": "Dashboard recommendations may be used as executable local work after standard verification.",
+  "actionabilityReason": "All dashboard readiness evidence is current and unblocked.",
+  "blockedActionReason": "GSC sitemap 마지막 수집일이 3일 전입니다. 오류 1개",
+  "hasSuppressedBlockedAction": true,
+  "fleetChainArtifactPath": "data/fleet-optimization-chain-2026-07-19.json",
+  "gscPermissionAuditArtifactPath": "data/gsc-permission-audit-2026-07-19.json",
+  "gscPermissionAuditWorkOrderPath": "docs/work-orders/gsc-permission-audit-2026-07-19.md",
+  "gscPermissionAuditHandoffStatus": "resolved",
+  "collectorAvailability": [
+    {
+      "key": "githubActions",
+      "status": "skipped",
+      "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped."
+    },
+    {
+      "key": "dashboardArtifacts",
+      "status": "ok",
+      "detail": "Read dashboard artifact snapshot=2026-07-19T05:31:20.047Z."
+    },
+    {
+      "key": "ga4",
+      "status": "ok",
+      "detail": "Read GA4 collector status for 98 sites."
+    }
+  ],
+  "checks": [
+    "http-2xx",
+    "fleet-panel",
+    "site-count",
+    "blocker-maintenance-split",
+    "gsc-handoff-status-visible",
+    "maintenance-visibility",
+    "collector-availability-visible",
+    "readable-rendered-text",
+    "unauthorized-local-evidence-blocked"
+  ],
+  "artifactGeneratedAt": "2026-07-19T05:41:33.709Z",
+  "date": "2026-07-19",
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "stopCondition": "This rendered UI smoke is local and non-mutating. It opens the dashboard in a browser and records evidence only; it does not authorize CMS edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
+}
