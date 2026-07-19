@@ -1,0 +1,81 @@
+{
+  "content_handoff_version": "1.2",
+  "persona_source": "unknown",
+  "persona_status": "not_checked",
+  "published_title_source": "https://legalser.com/wp-json/wp/v2/posts",
+  "title_export_source": "missing",
+  "content_source": "unknown",
+  "dashboard_evidence": {
+    "stats_path": "data/site-stats.json",
+    "snapshot_timestamp": "2026-07-19T05:31:20.047Z",
+    "connector_status": {
+      "gsc": "ok",
+      "ga4": "ok",
+      "adsense": "ok",
+      "ads_txt": "ok"
+    },
+    "insight_fields": [
+      "gscImpressions30d",
+      "gscPosition30d",
+      "ga4ActiveUsers30d",
+      "sitemapWarnings",
+      "sitemapErrors"
+    ],
+    "refreshed_by": "pnpm dashboard:refresh",
+    "refresh_command": "pnpm stats:update",
+    "refresh_failed_sources": []
+  },
+  "site_summary": "legalser.com has healthy public crawl and advertising endpoints, but sitemap freshness signals trail its July publication schedule.",
+  "technical_constraints": [
+    "Preserve the existing canonical host and single AdSense loader.",
+    "Map the active sitemap owner before rebuilding it.",
+    "Do not remove either Naver verification token before ownership is proven.",
+    "Do not rewrite article text while correcting technical metadata."
+  ],
+  "schema_status": "ok",
+  "rss_status": "ok",
+  "indexing_status": "setup_needed",
+  "adsense_risk": "low",
+  "recommended_next_skill": "site-optimizer",
+  "content_work_needed": [
+    "blog_index"
+  ],
+  "site_topic_profile": {
+    "site_topic": "plain-English legal terminology and legal-information guides",
+    "primary_audience": "readers seeking general legal vocabulary guidance",
+    "tone_constraints": [
+      "retain the legal-information-not-advice boundary",
+      "do not make jurisdiction-specific legal claims without editorial review"
+    ],
+    "trust_markers_needed": [
+      "clear update dates",
+      "source attribution",
+      "legal-information disclaimer"
+    ]
+  },
+  "article_topic_persona_briefs": [],
+  "content_optimization_targets": [],
+  "toc_findings": [],
+  "article_layout_findings": [],
+  "blog_index_findings": {
+    "url": "https://legalser.com/blog/",
+    "status": "not_checked",
+    "technical_action": "none",
+    "evidence": "This audit verified home, a sampled post, sitemap, feed, llms.txt, and ads.txt; it did not render the blog archive at responsive breakpoints.",
+    "breakpoints_checked": [
+      "390",
+      "768",
+      "1366"
+    ],
+    "issues_by_viewport": {
+      "390": "not_checked",
+      "768": "not_checked",
+      "1366": "not_checked"
+    },
+    "card_layout": "not_checked",
+    "pagination": "not_checked",
+    "media": "not_checked",
+    "metadata": "not_checked",
+    "ad_interaction": "not_checked"
+  }
+}
