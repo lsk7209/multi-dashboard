@@ -38,6 +38,10 @@ describe("create-fleet-optimization-plan dashboard evidence", () => {
     ).not.toContain("skipped_refresh_failed:adsense_queue:missing_current:1");
   });
 
+  it("does not mistake a site-level sitemap finding for a dashboard refresh failure", () => {
+    expect(buildRefreshFailedSources([row({ sitemapErrors: 1 })])).toEqual([]);
+  });
+
   it("summarizes connector statuses and treats non-monetized rows as disabled", () => {
     const summary = summarizeConnectorStatus([
       row(),

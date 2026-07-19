@@ -489,12 +489,10 @@ export function buildRefreshFailedSources(
     }
   }
 
-  const sitemapErrorCount = rows.filter(
-    (row) => numberValue(row.sitemapErrors) > 0,
-  ).length;
-  if (sitemapErrorCount > 0) {
-    failed.push(`skipped_refresh_failed:sitemap:errors:${sitemapErrorCount}`);
-  }
+  // Sitemap errors are fresh Search Console findings, not collector failures.
+  // Keep them in the site-level indexing/technical SEO queue; making them a
+  // dashboard-refresh failure prevents the dashboard from presenting the
+  // evidence needed to resolve them.
   if (options.adsenseQueueMissing === true && rows.some((row) => row.monetization !== false)) {
     failed.push("skipped_refresh_failed:adsense_queue:missing_current:1");
   }
