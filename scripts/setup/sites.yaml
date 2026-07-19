@@ -124,6 +124,7 @@ sites:
     ga4PropertyId: "516369797"
     gscSiteUrl: sc-domain:temon.kr
     monetization: true
+    adsenseRuntimeCheck: desktop_browser
     contentSource:
       type: local-app
       locationLabel: kwangju

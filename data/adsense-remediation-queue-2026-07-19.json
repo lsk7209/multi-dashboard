@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-18T23:49:23.292Z",
-  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-18T23:47:49.406Z",
+  "generatedAt": "2026-07-19T00:23:55.919Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-19T00:23:10.487Z",
   "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
   "productionMutationPerformed": false,
   "adsenseConsoleChecked": false,
@@ -25,34 +25,15 @@
   "summary": {
     "totalRows": 98,
     "reviewedRows": 84,
-    "adsenseOkRows": 83,
-    "problemRows": 1,
-    "ordinaryAdsenseProof": 1,
+    "adsenseOkRows": 84,
+    "problemRows": 0,
+    "ordinaryAdsenseProof": 0,
     "approvedRootSubdomainScope": 0,
     "gscAuthTelemetry": 0,
     "ga4ConfigTelemetry": 0
   },
   "lanes": {
-    "ordinary_adsense_proof": [
-      {
-        "siteId": "ezfunnel",
-        "host": "ezfunnel.kr",
-        "name": "ezfunnel.kr",
-        "lane": "ordinary_adsense_proof",
-        "priority": 999829,
-        "requiredEvidence": [
-          "Homepage/sample page contains AdSense loader evidence.",
-          "ads.txt validates the configured publisher id."
-        ],
-        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
-        "notes": [
-          "adsenseStatus=ok",
-          "adsenseCollectorStatus=transient_error",
-          "adsTxtStatus=missing_config",
-          "adsTxtCollectorStatus=ok"
-        ]
-      }
-    ],
+    "ordinary_adsense_proof": [],
     "approved_root_subdomain_scope": [],
     "gsc_auth_telemetry": [],
     "ga4_config_telemetry": []

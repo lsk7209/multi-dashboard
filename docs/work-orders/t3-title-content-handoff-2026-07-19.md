@@ -1,15 +1,15 @@
-# T3 Title/Content Handoff - 2026-07-18T23:47:49.406Z
+# T3 Title/Content Handoff - 2026-07-19T00:23:10.487Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-18T23:47:49.406Z`
+- Snapshot: `2026-07-19T00:23:10.487Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-19.json`
 - Sites path: `scripts\setup\sites.yaml`
 - Refresh command: `pnpm stats:update`
-- Refresh failed sources: `skipped_refresh_failed:adsense:missing_config:1`, `skipped_refresh_failed:adsense_collector:transient_error:1`, `skipped_refresh_failed:ads_txt:missing_config:1`, `skipped_refresh_failed:sitemap:errors:1`
+- Refresh failed sources: `skipped_refresh_failed:sitemap:errors:1`
 
 ## Summary
 
@@ -32,7 +32,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `nexttech7.com` | 9 | `title_handoff` | 1333 impr / 28 clicks / 2.10% CTR / pos 14.10 | 198 | `missing` | `D:\web\nexttech7com` |
 | `dogspang.kr` | 10, 11 | `title_handoff`, `content_handoff` | 971 impr / 18 clicks / 1.85% CTR / pos 9.60 | 93 | `missing` | `D:\web\dogspangkr` |
 | `today2424.kr` | 13 | `content_handoff` | 796 impr / 38 clicks / 4.77% CTR / pos 9.18 | 80 | `missing` | `D:\web\today2424\2424` |
-| `legalser.com` | 15 | `content_handoff` | 696 impr / 2 clicks / 0.29% CTR / pos 40.19 | 24 | `missing` | `D:\web\legalsercom` |
+| `legalser.com` | 15 | `content_handoff` | 696 impr / 2 clicks / 0.29% CTR / pos 40.19 | 23 | `missing` | `D:\web\legalsercom` |
 | `healfood.kr` | 17, 19 | `title_handoff`, `content_handoff` | 511 impr / 4 clicks / 0.78% CTR / pos 9.03 | 37 | `missing` | `D:\web\healfoodkr` |
 | `homeimer.com` | 18 | `content_handoff` | 537 impr / 0 clicks / 0.00% CTR / pos 66.29 | 13 | `missing` | `D:\web\homeimercom` |
 

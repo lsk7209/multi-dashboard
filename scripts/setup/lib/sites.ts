@@ -15,6 +15,8 @@ const siteSchema = z.object({
   sitemapUrls: z.array(z.string().url()).optional(),
   // AdSense 미적용 사이트(예: 쇼핑몰)는 false. 수익화 수집·이슈 집계에서 제외된다.
   monetization: z.boolean().default(true),
+  // Opt in only client-rendered sites that need desktop runtime evidence.
+  adsenseRuntimeCheck: z.enum(["desktop_browser"]).optional(),
   contentSource: z
     .object({
       type: z.enum(["wordpress-ssh", "local-next", "github-next", "local-app"]),

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildFailedSiteStat } from "./update-ga4-stats.js";
+import { buildFailedSiteStat, findAdsenseSignal } from "./update-ga4-stats.js";
 
 describe("buildFailedSiteStat", () => {
   it("preserves completed service telemetry when only the content phase times out", () => {
@@ -43,5 +43,15 @@ describe("buildFailedSiteStat", () => {
       collectionFailurePhase: "content",
     });
     expect(result.error).toContain("site discparty timed out after 90s");
+  });
+});
+
+describe("findAdsenseSignal", () => {
+  it("recognizes a hydrated AdSense loader", () => {
+    expect(
+      findAdsenseSignal(
+        '<script id="adsense-loader" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3050601904412736"></script>',
+      ),
+    ).toBe("pagead2");
   });
 });

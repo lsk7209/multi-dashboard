@@ -280,6 +280,7 @@ type MonetizationEvidenceType =
   | "homepage"
   | "homepage_mediapartners"
   | "sample_page"
+  | "homepage_browser_desktop"
   | "ads_txt";
 type ErrorKind =
   | "permission"
@@ -1759,7 +1760,7 @@ async function fetchWpPostDate(url: string): Promise<string | undefined> {
   return dateGmt ? `${dateGmt}Z` : undefined;
 }
 
-function findAdsenseSignal(html: string): string | undefined {
+export function findAdsenseSignal(html: string): string | undefined {
   const normalized = html.toLowerCase();
   if (
     normalized.includes(
@@ -1775,6 +1776,54 @@ function findAdsenseSignal(html: string): string | undefined {
     return "ca-pub";
   }
   return undefined;
+}
+
+async function collectDesktopBrowserAdsenseEvidence(
+  site: Site,
+  checkedAt: string,
+): Promise<MonetizationEvidence> {
+  const item: MonetizationEvidence = {
+    type: "homepage_browser_desktop",
+    url: site.url,
+    checkedAt,
+  };
+
+  try {
+    const { chromium } = await import("@playwright/test");
+    const browser = await chromium.launch({ headless: true });
+    try {
+      const page = await browser.newPage({
+        viewport: { width: 1920, height: 1080 },
+        userAgent:
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+      });
+      const response = await page.goto(site.url, {
+        waitUntil: "networkidle",
+        timeout: 30000,
+      });
+      item.httpStatus = response?.status();
+      await page.waitForTimeout(1500);
+      const signal = await page.locator("script").evaluateAll((scripts) => {
+        const matchingScript = scripts.find((script) =>
+          /pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js|adsbygoogle|ca-pub-/i.test(
+            [script.id, script.getAttribute("src"), script.textContent].join(" "),
+          ),
+        );
+        return matchingScript
+          ? matchingScript.getAttribute("src") || matchingScript.id || "adsbygoogle"
+          : undefined;
+      });
+      if (signal) {
+        item.matchedSignal = "desktop_browser";
+      }
+    } finally {
+      await browser.close();
+    }
+  } catch (error) {
+    item.error = getErrorMessage(error);
+  }
+
+  return item;
 }
 
 function isRecentIso(value: string | undefined, maxAgeHours: number): boolean {
@@ -1923,6 +1972,13 @@ async function collectAdsenseCodeStatus(
         error: getErrorMessage(error),
       });
     }
+  }
+
+  if (
+    !evidence.some((item) => item.matchedSignal) &&
+    site.adsenseRuntimeCheck === "desktop_browser"
+  ) {
+    evidence.push(await collectDesktopBrowserAdsenseEvidence(site, checkedAt));
   }
 
   const matched = evidence.find((item) => item.matchedSignal);
