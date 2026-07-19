@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-07-19T08:19:35.174Z",
+  "generatedAt": "2026-07-19T09:59:20.790Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-19T08:19:34.233Z",
+  "statsSnapshot": "2026-07-19T09:58:51.978Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-19T08:19:35.174Z",
+      "checkedAt": "2026-07-19T09:59:20.790Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-19T08:19:34.233Z.",
-      "checkedAt": "2026-07-19T08:19:35.172Z",
+      "detail": "Read dashboard artifact snapshot=2026-07-19T09:58:51.978Z.",
+      "checkedAt": "2026-07-19T09:59:20.789Z",
       "count": 1
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-19T08:19:35.172Z",
+      "checkedAt": "2026-07-19T09:59:20.789Z",
       "count": 98
     }
   },

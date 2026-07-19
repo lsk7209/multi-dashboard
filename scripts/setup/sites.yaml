@@ -1296,9 +1296,8 @@ sites:
   - id: dogswhere
     name: dogswhere.com
     enabled: true
-    platform: wordpress
+    platform: nextjs
     url: https://dogswhere.com/
-    wpRestBase: https://dogswhere.com/wp-json/wp/v2
     ga4PropertyId: "539684317"
     gscSiteUrl: sc-domain:dogswhere.com
     monetization: true
