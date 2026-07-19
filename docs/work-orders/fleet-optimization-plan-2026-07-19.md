@@ -1,4 +1,4 @@
-# Fleet Optimization Plan - 2026-07-19T06:42:20.638Z
+# Fleet Optimization Plan - 2026-07-19T08:19:34.233Z
 
 ## Verdict
 
@@ -6,7 +6,7 @@ This is a local, non-mutating plan for AdSense approval optimization and Google 
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-19T06:42:20.638Z`
+- Snapshot: `2026-07-19T08:19:34.233Z`
 - Stats path: `D:\web\multi-dashboard\data\site-stats.json`
 - Refresh command: `pnpm stats:update`
 - Refresh failed sources: `skipped_refresh_failed:adsense_collector:transient_error:1`
@@ -60,8 +60,8 @@ Source: `data\adsense-remediation-queue-2026-07-19.json`
 | 7 | `dogswhere.com` | `title_handoff` | T3 | 1426 impr / 2.17% CTR / pos 12.02 / 1784 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 8 | `petinsuer.com` | `title_handoff` | T3 | 1513 impr / 1.19% CTR / pos 8.95 / 137 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
 | 9 | `nexttech7.com` | `title_handoff` | T3 | 1427 impr / 2.17% CTR / pos 14.05 / 198 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 10 | `dogspang.kr` | `title_handoff` | T3 | 971 impr / 1.85% CTR / pos 9.60 / 93 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
-| 11 | `dogspang.kr` | `content_handoff` | T3 | 971 impr / 1.85% CTR / pos 9.60 / 93 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
+| 10 | `dogspang.kr` | `title_handoff` | T3 | 971 impr / 1.85% CTR / pos 9.60 / 91 users | Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan. |
+| 11 | `dogspang.kr` | `content_handoff` | T3 | 971 impr / 1.85% CTR / pos 9.60 / 91 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 12 | `legalser.com` | `technical_seo` | T2 | 728 impr / 0.27% CTR / pos 39.52 / 23 users | Run per-site technical SEO audit for sitemap, canonical, schema, robots, feed, and indexability. |
 | 13 | `today2424.kr` | `content_handoff` | T3 | 796 impr / 4.77% CTR / pos 9.18 / 80 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |
 | 14 | `legalser.com` | `content_handoff` | T3 | 728 impr / 0.27% CTR / pos 39.52 / 23 users | Send to persona/content workflow for intent alignment, source quality, and helpful-content review. |

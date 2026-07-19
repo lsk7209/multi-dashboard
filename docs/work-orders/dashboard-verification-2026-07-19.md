@@ -2,8 +2,8 @@
 
 Mutation status: production/external systems were not mutated; local dashboard evidence artifacts were refreshed.
 
-- Generated at: `2026-07-19T05:41:34.210Z`
-- Stats snapshot: `2026-07-19T05:31:20.047Z`
+- Generated at: `2026-07-19T08:25:23.825Z`
+- Stats snapshot: `2026-07-19T08:19:34.233Z`
 - Verdict: `local_verified`
 - External blocker sources: `skipped_refresh_failed:adsense_collector:transient_error:1`
 - Maintenance sources: `skipped_refresh_failed:adsense_collector:transient_error:1`
@@ -29,18 +29,18 @@ Mutation status: production/external systems were not mutated; local dashboard e
 - Path: `data\dashboard-ui-smoke-2026-07-19.json`
 - Exists: `true`
 - Status: `current`
-- Expected stats snapshot: `2026-07-19T05:31:20.047Z`
-- UI smoke stats snapshot: `2026-07-19T05:31:20.047Z`
-- Artifact generated at: `2026-07-19T05:41:33.709Z`
+- Expected stats snapshot: `2026-07-19T08:19:34.233Z`
+- UI smoke stats snapshot: `2026-07-19T08:19:34.233Z`
+- Artifact generated at: `2026-07-19T08:25:23.333Z`
 
 ## Dashboard Surface Evidence
 
 - Source command: `dashboard-smoke`
 - Status: `current`
-- Stats snapshot: `2026-07-19T05:31:20.047Z`
+- Stats snapshot: `2026-07-19T08:19:34.233Z`
 - Sites: `98`
 - Actions: `16`
-- Insights: `81`
+- Insights: `74`
 - Fleet chain status: `current`
 - Fleet verdict: `ready`
 - Blocker hosts: `none`
@@ -77,14 +77,14 @@ Mutation status: production/external systems were not mutated; local dashboard e
 
 | Source | Path | Exists | Snapshot | Production | CMS | GSC | AdSense | Title/body |
 |---|---|---:|---|---:|---:|---:|---:|---:|
-| `site_stats_snapshot` | `data\site-stats.json` | `true` | `2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
-| `site_stats_history` | `data\history\2026-07-19.json` | `true` | `2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
-| `fleet_optimization_chain` | `data\fleet-optimization-chain-2026-07-19.json` | `true` | `2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
-| `gsc_permission_audit` | `data\gsc-permission-audit-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
-| `adsense_remediation_queue` | `data\adsense-remediation-queue-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
+| `site_stats_snapshot` | `data\site-stats.json` | `true` | `2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
+| `site_stats_history` | `data\history\2026-07-19.json` | `true` | `2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
+| `fleet_optimization_chain` | `data\fleet-optimization-chain-2026-07-19.json` | `true` | `2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
+| `gsc_permission_audit` | `data\gsc-permission-audit-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
+| `adsense_remediation_queue` | `data\adsense-remediation-queue-2026-07-19.json` | `true` | `data/site-stats.json generatedAt=2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
 | `vercel_api_data_inventory` | `data\vercel-api-data-sites.json` | `true` | `2026-07-19T05:02:45.579Z` | `false` | `false` | `false` | `false` | `false` |
-| `fleet_optimization_plan` | `data\fleet-optimization-plan-2026-07-19.json` | `true` | `2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
-| `t3_title_content_handoff` | `data\t3-title-content-handoff-2026-07-19.json` | `true` | `2026-07-19T05:31:20.047Z` | `false` | `false` | `false` | `false` | `false` |
+| `fleet_optimization_plan` | `data\fleet-optimization-plan-2026-07-19.json` | `true` | `2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
+| `t3_title_content_handoff` | `data\t3-title-content-handoff-2026-07-19.json` | `true` | `2026-07-19T08:19:34.233Z` | `false` | `false` | `false` | `false` | `false` |
 
 ## Commands
 

@@ -4,8 +4,8 @@ This is a local browser-rendered smoke artifact. It does not mutate production o
 
 ## Summary
 
-- URL: `https://multi-dashboard-one.vercel.app/?actionabilityMode=local-evidence&actionabilityToken=redacted`
-- Stats snapshot: `2026-07-19T05:31:20.047Z`
+- URL: `http://127.0.0.1:3000/?actionabilityMode=local-evidence&actionabilityToken=redacted`
+- Stats snapshot: `2026-07-19T08:19:34.233Z`
 - Sites: 98
 - Blocking sources: 0
 - Maintenance sources: 1
