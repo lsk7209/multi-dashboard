@@ -1,10 +1,10 @@
-# T3 Title/Content Handoff - 2026-07-19T06:42:20.638Z
+# T3 Title/Content Handoff - 2026-07-19T08:19:34.233Z
 
 Mutation status: no CMS, database, Search Console, AdSense, production title/body, or deployment mutation performed.
 
 ## Dashboard Evidence
 
-- Snapshot: `2026-07-19T06:42:20.638Z`
+- Snapshot: `2026-07-19T08:19:34.233Z`
 - Stats path: `data\site-stats.json`
 - Plan path: `data\fleet-optimization-plan-2026-07-19.json`
 - Sites path: `scripts\setup\sites.yaml`
@@ -30,7 +30,7 @@ Mutation status: no CMS, database, Search Console, AdSense, production title/bod
 | `dogswhere.com` | 7 | `title_handoff` | 1426 impr / 31 clicks / 2.17% CTR / pos 12.02 | 1784 | `강아지 맡길 곳` (14 impr, pos 32.00)<br>`best dog parks near me` (13 impr, pos 6.69) | `D:\web\dogswherecom` |
 | `petinsuer.com` | 8 | `title_handoff` | 1513 impr / 18 clicks / 1.19% CTR / pos 8.95 | 137 | `강아지 발톱 혈관 줄이기` (12 impr, pos 7.92)<br>`강아지 요플레 먹어도 되나요` (13 impr, pos 9.54) | `D:\web\petinsuercom` |
 | `nexttech7.com` | 9 | `title_handoff` | 1427 impr / 31 clicks / 2.17% CTR / pos 14.05 | 198 | `missing` | `D:\web\nexttech7com` |
-| `dogspang.kr` | 10, 11 | `title_handoff`, `content_handoff` | 971 impr / 18 clicks / 1.85% CTR / pos 9.60 | 93 | `missing` | `missing` |
+| `dogspang.kr` | 10, 11 | `title_handoff`, `content_handoff` | 971 impr / 18 clicks / 1.85% CTR / pos 9.60 | 91 | `missing` | `missing` |
 | `today2424.kr` | 13 | `content_handoff` | 796 impr / 38 clicks / 4.77% CTR / pos 9.18 | 80 | `missing` | `D:\web\today2424\2424` |
 | `legalser.com` | 14 | `content_handoff` | 728 impr / 2 clicks / 0.27% CTR / pos 39.52 | 23 | `legalser` (11 impr, pos 9.55) | `D:\web\legalsercom` |
 | `healfood.kr` | 17, 19 | `title_handoff`, `content_handoff` | 515 impr / 4 clicks / 0.78% CTR / pos 9.03 | 37 | `missing` | `D:\web\healfoodkr` |

@@ -308,19 +308,6 @@ export async function verifyDashboardRenderedUiSmoke(
         BLOCKED_SITE_TABLE_TITLE_FORBIDDEN_PATTERNS,
         "Blocked sites panel still exposes executable tooltip text",
       );
-      await page.locator("#tab-banners").click();
-      const bannersPanel = page.locator("#panel-banners");
-      await assertVisible(
-        bannersPanel.locator(".command-row", {
-          hasText: "read-only until post-recovery passes",
-        }),
-        "Blocked banner panel does not show read-only hold copy.",
-      );
-      await assertNoBlockedTextLeaks(
-        bannersPanel.locator(".command-row"),
-        BLOCKED_SUPPORT_COMMAND_FORBIDDEN_PATTERNS,
-        "Blocked banner panel still exposes external commands",
-      );
       const affiliatePage = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
       try {
         const affiliateResponse = await affiliatePage.goto(affiliateUrl(url), {

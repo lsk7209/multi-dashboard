@@ -1,9 +1,9 @@
 # Dashboard Post-Recovery Chain - 2026-07-19
 
-- Generated at: `2026-07-19T05:41:34.695Z`
+- Generated at: `2026-07-19T08:25:24.311Z`
 - Dry run: `false`
 - Readiness: `ready_to_act`
-- Stats snapshot: `2026-07-19T05:31:20.047Z`
+- Stats snapshot: `2026-07-19T08:19:34.233Z`
 - Verification verdict: `local_verified`
 - Production mutation: `false`
 - CMS mutation: `false`

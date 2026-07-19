@@ -22,9 +22,6 @@ import { getErrorMessage } from "./lib/errors.js";
 
 const OUTPUT_PATH = "data/site-stats.json";
 const TRAFFIC_KEYWORDS_PATH = "data/traffic-keywords.json";
-const GMAIL_DIGEST_README_URL =
-  process.env.GMAIL_DIGEST_README_URL ??
-  "https://raw.githubusercontent.com/lsk7209/gmail-digest/main/README.md";
 const DAY_RANGE = 1;
 const RANGE_DAYS = 7;
 const LONG_RANGE_DAYS = 30;
@@ -307,16 +304,6 @@ interface GscQueryMetric extends GscMetricSet {
   query: string;
 }
 
-interface GscEmailAlert {
-  source: "gmail-digest";
-  site: string;
-  issue: string;
-  time?: string;
-  detectedAt: string;
-  url: string;
-  severity: "high" | "medium" | "low";
-}
-
 interface TrafficKeywordMetric {
   keyword: string;
   source: string;
@@ -431,7 +418,6 @@ interface SiteStat {
   adsTxtErrorKind?: ErrorKind;
   collectionFailurePhase?: string;
   sitemapErrorKind?: ErrorKind;
-  gscEmailAlerts?: GscEmailAlert[];
   error?: string;
   gscError?: string;
   adsenseError?: string;
@@ -1028,132 +1014,6 @@ function normalizeSiteUrlKey(url: string | undefined): string | undefined {
     .trim()
     .replace(/^https?:\/\//, "")
     .replace(/\/$/, "");
-}
-
-function normalizeHostKey(value: string | undefined): string | undefined {
-  if (!value) {
-    return undefined;
-  }
-
-  const trimmed = value.trim();
-  if (!trimmed) {
-    return undefined;
-  }
-
-  const withoutScDomain = trimmed.replace(/^sc-domain:/i, "");
-  try {
-    return new URL(
-      withoutScDomain.includes("://")
-        ? withoutScDomain
-        : `https://${withoutScDomain}`,
-    ).hostname.replace(/^www\./, "").toLowerCase();
-  } catch {
-    return withoutScDomain
-      .replace(/^https?:\/\//i, "")
-      .replace(/\/$/, "")
-      .replace(/^www\./i, "")
-      .toLowerCase();
-  }
-}
-
-function classifyGscEmailAlertSeverity(issue: string): GscEmailAlert["severity"] {
-  const normalized = issue.toLowerCase();
-  if (
-    normalized.includes("404") ||
-    normalized.includes("noindex") ||
-    normalized.includes("robots") ||
-    issue.includes("찾을 수 없음") ||
-    issue.includes("NOINDEX") ||
-    issue.includes("차단")
-  ) {
-    return "high";
-  }
-  if (
-    normalized.includes("duplicate") ||
-    normalized.includes("canonical") ||
-    issue.includes("중복") ||
-    issue.includes("표준")
-  ) {
-    return "medium";
-  }
-  return "low";
-}
-
-function parseGscEmailAlerts(markdown: string, detectedAt: string): GscEmailAlert[] {
-  const alerts: GscEmailAlert[] = [];
-  const linePattern =
-    /^\s*[-*]\s+`(?<time>\d{2}:\d{2})`\s+\[GSC\]\s+(?<rest>.+?)\s*$/;
-
-  for (const line of markdown.split(/\r?\n/)) {
-    const match = line.match(linePattern);
-    const groups = match?.groups;
-    const parsed = parseGscEmailAlertBody(groups?.rest);
-    if (!parsed) {
-      continue;
-    }
-
-    alerts.push({
-      source: "gmail-digest",
-      site: parsed.site,
-      issue: parsed.issue,
-      detectedAt,
-      url: GMAIL_DIGEST_README_URL,
-      severity: classifyGscEmailAlertSeverity(parsed.issue),
-      ...(groups?.time ? { time: groups.time } : {}),
-    });
-  }
-
-  return alerts;
-}
-
-function parseGscEmailAlertBody(
-  value: string | undefined,
-): { site: string; issue: string } | undefined {
-  const body = value?.trim();
-  if (!body) {
-    return undefined;
-  }
-
-  const match = body.match(
-    /^(?<site>[a-z0-9.-]+\.[a-z]{2,})(?:\s+[^a-z0-9가-힣*]+\s+|\s+-\s+)\*?\s*(?<issue>.+)$/i,
-  );
-  const site = match?.groups?.site?.trim();
-  const issue = match?.groups?.issue?.trim();
-  if (!site || !issue) {
-    return undefined;
-  }
-
-  return { site, issue };
-}
-
-async function loadGscEmailAlerts(): Promise<Map<string, GscEmailAlert[]>> {
-  const detectedAt = new Date().toISOString();
-  try {
-    const response = await fetch(GMAIL_DIGEST_README_URL, {
-      signal: AbortSignal.timeout(10000),
-      headers: { Accept: "text/markdown,text/plain,*/*" },
-    });
-    if (!response.ok) {
-      console.warn(
-        `Gmail digest GSC alerts skipped: HTTP ${response.status} from ${GMAIL_DIGEST_README_URL}`,
-      );
-      return new Map();
-    }
-
-    const alerts = parseGscEmailAlerts(await response.text(), detectedAt);
-    const byHost = new Map<string, GscEmailAlert[]>();
-    for (const alert of alerts) {
-      const host = normalizeHostKey(alert.site);
-      if (!host) {
-        continue;
-      }
-      byHost.set(host, [...(byHost.get(host) ?? []), alert]);
-    }
-    return byHost;
-  } catch (error) {
-    console.warn(`Gmail digest GSC alerts skipped: ${getErrorMessage(error)}`);
-    return new Map();
-  }
 }
 
 function getHostname(url: string | null | undefined): string | undefined {
@@ -2179,7 +2039,6 @@ async function fetchSiteStat(
   gscClient: ReturnType<typeof google.searchconsole>,
   site: Site,
   externalTrafficKeywords: Map<string, TrafficKeywordMetric[]>,
-  gscEmailAlertsByHost: Map<string, GscEmailAlert[]>,
   previousStat: SiteStat | undefined,
   reportProgress: (phase: string) => void = () => undefined,
 ): Promise<SiteStat> {
@@ -2241,18 +2100,6 @@ async function fetchSiteStat(
   }
 
   const gscSiteUrl = site.gscSiteUrl ?? site.url;
-  const gscEmailAlerts = [
-    ...(gscEmailAlertsByHost.get(normalizeHostKey(site.url) ?? "") ?? []),
-    ...(gscEmailAlertsByHost.get(normalizeHostKey(gscSiteUrl) ?? "") ?? []),
-  ].filter(
-    (alert, index, alerts) =>
-      alerts.findIndex(
-        (candidate) =>
-          candidate.site === alert.site &&
-          candidate.issue === alert.issue &&
-          candidate.time === alert.time,
-      ) === index,
-  );
   const siteTrafficKeywords = getExternalTrafficKeywordsForSite(
     externalTrafficKeywords,
     site,
@@ -2318,7 +2165,6 @@ async function fetchSiteStat(
     ga4LandingPages,
     ga4Status: statusFromError(error, "api_error"),
     gscStatus: statusFromError(gscError, "api_error"),
-    ...(gscEmailAlerts.length > 0 ? { gscEmailAlerts } : {}),
     // exactOptionalPropertyTypes: monetization 비활성 사이트는 adsense/adsTxt
     // 키를 undefined로 명시하지 않고 아예 빼서 optional 계약을 지킨다.
     ...(monetizationEnabled
@@ -2457,7 +2303,6 @@ async function runStatsUpdate(): Promise<void> {
   const gscClient = google.searchconsole({ version: "v1", auth });
   const limit = pLimit(CONCURRENCY);
   const externalTrafficKeywords = await loadExternalTrafficKeywords();
-  const gscEmailAlertsByHost = await loadGscEmailAlerts();
   const previousStatsById = await loadPreviousStatsById();
   const runStartedAt = Date.now();
   let completed = 0;
@@ -2506,7 +2351,6 @@ async function runStatsUpdate(): Promise<void> {
                 gscClient,
                 site,
                 externalTrafficKeywords,
-                gscEmailAlertsByHost,
                 previousStatsById.get(site.id),
                 reportProgress,
               ),
@@ -2585,10 +2429,6 @@ async function runStatsUpdate(): Promise<void> {
 
   const ga4Failed = stats.filter((site) => site.error).length;
   const gscFailed = stats.filter((site) => site.gscError).length;
-  const gscEmailAlerts = stats.reduce(
-    (total, site) => total + (site.gscEmailAlerts?.length ?? 0),
-    0,
-  );
   const adsenseCodeNotDetected = stats.filter(
     (site) => isCurrentAdsenseInstallFailure(site),
   ).length;
@@ -2604,7 +2444,7 @@ async function runStatsUpdate(): Promise<void> {
   ).length;
   const sitemapFailed = stats.filter((site) => site.sitemapError).length;
   console.log(
-    `Stats updated: ${stats.length} sites, concurrency=${CONCURRENCY}, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, GSC email alerts=${gscEmailAlerts}, sitemaps checked=${sitemapChecked}, sitemaps failed=${sitemapFailed}, AdSense code not detected=${adsenseCodeNotDetected}, AdSense transient=${adsenseTransientErrors}, ads.txt failed=${adsTxtFailed}, ads.txt transient=${adsTxtTransientErrors}, output=${OUTPUT_PATH}, history=${historyPath}`,
+    `Stats updated: ${stats.length} sites, concurrency=${CONCURRENCY}, GA4 failed=${ga4Failed}, GSC failed=${gscFailed}, sitemaps checked=${sitemapChecked}, sitemaps failed=${sitemapFailed}, AdSense code not detected=${adsenseCodeNotDetected}, AdSense transient=${adsenseTransientErrors}, ads.txt failed=${adsTxtFailed}, ads.txt transient=${adsTxtTransientErrors}, output=${OUTPUT_PATH}, history=${historyPath}`,
   );
 }
 

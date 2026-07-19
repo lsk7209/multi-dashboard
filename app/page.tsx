@@ -1126,20 +1126,12 @@ function getErrorKindLabel(kind: string | undefined): string {
 function getGscIssueDetail(
   stat: ReturnType<typeof getDashboardData>["stats"][number],
 ): string {
-  const alert = stat.gscEmailAlerts?.[0];
-  if (alert) {
-    return `Gmail digest ${alert.time ? `${alert.time} ` : ""}${alert.issue}`;
-  }
   return stat.statusReason;
 }
 
 function getGscIssueLabel(
   stat: ReturnType<typeof getDashboardData>["stats"][number],
 ): string {
-  const alert = stat.gscEmailAlerts?.[0];
-  if (alert) {
-    return alert.severity === "high" ? "GSC alert high" : "GSC alert";
-  }
   return getErrorKindLabel(stat.gscErrorKind);
 }
 

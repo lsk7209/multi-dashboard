@@ -264,6 +264,25 @@ describe("getDevelopmentPaths", () => {
 });
 
 describe("buildActionItems (owner-required public fetch blockers)", () => {
+  it("ignores legacy Gmail-derived alerts in snapshot-shaped data", () => {
+    const legacyStat = {
+      ...makeEnriched({ id: "legacy", name: "legacy.example" }),
+      gscEmailAlerts: [
+        {
+          source: "gmail-digest",
+          issue: "Not found (404)",
+          severity: "high",
+        },
+      ],
+    } as unknown as EnrichedSiteStat;
+
+    expect(
+      buildActionItems([legacyStat]).some((action) =>
+        action.reason.includes("Not found (404)"),
+      ),
+    ).toBe(false);
+  });
+
   it("transient AdSense/ads.txt fetch failures are owner actions before local patches", () => {
     const actions = buildActionItems([
       makeEnriched({
