@@ -250,7 +250,10 @@ export function buildT3TitleContentHandoff(input: {
         adsenseStatus: stringValue(statsRow?.adsenseStatus),
         adsTxtStatus: stringValue(statsRow?.adsTxtStatus),
       },
-      recommendedNextAction: recommendedNextAction([action]),
+      recommendedNextAction: recommendedNextAction(
+        [action],
+        stringValue(profile?.contentSource?.localPath),
+      ),
     });
   }
 
@@ -260,7 +263,7 @@ export function buildT3TitleContentHandoff(input: {
       left.host.localeCompare(right.host),
   );
   for (const site of sites) {
-    site.recommendedNextAction = recommendedNextAction(site.actions);
+    site.recommendedNextAction = recommendedNextAction(site.actions, site.localPath);
   }
 
   return {
@@ -357,7 +360,10 @@ function isT3Candidate(candidate: PlanCandidate): boolean {
   );
 }
 
-function recommendedNextAction(actions: T3ActionType[]): string {
+function recommendedNextAction(actions: T3ActionType[], localPath: string): string {
+  if (!localPath) {
+    return "Evidence collection only: no controlled local content source is registered; do not create or edit production content.";
+  }
   if (actions.includes("title_handoff") && actions.includes("content_handoff")) {
     return "Title + content workflow; do not directly edit live titles or article bodies from this handoff.";
   }

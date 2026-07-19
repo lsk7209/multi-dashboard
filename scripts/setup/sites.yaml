@@ -770,10 +770,6 @@ sites:
     ga4PropertyId: "536564400"
     gscSiteUrl: https://dogspang.kr/
     monetization: true
-    contentSource:
-      type: local-app
-      locationLabel: seoul
-      localPath: D:\web\dogspangkr
   - id: travelpang-2
     name: travelpang.kr
     enabled: true
@@ -806,8 +802,13 @@ sites:
     gscSiteUrl: https://petinsuer.com/
     monetization: true
     contentSource:
-      type: local-app
+      type: wordpress-ssh
       locationLabel: kwangju
+      sshHost: petinsuer.com
+      sshPort: 1988
+      sshUser: petinsuer
+      sshKeyPath: D:\env\petinsuer-ssh-key
+      wpPath: /home/petinsuer/public_html
       localPath: D:\web\petinsuercom
   - id: etique-2
     name: etique.kr
@@ -868,8 +869,13 @@ sites:
     gscSiteUrl: https://healfood.kr/
     monetization: true
     contentSource:
-      type: local-app
+      type: wordpress-ssh
       locationLabel: kwangju
+      sshHost: 158.247.245.11
+      sshPort: 1988
+      sshUser: healfood
+      sshKeyPath: D:\env\healfood-chemicloud-PrivateKey-nopass
+      wpPath: /home/healfood/public_html
       localPath: D:\web\healfoodkr
   - id: gover-2
     name: gover.kr
@@ -1408,10 +1414,6 @@ sites:
     ga4PropertyId: "540102091"
     gscSiteUrl: https://sorimate.com/
     monetization: false
-    contentSource:
-      type: local-app
-      locationLabel: seoul
-      localPath: D:\web\sorimate
   - id: campgogo
     name: https://campgogo.kr
     enabled: true

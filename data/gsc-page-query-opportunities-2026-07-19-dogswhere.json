@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-07-19T04:16:01.094Z",
+  "dateRange": {
+    "startDate": "2026-06-20",
+    "endDate": "2026-07-18"
+  },
+  "targets": [
+    "dogswhere"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "dogswhere",
+      "siteName": "dogswhere.com",
+      "page": "https://dogswhere.com/",
+      "query": "강아지 맡길 곳",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 32.08108108108108
+    },
+    {
+      "siteId": "dogswhere",
+      "siteName": "dogswhere.com",
+      "page": "https://www.dogswhere.com/",
+      "query": "강아지 맡길 곳",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 36.1875
+    },
+    {
+      "siteId": "dogswhere",
+      "siteName": "dogswhere.com",
+      "page": "https://dogswhere.com/busan/park",
+      "query": "부산 지하철 근처 애견 유치원",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 40.62068965517241
+    }
+  ]
+}

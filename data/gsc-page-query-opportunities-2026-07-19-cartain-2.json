@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-07-19T03:37:58.128Z",
+  "dateRange": {
+    "startDate": "2026-06-20",
+    "endDate": "2026-07-18"
+  },
+  "targets": [
+    "cartain-2"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/new-car-release-schedule-2026-second-half",
+      "query": "2026년 신차 출시 일정",
+      "clicks": 1,
+      "impressions": 55,
+      "ctr": 0.01818181818181818,
+      "position": 6.927272727272728
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/",
+      "query": "자동차 유지비 계산기",
+      "clicks": 0,
+      "impressions": 26,
+      "ctr": 0,
+      "position": 6.538461538461538
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/%ED%8F%AC%EB%A5%B4%EC%89%90-%EC%B9%B4%EC%9D%B4%EC%97%94-%EC%9B%94-%EC%9C%A0%EC%A7%80%EB%B9%84-2026",
+      "query": "카이엔 유지비",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 7.04
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/%EC%A0%90%ED%99%94%ED%94%8C%EB%9F%AC%EA%B7%B8-%EC%9D%B4%EA%B7%B8%EB%8B%88%EC%85%98%EC%BD%94%EC%9D%BC-%EA%B5%90%ED%99%98-%EC%8B%9C%EA%B8%B0-%EB%B9%84%EC%9A%A9-2026",
+      "query": "점화플러그 교체비용",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 10.24
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/",
+      "query": "자동차 유지비 계산",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 8.59090909090909
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/35-15-1772805659284-37g4",
+      "query": "썬팅 농도 35 15",
+      "clicks": 1,
+      "impressions": 22,
+      "ctr": 0.045454545454545456,
+      "position": 7.2727272727272725
+    }
+  ]
+}

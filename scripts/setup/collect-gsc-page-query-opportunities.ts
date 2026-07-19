@@ -1,8 +1,8 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
 import { google } from "googleapis";
 import YAML from "yaml";
 import { makeGoogleAuth } from "./lib/gcp.js";
+import { getGscPageQueryOutputPath } from "./lib/gsc-page-query-output.js";
 import { loadLocalSecrets, readSecret } from "./lib/secrets.js";
 
 const DEFAULT_TARGETS = ["estat-2", "cartain-2", "texturb", "tennisfrens"];
@@ -107,8 +107,8 @@ async function main(): Promise<void> {
     opportunities,
   };
   mkdirSync(DATA_DIR, { recursive: true });
-  const path = join(DATA_DIR, `gsc-page-query-opportunities-${date}.json`);
-  writeFileSync(path, `${JSON.stringify(output, null, 2)}\n`);
+  const path = getGscPageQueryOutputPath(DATA_DIR, date, targets);
+  writeFileSync(path, `${JSON.stringify(output, null, 2)}\n`, "utf8");
   console.log(`Wrote ${path}. rows=${opportunities.length} targets=${targets.length}`);
 }
 

@@ -178,7 +178,14 @@ describe("create-t3-title-content-handoff", () => {
         generatedAt: SNAPSHOT,
         stats: [{ url: "https://estat.kr/" }],
       },
-      siteProfiles: [],
+      siteProfiles: [
+        {
+          id: "estat-2",
+          url: "https://estat.kr/",
+          platform: "wordpress",
+          contentSource: { type: "local-app", localPath: "D:\\web\\estatkr" },
+        },
+      ],
       planPath: "data/fleet-optimization-plan-2026-07-05.json",
       statsPath: "data/site-stats.json",
       sitesPath: "scripts/setup/sites.yaml",
@@ -186,6 +193,34 @@ describe("create-t3-title-content-handoff", () => {
 
     expect(handoff.sites[0]?.recommendedNextAction).toContain("Title + content workflow");
     expect(handoff.sites[0]?.recommendedNextAction).toContain("article bodies");
+  });
+
+  it("limits sites without a controlled local source to evidence collection", () => {
+    const handoff = buildT3TitleContentHandoff({
+      plan: {
+        dashboardEvidence: { snapshotTimestamp: SNAPSHOT },
+        seoCandidates: [
+          candidate({ host: "dogspang.kr", actionType: "title_handoff", rank: 10 }),
+        ],
+      },
+      stats: {
+        generatedAt: SNAPSHOT,
+        stats: [{ url: "https://dogspang.kr/" }],
+      },
+      siteProfiles: [
+        {
+          id: "dogspang-2",
+          url: "https://dogspang.kr/",
+          platform: "wordpress",
+        },
+      ],
+      planPath: "data/fleet-optimization-plan-2026-07-05.json",
+      statsPath: "data/site-stats.json",
+      sitesPath: "scripts/setup/sites.yaml",
+    });
+
+    expect(handoff.sites[0]).toMatchObject({ localPath: "" });
+    expect(handoff.sites[0]?.recommendedNextAction).toContain("Evidence collection only");
   });
 
   it("preserves Korean GSC query text in handoff evidence", () => {

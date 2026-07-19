@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-07-19T04:47:32.126Z",
+  "dateRange": {
+    "startDate": "2026-06-20",
+    "endDate": "2026-07-18"
+  },
+  "targets": [
+    "healfood-2",
+    "petinsuer-2"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "healfood-2",
+      "siteName": "healfood.kr",
+      "page": "https://healfood.kr/%EC%9A%B0%EC%9C%A0%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%A8%B9%EC%9C%BC%EB%A9%B4-%EC%95%88-%EB%90%98%EB%8A%94-%EC%83%9D%EB%A7%88-%ED%9A%A8%EB%8A%A5-%EA%B2%B0%EC%84%9D-%EC%83%9D%EA%B8%B8-%EC%88%98-%EC%9E%88/",
+      "query": "생마 뜻",
+      "clicks": 0,
+      "impressions": 80,
+      "ctr": 0,
+      "position": 1.825
+    },
+    {
+      "siteId": "healfood-2",
+      "siteName": "healfood.kr",
+      "page": "https://healfood.kr/%EC%9A%B0%EC%9C%A0%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%A8%B9%EC%9C%BC%EB%A9%B4-%EC%95%88-%EB%90%98%EB%8A%94-%EC%83%9D%EB%A7%88-%ED%9A%A8%EB%8A%A5-%EA%B2%B0%EC%84%9D-%EC%83%9D%EA%B8%B8-%EC%88%98-%EC%9E%88/",
+      "query": "생마 하루 섭취량",
+      "clicks": 1,
+      "impressions": 46,
+      "ctr": 0.021739130434782608,
+      "position": 9.630434782608695
+    },
+    {
+      "siteId": "petinsuer-2",
+      "siteName": "petinsuer.com",
+      "page": "https://petinsuer.com/dog-care-070/",
+      "query": "노견 기준",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 7.783783783783784
+    },
+    {
+      "siteId": "petinsuer-2",
+      "siteName": "petinsuer.com",
+      "page": "https://petinsuer.com/%EA%B0%95%EC%95%84%EC%A7%80-%EC%9A%94%EA%B1%B0%ED%8A%B8-%EC%9A%94%ED%94%8C%EB%A0%88-%EB%A8%B9%EC%96%B4%EB%8F%84-%EB%90%98%EB%82%98%EC%9A%94-%EB%AC%B4%EA%B0%80%EB%8B%B9-%EA%B7%B8%EB%A6%AD%EC%9A%94/",
+      "query": "강아지 요플레 먹어도 되나요",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 9.794117647058824
+    },
+    {
+      "siteId": "petinsuer-2",
+      "siteName": "petinsuer.com",
+      "page": "https://petinsuer.com/%EA%B0%95%EC%95%84%EC%A7%80-%EB%B0%9C%ED%86%B1-%ED%98%88%EA%B4%80-%EA%B8%B8%EC%9D%B4-%EC%A4%84%EC%9D%B4%EB%8A%94-%EA%B0%88%EA%B8%B0-%EB%B0%A9%EB%B2%95-%EC%A0%84%EB%8F%99-%EB%B0%9C%ED%86%B1-%EB%8B%A4/",
+      "query": "강아지 발톱 혈관 줄이기",
+      "clicks": 1,
+      "impressions": 31,
+      "ctr": 0.03225806451612903,
+      "position": 8.612903225806452
+    },
+    {
+      "siteId": "petinsuer-2",
+      "siteName": "petinsuer.com",
+      "page": "https://petinsuer.com/%EA%B0%95%EC%95%84%EC%A7%80-%EC%9A%94%EA%B1%B0%ED%8A%B8-%EC%9A%94%ED%94%8C%EB%A0%88-%EB%A8%B9%EC%96%B4%EB%8F%84-%EB%90%98%EB%82%98%EC%9A%94-%EB%AC%B4%EA%B0%80%EB%8B%B9-%EA%B7%B8%EB%A6%AD%EC%9A%94/",
+      "query": "강아지 요거트 먹어도 되나요",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "siteId": "petinsuer-2",
+      "siteName": "petinsuer.com",
+      "page": "https://petinsuer.com/%EA%B0%95%EC%95%84%EC%A7%80-%EC%9A%94%EA%B1%B0%ED%8A%B8-%EC%9A%94%ED%94%8C%EB%A0%88-%EB%A8%B9%EC%96%B4%EB%8F%84-%EB%90%98%EB%82%98%EC%9A%94-%EB%AC%B4%EA%B0%80%EB%8B%B9-%EA%B7%B8%EB%A6%AD%EC%9A%94/",
+      "query": "강아지 무가당 요거트",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 6.392857142857143
+    },
+    {
+      "siteId": "petinsuer-2",
+      "siteName": "petinsuer.com",
+      "page": "https://petinsuer.com/%EA%B0%95%EC%95%84%EC%A7%80-%EB%B0%9C%ED%86%B1-%ED%98%88%EA%B4%80-%EA%B8%B8%EC%9D%B4-%EC%A4%84%EC%9D%B4%EB%8A%94-%EA%B0%88%EA%B8%B0-%EB%B0%A9%EB%B2%95-%EC%A0%84%EB%8F%99-%EB%B0%9C%ED%86%B1-%EB%8B%A4/",
+      "query": "강아지 발톱 혈관 길어짐",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 8.120000000000001
+    }
+  ]
+}

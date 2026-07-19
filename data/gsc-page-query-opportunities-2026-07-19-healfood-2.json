@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-07-19T04:26:59.562Z",
+  "dateRange": {
+    "startDate": "2026-06-20",
+    "endDate": "2026-07-18"
+  },
+  "targets": [
+    "healfood-2"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "healfood-2",
+      "siteName": "healfood.kr",
+      "page": "https://healfood.kr/%EC%9A%B0%EC%9C%A0%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%A8%B9%EC%9C%BC%EB%A9%B4-%EC%95%88-%EB%90%98%EB%8A%94-%EC%83%9D%EB%A7%88-%ED%9A%A8%EB%8A%A5-%EA%B2%B0%EC%84%9D-%EC%83%9D%EA%B8%B8-%EC%88%98-%EC%9E%88/",
+      "query": "생마 뜻",
+      "clicks": 0,
+      "impressions": 80,
+      "ctr": 0,
+      "position": 1.825
+    },
+    {
+      "siteId": "healfood-2",
+      "siteName": "healfood.kr",
+      "page": "https://healfood.kr/%EC%9A%B0%EC%9C%A0%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%A8%B9%EC%9C%BC%EB%A9%B4-%EC%95%88-%EB%90%98%EB%8A%94-%EC%83%9D%EB%A7%88-%ED%9A%A8%EB%8A%A5-%EA%B2%B0%EC%84%9D-%EC%83%9D%EA%B8%B8-%EC%88%98-%EC%9E%88/",
+      "query": "생마 하루 섭취량",
+      "clicks": 1,
+      "impressions": 46,
+      "ctr": 0.021739130434782608,
+      "position": 9.630434782608695
+    }
+  ]
+}
