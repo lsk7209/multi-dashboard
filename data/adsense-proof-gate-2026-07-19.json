@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-07-19T05:41:34.174Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-19T05:31:20.047Z",
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "verdict": "ready_for_console_review",
+  "readiness": {
+    "technicalReadiness": "ready",
+    "consoleReadiness": "not_checked",
+    "scopeReadiness": "no_active_scope_blocker",
+    "telemetryReadiness": "clean"
+  },
+  "blockers": [],
+  "summary": {
+    "externalProof": 0,
+    "localSupplement": 0,
+    "livePublic": 0,
+    "endpointRetryResultCount": 0,
+    "endpointRetry": 0,
+    "loaderRetry": 0,
+    "hostingEndpointPacket": 0,
+    "hostingLoaderPacket": 0,
+    "hostingLoaderResult": 0,
+    "consoleState": 0,
+    "networkVantage": 0,
+    "remediationQueue": 0,
+    "checkedActions": 0
+  },
+  "stopCondition": "This verifier is local and non-mutating. It confirms the current AdSense queue/proof state only; it does not submit AdSense reviews or edit production sites."
+}
