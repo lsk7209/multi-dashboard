@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-19T05:38:07.655Z",
+  "generatedAt": "2026-07-19T06:43:27.163Z",
   "dashboardEvidence": {
     "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
-    "snapshotTimestamp": "2026-07-19T05:31:20.047Z",
+    "snapshotTimestamp": "2026-07-19T06:42:20.638Z",
     "refreshCommand": "pnpm stats:update",
     "refreshFailedSources": [
       "skipped_refresh_failed:adsense_collector:transient_error:1"
@@ -56,7 +56,7 @@
   },
   "adsenseQueue": {
     "artifactPath": "data\\adsense-remediation-queue-2026-07-19.json",
-    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-19T05:31:20.047Z",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-19T06:42:20.638Z",
     "summary": {
       "totalRows": 98,
       "reviewedRows": 84,
@@ -88,7 +88,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -115,7 +115,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -142,7 +142,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -169,7 +169,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -196,7 +196,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -223,7 +223,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -250,7 +250,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -277,7 +277,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -304,7 +304,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -331,7 +331,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -358,7 +358,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -385,7 +385,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -412,7 +412,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -439,7 +439,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -466,7 +466,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -493,7 +493,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -520,7 +520,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -547,7 +547,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -574,7 +574,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
@@ -601,7 +601,7 @@
       },
       "evidence": [
         "data/site-stats.json",
-        "snapshot=2026-07-19T05:31:20.047Z",
+        "snapshot=2026-07-19T06:42:20.638Z",
         "gscStatus=ok",
         "adsenseStatus=ok",
         "adsTxtStatus=ok",
