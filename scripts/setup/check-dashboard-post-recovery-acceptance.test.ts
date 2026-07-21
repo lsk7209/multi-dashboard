@@ -9,7 +9,10 @@ import {
 
 describe("check-dashboard-post-recovery-acceptance", () => {
   it("passes only when every post-recovery dashboard field is in the terminal ready state", () => {
-    const result = evaluateDashboardPostRecoveryAcceptance(makeReadyArtifact(), "data/dashboard-verification-2026-07-06.json");
+    const result = evaluateDashboardPostRecoveryAcceptance(
+      makeReadyArtifact(),
+      "data/dashboard-verification-2026-07-06.json",
+    );
 
     expect(result.ready).toBe(true);
     expect(result.checks.every((check) => check.pass)).toBe(true);
@@ -41,7 +44,9 @@ describe("check-dashboard-post-recovery-acceptance", () => {
     });
 
     expect(result.ready).toBe(false);
-    expect(result.checks.filter((check) => !check.pass).map((check) => check.id)).toEqual([
+    expect(
+      result.checks.filter((check) => !check.pass).map((check) => check.id),
+    ).toEqual([
       "verdict_local_verified",
       "summary_clean",
       "external_blockers_cleared",
@@ -75,7 +80,9 @@ describe("check-dashboard-post-recovery-acceptance", () => {
     });
 
     expect(result.ready).toBe(false);
-    expect(result.checks.find((check) => check.id === "mutation_boundary_clean")).toMatchObject({
+    expect(
+      result.checks.find((check) => check.id === "mutation_boundary_clean"),
+    ).toMatchObject({
       pass: false,
     });
   });
@@ -102,7 +109,11 @@ describe("check-dashboard-post-recovery-acceptance", () => {
 
     for (const result of [fakeRow, missingRow, duplicateRow]) {
       expect(result.ready).toBe(false);
-      expect(result.checks.find((check) => check.id === "post_recovery_rows_satisfied")).toMatchObject({
+      expect(
+        result.checks.find(
+          (check) => check.id === "post_recovery_rows_satisfied",
+        ),
+      ).toMatchObject({
         pass: false,
       });
     }
@@ -111,27 +122,36 @@ describe("check-dashboard-post-recovery-acceptance", () => {
   it("fails when post-recovery acceptance rows omit requirement or evidence text", () => {
     const missingEvidence = evaluateDashboardPostRecoveryAcceptance({
       ...makeReadyArtifact(),
-      postRecoveryAcceptance: makeReadyArtifact().postRecoveryAcceptance.map((row) => ({
-        ...row,
-        evidence: row.id === "dashboard_verify_local_verified" ? "" : row.evidence,
-      })),
+      postRecoveryAcceptance: makeReadyArtifact().postRecoveryAcceptance.map(
+        (row) => ({
+          ...row,
+          evidence:
+            row.id === "dashboard_verify_local_verified" ? "" : row.evidence,
+        }),
+      ),
     });
     const missingRequirement = evaluateDashboardPostRecoveryAcceptance({
       ...makeReadyArtifact(),
-      postRecoveryAcceptance: makeReadyArtifact().postRecoveryAcceptance.map((row) => ({
-        ...row,
-        requirement: row.id === "dashboard_surface_current" ? "" : row.requirement,
-      })),
+      postRecoveryAcceptance: makeReadyArtifact().postRecoveryAcceptance.map(
+        (row) => ({
+          ...row,
+          requirement:
+            row.id === "dashboard_surface_current" ? "" : row.requirement,
+        }),
+      ),
     });
 
     for (const result of [missingEvidence, missingRequirement]) {
       expect(result.ready).toBe(false);
-      expect(result.checks.find((check) => check.id === "post_recovery_rows_satisfied")).toMatchObject({
+      expect(
+        result.checks.find(
+          (check) => check.id === "post_recovery_rows_satisfied",
+        ),
+      ).toMatchObject({
         pass: false,
       });
     }
   });
-
 
   it("fails when mutation evidence artifact rows are malformed", () => {
     const result = evaluateDashboardPostRecoveryAcceptance({
@@ -148,7 +168,9 @@ describe("check-dashboard-post-recovery-acceptance", () => {
     });
 
     expect(result.ready).toBe(false);
-    expect(result.checks.find((check) => check.id === "mutation_boundary_clean")).toMatchObject({
+    expect(
+      result.checks.find((check) => check.id === "mutation_boundary_clean"),
+    ).toMatchObject({
       pass: false,
     });
   });
@@ -160,7 +182,8 @@ describe("check-dashboard-post-recovery-acceptance", () => {
         ...makeReadyArtifact().mutationBoundaryEvidence,
         evidenceArtifacts: [
           {
-            ...makeReadyArtifact().mutationBoundaryEvidence.evidenceArtifacts[0],
+            ...makeReadyArtifact().mutationBoundaryEvidence
+              .evidenceArtifacts[0],
             source: "fleet_optimization_chain",
             snapshot: "2026-07-05T12:00:00.000Z",
           },
@@ -169,11 +192,12 @@ describe("check-dashboard-post-recovery-acceptance", () => {
     });
 
     expect(result.ready).toBe(false);
-    expect(result.checks.find((check) => check.id === "mutation_boundary_clean")).toMatchObject({
+    expect(
+      result.checks.find((check) => check.id === "mutation_boundary_clean"),
+    ).toMatchObject({
       pass: false,
     });
   });
-
 
   it("fails when the artifact identity or snapshot evidence is stale or mismatched", () => {
     const wrongPathDate = evaluateDashboardPostRecoveryAcceptance(
@@ -199,19 +223,35 @@ describe("check-dashboard-post-recovery-acceptance", () => {
     );
 
     expect(wrongPathDate.ready).toBe(false);
-    expect(wrongPathDate.checks.find((check) => check.id === "artifact_identity_current")).toMatchObject({
+    expect(
+      wrongPathDate.checks.find(
+        (check) => check.id === "artifact_identity_current",
+      ),
+    ).toMatchObject({
       pass: false,
     });
     expect(staleRenderedEvidence.ready).toBe(false);
-    expect(staleRenderedEvidence.checks.find((check) => check.id === "snapshot_evidence_aligned")).toMatchObject({
+    expect(
+      staleRenderedEvidence.checks.find(
+        (check) => check.id === "snapshot_evidence_aligned",
+      ),
+    ).toMatchObject({
       pass: false,
     });
     expect(missingGeneratedAt.ready).toBe(false);
-    expect(missingGeneratedAt.checks.find((check) => check.id === "artifact_identity_current")).toMatchObject({
+    expect(
+      missingGeneratedAt.checks.find(
+        (check) => check.id === "artifact_identity_current",
+      ),
+    ).toMatchObject({
       pass: false,
     });
     expect(staleCurrentStats.ready).toBe(false);
-    expect(staleCurrentStats.checks.find((check) => check.id === "artifact_identity_current")).toMatchObject({
+    expect(
+      staleCurrentStats.checks.find(
+        (check) => check.id === "artifact_identity_current",
+      ),
+    ).toMatchObject({
       pass: false,
     });
   });
@@ -242,7 +282,9 @@ describe("check-dashboard-post-recovery-acceptance", () => {
     });
 
     expect(result.ready).toBe(false);
-    expect(result.checks.filter((check) => !check.pass).map((check) => check.id)).toEqual([
+    expect(
+      result.checks.filter((check) => !check.pass).map((check) => check.id),
+    ).toEqual([
       "external_blockers_cleared",
       "dashboard_safe_to_act",
       "dashboard_surface_current",
@@ -254,13 +296,21 @@ describe("check-dashboard-post-recovery-acceptance", () => {
   it("selects only the requested current-date verification artifact by default", () => {
     const dir = mkdtempSync(join(tmpdir(), "dashboard-acceptance-"));
     try {
-      writeFileSync(join(dir, "dashboard-verification-2026-07-06.json"), "{}\n");
-      writeFileSync(join(dir, "dashboard-verification-2099-01-01.json"), "{}\n");
+      writeFileSync(
+        join(dir, "dashboard-verification-2026-07-06.json"),
+        "{}\n",
+      );
+      writeFileSync(
+        join(dir, "dashboard-verification-2099-01-01.json"),
+        "{}\n",
+      );
 
       expect(findLatestDashboardVerificationArtifact(dir, "2026-07-06")).toBe(
         join(dir, "dashboard-verification-2026-07-06.json"),
       );
-      expect(findLatestDashboardVerificationArtifact(dir, "2026-07-07")).toBe("");
+      expect(findLatestDashboardVerificationArtifact(dir, "2026-07-07")).toBe(
+        "",
+      );
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -316,7 +366,7 @@ function makeReadyArtifact() {
       evidenceArtifacts: [
         {
           source: "site_stats_snapshot",
-          path: "data\\site-stats.json",
+          path: join("data", "site-stats.json"),
           exists: true,
           snapshot: "2026-07-05T17:25:00.919Z",
           productionMutationPerformed: false,

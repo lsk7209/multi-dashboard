@@ -1,3 +1,4 @@
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   applyArtifactIntegrityResult,
@@ -27,12 +28,16 @@ describe("run-dashboard-post-recovery-chain", () => {
     ]);
     expect(plan.commands.at(-1)?.args).toEqual([
       "dashboard:acceptance",
-      "data\\dashboard-verification-2026-07-06.json",
+      join("data", "dashboard-verification-2026-07-06.json"),
     ]);
   });
 
   it("supports dry-run and accepts the legacy skip stats update flag", () => {
-    const options = parseCliOptions(["--dry-run", "--skip-stats-update", "--date=2026-07-06"]);
+    const options = parseCliOptions([
+      "--dry-run",
+      "--skip-stats-update",
+      "--date=2026-07-06",
+    ]);
     const plan = buildDashboardPostRecoveryChainPlan({
       ...options,
       generatedAt: "2026-07-06T00:00:00.000Z",
@@ -52,7 +57,9 @@ describe("run-dashboard-post-recovery-chain", () => {
 
   it("rejects unsafe or malformed CLI options", () => {
     expect(() => parseCliOptions(["--date=20260706"])).toThrow(/YYYY-MM-DD/);
-    expect(() => parseCliOptions(["--date=2026-07-06"])).toThrow(/only supported with --dry-run/);
+    expect(() => parseCliOptions(["--date=2026-07-06"])).toThrow(
+      /only supported with --dry-run/,
+    );
     expect(() => parseCliOptions(["--unknown"])).toThrow(/Unknown option/);
   });
 
@@ -69,9 +76,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "fail", exitCode: 1, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "fail",
+          exitCode: 1,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       {
         path: "data/dashboard-verification-2026-07-06.json",
@@ -110,9 +135,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "fail", exitCode: 1, stdoutTail: "", stderrTail: "auth command failed" },
-        { id: "dashboard-verify", status: "skipped", exitCode: null, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "skipped", exitCode: null, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "fail",
+          exitCode: 1,
+          stdoutTail: "",
+          stderrTail: "auth command failed",
+        },
+        {
+          id: "dashboard-verify",
+          status: "skipped",
+          exitCode: null,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "skipped",
+          exitCode: null,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       {
         path: "data/dashboard-verification-2026-07-06.json",
@@ -145,9 +188,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "fail", exitCode: 1, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "fail",
+          exitCode: 1,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       {
         path: "data/dashboard-verification-2026-07-06.json",
@@ -180,9 +241,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "fail", exitCode: 1, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "fail",
+          exitCode: 1,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       {
         path: "data/dashboard-verification-2026-07-06.json",
@@ -216,9 +295,27 @@ describe("run-dashboard-post-recovery-chain", () => {
           dryRun: false,
         }),
         [
-          { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-          { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-          { id: "dashboard-acceptance", status: "fail", exitCode: 1, stdoutTail: "", stderrTail: "" },
+          {
+            id: "gsc-permission-audit",
+            status: "pass",
+            exitCode: 0,
+            stdoutTail: "",
+            stderrTail: "",
+          },
+          {
+            id: "dashboard-verify",
+            status: "pass",
+            exitCode: 0,
+            stdoutTail: "",
+            stderrTail: "",
+          },
+          {
+            id: "dashboard-acceptance",
+            status: "fail",
+            exitCode: 1,
+            stdoutTail: "",
+            stderrTail: "",
+          },
         ],
         {
           path: "data/dashboard-verification-2026-07-06.json",
@@ -253,9 +350,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "fail", exitCode: 1, stdoutTail: "", stderrTail: "verify failed" },
-        { id: "dashboard-acceptance", status: "skipped", exitCode: null, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "fail",
+          exitCode: 1,
+          stdoutTail: "",
+          stderrTail: "verify failed",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "skipped",
+          exitCode: null,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       {
         path: "data/dashboard-verification-2026-07-06.json",
@@ -288,9 +403,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       {
         path: "data/dashboard-verification-2026-07-06.json",
@@ -323,9 +456,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       makeReadyVerification(),
     );
@@ -350,9 +501,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       makeReadyVerification({ postRecoveryAcceptance: [] }),
     );
@@ -368,11 +537,31 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
-      makeReadyVerification({ postRecoveryAcceptance: ["not_a_real_gate=satisfied"] }),
+      makeReadyVerification({
+        postRecoveryAcceptance: ["not_a_real_gate=satisfied"],
+      }),
     );
     const incomplete = buildDashboardPostRecoveryChainArtifact(
       buildDashboardPostRecoveryChainPlan({
@@ -381,9 +570,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       makeReadyVerification({
         postRecoveryAcceptance: [
@@ -405,9 +612,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       makeReadyVerification({ fail: 1 }),
     );
@@ -418,9 +643,27 @@ describe("run-dashboard-post-recovery-chain", () => {
         dryRun: false,
       }),
       [
-        { id: "gsc-permission-audit", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-verify", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
-        { id: "dashboard-acceptance", status: "pass", exitCode: 0, stdoutTail: "", stderrTail: "" },
+        {
+          id: "gsc-permission-audit",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-verify",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
+        {
+          id: "dashboard-acceptance",
+          status: "pass",
+          exitCode: 0,
+          stdoutTail: "",
+          stderrTail: "",
+        },
       ],
       makeReadyVerification({ skipped: 1 }),
     );
@@ -431,7 +674,9 @@ describe("run-dashboard-post-recovery-chain", () => {
 });
 
 function makeReadyVerification(
-  overrides: Partial<Parameters<typeof buildDashboardPostRecoveryChainArtifact>[2]> = {},
+  overrides: Partial<
+    Parameters<typeof buildDashboardPostRecoveryChainArtifact>[2]
+  > = {},
 ): Parameters<typeof buildDashboardPostRecoveryChainArtifact>[2] {
   return {
     path: "data/dashboard-verification-2026-07-06.json",

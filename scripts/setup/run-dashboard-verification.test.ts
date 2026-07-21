@@ -40,7 +40,9 @@ describe("run-dashboard-verification", () => {
 
   it("returns nonzero exit codes for failed or pending verification verdicts", () => {
     expect(dashboardVerificationExitCode("local_verified")).toBe(0);
-    expect(dashboardVerificationExitCode("local_verified_external_blocker")).toBe(0);
+    expect(
+      dashboardVerificationExitCode("local_verified_external_blocker"),
+    ).toBe(0);
     expect(dashboardVerificationExitCode("pending_verification")).toBe(1);
     expect(dashboardVerificationExitCode("failed")).toBe(1);
   });
@@ -61,7 +63,9 @@ describe("run-dashboard-verification", () => {
   });
 
   it("reuses the current snapshot when post-recovery verification skips collection", () => {
-    expect(buildDashboardVerificationCommands({ skipStatsUpdate: true })[0]).toEqual({
+    expect(
+      buildDashboardVerificationCommands({ skipStatsUpdate: true })[0],
+    ).toEqual({
       id: "fleet-optimize",
       args: ["fleet:optimize", "--skip-stats-update", "--skip-api-data-audit"],
     });
@@ -144,7 +148,10 @@ describe("run-dashboard-verification", () => {
     });
     expect(artifact.mutationBoundaryEvidence.evidenceArtifacts).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ source: "site_stats_snapshot", path: "data\\site-stats.json" }),
+        expect.objectContaining({
+          source: "site_stats_snapshot",
+          path: join("data", "site-stats.json"),
+        }),
         expect.objectContaining({ source: "fleet_optimization_chain" }),
         expect.objectContaining({ source: "gsc_permission_audit" }),
         expect.objectContaining({ source: "adsense_remediation_queue" }),
@@ -155,7 +162,7 @@ describe("run-dashboard-verification", () => {
     );
     expect(artifact.renderedUiSmokeEvidence).toEqual(
       expect.objectContaining({
-        path: "data\\dashboard-ui-smoke-2026-07-05.json",
+        path: join("data", "dashboard-ui-smoke-2026-07-05.json"),
         expectedStatsSnapshot: artifact.statsSnapshot,
       }),
     );
@@ -179,7 +186,9 @@ describe("run-dashboard-verification", () => {
       blockerHosts: ["yesa.kr"],
       requiredVerificationCommand: "pnpm dashboard:post-recovery",
     });
-    expect(artifact.postRecoveryShortcutCommand).toBe("pnpm dashboard:post-recovery");
+    expect(artifact.postRecoveryShortcutCommand).toBe(
+      "pnpm dashboard:post-recovery",
+    );
     expect(artifact.postRecoveryAcceptance).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -209,8 +218,12 @@ describe("run-dashboard-verification", () => {
         fail: 0,
         expectedBlocked: 1,
         externalBlockerEvidence: [makeExternalBlockerEvidence()],
-        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({ status: "current" }),
-        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({ status: "current" }),
+        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({
+          status: "current",
+        }),
+        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({
+          status: "current",
+        }),
         dashboardActionability: makeDashboardActionability({
           status: "blocked_for_action_until_post_recovery_verify",
           blockerHosts: ["yesa.kr"],
@@ -224,8 +237,12 @@ describe("run-dashboard-verification", () => {
         fail: 0,
         expectedBlocked: 1,
         externalBlockerEvidence: [makeExternalBlockerEvidence()],
-        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({ status: "stale" }),
-        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({ status: "current" }),
+        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({
+          status: "stale",
+        }),
+        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({
+          status: "current",
+        }),
         dashboardActionability: makeDashboardActionability({
           status: "blocked_for_action_until_post_recovery_verify",
           blockerHosts: ["yesa.kr"],
@@ -239,8 +256,12 @@ describe("run-dashboard-verification", () => {
         fail: 0,
         expectedBlocked: 1,
         externalBlockerEvidence: [makeExternalBlockerEvidence()],
-        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({ status: "current" }),
-        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({ status: "current" }),
+        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({
+          status: "current",
+        }),
+        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({
+          status: "current",
+        }),
         dashboardActionability: makeDashboardActionability({
           status: "blocked_for_action_until_post_recovery_verify",
           blockerHosts: ["yesa.kr"],
@@ -258,8 +279,12 @@ describe("run-dashboard-verification", () => {
         fail: 0,
         expectedBlocked: 1,
         externalBlockerEvidence: [],
-        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({ status: "current" }),
-        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({ status: "current" }),
+        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({
+          status: "current",
+        }),
+        dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({
+          status: "current",
+        }),
         dashboardActionability: makeDashboardActionability({
           status: "blocked_for_action_until_post_recovery_verify",
           blockerHosts: ["yesa.kr"],
@@ -276,11 +301,21 @@ describe("run-dashboard-verification", () => {
     });
 
     for (const chain of [
-      makeFleetChainArtifact({ summary: { commands: 6, pass: 5, fail: 0, skipped: 0 } }),
-      makeFleetChainArtifact({ summary: { commands: 6, pass: 6, fail: 0, skipped: 1 } }),
-      makeFleetChainArtifact({ summary: { commands: 0, pass: 0, fail: 0, skipped: 0 } }),
-      makeFleetChainArtifact({ summary: { commands: 6, pass: 6, fail: undefined, skipped: 0 } }),
-      makeFleetChainArtifact({ summary: { commands: 6, pass: 6, fail: 0, skipped: undefined } }),
+      makeFleetChainArtifact({
+        summary: { commands: 6, pass: 5, fail: 0, skipped: 0 },
+      }),
+      makeFleetChainArtifact({
+        summary: { commands: 6, pass: 6, fail: 0, skipped: 1 },
+      }),
+      makeFleetChainArtifact({
+        summary: { commands: 0, pass: 0, fail: 0, skipped: 0 },
+      }),
+      makeFleetChainArtifact({
+        summary: { commands: 6, pass: 6, fail: undefined, skipped: 0 },
+      }),
+      makeFleetChainArtifact({
+        summary: { commands: 6, pass: 6, fail: 0, skipped: undefined },
+      }),
       makeFleetChainArtifact({
         verification: {
           refreshFailedSources: ["skipped_refresh_failed:gsc:auth_error:1"],
@@ -288,13 +323,19 @@ describe("run-dashboard-verification", () => {
         },
       }),
     ]) {
-      expect(buildDashboardActionability([], surfaceEvidence, chain)).toMatchObject({
+      expect(
+        buildDashboardActionability([], surfaceEvidence, chain),
+      ).toMatchObject({
         status: "unknown",
       });
     }
 
     expect(
-      buildDashboardActionability([], surfaceEvidence, makeFleetChainArtifact()),
+      buildDashboardActionability(
+        [],
+        surfaceEvidence,
+        makeFleetChainArtifact(),
+      ),
     ).toMatchObject({
       status: "safe_to_act",
       blockerHosts: [],
@@ -326,7 +367,11 @@ describe("run-dashboard-verification", () => {
     });
 
     expect(
-      buildDashboardActionability([], surfaceEvidence, makeFleetChainArtifact()),
+      buildDashboardActionability(
+        [],
+        surfaceEvidence,
+        makeFleetChainArtifact(),
+      ),
     ).toMatchObject({
       status: "blocked_for_action_until_post_recovery_verify",
       blockerHosts: ["yesa.kr"],
@@ -337,7 +382,9 @@ describe("run-dashboard-verification", () => {
         fail: 0,
         expectedBlocked: 0,
         externalBlockerEvidence: [],
-        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({ status: "current" }),
+        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({
+          status: "current",
+        }),
         dashboardSurfaceEvidence: surfaceEvidence,
         dashboardActionability: makeDashboardActionability({
           status: "safe_to_act",
@@ -354,7 +401,9 @@ describe("run-dashboard-verification", () => {
         fail: 0,
         expectedBlocked: 0,
         externalBlockerEvidence: [],
-        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({ status: "current" }),
+        renderedUiSmokeEvidence: makeRenderedUiSmokeEvidence({
+          status: "current",
+        }),
         dashboardSurfaceEvidence: makeDashboardSurfaceEvidence({
           status: "current",
           chainVerdict: "ready",
@@ -368,7 +417,7 @@ describe("run-dashboard-verification", () => {
           evidenceArtifacts: [
             {
               source: "site_stats_snapshot",
-              path: "data\\site-stats.json",
+              path: join("data", "site-stats.json"),
               exists: false,
               generatedAt: "",
               snapshot: "",
@@ -528,7 +577,8 @@ describe("run-dashboard-verification", () => {
     expect(
       isExpectedFleetReadinessBlockArtifact(chain, {
         ...audit,
-        collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T13:00:00.000Z",
+        collectorSnapshot:
+          "data/site-stats.json generatedAt=2026-07-05T13:00:00.000Z",
       }),
     ).toBe(false);
     expect(
@@ -554,8 +604,13 @@ describe("run-dashboard-verification", () => {
       {
         source: "gsc_permission_audit",
         artifactPath: "data/gsc-permission-audit-2026-07-05.json",
-        workOrderPath: "docs\\work-orders\\gsc-permission-audit-2026-07-05.md",
-        collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T14:02:20.715Z",
+        workOrderPath: join(
+          "docs",
+          "work-orders",
+          "gsc-permission-audit-2026-07-05.md",
+        ),
+        collectorSnapshot:
+          "data/site-stats.json generatedAt=2026-07-05T14:02:20.715Z",
         host: "yesa.kr",
         siteId: "yesa",
         gscStatus: "auth_error",
@@ -581,7 +636,8 @@ describe("run-dashboard-verification", () => {
           gscStatus: "auth_error",
           permissionLevel: "siteOwner",
           accessState: "owner_access",
-          requiredAction: "Re-run stats collection; current auth failure may be transient or property-specific.",
+          requiredAction:
+            "Re-run stats collection; current auth failure may be transient or property-specific.",
         },
       ],
     };
@@ -616,7 +672,8 @@ describe("run-dashboard-verification", () => {
         join(dir, "gsc-permission-audit-2026-07-06.json"),
         JSON.stringify({
           ...makeGscAudit(),
-          collectorSnapshot: "data/site-stats.json generatedAt=2026-07-06T00:00:00.000Z",
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-07-06T00:00:00.000Z",
         }),
       );
 
@@ -626,13 +683,17 @@ describe("run-dashboard-verification", () => {
         dir,
       );
 
-      expect(result.path).toBe(join(dir, "gsc-permission-audit-2026-07-06.json"));
-      expect(buildExternalBlockerEvidence(
-        result.artifact,
-        "2026-07-06",
-        "2026-07-05T14:02:20.715Z",
-        result.path,
-      )).toEqual([]);
+      expect(result.path).toBe(
+        join(dir, "gsc-permission-audit-2026-07-06.json"),
+      );
+      expect(
+        buildExternalBlockerEvidence(
+          result.artifact,
+          "2026-07-06",
+          "2026-07-05T14:02:20.715Z",
+          result.path,
+        ),
+      ).toEqual([]);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -645,10 +706,7 @@ describe("run-dashboard-verification", () => {
         join(dir, "gsc-permission-audit-2026-07-05.json"),
         JSON.stringify(makeGscAudit()),
       );
-      writeFileSync(
-        join(dir, "gsc-permission-audit-2026-07-06.json"),
-        "{",
-      );
+      writeFileSync(join(dir, "gsc-permission-audit-2026-07-06.json"), "{");
 
       const result = loadGscAuditForStatsSnapshot(
         "2026-07-05T14:02:20.715Z",
@@ -656,14 +714,18 @@ describe("run-dashboard-verification", () => {
         dir,
       );
 
-      expect(result.path).toBe(join(dir, "gsc-permission-audit-2026-07-06.json"));
+      expect(result.path).toBe(
+        join(dir, "gsc-permission-audit-2026-07-06.json"),
+      );
       expect(result.artifact).toBeUndefined();
-      expect(buildExternalBlockerEvidence(
-        result.artifact,
-        "2026-07-06",
-        "2026-07-05T14:02:20.715Z",
-        result.path,
-      )).toEqual([]);
+      expect(
+        buildExternalBlockerEvidence(
+          result.artifact,
+          "2026-07-06",
+          "2026-07-05T14:02:20.715Z",
+          result.path,
+        ),
+      ).toEqual([]);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -672,12 +734,48 @@ describe("run-dashboard-verification", () => {
   it("builds dashboard post-recovery commands only when external blockers exist", () => {
     expect(buildDashboardPostRecoveryCommands([], "2026-07-05")).toEqual([]);
     expect(
-      buildDashboardPostRecoveryCommands([
+      buildDashboardPostRecoveryCommands(
+        [
+          {
+            source: "gsc_permission_audit",
+            artifactPath: join("data", "gsc-permission-audit-2026-07-05.json"),
+            workOrderPath: join(
+              "docs",
+              "work-orders",
+              "gsc-permission-audit-2026-07-05.md",
+            ),
+            collectorSnapshot:
+              "data/site-stats.json generatedAt=2026-07-05T14:30:00.000Z",
+            host: "yesa.kr",
+            siteId: "yesa",
+            gscStatus: "auth_error",
+            permissionLevel: "siteUnverifiedUser",
+            accessState: "unverified",
+            requiredAction: "Verify the Search Console property.",
+          },
+        ],
+        "2026-07-05",
+      ).map((command) => command.args),
+    ).toEqual([
+      ["gsc:permissions:audit"],
+      ["dashboard:verify"],
+      [
+        "dashboard:acceptance",
+        join("data", "dashboard-verification-2026-07-05.json"),
+      ],
+    ]);
+    const postRecoveryCommands = buildDashboardPostRecoveryCommands(
+      [
         {
           source: "gsc_permission_audit",
-          artifactPath: "data\\gsc-permission-audit-2026-07-05.json",
-          workOrderPath: "docs\\work-orders\\gsc-permission-audit-2026-07-05.md",
-          collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T14:30:00.000Z",
+          artifactPath: join("data", "gsc-permission-audit-2026-07-05.json"),
+          workOrderPath: join(
+            "docs",
+            "work-orders",
+            "gsc-permission-audit-2026-07-05.md",
+          ),
+          collectorSnapshot:
+            "data/site-stats.json generatedAt=2026-07-05T14:30:00.000Z",
           host: "yesa.kr",
           siteId: "yesa",
           gscStatus: "auth_error",
@@ -685,31 +783,21 @@ describe("run-dashboard-verification", () => {
           accessState: "unverified",
           requiredAction: "Verify the Search Console property.",
         },
-      ], "2026-07-05").map((command) => command.args),
+      ],
+      "2026-07-05",
+    );
+    expect(
+      postRecoveryCommands.find((command) => command.id === "dashboard-verify")
+        ?.requires,
     ).toEqual([
-      ["gsc:permissions:audit"],
-      ["dashboard:verify"],
-      ["dashboard:acceptance", "data\\dashboard-verification-2026-07-05.json"],
-    ]);
-    const postRecoveryCommands = buildDashboardPostRecoveryCommands([
-      {
-        source: "gsc_permission_audit",
-        artifactPath: "data\\gsc-permission-audit-2026-07-05.json",
-        workOrderPath: "docs\\work-orders\\gsc-permission-audit-2026-07-05.md",
-        collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T14:30:00.000Z",
-        host: "yesa.kr",
-        siteId: "yesa",
-        gscStatus: "auth_error",
-        permissionLevel: "siteUnverifiedUser",
-        accessState: "unverified",
-        requiredAction: "Verify the Search Console property.",
-      },
-    ], "2026-07-05");
-    expect(postRecoveryCommands.find((command) => command.id === "dashboard-verify")?.requires).toEqual([
       "Set DASHBOARD_URL to an owned current multi-dashboard server URL before running `pnpm dashboard:verify`.",
     ]);
-    expect(postRecoveryCommands.find((command) => command.id === "dashboard-acceptance")?.requires).toEqual([
-      "Run after `pnpm dashboard:verify` has written `data\\dashboard-verification-2026-07-05.json`.",
+    expect(
+      postRecoveryCommands.find(
+        (command) => command.id === "dashboard-acceptance",
+      )?.requires,
+    ).toEqual([
+      `Run after \`pnpm dashboard:verify\` has written \`${join("data", "dashboard-verification-2026-07-05.json")}\`.`,
     ]);
   });
 
@@ -746,9 +834,14 @@ describe("run-dashboard-verification", () => {
     artifact.externalBlockerEvidence = [
       {
         source: "gsc_permission_audit",
-        artifactPath: "data\\gsc-permission-audit-2026-07-05.json",
-        workOrderPath: "docs\\work-orders\\gsc-permission-audit-2026-07-05.md",
-        collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T14:30:00.000Z",
+        artifactPath: join("data", "gsc-permission-audit-2026-07-05.json"),
+        workOrderPath: join(
+          "docs",
+          "work-orders",
+          "gsc-permission-audit-2026-07-05.md",
+        ),
+        collectorSnapshot:
+          "data/site-stats.json generatedAt=2026-07-05T14:30:00.000Z",
         host: "yesa.kr",
         siteId: "yesa",
         gscStatus: "auth_error",
@@ -758,9 +851,12 @@ describe("run-dashboard-verification", () => {
           "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection.",
       },
     ];
-    artifact.postRecoveryCommands = buildDashboardPostRecoveryCommands(artifact.externalBlockerEvidence, "2026-07-05");
+    artifact.postRecoveryCommands = buildDashboardPostRecoveryCommands(
+      artifact.externalBlockerEvidence,
+      "2026-07-05",
+    );
     artifact.renderedUiSmokeEvidence = {
-      path: "data\\dashboard-ui-smoke-2026-07-05.json",
+      path: join("data", "dashboard-ui-smoke-2026-07-05.json"),
       exists: true,
       expectedStatsSnapshot: "2026-07-05T14:30:00.000Z",
       statsSnapshot: "2026-07-05T14:02:20.715Z",
@@ -796,13 +892,15 @@ describe("run-dashboard-verification", () => {
       {
         id: "external_gsc_access_restored",
         status: "pending_external",
-        requirement: "Search Console access/ownership is restored for every external GSC blocker.",
+        requirement:
+          "Search Console access/ownership is restored for every external GSC blocker.",
         evidence: "Pending blockers: yesa.kr.",
       },
       {
         id: "dashboard_verify_local_verified",
         status: "pending_verification",
-        requirement: "`pnpm dashboard:verify` finishes with verdict `local_verified`.",
+        requirement:
+          "`pnpm dashboard:verify` finishes with verdict `local_verified`.",
         evidence: "Current verdict is local_verified_external_blocker.",
       },
     ];
@@ -813,30 +911,50 @@ describe("run-dashboard-verification", () => {
     expect(markdown).toContain(
       "required action `Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection.`",
     );
-    expect(markdown).toContain("work order `docs\\work-orders\\gsc-permission-audit-2026-07-05.md`");
+    expect(markdown).toContain(
+      `work order \`${join("docs", "work-orders", "gsc-permission-audit-2026-07-05.md")}\``,
+    );
     expect(markdown).toContain("## Post-Recovery Verification");
     expect(markdown).toContain("Shortcut: `pnpm dashboard:post-recovery`");
     expect(markdown).toContain("1. `pnpm gsc:permissions:audit`");
     expect(markdown).toContain("2. `pnpm dashboard:verify`");
-    expect(markdown).toContain("3. `pnpm dashboard:acceptance data\\dashboard-verification-2026-07-05.json`");
-    expect(markdown).toContain("Run after `pnpm dashboard:verify` has written `data\\dashboard-verification-2026-07-05.json`.");
-    expect(markdown).toContain("Requires: Set DASHBOARD_URL to an owned current multi-dashboard server URL");
+    expect(markdown).toContain(
+      `3. \`pnpm dashboard:acceptance ${join("data", "dashboard-verification-2026-07-05.json")}\``,
+    );
+    expect(markdown).toContain(
+      `Run after \`pnpm dashboard:verify\` has written \`${join("data", "dashboard-verification-2026-07-05.json")}\`.`,
+    );
+    expect(markdown).toContain(
+      "Requires: Set DASHBOARD_URL to an owned current multi-dashboard server URL",
+    );
     expect(markdown).toContain("## Rendered UI Smoke Evidence");
     expect(markdown).toContain("- Status: `stale`");
-    expect(markdown).toContain("- Expected stats snapshot: `2026-07-05T14:30:00.000Z`");
-    expect(markdown).toContain("- UI smoke stats snapshot: `2026-07-05T14:02:20.715Z`");
+    expect(markdown).toContain(
+      "- Expected stats snapshot: `2026-07-05T14:30:00.000Z`",
+    );
+    expect(markdown).toContain(
+      "- UI smoke stats snapshot: `2026-07-05T14:02:20.715Z`",
+    );
     expect(markdown).toContain("## Dashboard Surface Evidence");
     expect(markdown).toContain("- Actions: `16`");
     expect(markdown).toContain("- Insights: `72`");
     expect(markdown).toContain("- Fleet verdict: `readiness_blocked`");
     expect(markdown).toContain("- Blocker hosts: `yesa.kr`");
     expect(markdown).toContain("## Dashboard Actionability");
-    expect(markdown).toContain("- Status: `blocked_for_action_until_post_recovery_verify`");
+    expect(markdown).toContain(
+      "- Status: `blocked_for_action_until_post_recovery_verify`",
+    );
     expect(markdown).toContain("Read-only triage is allowed");
-    expect(markdown).toContain("- Required verification command: `pnpm dashboard:post-recovery`");
+    expect(markdown).toContain(
+      "- Required verification command: `pnpm dashboard:post-recovery`",
+    );
     expect(markdown).toContain("## Post-Recovery Acceptance");
-    expect(markdown).toContain("| `pending_external` | `external_gsc_access_restored` |");
-    expect(markdown).toContain("| `pending_verification` | `dashboard_verify_local_verified` |");
+    expect(markdown).toContain(
+      "| `pending_external` | `external_gsc_access_restored` |",
+    );
+    expect(markdown).toContain(
+      "| `pending_verification` | `dashboard_verify_local_verified` |",
+    );
   });
 });
 
@@ -865,7 +983,8 @@ function makeFleetChain({
 
 function makeGscAudit() {
   return {
-    collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T14:02:20.715Z",
+    collectorSnapshot:
+      "data/site-stats.json generatedAt=2026-07-05T14:02:20.715Z",
     handoffStatus: "pending_external",
     productionMutationPerformed: false,
     gscMutationPerformed: false,
@@ -888,7 +1007,7 @@ function makeGscAudit() {
 
 function makeRenderedUiSmokeEvidence(overrides: Record<string, unknown> = {}) {
   return {
-    path: "data\\dashboard-ui-smoke-2026-07-05.json",
+    path: join("data", "dashboard-ui-smoke-2026-07-05.json"),
     exists: true,
     expectedStatsSnapshot: "2026-07-05T14:02:20.715Z",
     statsSnapshot: "2026-07-05T14:02:20.715Z",
@@ -932,9 +1051,14 @@ function makeDashboardActionability(overrides: Record<string, unknown> = {}) {
 function makeExternalBlockerEvidence(overrides: Record<string, unknown> = {}) {
   return {
     source: "gsc_permission_audit",
-    artifactPath: "data\\gsc-permission-audit-2026-07-05.json",
-    workOrderPath: "docs\\work-orders\\gsc-permission-audit-2026-07-05.md",
-    collectorSnapshot: "data/site-stats.json generatedAt=2026-07-05T14:02:20.715Z",
+    artifactPath: join("data", "gsc-permission-audit-2026-07-05.json"),
+    workOrderPath: join(
+      "docs",
+      "work-orders",
+      "gsc-permission-audit-2026-07-05.md",
+    ),
+    collectorSnapshot:
+      "data/site-stats.json generatedAt=2026-07-05T14:02:20.715Z",
     host: "yesa.kr",
     siteId: "yesa",
     gscStatus: "auth_error",
@@ -956,7 +1080,7 @@ function makeMutationBoundaryEvidence(overrides: Record<string, unknown> = {}) {
     evidenceArtifacts: [
       {
         source: "site_stats_snapshot",
-        path: "data\\site-stats.json",
+        path: join("data", "site-stats.json"),
         exists: true,
         generatedAt: "2026-07-05T14:02:20.715Z",
         snapshot: "2026-07-05T14:02:20.715Z",
@@ -971,10 +1095,12 @@ function makeMutationBoundaryEvidence(overrides: Record<string, unknown> = {}) {
   } as never;
 }
 
-function makeFleetChainArtifact(overrides: {
-  summary?: Record<string, unknown>;
-  verification?: Record<string, unknown>;
-} = {}) {
+function makeFleetChainArtifact(
+  overrides: {
+    summary?: Record<string, unknown>;
+    verification?: Record<string, unknown>;
+  } = {},
+) {
   return {
     summary: {
       commands: 6,
