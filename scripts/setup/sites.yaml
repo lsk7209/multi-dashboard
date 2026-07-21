@@ -417,10 +417,10 @@ sites:
     enabled: false
     platform: static
     url: https://spinkorea.kr/
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "532855163"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
-    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: texturb
     name: texturb.com
     enabled: true
@@ -571,6 +571,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://todaypharm.kr/
+    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
     ga4PropertyId: "534313222"
     gscSiteUrl: https://todaypharm.kr/
     sitemapUrls:
@@ -580,7 +581,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\todaypharm
-    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true
@@ -648,6 +648,7 @@ sites:
     enabled: true
     platform: static
     url: https://spinkorea.kr/
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "536081634"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
@@ -655,7 +656,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\spinkorea
-    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: ezfunnel
     name: ezfunnel.kr
     enabled: true
@@ -1301,6 +1301,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://dogswhere.com/
+    wpRestBase: https://dogswhere.com/wp-json/wp/v2
     ga4PropertyId: "539684317"
     gscSiteUrl: sc-domain:dogswhere.com
     monetization: true
@@ -1308,7 +1309,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\dogswherecom
-    wpRestBase: https://dogswhere.com/wp-json/wp/v2
   - id: smallhomepick
     name: 스몰홈픽 - 작은집 살림템 가이드
     enabled: true
@@ -1680,6 +1680,7 @@ sites:
     enabled: true
     platform: static
     url: https://dogbreedcost.com/
+    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
     ga4PropertyId: "543424923"
     gscSiteUrl: https://dogbreedcost.com/
     monetization: true
@@ -1688,7 +1689,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\dog-breed\repo
       githubRepo: https://github.com/lsk7209/dog-breed
-    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
   - id: plategogo
     name: plategogo.com
     enabled: true
@@ -1740,4 +1740,13 @@ sites:
     wpRestBase: https://petcostlab.com/wp-json/wp/v2
     ga4PropertyId: "545108775"
     gscSiteUrl: https://petcostlab.com/
+    monetization: true
+  - id: picturebooks
+    name: picturebooks.kr
+    enabled: true
+    platform: wordpress
+    url: https://picturebooks.kr/
+    wpRestBase: https://picturebooks.kr/wp-json/wp/v2
+    ga4PropertyId: "546472123"
+    gscSiteUrl: https://picturebooks.kr/
     monetization: true
