@@ -371,10 +371,10 @@ sites:
     platform: wordpress
     url: https://nicewomen.kr/
     wpRestBase: https://nicewomen.kr/wp-json/wp/v2
-    sitemapUrls:
-      - https://nicewomen.kr/sitemap_index.xml
     ga4PropertyId: "524548131"
     gscSiteUrl: https://nicewomen.kr/
+    sitemapUrls:
+      - https://nicewomen.kr/sitemap_index.xml
     monetization: true
     contentSource:
       type: wordpress-ssh
@@ -420,6 +420,7 @@ sites:
     ga4PropertyId: "532855163"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: texturb
     name: texturb.com
     enabled: true
@@ -579,6 +580,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\todaypharm
+    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true
@@ -653,16 +655,17 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\spinkorea
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: ezfunnel
     name: ezfunnel.kr
     enabled: true
     platform: wordpress
     url: https://ezfunnel.kr/
     wpRestBase: https://ezfunnel.kr/wp-json/wp/v2
-    sitemapUrls:
-      - https://ezfunnel.kr/sitemap_index.xml
     ga4PropertyId: "536106465"
     gscSiteUrl: https://ezfunnel.kr/
+    sitemapUrls:
+      - https://ezfunnel.kr/sitemap_index.xml
     monetization: true
     contentSource:
       type: wordpress-ssh
@@ -1305,6 +1308,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\dogswherecom
+    wpRestBase: https://dogswhere.com/wp-json/wp/v2
   - id: smallhomepick
     name: 스몰홈픽 - 작은집 살림템 가이드
     enabled: true
@@ -1628,6 +1632,7 @@ sites:
     enabled: true
     platform: static
     url: https://localgeo.app/
+    wpRestBase: https://localgeo.app/wp-json/wp/v2
     ga4PropertyId: "544179002"
     gscSiteUrl: https://localgeo.app/
     sitemapUrls:
@@ -1638,12 +1643,12 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\localgeo\repo
       githubRepo: https://github.com/lsk7209/localgeo
-    wpRestBase: https://localgeo.app/wp-json/wp/v2
   - id: autorentlab
     name: autorentlab.com
     enabled: true
     platform: nextjs
     url: https://autorentlab.com/
+    wpRestBase: https://autorentlab.com/wp-json/wp/v2
     ga4PropertyId: "544134188"
     gscSiteUrl: https://autorentlab.com/
     sitemapUrls:
@@ -1654,12 +1659,12 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\autorentlab
       githubRepo: https://github.com/lsk7209/autorentlab
-    wpRestBase: https://autorentlab.com/wp-json/wp/v2
   - id: gradienttrail
     name: gradienttrail.com
     enabled: true
     platform: static
     url: https://gradienttrail.com/
+    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
     ga4PropertyId: "543434435"
     gscSiteUrl: https://gradienttrail.com/
     sitemapUrls:
@@ -1670,7 +1675,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\park-trail
       githubRepo: https://github.com/lsk7209/park-trail
-    wpRestBase: https://gradienttrail.com/wp-json/wp/v2
   - id: dogbreedcost
     name: https://dogbreedcost.com
     enabled: true
@@ -1684,11 +1688,14 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\dog-breed\repo
       githubRepo: https://github.com/lsk7209/dog-breed
+    wpRestBase: https://dogbreedcost.com/wp-json/wp/v2
   - id: plategogo
     name: plategogo.com
     enabled: true
     platform: nextjs
     url: https://plategogo.com/
+    wpRestBase: https://plategogo.com/wp-json/wp/v2
+    ga4PropertyId: "544137483"
     gscSiteUrl: https://plategogo.com/
     sitemapUrls:
       - https://plategogo.com/sitemap.xml
@@ -1698,8 +1705,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\plategogocom
       githubRepo: https://github.com/lsk7209/plategogo
-    wpRestBase: https://plategogo.com/wp-json/wp/v2
-    ga4PropertyId: "544137483"
   - id: wedfairguide
     name: wedfairguide.com
     enabled: true
@@ -1708,4 +1713,31 @@ sites:
     wpRestBase: https://wedfairguide.com/wp-json/wp/v2
     ga4PropertyId: "544110804"
     gscSiteUrl: https://wedfairguide.com/
+    monetization: true
+  - id: seniorlivingnote
+    name: seniorlivingnote.com
+    enabled: true
+    platform: wordpress
+    url: https://seniorlivingnote.com/
+    wpRestBase: https://seniorlivingnote.com/wp-json/wp/v2
+    ga4PropertyId: "545086577"
+    gscSiteUrl: https://seniorlivingnote.com/
+    monetization: true
+  - id: autopickgo
+    name: autopickgo.com
+    enabled: true
+    platform: wordpress
+    url: https://autopickgo.com/
+    wpRestBase: https://autopickgo.com/wp-json/wp/v2
+    ga4PropertyId: "545221558"
+    gscSiteUrl: https://autopickgo.com/
+    monetization: true
+  - id: petcostlab
+    name: petcostlab.com
+    enabled: true
+    platform: wordpress
+    url: https://petcostlab.com/
+    wpRestBase: https://petcostlab.com/wp-json/wp/v2
+    ga4PropertyId: "545108775"
+    gscSiteUrl: https://petcostlab.com/
     monetization: true
