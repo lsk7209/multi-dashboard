@@ -1750,3 +1750,12 @@ sites:
     ga4PropertyId: "546472123"
     gscSiteUrl: https://picturebooks.kr/
     monetization: true
+  - id: shotsetup
+    name: shotsetup.com
+    enabled: true
+    platform: wordpress
+    url: https://shotsetup.com/
+    wpRestBase: https://shotsetup.com/wp-json/wp/v2
+    ga4PropertyId: "547033336"
+    gscSiteUrl: https://shotsetup.com/
+    monetization: true
