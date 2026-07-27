@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-19T09:59:24.650Z",
+  "generatedAt": "2026-07-27T02:41:40.936Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-07-19T09:59:20.790Z",
+  "sourceUpdatedAt": "2026-07-27T02:41:40.356Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 0
   },
   "counts": {
     "github-actions": 0,
-    "gsc": 1,
-    "adsense": 0,
+    "gsc": 0,
+    "adsense": 2,
     "ga4": 0,
     "vercel": 0,
     "other": 0
@@ -23,32 +23,42 @@
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-19T09:59:20.790Z",
+      "checkedAt": "2026-07-27T02:41:40.350Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-19T09:58:51.978Z.",
-      "checkedAt": "2026-07-19T09:59:20.789Z",
-      "count": 1
+      "detail": "Read dashboard artifact snapshot=2026-07-27T02:41:39.581Z.",
+      "checkedAt": "2026-07-27T02:41:40.349Z",
+      "count": 2
     },
     "ga4": {
       "status": "ok",
-      "detail": "Read GA4 collector status for 98 sites.",
-      "checkedAt": "2026-07-19T09:59:20.789Z",
-      "count": 98
+      "detail": "Read GA4 collector status for 99 sites.",
+      "checkedAt": "2026-07-27T02:41:40.349Z",
+      "count": 99
     }
   },
   "findings": [
     {
-      "id": "gsc-ezfunnel-1mrj4df",
-      "kind": "gsc",
+      "id": "adsense-temon-ckdu1b",
+      "kind": "adsense",
       "severity": "high",
       "priority": 80,
-      "site": "ezfunnel",
-      "sourceLine": "direct:dashboard site=ezfunnel kind=gsc status=sitemap warnings=0 errors=1 detail=https://ezfunnel.kr/sitemap_index.xml warnings=0 errors=1 submitted=502 downloaded=2026-07-15T10:44:06.443Z submittedAt=2026-07-11T07:46:26.303Z",
-      "title": "ezfunnel.kr: GSC direct collector signal sitemap warnings=0 errors=1",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://ezfunnel.kr/sitemap_index.xml warnings=0 errors=1 submitted=502 downloaded=2026-07-15T10:44:06.443Z submittedAt=2026-07-11T07:46:26.303Z."
+      "site": "temon",
+      "sourceLine": "direct:dashboard site=temon kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "테몬_temon.kr: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "adsense-caregos-ckdu1b",
+      "kind": "adsense",
+      "severity": "high",
+      "priority": 80,
+      "site": "caregos",
+      "sourceLine": "direct:dashboard site=caregos kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "caregos.com: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
     }
   ]
 }
