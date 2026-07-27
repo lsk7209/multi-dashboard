@@ -1724,6 +1724,14 @@ sites:
     ga4PropertyId: "545086577"
     gscSiteUrl: https://seniorlivingnote.com/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: nexttech
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/seniorlivingnote.com
   - id: autopickgo
     name: autopickgo.com
     enabled: true
@@ -1733,6 +1741,14 @@ sites:
     ga4PropertyId: "545221558"
     gscSiteUrl: https://autopickgo.com/
     monetization: true
+    contentSource:
+      type: wordpress-ssh
+      locationLabel: nexttech
+      sshHost: 158.247.212.123
+      sshPort: 1988
+      sshUser: nexttech
+      sshKeyPath: D:\env\haemongdream-claude_key2
+      wpPath: /home/nexttech/autopickgo.com
   - id: petcostlab
     name: petcostlab.com
     enabled: true
