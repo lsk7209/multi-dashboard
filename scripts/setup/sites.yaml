@@ -1515,6 +1515,7 @@ sites:
     ga4PropertyId: "540671690"
     gscSiteUrl: https://caregos.com/
     monetization: true
+    adsenseMonitoring: editorial_hold
     contentSource:
       type: local-app
       locationLabel: static-local

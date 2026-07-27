@@ -446,7 +446,8 @@ export type CollectionStatus =
   | "ok"
   | "auth_error"
   | "api_error"
-  | "missing_config";
+  | "missing_config"
+  | "editorial_hold";
 export type AdsenseInstallStatus = "installed" | "not_detected" | "unknown";
 export type AdsTxtValidationStatus =
   | "valid"
@@ -2261,7 +2262,7 @@ function getApiCollectionSource(
   checkedAt: string | undefined,
   error: string | undefined,
 ): CollectionSourceStatus {
-  if (!status || status === "missing_config") {
+  if (!status || status === "missing_config" || status === "editorial_hold") {
     return {
       key,
       label,

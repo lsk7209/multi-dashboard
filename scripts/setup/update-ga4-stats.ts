@@ -83,6 +83,7 @@ const MEDIAPARTNERS_FETCH_HEADERS = {
   "User-Agent": "Mediapartners-Google",
 } as const;
 const MONETIZATION_LAST_GOOD_TTL_HOURS = 72;
+const ADSENSE_BROWSER_NAVIGATION_TIMEOUT_MS = 15000;
 const TOP_QUERY_LIMIT = 3;
 const TOP_QUERY_MIN_IMPRESSIONS = 10;
 const TOP_TRAFFIC_KEYWORD_MIN_COUNT = 10;
@@ -265,7 +266,12 @@ async function acquireStatsUpdateLock(): Promise<() => Promise<void>> {
 
 const execFileAsync = promisify(execFile);
 
-type CollectionStatus = "ok" | "auth_error" | "api_error" | "missing_config";
+type CollectionStatus =
+  | "ok"
+  | "auth_error"
+  | "api_error"
+  | "missing_config"
+  | "editorial_hold";
 type AdsenseInstallStatus = "installed" | "not_detected" | "unknown";
 type AdsTxtValidationStatus =
   | "valid"
@@ -1638,6 +1644,27 @@ export function findAdsenseSignal(html: string): string | undefined {
   return undefined;
 }
 
+export function resolveEditorialAdsenseHold(
+  site: Pick<Site, "adsenseMonitoring">,
+): Pick<
+  SiteStat,
+  | "adsenseStatus"
+  | "adsenseInstallStatus"
+  | "adsenseCollectorStatus"
+  | "adsenseError"
+> | undefined {
+  if (site.adsenseMonitoring !== "editorial_hold") {
+    return undefined;
+  }
+  return {
+    adsenseStatus: "editorial_hold",
+    adsenseInstallStatus: "not_detected",
+    adsenseCollectorStatus: "ok",
+    adsenseError:
+      "AdSense and public indexing are intentionally held until a named editor records approval in the source release gate.",
+  };
+}
+
 async function collectDesktopBrowserAdsenseEvidence(
   site: Site,
   checkedAt: string,
@@ -1658,8 +1685,8 @@ async function collectDesktopBrowserAdsenseEvidence(
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
       });
       const response = await page.goto(site.url, {
-        waitUntil: "networkidle",
-        timeout: 30000,
+        waitUntil: "domcontentloaded",
+        timeout: ADSENSE_BROWSER_NAVIGATION_TIMEOUT_MS,
       });
       item.httpStatus = response?.status();
       await page.waitForTimeout(1500);
@@ -1864,6 +1891,13 @@ async function collectAdsenseCodeStatus(
       item.error || (item.httpStatus !== undefined && item.httpStatus >= 400),
   );
   if (successfulHtmlChecks.length >= 2 && transientErrors.length === 0) {
+    const editorialHold = resolveEditorialAdsenseHold(site);
+    if (editorialHold) {
+      return {
+        ...editorialHold,
+        adsenseEvidence: evidence,
+      };
+    }
     const error = "AdSense code not detected on checked pages";
     return {
       adsenseStatus: "missing_config",
