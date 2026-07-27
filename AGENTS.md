@@ -42,6 +42,11 @@
 - If a script still reads `gmail-digest`, treat that as legacy technical debt to replace with direct collection, not as a user workflow requirement.
 - When planning site fixes, explicitly separate direct dashboard evidence from any stale legacy digest-derived artifact.
 
+## Permanent Monetization Exclusions
+
+- `picturebooks.kr` is a shopping mall and must never receive AdSense code, ads.txt monetization remediation, approval work, or AdSense-related deployment changes.
+- Keep its dashboard site configuration `monetization: false`; exclude it from AdSense and ads.txt action queues. This is a permanent product constraint, not a temporary collector exception.
+
 ## No Cloudflare Service Usage
 
 - The managed sites do not use Cloudflare services as an active hosting, worker, database, proxy, or deployment layer.
