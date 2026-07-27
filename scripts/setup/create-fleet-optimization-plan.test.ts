@@ -42,6 +42,24 @@ describe("create-fleet-optimization-plan dashboard evidence", () => {
     expect(buildRefreshFailedSources([row({ sitemapErrors: 1 })])).toEqual([]);
   });
 
+  it("does not mistake an intentional editorial hold for a dashboard refresh failure", () => {
+    expect(buildRefreshFailedSources([row({ adsenseStatus: "editorial_hold" })])).toEqual([]);
+  });
+
+  it("limits editorial holds to the AdSense editorial status", () => {
+    expect(
+      buildRefreshFailedSources([
+        row({ gscStatus: "editorial_hold" }),
+        row({ adsenseCollectorStatus: "editorial_hold" }),
+        row({ adsenseStatus: "editorial_hold", adsenseCollectorStatus: "transient_error" }),
+      ]),
+    ).toEqual([
+      "skipped_refresh_failed:gsc:editorial_hold:1",
+      "skipped_refresh_failed:adsense_collector:editorial_hold:1",
+      "skipped_refresh_failed:adsense_collector:transient_error:1",
+    ]);
+  });
+
   it("summarizes connector statuses and treats non-monetized rows as disabled", () => {
     const summary = summarizeConnectorStatus([
       row(),

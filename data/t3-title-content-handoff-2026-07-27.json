@@ -1,0 +1,475 @@
+{
+  "generatedAt": "2026-07-27T12:49:49.798Z",
+  "mutationStatus": {
+    "cmsMutationPerformed": false,
+    "productionDeploymentPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false
+  },
+  "dashboardEvidence": {
+    "snapshotTimestamp": "2026-07-27T12:40:42.252Z",
+    "statsPath": "data\\site-stats.json",
+    "planPath": "data\\fleet-optimization-plan-2026-07-27.json",
+    "sitesPath": "scripts\\setup\\sites.yaml",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": []
+  },
+  "summary": {
+    "siteCount": 13,
+    "titleHandoffCount": 11,
+    "contentHandoffCount": 6
+  },
+  "sites": [
+    {
+      "host": "tennisfrens.com",
+      "siteId": "tennisfrens",
+      "url": "https://tennisfrens.com/",
+      "localPath": "D:\\web\\tennisfrens",
+      "platform": "wordpress",
+      "wpRestBase": "https://tennisfrens.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        1
+      ],
+      "metrics": {
+        "gscImpressions30d": 15371,
+        "gscClicks30d": 134,
+        "gscCtr30d": 0.00871771517793247,
+        "gscPosition30d": 9.8166677509596,
+        "ga4ActiveUsers30d": 1663
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://www.tennisfrens.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "cartain.kr",
+      "siteId": "cartain-2",
+      "url": "https://cartain.kr/",
+      "localPath": "D:\\web\\cartainkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://cartain.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        2
+      ],
+      "metrics": {
+        "gscImpressions30d": 5481,
+        "gscClicks30d": 119,
+        "gscCtr30d": 0.021711366538952746,
+        "gscPosition30d": 9.203247582557927,
+        "ga4ActiveUsers30d": 1314
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://cartain.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "estat.kr",
+      "siteId": "estat-2",
+      "url": "https://estat.kr/",
+      "localPath": "D:\\web\\estatkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://estat.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        3,
+        4
+      ],
+      "metrics": {
+        "gscImpressions30d": 3497,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.005147269087789534,
+        "gscPosition30d": 7.586502716614241,
+        "ga4ActiveUsers30d": 64
+      },
+      "topQueries": [
+        {
+          "query": "냉면 양념장 황금 레시피",
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 2.8823529411764706
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://estat.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "gong365.kr",
+      "siteId": "gong365",
+      "url": "https://gong365.kr/",
+      "localPath": "D:\\web\\gong365kr",
+      "platform": "wordpress",
+      "wpRestBase": "https://gong365.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        5,
+        6
+      ],
+      "metrics": {
+        "gscImpressions30d": 2894,
+        "gscClicks30d": 31,
+        "gscCtr30d": 0.010711817553559088,
+        "gscPosition30d": 8.125086385625432,
+        "ga4ActiveUsers30d": 92
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://gong365.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "nexttech7.com",
+      "siteId": "nexttech7",
+      "url": "https://nexttech7.com/",
+      "localPath": "D:\\web\\nexttech7com",
+      "platform": "wordpress",
+      "wpRestBase": "https://nexttech7.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        7
+      ],
+      "metrics": {
+        "gscImpressions30d": 1754,
+        "gscClicks30d": 38,
+        "gscCtr30d": 0.021664766248574687,
+        "gscPosition30d": 14.770809578107183,
+        "ga4ActiveUsers30d": 213
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://nexttech7.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "petinsuer.com",
+      "siteId": "petinsuer-2",
+      "url": "https://petinsuer.com/",
+      "localPath": "D:\\web\\petinsuercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://petinsuer.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        8
+      ],
+      "metrics": {
+        "gscImpressions30d": 1577,
+        "gscClicks30d": 15,
+        "gscCtr30d": 0.009511731135066582,
+        "gscPosition30d": 8.814838300570704,
+        "ga4ActiveUsers30d": 165
+      },
+      "topQueries": [
+        {
+          "query": "강아지 요플레 먹어도 되나요",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 9.909090909090908
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://petinsuer.com/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "dogspang.kr",
+      "siteId": "dogspang-2",
+      "url": "https://dogspang.kr/",
+      "localPath": "",
+      "platform": "wordpress",
+      "wpRestBase": "https://dogspang.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        11,
+        12
+      ],
+      "metrics": {
+        "gscImpressions30d": 677,
+        "gscClicks30d": 10,
+        "gscCtr30d": 0.014771048744460856,
+        "gscPosition30d": 9.794682422451993,
+        "ga4ActiveUsers30d": 71
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://dogspang.kr/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Evidence collection only: no controlled local content source is registered; do not create or edit production content."
+    },
+    {
+      "host": "legalser.com",
+      "siteId": "legalser",
+      "url": "https://legalser.com/",
+      "localPath": "D:\\web\\legalsercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://legalser.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        13
+      ],
+      "metrics": {
+        "gscImpressions30d": 682,
+        "gscClicks30d": 3,
+        "gscCtr30d": 0.004398826979472141,
+        "gscPosition30d": 24.755131964809383,
+        "ga4ActiveUsers30d": 32
+      },
+      "topQueries": [
+        {
+          "query": "legalser",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 9.090909090909092
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://legalser.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "plategogo.com",
+      "siteId": "plategogo",
+      "url": "https://plategogo.com/",
+      "localPath": "D:\\web\\plategogocom",
+      "platform": "nextjs",
+      "wpRestBase": "https://plategogo.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        14,
+        16
+      ],
+      "metrics": {
+        "gscImpressions30d": 560,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 10.373214285714285,
+        "ga4ActiveUsers30d": 87
+      },
+      "topQueries": [
+        {
+          "query": "김치찌개 칼로리",
+          "clicks": 0,
+          "impressions": 40,
+          "ctr": 0,
+          "position": 9.875
+        },
+        {
+          "query": "바나나 1개 단백질",
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 8.055555555555555
+        },
+        {
+          "query": "그릭요거트 100g 칼로리",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 11.333333333333334
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://plategogo.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "today2424.kr",
+      "siteId": "today2424",
+      "url": "https://today2424.kr/",
+      "localPath": "D:\\web\\today2424\\2424",
+      "platform": "wordpress",
+      "wpRestBase": "https://today2424.kr/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        15
+      ],
+      "metrics": {
+        "gscImpressions30d": 594,
+        "gscClicks30d": 31,
+        "gscCtr30d": 0.05218855218855219,
+        "gscPosition30d": 9.296296296296296,
+        "ga4ActiveUsers30d": 66
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://today2424.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "patentgogo.com",
+      "siteId": "patentgogo",
+      "url": "https://patentgogo.com/",
+      "localPath": "D:\\web\\tukhugogo",
+      "platform": "nextjs",
+      "wpRestBase": "https://patentgogo.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        17
+      ],
+      "metrics": {
+        "gscImpressions30d": 467,
+        "gscClicks30d": 1,
+        "gscCtr30d": 0.0021413276231263384,
+        "gscPosition30d": 10.927194860813705,
+        "ga4ActiveUsers30d": 57
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://patentgogo.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "healfood.kr",
+      "siteId": "healfood-2",
+      "url": "https://healfood.kr/",
+      "localPath": "D:\\web\\healfoodkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://healfood.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        18
+      ],
+      "metrics": {
+        "gscImpressions30d": 388,
+        "gscClicks30d": 4,
+        "gscCtr30d": 0.010309278350515464,
+        "gscPosition30d": 10.63659793814433,
+        "ga4ActiveUsers30d": 45
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://healfood.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "yungyanggogo.kr",
+      "siteId": "yungyanggogo",
+      "url": "https://yungyanggogo.kr/",
+      "localPath": "D:\\web\\yungyanggogo",
+      "platform": "wordpress",
+      "wpRestBase": "https://yungyanggogo.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        19
+      ],
+      "metrics": {
+        "gscImpressions30d": 314,
+        "gscClicks30d": 3,
+        "gscCtr30d": 0.009554140127388535,
+        "gscPosition30d": 6.974522292993631,
+        "ga4ActiveUsers30d": 166
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://yungyanggogo.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    }
+  ],
+  "stopConditions": [
+    "Do not edit WordPress titles, slugs, article bodies, headings, or in-body internal links from this handoff.",
+    "Do not publish drafts, schedule posts, submit sitemaps, ping IndexNow, deploy, or mutate CMS/API state without an explicit apply step and rollback path.",
+    "If localPath is missing or dirty, collect evidence only and do not create content in production.",
+    "Re-run pnpm stats:update and pnpm fleet:optimize:plan before using this handoff after the next dashboard data window."
+  ]
+}

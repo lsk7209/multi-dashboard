@@ -479,7 +479,7 @@ export function buildRefreshFailedSources(
     const counts = new Map<string, number>();
     for (const row of rows) {
       const status = connectorStatusValue(row, field);
-      if (isSuccessfulOrSkippedStatus(status)) {
+      if (isSuccessfulOrSkippedStatus(status, field)) {
         continue;
       }
       counts.set(status, (counts.get(status) ?? 0) + 1);
@@ -511,8 +511,13 @@ function connectorStatusValue(row: Record<string, unknown>, field: string): stri
   return typeof value === "string" && value.length > 0 ? value : "unknown";
 }
 
-function isSuccessfulOrSkippedStatus(status: string): boolean {
-  return status === "ok" || status === "disabled" || status === "not_applicable";
+function isSuccessfulOrSkippedStatus(status: string, field: string): boolean {
+  return (
+    status === "ok" ||
+    status === "disabled" ||
+    status === "not_applicable" ||
+    (field === "adsenseStatus" && status === "editorial_hold")
+  );
 }
 
 function renderMarkdown(plan: FleetOptimizationPlan): string {

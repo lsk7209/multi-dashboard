@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-07-27T12:49:48.582Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-27T12:40:42.252Z",
+  "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "approvedExactDomainsExcluded": [
+    "ehon365.kr",
+    "fastjob.kr",
+    "haemongdream.com",
+    "kang4.com",
+    "klick.kr",
+    "luckyday.kr",
+    "nexttech7.com",
+    "sellerpit.kr",
+    "tasko.kr",
+    "temon.kr",
+    "tennisfrens.com"
+  ],
+  "nonMonetizedExactDomainsExcluded": [
+    "limsight.kr",
+    "picturebooks.kr",
+    "sorimate.com",
+    "yesa.kr"
+  ],
+  "summary": {
+    "totalRows": 103,
+    "reviewedRows": 88,
+    "adsenseOkRows": 87,
+    "problemRows": 1,
+    "ordinaryAdsenseProof": 1,
+    "approvedRootSubdomainScope": 0,
+    "gscAuthTelemetry": 0,
+    "ga4ConfigTelemetry": 0
+  },
+  "lanes": {
+    "ordinary_adsense_proof": [
+      {
+        "siteId": "caregos",
+        "host": "caregos.com",
+        "name": "caregos.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999909,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=editorial_hold",
+          "adsenseCollectorStatus=ok",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      }
+    ],
+    "approved_root_subdomain_scope": [],
+    "gsc_auth_telemetry": [],
+    "ga4_config_telemetry": []
+  }
+}

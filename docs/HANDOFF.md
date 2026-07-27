@@ -1,5 +1,14 @@
 # Handoff
 
+## SSH1 source maps and dashboard refresh verified (2026-07-27 KST)
+
+- User goal: restore the verified remote WordPress source maps for `seniorlivingnote.com` and `autopickgo.com`, refresh dashboard evidence, and deliver the normal Git-connected deployment.
+- Completed: added only the two `wordpress-ssh` source maps to `scripts/setup/sites.yaml`, using the established SSH1 host/key/user and each verified WordPress root. The fresh snapshot is `2026-07-27T12:40:42.252Z` with 103 sites; both restored rows have GA4/GSC/AdSense/ads.txt `ok` and one sitemap. SeniorLivingNote has the expected next scheduled date; Autopickgo has the expected last-published timestamp.
+- Repair: the strict dashboard chain exposed a classification defect: intentional `adsenseStatus=editorial_hold` was counted as a refresh failure even though it is not a collector outage. `scripts/setup/create-fleet-optimization-plan.ts` now treats that status as a non-failure only for the AdSense editorial field; GSC and collector `editorial_hold` values remain failures. Focused regression tests cover both the allowed hold and the negative cases.
+- Validation: focused Vitest 7/7, `pnpm type-check`, `pnpm lint`, `pnpm build`, strict fleet chain (4/4 commands), runtime smoke (103 sites, 8 checks), and rendered UI smoke (103 sites, 10 checks) all passed. The chain is local/read-only and reports no CMS, Search Console, AdSense, title/body, or publishing mutation.
+- Side effects and rollback: only dashboard configuration, generated snapshot/ops/chain artifacts, the classifier test/implementation, and task evidence changed in the isolated clone. Roll back after deployment by reverting the single scoped commit. `picturebooks` was not added, changed, or monetized.
+- Next concrete step: inspect the scoped diff, commit only these files, push `main`, then verify the Git-connected Vercel production deployment and public alias.
+
 ## 2026-07-15 AdSense Proof Freshness Repair
 
 - Repaired the dangling `pnpm adsense:proof:refresh-snapshot` command by adding a non-mutating continuation refresher. It carries only previously recorded candidates that remain in the current proof queue; it never invents external proof, upgrades a candidate, checks the AdSense console, or mutates a site.

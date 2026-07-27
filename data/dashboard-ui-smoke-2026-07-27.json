@@ -1,0 +1,55 @@
+{
+  "url": "http://127.0.0.1:3000/",
+  "generatedAt": "2026-07-27T12:40:42.252Z",
+  "siteCount": 103,
+  "blockingSources": [],
+  "maintenanceSources": [],
+  "blockerHosts": [],
+  "actionabilityStatus": "blocked_for_action_until_post_recovery_verify",
+  "actionabilityCommand": "pnpm dashboard:post-recovery",
+  "actionabilityAllowedUse": "Read-only triage only. Do not execute dashboard recommendations until post-recovery verification passes.",
+  "actionabilityReason": "Blocked until pnpm dashboard:post-recovery passes for post_recovery_chain.",
+  "blockedActionReason": "caregos.com: Homepage/sample page contains AdSense loader evidence..",
+  "hasSuppressedBlockedAction": true,
+  "fleetChainArtifactPath": "data/fleet-optimization-chain-2026-07-27.json",
+  "gscPermissionAuditArtifactPath": "data/gsc-permission-audit-2026-07-27.json",
+  "gscPermissionAuditWorkOrderPath": "docs/work-orders/gsc-permission-audit-2026-07-27.md",
+  "gscPermissionAuditHandoffStatus": "resolved",
+  "collectorAvailability": [
+    {
+      "key": "githubActions",
+      "status": "skipped",
+      "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped."
+    },
+    {
+      "key": "dashboardArtifacts",
+      "status": "ok",
+      "detail": "Read dashboard artifact snapshot=2026-07-27T12:40:42.252Z."
+    },
+    {
+      "key": "ga4",
+      "status": "ok",
+      "detail": "Read GA4 collector status for 103 sites."
+    }
+  ],
+  "checks": [
+    "http-2xx",
+    "fleet-panel",
+    "site-count",
+    "blocker-maintenance-split",
+    "gsc-handoff-status-visible",
+    "affiliate-command-suppressed",
+    "actionability-read-only-visible",
+    "maintenance-visibility",
+    "collector-availability-visible",
+    "readable-rendered-text"
+  ],
+  "artifactGeneratedAt": "2026-07-27T12:51:07.630Z",
+  "date": "2026-07-27",
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "stopCondition": "This rendered UI smoke is local and non-mutating. It opens the dashboard in a browser and records evidence only; it does not authorize CMS edits, Search Console mutation, AdSense mutation, publishing, DNS changes, or deployment."
+}
