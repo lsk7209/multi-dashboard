@@ -1,66 +1,46 @@
 {
-  "generatedAt": "2026-07-27T06:22:52.638Z",
+  "generatedAt": "2026-07-27T10:07:31.487Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-27T06:22:51.927Z",
+  "statsSnapshot": "2026-07-27T10:07:30.741Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-27T06:22:52.638Z",
+      "checkedAt": "2026-07-27T10:07:31.487Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-27T06:22:51.927Z.",
-      "checkedAt": "2026-07-27T06:22:52.637Z",
-      "count": 3
+      "detail": "Read dashboard artifact snapshot=2026-07-27T10:07:30.741Z.",
+      "checkedAt": "2026-07-27T10:07:31.486Z",
+      "count": 1
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 103 sites.",
-      "checkedAt": "2026-07-27T06:22:52.637Z",
+      "checkedAt": "2026-07-27T10:07:31.486Z",
       "count": 103
     }
   },
   "counts": {
     "github-actions": 0,
     "gsc": 0,
-    "adsense": 3,
+    "adsense": 1,
     "ga4": 0,
     "vercel": 0,
     "other": 0
   },
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1
   },
   "findings": [
-    {
-      "id": "adsense-picturebooks-ckdu1b",
-      "kind": "adsense",
-      "severity": "high",
-      "priority": 80,
-      "site": "picturebooks",
-      "sourceLine": "direct:dashboard site=picturebooks kind=adsense status=missing_config error=AdSense code not detected on checked pages",
-      "title": "picturebooks.kr: ADSENSE direct collector signal missing_config",
-      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
-    },
-    {
-      "id": "adsense-picturebooks-2wxnys",
-      "kind": "adsense",
-      "severity": "medium",
-      "priority": 50,
-      "site": "picturebooks",
-      "sourceLine": "direct:dashboard site=picturebooks kind=adsense status=ads.txt missing_config error=ads.txt unavailable: 404",
-      "title": "picturebooks.kr: ADSENSE direct collector signal ads.txt missing_config",
-      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status ads.txt missing_config."
-    },
     {
       "id": "adsense-caregos-1ei0ghx",
       "kind": "adsense",
