@@ -1,5 +1,14 @@
 # Handoff
 
+## Dashboard priority refresh and evidence triage complete (2026-07-27 KST)
+
+- User goal: choose the next evidence-backed site/content improvement after the dashboard deployment.
+- Current state: fresh `pnpm stats:update` completed with snapshot `2026-07-27T13:07:27.938Z` for 103 sites. GA4 and GSC are `ok` for all 103 sites; the only direct ops finding is the intentional `caregos` AdSense editorial hold (low severity). The strict fleet chain passed 4/4, runtime smoke passed 8 checks, and rendered UI smoke passed 10 checks.
+- Completed: read-only GSC page/query evidence was refreshed for `tennisfrens`, `cartain-2`, and `gong365`; no CMS, Search Console, AdSense, publishing, content, or site mutation was made.
+- Decision: do not use the high-impression legacy Marta Kostyuk URL as a title target because it already returns a 308 to its canonical page. The live Tennisfrens and Gong365 target titles already lead with their primary queries, so the current evidence does not justify a blind title rewrite. `gong365` regional and support-program pages are the best next content-research lane, but its local repository is dirty and needs a clean isolated clone before any T3 editorial draft or implementation.
+- Blocker/risk: T3 article-title/body changes require an editorial brief and must not be applied in the dirty `D:\web\gong365kr`, `D:\web\tennisfrens`, or `D:\web\cartainkr` checkouts. `estat` and `plategogo` remain measurement holds; `picturebooks` remains excluded from all AdSense work.
+- Next concrete step: publish this coherent dashboard refresh, then create a clean Gong365 clone and prepare a query-specific, non-publishing regional/support-program content brief with persona and rollback metadata.
+
 ## SSH1 source maps and dashboard refresh verified (2026-07-27 KST)
 
 - User goal: restore the verified remote WordPress source maps for `seniorlivingnote.com` and `autopickgo.com`, refresh dashboard evidence, and deliver the normal Git-connected deployment.

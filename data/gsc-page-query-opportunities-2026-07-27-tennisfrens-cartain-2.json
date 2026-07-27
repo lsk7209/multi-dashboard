@@ -1,0 +1,564 @@
+{
+  "generatedAt": "2026-07-27T13:09:34.739Z",
+  "dateRange": {
+    "startDate": "2026-06-28",
+    "endDate": "2026-07-26"
+  },
+  "targets": [
+    "tennisfrens",
+    "cartain-2"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marta-kostyuk-legacy",
+      "query": "마르타 코스튜크",
+      "clicks": 0,
+      "impressions": 2110,
+      "ctr": 0,
+      "position": 8.034597156398103
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marta-kostyuk",
+      "query": "마르타 코스튜크",
+      "clicks": 1,
+      "impressions": 1380,
+      "ctr": 0.0007246376811594203,
+      "position": 7.883333333333334
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexandra-eala",
+      "query": "알렉산드라 이알라",
+      "clicks": 0,
+      "impressions": 1327,
+      "ctr": 0,
+      "position": 8.072343632253203
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/arthur-landercknech",
+      "query": "아르튀르 랭데르크네슈",
+      "clicks": 6,
+      "impressions": 970,
+      "ctr": 0.006185567010309278,
+      "position": 10.28659793814433
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/alexandra-eala",
+      "query": "알렉산드라 이알라",
+      "clicks": 0,
+      "impressions": 658,
+      "ctr": 0,
+      "position": 9.463525835866262
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/karolina-muchova",
+      "query": "카롤리나 무초바",
+      "clicks": 1,
+      "impressions": 643,
+      "ctr": 0.0015552099533437014,
+      "position": 11.489891135303266
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexander-blockx",
+      "query": "알렉산더 블록스",
+      "clicks": 2,
+      "impressions": 485,
+      "ctr": 0.004123711340206186,
+      "position": 10.34639175257732
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/martin-landaluce",
+      "query": "마르틴 란달루세",
+      "clicks": 3,
+      "impressions": 447,
+      "ctr": 0.006711409395973154,
+      "position": 10.579418344519016
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/iva-jovic",
+      "query": "이바 조비크",
+      "clicks": 0,
+      "impressions": 395,
+      "ctr": 0,
+      "position": 7.554430379746836
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/blog/grigor-dimitrov",
+      "query": "그리고르 디미트로프",
+      "clicks": 0,
+      "impressions": 292,
+      "ctr": 0,
+      "position": 10.01027397260274
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/paula-badosa",
+      "query": "폴라 바도사 기버트",
+      "clicks": 0,
+      "impressions": 244,
+      "ctr": 0,
+      "position": 9.610655737704919
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marie-bouzkova",
+      "query": "마리 부즈코바",
+      "clicks": 0,
+      "impressions": 214,
+      "ctr": 0,
+      "position": 9.514018691588785
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/martin-landaluce",
+      "query": "란달루세",
+      "clicks": 2,
+      "impressions": 175,
+      "ctr": 0.011428571428571429,
+      "position": 10.76
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/yannick-hanfmann",
+      "query": "야닉 한프만",
+      "clicks": 0,
+      "impressions": 162,
+      "ctr": 0,
+      "position": 10.061728395061728
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/nuno-borges",
+      "query": "누누 보르즈스",
+      "clicks": 1,
+      "impressions": 159,
+      "ctr": 0.006289308176100629,
+      "position": 8.955974842767295
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/botic-van-de-zandschulp",
+      "query": "보틱 판더잔츠휠프",
+      "clicks": 0,
+      "impressions": 129,
+      "ctr": 0,
+      "position": 10.503875968992247
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/andrey-rublev",
+      "query": "안드레이 루블레프",
+      "clicks": 0,
+      "impressions": 113,
+      "ctr": 0,
+      "position": 11.176991150442477
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/karolina-muchova",
+      "query": "무초바",
+      "clicks": 0,
+      "impressions": 110,
+      "ctr": 0,
+      "position": 11.927272727272728
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/elise-mertens",
+      "query": "엘리제 메르텐스",
+      "clicks": 0,
+      "impressions": 91,
+      "ctr": 0,
+      "position": 11.153846153846153
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/dino-prizmic",
+      "query": "디노 프리즈미치",
+      "clicks": 0,
+      "impressions": 83,
+      "ctr": 0,
+      "position": 9.710843373493976
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/alexandra-eala",
+      "query": "이알라",
+      "clicks": 1,
+      "impressions": 68,
+      "ctr": 0.014705882352941176,
+      "position": 10.779411764705882
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/maya-joint",
+      "query": "마야 조인트",
+      "clicks": 0,
+      "impressions": 61,
+      "ctr": 0,
+      "position": 9.524590163934427
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexander-shevchenko",
+      "query": "알렉산드르 솁첸코",
+      "clicks": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "position": 8.363636363636363
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/marta-kostyuk",
+      "query": "코스튜크",
+      "clicks": 0,
+      "impressions": 50,
+      "ctr": 0,
+      "position": 10.64
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/giovanni-mpetshi-perricard",
+      "query": "지오바니 음페치 페리카르",
+      "clicks": 0,
+      "impressions": 49,
+      "ctr": 0,
+      "position": 9.244897959183673
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/utility/ntrp-test",
+      "query": "ntrp 테스트",
+      "clicks": 30,
+      "impressions": 49,
+      "ctr": 0.6122448979591837,
+      "position": 1.489795918367347
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/new-car-release-schedule-2026-second-half",
+      "query": "2026년 신차 출시 일정",
+      "clicks": 1,
+      "impressions": 47,
+      "ctr": 0.02127659574468085,
+      "position": 6.914893617021277
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/hugo-gaston",
+      "query": "위고 가스통",
+      "clicks": 0,
+      "impressions": 46,
+      "ctr": 0,
+      "position": 6.108695652173913
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/alejandro-tabilo",
+      "query": "알레한드로 타빌로",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 10.488888888888889
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/karolina-pliskova",
+      "query": "카롤리나 플리스코바",
+      "clicks": 0,
+      "impressions": 42,
+      "ctr": 0,
+      "position": 10.214285714285714
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/alexander-blockx",
+      "query": "알렉산더 블록 스",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 10.307692307692308
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/anhelina-kalinina",
+      "query": "안헬리나 칼리니나",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 7.861111111111111
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/sara-errani",
+      "query": "사라 에라니",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 10.705882352941176
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/yannick-hanfmann#play-style",
+      "query": "야닉 한프만",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 10.121212121212121
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/yannick-hanfmann#why-notable",
+      "query": "야닉 한프만",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 10.121212121212121
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/arthur-landercknech",
+      "query": "랭데르크네슈",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 9.21875
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/lleyton-hewitt",
+      "query": "레이튼 휴이트",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 7.354838709677419
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/jannik-sinner",
+      "query": "야닉 시너",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 31.387096774193548
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/mackenzie-mcdonald",
+      "query": "맥켄지 맥도날드",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 11.464285714285714
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/35-15-1772805659284-37g4",
+      "query": "썬팅 농도 35 15",
+      "clicks": 1,
+      "impressions": 28,
+      "ctr": 0.03571428571428571,
+      "position": 7.428571428571429
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/",
+      "query": "테니스프렌즈",
+      "clicks": 5,
+      "impressions": 28,
+      "ctr": 0.17857142857142858,
+      "position": 2.142857142857143
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/blog/tennis-ntrp-25-to-30-guide",
+      "query": "ntrp 2.5",
+      "clicks": 1,
+      "impressions": 26,
+      "ctr": 0.038461538461538464,
+      "position": 9.23076923076923
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/utility/reaction-test",
+      "query": "반응속도 테스트",
+      "clicks": 1,
+      "impressions": 26,
+      "ctr": 0.038461538461538464,
+      "position": 24.884615384615383
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/%EC%A0%90%ED%99%94%ED%94%8C%EB%9F%AC%EA%B7%B8-%EC%9D%B4%EA%B7%B8%EB%8B%88%EC%85%98%EC%BD%94%EC%9D%BC-%EA%B5%90%ED%99%98-%EC%8B%9C%EA%B8%B0-%EB%B9%84%EC%9A%A9-2026",
+      "query": "점화플러그 교체비용",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 10.24
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/valentin-vacherot",
+      "query": "발랑탱 바케로",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 10.56
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/roberto-bautista-agut",
+      "query": "로베르토 바우티스타 아굿",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 11.48
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/katerina-siniakova",
+      "query": "카테리나 시니아코바",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 10.541666666666666
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/giovanni-mpetshi-perricard",
+      "query": "페리카르",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 7.391304347826087
+    },
+    {
+      "siteId": "cartain-2",
+      "siteName": "cartain.kr",
+      "page": "https://cartain.kr/magazine/%ED%8F%AC%EB%A5%B4%EC%89%90-%EC%B9%B4%EC%9D%B4%EC%97%94-%EC%9B%94-%EC%9C%A0%EC%A7%80%EB%B9%84-2026",
+      "query": "카이엔 유지비",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 6.954545454545454
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/laslo-djere",
+      "query": "라슬로 제레",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 7.136363636363637
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/magda-linette",
+      "query": "마그다 리네트",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/ethan-quinn",
+      "query": "에단 퀸",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/yulia-putintseva",
+      "query": "율리아 푸틴체바",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 10.333333333333334
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://tennisfrens.com/players/paula-badosa",
+      "query": "바도사",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 10.476190476190476
+    },
+    {
+      "siteId": "tennisfrens",
+      "siteName": "tennisfrens.com",
+      "page": "https://www.tennisfrens.com/players/tallon-griekspoor",
+      "query": "탈론 그리에크스푸르",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 8.55
+    }
+  ]
+}

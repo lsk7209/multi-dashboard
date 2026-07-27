@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-07-27T13:12:00.421Z",
+  "dateRange": {
+    "startDate": "2026-06-28",
+    "endDate": "2026-07-26"
+  },
+  "targets": [
+    "gong365"
+  ],
+  "productionMutationPerformed": false,
+  "opportunities": [
+    {
+      "siteId": "gong365",
+      "siteName": "gong365.kr",
+      "page": "https://gong365.kr/regions/jeonnam",
+      "query": "전남 2026 기업 지원사업 공고",
+      "clicks": 0,
+      "impressions": 68,
+      "ctr": 0,
+      "position": 7.926470588235294
+    },
+    {
+      "siteId": "gong365",
+      "siteName": "gong365.kr",
+      "page": "https://gong365.kr/regions/chungbuk",
+      "query": "충남 충북 2026 기업 지원사업 공고",
+      "clicks": 0,
+      "impressions": 46,
+      "ctr": 0,
+      "position": 9.021739130434783
+    },
+    {
+      "siteId": "gong365",
+      "siteName": "gong365.kr",
+      "page": "https://gong365.kr/programs/tech-support-recruit-program-2026-ict-2026-pbln-000000000123682",
+      "query": "2026 사이버보안 정보보호 지원사업 공고",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 7.5
+    }
+  ]
+}

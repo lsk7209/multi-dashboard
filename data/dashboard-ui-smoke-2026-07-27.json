@@ -1,6 +1,6 @@
 {
   "url": "http://127.0.0.1:3000/",
-  "generatedAt": "2026-07-27T12:40:42.252Z",
+  "generatedAt": "2026-07-27T13:07:27.938Z",
   "siteCount": 103,
   "blockingSources": [],
   "maintenanceSources": [],
@@ -24,7 +24,7 @@
     {
       "key": "dashboardArtifacts",
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-27T12:40:42.252Z."
+      "detail": "Read dashboard artifact snapshot=2026-07-27T13:07:27.938Z."
     },
     {
       "key": "ga4",
@@ -44,7 +44,7 @@
     "collector-availability-visible",
     "readable-rendered-text"
   ],
-  "artifactGeneratedAt": "2026-07-27T12:51:07.630Z",
+  "artifactGeneratedAt": "2026-07-27T13:11:09.543Z",
   "date": "2026-07-27",
   "productionMutationPerformed": false,
   "cmsMutationPerformed": false,
