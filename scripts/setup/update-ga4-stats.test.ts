@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { buildFailedSiteStat, findAdsenseSignal } from "./update-ga4-stats.js";
+import {
+  buildFailedSiteStat,
+  findAdsenseSignal,
+  resolveEditorialAdsenseHold,
+} from "./update-ga4-stats.js";
 
 describe("buildFailedSiteStat", () => {
   it("preserves completed service telemetry when only the content phase times out", () => {
@@ -53,5 +57,17 @@ describe("findAdsenseSignal", () => {
         '<script id="adsense-loader" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3050601904412736"></script>',
       ),
     ).toBe("pagead2");
+  });
+});
+
+describe("resolveEditorialAdsenseHold", () => {
+  it("keeps a documented editorial hold out of the generic missing-loader lane", () => {
+    expect(
+      resolveEditorialAdsenseHold({ adsenseMonitoring: "editorial_hold" }),
+    ).toMatchObject({
+      adsenseStatus: "editorial_hold",
+      adsenseInstallStatus: "not_detected",
+      adsenseCollectorStatus: "ok",
+    });
   });
 });

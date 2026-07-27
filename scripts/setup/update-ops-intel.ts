@@ -478,7 +478,18 @@ function collectDashboardFindings(
     if (site.gscStatus && site.gscStatus !== "ok") {
       findings.push(dashboardFinding("gsc", "high", siteId, siteName, site.gscStatus, site.gscError));
     }
-    if (
+    if (site.adsenseStatus === "editorial_hold") {
+      findings.push(
+        dashboardFinding(
+          "adsense",
+          "low",
+          siteId,
+          siteName,
+          site.adsenseStatus,
+          site.adsenseError,
+        ),
+      );
+    } else if (
       site.adsenseStatus &&
       !["ok", "disabled"].includes(site.adsenseStatus) &&
       site.adsenseCollectorStatus !== "transient_error"
@@ -599,6 +610,9 @@ function recommendDashboardAction(kind: FindingKind, status: string, detail?: st
     return "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence.";
   }
   if (kind === "adsense") {
+    if (status === "editorial_hold") {
+      return "Keep AdSense and indexing paused; record a named-editor approval in the source release gate before any publication change.";
+    }
     return `Verify AdSense code, ads.txt, approval scope, and collector evidence for status ${status}.`;
   }
   if (status === "collection_timeout") {
