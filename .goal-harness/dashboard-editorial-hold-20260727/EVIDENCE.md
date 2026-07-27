@@ -10,3 +10,4 @@
 - `pnpm fleet:optimize -- --date=2026-07-27 --skip-stats-update --skip-api-data-audit`: PASS, snapshot `2026-07-27T12:40:42.252Z`, 4/4 commands passed.
 - `pnpm dashboard:smoke`: PASS, 103 sites, current chain, ready verdict, 8 checks.
 - `pnpm dashboard:ui-smoke` against a temporary local production server: PASS, 103 sites, 10 checks. The server was stopped after the test.
+- Deployment: commits `91575af` (SSH1 source maps) and `d93804d` (classification and artifacts) are on `main`. Git-connected Vercel production deployment `dpl_3HYYVTgufTNSgdNPgZrS14MfwTRe` is `Ready`; `https://multi-dashboard-one.vercel.app` returned HTTP 200 with the current snapshot marker and 103-site content.

@@ -6,7 +6,7 @@ Classify an intentional `editorial_hold` as a non-collector status so a fresh da
 
 ## Non-Goals
 
-- No CMS, GSC, AdSense, publishing, or deployment mutation.
+- No CMS, GSC, AdSense, or publishing mutation. The user-authorized dashboard Git deployment is allowed.
 - Do not remove or bypass the `caregos` editorial hold.
 
 ## Done Conditions

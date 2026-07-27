@@ -7,7 +7,8 @@
 - Repair: the strict dashboard chain exposed a classification defect: intentional `adsenseStatus=editorial_hold` was counted as a refresh failure even though it is not a collector outage. `scripts/setup/create-fleet-optimization-plan.ts` now treats that status as a non-failure only for the AdSense editorial field; GSC and collector `editorial_hold` values remain failures. Focused regression tests cover both the allowed hold and the negative cases.
 - Validation: focused Vitest 7/7, `pnpm type-check`, `pnpm lint`, `pnpm build`, strict fleet chain (4/4 commands), runtime smoke (103 sites, 8 checks), and rendered UI smoke (103 sites, 10 checks) all passed. The chain is local/read-only and reports no CMS, Search Console, AdSense, title/body, or publishing mutation.
 - Side effects and rollback: only dashboard configuration, generated snapshot/ops/chain artifacts, the classifier test/implementation, and task evidence changed in the isolated clone. Roll back after deployment by reverting the single scoped commit. `picturebooks` was not added, changed, or monetized.
-- Next concrete step: inspect the scoped diff, commit only these files, push `main`, then verify the Git-connected Vercel production deployment and public alias.
+- Deployment complete: source-map commit `91575af` and classification/artifact commit `d93804d` are on `main`. Git-connected Vercel production deployment `dpl_3HYYVTgufTNSgdNPgZrS14MfwTRe` is `Ready`; the production alias `https://multi-dashboard-one.vercel.app` returned HTTP 200 with snapshot `2026-07-27T12:40:42.252Z` and 103-site content.
+- Next concrete step: do not change the restored SSH1 paths or the editorial hold without new evidence; resume only from a newly refreshed dashboard snapshot.
 
 ## 2026-07-15 AdSense Proof Freshness Repair
 
