@@ -109,6 +109,7 @@
     "adsense:queue": "tsx scripts/setup/create-adsense-remediation-queue.ts",
     "gsc:permissions:audit": "tsx scripts/setup/audit-gsc-permissions.ts",
     "gsc:sitemaps:verify": "tsx scripts/setup/verify-gsc-sitemaps.ts",
+    "gsc:sitemap:submit": "tsx scripts/setup/submit-gsc-sitemap.ts",
     "diag": "tsx scripts/setup/diagnose-ops.ts",
     "traffic-keywords:validate": "tsx scripts/setup/validate-traffic-keywords.ts",
     "index-presence:update": "tsx scripts/setup/update-index-presence.ts",

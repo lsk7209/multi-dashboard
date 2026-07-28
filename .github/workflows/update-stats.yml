@@ -45,6 +45,14 @@ jobs:
       - name: Import GA4 web streams
         run: pnpm setup:import-ga4-sites
 
+      - name: Keep Autopickgo sitemap green
+        run: >-
+          pnpm gsc:sitemap:submit --
+          --site-url=https://autopickgo.com/
+          --feedpath=https://autopickgo.com/sitemap.xml
+          --min-age-days=5
+          --poll-seconds=90
+
       - name: Refresh stale GSC sitemaps
         continue-on-error: true
         run: pnpm sitemaps:refresh-stale -- --min-age-days=5 --limit=50
