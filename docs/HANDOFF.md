@@ -1,13 +1,14 @@
 # Handoff
 
-## WordPress reader-sample collector repair staged (2026-07-29 KST)
+## WordPress reader-sample collector repair released (2026-07-29 KST)
 
 - User goal: keep fleet prioritization evidence-based while improving AdSense review readiness and reader-first site quality without making external AdSense or Google actions.
 - Current state: `scripts/setup/update-ga4-stats.ts` now scores WordPress `post-sitemap`/article sitemap entries above taxonomy and page sitemaps, and lowers archive routes such as `/blog-2/`. This prevents a reader-detail-only AdSense installation from being reported as absent merely because the homepage is intentionally ad-free.
 - Fresh evidence: after the change, canonical isolated-clone `pnpm stats:update` completed for 103 sites at `2026-07-29T03:03:00.728Z`: GA4, GSC, sitemap, AdSense, and ads.txt failures are all zero, including zero `missing_config` rows. `nicewomen` now has `sample_page` evidence on an individual post with `pagead2` detected; its public homepage remains intentionally loader-free.
 - Validation: focused Vitest 7/7, TypeScript `--noEmit`, ESLint for the changed source/test, direct live sampler probe for `nicewomen`, and `git diff --check` pass. Generated daily history and snapshot are included so the dashboard state matches the code.
-- Side effects and rollback: no site, CMS, Search Console, AdSense-console, or publishing action occurred. The pending dashboard-only change can be rolled back by reverting its one commit after release.
-- Single next step: run the production build, commit the collector/test/snapshot/handoff as one coherent change, push `main`, and verify the Git-connected Vercel deployment.
+- Release evidence: coherent commit `fa7bca3` is pushed to `origin/main`. Git-connected Vercel production deployment `dpl_F2HBcNZmw5yc2C8Y2yutUb2QGY43` (`multi-dashboard-8veklinr9-limsubs-projects.vercel.app`) is Ready. The production alias `https://multi-dashboard-one.vercel.app` returns HTTP 200 and contains the refreshed snapshot marker `2026-07-29T03:03:00.728Z`.
+- Side effects and rollback: no site, CMS, Search Console, AdSense-console, or publishing action occurred. Roll back by reverting `fa7bca3` and using the same Git-connected Vercel flow.
+- Single next step: use the refreshed dashboard evidence to choose the next non-colliding site/content review; do not reopen released reader-detail-only AdSense repairs solely because their homepage is loader-free.
 
 ## Dashboard priority refresh and evidence triage complete (2026-07-27 KST)
 
