@@ -1776,3 +1776,12 @@ sites:
     ga4PropertyId: "547033336"
     gscSiteUrl: https://shotsetup.com/
     monetization: true
+  - id: mohana
+    name: mohana.kr
+    enabled: true
+    platform: wordpress
+    url: https://mohana.kr/
+    wpRestBase: https://mohana.kr/wp-json/wp/v2
+    ga4PropertyId: "547512172"
+    gscSiteUrl: https://mohana.kr/
+    monetization: true
