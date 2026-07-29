@@ -1752,7 +1752,7 @@ export async function discoverSampleContentUrl(
   const siteHost = normalizeSiteHost(site.url);
   const pending = [...sitemapUrls];
   const visited = new Set<string>();
-  const candidates = new Set<string>();
+  const candidates = new Map<string, number>();
 
   while (
     pending.length > 0 &&
@@ -1790,7 +1790,14 @@ export async function discoverSampleContentUrl(
           !normalized.endsWith("/contact") &&
           !normalized.endsWith("/terms")
         ) {
-          candidates.add(url);
+          const currentScore = candidates.get(url) ?? Number.NEGATIVE_INFINITY;
+          candidates.set(
+            url,
+            Math.max(
+              currentScore,
+              sitemapReaderContentScore(sitemapUrl) + sampleContentScore(url),
+            ),
+          );
         }
       }
 
@@ -1808,8 +1815,8 @@ export async function discoverSampleContentUrl(
     }
   }
 
-  return [...candidates]
-    .sort((left, right) => sampleContentScore(right) - sampleContentScore(left))[0];
+  return [...candidates.entries()]
+    .sort(([, leftScore], [, rightScore]) => rightScore - leftScore)[0]?.[0];
 }
 
 function normalizeUrlForComparison(url: string): string {
@@ -1853,7 +1860,21 @@ function sampleContentScore(url: string): number {
   const editorialRouteBonus = /\/(?:articles?|posts?|blog)\//.test(pathname)
     ? 100
     : 0;
-  return editorialRouteBonus + segments;
+  const archivePenalty = /\/(?:blog|posts?|articles?)(?:-\d+)?\/?$/.test(pathname)
+    ? -100
+    : 0;
+  return editorialRouteBonus + segments + archivePenalty;
+}
+
+function sitemapReaderContentScore(sitemapUrl: string): number {
+  const pathname = new URL(sitemapUrl).pathname.toLowerCase();
+  if (/(?:post|article|blog)-sitemap/.test(pathname)) {
+    return 1_000;
+  }
+  if (/(?:category|tag|author|page)-sitemap/.test(pathname)) {
+    return -1_000;
+  }
+  return 0;
 }
 
 async function collectAdsenseCodeStatus(

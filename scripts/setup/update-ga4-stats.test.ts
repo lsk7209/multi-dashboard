@@ -118,6 +118,36 @@ describe("discoverSampleContentUrl", () => {
       } as Parameters<typeof discoverSampleContentUrl>[0]),
     ).resolves.toBe("https://example.com/blog/useful-guide");
   });
+
+  it("prefers a WordPress post sitemap article over category and archive URLs", async () => {
+    globalThis.fetch = vi.fn(async (input: string | URL) => {
+      const url = String(input);
+      if (url.endsWith("/sitemap_index.xml")) {
+        return new Response(
+          "<sitemapindex><sitemap><loc>https://example.com/post-sitemap1.xml</loc></sitemap><sitemap><loc>https://example.com/category-sitemap.xml</loc></sitemap></sitemapindex>",
+          { status: 200 },
+        );
+      }
+      if (url.endsWith("/post-sitemap1.xml")) {
+        return new Response(
+          "<urlset><url><loc>https://example.com/blog-2/</loc></url><url><loc>https://example.com/reader-specific-guide/</loc></url></urlset>",
+          { status: 200 },
+        );
+      }
+      return new Response(
+        "<urlset><url><loc>https://example.com/category/health-wellbeing/</loc></url></urlset>",
+        { status: 200 },
+      );
+    }) as typeof fetch;
+
+    await expect(
+      discoverSampleContentUrl({
+        id: "example",
+        url: "https://example.com/",
+        sitemapUrls: ["https://example.com/sitemap_index.xml"],
+      } as Parameters<typeof discoverSampleContentUrl>[0]),
+    ).resolves.toBe("https://example.com/reader-specific-guide/");
+  });
 });
 
 describe("resolveEditorialAdsenseHold", () => {
