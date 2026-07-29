@@ -1740,15 +1740,34 @@ function getPreviousAdsTxtLastKnownGood(
   );
 }
 
-async function discoverSampleContentUrl(
+const MAX_SITEMAP_DISCOVERY_DOCUMENTS = 5;
+
+export async function discoverSampleContentUrl(
   site: Site,
 ): Promise<string | undefined> {
   const sitemapUrls = site.sitemapUrls?.length
     ? site.sitemapUrls
     : [new URL("/sitemap.xml", site.url).toString()];
   const home = normalizeUrlForComparison(site.url);
+  const siteHost = normalizeSiteHost(site.url);
+  const pending = [...sitemapUrls];
+  const visited = new Set<string>();
+  const candidates = new Set<string>();
 
-  for (const sitemapUrl of sitemapUrls) {
+  while (
+    pending.length > 0 &&
+    visited.size < MAX_SITEMAP_DISCOVERY_DOCUMENTS
+  ) {
+    const sitemapUrl = pending.shift();
+    if (!sitemapUrl) {
+      continue;
+    }
+    const normalizedSitemapUrl = normalizeUrlForComparison(sitemapUrl);
+    if (visited.has(normalizedSitemapUrl)) {
+      continue;
+    }
+    visited.add(normalizedSitemapUrl);
+
     try {
       const response = await fetch(sitemapUrl, {
         signal: AbortSignal.timeout(8000),
@@ -1761,31 +1780,80 @@ async function discoverSampleContentUrl(
       const urls = Array.from(xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/gi))
         .map((match) => match[1]?.trim())
         .filter((value): value is string => Boolean(value));
-      const sampleUrl = urls.find((url) => {
+      for (const url of urls) {
         const normalized = normalizeUrlForComparison(url);
-        return (
-          normalized !== home &&
-          !normalized.endsWith(".xml") &&
-          !normalized.includes("/sitemap") &&
+        if (
+          isSameSiteUrl(url, siteHost) &&
+          isSampleContentUrl(normalized, home) &&
           !normalized.endsWith("/privacy") &&
           !normalized.endsWith("/privacy-policy") &&
           !normalized.endsWith("/contact") &&
           !normalized.endsWith("/terms")
-        );
-      });
-      if (sampleUrl) {
-        return sampleUrl;
+        ) {
+          candidates.add(url);
+        }
+      }
+
+      for (const url of urls) {
+        if (
+          isSameSiteUrl(url, siteHost) &&
+          isSitemapDocument(url) &&
+          !visited.has(normalizeUrlForComparison(url))
+        ) {
+          pending.push(url);
+        }
       }
     } catch {
       continue;
     }
   }
 
-  return undefined;
+  return [...candidates]
+    .sort((left, right) => sampleContentScore(right) - sampleContentScore(left))[0];
 }
 
 function normalizeUrlForComparison(url: string): string {
   return url.replace(/\/+$/, "").toLowerCase();
+}
+
+function normalizeSiteHost(url: string): string | undefined {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return undefined;
+  }
+}
+
+function isSameSiteUrl(url: string, siteHost: string | undefined): boolean {
+  try {
+    return (
+      siteHost !== undefined &&
+      new URL(url).hostname.replace(/^www\./, "").toLowerCase() === siteHost
+    );
+  } catch {
+    return false;
+  }
+}
+
+function isSitemapDocument(url: string): boolean {
+  const normalized = normalizeUrlForComparison(url);
+  return normalized.endsWith(".xml") || normalized.includes("/sitemap");
+}
+
+function isSampleContentUrl(normalizedUrl: string, home: string): boolean {
+  return (
+    normalizedUrl !== home &&
+    !isSitemapDocument(normalizedUrl)
+  );
+}
+
+function sampleContentScore(url: string): number {
+  const pathname = new URL(url).pathname.toLowerCase();
+  const segments = pathname.split("/").filter(Boolean).length;
+  const editorialRouteBonus = /\/(?:articles?|posts?|blog)\//.test(pathname)
+    ? 100
+    : 0;
+  return editorialRouteBonus + segments;
 }
 
 async function collectAdsenseCodeStatus(
