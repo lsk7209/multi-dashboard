@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T10:58:31.592Z",
-  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-30T10:58:20.646Z",
+  "generatedAt": "2026-07-30T12:29:03.766Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-30T12:28:53.528Z",
   "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
   "productionMutationPerformed": false,
   "adsenseConsoleChecked": false,
@@ -26,51 +26,15 @@
   "summary": {
     "totalRows": 104,
     "reviewedRows": 89,
-    "adsenseOkRows": 86,
-    "problemRows": 3,
-    "ordinaryAdsenseProof": 3,
+    "adsenseOkRows": 88,
+    "problemRows": 1,
+    "ordinaryAdsenseProof": 1,
     "approvedRootSubdomainScope": 0,
     "gscAuthTelemetry": 0,
     "ga4ConfigTelemetry": 0
   },
   "lanes": {
     "ordinary_adsense_proof": [
-      {
-        "siteId": "nongsusangogo",
-        "host": "nongsusangogo.kr",
-        "name": "https://nongsusangogo.kr",
-        "lane": "ordinary_adsense_proof",
-        "priority": 999848,
-        "requiredEvidence": [
-          "Homepage/sample page contains AdSense loader evidence.",
-          "ads.txt validates the configured publisher id."
-        ],
-        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
-        "notes": [
-          "adsenseStatus=missing_config",
-          "adsenseCollectorStatus=ok",
-          "adsTxtStatus=ok",
-          "adsTxtCollectorStatus=ok"
-        ]
-      },
-      {
-        "siteId": "caregos",
-        "host": "caregos.com",
-        "name": "caregos.com",
-        "lane": "ordinary_adsense_proof",
-        "priority": 999912,
-        "requiredEvidence": [
-          "Homepage/sample page contains AdSense loader evidence.",
-          "ads.txt validates the configured publisher id."
-        ],
-        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
-        "notes": [
-          "adsenseStatus=editorial_hold",
-          "adsenseCollectorStatus=ok",
-          "adsTxtStatus=ok",
-          "adsTxtCollectorStatus=ok"
-        ]
-      },
       {
         "siteId": "mohana",
         "host": "mohana.kr",

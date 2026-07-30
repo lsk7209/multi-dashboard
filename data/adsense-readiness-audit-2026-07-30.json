@@ -1,0 +1,1380 @@
+{
+  "generatedAt": "2026-07-30T12:29:25.646Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-07-30T12:28:53.528Z",
+  "targetCount": 4,
+  "summary": {
+    "ready": 0,
+    "review": 3,
+    "needs_patch": 1,
+    "blocked": 0
+  },
+  "sites": [
+    {
+      "id": "chatgipt-3",
+      "name": "chatgipt.kr",
+      "platform": "wordpress",
+      "url": "https://chatgipt.kr/",
+      "gscSiteUrl": "https://chatgipt.kr/",
+      "verdict": "review",
+      "score": 84,
+      "pages": [
+        {
+          "url": "https://chatgipt.kr/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "챗직피티 | AI·개발·클라우드 실무 콘텐츠"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "ChatGPT, 생성형 AI, 웹 개발, 클라우드 운영과 자동화 도구를 실무 기준으로 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://chatgipt.kr/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=4"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "32 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 850,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 4,
+          "internalLinkCount": 32,
+          "externalLinkCount": 0,
+          "h2Signature": "주요 콘텐츠 분야 | 최근 업데이트 | 콘텐츠 검토 기준 | 사이트 운영 정보 | chatgpt와 ai 도구를 실무에 적용하는 기준 | ai 글쓰기와 콘텐츠 제작 순서 | 개발 자동화와 코딩 ai 활용 | ai 도구 선택 체크리스트 | 최신 정보와 공식 문서 확인"
+        },
+        {
+          "url": "https://chatgipt.kr/llm-batch-api-cost-2/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "배치 API로 LLM 대량 작업 비용을 절감하는 법"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "배치 API가 LLM 대량 작업 비용을 낮추는 원리(비실시간 할인)와 적합 작업, 동기 호출 대비 지연 트레이드오프, 작업 분할·재시도·결과 수집 설계, 모니터링을 표와 체크리스트로 정리했습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://chatgipt.kr/llm-batch-api-cost-2/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=8, H3=5"
+          },
+          "imageAlt": {
+            "state": "warn",
+            "detail": "1/1 images missing alt"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC marker found"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "24 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/llm-batch-api-cost-2/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 1726,
+          "h1Count": 1,
+          "h2Count": 8,
+          "h3Count": 5,
+          "internalLinkCount": 24,
+          "externalLinkCount": 0,
+          "h2Signature": "배치 처리가 비용을 낮추는 원리 | 어떤 작업에 적합한가 | 동기 호출 대비 트레이드오프 | 배치 작업 설계 | 비용 추정과 모니터링 | 실무 적용 체크리스트 | 자주 묻는 질문 | related posts"
+        },
+        {
+          "url": "https://chatgipt.kr/services/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "콘텐츠 분야 | AI·개발·SEO"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "챗직피티가 다루는 AI, 개발, 클라우드, SEO, 애드센스 콘텐츠 분야를 정리했습니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://chatgipt.kr/services/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "18 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/services/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 868,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 0,
+          "internalLinkCount": 18,
+          "externalLinkCount": 0,
+          "h2Signature": "이 사이트에서 기대할 수 있는 내용 | 콘텐츠 분야별 ai 활용 안내 | 마케팅과 업무 자동화 분야 | 개발과 디자인 분야 | 콘텐츠 품질과 승인 검토 기준 | 처음 적용할 때의 순서 | 분야별 품질 검수 기준 | 사이트 운영자가 준비할 문서 | 서비스 페이지에서 이어지는 탐색 흐름"
+        },
+        {
+          "url": "https://chatgipt.kr/blog-2/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "AI·개발 실무 블로그 | 챗직피티"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "ChatGPT, AI 자동화, 웹 개발, 클라우드 운영 글을 최신순으로 모아 보는 챗직피티 블로그입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://chatgipt.kr/blog-2/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=10, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "39 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/blog-2/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 1120,
+          "h1Count": 1,
+          "h2Count": 10,
+          "h3Count": 0,
+          "internalLinkCount": 39,
+          "externalLinkCount": 0,
+          "h2Signature": "배치 api로 llm 대량 작업 비용을 절감하는 법 | 배치 api로 llm 대량 작업 비용을 절감하는 법 | llm 환각을 줄이는 그라운딩과 인용 설계 | llm 환각을 줄이는 그라운딩과 인용 설계 | llm에서 구조화된 json 출력을 안정적으로 받는 법 | llm에서 구조화된 json 출력을 안정적으로 받는 법 | 프롬프트 캐싱으로 llm api 비용 줄이기 — 동작 원리와 적용 기준 | 프롬프트 캐싱으로 llm api 비용 줄이기 — 동작 원리와 적용 기준 | 페이지별 체류 시간, 페이지별 성과를 개선 과제로 바꾸는 방법 | gsc 국가별 유입, 보고서 숫자가 흔들릴 때 확인할 조건"
+        },
+        {
+          "url": "https://chatgipt.kr/llm-hallucination-grounding-2/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "LLM 환각을 줄이는 그라운딩과 인용 설계"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "LLM 환각이 생기는 메커니즘과 이를 줄이는 그라운딩·인용 강제·근거 없는 답변 거부 설계를 정리했습니다. self-check와 인용 검증, 평가 방법, 한계를 표와 체크리스트, 예제로 다룹니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://chatgipt.kr/llm-hallucination-grounding-2/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=5"
+          },
+          "imageAlt": {
+            "state": "warn",
+            "detail": "1/1 images missing alt"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC marker found"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "25 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/llm-hallucination-grounding-2/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 1684,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 5,
+          "internalLinkCount": 25,
+          "externalLinkCount": 0,
+          "h2Signature": "환각은 왜 생기는가 | 그라운딩 — 답할 근거를 직접 준다 | 인용을 강제한다 | 근거 없는 답변을 거부하게 한다 | 답변 후 검증 단계 | 얼마나 줄었는지 평가하기 | 한계 — 환각은 0이 되지 않는다 | 자주 묻는 질문 | related posts"
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://chatgipt.kr/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://chatgipt.kr/sitemap.xml lastDownloaded=2026-06-08T00:15:51.866Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 27 internal post-like links"
+      },
+      "contentQuality": {
+        "state": "warn",
+        "detail": "only 3 article samples; low-value risk needs manual review"
+      },
+      "issues": [],
+      "nextActions": [
+        "Fix low-value content signals: reduce repeated templates, expand priority articles, add credible sources, and improve hub pages.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "shotsetup",
+      "name": "shotsetup.com",
+      "platform": "wordpress",
+      "url": "https://shotsetup.com/",
+      "gscSiteUrl": "https://shotsetup.com/",
+      "verdict": "review",
+      "score": 89,
+      "pages": [
+        {
+          "url": "https://shotsetup.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "촬영 장비 셋업 가이드 | SHOT SETUP"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "촬영 장비 셋업을 시작하기 전, 공간·카메라·조명·오디오·저장 흐름을 차례로 정리하는 크리에이터 가이드입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://shotsetup.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=4, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "13 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 248,
+          "h1Count": 1,
+          "h2Count": 4,
+          "h3Count": 0,
+          "internalLinkCount": 13,
+          "externalLinkCount": 1,
+          "h2Signature": "구매 전에 먼저 정할 세 가지 | 다루는 범위 | 추천보다 먼저 공개하는 기준 | 최신 글"
+        },
+        {
+          "url": "https://shotsetup.com/small-room-solo-shooting-layout/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "작은 방 1인 촬영 셋업은 장비보다 동선부터 정한다 &#8211; SHOT SETUP"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "작은 방 1인 촬영 셋업은 장비보다 동선부터 정한다: 촬영 장비 셋업 기준과 확인 순서를 SHOT SETUP이 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://shotsetup.com/small-room-solo-shooting-layout/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "22 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "7 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/small-room-solo-shooting-layout/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 1323,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 0,
+          "internalLinkCount": 22,
+          "externalLinkCount": 7,
+          "h2Signature": "작은 방 1인 촬영 셋업의 첫 결정은 카메라가 아니라 통로입니다 | 촬영 구역·조작 구역·보관 구역을 분리하면 준비가 짧아집니다 | 전원과 케이블은 촬영 구역 밖으로 보내야 합니다 | 촬영 배경은 꾸미기보다 개인정보와 재현 비용을 먼저 봅니다 | 소리와 빛은 장비를 더하기 전에 위치부터 확인합니다 | 촬영 전에 10~15초 테스트로 동선을 확인합니다 | 장비 구매 전에는 공간 메모 한 장을 남깁니다 | 다음 셋업 가이드 | 최신 글"
+        },
+        {
+          "url": "https://shotsetup.com/mirrorless-webcam-smartphone-solo-creator/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "미러리스와 웹캠과 스마트폰 사이에서 1인 촬영 장비를 고르는 기준 &#8211; SHOT SETUP"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "미러리스와 웹캠과 스마트폰 사이에서 1인 촬영 장비를 고르는 기준: 촬영 장비 셋업 기준과 확인 순서를 SHOT SETUP이 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://shotsetup.com/mirrorless-webcam-smartphone-solo-creator/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=10, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "23 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "7 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/mirrorless-webcam-smartphone-solo-creator/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 1453,
+          "h1Count": 1,
+          "h2Count": 10,
+          "h3Count": 0,
+          "internalLinkCount": 23,
+          "externalLinkCount": 7,
+          "h2Signature": "1인 촬영 장비는 다음 촬영일에 반복할 행동부터 적습니다 | 미러리스는 촬영 모드와 usb 전환을 감당할 때 후보가 됩니다 | 웹캠은 책상 고정과 앱 입력을 반복할 때 후보가 됩니다 | 스마트폰은 단독 녹화와 컴퓨터 카메라 사용을 나눠 봅니다 | 미러리스·웹캠·스마트폰 준비 부담 매트릭스로 비교합니다 | 파일 녹화와 컴퓨터 입력은 1인 촬영 장비의 다른 요구입니다 | 1인 촬영 장비 선택은 반복 병목을 따라 좁힙니다 | 다음 촬영일에는 1인 촬영 장비의 준비 기록 한 줄을 남깁니다 | 다음 셋업 가이드 | 최신 글"
+        },
+        {
+          "url": "https://shotsetup.com/first-video-light-checklist/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "촬영용 조명 첫 선택에서 밝기보다 먼저 확인할 다섯 가지 &#8211; SHOT SETUP"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "촬영용 조명 첫 선택에서 밝기보다 먼저 확인할 다섯 가지: 촬영 장비 셋업 기준과 확인 순서를 SHOT SETUP이 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://shotsetup.com/first-video-light-checklist/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "21 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "9 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/first-video-light-checklist/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 1368,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 0,
+          "internalLinkCount": 21,
+          "externalLinkCount": 9,
+          "h2Signature": "촬영용 조명 첫 선택은 화면 범위와 거리부터 적습니다 | led 조명 거리 확산은 본체와 확산기를 함께 봅니다 | 촬영용 조명 전원은 콘센트가 아니라 동선과 환기까지 봅니다 | 스탠드와 마운트는 붙는가보다 잠기고 버티는가를 봅니다 | 후보 모델 설명서에서 이 조명만의 조건을 마지막으로 확인합니다 | 촬영용 조명 첫 선택 전 다섯 칸을 채워 봅니다 | 첫 led 조명 구매 전에는 장바구니보다 체크리스트를 남깁니다 | 다음 셋업 가이드 | 최신 글"
+        },
+        {
+          "url": "https://shotsetup.com/camera-mic-port-power-distance/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "카메라와 마이크를 연결하기 전에 포트와 전원과 거리를 확인하는 법 &#8211; SHOT SETUP"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "카메라와 마이크를 연결하기 전에 포트와 전원과 거리를 확인하는 법: 촬영 장비 셋업 기준과 확인 순서를 SHOT SETUP이 정리합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://shotsetup.com/camera-mic-port-power-distance/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=10, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "warn",
+            "detail": "long article without TOC marker"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "21 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "9 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/camera-mic-port-power-distance/"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 1608,
+          "h1Count": 1,
+          "h2Count": 10,
+          "h3Count": 0,
+          "internalLinkCount": 21,
+          "externalLinkCount": 9,
+          "h2Signature": "먼저 증상을 성능 문제로 부르지 않습니다 | 정답은 카메라 본체의 입력 문서에서 시작합니다 | 케이블은 모양이 아니라 선언된 경로와 체결 상태를 봅니다 | 마이크의 작동 조건은 카메라 설정과 분리해 읽습니다 | 입력 종류와 표시를 한 번에 해결하려 하지 않습니다 | 화면의 반응 다음에는 짧은 녹음 파일을 남깁니다 | 파일에 남은 소리로 배치 재시험의 범위를 좁힙니다 | 마지막에는 한 줄 연결표만 남깁니다 | 다음 셋업 가이드 | 최신 글"
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://shotsetup.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://shotsetup.com/feed/ lastDownloaded=2026-07-28T21:10:06.768Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 39 internal post-like links"
+      },
+      "contentQuality": {
+        "state": "warn",
+        "detail": "only 4 article samples; low-value risk needs manual review"
+      },
+      "issues": [],
+      "nextActions": [
+        "Fix low-value content signals: reduce repeated templates, expand priority articles, add credible sources, and improve hub pages.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "gradienttrail",
+      "name": "gradienttrail.com",
+      "platform": "static",
+      "url": "https://gradienttrail.com/",
+      "gscSiteUrl": "https://gradienttrail.com/",
+      "verdict": "needs_patch",
+      "score": 90,
+      "pages": [
+        {
+          "url": "https://gradienttrail.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Gradient Trail | Gentle national park trail finder"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "Find gentle, family-friendly national park trails with DEM-based terrain scores, conservative access signals and transparent source attribution."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gradienttrail.com/"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=3"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "1 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "19 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 253,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 3,
+          "internalLinkCount": 19,
+          "externalLinkCount": 0,
+          "h2Signature": "plan by terrain, not vibes | built for adsense-ready trust first"
+        },
+        {
+          "url": "https://gradienttrail.com/us-trails/articles/acadia-carriage-road-gentle-hike",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Acadia Carriage Roads as Gentle Hiking Candidates | Gradient Trail"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "How to compare surface, grade, loops, bikes and scenic payoff on carriage-road walks."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gradienttrail.com/us-trails/articles/acadia-carriage-road-gentle-hike"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=20, H3=16"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC marker found"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "25 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "13 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/us-trails/articles/acadia-carriage-road-gentle-hike"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 2276,
+          "h1Count": 1,
+          "h2Count": 20,
+          "h3Count": 16,
+          "internalLinkCount": 25,
+          "externalLinkCount": 13,
+          "h2Signature": "acadia carriage roads as gentle hiking candidates planning verdict | start with the decision this acadia carriage road gentle hike is supposed to support | read carriage road grade before trusting the headline | watch the false shortcut: assuming broad roads are automatically low effort | use a comfortable walk with classic acadia texture as the reward test | make the final call with a conservative check | acadia carriage-road table: visual planning block | acadia carriage roads as gentle hiking candidates reader scenario test | acadia carriage-road table | acadia carriage roads as gentle hiking candidates quick questions | acadia carriage roads as gentle hiking candidates final fit scan | official park data checkpoints | research evidence used | editorial review note | how to use this guide on a real park day | planning resources and affiliate disclosure | route planning next step | where to go next on gradient trail | field takeaways | sources and verification notes"
+        },
+        {
+          "url": "https://gradienttrail.com/us-trails/trails",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Gentle Trail Finder | Gradient Trail"
+          },
+          "description": {
+            "state": "pass",
+            "detail": "Gentle Trail Finder helps compare national park routes by distance, gain, grade and conservative access signals."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gradienttrail.com/us-trails/trails"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=1, H3=7"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "18 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/us-trails/trails"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 261,
+          "h1Count": 1,
+          "h2Count": 1,
+          "h3Count": 7,
+          "internalLinkCount": 18,
+          "externalLinkCount": 0,
+          "h2Signature": "sample gentle trail records"
+        },
+        {
+          "url": "https://gradienttrail.com/us-trails/parks",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Park Hubs | Gradient Trail"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "National park hub pages organized for gentle walks, low-climb planning and official alert checks."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gradienttrail.com/us-trails/parks"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=1, H3=7"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "19 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/us-trails/parks"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 258,
+          "h1Count": 1,
+          "h2Count": 1,
+          "h3Count": 7,
+          "internalLinkCount": 19,
+          "externalLinkCount": 0,
+          "h2Signature": "gentle-walk planning hubs"
+        },
+        {
+          "url": "https://gradienttrail.com/us-trails/calculator",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "Hiking Time Calculator | Gradient Trail"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "Estimate hiking time for gentle national park routes using distance, elevation gain and conservative planning buffers."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://gradienttrail.com/us-trails/calculator"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=0, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "12 internal links"
+          },
+          "outlinks": {
+            "state": "warn",
+            "detail": "0 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/us-trails/calculator"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader not required outside configured reader samples"
+          },
+          "wordCount": 136,
+          "h1Count": 1,
+          "h2Count": 0,
+          "h3Count": 0,
+          "internalLinkCount": 12,
+          "externalLinkCount": 0,
+          "h2Signature": ""
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://gradienttrail.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://gradienttrail.com/sitemap.xml lastDownloaded=2026-07-27T21:58:39.523Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 274 internal post-like links"
+      },
+      "contentQuality": {
+        "state": "warn",
+        "detail": "only 4 article samples; low-value risk needs manual review"
+      },
+      "issues": [
+        "thin page: https://gradienttrail.com/us-trails/trails visible word tokens=261",
+        "thin page: https://gradienttrail.com/us-trails/parks visible word tokens=258",
+        "thin page: https://gradienttrail.com/us-trails/calculator visible word tokens=136"
+      ],
+      "nextActions": [
+        "Fix low-value content signals: reduce repeated templates, expand priority articles, add credible sources, and improve hub pages.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    },
+    {
+      "id": "wedfairguide",
+      "name": "wedfairguide.com",
+      "platform": "nextjs",
+      "url": "https://wedfairguide.com/",
+      "gscSiteUrl": "https://wedfairguide.com/",
+      "verdict": "review",
+      "score": 92,
+      "pages": [
+        {
+          "url": "https://wedfairguide.com/",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웨딩페어 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "결혼박람회 일정, 지역, 혜택 조건, 계약 전 확인사항을 함께 비교하는 정보성 허브입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://wedfairguide.com"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=3, H3=8"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "6 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "45 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "18 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 292,
+          "h1Count": 1,
+          "h2Count": 3,
+          "h3Count": 8,
+          "internalLinkCount": 45,
+          "externalLinkCount": 18,
+          "h2Signature": "곧 열리는 웨딩박람회 | 가까운 웨딩박람회 | 박람회 방문 전 확인할 것"
+        },
+        {
+          "url": "https://wedfairguide.com",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "웨딩페어 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "결혼박람회 일정, 지역, 혜택 조건, 계약 전 확인사항을 함께 비교하는 정보성 허브입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://wedfairguide.com"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=3, H3=8"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "6 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "45 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "18 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "home"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 292,
+          "h1Count": 1,
+          "h2Count": 3,
+          "h3Count": 8,
+          "internalLinkCount": 45,
+          "externalLinkCount": 18,
+          "h2Signature": "곧 열리는 웨딩박람회 | 가까운 웨딩박람회 | 박람회 방문 전 확인할 것"
+        },
+        {
+          "url": "https://wedfairguide.com/fairs",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "전국 웨딩박람회 모음 | 무료 상담 신청 | 웨딩페어 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "전국 웨딩박람회 103개를 지역과 일정별로 모아 비교합니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://wedfairguide.com/fairs"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=2, H3=107"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "103 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "135 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "313 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/fairs"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 2388,
+          "h1Count": 1,
+          "h2Count": 2,
+          "h3Count": 107,
+          "internalLinkCount": 135,
+          "externalLinkCount": 313,
+          "h2Signature": "현재 연결 가능한 웨딩박람회 | 전국 박람회 일정 모음"
+        },
+        {
+          "url": "https://wedfairguide.com/fairs/date/this-week",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "이번 주 결혼박람회 일정 | 웨딩페어 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "이번 주 방문 가능한 결혼박람회 일정과 방문 전 체크리스트입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://wedfairguide.com/fairs/date/this-week"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=8, H3=1"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "25 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "2 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/fairs/date/this-week"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 538,
+          "h1Count": 1,
+          "h2Count": 8,
+          "h3Count": 1,
+          "internalLinkCount": 25,
+          "externalLinkCount": 2,
+          "h2Signature": "정보 확인 기준 | 이번 주 박람회를 비교하는 방법 | 이번 주 방문 가능 시간을 먼저 고정하세요 | 상담할 항목을 세 가지 이내로 줄이세요 | 당일 혜택과 계약 조건을 분리해서 적으세요 | 방문 직후 비교표를 완성하세요 | 이번 주 방문 전 체크리스트 | 일정과 소비자 정보를 확인할 곳"
+        },
+        {
+          "url": "https://wedfairguide.com/fairs/date/this-month",
+          "status": 200,
+          "title": {
+            "state": "warn",
+            "detail": "이번 달 결혼박람회 일정 | 웨딩페어 가이드"
+          },
+          "description": {
+            "state": "warn",
+            "detail": "이번 달 방문 가능한 결혼박람회 일정과 방문 전 체크리스트입니다."
+          },
+          "canonical": {
+            "state": "pass",
+            "detail": "https://wedfairguide.com/fairs/date/this-month"
+          },
+          "headings": {
+            "state": "pass",
+            "detail": "H1=1, H2=9, H3=0"
+          },
+          "imageAlt": {
+            "state": "pass",
+            "detail": "0 images"
+          },
+          "viewport": {
+            "state": "pass",
+            "detail": "responsive viewport meta found"
+          },
+          "toc": {
+            "state": "pass",
+            "detail": "TOC not required for sampled page"
+          },
+          "cta": {
+            "state": "pass",
+            "detail": "CTA-like text found"
+          },
+          "inlinks": {
+            "state": "pass",
+            "detail": "25 internal links"
+          },
+          "outlinks": {
+            "state": "pass",
+            "detail": "1 external links"
+          },
+          "readableUrl": {
+            "state": "pass",
+            "detail": "/fairs/date/this-month"
+          },
+          "adsenseLoader": {
+            "state": "pass",
+            "detail": "loader with publisher id found"
+          },
+          "wordCount": 507,
+          "h1Count": 1,
+          "h2Count": 9,
+          "h3Count": 0,
+          "internalLinkCount": 25,
+          "externalLinkCount": 1,
+          "h2Signature": "정보 확인 기준 | 현재 표시할 일정이 없습니다 | 이번 달 박람회를 비교하는 방법 | 이번 달 후보를 목적별로 나누세요 | 같은 기준의 견적서를 요청하세요 | 계약 검토일을 방문 일정 사이에 넣으세요 | 최신 일정은 원출처에서 다시 확인하세요 | 이번 달 방문 전 체크리스트 | 일정과 소비자 정보를 확인할 곳"
+        }
+      ],
+      "robots": {
+        "state": "pass",
+        "detail": "robots.txt with sitemap"
+      },
+      "sitemap": {
+        "state": "pass",
+        "detail": "https://wedfairguide.com/sitemap.xml"
+      },
+      "gscSitemap": {
+        "state": "pass",
+        "detail": "https://wedfairguide.com/sitemap.xml lastDownloaded=2026-07-29T23:20:03.063Z"
+      },
+      "adsTxt": {
+        "state": "pass",
+        "detail": "publisher line found"
+      },
+      "trustPages": {
+        "state": "pass",
+        "detail": "about/contact/privacy/terms reachable"
+      },
+      "blogIndex": {
+        "state": "pass",
+        "detail": "/blog/ canonical found, 225 internal post-like links"
+      },
+      "contentQuality": {
+        "state": "warn",
+        "detail": "only 3 article samples; low-value risk needs manual review"
+      },
+      "issues": [
+        "thin page: https://wedfairguide.com/fairs/date/this-week visible word tokens=538",
+        "thin page: https://wedfairguide.com/fairs/date/this-month visible word tokens=507"
+      ],
+      "nextActions": [
+        "Fix low-value content signals: reduce repeated templates, expand priority articles, add credible sources, and improve hub pages.",
+        "Patch technical SEO templates for meta, canonical, headings, and alt text.",
+        "Queue content-quality pass: persona, TOC, CTA, internal links, credible sources."
+      ]
+    }
+  ]
+}

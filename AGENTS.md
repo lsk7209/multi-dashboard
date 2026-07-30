@@ -66,6 +66,14 @@
   - `워드프레스 제외 Vercel API 수집형 사이트들 중 신규 API 데이터가 있는지 확인하고, 새 데이터 기반 콘텐츠 보완/생성 작업을 추가할까요?`
 - Checking for new data is read-only by default. Do not run production DB writes, live API backfills, publishing jobs, or deployments solely because of this reminder.
 
+## Cancelled Or Interrupted Tool Continuation
+
+- A cancelled, interrupted, or checkpointed tool call is not evidence of success or failure and must not end the task by itself.
+- First inspect whether the command, process, file write, deployment, or external mutation actually completed before retrying. Avoid launching a duplicate collector or repeating a non-idempotent mutation.
+- Resume from the last verified state and rerun the smallest safe, idempotent verification individually rather than repeating a fragile parallel batch.
+- Do not reply with only "waiting" or stop the turn unless user input is genuinely required or a concrete hard blocker has been verified.
+- After recovery, continue the active plan through validation, recording, and deployment without asking the user to repeat the instruction.
+
 ## Harness Workflow
 
 For complex coding tasks, use the Goal-Harness workflow.
