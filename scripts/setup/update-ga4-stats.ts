@@ -1745,6 +1745,11 @@ const MAX_SITEMAP_DISCOVERY_DOCUMENTS = 5;
 export async function discoverSampleContentUrl(
   site: Site,
 ): Promise<string | undefined> {
+  const configuredSampleUrl = site.adsenseSampleUrls?.[0];
+  if (configuredSampleUrl) {
+    return configuredSampleUrl;
+  }
+
   const sitemapUrls = site.sitemapUrls?.length
     ? site.sitemapUrls
     : [new URL("/sitemap.xml", site.url).toString()];
