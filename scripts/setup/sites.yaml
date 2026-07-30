@@ -539,10 +539,17 @@ sites:
     wpRestBase: https://chatgipt.kr/wp-json/wp/v2
     ga4PropertyId: "534308136"
     gscSiteUrl: https://chatgipt.kr/
+    adsenseSampleUrls:
+      - https://chatgipt.kr/llm-batch-api-cost-2/
     monetization: true
     contentSource:
-      type: local-app
-      locationLabel: kwangju
+      type: wordpress-ssh
+      locationLabel: chemicloud
+      sshHost: 158.247.245.11
+      sshPort: 1988
+      sshUser: chatgipt
+      sshKeyPath: D:\env\chatgipt-chemicloud-PrivateKey-nopass
+      wpPath: /home/chatgipt/public_html
       localPath: D:\web\chatgiptkr
   - id: esgyo-2
     name: esgyo.kr
@@ -1670,6 +1677,8 @@ sites:
     gscSiteUrl: https://gradienttrail.com/
     sitemapUrls:
       - https://gradienttrail.com/sitemap.xml
+    adsenseSampleUrls:
+      - https://gradienttrail.com/us-trails/articles/acadia-carriage-road-gentle-hike
     monetization: true
     contentSource:
       type: local-app

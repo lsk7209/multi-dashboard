@@ -13,6 +13,8 @@ const siteSchema = z.object({
   ga4PropertyId: z.string().min(1).optional(),
   gscSiteUrl: z.string().min(1).optional(),
   sitemapUrls: z.array(z.string().url()).optional(),
+  // 홈/허브에서 광고를 의도적으로 제외하는 사이트는 실제 reader page를 명시한다.
+  adsenseSampleUrls: z.array(z.string().url()).optional(),
   // AdSense 미적용 사이트(예: 쇼핑몰)는 false. 수익화 수집·이슈 집계에서 제외된다.
   monetization: z.boolean().default(true),
   adsenseMonitoring: z.enum(["editorial_hold"]).optional(),
