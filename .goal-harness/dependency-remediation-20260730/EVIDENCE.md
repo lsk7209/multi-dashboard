@@ -20,3 +20,11 @@
 
 ## Safety
 - No content, data, AdSense, site configuration, production DB, or deployment mutation has occurred.
+
+## PR, production, and alert closure
+- multi-dashboard PR #55: https://github.com/lsk7209/multi-dashboard/pull/55; Vercel Preview PASS; GitHub CLEAN/MERGEABLE; squash merge `88d4e5e667a1dd2afe5af6f884ad69603f23a43d` at `2026-07-30T14:10:05Z`.
+- multi-dashboard Vercel production SUCCESS at `2026-07-30T14:10:35Z`; `https://multi-dashboard-one.vercel.app/?v=88d4e5e` returned HTTP 200 and rendered the exact dashboard snapshot, launch-hold label, and Wedfairguide row.
+- Wedfairguide PR #48: https://github.com/lsk7209/wedding-fair-decision-hub/pull/48; Vercel Preview PASS; GitHub CLEAN/MERGEABLE; squash merge `8f3040bfbe71206429296c45de4db6a33947d5a4` at `2026-07-30T14:10:04Z`.
+- Wedfairguide Vercel production SUCCESS at `2026-07-30T14:10:40Z`; homepage, advertising disclosure, and this-month fair page all returned HTTP 200.
+- Independent reviewer/subagent calls were attempted three times (reviewer and dev auditor roles) and all were blocked by the same service-throttling error. No review finding was produced; the fallback gates were full local validation, local audit 0, scoped GitHub file lists, CLEAN/MERGEABLE state, and successful Vercel Preview.
+- Post-merge GitHub Dependabot API reports `open=0` for both repositories. No alert was manually dismissed.
