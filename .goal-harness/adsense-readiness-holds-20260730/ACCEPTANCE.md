@@ -13,4 +13,4 @@
 - [x] GitHub dependency alerts are classified read-only with dependency updates explicitly separated.
 - [x] Picturebooks, Nongsusan, Caregos, and Plategogo constraints remain unchanged; unrelated dirty work is not staged.
 - [x] Cancelled tool calls are handled as unknown outcomes with process inspection and safe individual retries rather than terminal stops.
-- [ ] Final coherent artifact/config commit is applied to a fresh latest-main branch through PR, Vercel production succeeds, and the live dashboard exposes the exact final snapshot and launch-hold state.
+- [x] Final coherent artifact/config commit was applied to latest main through PR #53, merged as `583b5e5fe915929a08edb23a3aa1dd0038d7c45f`; Vercel production succeeded and the live dashboard exposed the exact final snapshot and launch-hold state.

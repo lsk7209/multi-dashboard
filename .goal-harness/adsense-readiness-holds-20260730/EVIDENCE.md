@@ -62,3 +62,10 @@
 - The previous workflow incorrectly treated a cancelled verification batch as a terminal blocker and returned a waiting response even though no user input was required.
 - `AGENTS.md` now requires cancelled/interrupted calls to be treated as unknown outcomes: inspect live processes and artifacts, avoid duplicate/non-idempotent execution, retry the smallest safe verification individually, and continue through validation/deployment.
 - Recovery inspection found the final isolated snapshot and generated artifacts intact. A separately started default-checkout collector was detected and left running rather than duplicated or terminated. All cancelled assertions were then rerun individually and passed.
+
+## Final artifact deployment
+- Evidence/config commit on latest-main branch: `ac6218d230c06030a7105ba9d4104a5c406bbc73`.
+- PR #53: https://github.com/lsk7209/multi-dashboard/pull/53; Vercel Preview PASS; merge state CLEAN; independent reviewer APPROVE with no blocking correctness, security, or scope finding.
+- Squash merge: `583b5e5fe915929a08edb23a3aa1dd0038d7c45f` at `2026-07-30T12:54:23Z`.
+- Git-connected Vercel production status: SUCCESS at `2026-07-30T12:54:48Z`.
+- Public alias `https://multi-dashboard-one.vercel.app/?v=583b5e5`: HTTP 200, 1,047,170 bytes; exact snapshot `2026-07-30T12:28:53.528Z`, `출시 승인 대기`, Wedfairguide, Nongsusan, and Picturebooks are rendered.
