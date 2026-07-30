@@ -271,7 +271,8 @@ type CollectionStatus =
   | "auth_error"
   | "api_error"
   | "missing_config"
-  | "editorial_hold";
+  | "editorial_hold"
+  | "launch_hold";
 type AdsenseInstallStatus = "installed" | "not_detected" | "unknown";
 type AdsTxtValidationStatus =
   | "valid"
@@ -1644,7 +1645,17 @@ export function findAdsenseSignal(html: string): string | undefined {
   return undefined;
 }
 
-export function resolveEditorialAdsenseHold(
+const ADSENSE_MONITORING_HOLD_ERRORS: Record<
+  NonNullable<Site["adsenseMonitoring"]>,
+  string
+> = {
+  editorial_hold:
+    "AdSense and public indexing are intentionally held until a named editor records approval in the source release gate.",
+  launch_hold:
+    "AdSense activation is intentionally held until the site's launch, publishing, and production-data gates are released.",
+};
+
+export function resolveAdsenseMonitoringHold(
   site: Pick<Site, "adsenseMonitoring">,
 ): Pick<
   SiteStat,
@@ -1653,15 +1664,15 @@ export function resolveEditorialAdsenseHold(
   | "adsenseCollectorStatus"
   | "adsenseError"
 > | undefined {
-  if (site.adsenseMonitoring !== "editorial_hold") {
+  const holdStatus = site.adsenseMonitoring;
+  if (!holdStatus) {
     return undefined;
   }
   return {
-    adsenseStatus: "editorial_hold",
+    adsenseStatus: holdStatus,
     adsenseInstallStatus: "not_detected",
     adsenseCollectorStatus: "ok",
-    adsenseError:
-      "AdSense and public indexing are intentionally held until a named editor records approval in the source release gate.",
+    adsenseError: ADSENSE_MONITORING_HOLD_ERRORS[holdStatus],
   };
 }
 
@@ -1985,10 +1996,10 @@ async function collectAdsenseCodeStatus(
       item.error || (item.httpStatus !== undefined && item.httpStatus >= 400),
   );
   if (successfulHtmlChecks.length >= 2 && transientErrors.length === 0) {
-    const editorialHold = resolveEditorialAdsenseHold(site);
-    if (editorialHold) {
+    const monitoringHold = resolveAdsenseMonitoringHold(site);
+    if (monitoringHold) {
       return {
-        ...editorialHold,
+        ...monitoringHold,
         adsenseEvidence: evidence,
       };
     }

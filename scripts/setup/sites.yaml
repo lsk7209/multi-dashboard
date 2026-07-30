@@ -1496,6 +1496,7 @@ sites:
     ga4PropertyId: "540392169"
     gscSiteUrl: https://nongsusangogo.kr/
     monetization: true
+    adsenseMonitoring: launch_hold
     contentSource:
       type: local-app
       locationLabel: seoul

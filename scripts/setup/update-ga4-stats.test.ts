@@ -3,7 +3,7 @@ import {
   buildFailedSiteStat,
   discoverSampleContentUrl,
   findAdsenseSignal,
-  resolveEditorialAdsenseHold,
+  resolveAdsenseMonitoringHold,
 } from "./update-ga4-stats.js";
 
 describe("buildFailedSiteStat", () => {
@@ -150,14 +150,18 @@ describe("discoverSampleContentUrl", () => {
   });
 });
 
-describe("resolveEditorialAdsenseHold", () => {
-  it("keeps a documented editorial hold out of the generic missing-loader lane", () => {
+describe("resolveAdsenseMonitoringHold", () => {
+  it.each([
+    ["editorial_hold", "named editor"],
+    ["launch_hold", "launch, publishing, and production-data gates"],
+  ] as const)("maps %s to a policy-specific collector hold", (status, message) => {
     expect(
-      resolveEditorialAdsenseHold({ adsenseMonitoring: "editorial_hold" }),
+      resolveAdsenseMonitoringHold({ adsenseMonitoring: status }),
     ).toMatchObject({
-      adsenseStatus: "editorial_hold",
+      adsenseStatus: status,
       adsenseInstallStatus: "not_detected",
       adsenseCollectorStatus: "ok",
+      adsenseError: expect.stringContaining(message),
     });
   });
 });

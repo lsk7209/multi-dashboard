@@ -478,7 +478,10 @@ function collectDashboardFindings(
     if (site.gscStatus && site.gscStatus !== "ok") {
       findings.push(dashboardFinding("gsc", "high", siteId, siteName, site.gscStatus, site.gscError));
     }
-    if (site.adsenseStatus === "editorial_hold") {
+    if (
+      site.adsenseStatus === "editorial_hold" ||
+      site.adsenseStatus === "launch_hold"
+    ) {
       findings.push(
         dashboardFinding(
           "adsense",
@@ -612,6 +615,9 @@ function recommendDashboardAction(kind: FindingKind, status: string, detail?: st
   if (kind === "adsense") {
     if (status === "editorial_hold") {
       return "Keep AdSense and indexing paused; record a named-editor approval in the source release gate before any publication change.";
+    }
+    if (status === "launch_hold") {
+      return "Keep AdSense paused until launch, publishing, and production-data gates are explicitly released.";
     }
     return `Verify AdSense code, ads.txt, approval scope, and collector evidence for status ${status}.`;
   }

@@ -1,5 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const ADSENSE_APPROVED_EXACT_DOMAINS = [
   "ehon365.kr",
@@ -200,9 +201,10 @@ function isAdsenseHealthy(row: StatsRow): boolean {
   return isStatusOk(row.ga4Status) && isStatusOk(row.gscStatus) && isAdsenseTelemetryHealthy(row);
 }
 
-function isAdsenseTelemetryHealthy(row: StatsRow): boolean {
+export function isAdsenseTelemetryHealthy(row: StatsRow): boolean {
   const collectorStatusesAreHealthy =
-    isStatusOk(row.adsenseStatus) &&
+    (isStatusOk(row.adsenseStatus) ||
+      isIntentionalAdsenseHold(row.adsenseStatus)) &&
     isStatusOk(row.adsenseCollectorStatus) &&
     isStatusOk(row.adsTxtStatus) &&
     isStatusOk(row.adsTxtCollectorStatus);
@@ -217,6 +219,10 @@ function isAdsenseTelemetryHealthy(row: StatsRow): boolean {
     row.adsenseInstallStatus === "installed" &&
     row.adsTxtValidationStatus === "valid"
   );
+}
+
+function isIntentionalAdsenseHold(value: unknown): boolean {
+  return value === "editorial_hold" || value === "launch_hold";
 }
 
 function isStatusOk(value: unknown): boolean {
@@ -376,4 +382,6 @@ function renderLane(lane: LaneKey, items: QueueItem[]): string {
   ].join("\n");
 }
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
