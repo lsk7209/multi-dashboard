@@ -9,6 +9,14 @@ export default tseslint.config(
     ignores: ["node_modules/**", "dist/**", ".next/**", "test-results/**", "playwright-report/**", "tmp/**", "tmp-*.mjs"],
   },
   {
+    // Preserve the pre-ESLint-10 lint baseline; adopting these new policies
+    // requires a separate code-focused refactor rather than a dependency fix.
+    rules: {
+      "no-useless-assignment": "off",
+      "preserve-caught-error": "off",
+    },
+  },
+  {
     files: ["scripts/**/*.mjs"],
     languageOptions: {
       globals: {
