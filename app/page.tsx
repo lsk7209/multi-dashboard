@@ -1187,6 +1187,7 @@ function getFleetReadinessBlockerMessage(
 function getMonetizationLabel(kind: string | undefined): string {
   if (kind === "ok") return "정상";
   if (kind === "editorial_hold") return "편집 승인 대기";
+  if (kind === "launch_hold") return "출시 승인 대기";
   if (kind === "missing_config") return "미탐지";
   if (kind === "api_error" || kind === "auth_error") return "상태 확인 실패";
   return "미수집";
@@ -1214,6 +1215,7 @@ function getMonetizationIssueLabel(
 ): string {
   if (stat.adsenseStatus === "missing_config") return "코드 미탐지";
   if (stat.adsenseStatus === "editorial_hold") return "편집 승인 대기";
+  if (stat.adsenseStatus === "launch_hold") return "출시 승인 대기";
   if (stat.adsTxtStatus === "missing_config") return "ads.txt 없음";
   return "확정 문제 확인 필요";
 }

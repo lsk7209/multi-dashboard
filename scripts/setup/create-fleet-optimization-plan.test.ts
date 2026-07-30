@@ -46,6 +46,10 @@ describe("create-fleet-optimization-plan dashboard evidence", () => {
     expect(buildRefreshFailedSources([row({ adsenseStatus: "editorial_hold" })])).toEqual([]);
   });
 
+  it("does not mistake an intentional launch hold for a dashboard refresh failure", () => {
+    expect(buildRefreshFailedSources([row({ adsenseStatus: "launch_hold" })])).toEqual([]);
+  });
+
   it("limits editorial holds to the AdSense editorial status", () => {
     expect(
       buildRefreshFailedSources([

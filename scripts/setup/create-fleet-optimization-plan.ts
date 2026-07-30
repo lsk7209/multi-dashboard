@@ -516,7 +516,8 @@ function isSuccessfulOrSkippedStatus(status: string, field: string): boolean {
     status === "ok" ||
     status === "disabled" ||
     status === "not_applicable" ||
-    (field === "adsenseStatus" && status === "editorial_hold")
+    (field === "adsenseStatus" &&
+      (status === "editorial_hold" || status === "launch_hold"))
   );
 }
 

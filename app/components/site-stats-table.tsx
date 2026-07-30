@@ -1052,6 +1052,9 @@ function getAdsenseStatusLabel(stat: EnrichedSiteStat): string {
   if (stat.adsenseStatus === "editorial_hold") {
     return "편집 승인 대기";
   }
+  if (stat.adsenseStatus === "launch_hold") {
+    return "출시 승인 대기";
+  }
   if (stat.adsenseStatus === "missing_config") {
     return "코드 미탐지";
   }
@@ -1078,6 +1081,9 @@ function getAdsenseStatusTitle(
   }
   if (stat.adsenseStatus === "editorial_hold") {
     return "이 사이트는 이름 있는 편집자 승인 전까지 AdSense와 공개 색인을 보류합니다.";
+  }
+  if (stat.adsenseStatus === "launch_hold") {
+    return "이 사이트는 출시, 게시, 운영 데이터 gate가 해제될 때까지 AdSense 활성화를 보류합니다.";
   }
   if (stat.adsenseError) {
     return stat.adsenseError === "Missing AdSense code" ||
@@ -1146,7 +1152,7 @@ function getMonetizationBadgeClass(
   if (status === "ok") {
     return "badge";
   }
-  if (status === "editorial_hold") {
+  if (status === "editorial_hold" || status === "launch_hold") {
     return "badge badge-info";
   }
   if (status === "missing_config") {

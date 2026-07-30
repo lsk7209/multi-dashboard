@@ -416,27 +416,59 @@ async function discoverSitemapPageUrls(site: Site): Promise<string[]> {
 }
 
 async function discoverSamplePages(site: Site): Promise<string[]> {
-  const home = site.url;
-  const samples: string[] = [home];
-  const pageLocs = (await discoverSitemapPageUrls(site)).filter((loc) => {
-    const path = new URL(loc).pathname.toLowerCase();
+  return buildReadinessSampleUrls(
+    site,
+    await discoverSitemapPageUrls(site),
+    PAGE_LIMIT,
+  );
+}
+
+export function buildReadinessSampleUrls(
+  site: Site,
+  discoveredPageUrls: string[],
+  pageLimit: number,
+): string[] {
+  const discoveredContentUrls = discoveredPageUrls.filter((url) => {
+    const path = new URL(url).pathname.toLowerCase();
     return (
       !path.includes("privacy") &&
       !path.includes("terms") &&
       !path.includes("contact") &&
       !path.includes("about") &&
-      isApprovalContentSample(loc)
+      isApprovalContentSample(url)
     );
   });
-  samples.push(...pageLocs.slice(0, PAGE_LIMIT - samples.length));
 
-  return [...new Set(samples)].slice(0, PAGE_LIMIT);
+  return dedupeStrings([
+    site.url,
+    ...(site.adsenseSampleUrls ?? []),
+    ...discoveredContentUrls,
+  ]).slice(0, pageLimit);
+}
+
+export function isAdsenseLoaderRequiredForPage(
+  site: Site,
+  pageUrl: string,
+): boolean {
+  const configuredSamples = site.adsenseSampleUrls ?? [];
+  if (configuredSamples.length === 0) {
+    return true;
+  }
+  const normalizedPageUrl = normalizeAuditUrl(pageUrl);
+  return configuredSamples.some(
+    (sampleUrl) => normalizeAuditUrl(sampleUrl) === normalizedPageUrl,
+  );
+}
+
+function normalizeAuditUrl(url: string): string {
+  return url.replace(/\/+$/, "").toLowerCase();
 }
 
 function auditPage(
   url: string,
   status: number | undefined,
   html: string,
+  adsenseLoaderRequired = true,
 ): PageAudit {
   const host = new URL(url).hostname;
   const title = textBetween(html, /<title[^>]*>([\s\S]*?)<\/title>/i) ?? "";
@@ -562,9 +594,11 @@ function auditPage(
         ? { state: "pass", detail: `${externalLinks.length} external links` }
         : { state: "warn", detail: `${externalLinks.length} external links` },
     readableUrl: checkReadableUrl(url),
-    adsenseLoader: pageHasAdsenseLoader(html)
-      ? { state: "pass", detail: "loader with publisher id found" }
-      : { state: "fail", detail: "loader not found" },
+    adsenseLoader: !adsenseLoaderRequired
+      ? { state: "pass", detail: "loader not required outside configured reader samples" }
+      : pageHasAdsenseLoader(html)
+        ? { state: "pass", detail: "loader with publisher id found" }
+        : { state: "fail", detail: "loader not found" },
     wordCount: count,
     h1Count: h1.length,
     h2Count: h2.length,
@@ -1199,9 +1233,17 @@ async function auditSite(
   const sampleUrls = await discoverSamplePages(site);
   const pages: PageAudit[] = [];
   for (const url of sampleUrls) {
+    const adsenseLoaderRequired = isAdsenseLoaderRequiredForPage(site, url);
     try {
       const { status, body } = await fetchText(url);
-      pages.push(auditPage(url, status, body));
+      pages.push(
+        auditPage(
+          url,
+          status,
+          body,
+          adsenseLoaderRequired,
+        ),
+      );
     } catch (error) {
       pages.push({
         url,
@@ -1214,7 +1256,12 @@ async function auditSite(
         inlinks: { state: "unknown", detail: getErrorMessage(error) },
         outlinks: { state: "unknown", detail: getErrorMessage(error) },
         readableUrl: checkReadableUrl(url),
-        adsenseLoader: { state: "unknown", detail: getErrorMessage(error) },
+        adsenseLoader: adsenseLoaderRequired
+          ? { state: "unknown", detail: getErrorMessage(error) }
+          : {
+              state: "pass",
+              detail: "loader not required outside configured reader samples",
+            },
         viewport: { state: "unknown", detail: getErrorMessage(error) },
         toc: { state: "unknown", detail: getErrorMessage(error) },
         wordCount: 0,
