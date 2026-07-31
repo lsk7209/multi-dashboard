@@ -1721,6 +1721,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://wedfairguide.com/
+    wpRestBase: https://wedfairguide.com/wp-json/wp/v2
     ga4PropertyId: "544110804"
     gscSiteUrl: https://wedfairguide.com/
     monetization: true
@@ -1729,7 +1730,6 @@ sites:
       locationLabel: vercel
       localPath: D:\web\wedding-fair-decision-hub
       githubRepo: https://github.com/lsk7209/wedding-fair-decision-hub
-    wpRestBase: https://wedfairguide.com/wp-json/wp/v2
   - id: seniorlivingnote
     name: seniorlivingnote.com
     enabled: true
