@@ -1800,3 +1800,66 @@ sites:
     ga4PropertyId: "547512172"
     gscSiteUrl: https://mohana.kr/
     monetization: true
+  - id: car-klick
+    name: car.klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://car.klick.kr/
+    wpRestBase: https://car.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "549431717"
+    gscSiteUrl: https://car.klick.kr/
+    monetization: true
+  - id: joy-ehon365
+    name: joy.ehon365.kr
+    enabled: true
+    platform: wordpress
+    url: https://joy.ehon365.kr/
+    wpRestBase: https://joy.ehon365.kr/wp-json/wp/v2
+    ga4PropertyId: "549437646"
+    gscSiteUrl: https://joy.ehon365.kr/
+    monetization: true
+  - id: go-sellerpit
+    name: go.sellerpit.kr
+    enabled: true
+    platform: wordpress
+    url: https://go.sellerpit.kr/
+    wpRestBase: https://go.sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "549438280"
+    gscSiteUrl: https://go.sellerpit.kr/
+    monetization: true
+  - id: bu-sellerpit
+    name: bu.sellerpit.kr
+    enabled: true
+    platform: wordpress
+    url: https://bu.sellerpit.kr/
+    wpRestBase: https://bu.sellerpit.kr/wp-json/wp/v2
+    ga4PropertyId: "549440319"
+    gscSiteUrl: https://bu.sellerpit.kr/
+    monetization: true
+  - id: lo-klick
+    name: lo.klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://lo.klick.kr/
+    wpRestBase: https://lo.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "549415733"
+    gscSiteUrl: https://lo.klick.kr/
+    monetization: true
+  - id: ko-klick
+    name: ko.klick.kr
+    enabled: true
+    platform: wordpress
+    url: https://ko.klick.kr/
+    wpRestBase: https://ko.klick.kr/wp-json/wp/v2
+    ga4PropertyId: "549433726"
+    gscSiteUrl: https://ko.klick.kr/
+    monetization: true
+  - id: wonon-ehon365
+    name: wonon.ehon365.kr
+    enabled: true
+    platform: wordpress
+    url: https://wonon.ehon365.kr/
+    wpRestBase: https://wonon.ehon365.kr/wp-json/wp/v2
+    ga4PropertyId: "549519780"
+    gscSiteUrl: https://wonon.ehon365.kr/
+    monetization: true
