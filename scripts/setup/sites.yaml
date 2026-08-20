@@ -1863,3 +1863,21 @@ sites:
     ga4PropertyId: "549519780"
     gscSiteUrl: https://wonon.ehon365.kr/
     monetization: true
+  - id: jeompolab
+    name: jeompolab.com
+    enabled: true
+    platform: wordpress
+    url: https://jeompolab.com/
+    wpRestBase: https://jeompolab.com/wp-json/wp/v2
+    ga4PropertyId: "550814434"
+    gscSiteUrl: https://jeompolab.com/
+    monetization: true
+  - id: lim01-soonsaak-co
+    name: lim01.soonsaak.co.kr
+    enabled: true
+    platform: wordpress
+    url: https://lim01.soonsaak.co.kr/
+    wpRestBase: https://lim01.soonsaak.co.kr/wp-json/wp/v2
+    ga4PropertyId: "550822302"
+    gscSiteUrl: https://lim01.soonsaak.co.kr/
+    monetization: true
