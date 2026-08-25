@@ -279,3 +279,16 @@
 - Confirmed candidates: only `softwa` has a meaningful GSC ranking/CTR signal, and only the `tennisfrens` Arthur Rinderknech page has page-query-backed title evidence. Both remain pending because the dashboard is read-only.
 - Hold sitemap generator changes for `nicewomen`, `ezfunnel`, and `autorentlab`: public robots/sitemaps are healthy, while GSC submitted URL counts diverge from current public inventories. Exact Search Console warning details are required before a repair.
 - `ezfunnel` and `dogbreedcost` remain GA4 low-sample/channel-unknown cases, not confirmed SEO declines.
+# 2026-08-26 G015 AdSense fleet correction and softwa freeze
+
+- Goal: correct fleet-wide AdSense readiness evidence, stop further low-value template publication on softwa.kr, and deploy only proven fixes.
+- Dashboard source: isolated clean clone `D:\web\multi-dashboard-g015-release` from GitHub main. The earlier `multi-dashboard-clean` worktree backlink was broken and was not repaired.
+- Final snapshot: `data/site-stats.json` generated `2026-08-25T21:30:34.254Z`, 113 sites, GA4 failures 0, confirmed AdSense loader missing 0, confirmed ads.txt failures 0. GSC auth errors remain for kang4, picturebooks, and lim01-soonsaak-co and are not AdSense-code defects.
+- Configuration: explicit monetized sample routes were recorded for seven WordPress sites whose home/trust pages are intentionally ad-free; caregos is an editorial review hold; mohana and lim01 are business/lead-generation sites and not AdSense properties.
+- softwa.kr: 112 future factory posts were inventoried, WXR-backed up, and reversibly changed to draft. After verification: future=0, draft=112, published=640. No published URL was deleted or unpublished. Backup and hashes are in `.goal-harness/adsense-loader-softwa-g012-g015-20260826/EVIDENCE.md`.
+- softwa AdSense account state remains NEEDS_ATTENTION for low-value content. `DO_NOT_SUBMIT` remains until curated rewrites, truthful author/editorial evidence, overlap consolidation, and live QA pass. No review/resubmission action was sent.
+- G012: independent non-Spark verification found local evidence complete except its review seal. The only code-actionable production guard was ported to a fresh Crepika clone, tested, built, and pushed as `bf33657`. External 403/account items remain explicit no-mutation gates.
+- Validation: dashboard 291/291 tests, ESLint, TypeScript, and Next.js production build passed; Crepika four preflight tests, ESLint, build, and SEO gates passed.
+- Rollback: revert the dashboard release commit; softwa status rollback uses the remote CSV/WXR artifacts documented in the G015 evidence file; revert Crepika `bf33657` if the fail-closed slug preflight must be removed.
+- Deliberately not run: AdSense review cancellation/resubmission, ad clicks, bulk content deletion/noindex, DNS/payment/account changes, or external 403 bypass.
+- Next step: verify the Git-connected dashboard and Crepika production deployments and public HTTP health.

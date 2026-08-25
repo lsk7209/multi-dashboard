@@ -155,7 +155,12 @@ sites:
     wpRestBase: https://insupang.com/wp-json/wp/v2
     ga4PropertyId: "517897382"
     gscSiteUrl: https://insupang.com/
+    adsenseSampleUrls:
+      - https://insupang.com/blog-2/
     monetization: true
+    nonMonetizedPaths:
+      - /
+      - /services/
     contentSource:
       type: local-app
       locationLabel: kwangju
@@ -168,7 +173,13 @@ sites:
     wpRestBase: https://healthgotoo.com/wp-json/wp/v2
     ga4PropertyId: "536550724"
     gscSiteUrl: https://healthgotoo.com/
+    adsenseSampleUrls:
+      - https://healthgotoo.com/blog-2/
     monetization: true
+    nonMonetizedPaths:
+      - /
+      - /disclaimer/
+      - /services/
     contentSource:
       type: local-app
       locationLabel: kwangju
@@ -542,6 +553,10 @@ sites:
     adsenseSampleUrls:
       - https://chatgipt.kr/llm-batch-api-cost-2/
     monetization: true
+    nonMonetizedPaths:
+      - /
+      - /services/
+      - /blog-2/
     contentSource:
       type: wordpress-ssh
       locationLabel: chemicloud
@@ -902,7 +917,11 @@ sites:
     wpRestBase: https://estat.kr/wp-json/wp/v2
     ga4PropertyId: "536753109"
     gscSiteUrl: https://estat.kr/
+    adsenseSampleUrls:
+      - https://estat.kr/%EB%B0%B1%EC%A2%85%EC%9B%90%EB%8F%84-%EC%9A%B8%EA%B3%A0-%EA%B0%88-%EA%B9%8A%EC%9D%80-%EA%B5%AD%EB%AC%BC-%EB%A7%9B-%EB%8F%BC%EC%A7%80%EA%B3%A0%EA%B8%B0-%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C-%EB%A7%9B/
     monetization: true
+    nonMonetizedPaths:
+      - /
     contentSource:
       type: local-app
       locationLabel: kwangju
@@ -994,7 +1013,11 @@ sites:
     wpRestBase: https://sssaass.com/wp-json/wp/v2
     ga4PropertyId: "537317309"
     gscSiteUrl: https://sssaass.com/
+    adsenseSampleUrls:
+      - https://sssaass.com/chatgpt-free-paid-freelancer-setup/
     monetization: true
+    nonMonetizedPaths:
+      - /
     contentSource:
       type: local-app
       locationLabel: kwangju
@@ -1016,7 +1039,16 @@ sites:
     wpRestBase: https://educaer.com/wp-json/wp/v2
     ga4PropertyId: "537331142"
     gscSiteUrl: https://educaer.com/
+    adsenseSampleUrls:
+      - https://educaer.com/educaer-b6c9d36b4886/
     monetization: true
+    nonMonetizedPaths:
+      - /
+      - /editorial-policy/
+      - /support-benefits/
+      - /credit-card-benefits/
+      - /finance-basics/
+      - /disclaimer/
     contentSource:
       type: local-app
       locationLabel: kwangju
@@ -1029,7 +1061,14 @@ sites:
     wpRestBase: https://todayshops.kr/wp-json/wp/v2
     ga4PropertyId: "537250213"
     gscSiteUrl: https://todayshops.kr/
+    adsenseSampleUrls:
+      - https://todayshops.kr/todayshops-kr-0013-aws-certification-checklist/
     monetization: true
+    nonMonetizedPaths:
+      - /
+      - /disclaimer/
+      - /blog/
+      - /home/
     contentSource:
       type: local-app
       locationLabel: kwangju
@@ -1517,12 +1556,13 @@ sites:
   - id: caregos
     name: caregos.com
     enabled: true
-    platform: wordpress
+    platform: static
     url: https://caregos.com/
-    wpRestBase: https://caregos.com/wp-json/wp/v2
     ga4PropertyId: "540671690"
     gscSiteUrl: https://caregos.com/
-    monetization: true
+    # Explicit review hold: the deployed static site is intentionally noindex,
+    # robots-disallowed, loader-free, and excluded from monetization checks.
+    monetization: false
     adsenseMonitoring: editorial_hold
     contentSource:
       type: local-app
@@ -1799,7 +1839,8 @@ sites:
     wpRestBase: https://mohana.kr/wp-json/wp/v2
     ga4PropertyId: "547512172"
     gscSiteUrl: https://mohana.kr/
-    monetization: true
+    # Workshop/class booking business site, not an AdSense content property.
+    monetization: false
   - id: car-klick
     name: car.klick.kr
     enabled: true
@@ -1880,4 +1921,5 @@ sites:
     wpRestBase: https://lim01.soonsaak.co.kr/wp-json/wp/v2
     ga4PropertyId: "550822302"
     gscSiteUrl: https://lim01.soonsaak.co.kr/
-    monetization: true
+    # Commercial demolition lead-generation landing site, not an AdSense blog.
+    monetization: false
