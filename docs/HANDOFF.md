@@ -291,4 +291,5 @@
 - Validation: dashboard 291/291 tests, ESLint, TypeScript, and Next.js production build passed; Crepika four preflight tests, ESLint, build, and SEO gates passed.
 - Rollback: revert the dashboard release commit; softwa status rollback uses the remote CSV/WXR artifacts documented in the G015 evidence file; revert Crepika `bf33657` if the fail-closed slug preflight must be removed.
 - Deliberately not run: AdSense review cancellation/resubmission, ad clicks, bulk content deletion/noindex, DNS/payment/account changes, or external 403 bypass.
-- Next step: verify the Git-connected dashboard and Crepika production deployments and public HTTP health.
+- Deployment evidence: dashboard commit `0690fde` and Crepika commit `bf33657` both reached successful Git-connected Vercel statuses. `https://multi-dashboard-one.vercel.app/` returned HTTP 200 with the 113-site G015 snapshot marker; `https://crepika.com/` returned HTTP 200. softwa recheck remained future=0 and draft=112.
+- Next step: curate and rewrite the first softwa high-overlap tool cluster with persona-writer evidence, consolidate only mapped siblings reversibly, then repeat live QA. Keep AdSense re-review at `DO_NOT_SUBMIT` until those gates pass.
