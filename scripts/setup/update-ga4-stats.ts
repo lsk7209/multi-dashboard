@@ -62,9 +62,10 @@ const SITE_TIMEOUT_MS = readPositiveInteger(
   90000,
   180000,
 );
+export const DEFAULT_RUN_TIMEOUT_MS = 15 * 60 * 1000;
 const RUN_TIMEOUT_MS = readNonNegativeInteger(
   process.env.STATS_UPDATE_RUN_TIMEOUT_MS,
-  600000,
+  DEFAULT_RUN_TIMEOUT_MS,
   3600000,
 );
 const ADSENSE_PUBLISHER_ID =
@@ -424,6 +425,7 @@ interface SiteStat {
   adsenseErrorKind?: ErrorKind;
   adsTxtErrorKind?: ErrorKind;
   collectionFailurePhase?: string;
+  collectionFailureError?: string;
   sitemapErrorKind?: ErrorKind;
   error?: string;
   gscError?: string;
@@ -2180,6 +2182,7 @@ async function fetchSiteStat(
   externalTrafficKeywords: Map<string, TrafficKeywordMetric[]>,
   previousStat: SiteStat | undefined,
   reportProgress: (phase: string) => void = () => undefined,
+  capturePartialStat: (stat: SiteStat) => void = () => undefined,
 ): Promise<SiteStat> {
   let last1Days = emptyMetrics();
   let last7Days = emptyMetrics();
@@ -2340,6 +2343,7 @@ async function fetchSiteStat(
   }
 
   reportProgress("content");
+  capturePartialStat(stat);
   const wpStats = await fetchWpStats(site);
   if (wpStats.lastPublishedAt) {
     stat.lastPublishedAt = wpStats.lastPublishedAt;
@@ -2356,6 +2360,7 @@ export function buildFailedSiteStat(
   previousStat: SiteStat | undefined,
   errorMessage: string,
   failedPhase?: string,
+  partialStat?: SiteStat,
 ): SiteStat {
   const gscSiteUrl = site.gscSiteUrl ?? site.url;
   const base: SiteStat = previousStat ?? {
@@ -2376,27 +2381,15 @@ export function buildFailedSiteStat(
   };
   const error = `stats:update site collection failed: ${errorMessage}`;
 
-  if (failedPhase === "content" && previousStat) {
+  if (failedPhase === "content" && partialStat) {
     return {
-      ...base,
+      ...partialStat,
       id: site.id,
-      name: site.name ?? previousStat.name ?? site.id,
+      name: site.name ?? partialStat.name ?? site.id,
       url: site.url,
-      ga4PropertyId: site.ga4PropertyId ?? previousStat.ga4PropertyId ?? "",
+      ga4PropertyId: site.ga4PropertyId ?? partialStat.ga4PropertyId ?? "",
       gscSiteUrl,
-      // Content collection runs after GA4, GSC, and monetization probes. Its
-      // timeout must not turn completed probes into synthetic API failures.
-      ga4Status: "ok",
-      gscStatus: "ok",
-      ...(site.monetization === false
-        ? { monetization: false }
-        : {
-            adsenseStatus: "ok" as const,
-            adsTxtStatus: "ok" as const,
-            adsenseCollectorStatus: "ok" as const,
-            adsTxtCollectorStatus: "ok" as const,
-          }),
-      error,
+      collectionFailureError: error,
       collectionFailurePhase: failedPhase,
     };
   }
@@ -2483,6 +2476,7 @@ async function runStatsUpdate(): Promise<void> {
             }
           };
 
+          let partialStat: SiteStat | undefined;
           try {
             const stat = await withTimeout(
               fetchSiteStat(
@@ -2492,6 +2486,9 @@ async function runStatsUpdate(): Promise<void> {
                 externalTrafficKeywords,
                 previousStatsById.get(site.id),
                 reportProgress,
+                (currentStat) => {
+                  partialStat = currentStat;
+                },
               ),
               SITE_TIMEOUT_MS,
               `site ${site.id}`,
@@ -2528,6 +2525,7 @@ async function runStatsUpdate(): Promise<void> {
               previousStatsById.get(site.id),
               errorMessage,
               failedPhase,
+              partialStat,
             );
           } finally {
             inFlight.delete(site.id);

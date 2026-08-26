@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-07-27T13:07:56.438Z",
+  "generatedAt": "2026-08-26T12:47:37.232Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-07-27T13:07:27.938Z",
+  "statsSnapshot": "2026-08-26T12:47:22.978Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-07-27T13:07:56.438Z",
+      "checkedAt": "2026-08-26T12:47:37.225Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-07-27T13:07:27.938Z.",
-      "checkedAt": "2026-07-27T13:07:56.437Z",
-      "count": 1
+      "detail": "Read dashboard artifact snapshot=2026-08-26T12:47:22.978Z.",
+      "checkedAt": "2026-08-26T12:47:37.224Z",
+      "count": 6
     },
     "ga4": {
       "status": "ok",
-      "detail": "Read GA4 collector status for 103 sites.",
-      "checkedAt": "2026-07-27T13:07:56.437Z",
-      "count": 103
+      "detail": "Read GA4 collector status for 113 sites.",
+      "checkedAt": "2026-08-26T12:47:37.224Z",
+      "count": 113
     }
   },
   "counts": {
     "github-actions": 0,
-    "gsc": 0,
+    "gsc": 5,
     "adsense": 1,
     "ga4": 0,
     "vercel": 0,
@@ -36,20 +36,70 @@
   },
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 3,
     "medium": 0,
-    "low": 1
+    "low": 3
   },
   "findings": [
     {
-      "id": "adsense-caregos-1ei0ghx",
+      "id": "gsc-kang4-j1m9wr",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "kang4",
+      "sourceLine": "direct:dashboard site=kang4 kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://kang4.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "강사자판기: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-lim01-soonsaak-co-vc2la0",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "lim01-soonsaak-co",
+      "sourceLine": "direct:dashboard site=lim01-soonsaak-co kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://lim01.soonsaak.co.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "lim01.soonsaak.co.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-picturebooks-1an0jga",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "picturebooks",
+      "sourceLine": "direct:dashboard site=picturebooks kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://picturebooks.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "picturebooks.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-discparty-t1o7t1",
+      "kind": "gsc",
+      "severity": "low",
+      "priority": 20,
+      "site": "discparty",
+      "sourceLine": "direct:dashboard site=discparty kind=gsc status=sitemap warnings=1 errors=0 detail=https://discparty.com/sitemap.xml warnings=1 errors=0 submitted=27 downloaded=2026-08-22T09:47:21.441Z submittedAt=2026-08-04T22:05:42.060Z",
+      "title": "디스크파티 - GA4: GSC direct collector signal sitemap warnings=1 errors=0",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://discparty.com/sitemap.xml warnings=1 errors=0 submitted=27 downloaded=2026-08-22T09:47:21.441Z submittedAt=2026-08-04T22:05:42.060Z."
+    },
+    {
+      "id": "adsense-nongsusangogo-tqcbes",
       "kind": "adsense",
       "severity": "low",
       "priority": 20,
-      "site": "caregos",
-      "sourceLine": "direct:dashboard site=caregos kind=adsense status=editorial_hold error=AdSense and public indexing are intentionally held until a named editor records approval in the source release gate.",
-      "title": "caregos.com: ADSENSE direct collector signal editorial_hold",
-      "recommendedAction": "Keep AdSense and indexing paused; record a named-editor approval in the source release gate before any publication change."
+      "site": "nongsusangogo",
+      "sourceLine": "direct:dashboard site=nongsusangogo kind=adsense status=launch_hold error=AdSense activation is intentionally held until the site's launch, publishing, and production-data gates are released.",
+      "title": "https://nongsusangogo.kr: ADSENSE direct collector signal launch_hold",
+      "recommendedAction": "Keep AdSense paused until launch, publishing, and production-data gates are explicitly released."
+    },
+    {
+      "id": "gsc-nexttech7-t1o7t1",
+      "kind": "gsc",
+      "severity": "low",
+      "priority": 20,
+      "site": "nexttech7",
+      "sourceLine": "direct:dashboard site=nexttech7 kind=gsc status=sitemap warnings=1 errors=0 detail=https://nexttech7.com/sitemap.xml warnings=1 errors=0 submitted=7742 downloaded=2026-08-16T21:40:46.247Z submittedAt=2026-06-08T00:15:33.956Z",
+      "title": "nexttech7.com: GSC direct collector signal sitemap warnings=1 errors=0",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://nexttech7.com/sitemap.xml warnings=1 errors=0 submitted=7742 downloaded=2026-08-16T21:40:46.247Z submittedAt=2026-06-08T00:15:33.956Z."
     }
   ]
 }

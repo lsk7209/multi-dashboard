@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-08-26T12:47:41.443Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-08-26T12:47:22.978Z",
+  "scope": "AdSense remediation queue after approved exact-domain and non-monetized site exclusions",
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "approvedExactDomainsExcluded": [
+    "ehon365.kr",
+    "fastjob.kr",
+    "haemongdream.com",
+    "kang4.com",
+    "klick.kr",
+    "luckyday.kr",
+    "nexttech7.com",
+    "sellerpit.kr",
+    "tasko.kr",
+    "temon.kr",
+    "tennisfrens.com"
+  ],
+  "nonMonetizedExactDomainsExcluded": [
+    "caregos.com",
+    "jeompolab.com",
+    "lim01.soonsaak.co.kr",
+    "limsight.kr",
+    "mohana.kr",
+    "picturebooks.kr",
+    "sorimate.com",
+    "yesa.kr"
+  ],
+  "summary": {
+    "totalRows": 113,
+    "reviewedRows": 94,
+    "adsenseOkRows": 88,
+    "problemRows": 6,
+    "ordinaryAdsenseProof": 6,
+    "approvedRootSubdomainScope": 0,
+    "gscAuthTelemetry": 0,
+    "ga4ConfigTelemetry": 0
+  },
+  "lanes": {
+    "ordinary_adsense_proof": [
+      {
+        "siteId": "shotsetup",
+        "host": "shotsetup.com",
+        "name": "shotsetup.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999581,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=ok",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "pethomepick",
+        "host": "pethomepick.com",
+        "name": "pethomepick.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999711,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "jasamall-sellerpit",
+        "host": "jasamall.sellerpit.kr",
+        "name": "jasamall.sellerpit.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999900,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "kdramanote",
+        "host": "kdramanote.com",
+        "name": "kdramanote.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999922,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=ok",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "petcostlab",
+        "host": "petcostlab.com",
+        "name": "petcostlab.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999941,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=ok",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "ezfunnel",
+        "host": "ezfunnel.kr",
+        "name": "ezfunnel.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999965,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=ok",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      }
+    ],
+    "approved_root_subdomain_scope": [],
+    "gsc_auth_telemetry": [],
+    "ga4_config_telemetry": []
+  }
+}

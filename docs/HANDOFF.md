@@ -1,5 +1,14 @@
 # Handoff
 
+## G016 collector resilience and Todaypharm audit (2026-08-26 KST)
+
+- User goal: improve the full-site dashboard and AdSense-readiness evidence, keeping `jeompolab.com` excluded and avoiding AdSense/GSC submissions or production database writes.
+- Current state: the collector default run budget is 15 minutes. If a site times out during its final content probe, the dashboard preserves the GA4/GSC/AdSense/ads.txt telemetry collected in that same run and records a separate high-priority `콘텐츠 수집 실패` action.
+- Fresh validation: with `STATS_UPDATE_RUN_TIMEOUT_MS` explicitly absent, the collector logged `runTimeoutMs=900000` and completed 113/113 sites at `2026-08-26T12:47:22.978Z`. One content timeout (`kdramanote`) retained GA4/GSC/AdSense `ok` and surfaced the priority-97 data action. Typecheck, lint, 293 tests, production build, and runtime smoke all passed; smoke reports 113 sites, 16 actions, 82 insights, 8 checks, and `readiness_blocked` for the three current GSC access blockers.
+- Todaypharm: read-only source/public audit confirmed `origin/main` already filters pharmacy sitemap count/chunks through the indexability quality predicate. Its local checkout is dirty and `ahead 2, behind 6`, so no merge or source overwrite was attempted. Recent API-data evidence is dated 2026-08-23 through 2026-08-24. No live DB sync/backfill, publishing, sitemap submission, AdSense action, or Vercel CLI/API mutation occurred.
+- Side effects and rollback: dashboard code/tests plus fresh snapshot, ops, non-mutating fleet/AdSense continuation artifacts, and harness evidence changed. Revert the scoped release commit to restore the former 10-minute budget and action behavior. The local AdSense continuation artifact explicitly retains prior proof only and does not claim console approval.
+- Single next step: after the scoped Git push, confirm the Git-connected production dashboard serves snapshot `2026-08-26T12:47:22.978Z`; handle the three GSC access blockers separately without resubmitting AdSense.
+
 ## jeompolab.com AdSense exclusion recorded (2026-08-26 KST)
 
 - User decision: `jeompolab.com` is excluded from AdSense operations.

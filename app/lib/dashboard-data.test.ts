@@ -2704,6 +2704,35 @@ function emptyGsc(): GscMetricSet {
   return { clicks: 0, impressions: 0, ctr: 0, position: 0 };
 }
 
+describe("buildActionItems content collection failures", () => {
+  it("surfaces a content-phase timeout without changing connector status", () => {
+    const stat = makeEnriched({
+      id: "content-timeout",
+      name: "content-timeout.example",
+      collectionFailurePhase: "content",
+      collectionFailureError:
+        "stats:update site collection failed: site content-timeout timed out after 90s",
+      ga4Status: "api_error",
+      operationalStatus: "normal",
+      statusLabel: "정상",
+      statusReason: "GA4/GSC 수집 정상",
+    });
+
+    const actions = buildActionItems([stat]);
+    const timeoutAction = actions.find(
+      (action) =>
+        action.siteId === "content-timeout" && action.kind === "data",
+    );
+
+    expect(timeoutAction).toMatchObject({
+      priority: 97,
+      value: "콘텐츠 수집 실패",
+    });
+    expect(stat.ga4Status).toBe("api_error");
+    expect(stat.operationalStatus).toBe("normal");
+  });
+});
+
 function makeEnriched(overrides: Partial<EnrichedSiteStat>): EnrichedSiteStat {
   const trend: SiteTrend = {
     activeUsersChange: 0,

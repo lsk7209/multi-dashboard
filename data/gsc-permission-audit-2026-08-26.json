@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-08-26T12:47:40.958Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-08-26T12:47:22.978Z",
+  "handoffStatus": "pending_external",
+  "productionMutationPerformed": false,
+  "gscMutationPerformed": false,
+  "serviceAccountEmail": "id-ai-179@cursorai-451704.iam.gserviceaccount.com",
+  "summary": {
+    "auditedRows": 3,
+    "ownerAccess": 0,
+    "restrictedAccess": 0,
+    "unverified": 2,
+    "notListed": 1
+  },
+  "results": [
+    {
+      "siteId": "lim01-soonsaak-co",
+      "host": "lim01.soonsaak.co.kr",
+      "configuredGscSiteUrl": "https://lim01.soonsaak.co.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": null,
+      "permissionLevel": null,
+      "accessState": "not_listed",
+      "requiredAction": "Add or share the configured Search Console property with the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "picturebooks",
+      "host": "picturebooks.kr",
+      "configuredGscSiteUrl": "https://picturebooks.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://picturebooks.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "kang4",
+      "host": "kang4.com",
+      "configuredGscSiteUrl": "https://kang4.com/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://kang4.com/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    }
+  ]
+}

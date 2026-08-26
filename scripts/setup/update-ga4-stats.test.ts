@@ -1,13 +1,20 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  DEFAULT_RUN_TIMEOUT_MS,
   buildFailedSiteStat,
   discoverSampleContentUrl,
   findAdsenseSignal,
   resolveAdsenseMonitoringHold,
 } from "./update-ga4-stats.js";
 
+describe("stats:update run budget", () => {
+  it("allows the current fleet enough time to finish by default", () => {
+    expect(DEFAULT_RUN_TIMEOUT_MS).toBe(15 * 60 * 1000);
+  });
+});
+
 describe("buildFailedSiteStat", () => {
-  it("preserves completed service telemetry when only the content phase times out", () => {
+  it("preserves current service telemetry when only the content phase times out", () => {
     const previous = {
       id: "discparty",
       name: "discparty.com",
@@ -31,23 +38,37 @@ describe("buildFailedSiteStat", () => {
       url: "https://discparty.com/",
     } as Parameters<typeof buildFailedSiteStat>[0];
 
+    const current = {
+      ...previous,
+      last7Days: { activeUsers: 42 },
+      ga4Status: "api_error",
+      gscStatus: "ok",
+      adsenseStatus: "api_error",
+      adsTxtStatus: "ok",
+      error: "GA4 denied",
+      gscLastSuccessfulFetchAt: "2026-08-26T10:00:00.000Z",
+    } as Parameters<typeof buildFailedSiteStat>[4];
+
     const result = buildFailedSiteStat(
       site,
       previous,
       "site discparty timed out after 90s",
       "content",
+      current,
     );
 
     expect(result).toMatchObject({
-      ga4Status: "ok",
+      last7Days: { activeUsers: 42 },
+      ga4Status: "api_error",
       gscStatus: "ok",
-      adsenseStatus: "ok",
+      adsenseStatus: "api_error",
       adsTxtStatus: "ok",
-      adsenseCollectorStatus: "ok",
-      adsTxtCollectorStatus: "ok",
+      error: "GA4 denied",
       collectionFailurePhase: "content",
     });
-    expect(result.error).toContain("site discparty timed out after 90s");
+    expect(result.collectionFailureError).toContain(
+      "site discparty timed out after 90s",
+    );
   });
 });
 

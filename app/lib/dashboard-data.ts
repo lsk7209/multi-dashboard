@@ -605,6 +605,8 @@ export interface SiteStat {
   adsenseErrorKind?: ErrorKind;
   adsTxtErrorKind?: ErrorKind;
   sitemapErrorKind?: ErrorKind;
+  collectionFailurePhase?: string;
+  collectionFailureError?: string;
   error?: string;
   gscError?: string;
   adsenseError?: string;
@@ -1453,6 +1455,22 @@ function getActionItems(
   const skipAdsenseApprovalQueue = shouldSkipAdsenseApprovalQueue(stat);
   const needsAdsenseConsoleScopeReview =
     hasApprovedAdsenseRoot(stat) && hasMonetizationCollectionIssue(stat);
+
+  if (
+    stat.collectionFailurePhase === "content" &&
+    (stat.collectionFailureError || stat.error)
+  ) {
+    items.push(
+      makeAction(
+        stat,
+        "data",
+        97,
+        "콘텐츠 수집 실패",
+        "GA4·GSC·수익화 수집 이후 콘텐츠 확인 단계가 완료되지 않았습니다.",
+        "콘텐츠 URL 응답 시간과 수집 제한을 확인한 뒤 해당 사이트만 다시 수집하세요.",
+      ),
+    );
+  }
 
   if (stat.operationalStatus === "needsPermission" && gscAuditResult) {
     items.push(makeGscPermissionAuditAction(stat, gscAuditResult));
