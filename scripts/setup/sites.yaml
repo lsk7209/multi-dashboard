@@ -1912,7 +1912,8 @@ sites:
     wpRestBase: https://jeompolab.com/wp-json/wp/v2
     ga4PropertyId: "550814434"
     gscSiteUrl: https://jeompolab.com/
-    monetization: true
+    # Confirmed by the operator on 2026-08-26: this site is excluded from AdSense operations.
+    monetization: false
   - id: lim01-soonsaak-co
     name: lim01.soonsaak.co.kr
     enabled: true

@@ -1,5 +1,14 @@
 # Handoff
 
+## jeompolab.com AdSense exclusion recorded (2026-08-26 KST)
+
+- User decision: `jeompolab.com` is excluded from AdSense operations.
+- Current state: `scripts/setup/sites.yaml` now records `monetization: false`; `AGENTS.md` records the durable project rule so missing loader or `/ads.txt` signals are not added to the AdSense remediation queue.
+- Fresh validation: `pnpm stats:update` completed for 113 sites at `2026-08-26T10:45:25.234Z`; `jeompolab` resolved with GA4/GSC `ok` and AdSense/ads.txt disabled. Fleet totals now report zero missing AdSense-code detections and zero ads.txt failures. `pnpm type-check`, `pnpm lint`, and `pnpm build` all pass.
+- Side effects: dashboard configuration and generated snapshot/history changed. No `jeompolab.com` live site, AdSense account, Search Console, DNS, or publishing mutation was performed.
+- Rollback: revert the two configuration/documentation changes only if the operator explicitly restores `jeompolab.com` to AdSense scope.
+- Single next step: include these coherent dashboard files in the next Git deployment; do not re-enable monetization unless the operator explicitly reverses the exclusion.
+
 ## WordPress reader-sample collector repair released (2026-07-29 KST)
 
 - User goal: keep fleet prioritization evidence-based while improving AdSense review readiness and reader-first site quality without making external AdSense or Google actions.
