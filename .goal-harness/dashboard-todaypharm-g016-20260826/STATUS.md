@@ -1,10 +1,10 @@
 # Status
 
 Current State: DONE
-Current Phase: Acceptance satisfied; scoped deployment pending within this turn
-Completed: Collector resilience implementation, regression/full validation, default-budget 113-site proof, Todaypharm audit, independent re-review, runtime smoke and durable handoff.
-In Progress: Commit, push and read-only production confirmation.
-Remaining: Confirm Git-connected production serves the new snapshot.
+Current Phase: Acceptance and deployment complete
+Completed: Collector resilience implementation, regression/full validation, default-budget 113-site proof, Todaypharm audit, independent re-review, runtime smoke, durable handoff, Git push and successful Git-connected Vercel status.
+In Progress: None.
+Remaining: None within the authorized scope.
 Blocked: None.
 Last Verification: Typecheck, lint, 293 tests, production build and runtime smoke passed; snapshot `2026-08-26T12:47:22.978Z` contains 113 sites.
-Next Action: Commit only coherent G016 files, push `main`, and verify the production alias without Vercel CLI/API mutation.
+Next Action: Address the three recorded GSC access blockers in a separate evidence-backed task; anonymous production HTML verification remains limited by the Vercel challenge response.
