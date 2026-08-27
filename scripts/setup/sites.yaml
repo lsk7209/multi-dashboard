@@ -1,18 +1,5 @@
 # Generated/managed by scripts/setup/import-ga4-sites.ts
 sites:
-  - id: kang4
-    name: 강사자판기
-    enabled: true
-    platform: wordpress
-    url: https://kang4.com/
-    wpRestBase: https://kang4.com/wp-json/wp/v2
-    ga4PropertyId: "536337959"
-    gscSiteUrl: https://kang4.com/
-    monetization: true
-    contentSource:
-      type: local-app
-      locationLabel: kwangju
-      localPath: D:\web\kang4com
   - id: tasko
     name: 태스코 - GA4
     enabled: false
@@ -695,15 +682,6 @@ sites:
     wpRestBase: https://knewstory.kr/wp-json/wp/v2
     ga4PropertyId: "536122428"
     gscSiteUrl: https://knewstory.kr/
-    monetization: true
-  - id: kang4-2
-    name: kang4.com
-    enabled: false
-    platform: wordpress
-    url: https://kang4.com/
-    wpRestBase: https://kang4.com/wp-json/wp/v2
-    ga4PropertyId: "536337959"
-    gscSiteUrl: https://kang4.com/
     monetization: true
   - id: coinyo-2
     name: coinyo.kr

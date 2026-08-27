@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-26T12:47:37.764Z",
+  "generatedAt": "2026-08-27T01:30:16.068Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-08-26T12:47:37.232Z",
+  "sourceUpdatedAt": "2026-08-27T01:29:40.930Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 0,
     "medium": 0,
     "low": 3
   },
   "counts": {
     "github-actions": 0,
-    "gsc": 5,
+    "gsc": 2,
     "adsense": 1,
     "ga4": 0,
     "vercel": 0,
@@ -23,53 +23,23 @@
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-08-26T12:47:37.225Z",
+      "checkedAt": "2026-08-27T01:29:40.921Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-08-26T12:47:22.978Z.",
-      "checkedAt": "2026-08-26T12:47:37.224Z",
-      "count": 6
+      "detail": "Read dashboard artifact snapshot=2026-08-27T01:29:24.500Z.",
+      "checkedAt": "2026-08-27T01:29:40.919Z",
+      "count": 3
     },
     "ga4": {
       "status": "ok",
-      "detail": "Read GA4 collector status for 113 sites.",
-      "checkedAt": "2026-08-26T12:47:37.224Z",
-      "count": 113
+      "detail": "Read GA4 collector status for 112 sites.",
+      "checkedAt": "2026-08-27T01:29:40.919Z",
+      "count": 112
     }
   },
   "findings": [
-    {
-      "id": "gsc-kang4-j1m9wr",
-      "kind": "gsc",
-      "severity": "high",
-      "priority": 80,
-      "site": "kang4",
-      "sourceLine": "direct:dashboard site=kang4 kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://kang4.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "title": "강사자판기: GSC direct collector signal auth_error",
-      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
-    },
-    {
-      "id": "gsc-lim01-soonsaak-co-vc2la0",
-      "kind": "gsc",
-      "severity": "high",
-      "priority": 80,
-      "site": "lim01-soonsaak-co",
-      "sourceLine": "direct:dashboard site=lim01-soonsaak-co kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://lim01.soonsaak.co.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "title": "lim01.soonsaak.co.kr: GSC direct collector signal auth_error",
-      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
-    },
-    {
-      "id": "gsc-picturebooks-1an0jga",
-      "kind": "gsc",
-      "severity": "high",
-      "priority": 80,
-      "site": "picturebooks",
-      "sourceLine": "direct:dashboard site=picturebooks kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://picturebooks.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "title": "picturebooks.kr: GSC direct collector signal auth_error",
-      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
-    },
     {
       "id": "gsc-discparty-t1o7t1",
       "kind": "gsc",

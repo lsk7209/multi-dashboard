@@ -10,6 +10,10 @@
 
 - `jeompolab.com` is not an AdSense-operated site. Keep its dashboard `monetization` setting disabled and exclude missing AdSense loader or `ads.txt` signals from the AdSense remediation queue unless the user explicitly reverses this decision.
 
+## Retired Sites
+
+- `kang4.com` was retired by the operator on 2026-08-27 after domain expiry and zero 30-day GA4/GSC activity. Keep it out of `scripts/setup/sites.yaml`, active monetization/affiliate inventories, collection runs, action queues, and new content work unless the operator explicitly reverses this decision. Preserve historical evidence and the local source checkout; retirement does not authorize filesystem deletion, registrar mutation, DNS mutation, or AdSense-console removal.
+
 ## Dashboard Freshness Before Site Work
 
 - Before using dashboard insights to inspect, improve, or deploy any individual site, refresh the dashboard snapshot first.

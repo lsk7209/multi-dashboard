@@ -6,7 +6,6 @@ const ADSENSE_APPROVED_EXACT_DOMAINS = [
   "ehon365.kr",
   "fastjob.kr",
   "haemongdream.com",
-  "kang4.com",
   "klick.kr",
   "luckyday.kr",
   "nexttech7.com",

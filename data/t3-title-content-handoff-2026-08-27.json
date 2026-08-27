@@ -1,0 +1,446 @@
+{
+  "generatedAt": "2026-08-27T01:30:21.574Z",
+  "mutationStatus": {
+    "cmsMutationPerformed": false,
+    "productionDeploymentPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false
+  },
+  "dashboardEvidence": {
+    "snapshotTimestamp": "2026-08-27T01:29:24.500Z",
+    "statsPath": "data\\site-stats.json",
+    "planPath": "data\\fleet-optimization-plan-2026-08-27.json",
+    "sitesPath": "scripts\\setup\\sites.yaml",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": [
+      "skipped_refresh_failed:adsense:api_error:2",
+      "skipped_refresh_failed:adsense_collector:transient_error:26",
+      "skipped_refresh_failed:ads_txt_collector:transient_error:16"
+    ]
+  },
+  "summary": {
+    "siteCount": 12,
+    "titleHandoffCount": 8,
+    "contentHandoffCount": 7
+  },
+  "sites": [
+    {
+      "host": "tennisfrens.com",
+      "siteId": "tennisfrens",
+      "url": "https://tennisfrens.com/",
+      "localPath": "D:\\web\\tennisfrens",
+      "platform": "wordpress",
+      "wpRestBase": "https://tennisfrens.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        1
+      ],
+      "metrics": {
+        "gscImpressions30d": 11821,
+        "gscClicks30d": 124,
+        "gscCtr30d": 0.010489806276964725,
+        "gscPosition30d": 11.09677692242619,
+        "ga4ActiveUsers30d": 1511
+      },
+      "topQueries": [
+        {
+          "query": "ntrp 테스트",
+          "clicks": 11,
+          "impressions": 19,
+          "ctr": 0.5789473684210527,
+          "position": 1
+        },
+        {
+          "query": "사라 베일렉",
+          "clicks": 3,
+          "impressions": 584,
+          "ctr": 0.005136986301369863,
+          "position": 10.422945205479452
+        },
+        {
+          "query": "사라베일렉",
+          "clicks": 1,
+          "impressions": 73,
+          "ctr": 0.0136986301369863,
+          "position": 10.58904109589041
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://tennisfrens.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "estat.kr",
+      "siteId": "estat-2",
+      "url": "https://estat.kr/",
+      "localPath": "D:\\web\\estatkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://estat.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        2,
+        3
+      ],
+      "metrics": {
+        "gscImpressions30d": 11658,
+        "gscClicks30d": 66,
+        "gscCtr30d": 0.005661348430262481,
+        "gscPosition30d": 7.691713844570252,
+        "ga4ActiveUsers30d": 96
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://estat.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "sorimate.com",
+      "siteId": "sorimate",
+      "url": "https://sorimate.com/",
+      "localPath": "",
+      "platform": "wordpress",
+      "wpRestBase": "https://sorimate.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        4
+      ],
+      "metrics": {
+        "gscImpressions30d": 4926,
+        "gscClicks30d": 15,
+        "gscCtr30d": 0.0030450669914738123,
+        "gscPosition30d": 13.960617133576939,
+        "ga4ActiveUsers30d": 344
+      },
+      "topQueries": [
+        {
+          "query": "eolmayeyo",
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 8.4
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://sorimate.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "",
+        "adsTxtStatus": ""
+      },
+      "recommendedNextAction": "Evidence collection only: no controlled local content source is registered; do not create or edit production content."
+    },
+    {
+      "host": "dogswhere.com",
+      "siteId": "dogswhere",
+      "url": "https://dogswhere.com/",
+      "localPath": "D:\\web\\dogswherecom",
+      "platform": "nextjs",
+      "wpRestBase": "https://dogswhere.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        5
+      ],
+      "metrics": {
+        "gscImpressions30d": 1558,
+        "gscClicks30d": 38,
+        "gscCtr30d": 0.024390243902439025,
+        "gscPosition30d": 10.20795892169448,
+        "ga4ActiveUsers30d": 2825
+      },
+      "topQueries": [
+        {
+          "query": "광주 오프리쉬",
+          "clicks": 0,
+          "impressions": 50,
+          "ctr": 0,
+          "position": 9.6
+        },
+        {
+          "query": "강아지 맡길 곳",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 33.8
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://dogswhere.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "petinsuer.com",
+      "siteId": "petinsuer-2",
+      "url": "https://petinsuer.com/",
+      "localPath": "D:\\web\\petinsuercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://petinsuer.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        6
+      ],
+      "metrics": {
+        "gscImpressions30d": 1662,
+        "gscClicks30d": 29,
+        "gscCtr30d": 0.017448856799037304,
+        "gscPosition30d": 9.230445246690733,
+        "ga4ActiveUsers30d": 258
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://petinsuer.com/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "legalser.com",
+      "siteId": "legalser",
+      "url": "https://legalser.com/",
+      "localPath": "D:\\web\\legalsercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://legalser.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        9
+      ],
+      "metrics": {
+        "gscImpressions30d": 998,
+        "gscClicks30d": 6,
+        "gscCtr30d": 0.006012024048096192,
+        "gscPosition30d": 32.26653306613227,
+        "ga4ActiveUsers30d": 59
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://legalser.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "seniorlivingnote.com",
+      "siteId": "seniorlivingnote",
+      "url": "https://seniorlivingnote.com/",
+      "localPath": "",
+      "platform": "wordpress",
+      "wpRestBase": "https://seniorlivingnote.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        10
+      ],
+      "metrics": {
+        "gscImpressions30d": 927,
+        "gscClicks30d": 28,
+        "gscCtr30d": 0.030204962243797196,
+        "gscPosition30d": 8.157497303128372,
+        "ga4ActiveUsers30d": 89
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://seniorlivingnote.com/wp-sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Evidence collection only: no controlled local content source is registered; do not create or edit production content."
+    },
+    {
+      "host": "patentgogo.com",
+      "siteId": "patentgogo",
+      "url": "https://patentgogo.com/",
+      "localPath": "D:\\web\\tukhugogo",
+      "platform": "nextjs",
+      "wpRestBase": "https://patentgogo.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        11,
+        12
+      ],
+      "metrics": {
+        "gscImpressions30d": 748,
+        "gscClicks30d": 4,
+        "gscCtr30d": 0.0053475935828877,
+        "gscPosition30d": 10.356951871657754,
+        "ga4ActiveUsers30d": 32
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://patentgogo.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "travelpang.kr",
+      "siteId": "travelpang-2",
+      "url": "https://travelpang.kr/",
+      "localPath": "D:\\web\\travelpangkr",
+      "platform": "wordpress",
+      "wpRestBase": "https://travelpang.kr/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        14
+      ],
+      "metrics": {
+        "gscImpressions30d": 596,
+        "gscClicks30d": 18,
+        "gscCtr30d": 0.030201342281879196,
+        "gscPosition30d": 11.770134228187919,
+        "ga4ActiveUsers30d": 53
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://travelpang.kr/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    },
+    {
+      "host": "trave.kr",
+      "siteId": "trave",
+      "url": "https://trave.kr/",
+      "localPath": "D:\\web\\travekr",
+      "platform": "wordpress",
+      "wpRestBase": "https://trave.kr/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        15,
+        18
+      ],
+      "metrics": {
+        "gscImpressions30d": 509,
+        "gscClicks30d": 11,
+        "gscCtr30d": 0.021611001964636542,
+        "gscPosition30d": 6.880157170923379,
+        "ga4ActiveUsers30d": 42
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://trave.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "wedfairguide.com",
+      "siteId": "wedfairguide",
+      "url": "https://wedfairguide.com/",
+      "localPath": "D:\\web\\wedding-fair-decision-hub",
+      "platform": "nextjs",
+      "wpRestBase": "https://wedfairguide.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        16
+      ],
+      "metrics": {
+        "gscImpressions30d": 471,
+        "gscClicks30d": 7,
+        "gscCtr30d": 0.014861995753715499,
+        "gscPosition30d": 11.303609341825902,
+        "ga4ActiveUsers30d": 101
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://wedfairguide.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "gradienttrail.com",
+      "siteId": "gradienttrail",
+      "url": "https://gradienttrail.com/",
+      "localPath": "D:\\web\\park-trail",
+      "platform": "static",
+      "wpRestBase": "https://gradienttrail.com/wp-json/wp/v2",
+      "actions": [
+        "content_handoff"
+      ],
+      "planRanks": [
+        17
+      ],
+      "metrics": {
+        "gscImpressions30d": 516,
+        "gscClicks30d": 6,
+        "gscCtr30d": 0.011627906976744186,
+        "gscPosition30d": 22.984496124031008,
+        "ga4ActiveUsers30d": 60
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://gradienttrail.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Persona/content workflow only; do not directly edit article bodies from this handoff."
+    }
+  ],
+  "stopConditions": [
+    "Do not edit WordPress titles, slugs, article bodies, headings, or in-body internal links from this handoff.",
+    "Do not publish drafts, schedule posts, submit sitemaps, ping IndexNow, deploy, or mutate CMS/API state without an explicit apply step and rollback path.",
+    "If localPath is missing or dirty, collect evidence only and do not create content in production.",
+    "Re-run pnpm stats:update and pnpm fleet:optimize:plan before using this handoff after the next dashboard data window."
+  ]
+}

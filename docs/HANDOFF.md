@@ -1,5 +1,23 @@
 # Handoff
 
+## kang4.com retired from active dashboard operations (2026-08-27 KST)
+
+- User decision: retire `kang4.com` from the dashboard and active site operations after domain expiry and zero 30-day GA4/GSC traffic.
+- Completed: removed both `kang4` site entries from `scripts/setup/sites.yaml`, removed the domain from the active AdSense-approved queue scope, and removed its affiliate audience classification. `AGENTS.md` now records the retirement rule so future refreshes, action queues, and new-content work do not silently reintroduce it.
+- Fresh validation: the default `pnpm stats:update` completed successfully at `2026-08-27T01:29:24.500Z` with 112 sites, GA4 failures 0, GSC failures 0, sitemap failures 0, AdSense-code missing 0, and ads.txt failures 0. Current `data/site-stats.json` contains zero `kang4` rows. Direct ops regeneration contains no `kang4` finding, and the strict fleet chain passed 4/4 commands against the same snapshot.
+- Preserved history: dated audits, historical approval/scheduling records, and the local source checkout `D:\web\kang4com` remain intact for auditability and recovery. They are not active inventory.
+- Side effects and authority boundary: no registrar, DNS, Google AdSense console, Search Console, WordPress, or filesystem deletion was performed. Roll back by reverting the scoped retirement commit and restoring the removed configuration rows only if the operator explicitly reverses this decision.
+- Single next step: deploy the scoped dashboard retirement commit through the existing Git-connected production flow and confirm its commit status.
+
+## GSC owner recovery verified; kang4 renewal decision pending (2026-08-27 KST)
+
+- User update: owner access was added for `lim01.soonsaak.co.kr` and `picturebooks.kr`.
+- Fresh proof: live permission audit first returned `siteOwner` for both. A default-budget `pnpm stats:update` then completed 113/113 at `2026-08-26T23:11:23.493Z`; both rows now have `gscStatus=ok`. The follow-up permission audit contains only `kang4.com`, still `siteUnverifiedUser`.
+- Current search evidence: `picturebooks.kr` has 3 GSC clicks / 11 impressions over 30 days. `lim01.soonsaak.co.kr` has GSC 0/0 but GA4 273 users over the available 30-day window. `kang4.com` has zero GA4 users, sessions and pageviews and zero GSC clicks/impressions over 30 days; its domain is reported expired by the operator.
+- Decision boundary: do not renew or repurchase `kang4.com` solely because its AdSense site status had passed. A subdomain can serve ads under an approved parent domain, but it has no guaranteed Google/Naver discovery advantage; choose renewal only if preserving the name/content is worth a bounded one-year experiment.
+- Side effects: refreshed dashboard snapshot/history and generated the 2026-08-27 GSC permission packet. No GSC mutation, AdSense action, registrar purchase, DNS change, publishing, or deployment occurred.
+- Single next step: operator decides whether to abandon `kang4.com` or authorize an exact renewal/purchase check; until then keep it out of new content investment and retain only the read-only dashboard evidence.
+
 ## G016 collector resilience and Todaypharm audit (2026-08-26 KST)
 
 - User goal: improve the full-site dashboard and AdSense-readiness evidence, keeping `jeompolab.com` excluded and avoiding AdSense/GSC submissions or production database writes.
