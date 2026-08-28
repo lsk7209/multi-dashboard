@@ -1509,6 +1509,7 @@ sites:
     enabled: true
     platform: static
     url: https://caregos.com/
+    wpRestBase: https://caregos.com/wp-json/wp/v2
     ga4PropertyId: "540671690"
     gscSiteUrl: https://caregos.com/
     monetization: false
@@ -1517,7 +1518,6 @@ sites:
       type: local-app
       locationLabel: static-local
       localPath: D:\web\yoyangwon
-    wpRestBase: https://caregos.com/wp-json/wp/v2
   - id: wattbenchs
     name: wattbenchs.com
     enabled: true
@@ -1871,3 +1871,21 @@ sites:
     ga4PropertyId: "550822302"
     gscSiteUrl: https://lim01.soonsaak.co.kr/
     monetization: false
+  - id: kang4
+    name: 강사자판기
+    enabled: true
+    platform: wordpress
+    url: https://kang4.com/
+    wpRestBase: https://kang4.com/wp-json/wp/v2
+    ga4PropertyId: "325680688"
+    gscSiteUrl: https://kang4.com/
+    monetization: true
+  - id: kang4-2
+    name: kang4.com
+    enabled: true
+    platform: wordpress
+    url: https://kang4.com/
+    wpRestBase: https://kang4.com/wp-json/wp/v2
+    ga4PropertyId: "536337959"
+    gscSiteUrl: https://kang4.com/
+    monetization: true
