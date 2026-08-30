@@ -1889,3 +1889,12 @@ sites:
     ga4PropertyId: "536337959"
     gscSiteUrl: https://kang4.com/
     monetization: true
+  - id: gold79
+    name: gold79.kr
+    enabled: true
+    platform: wordpress
+    url: https://gold79.kr/
+    wpRestBase: https://gold79.kr/wp-json/wp/v2
+    ga4PropertyId: "552090458"
+    gscSiteUrl: https://gold79.kr/
+    monetization: true
