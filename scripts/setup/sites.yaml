@@ -1898,3 +1898,12 @@ sites:
     ga4PropertyId: "552090458"
     gscSiteUrl: https://gold79.kr/
     monetization: true
+  - id: item79
+    name: item79.com
+    enabled: true
+    platform: wordpress
+    url: https://item79.com/
+    wpRestBase: https://item79.com/wp-json/wp/v2
+    ga4PropertyId: "552227671"
+    gscSiteUrl: https://item79.com/
+    monetization: true
