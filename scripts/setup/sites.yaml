@@ -1907,3 +1907,21 @@ sites:
     ga4PropertyId: "552227671"
     gscSiteUrl: https://item79.com/
     monetization: true
+  - id: finance-2mlab
+    name: finance.2mlab.kr
+    enabled: true
+    platform: wordpress
+    url: https://finance.2mlab.kr/
+    wpRestBase: https://finance.2mlab.kr/wp-json/wp/v2
+    ga4PropertyId: "555938140"
+    gscSiteUrl: https://finance.2mlab.kr/
+    monetization: true
+  - id: food-2mlab
+    name: food.2mlab.kr
+    enabled: true
+    platform: wordpress
+    url: https://food.2mlab.kr/
+    wpRestBase: https://food.2mlab.kr/wp-json/wp/v2
+    ga4PropertyId: "556050046"
+    gscSiteUrl: https://food.2mlab.kr/
+    monetization: true
