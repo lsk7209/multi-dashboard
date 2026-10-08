@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-08T12:22:29.906604+00:00",
+  "status": "PASS",
+  "scope": "Turbo1 duplicate WordPress configuration cleanup",
+  "repairs": [
+    {
+      "domain": "2mlab.kr",
+      "removedDuplicateConstants": [
+        "WP_MEMORY_LIMIT",
+        "WP_POST_REVISIONS"
+      ],
+      "phpLint": "PASS",
+      "backupVerified": true,
+      "modePreserved": true
+    },
+    {
+      "domain": "fastjob.kr",
+      "removedDuplicateConstants": [
+        "DISABLE_WP_CRON"
+      ],
+      "phpLint": "PASS",
+      "backupVerified": true,
+      "modePreserved": true
+    }
+  ],
+  "runtimeConstants": {
+    "2mlab.kr": {
+      "memory": "256M",
+      "revisions": 3,
+      "cronDisabled": true
+    },
+    "fastjob.kr": {
+      "memory": "256M",
+      "revisions": 3,
+      "cronDisabled": true
+    }
+  },
+  "verification": {
+    "uncachedHttps200": true,
+    "duplicateWarningsObservedAfterRepair": 0,
+    "publicAddressesChecked": 29,
+    "publicResponseRegressions": 0,
+    "protectedConfigurationsMatch": true,
+    "cronUnchanged": true,
+    "independentReview": "PASS"
+  },
+  "migration": "DEFERRED",
+  "limitations": [
+    "The warning check covers the observed requests, not long-term recurrence.",
+    "Separate haemongdream.com REST/SQL log diagnostics remain unresolved.",
+    "No additional file deletion or capacity recovery is claimed."
+  ]
+}
