@@ -1925,3 +1925,57 @@ sites:
     ga4PropertyId: "556050046"
     gscSiteUrl: https://food.2mlab.kr/
     monetization: true
+  - id: alt-coinyo
+    name: alt.coinyo.kr
+    enabled: true
+    platform: wordpress
+    url: https://alt.coinyo.kr/
+    wpRestBase: https://alt.coinyo.kr/wp-json/wp/v2
+    ga4PropertyId: "558091977"
+    gscSiteUrl: https://alt.coinyo.kr/
+    monetization: true
+  - id: bit-coinyo
+    name: bit.coinyo.kr
+    enabled: true
+    platform: wordpress
+    url: https://bit.coinyo.kr/
+    wpRestBase: https://bit.coinyo.kr/wp-json/wp/v2
+    ga4PropertyId: "558093604"
+    gscSiteUrl: https://bit.coinyo.kr/
+    monetization: true
+  - id: travel-dogspang
+    name: travel.dogspang.kr
+    enabled: true
+    platform: wordpress
+    url: https://travel.dogspang.kr/
+    wpRestBase: https://travel.dogspang.kr/wp-json/wp/v2
+    ga4PropertyId: "558214157"
+    gscSiteUrl: https://travel.dogspang.kr/
+    monetization: true
+  - id: hos-dogspang
+    name: hos.dogspang.kr
+    enabled: true
+    platform: wordpress
+    url: https://hos.dogspang.kr/
+    wpRestBase: https://hos.dogspang.kr/wp-json/wp/v2
+    ga4PropertyId: "558237812"
+    gscSiteUrl: https://hos.dogspang.kr/
+    monetization: true
+  - id: nekau
+    name: nekau.com
+    enabled: true
+    platform: wordpress
+    url: https://nekau.com/
+    wpRestBase: https://nekau.com/wp-json/wp/v2
+    ga4PropertyId: "558214540"
+    gscSiteUrl: https://nekau.com/
+    monetization: true
+  - id: dog-nekau
+    name: dog.nekau.com
+    enabled: true
+    platform: wordpress
+    url: https://dog.nekau.com/
+    wpRestBase: https://dog.nekau.com/wp-json/wp/v2
+    ga4PropertyId: "558204098"
+    gscSiteUrl: https://dog.nekau.com/
+    monetization: true
