@@ -1979,3 +1979,12 @@ sites:
     ga4PropertyId: "558204098"
     gscSiteUrl: https://dog.nekau.com/
     monetization: true
+  - id: toolnavigo
+    name: toolnavigo.com
+    enabled: true
+    platform: wordpress
+    url: https://toolnavigo.com/
+    wpRestBase: https://toolnavigo.com/wp-json/wp/v2
+    ga4PropertyId: "558243423"
+    gscSiteUrl: https://toolnavigo.com/
+    monetization: true
