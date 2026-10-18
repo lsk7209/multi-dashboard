@@ -1,8 +1,5 @@
 # Generated/managed by scripts/setup/import-ga4-sites.ts
 sites:
-  # tasko.kr (main) — 2026-08-29 은퇴. 완전 deindex(Scaled Content Abuse, sitemap indexed:0)
-  # + 트래픽 0(GA4 2속성·SlimStat 4개월). AdSense·ads.txt 제거, 파이프라인 중단.
-  # sc-domain 서브(saju/mbti/ai.tasko.kr)는 별개 자산으로 유지. import-ga4-sites.ts RETIRED_HOSTNAMES 참조.
   - id: luckyday
     name: 럭키데이 - GA4
     enabled: true
@@ -109,6 +106,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\temon
+    wpRestBase: https://temon.kr/wp-json/wp/v2
   - id: haemongdream
     name: 해몽드림 - GA4
     enabled: true
@@ -404,6 +402,7 @@ sites:
     ga4PropertyId: "532855163"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: texturb
     name: texturb.com
     enabled: true
@@ -430,7 +429,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\runmania
-  # tasko-2 (tasko.kr main) 은퇴 제거 — 2026-08-29. import-ga4-sites.ts RETIRED_HOSTNAMES가 재삽입 차단.
   - id: mbti-tasko
     name: tasko.kr
     enabled: true
@@ -558,6 +556,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\todaypharm
+    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true
@@ -570,6 +569,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\tennisfrens
+    wpRestBase: https://tennisfrens.com/wp-json/wp/v2
   - id: bojo24
     name: bojo24.kr
     enabled: true
@@ -587,6 +587,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\bojo24
+    wpRestBase: https://bojo24.kr/wp-json/wp/v2
   - id: ehon365
     name: ehon365.kr
     enabled: true
@@ -599,6 +600,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\ehon365\temp_clone
+    wpRestBase: https://ehon365.kr/wp-json/wp/v2
   - id: 2mlab-2
     name: 2mlab.kr
     enabled: true
@@ -629,6 +631,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\spinkorea
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: ezfunnel
     name: ezfunnel.kr
     enabled: true
@@ -673,8 +676,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\coinyokr
-  # Measurement registered 2026-10-08; GSC collector access pending.
-  # Existing noindex preserved. Monetization is not AdSense approval evidence.
   - id: coinyo-alt
     name: alt.coinyo.kr
     enabled: true
@@ -692,8 +693,6 @@ sites:
       sshUser: coinyo
       sshKeyPath: E:\env\coinyo-chemicloud-PrivateKey-nopass
       wpPath: /home/coinyo/alt.coinyo.kr
-  # Measurement registered 2026-10-08; GSC collector access pending.
-  # Existing noindex preserved. Monetization is not AdSense approval evidence.
   - id: coinyo-bit
     name: bit.coinyo.kr
     enabled: true
@@ -732,6 +731,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\cartainkr
+    wpRestBase: https://cartain.kr/wp-json/wp/v2
   - id: crepika
     name: crepika.com
     enabled: true
@@ -955,6 +955,7 @@ sites:
     ga4PropertyId: "536856718"
     gscSiteUrl: https://goesku.com/
     monetization: true
+    wpRestBase: https://goesku.com/wp-json/wp/v2
   - id: roadways
     name: roadways.kr
     enabled: true
@@ -1196,6 +1197,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\picklefriend
+    wpRestBase: https://picklefriend.kr/wp-json/wp/v2
   - id: smart-sellerpit
     name: smart.sellerpit.kr
     enabled: true
@@ -1311,6 +1313,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\dogswherecom
+    wpRestBase: https://dogswhere.com/wp-json/wp/v2
   - id: smallhomepick
     name: 스몰홈픽 - 작은집 살림템 가이드
     enabled: true
@@ -1429,6 +1432,7 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\campgogokr
       githubRepo: https://github.com/lsk7209/campgogo.kr
+    wpRestBase: https://campgogo.kr/wp-json/wp/v2
   - id: dullegilgogo
     name: https://dullegilgogo.kr
     enabled: true
@@ -1507,6 +1511,7 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\yungyanggogo
+    wpRestBase: https://yungyanggogo.kr/wp-json/wp/v2
   - id: caregos
     name: caregos.com
     enabled: true
@@ -1520,6 +1525,7 @@ sites:
       type: local-app
       locationLabel: static-local
       localPath: D:\web\yoyangwon
+    wpRestBase: https://caregos.com/wp-json/wp/v2
   - id: wattbenchs
     name: wattbenchs.com
     enabled: true
@@ -1721,6 +1727,7 @@ sites:
       locationLabel: vercel
       localPath: D:\web\wedding
       githubRepo: https://github.com/lsk7209/wedding-fair-decision-hub
+    wpRestBase: https://wedfairguide.com/wp-json/wp/v2
   - id: seniorlivingnote
     name: seniorlivingnote.com
     enabled: true
@@ -1880,3 +1887,84 @@ sites:
     ga4PropertyId: "550822302"
     gscSiteUrl: https://lim01.soonsaak.co.kr/
     monetization: false
+  - id: gold79
+    name: gold79.kr
+    enabled: true
+    platform: wordpress
+    url: https://gold79.kr/
+    wpRestBase: https://gold79.kr/wp-json/wp/v2
+    ga4PropertyId: "552090458"
+    gscSiteUrl: https://gold79.kr/
+    monetization: true
+  - id: item79
+    name: item79.com
+    enabled: true
+    platform: wordpress
+    url: https://item79.com/
+    wpRestBase: https://item79.com/wp-json/wp/v2
+    ga4PropertyId: "552227671"
+    gscSiteUrl: https://item79.com/
+    monetization: true
+  - id: finance-2mlab
+    name: finance.2mlab.kr
+    enabled: true
+    platform: wordpress
+    url: https://finance.2mlab.kr/
+    wpRestBase: https://finance.2mlab.kr/wp-json/wp/v2
+    ga4PropertyId: "555938140"
+    gscSiteUrl: https://finance.2mlab.kr/
+    monetization: true
+  - id: food-2mlab
+    name: food.2mlab.kr
+    enabled: true
+    platform: wordpress
+    url: https://food.2mlab.kr/
+    wpRestBase: https://food.2mlab.kr/wp-json/wp/v2
+    ga4PropertyId: "556050046"
+    gscSiteUrl: https://food.2mlab.kr/
+    monetization: true
+  - id: travel-dogspang
+    name: travel.dogspang.kr
+    enabled: true
+    platform: wordpress
+    url: https://travel.dogspang.kr/
+    wpRestBase: https://travel.dogspang.kr/wp-json/wp/v2
+    ga4PropertyId: "558214157"
+    gscSiteUrl: https://travel.dogspang.kr/
+    monetization: true
+  - id: hos-dogspang
+    name: hos.dogspang.kr
+    enabled: true
+    platform: wordpress
+    url: https://hos.dogspang.kr/
+    wpRestBase: https://hos.dogspang.kr/wp-json/wp/v2
+    ga4PropertyId: "558237812"
+    gscSiteUrl: https://hos.dogspang.kr/
+    monetization: true
+  - id: nekau
+    name: nekau.com
+    enabled: true
+    platform: wordpress
+    url: https://nekau.com/
+    wpRestBase: https://nekau.com/wp-json/wp/v2
+    ga4PropertyId: "558214540"
+    gscSiteUrl: https://nekau.com/
+    monetization: true
+  - id: dog-nekau
+    name: dog.nekau.com
+    enabled: true
+    platform: wordpress
+    url: https://dog.nekau.com/
+    wpRestBase: https://dog.nekau.com/wp-json/wp/v2
+    ga4PropertyId: "558204098"
+    gscSiteUrl: https://dog.nekau.com/
+    monetization: true
+  - id: toolnavigo
+    name: toolnavigo.com
+    enabled: true
+    platform: wordpress
+    url: https://toolnavigo.com/
+    wpRestBase: https://toolnavigo.com/wp-json/wp/v2
+    ga4PropertyId: "558243423"
+    gscSiteUrl: https://toolnavigo.com/
+    monetization: true

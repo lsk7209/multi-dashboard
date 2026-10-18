@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-18T08:17:55.934Z",
+  "generatedAt": "2026-10-18T22:50:59.592Z",
   "mutationPerformed": false,
   "ga4": {
-    "checkedAt": "2026-10-18T08:18:26.855Z",
+    "checkedAt": "2026-10-18T22:51:05.594Z",
     "complete": true,
     "accounts": 1,
     "properties": [
@@ -483,9 +483,14 @@
         "measurementId": "G-JDDZSJER8C"
       },
       {
-        "property": "properties/513733245",
-        "domain": "discparty.com",
-        "measurementId": "G-R5T8LMK38M"
+        "property": "properties/513769879",
+        "domain": "fastjob.kr",
+        "measurementId": "G-26XVC7KQBN"
+      },
+      {
+        "property": "properties/512060443",
+        "domain": "chatgipt.kr",
+        "measurementId": "G-FJHVBX6E6L"
       },
       {
         "property": "properties/512050444",
@@ -498,29 +503,19 @@
         "measurementId": "G-56PDD9FJ9X"
       },
       {
-        "property": "properties/512060443",
-        "domain": "chatgipt.kr",
-        "measurementId": "G-FJHVBX6E6L"
-      },
-      {
-        "property": "properties/513769879",
-        "domain": "fastjob.kr",
-        "measurementId": "G-26XVC7KQBN"
-      },
-      {
-        "property": "properties/516256882",
-        "domain": "haemongdream.com",
-        "measurementId": "G-4DD3504NHM"
-      },
-      {
-        "property": "properties/517897382",
-        "domain": "insupang.com",
-        "measurementId": "G-4BPRY10DEK"
+        "property": "properties/513733245",
+        "domain": "discparty.com",
+        "measurementId": "G-R5T8LMK38M"
       },
       {
         "property": "properties/517066030",
         "domain": "healthgotoo.com",
         "measurementId": "G-WMHY8QEC7Y"
+      },
+      {
+        "property": "properties/516256882",
+        "domain": "haemongdream.com",
+        "measurementId": "G-4DD3504NHM"
       },
       {
         "property": "properties/516369797",
@@ -538,14 +533,9 @@
         "measurementId": "G-1DHN7FS77L"
       },
       {
-        "property": "properties/519536919",
-        "domain": "legalser.com",
-        "measurementId": "G-XRJ448NND0"
-      },
-      {
-        "property": "properties/519578899",
-        "domain": "petinsuer.com",
-        "measurementId": "G-LZHWMJYV2C"
+        "property": "properties/517897382",
+        "domain": "insupang.com",
+        "measurementId": "G-4BPRY10DEK"
       },
       {
         "property": "properties/518554091",
@@ -563,6 +553,21 @@
         "measurementId": "G-2399V9D3BL"
       },
       {
+        "property": "properties/519536919",
+        "domain": "legalser.com",
+        "measurementId": "G-XRJ448NND0"
+      },
+      {
+        "property": "properties/519578899",
+        "domain": "petinsuer.com",
+        "measurementId": "G-LZHWMJYV2C"
+      },
+      {
+        "property": "properties/520579523",
+        "domain": "finan.kr",
+        "measurementId": "G-BX75JB1MM9"
+      },
+      {
         "property": "properties/519582866",
         "domain": "homeimer.com",
         "measurementId": "G-G9P7DNWRL8"
@@ -573,19 +578,14 @@
         "measurementId": "G-6F4SRD1QSQ"
       },
       {
-        "property": "properties/521243475",
-        "domain": "luxurytraver.com",
-        "measurementId": "G-48P3C5MKRJ"
-      },
-      {
-        "property": "properties/520579523",
-        "domain": "finan.kr",
-        "measurementId": "G-BX75JB1MM9"
-      },
-      {
         "property": "properties/521236824",
         "domain": "etique.kr",
         "measurementId": "G-T0XDEL37RD"
+      },
+      {
+        "property": "properties/521782814",
+        "domain": "autoscares.com",
+        "measurementId": "G-B5DF450VWT"
       },
       {
         "property": "properties/521243855",
@@ -593,14 +593,14 @@
         "measurementId": "G-X1XF83W80C"
       },
       {
+        "property": "properties/521243475",
+        "domain": "luxurytraver.com",
+        "measurementId": "G-48P3C5MKRJ"
+      },
+      {
         "property": "properties/521770057",
         "domain": "lawer.kr",
         "measurementId": "G-SCTB6F7KWB"
-      },
-      {
-        "property": "properties/521782814",
-        "domain": "autoscares.com",
-        "measurementId": "G-B5DF450VWT"
       },
       {
         "property": "properties/523266152",
@@ -613,6 +613,11 @@
         "measurementId": "G-83CLXETEJV"
       },
       {
+        "property": "properties/525923821",
+        "domain": "sellerpit.kr",
+        "measurementId": "G-MXE2PMM4E6"
+      },
+      {
         "property": "properties/524548131",
         "domain": "nicewomen.kr",
         "measurementId": "G-Q9N8XB9558"
@@ -623,29 +628,9 @@
         "measurementId": "G-9PHB2FYXSV"
       },
       {
-        "property": "properties/533729607",
-        "domain": "luckyday.kr",
-        "measurementId": "G-81SF0V450Y"
-      },
-      {
-        "property": "properties/533614337",
-        "domain": "runmania.kr",
-        "measurementId": "G-01M1XY4FM1"
-      },
-      {
         "property": "properties/532855163",
         "domain": "spinkorea.kr",
         "measurementId": "G-8RCEVHDSK5"
-      },
-      {
-        "property": "properties/532887366",
-        "domain": "texturb.com",
-        "measurementId": "G-0XP0CFXR0X"
-      },
-      {
-        "property": "properties/525923821",
-        "domain": "sellerpit.kr",
-        "measurementId": "G-MXE2PMM4E6"
       },
       {
         "property": "properties/533748860",
@@ -653,9 +638,9 @@
         "measurementId": "G-0H4Q9V5KJL"
       },
       {
-        "property": "properties/534288708",
-        "domain": "bojo24.kr",
-        "measurementId": "G-ZQJVKK37Y2"
+        "property": "properties/533614337",
+        "domain": "runmania.kr",
+        "measurementId": "G-01M1XY4FM1"
       },
       {
         "property": "properties/533744995",
@@ -663,9 +648,34 @@
         "measurementId": "G-NMW0CRZ2D7"
       },
       {
+        "property": "properties/532887366",
+        "domain": "texturb.com",
+        "measurementId": "G-0XP0CFXR0X"
+      },
+      {
+        "property": "properties/533729607",
+        "domain": "luckyday.kr",
+        "measurementId": "G-81SF0V450Y"
+      },
+      {
+        "property": "properties/534288708",
+        "domain": "bojo24.kr",
+        "measurementId": "G-ZQJVKK37Y2"
+      },
+      {
+        "property": "properties/534308136",
+        "domain": "chatgipt.kr",
+        "measurementId": "G-88SWNR1YS3"
+      },
+      {
         "property": "properties/534284697",
         "domain": "esgyo.kr",
         "measurementId": "G-1MJGZ1CVS1"
+      },
+      {
+        "property": "properties/534005389",
+        "domain": "sellerpit.kr",
+        "measurementId": "G-HF22729VRB"
       },
       {
         "property": "properties/533760772",
@@ -678,9 +688,9 @@
         "measurementId": "G-LV3YLJPLCP"
       },
       {
-        "property": "properties/534005389",
-        "domain": "sellerpit.kr",
-        "measurementId": "G-HF22729VRB"
+        "property": "properties/535779756",
+        "domain": "ehon365.kr",
+        "measurementId": "G-6SQ4F96Y3C"
       },
       {
         "property": "properties/534356101",
@@ -688,14 +698,9 @@
         "measurementId": "G-W1K51D8SBX"
       },
       {
-        "property": "properties/535779756",
-        "domain": "ehon365.kr",
-        "measurementId": "G-6SQ4F96Y3C"
-      },
-      {
-        "property": "properties/534308136",
-        "domain": "chatgipt.kr",
-        "measurementId": "G-88SWNR1YS3"
+        "property": "properties/534327620",
+        "domain": "today2424.kr",
+        "measurementId": "G-N2V7ZZP184"
       },
       {
         "property": "properties/534313222",
@@ -703,9 +708,9 @@
         "measurementId": "G-NPMV2G9KPK"
       },
       {
-        "property": "properties/534327620",
-        "domain": "today2424.kr",
-        "measurementId": "G-N2V7ZZP184"
+        "property": "properties/536008285",
+        "domain": "2mlab.kr",
+        "measurementId": "G-DRNYNWDVR3"
       },
       {
         "property": "properties/536106465",
@@ -713,14 +718,9 @@
         "measurementId": "G-9XSNSFF45N"
       },
       {
-        "property": "properties/536008285",
-        "domain": "2mlab.kr",
-        "measurementId": "G-DRNYNWDVR3"
-      },
-      {
-        "property": "properties/536081634",
-        "domain": "spinkorea.kr",
-        "measurementId": "G-KY5S8XFJFG"
+        "property": "properties/536352221",
+        "domain": "coinyo.knewstory.kr",
+        "measurementId": "G-XF9QHMC4F6"
       },
       {
         "property": "properties/536122428",
@@ -728,14 +728,19 @@
         "measurementId": "G-NKMPGF4J87"
       },
       {
+        "property": "properties/536081634",
+        "domain": "spinkorea.kr",
+        "measurementId": "G-KY5S8XFJFG"
+      },
+      {
+        "property": "properties/536550724",
+        "domain": "healthgotoo.com",
+        "measurementId": "G-JHB4QSD4TV"
+      },
+      {
         "property": "properties/536358308",
         "domain": "fastjob.kr",
         "measurementId": "G-E79YB5RZDL"
-      },
-      {
-        "property": "properties/536352221",
-        "domain": "coinyo.knewstory.kr",
-        "measurementId": "G-XF9QHMC4F6"
       },
       {
         "property": "properties/536548785",
@@ -748,16 +753,6 @@
         "measurementId": "G-1XXH5V0587"
       },
       {
-        "property": "properties/536573278",
-        "domain": "legalser.com",
-        "measurementId": "G-4NTN698TVW"
-      },
-      {
-        "property": "properties/536550724",
-        "domain": "healthgotoo.com",
-        "measurementId": "G-JHB4QSD4TV"
-      },
-      {
         "property": "properties/536558706",
         "domain": "cartain.kr",
         "measurementId": "G-N7JJFW6007"
@@ -768,19 +763,19 @@
         "measurementId": "G-BLTPX3X6CC"
       },
       {
+        "property": "properties/536573278",
+        "domain": "legalser.com",
+        "measurementId": "G-4NTN698TVW"
+      },
+      {
         "property": "properties/536564400",
         "domain": "dogspang.kr",
         "measurementId": "G-HBERNJNH03"
       },
       {
-        "property": "properties/536662292",
-        "domain": "luxurytraver.com",
-        "measurementId": "G-WQBV340TRP"
-      },
-      {
-        "property": "properties/536668384",
-        "domain": "softwa.kr",
-        "measurementId": "G-Q31DXXPEDR"
+        "property": "properties/536651077",
+        "domain": "autoscares.com",
+        "measurementId": "G-S3DBYE2TWD"
       },
       {
         "property": "properties/536578195",
@@ -788,9 +783,14 @@
         "measurementId": "G-P8LJ76FVM4"
       },
       {
-        "property": "properties/536651077",
-        "domain": "autoscares.com",
-        "measurementId": "G-S3DBYE2TWD"
+        "property": "properties/536788301",
+        "domain": "healfood.kr",
+        "measurementId": "G-5VMV1NPV5M"
+      },
+      {
+        "property": "properties/536662292",
+        "domain": "luxurytraver.com",
+        "measurementId": "G-WQBV340TRP"
       },
       {
         "property": "properties/536670197",
@@ -803,9 +803,9 @@
         "measurementId": "G-LRJ1FE9715"
       },
       {
-        "property": "properties/536788301",
-        "domain": "healfood.kr",
-        "measurementId": "G-5VMV1NPV5M"
+        "property": "properties/536668384",
+        "domain": "softwa.kr",
+        "measurementId": "G-Q31DXXPEDR"
       },
       {
         "property": "properties/536824904",
@@ -823,11 +823,6 @@
         "measurementId": "G-468TKLWG30"
       },
       {
-        "property": "properties/536910323",
-        "domain": "trave.kr",
-        "measurementId": "G-P2PS3SJ8KJ"
-      },
-      {
         "property": "properties/536871374",
         "domain": "askore.kr",
         "measurementId": "G-RHGM9HJVDY"
@@ -843,19 +838,19 @@
         "measurementId": "G-5FJ0PMBPHJ"
       },
       {
-        "property": "properties/537125482",
-        "domain": "lawer.kr",
-        "measurementId": "G-ZP9JY25DV0"
-      },
-      {
         "property": "properties/537250213",
         "domain": "todayshops.kr",
         "measurementId": "G-8ZB3DMRXXT"
       },
       {
-        "property": "properties/537331142",
-        "domain": "educaer.com",
-        "measurementId": "G-EPJM5700G9"
+        "property": "properties/537125482",
+        "domain": "lawer.kr",
+        "measurementId": "G-ZP9JY25DV0"
+      },
+      {
+        "property": "properties/536910323",
+        "domain": "trave.kr",
+        "measurementId": "G-P2PS3SJ8KJ"
       },
       {
         "property": "properties/537317309",
@@ -863,19 +858,14 @@
         "measurementId": "G-E53Q62EC2H"
       },
       {
-        "property": "properties/537950699",
-        "domain": "richyou.kr",
-        "measurementId": "G-KE5N7805FP"
+        "property": "properties/538330802",
+        "domain": "gong.luckyday.kr",
+        "measurementId": "G-ZWPVZN27BX"
       },
       {
-        "property": "properties/537937514",
-        "domain": "finan.kr",
-        "measurementId": "G-2BMTRMHKZE"
-      },
-      {
-        "property": "properties/538367953",
-        "domain": "car.luckyday.kr",
-        "measurementId": "G-FJ7TB5XM4F"
+        "property": "properties/537331142",
+        "domain": "educaer.com",
+        "measurementId": "G-EPJM5700G9"
       },
       {
         "property": "properties/537945374",
@@ -883,9 +873,14 @@
         "measurementId": "G-GKTKWGYN4J"
       },
       {
-        "property": "properties/538330802",
-        "domain": "gong.luckyday.kr",
-        "measurementId": "G-ZWPVZN27BX"
+        "property": "properties/537937514",
+        "domain": "finan.kr",
+        "measurementId": "G-2BMTRMHKZE"
+      },
+      {
+        "property": "properties/537950699",
+        "domain": "richyou.kr",
+        "measurementId": "G-KE5N7805FP"
       },
       {
         "property": "properties/538351492",
@@ -898,24 +893,19 @@
         "measurementId": "G-9N5XSH5W0M"
       },
       {
-        "property": "properties/538418545",
-        "domain": "petjigi.kr",
-        "measurementId": "G-VF43X6349L"
+        "property": "properties/538379576",
+        "domain": "phone.luckyday.kr",
+        "measurementId": "G-CL4NB3L8S7"
+      },
+      {
+        "property": "properties/538367953",
+        "domain": "car.luckyday.kr",
+        "measurementId": "G-FJ7TB5XM4F"
       },
       {
         "property": "properties/538409598",
         "domain": "saju.tasko.kr",
         "measurementId": "G-JSH1S3FVQ3"
-      },
-      {
-        "property": "properties/539176876",
-        "domain": "yesa.kr",
-        "measurementId": "G-92SCTLYGJF"
-      },
-      {
-        "property": "properties/538379576",
-        "domain": "phone.luckyday.kr",
-        "measurementId": "G-CL4NB3L8S7"
       },
       {
         "property": "properties/539463615",
@@ -928,19 +918,24 @@
         "measurementId": "G-17SWWC9DKM"
       },
       {
+        "property": "properties/538418545",
+        "domain": "petjigi.kr",
+        "measurementId": "G-VF43X6349L"
+      },
+      {
         "property": "properties/539268592",
         "domain": "picklefriend.kr",
         "measurementId": "G-GL7VSTB156"
       },
       {
+        "property": "properties/539176876",
+        "domain": "yesa.kr",
+        "measurementId": "G-92SCTLYGJF"
+      },
+      {
         "property": "properties/539606050",
         "domain": "webtoon.klick.kr",
         "measurementId": "G-F06R0SQLZN"
-      },
-      {
-        "property": "properties/539600556",
-        "domain": "pregnancy.ehon365.kr",
-        "measurementId": "G-R127LB4THW"
       },
       {
         "property": "properties/539592261",
@@ -953,34 +948,19 @@
         "measurementId": "G-BNVY0PQET2"
       },
       {
-        "property": "properties/539677201",
-        "domain": "dog.klick.kr",
-        "measurementId": "G-FQHYQQL7Q0"
-      },
-      {
-        "property": "properties/539903323",
-        "domain": "jasamall.sellerpit.kr",
-        "measurementId": "G-HG4CB2V2KQ"
-      },
-      {
         "property": "properties/539658831",
         "domain": "dolbomjigi.ehon365.kr",
         "measurementId": "G-09901YJY2H"
       },
       {
-        "property": "properties/539684317",
-        "domain": "dogswhere.com",
-        "measurementId": "G-MZ5SHKNXW2"
+        "property": "properties/539600556",
+        "domain": "pregnancy.ehon365.kr",
+        "measurementId": "G-R127LB4THW"
       },
       {
-        "property": "properties/540129650",
-        "domain": "campgogo.kr",
-        "measurementId": "G-1E6KZFZNS6"
-      },
-      {
-        "property": "properties/539747744",
-        "domain": "travel.sellerpit.kr",
-        "measurementId": "G-4SBPER4XKP"
+        "property": "properties/539677201",
+        "domain": "dog.klick.kr",
+        "measurementId": "G-FQHYQQL7Q0"
       },
       {
         "property": "properties/540102091",
@@ -988,14 +968,19 @@
         "measurementId": "G-LBDHZHV504"
       },
       {
-        "property": "properties/540469143",
-        "domain": "youkamap.kr",
-        "measurementId": "G-2PB8D7610M"
+        "property": "properties/539903323",
+        "domain": "jasamall.sellerpit.kr",
+        "measurementId": "G-HG4CB2V2KQ"
       },
       {
-        "property": "properties/540357516",
-        "domain": "workgogo.kr",
-        "measurementId": "G-ZBPZ0NYHWC"
+        "property": "properties/539747744",
+        "domain": "travel.sellerpit.kr",
+        "measurementId": "G-4SBPER4XKP"
+      },
+      {
+        "property": "properties/539684317",
+        "domain": "dogswhere.com",
+        "measurementId": "G-MZ5SHKNXW2"
       },
       {
         "property": "properties/540228738",
@@ -1003,14 +988,39 @@
         "measurementId": "G-XDVPLTC3E5"
       },
       {
-        "property": "properties/540392169",
-        "domain": "nongsusangogo.kr",
-        "measurementId": "G-CZ04JDMFC4"
+        "property": "properties/540129650",
+        "domain": "campgogo.kr",
+        "measurementId": "G-1E6KZFZNS6"
+      },
+      {
+        "property": "properties/540357516",
+        "domain": "workgogo.kr",
+        "measurementId": "G-ZBPZ0NYHWC"
       },
       {
         "property": "properties/540455691",
         "domain": "yungyanggogo.kr",
         "measurementId": "G-92QVJS88F8"
+      },
+      {
+        "property": "properties/540392169",
+        "domain": "nongsusangogo.kr",
+        "measurementId": "G-CZ04JDMFC4"
+      },
+      {
+        "property": "properties/540469143",
+        "domain": "youkamap.kr",
+        "measurementId": "G-2PB8D7610M"
+      },
+      {
+        "property": "properties/540671690",
+        "domain": "caregos.com",
+        "measurementId": "G-Q0TB2VKNGR"
+      },
+      {
+        "property": "properties/540474596",
+        "domain": "doseogogo.kr",
+        "measurementId": "G-VZW89LG9MD"
       },
       {
         "property": "properties/541579004",
@@ -1023,26 +1033,6 @@
         "measurementId": "G-V70KJ8GE9J"
       },
       {
-        "property": "properties/540474596",
-        "domain": "doseogogo.kr",
-        "measurementId": "G-VZW89LG9MD"
-      },
-      {
-        "property": "properties/542279941",
-        "domain": "coverclarityhealth.com",
-        "measurementId": "G-GYRK9P50CW"
-      },
-      {
-        "property": "properties/542290124",
-        "domain": "kapti.kr",
-        "measurementId": "G-8REM1FQYW7"
-      },
-      {
-        "property": "properties/540671690",
-        "domain": "caregos.com",
-        "measurementId": "G-Q0TB2VKNGR"
-      },
-      {
         "property": "properties/542279766",
         "domain": "solarpaybackmap.com",
         "measurementId": "G-85ET570CDB"
@@ -1053,14 +1043,19 @@
         "measurementId": "G-5FZSHME54N"
       },
       {
+        "property": "properties/542290124",
+        "domain": "kapti.kr",
+        "measurementId": "G-8REM1FQYW7"
+      },
+      {
+        "property": "properties/542279941",
+        "domain": "coverclarityhealth.com",
+        "measurementId": "G-GYRK9P50CW"
+      },
+      {
         "property": "properties/543434435",
         "domain": "gradienttrail.com",
         "measurementId": "G-JXKB19KWYF"
-      },
-      {
-        "property": "properties/543441407",
-        "domain": "patentgogo.com",
-        "measurementId": "G-9LKQHKSWP3"
       },
       {
         "property": "properties/543459196",
@@ -1073,9 +1068,14 @@
         "measurementId": "G-5CNEDTSX08"
       },
       {
-        "property": "properties/544134188",
-        "domain": "autorentlab.com",
-        "measurementId": "G-QPQY1XHQK3"
+        "property": "properties/544124021",
+        "domain": "smallhomepick.com",
+        "measurementId": "G-NPDJTE52VX"
+      },
+      {
+        "property": "properties/543441407",
+        "domain": "patentgogo.com",
+        "measurementId": "G-9LKQHKSWP3"
       },
       {
         "property": "properties/544137483",
@@ -1083,19 +1083,9 @@
         "measurementId": "G-EJT2ZBM14Q"
       },
       {
-        "property": "properties/544155633",
-        "domain": "mbti.tasko.kr",
-        "measurementId": "G-K1V3GD9PWP"
-      },
-      {
-        "property": "properties/544124021",
-        "domain": "smallhomepick.com",
-        "measurementId": "G-NPDJTE52VX"
-      },
-      {
-        "property": "properties/544164198",
-        "domain": "kdramanote.com",
-        "measurementId": "G-F41TQRYZW5"
+        "property": "properties/544134188",
+        "domain": "autorentlab.com",
+        "measurementId": "G-QPQY1XHQK3"
       },
       {
         "property": "properties/544179002",
@@ -1103,9 +1093,24 @@
         "measurementId": "G-FXR7TQ37VY"
       },
       {
+        "property": "properties/544155633",
+        "domain": "mbti.tasko.kr",
+        "measurementId": "G-K1V3GD9PWP"
+      },
+      {
+        "property": "properties/544164198",
+        "domain": "kdramanote.com",
+        "measurementId": "G-F41TQRYZW5"
+      },
+      {
         "property": "properties/545108775",
         "domain": "petcostlab.com",
         "measurementId": "G-SYW3K3WPTH"
+      },
+      {
+        "property": "properties/545221558",
+        "domain": "autopickgo.com",
+        "measurementId": "G-5WQ0TR8Q2M"
       },
       {
         "property": "properties/544197313",
@@ -1118,39 +1123,9 @@
         "measurementId": "G-0SS13Y696H"
       },
       {
-        "property": "properties/545221558",
-        "domain": "autopickgo.com",
-        "measurementId": "G-5WQ0TR8Q2M"
-      },
-      {
-        "property": "properties/547512172",
-        "domain": "mohana.kr",
-        "measurementId": "G-HG3679PEV7"
-      },
-      {
-        "property": "properties/549415733",
-        "domain": "lo.klick.kr",
-        "measurementId": "G-9427MM2JR8"
-      },
-      {
-        "property": "properties/549433726",
-        "domain": "ko.klick.kr",
-        "measurementId": "G-B69RFTXPDZ"
-      },
-      {
         "property": "properties/546472123",
         "domain": "picturebooks.kr",
         "measurementId": "G-T04GJF5W90"
-      },
-      {
-        "property": "properties/547033336",
-        "domain": "shotsetup.com",
-        "measurementId": "G-MW6JS8F2RB"
-      },
-      {
-        "property": "properties/549437646",
-        "domain": "joy.ehon365.kr",
-        "measurementId": "G-NYLD6PJ7JW"
       },
       {
         "property": "properties/549431717",
@@ -1158,14 +1133,29 @@
         "measurementId": "G-G2PZVBDJLM"
       },
       {
-        "property": "properties/550814434",
-        "domain": "jeompolab.com",
-        "measurementId": "G-FV3MPR6SWL"
+        "property": "properties/547033336",
+        "domain": "shotsetup.com",
+        "measurementId": "G-MW6JS8F2RB"
       },
       {
-        "property": "properties/549438280",
-        "domain": "go.sellerpit.kr",
-        "measurementId": "G-7NCZDJBZQ7"
+        "property": "properties/549415733",
+        "domain": "lo.klick.kr",
+        "measurementId": "G-9427MM2JR8"
+      },
+      {
+        "property": "properties/547512172",
+        "domain": "mohana.kr",
+        "measurementId": "G-HG3679PEV7"
+      },
+      {
+        "property": "properties/549433726",
+        "domain": "ko.klick.kr",
+        "measurementId": "G-B69RFTXPDZ"
+      },
+      {
+        "property": "properties/549437646",
+        "domain": "joy.ehon365.kr",
+        "measurementId": "G-NYLD6PJ7JW"
       },
       {
         "property": "properties/549440319",
@@ -1173,9 +1163,19 @@
         "measurementId": "G-YVHPLXZ82N"
       },
       {
+        "property": "properties/550814434",
+        "domain": "jeompolab.com",
+        "measurementId": "G-FV3MPR6SWL"
+      },
+      {
         "property": "properties/549519780",
         "domain": "wonon.ehon365.kr",
         "measurementId": "G-GHW1NZJ8FE"
+      },
+      {
+        "property": "properties/549438280",
+        "domain": "go.sellerpit.kr",
+        "measurementId": "G-7NCZDJBZQ7"
       },
       {
         "property": "properties/550822302",
@@ -1193,29 +1193,19 @@
         "measurementId": "G-ZDB3M39G70"
       },
       {
-        "property": "properties/552090458",
-        "domain": "gold79.kr",
-        "measurementId": "G-QF5BNLWEZC"
-      },
-      {
-        "property": "properties/558204098",
-        "domain": "dog.nekau.com",
-        "measurementId": "G-MK28W1SNSN"
-      },
-      {
-        "property": "properties/558093604",
-        "domain": "bit.coinyo.kr",
-        "measurementId": "G-MP871C8CSP"
-      },
-      {
         "property": "properties/555938140",
         "domain": "finance.2mlab.kr",
         "measurementId": "G-HBGKMMZEN1"
       },
       {
-        "property": "properties/558091977",
-        "domain": "alt.coinyo.kr",
-        "measurementId": "G-VJM42G9VVY"
+        "property": "properties/552090458",
+        "domain": "gold79.kr",
+        "measurementId": "G-QF5BNLWEZC"
+      },
+      {
+        "property": "properties/558214157",
+        "domain": "travel.dogspang.kr",
+        "measurementId": "G-X63N3F0VTD"
       },
       {
         "property": "properties/558214540",
@@ -1223,9 +1213,19 @@
         "measurementId": "G-0RT7147LNZ"
       },
       {
-        "property": "properties/558214157",
-        "domain": "travel.dogspang.kr",
-        "measurementId": "G-X63N3F0VTD"
+        "property": "properties/558093604",
+        "domain": "bit.coinyo.kr",
+        "measurementId": "G-MP871C8CSP"
+      },
+      {
+        "property": "properties/558204098",
+        "domain": "dog.nekau.com",
+        "measurementId": "G-MK28W1SNSN"
+      },
+      {
+        "property": "properties/558091977",
+        "domain": "alt.coinyo.kr",
+        "measurementId": "G-VJM42G9VVY"
       },
       {
         "property": "properties/558237812",
@@ -1241,304 +1241,148 @@
     "failures": []
   },
   "gsc": {
-    "checkedAt": "2026-10-18T08:18:27.288Z",
+    "checkedAt": "2026-10-18T22:51:05.678Z",
     "complete": true,
     "properties": [
       {
-        "siteUrl": "https://wattbenchs.com/",
-        "domain": "wattbenchs.com"
+        "siteUrl": "https://finance.2mlab.kr/",
+        "domain": "finance.2mlab.kr"
       },
       {
-        "siteUrl": "https://petcostlab.com/",
-        "domain": "petcostlab.com"
+        "siteUrl": "https://ezfunnel.kr/",
+        "domain": "ezfunnel.kr"
       },
       {
-        "siteUrl": "https://chatgipt.kr/",
-        "domain": "chatgipt.kr"
-      },
-      {
-        "siteUrl": "https://dolbomjigi.ehon365.kr/",
-        "domain": "dolbomjigi.ehon365.kr"
-      },
-      {
-        "siteUrl": "https://healthgotoo.com/",
-        "domain": "healthgotoo.com"
-      },
-      {
-        "siteUrl": "https://certifi.kr/",
-        "domain": "certifi.kr"
-      },
-      {
-        "siteUrl": "https://todaypharm.kr/",
-        "domain": "todaypharm.kr"
-      },
-      {
-        "siteUrl": "https://bu.sellerpit.kr/",
-        "domain": "bu.sellerpit.kr"
-      },
-      {
-        "siteUrl": "sc-domain:ai.tasko.kr",
-        "domain": "ai.tasko.kr"
-      },
-      {
-        "siteUrl": "https://phone.luckyday.kr/",
-        "domain": "phone.luckyday.kr"
-      },
-      {
-        "siteUrl": "https://temon.kr/",
-        "domain": "temon.kr"
-      },
-      {
-        "siteUrl": "sc-domain:gong.luckyday.kr",
-        "domain": "gong.luckyday.kr"
-      },
-      {
-        "siteUrl": "https://yesa.kr/",
-        "domain": "yesa.kr"
-      },
-      {
-        "siteUrl": "https://sinhonjigi.ehon365.kr/",
-        "domain": "sinhonjigi.ehon365.kr"
-      },
-      {
-        "siteUrl": "https://picklefriend.kr/",
-        "domain": "picklefriend.kr"
-      },
-      {
-        "siteUrl": "https://texturb.com/",
-        "domain": "texturb.com"
-      },
-      {
-        "siteUrl": "https://dullegilgogo.kr/",
-        "domain": "dullegilgogo.kr"
-      },
-      {
-        "siteUrl": "https://limsight.kr/",
-        "domain": "limsight.kr"
-      },
-      {
-        "siteUrl": "https://lo.klick.kr/",
-        "domain": "lo.klick.kr"
-      },
-      {
-        "siteUrl": "https://askore.kr/",
-        "domain": "askore.kr"
-      },
-      {
-        "siteUrl": "sc-domain:saju.tasko.kr",
-        "domain": "saju.tasko.kr"
-      },
-      {
-        "siteUrl": "https://softwa.kr/",
-        "domain": "softwa.kr"
-      },
-      {
-        "siteUrl": "sc-domain:car.luckyday.kr",
-        "domain": "car.luckyday.kr"
-      },
-      {
-        "siteUrl": "https://localgeo.app/",
-        "domain": "localgeo.app"
-      },
-      {
-        "siteUrl": "https://mohana.kr/",
-        "domain": "mohana.kr"
-      },
-      {
-        "siteUrl": "https://seniorlivingnote.com/",
-        "domain": "seniorlivingnote.com"
-      },
-      {
-        "siteUrl": "https://ko.klick.kr/",
-        "domain": "ko.klick.kr"
-      },
-      {
-        "siteUrl": "https://caregos.com/",
-        "domain": "caregos.com"
-      },
-      {
-        "siteUrl": "https://smallhomepick.com/",
-        "domain": "smallhomepick.com"
-      },
-      {
-        "siteUrl": "https://jasamall.sellerpit.kr/",
-        "domain": "jasamall.sellerpit.kr"
-      },
-      {
-        "siteUrl": "https://esgyo.kr/",
-        "domain": "esgyo.kr"
-      },
-      {
-        "siteUrl": "https://travel.sellerpit.kr/",
-        "domain": "travel.sellerpit.kr"
-      },
-      {
-        "siteUrl": "https://today2424.kr/",
-        "domain": "today2424.kr"
-      },
-      {
-        "siteUrl": "https://homeimer.com/",
-        "domain": "homeimer.com"
-      },
-      {
-        "siteUrl": "https://insupang.com/",
-        "domain": "insupang.com"
-      },
-      {
-        "siteUrl": "https://todayshops.kr/",
-        "domain": "todayshops.kr"
-      },
-      {
-        "siteUrl": "http://workgogo.kr/",
-        "domain": "workgogo.kr"
-      },
-      {
-        "siteUrl": "https://notebook.klick.kr/",
-        "domain": "notebook.klick.kr"
-      },
-      {
-        "siteUrl": "https://wedding-fair-decision-hub.vercel.app/",
-        "domain": "wedding-fair-decision-hub.vercel.app"
-      },
-      {
-        "siteUrl": "sc-domain:jasamall.sellerpit.kr",
-        "domain": "jasamall.sellerpit.kr"
-      },
-      {
-        "siteUrl": "https://cartain.kr/",
-        "domain": "cartain.kr"
-      },
-      {
-        "siteUrl": "https://pregnancy.ehon365.kr/",
-        "domain": "pregnancy.ehon365.kr"
-      },
-      {
-        "siteUrl": "https://car.klick.kr/",
-        "domain": "car.klick.kr"
-      },
-      {
-        "siteUrl": "http://caregos.com/",
-        "domain": "caregos.com"
-      },
-      {
-        "siteUrl": "http://doseogogo.kr/",
-        "domain": "doseogogo.kr"
-      },
-      {
-        "siteUrl": "https://yourtripgo.com/",
-        "domain": "yourtripgo.com"
-      },
-      {
-        "siteUrl": "https://haemongdream.com/",
-        "domain": "haemongdream.com"
-      },
-      {
-        "siteUrl": "https://pethomepick.com/",
-        "domain": "pethomepick.com"
-      },
-      {
-        "siteUrl": "https://gong365.kr/",
-        "domain": "gong365.kr"
-      },
-      {
-        "siteUrl": "https://blogsample2.nexttech7.com/",
-        "domain": "blogsample2.nexttech7.com"
-      },
-      {
-        "siteUrl": "https://shotsetup.com/",
-        "domain": "shotsetup.com"
-      },
-      {
-        "siteUrl": "sc-domain:gradienttrail.com",
-        "domain": "gradienttrail.com"
-      },
-      {
-        "siteUrl": "https://plategogo.com/",
-        "domain": "plategogo.com"
-      },
-      {
-        "siteUrl": "https://luxurytraver.com/",
-        "domain": "luxurytraver.com"
-      },
-      {
-        "siteUrl": "https://alt.coinyo.kr/",
-        "domain": "alt.coinyo.kr"
-      },
-      {
-        "siteUrl": "https://etique.kr/",
-        "domain": "etique.kr"
-      },
-      {
-        "siteUrl": "https://sellerpit.kr/",
-        "domain": "sellerpit.kr"
-      },
-      {
-        "siteUrl": "https://rndatlas.com/",
-        "domain": "rndatlas.com"
-      },
-      {
-        "siteUrl": "https://gold79.kr/",
-        "domain": "gold79.kr"
-      },
-      {
-        "siteUrl": "sc-domain:tennisfrens.com",
-        "domain": "tennisfrens.com"
-      },
-      {
-        "siteUrl": "https://solarpaybackmap.com/",
-        "domain": "solarpaybackmap.com"
-      },
-      {
-        "siteUrl": "https://www.roadways.kr/",
-        "domain": "www.roadways.kr"
-      },
-      {
-        "siteUrl": "https://www.bojo24.kr/",
-        "domain": "www.bojo24.kr"
-      },
-      {
-        "siteUrl": "https://petjigi.kr/",
-        "domain": "petjigi.kr"
+        "siteUrl": "https://roadways.kr/",
+        "domain": "roadways.kr"
       },
       {
         "siteUrl": "https://joy.ehon365.kr/",
         "domain": "joy.ehon365.kr"
       },
       {
-        "siteUrl": "https://wonon.ehon365.kr/",
-        "domain": "wonon.ehon365.kr"
+        "siteUrl": "https://dullegilgogo.kr/",
+        "domain": "dullegilgogo.kr"
       },
       {
-        "siteUrl": "https://nicewomen.kr/",
-        "domain": "nicewomen.kr"
+        "siteUrl": "https://chatgipt.kr/",
+        "domain": "chatgipt.kr"
       },
       {
-        "siteUrl": "https://legalser.com/",
-        "domain": "legalser.com"
+        "siteUrl": "https://lawer.kr/",
+        "domain": "lawer.kr"
       },
       {
-        "siteUrl": "https://webtoon.klick.kr/",
-        "domain": "webtoon.klick.kr"
+        "siteUrl": "https://temon.kr/",
+        "domain": "temon.kr"
+      },
+      {
+        "siteUrl": "https://plategogo.com/",
+        "domain": "plategogo.com"
+      },
+      {
+        "siteUrl": "https://nexttech7.com/",
+        "domain": "nexttech7.com"
+      },
+      {
+        "siteUrl": "https://mbti.tasko.kr/",
+        "domain": "mbti.tasko.kr"
+      },
+      {
+        "siteUrl": "https://shotsetup.com/",
+        "domain": "shotsetup.com"
+      },
+      {
+        "siteUrl": "sc-domain:car.luckyday.kr",
+        "domain": "car.luckyday.kr"
+      },
+      {
+        "siteUrl": "https://sellerpit.kr/",
+        "domain": "sellerpit.kr"
+      },
+      {
+        "siteUrl": "https://coinyo.kr/",
+        "domain": "coinyo.kr"
+      },
+      {
+        "siteUrl": "https://crepika.com/",
+        "domain": "crepika.com"
       },
       {
         "siteUrl": "sc-domain:phone.luckyday.kr",
         "domain": "phone.luckyday.kr"
       },
       {
-        "siteUrl": "sc-domain:notebook.klick.kr",
-        "domain": "notebook.klick.kr"
+        "siteUrl": "https://youkamap.kr/",
+        "domain": "youkamap.kr"
       },
       {
-        "siteUrl": "sc-domain:ehon365.kr",
-        "domain": "ehon365.kr"
+        "siteUrl": "https://www.bojo24.kr/",
+        "domain": "www.bojo24.kr"
       },
       {
-        "siteUrl": "https://autorentlab.com/",
-        "domain": "autorentlab.com"
+        "siteUrl": "https://jasamall.sellerpit.kr/",
+        "domain": "jasamall.sellerpit.kr"
       },
       {
-        "siteUrl": "https://ezfunnel.kr/",
-        "domain": "ezfunnel.kr"
+        "siteUrl": "https://localgeo.app/",
+        "domain": "localgeo.app"
+      },
+      {
+        "siteUrl": "https://fastjob.kr/",
+        "domain": "fastjob.kr"
+      },
+      {
+        "siteUrl": "https://bit.coinyo.kr/",
+        "domain": "bit.coinyo.kr"
+      },
+      {
+        "siteUrl": "https://certifi.kr/",
+        "domain": "certifi.kr"
+      },
+      {
+        "siteUrl": "https://smart.sellerpit.kr/",
+        "domain": "smart.sellerpit.kr"
+      },
+      {
+        "siteUrl": "https://estat.kr/",
+        "domain": "estat.kr"
+      },
+      {
+        "siteUrl": "https://www.today2424.kr/",
+        "domain": "www.today2424.kr"
+      },
+      {
+        "siteUrl": "https://bojo24.kr/",
+        "domain": "bojo24.kr"
+      },
+      {
+        "siteUrl": "https://dolbomjigi.ehon365.kr/",
+        "domain": "dolbomjigi.ehon365.kr"
+      },
+      {
+        "siteUrl": "https://yungyanggogo.kr/",
+        "domain": "yungyanggogo.kr"
+      },
+      {
+        "siteUrl": "https://webtoon.klick.kr/",
+        "domain": "webtoon.klick.kr"
+      },
+      {
+        "siteUrl": "https://gong365.kr/",
+        "domain": "gong365.kr"
+      },
+      {
+        "siteUrl": "https://lo.klick.kr/",
+        "domain": "lo.klick.kr"
+      },
+      {
+        "siteUrl": "https://healthgotoo.com/",
+        "domain": "healthgotoo.com"
+      },
+      {
+        "siteUrl": "sc-domain:mbti.tasko.kr",
+        "domain": "mbti.tasko.kr"
       },
       {
         "siteUrl": "https://www.yourtripgo.com/",
@@ -1549,272 +1393,419 @@
         "domain": "picturebooks.kr"
       },
       {
-        "siteUrl": "https://richyou.kr/",
-        "domain": "richyou.kr"
+        "siteUrl": "sc-domain:ai.tasko.kr",
+        "domain": "ai.tasko.kr"
       },
       {
-        "siteUrl": "https://fastjob.kr/",
-        "domain": "fastjob.kr"
-      },
-      {
-        "siteUrl": "https://discparty.com/",
-        "domain": "discparty.com"
-      },
-      {
-        "siteUrl": "sc-domain:pethomepick.com",
-        "domain": "pethomepick.com"
-      },
-      {
-        "siteUrl": "https://2mlab.kr/",
-        "domain": "2mlab.kr"
-      },
-      {
-        "siteUrl": "sc-domain:temon.kr",
-        "domain": "temon.kr"
-      },
-      {
-        "siteUrl": "https://kdramanote.com/",
-        "domain": "kdramanote.com"
-      },
-      {
-        "siteUrl": "https://bojo24.kr/",
-        "domain": "bojo24.kr"
-      },
-      {
-        "siteUrl": "https://workgogo.kr/",
-        "domain": "workgogo.kr"
-      },
-      {
-        "siteUrl": "https://bit.coinyo.kr/",
-        "domain": "bit.coinyo.kr"
-      },
-      {
-        "siteUrl": "https://food.2mlab.kr/",
-        "domain": "food.2mlab.kr"
-      },
-      {
-        "siteUrl": "sc-domain:dogswhere.com",
-        "domain": "dogswhere.com"
-      },
-      {
-        "siteUrl": "https://campgogo.kr/",
-        "domain": "campgogo.kr"
-      },
-      {
-        "siteUrl": "https://coverclarityhealth.com/",
-        "domain": "coverclarityhealth.com"
-      },
-      {
-        "siteUrl": "https://sssaass.com/",
-        "domain": "sssaass.com"
-      },
-      {
-        "siteUrl": "https://wedfairguide.com/",
-        "domain": "wedfairguide.com"
-      },
-      {
-        "siteUrl": "https://roadways.kr/",
-        "domain": "roadways.kr"
-      },
-      {
-        "siteUrl": "https://gpt.nexttech7.com/",
-        "domain": "gpt.nexttech7.com"
-      },
-      {
-        "siteUrl": "https://www.todaypharm.kr/",
-        "domain": "www.todaypharm.kr"
-      },
-      {
-        "siteUrl": "https://mbti.tasko.kr/",
-        "domain": "mbti.tasko.kr"
-      },
-      {
-        "siteUrl": "https://doseogogo.kr/",
-        "domain": "doseogogo.kr"
-      },
-      {
-        "siteUrl": "https://dogspang.kr/",
-        "domain": "dogspang.kr"
-      },
-      {
-        "siteUrl": "https://gover.kr/",
-        "domain": "gover.kr"
-      },
-      {
-        "siteUrl": "https://coinyo.kr/",
-        "domain": "coinyo.kr"
-      },
-      {
-        "siteUrl": "https://klick.kr/",
-        "domain": "klick.kr"
-      },
-      {
-        "siteUrl": "https://trave.kr/",
-        "domain": "trave.kr"
-      },
-      {
-        "siteUrl": "https://kapti.kr/",
-        "domain": "kapti.kr"
-      },
-      {
-        "siteUrl": "sc-domain:yourtripgo.com",
-        "domain": "yourtripgo.com"
-      },
-      {
-        "siteUrl": "https://healfood.kr/",
-        "domain": "healfood.kr"
-      },
-      {
-        "siteUrl": "https://estat.kr/",
-        "domain": "estat.kr"
-      },
-      {
-        "siteUrl": "https://travelpang.kr/",
-        "domain": "travelpang.kr"
-      },
-      {
-        "siteUrl": "https://youkamap.kr/",
-        "domain": "youkamap.kr"
-      },
-      {
-        "siteUrl": "https://www.texturb.com/",
-        "domain": "www.texturb.com"
-      },
-      {
-        "siteUrl": "https://dog.klick.kr/",
-        "domain": "dog.klick.kr"
+        "siteUrl": "https://sinhonjigi.ehon365.kr/",
+        "domain": "sinhonjigi.ehon365.kr"
       },
       {
         "siteUrl": "https://dogbreedcost.com/",
         "domain": "dogbreedcost.com"
       },
       {
-        "siteUrl": "https://nexttech7.com/",
-        "domain": "nexttech7.com"
-      },
-      {
-        "siteUrl": "sc-domain:mbti.tasko.kr",
-        "domain": "mbti.tasko.kr"
-      },
-      {
-        "siteUrl": "https://gradienttrail.com/",
-        "domain": "gradienttrail.com"
-      },
-      {
-        "siteUrl": "https://jeompolab.com/",
-        "domain": "jeompolab.com"
-      },
-      {
-        "siteUrl": "https://petinsuer.com/",
-        "domain": "petinsuer.com"
-      },
-      {
         "siteUrl": "https://lim01.soonsaak.co.kr/",
         "domain": "lim01.soonsaak.co.kr"
       },
       {
-        "siteUrl": "https://finan.kr/",
-        "domain": "finan.kr"
+        "siteUrl": "https://www.todaypharm.kr/",
+        "domain": "www.todaypharm.kr"
       },
       {
-        "siteUrl": "https://educaer.com/",
-        "domain": "educaer.com"
+        "siteUrl": "sc-domain:pethomepick.com",
+        "domain": "pethomepick.com"
       },
       {
-        "siteUrl": "https://smart.sellerpit.kr/",
-        "domain": "smart.sellerpit.kr"
+        "siteUrl": "https://limsight.kr/",
+        "domain": "limsight.kr"
       },
       {
-        "siteUrl": "https://nongsusangogo.kr/",
-        "domain": "nongsusangogo.kr"
+        "siteUrl": "https://pregnancy.ehon365.kr/",
+        "domain": "pregnancy.ehon365.kr"
       },
       {
-        "siteUrl": "https://patentgogo.com/",
-        "domain": "patentgogo.com"
+        "siteUrl": "sc-domain:tennisfrens.com",
+        "domain": "tennisfrens.com"
       },
       {
-        "siteUrl": "https://go.sellerpit.kr/",
-        "domain": "go.sellerpit.kr"
+        "siteUrl": "https://picklefriend.kr/",
+        "domain": "picklefriend.kr"
       },
       {
-        "siteUrl": "https://yungyanggogo.kr/",
-        "domain": "yungyanggogo.kr"
+        "siteUrl": "https://esgyo.kr/",
+        "domain": "esgyo.kr"
       },
       {
-        "siteUrl": "https://finance.2mlab.kr/",
-        "domain": "finance.2mlab.kr"
+        "siteUrl": "https://todayshops.kr/",
+        "domain": "todayshops.kr"
       },
       {
-        "siteUrl": "https://autopickgo.com/",
-        "domain": "autopickgo.com"
+        "siteUrl": "https://petcostlab.com/",
+        "domain": "petcostlab.com"
       },
       {
-        "siteUrl": "https://crepika.com/",
-        "domain": "crepika.com"
+        "siteUrl": "sc-domain:jasamall.sellerpit.kr",
+        "domain": "jasamall.sellerpit.kr"
       },
       {
-        "siteUrl": "https://knewstory.kr/",
-        "domain": "knewstory.kr"
+        "siteUrl": "sc-domain:notebook.klick.kr",
+        "domain": "notebook.klick.kr"
       },
       {
-        "siteUrl": "sc-domain:luckyday.kr",
-        "domain": "luckyday.kr"
+        "siteUrl": "https://sssaass.com/",
+        "domain": "sssaass.com"
       },
       {
-        "siteUrl": "https://item79.com/",
-        "domain": "item79.com"
+        "siteUrl": "https://legalser.com/",
+        "domain": "legalser.com"
       },
       {
-        "siteUrl": "https://lawer.kr/",
-        "domain": "lawer.kr"
+        "siteUrl": "https://wedding-fair-decision-hub.vercel.app/",
+        "domain": "wedding-fair-decision-hub.vercel.app"
       },
       {
-        "siteUrl": "https://www.today2424.kr/",
-        "domain": "www.today2424.kr"
+        "siteUrl": "sc-domain:gong.luckyday.kr",
+        "domain": "gong.luckyday.kr"
       },
       {
         "siteUrl": "https://runmania.kr/",
         "domain": "runmania.kr"
       },
       {
-        "siteUrl": "https://nekau.com/",
-        "domain": "nekau.com"
+        "siteUrl": "https://alt.coinyo.kr/",
+        "domain": "alt.coinyo.kr"
+      },
+      {
+        "siteUrl": "https://yourtripgo.com/",
+        "domain": "yourtripgo.com"
+      },
+      {
+        "siteUrl": "https://coverclarityhealth.com/",
+        "domain": "coverclarityhealth.com"
+      },
+      {
+        "siteUrl": "https://phone.luckyday.kr/",
+        "domain": "phone.luckyday.kr"
+      },
+      {
+        "siteUrl": "sc-domain:luckyday.kr",
+        "domain": "luckyday.kr"
+      },
+      {
+        "siteUrl": "https://today2424.kr/",
+        "domain": "today2424.kr"
+      },
+      {
+        "siteUrl": "https://wattbenchs.com/",
+        "domain": "wattbenchs.com"
+      },
+      {
+        "siteUrl": "https://insupang.com/",
+        "domain": "insupang.com"
+      },
+      {
+        "siteUrl": "https://nicewomen.kr/",
+        "domain": "nicewomen.kr"
+      },
+      {
+        "siteUrl": "https://kapti.kr/",
+        "domain": "kapti.kr"
+      },
+      {
+        "siteUrl": "https://ko.klick.kr/",
+        "domain": "ko.klick.kr"
+      },
+      {
+        "siteUrl": "https://cartain.kr/",
+        "domain": "cartain.kr"
+      },
+      {
+        "siteUrl": "https://item79.com/",
+        "domain": "item79.com"
+      },
+      {
+        "siteUrl": "https://pethomepick.com/",
+        "domain": "pethomepick.com"
+      },
+      {
+        "siteUrl": "https://dogspang.kr/",
+        "domain": "dogspang.kr"
       },
       {
         "siteUrl": "https://goesku.com/",
         "domain": "goesku.com"
       },
       {
+        "siteUrl": "https://jeompolab.com/",
+        "domain": "jeompolab.com"
+      },
+      {
+        "siteUrl": "https://www.texturb.com/",
+        "domain": "www.texturb.com"
+      },
+      {
+        "siteUrl": "https://nongsusangogo.kr/",
+        "domain": "nongsusangogo.kr"
+      },
+      {
+        "siteUrl": "https://car.klick.kr/",
+        "domain": "car.klick.kr"
+      },
+      {
+        "siteUrl": "https://notebook.klick.kr/",
+        "domain": "notebook.klick.kr"
+      },
+      {
+        "siteUrl": "https://healfood.kr/",
+        "domain": "healfood.kr"
+      },
+      {
+        "siteUrl": "https://gpt.nexttech7.com/",
+        "domain": "gpt.nexttech7.com"
+      },
+      {
+        "siteUrl": "https://klick.kr/",
+        "domain": "klick.kr"
+      },
+      {
+        "siteUrl": "https://wonon.ehon365.kr/",
+        "domain": "wonon.ehon365.kr"
+      },
+      {
+        "siteUrl": "https://petjigi.kr/",
+        "domain": "petjigi.kr"
+      },
+      {
+        "siteUrl": "https://gold79.kr/",
+        "domain": "gold79.kr"
+      },
+      {
+        "siteUrl": "https://bu.sellerpit.kr/",
+        "domain": "bu.sellerpit.kr"
+      },
+      {
+        "siteUrl": "https://discparty.com/",
+        "domain": "discparty.com"
+      },
+      {
+        "siteUrl": "https://homeimer.com/",
+        "domain": "homeimer.com"
+      },
+      {
+        "siteUrl": "https://richyou.kr/",
+        "domain": "richyou.kr"
+      },
+      {
+        "siteUrl": "https://travel.sellerpit.kr/",
+        "domain": "travel.sellerpit.kr"
+      },
+      {
+        "siteUrl": "https://solarpaybackmap.com/",
+        "domain": "solarpaybackmap.com"
+      },
+      {
+        "siteUrl": "https://educaer.com/",
+        "domain": "educaer.com"
+      },
+      {
+        "siteUrl": "https://workgogo.kr/",
+        "domain": "workgogo.kr"
+      },
+      {
+        "siteUrl": "https://gradienttrail.com/",
+        "domain": "gradienttrail.com"
+      },
+      {
+        "siteUrl": "https://seniorlivingnote.com/",
+        "domain": "seniorlivingnote.com"
+      },
+      {
+        "siteUrl": "https://knewstory.kr/",
+        "domain": "knewstory.kr"
+      },
+      {
+        "siteUrl": "sc-domain:yourtripgo.com",
+        "domain": "yourtripgo.com"
+      },
+      {
+        "siteUrl": "https://texturb.com/",
+        "domain": "texturb.com"
+      },
+      {
+        "siteUrl": "sc-domain:ehon365.kr",
+        "domain": "ehon365.kr"
+      },
+      {
+        "siteUrl": "https://yesa.kr/",
+        "domain": "yesa.kr"
+      },
+      {
+        "siteUrl": "https://www.roadways.kr/",
+        "domain": "www.roadways.kr"
+      },
+      {
+        "siteUrl": "https://patentgogo.com/",
+        "domain": "patentgogo.com"
+      },
+      {
+        "siteUrl": "https://mohana.kr/",
+        "domain": "mohana.kr"
+      },
+      {
+        "siteUrl": "https://finan.kr/",
+        "domain": "finan.kr"
+      },
+      {
         "siteUrl": "https://sorimate.com/",
         "domain": "sorimate.com"
+      },
+      {
+        "siteUrl": "https://rndatlas.com/",
+        "domain": "rndatlas.com"
+      },
+      {
+        "siteUrl": "https://campgogo.kr/",
+        "domain": "campgogo.kr"
+      },
+      {
+        "siteUrl": "sc-domain:gradienttrail.com",
+        "domain": "gradienttrail.com"
+      },
+      {
+        "siteUrl": "sc-domain:saju.tasko.kr",
+        "domain": "saju.tasko.kr"
+      },
+      {
+        "siteUrl": "http://doseogogo.kr/",
+        "domain": "doseogogo.kr"
+      },
+      {
+        "siteUrl": "https://blogsample2.nexttech7.com/",
+        "domain": "blogsample2.nexttech7.com"
+      },
+      {
+        "siteUrl": "https://caregos.com/",
+        "domain": "caregos.com"
+      },
+      {
+        "siteUrl": "https://autorentlab.com/",
+        "domain": "autorentlab.com"
+      },
+      {
+        "siteUrl": "https://askore.kr/",
+        "domain": "askore.kr"
+      },
+      {
+        "siteUrl": "https://food.2mlab.kr/",
+        "domain": "food.2mlab.kr"
+      },
+      {
+        "siteUrl": "http://caregos.com/",
+        "domain": "caregos.com"
+      },
+      {
+        "siteUrl": "https://softwa.kr/",
+        "domain": "softwa.kr"
+      },
+      {
+        "siteUrl": "https://trave.kr/",
+        "domain": "trave.kr"
+      },
+      {
+        "siteUrl": "https://go.sellerpit.kr/",
+        "domain": "go.sellerpit.kr"
+      },
+      {
+        "siteUrl": "https://etique.kr/",
+        "domain": "etique.kr"
+      },
+      {
+        "siteUrl": "https://todaypharm.kr/",
+        "domain": "todaypharm.kr"
+      },
+      {
+        "siteUrl": "https://kdramanote.com/",
+        "domain": "kdramanote.com"
+      },
+      {
+        "siteUrl": "https://luxurytraver.com/",
+        "domain": "luxurytraver.com"
+      },
+      {
+        "siteUrl": "https://smallhomepick.com/",
+        "domain": "smallhomepick.com"
+      },
+      {
+        "siteUrl": "https://2mlab.kr/",
+        "domain": "2mlab.kr"
+      },
+      {
+        "siteUrl": "https://nekau.com/",
+        "domain": "nekau.com"
+      },
+      {
+        "siteUrl": "http://workgogo.kr/",
+        "domain": "workgogo.kr"
+      },
+      {
+        "siteUrl": "https://gover.kr/",
+        "domain": "gover.kr"
+      },
+      {
+        "siteUrl": "https://autoscares.com/",
+        "domain": "autoscares.com"
+      },
+      {
+        "siteUrl": "https://haemongdream.com/",
+        "domain": "haemongdream.com"
+      },
+      {
+        "siteUrl": "https://dog.klick.kr/",
+        "domain": "dog.klick.kr"
+      },
+      {
+        "siteUrl": "https://autopickgo.com/",
+        "domain": "autopickgo.com"
+      },
+      {
+        "siteUrl": "sc-domain:temon.kr",
+        "domain": "temon.kr"
+      },
+      {
+        "siteUrl": "sc-domain:dogswhere.com",
+        "domain": "dogswhere.com"
       },
       {
         "siteUrl": "https://spinkorea.kr/",
         "domain": "spinkorea.kr"
       },
       {
-        "siteUrl": "https://autoscares.com/",
-        "domain": "autoscares.com"
+        "siteUrl": "https://doseogogo.kr/",
+        "domain": "doseogogo.kr"
+      },
+      {
+        "siteUrl": "https://petinsuer.com/",
+        "domain": "petinsuer.com"
+      },
+      {
+        "siteUrl": "https://travelpang.kr/",
+        "domain": "travelpang.kr"
+      },
+      {
+        "siteUrl": "https://wedfairguide.com/",
+        "domain": "wedfairguide.com"
       }
     ],
     "failure": null
   },
   "comparison": {
-    "configuredSites": 113,
+    "configuredSites": 122,
     "ga4": {
       "discoveredDomainsMissingFromConfig": [
         "blogsample2.nexttech7.com",
         "coinyo.knewstory.kr",
-        "www.certifi.kr",
-        "item79.com",
-        "food.2mlab.kr",
-        "gold79.kr",
-        "dog.nekau.com",
-        "finance.2mlab.kr",
-        "nekau.com",
-        "travel.dogspang.kr",
-        "hos.dogspang.kr",
-        "toolnavigo.com"
+        "www.certifi.kr"
       ],
       "duplicateStreams": [
         {
@@ -1839,10 +1830,17 @@
           ]
         },
         {
+          "domain": "fastjob.kr",
+          "propertyIds": [
+            "513769879",
+            "536358308"
+          ]
+        },
+        {
           "domain": "chatgipt.kr",
           "propertyIds": [
-            "512050444",
             "512060443",
+            "512050444",
             "534308136"
           ]
         },
@@ -1851,20 +1849,6 @@
           "propertyIds": [
             "515381693",
             "533748860"
-          ]
-        },
-        {
-          "domain": "fastjob.kr",
-          "propertyIds": [
-            "513769879",
-            "536358308"
-          ]
-        },
-        {
-          "domain": "insupang.com",
-          "propertyIds": [
-            "517897382",
-            "536533161"
           ]
         },
         {
@@ -1882,17 +1866,10 @@
           ]
         },
         {
-          "domain": "legalser.com",
+          "domain": "insupang.com",
           "propertyIds": [
-            "519536919",
-            "536573278"
-          ]
-        },
-        {
-          "domain": "petinsuer.com",
-          "propertyIds": [
-            "519578899",
-            "536670197"
+            "517897382",
+            "536533161"
           ]
         },
         {
@@ -1917,6 +1894,27 @@
           ]
         },
         {
+          "domain": "legalser.com",
+          "propertyIds": [
+            "519536919",
+            "536573278"
+          ]
+        },
+        {
+          "domain": "petinsuer.com",
+          "propertyIds": [
+            "519578899",
+            "536670197"
+          ]
+        },
+        {
+          "domain": "finan.kr",
+          "propertyIds": [
+            "520579523",
+            "537937514"
+          ]
+        },
+        {
           "domain": "homeimer.com",
           "propertyIds": [
             "519582866",
@@ -1931,24 +1929,17 @@
           ]
         },
         {
-          "domain": "luxurytraver.com",
-          "propertyIds": [
-            "521243475",
-            "536662292"
-          ]
-        },
-        {
-          "domain": "finan.kr",
-          "propertyIds": [
-            "520579523",
-            "537937514"
-          ]
-        },
-        {
           "domain": "etique.kr",
           "propertyIds": [
             "521236824",
             "536548785"
+          ]
+        },
+        {
+          "domain": "autoscares.com",
+          "propertyIds": [
+            "521782814",
+            "536651077"
           ]
         },
         {
@@ -1959,17 +1950,17 @@
           ]
         },
         {
+          "domain": "luxurytraver.com",
+          "propertyIds": [
+            "521243475",
+            "536662292"
+          ]
+        },
+        {
           "domain": "lawer.kr",
           "propertyIds": [
             "521770057",
             "537125482"
-          ]
-        },
-        {
-          "domain": "autoscares.com",
-          "propertyIds": [
-            "521782814",
-            "536651077"
           ]
         },
         {
@@ -1987,6 +1978,13 @@
           ]
         },
         {
+          "domain": "sellerpit.kr",
+          "propertyIds": [
+            "525923821",
+            "534005389"
+          ]
+        },
+        {
           "domain": "esgyo.kr",
           "propertyIds": [
             "524502961",
@@ -1998,13 +1996,6 @@
           "propertyIds": [
             "532855163",
             "536081634"
-          ]
-        },
-        {
-          "domain": "sellerpit.kr",
-          "propertyIds": [
-            "525923821",
-            "534005389"
           ]
         },
         {
@@ -2037,22 +2028,38 @@
     },
     "gsc": {
       "discoveredDomainsMissingFromConfig": [
+        "www.bojo24.kr",
+        "www.today2424.kr",
+        "www.yourtripgo.com",
+        "www.todaypharm.kr",
         "wedding-fair-decision-hub.vercel.app",
         "yourtripgo.com",
-        "blogsample2.nexttech7.com",
-        "gold79.kr",
-        "www.roadways.kr",
-        "www.bojo24.kr",
-        "www.yourtripgo.com",
-        "food.2mlab.kr",
-        "www.todaypharm.kr",
         "www.texturb.com",
-        "finance.2mlab.kr",
-        "item79.com",
-        "www.today2424.kr",
-        "nekau.com"
+        "www.roadways.kr",
+        "blogsample2.nexttech7.com"
       ],
-      "configuredPropertiesNotListed": []
+      "configuredPropertiesNotListed": [
+        {
+          "id": "travel-dogspang",
+          "domain": "travel.dogspang.kr",
+          "configuredSiteUrl": "https://travel.dogspang.kr/"
+        },
+        {
+          "id": "hos-dogspang",
+          "domain": "hos.dogspang.kr",
+          "configuredSiteUrl": "https://hos.dogspang.kr/"
+        },
+        {
+          "id": "dog-nekau",
+          "domain": "dog.nekau.com",
+          "configuredSiteUrl": "https://dog.nekau.com/"
+        },
+        {
+          "id": "toolnavigo",
+          "domain": "toolnavigo.com",
+          "configuredSiteUrl": "https://toolnavigo.com/"
+        }
+      ]
     }
   }
 }
