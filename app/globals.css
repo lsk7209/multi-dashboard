@@ -27,6 +27,9 @@
 .server-table { width: 100%; min-width: 980px; border-collapse: collapse; text-align: left; font-size: 13px; }
 .server-table th, .server-table td { padding: 16px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 .server-table thead th { background: var(--bg); color: var(--muted); font-size: 12px; }
+.server-table thead button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 0; border: 0; background: transparent; color: inherit; font: inherit; font-weight: 700; cursor: pointer; }
+.server-table thead th[aria-sort="ascending"], .server-table thead th[aria-sort="descending"] { color: var(--accent); }
+.server-table thead button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .server-table tbody th { font-weight: 500; }
 .server-table tbody tr:last-child > * { border-bottom: 0; }
 .server-table tbody tr:hover { background: var(--bg); }

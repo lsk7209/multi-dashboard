@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { APPROVAL_LABELS } from "../lib/site-inventory";
+import { compareServerSites, type ServerSortKey, type SortDirection } from "../lib/server-site-sort";
 import type { ServerSiteRow } from "../lib/server-site-metrics";
 
 const number = (value: number | null) => value === null ? "미확인" : value.toLocaleString("ko-KR");
@@ -13,13 +14,25 @@ const SERVERS = [
   { id: "turbo2", label: "Turbo2" },
 ] as const;
 
+const COLUMNS: { key: ServerSortKey; label: string }[] = [
+  { key: "domain", label: "사이트" }, { key: "host", label: "서버" },
+  { key: "dailyUsers", label: "GA4 어제 사용자" }, { key: "weeklyUsers", label: "GA4 7일 사용자" },
+  { key: "clicks", label: "GSC 7일 클릭" }, { key: "impressions", label: "GSC 7일 노출" },
+  { key: "approval", label: "애드센스" },
+];
+
 export function ServerSites({ sites }: { sites: ServerSiteRow[] }) {
   const [query, setQuery] = useState("");
   const [server, setServer] = useState("all");
+  const [sort, setSort] = useState<{ key: ServerSortKey; direction: SortDirection }>({ key: "domain", direction: "asc" });
   const filtered = sites.filter(site =>
     (server === "all" || site.host === server) &&
     site.domain.toLowerCase().includes(query.trim().toLowerCase())
-  );
+  ).sort((a, b) => compareServerSites(a, b, sort.key, sort.direction));
+  const changeSort = (key: ServerSortKey) => setSort(current => ({ key,
+    direction: current.key === key ? (current.direction === "asc" ? "desc" : "asc")
+      : (["dailyUsers", "weeklyUsers", "clicks", "impressions"].includes(key) ? "desc" : "asc"),
+  }));
   const filters = [{ id: "all", label: "전체" }, ...SERVERS];
   return <>
     <div className="server-filters" role="group" aria-label="서버 필터">
@@ -34,7 +47,9 @@ export function ServerSites({ sites }: { sites: ServerSiteRow[] }) {
     </div>
     <div className="server-table-wrap" role="region" aria-label="서버별 사이트 통계 표, 가로 스크롤 가능" tabIndex={0}>
       <table className="server-table" aria-label="서버별 사이트 통계">
-        <thead><tr><th scope="col">사이트</th><th scope="col">서버</th><th scope="col">GA4 어제 사용자</th><th scope="col">GA4 7일 사용자</th><th scope="col">GSC 7일 클릭</th><th scope="col">GSC 7일 노출</th><th scope="col">애드센스</th></tr></thead>
+        <thead><tr>{COLUMNS.map(column => <th key={column.key} scope="col" aria-sort={sort.key === column.key ? (sort.direction === "asc" ? "ascending" : "descending") : "none"}>
+          <button type="button" onClick={() => changeSort(column.key)}>{column.label} <span aria-hidden="true">{sort.key === column.key ? (sort.direction === "asc" ? "↑" : "↓") : "↕"}</span></button>
+        </th>)}</tr></thead>
         <tbody>
           {filtered.map(site => <tr key={site.domain}>
             <th scope="row"><a href={site.url} target="_blank" rel="noreferrer">{site.domain} <span aria-hidden="true">↗</span></a></th>
