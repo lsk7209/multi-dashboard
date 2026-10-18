@@ -8,6 +8,26 @@ import { loadSites, type Site } from "./lib/sites.js";
 const DEFAULT_ACCOUNT_ID = "236349432";
 const SITES_PATH = "scripts/setup/sites.yaml";
 
+// 은퇴한 사이트 — GA4 속성/스트림이 남아 있어도 sites.yaml에 재삽입하지 않는다.
+// AGENTS.md "Retired Sites" 참조. 되돌리려면 운영자 승인 필요.
+// 정확한 호스트만 매칭하므로 서브도메인(예: saju.tasko.kr)은 영향 없음.
+const RETIRED_HOSTNAMES = new Set<string>([
+  "kang4.com", // 2026-08-27 은퇴 (도메인 만료, 30일 활동 0)
+  "tasko.kr", // 2026-08-29 은퇴 (완전 deindex, 트래픽 0). 서브도메인은 유지
+]);
+
+function hostnameOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function isRetiredSite(site: { url?: string }): boolean {
+  return RETIRED_HOSTNAMES.has(hostnameOf(site.url ?? ""));
+}
+
 interface SitesDocument {
   sites: Site[];
 }
@@ -111,6 +131,9 @@ async function listImportedSites(accountId: string): Promise<ImportedSite[]> {
       }
 
       const url = normalizeUrl(defaultUri);
+      if (RETIRED_HOSTNAMES.has(hostnameOf(url))) {
+        continue;
+      }
       const id = uniqueSiteId(siteIdFromUrl(url), existingIds);
 
       imported.push({
@@ -132,7 +155,9 @@ async function listImportedSites(accountId: string): Promise<ImportedSite[]> {
 async function writeMergedSites(
   imported: ImportedSite[],
 ): Promise<{ added: number; updated: number; total: number }> {
-  const current = await loadSites(SITES_PATH);
+  const loaded = await loadSites(SITES_PATH);
+  // 은퇴 사이트가 이전에 sites.yaml에 남아 있으면 이 기회에 제거한다.
+  const current = loaded.filter((site) => !isRetiredSite(site));
   const byGa4 = new Map(
     current
       .filter((site) => site.ga4PropertyId)

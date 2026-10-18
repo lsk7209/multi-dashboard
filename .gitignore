@@ -15,6 +15,7 @@ playwright-report/
 
 .vercel
 .gstack/
+.local/
 
 # OMC 산출물 (세션마다 변경 — 추적 제외)
 .omc/

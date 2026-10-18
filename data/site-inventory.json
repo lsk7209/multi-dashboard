@@ -1,0 +1,7521 @@
+{
+  "generatedAt": "2026-10-18T07:23:04.616Z",
+  "statsGeneratedAt": "2026-10-18T07:12:01.364Z",
+  "adsenseCheckedAt": "2026-10-18T07:22:56.308Z",
+  "adsenseListComplete": true,
+  "adsenseAccountSummary": {
+    "total": 12,
+    "ready": 11,
+    "gettingReady": 1
+  },
+  "googleBindingsCheckedAt": "2026-10-18T07:20:19.872Z",
+  "googleBindingsComplete": true,
+  "sites": [
+    {
+      "domain": "2mlab.kr",
+      "url": "https://2mlab.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.428Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "2mlab",
+          "enabled": false,
+          "ga4PropertyId": "511994173",
+          "gscSiteUrl": "https://2mlab.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "2mlab-2",
+          "enabled": true,
+          "ga4PropertyId": "536008285",
+          "gscSiteUrl": "https://2mlab.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 5
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "511994173",
+          "measurementId": "G-C0Q13SEY0J"
+        },
+        {
+          "propertyId": "536008285",
+          "measurementId": "G-DRNYNWDVR3"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://2mlab.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "ai.tasko.kr",
+      "url": "https://ai.tasko.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.492Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "seoul"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "ai-tasko",
+          "enabled": true,
+          "ga4PropertyId": "538418068",
+          "gscSiteUrl": "sc-domain:ai.tasko.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538418068",
+          "measurementId": "G-9N5XSH5W0M"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:ai.tasko.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "alt.coinyo.kr",
+      "url": "https://alt.coinyo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.672Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "Kickstart source - migration held"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "coinyo-alt",
+          "enabled": true,
+          "ga4PropertyId": "558091977",
+          "gscSiteUrl": "https://alt.coinyo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "auth_error",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558091977",
+          "measurementId": "G-VJM42G9VVY"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://alt.coinyo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "askore.kr",
+      "url": "https://askore.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.003Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "askore",
+          "enabled": true,
+          "ga4PropertyId": "536871374",
+          "gscSiteUrl": "https://askore.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 15
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536871374",
+          "measurementId": "G-RHGM9HJVDY"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://askore.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "autopickgo.com",
+      "url": "https://autopickgo.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.269Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "nexttech"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "autopickgo",
+          "enabled": true,
+          "ga4PropertyId": "545221558",
+          "gscSiteUrl": "https://autopickgo.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "545221558",
+          "measurementId": "G-5WQ0TR8Q2M"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://autopickgo.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "autorentlab.com",
+      "url": "https://autorentlab.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.948Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "autorentlab",
+          "enabled": true,
+          "ga4PropertyId": "544134188",
+          "gscSiteUrl": "https://autorentlab.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544134188",
+          "measurementId": "G-QPQY1XHQK3"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://autorentlab.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "autoscares.com",
+      "url": "https://autoscares.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.877Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "autoscares",
+          "enabled": false,
+          "ga4PropertyId": "521782814",
+          "gscSiteUrl": "https://autoscares.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "autoscares-2",
+          "enabled": true,
+          "ga4PropertyId": "536651077",
+          "gscSiteUrl": "https://autoscares.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "521782814",
+          "measurementId": "G-B5DF450VWT"
+        },
+        {
+          "propertyId": "536651077",
+          "measurementId": "G-S3DBYE2TWD"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://autoscares.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "bit.coinyo.kr",
+      "url": "https://bit.coinyo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.705Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "Kickstart source - migration held"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "coinyo-bit",
+          "enabled": true,
+          "ga4PropertyId": "558093604",
+          "gscSiteUrl": "https://bit.coinyo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "auth_error",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558093604",
+          "measurementId": "G-MP871C8CSP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://bit.coinyo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "blogsample2.nexttech7.com",
+      "url": "https://blogsample2.nexttech7.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.686Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:blogsample2.nexttech7.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "533760772",
+          "measurementId": "G-LV3YLJPLCP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://blogsample2.nexttech7.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가",
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "bojo24.kr",
+      "url": "https://bojo24.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.593Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "bojo24",
+          "enabled": true,
+          "ga4PropertyId": "534288708",
+          "gscSiteUrl": "https://bojo24.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 11
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "534288708",
+          "measurementId": "G-ZQJVKK37Y2"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://bojo24.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://www.bojo24.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "bu.sellerpit.kr",
+      "url": "https://bu.sellerpit.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.415Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "bu-sellerpit",
+          "enabled": true,
+          "ga4PropertyId": "549440319",
+          "gscSiteUrl": "https://bu.sellerpit.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549440319",
+          "measurementId": "G-YVHPLXZ82N"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://bu.sellerpit.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "campgogo.kr",
+      "url": "https://campgogo.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.415Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "campgogo",
+          "enabled": true,
+          "ga4PropertyId": "540129650",
+          "gscSiteUrl": "https://campgogo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540129650",
+          "measurementId": "G-1E6KZFZNS6"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://campgogo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "car.klick.kr",
+      "url": "https://car.klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.270Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "car-klick",
+          "enabled": true,
+          "ga4PropertyId": "549431717",
+          "gscSiteUrl": "https://car.klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549431717",
+          "measurementId": "G-G2PZVBDJLM"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://car.klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "car.luckyday.kr",
+      "url": "https://car.luckyday.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.363Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "car-luckyday",
+          "enabled": true,
+          "ga4PropertyId": "538367953",
+          "gscSiteUrl": "sc-domain:car.luckyday.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538367953",
+          "measurementId": "G-FJ7TB5XM4F"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:car.luckyday.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "caregos.com",
+      "url": "https://caregos.com/",
+      "enabled": true,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.720Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "static-local"
+      ],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "caregos",
+          "enabled": true,
+          "ga4PropertyId": "540671690",
+          "gscSiteUrl": "https://caregos.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540671690",
+          "measurementId": "G-Q0TB2VKNGR"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "http://caregos.com/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://caregos.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "cartain.kr",
+      "url": "https://cartain.kr/",
+      "enabled": true,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.711Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "cartain",
+          "enabled": false,
+          "ga4PropertyId": "518554091",
+          "gscSiteUrl": "https://cartain.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "cartain-2",
+          "enabled": true,
+          "ga4PropertyId": "536558706",
+          "gscSiteUrl": "https://cartain.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "518554091",
+          "measurementId": "G-69KWFZVNCQ"
+        },
+        {
+          "propertyId": "536558706",
+          "measurementId": "G-N7JJFW6007"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://cartain.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "certifi.kr",
+      "url": "https://certifi.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.651Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200",
+        "redirect: www.certifi.kr"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "certifi",
+          "enabled": true,
+          "ga4PropertyId": "537945374",
+          "gscSiteUrl": "https://certifi.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "537945374",
+          "measurementId": "G-GKTKWGYN4J"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://certifi.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "chatgipt.kr",
+      "url": "https://chatgipt.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "kickstart",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "kickstart",
+          "checkedAt": "2026-10-18T07:10:13.457Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.245.11"
+      ],
+      "addresses": [
+        "158.247.245.11"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.691Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.245.11",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "chemicloud"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "chatgipt",
+          "enabled": false,
+          "ga4PropertyId": "512060443",
+          "gscSiteUrl": "https://chatgipt.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "chatgipt-2",
+          "enabled": false,
+          "ga4PropertyId": "512050444",
+          "gscSiteUrl": "https://chatgipt.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "chatgipt-3",
+          "enabled": true,
+          "ga4PropertyId": "534308136",
+          "gscSiteUrl": "https://chatgipt.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "512060443",
+          "measurementId": "G-FJHVBX6E6L"
+        },
+        {
+          "propertyId": "512050444",
+          "measurementId": "G-0HVL91L73S"
+        },
+        {
+          "propertyId": "534308136",
+          "measurementId": "G-88SWNR1YS3"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://chatgipt.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "coinyo.knewstory.kr",
+      "url": "https://coinyo.knewstory.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:02.239Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:coinyo.knewstory.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536352221",
+          "measurementId": "G-XF9QHMC4F6"
+        }
+      ],
+      "discoveredGsc": [],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "coinyo.kr",
+      "url": "https://coinyo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.654Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "coinyo",
+          "enabled": false,
+          "ga4PropertyId": "517634776",
+          "gscSiteUrl": "https://coinyo.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "coinyo-2",
+          "enabled": true,
+          "ga4PropertyId": "536352221",
+          "gscSiteUrl": "https://coinyo.kr/",
+          "ga4Status": "binding_mismatch",
+          "gscStatus": "ok",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "517634776",
+          "measurementId": "G-1DHN7FS77L"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://coinyo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "설정 GA4 536352221: 웹 스트림 도메인 불일치"
+      ]
+    },
+    {
+      "domain": "comu.chatgipt.kr",
+      "url": "https://comu.chatgipt.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "kickstart",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "kickstart",
+          "checkedAt": "2026-10-18T07:10:13.457Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.245.11"
+      ],
+      "addresses": [
+        "158.247.245.11"
+      ],
+      "cname": [],
+      "httpStatus": 404,
+      "checkedAt": "2026-10-18T07:23:02.107Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.245.11",
+        "HTTPS HEAD 404"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:comu.chatgipt.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [],
+      "discoveredGsc": [],
+      "issues": [
+        "현재 서버 계정에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "coverclarityhealth.com",
+      "url": "https://coverclarityhealth.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.848Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "coverclarityhealth",
+          "enabled": true,
+          "ga4PropertyId": "542279941",
+          "gscSiteUrl": "https://coverclarityhealth.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "542279941",
+          "measurementId": "G-GYRK9P50CW"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://coverclarityhealth.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "crepika.com",
+      "url": "https://crepika.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.772Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "crepika",
+          "enabled": true,
+          "ga4PropertyId": "536578195",
+          "gscSiteUrl": "https://crepika.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536578195",
+          "measurementId": "G-P8LJ76FVM4"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://crepika.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "discparty.com",
+      "url": "https://discparty.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.432Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discparty",
+          "enabled": true,
+          "ga4PropertyId": "513733245",
+          "gscSiteUrl": "https://discparty.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "513733245",
+          "measurementId": "G-R5T8LMK38M"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://discparty.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "dog.klick.kr",
+      "url": "https://dog.klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.995Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "dog-klick",
+          "enabled": true,
+          "ga4PropertyId": "539677201",
+          "gscSiteUrl": "https://dog.klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539677201",
+          "measurementId": "G-FQHYQQL7Q0"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://dog.klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "dog.nekau.com",
+      "url": "https://dog.nekau.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.785Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:dog.nekau.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558204098",
+          "measurementId": "G-MK28W1SNSN"
+        }
+      ],
+      "discoveredGsc": [],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "dogbreedcost.com",
+      "url": "https://dogbreedcost.com/",
+      "enabled": true,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.65",
+        "216.150.1.129"
+      ],
+      "addresses": [
+        "216.150.16.65",
+        "216.150.1.65"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.003Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.65, 216.150.1.129",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "dogbreedcost",
+          "enabled": true,
+          "ga4PropertyId": "543424923",
+          "gscSiteUrl": "https://dogbreedcost.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "543424923",
+          "measurementId": "G-5FZSHME54N"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://dogbreedcost.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "dogspang.kr",
+      "url": "https://dogspang.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.580Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "dogspang",
+          "enabled": false,
+          "ga4PropertyId": "517108655",
+          "gscSiteUrl": "https://dogspang.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "dogspang-2",
+          "enabled": true,
+          "ga4PropertyId": "536564400",
+          "gscSiteUrl": "https://dogspang.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "517108655",
+          "measurementId": "G-KZK72Z4V75"
+        },
+        {
+          "propertyId": "536564400",
+          "measurementId": "G-HBERNJNH03"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://dogspang.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "dogswhere.com",
+      "url": "https://dogswhere.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.302Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "dogswhere",
+          "enabled": true,
+          "ga4PropertyId": "539684317",
+          "gscSiteUrl": "sc-domain:dogswhere.com",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 23
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539684317",
+          "measurementId": "G-MZ5SHKNXW2"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:dogswhere.com",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "dolbomjigi.ehon365.kr",
+      "url": "https://dolbomjigi.ehon365.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.16.129",
+        "216.150.1.129"
+      ],
+      "addresses": [
+        "216.150.1.129",
+        "216.150.16.129"
+      ],
+      "cname": [
+        "d873cb10367ad8e9.vercel-dns-016.com"
+      ],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.072Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.16.129, 216.150.1.129",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "dolbomjigi-ehon365",
+          "enabled": true,
+          "ga4PropertyId": "539658831",
+          "gscSiteUrl": "https://dolbomjigi.ehon365.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 9
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539658831",
+          "measurementId": "G-09901YJY2H"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://dolbomjigi.ehon365.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "doseogogo.kr",
+      "url": "https://doseogogo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.609Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "doseogogo",
+          "enabled": true,
+          "ga4PropertyId": "540474596",
+          "gscSiteUrl": "https://doseogogo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540474596",
+          "measurementId": "G-VZW89LG9MD"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "http://doseogogo.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://doseogogo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "dullegilgogo.kr",
+      "url": "https://dullegilgogo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.396Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "dullegilgogo",
+          "enabled": true,
+          "ga4PropertyId": "540228738",
+          "gscSiteUrl": "https://dullegilgogo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540228738",
+          "measurementId": "G-XDVPLTC3E5"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://dullegilgogo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "educaer.com",
+      "url": "https://educaer.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "kickstart",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [
+        {
+          "host": "kickstart",
+          "checkedAt": "2026-10-18T07:10:13.457Z"
+        }
+      ],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:00.800Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS 조회 미확인",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "educaer",
+          "enabled": true,
+          "ga4PropertyId": "537331142",
+          "gscSiteUrl": "https://educaer.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "537331142",
+          "measurementId": "G-EPJM5700G9"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://educaer.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "ehon365.kr",
+      "url": "https://ehon365.kr/",
+      "enabled": true,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.565Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "ehon365",
+          "enabled": true,
+          "ga4PropertyId": "535779756",
+          "gscSiteUrl": "sc-domain:ehon365.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 4
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "535779756",
+          "measurementId": "G-6SQ4F96Y3C"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:ehon365.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "email.chatgipt.kr",
+      "url": "https://email.chatgipt.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "kickstart",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "kickstart",
+          "checkedAt": "2026-10-18T07:10:13.457Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.245.11"
+      ],
+      "addresses": [
+        "158.247.245.11"
+      ],
+      "cname": [],
+      "httpStatus": 404,
+      "checkedAt": "2026-10-18T07:23:02.211Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.245.11",
+        "HTTPS HEAD 404"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:email.chatgipt.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [],
+      "discoveredGsc": [],
+      "issues": [
+        "현재 서버 계정에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "esgyo.kr",
+      "url": "https://esgyo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.965Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "esgyo",
+          "enabled": true,
+          "ga4PropertyId": "524502961",
+          "gscSiteUrl": "https://esgyo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        },
+        {
+          "id": "esgyo-2",
+          "enabled": false,
+          "ga4PropertyId": "534284697",
+          "gscSiteUrl": "https://esgyo.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "524502961",
+          "measurementId": "G-9PHB2FYXSV"
+        },
+        {
+          "propertyId": "534284697",
+          "measurementId": "G-1MJGZ1CVS1"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://esgyo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "estat.kr",
+      "url": "https://estat.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.119Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "estat",
+          "enabled": false,
+          "ga4PropertyId": "523324426",
+          "gscSiteUrl": "https://estat.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "estat-2",
+          "enabled": true,
+          "ga4PropertyId": "536753109",
+          "gscSiteUrl": "https://estat.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 11
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "523324426",
+          "measurementId": "G-83CLXETEJV"
+        },
+        {
+          "propertyId": "536753109",
+          "measurementId": "G-LRJ1FE9715"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://estat.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "etique.kr",
+      "url": "https://etique.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.893Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "etique",
+          "enabled": true,
+          "ga4PropertyId": "521236824",
+          "gscSiteUrl": "https://etique.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 4
+        },
+        {
+          "id": "etique-2",
+          "enabled": false,
+          "ga4PropertyId": "536548785",
+          "gscSiteUrl": "https://etique.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "521236824",
+          "measurementId": "G-T0XDEL37RD"
+        },
+        {
+          "propertyId": "536548785",
+          "measurementId": "G-SN6CQZCRQX"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://etique.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "ezfunnel.kr",
+      "url": "https://ezfunnel.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.316Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "ezfunnel",
+          "enabled": true,
+          "ga4PropertyId": "536106465",
+          "gscSiteUrl": "https://ezfunnel.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536106465",
+          "measurementId": "G-9XSNSFF45N"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://ezfunnel.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "fastjob.kr",
+      "url": "https://fastjob.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.509Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "fastjob",
+          "enabled": true,
+          "ga4PropertyId": "513769879",
+          "gscSiteUrl": "https://fastjob.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        },
+        {
+          "id": "fastjob-2",
+          "enabled": false,
+          "ga4PropertyId": "536358308",
+          "gscSiteUrl": "https://fastjob.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "513769879",
+          "measurementId": "G-26XVC7KQBN"
+        },
+        {
+          "propertyId": "536358308",
+          "measurementId": "G-E79YB5RZDL"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://fastjob.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "finan.kr",
+      "url": "https://finan.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.767Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "finan",
+          "enabled": true,
+          "ga4PropertyId": "520579523",
+          "gscSiteUrl": "https://finan.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        },
+        {
+          "id": "finan-2",
+          "enabled": false,
+          "ga4PropertyId": "537937514",
+          "gscSiteUrl": "https://finan.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "520579523",
+          "measurementId": "G-BX75JB1MM9"
+        },
+        {
+          "propertyId": "537937514",
+          "measurementId": "G-2BMTRMHKZE"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://finan.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "finance.2mlab.kr",
+      "url": "https://finance.2mlab.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.737Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:finance.2mlab.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "555938140",
+          "measurementId": "G-HBGKMMZEN1"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://finance.2mlab.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가",
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "food.2mlab.kr",
+      "url": "https://food.2mlab.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.902Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:food.2mlab.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "556050046",
+          "measurementId": "G-ZDB3M39G70"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://food.2mlab.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가",
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "go.sellerpit.kr",
+      "url": "https://go.sellerpit.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.654Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "go-sellerpit",
+          "enabled": true,
+          "ga4PropertyId": "549438280",
+          "gscSiteUrl": "https://go.sellerpit.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549438280",
+          "measurementId": "G-7NCZDJBZQ7"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://go.sellerpit.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "goesku.com",
+      "url": "https://goesku.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.076Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "goesku",
+          "enabled": true,
+          "ga4PropertyId": "536856718",
+          "gscSiteUrl": "https://goesku.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 8
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536856718",
+          "measurementId": "G-468TKLWG30"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://goesku.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "gold79.kr",
+      "url": "https://gold79.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.927Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:gold79.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "552090458",
+          "measurementId": "G-QF5BNLWEZC"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://gold79.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "gong.luckyday.kr",
+      "url": "https://gong.luckyday.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.323Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "gong-luckyday",
+          "enabled": true,
+          "ga4PropertyId": "538330802",
+          "gscSiteUrl": "sc-domain:gong.luckyday.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538330802",
+          "measurementId": "G-ZWPVZN27BX"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:gong.luckyday.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "gong365.kr",
+      "url": "https://gong365.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.198.79.1"
+      ],
+      "addresses": [
+        "216.198.79.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.929Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.198.79.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "gong365",
+          "enabled": true,
+          "ga4PropertyId": "536928839",
+          "gscSiteUrl": "https://gong365.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536928839",
+          "measurementId": "G-5FJ0PMBPHJ"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://gong365.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "gover.kr",
+      "url": "https://gover.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.952Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "gover",
+          "enabled": true,
+          "ga4PropertyId": "523266152",
+          "gscSiteUrl": "https://gover.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        },
+        {
+          "id": "gover-2",
+          "enabled": false,
+          "ga4PropertyId": "536824904",
+          "gscSiteUrl": "https://gover.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "523266152",
+          "measurementId": "G-9RMH6FMB2N"
+        },
+        {
+          "propertyId": "536824904",
+          "measurementId": "G-ZXLKF8Z95D"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://gover.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "gpt.nexttech7.com",
+      "url": "https://gpt.nexttech7.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:00.034Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "gpt-nexttech7",
+          "enabled": true,
+          "ga4PropertyId": "539592261",
+          "gscSiteUrl": "https://gpt.nexttech7.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539592261",
+          "measurementId": "G-8XYB27DRCP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://gpt.nexttech7.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 경로 확인 · 현재 계정 목록에서 정확한 도메인 미확인"
+      ]
+    },
+    {
+      "domain": "gradienttrail.com",
+      "url": "https://gradienttrail.com/",
+      "enabled": true,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.108Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "gradienttrail",
+          "enabled": true,
+          "ga4PropertyId": "543434435",
+          "gscSiteUrl": "https://gradienttrail.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "543434435",
+          "measurementId": "G-JXKB19KWYF"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://gradienttrail.com/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "sc-domain:gradienttrail.com",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "haemongdream.com",
+      "url": "https://haemongdream.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.747Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "haemongdream",
+          "enabled": true,
+          "ga4PropertyId": "516256882",
+          "gscSiteUrl": "https://haemongdream.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 34
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "516256882",
+          "measurementId": "G-4DD3504NHM"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://haemongdream.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "healfood.kr",
+      "url": "https://healfood.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.767Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "healfood",
+          "enabled": false,
+          "ga4PropertyId": "520249990",
+          "gscSiteUrl": "https://healfood.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "healfood-2",
+          "enabled": true,
+          "ga4PropertyId": "536788301",
+          "gscSiteUrl": "https://healfood.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "520249990",
+          "measurementId": "G-6F4SRD1QSQ"
+        },
+        {
+          "propertyId": "536788301",
+          "measurementId": "G-5VMV1NPV5M"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://healfood.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "healthgotoo.com",
+      "url": "https://healthgotoo.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.547Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "healthgotoo",
+          "enabled": true,
+          "ga4PropertyId": "536550724",
+          "gscSiteUrl": "https://healthgotoo.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 10
+        },
+        {
+          "id": "healthgotoo-2",
+          "enabled": false,
+          "ga4PropertyId": "536550724",
+          "gscSiteUrl": "https://healthgotoo.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "517066030",
+          "measurementId": "G-WMHY8QEC7Y"
+        },
+        {
+          "propertyId": "536550724",
+          "measurementId": "G-JHB4QSD4TV"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://healthgotoo.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "homeimer.com",
+      "url": "https://homeimer.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "kickstart",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "kickstart",
+          "checkedAt": "2026-10-18T07:10:13.457Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.245.11"
+      ],
+      "addresses": [
+        "158.247.245.11"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.733Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.245.11",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "homeimer",
+          "enabled": true,
+          "ga4PropertyId": "519582866",
+          "gscSiteUrl": "https://homeimer.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        },
+        {
+          "id": "homeimer-2",
+          "enabled": false,
+          "ga4PropertyId": "536833044",
+          "gscSiteUrl": "https://homeimer.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "519582866",
+          "measurementId": "G-G9P7DNWRL8"
+        },
+        {
+          "propertyId": "536833044",
+          "measurementId": "G-FEL8N9DBHX"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://homeimer.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "hos.dogspang.kr",
+      "url": "https://hos.dogspang.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.904Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:hos.dogspang.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558237812",
+          "measurementId": "G-YZW3TDSVFS"
+        }
+      ],
+      "discoveredGsc": [],
+      "issues": [
+        "공개 DNS 확인 불가",
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "insupang.com",
+      "url": "https://insupang.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 410,
+      "checkedAt": "2026-10-18T07:22:57.507Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 410"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "insupang",
+          "enabled": true,
+          "ga4PropertyId": "517897382",
+          "gscSiteUrl": "https://insupang.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        },
+        {
+          "id": "insupang-2",
+          "enabled": false,
+          "ga4PropertyId": "536533161",
+          "gscSiteUrl": "https://insupang.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "517897382",
+          "measurementId": "G-4BPRY10DEK"
+        },
+        {
+          "propertyId": "536533161",
+          "measurementId": "G-1XXH5V0587"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://insupang.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "item79.com",
+      "url": "https://item79.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1",
+        "216.150.16.65"
+      ],
+      "addresses": [
+        "216.150.16.129",
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:04.516Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1, 216.150.16.65",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:item79.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "552227671",
+          "measurementId": "G-EB1HG3LPXH"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://item79.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "jasamall.sellerpit.kr",
+      "url": "https://jasamall.sellerpit.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.768Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "jasamall-sellerpit",
+          "enabled": true,
+          "ga4PropertyId": "539903323",
+          "gscSiteUrl": "https://jasamall.sellerpit.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539903323",
+          "measurementId": "G-HG4CB2V2KQ"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:jasamall.sellerpit.kr",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://jasamall.sellerpit.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "jeompolab.com",
+      "url": "https://jeompolab.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.809Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "jeompolab",
+          "enabled": true,
+          "ga4PropertyId": "550814434",
+          "gscSiteUrl": "https://jeompolab.com/",
+          "ga4Status": "ok",
+          "gscStatus": "auth_error",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "550814434",
+          "measurementId": "G-FV3MPR6SWL"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://jeompolab.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "joy.ehon365.kr",
+      "url": "https://joy.ehon365.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.16.65",
+        "216.150.1.65"
+      ],
+      "addresses": [
+        "216.150.1.193",
+        "216.150.16.193"
+      ],
+      "cname": [
+        "1f699a951bb7a900.vercel-dns-016.com"
+      ],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.687Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.16.65, 216.150.1.65",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "joy-ehon365",
+          "enabled": true,
+          "ga4PropertyId": "549437646",
+          "gscSiteUrl": "https://joy.ehon365.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549437646",
+          "measurementId": "G-NYLD6PJ7JW"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://joy.ehon365.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "kapti.kr",
+      "url": "https://kapti.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.894Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "kapti",
+          "enabled": true,
+          "ga4PropertyId": "542290124",
+          "gscSiteUrl": "https://kapti.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "542290124",
+          "measurementId": "G-8REM1FQYW7"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://kapti.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "kayest.com",
+      "url": "https://kayest.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:04.616Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:kayest.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [],
+      "discoveredGsc": [],
+      "issues": [
+        "현재 서버 계정에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "kdramanote.com",
+      "url": "https://kdramanote.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.710Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "kdramanote",
+          "enabled": true,
+          "ga4PropertyId": "544164198",
+          "gscSiteUrl": "https://kdramanote.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544164198",
+          "measurementId": "G-F41TQRYZW5"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://kdramanote.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "klick.kr",
+      "url": "https://klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.503Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "klick",
+          "enabled": false,
+          "ga4PropertyId": "515381693",
+          "gscSiteUrl": "https://klick.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "klick-2",
+          "enabled": true,
+          "ga4PropertyId": "533748860",
+          "gscSiteUrl": "https://klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 6
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "515381693",
+          "measurementId": "G-56PDD9FJ9X"
+        },
+        {
+          "propertyId": "533748860",
+          "measurementId": "G-0H4Q9V5KJL"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "knewstory.kr",
+      "url": "https://knewstory.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 410,
+      "checkedAt": "2026-10-18T07:22:57.434Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 410"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "knewstory",
+          "enabled": true,
+          "ga4PropertyId": "511978714",
+          "gscSiteUrl": "https://knewstory.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        },
+        {
+          "id": "knewstory-2",
+          "enabled": false,
+          "ga4PropertyId": "536122428",
+          "gscSiteUrl": "https://knewstory.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "511978714",
+          "measurementId": "G-JDDZSJER8C"
+        },
+        {
+          "propertyId": "536122428",
+          "measurementId": "G-NKMPGF4J87"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://knewstory.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "ko.klick.kr",
+      "url": "https://ko.klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.377Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "ko-klick",
+          "enabled": true,
+          "ga4PropertyId": "549433726",
+          "gscSiteUrl": "https://ko.klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "auth_error",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549433726",
+          "measurementId": "G-B69RFTXPDZ"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://ko.klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "lawer.kr",
+      "url": "https://lawer.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.041Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "lawer",
+          "enabled": true,
+          "ga4PropertyId": "521770057",
+          "gscSiteUrl": "https://lawer.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        },
+        {
+          "id": "lawer-2",
+          "enabled": false,
+          "ga4PropertyId": "537125482",
+          "gscSiteUrl": "https://lawer.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "521770057",
+          "measurementId": "G-SCTB6F7KWB"
+        },
+        {
+          "propertyId": "537125482",
+          "measurementId": "G-ZP9JY25DV0"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://lawer.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "legalser.com",
+      "url": "https://legalser.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.649Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "legalser",
+          "enabled": true,
+          "ga4PropertyId": "519536919",
+          "gscSiteUrl": "https://legalser.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 4
+        },
+        {
+          "id": "legalser-2",
+          "enabled": false,
+          "ga4PropertyId": "536573278",
+          "gscSiteUrl": "https://legalser.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "519536919",
+          "measurementId": "G-XRJ448NND0"
+        },
+        {
+          "propertyId": "536573278",
+          "measurementId": "G-4NTN698TVW"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://legalser.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "lim01.soonsaak.co.kr",
+      "url": "https://lim01.soonsaak.co.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "unverified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "104.21.47.121",
+        "172.67.147.161"
+      ],
+      "addresses": [
+        "172.67.147.161",
+        "104.21.47.121",
+        "2606:4700:3032::6815:2f79",
+        "2606:4700:3035::ac43:93a1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:02.199Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 104.21.47.121, 172.67.147.161",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "lim01-soonsaak-co",
+          "enabled": true,
+          "ga4PropertyId": "550822302",
+          "gscSiteUrl": "https://lim01.soonsaak.co.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "550822302",
+          "measurementId": "G-XWZFFV92CV"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://lim01.soonsaak.co.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "limsight.kr",
+      "url": "https://limsight.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.876Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "limsight",
+          "enabled": true,
+          "ga4PropertyId": "541579004",
+          "gscSiteUrl": "https://limsight.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "541579004",
+          "measurementId": "G-53NMV4GFGY"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://limsight.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "lo.klick.kr",
+      "url": "https://lo.klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.618Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "lo-klick",
+          "enabled": true,
+          "ga4PropertyId": "549415733",
+          "gscSiteUrl": "https://lo.klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "auth_error",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549415733",
+          "measurementId": "G-9427MM2JR8"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://lo.klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "localgeo.app",
+      "url": "https://localgeo.app/",
+      "enabled": true,
+      "platform": "static",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.224Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "localgeo",
+          "enabled": true,
+          "ga4PropertyId": "544179002",
+          "gscSiteUrl": "https://localgeo.app/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 27
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544179002",
+          "measurementId": "G-FXR7TQ37VY"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://localgeo.app/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "luckyday.kr",
+      "url": "https://luckyday.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.433Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "luckyday",
+          "enabled": true,
+          "ga4PropertyId": "512019715",
+          "gscSiteUrl": "sc-domain:luckyday.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 6
+        },
+        {
+          "id": "luckyday-2",
+          "enabled": false,
+          "ga4PropertyId": "533729607",
+          "gscSiteUrl": "sc-domain:luckyday.kr",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "512019715",
+          "measurementId": "G-LHCBHFQ3HK"
+        },
+        {
+          "propertyId": "533729607",
+          "measurementId": "G-81SF0V450Y"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:luckyday.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "luxurytraver.com",
+      "url": "https://luxurytraver.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.449Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS 조회 미확인",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "luxurytraver",
+          "enabled": false,
+          "ga4PropertyId": "521243475",
+          "gscSiteUrl": "https://luxurytraver.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "luxurytraver-2",
+          "enabled": true,
+          "ga4PropertyId": "536662292",
+          "gscSiteUrl": "https://luxurytraver.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "521243475",
+          "measurementId": "G-48P3C5MKRJ"
+        },
+        {
+          "propertyId": "536662292",
+          "measurementId": "G-WQBV340TRP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://luxurytraver.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "mbti.tasko.kr",
+      "url": "https://mbti.tasko.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:58.165Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "mbti-tasko",
+          "enabled": true,
+          "ga4PropertyId": "544155633",
+          "gscSiteUrl": "https://mbti.tasko.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "533744995",
+          "measurementId": "G-NMW0CRZ2D7"
+        },
+        {
+          "propertyId": "544155633",
+          "measurementId": "G-K1V3GD9PWP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:mbti.tasko.kr",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://mbti.tasko.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "mohana.kr",
+      "url": "https://mohana.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "unverified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "121.254.224.110"
+      ],
+      "addresses": [
+        "121.254.224.110"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.757Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 121.254.224.110",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "mohana",
+          "enabled": true,
+          "ga4PropertyId": "547512172",
+          "gscSiteUrl": "https://mohana.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 28
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "547512172",
+          "measurementId": "G-HG3679PEV7"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://mohana.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "nekau.com",
+      "url": "https://nekau.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:02.144Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:nekau.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558214540",
+          "measurementId": "G-0RT7147LNZ"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://nekau.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "nexttech7.com",
+      "url": "https://nexttech7.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.216Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "nexttech7",
+          "enabled": true,
+          "ga4PropertyId": "533760772",
+          "gscSiteUrl": "https://nexttech7.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "533760772",
+          "measurementId": "G-RH60S4JMVJ"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://nexttech7.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "nicewomen.kr",
+      "url": "https://nicewomen.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.171Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "nicewomen",
+          "enabled": true,
+          "ga4PropertyId": "524548131",
+          "gscSiteUrl": "https://nicewomen.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "524548131",
+          "measurementId": "G-Q9N8XB9558"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://nicewomen.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "nongsusangogo.kr",
+      "url": "https://nongsusangogo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.619Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "seoul"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "nongsusangogo",
+          "enabled": true,
+          "ga4PropertyId": "540392169",
+          "gscSiteUrl": "https://nongsusangogo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540392169",
+          "measurementId": "G-CZ04JDMFC4"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://nongsusangogo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "notebook.klick.kr",
+      "url": "https://notebook.klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.668Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "notebook-klick",
+          "enabled": false,
+          "ga4PropertyId": "538351492",
+          "gscSiteUrl": "https://notebook.klick.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "notebook-klick-2",
+          "enabled": true,
+          "ga4PropertyId": "538469681",
+          "gscSiteUrl": "https://notebook.klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538351492",
+          "measurementId": "G-GXSFN9Z1JQ"
+        },
+        {
+          "propertyId": "538469681",
+          "measurementId": "G-17SWWC9DKM"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:notebook.klick.kr",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://notebook.klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "patentgogo.com",
+      "url": "https://patentgogo.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.159Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "patentgogo",
+          "enabled": true,
+          "ga4PropertyId": "543441407",
+          "gscSiteUrl": "https://patentgogo.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 6
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "543441407",
+          "measurementId": "G-9LKQHKSWP3"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://patentgogo.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "petcostlab.com",
+      "url": "https://petcostlab.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.368Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "petcostlab",
+          "enabled": true,
+          "ga4PropertyId": "545108775",
+          "gscSiteUrl": "https://petcostlab.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "545108775",
+          "measurementId": "G-SYW3K3WPTH"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://petcostlab.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "pethomepick.com",
+      "url": "https://pethomepick.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.277Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "pethomepick",
+          "enabled": true,
+          "ga4PropertyId": "544197313",
+          "gscSiteUrl": "sc-domain:pethomepick.com",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544197313",
+          "measurementId": "G-KQ4L3B3JEY"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:pethomepick.com",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://pethomepick.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "petinsuer.com",
+      "url": "https://petinsuer.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.651Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "petinsuer",
+          "enabled": false,
+          "ga4PropertyId": "519578899",
+          "gscSiteUrl": "https://petinsuer.com/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "petinsuer-2",
+          "enabled": true,
+          "ga4PropertyId": "536670197",
+          "gscSiteUrl": "https://petinsuer.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "519578899",
+          "measurementId": "G-LZHWMJYV2C"
+        },
+        {
+          "propertyId": "536670197",
+          "measurementId": "G-DWK1WH7TC6"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://petinsuer.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "petjigi.kr",
+      "url": "https://petjigi.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.871Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "GETTING_READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "petjigi",
+          "enabled": true,
+          "ga4PropertyId": "538418545",
+          "gscSiteUrl": "https://petjigi.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538418545",
+          "measurementId": "G-VF43X6349L"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://petjigi.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "phone.luckyday.kr",
+      "url": "https://phone.luckyday.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.417Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "phone-luckyday",
+          "enabled": true,
+          "ga4PropertyId": "538379576",
+          "gscSiteUrl": "https://phone.luckyday.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538379576",
+          "measurementId": "G-CL4NB3L8S7"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:phone.luckyday.kr",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://phone.luckyday.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "picklefriend.kr",
+      "url": "https://picklefriend.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.928Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "picklefriend",
+          "enabled": true,
+          "ga4PropertyId": "539268592",
+          "gscSiteUrl": "https://picklefriend.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 111
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539268592",
+          "measurementId": "G-GL7VSTB156"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://picklefriend.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "picturebooks.kr",
+      "url": "https://picturebooks.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.326Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "picturebooks",
+          "enabled": true,
+          "ga4PropertyId": "546472123",
+          "gscSiteUrl": "https://picturebooks.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "546472123",
+          "measurementId": "G-T04GJF5W90"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://picturebooks.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "plategogo.com",
+      "url": "https://plategogo.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.65",
+        "216.150.16.193"
+      ],
+      "addresses": [
+        "216.150.1.193",
+        "216.150.16.129"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.017Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.65, 216.150.16.193",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "plategogo",
+          "enabled": true,
+          "ga4PropertyId": "544137483",
+          "gscSiteUrl": "https://plategogo.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544137483",
+          "measurementId": "G-EJT2ZBM14Q"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://plategogo.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "pregnancy.ehon365.kr",
+      "url": "https://pregnancy.ehon365.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.193",
+        "216.150.16.193"
+      ],
+      "addresses": [
+        "216.150.1.65",
+        "216.150.16.65"
+      ],
+      "cname": [
+        "62b030b7bfcc8d5d.vercel-dns-016.com"
+      ],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.885Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.193, 216.150.16.193",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "pregnancy-ehon365",
+          "enabled": true,
+          "ga4PropertyId": "539600556",
+          "gscSiteUrl": "https://pregnancy.ehon365.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539600556",
+          "measurementId": "G-R127LB4THW"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://pregnancy.ehon365.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "richyou.kr",
+      "url": "https://richyou.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.159Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "richyou",
+          "enabled": true,
+          "ga4PropertyId": "537950699",
+          "gscSiteUrl": "https://richyou.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "537950699",
+          "measurementId": "G-KE5N7805FP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://richyou.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "rndatlas.com",
+      "url": "https://rndatlas.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.280Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "rndatlas",
+          "enabled": true,
+          "ga4PropertyId": "543459196",
+          "gscSiteUrl": "https://rndatlas.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "543459196",
+          "measurementId": "G-3NJ07LPVXD"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://rndatlas.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "roadways.kr",
+      "url": "https://roadways.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.194Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "roadways",
+          "enabled": true,
+          "ga4PropertyId": "536902558",
+          "gscSiteUrl": "https://roadways.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 11
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "536902558",
+          "measurementId": "G-MH1JSZH1XG"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://www.roadways.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://roadways.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "runmania.kr",
+      "url": "https://runmania.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.211Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "runmania",
+          "enabled": true,
+          "ga4PropertyId": "533614337",
+          "gscSiteUrl": "https://runmania.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 3
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "533614337",
+          "measurementId": "G-01M1XY4FM1"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://runmania.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "saju.tasko.kr",
+      "url": "https://saju.tasko.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.493Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "seoul"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "saju-tasko",
+          "enabled": true,
+          "ga4PropertyId": "538409598",
+          "gscSiteUrl": "sc-domain:saju.tasko.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 111
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "538409598",
+          "measurementId": "G-JSH1S3FVQ3"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:saju.tasko.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "sellerpit.kr",
+      "url": "https://sellerpit.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.025Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "sellerpit",
+          "enabled": false,
+          "ga4PropertyId": "525923821",
+          "gscSiteUrl": "https://sellerpit.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "sellerpit-2",
+          "enabled": true,
+          "ga4PropertyId": "534005389",
+          "gscSiteUrl": "https://sellerpit.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 6
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "525923821",
+          "measurementId": "G-MXE2PMM4E6"
+        },
+        {
+          "propertyId": "534005389",
+          "measurementId": "G-HF22729VRB"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://sellerpit.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "seniorlivingnote.com",
+      "url": "https://seniorlivingnote.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.271Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "nexttech"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "seniorlivingnote",
+          "enabled": true,
+          "ga4PropertyId": "545086577",
+          "gscSiteUrl": "https://seniorlivingnote.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 36
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "545086577",
+          "measurementId": "G-0SS13Y696H"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://seniorlivingnote.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "shotsetup.com",
+      "url": "https://shotsetup.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.610Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "shotsetup",
+          "enabled": true,
+          "ga4PropertyId": "547033336",
+          "gscSiteUrl": "https://shotsetup.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 25
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "547033336",
+          "measurementId": "G-MW6JS8F2RB"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://shotsetup.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "sinhonjigi.ehon365.kr",
+      "url": "https://sinhonjigi.ehon365.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.193",
+        "216.150.16.193"
+      ],
+      "addresses": [
+        "216.150.1.193",
+        "216.150.16.193"
+      ],
+      "cname": [
+        "7559dbd876501752.vercel-dns-016.com"
+      ],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.052Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.193, 216.150.16.193",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "sinhonjigi-ehon365",
+          "enabled": true,
+          "ga4PropertyId": "539463615",
+          "gscSiteUrl": "https://sinhonjigi.ehon365.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539463615",
+          "measurementId": "G-H62XHNDF13"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://sinhonjigi.ehon365.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "smallhomepick.com",
+      "url": "https://smallhomepick.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.208Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "smallhomepick",
+          "enabled": true,
+          "ga4PropertyId": "544124021",
+          "gscSiteUrl": "https://smallhomepick.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544124021",
+          "measurementId": "G-NPDJTE52VX"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://smallhomepick.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "smart.sellerpit.kr",
+      "url": "https://smart.sellerpit.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.708Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "smart-sellerpit",
+          "enabled": true,
+          "ga4PropertyId": "539570439",
+          "gscSiteUrl": "https://smart.sellerpit.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539570439",
+          "measurementId": "G-BNVY0PQET2"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://smart.sellerpit.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "softwa.kr",
+      "url": "https://softwa.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.891Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "softwa",
+          "enabled": true,
+          "ga4PropertyId": "519577510",
+          "gscSiteUrl": "https://softwa.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        },
+        {
+          "id": "softwa-2",
+          "enabled": false,
+          "ga4PropertyId": "536668384",
+          "gscSiteUrl": "https://softwa.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "519577510",
+          "measurementId": "G-2399V9D3BL"
+        },
+        {
+          "propertyId": "536668384",
+          "measurementId": "G-Q31DXXPEDR"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://softwa.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "solarpaybackmap.com",
+      "url": "https://solarpaybackmap.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.040Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "solarpaybackmap",
+          "enabled": true,
+          "ga4PropertyId": "542279766",
+          "gscSiteUrl": "https://solarpaybackmap.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "542279766",
+          "measurementId": "G-85ET570CDB"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://solarpaybackmap.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "sorimate.com",
+      "url": "https://sorimate.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.392Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "sorimate",
+          "enabled": true,
+          "ga4PropertyId": "540102091",
+          "gscSiteUrl": "https://sorimate.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540102091",
+          "measurementId": "G-LBDHZHV504"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://sorimate.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "spinkorea.kr",
+      "url": "https://spinkorea.kr/",
+      "enabled": true,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.198.79.1"
+      ],
+      "addresses": [
+        "216.198.79.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.149Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.198.79.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "spinkorea",
+          "enabled": false,
+          "ga4PropertyId": "532855163",
+          "gscSiteUrl": "https://spinkorea.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "spinkorea-2",
+          "enabled": true,
+          "ga4PropertyId": "536081634",
+          "gscSiteUrl": "https://spinkorea.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 44
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "532855163",
+          "measurementId": "G-8RCEVHDSK5"
+        },
+        {
+          "propertyId": "536081634",
+          "measurementId": "G-KY5S8XFJFG"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://spinkorea.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "sssaass.com",
+      "url": "https://sssaass.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.004Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "sssaass",
+          "enabled": true,
+          "ga4PropertyId": "537317309",
+          "gscSiteUrl": "https://sssaass.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "537317309",
+          "measurementId": "G-E53Q62EC2H"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://sssaass.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "temon.kr",
+      "url": "https://temon.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.760Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "temon",
+          "enabled": true,
+          "ga4PropertyId": "516369797",
+          "gscSiteUrl": "sc-domain:temon.kr",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 35
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "516369797",
+          "measurementId": "G-L167CCPS8E"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://temon.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "sc-domain:temon.kr",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "tennisfrens.com",
+      "url": "https://tennisfrens.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.644Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "READY",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "tennisfrens",
+          "enabled": true,
+          "ga4PropertyId": "534356101",
+          "gscSiteUrl": "sc-domain:tennisfrens.com",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 46
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "534356101",
+          "measurementId": "G-W1K51D8SBX"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "sc-domain:tennisfrens.com",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "texturb.com",
+      "url": "https://texturb.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "mixed",
+      "hostStatus": "dns_disagreement",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.198.79.1"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.715Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.198.79.1",
+        "HTTPS HEAD 200",
+        "redirect: www.texturb.com"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "texturb",
+          "enabled": true,
+          "ga4PropertyId": "532887366",
+          "gscSiteUrl": "https://texturb.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 5
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "532887366",
+          "measurementId": "G-0XP0CFXR0X"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://www.texturb.com/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://texturb.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "DNS 조회 경로별 응답 불일치 · 이전 완료 미확인"
+      ]
+    },
+    {
+      "domain": "today2424.kr",
+      "url": "https://today2424.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.198.79.1"
+      ],
+      "addresses": [
+        "216.198.79.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.338Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.198.79.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "today2424",
+          "enabled": true,
+          "ga4PropertyId": "534327620",
+          "gscSiteUrl": "https://today2424.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "534327620",
+          "measurementId": "G-N2V7ZZP184"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://today2424.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://www.today2424.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "todaypharm.kr",
+      "url": "https://todaypharm.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:58.558Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "todaypharm",
+          "enabled": true,
+          "ga4PropertyId": "534313222",
+          "gscSiteUrl": "https://todaypharm.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 35
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "534313222",
+          "measurementId": "G-NPMV2G9KPK"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://todaypharm.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://www.todaypharm.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "todayshops.kr",
+      "url": "https://todayshops.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.080Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "todayshops",
+          "enabled": false,
+          "ga4PropertyId": "537295441",
+          "gscSiteUrl": "https://todayshops.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "todayshops-2",
+          "enabled": true,
+          "ga4PropertyId": "537250213",
+          "gscSiteUrl": "https://todayshops.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "537250213",
+          "measurementId": "G-8ZB3DMRXXT"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://todayshops.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "toolnavigo.com",
+      "url": "https://toolnavigo.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.938Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:toolnavigo.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558243423",
+          "measurementId": "G-VTZXN9R959"
+        }
+      ],
+      "discoveredGsc": [],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "trave.kr",
+      "url": "https://trave.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.848Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "trave",
+          "enabled": true,
+          "ga4PropertyId": "521243855",
+          "gscSiteUrl": "https://trave.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        },
+        {
+          "id": "trave-2",
+          "enabled": false,
+          "ga4PropertyId": "536910323",
+          "gscSiteUrl": "https://trave.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "521243855",
+          "measurementId": "G-X1XF83W80C"
+        },
+        {
+          "propertyId": "536910323",
+          "measurementId": "G-P2PS3SJ8KJ"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://trave.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "travel.dogspang.kr",
+      "url": "https://travel.dogspang.kr/",
+      "enabled": false,
+      "platform": "static",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:23:01.834Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:travel.dogspang.kr",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "558214157",
+          "measurementId": "G-X63N3F0VTD"
+        }
+      ],
+      "discoveredGsc": [],
+      "issues": [
+        "공개 DNS 확인 불가",
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "travel.sellerpit.kr",
+      "url": "https://travel.sellerpit.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo1",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo1",
+          "checkedAt": "2026-10-18T07:07:35Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
+      "addresses": [
+        "158.247.212.123"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.362Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.212.123",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "travel-sellerpit",
+          "enabled": true,
+          "ga4PropertyId": "539747744",
+          "gscSiteUrl": "https://travel.sellerpit.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 2
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539747744",
+          "measurementId": "G-4SBPER4XKP"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://travel.sellerpit.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "travelpang.kr",
+      "url": "https://travelpang.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:57.581Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "travelpang",
+          "enabled": false,
+          "ga4PropertyId": "517948231",
+          "gscSiteUrl": "https://travelpang.kr/",
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        },
+        {
+          "id": "travelpang-2",
+          "enabled": true,
+          "ga4PropertyId": "536559437",
+          "gscSiteUrl": "https://travelpang.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 4
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "517948231",
+          "measurementId": "G-DQ2LLVZK07"
+        },
+        {
+          "propertyId": "536559437",
+          "measurementId": "G-BLTPX3X6CC"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://travelpang.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "wattbenchs.com",
+      "url": "https://wattbenchs.com/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.818Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "nextjs-local"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "wattbenchs",
+          "enabled": true,
+          "ga4PropertyId": "540673092",
+          "gscSiteUrl": "https://wattbenchs.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 1
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540673092",
+          "measurementId": "G-V70KJ8GE9J"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://wattbenchs.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "webtoon.klick.kr",
+      "url": "https://webtoon.klick.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "unknown",
+      "hostStatus": "account_configured_no_public_route",
+      "accountHosts": [],
+      "publicDnsAddresses": [],
+      "addresses": [],
+      "cname": [],
+      "httpStatus": null,
+      "checkedAt": "2026-10-18T07:22:59.718Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: A 응답 없음",
+        "HTTPS HEAD unavailable"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "webtoon-klick",
+          "enabled": true,
+          "ga4PropertyId": "539606050",
+          "gscSiteUrl": "https://webtoon.klick.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539606050",
+          "measurementId": "G-F06R0SQLZN"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://webtoon.klick.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ]
+    },
+    {
+      "domain": "wedding-fair-decision-hub.vercel.app",
+      "url": "https://wedding-fair-decision-hub.vercel.app/",
+      "enabled": false,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "64.29.17.3",
+        "216.198.79.3"
+      ],
+      "addresses": [
+        "216.198.79.3",
+        "64.29.17.3"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:02.027Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 64.29.17.3, 216.198.79.3",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:wedding-fair-decision-hub.vercel.app",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://wedding-fair-decision-hub.vercel.app/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "wedfairguide.com",
+      "url": "https://wedfairguide.com/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.129",
+        "216.150.1.193"
+      ],
+      "addresses": [
+        "216.150.1.65",
+        "216.150.16.129"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.170Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.129, 216.150.1.193",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "vercel"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "wedfairguide",
+          "enabled": true,
+          "ga4PropertyId": "544110804",
+          "gscSiteUrl": "https://wedfairguide.com/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 19
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "544110804",
+          "measurementId": "G-5CNEDTSX08"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://wedfairguide.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "wonon.ehon365.kr",
+      "url": "https://wonon.ehon365.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.16.193",
+        "216.150.1.193"
+      ],
+      "addresses": [
+        "216.150.1.193",
+        "216.150.16.193"
+      ],
+      "cname": [
+        "3497de2890fedbbb.vercel-dns-016.com"
+      ],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:01.717Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.16.193, 216.150.1.193",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "wonon-ehon365",
+          "enabled": true,
+          "ga4PropertyId": "549519780",
+          "gscSiteUrl": "https://wonon.ehon365.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "549519780",
+          "measurementId": "G-GHW1NZJ8FE"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://wonon.ehon365.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "workgogo.kr",
+      "url": "https://workgogo.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 404,
+      "checkedAt": "2026-10-18T07:23:00.604Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 404"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "workgogo",
+          "enabled": true,
+          "ga4PropertyId": "540357516",
+          "gscSiteUrl": "https://workgogo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540357516",
+          "measurementId": "G-ZBPZ0NYHWC"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "http://workgogo.kr/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://workgogo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "yesa.kr",
+      "url": "https://yesa.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "turbo2",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [
+        {
+          "host": "turbo2",
+          "checkedAt": "2026-10-18T07:07:37Z"
+        }
+      ],
+      "publicDnsAddresses": [
+        "158.247.209.217"
+      ],
+      "addresses": [
+        "158.247.209.217"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:22:59.566Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 158.247.209.217",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": false,
+      "approval": "EXCLUDED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "yesa",
+          "enabled": true,
+          "ga4PropertyId": "539176876",
+          "gscSiteUrl": "https://yesa.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 11
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "539176876",
+          "measurementId": "G-92SCTLYGJF"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://yesa.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "youkamap.kr",
+      "url": "https://youkamap.kr/",
+      "enabled": true,
+      "platform": "wordpress",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "216.150.1.1"
+      ],
+      "addresses": [
+        "216.150.1.1"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.496Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 216.150.1.1",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "youkamap",
+          "enabled": true,
+          "ga4PropertyId": "540469143",
+          "gscSiteUrl": "https://youkamap.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540469143",
+          "measurementId": "G-2PB8D7610M"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://youkamap.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "domain": "yourtripgo.com",
+      "url": "https://yourtripgo.com/",
+      "enabled": false,
+      "platform": "static",
+      "host": "vercel",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "76.76.21.21"
+      ],
+      "addresses": [
+        "76.76.21.21"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:02.327Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 76.76.21.21",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [],
+      "monetization": true,
+      "approval": "UNKNOWN",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "discovered:yourtripgo.com",
+          "enabled": false,
+          "ga4PropertyId": null,
+          "gscSiteUrl": null,
+          "ga4Status": "not_collected",
+          "gscStatus": "not_collected",
+          "dailyUsers": null
+        }
+      ],
+      "discoveredGa4": [],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://yourtripgo.com/",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "sc-domain:yourtripgo.com",
+          "permission": "속성 목록에 있음"
+        },
+        {
+          "siteUrl": "https://www.yourtripgo.com/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": [
+        "Google 목록에서 발견 · 운영 대상 등록 전"
+      ]
+    },
+    {
+      "domain": "yungyanggogo.kr",
+      "url": "https://yungyanggogo.kr/",
+      "enabled": true,
+      "platform": "nextjs",
+      "host": "ovh",
+      "hostStatus": "public_route_verified",
+      "accountHosts": [],
+      "publicDnsAddresses": [
+        "51.79.206.71"
+      ],
+      "addresses": [
+        "51.79.206.71"
+      ],
+      "cname": [],
+      "httpStatus": 200,
+      "checkedAt": "2026-10-18T07:23:00.789Z",
+      "evidence": [
+        "시스템 DNS A/AAAA/CNAME",
+        "Google DNS: 51.79.206.71",
+        "HTTPS HEAD 200"
+      ],
+      "configuredLocations": [
+        "kwangju"
+      ],
+      "monetization": true,
+      "approval": "NOT_LISTED",
+      "approvalCheckedAt": "2026-10-18T07:22:56.308Z",
+      "bindings": [
+        {
+          "id": "yungyanggogo",
+          "enabled": true,
+          "ga4PropertyId": "540455691",
+          "gscSiteUrl": "https://yungyanggogo.kr/",
+          "ga4Status": "ok",
+          "gscStatus": "ok",
+          "dailyUsers": 0
+        }
+      ],
+      "discoveredGa4": [
+        {
+          "propertyId": "540455691",
+          "measurementId": "G-92QVJS88F8"
+        }
+      ],
+      "discoveredGsc": [
+        {
+          "siteUrl": "https://yungyanggogo.kr/",
+          "permission": "속성 목록에 있음"
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "notes": [
+    "호스팅은 현재 공개 DNS와 응답 기준이며 이전 완료·원본 삭제를 의미하지 않습니다.",
+    "GA4 중복 속성은 별도 표시하며 사용자를 합산하지 않습니다. 비활성 설정은 수집하지 않습니다.",
+    "애드센스는 24시간 이내 완전한 공식 목록의 정확한 도메인만 대조합니다. 서브도메인은 상위 도메인 승인을 상속하지 않습니다.",
+    "설정 위치는 기존 메타데이터이며 현재 호스팅 증거와 구분합니다."
+  ]
+}

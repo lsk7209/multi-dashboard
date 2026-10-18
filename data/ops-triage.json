@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-08-27T01:30:16.068Z",
+  "generatedAt": "2026-10-18T07:12:02.884Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-08-27T01:29:40.930Z",
+  "sourceUpdatedAt": "2026-10-18T07:12:02.232Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3
+    "high": 17,
+    "medium": 3,
+    "low": 5
   },
   "counts": {
     "github-actions": 0,
-    "gsc": 2,
-    "adsense": 1,
+    "gsc": 16,
+    "adsense": 9,
     "ga4": 0,
     "vercel": 0,
     "other": 0
@@ -23,32 +23,262 @@
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-08-27T01:29:40.921Z",
+      "checkedAt": "2026-10-18T07:12:02.226Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-08-27T01:29:24.500Z.",
-      "checkedAt": "2026-08-27T01:29:40.919Z",
-      "count": 3
+      "detail": "Read dashboard artifact snapshot=2026-10-18T07:12:01.364Z.",
+      "checkedAt": "2026-10-18T07:12:02.224Z",
+      "count": 25
     },
     "ga4": {
       "status": "ok",
-      "detail": "Read GA4 collector status for 112 sites.",
-      "checkedAt": "2026-08-27T01:29:40.919Z",
-      "count": 112
+      "detail": "Read GA4 collector status for 113 sites.",
+      "checkedAt": "2026-10-18T07:12:02.224Z",
+      "count": 113
     }
   },
   "findings": [
     {
-      "id": "gsc-discparty-t1o7t1",
+      "id": "gsc-knewstory-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "knewstory",
+      "sourceLine": "direct:dashboard site=knewstory kind=gsc status=sitemap warnings=0 errors=1 detail=https://knewstory.kr/sitemap_index.xml warnings=0 errors=1 submitted=3979 downloaded=2026-10-07T02:20:51.012Z submittedAt=2026-09-16T23:28:44.297Z",
+      "title": "케이뉴스스토리 - GA4: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://knewstory.kr/sitemap_index.xml warnings=0 errors=1 submitted=3979 downloaded=2026-10-07T02:20:51.012Z submittedAt=2026-09-16T23:28:44.297Z."
+    },
+    {
+      "id": "gsc-coinyo-alt-frt0ey",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "coinyo-alt",
+      "sourceLine": "direct:dashboard site=coinyo-alt kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://alt.coinyo.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "alt.coinyo.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-coinyo-bit-d5cvq",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "coinyo-bit",
+      "sourceLine": "direct:dashboard site=coinyo-bit kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://bit.coinyo.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "bit.coinyo.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-car-klick-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "car-klick",
+      "sourceLine": "direct:dashboard site=car-klick kind=gsc status=sitemap warnings=0 errors=1 detail=https://car.klick.kr/sitemap.xml warnings=0 errors=1 submitted=119 downloaded=2026-09-28T02:01:57.418Z submittedAt=2026-08-11T05:53:54.068Z",
+      "title": "car.klick.kr: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://car.klick.kr/sitemap.xml warnings=0 errors=1 submitted=119 downloaded=2026-09-28T02:01:57.418Z submittedAt=2026-08-11T05:53:54.068Z."
+    },
+    {
+      "id": "adsense-cartain-2-ckdu1b",
+      "kind": "adsense",
+      "severity": "high",
+      "priority": 80,
+      "site": "cartain-2",
+      "sourceLine": "direct:dashboard site=cartain-2 kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "cartain.kr: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "gsc-educaer-t1o7tw",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "educaer",
+      "sourceLine": "direct:dashboard site=educaer kind=gsc status=sitemap warnings=1 errors=1 detail=https://educaer.com/sitemap_index.xml warnings=1 errors=1 submitted=634 downloaded=2026-10-06T20:28:26.014Z submittedAt=2026-06-02T03:55:58.091Z",
+      "title": "educaer.com: GSC direct collector signal sitemap warnings=1 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://educaer.com/sitemap_index.xml warnings=1 errors=1 submitted=634 downloaded=2026-10-06T20:28:26.014Z submittedAt=2026-06-02T03:55:58.091Z."
+    },
+    {
+      "id": "gsc-insupang-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "insupang",
+      "sourceLine": "direct:dashboard site=insupang kind=gsc status=sitemap warnings=0 errors=1 detail=https://insupang.com/sitemap.xml warnings=0 errors=1 submitted=675 downloaded=2026-10-08T03:33:16.268Z submittedAt=2026-08-23T21:16:04.434Z",
+      "title": "insupang - GA4: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://insupang.com/sitemap.xml warnings=0 errors=1 submitted=675 downloaded=2026-10-08T03:33:16.268Z submittedAt=2026-08-23T21:16:04.434Z."
+    },
+    {
+      "id": "gsc-jeompolab-ecuhmj",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "jeompolab",
+      "sourceLine": "direct:dashboard site=jeompolab kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://jeompolab.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "jeompolab.com: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "adsense-kapti-ckdu1b",
+      "kind": "adsense",
+      "severity": "high",
+      "priority": 80,
+      "site": "kapti",
+      "sourceLine": "direct:dashboard site=kapti kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "kapti.kr: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "gsc-ko-klick-1fz9ul0",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "ko-klick",
+      "sourceLine": "direct:dashboard site=ko-klick kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://ko.klick.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "ko.klick.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-lo-klick-1mx1jub",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "lo-klick",
+      "sourceLine": "direct:dashboard site=lo-klick kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://lo.klick.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "lo.klick.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-localgeo-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "localgeo",
+      "sourceLine": "direct:dashboard site=localgeo kind=gsc status=sitemap warnings=0 errors=1 detail=https://localgeo.app/sitemap.xml warnings=0 errors=1 submitted=1087834 downloaded=2026-09-21T23:45:16.883Z submittedAt=2026-09-21T23:45:15.602Z",
+      "title": "localgeo.app: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://localgeo.app/sitemap.xml warnings=0 errors=1 submitted=1087834 downloaded=2026-09-21T23:45:16.883Z submittedAt=2026-09-21T23:45:15.602Z."
+    },
+    {
+      "id": "gsc-luxurytraver-2-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "luxurytraver-2",
+      "sourceLine": "direct:dashboard site=luxurytraver-2 kind=gsc status=sitemap warnings=0 errors=1 detail=https://luxurytraver.com/sitemap.xml warnings=0 errors=1 submitted=482 downloaded=2026-10-03T23:48:07.938Z submittedAt=2026-09-22T23:25:36.503Z",
+      "title": "luxurytraver.com: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://luxurytraver.com/sitemap.xml warnings=0 errors=1 submitted=482 downloaded=2026-10-03T23:48:07.938Z submittedAt=2026-09-22T23:25:36.503Z."
+    },
+    {
+      "id": "gsc-notebook-klick-2-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "notebook-klick-2",
+      "sourceLine": "direct:dashboard site=notebook-klick-2 kind=gsc status=sitemap warnings=0 errors=1 detail=https://notebook.klick.kr/sitemap.xml warnings=0 errors=1 submitted=703 downloaded=2026-09-22T23:24:54.084Z submittedAt=2026-09-22T23:24:50.402Z",
+      "title": "notebook.klick.kr: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://notebook.klick.kr/sitemap.xml warnings=0 errors=1 submitted=703 downloaded=2026-09-22T23:24:54.084Z submittedAt=2026-09-22T23:24:50.402Z."
+    },
+    {
+      "id": "adsense-picklefriend-ckdu1b",
+      "kind": "adsense",
+      "severity": "high",
+      "priority": 80,
+      "site": "picklefriend",
+      "sourceLine": "direct:dashboard site=picklefriend kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "picklefriend.kr: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "adsense-tennisfrens-ckdu1b",
+      "kind": "adsense",
+      "severity": "high",
+      "priority": 80,
+      "site": "tennisfrens",
+      "sourceLine": "direct:dashboard site=tennisfrens kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "tennisfrens.com: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "adsense-yungyanggogo-ckdu1b",
+      "kind": "adsense",
+      "severity": "high",
+      "priority": 80,
+      "site": "yungyanggogo",
+      "sourceLine": "direct:dashboard site=yungyanggogo kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "yungyanggogo.kr: ADSENSE direct collector signal missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "adsense-kapti-5fzpo3",
+      "kind": "adsense",
+      "severity": "medium",
+      "priority": 50,
+      "site": "kapti",
+      "sourceLine": "direct:dashboard site=kapti kind=adsense status=ads.txt missing_config error=Missing ads.txt Google publisher entry",
+      "title": "kapti.kr: ADSENSE direct collector signal ads.txt missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status ads.txt missing_config."
+    },
+    {
+      "id": "adsense-seniorlivingnote-11xi7fn",
+      "kind": "adsense",
+      "severity": "medium",
+      "priority": 50,
+      "site": "seniorlivingnote",
+      "sourceLine": "direct:dashboard site=seniorlivingnote kind=adsense status=ads.txt missing_config error=Missing ads.txt publisher pub-3050601904412736",
+      "title": "seniorlivingnote.com: ADSENSE direct collector signal ads.txt missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status ads.txt missing_config."
+    },
+    {
+      "id": "adsense-workgogo-2wxnys",
+      "kind": "adsense",
+      "severity": "medium",
+      "priority": 50,
+      "site": "workgogo",
+      "sourceLine": "direct:dashboard site=workgogo kind=adsense status=ads.txt missing_config error=ads.txt unavailable: 404",
+      "title": "workgogo.kr: ADSENSE direct collector signal ads.txt missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status ads.txt missing_config."
+    },
+    {
+      "id": "gsc-chatgipt-3-t1o7t1",
       "kind": "gsc",
       "severity": "low",
       "priority": 20,
-      "site": "discparty",
-      "sourceLine": "direct:dashboard site=discparty kind=gsc status=sitemap warnings=1 errors=0 detail=https://discparty.com/sitemap.xml warnings=1 errors=0 submitted=27 downloaded=2026-08-22T09:47:21.441Z submittedAt=2026-08-04T22:05:42.060Z",
-      "title": "디스크파티 - GA4: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://discparty.com/sitemap.xml warnings=1 errors=0 submitted=27 downloaded=2026-08-22T09:47:21.441Z submittedAt=2026-08-04T22:05:42.060Z."
+      "site": "chatgipt-3",
+      "sourceLine": "direct:dashboard site=chatgipt-3 kind=gsc status=sitemap warnings=1 errors=0 detail=https://chatgipt.kr/sitemap_index.xml warnings=1 errors=0 submitted=3043 downloaded=2026-10-17T16:45:23.320Z submittedAt=2026-06-02T03:55:39.224Z",
+      "title": "chatgipt.kr: GSC direct collector signal sitemap warnings=1 errors=0",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://chatgipt.kr/sitemap_index.xml warnings=1 errors=0 submitted=3043 downloaded=2026-10-17T16:45:23.320Z submittedAt=2026-06-02T03:55:39.224Z."
+    },
+    {
+      "id": "gsc-dog-klick-t1o7t1",
+      "kind": "gsc",
+      "severity": "low",
+      "priority": 20,
+      "site": "dog-klick",
+      "sourceLine": "direct:dashboard site=dog-klick kind=gsc status=sitemap warnings=1 errors=0 detail=https://dog.klick.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-23T23:23:31.207Z submittedAt=2026-09-23T23:23:26.686Z",
+      "title": "dog.klick.kr: GSC direct collector signal sitemap warnings=1 errors=0",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://dog.klick.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-23T23:23:31.207Z submittedAt=2026-09-23T23:23:26.686Z."
+    },
+    {
+      "id": "gsc-dogswhere-t1o7t1",
+      "kind": "gsc",
+      "severity": "low",
+      "priority": 20,
+      "site": "dogswhere",
+      "sourceLine": "direct:dashboard site=dogswhere kind=gsc status=sitemap warnings=1 errors=0 detail=https://www.dogswhere.com/sitemap.xml warnings=1 errors=0 submitted=216 downloaded=2026-10-17T23:19:06.401Z submittedAt=2026-06-07T16:33:00.627Z",
+      "title": "dogswhere.com: GSC direct collector signal sitemap warnings=1 errors=0",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://www.dogswhere.com/sitemap.xml warnings=1 errors=0 submitted=216 downloaded=2026-10-17T23:19:06.401Z submittedAt=2026-06-07T16:33:00.627Z."
+    },
+    {
+      "id": "gsc-gong-luckyday-t1o7t1",
+      "kind": "gsc",
+      "severity": "low",
+      "priority": 20,
+      "site": "gong-luckyday",
+      "sourceLine": "direct:dashboard site=gong-luckyday kind=gsc status=sitemap warnings=1 errors=0 detail=https://gong.luckyday.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-22T23:25:15.773Z submittedAt=2026-09-22T23:25:13.459Z",
+      "title": "gong.luckyday.kr: GSC direct collector signal sitemap warnings=1 errors=0",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://gong.luckyday.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-22T23:25:15.773Z submittedAt=2026-09-22T23:25:13.459Z."
     },
     {
       "id": "adsense-nongsusangogo-tqcbes",
@@ -59,16 +289,6 @@
       "sourceLine": "direct:dashboard site=nongsusangogo kind=adsense status=launch_hold error=AdSense activation is intentionally held until the site's launch, publishing, and production-data gates are released.",
       "title": "https://nongsusangogo.kr: ADSENSE direct collector signal launch_hold",
       "recommendedAction": "Keep AdSense paused until launch, publishing, and production-data gates are explicitly released."
-    },
-    {
-      "id": "gsc-nexttech7-t1o7t1",
-      "kind": "gsc",
-      "severity": "low",
-      "priority": 20,
-      "site": "nexttech7",
-      "sourceLine": "direct:dashboard site=nexttech7 kind=gsc status=sitemap warnings=1 errors=0 detail=https://nexttech7.com/sitemap.xml warnings=1 errors=0 submitted=7742 downloaded=2026-08-16T21:40:46.247Z submittedAt=2026-06-08T00:15:33.956Z",
-      "title": "nexttech7.com: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://nexttech7.com/sitemap.xml warnings=1 errors=0 submitted=7742 downloaded=2026-08-16T21:40:46.247Z submittedAt=2026-06-08T00:15:33.956Z."
     }
   ]
 }

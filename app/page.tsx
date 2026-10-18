@@ -6,6 +6,8 @@ import { AppHeader } from "./components/app-header";
 import { InsightExplorer } from "./components/insight-explorer";
 import { OpsMailReportPanel } from "./components/ops-mail-report-panel";
 import { SiteStatsTable } from "./components/site-stats-table";
+import { SiteInventoryPanel } from "./components/site-inventory-panel";
+import { getSiteInventory } from "./lib/site-inventory-store";
 import {
   getDashboardActionability,
   type DashboardActionability,
@@ -32,6 +34,7 @@ export default async function DashboardPage({
   searchParams,
 }: DashboardPageProps = {}) {
   const data = getDashboardData();
+  const inventory = getSiteInventory();
   const params = await searchParams;
   const actionabilityOptions = getActionabilityOptions(params);
   const actionability = getDashboardActionability(data, actionabilityOptions);
@@ -59,6 +62,13 @@ export default async function DashboardPage({
           }
         />
       ),
+    },
+    {
+      id: "inventory",
+      label: "서버·연결",
+      panelLabel: "서버·연결 현황",
+      count: String(inventory?.sites.length ?? 0),
+      content: <SiteInventoryPanel inventory={inventory} />,
     },
     {
       id: "insights",
