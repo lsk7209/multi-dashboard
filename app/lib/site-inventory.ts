@@ -48,6 +48,7 @@ export const HOST_LABELS: Record<string, string> = {
   ovh: "OVHcloud", turbo1: "ChemiCloud Turbo1", turbo2: "ChemiCloud Turbo2",
   kickstart: "ChemiCloud Kickstart", vercel: "Vercel", unknown: "미확인",
   mixed: "DNS 불일치",
+  turbo_pending: "Turbo1·2 · 세부 서버 미확인",
 };
 export const APPROVAL_LABELS: Record<string, string> = {
   READY: "승인됨", GETTING_READY: "준비 중", NEEDS_ATTENTION: "주의 필요",
@@ -64,6 +65,12 @@ export function classifyHost(addresses: string[], cname: string[], vercelHeader:
   if (matches.size === 1) return [...matches][0]!;
   if (vercelHeader || cname.some(name => /(?:^|\.)vercel-dns\.(?:com|net)\.?$/i.test(name))) return "vercel";
   return "unknown";
+}
+
+export function migrationAwareHost(routeHost: string, accountHosts: string[], migrated: boolean): string {
+  if (!migrated || !["kickstart", "unknown"].includes(routeHost)) return routeHost;
+  const targets = [...new Set(accountHosts.filter(host => ["turbo1", "turbo2"].includes(host)))];
+  return targets.length === 1 ? targets[0]! : "turbo_pending";
 }
 
 export function exactApproval(domain: string, monetization: boolean, snapshot: {

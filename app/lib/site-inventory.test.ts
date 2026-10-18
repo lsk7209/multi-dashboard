@@ -1,7 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { classifyHost, exactApproval, hostingDisagreement } from "./site-inventory";
+import { classifyHost, exactApproval, hostingDisagreement, migrationAwareHost } from "./site-inventory";
 
 describe("hosting and approval reconciliation", () => {
+  it("keeps migrated sites separate from retained source routes without guessing a Turbo destination", () => {
+    expect(migrationAwareHost("kickstart", [], true)).toBe("turbo_pending");
+    expect(migrationAwareHost("unknown", ["turbo2"], true)).toBe("turbo2");
+    expect(migrationAwareHost("kickstart", ["turbo1", "turbo2"], true)).toBe("turbo_pending");
+    expect(migrationAwareHost("ovh", [], true)).toBe("ovh");
+    expect(migrationAwareHost("kickstart", [], false)).toBe("kickstart");
+  });
   it("recognizes live addresses including Turbo2 cPanel proxy", () => {
     expect(classifyHost(["51.79.206.71"], [], false)).toBe("ovh");
     expect(classifyHost(["158.247.209.217"], [], false)).toBe("turbo2");

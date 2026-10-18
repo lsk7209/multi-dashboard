@@ -95,3 +95,9 @@ For complex coding tasks, use the Goal-Harness workflow.
 7. Do not claim completion until ACCEPTANCE.md is satisfied.
 8. If the same failure repeats three times, enter Failure Analysis Mode.
 9. Do not expose secrets, modify production data, or run destructive commands without explicit approval.
+
+## 2026-10-18 Kickstart Migration Inventory Correction
+
+- The operator confirms that Kickstart sites have been migrated to Turbo1/Turbo2. Treat the old Kickstart account inventory as retained source/rollback evidence, not proof of current production hosting or unfinished migration.
+- Reconcile each site's actual Turbo1/Turbo2 destination using current management/account and serving evidence. If public DNS still points at the former source or the exact destination is unverified, show that discrepancy explicitly rather than classifying the migration as incomplete or silently assigning a target.
+- This correction does not authorize migration replay, source removal, DNS changes, or cancellation.

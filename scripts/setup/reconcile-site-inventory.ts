@@ -3,7 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import pLimit from "p-limit";
 import { loadSites } from "./lib/sites.js";
-import { classifyHost, exactApproval, hostingDisagreement, type InventorySite, type SiteInventory } from "../../app/lib/site-inventory.js";
+import { classifyHost, exactApproval, hostingDisagreement, migrationAwareHost, type InventorySite, type SiteInventory } from "../../app/lib/site-inventory.js";
 
 async function readJson(file: string) {
   return JSON.parse(await readFile(file, "utf8"));
@@ -19,9 +19,9 @@ export async function main() {
   const canonical = (domain: string) => domain.replace(/^www\./, "");
   const discoveredDomains: string[] = [...(google.ga4?.webStreams ?? []), ...(google.gsc?.properties ?? [])].filter((item: { domain: string | null }) => item.domain).map((item: { domain: string }) => canonical(item.domain));
   const scope = await readJson("data/site-inventory-domains.json");
-  const hostingDomains: string[] = (hosting.accounts ?? []).filter((account: { checkedAt: string }) => {
+  const hostingDomains: string[] = (hosting.accounts ?? []).filter((account: { checkedAt: string; role?: string }) => {
     const age = Date.now() - Date.parse(account.checkedAt);
-    return Number.isFinite(age) && age >= -300000 && age < 7 * 86400000;
+    return account.role !== "retained_source" && Number.isFinite(age) && age >= -300000 && age < 7 * 86400000;
   }).flatMap((account: { domains: string[] }) => account.domains);
   for (const domain of new Set([...discoveredDomains, ...hostingDomains, ...scope.domains])) {
     if (["kang4.com", "tasko.kr"].includes(domain) || sites.some(site => canonical(new URL(site.url).hostname) === domain)) continue;
@@ -59,13 +59,15 @@ export async function main() {
       }
     } catch { /* The separate resolver failure is recorded in evidence. */ }
     const localHost = classifyHost(addresses, cname, [domain, `www.${domain}`].includes(finalDomain) && vercelHeader);
-    const accountHosts = (hosting.accounts ?? []).filter((account: { domains: string[]; checkedAt: string }) => account.domains.includes(domain) && Number.isFinite(Date.parse(account.checkedAt)) && Date.now() - Date.parse(account.checkedAt) >= -300000 && Date.now() - Date.parse(account.checkedAt) < 7 * 86400000).map((account: { host: string; checkedAt: string }) => ({ host: account.host, checkedAt: account.checkedAt }));
+    const accountHosts = (hosting.accounts ?? []).filter((account: { domains: string[]; checkedAt: string; role?: string }) => account.role !== "retained_source" && account.domains.includes(domain) && Number.isFinite(Date.parse(account.checkedAt)) && Date.now() - Date.parse(account.checkedAt) >= -300000 && Date.now() - Date.parse(account.checkedAt) < 7 * 86400000).map((account: { host: string; checkedAt: string }) => ({ host: account.host, checkedAt: account.checkedAt }));
     const splitDns = hostingDisagreement(localHost, ipv4, publicDnsAddresses, publicDnsChecked);
-    const host = splitDns ? "mixed" : localHost === "unknown" && !addresses.length && accountHosts.length === 1 ? accountHosts[0].host : localHost;
+    const routeHost = splitDns ? "mixed" : localHost === "unknown" && !addresses.length && accountHosts.length === 1 ? accountHosts[0].host : localHost;
+    const migration = hosting.migrations?.find((item: { domains: string[] }) => item.domains.includes(domain));
+    const host = migrationAwareHost(routeHost, accountHosts.map((item: { host: string }) => item.host), Boolean(migration));
     const monetization = configs.some(config => config.monetization !== false);
     return {
       domain, url: site.url, enabled: configs.some(config => config.enabled), platform: site.platform,
-      host, hostStatus: splitDns ? "dns_disagreement" : !addresses.length ? "account_configured_no_public_route" : host === "unknown" ? "unverified" : "public_route_verified",
+      host, hostStatus: host === "turbo_pending" ? "migration_confirmed_target_unverified" : splitDns ? "dns_disagreement" : !addresses.length ? "account_configured_no_public_route" : host === "unknown" ? "unverified" : "public_route_verified",
       accountHosts, publicDnsAddresses,
       addresses, cname, httpStatus, checkedAt: new Date().toISOString(),
       evidence: ["시스템 DNS A/AAAA/CNAME", publicDnsChecked ? `Google DNS: ${publicDnsAddresses.join(", ") || "A 응답 없음"}` : "Google DNS 조회 미확인", ...(httpStatus !== null ? [`HTTPS HEAD ${httpStatus}`, ...(finalDomain !== domain ? [`redirect: ${finalDomain}`] : [])] : ["HTTPS HEAD unavailable"])],
@@ -82,6 +84,7 @@ export async function main() {
       discoveredGa4: (google.ga4?.webStreams ?? []).filter((stream: { domain: string | null }) => stream.domain && canonical(stream.domain) === canonical(domain)).map((stream: { property: string; measurementId: string | null }) => ({ propertyId: stream.property.split("/").at(-1)!, measurementId: stream.measurementId ?? "미확인" })),
       discoveredGsc: (google.gsc?.properties ?? []).filter((entry: { domain: string | null }) => entry.domain && canonical(entry.domain) === canonical(domain)).map((entry: { siteUrl: string }) => ({ siteUrl: entry.siteUrl, permission: "속성 목록에 있음" })),
       issues: [
+        ...(migration ? ["운영자 확인: Kickstart → Turbo1·2 이전 완료", ...(host === "turbo_pending" ? ["세부 목적지 계정 확인 필요"] : []), ...(localHost === "kickstart" ? ["공개 DNS는 이전 원본 IP 응답 · 운영 목적지와 별도 확인 필요"] : [])] : []),
         ...(splitDns ? ["DNS 조회 경로별 응답 불일치 · 이전 완료 미확인"] : []),
         ...(!addresses.length ? ["공개 DNS 확인 불가"] : []),
         ...(site.id.startsWith("discovered:") ? [`${discoveredDomains.includes(domain) ? "Google 목록에서 발견" : accountHosts.length ? "현재 서버 계정에서 발견" : "기존 현황에 등록 · 현재 연결 목록 미확인"} · 운영 대상 등록 전`] : []),
@@ -96,7 +99,7 @@ export async function main() {
     adsenseAccountSummary: approval.listComplete ? { total: approval.totalSites, ready: approval.stateCounts?.READY ?? 0, gettingReady: approval.stateCounts?.GETTING_READY ?? 0 } : null,
     googleBindingsCheckedAt: google.generatedAt ?? null, googleBindingsComplete: google.ga4?.complete === true && google.gsc?.complete === true,
     sites: rows.sort((a, b) => a.domain.localeCompare(b.domain)),
-    notes: ["호스팅은 현재 공개 DNS와 응답 기준이며 이전 완료·원본 삭제를 의미하지 않습니다.",
+    notes: ["호스팅은 공개 경로와 현재 계정 증거를 대조합니다. 운영자가 이전 완료를 확인한 Kickstart 원본은 현재 운영 서버로 집계하지 않으며, 세부 Turbo 목적지가 없으면 별도 미확인으로 표시합니다.",
       "GA4 중복 속성은 별도 표시하며 사용자를 합산하지 않습니다. 비활성 설정은 수집하지 않습니다.",
       "애드센스는 24시간 이내 완전한 공식 목록의 정확한 도메인만 대조합니다. 서브도메인은 상위 도메인 승인을 상속하지 않습니다.",
       "설정 위치는 기존 메타데이터이며 현재 호스팅 증거와 구분합니다."],

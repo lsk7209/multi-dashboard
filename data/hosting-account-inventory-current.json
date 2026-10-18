@@ -4,20 +4,137 @@
   "mutationPerformed": false,
   "accounts": [
     {
-      "host": "turbo1", "checkedAt": "2026-10-18T07:07:35Z", "serverName": "rs6-kor.serverhostgroup.com", "address": "158.247.212.123",
-      "totalDomainMappings": 39, "complete": true,
-      "domains": ["nexttech7.com", "nekau.com", "limsight.kr", "fastjob.kr", "2mlab.kr", "ezfunnel.kr", "haemongdream.com", "kdramanote.com", "discparty.com", "sellerpit.kr", "finan.kr", "seniorlivingnote.com", "autopickgo.com", "coinyo.kr", "smallhomepick.com", "nicewomen.kr", "esgyo.kr", "richyou.kr", "shotsetup.com", "petcostlab.com", "toolnavigo.com", "pethomepick.com", "dog.nekau.com", "jasamall.sellerpit.kr", "bit.coinyo.kr", "alt.coinyo.kr", "smart.sellerpit.kr", "travel.sellerpit.kr"]
+      "host": "turbo1",
+      "checkedAt": "2026-10-18T07:07:35Z",
+      "serverName": "rs6-kor.serverhostgroup.com",
+      "address": "158.247.212.123",
+      "totalDomainMappings": 39,
+      "complete": true,
+      "domains": [
+        "nexttech7.com",
+        "nekau.com",
+        "limsight.kr",
+        "fastjob.kr",
+        "2mlab.kr",
+        "ezfunnel.kr",
+        "haemongdream.com",
+        "kdramanote.com",
+        "discparty.com",
+        "sellerpit.kr",
+        "finan.kr",
+        "seniorlivingnote.com",
+        "autopickgo.com",
+        "coinyo.kr",
+        "smallhomepick.com",
+        "nicewomen.kr",
+        "esgyo.kr",
+        "richyou.kr",
+        "shotsetup.com",
+        "petcostlab.com",
+        "toolnavigo.com",
+        "pethomepick.com",
+        "dog.nekau.com",
+        "jasamall.sellerpit.kr",
+        "bit.coinyo.kr",
+        "alt.coinyo.kr",
+        "smart.sellerpit.kr",
+        "travel.sellerpit.kr"
+      ]
     },
     {
-      "host": "turbo2", "checkedAt": "2026-10-18T07:07:37Z", "serverName": "rs7-kor.serverhostgroup.com", "address": "158.247.209.217",
-      "totalDomainMappings": 42, "complete": true,
-      "domains": ["luckyday.kr", "autoscares.com", "healfood.kr", "dogspang.kr", "legalser.com", "sorimate.com", "estat.kr", "insupang.com", "klick.kr", "certifi.kr", "gover.kr", "softwa.kr", "yesa.kr", "lawer.kr", "travelpang.kr", "kayest.com", "petinsuer.com", "healthgotoo.com", "todayshops.kr", "trave.kr", "etique.kr", "sssaass.com", "knewstory.kr", "saju.tasko.kr", "coinyo.knewstory.kr"]
+      "host": "turbo2",
+      "checkedAt": "2026-10-18T07:07:37Z",
+      "serverName": "rs7-kor.serverhostgroup.com",
+      "address": "158.247.209.217",
+      "totalDomainMappings": 42,
+      "complete": true,
+      "domains": [
+        "luckyday.kr",
+        "autoscares.com",
+        "healfood.kr",
+        "dogspang.kr",
+        "legalser.com",
+        "sorimate.com",
+        "estat.kr",
+        "insupang.com",
+        "klick.kr",
+        "certifi.kr",
+        "gover.kr",
+        "softwa.kr",
+        "yesa.kr",
+        "lawer.kr",
+        "travelpang.kr",
+        "kayest.com",
+        "petinsuer.com",
+        "healthgotoo.com",
+        "todayshops.kr",
+        "trave.kr",
+        "etique.kr",
+        "sssaass.com",
+        "knewstory.kr",
+        "saju.tasko.kr",
+        "coinyo.knewstory.kr"
+      ]
     },
     {
-      "host": "kickstart", "checkedAt": "2026-10-18T07:10:13.457Z", "serverName": "rs-kor.serverhostgroup.com", "address": "158.247.245.11",
-      "totalDomainMappings": 6, "complete": false,
-      "domains": ["chatgipt.kr", "comu.chatgipt.kr", "email.chatgipt.kr", "homeimer.com", "educaer.com"]
+      "host": "kickstart",
+      "checkedAt": "2026-10-18T07:10:13.457Z",
+      "serverName": "rs-kor.serverhostgroup.com",
+      "address": "158.247.245.11",
+      "totalDomainMappings": 6,
+      "complete": false,
+      "domains": [
+        "chatgipt.kr",
+        "comu.chatgipt.kr",
+        "email.chatgipt.kr",
+        "homeimer.com",
+        "educaer.com"
+      ],
+      "role": "retained_source"
     }
   ],
-  "resolverDisagreements": [{ "domain": "texturb.com", "checkedAt": "2026-10-18T07:10:13.457Z", "answers": [{ "resolver": "1.1.1.1", "addresses": ["216.198.79.1"] }, { "resolver": "8.8.8.8", "addresses": ["216.198.79.1"] }, { "resolver": "9.9.9.9", "addresses": ["51.79.206.71"] }] }]
+  "resolverDisagreements": [
+    {
+      "domain": "texturb.com",
+      "checkedAt": "2026-10-18T07:10:13.457Z",
+      "answers": [
+        {
+          "resolver": "1.1.1.1",
+          "addresses": [
+            "216.198.79.1"
+          ]
+        },
+        {
+          "resolver": "8.8.8.8",
+          "addresses": [
+            "216.198.79.1"
+          ]
+        },
+        {
+          "resolver": "9.9.9.9",
+          "addresses": [
+            "51.79.206.71"
+          ]
+        }
+      ]
+    }
+  ],
+  "migrations": [
+    {
+      "domains": [
+        "chatgipt.kr",
+        "comu.chatgipt.kr",
+        "email.chatgipt.kr",
+        "homeimer.com",
+        "educaer.com"
+      ],
+      "source": "kickstart",
+      "confirmedAt": "2026-10-18T07:36:47.8250026Z",
+      "evidence": "Operator confirms Kickstart sites migrated to Turbo1/Turbo2; exact per-domain destination requires reconciliation",
+      "destinations": [
+        "turbo1",
+        "turbo2"
+      ]
+    }
+  ]
 }
