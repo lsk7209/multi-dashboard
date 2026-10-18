@@ -34,6 +34,15 @@
 .server-card li a:hover { color: var(--accent); text-decoration: underline; }
 .server-card li a > span:last-child { color: var(--muted); }
 .server-empty { padding: 12px 24px; color: var(--muted); font-size: 14px; }
+.server-period { margin: -12px 0 22px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.server-site-metrics { display: grid; gap: 9px; margin: 0 0 18px; font-size: 12px; }
+.server-site-metrics > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.server-site-metrics dt { color: var(--muted); flex-shrink: 0; }
+.server-site-metrics dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.server-site-metrics b { font-variant-numeric: tabular-nums; }
+.server-approval { display: inline-block; padding: 3px 8px; border-radius: 5px; background: var(--bg); color: var(--muted); }
+.server-approval.approval-ready { background: var(--accent-weak); color: var(--accent); }
+.server-approval.approval-getting_ready, .server-approval.approval-needs_attention, .server-approval.approval-requires_review { background: var(--warning-weak); color: var(--warning); }
 .servers-footnote { margin-top: 24px; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .servers-footnote p { margin: 4px 0; }
 .servers-footnote a { display: inline-block; margin-top: 8px; color: var(--accent); }

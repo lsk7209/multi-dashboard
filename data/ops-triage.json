@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-18T07:12:02.884Z",
+  "generatedAt": "2026-10-18T08:17:48.124Z",
   "source": "direct",
   "sourcePath": "data/ops-intel.json",
-  "sourceUpdatedAt": "2026-10-18T07:12:02.232Z",
+  "sourceUpdatedAt": "2026-10-18T08:17:47.479Z",
   "digestUrl": null,
   "owner": "lsk7209",
   "summary": {
@@ -23,19 +23,19 @@
     "githubActions": {
       "status": "skipped",
       "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-10-18T07:12:02.226Z",
+      "checkedAt": "2026-10-18T08:17:47.473Z",
       "count": 0
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-10-18T07:12:01.364Z.",
-      "checkedAt": "2026-10-18T07:12:02.224Z",
+      "detail": "Read dashboard artifact snapshot=2026-10-18T08:17:46.510Z.",
+      "checkedAt": "2026-10-18T08:17:47.471Z",
       "count": 25
     },
     "ga4": {
       "status": "ok",
       "detail": "Read GA4 collector status for 113 sites.",
-      "checkedAt": "2026-10-18T07:12:02.224Z",
+      "checkedAt": "2026-10-18T08:17:47.471Z",
       "count": 113
     }
   },
