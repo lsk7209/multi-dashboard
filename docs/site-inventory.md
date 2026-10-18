@@ -8,6 +8,7 @@
 - `pnpm inventory:refresh`: 공식 애드센스 → Google 연결 목록 → DNS/HTTPS 및 계정 증거 대조.
 - `pnpm inventory:reconcile`: 이미 수집한 필수 소스와 현재 공개 DNS/HTTPS를 대조한다. 필수 파일이 없거나 손상됐으면 새 현황으로 덮어쓰지 않는다.
 - 기존 인증 파일을 사용하며 값은 출력하지 않는다. 경로는 `ADSENSE_OAUTH_CLIENT_PATH`, `ADSENSE_TOKEN_PATH`, `GOOGLE_BINDINGS_CREDENTIAL_PATH`로 바꿀 수 있다. Google 서비스 계정 JSON은 `GCP_SA_KEY_JSON`도 지원한다.
+- AdSense 계정이 여러 개이면 Git 밖의 비공개 JSON 파일을 `E:\env\adsense_accounts.json`에 둔다. 경로는 `ADSENSE_ACCOUNTS_CONFIG_PATH`로 바꿀 수 있다. 파일은 `[{"clientPath":"...","tokenPath":"...","accountRef":"accounts/..."}]` 형식이며 `accountRef`는 선택 사항이다. 지정된 계정은 공식 `accounts.list` 결과에서 확인되어야 한다. 설정 파일이 없으면 기존 단일 OAuth 경로를 사용하며 명시적인 `--client`·`--token` 인수도 단일 계정 경로를 사용한다. 어느 인증 또는 목록 조회라도 실패하면 전체 목록을 미완료로 표시하고 승인 누락을 판정하지 않는다. 같은 도메인의 계정별 상태가 충돌하면 공개 상태는 `UNKNOWN`으로 둔다. 인증값과 계정 식별자는 공개 결과에 쓰지 않는다.
 
 원본 계정 목록은 Git 제외 경로 `.local/site-inventory/`에만 저장한다. 공개 자료에는 계정 리소스 ID, 속성 표시 이름, 스트림 리소스 ID, 권한 수준, 서버 사용자·경로·인증값을 포함하지 않는다. 대시보드에 필요한 도메인과 기술 연결 식별자, 상태 및 확인 시각만 남긴다.
 
@@ -28,3 +29,5 @@ GA4 속성 156개·웹 스트림 158개, GSC 속성 140개를 조회했다. 공�
 
 `coinyo.kr`의 `coinyo-2` 설정 속성 `536352221`은 웹 스트림 도메인이 `coinyo.knewstory.kr`이어서 불일치로 표시했다. 계정 등록과 원본 통계는 변경하지 않았다. `texturb.com`은 조회 시점·리졸버에 따라 Vercel/OVH 응답이 관측되어 최종 대조 결과와 시각을 함께 보존한다.
 `data/site-inventory-domains.json`은 이번 조사에서 대시보드에 포함한 도메인의 명시적 범위다. 계정 전체 원본은 비공개로 보존하고 공개 수집 결과는 이 범위와 설정 도메인으로 제한한다. 승인 목록의 공개 대조 범위 밖에서는 목록 없음 대신 미확인으로 표시한다.
+
+2026-10-19 KST 추가 계정 연결: 별도 읽기 전용 OAuth 인증과 대상 게시자 계정 접근을 확인했다. 두 인증으로 공식 목록 전체13개(READY11/GETTING_READY2)를 조회했으며 seniorlivingnote.com은 GETTING_READY다. 계정 이메일·게시자ID·토큰은 Git 밖에 보관한다. 기존 GA4/GSC 통계 시각은 유지하고 공식 승인·호스팅 대조만 갱신했다.

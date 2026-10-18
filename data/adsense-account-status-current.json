@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-10-18T08:17:50.943Z",
-  "checkedAt": "2026-10-18T08:17:53.814Z",
+  "attemptedAt": "2026-10-18T15:01:38.454Z",
+  "checkedAt": "2026-10-18T15:01:43.892Z",
   "listComplete": true,
   "proofDomains": [
     "2mlab.kr",
@@ -118,10 +118,10 @@
     "yungyanggogo.kr"
   ],
   "mutationPerformed": false,
-  "totalSites": 12,
+  "totalSites": 13,
   "stateCounts": {
     "READY": 11,
-    "GETTING_READY": 1
+    "GETTING_READY": 2
   },
   "sites": [
     {
@@ -163,6 +163,10 @@
     {
       "domain": "tennisfrens.com",
       "rawState": "READY"
+    },
+    {
+      "domain": "seniorlivingnote.com",
+      "rawState": "GETTING_READY"
     }
   ]
 }

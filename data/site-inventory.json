@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-18T08:18:35.808Z",
+  "generatedAt": "2026-10-18T15:02:22.662Z",
   "statsGeneratedAt": "2026-10-18T08:17:46.510Z",
-  "adsenseCheckedAt": "2026-10-18T08:17:53.814Z",
+  "adsenseCheckedAt": "2026-10-18T15:01:43.892Z",
   "adsenseListComplete": true,
   "adsenseAccountSummary": {
-    "total": 12,
+    "total": 13,
     "ready": 11,
-    "gettingReady": 1
+    "gettingReady": 2
   },
   "googleBindingsCheckedAt": "2026-10-18T08:17:55.934Z",
   "googleBindingsComplete": true,
@@ -32,7 +32,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.548Z",
+      "checkedAt": "2026-10-18T15:02:14.929Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -43,7 +43,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "2mlab",
@@ -94,7 +94,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.255Z",
+      "checkedAt": "2026-10-18T15:02:17.082Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -105,7 +105,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "ai-tasko",
@@ -154,7 +154,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.478Z",
+      "checkedAt": "2026-10-18T15:02:16.633Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -165,7 +165,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "coinyo-alt",
@@ -207,7 +207,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.961Z",
+      "checkedAt": "2026-10-18T15:02:16.815Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -218,7 +218,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "askore",
@@ -265,7 +265,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.405Z",
+      "checkedAt": "2026-10-18T15:02:19.107Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -276,7 +276,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "autopickgo",
@@ -318,7 +318,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.087Z",
+      "checkedAt": "2026-10-18T15:02:19.061Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -329,7 +329,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "autorentlab",
@@ -376,7 +376,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.976Z",
+      "checkedAt": "2026-10-18T15:02:15.524Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -387,7 +387,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "autoscares",
@@ -447,7 +447,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.639Z",
+      "checkedAt": "2026-10-18T15:02:16.634Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -458,7 +458,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "coinyo-bit",
@@ -496,7 +496,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:32.970Z",
+      "checkedAt": "2026-10-18T15:02:19.907Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -505,7 +505,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:blogsample2.nexttech7.com",
@@ -550,7 +550,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.533Z",
+      "checkedAt": "2026-10-18T15:02:16.404Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -561,7 +561,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "bojo24",
@@ -607,7 +607,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.827Z",
+      "checkedAt": "2026-10-18T15:02:19.431Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -616,7 +616,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "bu-sellerpit",
@@ -658,7 +658,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.273Z",
+      "checkedAt": "2026-10-18T15:02:18.657Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -669,7 +669,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "campgogo",
@@ -707,7 +707,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:32.525Z",
+      "checkedAt": "2026-10-18T15:02:19.262Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -716,7 +716,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "car-klick",
@@ -756,7 +756,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:31.234Z",
+      "checkedAt": "2026-10-18T15:02:17.064Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -767,7 +767,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "car-luckyday",
@@ -811,7 +811,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.536Z",
+      "checkedAt": "2026-10-18T15:02:18.396Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -822,7 +822,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "caregos",
@@ -868,7 +868,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.705Z",
+      "checkedAt": "2026-10-18T15:02:15.247Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -879,7 +879,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "cartain",
@@ -939,7 +939,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.421Z",
+      "checkedAt": "2026-10-18T15:02:17.705Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -951,7 +951,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "certifi",
@@ -993,7 +993,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.675Z",
+      "checkedAt": "2026-10-18T15:02:17.208Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -1004,7 +1004,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "chatgipt",
@@ -1081,7 +1081,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.553Z",
+      "checkedAt": "2026-10-18T15:02:20.510Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1090,7 +1090,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:coinyo.knewstory.kr",
@@ -1134,7 +1134,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.667Z",
+      "checkedAt": "2026-10-18T15:02:15.009Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1145,7 +1145,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "coinyo",
@@ -1198,7 +1198,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-10-18T08:18:33.431Z",
+      "checkedAt": "2026-10-18T15:02:20.297Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -1207,7 +1207,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:comu.chatgipt.kr",
@@ -1244,7 +1244,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.674Z",
+      "checkedAt": "2026-10-18T15:02:18.466Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1255,7 +1255,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "coverclarityhealth",
@@ -1297,7 +1297,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.689Z",
+      "checkedAt": "2026-10-18T15:02:16.783Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1308,7 +1308,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "crepika",
@@ -1355,7 +1355,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.512Z",
+      "checkedAt": "2026-10-18T15:02:14.928Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1366,7 +1366,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discparty",
@@ -1404,7 +1404,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:31.046Z",
+      "checkedAt": "2026-10-18T15:02:17.671Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -1415,7 +1415,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "dog-klick",
@@ -1464,7 +1464,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.353Z",
+      "checkedAt": "2026-10-18T15:02:19.994Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1473,7 +1473,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:dog.nekau.com",
@@ -1505,19 +1505,19 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.1.1",
-        "216.150.1.193"
+        "216.150.16.1",
+        "216.150.1.129"
       ],
       "addresses": [
-        "216.150.16.65",
-        "216.150.16.193"
+        "216.150.16.1",
+        "216.150.1.1"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.134Z",
+      "checkedAt": "2026-10-18T15:02:18.769Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.1.1, 216.150.1.193",
+        "Google DNS: 216.150.16.1, 216.150.1.129",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -1525,7 +1525,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "dogbreedcost",
@@ -1572,7 +1572,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.651Z",
+      "checkedAt": "2026-10-18T15:02:15.884Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1581,7 +1581,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "dogspang",
@@ -1636,7 +1636,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.169Z",
+      "checkedAt": "2026-10-18T15:02:17.884Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -1647,7 +1647,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "dogswhere",
@@ -1678,25 +1678,21 @@
       "url": "https://dolbomjigi.ehon365.kr/",
       "enabled": true,
       "platform": "wordpress",
-      "host": "vercel",
+      "host": "ovh",
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.16.193",
-        "216.150.1.193"
+        "51.79.206.71"
       ],
       "addresses": [
-        "216.150.16.193",
-        "216.150.1.193"
+        "51.79.206.71"
       ],
-      "cname": [
-        "d873cb10367ad8e9.vercel-dns-016.com"
-      ],
+      "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.756Z",
+      "checkedAt": "2026-10-18T15:02:17.754Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.16.193, 216.150.1.193",
+        "Google DNS: 51.79.206.71",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -1704,7 +1700,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "dolbomjigi-ehon365",
@@ -1746,7 +1742,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.430Z",
+      "checkedAt": "2026-10-18T15:02:18.172Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1757,7 +1753,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "doseogogo",
@@ -1803,7 +1799,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.442Z",
+      "checkedAt": "2026-10-18T15:02:18.026Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1814,7 +1810,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "dullegilgogo",
@@ -1852,7 +1848,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:31.667Z",
+      "checkedAt": "2026-10-18T15:02:18.563Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -1863,7 +1859,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "educaer",
@@ -1909,7 +1905,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.323Z",
+      "checkedAt": "2026-10-18T15:02:16.266Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1920,7 +1916,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "ehon365",
@@ -1962,7 +1958,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-10-18T08:18:33.703Z",
+      "checkedAt": "2026-10-18T15:02:20.320Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -1971,7 +1967,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:email.chatgipt.kr",
@@ -2013,7 +2009,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.919Z",
+      "checkedAt": "2026-10-18T15:02:15.707Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2024,7 +2020,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "esgyo",
@@ -2084,7 +2080,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.848Z",
+      "checkedAt": "2026-10-18T15:02:16.115Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2095,7 +2091,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "estat",
@@ -2155,7 +2151,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.791Z",
+      "checkedAt": "2026-10-18T15:02:15.556Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2166,7 +2162,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "etique",
@@ -2226,7 +2222,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.921Z",
+      "checkedAt": "2026-10-18T15:02:16.728Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2237,7 +2233,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "ezfunnel",
@@ -2284,7 +2280,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.470Z",
+      "checkedAt": "2026-10-18T15:02:14.927Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2295,7 +2291,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "fastjob",
@@ -2355,7 +2351,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.029Z",
+      "checkedAt": "2026-10-18T15:02:15.403Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2366,7 +2362,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "finan",
@@ -2417,7 +2413,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:33.250Z",
+      "checkedAt": "2026-10-18T15:02:19.906Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2426,7 +2422,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:finance.2mlab.kr",
@@ -2467,7 +2463,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:33.358Z",
+      "checkedAt": "2026-10-18T15:02:19.801Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2476,7 +2472,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:food.2mlab.kr",
@@ -2521,7 +2517,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.895Z",
+      "checkedAt": "2026-10-18T15:02:19.388Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -2530,7 +2526,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "go-sellerpit",
@@ -2572,7 +2568,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.194Z",
+      "checkedAt": "2026-10-18T15:02:16.957Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -2581,7 +2577,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "goesku",
@@ -2623,7 +2619,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.143Z",
+      "checkedAt": "2026-10-18T15:02:20.106Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -2632,7 +2628,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:gold79.kr",
@@ -2672,7 +2668,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.139Z",
+      "checkedAt": "2026-10-18T15:02:17.018Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2683,7 +2679,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "gong-luckyday",
@@ -2727,7 +2723,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.018Z",
+      "checkedAt": "2026-10-18T15:02:16.596Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -2738,7 +2734,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "gong365",
@@ -2785,7 +2781,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.859Z",
+      "checkedAt": "2026-10-18T15:02:15.733Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2796,7 +2792,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "gover",
@@ -2851,7 +2847,7 @@
       ],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.737Z",
+      "checkedAt": "2026-10-18T15:02:17.515Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2862,7 +2858,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "gpt-nexttech7",
@@ -2906,7 +2902,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.222Z",
+      "checkedAt": "2026-10-18T15:02:19.008Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -2917,7 +2913,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "gradienttrail",
@@ -2968,7 +2964,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.514Z",
+      "checkedAt": "2026-10-18T15:02:15.055Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2979,7 +2975,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "haemongdream",
@@ -3026,7 +3022,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.789Z",
+      "checkedAt": "2026-10-18T15:02:15.421Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3037,7 +3033,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "healfood",
@@ -3097,7 +3093,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.549Z",
+      "checkedAt": "2026-10-18T15:02:15.054Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3108,7 +3104,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "healthgotoo",
@@ -3163,7 +3159,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.884Z",
+      "checkedAt": "2026-10-18T15:02:15.515Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -3174,7 +3170,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "homeimer",
@@ -3229,7 +3225,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:33.590Z",
+      "checkedAt": "2026-10-18T15:02:20.054Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -3238,7 +3234,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:hos.dogspang.kr",
@@ -3283,7 +3279,7 @@
       ],
       "cname": [],
       "httpStatus": 410,
-      "checkedAt": "2026-10-18T08:18:28.515Z",
+      "checkedAt": "2026-10-18T15:02:15.047Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3294,7 +3290,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "insupang",
@@ -3342,25 +3338,25 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.16.65",
-        "216.150.16.193"
+        "216.150.16.1",
+        "216.150.1.129"
       ],
       "addresses": [
-        "216.150.1.1",
-        "216.150.1.129"
+        "216.150.1.129",
+        "216.150.1.1"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:35.808Z",
+      "checkedAt": "2026-10-18T15:02:22.662Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.16.65, 216.150.16.193",
+        "Google DNS: 216.150.16.1, 216.150.1.129",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:item79.com",
@@ -3409,7 +3405,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.198Z",
+      "checkedAt": "2026-10-18T15:02:18.306Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -3420,7 +3416,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "jasamall-sellerpit",
@@ -3466,7 +3462,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.205Z",
+      "checkedAt": "2026-10-18T15:02:19.848Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -3475,7 +3471,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "jeompolab",
@@ -3514,14 +3510,14 @@
         "216.150.16.1"
       ],
       "addresses": [
-        "216.150.1.129",
-        "216.150.16.129"
+        "216.150.16.193",
+        "216.150.1.193"
       ],
       "cname": [
         "1f699a951bb7a900.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.833Z",
+      "checkedAt": "2026-10-18T15:02:19.607Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1, 216.150.16.1",
@@ -3530,7 +3526,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "joy-ehon365",
@@ -3572,7 +3568,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.750Z",
+      "checkedAt": "2026-10-18T15:02:18.612Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -3583,7 +3579,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "kapti",
@@ -3630,7 +3626,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:35.055Z",
+      "checkedAt": "2026-10-18T15:02:21.904Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3639,7 +3635,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:kayest.com",
@@ -3678,7 +3674,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.341Z",
+      "checkedAt": "2026-10-18T15:02:18.271Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -3689,7 +3685,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "kdramanote",
@@ -3736,7 +3732,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.436Z",
+      "checkedAt": "2026-10-18T15:02:14.930Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3747,7 +3743,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "klick",
@@ -3807,7 +3803,7 @@
       ],
       "cname": [],
       "httpStatus": 410,
-      "checkedAt": "2026-10-18T08:18:28.493Z",
+      "checkedAt": "2026-10-18T15:02:14.925Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3818,7 +3814,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "knewstory",
@@ -3869,7 +3865,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:32.971Z",
+      "checkedAt": "2026-10-18T15:02:19.663Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -3878,7 +3874,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "ko-klick",
@@ -3927,7 +3923,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.911Z",
+      "checkedAt": "2026-10-18T15:02:15.588Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3938,7 +3934,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "lawer",
@@ -3998,7 +3994,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.631Z",
+      "checkedAt": "2026-10-18T15:02:15.182Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4009,7 +4005,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "legalser",
@@ -4061,14 +4057,14 @@
         "172.67.147.161"
       ],
       "addresses": [
-        "172.67.147.161",
         "104.21.47.121",
+        "172.67.147.161",
         "2606:4700:3035::ac43:93a1",
         "2606:4700:3032::6815:2f79"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.575Z",
+      "checkedAt": "2026-10-18T15:02:20.344Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 104.21.47.121, 172.67.147.161",
@@ -4077,7 +4073,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "lim01-soonsaak-co",
@@ -4124,7 +4120,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.021Z",
+      "checkedAt": "2026-10-18T15:02:18.457Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4135,7 +4131,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "limsight",
@@ -4173,7 +4169,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:32.648Z",
+      "checkedAt": "2026-10-18T15:02:19.518Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4182,7 +4178,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "lo-klick",
@@ -4226,7 +4222,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.156Z",
+      "checkedAt": "2026-10-18T15:02:18.989Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -4237,7 +4233,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "localgeo",
@@ -4284,7 +4280,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.438Z",
+      "checkedAt": "2026-10-18T15:02:15.550Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4295,7 +4291,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "luckyday",
@@ -4346,7 +4342,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.391Z",
+      "checkedAt": "2026-10-18T15:02:16.989Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -4357,7 +4353,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "luxurytraver",
@@ -4410,7 +4406,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:29.058Z",
+      "checkedAt": "2026-10-18T15:02:16.003Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4421,7 +4417,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "mbti-tasko",
@@ -4473,7 +4469,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.995Z",
+      "checkedAt": "2026-10-18T15:02:19.672Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 121.254.224.110",
@@ -4482,7 +4478,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "mohana",
@@ -4529,7 +4525,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.224Z",
+      "checkedAt": "2026-10-18T15:02:20.160Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4538,7 +4534,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:nekau.com",
@@ -4587,7 +4583,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.046Z",
+      "checkedAt": "2026-10-18T15:02:15.933Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4598,7 +4594,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "nexttech7",
@@ -4645,7 +4641,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.934Z",
+      "checkedAt": "2026-10-18T15:02:15.706Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4656,7 +4652,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "nicewomen",
@@ -4698,7 +4694,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.445Z",
+      "checkedAt": "2026-10-18T15:02:18.266Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -4709,7 +4705,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "nongsusangogo",
@@ -4747,7 +4743,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.372Z",
+      "checkedAt": "2026-10-18T15:02:17.149Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4758,7 +4754,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "notebook-klick",
@@ -4819,7 +4815,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.992Z",
+      "checkedAt": "2026-10-18T15:02:19.583Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -4830,7 +4826,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "patentgogo",
@@ -4877,7 +4873,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.474Z",
+      "checkedAt": "2026-10-18T15:02:19.421Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4888,7 +4884,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "petcostlab",
@@ -4935,7 +4931,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.491Z",
+      "checkedAt": "2026-10-18T15:02:18.320Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4946,7 +4942,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "pethomepick",
@@ -4997,7 +4993,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.756Z",
+      "checkedAt": "2026-10-18T15:02:15.246Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -5008,7 +5004,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "petinsuer",
@@ -5063,7 +5059,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.707Z",
+      "checkedAt": "2026-10-18T15:02:17.420Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5074,7 +5070,7 @@
       ],
       "monetization": true,
       "approval": "GETTING_READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "petjigi",
@@ -5112,7 +5108,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.280Z",
+      "checkedAt": "2026-10-18T15:02:16.942Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -5123,7 +5119,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "phone-luckyday",
@@ -5171,7 +5167,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.758Z",
+      "checkedAt": "2026-10-18T15:02:17.444Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5182,7 +5178,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "picklefriend",
@@ -5224,7 +5220,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.393Z",
+      "checkedAt": "2026-10-18T15:02:19.206Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5233,7 +5229,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "picturebooks",
@@ -5269,18 +5265,18 @@
       "accountHosts": [],
       "publicDnsAddresses": [
         "216.150.1.129",
-        "216.150.16.1"
+        "216.150.16.65"
       ],
       "addresses": [
-        "216.150.16.1",
-        "216.150.1.65"
+        "216.150.1.193",
+        "216.150.16.193"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.176Z",
+      "checkedAt": "2026-10-18T15:02:18.826Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.1.129, 216.150.16.1",
+        "Google DNS: 216.150.1.129, 216.150.16.65",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -5288,7 +5284,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "plategogo",
@@ -5323,21 +5319,21 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.1.1",
-        "216.150.16.1"
+        "216.150.16.65",
+        "216.150.1.65"
       ],
       "addresses": [
-        "216.150.1.1",
-        "216.150.16.1"
+        "216.150.16.193",
+        "216.150.1.193"
       ],
       "cname": [
         "62b030b7bfcc8d5d.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.636Z",
+      "checkedAt": "2026-10-18T15:02:17.320Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.1.1, 216.150.16.1",
+        "Google DNS: 216.150.16.65, 216.150.1.65",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -5345,7 +5341,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "pregnancy-ehon365",
@@ -5392,7 +5388,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.018Z",
+      "checkedAt": "2026-10-18T15:02:16.891Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5403,7 +5399,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "richyou",
@@ -5445,7 +5441,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.077Z",
+      "checkedAt": "2026-10-18T15:02:19.132Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -5456,7 +5452,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "rndatlas",
@@ -5498,7 +5494,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.102Z",
+      "checkedAt": "2026-10-18T15:02:17.045Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5509,7 +5505,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "roadways",
@@ -5555,7 +5551,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.099Z",
+      "checkedAt": "2026-10-18T15:02:15.886Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5566,7 +5562,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "runmania",
@@ -5613,7 +5609,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.260Z",
+      "checkedAt": "2026-10-18T15:02:17.097Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -5624,7 +5620,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "saju-tasko",
@@ -5671,7 +5667,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.002Z",
+      "checkedAt": "2026-10-18T15:02:15.728Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5682,7 +5678,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "sellerpit",
@@ -5742,7 +5738,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.430Z",
+      "checkedAt": "2026-10-18T15:02:19.396Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5752,8 +5748,8 @@
         "nexttech"
       ],
       "monetization": true,
-      "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approval": "GETTING_READY",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "seniorlivingnote",
@@ -5800,7 +5796,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.933Z",
+      "checkedAt": "2026-10-18T15:02:19.728Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5809,7 +5805,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "shotsetup",
@@ -5844,21 +5840,21 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.16.193",
-        "216.150.1.193"
+        "216.150.1.1",
+        "216.150.16.1"
       ],
       "addresses": [
-        "216.150.16.65",
-        "216.150.1.65"
+        "216.150.16.129",
+        "216.150.1.129"
       ],
       "cname": [
         "7559dbd876501752.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.868Z",
+      "checkedAt": "2026-10-18T15:02:17.797Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.16.193, 216.150.1.193",
+        "Google DNS: 216.150.1.1, 216.150.16.1",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -5866,7 +5862,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "sinhonjigi-ehon365",
@@ -5913,7 +5909,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.873Z",
+      "checkedAt": "2026-10-18T15:02:17.650Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5924,7 +5920,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "smallhomepick",
@@ -5971,7 +5967,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.403Z",
+      "checkedAt": "2026-10-18T15:02:17.403Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5982,7 +5978,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "smart-sellerpit",
@@ -6029,7 +6025,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.689Z",
+      "checkedAt": "2026-10-18T15:02:15.439Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6040,7 +6036,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "softwa",
@@ -6095,7 +6091,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.874Z",
+      "checkedAt": "2026-10-18T15:02:18.822Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -6106,7 +6102,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "solarpaybackmap",
@@ -6153,7 +6149,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.135Z",
+      "checkedAt": "2026-10-18T15:02:17.870Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6162,7 +6158,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "sorimate",
@@ -6204,7 +6200,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.066Z",
+      "checkedAt": "2026-10-18T15:02:15.805Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -6215,7 +6211,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "spinkorea",
@@ -6275,7 +6271,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.787Z",
+      "checkedAt": "2026-10-18T15:02:16.891Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6286,7 +6282,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "sssaass",
@@ -6328,7 +6324,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.642Z",
+      "checkedAt": "2026-10-18T15:02:15.162Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6339,7 +6335,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "temon",
@@ -6385,7 +6381,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.484Z",
+      "checkedAt": "2026-10-18T15:02:16.380Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6396,7 +6392,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "tennisfrens",
@@ -6438,7 +6434,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.645Z",
+      "checkedAt": "2026-10-18T15:02:16.405Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6450,7 +6446,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "texturb",
@@ -6496,7 +6492,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.166Z",
+      "checkedAt": "2026-10-18T15:02:16.053Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -6507,7 +6503,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "today2424",
@@ -6553,7 +6549,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.488Z",
+      "checkedAt": "2026-10-18T15:02:16.259Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6564,7 +6560,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "todaypharm",
@@ -6615,7 +6611,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:29.940Z",
+      "checkedAt": "2026-10-18T15:02:16.886Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6626,7 +6622,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "todayshops",
@@ -6682,7 +6678,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.330Z",
+      "checkedAt": "2026-10-18T15:02:20.114Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6691,7 +6687,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:toolnavigo.com",
@@ -6735,7 +6731,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.764Z",
+      "checkedAt": "2026-10-18T15:02:15.502Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6746,7 +6742,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "trave",
@@ -6797,7 +6793,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:33.333Z",
+      "checkedAt": "2026-10-18T15:02:20.031Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -6806,7 +6802,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:travel.dogspang.kr",
@@ -6851,7 +6847,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.047Z",
+      "checkedAt": "2026-10-18T15:02:17.828Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6862,7 +6858,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "travel-sellerpit",
@@ -6909,7 +6905,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:28.565Z",
+      "checkedAt": "2026-10-18T15:02:15.222Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6920,7 +6916,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "travelpang",
@@ -6975,7 +6971,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.614Z",
+      "checkedAt": "2026-10-18T15:02:18.418Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -6986,7 +6982,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "wattbenchs",
@@ -7024,7 +7020,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-18T08:18:30.518Z",
+      "checkedAt": "2026-10-18T15:02:17.267Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -7035,7 +7031,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "webtoon-klick",
@@ -7076,12 +7072,12 @@
         "216.198.79.131"
       ],
       "addresses": [
-        "216.198.79.3",
-        "64.29.17.3"
+        "64.29.17.67",
+        "216.198.79.67"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.447Z",
+      "checkedAt": "2026-10-18T15:02:20.145Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 64.29.17.131, 216.198.79.131",
@@ -7090,7 +7086,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:wedding-fair-decision-hub.vercel.app",
@@ -7129,7 +7125,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.501Z",
+      "checkedAt": "2026-10-18T15:02:19.180Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7140,7 +7136,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "wedfairguide",
@@ -7175,27 +7171,27 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.16.1",
-        "216.150.1.1"
+        "216.150.16.193",
+        "216.150.1.193"
       ],
       "addresses": [
-        "216.150.1.65",
-        "216.150.16.65"
+        "216.150.1.1",
+        "216.150.16.1"
       ],
       "cname": [
         "3497de2890fedbbb.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.123Z",
+      "checkedAt": "2026-10-18T15:02:19.919Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.16.1, 216.150.1.1",
+        "Google DNS: 216.150.16.193, 216.150.1.193",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "wonon-ehon365",
@@ -7237,7 +7233,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-10-18T08:18:31.406Z",
+      "checkedAt": "2026-10-18T15:02:18.025Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -7248,7 +7244,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "workgogo",
@@ -7299,7 +7295,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:30.331Z",
+      "checkedAt": "2026-10-18T15:02:17.226Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -7310,7 +7306,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "yesa",
@@ -7352,7 +7348,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:31.354Z",
+      "checkedAt": "2026-10-18T15:02:18.341Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -7363,7 +7359,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "youkamap",
@@ -7405,7 +7401,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:33.881Z",
+      "checkedAt": "2026-10-18T15:02:20.731Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -7414,7 +7410,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "UNKNOWN",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "discovered:yourtripgo.com",
@@ -7461,7 +7457,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-18T08:18:32.847Z",
+      "checkedAt": "2026-10-18T15:02:18.573Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7472,7 +7468,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-10-18T08:17:53.814Z",
+      "approvalCheckedAt": "2026-10-18T15:01:43.892Z",
       "bindings": [
         {
           "id": "yungyanggogo",

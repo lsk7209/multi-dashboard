@@ -7,6 +7,7 @@ import { loadSites } from "./lib/sites.js";
 type Page<T> = { items: T[]; nextPageToken?: string | null };
 type Site = { domain?: string | null; state?: string | null; autoAdsEnabled?: boolean | null };
 type Account = { name?: string | null };
+type AccountConfig = { clientPath: string; tokenPath: string; accountRef?: string };
 
 export type SiteStatus = {
   accountRef: string;
@@ -22,6 +23,7 @@ export type Collection = {
   mutationPerformed: false;
   totalSites: number;
   accountsFound: number;
+  accountRefs?: string[];
   sites: SiteStatus[];
   failure?: { stage: "credentials" | "accounts.list" | "accounts.sites.list"; httpStatus: number | null; accountRef?: string };
 };
@@ -60,6 +62,7 @@ export async function collectStatus(
   listAccounts: (token?: string) => Promise<Page<Account>>,
   listSites: (account: string, token?: string) => Promise<Page<Site>>,
   now = () => new Date().toISOString(),
+  expectedAccountRef?: string,
 ): Promise<Collection> {
   const result: Collection = {
     attemptedAt: now(), checkedAt: null, listComplete: false, mutationPerformed: false,
@@ -73,12 +76,18 @@ export async function collectStatus(
     return result;
   }
   result.accountsFound = accounts.length;
+  result.accountRefs = [];
+  if (expectedAccountRef && !accounts.some(account => account.name === expectedAccountRef)) {
+    result.failure = { stage: "accounts.list", httpStatus: null };
+    return result;
+  }
   for (const account of accounts) {
     const accountRef = account.name;
     if (!accountRef || !/^accounts\/[^/]+$/.test(accountRef)) {
       result.failure = { stage: "accounts.list", httpStatus: null };
       return result;
     }
+    result.accountRefs.push(accountRef);
     let sites: Site[];
     try {
       sites = await listAllPages((token) => listSites(accountRef, token));
@@ -105,6 +114,84 @@ export async function collectStatus(
   return result;
 }
 
+export function parseAccountConfig(value: unknown): AccountConfig[] {
+  if (!Array.isArray(value) || value.length === 0) throw new Error("Invalid AdSense accounts configuration");
+  return value.map((entry: unknown) => {
+    if (typeof entry !== "object" || entry === null) throw new Error("Invalid AdSense account entry");
+    const { clientPath, tokenPath, accountRef } = entry as Record<string, unknown>;
+    if (typeof clientPath !== "string" || !clientPath.trim() || typeof tokenPath !== "string" || !tokenPath.trim()
+      || (accountRef !== undefined && (typeof accountRef !== "string" || !/^accounts\/[^/]+$/.test(accountRef)))) {
+      throw new Error("Invalid AdSense account entry");
+    }
+    return { clientPath, tokenPath, ...(accountRef === undefined ? {} : { accountRef: accountRef as string }) };
+  });
+}
+
+export async function loadAccountConfigs(
+  configuredPath: string | undefined,
+  explicitLegacyArgs: boolean,
+  legacy: AccountConfig,
+  readText: (file: string) => Promise<string> = (file) => readFile(file, "utf8"),
+  defaultPath = "E:\\env\\adsense_accounts.json",
+): Promise<AccountConfig[]> {
+  if (explicitLegacyArgs) return [legacy];
+  if (configuredPath) return parseAccountConfig(JSON.parse(await readText(configuredPath)));
+  try {
+    return parseAccountConfig(JSON.parse(await readText(defaultPath)));
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return [legacy];
+    throw error;
+  }
+}
+
+export async function collectSources(
+  sources: Array<() => Promise<Collection>>,
+  now = () => new Date().toISOString(),
+): Promise<Collection> {
+  const result: Collection = { attemptedAt: now(), checkedAt: null, listComplete: false,
+    mutationPerformed: false, totalSites: 0, accountsFound: 0, accountRefs: [], sites: [] };
+  const accountRefs = new Set<string>();
+  const sites = new Map<string, SiteStatus>();
+  let complete = true;
+  for (const source of sources) {
+    let collected: Collection;
+    try {
+      collected = await source();
+    } catch (error) {
+      collected = { attemptedAt: result.attemptedAt, checkedAt: null, listComplete: false,
+        mutationPerformed: false, totalSites: 0, accountsFound: 0, sites: [],
+        failure: { stage: "credentials", httpStatus: httpStatus(error) } };
+    }
+    if (!collected.listComplete) {
+      complete = false;
+      if (!result.failure) result.failure = collected.failure ?? { stage: "credentials", httpStatus: null };
+    }
+    for (const ref of collected.accountRefs ?? []) accountRefs.add(ref);
+    for (const site of collected.sites) {
+      const key = `${site.accountRef}\0${normalizeDomain(site.domain)}`;
+      if (!sites.has(key)) sites.set(key, site);
+    }
+  }
+  result.accountRefs = [...accountRefs].sort();
+  result.accountsFound = accountRefs.size;
+  result.sites = [...sites.values()];
+  result.totalSites = result.sites.length;
+  result.listComplete = complete && sources.length > 0;
+  if (result.listComplete) result.checkedAt = now();
+  return result;
+}
+
+export function publicSiteStates(sites: SiteStatus[]): Array<{ domain: string; rawState: string }> {
+  const states = new Map<string, string>();
+  for (const site of sites) {
+    const domain = normalizeDomain(site.domain);
+    const state = site.rawState ?? "UNKNOWN";
+    const previous = states.get(domain);
+    states.set(domain, previous === undefined ? state : previous === state ? state : "UNKNOWN");
+  }
+  return [...states].map(([domain, rawState]) => ({ domain, rawState }));
+}
+
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const arg = (name: string, fallback: string) => args.find((item) => item.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
@@ -113,27 +200,32 @@ async function main(): Promise<void> {
   const outputPath = arg("output", process.env.ADSENSE_STATUS_OUTPUT_PATH || path.resolve("data/adsense-account-status-current.json"));
   let result: Collection;
   try {
-    const clientFile = JSON.parse(await readFile(clientPath, "utf8"));
-    const tokenFile = JSON.parse(await readFile(tokenPath, "utf8"));
-    const client = clientFile.installed ?? clientFile.web;
-    if (!client?.client_id || !client?.client_secret || !tokenFile?.refresh_token) throw new Error("Missing OAuth credentials");
-    const auth = new google.auth.OAuth2(client.client_id, client.client_secret, client.redirect_uris?.[0]);
-    auth.setCredentials({
-      access_token: tokenFile.token ?? tokenFile.access_token,
-      refresh_token: tokenFile.refresh_token,
-      expiry_date: typeof tokenFile.expiry === "string" ? Date.parse(tokenFile.expiry) : tokenFile.expiry_date,
-    });
-    const api = google.adsense({ version: "v2", auth });
-    result = await collectStatus(
-      async (pageToken) => {
-        const response = await api.accounts.list({ pageSize: 10000, pageToken });
-        return { items: response.data.accounts ?? [], nextPageToken: response.data.nextPageToken };
-      },
-      async (parent, pageToken) => {
-        const response = await api.accounts.sites.list({ parent, pageSize: 10000, pageToken });
-        return { items: response.data.sites ?? [], nextPageToken: response.data.nextPageToken };
-      },
-    );
+    const configs = await loadAccountConfigs(process.env.ADSENSE_ACCOUNTS_CONFIG_PATH,
+      args.some(item => item.startsWith("--client=") || item.startsWith("--token=")), { clientPath, tokenPath });
+    result = await collectSources(configs.map(config => async () => {
+      const clientFile = JSON.parse(await readFile(config.clientPath, "utf8"));
+      const tokenFile = JSON.parse(await readFile(config.tokenPath, "utf8"));
+      const client = clientFile.installed ?? clientFile.web;
+      if (!client?.client_id || !client?.client_secret || !tokenFile?.refresh_token) throw new Error("Missing OAuth credentials");
+      const auth = new google.auth.OAuth2(client.client_id, client.client_secret, client.redirect_uris?.[0]);
+      auth.setCredentials({
+        access_token: tokenFile.token ?? tokenFile.access_token,
+        refresh_token: tokenFile.refresh_token,
+        expiry_date: typeof tokenFile.expiry === "string" ? Date.parse(tokenFile.expiry) : tokenFile.expiry_date,
+      });
+      const api = google.adsense({ version: "v2", auth });
+      return collectStatus(
+        async (pageToken) => {
+          const response = await api.accounts.list({ pageSize: 10000, pageToken });
+          return { items: response.data.accounts ?? [], nextPageToken: response.data.nextPageToken };
+        },
+        async (parent, pageToken) => {
+          const response = await api.accounts.sites.list({ parent, pageSize: 10000, pageToken });
+          return { items: response.data.sites ?? [], nextPageToken: response.data.nextPageToken };
+        },
+        () => new Date().toISOString(), config.accountRef,
+      );
+    }));
   } catch (error) {
     result = {
       attemptedAt: new Date().toISOString(), checkedAt: null, listComplete: false,
@@ -144,16 +236,17 @@ async function main(): Promise<void> {
   await mkdir(".local/site-inventory", { recursive: true });
   await writeFile(".local/site-inventory/adsense-account-raw.json", `${JSON.stringify(result, null, 2)}\n`, "utf8");
   const domains = new Set((await loadSites()).map(site => new URL(site.url).hostname));
+  const publicStates = publicSiteStates(result.sites);
   const publicResult = { attemptedAt: result.attemptedAt, checkedAt: result.checkedAt,
-    listComplete: result.listComplete, proofDomains: [...domains].sort(), mutationPerformed: false, totalSites: result.totalSites,
-    stateCounts: Object.fromEntries([...new Set(result.sites.map(site => site.rawState ?? "UNKNOWN"))].map(state => [state, result.sites.filter(site => (site.rawState ?? "UNKNOWN") === state).length])),
-    sites: result.sites.filter(site => domains.has(site.domain) && !["tasko.kr", "kang4.com"].includes(site.domain))
-      .map(site => ({ domain: site.domain, rawState: site.rawState })),
+    listComplete: result.listComplete, proofDomains: [...domains].sort(), mutationPerformed: false, totalSites: publicStates.length,
+    stateCounts: Object.fromEntries([...new Set(publicStates.map(site => site.rawState))].map(state => [state, publicStates.filter(site => site.rawState === state).length])),
+    sites: publicStates.filter(site => domains.has(site.domain) && !["tasko.kr", "kang4.com"].includes(site.domain)),
     ...(result.failure ? { failure: { stage: result.failure.stage, httpStatus: result.failure.httpStatus } } : {}),
   };
   await writeFile(outputPath, `${JSON.stringify(publicResult, null, 2)}\n`, "utf8");
   console.log(JSON.stringify({ outputPath, checkedAt: result.checkedAt, listComplete: result.listComplete,
-    accountsFound: result.accountsFound, totalSites: result.totalSites, failure: result.failure }));
+    accountsFound: result.accountsFound, totalSites: result.totalSites,
+    failure: result.failure ? { stage: result.failure.stage, httpStatus: result.failure.httpStatus } : undefined }));
   if (!result.listComplete) process.exitCode = 1;
 }
 
