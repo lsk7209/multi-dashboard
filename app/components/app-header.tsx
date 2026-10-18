@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { href: "/", id: "dashboard", label: "대시보드" },
+  { href: "/servers", id: "servers", label: "서버별 사이트" },
   { href: "/affiliate", id: "affiliate", label: "제휴" },
   { href: "/banner-management", id: "banner-management", label: "배너 콘솔" },
 ] as const;
