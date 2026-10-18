@@ -3,6 +3,7 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/*": [
       "data/site-stats.json",
+      "data/site-inventory.json",
       "data/ops-triage.json",
       "data/gsc-permission-audit-*.json",
       "data/fleet-optimization-chain-*.json",
