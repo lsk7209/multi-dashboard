@@ -98,6 +98,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://temon.kr/
+    wpRestBase: https://temon.kr/wp-json/wp/v2
     ga4PropertyId: "516369797"
     gscSiteUrl: sc-domain:temon.kr
     monetization: true
@@ -106,7 +107,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\temon
-    wpRestBase: https://temon.kr/wp-json/wp/v2
   - id: haemongdream
     name: 해몽드림 - GA4
     enabled: true
@@ -399,10 +399,10 @@ sites:
     enabled: false
     platform: static
     url: https://spinkorea.kr/
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "532855163"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
-    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: texturb
     name: texturb.com
     enabled: true
@@ -547,6 +547,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://todaypharm.kr/
+    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
     ga4PropertyId: "534313222"
     gscSiteUrl: https://todaypharm.kr/
     sitemapUrls:
@@ -556,12 +557,12 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\todaypharm
-    wpRestBase: https://todaypharm.kr/wp-json/wp/v2
   - id: tennisfrens
     name: tennisfrens.com
     enabled: true
     platform: nextjs
     url: https://tennisfrens.com/
+    wpRestBase: https://tennisfrens.com/wp-json/wp/v2
     ga4PropertyId: "534356101"
     gscSiteUrl: sc-domain:tennisfrens.com
     monetization: true
@@ -569,12 +570,12 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\tennisfrens
-    wpRestBase: https://tennisfrens.com/wp-json/wp/v2
   - id: bojo24
     name: bojo24.kr
     enabled: true
     platform: nextjs
     url: https://bojo24.kr/
+    wpRestBase: https://bojo24.kr/wp-json/wp/v2
     ga4PropertyId: "534288708"
     gscSiteUrl: https://bojo24.kr/
     sitemapUrls:
@@ -587,12 +588,12 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\bojo24
-    wpRestBase: https://bojo24.kr/wp-json/wp/v2
   - id: ehon365
     name: ehon365.kr
     enabled: true
     platform: static
     url: https://ehon365.kr/
+    wpRestBase: https://ehon365.kr/wp-json/wp/v2
     ga4PropertyId: "535779756"
     gscSiteUrl: sc-domain:ehon365.kr
     monetization: true
@@ -600,7 +601,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\ehon365\temp_clone
-    wpRestBase: https://ehon365.kr/wp-json/wp/v2
   - id: 2mlab-2
     name: 2mlab.kr
     enabled: true
@@ -624,6 +624,7 @@ sites:
     enabled: true
     platform: static
     url: https://spinkorea.kr/
+    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
     ga4PropertyId: "536081634"
     gscSiteUrl: https://spinkorea.kr/
     monetization: true
@@ -631,7 +632,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\spinkorea
-    wpRestBase: https://spinkorea.kr/wp-json/wp/v2
   - id: ezfunnel
     name: ezfunnel.kr
     enabled: true
@@ -724,6 +724,7 @@ sites:
     enabled: true
     platform: static
     url: https://cartain.kr/
+    wpRestBase: https://cartain.kr/wp-json/wp/v2
     ga4PropertyId: "536558706"
     gscSiteUrl: https://cartain.kr/
     monetization: true
@@ -731,7 +732,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\cartainkr
-    wpRestBase: https://cartain.kr/wp-json/wp/v2
   - id: crepika
     name: crepika.com
     enabled: true
@@ -952,10 +952,10 @@ sites:
     enabled: true
     platform: nextjs
     url: https://goesku.com/
+    wpRestBase: https://goesku.com/wp-json/wp/v2
     ga4PropertyId: "536856718"
     gscSiteUrl: https://goesku.com/
     monetization: true
-    wpRestBase: https://goesku.com/wp-json/wp/v2
   - id: roadways
     name: roadways.kr
     enabled: true
@@ -1190,6 +1190,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://picklefriend.kr/
+    wpRestBase: https://picklefriend.kr/wp-json/wp/v2
     ga4PropertyId: "539268592"
     gscSiteUrl: https://picklefriend.kr/
     monetization: true
@@ -1197,7 +1198,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\picklefriend
-    wpRestBase: https://picklefriend.kr/wp-json/wp/v2
   - id: smart-sellerpit
     name: smart.sellerpit.kr
     enabled: true
@@ -1306,6 +1306,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://dogswhere.com/
+    wpRestBase: https://dogswhere.com/wp-json/wp/v2
     ga4PropertyId: "539684317"
     gscSiteUrl: sc-domain:dogswhere.com
     monetization: true
@@ -1313,7 +1314,6 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\dogswherecom
-    wpRestBase: https://dogswhere.com/wp-json/wp/v2
   - id: smallhomepick
     name: 스몰홈픽 - 작은집 살림템 가이드
     enabled: true
@@ -1424,6 +1424,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://campgogo.kr/
+    wpRestBase: https://campgogo.kr/wp-json/wp/v2
     ga4PropertyId: "540129650"
     gscSiteUrl: https://campgogo.kr/
     monetization: true
@@ -1432,7 +1433,6 @@ sites:
       locationLabel: kwangju
       localPath: D:\web\campgogokr
       githubRepo: https://github.com/lsk7209/campgogo.kr
-    wpRestBase: https://campgogo.kr/wp-json/wp/v2
   - id: dullegilgogo
     name: https://dullegilgogo.kr
     enabled: true
@@ -1504,6 +1504,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://yungyanggogo.kr/
+    wpRestBase: https://yungyanggogo.kr/wp-json/wp/v2
     ga4PropertyId: "540455691"
     gscSiteUrl: https://yungyanggogo.kr/
     monetization: true
@@ -1511,12 +1512,12 @@ sites:
       type: local-app
       locationLabel: kwangju
       localPath: D:\web\yungyanggogo
-    wpRestBase: https://yungyanggogo.kr/wp-json/wp/v2
   - id: caregos
     name: caregos.com
     enabled: true
     platform: static
     url: https://caregos.com/
+    wpRestBase: https://caregos.com/wp-json/wp/v2
     ga4PropertyId: "540671690"
     gscSiteUrl: https://caregos.com/
     monetization: false
@@ -1525,7 +1526,6 @@ sites:
       type: local-app
       locationLabel: static-local
       localPath: D:\web\yoyangwon
-    wpRestBase: https://caregos.com/wp-json/wp/v2
   - id: wattbenchs
     name: wattbenchs.com
     enabled: true
@@ -1719,6 +1719,7 @@ sites:
     enabled: true
     platform: nextjs
     url: https://wedfairguide.com/
+    wpRestBase: https://wedfairguide.com/wp-json/wp/v2
     ga4PropertyId: "544110804"
     gscSiteUrl: https://wedfairguide.com/
     monetization: true
@@ -1727,7 +1728,6 @@ sites:
       locationLabel: vercel
       localPath: D:\web\wedding
       githubRepo: https://github.com/lsk7209/wedding-fair-decision-hub
-    wpRestBase: https://wedfairguide.com/wp-json/wp/v2
   - id: seniorlivingnote
     name: seniorlivingnote.com
     enabled: true
