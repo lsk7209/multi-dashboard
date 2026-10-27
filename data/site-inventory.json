@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-25T23:06:00.065Z",
-  "statsGeneratedAt": "2026-10-25T23:05:26.678Z",
+  "generatedAt": "2026-10-27T00:21:15.846Z",
+  "statsGeneratedAt": "2026-10-27T00:20:20.649Z",
   "adsenseCheckedAt": "2026-10-18T15:01:43.892Z",
   "adsenseListComplete": true,
   "adsenseAccountSummary": {
@@ -8,7 +8,7 @@
     "ready": 11,
     "gettingReady": 2
   },
-  "googleBindingsCheckedAt": "2026-10-25T23:05:28.041Z",
+  "googleBindingsCheckedAt": "2026-10-27T00:20:22.843Z",
   "googleBindingsComplete": true,
   "sites": [
     {
@@ -27,7 +27,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:33.234Z",
+      "checkedAt": "2026-10-27T00:20:36.645Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -56,7 +56,7 @@
           "gscSiteUrl": "https://2mlab.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -91,7 +91,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:41.688Z",
+      "checkedAt": "2026-10-27T00:20:44.333Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -146,7 +146,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.222Z",
+      "checkedAt": "2026-10-27T00:20:41.903Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -201,7 +201,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:40.434Z",
+      "checkedAt": "2026-10-27T00:20:43.082Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -221,7 +221,7 @@
           "gscSiteUrl": "https://askore.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 13
+          "dailyUsers": 16
         }
       ],
       "discoveredGa4": [
@@ -254,7 +254,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.811Z",
+      "checkedAt": "2026-10-27T00:20:50.703Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -274,7 +274,7 @@
           "gscSiteUrl": "https://autopickgo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -309,7 +309,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.279Z",
+      "checkedAt": "2026-10-27T00:20:49.908Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -329,7 +329,7 @@
           "gscSiteUrl": "https://autorentlab.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 6
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -362,7 +362,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:35.955Z",
+      "checkedAt": "2026-10-27T00:20:38.845Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -430,7 +430,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.462Z",
+      "checkedAt": "2026-10-27T00:20:42.107Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -481,7 +481,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:54.292Z",
+      "checkedAt": "2026-10-27T00:21:13.308Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -535,7 +535,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.088Z",
+      "checkedAt": "2026-10-27T00:20:41.818Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -555,7 +555,7 @@
           "gscSiteUrl": "https://bojo24.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 11
         }
       ],
       "discoveredGa4": [
@@ -592,7 +592,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:50.010Z",
+      "checkedAt": "2026-10-27T00:20:51.947Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -610,7 +610,7 @@
           "gscSiteUrl": "https://bu.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -643,7 +643,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:45.724Z",
+      "checkedAt": "2026-10-27T00:20:48.206Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -663,7 +663,7 @@
           "gscSiteUrl": "https://campgogo.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 5
         }
       ],
       "discoveredGa4": [
@@ -692,7 +692,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:49.359Z",
+      "checkedAt": "2026-10-27T00:20:51.148Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -741,7 +741,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:41.136Z",
+      "checkedAt": "2026-10-27T00:20:43.785Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -760,7 +760,7 @@
           "ga4PropertyId": "538367953",
           "gscSiteUrl": "sc-domain:car.luckyday.kr",
           "ga4Status": "ok",
-          "gscStatus": "ok",
+          "gscStatus": "auth_error",
           "dailyUsers": 0
         }
       ],
@@ -796,7 +796,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:46.935Z",
+      "checkedAt": "2026-10-27T00:20:48.789Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -827,11 +827,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://caregos.com/",
+          "siteUrl": "http://caregos.com/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "http://caregos.com/",
+          "siteUrl": "https://caregos.com/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -853,7 +853,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.982Z",
+      "checkedAt": "2026-10-27T00:20:37.765Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -919,7 +919,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:41.934Z",
+      "checkedAt": "2026-10-27T00:20:45.171Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -940,7 +940,7 @@
           "gscSiteUrl": "https://certifi.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -975,7 +975,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:33.560Z",
+      "checkedAt": "2026-10-27T00:20:36.914Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -1058,7 +1058,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:55.000Z",
+      "checkedAt": "2026-10-27T00:21:13.511Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1107,7 +1107,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.356Z",
+      "checkedAt": "2026-10-27T00:20:37.564Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1172,7 +1172,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-10-25T23:05:55.349Z",
+      "checkedAt": "2026-10-27T00:21:13.472Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -1218,7 +1218,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.590Z",
+      "checkedAt": "2026-10-27T00:20:49.381Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1271,7 +1271,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.291Z",
+      "checkedAt": "2026-10-27T00:20:42.192Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1324,7 +1324,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:32.988Z",
+      "checkedAt": "2026-10-27T00:20:36.134Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1344,7 +1344,7 @@
           "gscSiteUrl": "https://discparty.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -1375,7 +1375,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:43.011Z",
+      "checkedAt": "2026-10-27T00:20:46.104Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -1422,19 +1422,17 @@
       "host": "turbo1",
       "hostStatus": "public_route_verified",
       "accountHosts": [],
-      "publicDnsAddresses": [
-        "158.247.212.123"
-      ],
+      "publicDnsAddresses": [],
       "addresses": [
         "158.247.212.123"
       ],
       "cname": [],
-      "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.650Z",
+      "httpStatus": null,
+      "checkedAt": "2026-10-27T00:21:11.975Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 158.247.212.123",
-        "HTTPS HEAD 200"
+        "Google DNS 조회 미확인",
+        "HTTPS HEAD unavailable"
       ],
       "configuredLocations": [],
       "monetization": true,
@@ -1471,19 +1469,19 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.1.129",
-        "216.150.1.193"
+        "216.150.1.1",
+        "216.150.1.65"
       ],
       "addresses": [
-        "216.150.16.1",
-        "216.150.1.193"
+        "216.150.1.129",
+        "216.150.16.1"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.049Z",
+      "checkedAt": "2026-10-27T00:20:49.611Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.1.129, 216.150.1.193",
+        "Google DNS: 216.150.1.1, 216.150.1.65",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -1500,7 +1498,7 @@
           "gscSiteUrl": "https://dogbreedcost.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -1533,7 +1531,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.457Z",
+      "checkedAt": "2026-10-27T00:20:37.596Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1560,7 +1558,7 @@
           "gscSiteUrl": "https://dogspang.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -1599,7 +1597,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:44.174Z",
+      "checkedAt": "2026-10-27T00:20:46.947Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -1619,7 +1617,7 @@
           "gscSiteUrl": "sc-domain:dogswhere.com",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 22
+          "dailyUsers": 12
         }
       ],
       "discoveredGa4": [
@@ -1652,7 +1650,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:44.413Z",
+      "checkedAt": "2026-10-27T00:20:47.238Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -1672,7 +1670,7 @@
           "gscSiteUrl": "https://dolbomjigi.ehon365.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 7
+          "dailyUsers": 9
         }
       ],
       "discoveredGa4": [
@@ -1705,7 +1703,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:46.613Z",
+      "checkedAt": "2026-10-27T00:20:48.806Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -1725,7 +1723,7 @@
           "gscSiteUrl": "https://doseogogo.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 4
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -1736,11 +1734,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "http://doseogogo.kr/",
+          "siteUrl": "https://doseogogo.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://doseogogo.kr/",
+          "siteUrl": "http://doseogogo.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -1762,7 +1760,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:45.599Z",
+      "checkedAt": "2026-10-27T00:20:47.860Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1811,7 +1809,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:06:00.065Z",
+      "checkedAt": "2026-10-27T00:21:10.479Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -1868,7 +1866,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:38.988Z",
+      "checkedAt": "2026-10-27T00:20:41.887Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -1888,7 +1886,7 @@
           "gscSiteUrl": "sc-domain:ehon365.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -1921,7 +1919,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-10-25T23:05:55.667Z",
+      "checkedAt": "2026-10-27T00:21:13.704Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -1967,7 +1965,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.976Z",
+      "checkedAt": "2026-10-27T00:20:39.825Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2035,7 +2033,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.212Z",
+      "checkedAt": "2026-10-27T00:20:39.646Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2064,7 +2062,7 @@
           "gscSiteUrl": "https://estat.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -2103,7 +2101,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:35.813Z",
+      "checkedAt": "2026-10-27T00:20:38.590Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2123,7 +2121,7 @@
           "gscSiteUrl": "https://etique.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 2
         },
         {
           "id": "etique-2",
@@ -2171,7 +2169,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.355Z",
+      "checkedAt": "2026-10-27T00:20:42.610Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2191,7 +2189,7 @@
           "gscSiteUrl": "https://ezfunnel.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -2226,7 +2224,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.628Z",
+      "checkedAt": "2026-10-27T00:20:36.527Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2246,7 +2244,7 @@
           "gscSiteUrl": "https://fastjob.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         },
         {
           "id": "fastjob-2",
@@ -2294,7 +2292,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.661Z",
+      "checkedAt": "2026-10-27T00:20:38.540Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2314,7 +2312,7 @@
           "gscSiteUrl": "https://finan.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 4
         },
         {
           "id": "finan-2",
@@ -2358,10 +2356,10 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:53.698Z",
+      "checkedAt": "2026-10-27T00:21:10.478Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: A 응답 없음",
+        "Google DNS 조회 미확인",
         "HTTPS HEAD unavailable"
       ],
       "configuredLocations": [],
@@ -2407,10 +2405,10 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:53.660Z",
+      "checkedAt": "2026-10-27T00:21:10.978Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: A 응답 없음",
+        "Google DNS 조회 미확인",
         "HTTPS HEAD unavailable"
       ],
       "configuredLocations": [],
@@ -2449,21 +2447,21 @@
       "url": "https://go.sellerpit.kr/",
       "enabled": true,
       "platform": "wordpress",
-      "host": "vercel",
-      "hostStatus": "public_route_verified",
+      "host": "unknown",
+      "hostStatus": "unverified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "76.76.21.21"
+        "13.140.77.84"
       ],
       "addresses": [
-        "76.76.21.21"
+        "13.140.77.84"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:49.742Z",
+      "checkedAt": "2026-10-27T00:20:52.001Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 76.76.21.21",
+        "Google DNS: 13.140.77.84",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [],
@@ -2478,7 +2476,7 @@
           "gscSiteUrl": "https://go.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -2511,7 +2509,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.846Z",
+      "checkedAt": "2026-10-27T00:20:42.446Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -2529,7 +2527,7 @@
           "gscSiteUrl": "https://goesku.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -2562,7 +2560,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.027Z",
+      "checkedAt": "2026-10-27T00:20:53.143Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -2580,7 +2578,7 @@
           "gscSiteUrl": "https://gold79.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 5
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -2609,7 +2607,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:40.903Z",
+      "checkedAt": "2026-10-27T00:20:43.786Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2628,7 +2626,7 @@
           "ga4PropertyId": "538330802",
           "gscSiteUrl": "sc-domain:gong.luckyday.kr",
           "ga4Status": "ok",
-          "gscStatus": "ok",
+          "gscStatus": "auth_error",
           "dailyUsers": 0
         }
       ],
@@ -2664,7 +2662,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:39.848Z",
+      "checkedAt": "2026-10-27T00:20:42.915Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -2684,7 +2682,7 @@
           "gscSiteUrl": "https://gong365.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -2717,7 +2715,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.766Z",
+      "checkedAt": "2026-10-27T00:20:39.826Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2785,7 +2783,7 @@
       ],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:42.996Z",
+      "checkedAt": "2026-10-27T00:20:45.983Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2829,21 +2827,21 @@
       "url": "https://gradienttrail.com/",
       "enabled": true,
       "platform": "static",
-      "host": "vercel",
-      "hostStatus": "public_route_verified",
+      "host": "unknown",
+      "hostStatus": "unverified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "76.76.21.21"
+        "13.140.77.84"
       ],
       "addresses": [
-        "76.76.21.21"
+        "13.140.77.84"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.894Z",
+      "checkedAt": "2026-10-27T00:20:50.032Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 76.76.21.21",
+        "Google DNS: 13.140.77.84",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -2860,7 +2858,7 @@
           "gscSiteUrl": "https://gradienttrail.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 12
         }
       ],
       "discoveredGa4": [
@@ -2871,11 +2869,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "sc-domain:gradienttrail.com",
+          "siteUrl": "https://gradienttrail.com/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://gradienttrail.com/",
+          "siteUrl": "sc-domain:gradienttrail.com",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -2897,7 +2895,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:33.886Z",
+      "checkedAt": "2026-10-27T00:20:36.854Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2917,7 +2915,7 @@
           "gscSiteUrl": "https://haemongdream.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 47
+          "dailyUsers": 32
         }
       ],
       "discoveredGa4": [
@@ -2952,7 +2950,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:35.434Z",
+      "checkedAt": "2026-10-27T00:20:39.092Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2981,7 +2979,7 @@
           "gscSiteUrl": "https://healfood.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -3020,7 +3018,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:33.909Z",
+      "checkedAt": "2026-10-27T00:20:37.298Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3040,7 +3038,7 @@
           "gscSiteUrl": "https://healthgotoo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 5
+          "dailyUsers": 36
         },
         {
           "id": "healthgotoo-2",
@@ -3088,7 +3086,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:35.020Z",
+      "checkedAt": "2026-10-27T00:20:38.978Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.245.11",
@@ -3154,10 +3152,10 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:53.784Z",
+      "checkedAt": "2026-10-27T00:21:10.980Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: A 응답 없음",
+        "Google DNS 조회 미확인",
         "HTTPS HEAD unavailable"
       ],
       "configuredLocations": [],
@@ -3202,7 +3200,7 @@
       ],
       "cname": [],
       "httpStatus": 410,
-      "checkedAt": "2026-10-25T23:05:33.906Z",
+      "checkedAt": "2026-10-27T00:20:37.020Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3270,7 +3268,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.796Z",
+      "checkedAt": "2026-10-27T00:20:53.465Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -3288,7 +3286,7 @@
           "gscSiteUrl": "https://item79.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 17
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -3321,7 +3319,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:44.637Z",
+      "checkedAt": "2026-10-27T00:20:48.034Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -3341,7 +3339,7 @@
           "gscSiteUrl": "https://jasamall.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -3352,11 +3350,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://jasamall.sellerpit.kr/",
+          "siteUrl": "sc-domain:jasamall.sellerpit.kr",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:jasamall.sellerpit.kr",
+          "siteUrl": "https://jasamall.sellerpit.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -3380,7 +3378,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:53.140Z",
+      "checkedAt": "2026-10-27T00:20:52.545Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -3398,7 +3396,7 @@
           "gscSiteUrl": "https://jeompolab.com/",
           "ga4Status": "ok",
           "gscStatus": "auth_error",
-          "dailyUsers": 2
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -3431,7 +3429,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:49.979Z",
+      "checkedAt": "2026-10-27T00:20:51.731Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -3449,7 +3447,7 @@
           "gscSiteUrl": "https://joy.ehon365.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 6
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -3482,7 +3480,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.054Z",
+      "checkedAt": "2026-10-27T00:20:49.797Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -3535,7 +3533,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:56.959Z",
+      "checkedAt": "2026-10-27T00:21:15.845Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3579,7 +3577,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:44.204Z",
+      "checkedAt": "2026-10-27T00:20:47.039Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -3634,7 +3632,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:33.271Z",
+      "checkedAt": "2026-10-27T00:20:36.566Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3663,7 +3661,7 @@
           "gscSiteUrl": "https://klick.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 11
+          "dailyUsers": 19
         }
       ],
       "discoveredGa4": [
@@ -3702,7 +3700,7 @@
       ],
       "cname": [],
       "httpStatus": 410,
-      "checkedAt": "2026-10-25T23:05:33.223Z",
+      "checkedAt": "2026-10-27T00:20:36.400Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3766,7 +3764,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:53.028Z",
+      "checkedAt": "2026-10-27T00:20:52.013Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -3819,7 +3817,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.095Z",
+      "checkedAt": "2026-10-27T00:20:39.201Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3887,7 +3885,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.597Z",
+      "checkedAt": "2026-10-27T00:20:37.630Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3907,7 +3905,7 @@
           "gscSiteUrl": "https://legalser.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 1
         },
         {
           "id": "legalser-2",
@@ -3954,12 +3952,12 @@
       "addresses": [
         "104.21.47.121",
         "172.67.147.161",
-        "2606:4700:3035::ac43:93a1",
-        "2606:4700:3032::6815:2f79"
+        "2606:4700:3032::6815:2f79",
+        "2606:4700:3035::ac43:93a1"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:53.509Z",
+      "checkedAt": "2026-10-27T00:20:52.752Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 172.67.147.161, 104.21.47.121",
@@ -4010,7 +4008,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.593Z",
+      "checkedAt": "2026-10-27T00:20:49.404Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4061,7 +4059,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:49.880Z",
+      "checkedAt": "2026-10-27T00:20:52.000Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4114,7 +4112,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.328Z",
+      "checkedAt": "2026-10-27T00:20:50.001Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -4134,7 +4132,7 @@
           "gscSiteUrl": "https://localgeo.app/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 67
+          "dailyUsers": 65
         }
       ],
       "discoveredGa4": [
@@ -4167,7 +4165,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:33.222Z",
+      "checkedAt": "2026-10-27T00:20:36.332Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4186,8 +4184,8 @@
           "ga4PropertyId": "512019715",
           "gscSiteUrl": "sc-domain:luckyday.kr",
           "ga4Status": "ok",
-          "gscStatus": "ok",
-          "dailyUsers": 17
+          "gscStatus": "auth_error",
+          "dailyUsers": 9
         },
         {
           "id": "luckyday-2",
@@ -4231,7 +4229,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:53.111Z",
+      "checkedAt": "2026-10-27T00:21:09.978Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -4295,7 +4293,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:37.384Z",
+      "checkedAt": "2026-10-27T00:20:40.559Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4314,7 +4312,7 @@
           "ga4PropertyId": "544155633",
           "gscSiteUrl": "https://mbti.tasko.kr/",
           "ga4Status": "ok",
-          "gscStatus": "ok",
+          "gscStatus": "auth_error",
           "dailyUsers": 0
         }
       ],
@@ -4358,7 +4356,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:51.346Z",
+      "checkedAt": "2026-10-27T00:20:52.743Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 121.254.224.110",
@@ -4376,7 +4374,7 @@
           "gscSiteUrl": "https://mohana.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 34
+          "dailyUsers": 43
         }
       ],
       "discoveredGa4": [
@@ -4401,19 +4399,17 @@
       "host": "turbo1",
       "hostStatus": "public_route_verified",
       "accountHosts": [],
-      "publicDnsAddresses": [
-        "158.247.212.123"
-      ],
+      "publicDnsAddresses": [],
       "addresses": [
         "158.247.212.123"
       ],
       "cname": [],
-      "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.113Z",
+      "httpStatus": null,
+      "checkedAt": "2026-10-27T00:21:11.476Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 158.247.212.123",
-        "HTTPS HEAD 200"
+        "Google DNS 조회 미확인",
+        "HTTPS HEAD unavailable"
       ],
       "configuredLocations": [],
       "monetization": true,
@@ -4427,7 +4423,7 @@
           "gscSiteUrl": "https://nekau.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -4462,7 +4458,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:37.519Z",
+      "checkedAt": "2026-10-27T00:20:40.592Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4482,7 +4478,7 @@
           "gscSiteUrl": "https://nexttech7.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 8
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -4517,7 +4513,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.922Z",
+      "checkedAt": "2026-10-27T00:20:39.988Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4537,7 +4533,7 @@
           "gscSiteUrl": "https://nicewomen.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -4572,7 +4568,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:46.500Z",
+      "checkedAt": "2026-10-27T00:20:48.667Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -4621,7 +4617,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:41.451Z",
+      "checkedAt": "2026-10-27T00:20:44.230Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4665,11 +4661,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "sc-domain:notebook.klick.kr",
+          "siteUrl": "https://notebook.klick.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://notebook.klick.kr/",
+          "siteUrl": "sc-domain:notebook.klick.kr",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -4693,7 +4689,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.840Z",
+      "checkedAt": "2026-10-27T00:20:49.264Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -4746,7 +4742,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:49.166Z",
+      "checkedAt": "2026-10-27T00:20:51.029Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4801,7 +4797,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:44.315Z",
+      "checkedAt": "2026-10-27T00:20:47.092Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4821,7 +4817,7 @@
           "gscSiteUrl": "sc-domain:pethomepick.com",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -4832,11 +4828,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://pethomepick.com/",
+          "siteUrl": "sc-domain:pethomepick.com",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:pethomepick.com",
+          "siteUrl": "https://pethomepick.com/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -4860,7 +4856,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.802Z",
+      "checkedAt": "2026-10-27T00:20:37.906Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4889,7 +4885,7 @@
           "gscSiteUrl": "https://petinsuer.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 5
         }
       ],
       "discoveredGa4": [
@@ -4928,7 +4924,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:42.571Z",
+      "checkedAt": "2026-10-27T00:20:46.233Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -4947,7 +4943,7 @@
           "ga4PropertyId": "538418545",
           "gscSiteUrl": "https://petjigi.kr/",
           "ga4Status": "ok",
-          "gscStatus": "ok",
+          "gscStatus": "api_error",
           "dailyUsers": 2
         }
       ],
@@ -4977,7 +4973,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:40.869Z",
+      "checkedAt": "2026-10-27T00:20:43.523Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4996,7 +4992,7 @@
           "ga4PropertyId": "538379576",
           "gscSiteUrl": "https://phone.luckyday.kr/",
           "ga4Status": "ok",
-          "gscStatus": "ok",
+          "gscStatus": "auth_error",
           "dailyUsers": 0
         }
       ],
@@ -5008,11 +5004,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "sc-domain:phone.luckyday.kr",
+          "siteUrl": "https://phone.luckyday.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://phone.luckyday.kr/",
+          "siteUrl": "sc-domain:phone.luckyday.kr",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -5036,7 +5032,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:42.999Z",
+      "checkedAt": "2026-10-27T00:20:45.539Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5056,7 +5052,7 @@
           "gscSiteUrl": "https://picklefriend.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 70
+          "dailyUsers": 92
         }
       ],
       "discoveredGa4": [
@@ -5089,7 +5085,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:49.741Z",
+      "checkedAt": "2026-10-27T00:20:51.075Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5107,7 +5103,7 @@
           "gscSiteUrl": "https://picturebooks.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -5140,7 +5136,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.483Z",
+      "checkedAt": "2026-10-27T00:20:50.105Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -5160,7 +5156,7 @@
           "gscSiteUrl": "https://plategogo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -5182,25 +5178,21 @@
       "url": "https://pregnancy.ehon365.kr/",
       "enabled": true,
       "platform": "wordpress",
-      "host": "vercel",
-      "hostStatus": "public_route_verified",
+      "host": "unknown",
+      "hostStatus": "unverified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.16.193",
-        "216.150.1.193"
+        "13.140.77.84"
       ],
       "addresses": [
-        "216.150.16.129",
-        "216.150.1.129"
+        "13.140.77.84"
       ],
-      "cname": [
-        "62b030b7bfcc8d5d.vercel-dns-016.com"
-      ],
+      "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:42.861Z",
+      "checkedAt": "2026-10-27T00:20:45.893Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.16.193, 216.150.1.193",
+        "Google DNS: 13.140.77.84",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -5217,7 +5209,7 @@
           "gscSiteUrl": "https://pregnancy.ehon365.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -5250,7 +5242,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:40.923Z",
+      "checkedAt": "2026-10-27T00:20:43.655Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5270,7 +5262,7 @@
           "gscSiteUrl": "https://richyou.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -5305,7 +5297,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.160Z",
+      "checkedAt": "2026-10-27T00:20:49.697Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -5325,7 +5317,7 @@
           "gscSiteUrl": "https://rndatlas.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 6
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -5358,7 +5350,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:40.645Z",
+      "checkedAt": "2026-10-27T00:20:43.807Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5378,7 +5370,7 @@
           "gscSiteUrl": "https://roadways.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 16
+          "dailyUsers": 9
         }
       ],
       "discoveredGa4": [
@@ -5415,7 +5407,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:37.768Z",
+      "checkedAt": "2026-10-27T00:20:40.476Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5435,7 +5427,7 @@
           "gscSiteUrl": "https://runmania.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -5468,7 +5460,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:41.971Z",
+      "checkedAt": "2026-10-27T00:20:44.772Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -5488,7 +5480,7 @@
           "gscSiteUrl": "sc-domain:saju.tasko.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 85
+          "dailyUsers": 89
         }
       ],
       "discoveredGa4": [
@@ -5523,7 +5515,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:36.907Z",
+      "checkedAt": "2026-10-27T00:20:40.026Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5552,7 +5544,7 @@
           "gscSiteUrl": "https://sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -5591,7 +5583,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.690Z",
+      "checkedAt": "2026-10-27T00:20:50.542Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5611,7 +5603,7 @@
           "gscSiteUrl": "https://seniorlivingnote.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 27
+          "dailyUsers": 29
         }
       ],
       "discoveredGa4": [
@@ -5646,7 +5638,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:49.402Z",
+      "checkedAt": "2026-10-27T00:20:51.043Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5664,7 +5656,7 @@
           "gscSiteUrl": "https://shotsetup.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -5692,8 +5684,8 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.16.193",
-        "216.150.1.193"
+        "216.150.1.1",
+        "216.150.16.1"
       ],
       "addresses": [
         "216.150.1.193",
@@ -5703,10 +5695,10 @@
         "7559dbd876501752.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:43.219Z",
+      "checkedAt": "2026-10-27T00:20:46.016Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.16.193, 216.150.1.193",
+        "Google DNS: 216.150.1.1, 216.150.16.1",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [
@@ -5756,7 +5748,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:43.641Z",
+      "checkedAt": "2026-10-27T00:20:46.755Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5776,7 +5768,7 @@
           "gscSiteUrl": "https://smallhomepick.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 21
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -5811,7 +5803,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:42.560Z",
+      "checkedAt": "2026-10-27T00:20:45.388Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5831,7 +5823,7 @@
           "gscSiteUrl": "https://smart.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -5866,7 +5858,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:35.043Z",
+      "checkedAt": "2026-10-27T00:20:37.953Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -5886,7 +5878,7 @@
           "gscSiteUrl": "https://softwa.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 4
+          "dailyUsers": 8
         },
         {
           "id": "softwa-2",
@@ -5934,7 +5926,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.466Z",
+      "checkedAt": "2026-10-27T00:20:49.326Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5987,7 +5979,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:45.045Z",
+      "checkedAt": "2026-10-27T00:20:47.749Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6040,7 +6032,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:37.154Z",
+      "checkedAt": "2026-10-27T00:20:40.090Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -6069,7 +6061,7 @@
           "gscSiteUrl": "https://spinkorea.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 5
+          "dailyUsers": 13
         }
       ],
       "discoveredGa4": [
@@ -6106,7 +6098,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:40.132Z",
+      "checkedAt": "2026-10-27T00:20:42.854Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6126,7 +6118,7 @@
           "gscSiteUrl": "https://sssaass.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -6161,7 +6153,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.017Z",
+      "checkedAt": "2026-10-27T00:20:36.638Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6181,7 +6173,7 @@
           "gscSiteUrl": "sc-domain:temon.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 38
+          "dailyUsers": 36
         }
       ],
       "discoveredGa4": [
@@ -6192,11 +6184,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "sc-domain:temon.kr",
+          "siteUrl": "https://temon.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://temon.kr/",
+          "siteUrl": "sc-domain:temon.kr",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -6218,7 +6210,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:38.538Z",
+      "checkedAt": "2026-10-27T00:20:41.211Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6238,7 +6230,7 @@
           "gscSiteUrl": "sc-domain:tennisfrens.com",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 57
+          "dailyUsers": 58
         }
       ],
       "discoveredGa4": [
@@ -6271,7 +6263,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:38.369Z",
+      "checkedAt": "2026-10-27T00:20:41.832Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6329,7 +6321,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:38.247Z",
+      "checkedAt": "2026-10-27T00:20:40.819Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -6386,7 +6378,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:38.822Z",
+      "checkedAt": "2026-10-27T00:20:41.567Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6406,7 +6398,7 @@
           "gscSiteUrl": "https://todaypharm.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 148
+          "dailyUsers": 2850
         }
       ],
       "discoveredGa4": [
@@ -6443,7 +6435,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:40.534Z",
+      "checkedAt": "2026-10-27T00:20:43.205Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6472,7 +6464,7 @@
           "gscSiteUrl": "https://todayshops.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -6507,7 +6499,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.513Z",
+      "checkedAt": "2026-10-27T00:21:13.336Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6555,7 +6547,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:35.858Z",
+      "checkedAt": "2026-10-27T00:20:38.850Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6575,7 +6567,7 @@
           "gscSiteUrl": "https://trave.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         },
         {
           "id": "trave-2",
@@ -6619,10 +6611,10 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:53.704Z",
+      "checkedAt": "2026-10-27T00:21:10.976Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: A 응답 없음",
+        "Google DNS 조회 미확인",
         "HTTPS HEAD unavailable"
       ],
       "configuredLocations": [],
@@ -6667,7 +6659,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:44.193Z",
+      "checkedAt": "2026-10-27T00:20:47.170Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6687,7 +6679,7 @@
           "gscSiteUrl": "https://travel.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -6722,7 +6714,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:34.311Z",
+      "checkedAt": "2026-10-27T00:20:37.526Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6751,7 +6743,7 @@
           "gscSiteUrl": "https://travelpang.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 8
         }
       ],
       "discoveredGa4": [
@@ -6790,7 +6782,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.085Z",
+      "checkedAt": "2026-10-27T00:20:48.810Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -6810,7 +6802,7 @@
           "gscSiteUrl": "https://wattbenchs.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -6839,7 +6831,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-10-25T23:05:42.256Z",
+      "checkedAt": "2026-10-27T00:20:45.598Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -6887,19 +6879,19 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.198.79.195",
-        "64.29.17.195"
+        "216.198.79.3",
+        "64.29.17.3"
       ],
       "addresses": [
-        "216.198.79.195",
-        "64.29.17.195"
+        "64.29.17.3",
+        "216.198.79.3"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.721Z",
+      "checkedAt": "2026-10-27T00:21:13.249Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.198.79.195, 64.29.17.195",
+        "Google DNS: 216.198.79.3, 64.29.17.3",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [],
@@ -6944,7 +6936,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:48.840Z",
+      "checkedAt": "2026-10-27T00:20:50.354Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6964,7 +6956,7 @@
           "gscSiteUrl": "https://wedfairguide.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 15
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -6990,21 +6982,21 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.1.193",
-        "216.150.16.193"
+        "216.150.16.1",
+        "216.150.1.1"
       ],
       "addresses": [
-        "216.150.1.193",
-        "216.150.16.193"
+        "216.150.16.193",
+        "216.150.1.193"
       ],
       "cname": [
         "3497de2890fedbbb.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:53.375Z",
+      "checkedAt": "2026-10-27T00:20:52.391Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.1.193, 216.150.16.193",
+        "Google DNS: 216.150.16.1, 216.150.1.1",
         "HTTPS HEAD 200"
       ],
       "configuredLocations": [],
@@ -7019,7 +7011,7 @@
           "gscSiteUrl": "https://wonon.ehon365.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -7052,7 +7044,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-10-25T23:05:45.984Z",
+      "checkedAt": "2026-10-27T00:20:48.081Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -7109,7 +7101,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:42.410Z",
+      "checkedAt": "2026-10-27T00:20:44.863Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -7164,7 +7156,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:45.927Z",
+      "checkedAt": "2026-10-27T00:20:48.342Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -7184,7 +7176,7 @@
           "gscSiteUrl": "https://youkamap.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -7217,7 +7209,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:54.621Z",
+      "checkedAt": "2026-10-27T00:21:13.390Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -7245,11 +7237,11 @@
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://yourtripgo.com/",
+          "siteUrl": "sc-domain:yourtripgo.com",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:yourtripgo.com",
+          "siteUrl": "https://yourtripgo.com/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -7273,7 +7265,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-10-25T23:05:47.315Z",
+      "checkedAt": "2026-10-27T00:20:49.039Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
