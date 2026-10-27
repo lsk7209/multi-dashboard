@@ -13,6 +13,45 @@
   --shadow: 0 6px 18px rgba(21, 25, 34, 0.06);
 }
 
+.affiliate-marketing-page .panel { min-width: 0; }
+.affiliate-connection { padding: 28px; }
+.affiliate-section-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.affiliate-section-heading h2 { margin: 4px 0 0; font-size: 22px; }
+.affiliate-connection p, .affiliate-readiness p, .affiliate-workflow span { color: var(--muted); line-height: 1.8; font-size: 14px; overflow-wrap: anywhere; }
+.affiliate-connection-badge { border-radius: 20px; padding: 8px 12px; background: var(--accent-weak); color: var(--accent); font-size: 12px; }
+.affiliate-open-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+.affiliate-primary-action { display: inline-flex; align-items: center; gap: 12px; background: var(--accent); color: white; border-radius: 8px; padding: 14px 20px; text-decoration: none; font-size: 14px; font-weight: 700; }
+.affiliate-primary-action:hover { background: #095e58; }
+.affiliate-open-actions > span { color: var(--muted); font-size: 13px; }
+.affiliate-access-note { padding: 14px 16px; background: var(--bg); border-radius: 8px; }
+.affiliate-settings { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 24px; }
+.affiliate-settings summary { cursor: pointer; font-size: 14px; font-weight: 700; padding: 4px 0; }
+.affiliate-settings form { margin-top: 18px; display: grid; gap: 10px; }
+.affiliate-settings label { font-size: 14px; font-weight: 700; }
+.affiliate-settings input { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.affiliate-settings form p { margin: 0; font-size: 12px; }
+.affiliate-form-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.affiliate-form-actions button { border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; background: var(--panel); color: var(--ink); cursor: pointer; }
+.affiliate-form-actions button[type="submit"] { background: var(--accent-weak); color: var(--accent); border-color: var(--accent); }
+.affiliate-form-actions button:disabled { opacity: .5; cursor: wait; }
+.affiliate-setting-feedback { margin-bottom: 0; }
+.affiliate-setting-feedback:empty { display: none; }
+.affiliate-readiness { margin: 32px 0; }
+.affiliate-readiness > h2, .affiliate-workflow h2 { font-size: 20px; margin: 0 0 18px; }
+.affiliate-readiness-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.affiliate-readiness-grid .panel { padding: 22px; }
+.affiliate-card-label { color: var(--muted); font-size: 12px; }
+.affiliate-readiness h3 { font-size: 17px; margin: 12px 0 8px; }
+.affiliate-readiness p { margin: 0; }
+.affiliate-workflow { padding: 28px; }
+.affiliate-workflow ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding-left: 22px; margin-bottom: 0; }
+.affiliate-workflow li { padding-left: 4px; }
+.affiliate-workflow strong, .affiliate-workflow span { display: block; }
+.affiliate-workflow strong { font-size: 14px; margin-bottom: 8px; }
+.affiliate-marketing-page :is(a, button, input, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 950px) { .affiliate-readiness-grid { grid-template-columns: 1fr; } .affiliate-workflow ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .affiliate-connection, .affiliate-workflow { padding: 20px; } .affiliate-workflow ol { grid-template-columns: 1fr; gap: 18px; } .affiliate-primary-action { width: 100%; justify-content: center; } }
+
 .servers-page { max-width: 1440px; }
 .servers-intro { color: var(--muted); margin: 12px 0 28px; line-height: 1.6; }
 .server-search { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
@@ -3267,3 +3306,47 @@ code {
   grid-template-columns: minmax(0, 1fr);
   overflow-wrap: anywhere;
 }
+
+/* Server-centric workspace, revision 2026-10-27. */
+.workspace-page { max-width: 1600px; }
+.workspace-overview { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:24px 0; }
+.workspace-overview article { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; display:grid; gap:10px; }
+.workspace-overview span { font-size:13px; color:var(--muted); }
+.workspace-overview strong { font-size:32px; font-variant-numeric:tabular-nums; }
+.workspace-overview small { color:var(--muted); font-size:12px; }
+.workspace-sites { scroll-margin-top:20px; }
+.workspace-section-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin:32px 0 16px; }
+.workspace-section-heading h2,.workspace-notes h2 { font-size:20px; margin:0; }
+.workspace-section-heading p { color:var(--muted); font-size:13px; margin:0; }
+.workspace-focus { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; margin:16px 0 24px; }
+.workspace-focus button { display:grid; grid-template-columns:1fr auto; gap:8px; text-align:left; background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:10px; padding:14px; font:inherit; cursor:pointer; min-width:0; }
+.workspace-focus button[aria-pressed="true"] { background:var(--accent-weak); border-color:var(--accent); }
+.workspace-focus span { font-size:13px; font-weight:700; }
+.workspace-focus strong { color:var(--accent); }
+.workspace-focus small { grid-column:1/-1; font-size:11px; color:var(--muted); line-height:1.5; }
+.workspace-reset { color:var(--accent); background:var(--panel); border:1px solid var(--line); padding:9px 12px; border-radius:6px; cursor:pointer; }
+.workspace-table-hint { color:var(--muted); font-size:12px; line-height:1.7; }
+.workspace-table { min-width:1180px; }
+.workspace-table td,.workspace-table th { padding:15px 12px; }
+.workspace-table .workspace-domain { min-width:230px; max-width:300px; white-space:normal; }
+.workspace-domain > a { font-weight:700; overflow-wrap:anywhere; }
+.workspace-issues { margin-top:8px; display:flex; gap:4px; flex-wrap:wrap; }
+.workspace-issues span { color:var(--warning); font-size:11px; line-height:1.5; }
+.workspace-issues span+span:before { content:"· "; }
+.workspace-issues .workspace-no-issue { color:var(--muted); }
+.workspace-detail-toggle { color:var(--accent); border:0; background:transparent; padding:8px 0 0; cursor:pointer; font:inherit; font-size:12px; }
+.workspace-stage { display:block; color:var(--muted); font-size:11px; margin-top:6px; }
+.workspace-growing { color:#08786f; }
+.workspace-falling,.workspace-check { color:#aa4518; }
+.workspace-table .workspace-approval { max-width:160px; white-space:normal; }
+.workspace-approval span { line-height:1.5; }
+.workspace-detail-row > td { background:var(--bg); white-space:normal; }
+.workspace-detail-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+.workspace-detail-grid > div { min-width:0; overflow-wrap:anywhere; }
+.workspace-detail-grid strong { font-size:13px; }
+.workspace-detail-grid p,.workspace-detail-grid small { font-size:12px; line-height:1.7; color:var(--muted); margin:5px 0; }
+.workspace-notes { margin-top:32px; padding:24px 0; border-top:1px solid var(--line); color:var(--muted); font-size:12px; line-height:1.9; scroll-margin-top:20px; }
+.workspace-notice { padding:14px; border:1px solid #e5b65a; background:var(--warning-weak); border-radius:8px; font-size:13px; line-height:1.7; }
+.workspace-page button:focus-visible,.workspace-page a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:1100px) { .workspace-focus { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:600px) { .workspace-overview { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; } .workspace-overview article { padding:14px; } .workspace-overview strong { font-size:28px; } .workspace-focus { grid-template-columns:repeat(2,minmax(0,1fr)); } .workspace-focus button { padding:12px; } .workspace-page .topbar-title h1 { font-size:28px; } .workspace-header .status-pill { font-size:11px; line-height:1.6; } }

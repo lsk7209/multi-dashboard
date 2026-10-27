@@ -101,3 +101,10 @@ For complex coding tasks, use the Goal-Harness workflow.
 - The operator confirms that Kickstart sites have been migrated to Turbo1/Turbo2. Treat the old Kickstart account inventory as retained source/rollback evidence, not proof of current production hosting or unfinished migration.
 - Reconcile each site's actual Turbo1/Turbo2 destination using current management/account and serving evidence. If public DNS still points at the former source or the exact destination is unverified, show that discrepancy explicitly rather than classifying the migration as incomplete or silently assigning a target.
 - This correction does not authorize migration replay, source removal, DNS changes, or cancellation.
+
+
+## 2026-10-28 Dashboard Menu Correction
+
+- Keep exactly two top-level menus: 서버별 사이트 and 제휴마케팅. The home page is the server workspace. Retire the old tabbed dashboard, affiliate inventory and banner-console pages; old URLs redirect to their replacement.
+- The 제휴마케팅 page targets the separate Affiliate OS project, not ad-manage. Current private SSH administrator navigation is distinct from API/data integration and site publication. Do not label saved URLs or old static inventory counters as live integration.
+- Preserve server inventory, analytics collectors, private source data and legacy runtime APIs while replacing these pages. Changes to other sites or provider/account settings require their own scope.

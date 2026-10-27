@@ -10,12 +10,24 @@ export interface ServerSiteRow {
   ga4Status: string;
   dailyUsers: number | null;
   weeklyUsers: number | null;
+  monthlyUsers?: number | null;
+  previousWeeklyUsers?: number | null;
+  weeklyChange?: number | null;
   gscStatus: string;
   clicks: number | null;
   impressions: number | null;
+  ctr?: number | null;
+  position?: number | null;
+  checkedAt?: string | null;
+  hostStatus?: string;
+  stagingTargets?: Array<{ host: string; checkedAt: string }>;
+  issues?: string[];
 }
 
-export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "host" | "approval" | "bindings"> & Partial<Pick<InventorySite, "httpStatus">>, stats: SiteStat[]): ServerSiteRow {
+const finiteMetric = (value: number | undefined): number | null =>
+  typeof value === "number" && Number.isFinite(value) ? value : null;
+
+export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "host" | "approval" | "bindings"> & Partial<Pick<InventorySite, "httpStatus" | "checkedAt" | "hostStatus" | "stagingTargets" | "issues">>, stats: SiteStat[]): ServerSiteRow {
   const sameDomain = (url: string) => {
     try { return new URL(url).hostname.replace(/^www\./, "") === site.domain.replace(/^www\./, ""); }
     catch { return false; }
@@ -26,13 +38,27 @@ export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "
   }));
   const ga4 = candidates.find(({ binding, stat }) => binding.ga4Status === "ok" && stat?.ga4Status === "ok" && stat.ga4PropertyId === binding.ga4PropertyId);
   const gsc = candidates.find(({ binding, stat }) => binding.gscStatus === "ok" && stat?.gscStatus === "ok" && stat.gscSiteUrl === binding.gscSiteUrl && Boolean(binding.gscSiteUrl));
+  const weeklyUsers = finiteMetric(ga4?.stat?.last7Days?.activeUsers);
+  const previousWeeklyUsers = finiteMetric(ga4?.stat?.previous7Days?.activeUsers);
+  const weeklyChange = weeklyUsers === null || previousWeeklyUsers === null
+    ? null
+    : previousWeeklyUsers === 0
+      ? weeklyUsers === 0 ? 0 : null
+      : (weeklyUsers - previousWeeklyUsers) / previousWeeklyUsers * 100;
   return { domain: site.domain, url: site.url, host: site.host, approval: site.approval,
     httpStatus: site.httpStatus ?? null,
+    checkedAt: site.checkedAt ?? null,
+    ...(site.hostStatus !== undefined ? { hostStatus: site.hostStatus } : {}),
+    ...(site.stagingTargets !== undefined ? { stagingTargets: site.stagingTargets } : {}),
+    ...(site.issues !== undefined ? { issues: site.issues } : {}),
     ga4Status: ga4 ? "ok" : bindings.find(binding => ["binding_mismatch", "binding_unknown"].includes(binding.ga4Status))?.ga4Status ?? candidates.find(({ stat }) => stat?.ga4Status && stat.ga4Status !== "ok")?.stat?.ga4Status ?? (bindings.length ? "binding_unknown" : "not_collected"),
-    dailyUsers: ga4?.stat?.last1Days?.activeUsers ?? null,
-    weeklyUsers: ga4?.stat?.last7Days?.activeUsers ?? null,
+    dailyUsers: finiteMetric(ga4?.stat?.last1Days?.activeUsers),
+    weeklyUsers, monthlyUsers: finiteMetric(ga4?.stat?.last30Days?.activeUsers),
+    previousWeeklyUsers, weeklyChange,
     gscStatus: gsc ? "ok" : candidates.find(({ stat }) => stat?.gscStatus && stat.gscStatus !== "ok")?.stat?.gscStatus ?? bindings.find(binding => binding.gscStatus !== "ok")?.gscStatus ?? "not_collected",
-    clicks: gsc?.stat?.gscLast7Days?.clicks ?? null,
-    impressions: gsc?.stat?.gscLast7Days?.impressions ?? null,
+    clicks: finiteMetric(gsc?.stat?.gscLast7Days?.clicks),
+    impressions: finiteMetric(gsc?.stat?.gscLast7Days?.impressions),
+    ctr: finiteMetric(gsc?.stat?.gscLast7Days?.ctr),
+    position: finiteMetric(gsc?.stat?.gscLast7Days?.position),
   };
 }

@@ -1,39 +1,63 @@
 import { expect, test } from "@playwright/test";
 
-test("top navigation opens the dedicated affiliate operations page", async ({
-  page,
-}) => {
+const key = "multi-dashboard.affiliate-admin-url.v1";
+
+test("two menus open the server workspace and Affiliate OS page", async ({ page }) => {
   await page.goto("/");
-
-  await page.getByRole("link", { name: "제휴" }).click();
-
-  await expect(page).toHaveURL(/\/affiliate$/);
-  await expect(
-    page.locator(".header-menu").getByRole("link", { name: "제휴" }),
-  ).toHaveAttribute("aria-current", "page");
-  await expect(page.getByRole("heading", { level: 1, name: "제휴" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "제휴 운영 저장소" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "우선순위 항목" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "배너 적용 준비" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "프로그램 저장소" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "운영 규칙" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "리플알바 고단가 후보" })).toBeVisible();
-  await expect(page.locator("body")).toContainText("LinkPrice");
-  await expect(page.locator("body")).toContainText("Adpick");
-  await expect(page.locator("body")).toContainText("API");
+  const menu = page.getByRole("navigation", { name: "주 메뉴" });
+  await expect(menu.getByRole("link")).toHaveText(["서버별 사이트", "제휴마케팅"]);
+  await expect(menu.getByRole("link", { name: "서버별 사이트" })).toHaveAttribute("aria-current", "page");
+  await expect(page.getByRole("tab")).toHaveCount(0);
+  await menu.getByRole("link", { name: "제휴마케팅", exact: true }).click();
+  await expect(page).toHaveURL(/\/affiliate-marketing$/);
+  await expect(page.getByRole("heading", { level: 1, name: "제휴마케팅" })).toBeVisible();
+  await expect(menu.getByRole("link", { name: "제휴마케팅", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(page.getByText("실시간 상태 미확인", { exact: true })).toBeVisible();
 });
 
-test("affiliate inventory is excluded from dashboard tabs", async ({ page }) => {
-  await page.goto("/");
+for (const route of ["/affiliate", "/banner-management"]) {
+  test(`retired ${route} redirects to new marketing workspace`, async ({ page }) => {
+    await page.goto(route);
+    await expect(page).toHaveURL(/\/affiliate-marketing$/);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("제휴마케팅");
+  });
+}
 
-  await expect(page.getByRole("tab", { name: /제휴/ })).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "제휴" })).toHaveAttribute(
-    "href",
-    "/affiliate",
-  );
-  await expect(page.getByRole("link", { name: "배너", exact: true })).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "배너 콘솔" })).toHaveAttribute(
-    "href",
-    "/banner-management",
-  );
+test("settings persist, reject unsafe HTTP and reset without changing services", async ({ page }) => {
+  await page.goto("/affiliate-marketing");
+  await page.getByText("접속 주소 설정", { exact: true }).click();
+  const input = page.getByLabel("Affiliate OS 관리자 주소", { exact: true });
+  const save = page.getByRole("button", { name: "접속 주소 저장", exact: true });
+  const link = page.getByRole("link", { name: "Affiliate OS 관리자 열기" });
+  await input.fill("http://unsafe.example.com/admin"); await save.click();
+  await expect(page.getByRole("status")).toContainText("HTTPS 주소");
+  await expect(link).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await input.fill("https://affiliate.example.com/admin"); await save.click();
+  await expect(link).toHaveAttribute("href", "https://affiliate.example.com/admin");
+  await expect(link).toHaveAttribute("target", "_blank");
+  await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  await page.reload();
+  await expect(link).toHaveAttribute("href", "https://affiliate.example.com/admin");
+  await page.getByText("접속 주소 설정", { exact: true }).click();
+  await page.getByRole("button", { name: "기본 주소로 복원" }).click();
+  await expect(link).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  expect(await page.evaluate(key => localStorage.getItem(key), key)).toBeNull();
+});
+
+test("corrupt stored URL falls back safely", async ({ page }) => {
+  await page.addInitScript(key => localStorage.setItem(key, "javascript:alert(1)"), key);
+  await page.goto("/affiliate-marketing");
+  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(page.getByRole("status")).toContainText("저장된 주소가 올바르지 않아");
+});
+
+test("unavailable storage reports save failure", async ({ page }) => {
+  await page.addInitScript(() => { Object.defineProperty(Storage.prototype, "setItem", { value: () => { throw new Error("blocked"); } }); });
+  await page.goto("/affiliate-marketing");
+  await page.getByText("접속 주소 설정", { exact: true }).click();
+  await page.getByLabel("Affiliate OS 관리자 주소", { exact: true }).fill("https://affiliate.example.com/admin");
+  await page.getByRole("button", { name: "접속 주소 저장", exact: true }).click();
+  await expect(page.getByRole("status")).toContainText("주소를 저장하지 못했습니다");
+  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
 });
