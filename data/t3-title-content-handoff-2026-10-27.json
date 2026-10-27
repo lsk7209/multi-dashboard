@@ -1,0 +1,200 @@
+{
+  "generatedAt": "2026-10-27T09:46:42.788Z",
+  "mutationStatus": {
+    "cmsMutationPerformed": false,
+    "productionDeploymentPerformed": false,
+    "searchConsoleMutationPerformed": false,
+    "adsenseMutationPerformed": false,
+    "titleOrBodyMutationPerformed": false
+  },
+  "dashboardEvidence": {
+    "snapshotTimestamp": "2026-10-27T09:45:07.000Z",
+    "statsPath": "data\\site-stats.json",
+    "planPath": "data\\fleet-optimization-plan-2026-10-27.json",
+    "sitesPath": "scripts\\setup\\sites.yaml",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": [
+      "skipped_refresh_failed:gsc:auth_error:17",
+      "skipped_refresh_failed:adsense:api_error:21",
+      "skipped_refresh_failed:adsense:missing_config:3",
+      "skipped_refresh_failed:adsense_collector:transient_error:21",
+      "skipped_refresh_failed:ads_txt:api_error:20",
+      "skipped_refresh_failed:ads_txt:missing_config:4",
+      "skipped_refresh_failed:ads_txt_collector:transient_error:20"
+    ]
+  },
+  "summary": {
+    "siteCount": 4,
+    "titleHandoffCount": 4,
+    "contentHandoffCount": 2
+  },
+  "sites": [
+    {
+      "host": "yungyanggogo.kr",
+      "siteId": "yungyanggogo",
+      "url": "https://yungyanggogo.kr/",
+      "localPath": "D:\\web\\yungyanggogo",
+      "platform": "nextjs",
+      "wpRestBase": "",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        1,
+        2
+      ],
+      "metrics": {
+        "gscImpressions30d": 6807,
+        "gscClicks30d": 57,
+        "gscCtr30d": 0.008373732921992068,
+        "gscPosition30d": 7.18172469516674,
+        "ga4ActiveUsers30d": 86
+      },
+      "topQueries": [
+        {
+          "query": "갈비탕 단백질",
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 9.61111111111111
+        },
+        {
+          "query": "과자 영양성분표",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 8.4
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://yungyanggogo.kr/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title + content workflow; do not directly edit live titles or article bodies from this handoff."
+    },
+    {
+      "host": "sorimate.com",
+      "siteId": "sorimate",
+      "url": "https://sorimate.com/",
+      "localPath": "",
+      "platform": "wordpress",
+      "wpRestBase": "https://sorimate.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff",
+        "content_handoff"
+      ],
+      "planRanks": [
+        3,
+        4
+      ],
+      "metrics": {
+        "gscImpressions30d": 4439,
+        "gscClicks30d": 27,
+        "gscCtr30d": 0.006082451002478036,
+        "gscPosition30d": 8.368776751520613,
+        "ga4ActiveUsers30d": 11
+      },
+      "topQueries": [
+        {
+          "query": "gwaenchanayo",
+          "clicks": 0,
+          "impressions": 24,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "query": "eolmayeyo meaning in english",
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "query": "jal meokgesseumnida",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 5.916666666666667
+        }
+      ],
+      "technicalStatus": {
+        "sitemapPath": "https://sorimate.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "",
+        "adsTxtStatus": ""
+      },
+      "recommendedNextAction": "Evidence collection only: no controlled local content source is registered; do not create or edit production content."
+    },
+    {
+      "host": "petinsuer.com",
+      "siteId": "petinsuer-2",
+      "url": "https://petinsuer.com/",
+      "localPath": "D:\\web\\petinsuercom",
+      "platform": "wordpress",
+      "wpRestBase": "https://petinsuer.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        6
+      ],
+      "metrics": {
+        "gscImpressions30d": 636,
+        "gscClicks30d": 9,
+        "gscCtr30d": 0.014150943396226415,
+        "gscPosition30d": 8.716981132075471,
+        "ga4ActiveUsers30d": 148
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://petinsuer.com/sitemap_index.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    },
+    {
+      "host": "patentgogo.com",
+      "siteId": "patentgogo",
+      "url": "https://patentgogo.com/",
+      "localPath": "D:\\web\\tukhugogo",
+      "platform": "nextjs",
+      "wpRestBase": "https://patentgogo.com/wp-json/wp/v2",
+      "actions": [
+        "title_handoff"
+      ],
+      "planRanks": [
+        7
+      ],
+      "metrics": {
+        "gscImpressions30d": 302,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 10.943708609271523,
+        "ga4ActiveUsers30d": 31
+      },
+      "topQueries": [],
+      "technicalStatus": {
+        "sitemapPath": "https://patentgogo.com/sitemap.xml",
+        "sitemapWarnings": 0,
+        "sitemapErrors": 0,
+        "adsenseStatus": "ok",
+        "adsTxtStatus": "ok"
+      },
+      "recommendedNextAction": "Title workflow only; do not directly edit live titles from this handoff."
+    }
+  ],
+  "stopConditions": [
+    "Do not edit WordPress titles, slugs, article bodies, headings, or in-body internal links from this handoff.",
+    "Do not publish drafts, schedule posts, submit sitemaps, ping IndexNow, deploy, or mutate CMS/API state without an explicit apply step and rollback path.",
+    "If localPath is missing or dirty, collect evidence only and do not create content in production.",
+    "Re-run pnpm stats:update and pnpm fleet:optimize:plan before using this handoff after the next dashboard data window."
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-10-27T09:46:42.838Z",
+  "date": "2026-10-27",
+  "dryRun": false,
+  "skipStatsUpdate": true,
+  "skipApiDataAudit": true,
+  "productionMutationPerformed": false,
+  "cmsMutationPerformed": false,
+  "searchConsoleMutationPerformed": false,
+  "adsenseMutationPerformed": false,
+  "titleOrBodyMutationPerformed": false,
+  "commands": [
+    {
+      "id": "gsc-permission-audit",
+      "args": [
+        "gsc:permissions:audit"
+      ]
+    },
+    {
+      "id": "adsense-queue",
+      "args": [
+        "adsense:queue"
+      ]
+    },
+    {
+      "id": "fleet-optimize-plan",
+      "args": [
+        "exec",
+        "tsx",
+        "scripts/setup/create-fleet-optimization-plan.ts",
+        "--date=2026-10-27"
+      ]
+    },
+    {
+      "id": "t3-title-content-handoff",
+      "args": [
+        "exec",
+        "tsx",
+        "scripts/setup/create-t3-title-content-handoff.ts",
+        "--date=2026-10-27"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "gsc-permission-audit",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 gsc:permissions:audit E:\\web\\multi-dashboard\n> tsx scripts/setup/audit-gsc-permissions.ts\n\nWrote data\\gsc-permission-audit-2026-10-27.json and docs\\work-orders\\gsc-permission-audit-2026-10-27.md. snapshot=2026-10-27T09:45:07.000Z auditedRows=17 ownerAccess=0 restrictedAccess=0 unverified=13 notListed=4\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "adsense-queue",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "\n> multi-dashboard@0.1.0 adsense:queue E:\\web\\multi-dashboard\n> tsx scripts/setup/create-adsense-remediation-queue.ts\n\nWrote data\\adsense-remediation-queue-2026-10-27.json and docs\\work-orders\\adsense\\remediation-queue-2026-10-27.md. snapshot=2026-10-27T09:45:07.000Z reviewedRows=82 problemRows=21 ordinaryAdsenseProof=13 approvedRootSubdomainScope=0 gscAuthTelemetry=8 ga4ConfigTelemetry=0\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "fleet-optimize-plan",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "Wrote data\\fleet-optimization-plan-2026-10-27.json and docs\\work-orders\\fleet-optimization-plan-2026-10-27.md. snapshot=2026-10-27T09:45:07.000Z seoCandidates=20 adsenseProblemRows=21\n",
+      "stderrTail": ""
+    },
+    {
+      "id": "t3-title-content-handoff",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "Wrote data\\t3-title-content-handoff-2026-10-27.json and docs\\work-orders\\t3-title-content-handoff-2026-10-27.md. snapshot=2026-10-27T09:45:07.000Z sites=4 titleHandoff=4 contentHandoff=2\n",
+      "stderrTail": ""
+    }
+  ],
+  "verification": {
+    "statsSnapshot": "2026-10-27T09:45:07.000Z",
+    "planSnapshot": "2026-10-27T09:45:07.000Z",
+    "handoffSnapshot": "2026-10-27T09:45:07.000Z",
+    "refreshFailedSources": [
+      "skipped_refresh_failed:gsc:auth_error:17",
+      "skipped_refresh_failed:adsense:api_error:21",
+      "skipped_refresh_failed:adsense:missing_config:3",
+      "skipped_refresh_failed:adsense_collector:transient_error:21",
+      "skipped_refresh_failed:ads_txt:api_error:20",
+      "skipped_refresh_failed:ads_txt:missing_config:4",
+      "skipped_refresh_failed:ads_txt_collector:transient_error:20"
+    ],
+    "refreshFailureCount": 7,
+    "refreshFailuresBlockReadiness": true,
+    "planMatchesStats": true,
+    "handoffMatchesStats": true,
+    "handoffMutationFlagsFalse": true,
+    "handoffSiteCount": 4,
+    "titleHandoffCount": 4,
+    "contentHandoffCount": 2
+  },
+  "summary": {
+    "commands": 4,
+    "pass": 4,
+    "fail": 0,
+    "skipped": 0
+  },
+  "stopCondition": "This chain is local and non-mutating. It only refreshes dashboard evidence and handoff artifacts; it does not authorize CMS edits, title/body edits, Search Console mutation, AdSense mutation, publishing, or deployment."
+}

@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-10-18T15:01:38.454Z",
-  "checkedAt": "2026-10-18T15:01:43.892Z",
+  "attemptedAt": "2026-10-27T09:45:13.094Z",
+  "checkedAt": "2026-10-27T09:45:18.509Z",
   "listComplete": true,
   "proofDomains": [
     "2mlab.kr",
@@ -25,6 +25,7 @@
     "crepika.com",
     "discparty.com",
     "dog.klick.kr",
+    "dog.nekau.com",
     "dogbreedcost.com",
     "dogspang.kr",
     "dogswhere.com",
@@ -39,8 +40,11 @@
     "ezfunnel.kr",
     "fastjob.kr",
     "finan.kr",
+    "finance.2mlab.kr",
+    "food.2mlab.kr",
     "go.sellerpit.kr",
     "goesku.com",
+    "gold79.kr",
     "gong.luckyday.kr",
     "gong365.kr",
     "gover.kr",
@@ -50,7 +54,9 @@
     "healfood.kr",
     "healthgotoo.com",
     "homeimer.com",
+    "hos.dogspang.kr",
     "insupang.com",
+    "item79.com",
     "jasamall.sellerpit.kr",
     "jeompolab.com",
     "joy.ehon365.kr",
@@ -69,6 +75,7 @@
     "luxurytraver.com",
     "mbti.tasko.kr",
     "mohana.kr",
+    "nekau.com",
     "nexttech7.com",
     "nicewomen.kr",
     "nongsusangogo.kr",
@@ -105,7 +112,9 @@
     "today2424.kr",
     "todaypharm.kr",
     "todayshops.kr",
+    "toolnavigo.com",
     "trave.kr",
+    "travel.dogspang.kr",
     "travel.sellerpit.kr",
     "travelpang.kr",
     "wattbenchs.com",
@@ -120,10 +129,15 @@
   "mutationPerformed": false,
   "totalSites": 13,
   "stateCounts": {
+    "GETTING_READY": 1,
     "READY": 11,
-    "GETTING_READY": 2
+    "NEEDS_ATTENTION": 1
   },
   "sites": [
+    {
+      "domain": "dogswhere.com",
+      "rawState": "GETTING_READY"
+    },
     {
       "domain": "ehon365.kr",
       "rawState": "READY"
@@ -149,10 +163,6 @@
       "rawState": "READY"
     },
     {
-      "domain": "petjigi.kr",
-      "rawState": "GETTING_READY"
-    },
-    {
       "domain": "sellerpit.kr",
       "rawState": "READY"
     },
@@ -166,7 +176,7 @@
     },
     {
       "domain": "seniorlivingnote.com",
-      "rawState": "GETTING_READY"
+      "rawState": "NEEDS_ATTENTION"
     }
   ]
 }

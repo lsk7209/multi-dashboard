@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-10-27T09:46:40.729Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-10-27T09:45:07.000Z",
+  "handoffStatus": "pending_external",
+  "productionMutationPerformed": false,
+  "gscMutationPerformed": false,
+  "serviceAccountEmail": null,
+  "summary": {
+    "auditedRows": 17,
+    "ownerAccess": 0,
+    "restrictedAccess": 0,
+    "unverified": 13,
+    "notListed": 4
+  },
+  "results": [
+    {
+      "siteId": "luckyday",
+      "host": "luckyday.kr",
+      "configuredGscSiteUrl": "sc-domain:luckyday.kr",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "sc-domain:luckyday.kr",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "toolnavigo",
+      "host": "toolnavigo.com",
+      "configuredGscSiteUrl": "https://toolnavigo.com/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": null,
+      "permissionLevel": null,
+      "accessState": "not_listed",
+      "requiredAction": "Add or share the configured Search Console property with the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "jeompolab",
+      "host": "jeompolab.com",
+      "configuredGscSiteUrl": "https://jeompolab.com/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://jeompolab.com/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "coinyo-alt",
+      "host": "alt.coinyo.kr",
+      "configuredGscSiteUrl": "https://alt.coinyo.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://alt.coinyo.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "coinyo-bit",
+      "host": "bit.coinyo.kr",
+      "configuredGscSiteUrl": "https://bit.coinyo.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://bit.coinyo.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "dog-nekau",
+      "host": "dog.nekau.com",
+      "configuredGscSiteUrl": "https://dog.nekau.com/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": null,
+      "permissionLevel": null,
+      "accessState": "not_listed",
+      "requiredAction": "Add or share the configured Search Console property with the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "mbti-tasko",
+      "host": "mbti.tasko.kr",
+      "configuredGscSiteUrl": "https://mbti.tasko.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://mbti.tasko.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "phone-luckyday",
+      "host": "phone.luckyday.kr",
+      "configuredGscSiteUrl": "https://phone.luckyday.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://phone.luckyday.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "gong-luckyday",
+      "host": "gong.luckyday.kr",
+      "configuredGscSiteUrl": "sc-domain:gong.luckyday.kr",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "sc-domain:gong.luckyday.kr",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "car-luckyday",
+      "host": "car.luckyday.kr",
+      "configuredGscSiteUrl": "sc-domain:car.luckyday.kr",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "sc-domain:car.luckyday.kr",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "car-klick",
+      "host": "car.klick.kr",
+      "configuredGscSiteUrl": "https://car.klick.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://car.klick.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "lo-klick",
+      "host": "lo.klick.kr",
+      "configuredGscSiteUrl": "https://lo.klick.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://lo.klick.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "ko-klick",
+      "host": "ko.klick.kr",
+      "configuredGscSiteUrl": "https://ko.klick.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://ko.klick.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "finance-2mlab",
+      "host": "finance.2mlab.kr",
+      "configuredGscSiteUrl": "https://finance.2mlab.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://finance.2mlab.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "food-2mlab",
+      "host": "food.2mlab.kr",
+      "configuredGscSiteUrl": "https://food.2mlab.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": "https://food.2mlab.kr/",
+      "permissionLevel": "siteUnverifiedUser",
+      "accessState": "unverified",
+      "requiredAction": "Verify the Search Console property or grant owner-level access to the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "travel-dogspang",
+      "host": "travel.dogspang.kr",
+      "configuredGscSiteUrl": "https://travel.dogspang.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": null,
+      "permissionLevel": null,
+      "accessState": "not_listed",
+      "requiredAction": "Add or share the configured Search Console property with the dashboard service account, then re-run stats collection."
+    },
+    {
+      "siteId": "hos-dogspang",
+      "host": "hos.dogspang.kr",
+      "configuredGscSiteUrl": "https://hos.dogspang.kr/",
+      "gscStatus": "auth_error",
+      "listedSiteUrl": null,
+      "permissionLevel": null,
+      "accessState": "not_listed",
+      "requiredAction": "Add or share the configured Search Console property with the dashboard service account, then re-run stats collection."
+    }
+  ]
+}

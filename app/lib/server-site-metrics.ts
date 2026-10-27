@@ -6,6 +6,7 @@ export interface ServerSiteRow {
   url: string;
   host: string;
   approval: string;
+  httpStatus?: number | null;
   ga4Status: string;
   dailyUsers: number | null;
   weeklyUsers: number | null;
@@ -14,7 +15,7 @@ export interface ServerSiteRow {
   impressions: number | null;
 }
 
-export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "host" | "approval" | "bindings">, stats: SiteStat[]): ServerSiteRow {
+export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "host" | "approval" | "bindings"> & Partial<Pick<InventorySite, "httpStatus">>, stats: SiteStat[]): ServerSiteRow {
   const sameDomain = (url: string) => {
     try { return new URL(url).hostname.replace(/^www\./, "") === site.domain.replace(/^www\./, ""); }
     catch { return false; }
@@ -26,6 +27,7 @@ export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "
   const ga4 = candidates.find(({ binding, stat }) => binding.ga4Status === "ok" && stat?.ga4Status === "ok" && stat.ga4PropertyId === binding.ga4PropertyId);
   const gsc = candidates.find(({ binding, stat }) => binding.gscStatus === "ok" && stat?.gscStatus === "ok" && stat.gscSiteUrl === binding.gscSiteUrl && Boolean(binding.gscSiteUrl));
   return { domain: site.domain, url: site.url, host: site.host, approval: site.approval,
+    httpStatus: site.httpStatus ?? null,
     ga4Status: ga4 ? "ok" : bindings.find(binding => ["binding_mismatch", "binding_unknown"].includes(binding.ga4Status))?.ga4Status ?? candidates.find(({ stat }) => stat?.ga4Status && stat.ga4Status !== "ok")?.stat?.ga4Status ?? (bindings.length ? "binding_unknown" : "not_collected"),
     dailyUsers: ga4?.stat?.last1Days?.activeUsers ?? null,
     weeklyUsers: ga4?.stat?.last7Days?.activeUsers ?? null,

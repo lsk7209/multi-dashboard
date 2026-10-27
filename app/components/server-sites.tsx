@@ -10,12 +10,15 @@ const status = (value: string) => ({ auth_error: "권한 오류", permission_den
 
 const SERVERS = [
   { id: "ovh", label: "OVHcloud" },
+  { id: "contabo", label: "Contabo" },
   { id: "turbo1", label: "Turbo1" },
   { id: "turbo2", label: "Turbo2" },
+  { id: "vercel", label: "Vercel" },
 ] as const;
 
 const COLUMNS: { key: ServerSortKey; label: string }[] = [
   { key: "domain", label: "사이트" }, { key: "host", label: "서버" },
+  { key: "httpStatus", label: "HTTPS 응답" },
   { key: "dailyUsers", label: "GA4 어제 사용자" }, { key: "weeklyUsers", label: "GA4 7일 사용자" },
   { key: "clicks", label: "GSC 7일 클릭" }, { key: "impressions", label: "GSC 7일 노출" },
   { key: "approval", label: "애드센스" },
@@ -54,11 +57,12 @@ export function ServerSites({ sites }: { sites: ServerSiteRow[] }) {
           {filtered.map(site => <tr key={site.domain}>
             <th scope="row"><a href={site.url} target="_blank" rel="noreferrer">{site.domain} <span aria-hidden="true">↗</span></a></th>
             <td><span className={`server-badge server-${site.host}`}>{SERVERS.find(item => item.id === site.host)?.label ?? site.host}</span></td>
+            <td>{site.httpStatus ?? "미확인"}</td>
             {site.ga4Status === "ok" ? <><td className="server-number">{number(site.dailyUsers)}</td><td className="server-number">{number(site.weeklyUsers)}</td></> : <td className="server-metric-status" colSpan={2}>{status(site.ga4Status)}</td>}
             {site.gscStatus === "ok" ? <><td className="server-number">{number(site.clicks)}</td><td className="server-number">{number(site.impressions)}</td></> : <td className="server-metric-status" colSpan={2}>{status(site.gscStatus)}</td>}
             <td><span className={`server-approval approval-${site.approval.toLowerCase()}`}>{APPROVAL_LABELS[site.approval] ?? "미확인"}</span></td>
           </tr>)}
-          {!filtered.length && <tr><td colSpan={7} className="server-empty">조건에 맞는 사이트가 없습니다.</td></tr>}
+          {!filtered.length && <tr><td colSpan={8} className="server-empty">조건에 맞는 사이트가 없습니다.</td></tr>}
         </tbody>
       </table>
     </div>

@@ -30,6 +30,7 @@ export interface InventorySite {
   issues: string[];
   accountHosts: Array<{ host: string; checkedAt: string }>;
   publicDnsAddresses: string[];
+  stagingTargets?: Array<{ host: string; checkedAt: string }>;
 }
 
 export interface SiteInventory {
@@ -45,7 +46,7 @@ export interface SiteInventory {
 }
 
 export const HOST_LABELS: Record<string, string> = {
-  ovh: "OVHcloud", turbo1: "ChemiCloud Turbo1", turbo2: "ChemiCloud Turbo2",
+  ovh: "OVHcloud", contabo: "Contabo", turbo1: "ChemiCloud Turbo1", turbo2: "ChemiCloud Turbo2",
   kickstart: "ChemiCloud Kickstart", vercel: "Vercel", unknown: "미확인",
   mixed: "DNS 불일치",
   turbo_pending: "Turbo1·2 · 세부 서버 미확인",
@@ -57,7 +58,7 @@ export const APPROVAL_LABELS: Record<string, string> = {
 
 export function classifyHost(addresses: string[], cname: string[], vercelHeader: boolean): string {
   const hosts: Record<string, string> = {
-    "51.79.206.71": "ovh", "158.247.212.123": "turbo1",
+    "51.79.206.71": "ovh", "13.140.77.84": "contabo", "158.247.212.123": "turbo1",
     "158.247.209.217": "turbo2", "158.247.245.11": "kickstart",
   };
   const matches = new Set(addresses.map(ip => hosts[ip]).filter(Boolean));
@@ -71,6 +72,13 @@ export function migrationAwareHost(routeHost: string, accountHosts: string[], mi
   if (!migrated || !["kickstart", "unknown"].includes(routeHost)) return routeHost;
   const targets = [...new Set(accountHosts.filter(host => ["turbo1", "turbo2"].includes(host)))];
   return targets.length === 1 ? targets[0]! : "turbo_pending";
+}
+
+export function currentStagingTargets(domain: string, stages: Array<{ domain: string; host: string; checkedAt: string }>, now = Date.now()) {
+  return stages.filter(stage => {
+    const age = now - Date.parse(stage.checkedAt);
+    return stage.domain === domain && Number.isFinite(age) && age >= -300000 && age < 7 * 86400000;
+  }).map(({ host, checkedAt }) => ({ host, checkedAt }));
 }
 
 export function exactApproval(domain: string, monetization: boolean, snapshot: {

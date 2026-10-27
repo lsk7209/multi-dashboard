@@ -1,0 +1,905 @@
+{
+  "generatedAt": "2026-10-27T09:46:42.059Z",
+  "dashboardEvidence": {
+    "statsPath": "D:\\web\\multi-dashboard\\data\\site-stats.json",
+    "snapshotTimestamp": "2026-10-27T09:45:07.000Z",
+    "refreshCommand": "pnpm stats:update",
+    "refreshFailedSources": [
+      "skipped_refresh_failed:gsc:auth_error:17",
+      "skipped_refresh_failed:adsense:api_error:21",
+      "skipped_refresh_failed:adsense:missing_config:3",
+      "skipped_refresh_failed:adsense_collector:transient_error:21",
+      "skipped_refresh_failed:ads_txt:api_error:20",
+      "skipped_refresh_failed:ads_txt:missing_config:4",
+      "skipped_refresh_failed:ads_txt_collector:transient_error:20"
+    ],
+    "connectorStatus": {
+      "ga4Status": {
+        "ok": 119
+      },
+      "gscStatus": {
+        "ok": 102,
+        "auth_error": 17
+      },
+      "adsenseStatus": {
+        "ok": 85,
+        "disabled": 9,
+        "missing_config": 3,
+        "api_error": 21,
+        "launch_hold": 1
+      },
+      "adsenseCollectorStatus": {
+        "ok": 89,
+        "disabled": 9,
+        "transient_error": 21
+      },
+      "adsTxtStatus": {
+        "ok": 86,
+        "disabled": 9,
+        "missing_config": 4,
+        "api_error": 20
+      },
+      "adsTxtCollectorStatus": {
+        "ok": 90,
+        "disabled": 9,
+        "transient_error": 20
+      }
+    },
+    "insightFields": [
+      "stats[].gscLast7Days",
+      "stats[].gscPrevious7Days",
+      "stats[].gscLast30Days",
+      "stats[].last30Days",
+      "stats[].adsenseStatus",
+      "stats[].adsenseCollectorStatus",
+      "stats[].adsTxtStatus",
+      "stats[].adsTxtCollectorStatus",
+      "stats[].gscStatus",
+      "stats[].ga4Status",
+      "stats[].sitemapWarnings",
+      "data/adsense-remediation-queue-*.json"
+    ]
+  },
+  "summary": {
+    "siteCount": 119,
+    "adsenseProblemRows": 21,
+    "seoCandidateCount": 20,
+    "titleHandoffCount": 4,
+    "indexingCount": 14,
+    "technicalSeoCount": 0,
+    "contentHandoffCount": 2
+  },
+  "adsenseQueue": {
+    "artifactPath": "data\\adsense-remediation-queue-2026-10-27.json",
+    "collectorSnapshot": "data/site-stats.json generatedAt=2026-10-27T09:45:07.000Z",
+    "summary": {
+      "totalRows": 122,
+      "reviewedRows": 82,
+      "adsenseOkRows": 66,
+      "problemRows": 21,
+      "ordinaryAdsenseProof": 13,
+      "approvedRootSubdomainScope": 0,
+      "gscAuthTelemetry": 8,
+      "ga4ConfigTelemetry": 0
+    },
+    "nextItems": [
+      {
+        "priority": 997391,
+        "siteId": "seniorlivingnote",
+        "host": "seniorlivingnote.com",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999775,
+        "siteId": "insupang",
+        "host": "insupang.com",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999836,
+        "siteId": "luxurytraver-2",
+        "host": "luxurytraver.com",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999954,
+        "siteId": "toolnavigo",
+        "host": "toolnavigo.com",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999968,
+        "siteId": "cartain-2",
+        "host": "cartain.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999972,
+        "siteId": "knewstory",
+        "host": "knewstory.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999992,
+        "siteId": "hos-dogspang",
+        "host": "hos.dogspang.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999994,
+        "siteId": "educaer",
+        "host": "educaer.com",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999995,
+        "siteId": "workgogo",
+        "host": "workgogo.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999996,
+        "siteId": "travel-dogspang",
+        "host": "travel.dogspang.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 999997,
+        "siteId": "kapti",
+        "host": "kapti.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 1000000,
+        "siteId": "finance-2mlab",
+        "host": "finance.2mlab.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 1000000,
+        "siteId": "food-2mlab",
+        "host": "food.2mlab.kr",
+        "lane": "ordinary_adsense_proof",
+        "actionType": "adsense_proof",
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok."
+      },
+      {
+        "priority": 2999950,
+        "siteId": "coinyo-alt",
+        "host": "alt.coinyo.kr",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 2999954,
+        "siteId": "toolnavigo",
+        "host": "toolnavigo.com",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 2999958,
+        "siteId": "coinyo-bit",
+        "host": "bit.coinyo.kr",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 2999988,
+        "siteId": "dog-nekau",
+        "host": "dog.nekau.com",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 2999992,
+        "siteId": "hos-dogspang",
+        "host": "hos.dogspang.kr",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 2999996,
+        "siteId": "travel-dogspang",
+        "host": "travel.dogspang.kr",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 3000000,
+        "siteId": "finance-2mlab",
+        "host": "finance.2mlab.kr",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      },
+      {
+        "priority": 3000000,
+        "siteId": "food-2mlab",
+        "host": "food.2mlab.kr",
+        "lane": "gsc_auth_telemetry",
+        "actionType": "telemetry",
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site."
+      }
+    ]
+  },
+  "seoCandidates": [
+    {
+      "rank": 1,
+      "siteId": "yungyanggogo",
+      "host": "yungyanggogo.kr",
+      "url": "https://yungyanggogo.kr/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 6807 impressions, 0.84% CTR, average position 7.18.",
+      "metrics": {
+        "gscImpressions7d": 1865,
+        "gscPreviousImpressions7d": 1919,
+        "gscImpressionsChange7d": -0.028139656070870246,
+        "gscImpressions30d": 6807,
+        "gscClicks30d": 57,
+        "gscCtr30d": 0.008373732921992068,
+        "gscPosition30d": 7.18172469516674,
+        "ga4ActiveUsers30d": 86
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=1865",
+        "gscPreviousImpressions7d=1919"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 2,
+      "siteId": "yungyanggogo",
+      "host": "yungyanggogo.kr",
+      "url": "https://yungyanggogo.kr/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 6807 impressions and 86 users.",
+      "metrics": {
+        "gscImpressions7d": 1865,
+        "gscPreviousImpressions7d": 1919,
+        "gscImpressionsChange7d": -0.028139656070870246,
+        "gscImpressions30d": 6807,
+        "gscClicks30d": 57,
+        "gscCtr30d": 0.008373732921992068,
+        "gscPosition30d": 7.18172469516674,
+        "ga4ActiveUsers30d": 86
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=1865",
+        "gscPreviousImpressions7d=1919"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 3,
+      "siteId": "sorimate",
+      "host": "sorimate.com",
+      "url": "https://sorimate.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 4439 impressions, 0.61% CTR, average position 8.37.",
+      "metrics": {
+        "gscImpressions7d": 873,
+        "gscPreviousImpressions7d": 1092,
+        "gscImpressionsChange7d": -0.20054945054945056,
+        "gscImpressions30d": 4439,
+        "gscClicks30d": 27,
+        "gscCtr30d": 0.006082451002478036,
+        "gscPosition30d": 8.368776751520613,
+        "ga4ActiveUsers30d": 11
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=",
+        "adsTxtStatus=",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=873",
+        "gscPreviousImpressions7d=1092"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 4,
+      "siteId": "sorimate",
+      "host": "sorimate.com",
+      "url": "https://sorimate.com/",
+      "actionType": "content_handoff",
+      "tier": "T3",
+      "confidence": "medium",
+      "reason": "Search exposure is present but GA4 users are low: 4439 impressions and 11 users.",
+      "metrics": {
+        "gscImpressions7d": 873,
+        "gscPreviousImpressions7d": 1092,
+        "gscImpressionsChange7d": -0.20054945054945056,
+        "gscImpressions30d": 4439,
+        "gscClicks30d": 27,
+        "gscCtr30d": 0.006082451002478036,
+        "gscPosition30d": 8.368776751520613,
+        "ga4ActiveUsers30d": 11
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=",
+        "adsTxtStatus=",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=873",
+        "gscPreviousImpressions7d=1092"
+      ],
+      "nextAction": "Send to persona/content workflow for intent alignment, source quality, and helpful-content review."
+    },
+    {
+      "rank": 5,
+      "siteId": "localgeo",
+      "host": "localgeo.app",
+      "url": "https://localgeo.app/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Search visibility cliff: 6 impressions in the latest 7 days versus 950 previously (-99.4%). Hold title/content edits until URL inspection, update timing, and site-quality evidence are reviewed.",
+      "metrics": {
+        "gscImpressions7d": 6,
+        "gscPreviousImpressions7d": 950,
+        "gscImpressionsChange7d": -0.9936842105263158,
+        "gscImpressions30d": 2709,
+        "gscClicks30d": 48,
+        "gscCtr30d": 0.017718715393133997,
+        "gscPosition30d": 8.802141011443336,
+        "ga4ActiveUsers30d": 999
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=6",
+        "gscPreviousImpressions7d=950"
+      ],
+      "nextAction": "Run URL Inspection plus spam-policy and site-quality review; check Manual Actions/Security Issues read-only when console access exists, and hold title/body edits, bulk publishing, sitemap submission, and indexing requests as recovery shortcuts."
+    },
+    {
+      "rank": 6,
+      "siteId": "petinsuer-2",
+      "host": "petinsuer.com",
+      "url": "https://petinsuer.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 636 impressions, 1.42% CTR, average position 8.72.",
+      "metrics": {
+        "gscImpressions7d": 59,
+        "gscPreviousImpressions7d": 124,
+        "gscImpressionsChange7d": -0.5241935483870968,
+        "gscImpressions30d": 636,
+        "gscClicks30d": 9,
+        "gscCtr30d": 0.014150943396226415,
+        "gscPosition30d": 8.716981132075471,
+        "ga4ActiveUsers30d": 148
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=59",
+        "gscPreviousImpressions7d=124"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 7,
+      "siteId": "patentgogo",
+      "host": "patentgogo.com",
+      "url": "https://patentgogo.com/",
+      "actionType": "title_handoff",
+      "tier": "T3",
+      "confidence": "high",
+      "reason": "High-impression low-CTR opportunity: 302 impressions, 0.00% CTR, average position 10.94.",
+      "metrics": {
+        "gscImpressions7d": 47,
+        "gscPreviousImpressions7d": 62,
+        "gscImpressionsChange7d": -0.24193548387096775,
+        "gscImpressions30d": 302,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 10.943708609271523,
+        "ga4ActiveUsers30d": 31
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=47",
+        "gscPreviousImpressions7d=62"
+      ],
+      "nextAction": "Send to title-master/title workflow with existing query/page evidence; do not edit titles in this technical plan."
+    },
+    {
+      "rank": 8,
+      "siteId": "luckyday",
+      "host": "luckyday.kr",
+      "url": "https://luckyday.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=auth_error, sitemapWarnings=0, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 468
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=auth_error",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 9,
+      "siteId": "luxurytraver-2",
+      "host": "luxurytraver.com",
+      "url": "https://luxurytraver.com/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=1, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 93,
+        "gscPreviousImpressions7d": 30,
+        "gscImpressionsChange7d": 2.1,
+        "gscImpressions30d": 144,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 15.027777777777779,
+        "ga4ActiveUsers30d": 10
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=api_error",
+        "adsTxtStatus=api_error",
+        "sitemapWarnings=0",
+        "sitemapErrors=1",
+        "gscImpressions7d=93",
+        "gscPreviousImpressions7d=30"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 10,
+      "siteId": "insupang",
+      "host": "insupang.com",
+      "url": "https://insupang.com/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=1, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 24,
+        "gscPreviousImpressions7d": 22,
+        "gscImpressionsChange7d": 0.09090909090909091,
+        "gscImpressions30d": 117,
+        "gscClicks30d": 4,
+        "gscCtr30d": 0.03418803418803419,
+        "gscPosition30d": 8.384615384615385,
+        "ga4ActiveUsers30d": 54
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=api_error",
+        "adsTxtStatus=api_error",
+        "sitemapWarnings=0",
+        "sitemapErrors=1",
+        "gscImpressions7d=24",
+        "gscPreviousImpressions7d=22"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 11,
+      "siteId": "notebook-klick-2",
+      "host": "notebook.klick.kr",
+      "url": "https://notebook.klick.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=1, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 77
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=api_error",
+        "adsTxtStatus=api_error",
+        "sitemapWarnings=0",
+        "sitemapErrors=1",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 12,
+      "siteId": "ai-tasko",
+      "host": "ai.tasko.kr",
+      "url": "https://ai.tasko.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=1, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 72
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=api_error",
+        "adsTxtStatus=api_error",
+        "sitemapWarnings=0",
+        "sitemapErrors=1",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 13,
+      "siteId": "chatgipt-3",
+      "host": "chatgipt.kr",
+      "url": "https://chatgipt.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=1, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 6,
+        "gscPreviousImpressions7d": 8,
+        "gscImpressionsChange7d": -0.25,
+        "gscImpressions30d": 21,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 16,
+        "ga4ActiveUsers30d": 9
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=1",
+        "sitemapErrors=0",
+        "gscImpressions7d=6",
+        "gscPreviousImpressions7d=8"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 14,
+      "siteId": "caregos",
+      "host": "caregos.com",
+      "url": "https://caregos.com/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=0, sitemapPending=true.",
+      "metrics": {
+        "gscImpressions7d": 4,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 5,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 1,
+        "ga4ActiveUsers30d": 19
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=",
+        "adsTxtStatus=",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=4",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 15,
+      "siteId": "coinyo-alt",
+      "host": "alt.coinyo.kr",
+      "url": "https://alt.coinyo.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=auth_error, sitemapWarnings=0, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 25
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=auth_error",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 16,
+      "siteId": "toolnavigo",
+      "host": "toolnavigo.com",
+      "url": "https://toolnavigo.com/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=auth_error, sitemapWarnings=0, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 23
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=auth_error",
+        "adsenseStatus=missing_config",
+        "adsTxtStatus=missing_config",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 17,
+      "siteId": "knewstory",
+      "host": "knewstory.kr",
+      "url": "https://knewstory.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=1, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 3,
+        "gscPreviousImpressions7d": 2,
+        "gscImpressionsChange7d": 0.5,
+        "gscImpressions30d": 6,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 6.166666666666667,
+        "ga4ActiveUsers30d": 11
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=api_error",
+        "adsTxtStatus=api_error",
+        "sitemapWarnings=0",
+        "sitemapErrors=1",
+        "gscImpressions7d=3",
+        "gscPreviousImpressions7d=2"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 18,
+      "siteId": "coinyo-bit",
+      "host": "bit.coinyo.kr",
+      "url": "https://bit.coinyo.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=auth_error, sitemapWarnings=0, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 21
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=auth_error",
+        "adsenseStatus=ok",
+        "adsTxtStatus=ok",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 19,
+      "siteId": "jeompolab",
+      "host": "jeompolab.com",
+      "url": "https://jeompolab.com/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=auth_error, sitemapWarnings=0, sitemapErrors=0, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 0,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 0,
+        "ga4ActiveUsers30d": 20
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=auth_error",
+        "adsenseStatus=",
+        "adsTxtStatus=",
+        "sitemapWarnings=0",
+        "sitemapErrors=0",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    },
+    {
+      "rank": 20,
+      "siteId": "workgogo",
+      "host": "workgogo.kr",
+      "url": "https://workgogo.kr/",
+      "actionType": "indexing",
+      "tier": "T2",
+      "confidence": "high",
+      "reason": "Indexing risk: gscStatus=ok, sitemapWarnings=0, sitemapErrors=1, sitemapPending=false.",
+      "metrics": {
+        "gscImpressions7d": 0,
+        "gscPreviousImpressions7d": 0,
+        "gscImpressionsChange7d": null,
+        "gscImpressions30d": 5,
+        "gscClicks30d": 0,
+        "gscCtr30d": 0,
+        "gscPosition30d": 8.4,
+        "ga4ActiveUsers30d": 0
+      },
+      "evidence": [
+        "data/site-stats.json",
+        "snapshot=2026-10-27T09:45:07.000Z",
+        "gscStatus=ok",
+        "adsenseStatus=api_error",
+        "adsTxtStatus=missing_config",
+        "sitemapWarnings=0",
+        "sitemapErrors=1",
+        "gscImpressions7d=0",
+        "gscPreviousImpressions7d=0"
+      ],
+      "nextAction": "Run sitemap/GSC dry-run verification first; patch only after a concrete sitemap, canonical, or access blocker is confirmed."
+    }
+  ],
+  "stopConditions": [
+    "Do not submit AdSense review while console state is unknown or raw loader proof is missing.",
+    "Do not treat local collector timeout as proof of site-level AdSense breakage.",
+    "Do not edit article titles or bodies from this technical plan; route those to title/content handoff.",
+    "Do not use this plan as fresh prioritization if pnpm stats:update has not completed cleanly.",
+    "Do not run sitemap submission, production deployment, or WordPress mutations from this plan without an explicit apply step and rollback path."
+  ]
+}

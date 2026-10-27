@@ -9,6 +9,10 @@ const stat: SiteStat = { id: "example", name: "example", url: site.url, ga4Prope
   ga4Status: "ok", gscStatus: "ok", last1Days: metrics(0), last7Days: metrics(42), gscLast7Days: { clicks: 0, impressions: 120, ctr: 0, position: 0 } };
 
 describe("server site metrics", () => {
+  it("preserves current HTTP failures and unknown probes separately from analytics", () => {
+    expect(serverSiteMetrics({ ...site, httpStatus: 503 }, [stat])).toMatchObject({ httpStatus: 503, weeklyUsers: 42 });
+    expect(serverSiteMetrics({ ...site, httpStatus: null }, [stat]).httpStatus).toBeNull();
+  });
   it("joins exact enabled bindings and preserves valid zero counts and official approval", () => {
     expect(serverSiteMetrics(site, [stat])).toMatchObject({ dailyUsers: 0, weeklyUsers: 42, clicks: 0, impressions: 120, approval: "READY" });
   });

@@ -5,6 +5,11 @@ import type { ServerSiteRow } from "./server-site-metrics";
 const row = (domain: string, count: number | null): ServerSiteRow => ({ domain, url: `https://${domain}`, host: "ovh", approval: "READY", ga4Status: "ok", dailyUsers: count, weeklyUsers: count, gscStatus: "ok", clicks: count, impressions: count });
 
 describe("server table sorting", () => {
+  it("sorts HTTP results while keeping unavailable probes last", () => {
+    const sites = [{ ...row("missing.com", 0), httpStatus: null }, { ...row("error.com", 0), httpStatus: 503 }, { ...row("ok.com", 0), httpStatus: 200 }];
+    expect([...sites].sort((a, b) => compareServerSites(a, b, "httpStatus", "asc")).map(site => site.domain)).toEqual(["ok.com", "error.com", "missing.com"]);
+    expect([...sites].sort((a, b) => compareServerSites(a, b, "httpStatus", "desc")).map(site => site.domain)).toEqual(["error.com", "ok.com", "missing.com"]);
+  });
   it.each<ServerSortKey>(["dailyUsers", "weeklyUsers", "clicks", "impressions"])("sorts %s numerically, keeps zero valid and missing values last both ways", key => {
     const sites = [row("unknown.com", null), row("ten.com", 10), row("zero.com", 0), row("two.com", 2)];
     expect([...sites].sort((a, b) => compareServerSites(a, b, key, "asc")).map(s => s.domain)).toEqual(["zero.com", "two.com", "ten.com", "unknown.com"]);

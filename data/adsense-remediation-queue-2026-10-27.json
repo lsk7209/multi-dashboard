@@ -1,0 +1,394 @@
+{
+  "generatedAt": "2026-10-27T09:46:41.440Z",
+  "collectorSnapshot": "data/site-stats.json generatedAt=2026-10-27T09:45:07.000Z",
+  "scope": "AdSense remediation queue after approved root-domain coverage and non-monetized site exclusions",
+  "productionMutationPerformed": false,
+  "adsenseConsoleChecked": false,
+  "approvedExactDomainsExcluded": [
+    "ehon365.kr",
+    "fastjob.kr",
+    "haemongdream.com",
+    "klick.kr",
+    "luckyday.kr",
+    "nexttech7.com",
+    "sellerpit.kr",
+    "tasko.kr",
+    "temon.kr",
+    "tennisfrens.com"
+  ],
+  "nonMonetizedExactDomainsExcluded": [
+    "caregos.com",
+    "fastjob.kr",
+    "jeompolab.com",
+    "lim01.soonsaak.co.kr",
+    "limsight.kr",
+    "mohana.kr",
+    "picturebooks.kr",
+    "sorimate.com",
+    "yesa.kr"
+  ],
+  "summary": {
+    "totalRows": 122,
+    "reviewedRows": 82,
+    "adsenseOkRows": 66,
+    "problemRows": 21,
+    "ordinaryAdsenseProof": 13,
+    "approvedRootSubdomainScope": 0,
+    "gscAuthTelemetry": 8,
+    "ga4ConfigTelemetry": 0
+  },
+  "lanes": {
+    "ordinary_adsense_proof": [
+      {
+        "siteId": "seniorlivingnote",
+        "host": "seniorlivingnote.com",
+        "name": "seniorlivingnote.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 997391,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=ok",
+          "adsenseCollectorStatus=ok",
+          "adsTxtStatus=missing_config",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "insupang",
+        "host": "insupang.com",
+        "name": "insupang - GA4",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999775,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "luxurytraver-2",
+        "host": "luxurytraver.com",
+        "name": "luxurytraver.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999836,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "toolnavigo",
+        "host": "toolnavigo.com",
+        "name": "toolnavigo.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999954,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=missing_config",
+          "adsenseCollectorStatus=ok",
+          "adsTxtStatus=missing_config",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "cartain-2",
+        "host": "cartain.kr",
+        "name": "cartain.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999968,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=missing_config",
+          "adsenseCollectorStatus=ok",
+          "adsTxtStatus=ok",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "knewstory",
+        "host": "knewstory.kr",
+        "name": "케이뉴스스토리 - GA4",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999972,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "hos-dogspang",
+        "host": "hos.dogspang.kr",
+        "name": "hos.dogspang.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999992,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "educaer",
+        "host": "educaer.com",
+        "name": "educaer.com",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999994,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "workgogo",
+        "host": "workgogo.kr",
+        "name": "workgogo.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999995,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=missing_config",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "travel-dogspang",
+        "host": "travel.dogspang.kr",
+        "name": "travel.dogspang.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999996,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "kapti",
+        "host": "kapti.kr",
+        "name": "kapti.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 999997,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=missing_config",
+          "adsenseCollectorStatus=ok",
+          "adsTxtStatus=missing_config",
+          "adsTxtCollectorStatus=ok"
+        ]
+      },
+      {
+        "siteId": "finance-2mlab",
+        "host": "finance.2mlab.kr",
+        "name": "finance.2mlab.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 1000000,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      },
+      {
+        "siteId": "food-2mlab",
+        "host": "food.2mlab.kr",
+        "name": "food.2mlab.kr",
+        "lane": "ordinary_adsense_proof",
+        "priority": 1000000,
+        "requiredEvidence": [
+          "Homepage/sample page contains AdSense loader evidence.",
+          "ads.txt validates the configured publisher id."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm AdSense and ads.txt statuses are ok.",
+        "notes": [
+          "adsenseStatus=api_error",
+          "adsenseCollectorStatus=transient_error",
+          "adsTxtStatus=api_error",
+          "adsTxtCollectorStatus=transient_error"
+        ]
+      }
+    ],
+    "approved_root_subdomain_scope": [],
+    "gsc_auth_telemetry": [
+      {
+        "siteId": "coinyo-alt",
+        "host": "alt.coinyo.kr",
+        "name": "alt.coinyo.kr",
+        "lane": "gsc_auth_telemetry",
+        "priority": 2999950,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "toolnavigo",
+        "host": "toolnavigo.com",
+        "name": "toolnavigo.com",
+        "lane": "gsc_auth_telemetry",
+        "priority": 2999954,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "coinyo-bit",
+        "host": "bit.coinyo.kr",
+        "name": "bit.coinyo.kr",
+        "lane": "gsc_auth_telemetry",
+        "priority": 2999958,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "dog-nekau",
+        "host": "dog.nekau.com",
+        "name": "dog.nekau.com",
+        "lane": "gsc_auth_telemetry",
+        "priority": 2999988,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "hos-dogspang",
+        "host": "hos.dogspang.kr",
+        "name": "hos.dogspang.kr",
+        "lane": "gsc_auth_telemetry",
+        "priority": 2999992,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "travel-dogspang",
+        "host": "travel.dogspang.kr",
+        "name": "travel.dogspang.kr",
+        "lane": "gsc_auth_telemetry",
+        "priority": 2999996,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "finance-2mlab",
+        "host": "finance.2mlab.kr",
+        "name": "finance.2mlab.kr",
+        "lane": "gsc_auth_telemetry",
+        "priority": 3000000,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      },
+      {
+        "siteId": "food-2mlab",
+        "host": "food.2mlab.kr",
+        "name": "food.2mlab.kr",
+        "lane": "gsc_auth_telemetry",
+        "priority": 3000000,
+        "requiredEvidence": [
+          "GSC property access returns ok in the next stats refresh."
+        ],
+        "stopCondition": "Rerun pnpm stats:update and confirm gscStatus=ok for this site.",
+        "notes": [
+          "gscStatus=auth_error"
+        ]
+      }
+    ],
+    "ga4_config_telemetry": []
+  }
+}

@@ -1,46 +1,116 @@
 {
-  "generatedAt": "2026-10-18T08:17:47.479Z",
+  "generatedAt": "2026-10-27T09:49:45.356Z",
   "source": "direct",
   "owner": "lsk7209",
   "lookbackDays": 7,
   "statsPath": "data/site-stats.json",
-  "statsSnapshot": "2026-10-18T08:17:46.510Z",
+  "statsSnapshot": "2026-10-27T09:45:07.000Z",
   "sitesPath": "scripts/setup/sites.yaml",
   "collection": {
     "githubActions": {
-      "status": "skipped",
-      "detail": "GITHUB_TOKEN or GH_TOKEN is missing; GitHub Actions direct collection skipped.",
-      "checkedAt": "2026-10-18T08:17:47.473Z",
-      "count": 0
+      "status": "ok",
+      "detail": "Collected failed workflow runs from 48 repositories.",
+      "checkedAt": "2026-10-27T09:46:18.332Z",
+      "count": 7
     },
     "dashboardArtifacts": {
       "status": "ok",
-      "detail": "Read dashboard artifact snapshot=2026-10-18T08:17:46.510Z.",
-      "checkedAt": "2026-10-18T08:17:47.471Z",
-      "count": 25
+      "detail": "Read dashboard artifact snapshot=2026-10-27T09:45:07.000Z.",
+      "checkedAt": "2026-10-27T09:46:18.330Z",
+      "count": 37
     },
     "ga4": {
       "status": "ok",
-      "detail": "Read GA4 collector status for 113 sites.",
-      "checkedAt": "2026-10-18T08:17:47.471Z",
-      "count": 113
+      "detail": "Read GA4 collector status for 122 sites.",
+      "checkedAt": "2026-10-27T09:46:18.330Z",
+      "count": 122
     }
   },
   "counts": {
-    "github-actions": 0,
-    "gsc": 16,
+    "github-actions": 7,
+    "gsc": 28,
     "adsense": 9,
     "ga4": 0,
     "vercel": 0,
     "other": 0
   },
   "summary": {
-    "critical": 0,
-    "high": 17,
-    "medium": 3,
-    "low": 5
+    "critical": 1,
+    "high": 33,
+    "medium": 7,
+    "low": 3
   },
   "findings": [
+    {
+      "id": "gha-crepikacom-1yft8t2",
+      "kind": "github-actions",
+      "severity": "critical",
+      "priority": 115,
+      "repo": "crepikacom",
+      "workflow": "Auto Publish Blog Post",
+      "category": "content",
+      "count": 39,
+      "commit": "2ac5caf",
+      "sourceLine": "direct:github-actions repo=crepikacom workflow=Auto Publish Blog Post count=39 commit=2ac5caf",
+      "title": "crepikacom: Auto Publish Blog Post failed 39 times",
+      "recommendedAction": "Inspect the content queue and publish script assumptions; skip missing input with evidence instead of failing the whole workflow.",
+      "evidenceUrl": "https://github.com/lsk7209/crepikacom/actions/runs/40456704731"
+    },
+    {
+      "id": "gha-2424-wgn5ae",
+      "kind": "github-actions",
+      "severity": "high",
+      "priority": 87,
+      "repo": "2424",
+      "workflow": "Live Cost Watch",
+      "category": "system",
+      "count": 7,
+      "commit": "e79fade",
+      "sourceLine": "direct:github-actions repo=2424 workflow=Live Cost Watch count=7 commit=e79fade",
+      "title": "2424: Live Cost Watch failed 7 times",
+      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.",
+      "evidenceUrl": "https://github.com/lsk7209/2424/actions/runs/40454032287"
+    },
+    {
+      "id": "gha-dog-breed-sluiv",
+      "kind": "github-actions",
+      "severity": "high",
+      "priority": 87,
+      "repo": "dog-breed",
+      "workflow": "Update Outdoor Risk Data",
+      "category": "system",
+      "count": 7,
+      "commit": "d784efd",
+      "sourceLine": "direct:github-actions repo=dog-breed workflow=Update Outdoor Risk Data count=7 commit=d784efd",
+      "title": "dog-breed: Update Outdoor Risk Data failed 7 times",
+      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.",
+      "evidenceUrl": "https://github.com/lsk7209/dog-breed/actions/runs/40379609822"
+    },
+    {
+      "id": "gha-tennis_friends-1mxb86o",
+      "kind": "github-actions",
+      "severity": "high",
+      "priority": 81,
+      "repo": "tennis_friends",
+      "workflow": "Quality checks",
+      "category": "quality",
+      "count": 1,
+      "commit": "cae9caa",
+      "sourceLine": "direct:github-actions repo=tennis_friends workflow=Quality checks count=1 commit=cae9caa",
+      "title": "tennis_friends: Quality checks failed 1 time",
+      "recommendedAction": "Run the repo quality gate locally and patch the failing build, lint, SEO, schema, or test check.",
+      "evidenceUrl": "https://github.com/lsk7209/tennis_friends/actions/runs/39543409781"
+    },
+    {
+      "id": "gsc-luckyday-1c92b0r",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "luckyday",
+      "sourceLine": "direct:dashboard site=luckyday kind=gsc status=auth_error error=User does not have sufficient permission for site 'sc-domain:luckyday.kr'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "럭키데이 - GA4: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
     {
       "id": "gsc-knewstory-1mrj4df",
       "kind": "gsc",
@@ -50,6 +120,16 @@
       "sourceLine": "direct:dashboard site=knewstory kind=gsc status=sitemap warnings=0 errors=1 detail=https://knewstory.kr/sitemap_index.xml warnings=0 errors=1 submitted=3979 downloaded=2026-10-07T02:20:51.012Z submittedAt=2026-09-16T23:28:44.297Z",
       "title": "케이뉴스스토리 - GA4: GSC direct collector signal sitemap warnings=0 errors=1",
       "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://knewstory.kr/sitemap_index.xml warnings=0 errors=1 submitted=3979 downloaded=2026-10-07T02:20:51.012Z submittedAt=2026-09-16T23:28:44.297Z."
+    },
+    {
+      "id": "gsc-ai-tasko-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "ai-tasko",
+      "sourceLine": "direct:dashboard site=ai-tasko kind=gsc status=sitemap warnings=0 errors=1 detail=https://ai.tasko.kr/sitemap.xml warnings=0 errors=1 downloaded=2026-09-23T23:23:25.554Z submittedAt=2026-09-23T23:23:21.766Z",
+      "title": "ai.tasko.kr: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://ai.tasko.kr/sitemap.xml warnings=0 errors=1 downloaded=2026-09-23T23:23:25.554Z submittedAt=2026-09-23T23:23:21.766Z."
     },
     {
       "id": "gsc-coinyo-alt-frt0ey",
@@ -72,14 +152,24 @@
       "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
     },
     {
-      "id": "gsc-car-klick-1mrj4df",
+      "id": "gsc-car-klick-13u585g",
       "kind": "gsc",
       "severity": "high",
       "priority": 80,
       "site": "car-klick",
-      "sourceLine": "direct:dashboard site=car-klick kind=gsc status=sitemap warnings=0 errors=1 detail=https://car.klick.kr/sitemap.xml warnings=0 errors=1 submitted=119 downloaded=2026-09-28T02:01:57.418Z submittedAt=2026-08-11T05:53:54.068Z",
-      "title": "car.klick.kr: GSC direct collector signal sitemap warnings=0 errors=1",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://car.klick.kr/sitemap.xml warnings=0 errors=1 submitted=119 downloaded=2026-09-28T02:01:57.418Z submittedAt=2026-08-11T05:53:54.068Z."
+      "sourceLine": "direct:dashboard site=car-klick kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://car.klick.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "car.klick.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-car-luckyday-qzvc1d",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "car-luckyday",
+      "sourceLine": "direct:dashboard site=car-luckyday kind=gsc status=auth_error error=User does not have sufficient permission for site 'sc-domain:car.luckyday.kr'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "car.luckyday.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
     },
     {
       "id": "adsense-cartain-2-ckdu1b",
@@ -92,6 +182,26 @@
       "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
     },
     {
+      "id": "gsc-dog-klick-t1o7tw",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "dog-klick",
+      "sourceLine": "direct:dashboard site=dog-klick kind=gsc status=sitemap warnings=1 errors=1 detail=https://dog.klick.kr/sitemap.xml warnings=1 errors=1 downloaded=2026-09-23T23:23:31.207Z submittedAt=2026-09-23T23:23:26.686Z",
+      "title": "dog.klick.kr: GSC direct collector signal sitemap warnings=1 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://dog.klick.kr/sitemap.xml warnings=1 errors=1 downloaded=2026-09-23T23:23:31.207Z submittedAt=2026-09-23T23:23:26.686Z."
+    },
+    {
+      "id": "gsc-dog-nekau-nk058a",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "dog-nekau",
+      "sourceLine": "direct:dashboard site=dog-nekau kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://dog.nekau.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "dog.nekau.com: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
       "id": "gsc-educaer-t1o7tw",
       "kind": "gsc",
       "severity": "high",
@@ -100,6 +210,46 @@
       "sourceLine": "direct:dashboard site=educaer kind=gsc status=sitemap warnings=1 errors=1 detail=https://educaer.com/sitemap_index.xml warnings=1 errors=1 submitted=634 downloaded=2026-10-06T20:28:26.014Z submittedAt=2026-06-02T03:55:58.091Z",
       "title": "educaer.com: GSC direct collector signal sitemap warnings=1 errors=1",
       "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://educaer.com/sitemap_index.xml warnings=1 errors=1 submitted=634 downloaded=2026-10-06T20:28:26.014Z submittedAt=2026-06-02T03:55:58.091Z."
+    },
+    {
+      "id": "gsc-finance-2mlab-ltaoj0",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "finance-2mlab",
+      "sourceLine": "direct:dashboard site=finance-2mlab kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://finance.2mlab.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "finance.2mlab.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-food-2mlab-uqcfn4",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "food-2mlab",
+      "sourceLine": "direct:dashboard site=food-2mlab kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://food.2mlab.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "food.2mlab.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-gong-luckyday-1ha68k2",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "gong-luckyday",
+      "sourceLine": "direct:dashboard site=gong-luckyday kind=gsc status=auth_error error=User does not have sufficient permission for site 'sc-domain:gong.luckyday.kr'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "gong.luckyday.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-hos-dogspang-1h2ne8h",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "hos-dogspang",
+      "sourceLine": "direct:dashboard site=hos-dogspang kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://hos.dogspang.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "hos.dogspang.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
     },
     {
       "id": "gsc-insupang-1mrj4df",
@@ -152,16 +302,6 @@
       "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
     },
     {
-      "id": "gsc-localgeo-1mrj4df",
-      "kind": "gsc",
-      "severity": "high",
-      "priority": 80,
-      "site": "localgeo",
-      "sourceLine": "direct:dashboard site=localgeo kind=gsc status=sitemap warnings=0 errors=1 detail=https://localgeo.app/sitemap.xml warnings=0 errors=1 submitted=1087834 downloaded=2026-09-21T23:45:16.883Z submittedAt=2026-09-21T23:45:15.602Z",
-      "title": "localgeo.app: GSC direct collector signal sitemap warnings=0 errors=1",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://localgeo.app/sitemap.xml warnings=0 errors=1 submitted=1087834 downloaded=2026-09-21T23:45:16.883Z submittedAt=2026-09-21T23:45:15.602Z."
-    },
-    {
       "id": "gsc-luxurytraver-2-1mrj4df",
       "kind": "gsc",
       "severity": "high",
@@ -182,14 +322,24 @@
       "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://notebook.klick.kr/sitemap.xml warnings=0 errors=1 submitted=703 downloaded=2026-09-22T23:24:54.084Z submittedAt=2026-09-22T23:24:50.402Z."
     },
     {
-      "id": "adsense-picklefriend-ckdu1b",
-      "kind": "adsense",
+      "id": "gsc-phone-luckyday-17klz6",
+      "kind": "gsc",
       "severity": "high",
       "priority": 80,
-      "site": "picklefriend",
-      "sourceLine": "direct:dashboard site=picklefriend kind=adsense status=missing_config error=AdSense code not detected on checked pages",
-      "title": "picklefriend.kr: ADSENSE direct collector signal missing_config",
-      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+      "site": "phone-luckyday",
+      "sourceLine": "direct:dashboard site=phone-luckyday kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://phone.luckyday.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "phone.luckyday.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-mbti-tasko-1kgdl9w",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "mbti-tasko",
+      "sourceLine": "direct:dashboard site=mbti-tasko kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://mbti.tasko.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "tasko.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
     },
     {
       "id": "adsense-tennisfrens-ckdu1b",
@@ -202,14 +352,99 @@
       "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
     },
     {
-      "id": "adsense-yungyanggogo-ckdu1b",
+      "id": "adsense-toolnavigo-ckdu1b",
       "kind": "adsense",
       "severity": "high",
       "priority": 80,
-      "site": "yungyanggogo",
-      "sourceLine": "direct:dashboard site=yungyanggogo kind=adsense status=missing_config error=AdSense code not detected on checked pages",
-      "title": "yungyanggogo.kr: ADSENSE direct collector signal missing_config",
+      "site": "toolnavigo",
+      "sourceLine": "direct:dashboard site=toolnavigo kind=adsense status=missing_config error=AdSense code not detected on checked pages",
+      "title": "toolnavigo.com: ADSENSE direct collector signal missing_config",
       "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status missing_config."
+    },
+    {
+      "id": "gsc-toolnavigo-hxrnmy",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "toolnavigo",
+      "sourceLine": "direct:dashboard site=toolnavigo kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://toolnavigo.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "toolnavigo.com: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-travel-dogspang-43lv0j",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "travel-dogspang",
+      "sourceLine": "direct:dashboard site=travel-dogspang kind=gsc status=auth_error error=User does not have sufficient permission for site 'https://travel.dogspang.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
+      "title": "travel.dogspang.kr: GSC direct collector signal auth_error",
+      "recommendedAction": "Inspect GSC property, sitemap, canonical, robots, and indexing state from direct Search Console evidence."
+    },
+    {
+      "id": "gsc-webtoon-klick-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "webtoon-klick",
+      "sourceLine": "direct:dashboard site=webtoon-klick kind=gsc status=sitemap warnings=0 errors=1 detail=https://webtoon.klick.kr/sitemap_index.xml/ warnings=0 errors=1 downloaded=2026-09-22T23:25:13.264Z submittedAt=2026-09-22T23:25:11.521Z",
+      "title": "webtoon.klick.kr: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://webtoon.klick.kr/sitemap_index.xml/ warnings=0 errors=1 downloaded=2026-09-22T23:25:13.264Z submittedAt=2026-09-22T23:25:11.521Z."
+    },
+    {
+      "id": "gsc-workgogo-1mrj4df",
+      "kind": "gsc",
+      "severity": "high",
+      "priority": 80,
+      "site": "workgogo",
+      "sourceLine": "direct:dashboard site=workgogo kind=gsc status=sitemap warnings=0 errors=1 detail=https://workgogo.kr/sitemap.xml warnings=0 errors=1 submitted=121 downloaded=2026-09-23T23:23:32.163Z submittedAt=2026-09-23T23:23:30.570Z",
+      "title": "workgogo.kr: GSC direct collector signal sitemap warnings=0 errors=1",
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://workgogo.kr/sitemap.xml warnings=0 errors=1 submitted=121 downloaded=2026-09-23T23:23:32.163Z submittedAt=2026-09-23T23:23:30.570Z."
+    },
+    {
+      "id": "gha-dog-breed-1iy68t6",
+      "kind": "github-actions",
+      "severity": "medium",
+      "priority": 51,
+      "repo": "dog-breed",
+      "workflow": "Check Public Data APIs",
+      "category": "system",
+      "count": 1,
+      "commit": "772f193",
+      "sourceLine": "direct:github-actions repo=dog-breed workflow=Check Public Data APIs count=1 commit=772f193",
+      "title": "dog-breed: Check Public Data APIs failed 1 time",
+      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.",
+      "evidenceUrl": "https://github.com/lsk7209/dog-breed/actions/runs/39484426894"
+    },
+    {
+      "id": "gha-tennis_friends-1om9xea",
+      "kind": "github-actions",
+      "severity": "medium",
+      "priority": 51,
+      "repo": "tennis_friends",
+      "workflow": "Editorial operations monitor",
+      "category": "system",
+      "count": 1,
+      "commit": "6cdd360",
+      "sourceLine": "direct:github-actions repo=tennis_friends workflow=Editorial operations monitor count=1 commit=6cdd360",
+      "title": "tennis_friends: Editorial operations monitor failed 1 time",
+      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.",
+      "evidenceUrl": "https://github.com/lsk7209/tennis_friends/actions/runs/40270386271"
+    },
+    {
+      "id": "gha-today_yakuk-vryqch",
+      "kind": "github-actions",
+      "severity": "medium",
+      "priority": 51,
+      "repo": "today_yakuk",
+      "workflow": "CI",
+      "category": "system",
+      "count": 1,
+      "commit": "89bf92f",
+      "sourceLine": "direct:github-actions repo=today_yakuk workflow=CI count=1 commit=89bf92f",
+      "title": "today_yakuk: CI failed 1 time",
+      "recommendedAction": "Open the latest workflow run, capture the first failing command, and patch the narrowest repo-local cause.",
+      "evidenceUrl": "https://github.com/lsk7209/today_yakuk/actions/runs/39799107909"
     },
     {
       "id": "adsense-kapti-5fzpo3",
@@ -232,6 +467,16 @@
       "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status ads.txt missing_config."
     },
     {
+      "id": "adsense-toolnavigo-2wxnys",
+      "kind": "adsense",
+      "severity": "medium",
+      "priority": 50,
+      "site": "toolnavigo",
+      "sourceLine": "direct:dashboard site=toolnavigo kind=adsense status=ads.txt missing_config error=ads.txt unavailable: 404",
+      "title": "toolnavigo.com: ADSENSE direct collector signal ads.txt missing_config",
+      "recommendedAction": "Verify AdSense code, ads.txt, approval scope, and collector evidence for status ads.txt missing_config."
+    },
+    {
       "id": "adsense-workgogo-2wxnys",
       "kind": "adsense",
       "severity": "medium",
@@ -247,19 +492,9 @@
       "severity": "low",
       "priority": 20,
       "site": "chatgipt-3",
-      "sourceLine": "direct:dashboard site=chatgipt-3 kind=gsc status=sitemap warnings=1 errors=0 detail=https://chatgipt.kr/sitemap_index.xml warnings=1 errors=0 submitted=3043 downloaded=2026-10-17T16:45:23.320Z submittedAt=2026-06-02T03:55:39.224Z",
+      "sourceLine": "direct:dashboard site=chatgipt-3 kind=gsc status=sitemap warnings=1 errors=0 detail=https://chatgipt.kr/sitemap_index.xml warnings=1 errors=0 submitted=3048 downloaded=2026-10-27T06:06:11.963Z submittedAt=2026-06-02T03:55:39.224Z",
       "title": "chatgipt.kr: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://chatgipt.kr/sitemap_index.xml warnings=1 errors=0 submitted=3043 downloaded=2026-10-17T16:45:23.320Z submittedAt=2026-06-02T03:55:39.224Z."
-    },
-    {
-      "id": "gsc-dog-klick-t1o7t1",
-      "kind": "gsc",
-      "severity": "low",
-      "priority": 20,
-      "site": "dog-klick",
-      "sourceLine": "direct:dashboard site=dog-klick kind=gsc status=sitemap warnings=1 errors=0 detail=https://dog.klick.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-23T23:23:31.207Z submittedAt=2026-09-23T23:23:26.686Z",
-      "title": "dog.klick.kr: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://dog.klick.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-23T23:23:31.207Z submittedAt=2026-09-23T23:23:26.686Z."
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://chatgipt.kr/sitemap_index.xml warnings=1 errors=0 submitted=3048 downloaded=2026-10-27T06:06:11.963Z submittedAt=2026-06-02T03:55:39.224Z."
     },
     {
       "id": "gsc-dogswhere-t1o7t1",
@@ -267,19 +502,9 @@
       "severity": "low",
       "priority": 20,
       "site": "dogswhere",
-      "sourceLine": "direct:dashboard site=dogswhere kind=gsc status=sitemap warnings=1 errors=0 detail=https://www.dogswhere.com/sitemap.xml warnings=1 errors=0 submitted=216 downloaded=2026-10-17T23:19:06.401Z submittedAt=2026-06-07T16:33:00.627Z",
+      "sourceLine": "direct:dashboard site=dogswhere kind=gsc status=sitemap warnings=1 errors=0 detail=https://www.dogswhere.com/sitemap.xml warnings=1 errors=0 submitted=216 downloaded=2026-10-26T23:24:25.990Z submittedAt=2026-06-07T16:33:00.627Z",
       "title": "dogswhere.com: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://www.dogswhere.com/sitemap.xml warnings=1 errors=0 submitted=216 downloaded=2026-10-17T23:19:06.401Z submittedAt=2026-06-07T16:33:00.627Z."
-    },
-    {
-      "id": "gsc-gong-luckyday-t1o7t1",
-      "kind": "gsc",
-      "severity": "low",
-      "priority": 20,
-      "site": "gong-luckyday",
-      "sourceLine": "direct:dashboard site=gong-luckyday kind=gsc status=sitemap warnings=1 errors=0 detail=https://gong.luckyday.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-22T23:25:15.773Z submittedAt=2026-09-22T23:25:13.459Z",
-      "title": "gong.luckyday.kr: GSC direct collector signal sitemap warnings=1 errors=0",
-      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://gong.luckyday.kr/sitemap.xml warnings=1 errors=0 downloaded=2026-09-22T23:25:15.773Z submittedAt=2026-09-22T23:25:13.459Z."
+      "recommendedAction": "Inspect the listed sitemap detail from direct Search Console evidence, then verify canonical, robots, and indexing state: https://www.dogswhere.com/sitemap.xml warnings=1 errors=0 submitted=216 downloaded=2026-10-26T23:24:25.990Z submittedAt=2026-06-07T16:33:00.627Z."
     },
     {
       "id": "adsense-nongsusangogo-tqcbes",

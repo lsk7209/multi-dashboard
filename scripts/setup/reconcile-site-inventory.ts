@@ -3,7 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import pLimit from "p-limit";
 import { loadSites } from "./lib/sites.js";
-import { classifyHost, exactApproval, hostingDisagreement, migrationAwareHost, type InventorySite, type SiteInventory } from "../../app/lib/site-inventory.js";
+import { classifyHost, currentStagingTargets, exactApproval, hostingDisagreement, migrationAwareHost, type InventorySite, type SiteInventory } from "../../app/lib/site-inventory.js";
 
 async function readJson(file: string) {
   return JSON.parse(await readFile(file, "utf8"));
@@ -40,10 +40,17 @@ export async function main() {
     let vercelHeader = false;
     let finalDomain = domain;
     try {
-      const response = await fetch(site.url, { method: "HEAD", signal: AbortSignal.timeout(12000), redirect: "follow" });
+      const options = { signal: AbortSignal.timeout(12000), redirect: "follow" as const,
+        headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36", Accept: "text/html,application/xhtml+xml,*/*;q=0.8" } };
+      let response = await fetch(site.url, { ...options, method: "HEAD" });
+      if ([403, 405, 415].includes(response.status)) {
+        await response.body?.cancel();
+        response = await fetch(site.url, { ...options, signal: AbortSignal.timeout(12000), method: "GET" });
+      }
       httpStatus = response.status;
       finalDomain = new URL(response.url).hostname;
       vercelHeader = response.headers.has("x-vercel-id") || response.headers.get("server")?.toLowerCase() === "vercel";
+      await response.body?.cancel();
     } catch { /* Probe failure remains explicit; DNS evidence is independent. */ }
     const addresses = [...ipv4, ...ipv6];
     let publicDnsAddresses: string[] = [];
@@ -65,12 +72,13 @@ export async function main() {
     const migration = hosting.migrations?.find((item: { domains: string[] }) => item.domains.includes(domain));
     const host = migrationAwareHost(routeHost, accountHosts.map((item: { host: string }) => item.host), Boolean(migration));
     const monetization = configs.some(config => config.monetization !== false);
+    const stagingTargets = currentStagingTargets(domain, hosting.stages ?? []);
     return {
       domain, url: site.url, enabled: configs.some(config => config.enabled), platform: site.platform,
-      host, hostStatus: host === "turbo_pending" ? "migration_confirmed_target_unverified" : splitDns ? "dns_disagreement" : !addresses.length ? "account_configured_no_public_route" : host === "unknown" ? "unverified" : "public_route_verified",
-      accountHosts, publicDnsAddresses,
+      host, hostStatus: host === "turbo_pending" ? "migration_confirmed_target_unverified" : splitDns ? "dns_disagreement" : !addresses.length ? (accountHosts.length ? "account_configured_no_public_route" : "public_route_unavailable") : host === "unknown" ? "unverified" : "public_route_verified",
+      accountHosts, publicDnsAddresses, stagingTargets,
       addresses, cname, httpStatus, checkedAt: new Date().toISOString(),
-      evidence: ["시스템 DNS A/AAAA/CNAME", publicDnsChecked ? `Google DNS: ${publicDnsAddresses.join(", ") || "A 응답 없음"}` : "Google DNS 조회 미확인", ...(httpStatus !== null ? [`HTTPS HEAD ${httpStatus}`, ...(finalDomain !== domain ? [`redirect: ${finalDomain}`] : [])] : ["HTTPS HEAD unavailable"])],
+      evidence: ["시스템 DNS A/AAAA/CNAME", publicDnsChecked ? `Google DNS: ${publicDnsAddresses.join(", ") || "A 응답 없음"}` : "Google DNS 조회 미확인", ...(httpStatus !== null ? [`HTTPS ${httpStatus}`, ...(finalDomain !== domain ? [`redirect: ${finalDomain}`] : [])] : ["HTTPS unavailable"])],
       configuredLocations: [...new Set(configs.map(config => config.contentSource?.locationLabel).filter((value): value is string => Boolean(value)))],
       monetization, approval: exactApproval(domain, monetization, approval), approvalCheckedAt: approval.checkedAt ?? null,
       bindings: configs.map(config => {
