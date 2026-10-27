@@ -3261,3 +3261,9 @@ code {
     display: grid;
   }
 }
+
+/* Keep long collector diagnostics inside their dashboard card on mobile. */
+.fleet-blocker {
+  grid-template-columns: minmax(0, 1fr);
+  overflow-wrap: anywhere;
+}
