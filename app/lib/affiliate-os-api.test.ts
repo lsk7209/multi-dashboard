@@ -89,6 +89,7 @@ describe("Affiliate OS BFF", () => {
     const response = await affiliateOsRequest(request("logout", "POST", { origin: dashboard, cookie: `__Secure-affiliate_dashboard_session=${token}`, "x-csrf-token": csrf }), "logout");
     expect(response.status).toBe(200);
     expect(response.headers.get("set-cookie")).toContain("Max-Age=0");
+    expect(response.headers.get("x-affiliate-session-cleared")).toBeNull();
     expect(fetch.mock.calls[0][1].headers.get("x-csrf-token")).toBe(csrf);
   });
 
@@ -101,6 +102,7 @@ describe("Affiliate OS BFF", () => {
       const failed = await affiliateOsRequest(request("logout", "POST", headers), "logout");
       expect(failed.status).toBe(502);
       expect(failed.headers.get("set-cookie")).toContain("Max-Age=0");
+      expect(failed.headers.get("x-affiliate-session-cleared")).toBe("1");
       expect(warning).toHaveBeenCalledWith("[affiliate-os]", { operation: "logout", category: "transport_failure" });
       expect(JSON.stringify(warning.mock.calls)).not.toContain(token);
       fetch.mockResolvedValue(Response.json({ error: "private upstream response" }, { status: 500 }));

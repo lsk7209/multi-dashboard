@@ -39,11 +39,27 @@ test("authenticated fixture data, search, exact money and logout", async ({ page
   await expect(page.getByText("검색 결과가 없습니다.")).toBeVisible();
   expect(await page.evaluate(() => JSON.stringify(localStorage))).not.toContain("fixture-password");
   expect(await page.evaluate(() => JSON.stringify(localStorage))).not.toContain("fixture-only-csrf");
-  await page.route("**/api/affiliate-os/logout", route => route.fulfill({ status: 502, json: { error: "upstream_failure" } }));
+  await page.route("**/api/affiliate-os/logout", route => route.fulfill({ status: 502, headers: { "X-Affiliate-Session-Cleared": "1" }, json: { error: "upstream_failure" } }));
   await page.getByRole("button", { name: "로그아웃", exact: true }).click();
   await expect(page.getByRole("button", { name: "Affiliate OS 로그인", exact: true })).toBeVisible();
   await expect(page.locator(".affiliate-live-metrics")).toHaveCount(0);
   await expect(page.getByRole("region", { name: "원장과 운영 현황", exact: true }).getByRole("alert")).toContainText("서버의 세션 종료 응답은 확인하지 못했습니다");
+});
+
+test("browser transport failure keeps the login state so logout can be retried", async ({ page }) => {
+  await page.route("**/api/affiliate-os/**", route => {
+    const operation = new URL(route.request().url()).pathname.split("/").pop();
+    if (operation === "session") return route.fulfill({ json: { authenticated: true, user: { username: "fixture-admin", role: "admin" }, csrf: "a".repeat(64) } });
+    if (operation === "logout") return route.abort("failed");
+    return route.fulfill({ status: 502, json: { error: "fixture_unavailable" } });
+  });
+  await page.goto("/affiliate-marketing");
+  const logout = page.getByRole("button", { name: "로그아웃", exact: true });
+  await expect(logout).toBeVisible();
+  await logout.click();
+  await expect(logout).toBeEnabled();
+  await expect(page.getByRole("button", { name: "Affiliate OS 로그인", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("region", { name: "원장과 운영 현황", exact: true }).getByRole("alert")).toContainText("다시 시도하세요");
 });
 
 test("malformed or failed API does not render zero as a successful result", async ({ page }) => {

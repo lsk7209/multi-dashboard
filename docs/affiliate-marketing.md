@@ -1,17 +1,17 @@
 # 서버별 사이트와 제휴마케팅
 
-메뉴는 서버별 사이트와 제휴마케팅 두 개입니다. `/`가 서버별 사이트 작업공간이며 `/servers`는 `/`로 이동합니다. 이전 `/affiliate`, `/banner-management` 페이지는 `/affiliate-marketing`으로 이동합니다. 기존 관리 데이터·배너 런타임 API·통계 수집은 보존했습니다.
+대시보드 최상위 메뉴는 서버별 사이트와 제휴마케팅 두 개입니다. `/`가 서버 작업공간이고 `/affiliate-marketing`에서 Affiliate OS 운영 현황과 관리자 진입을 제공합니다.
 
-제휴마케팅에는 관리자 바로가기와 인증 후 운영 조회가 있습니다. 기본 관리자 주소 `http://127.0.0.1:18787/admin`은 Affiliate OS 프로젝트의 `open-ovh.cmd`로 이 PC의 SSH 터널을 열어야 사용할 수 있습니다. 주소 설정은 이 브라우저의 localStorage에만 저장하며 HTTPS `/admin` 또는 로컬 HTTP `/admin`만 허용합니다. 로그인 정보·쿼리·해시는 거절합니다. 바로가기 주소 저장과 API 활성화는 별개입니다.
+기본 관리자 주소는 이 대시보드의 `/admin`입니다. 기존에 기본 로컬 주소 `http://127.0.0.1:18787/admin`을 저장한 브라우저는 새 기본 주소로 전환합니다. 별도로 저장한 HTTPS 또는 로컬 `/admin` 주소는 유지합니다. 관리자 페이지는 Affiliate OS의 원본 `workspace.html`, `workspace.js`, `workspace.css`를 같은 호스트에서 제공하며, 원본 사이드바와 기능을 유지합니다. 대시보드 상단 메뉴 구성에는 영향을 주지 않습니다.
 
-운영 조회는 같은 출처의 `/api/affiliate-os/{operation}`을 사용합니다. 허용된 동작은 로그인·세션 확인·로그아웃, 원장 요약·검색·게재 승인·최근 30일 클릭/정산·등록 사이트 조회뿐입니다. 상품 변경·게재 승인·백업 다운로드를 프록시하지 않습니다. 계정 비밀번호는 로그인 요청에만 사용하고 저장하지 않습니다. HttpOnly/Secure/SameSite 세션 쿠키와 메모리의 CSRF 토큰을 사용합니다. 로그아웃 중 상위 서버 오류가 나도 대시보드 쿠키와 화면 데이터를 지웁니다. 브라우저에서 대시보드까지 통신이 끊겼다면 서버 쿠키/세션의 종료는 확인할 수 없으므로 경고를 표시합니다.
+`/api/affiliate-os/{operation}`은 기존 조회 화면용 BFF입니다. 관리자 작업실은 같은 호스트의 `/api/auth/*`, `/api/admin/*`에서 상위 Affiliate OS의 실제 관리자 경로만 프록시합니다. 양쪽은 `__Secure-affiliate_dashboard_session` HttpOnly·Secure·SameSite=Strict 쿠키를 공유하고, 상위 서버에는 `__Host-affiliate_session`으로 매핑합니다. 모든 쓰기는 정확한 대시보드 Origin과 64자리 CSRF를 요구하며, 원래 Affiliate OS의 계정 역할 및 CSRF 검사를 그대로 받습니다. 로그인과 세션 조회는 예외입니다. 임의 경로, 메서드, 리디렉션, 요청 헤더 전달은 허용하지 않습니다.
 
-서버 전용 환경 변수 세 개가 필요합니다. `AFFILIATE_API_ORIGIN`은 경로 없는 고정 HTTPS 출처, `AFFILIATE_DASHBOARD_ORIGIN`은 정확한 대시보드 HTTPS 출처, `AFFILIATE_GATEWAY_AUTH`는 추가 게이트의 Basic 인증 헤더입니다. 값을 브라우저·소스·로그에 넣지 않습니다. 미설정 시 API는 503으로 닫히고 화면은 미연결을 표시합니다. 임의 상위 주소·리디렉션·헤더·메서드·쿼리는 허용하지 않습니다. 실제 응답 크기와 시간을 제한하고 캐시를 금지합니다.
+로그아웃 중 상위 서버가 실패해도 프록시는 대시보드 쿠키를 지우고 `X-Affiliate-Session-Cleared: 1`을 반환합니다. 브라우저가 그 응답을 받으면 화면의 세션도 버리고 서버 세션 종료가 미확인임을 알립니다. 브라우저와 대시보드 사이에서 응답이 끊겨 쿠키 삭제를 확인할 수 없으면 화면의 로그인 상태를 유지하고 재시도를 안내합니다.
 
-수집·상품 검토·사이트별 게재 승인·실제 설치는 구분합니다. 데이터 오류나 미연결을 0건으로 표시하지 않습니다. 정산은 원장의 `amount_decimal` 문자열을 통화·승인 상태·귀속별로 표시하며 통화 간 합산이나 입금액을 추정하지 않습니다. iframe 차단과 Affiliate OS의 기존 세션·CSRF·레거시 Bearer 비활성을 유지합니다.
+서버 전용 환경 변수는 `AFFILIATE_API_ORIGIN`(경로 없는 HTTPS 주소), `AFFILIATE_DASHBOARD_ORIGIN`(정확한 대시보드 HTTPS 출처), `AFFILIATE_GATEWAY_AUTH`(게이트의 Basic 인증값)입니다. 사설 인증서인 경우 `AFFILIATE_API_CA_CERT`에 PEM 인증서를 넣습니다. Node HTTPS 전송은 인증서 체인과 호스트명을 검사하며 검증을 끄지 않습니다. 이 값들을 브라우저·소스·로그에 넣지 않습니다. 설정이 없거나 형식이 잘못되면 503으로 닫힙니다.
 
-현재 공개 관리자 도메인은 미지정이며 HTTPS 실연결/사이트 설치는 미완료입니다. 실제 서버의 비공개 조회 결과는 원장 8,440건, 등록 사이트·게재 승인·활성 링크 0건입니다. 이 값은 자동 갱신되는 공개 통계가 아니며, 인증된 최신 API 응답만 화면에 표시합니다.
+일반 JSON 요청·응답은 1 MB, CSV 응답은 4 MB, 관리자 백업 다운로드는 64 MiB로 제한합니다. 백업과 CSV는 스트리밍하며 일반 요청은 8초, 백업은 30초 총 전송 기한이 있습니다. Vercel 요청 크기와 게이트 설정을 고려해 브라우저 원본 폴더 업로드는 4 MB로 제한합니다. 더 큰 폴더는 Affiliate OS의 로컬 관리자에서 처리해야 합니다. 실제 대용량 업로드·다운로드 성공은 배포 후 확인해야 합니다.
 
-검증: `pnpm test`, `pnpm lint`, `pnpm type-check`, `pnpm build`, `pnpm test:e2e`. API 모의 응답과 UI fixture는 실제 서버 연결이나 수익 증거를 대신하지 않습니다.
+수집·상품 검토·사이트별 게재 승인·실제 사이트 설치는 별개입니다. 화면의 데이터는 인증된 최신 응답이며, API 오류나 미연결은 0건으로 표시하지 않습니다. 실제 서버·모델·수익 API·배포 검증은 별도의 라이브 증거가 필요합니다.
 
-기술 근거: [Next BFF](https://nextjs.org/docs/app/guides/backend-for-frontend), [인증](https://nextjs.org/docs/app/guides/authentication), [환경 변수](https://nextjs.org/docs/app/guides/environment-variables), [OWASP CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html). 공급자 문서의 일반 안내와 이 앱의 검증 결과는 별도입니다.
+검증 명령: `pnpm exec vitest run app/lib/affiliate-upstream.test.ts app/lib/affiliate-admin-proxy.test.ts app/lib/affiliate-os-api.test.ts app/lib/affiliate-admin-url.test.ts`, `pnpm type-check`, 변경 파일 ESLint, 이후 전체 빌드와 브라우저 운영 스모크.

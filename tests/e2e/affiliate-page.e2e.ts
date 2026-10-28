@@ -12,7 +12,7 @@ test("two menus open the server workspace and Affiliate OS page", async ({ page 
   await expect(page).toHaveURL(/\/affiliate-marketing$/);
   await expect(page.getByRole("heading", { level: 1, name: "제휴마케팅" })).toBeVisible();
   await expect(menu.getByRole("link", { name: "제휴마케팅", exact: true })).toHaveAttribute("aria-current", "page");
-  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "/admin");
   await expect(page.getByRole("heading", { name: "원장과 운영 현황", exact: true })).toBeVisible();
 });
 
@@ -32,7 +32,7 @@ test("settings persist, reject unsafe HTTP and reset without changing services",
   const link = page.getByRole("link", { name: "Affiliate OS 관리자 열기" });
   await input.fill("http://unsafe.example.com/admin"); await save.click();
   await expect(page.getByRole("region", { name: "관리자 접속", exact: true }).getByRole("status")).toContainText("HTTPS 주소");
-  await expect(link).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(link).toHaveAttribute("href", "/admin");
   await input.fill("https://affiliate.example.com/admin"); await save.click();
   await expect(link).toHaveAttribute("href", "https://affiliate.example.com/admin");
   await expect(link).toHaveAttribute("target", "_blank");
@@ -41,14 +41,14 @@ test("settings persist, reject unsafe HTTP and reset without changing services",
   await expect(link).toHaveAttribute("href", "https://affiliate.example.com/admin");
   await page.getByText("접속 주소 설정", { exact: true }).click();
   await page.getByRole("button", { name: "기본 주소로 복원" }).click();
-  await expect(link).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(link).toHaveAttribute("href", "/admin");
   expect(await page.evaluate(key => localStorage.getItem(key), key)).toBeNull();
 });
 
 test("corrupt stored URL falls back safely", async ({ page }) => {
   await page.addInitScript(key => localStorage.setItem(key, "javascript:alert(1)"), key);
   await page.goto("/affiliate-marketing");
-  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "/admin");
   await expect(page.getByRole("region", { name: "관리자 접속", exact: true }).getByRole("status")).toContainText("저장된 주소가 올바르지 않아");
 });
 
@@ -59,5 +59,18 @@ test("unavailable storage reports save failure", async ({ page }) => {
   await page.getByLabel("Affiliate OS 관리자 주소", { exact: true }).fill("https://affiliate.example.com/admin");
   await page.getByRole("button", { name: "접속 주소 저장", exact: true }).click();
   await expect(page.getByRole("region", { name: "관리자 접속", exact: true }).getByRole("status")).toContainText("주소를 저장하지 못했습니다");
-  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "http://127.0.0.1:18787/admin");
+  await expect(page.getByRole("link", { name: "Affiliate OS 관리자 열기" })).toHaveAttribute("href", "/admin");
+});
+
+test("legacy default local address migrates to same-host administrator navigation", async ({ page }) => {
+  await page.addInitScript(key => localStorage.setItem(key, "http://127.0.0.1:18787/admin"), key);
+  await page.route("**/api/affiliate-os/session", route => route.fulfill({ status: 503, json: { error: "fixture_unavailable" } }));
+  await page.context().route("**/admin", route => route.fulfill({ contentType: "text/html; charset=utf-8", body: "<!doctype html><meta charset=\"utf-8\"><title>Affiliate OS fixture</title><h1>Affiliate OS 관리자 작업실</h1>" }));
+  await page.goto("/affiliate-marketing");
+  const link = page.getByRole("link", { name: "Affiliate OS 관리자 열기" });
+  await expect(link).toHaveAttribute("href", "/admin");
+  const [admin] = await Promise.all([page.context().waitForEvent("page"), link.click()]);
+  await admin.waitForLoadState();
+  expect(new URL(admin.url()).origin).toBe(new URL(page.url()).origin);
+  await expect(admin.getByRole("heading", { name: "Affiliate OS 관리자 작업실" })).toBeVisible();
 });

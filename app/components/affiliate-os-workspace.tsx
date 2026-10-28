@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { affiliateAnalytics, affiliateItems, affiliateLogin, affiliatePublications, affiliateSession, affiliateSites, affiliateSummary, type AffiliateSnapshot } from "../lib/affiliate-os-data";
 
-class ApiError extends Error { constructor(public status: number) { super("Affiliate OS request failed"); } }
+class ApiError extends Error { constructor(public status: number, public sessionCleared = false) { super("Affiliate OS request failed"); } }
 async function request(operation: string, signal: AbortSignal, init?: RequestInit) {
   const response = await fetch(`/api/affiliate-os/${operation}`, { ...init, credentials: "same-origin", cache: "no-store", signal: AbortSignal.any([signal, AbortSignal.timeout(20000)]) });
-  if (!response.ok) throw new ApiError(response.status);
+  if (!response.ok) throw new ApiError(response.status, response.headers.get("x-affiliate-session-cleared") === "1");
   return response.json() as Promise<unknown>;
 }
 function message(error: unknown) {
@@ -77,11 +77,20 @@ export function AffiliateOsWorkspace() {
   async function logout() {
     if (!session) return;
     setAuthBusy(true);
+    let discard = false;
     try {
       await request("logout", new AbortController().signal, { method: "POST", headers: { "X-CSRF-Token": session.csrf } });
+      discard = true;
       setFeedback("로그아웃했습니다.");
-    } catch { setFeedback("이 화면에서 로그아웃했습니다. 서버의 세션 종료 응답은 확인하지 못했습니다. 다른 창에서도 로그인했다면 관리자에서 세션을 확인하세요."); }
-    finally { setSession(null); setSnapshot(null); setAuthBusy(false); }
+    } catch (error) {
+      discard = error instanceof ApiError && error.sessionCleared;
+      setFeedback(discard
+        ? "이 브라우저의 로그인 쿠키를 지웠습니다. 서버의 세션 종료 응답은 확인하지 못했습니다. 다른 창의 세션은 관리자에서 확인하세요."
+        : "로그아웃 응답을 받지 못했습니다. 로그인 상태가 남아 있을 수 있습니다. 다시 시도하세요.");
+    } finally {
+      if (discard) { setSession(null); setSnapshot(null); }
+      setAuthBusy(false);
+    }
   }
 
   return <section className="panel affiliate-live" aria-labelledby="affiliate-live-title">

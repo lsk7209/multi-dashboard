@@ -1,5 +1,4 @@
-const COOKIE = "__Secure-affiliate_dashboard_session";
-const UPSTREAM_COOKIE = "__Host-affiliate_session";
+import { affiliateConfiguration, clearSessionCookie, issuedSessionCookie, sessionToken, upstreamRequest, upstreamToken, UPSTREAM_COOKIE } from "./affiliate-upstream";
 const MAX_RESPONSE = 1_000_000;
 class UpstreamResponseError extends Error {
   constructor(readonly category: "invalid_content_type" | "oversized_response" | "empty_response") { super(category); }
@@ -15,36 +14,14 @@ const OPERATIONS: Record<string, { path: string; method: "GET" | "POST"; query?:
   sites: { path: "/api/admin/sites", method: "GET" },
 };
 
-function configuredOrigin(value: string | undefined): string | null {
-  if (!value) return null;
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:" && url.origin === value && !url.username && !url.password ? value : null;
-  } catch { return null; }
-}
-
-function configuration() {
-  const api = configuredOrigin(process.env.AFFILIATE_API_ORIGIN);
-  const dashboard = configuredOrigin(process.env.AFFILIATE_DASHBOARD_ORIGIN);
-  const gateway = process.env.AFFILIATE_GATEWAY_AUTH;
-  if (!api || !dashboard || !gateway || !/^Basic [A-Za-z0-9+/]+={0,2}$/.test(gateway) || gateway.length > 1024) return null;
-  return { api, dashboard, gateway };
-}
 
 function json(status: number, value: unknown, cookie?: string): Response {
   const headers = new Headers({ "Cache-Control": "no-store", "Content-Type": "application/json; charset=utf-8", "X-Content-Type-Options": "nosniff" });
   if (cookie) headers.set("Set-Cookie", cookie);
+  if (cookie === clearSessionCookie && status >= 400) headers.set("X-Affiliate-Session-Cleared", "1");
   return new Response(JSON.stringify(value), { status, headers });
 }
 
-function sessionCookie(request: Request): string | null {
-  const raw = request.headers.get("cookie") ?? "";
-  if (raw.length > 8192) return null;
-  const matches = raw.split(";").map((part) => part.trim()).filter((part) => part.startsWith(`${COOKIE}=`));
-  if (matches.length !== 1) return null;
-  const token = matches[0]!.slice(COOKIE.length + 1);
-  return /^[A-Za-z0-9_-]{43}$/.test(token) ? token : null;
-}
 
 function queryString(request: Request, keys: readonly string[] = []): string | null {
   const search = new URL(request.url).search;
@@ -112,11 +89,6 @@ async function boundedJson(response: Response): Promise<unknown> {
   return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(Buffer.concat(chunks)));
 }
 
-function upstreamToken(response: Response): string | null {
-  const cookie = response.headers.get("set-cookie") ?? "";
-  const matches = [...cookie.matchAll(new RegExp(`(?:^|,\\s*)${UPSTREAM_COOKIE}=([A-Za-z0-9_-]{43})(?:;|$)`, "g"))];
-  return matches.length === 1 ? matches[0]?.[1] ?? null : null;
-}
 
 function validAuthResponse(data: unknown, operation: "login" | "session"): boolean {
   if (!data || typeof data !== "object" || Array.isArray(data)) return false;
@@ -129,17 +101,17 @@ function validAuthResponse(data: unknown, operation: "login" | "session"): boole
     typeof record.csrf === "string" && /^[a-f0-9]{64}$/.test(record.csrf));
 }
 
-const clearCookie = `${COOKIE}=; Path=/api/affiliate-os; HttpOnly; Secure; SameSite=Strict; Max-Age=0`;
+const clearCookie = clearSessionCookie;
 
 export async function affiliateOsRequest(request: Request, operation: string): Promise<Response> {
-  const config = configuration();
+  const config = affiliateConfiguration();
   if (!config) return json(503, { error: "Affiliate OS integration is unavailable" });
   const target = OPERATIONS[operation];
   if (!target || request.method !== target.method) return json(404, { error: "Not found" });
   if (target.method === "POST" && (request.headers.get("origin") !== config.dashboard || request.headers.get("sec-fetch-site") === "cross-site")) return json(403, { error: "Origin not permitted" });
   const query = queryString(request, target.query);
   if (query === null) return json(400, { error: "Invalid query" });
-  const token = sessionCookie(request);
+  const token = sessionToken(request);
   if (operation !== "login" && !token) return json(401, { authenticated: false, error: "Unauthorized" });
   const body = operation === "login" ? await loginBody(request) : undefined;
   if (operation === "login" && !body) return json(400, { error: "Invalid login request" });
@@ -151,14 +123,12 @@ export async function affiliateOsRequest(request: Request, operation: string): P
   if (body) headers.set("Content-Type", "application/json");
   if (operation === "logout") headers.set("X-CSRF-Token", csrf!);
   try {
-    const response = await fetch(`${config.api}${target.path}${query ? `?${query}` : ""}`, {
-      method: target.method, headers, ...(body ? { body } : {}), redirect: "error", cache: "no-store", signal: AbortSignal.timeout(8000),
-    });
+    const response = await upstreamRequest(`${config.api}${target.path}${query ? `?${query}` : ""}`, { method: target.method, headers, body: body ?? undefined, maxResponse: MAX_RESPONSE }, config.ca);
     const data = await boundedJson(response);
     if (operation === "login" && response.ok) {
       const issued = upstreamToken(response);
       if (!issued || !validAuthResponse(data, "login")) return json(502, { error: "Invalid upstream response" });
-      return json(200, data, `${COOKIE}=${issued}; Path=/api/affiliate-os; HttpOnly; Secure; SameSite=Strict; Max-Age=28800`);
+      return json(200, data, issuedSessionCookie(issued));
     }
     if (operation === "logout" && response.ok) return json(200, data, clearCookie);
     if (operation === "session" && response.status === 401) return json(401, { authenticated: false, error: "Unauthorized" }, clearCookie);
