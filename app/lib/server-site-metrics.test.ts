@@ -29,6 +29,15 @@ describe("server site metrics", () => {
     expect(serverSiteMetrics(site, []).weeklyUsers).toBeNull();
     expect(serverSiteMetrics(site, [{ ...stat, gscSiteUrl: "sc-domain:other.com" }])).toMatchObject({ clicks: null, ctr: null, position: null });
   });
+  it("uses independently collected period metrics and leaves absent periods unknown", () => {
+    const gsc = { clicks: 8, impressions: 80, ctr: 0.1, position: 3 };
+    const row = serverSiteMetrics(site, [{ ...stat, last14Days: metrics(70), gscLast14Days: gsc, gscLast1Days: { ...gsc, clicks: 0 } }]);
+    expect(row.periods?.["14"]).toMatchObject({ users: 70, clicks: 8, impressions: 80 });
+    expect(row.periods?.["1"]).toMatchObject({ users: 0, clicks: 0 });
+    expect(serverSiteMetrics(site, [{ ...stat, gscLast1Days: { clicks: 0, impressions: 0, ctr: 0, position: 0 } }]).periods?.["1"]).toMatchObject({ clicks: null, impressions: null });
+    expect(serverSiteMetrics(site, [stat]).periods?.["14"]).toMatchObject({ users: null, clicks: null });
+    expect(serverSiteMetrics(site, [{ ...stat, ga4Status: "auth_error", gscStatus: "auth_error", last14Days: metrics(70), gscLast14Days: gsc }]).periods?.["14"]).toMatchObject({ users: null, clicks: null });
+  });
   it("uses one matching property without summing duplicate accounts", () => {
     const other = { ...binding, id: "example-2", ga4PropertyId: "456" };
     expect(serverSiteMetrics({ ...site, bindings: [binding, other] }, [stat, { ...stat, id: other.id, ga4PropertyId: "456", last7Days: metrics(300), last30Days: metrics(900) }])).toMatchObject({ weeklyUsers: 42, monthlyUsers: 180 });

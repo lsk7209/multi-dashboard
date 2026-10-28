@@ -386,9 +386,13 @@ interface SiteStat {
   gscSiteUrl: string;
   last1Days: MetricSet;
   last7Days: MetricSet;
+  periodCollectionErrors?: string[];
+  last14Days?: MetricSet;
   previous7Days: MetricSet;
   last30Days: MetricSet;
+  gscLast1Days?: GscMetricSet;
   gscLast7Days: GscMetricSet;
+  gscLast14Days?: GscMetricSet;
   gscPrevious7Days: GscMetricSet;
   gscLast30Days: GscMetricSet;
   gscTopQueries?: GscQueryMetric[];
@@ -455,6 +459,7 @@ interface DateRangeSummary {
   basis: "completed_days";
   last1Days: DateRange;
   last7Days: DateRange;
+  last14Days: DateRange;
   previous7Days: DateRange;
   last30Days: DateRange;
 }
@@ -566,6 +571,7 @@ function buildDateRanges(): DateRangeSummary {
     basis: "completed_days",
     last1Days: buildDateRange(DAY_RANGE),
     last7Days: buildDateRange(RANGE_DAYS),
+    last14Days: buildDateRange(14),
     previous7Days: {
       startDate: seoulDateDaysAgo(14),
       endDate: seoulDateDaysAgo(8),
@@ -2175,6 +2181,11 @@ function summarizeEvidenceErrors(evidence: MonetizationEvidence[]): string {
   return details.join("; ");
 }
 
+export async function collectOptionalPeriod<T>(label: string, errors: string[], request: () => Promise<T>): Promise<T | undefined> {
+  try { return await request(); }
+  catch (error) { errors.push(`${label}:${classifyError(getErrorMessage(error))}`); return undefined; }
+}
+
 async function fetchSiteStat(
   ga4Client: BetaAnalyticsDataClient,
   gscClient: ReturnType<typeof google.searchconsole>,
@@ -2186,6 +2197,8 @@ async function fetchSiteStat(
 ): Promise<SiteStat> {
   let last1Days = emptyMetrics();
   let last7Days = emptyMetrics();
+  let last14Days: MetricSet | undefined;
+  const periodCollectionErrors: string[] = [];
   let previous7Days = emptyMetrics();
   let last30Days = emptyMetrics();
   let gscLast7Days = emptyGscMetrics();
@@ -2217,6 +2230,8 @@ async function fetchSiteStat(
     } catch (ga4Error) {
       error = getErrorMessage(ga4Error);
     }
+
+    last14Days = await collectOptionalPeriod("ga4_14d", periodCollectionErrors, () => fetchGa4Metrics(ga4Client, site.ga4PropertyId!, 14));
 
     reportProgress("ga4-keywords");
     try {
@@ -2260,6 +2275,11 @@ async function fetchSiteStat(
     gscError = getErrorMessage(searchError);
   }
 
+  const [gscLast1Days, gscLast14Days] = await Promise.all([
+    collectOptionalPeriod("gsc_1d", periodCollectionErrors, () => fetchGscMetrics(gscClient, gscSiteUrl, 1)),
+    collectOptionalPeriod("gsc_14d", periodCollectionErrors, () => fetchGscMetrics(gscClient, gscSiteUrl, 14)),
+  ]);
+
   reportProgress("sitemap");
   try {
     sitemapSummary = await fetchSitemapSummary(
@@ -2292,9 +2312,13 @@ async function fetchSiteStat(
     gscSiteUrl,
     last1Days,
     last7Days,
+    ...(periodCollectionErrors.length ? { periodCollectionErrors } : {}),
+    ...(last14Days ? { last14Days } : {}),
     previous7Days,
     last30Days,
+    ...(gscLast1Days ? { gscLast1Days } : {}),
     gscLast7Days,
+    ...(gscLast14Days ? { gscLast14Days } : {}),
     gscPrevious7Days,
     gscLast30Days,
     gscTopQueries,
@@ -2498,6 +2522,7 @@ async function runStatsUpdate(): Promise<void> {
             const status =
               `ga4=${stat.ga4Status ?? "unknown"}, ` +
               `gsc=${stat.gscStatus ?? "unknown"}, ` +
+              `periodFailures=${stat.periodCollectionErrors?.join("|") || "none"}, ` +
               `adsense=${stat.adsenseStatus ?? "disabled"}, ` +
               `adsTxt=${stat.adsTxtStatus ?? "disabled"}`;
             const message = `site done id=${site.id}, elapsed=${formatElapsed(

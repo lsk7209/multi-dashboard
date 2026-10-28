@@ -12,7 +12,6 @@ export function ServerWorkspace() {
   const sites = inventory?.sites ?? [];
   const known = sites.filter(site => ["ovh", "contabo", "turbo1", "turbo2", "vercel"].includes(site.host) && site.hostStatus === "public_route_verified").length;
   const staged = sites.filter(site => site.stagingTargets?.length).length;
-  const range = snapshot?.dateRanges?.last7Days;
   const age = Date.now() - Date.parse(snapshot?.generatedAt ?? "");
   const fresh = Number.isFinite(age) && age >= -300000 && age < 36 * 3600000;
   return <main className="dashboard-shell servers-page workspace-page">
@@ -24,7 +23,7 @@ export function ServerWorkspace() {
     {!fresh && <p className="workspace-notice" role="status">통계가 없거나 갱신 후 36시간이 지났습니다. 표시된 수집 시각을 확인해 주세요.</p>}
     {!snapshot && <p className="workspace-notice">통계 원본을 읽지 못했습니다. 수치는 미확인으로 표시합니다.</p>}
     <section id="sites" className="workspace-sites" aria-label="사이트 탐색">
-      <div className="workspace-section-heading"><h2>사이트 탐색</h2><p>{range ? `${range.startDate} ~ ${range.endDate}` : "통계 기간 미확인"} · 전일은 완료된 하루 기준</p></div>
+      <div className="workspace-section-heading"><h2>사이트 탐색</h2><p>기간을 선택해 GA4와 GSC를 비교하세요.</p></div>
       {inventory ? <ServerSites sites={sites.map(site => serverSiteMetrics(site, snapshot?.stats ?? []))} /> : <p role="status">호스팅 현황을 불러오지 못했습니다.</p>}
     </section>
     <footer id="data-notes" className="workspace-notes">

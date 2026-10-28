@@ -2,6 +2,7 @@ import type { SiteStat } from "./dashboard-data";
 import type { InventorySite } from "./site-inventory";
 
 export interface ServerSiteRow {
+  periods?: Record<"1" | "7" | "14" | "30", { users: number | null; clicks: number | null; impressions: number | null; ctr: number | null; position: number | null }>;
   domain: string;
   url: string;
   host: string;
@@ -45,7 +46,14 @@ export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "
     : previousWeeklyUsers === 0
       ? weeklyUsers === 0 ? 0 : null
       : (weeklyUsers - previousWeeklyUsers) / previousWeeklyUsers * 100;
-  return { domain: site.domain, url: site.url, host: site.host, approval: site.approval,
+  const period = (users: number | undefined, search: SiteStat["gscLast7Days"]) => ({ users: finiteMetric(users), clicks: finiteMetric(search?.clicks), impressions: finiteMetric(search?.impressions), ctr: finiteMetric(search?.ctr), position: finiteMetric(search?.position) });
+  const periods = {
+    "1": period(ga4?.stat?.last1Days?.activeUsers, gsc?.stat?.gscLast1Days?.impressions ? gsc.stat.gscLast1Days : undefined),
+    "7": period(ga4?.stat?.last7Days?.activeUsers, gsc?.stat?.gscLast7Days),
+    "14": period(ga4?.stat?.last14Days?.activeUsers, gsc?.stat?.gscLast14Days),
+    "30": period(ga4?.stat?.last30Days?.activeUsers, gsc?.stat?.gscLast30Days),
+  };
+  return { periods, domain: site.domain, url: site.url, host: site.host, approval: site.approval,
     httpStatus: site.httpStatus ?? null,
     checkedAt: site.checkedAt ?? null,
     ...(site.hostStatus !== undefined ? { hostStatus: site.hostStatus } : {}),

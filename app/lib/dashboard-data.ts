@@ -560,10 +560,13 @@ export interface SiteStat {
   ga4PropertyId: string;
   gscSiteUrl?: string;
   last1Days?: MetricSet;
+  last14Days?: MetricSet;
   last7Days: MetricSet;
   previous7Days?: MetricSet;
   last28Days?: MetricSet;
   last30Days?: MetricSet;
+  gscLast1Days?: GscMetricSet;
+  gscLast14Days?: GscMetricSet;
   gscLast7Days?: GscMetricSet;
   gscPrevious7Days?: GscMetricSet;
   gscLast28Days?: GscMetricSet;

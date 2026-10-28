@@ -16,3 +16,15 @@ test("server filters, search, details and legacy server URL work", async ({ page
   await page.locator(".workspace-detail-toggle").first().click();
   await expect(page.locator(".workspace-detail-row").first()).toBeVisible();
 });
+
+
+test("period selector updates GA4 and GSC columns without inventing missing values", async ({ page }) => {
+  await page.goto("/");
+  const periods = page.getByRole("group", { name: "통계 기간" });
+  for (const days of ["1", "7", "14", "30"]) {
+    await periods.getByRole("button", { name: `${days}일`, exact: true }).click();
+    await expect(periods.getByRole("button", { name: `${days}일`, exact: true })).toHaveAttribute("aria-pressed", "true");
+    await expect(page.getByRole("columnheader", { name: `${days}일 GA4 사용자` })).toBeVisible();
+    await expect(page.getByRole("columnheader", { name: `${days}일 GSC 클릭` })).toBeVisible();
+  }
+});

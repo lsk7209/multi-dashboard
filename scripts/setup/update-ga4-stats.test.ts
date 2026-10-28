@@ -186,3 +186,17 @@ describe("resolveAdsenseMonitoringHold", () => {
     });
   });
 });
+
+
+describe("optional period collection", () => {
+  it("records a failed request without fabricating a value or affecting another period", async () => {
+    const { collectOptionalPeriod } = await import("./update-ga4-stats");
+    const errors: string[] = [];
+    const failed = await collectOptionalPeriod("ga4_14d", errors, async () => { throw new Error("permission denied"); });
+    const success = await collectOptionalPeriod("gsc_1d", errors, async () => 0);
+    expect(failed).toBeUndefined();
+    expect(success).toBe(0);
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toMatch(/^ga4_14d:/);
+  });
+});
