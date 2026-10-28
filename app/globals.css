@@ -36,6 +36,28 @@
 .affiliate-form-actions button:disabled { opacity: .5; cursor: wait; }
 .affiliate-setting-feedback { margin-bottom: 0; }
 .affiliate-setting-feedback:empty { display: none; }
+.affiliate-live { padding:28px; margin:28px 0; }
+.affiliate-live > p,.affiliate-data-note { color:var(--muted); font-size:13px; line-height:1.8; overflow-wrap:anywhere; }
+.affiliate-login { display:flex; align-items:end; flex-wrap:wrap; gap:12px; margin:24px 0; }
+.affiliate-login label { display:grid; gap:8px; font-size:13px; flex:1 1 180px; }
+.affiliate-live input { min-width:0; width:100%; padding:12px; border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--ink); }
+.affiliate-live button { padding:12px 16px; border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--ink); font:inherit; font-size:13px; cursor:pointer; }
+.affiliate-live button[type="submit"] { background:var(--accent); color:white; }
+.affiliate-live button:disabled { opacity:.5; cursor:default; }
+.affiliate-live .affiliate-form-actions { align-items:center; font-size:13px; }
+.affiliate-live h3 { font-size:18px; margin:28px 0 12px; }
+.affiliate-live-metrics { margin:24px 0 12px; }
+.affiliate-search { display:flex; flex-wrap:wrap; gap:8px; align-items:center; max-width:100%; }
+.affiliate-search label { font-size:12px; color:var(--muted); }
+.affiliate-search input { width:220px; max-width:100%; }
+.affiliate-data-table { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+.affiliate-data-table table { width:100%; min-width:650px; border-collapse:collapse; }
+.affiliate-data-table th,.affiliate-data-table td { padding:14px; text-align:left; border-bottom:1px solid var(--line); font-size:13px; white-space:normal; max-width:260px; overflow-wrap:anywhere; }
+.affiliate-data-table th { background:var(--bg); color:var(--muted); }
+.affiliate-data-table small { display:block; font-size:11px; color:var(--muted); margin-top:6px; }
+.affiliate-data-table > p { padding:0 14px; color:var(--muted); font-size:13px; }
+.affiliate-pagination { margin:16px 0 24px; }
+@media(max-width:600px) { .affiliate-live { padding:20px; } .affiliate-search input { width:100%; } }
 .affiliate-readiness { margin: 32px 0; }
 .affiliate-readiness > h2, .affiliate-workflow h2 { font-size: 20px; margin: 0 0 18px; }
 .affiliate-readiness-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
