@@ -20,6 +20,18 @@ afterEach(() => {
 });
 
 describe("same-host Affiliate OS administrator proxy", () => {
+  it("requires the existing session and CSRF boundaries for automatic status and bulk preview", async () => {
+    const fetch = vi.fn().mockImplementation(() => Promise.resolve(Response.json({ policies: [], by_placement: [] })));
+    vi.stubGlobal("fetch", fetch);
+    expect((await proxy("/api/admin/auto-delivery")).status).toBe(401);
+    expect((await proxy("/api/admin/auto-delivery", "GET", { cookie })).status).toBe(200);
+    expect((await proxy("/api/admin/auto-delivery", "POST", { cookie, origin: dashboard })).status).toBe(404);
+    const path = "/api/admin/workspace/pages/batch/preview";
+    expect((await proxy(path, "POST", { cookie, origin: dashboard, "content-type": "application/json" }, "{}")).status).toBe(403);
+    expect((await proxy(path, "POST", { cookie, origin: dashboard, "content-type": "application/json", "x-csrf-token": csrf }, "{}")).status).toBe(200);
+    expect((await proxy(path, "POST", { cookie, origin: dashboard, "content-type": "application/json", "x-csrf-token": csrf, "content-length": "3000001" }, "{}")).status).toBe(413);
+    expect(fetch).toHaveBeenCalledTimes(2);
+  });
   it("rejects unknown methods, encoded path tricks, missing sessions and foreign writes before network", async () => {
     const fetch = vi.fn(); vi.stubGlobal("fetch", fetch);
     expect((await proxy("/api/admin/evil", "GET", { cookie })).status).toBe(404);

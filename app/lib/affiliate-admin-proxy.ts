@@ -13,12 +13,14 @@ const fixed: Record<string, readonly ("GET" | "POST")[]> = {
   "/api/admin/links": ["GET", "POST"], "/api/admin/links/toggle": ["POST"],
   "/api/admin/import-links": ["POST"], "/api/admin/import-conversions": ["POST"],
   "/api/admin/debug-match": ["POST"],
+  "/api/admin/auto-delivery": ["GET"],
 };
 const workspace: Record<string, readonly ("GET" | "POST")[]> = {
   "readiness": ["GET"], "yield-insights": ["GET"], "diagnostics": ["GET"], "jobs": ["GET"],
   "source/preview": ["POST"], "source/files": ["POST"], "source/apply": ["POST"],
   "item": ["GET"], "metadata": ["POST"], "metadata/batch": ["POST"], "simulate": ["POST"],
   "pages/status": ["GET"], "pages/preview": ["POST"], "pages/apply": ["POST"],
+  "pages/batch/preview": ["POST"], "pages/batch/apply": ["POST"],
   "semantic/status": ["GET"], "semantic/reset": ["POST"], "semantic/index": ["POST"],
   "simulations": ["GET"], "analytics": ["GET"], "analytics.csv": ["GET"], "audit": ["GET"],
   "schedule": ["GET", "POST"], "backups": ["GET", "POST"], "backup-access": ["GET"],
@@ -83,7 +85,7 @@ export async function affiliateAdminProxy(request: Request, parts: string[]): Pr
   if (!login && !token) return reply(401, "Unauthorized");
   const csrf = request.headers.get("x-csrf-token");
   if (write && !login && !/^[a-f0-9]{64}$/.test(csrf ?? "")) return reply(403, "Invalid CSRF token");
-  const requestLimit = path === "/api/admin/workspace/source/files" ? 4_000_000 : ["/api/admin/workspace/metadata/batch", "/api/admin/brain/metadata/import"].includes(path) ? 2_300_000 : 1_000_000;
+  const requestLimit = path === "/api/admin/workspace/source/files" ? 4_000_000 : path === "/api/admin/workspace/pages/batch/preview" ? 3_000_000 : ["/api/admin/workspace/metadata/batch", "/api/admin/brain/metadata/import"].includes(path) ? 2_300_000 : 1_000_000;
   if (write && Number(request.headers.get("content-length") ?? 0) > requestLimit) return reply(413, path === "/api/admin/workspace/source/files" ? "Upload exceeds dashboard 4 MB source limit; use Affiliate OS local admin for larger files" : "Request exceeds dashboard size limit");
   const body = write ? await boundedBody(request, login ? 2048 : requestLimit) : undefined;
   if (write && body === null) return reply(400, "Invalid or oversized JSON request");
