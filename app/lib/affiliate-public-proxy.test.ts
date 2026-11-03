@@ -100,6 +100,19 @@ it("does not authorize explicit no-ad fleet exclusions", async () => {
   }
   expect(fetch).not.toHaveBeenCalled();
 });
+it("accepts only the two verified www aliases with their existing site keys", async () => {
+  const fetch = vi.fn().mockResolvedValue(Response.json({ ...categoryOutput(), site_key: "certifi-kr", category: "캠핑 장비", links: [] }));
+  vi.stubGlobal("fetch", fetch);
+  const request = (hostname: string, site: string) => new Request(`https://dashboard.example/api/recommend?site_key=${site}`, {
+    method: "POST", headers: { origin: `https://${hostname}`, "content-type": "text/plain" }, body: JSON.stringify(categoryInput),
+  });
+  expect((await affiliatePublicPost(request("www.certifi.kr", "certifi-kr"), "recommend")).status).toBe(200);
+  fetch.mockResolvedValueOnce(Response.json({ ...categoryOutput(), site_key: "texturb-com", links: [] }));
+  expect((await affiliatePublicPost(request("www.texturb.com", "texturb-com"), "recommend")).status).toBe(200);
+  expect((await affiliatePublicPost(request("www.certifi.kr", "texturb-com"), "recommend")).status).toBe(400);
+  expect((await affiliatePublicPost(request("www.picklefriend.kr", "picklefriend"), "recommend")).status).toBe(403);
+  expect(fetch).toHaveBeenCalledTimes(2);
+});
 it("passes disabled or unconfigured category without manufacturing fallback", async () => {
   for (const category_revision of [0,1,2]) {
     vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({...categoryOutput(),category_revision,category_enabled:false,links:[]})));
