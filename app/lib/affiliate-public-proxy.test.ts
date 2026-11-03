@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { affiliatePublicPost, affiliatePublicAsset } from "./affiliate-public-proxy";
+import { affiliatePublicPost, affiliatePublicAsset, affiliatePublicOptions } from "./affiliate-public-proxy";
 
 const api = "https://affiliate.example";
-const link = { id: "5c7f400a-5d4b-4eea-863a-eedbdcfb982f", tracking_mode: "direct", click_path: null };
+const link = { id: "5c7f400a-5d4b-4eea-863a-eedbdcfb982f", tracking_mode: "direct", click_path: null, affiliate_url: "https://merchant.example/product" };
 const input = { delivery_mode: "auto_inline", path: "/blog/new-coffee", title: "커피 준비", paragraphs: [{ id: "p0", text: "캠핑 커피 드리퍼의 구성과 사용 방법을 확인해 보세요." }] };
 const output = () => ({ site_key: "campgogo", delivery_mode: "auto_inline", auto_revision: "camp-auto-r1", placement: { paragraph_id: "p0" }, links: [{ ...link }] });
 const post = (body: unknown, headers = {}) => affiliatePublicPost(new Request("https://dashboard.example/api/recommend?site_key=campgogo", { method: "POST", headers: { origin: "https://campgogo.kr", "content-type": "text/plain", ...headers }, body: JSON.stringify(body) }), "recommend");
@@ -62,10 +62,43 @@ it("rejects invalid category contracts before upstream", async () => {
   expect(fetch).not.toHaveBeenCalled();
 });
 it("rejects category response that changes mode, revision, approval or destination contract", async () => {
-  for (const patch of [{category:"other"}, {site_key:"other"}, {delivery_mode:"auto_inline"}, {category_revision:0}, {category_revision:1.5}, {category_enabled:false}, {links:[{...link,id:"other"}]}, {links:[{...link,tracking_mode:"redirect"}]}, {links:[{...link,click_path:"/go"}]}]) {
+  for (const patch of [{category:"other"}, {site_key:"other"}, {delivery_mode:"auto_inline"}, {category_revision:0}, {category_revision:1.5}, {category_enabled:false}, {links:[link,link]}, {links:[{...link,tracking_mode:"redirect"}]}, {links:[{...link,click_path:"/go"}]}, {links:[{...link,affiliate_url:"http://merchant.example/product"}]}, {links:[{...link,affiliate_url:"https://user:pass@merchant.example/product"}]}]) {
     vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({...categoryOutput(),...patch})));
     expect((await post(categoryInput)).status).toBe(502);
   }
+  vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({...categoryOutput(),category_revision:0,links:[]})));
+  expect((await post(categoryInput)).status).toBe(502);
+});
+it("uses exact registered origins and forwards generic category only", async () => {
+  const other = { ...categoryInput, path: "/guides/pickleball", categories: "피클볼" };
+  const approved = { ...categoryOutput(), site_key: "picklefriend", category: "피클볼", links: [{ ...link, id: "another-approved-link" }] };
+  const fetch = vi.fn().mockResolvedValue(Response.json(approved)); vi.stubGlobal("fetch", fetch);
+  const request = (origin: string, site = "picklefriend", body: unknown = other) => new Request(`https://dashboard.example/api/recommend?site_key=${site}`, { method: "POST", headers: { origin, "content-type": "text/plain" }, body: JSON.stringify(body) });
+  const response = await affiliatePublicPost(request("https://picklefriend.kr"), "recommend");
+  expect(response.status).toBe(200);
+  expect(response.headers.get("access-control-allow-origin")).toBe("https://picklefriend.kr");
+  expect(fetch.mock.calls[0][0]).toBe(api + "/api/recommend?site_key=picklefriend");
+  expect(fetch.mock.calls[0][1].headers.get("origin")).toBe("https://picklefriend.kr");
+  expect((await affiliatePublicPost(request("https://fake.picklefriend.kr"), "recommend")).status).toBe(403);
+  expect((await affiliatePublicPost(request("https://picklefriend.kr:444"), "recommend")).status).toBe(403);
+  expect((await affiliatePublicPost(request("https://picklefriend.kr", "campgogo"), "recommend")).status).toBe(400);
+  expect((await affiliatePublicPost(request("https://picklefriend.kr", "picklefriend", input), "recommend")).status).toBe(400);
+  for (const path of ["/admin/panel", "/wp-admin/post.php", "/cart", "/checkout", "/account", "/api/recommend", "/guides/%2e%2e/admin", "/guides//post"])
+    expect((await affiliatePublicPost(request("https://picklefriend.kr", "picklefriend", { ...other, path }), "recommend")).status).toBe(400);
+  expect((await affiliatePublicPost(new Request("https://dashboard.example/api/event?site_key=picklefriend", { method: "POST", headers: { origin: "https://picklefriend.kr" }, body: "{}" }), "event")).status).toBe(403);
+  expect(affiliatePublicOptions(new Request("https://dashboard.example/api/event?site_key=picklefriend", { method: "OPTIONS", headers: { origin: "https://picklefriend.kr" } }), "event").status).toBe(403);
+  expect(fetch).toHaveBeenCalledTimes(1);
+});
+it("does not authorize explicit no-ad fleet exclusions", async () => {
+  const held = ["caregos.com", "fastjob.kr", "jeompolab.com", "lim01.soonsaak.co.kr", "limsight.kr", "mohana.kr", "picturebooks.kr", "sorimate.com", "yesa.kr"];
+  const fetch = vi.fn(); vi.stubGlobal("fetch", fetch);
+  for (const hostname of held) {
+    const request = new Request(`https://dashboard.example/api/recommend?site_key=anything`, {
+      method: "POST", headers: { origin: `https://${hostname}`, "content-type": "text/plain" }, body: JSON.stringify(categoryInput),
+    });
+    expect((await affiliatePublicPost(request, "recommend")).status).toBe(403);
+  }
+  expect(fetch).not.toHaveBeenCalled();
 });
 it("passes disabled or unconfigured category without manufacturing fallback", async () => {
   for (const category_revision of [0,1,2]) {
