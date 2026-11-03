@@ -14,6 +14,7 @@ const fixed: Record<string, readonly ("GET" | "POST")[]> = {
   "/api/admin/import-links": ["POST"], "/api/admin/import-conversions": ["POST"],
   "/api/admin/debug-match": ["POST"],
   "/api/admin/auto-delivery": ["GET"],
+  "/api/admin/category-delivery": ["GET", "POST"],
 };
 const workspace: Record<string, readonly ("GET" | "POST")[]> = {
   "readiness": ["GET"], "yield-insights": ["GET"], "diagnostics": ["GET"], "jobs": ["GET"],

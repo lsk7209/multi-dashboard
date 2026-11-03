@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { affiliatePublicPost } from "./affiliate-public-proxy";
+import { affiliatePublicPost, affiliatePublicAsset } from "./affiliate-public-proxy";
 
 const api = "https://affiliate.example";
 const link = { id: "5c7f400a-5d4b-4eea-863a-eedbdcfb982f", tracking_mode: "direct", click_path: null };
@@ -46,4 +46,38 @@ it("bounds Korean automatic requests by bytes and rejects other origins", async 
   expect((await post(input, { "content-length": "32769" })).status).toBe(413);
   expect((await post(input, { origin: "https://elsewhere.example" })).status).toBe(403);
   expect(fetch).toHaveBeenCalledTimes(1);
+});
+
+const categoryInput = { delivery_mode: "category_card", path: "/blog/category-article", title: "Category article", categories: "캠핑 장비" };
+const categoryOutput = () => ({ site_key: "campgogo", delivery_mode: "category_card", category: "캠핑 장비", category_enabled: true, category_revision: 1, links: [{ ...link }] });
+it("passes category mode without paragraphs and preserves approved direct product", async () => {
+  const fetch = vi.fn().mockResolvedValue(Response.json(categoryOutput())); vi.stubGlobal("fetch", fetch);
+  expect((await post(categoryInput)).status).toBe(200);
+  expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(categoryInput);
+});
+it("rejects invalid category contracts before upstream", async () => {
+  const fetch = vi.fn(); vi.stubGlobal("fetch", fetch);
+  for (const patch of [{categories: 3}, {categories: "x".repeat(101)}, {paragraphs: []}, {path: "/blog/../x"}])
+    expect((await post({...categoryInput,...patch})).status).toBe(400);
+  expect(fetch).not.toHaveBeenCalled();
+});
+it("rejects category response that changes mode, revision, approval or destination contract", async () => {
+  for (const patch of [{category:"other"}, {site_key:"other"}, {delivery_mode:"auto_inline"}, {category_revision:0}, {category_revision:1.5}, {category_enabled:false}, {links:[{...link,id:"other"}]}, {links:[{...link,tracking_mode:"redirect"}]}, {links:[{...link,click_path:"/go"}]}]) {
+    vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({...categoryOutput(),...patch})));
+    expect((await post(categoryInput)).status).toBe(502);
+  }
+});
+it("passes disabled or unconfigured category without manufacturing fallback", async () => {
+  for (const category_revision of [0,1,2]) {
+    vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({...categoryOutput(),category_revision,category_enabled:false,links:[]})));
+    const response=await post(categoryInput); expect(response.status).toBe(200); expect((await response.json()).links).toEqual([]);
+  }
+});
+
+it("serves the new category asset through the existing authenticated upstream", async () => {
+  const fetch=vi.fn().mockImplementation(()=>Promise.resolve(new Response("/*category*/",{headers:{"content-type":"application/javascript"}}))); vi.stubGlobal("fetch",fetch);
+  const response=await affiliatePublicAsset(new Request("https://dashboard.example/category-widget.js"),"/category-widget.js");
+  expect(response.status).toBe(200); expect(await response.text()).toBe("/*category*/");
+  expect(fetch.mock.calls[0][0]).toBe(api+"/category-widget.js");
+  expect((await affiliatePublicAsset(new Request("https://dashboard.example/category-widget.js?other=1"),"/category-widget.js")).status).toBe(404);
 });

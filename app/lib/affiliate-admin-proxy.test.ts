@@ -104,3 +104,12 @@ describe("same-host Affiliate OS administrator proxy", () => {
     expect((await affiliateAdminAsset("/workspace.css")).status).toBe(200);
   });
 });
+
+it("category editor keeps login and CSRF boundaries", async () => {
+  const fetch=vi.fn().mockImplementation(()=>Promise.resolve(Response.json({revision:1}))); vi.stubGlobal("fetch",fetch);
+  expect((await proxy("/api/admin/category-delivery")).status).toBe(401);
+  expect((await proxy("/api/admin/category-delivery","GET",{cookie})).status).toBe(200);
+  expect((await proxy("/api/admin/category-delivery","POST",{cookie,origin:dashboard,"content-type":"application/json"},"{}")).status).toBe(403);
+  expect((await proxy("/api/admin/category-delivery","POST",{cookie,origin:dashboard,"content-type":"application/json","x-csrf-token":csrf},"{}")).status).toBe(200);
+  expect(fetch).toHaveBeenCalledTimes(2);
+});

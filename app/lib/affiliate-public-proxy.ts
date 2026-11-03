@@ -59,13 +59,14 @@ function validPayload(value: unknown, kind: "recommend" | "event"): boolean {
   if (Object.keys(data).some(key => !allowed.includes(key))) return false;
   if (kind === "event") return typeof data.kind === "string" && ["view", "click"].includes(data.kind) && typeof data.event_id === "string" && /^[0-9a-f-]{36}$/i.test(data.event_id) && typeof data.event_token === "string" && /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(data.event_token) && data.event_token.length <= 1200;
   if (Object.hasOwn(data, "delivery_mode")) {
-    if (data.delivery_mode !== "auto_inline" || typeof data.path !== "string" || data.path.length > 300 ||
+    if (!["auto_inline", "category_card"].includes(String(data.delivery_mode)) || typeof data.path !== "string" || data.path.length > 300 ||
       !data.path.startsWith("/blog/") || data.path === "/blog/" || /[?#\\]|%2f|%5c|%2e|\/\//i.test(data.path) ||
       [...data.path].some(char => char.charCodeAt(0) < 33 || char.charCodeAt(0) === 127) ||
       data.path.split("/").some(part => part === "." || part === "..") ||
-      !Array.isArray(data.paragraphs) || data.paragraphs.length > 20) return false;
+      data.delivery_mode === "auto_inline" && (!Array.isArray(data.paragraphs) || data.paragraphs.length > 20) ||
+      data.delivery_mode === "category_card" && (Object.hasOwn(data, "paragraphs") || typeof data.categories !== "string" || data.categories.length > 100)) return false;
     const ids = new Set<string>();
-    for (const row of data.paragraphs) {
+    for (const row of (data.delivery_mode === "auto_inline" ? data.paragraphs as { id: string; text: string }[] : [])) {
       if (!row || typeof row !== "object" || Array.isArray(row) || Object.keys(row).some(key => !["id", "text"].includes(key)) ||
         typeof row.id !== "string" || !/^p(?:0|[1-9]\d{0,2})$/.test(row.id) || Number(row.id.slice(1)) >= 160 || ids.has(row.id) ||
         typeof row.text !== "string" || row.text.length > 240) return false;
@@ -76,7 +77,7 @@ function validPayload(value: unknown, kind: "recommend" | "event"): boolean {
   return ["description", "headings", "tags", "categories", "content_excerpt"].every(key => data[key] === undefined || typeof data[key] === "string" && data[key].length <= (key === "content_excerpt" ? 1500 : key === "description" || key === "headings" ? 600 : 300));
 }
 
-export async function affiliatePublicAsset(request: Request, path: "/widget.js" | "/widget.css"): Promise<Response> {
+export async function affiliatePublicAsset(request: Request, path: "/widget.js" | "/widget.css" | "/category-widget.js"): Promise<Response> {
   const url = new URL(request.url);
   if (request.method !== "GET" || url.pathname !== path || url.search) return reply(404, "Not found");
   const config = affiliateConfiguration();
@@ -129,10 +130,16 @@ export async function affiliatePublicPost(request: Request, kind: "recommend" | 
         // Fail closed if runtime pilot configuration is absent or a redirect leaks
         // through. Empty/paused results do not expose a product and remain valid.
         const auto = input.delivery_mode === "auto_inline";
+        const category = input.delivery_mode === "category_card";
+        if (category && (payload.site_key !== SITE || payload.category !== (input.categories as string).normalize("NFKC").replace(/\s+/gu, " ").trim() ||
+          payload.delivery_mode !== "category_card" || typeof payload.category_enabled !== "boolean" ||
+          !Number.isSafeInteger(payload.category_revision) || payload.category_revision < 0 ||
+          payload.links.length && (!payload.category_enabled || payload.category_revision < 1 || payload.links[0]?.id !== AUTO_LINK)))
+          return reply(502, "Category policy unavailable", true);
         if (auto && (payload.delivery_mode !== "auto_inline" || payload.auto_revision !== AUTO_REVISION ||
           payload.links.length && (!(input.paragraphs as { id: string }[]).some(row => row.id === payload.placement?.paragraph_id) || payload.links[0]?.id !== AUTO_LINK)))
           return reply(502, "Auto policy unavailable", true);
-        if (payload.links.length && (payload.site_key !== SITE || !auto && payload.pilot_revision !== REVISION || payload.links.length > 1 ||
+        if (payload.links.length && (payload.site_key !== SITE || !auto && !category && payload.pilot_revision !== REVISION || payload.links.length > 1 ||
           payload.links.some((link: { tracking_mode?: string; click_path?: unknown } | null) => !link || link.tracking_mode !== "direct" || link.click_path !== null)))
           return reply(502, "Pilot policy unavailable", true);
       }
