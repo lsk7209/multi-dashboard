@@ -22,6 +22,8 @@ export function ServerWorkspace() {
     </section>
     {!fresh && <p className="workspace-notice" role="status">통계가 없거나 갱신 후 36시간이 지났습니다. 표시된 수집 시각을 확인해 주세요.</p>}
     {!snapshot && <p className="workspace-notice">통계 원본을 읽지 못했습니다. 수치는 미확인으로 표시합니다.</p>}
+    {inventory?.adsenseDiagnostics?.map(message => <p className="workspace-notice" role="status" key={message}>{message}</p>)}
+    <p className="workspace-notice" role="status">AdSense: 설정된 조회 연결 {inventory?.adsenseAccounts?.configuredSources ?? 0}개 중 완료 {inventory?.adsenseAccounts?.completeSources ?? 0}개 · 실패 {inventory?.adsenseAccounts?.failedSources ?? 0}개. 연결 계정 {(inventory?.adsenseAccounts?.discoveredPublisherIds ?? []).join(", ") || "미확인"}. 추가 계정은 연결 후 포함됩니다.</p>
     <section id="sites" className="workspace-sites" aria-label="사이트 탐색">
       <div className="workspace-section-heading"><h2>사이트 탐색</h2><p>기간을 선택해 GA4와 GSC를 비교하세요.</p></div>
       {inventory ? <ServerSites sites={sites.map(site => serverSiteMetrics(site, snapshot?.stats ?? []))} /> : <p role="status">호스팅 현황을 불러오지 못했습니다.</p>}
@@ -29,11 +31,12 @@ export function ServerWorkspace() {
     <footer id="data-notes" className="workspace-notes">
       <h2>데이터를 읽는 기준</h2>
       <p>호스팅 확인 {time(inventory?.generatedAt)} · AdSense 계정 확인 {time(inventory?.adsenseCheckedAt)}</p>
-      <p>매일 오전 6시(KST) 예약 수집하며 실행은 지연될 수 있습니다. 통계·공개 경로를 갱신하고, 서버 내부 계정·비공개 준비본·AdSense 공식 상태는 별도 점검합니다.</p>
+      <p>매일 오전 6시(KST) 예약 수집하며 실행은 지연될 수 있습니다. 통계·공개 경로·설정된 AdSense 계정을 갱신합니다. 서버 내부 계정·비공개 준비본은 별도 점검합니다.</p>
       <p>7일 증감은 직전 7일과 비교합니다. 이전 사용자가 0이면 양수 증가는 비교 불가로 표시합니다. 급감은 직전 50명 이상이면서 30% 이상 감소한 경우입니다.</p>
       <p>검색 개선 후보는 7일 노출 100회 이상, 평균 순위 20위 이내, CTR 2% 미만입니다. 개선 성과를 보장하지 않습니다.</p>
       <p>공개 경로 확인은 서비스 전체 기능의 정상 여부를 뜻하지 않습니다. HTTPS 404·410 등의 응답은 관측 결과이며 운영 의도는 별도 확인이 필요합니다.</p>
       <p>AdSense는 정확한 도메인으로 조회합니다. ‘조회 계정에 도메인 없음’은 거절 판정이 아니며, 코드 설치·ads.txt 상태와 별개입니다. 공식 근거가 24시간을 넘으면 미확인으로 표시합니다.</p>
+      <p>등록 계정은 공개 게시자 ID로 표시합니다. 조회 완료는 설정된 계정에 한정되며 아직 연결하지 않은 계정까지 확인했다는 뜻은 아닙니다. Ads.txt 콘솔 상태는 제공된 화면의 확인 시각과 함께 별도로 보존합니다.</p>
     </footer>
   </main>;
 }

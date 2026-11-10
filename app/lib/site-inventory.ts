@@ -1,3 +1,5 @@
+import type { AdSenseEvidence, AdSenseSnapshot } from "./adsense-evidence";
+
 export interface InventoryBinding {
   id: string;
   enabled: boolean;
@@ -23,6 +25,7 @@ export interface InventorySite {
   configuredLocations: string[];
   approval: string;
   approvalCheckedAt: string | null;
+  adsense?: AdSenseEvidence;
   monetization: boolean;
   bindings: InventoryBinding[];
   discoveredGa4: Array<{ propertyId: string; measurementId: string }>;
@@ -38,6 +41,8 @@ export interface SiteInventory {
   statsGeneratedAt: string | null;
   adsenseCheckedAt: string | null;
   adsenseListComplete: boolean;
+  adsenseAccounts?: AdSenseSnapshot["accountInventory"];
+  adsenseDiagnostics?: string[];
   googleBindingsCheckedAt: string | null;
   googleBindingsComplete: boolean;
   adsenseAccountSummary: { total: number; ready: number; gettingReady: number } | null;

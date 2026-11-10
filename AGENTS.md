@@ -1,5 +1,13 @@
 # Project Rules
 
+## Site account and AdSense inventory (2026-11-10)
+
+- This dashboard is the first lookup for managed-site account registration and AdSense state. Collect all configured authorized accounts with pagination and preserve each exact-domain publisher match, approval state, evidence source and check time.
+- Keep site approval separate from Ads.txt console status. Preserve operator console observations with their source/time, and never infer approval from code, ads.txt content, email history or a parent domain.
+- Incomplete account access means partial coverage, never universal NOT_LISTED. Support multiple account matches and show failures/stale evidence explicitly. The operator reports two additional accounts; do not invent their identities or consent.
+- Public UI uses publisher IDs/approved aliases, never OAuth secrets, credential paths or unapproved login emails. The global rule lives in C:/Users/dlatj/.codex/AGENTS.md.
+
+
 ## GA4 Naming Convention
 
 - When creating or registering any GA4 property, web data stream, Google tag, or dashboard GA4 label for a site, use the bare domain as the name, such as `smallhomepick.com`.

@@ -14,6 +14,8 @@ data/**
 !data/coupang-channel-registry.json
 !data/site-stats.json
 !data/site-inventory.json
+!data/adsense-account-status-current.json
+!data/adsense-console-observations.json
 !data/ops-intel.json
 !data/ops-triage.json
 !data/adsense-external-proof-continuation-*.json

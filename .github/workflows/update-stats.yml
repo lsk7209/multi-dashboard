@@ -60,6 +60,13 @@ jobs:
       - name: Update GA4 and GSC snapshot
         run: pnpm stats:update
 
+      - name: Collect AdSense account evidence
+        id: adsense
+        continue-on-error: true
+        env:
+          ADSENSE_ACCOUNTS_JSON: ${{ secrets.ADSENSE_ACCOUNTS_JSON }}
+        run: pnpm inventory:adsense
+
       - name: Reconcile public hosting and current connection inventory
         run: pnpm inventory:google && pnpm inventory:reconcile
 
@@ -84,17 +91,23 @@ jobs:
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/site-inventory.json data/google-site-bindings-current.json data/history; then
+          if git diff --quiet -- scripts/setup/sites.yaml data/site-stats.json data/site-inventory.json data/google-site-bindings-current.json data/adsense-account-status-current.json data/history; then
             echo "No stats changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/setup/sites.yaml data/site-stats.json data/site-inventory.json data/google-site-bindings-current.json data/history
+          git add scripts/setup/sites.yaml data/site-stats.json data/site-inventory.json data/google-site-bindings-current.json data/adsense-account-status-current.json data/history
           git commit \
             -m "Keep dashboard snapshot current from scheduled collection" \
             -m "Constraint: Scheduled collection must include newly discovered GA4 web streams before stats are generated. Confidence: high Scope-risk: narrow Directive: Keep this commit limited to generated site/stat/history data unless the collection contract changes. Tested: pnpm stats:update; pnpm type-check; pnpm lint; pnpm test; pnpm build Not-tested: Manual review of every metric value."
           git push
+
+      - name: Report partial AdSense collection after saving coverage
+        if: ${{ steps.adsense.outcome == 'failure' }}
+        run: |
+          echo "AdSense collection is incomplete; sanitized partial coverage was included in the snapshot commit."
+          exit 1
 
       - name: Alert on collection failure
         if: failure()

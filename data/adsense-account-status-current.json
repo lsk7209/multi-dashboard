@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-10-27T09:45:13.094Z",
-  "checkedAt": "2026-10-27T09:45:18.509Z",
+  "attemptedAt": "2026-11-10T08:57:22.191Z",
+  "checkedAt": "2026-11-10T08:57:25.746Z",
   "listComplete": true,
   "proofDomains": [
     "2mlab.kr",
@@ -127,56 +127,183 @@
     "yungyanggogo.kr"
   ],
   "mutationPerformed": false,
-  "totalSites": 13,
+  "totalSites": 15,
+  "sourceChecks": [
+    {
+      "sourceIndex": 0,
+      "attemptedAt": "2026-11-10T08:57:22.195Z",
+      "checkedAt": "2026-11-10T08:57:24.212Z",
+      "listComplete": true,
+      "publisherIds": [
+        "pub-3050601904412736"
+      ]
+    },
+    {
+      "sourceIndex": 1,
+      "attemptedAt": "2026-11-10T08:57:24.213Z",
+      "checkedAt": "2026-11-10T08:57:25.746Z",
+      "listComplete": true,
+      "publisherIds": [
+        "pub-7865675606131621"
+      ]
+    }
+  ],
+  "accountInventory": {
+    "configuredSources": 2,
+    "completeSources": 2,
+    "failedSources": 0,
+    "discoveredPublisherIds": [
+      "pub-3050601904412736",
+      "pub-7865675606131621"
+    ]
+  },
   "stateCounts": {
-    "GETTING_READY": 1,
     "READY": 11,
-    "NEEDS_ATTENTION": 1
+    "GETTING_READY": 4
   },
   "sites": [
     {
-      "domain": "dogswhere.com",
-      "rawState": "GETTING_READY"
-    },
-    {
       "domain": "ehon365.kr",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "fastjob.kr",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "haemongdream.com",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "klick.kr",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "luckyday.kr",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
+    },
+    {
+      "domain": "nekau.com",
+      "rawState": "GETTING_READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "GETTING_READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "nexttech7.com",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "sellerpit.kr",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "temon.kr",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
       "domain": "tennisfrens.com",
-      "rawState": "READY"
+      "rawState": "READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-3050601904412736",
+          "rawState": "READY",
+          "checkedAt": "2026-11-10T08:57:24.212Z"
+        }
+      ]
     },
     {
-      "domain": "seniorlivingnote.com",
-      "rawState": "NEEDS_ATTENTION"
+      "domain": "autorentlab.com",
+      "rawState": "GETTING_READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-7865675606131621",
+          "rawState": "GETTING_READY",
+          "checkedAt": "2026-11-10T08:57:25.746Z"
+        }
+      ]
+    },
+    {
+      "domain": "dogbreedcost.com",
+      "rawState": "GETTING_READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-7865675606131621",
+          "rawState": "GETTING_READY",
+          "checkedAt": "2026-11-10T08:57:25.746Z"
+        }
+      ]
+    },
+    {
+      "domain": "spinkorea.kr",
+      "rawState": "GETTING_READY",
+      "accountStates": [
+        {
+          "publisherId": "pub-7865675606131621",
+          "rawState": "GETTING_READY",
+          "checkedAt": "2026-11-10T08:57:25.746Z"
+        }
+      ]
     }
   ]
 }

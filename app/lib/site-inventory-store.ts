@@ -1,16 +1,26 @@
 import { readFileSync } from "node:fs";
 import type { SiteInventory } from "./site-inventory";
+import { applyAdSenseEvidence, type ConsoleObservation, type AdSenseSnapshot } from "./adsense-evidence";
 
 export function getSiteInventory(): SiteInventory | null {
   try {
     const inventory = JSON.parse(readFileSync("data/site-inventory.json", "utf8")) as SiteInventory;
     if (!Array.isArray(inventory.sites)) return null;
-    // A stored approval is only current for one day; preserve source timestamps.
-    const age = Date.now() - Date.parse(inventory.adsenseCheckedAt ?? "");
-    if (!Number.isFinite(age) || age > 24 * 3600000 || age < -300000 || !inventory.adsenseListComplete) {
-      inventory.adsenseListComplete = false;
-      inventory.sites = inventory.sites.map(site => ({ ...site, approval: site.monetization ? "UNKNOWN" : "EXCLUDED" }));
+    let snapshot: AdSenseSnapshot = {};
+    let observations: ConsoleObservation[] = [];
+    const diagnostics: string[] = [];
+    try {
+      const data = JSON.parse(readFileSync("data/adsense-account-status-current.json", "utf8"));
+      if (!data || !Array.isArray(data.sites)) throw new Error("Invalid snapshot");
+      snapshot = data;
+    } catch { diagnostics.push("AdSense API 스냅샷을 읽지 못했습니다. 현재 계정 조회 범위는 미확인입니다."); }
+    try {
+      const data = JSON.parse(readFileSync("data/adsense-console-observations.json", "utf8"));
+      if (!Array.isArray(data)) throw new Error("Invalid observations");
+      observations = data;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") diagnostics.push("AdSense 콘솔 관측 기록을 읽지 못했습니다.");
     }
-    return inventory;
+    return {...applyAdSenseEvidence(inventory, snapshot, observations), adsenseDiagnostics: diagnostics};
   } catch { return null; }
 }

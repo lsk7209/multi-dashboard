@@ -8,6 +8,12 @@ type Page<T> = { items: T[]; nextPageToken?: string | null };
 type Site = { domain?: string | null; state?: string | null; autoAdsEnabled?: boolean | null };
 type Account = { name?: string | null };
 type AccountConfig = { clientPath: string; tokenPath: string; accountRef?: string };
+type InlineAccountConfig = {
+  accountRef: string;
+  client: { installed?: OAuthClient; web?: OAuthClient };
+  token: { refresh_token: string; token?: string; access_token?: string; expiry?: string; expiry_date?: number };
+};
+type OAuthClient = { client_id: string; client_secret: string; redirect_uris?: string[] };
 
 export type SiteStatus = {
   accountRef: string;
@@ -15,6 +21,10 @@ export type SiteStatus = {
   rawState: string | null;
   autoAdsEnabled: boolean | null;
 };
+
+type Failure = { stage: "credentials" | "accounts.list" | "accounts.sites.list"; httpStatus: number | null; accountRef?: string };
+type AccountCheck = { accountRef: string; checkedAt: string | null; listComplete: boolean; siteCount: number; failure?: Failure };
+type SourceCheck = { sourceIndex: number; attemptedAt: string; checkedAt: string | null; listComplete: boolean; accountRefs: string[]; failure?: Failure };
 
 export type Collection = {
   attemptedAt: string;
@@ -24,8 +34,10 @@ export type Collection = {
   totalSites: number;
   accountsFound: number;
   accountRefs?: string[];
+  accountChecks?: AccountCheck[];
+  sourceChecks?: SourceCheck[];
   sites: SiteStatus[];
-  failure?: { stage: "credentials" | "accounts.list" | "accounts.sites.list"; httpStatus: number | null; accountRef?: string };
+  failure?: Failure;
 };
 
 export function normalizeDomain(domain: string): string {
@@ -66,7 +78,7 @@ export async function collectStatus(
 ): Promise<Collection> {
   const result: Collection = {
     attemptedAt: now(), checkedAt: null, listComplete: false, mutationPerformed: false,
-    totalSites: 0, accountsFound: 0, sites: [],
+    totalSites: 0, accountsFound: 0, accountChecks: [], sites: [],
   };
   let accounts: Account[];
   try {
@@ -93,21 +105,26 @@ export async function collectStatus(
       sites = await listAllPages((token) => listSites(accountRef, token));
     } catch (error) {
       result.failure = { stage: "accounts.sites.list", httpStatus: httpStatus(error), accountRef };
+      result.accountChecks!.push({ accountRef, checkedAt: null, listComplete: false, siteCount: 0, failure: result.failure });
       return result;
     }
+    const completedSites: SiteStatus[] = [];
     for (const site of sites) {
       if (!site.domain) {
         result.failure = { stage: "accounts.sites.list", httpStatus: null, accountRef };
+        result.accountChecks!.push({ accountRef, checkedAt: null, listComplete: false, siteCount: 0, failure: result.failure });
         return result;
       }
-      result.sites.push({
+      completedSites.push({
         accountRef,
         domain: normalizeDomain(site.domain),
         rawState: site.state ?? null,
         autoAdsEnabled: site.autoAdsEnabled ?? null,
       });
     }
+    result.sites.push(...completedSites);
     result.totalSites = result.sites.length;
+    result.accountChecks!.push({ accountRef, checkedAt: now(), listComplete: true, siteCount: sites.length });
   }
   result.checkedAt = now();
   result.listComplete = true;
@@ -127,14 +144,37 @@ export function parseAccountConfig(value: unknown): AccountConfig[] {
   });
 }
 
+function record(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+export function parseInlineAccountConfig(value: unknown): InlineAccountConfig[] {
+  if (!Array.isArray(value) || value.length === 0) throw new Error("Invalid inline AdSense accounts configuration");
+  return value.map((entry: unknown) => {
+    if (!record(entry) || typeof entry.accountRef !== "string" || !/^accounts\/[^/]+$/.test(entry.accountRef)
+      || !record(entry.client) || !record(entry.token)) throw new Error("Invalid inline AdSense account entry");
+    const client = entry.client.installed ?? entry.client.web;
+    if (!record(client) || typeof client.client_id !== "string" || !client.client_id.trim()
+      || typeof client.client_secret !== "string" || !client.client_secret.trim()
+      || (client.redirect_uris !== undefined && (!Array.isArray(client.redirect_uris)
+        || !client.redirect_uris.every(uri => typeof uri === "string")))
+      || typeof entry.token.refresh_token !== "string" || !entry.token.refresh_token.trim()) {
+      throw new Error("Invalid inline AdSense account entry");
+    }
+    return entry as InlineAccountConfig;
+  });
+}
+
 export async function loadAccountConfigs(
   configuredPath: string | undefined,
   explicitLegacyArgs: boolean,
   legacy: AccountConfig,
   readText: (file: string) => Promise<string> = (file) => readFile(file, "utf8"),
   defaultPath = "E:\\env\\adsense_accounts.json",
-): Promise<AccountConfig[]> {
+  inlineJson?: string,
+): Promise<Array<AccountConfig | InlineAccountConfig>> {
   if (explicitLegacyArgs) return [legacy];
+  if (inlineJson !== undefined) return parseInlineAccountConfig(JSON.parse(inlineJson));
   if (configuredPath) return parseAccountConfig(JSON.parse(await readText(configuredPath)));
   try {
     return parseAccountConfig(JSON.parse(await readText(defaultPath)));
@@ -152,8 +192,10 @@ export async function collectSources(
     mutationPerformed: false, totalSites: 0, accountsFound: 0, accountRefs: [], sites: [] };
   const accountRefs = new Set<string>();
   const sites = new Map<string, SiteStatus>();
+  const accountChecks = new Map<string, AccountCheck>();
+  const sourceChecks: SourceCheck[] = [];
   let complete = true;
-  for (const source of sources) {
+  for (const [sourceIndex, source] of sources.entries()) {
     let collected: Collection;
     try {
       collected = await source();
@@ -166,13 +208,24 @@ export async function collectSources(
       complete = false;
       if (!result.failure) result.failure = collected.failure ?? { stage: "credentials", httpStatus: null };
     }
+    sourceChecks.push({ sourceIndex, attemptedAt: collected.attemptedAt, checkedAt: collected.checkedAt,
+      listComplete: collected.listComplete, accountRefs: collected.accountRefs ?? [],
+      ...(collected.failure ? { failure: collected.failure } : {}) });
     for (const ref of collected.accountRefs ?? []) accountRefs.add(ref);
+    for (const check of collected.accountChecks ?? []) {
+      const previous = accountChecks.get(check.accountRef);
+      if (!previous || (!previous.listComplete && check.listComplete)) accountChecks.set(check.accountRef, check);
+    }
     for (const site of collected.sites) {
       const key = `${site.accountRef}\0${normalizeDomain(site.domain)}`;
-      if (!sites.has(key)) sites.set(key, site);
+      const previous = sites.get(key);
+      if (!previous) sites.set(key, site);
+      else if (previous.rawState !== site.rawState) sites.set(key, { ...previous, rawState: "UNKNOWN" });
     }
   }
   result.accountRefs = [...accountRefs].sort();
+  result.accountChecks = [...accountChecks.values()];
+  result.sourceChecks = sourceChecks;
   result.accountsFound = accountRefs.size;
   result.sites = [...sites.values()];
   result.totalSites = result.sites.length;
@@ -192,6 +245,45 @@ export function publicSiteStates(sites: SiteStatus[]): Array<{ domain: string; r
   return [...states].map(([domain, rawState]) => ({ domain, rawState }));
 }
 
+function publisherId(accountRef: string): string | null {
+  return /^accounts\/(pub-\d+)$/.exec(accountRef)?.[1] ?? null;
+}
+
+export function publicAccountEvidence(result: Collection): {
+  sites: Array<{ domain: string; rawState: string; accountStates: Array<{ publisherId: string; rawState: string; checkedAt: string }> }>;
+  sourceChecks: Array<{ sourceIndex: number; attemptedAt: string; checkedAt: string | null; listComplete: boolean; publisherIds: string[]; failure?: { stage: Failure["stage"]; httpStatus: number | null } }>;
+  accountInventory: { configuredSources: number; completeSources: number; failedSources: number; discoveredPublisherIds: string[] };
+} {
+  const completeChecks = new Map((result.accountChecks ?? []).filter(check => check.listComplete && check.checkedAt)
+    .map(check => [check.accountRef, check.checkedAt!]));
+  const sites = new Map<string, Array<{ publisherId: string; rawState: string; checkedAt: string }>>();
+  for (const site of result.sites) {
+    const id = publisherId(site.accountRef);
+    const checkedAt = completeChecks.get(site.accountRef);
+    if (!id || !checkedAt) continue;
+    const domain = normalizeDomain(site.domain);
+    const accountStates = sites.get(domain) ?? [];
+    if (!accountStates.some(state => state.publisherId === id)) accountStates.push({ publisherId: id,
+      rawState: site.rawState ?? "UNKNOWN", checkedAt });
+    sites.set(domain, accountStates);
+  }
+  const sourceChecks = (result.sourceChecks ?? []).map(source => ({ sourceIndex: source.sourceIndex,
+    attemptedAt: source.attemptedAt, checkedAt: source.checkedAt, listComplete: source.listComplete,
+    publisherIds: [...new Set(source.accountRefs.map(publisherId).filter((id): id is string => id !== null))].sort(),
+    ...(source.failure ? { failure: { stage: source.failure.stage, httpStatus: source.failure.httpStatus } } : {}),
+  }));
+  return {
+    sites: [...sites].map(([domain, accountStates]) => ({ domain,
+      rawState: accountStates.every(state => state.rawState === accountStates[0].rawState)
+        ? accountStates[0].rawState : "UNKNOWN", accountStates: accountStates.sort((a, b) => a.publisherId.localeCompare(b.publisherId)) })),
+    sourceChecks,
+    accountInventory: { configuredSources: sourceChecks.length,
+      completeSources: sourceChecks.filter(source => source.listComplete).length,
+      failedSources: sourceChecks.filter(source => !source.listComplete).length,
+      discoveredPublisherIds: [...new Set(sourceChecks.flatMap(source => source.publisherIds))].sort() },
+  };
+}
+
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const arg = (name: string, fallback: string) => args.find((item) => item.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
@@ -201,10 +293,11 @@ async function main(): Promise<void> {
   let result: Collection;
   try {
     const configs = await loadAccountConfigs(process.env.ADSENSE_ACCOUNTS_CONFIG_PATH,
-      args.some(item => item.startsWith("--client=") || item.startsWith("--token=")), { clientPath, tokenPath });
+      args.some(item => item.startsWith("--client=") || item.startsWith("--token=")), { clientPath, tokenPath },
+      undefined, undefined, process.env.ADSENSE_ACCOUNTS_JSON);
     result = await collectSources(configs.map(config => async () => {
-      const clientFile = JSON.parse(await readFile(config.clientPath, "utf8"));
-      const tokenFile = JSON.parse(await readFile(config.tokenPath, "utf8"));
+      const clientFile = "client" in config ? config.client : JSON.parse(await readFile(config.clientPath, "utf8"));
+      const tokenFile = "token" in config ? config.token : JSON.parse(await readFile(config.tokenPath, "utf8"));
       const client = clientFile.installed ?? clientFile.web;
       if (!client?.client_id || !client?.client_secret || !tokenFile?.refresh_token) throw new Error("Missing OAuth credentials");
       const auth = new google.auth.OAuth2(client.client_id, client.client_secret, client.redirect_uris?.[0]);
@@ -236,9 +329,11 @@ async function main(): Promise<void> {
   await mkdir(".local/site-inventory", { recursive: true });
   await writeFile(".local/site-inventory/adsense-account-raw.json", `${JSON.stringify(result, null, 2)}\n`, "utf8");
   const domains = new Set((await loadSites()).map(site => new URL(site.url).hostname));
-  const publicStates = publicSiteStates(result.sites);
+  const publicEvidence = publicAccountEvidence(result);
+  const publicStates = publicEvidence.sites;
   const publicResult = { attemptedAt: result.attemptedAt, checkedAt: result.checkedAt,
     listComplete: result.listComplete, proofDomains: [...domains].sort(), mutationPerformed: false, totalSites: publicStates.length,
+    sourceChecks: publicEvidence.sourceChecks, accountInventory: publicEvidence.accountInventory,
     stateCounts: Object.fromEntries([...new Set(publicStates.map(site => site.rawState))].map(state => [state, publicStates.filter(site => site.rawState === state).length])),
     sites: publicStates.filter(site => domains.has(site.domain) && !["tasko.kr", "kang4.com"].includes(site.domain)),
     ...(result.failure ? { failure: { stage: result.failure.stage, httpStatus: result.failure.httpStatus } } : {}),

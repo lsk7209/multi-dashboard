@@ -2,6 +2,7 @@ import { resolve4, resolve6, resolveCname } from "node:dns/promises";
 import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import pLimit from "p-limit";
+import { applyAdSenseEvidence } from "../../app/lib/adsense-evidence.js";
 import { loadSites } from "./lib/sites.js";
 import { classifyHost, currentStagingTargets, exactApproval, hostingDisagreement, migrationAwareHost, type InventorySite, type SiteInventory } from "../../app/lib/site-inventory.js";
 
@@ -112,7 +113,9 @@ export async function main() {
       "애드센스는 24시간 이내 완전한 공식 목록의 정확한 도메인만 대조합니다. 서브도메인은 상위 도메인 승인을 상속하지 않습니다.",
       "설정 위치는 기존 메타데이터이며 현재 호스팅 증거와 구분합니다."],
   };
-  await writeFile("data/site-inventory.json", JSON.stringify(inventory, null, 2) + "\n");
+  let observations = [];
+  try { observations = await readJson("data/adsense-console-observations.json"); } catch { /* Optional operator evidence. */ }
+  await writeFile("data/site-inventory.json", JSON.stringify(applyAdSenseEvidence(inventory, approval, observations), null, 2) + "\n");
   console.log(JSON.stringify({ domains: rows.length, activeDomains: rows.filter(row => row.enabled).length,
     hosts: Object.fromEntries([...new Set(rows.map(row => row.host))].map(host => [host, rows.filter(row => row.host === host).length])),
     approvals: Object.fromEntries([...new Set(rows.map(row => row.approval))].map(state => [state, rows.filter(row => row.approval === state).length])) }));

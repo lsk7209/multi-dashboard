@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { collectSources, collectStatus, exactSiteMatches, listAllPages, loadAccountConfigs, parseAccountConfig, publicSiteStates } from "./collect-adsense-account-status";
+import { collectSources, collectStatus, exactSiteMatches, listAllPages, loadAccountConfigs, parseAccountConfig, parseInlineAccountConfig, publicAccountEvidence, publicSiteStates } from "./collect-adsense-account-status";
 
 describe("AdSense account status collection", () => {
   it("collects every account and site page", async () => {
@@ -88,6 +88,9 @@ describe("AdSense account status collection", () => {
       .toHaveLength(1);
     expect(() => parseAccountConfig([])).toThrow();
     expect(() => parseAccountConfig([{ clientPath: "client.json", tokenPath: "token.json", accountRef: "bad" }])).toThrow();
+    expect(() => parseAccountConfig([{ clientPath: " ", tokenPath: "token.json" }])).toThrow();
+    expect(() => parseAccountConfig([{ clientPath: "client.json", tokenPath: "" }])).toThrow();
+    expect(() => parseAccountConfig([{ clientPath: "client.json", tokenPath: "token.json", accountRef: "accounts/pub-123/extra" }])).toThrow();
   });
 
   it("uses the private default config when present and preserves explicit legacy flags", async () => {
@@ -114,6 +117,32 @@ describe("AdSense account status collection", () => {
     })).rejects.toThrow();
   });
 
+  it("accepts two inline accounts and gives them priority over path configuration", async () => {
+    const inline = ["111", "222"].map(id => ({ accountRef: `accounts/pub-${id}`,
+      client: { installed: { client_id: `client-${id}`, client_secret: `secret-${id}` } },
+      token: { refresh_token: `refresh-${id}` } }));
+    expect(parseInlineAccountConfig(inline)).toEqual(inline);
+    expect(await loadAccountConfigs("unused.json", false, { clientPath: "old", tokenPath: "old" },
+      async () => { throw new Error("path must not be read"); }, "unused-default.json", JSON.stringify(inline)))
+      .toEqual(inline);
+    expect(await loadAccountConfigs("unused.json", true, { clientPath: "old", tokenPath: "old" },
+      async () => { throw new Error("path must not be read"); }, "unused-default.json", JSON.stringify(inline)))
+      .toEqual([{ clientPath: "old", tokenPath: "old" }]);
+  });
+
+  it("rejects invalid inline credentials without exposing their values", async () => {
+    const valid = { accountRef: "accounts/pub-111", client: { web: { client_id: "id", client_secret: "secret" } },
+      token: { refresh_token: "refresh" } };
+    for (const invalid of [[], [{ ...valid, client: undefined }],
+      [{ ...valid, client: { web: { client_id: "id" } } }],
+      [{ ...valid, token: {} }], [{ ...valid, accountRef: "invalid" }]]) {
+      expect(() => parseInlineAccountConfig(invalid)).toThrow(/Invalid inline AdSense/);
+    }
+    await expect(loadAccountConfigs(undefined, false, { clientPath: "old", tokenPath: "old" },
+      async () => { throw new Error("path must not be read"); }, "unused-default.json", "[]"))
+      .rejects.toThrow(/Invalid inline AdSense/);
+  });
+
   it("publishes one conservative state per domain when accounts disagree", () => {
     const site = (accountRef: string, domain: string, rawState: string) => ({
       accountRef, domain, rawState, autoAdsEnabled: null,
@@ -124,5 +153,58 @@ describe("AdSense account status collection", () => {
       site("accounts/c", "same.com", "READY"),
       site("accounts/d", "SAME.COM.", "READY"),
     ])).toEqual([{ domain: "example.com", rawState: "UNKNOWN" }, { domain: "same.com", rawState: "READY" }]);
+  });
+
+  it("keeps finished account evidence when a later account in the same source fails", async () => {
+    const result = await collectSources([() => collectStatus(
+      async () => ({ items: [{ name: "accounts/pub-111" }, { name: "accounts/pub-222" }] }),
+      async (account, token) => {
+        if (account === "accounts/pub-222" && token) throw Object.assign(new Error("private credential"), { code: 403 });
+        return account === "accounts/pub-111"
+          ? { items: [{ domain: "example.com", state: "READY" }] }
+          : { items: [{ domain: "partial.com", state: "READY" }], nextPageToken: "next" };
+      },
+      () => "2026-11-10T00:00:00.000Z",
+    )], () => "2026-11-10T00:00:00.000Z");
+    const published = publicAccountEvidence(result);
+    expect(result.listComplete).toBe(false);
+    expect(published.sites).toEqual([{ domain: "example.com", rawState: "READY", accountStates: [
+      { publisherId: "pub-111", rawState: "READY", checkedAt: "2026-11-10T00:00:00.000Z" },
+    ] }]);
+    expect(published.accountInventory).toEqual({ configuredSources: 1, completeSources: 0, failedSources: 1,
+      discoveredPublisherIds: ["pub-111", "pub-222"] });
+    expect(published.sourceChecks[0]).toMatchObject({ listComplete: false,
+      failure: { stage: "accounts.sites.list", httpStatus: 403 } });
+    expect(JSON.stringify(published)).not.toContain("private credential");
+    expect(JSON.stringify(published)).not.toContain("accounts/pub-");
+  });
+
+  it("preserves positive matches across sources and exposes exact conflicting account states", async () => {
+    const source = (accountRef: string, rawState: string) => () => collectStatus(
+      async () => ({ items: [{ name: accountRef }] }),
+      async () => ({ items: [{ domain: "EXAMPLE.COM.", state: rawState }] }),
+      () => "2026-11-10T00:00:00.000Z",
+    );
+    const result = await collectSources([source("accounts/pub-111", "READY"),
+      source("accounts/pub-222", "NEEDS_ATTENTION"), async () => { throw new Error("private path"); }]);
+    const published = publicAccountEvidence(result);
+    expect(result.listComplete).toBe(false);
+    expect(published.sites).toEqual([{ domain: "example.com", rawState: "UNKNOWN", accountStates: [
+      { publisherId: "pub-111", rawState: "READY", checkedAt: "2026-11-10T00:00:00.000Z" },
+      { publisherId: "pub-222", rawState: "NEEDS_ATTENTION", checkedAt: "2026-11-10T00:00:00.000Z" },
+    ] }]);
+    expect(published.accountInventory).toMatchObject({ configuredSources: 3, completeSources: 2, failedSources: 1 });
+    expect(JSON.stringify(published)).not.toContain("private path");
+  });
+
+  it("lists publisher IDs for complete accounts with no sites and hides generic refs", async () => {
+    const result = await collectSources([() => collectStatus(
+      async () => ({ items: [{ name: "accounts/pub-333" }, { name: "accounts/other" }] }),
+      async () => ({ items: [] }), () => "2026-11-10T00:00:00.000Z",
+    )]);
+    const published = publicAccountEvidence(result);
+    expect(published.sites).toEqual([]);
+    expect(published.accountInventory.discoveredPublisherIds).toEqual(["pub-333"]);
+    expect(JSON.stringify(published)).not.toContain("accounts/other");
   });
 });

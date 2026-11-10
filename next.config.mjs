@@ -4,6 +4,8 @@ const nextConfig = {
     "/*": [
       "data/site-stats.json",
       "data/site-inventory.json",
+      "data/adsense-account-status-current.json",
+      "data/adsense-console-observations.json",
       "data/ops-triage.json",
       "data/gsc-permission-audit-*.json",
       "data/fleet-optimization-chain-*.json",
