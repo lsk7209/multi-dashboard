@@ -526,7 +526,7 @@ sites:
     platform: wordpress
     url: https://esgyo.kr/
     wpRestBase: https://esgyo.kr/wp-json/wp/v2
-    ga4PropertyId: "534284697"
+    ga4PropertyId: "524502961"
     gscSiteUrl: https://esgyo.kr/
     monetization: true
   - id: today2424
