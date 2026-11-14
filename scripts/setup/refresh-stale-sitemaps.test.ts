@@ -53,3 +53,13 @@ test('main reports incomplete refresh after a network failure',async()=>{
  await expect(main()).rejects.toThrow('Sitemap refresh incomplete: 1 target(s)');
  expect(mocks.submit).not.toHaveBeenCalled();
 });
+test.each([429,500,503])('main reports transient HTTP %s as incomplete',async(status)=>{
+ vi.stubEnv('GCP_SA_KEY_JSON','{}');
+ vi.stubGlobal('fetch',vi.fn().mockResolvedValue(new Response('temporary',{status})));
+ mocks.readFile.mockResolvedValue(JSON.stringify({generatedAt:'2026-11-14T00:00:00Z',stats:[{
+  id:'example',name:'Example',url:'https://example.com/',
+  sitemapDetails:[{path:'https://example.com/sitemap.xml',lastDownloaded:'2026-01-01T00:00:00Z'}],
+ }]}));
+ await expect(main()).rejects.toThrow('Sitemap refresh incomplete: 1 target(s)');
+ expect(mocks.submit).not.toHaveBeenCalled();
+});

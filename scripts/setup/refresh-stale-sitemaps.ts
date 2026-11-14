@@ -326,7 +326,7 @@ export async function main(): Promise<void> {
 
     if (!publicStatus.startsWith("public ok")) {
       console.log(`SKIP ${prefix}; unsafe public sitemap`);
-      if (publicStatus.startsWith("public fetch-failed")) failed += 1;
+      if (publicStatus.startsWith("public fetch-failed") || /^public (429|5\d\d)\b/.test(publicStatus)) failed += 1;
       continue;
     }
 
