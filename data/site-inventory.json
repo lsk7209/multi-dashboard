@@ -8,7 +8,7 @@
     "ready": 11,
     "gettingReady": 4
   },
-  "googleBindingsCheckedAt": "2026-11-14T01:17:35.354Z",
+  "googleBindingsCheckedAt": "2026-11-14T16:35:00.131Z",
   "googleBindingsComplete": true,
   "sites": [
     {
@@ -1274,9 +1274,9 @@
           "enabled": true,
           "ga4PropertyId": "536352221",
           "gscSiteUrl": "https://coinyo.kr/",
-          "ga4Status": "binding_mismatch",
+          "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": null
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -1292,8 +1292,7 @@
         }
       ],
       "issues": [
-        "공개 경로 확인 · 현재 계정 목록에서 정확한 도메인 미확인",
-        "설정 GA4 536352221: 웹 스트림 도메인 불일치"
+        "공개 경로 확인 · 현재 계정 목록에서 정확한 도메인 미확인"
       ],
       "adsense": {
         "accounts": [],
@@ -2245,7 +2244,7 @@
         {
           "id": "esgyo",
           "enabled": true,
-          "ga4PropertyId": "524502961",
+          "ga4PropertyId": "534284697",
           "gscSiteUrl": "https://esgyo.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
@@ -2254,7 +2253,7 @@
         {
           "id": "esgyo-2",
           "enabled": false,
-          "ga4PropertyId": "534284697",
+          "ga4PropertyId": "524502961",
           "gscSiteUrl": "https://esgyo.kr/",
           "ga4Status": "not_collected",
           "gscStatus": "not_collected",

@@ -18712,7 +18712,7 @@
       "id": "esgyo",
       "name": "이에스지요 - GA4",
       "url": "https://esgyo.kr/",
-      "ga4PropertyId": "524502961",
+      "ga4PropertyId": "534284697",
       "gscSiteUrl": "https://esgyo.kr/",
       "last1Days": {
         "activeUsers": 0,
@@ -18739,10 +18739,10 @@
         "eventCount": 0
       },
       "last30Days": {
-        "activeUsers": 0,
-        "sessions": 0,
-        "screenPageViews": 0,
-        "eventCount": 0
+        "activeUsers": 4,
+        "sessions": 4,
+        "screenPageViews": 6,
+        "eventCount": 24
       },
       "gscLast1Days": {
         "clicks": 0,
@@ -18839,7 +18839,7 @@
       "sitemapWarnings": 0,
       "sitemapErrors": 0,
       "sitemapIsPending": false,
-      "ga4LastSuccessfulFetchAt": "2026-11-14T01:10:50.423Z",
+      "ga4LastSuccessfulFetchAt": "2026-11-14T16:36:22.164Z",
       "gscLastSuccessfulFetchAt": "2026-11-14T01:10:50.423Z",
       "lastPublishedAt": "2026-07-09T14:29:18Z"
     },
