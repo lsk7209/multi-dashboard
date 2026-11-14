@@ -1,3 +1,4 @@
+import { pathToFileURL } from "node:url";
 import { readFile } from "node:fs/promises";
 import { google } from "googleapis";
 import { makeGoogleAuth } from "./lib/gcp.js";
@@ -243,27 +244,56 @@ function selectTargets(snapshot: StatsSnapshot, args: Args): Target[] {
   return dedupeTargets(targets).slice(0, args.limit);
 }
 
-async function inspectPublicSitemap(url: string): Promise<string> {
-  const response = await fetch(url, {
-    redirect: "follow",
-    signal: AbortSignal.timeout(15000),
-  });
-  if (!response.ok) {
-    return `public ${response.status}`;
+// Conservative XML subset check: reject declarations and mismatched/malformed tags.
+// This gates automatic submissions; Google remains the full sitemap validator.
+function hasBalancedXml(text: string): boolean {
+  const stack: string[] = [];
+  let roots = 0;
+  let consumed = 0;
+  const tokens = /<(?:[^<>"']|"[^"<]*"|'[^'<]*')*>/g;
+  for (const token of text.matchAll(tokens)) {
+    if (text.slice(consumed, token.index).includes('<')) return false;
+    consumed = token.index + token[0].length;
+    const value = token[0];
+    const closing = value.match(/^<\/([A-Za-z_][\w:.-]*)\s*>$/);
+    if (closing) {
+      if (stack.pop() !== closing[1]) return false;
+      continue;
+    }
+    const opening = value.match(/^<([A-Za-z_][\w:.-]*)(?:\s+[A-Za-z_][\w:.-]*\s*=\s*(?:"[^"<]*"|'[^'<]*'))*\s*\/?>$/);
+    if (!opening) return false;
+    if (!stack.length && ++roots > 1) return false;
+    if (!value.endsWith('/>')) stack.push(opening[1]);
   }
-
-  const text = await response.text();
-  const hasXml =
-    text.includes("<urlset") ||
-    text.includes("<sitemapindex") ||
-    text.includes("<rss") ||
-    text.includes("<feed");
-  const lastmodCount = (text.match(/<lastmod>/g) ?? []).length;
-
-  return hasXml ? `public ok, lastmod=${lastmodCount}` : "public not-xml";
+  return roots === 1 && stack.length === 0 && !text.slice(consumed).includes('<');
 }
 
-async function main(): Promise<void> {
+export async function inspectPublicSitemap(url: string): Promise<string> {
+  try {
+    const response = await fetch(url, {
+      redirect: "follow",
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok) return `public ${response.status}`;
+    const text = (await response.text()).trim()
+      .replace(/^<\?xml[\s\S]*?\?>\s*/, "")
+      .replace(/<!--[\s\S]*?-->/g, "").trim();
+    if (!hasBalancedXml(text)) return "public malformed-xml";
+    const root = text.match(/^<(urlset|sitemapindex|rss|feed)\b[^>]*>[\s\S]*<\/\1>\s*$/);
+    if (!root) return "public not-xml";
+    const entries = root[1] === "urlset" ? /<url\b[^>]*>[\s\S]*?<loc\b[^>]*>\s*https?:\/\/[^<]+<\/loc>[\s\S]*?<\/url>/
+      : root[1] === "sitemapindex" ? /<sitemap\b[^>]*>[\s\S]*?<loc\b[^>]*>\s*https?:\/\/[^<]+<\/loc>[\s\S]*?<\/sitemap>/
+      : root[1] === "rss" ? /<item\b[^>]*>[\s\S]*?<link\b[^>]*>\s*https?:\/\/[^<]+<\/link>[\s\S]*?<\/item>/
+      : /<entry\b[^>]*>[\s\S]*?<link\b[^>]*\bhref=["']https?:\/\/[^"']+["'][^>]*\/?>(?:[\s\S]*?)<\/entry>/;
+    if (!entries.test(text)) return "public empty-or-invalid";
+    const lastmodCount = (text.match(/<lastmod>/g) ?? []).length;
+    return `public ok, lastmod=${lastmodCount}`;
+  } catch (error) {
+    return `public fetch-failed: ${getErrorMessage(error)}`;
+  }
+}
+
+export async function main(): Promise<void> {
   const args = parseArgs();
   const raw = await readFile(STATS_PATH, "utf8");
   const snapshot = JSON.parse(raw) as StatsSnapshot;
@@ -289,9 +319,16 @@ async function main(): Promise<void> {
     `${args.dryRun ? "Dry run" : "Submitting"} ${targets.length} sitemap(s). basis=${args.basis} minAgeDays=${args.minAgeDays}`,
   );
 
+  let failed = 0;
   for (const target of targets) {
     const publicStatus = await inspectPublicSitemap(target.feedpath);
     const prefix = `${target.stat.id} ${target.feedpath} (${target.reason}; ${publicStatus})`;
+
+    if (!publicStatus.startsWith("public ok")) {
+      console.log(`SKIP ${prefix}; unsafe public sitemap`);
+      if (publicStatus.startsWith("public fetch-failed")) failed += 1;
+      continue;
+    }
 
     if (args.dryRun) {
       console.log(`DRY ${prefix}`);
@@ -305,12 +342,13 @@ async function main(): Promise<void> {
       });
       console.log(`OK  ${prefix}`);
     } catch (error) {
+      failed += 1;
       console.log(`ERR ${prefix}; ${getErrorMessage(error)}`);
     }
   }
+  if (failed > 0) throw new Error(`Sitemap refresh incomplete: ${failed} target(s) could not be checked or submitted.`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => { console.error(error); process.exitCode = 1; });
+}
