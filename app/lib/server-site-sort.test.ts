@@ -5,6 +5,13 @@ import type { ServerSiteRow } from "./server-site-metrics";
 const row = (domain: string, count: number | null): ServerSiteRow => ({ domain, url: `https://${domain}`, host: "ovh", approval: "READY", ga4Status: "ok", dailyUsers: count, weeklyUsers: count, gscStatus: "ok", clicks: count, impressions: count });
 
 describe("server table sorting", () => {
+  it("sorts registration expiry timestamps both ways with missing and invalid dates last",()=>{
+    const sites=[{...row("early.com",0),registration:{registrationDomain:"early.com",checkedAt:null,record:{domain:"early.com",registrar:"Test",status:"registered",source:"fixture",checkedAt:"2026-11-15",expiresAt:"2026-11-21"}}},row("missing.com",0)];
+    const late={...sites[0]!,domain:"late.com",registration:{...sites[0]!.registration!,record:{...sites[0]!.registration!.record!,expiresAt:"2027-01-01"}}};
+    const invalid={...late,domain:"invalid.com",registration:{...late.registration,record:{...late.registration.record,expiresAt:"invalid"}}};
+    expect([...sites,late,invalid].sort((a,b)=>compareServerSites(a,b,"expiresAt","asc")).map(site=>site.domain)).toEqual(["early.com","late.com","invalid.com","missing.com"]);
+    expect([...sites,late,invalid].sort((a,b)=>compareServerSites(a,b,"expiresAt","desc")).map(site=>site.domain)).toEqual(["late.com","early.com","invalid.com","missing.com"]);
+  });
   it("sorts HTTP results while keeping unavailable probes last", () => {
     const sites = [{ ...row("missing.com", 0), httpStatus: null }, { ...row("error.com", 0), httpStatus: 503 }, { ...row("ok.com", 0), httpStatus: 200 }];
     expect([...sites].sort((a, b) => compareServerSites(a, b, "httpStatus", "asc")).map(site => site.domain)).toEqual(["ok.com", "error.com", "missing.com"]);

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { href: "/", id: "servers", label: "서버별 사이트" },
+  { href: "/domains", id: "domains", label: "미사용·확인 필요 도메인" },
   { href: "/affiliate-marketing", id: "affiliate-marketing", label: "제휴마케팅" },
 ] as const;
 

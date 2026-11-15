@@ -34,7 +34,7 @@ describe("domain registration evidence",()=>{
   it("publishes sanitized complete owned coverage and explicit partial deletion coverage",()=>{
     const data=JSON.parse(readFileSync("data/domain-status-current.json","utf8"));
     expect(parseDomainPortfolio(data)).not.toBeNull();
-    expect(ownedDomains(data)).toHaveLength(94);
+    expect(ownedDomains(data)).toHaveLength(95);
     expect(data.sources.find((s:{registrar:string})=>s.registrar==="HostingKR")).toMatchObject({ownedCount:74,ownedComplete:true,deletedComplete:false});
     expect(data.sources.find((s:{registrar:string})=>s.registrar==="Dynadot")).toMatchObject({ownedCount:20,ownedComplete:true});
     expect(JSON.stringify(data)).not.toMatch(/Owner Email|Owner Name|DYNADOT_API_KEY|ContactId|@gmail/);

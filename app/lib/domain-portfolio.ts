@@ -11,6 +11,7 @@ export interface DomainRecord {
   hold?: string;
   disabled?: string;
   deletedAt?: string;
+  reportedRenewalDate?: string;
 }
 export interface DomainSiteEvidence {
   domain: string;
@@ -57,7 +58,7 @@ export function parseDomainPortfolio(value: unknown): DomainPortfolio | null {
     domains: data.domains.map(record => ({
       domain: record.domain, registrar: record.registrar, status: record.status,
       checkedAt: record.checkedAt, source: typeof record.source === "string" ? record.source : "unknown",
-      ...optional(record, ["expiresAt", "daysRemaining", "autoRenew", "registrantUnverified", "hold", "disabled", "deletedAt"]),
+      ...optional(record, ["expiresAt", "daysRemaining", "autoRenew", "registrantUnverified", "hold", "disabled", "deletedAt", "reportedRenewalDate"]),
     })),
     sites: data.sites.map(site => ({
       domain: site.domain, checkedAt: site.checkedAt,
@@ -75,6 +76,14 @@ export function renewalLabel(value: string | null | undefined): string {
   if (["ON", "auto-renew"].includes(value ?? "")) return "켜짐";
   if (["OFF", "manual renewal"].includes(value ?? "")) return "꺼짐";
   return "미확인";
+}
+
+export function compareExpiration(left: string | null | undefined, right: string | null | undefined, direction: "asc" | "desc"): number {
+  const a = Date.parse(left ?? "");
+  const b = Date.parse(right ?? "");
+  if (!Number.isFinite(a)) return Number.isFinite(b) ? 1 : 0;
+  if (!Number.isFinite(b)) return -1;
+  return (a - b) * (direction === "asc" ? 1 : -1);
 }
 
 export function domainWarnings(record: DomainRecord): string[] {

@@ -14,6 +14,11 @@
       "ownedCount": 20,
       "ownedComplete": true,
       "source": "API list_domain"
+    },
+    {
+      "registrar": "Name.com",
+      "ownedCount": 1,
+      "ownedComplete": false
     }
   ],
   "domains": [
@@ -2617,6 +2622,16 @@
         "yungyanggogo.kr"
       ],
       "pausedSites": []
+    },
+    {
+      "domain": "nekau.com",
+      "registrar": "Name.com",
+      "status": "registered",
+      "expiresAt": "2027-06-20",
+      "reportedRenewalDate": "2027-06-20",
+      "autoRenew": null,
+      "checkedAt": "2026-11-15T05:50:51.533911+00:00",
+      "source": "사용자 제공 Name.com 보유 및 Renews 날짜 (API 미확인)"
     }
   ],
   "sites": [
@@ -3046,7 +3061,7 @@
       ],
       "httpStatus": 200,
       "finalUrl": "https://dog.nekau.com/",
-      "registrationDomain": null
+      "registrationDomain": "nekau.com"
     },
     {
       "domain": "dogbreedcost.com",
@@ -3939,7 +3954,7 @@
       ],
       "httpStatus": 200,
       "finalUrl": "https://nekau.com/",
-      "registrationDomain": null
+      "registrationDomain": "nekau.com"
     },
     {
       "domain": "nexttech7.com",

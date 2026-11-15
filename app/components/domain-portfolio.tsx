@@ -6,7 +6,7 @@ const date = (value?: string | null) => value && Number.isFinite(Date.parse(valu
 function DomainTable({records, label}: {records: DomainRecord[]; label: string}) {
   return <div className="server-table-wrap" role="region" aria-label={label} tabIndex={0}><table className="server-table workspace-table" aria-label={label}>
     <thead><tr><th scope="col">도메인</th><th scope="col">등록기관</th><th scope="col">만료일</th><th scope="col">남은 일수</th><th scope="col">자동연장</th><th scope="col">등록 상태 / 확인 사항</th></tr></thead>
-    <tbody>{records.map(record => <tr key={`${record.registrar}-${record.domain}`}><th scope="row">{record.domain}</th><td>{record.registrar}</td><td>{date(record.expiresAt)}</td><td>{remainingDays(record) ?? "미확인"}</td><td>{renewalLabel(record.autoRenew)}</td><td>{record.status === "registered" ? "등록 유지" : record.status}{domainWarnings(record).map(warning => <p key={warning}>{warning}</p>)}</td></tr>)}</tbody>
+    <tbody>{records.map(record => <tr key={`${record.registrar}-${record.domain}`}><th scope="row">{record.domain}</th><td>{record.registrar}</td><td>{date(record.expiresAt)}{record.reportedRenewalDate && <small>사용자 제공 갱신 예정일 기준</small>}</td><td>{remainingDays(record) ?? "미확인"}</td><td>{renewalLabel(record.autoRenew)}</td><td>{record.status === "registered" ? "등록 유지" : record.status}{domainWarnings(record).map(warning => <p key={warning}>{warning}</p>)}</td></tr>)}</tbody>
   </table></div>;
 }
 

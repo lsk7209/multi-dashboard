@@ -70,3 +70,11 @@ ai.tasko.kr, blogsample2.nexttech7.com, car.klick.kr, car.luckyday.kr, chatgipt.
 - 타입 검사·ESLint·프로덕션 빌드: 종료0. page 파일 추적에 새 JSON2개 포함 확인.
 - 실제 HTTP 브라우저 검사3개 통과: 서버/검색/상세, 기간선택, 핵심106/보류24·core410·도메인만료·PC/모바일390px. 기본 Playwright shell 미설치로 설치된 Chrome의 별도 임시 프로필을 사용했으며 사용자 프로필은 사용하지 않았다.
 - 기존 dirty checkout의 코드·통계·AGENTS 수정은 포함하지 않았다.
+
+
+## Domain review tab and expiry sorting
+- /domains lists registrar-owned roots with no core-site association: 3 unlinked (kabi.kr, nowtip.kr, weddingfairfinder.com), 4 paused-only (chatgipt.kr, educaer.com, homeimer.com, luxurytraver.com). Not proof of unused email/external services. Core roots stay excluded despite HTTP errors; deletions excluded.
+- Inventory snapshot now 95 owned: HostingKR74 + Dynadot20 + Name.com1 operator-reported partial coverage. nekau.com date2027-06-20 is operator-provided Renews date, displayed with that qualification, not a new API verification. Auto-renew remains unknown. Explicit nekau.com/dog.nekau.com association added.
+- Expiry sorting both directions on main site table and /domains; unknown/invalid dates remain last. Registration snapshot did not automatically refresh.
+- Fresh validation:456 unit tests, typecheck/lint/build PASS;5 real HTTP E2E PASS including navigation,7 candidates, both sort directions, unknownlast, Name.com attribution, desktop/mobile390 screenshots.
+- No renewals, payments, DNS or account changes. Original dirty checkout preserved.

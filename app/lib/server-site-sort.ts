@@ -1,10 +1,12 @@
 import { APPROVAL_LABELS } from "./site-inventory";
 import type { ServerSiteRow } from "./server-site-metrics";
+import { compareExpiration } from "./domain-portfolio";
 
-export type ServerSortKey = "domain" | "host" | "httpStatus" | "dailyUsers" | "weeklyUsers" | "monthlyUsers" | "weeklyChange" | "clicks" | "impressions" | "approval";
+export type ServerSortKey = "domain" | "host" | "httpStatus" | "dailyUsers" | "weeklyUsers" | "monthlyUsers" | "weeklyChange" | "clicks" | "impressions" | "approval" | "expiresAt";
 export type SortDirection = "asc" | "desc";
 
 export function compareServerSites(a: ServerSiteRow, b: ServerSiteRow, key: ServerSortKey, direction: SortDirection): number {
+  if (key === "expiresAt") return compareExpiration(a.registration?.record?.expiresAt, b.registration?.record?.expiresAt, direction) || a.domain.localeCompare(b.domain);
   const value = (site: ServerSiteRow) => {
     if ((key === "dailyUsers" || key === "weeklyUsers" || key === "monthlyUsers" || key === "weeklyChange") && site.ga4Status !== "ok") return null;
     if ((key === "clicks" || key === "impressions") && site.gscStatus !== "ok") return null;
