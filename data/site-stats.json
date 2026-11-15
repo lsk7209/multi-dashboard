@@ -17983,20 +17983,16 @@
         "eventCount": 3
       },
       "last7Days": {
-        "activeUsers": 1,
-        "sessions": 1,
-        "screenPageViews": 1,
-        "eventCount": 3
-      },
-      "periodCollectionErrors": [
-        "gsc_1d:permission",
-        "gsc_14d:permission"
-      ],
-      "last14Days": {
         "activeUsers": 2,
         "sessions": 2,
         "screenPageViews": 2,
         "eventCount": 6
+      },
+      "last14Days": {
+        "activeUsers": 3,
+        "sessions": 3,
+        "screenPageViews": 3,
+        "eventCount": 9
       },
       "previous7Days": {
         "activeUsers": 1,
@@ -18005,10 +18001,10 @@
         "eventCount": 3
       },
       "last30Days": {
-        "activeUsers": 18,
-        "sessions": 19,
-        "screenPageViews": 20,
-        "eventCount": 71
+        "activeUsers": 19,
+        "sessions": 20,
+        "screenPageViews": 21,
+        "eventCount": 74
       },
       "gscLast7Days": {
         "clicks": 0,
@@ -18024,40 +18020,68 @@
       },
       "gscLast30Days": {
         "clicks": 0,
-        "impressions": 0,
+        "impressions": 1,
         "ctr": 0,
-        "position": 0
+        "position": 1
       },
       "gscTopQueries": [],
       "trafficKeywords": [],
       "ga4SourceMedium": [
         {
           "dimension": "(direct) / (none)",
-          "activeUsers": 1,
-          "sessions": 1,
+          "activeUsers": 2,
+          "sessions": 2,
           "previousActiveUsers": 1,
           "previousSessions": 1,
-          "activeUsersChange": 0
+          "activeUsersChange": 1
         }
       ],
       "ga4LandingPages": [
         {
           "dimension": "/",
-          "activeUsers": 1,
-          "sessions": 1,
+          "activeUsers": 2,
+          "sessions": 2,
           "previousActiveUsers": 1,
           "previousSessions": 1,
-          "activeUsersChange": 0
+          "activeUsersChange": 1
         }
       ],
       "ga4Status": "ok",
-      "gscStatus": "auth_error",
+      "gscStatus": "ok",
       "monetization": false,
-      "ga4LastSuccessfulFetchAt": "2026-11-15T00:42:57.775Z",
-      "gscError": "User does not have sufficient permission for site 'https://jeompolab.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "gscErrorKind": "permission",
-      "sitemapError": "User does not have sufficient permission for site 'https://jeompolab.com/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "sitemapErrorKind": "permission"
+      "ga4LastSuccessfulFetchAt": "2026-11-15T03:31:28.471Z",
+      "gscLast1Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast14Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLastSuccessfulFetchAt": "2026-11-15T03:31:28.471Z",
+      "sitemapCount": 1,
+      "sitemapDetails": [
+        {
+          "path": "https://jeompolab.com/sitemap.xml",
+          "lastDownloaded": "2026-10-19T04:43:05.458Z",
+          "lastSubmitted": "2026-09-21T07:58:04.382Z",
+          "warnings": 0,
+          "errors": 0,
+          "isPending": false,
+          "submitted": 35
+        }
+      ],
+      "sitemapLastDownloadedAt": "2026-10-19T04:43:05.458Z",
+      "sitemapLastSubmittedAt": "2026-09-21T07:58:04.382Z",
+      "sitemapPath": "https://jeompolab.com/sitemap.xml",
+      "sitemapWarnings": 0,
+      "sitemapErrors": 0,
+      "sitemapIsPending": false,
+      "googleSubmittedCount": 35
     },
     {
       "id": "gold79",
@@ -20739,10 +20763,6 @@
         "screenPageViews": 0,
         "eventCount": 0
       },
-      "periodCollectionErrors": [
-        "gsc_1d:permission",
-        "gsc_14d:permission"
-      ],
       "last14Days": {
         "activeUsers": 0,
         "sessions": 0,
@@ -20784,7 +20804,7 @@
       "ga4SourceMedium": [],
       "ga4LandingPages": [],
       "ga4Status": "ok",
-      "gscStatus": "auth_error",
+      "gscStatus": "ok",
       "adsenseStatus": "missing_config",
       "adsenseInstallStatus": "not_detected",
       "adsenseCollectorStatus": "ok",
@@ -20823,11 +20843,39 @@
       ],
       "adsTxtError": "Missing ads.txt Google publisher entry",
       "adsTxtErrorKind": "missing_config",
-      "ga4LastSuccessfulFetchAt": "2026-11-15T00:41:33.560Z",
-      "gscError": "User does not have sufficient permission for site 'https://kapti.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "gscErrorKind": "permission",
-      "sitemapError": "User does not have sufficient permission for site 'https://kapti.kr/'. See also: https://support.google.com/webmasters/answer/2451999.",
-      "sitemapErrorKind": "permission"
+      "ga4LastSuccessfulFetchAt": "2026-11-15T03:31:18.164Z",
+      "gscLast1Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLast14Days": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      "gscLastSuccessfulFetchAt": "2026-11-15T03:31:18.164Z",
+      "sitemapCount": 1,
+      "sitemapDetails": [
+        {
+          "path": "https://kapti.kr/sitemap.xml",
+          "lastDownloaded": "2026-11-10T02:27:41.755Z",
+          "lastSubmitted": "2026-09-22T23:25:38.484Z",
+          "warnings": 0,
+          "errors": 0,
+          "isPending": false,
+          "submitted": 3
+        }
+      ],
+      "sitemapLastDownloadedAt": "2026-11-10T02:27:41.755Z",
+      "sitemapLastSubmittedAt": "2026-09-22T23:25:38.484Z",
+      "sitemapPath": "https://kapti.kr/sitemap.xml",
+      "sitemapWarnings": 0,
+      "sitemapErrors": 0,
+      "sitemapIsPending": false,
+      "googleSubmittedCount": 3
     },
     {
       "id": "car-klick",
