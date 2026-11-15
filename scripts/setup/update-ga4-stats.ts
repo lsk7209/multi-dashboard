@@ -584,6 +584,24 @@ function toGa4StartDate(days: number): string {
   return `${days}daysAgo`;
 }
 
+function ga4HostFilterForSite(siteUrl: string) {
+  const host = new URL(siteUrl).hostname.toLowerCase();
+  if (host !== "coinyo.kr" && host !== "www.coinyo.kr") {
+    return {};
+  }
+  return {
+    dimensionFilter: {
+      filter: {
+        fieldName: "hostName",
+        inListFilter: {
+          values: ["coinyo.kr", "www.coinyo.kr"],
+          caseSensitive: false,
+        },
+      },
+    },
+  };
+}
+
 function classifyError(error: string): ErrorKind {
   const normalized = error.toLowerCase();
 
@@ -661,24 +679,27 @@ async function runGa4Request<T>(
   });
 }
 
-async function fetchGa4Metrics(
+export async function fetchGa4Metrics(
   client: BetaAnalyticsDataClient,
   propertyId: string,
   days: number,
+  siteUrl: string,
 ): Promise<MetricSet> {
   return fetchGa4MetricsForRange(
     client,
     propertyId,
     toGa4StartDate(days),
     "yesterday",
+    siteUrl,
   );
 }
 
-async function fetchPreviousGa4Metrics(
+export async function fetchPreviousGa4Metrics(
   client: BetaAnalyticsDataClient,
   propertyId: string,
+  siteUrl: string,
 ): Promise<MetricSet> {
-  return fetchGa4MetricsForRange(client, propertyId, "14daysAgo", "8daysAgo");
+  return fetchGa4MetricsForRange(client, propertyId, "14daysAgo", "8daysAgo", siteUrl);
 }
 
 async function fetchGa4MetricsForRange(
@@ -686,11 +707,13 @@ async function fetchGa4MetricsForRange(
   propertyId: string,
   startDate: string,
   endDate: string,
+  siteUrl: string,
 ): Promise<MetricSet> {
   const [response] = await runGa4Request(() =>
     client.runReport({
       property: `properties/${propertyId}`,
       dateRanges: [{ startDate, endDate }],
+      ...ga4HostFilterForSite(siteUrl),
       metrics: [
         { name: "activeUsers" },
         { name: "sessions" },
@@ -715,15 +738,17 @@ async function fetchGa4MetricsForRange(
   };
 }
 
-async function fetchGa4TrafficKeywords(
+export async function fetchGa4TrafficKeywords(
   client: BetaAnalyticsDataClient,
   propertyId: string,
   days: number,
+  siteUrl: string,
 ): Promise<TrafficKeywordMetric[]> {
   const [response] = await runGa4Request(() =>
     client.runReport({
       property: `properties/${propertyId}`,
       dateRanges: [{ startDate: toGa4StartDate(days), endDate: "yesterday" }],
+      ...ga4HostFilterForSite(siteUrl),
       dimensions: [
         { name: "sessionSource" },
         { name: "sessionMedium" },
@@ -776,10 +801,11 @@ async function fetchGa4TrafficKeywords(
     .slice(0, TOP_QUERY_LIMIT);
 }
 
-async function fetchGa4TrafficBreakdown(
+export async function fetchGa4TrafficBreakdown(
   client: BetaAnalyticsDataClient,
   propertyId: string,
   dimensionName: "sourceMedium" | "landingPage",
+  siteUrl: string,
 ): Promise<TrafficBreakdownMetric[]> {
   const dimensions =
     dimensionName === "sourceMedium"
@@ -798,6 +824,7 @@ async function fetchGa4TrafficBreakdown(
       client.runReport({
         property: `properties/${propertyId}`,
         dateRanges: [{ startDate, endDate }],
+        ...ga4HostFilterForSite(siteUrl),
         dimensions,
         metrics: [{ name: "activeUsers" }, { name: "sessions" }],
         limit: 10,
@@ -2222,16 +2249,16 @@ async function fetchSiteStat(
     reportProgress("ga4-metrics");
     try {
       [last1Days, last7Days, previous7Days, last30Days] = await Promise.all([
-        fetchGa4Metrics(ga4Client, site.ga4PropertyId, DAY_RANGE),
-        fetchGa4Metrics(ga4Client, site.ga4PropertyId, RANGE_DAYS),
-        fetchPreviousGa4Metrics(ga4Client, site.ga4PropertyId),
-        fetchGa4Metrics(ga4Client, site.ga4PropertyId, LONG_RANGE_DAYS),
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, DAY_RANGE, site.url),
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, RANGE_DAYS, site.url),
+        fetchPreviousGa4Metrics(ga4Client, site.ga4PropertyId, site.url),
+        fetchGa4Metrics(ga4Client, site.ga4PropertyId, LONG_RANGE_DAYS, site.url),
       ]);
     } catch (ga4Error) {
       error = getErrorMessage(ga4Error);
     }
 
-    last14Days = await collectOptionalPeriod("ga4_14d", periodCollectionErrors, () => fetchGa4Metrics(ga4Client, site.ga4PropertyId!, 14));
+    last14Days = await collectOptionalPeriod("ga4_14d", periodCollectionErrors, () => fetchGa4Metrics(ga4Client, site.ga4PropertyId!, 14, site.url));
 
     reportProgress("ga4-keywords");
     try {
@@ -2239,6 +2266,7 @@ async function fetchSiteStat(
         ga4Client,
         site.ga4PropertyId,
         RANGE_DAYS,
+        site.url,
       );
     } catch {
       ga4TrafficKeywords = [];
@@ -2247,8 +2275,8 @@ async function fetchSiteStat(
     reportProgress("ga4-breakdown");
     try {
       [ga4SourceMedium, ga4LandingPages] = await Promise.all([
-        fetchGa4TrafficBreakdown(ga4Client, site.ga4PropertyId, "sourceMedium"),
-        fetchGa4TrafficBreakdown(ga4Client, site.ga4PropertyId, "landingPage"),
+        fetchGa4TrafficBreakdown(ga4Client, site.ga4PropertyId, "sourceMedium", site.url),
+        fetchGa4TrafficBreakdown(ga4Client, site.ga4PropertyId, "landingPage", site.url),
       ]);
     } catch {
       ga4SourceMedium = [];

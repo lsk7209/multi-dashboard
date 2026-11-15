@@ -7800,34 +7800,34 @@
       "ga4PropertyId": "536352221",
       "gscSiteUrl": "https://coinyo.kr/",
       "last1Days": {
-        "activeUsers": 3,
-        "sessions": 3,
-        "screenPageViews": 3,
-        "eventCount": 11
+        "activeUsers": 2,
+        "sessions": 2,
+        "screenPageViews": 2,
+        "eventCount": 7
       },
       "last7Days": {
-        "activeUsers": 13,
-        "sessions": 13,
-        "screenPageViews": 13,
-        "eventCount": 53
+        "activeUsers": 8,
+        "sessions": 8,
+        "screenPageViews": 8,
+        "eventCount": 31
       },
       "last14Days": {
-        "activeUsers": 46,
-        "sessions": 46,
-        "screenPageViews": 45,
-        "eventCount": 172
+        "activeUsers": 34,
+        "sessions": 34,
+        "screenPageViews": 33,
+        "eventCount": 118
       },
       "previous7Days": {
-        "activeUsers": 33,
-        "sessions": 33,
-        "screenPageViews": 32,
-        "eventCount": 119
+        "activeUsers": 26,
+        "sessions": 26,
+        "screenPageViews": 25,
+        "eventCount": 87
       },
       "last30Days": {
-        "activeUsers": 85,
-        "sessions": 87,
-        "screenPageViews": 91,
-        "eventCount": 356
+        "activeUsers": 57,
+        "sessions": 58,
+        "screenPageViews": 62,
+        "eventCount": 224
       },
       "gscLast1Days": {
         "clicks": 0,
@@ -7864,29 +7864,21 @@
       "ga4SourceMedium": [
         {
           "dimension": "(direct) / (none)",
-          "activeUsers": 13,
-          "sessions": 13,
-          "previousActiveUsers": 32,
-          "previousSessions": 32,
-          "activeUsersChange": -0.59375
-        },
-        {
-          "dimension": "(not set) / (not set)",
-          "activeUsers": 1,
-          "sessions": 1,
-          "previousActiveUsers": 0,
-          "previousSessions": 0,
-          "activeUsersChange": null
+          "activeUsers": 8,
+          "sessions": 8,
+          "previousActiveUsers": 25,
+          "previousSessions": 25,
+          "activeUsersChange": -0.68
         }
       ],
       "ga4LandingPages": [
         {
           "dimension": "/",
-          "activeUsers": 1,
-          "sessions": 1,
-          "previousActiveUsers": 33,
-          "previousSessions": 33,
-          "activeUsersChange": -0.9696969696969697
+          "activeUsers": 8,
+          "sessions": 8,
+          "previousActiveUsers": 26,
+          "previousSessions": 26,
+          "activeUsersChange": -0.6923076923076923
         }
       ],
       "ga4Status": "ok",
@@ -7950,7 +7942,7 @@
       "sitemapErrors": 0,
       "sitemapIsPending": false,
       "googleSubmittedCount": 155,
-      "ga4LastSuccessfulFetchAt": "2026-11-15T00:37:58.897Z",
+      "ga4LastSuccessfulFetchAt": "2026-11-15T02:31:49.906Z",
       "gscLastSuccessfulFetchAt": "2026-11-15T00:37:58.897Z",
       "lastPublishedAt": "2026-10-21T00:10:00Z"
     },
