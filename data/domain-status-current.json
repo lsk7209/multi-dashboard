@@ -1,0 +1,4866 @@
+{
+  "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+  "sources": [
+    {
+      "registrar": "HostingKR",
+      "ownedCount": 74,
+      "ownedComplete": true,
+      "deletedObserved": 39,
+      "deletedTotal": 41,
+      "deletedComplete": false
+    },
+    {
+      "registrar": "Dynadot",
+      "ownedCount": 20,
+      "ownedComplete": true,
+      "source": "API list_domain"
+    }
+  ],
+  "domains": [
+    {
+      "domain": "2mlab.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-03-19T12:00:00.000+09:00",
+      "daysRemaining": 124,
+      "autoRenew": "ON",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "2mlab.kr"
+      ],
+      "pausedSites": [
+        "finance.2mlab.kr",
+        "food.2mlab.kr"
+      ]
+    },
+    {
+      "domain": "2mlab.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2018-10-02 12:00+09:00",
+      "deletedAt": "2018-11-02 11:31+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [
+        "2mlab.kr"
+      ],
+      "pausedSites": [
+        "finance.2mlab.kr",
+        "food.2mlab.kr"
+      ]
+    },
+    {
+      "domain": "2mlab.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-10-08 23:59+09:00",
+      "deletedAt": "2022-11-20 02:37+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "askore.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-07T12:00:00.000+09:00",
+      "daysRemaining": 22,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "askore.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "autopickgo.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-08T23:11:22+00:00",
+      "daysRemaining": 235,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5621449",
+            "ServerName": "ns1.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621450",
+            "ServerName": "ns2.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621451",
+            "ServerName": "ns3.serverhostgroup.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "autopickgo.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "autorentlab.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-03T12:20:21+00:00",
+      "daysRemaining": 230,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "autorentlab.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "autoscares.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:44.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "autoscares.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "banshill.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-11-17 08:48+09:00",
+      "deletedAt": "2022-12-30 02:56+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "binances.co.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2020-11-04 12:00+09:00",
+      "deletedAt": "2020-12-05 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "bojo24.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-11T12:00:00.000+09:00",
+      "daysRemaining": 26,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "bojo24.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "bongja.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2026-05-20 12:00+09:00",
+      "deletedAt": "2026-06-20 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "cafemoney.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-01-10 12:00+09:00",
+      "deletedAt": "2022-02-10 12:00+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "campgogo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-03T12:00:00.000+09:00",
+      "daysRemaining": 200,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "campgogo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "caregos.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-08T11:09:22.000+09:00",
+      "daysRemaining": 205,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "caregos.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "cartain.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-27T12:00:00.000+09:00",
+      "daysRemaining": 42,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "cartain.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "certifi.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "certifi.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "chatgipt.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-03-29T12:00:00.000+09:00",
+      "daysRemaining": 134,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [],
+      "pausedSites": [
+        "chatgipt.kr",
+        "comu.chatgipt.kr",
+        "email.chatgipt.kr"
+      ]
+    },
+    {
+      "domain": "coinyo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-26T12:00:00.000+09:00",
+      "daysRemaining": 41,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "alt.coinyo.kr",
+        "bit.coinyo.kr",
+        "coinyo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "coverclarityhealth.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-19T00:10:27.000+09:00",
+      "daysRemaining": 216,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "coverclarityhealth.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "crepika.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-21T11:31:49.000+09:00",
+      "daysRemaining": 6,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "crepika.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "crowd1.ne.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2023-05-14 12:00+09:00",
+      "deletedAt": "2023-09-20 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "dailyloves.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-07-21 23:59+09:00",
+      "deletedAt": "2022-09-02 02:22+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "digitalrunner.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-03-29 12:00+09:00",
+      "deletedAt": "2022-04-29 12:00+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "discedu.co.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-12-28 12:00+09:00",
+      "deletedAt": "2023-01-28 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "discparty.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-17T12:23:55.000+09:00",
+      "daysRemaining": 63,
+      "autoRenew": "ON",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "discparty.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "dogbreedcost.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-06-26T23:30:05+00:00",
+      "daysRemaining": 223,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "no",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5586050",
+            "ServerName": "ns1.vercel-dns.com"
+          },
+          {
+            "ServerId": "5586051",
+            "ServerName": "ns2.vercel-dns.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "dogbreedcost.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "dogspang.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-01T12:00:00.000+09:00",
+      "daysRemaining": 47,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "dogspang.kr"
+      ],
+      "pausedSites": [
+        "hos.dogspang.kr",
+        "travel.dogspang.kr"
+      ]
+    },
+    {
+      "domain": "dogswhere.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-10-28T13:02:14.000+09:00",
+      "daysRemaining": 347,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "dogswhere.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "doseogogo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-06T12:00:00.000+09:00",
+      "daysRemaining": 203,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "doseogogo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "dullegilgogo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-03T12:00:00.000+09:00",
+      "daysRemaining": 200,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "dullegilgogo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "earth2.ne.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2023-03-25 12:00+09:00",
+      "deletedAt": "2023-04-25 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "easyfunnel.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2026-07-01 12:00+09:00",
+      "deletedAt": "2026-08-01 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "educaer.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:48.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [],
+      "pausedSites": [
+        "educaer.com"
+      ]
+    },
+    {
+      "domain": "ehon365.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-09T12:00:00.000+09:00",
+      "daysRemaining": 206,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "dolbomjigi.ehon365.kr",
+        "ehon365.kr",
+        "joy.ehon365.kr",
+        "pregnancy.ehon365.kr",
+        "sinhonjigi.ehon365.kr",
+        "wonon.ehon365.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "emailab.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-08-11 23:59+09:00",
+      "deletedAt": "2022-09-23 02:23+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "emoneys.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-10-28 23:59+09:00",
+      "deletedAt": "2022-12-10 02:53+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "esgyo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-27T12:00:00.000+09:00",
+      "daysRemaining": 12,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "esgyo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "estat.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "estat.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "etique.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "etique.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "everydaysmall.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-07-31 12:50+09:00",
+      "deletedAt": "2022-09-12 02:24+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "ezfunnel.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-08T12:00:00.000+09:00",
+      "daysRemaining": 23,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "ezfunnel.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "fastjob.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-28T12:00:00.000+09:00",
+      "daysRemaining": 194,
+      "autoRenew": "ON",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "fastjob.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "fastjobs.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2026-10-04 12:00+09:00",
+      "deletedAt": "2026-11-04 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "finan.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "finan.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "goesku.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-07T05:10:46.000+09:00",
+      "daysRemaining": 22,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "goesku.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "gold79.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-08-30T12:00:00.000+09:00",
+      "daysRemaining": 288,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "gold79.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "gong365.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-08T12:00:00.000+09:00",
+      "daysRemaining": 23,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "gong365.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "goodshouse.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-11-01 23:59+09:00",
+      "deletedAt": "2022-12-14 02:53+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "gover.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "gover.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "gradienttrail.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-06-26T17:10:07+00:00",
+      "daysRemaining": 223,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "no",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "gradienttrail.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "gundam4u.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2018-06-28 07:58+09:00",
+      "deletedAt": "2018-08-10 02:02+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "haemongdream.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-11T03:09:40.000+09:00",
+      "daysRemaining": 57,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "haemongdream.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "healfood.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "healfood.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "healletter.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-08-19 23:59+09:00",
+      "deletedAt": "2022-10-01 02:27+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "healthgotoo.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-31T14:00:11.000+09:00",
+      "daysRemaining": 46,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "healthgotoo.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "herocat.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-10-25 12:00+09:00",
+      "deletedAt": "2022-11-25 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "homeimer.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:47.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [],
+      "pausedSites": [
+        "homeimer.com"
+      ]
+    },
+    {
+      "domain": "insupang.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-31T12:10:11.000+09:00",
+      "daysRemaining": 46,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "insupang.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "ireports.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2019-06-07 12:00+09:00",
+      "deletedAt": "2019-07-08 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "item79.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-08-30T05:35:08+00:00",
+      "daysRemaining": 288,
+      "autoRenew": "auto-renew",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "item79.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "jeompolab.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-08-20T11:00:20+00:00",
+      "daysRemaining": 278,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "jeompolab.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "jeuncell.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-12-20 23:59+09:00",
+      "deletedAt": "2023-02-01 02:52+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "kabi.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-07-12T12:00:00.000+09:00",
+      "daysRemaining": 239,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "kang4.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2026-08-01 14:34+09:00",
+      "deletedAt": "2026-09-13 02:04+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "kapti.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-19T12:00:00.000+09:00",
+      "daysRemaining": 216,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "kapti.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "karastar.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-11-30 12:00+09:00",
+      "deletedAt": "2022-12-31 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "kdramanote.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-04T23:17:19+00:00",
+      "daysRemaining": 231,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "kdramanote.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "klick.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-06T12:00:00.000+09:00",
+      "daysRemaining": 21,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "klick.kr"
+      ],
+      "pausedSites": [
+        "car.klick.kr",
+        "dog.klick.kr",
+        "ko.klick.kr",
+        "lo.klick.kr",
+        "notebook.klick.kr",
+        "webtoon.klick.kr"
+      ]
+    },
+    {
+      "domain": "knewstory.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-02T12:00:00.000+09:00",
+      "daysRemaining": 17,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "coinyo.knewstory.kr",
+        "knewstory.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "kyussam.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2024-07-07 04:52+09:00",
+      "deletedAt": "2024-08-19 02:03+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "lawer.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "lawer.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "leadjo.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2026-07-05 12:33+09:00",
+      "deletedAt": "2026-08-17 02:03+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "legalser.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:51.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "legalser.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "limsight.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-12T12:00:00.000+09:00",
+      "daysRemaining": 209,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "limsight.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "localgeo.app",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-06-28T10:34:32+00:00",
+      "daysRemaining": 225,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5586050",
+            "ServerName": "ns1.vercel-dns.com"
+          },
+          {
+            "ServerId": "5586051",
+            "ServerName": "ns2.vercel-dns.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "localgeo.app"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "luckyday.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-21T12:00:00.000+09:00",
+      "daysRemaining": 218,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "luckyday.kr"
+      ],
+      "pausedSites": [
+        "car.luckyday.kr",
+        "gong.luckyday.kr",
+        "phone.luckyday.kr"
+      ]
+    },
+    {
+      "domain": "luxurytraver.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:43.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [],
+      "pausedSites": [
+        "luxurytraver.com"
+      ]
+    },
+    {
+      "domain": "newletters.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-09-19 23:59+09:00",
+      "deletedAt": "2022-11-01 02:27+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "nexttech7.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-09-19T05:58:59.000+09:00",
+      "daysRemaining": 308,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "gpt.nexttech7.com",
+        "nexttech7.com"
+      ],
+      "pausedSites": [
+        "blogsample2.nexttech7.com"
+      ]
+    },
+    {
+      "domain": "nicewomen.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-27T12:00:00.000+09:00",
+      "daysRemaining": 12,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "nicewomen.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "nongsusangogo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-06T12:00:00.000+09:00",
+      "daysRemaining": 203,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "nongsusangogo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "notebookreview.co.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-03-11 12:00+09:00",
+      "deletedAt": "2022-04-11 12:00+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "nowtip.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-04-25T12:00:00.000+09:00",
+      "daysRemaining": 161,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "patentgogo.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-06-27T15:29:33+00:00",
+      "daysRemaining": 224,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "patentgogo.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "petcostlab.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-05T14:53:06+00:00",
+      "daysRemaining": 232,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5621449",
+            "ServerName": "ns1.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621450",
+            "ServerName": "ns2.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621451",
+            "ServerName": "ns3.serverhostgroup.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "petcostlab.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "pethomepick.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-05T03:52:06+00:00",
+      "daysRemaining": 231,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5621449",
+            "ServerName": "ns1.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621450",
+            "ServerName": "ns2.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621451",
+            "ServerName": "ns3.serverhostgroup.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "pethomepick.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "petinsuer.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:45.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "petinsuer.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "petjigi.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-21T12:00:00.000+09:00",
+      "daysRemaining": 187,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "petjigi.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "picklefriend.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-28T12:00:00.000+09:00",
+      "daysRemaining": 194,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "picklefriend.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "picturebooks.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-07-21T12:00:00.000+09:00",
+      "daysRemaining": 248,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "picturebooks.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "plategogo.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-03T15:57:49+00:00",
+      "daysRemaining": 230,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5586050",
+            "ServerName": "ns1.vercel-dns.com"
+          },
+          {
+            "ServerId": "5586051",
+            "ServerName": "ns2.vercel-dns.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "plategogo.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "pnhoso.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-10-05 23:59+09:00",
+      "deletedAt": "2022-11-17 02:31+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "pnhyo.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-06-22 23:59+09:00",
+      "deletedAt": "2022-08-04 02:57+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "pnletter.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-11-21 23:59+09:00",
+      "deletedAt": "2023-01-03 02:52+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "primebuyok.com",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2026-01-10 09:14+09:00",
+      "deletedAt": "2026-02-22 02:05+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "revieway.co.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2021-03-29 12:00+09:00",
+      "deletedAt": "2021-04-29 12:00+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "richyou.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-07T12:00:00.000+09:00",
+      "daysRemaining": 22,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "richyou.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "rndatlas.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-06-27T15:19:16+00:00",
+      "daysRemaining": 224,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "rndatlas.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "roadways.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-04T12:00:00.000+09:00",
+      "daysRemaining": 19,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.vercel-dns.com",
+        "ns2.vercel-dns.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "roadways.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "runmania.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-02-20T12:00:00.000+09:00",
+      "daysRemaining": 97,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "runmania.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "sellerpit.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-27T12:00:00.000+09:00",
+      "daysRemaining": 12,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "bu.sellerpit.kr",
+        "go.sellerpit.kr",
+        "jasamall.sellerpit.kr",
+        "sellerpit.kr",
+        "smart.sellerpit.kr",
+        "travel.sellerpit.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "seniorlivingnote.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-10T13:02:18+00:00",
+      "daysRemaining": 237,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5621449",
+            "ServerName": "ns1.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621450",
+            "ServerName": "ns2.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621451",
+            "ServerName": "ns3.serverhostgroup.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "seniorlivingnote.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "shotsetup.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-24T01:37:56+00:00",
+      "daysRemaining": 250,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "shotsetup.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "smallhomepick.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-04T06:40:24+00:00",
+      "daysRemaining": 231,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5621449",
+            "ServerName": "ns1.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621450",
+            "ServerName": "ns2.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621451",
+            "ServerName": "ns3.serverhostgroup.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "smallhomepick.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "smartmethods.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-08-15 23:59+09:00",
+      "deletedAt": "2022-09-27 02:26+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "smsales.xyz",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2023-07-25 23:59+09:00",
+      "deletedAt": "2023-09-06 03:01+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "softwa.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "softwa.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "solarpaybackmap.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-19T00:01:31.000+09:00",
+      "daysRemaining": 216,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "solarpaybackmap.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "sorimate.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-31T14:22:55.000+09:00",
+      "daysRemaining": 197,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "sorimate.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "spinkorea.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-22T12:00:00.000+09:00",
+      "daysRemaining": 7,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "spinkorea.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "sssaass.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T08:18:50.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "sssaass.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "tasko.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-21T12:00:00.000+09:00",
+      "daysRemaining": 187,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "saju.tasko.kr"
+      ],
+      "pausedSites": [
+        "ai.tasko.kr",
+        "mbti.tasko.kr"
+      ]
+    },
+    {
+      "domain": "temon.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-27T12:00:00.000+09:00",
+      "daysRemaining": 193,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "temon.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "temon.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2024-03-02 12:00+09:00",
+      "deletedAt": "2024-04-02 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [
+        "temon.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "tennisfrens.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-25T07:59:58.000+09:00",
+      "daysRemaining": 191,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "tennisfrens.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "tennisfriends.co.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2025-01-20 12:00+09:00",
+      "deletedAt": "2025-02-21 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "tenniss.co.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-12-15 12:00+09:00",
+      "deletedAt": "2023-01-15 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "texturb.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-21T11:35:06.000+09:00",
+      "daysRemaining": 6,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "texturb.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "thecryptoyou.kr",
+      "registrar": "HostingKR",
+      "status": "deleted",
+      "expiresAt": "2022-12-12 12:00+09:00",
+      "deletedAt": "2023-01-12 11:30+09:00",
+      "reason": "만기 삭제",
+      "autoRenew": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "source": "HostingKR authenticated deleted portfolio visible rows",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "today2424.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-11-28T12:00:00.000+09:00",
+      "daysRemaining": 13,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "today2424.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "todaypharm.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-10T12:00:00.000+09:00",
+      "daysRemaining": 25,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "todaypharm.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "todayshops.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2026-12-07T12:00:00.000+09:00",
+      "daysRemaining": 22,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "todayshops.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "toolnavigo.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-25T04:54:01+00:00",
+      "daysRemaining": 251,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5621449",
+            "ServerName": "ns1.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621450",
+            "ServerName": "ns2.serverhostgroup.com"
+          },
+          {
+            "ServerId": "5621451",
+            "ServerName": "ns3.serverhostgroup.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "toolnavigo.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "trave.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-04T12:00:00.000+09:00",
+      "daysRemaining": 50,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "trave.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "travelpang.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-01-01T12:00:00.000+09:00",
+      "daysRemaining": 47,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "travelpang.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "wattbenchs.com",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-08T11:09:20.000+09:00",
+      "daysRemaining": 205,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "wattbenchs.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "weddingfairfinder.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-25T15:51:54+00:00",
+      "daysRemaining": 252,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [],
+      "pausedSites": []
+    },
+    {
+      "domain": "wedfairguide.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-07-03T03:15:06+00:00",
+      "daysRemaining": 229,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Name Servers",
+        "NameServers": [
+          {
+            "ServerId": "5586050",
+            "ServerName": "ns1.vercel-dns.com"
+          },
+          {
+            "ServerId": "5586051",
+            "ServerName": "ns2.vercel-dns.com"
+          }
+        ]
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "wedfairguide.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "workgogo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-04T12:00:00.000+09:00",
+      "daysRemaining": 201,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "workgogo.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "yesa.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-05-26T12:00:00.000+09:00",
+      "daysRemaining": 192,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.serverhostgroup.com",
+        "ns2.serverhostgroup.com",
+        "ns3.serverhostgroup.com"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "yesa.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "youkamap.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-06T12:00:00.000+09:00",
+      "daysRemaining": 203,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "youkamap.kr"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "yourtripgo.com",
+      "registrar": "Dynadot",
+      "status": "registered",
+      "expiresAt": "2027-08-04T01:32:16+00:00",
+      "daysRemaining": 261,
+      "autoRenew": "manual renewal",
+      "locked": "yes",
+      "hold": "no",
+      "disabled": "no",
+      "registrantUnverified": "yes",
+      "nameserverSettings": {
+        "Type": "Dynadot DNS"
+      },
+      "checkedAt": "2026-11-15T05:05:26.050138+00:00",
+      "source": "Dynadot API list_domain",
+      "coreSites": [
+        "yourtripgo.com"
+      ],
+      "pausedSites": []
+    },
+    {
+      "domain": "yungyanggogo.kr",
+      "registrar": "HostingKR",
+      "status": "정상",
+      "expiresAt": "2027-06-06T12:00:00.000+09:00",
+      "daysRemaining": 203,
+      "autoRenew": "OFF",
+      "locked": false,
+      "nameservers": [
+        "ns1.hosting.co.kr",
+        "ns2.hosting.co.kr",
+        "ns3.hosting.co.kr",
+        "ns4.hosting.co.kr"
+      ],
+      "checkedAt": "2026-11-15T05:04:36Z",
+      "source": "HostingKR authenticated CSV + visible portfolio table",
+      "coreSites": [
+        "yungyanggogo.kr"
+      ],
+      "pausedSites": []
+    }
+  ],
+  "sites": [
+    {
+      "domain": "2mlab.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "2mlab.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://2mlab.kr/",
+      "registrationDomain": "2mlab.kr"
+    },
+    {
+      "domain": "ai.tasko.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "tasko.kr"
+    },
+    {
+      "domain": "alt.coinyo.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "alt.coinyo.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://alt.coinyo.kr/",
+      "registrationDomain": "coinyo.kr"
+    },
+    {
+      "domain": "askore.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "askore.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://askore.kr/",
+      "registrationDomain": "askore.kr"
+    },
+    {
+      "domain": "autopickgo.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "autopickgo.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://autopickgo.com/",
+      "registrationDomain": "autopickgo.com"
+    },
+    {
+      "domain": "autorentlab.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "autorentlab.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://autorentlab.com/",
+      "registrationDomain": "autorentlab.com"
+    },
+    {
+      "domain": "autoscares.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "autoscares.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://autoscares.com/",
+      "registrationDomain": "autoscares.com"
+    },
+    {
+      "domain": "bit.coinyo.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "bit.coinyo.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://bit.coinyo.kr/",
+      "registrationDomain": "coinyo.kr"
+    },
+    {
+      "domain": "blogsample2.nexttech7.com",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "nexttech7.com"
+    },
+    {
+      "domain": "bojo24.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "bojo24.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://bojo24.kr/",
+      "registrationDomain": "bojo24.kr"
+    },
+    {
+      "domain": "bu.sellerpit.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "bu.sellerpit.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "76.76.21.21"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://bu.sellerpit.kr/",
+      "registrationDomain": "sellerpit.kr"
+    },
+    {
+      "domain": "campgogo.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "campgogo.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://campgogo.kr/",
+      "registrationDomain": "campgogo.kr"
+    },
+    {
+      "domain": "car.klick.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "car.luckyday.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "luckyday.kr"
+    },
+    {
+      "domain": "caregos.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "caregos.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://caregos.com/",
+      "registrationDomain": "caregos.com"
+    },
+    {
+      "domain": "cartain.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "cartain.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://cartain.kr/",
+      "registrationDomain": "cartain.kr"
+    },
+    {
+      "domain": "certifi.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "certifi.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.certifi.kr/",
+      "registrationDomain": "certifi.kr"
+    },
+    {
+      "domain": "chatgipt.kr",
+      "operationStatus": "paused",
+      "expectedHost": "turbo_pending",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "chatgipt.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.245.11"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://chatgipt.kr/",
+      "registrationDomain": "chatgipt.kr"
+    },
+    {
+      "domain": "coinyo.knewstory.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "coinyo.knewstory.kr.",
+          "type": 1,
+          "TTL": 7458,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://coinyo.knewstory.kr/",
+      "registrationDomain": "knewstory.kr"
+    },
+    {
+      "domain": "coinyo.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "coinyo.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://coinyo.kr/",
+      "registrationDomain": "coinyo.kr"
+    },
+    {
+      "domain": "comu.chatgipt.kr",
+      "operationStatus": "paused",
+      "expectedHost": "turbo_pending",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "comu.chatgipt.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.245.11"
+        }
+      ],
+      "httpStatus": 404,
+      "finalUrl": "https://comu.chatgipt.kr/",
+      "registrationDomain": "chatgipt.kr"
+    },
+    {
+      "domain": "coverclarityhealth.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "coverclarityhealth.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://coverclarityhealth.com/",
+      "registrationDomain": "coverclarityhealth.com"
+    },
+    {
+      "domain": "crepika.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "crepika.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://crepika.com/",
+      "registrationDomain": "crepika.com"
+    },
+    {
+      "domain": "discparty.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "discparty.com.",
+          "type": 1,
+          "TTL": 5105,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://discparty.com/",
+      "registrationDomain": "discparty.com"
+    },
+    {
+      "domain": "dog.klick.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "dog.nekau.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "dog.nekau.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://dog.nekau.com/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "dogbreedcost.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "dogbreedcost.com.",
+          "type": 1,
+          "TTL": 60,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://dogbreedcost.com/",
+      "registrationDomain": "dogbreedcost.com"
+    },
+    {
+      "domain": "dogspang.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "dogspang.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://dogspang.kr/",
+      "registrationDomain": "dogspang.kr"
+    },
+    {
+      "domain": "dogswhere.com",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "dogswhere.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://dogswhere.com/",
+      "registrationDomain": "dogswhere.com"
+    },
+    {
+      "domain": "dolbomjigi.ehon365.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "dolbomjigi.ehon365.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://dolbomjigi.ehon365.kr/",
+      "registrationDomain": "ehon365.kr"
+    },
+    {
+      "domain": "doseogogo.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "doseogogo.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://doseogogo.kr/",
+      "registrationDomain": "doseogogo.kr"
+    },
+    {
+      "domain": "dullegilgogo.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "dullegilgogo.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://dullegilgogo.kr/",
+      "registrationDomain": "dullegilgogo.kr"
+    },
+    {
+      "domain": "educaer.com",
+      "operationStatus": "paused",
+      "expectedHost": "turbo_pending",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 2,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "educaer.com"
+    },
+    {
+      "domain": "ehon365.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "ehon365.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://ehon365.kr/",
+      "registrationDomain": "ehon365.kr"
+    },
+    {
+      "domain": "email.chatgipt.kr",
+      "operationStatus": "paused",
+      "expectedHost": "turbo_pending",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "email.chatgipt.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.245.11"
+        }
+      ],
+      "httpStatus": 404,
+      "finalUrl": "https://email.chatgipt.kr/",
+      "registrationDomain": "chatgipt.kr"
+    },
+    {
+      "domain": "esgyo.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "esgyo.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://esgyo.kr/",
+      "registrationDomain": "esgyo.kr"
+    },
+    {
+      "domain": "estat.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "estat.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://estat.kr/",
+      "registrationDomain": "estat.kr"
+    },
+    {
+      "domain": "etique.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "etique.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://etique.kr/",
+      "registrationDomain": "etique.kr"
+    },
+    {
+      "domain": "ezfunnel.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "ezfunnel.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://ezfunnel.kr/",
+      "registrationDomain": "ezfunnel.kr"
+    },
+    {
+      "domain": "fastjob.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "fastjob.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://fastjob.kr/",
+      "registrationDomain": "fastjob.kr"
+    },
+    {
+      "domain": "finan.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "finan.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://finan.kr/",
+      "registrationDomain": "finan.kr"
+    },
+    {
+      "domain": "finance.2mlab.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "2mlab.kr"
+    },
+    {
+      "domain": "food.2mlab.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "2mlab.kr"
+    },
+    {
+      "domain": "go.sellerpit.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "go.sellerpit.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://go.sellerpit.kr/",
+      "registrationDomain": "sellerpit.kr"
+    },
+    {
+      "domain": "goesku.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "goesku.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://goesku.com/",
+      "registrationDomain": "goesku.com"
+    },
+    {
+      "domain": "gold79.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "gold79.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://gold79.kr/",
+      "registrationDomain": "gold79.kr"
+    },
+    {
+      "domain": "gong.luckyday.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "luckyday.kr"
+    },
+    {
+      "domain": "gong365.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "gong365.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.198.79.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://gong365.kr/",
+      "registrationDomain": "gong365.kr"
+    },
+    {
+      "domain": "gover.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "gover.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://gover.kr/",
+      "registrationDomain": "gover.kr"
+    },
+    {
+      "domain": "gpt.nexttech7.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "gpt.nexttech7.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpError": "SSLError",
+      "registrationDomain": "nexttech7.com"
+    },
+    {
+      "domain": "gradienttrail.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "gradienttrail.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://gradienttrail.com/",
+      "registrationDomain": "gradienttrail.com"
+    },
+    {
+      "domain": "haemongdream.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "haemongdream.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://haemongdream.com/",
+      "registrationDomain": "haemongdream.com"
+    },
+    {
+      "domain": "healfood.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "healfood.kr.",
+          "type": 1,
+          "TTL": 13883,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://healfood.kr/",
+      "registrationDomain": "healfood.kr"
+    },
+    {
+      "domain": "healthgotoo.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "healthgotoo.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://healthgotoo.com/",
+      "registrationDomain": "healthgotoo.com"
+    },
+    {
+      "domain": "homeimer.com",
+      "operationStatus": "paused",
+      "expectedHost": "turbo_pending",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "homeimer.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.245.11"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://homeimer.com/",
+      "registrationDomain": "homeimer.com"
+    },
+    {
+      "domain": "hos.dogspang.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "dogspang.kr"
+    },
+    {
+      "domain": "insupang.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "insupang.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 410,
+      "finalUrl": "https://insupang.com/",
+      "registrationDomain": "insupang.com"
+    },
+    {
+      "domain": "item79.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "item79.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://item79.com/",
+      "registrationDomain": "item79.com"
+    },
+    {
+      "domain": "jasamall.sellerpit.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "jasamall.sellerpit.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://jasamall.sellerpit.kr/",
+      "registrationDomain": "sellerpit.kr"
+    },
+    {
+      "domain": "jeompolab.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "jeompolab.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "76.76.21.21"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://jeompolab.com/",
+      "registrationDomain": "jeompolab.com"
+    },
+    {
+      "domain": "joy.ehon365.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "joy.ehon365.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://joy.ehon365.kr/",
+      "registrationDomain": "ehon365.kr"
+    },
+    {
+      "domain": "kapti.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "kapti.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://kapti.kr/",
+      "registrationDomain": "kapti.kr"
+    },
+    {
+      "domain": "kayest.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "kayest.com.",
+          "type": 1,
+          "TTL": 8430,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://kayest.com/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "kdramanote.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "kdramanote.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://kdramanote.com/",
+      "registrationDomain": "kdramanote.com"
+    },
+    {
+      "domain": "klick.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "klick.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://klick.kr/",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "knewstory.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "knewstory.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 410,
+      "finalUrl": "https://knewstory.kr/",
+      "registrationDomain": "knewstory.kr"
+    },
+    {
+      "domain": "ko.klick.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "lawer.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "lawer.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://lawer.kr/",
+      "registrationDomain": "lawer.kr"
+    },
+    {
+      "domain": "legalser.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "legalser.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://legalser.com/",
+      "registrationDomain": "legalser.com"
+    },
+    {
+      "domain": "lim01.soonsaak.co.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "lim01.soonsaak.co.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "172.67.147.161"
+        },
+        {
+          "name": "lim01.soonsaak.co.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "104.21.47.121"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://lim01.soonsaak.co.kr/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "limsight.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "limsight.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://limsight.kr/",
+      "registrationDomain": "limsight.kr"
+    },
+    {
+      "domain": "lo.klick.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "localgeo.app",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "localgeo.app.",
+          "type": 1,
+          "TTL": 60,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://localgeo.app/",
+      "registrationDomain": "localgeo.app"
+    },
+    {
+      "domain": "luckyday.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "luckyday.kr.",
+          "type": 1,
+          "TTL": 1139,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://luckyday.kr/",
+      "registrationDomain": "luckyday.kr"
+    },
+    {
+      "domain": "luxurytraver.com",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 2,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "luxurytraver.com"
+    },
+    {
+      "domain": "mbti.tasko.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "tasko.kr"
+    },
+    {
+      "domain": "mohana.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "mohana.kr.",
+          "type": 1,
+          "TTL": 60,
+          "data": "121.254.224.110"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://mohana.kr/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "multi-dashboard-one.vercel.app",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "multi-dashboard-one.vercel.app.",
+          "type": 1,
+          "TTL": 300,
+          "data": "64.29.17.195"
+        },
+        {
+          "name": "multi-dashboard-one.vercel.app.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.198.79.195"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://multi-dashboard-one.vercel.app/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "nekau.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "nekau.com.",
+          "type": 1,
+          "TTL": 10104,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://nekau.com/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "nexttech7.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "nexttech7.com.",
+          "type": 1,
+          "TTL": 10152,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://nexttech7.com/",
+      "registrationDomain": "nexttech7.com"
+    },
+    {
+      "domain": "nicewomen.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "nicewomen.kr.",
+          "type": 1,
+          "TTL": 10208,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://nicewomen.kr/",
+      "registrationDomain": "nicewomen.kr"
+    },
+    {
+      "domain": "nongsusangogo.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "nongsusangogo.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://nongsusangogo.kr/",
+      "registrationDomain": "nongsusangogo.kr"
+    },
+    {
+      "domain": "notebook.klick.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "patentgogo.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "patentgogo.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "76.76.21.21"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://patentgogo.com/",
+      "registrationDomain": "patentgogo.com"
+    },
+    {
+      "domain": "petcostlab.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "petcostlab.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://petcostlab.com/",
+      "registrationDomain": "petcostlab.com"
+    },
+    {
+      "domain": "pethomepick.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "pethomepick.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://pethomepick.com/",
+      "registrationDomain": "pethomepick.com"
+    },
+    {
+      "domain": "petinsuer.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "petinsuer.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://petinsuer.com/",
+      "registrationDomain": "petinsuer.com"
+    },
+    {
+      "domain": "petjigi.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "petjigi.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://petjigi.kr/",
+      "registrationDomain": "petjigi.kr"
+    },
+    {
+      "domain": "phone.luckyday.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "luckyday.kr"
+    },
+    {
+      "domain": "picklefriend.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "picklefriend.kr.",
+          "type": 1,
+          "TTL": 300,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://picklefriend.kr/",
+      "registrationDomain": "picklefriend.kr"
+    },
+    {
+      "domain": "picturebooks.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "picturebooks.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://picturebooks.kr/",
+      "registrationDomain": "picturebooks.kr"
+    },
+    {
+      "domain": "plategogo.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "plategogo.com.",
+          "type": 1,
+          "TTL": 60,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://plategogo.com/",
+      "registrationDomain": "plategogo.com"
+    },
+    {
+      "domain": "pregnancy.ehon365.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "pregnancy.ehon365.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://pregnancy.ehon365.kr/",
+      "registrationDomain": "ehon365.kr"
+    },
+    {
+      "domain": "richyou.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "richyou.kr.",
+          "type": 1,
+          "TTL": 5753,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://richyou.kr/",
+      "registrationDomain": "richyou.kr"
+    },
+    {
+      "domain": "rndatlas.com",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "rndatlas.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://rndatlas.com/",
+      "registrationDomain": "rndatlas.com"
+    },
+    {
+      "domain": "roadways.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "roadways.kr.",
+          "type": 1,
+          "TTL": 60,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://roadways.kr/",
+      "registrationDomain": "roadways.kr"
+    },
+    {
+      "domain": "runmania.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "runmania.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://runmania.kr/",
+      "registrationDomain": "runmania.kr"
+    },
+    {
+      "domain": "saju.tasko.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "saju.tasko.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://saju.tasko.kr/",
+      "registrationDomain": "tasko.kr"
+    },
+    {
+      "domain": "sellerpit.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "sellerpit.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://sellerpit.kr/",
+      "registrationDomain": "sellerpit.kr"
+    },
+    {
+      "domain": "seniorlivingnote.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "seniorlivingnote.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://seniorlivingnote.com/",
+      "registrationDomain": "seniorlivingnote.com"
+    },
+    {
+      "domain": "shotsetup.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "shotsetup.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://shotsetup.com/",
+      "registrationDomain": "shotsetup.com"
+    },
+    {
+      "domain": "sinhonjigi.ehon365.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "sinhonjigi.ehon365.kr.",
+          "type": 5,
+          "TTL": 180,
+          "data": "7559dbd876501752.vercel-dns-016.com."
+        },
+        {
+          "name": "7559dbd876501752.vercel-dns-016.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.150.1.129"
+        },
+        {
+          "name": "7559dbd876501752.vercel-dns-016.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.150.16.129"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://sinhonjigi.ehon365.kr/",
+      "registrationDomain": "ehon365.kr"
+    },
+    {
+      "domain": "smallhomepick.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "smallhomepick.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://smallhomepick.com/",
+      "registrationDomain": "smallhomepick.com"
+    },
+    {
+      "domain": "smart.sellerpit.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "smart.sellerpit.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://smart.sellerpit.kr/",
+      "registrationDomain": "sellerpit.kr"
+    },
+    {
+      "domain": "softwa.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "softwa.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://softwa.kr/",
+      "registrationDomain": "softwa.kr"
+    },
+    {
+      "domain": "solarpaybackmap.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "solarpaybackmap.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://solarpaybackmap.com/",
+      "registrationDomain": "solarpaybackmap.com"
+    },
+    {
+      "domain": "sorimate.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "sorimate.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://sorimate.com/",
+      "registrationDomain": "sorimate.com"
+    },
+    {
+      "domain": "spinkorea.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "spinkorea.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://spinkorea.kr/",
+      "registrationDomain": "spinkorea.kr"
+    },
+    {
+      "domain": "sssaass.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "sssaass.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://sssaass.com/",
+      "registrationDomain": "sssaass.com"
+    },
+    {
+      "domain": "temon.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "temon.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://temon.kr/",
+      "registrationDomain": "temon.kr"
+    },
+    {
+      "domain": "tennisfrens.com",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "tennisfrens.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://tennisfrens.com/",
+      "registrationDomain": "tennisfrens.com"
+    },
+    {
+      "domain": "texturb.com",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "texturb.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.texturb.com/",
+      "registrationDomain": "texturb.com"
+    },
+    {
+      "domain": "today2424.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "today2424.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.198.79.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://today2424.kr/",
+      "registrationDomain": "today2424.kr"
+    },
+    {
+      "domain": "todaypharm.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "todaypharm.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://todaypharm.kr/",
+      "registrationDomain": "todaypharm.kr"
+    },
+    {
+      "domain": "todayshops.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "todayshops.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://todayshops.kr/",
+      "registrationDomain": "todayshops.kr"
+    },
+    {
+      "domain": "toolnavigo.com",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "toolnavigo.com.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://toolnavigo.com/",
+      "registrationDomain": "toolnavigo.com"
+    },
+    {
+      "domain": "trave.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "trave.kr.",
+          "type": 1,
+          "TTL": 12820,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://trave.kr/",
+      "registrationDomain": "trave.kr"
+    },
+    {
+      "domain": "travel.dogspang.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "dogspang.kr"
+    },
+    {
+      "domain": "travel.sellerpit.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo1",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "travel.sellerpit.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.212.123"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://travel.sellerpit.kr/",
+      "registrationDomain": "sellerpit.kr"
+    },
+    {
+      "domain": "travelpang.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "travelpang.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://travelpang.kr/",
+      "registrationDomain": "travelpang.kr"
+    },
+    {
+      "domain": "wattbenchs.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "wattbenchs.com.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://wattbenchs.com/",
+      "registrationDomain": "wattbenchs.com"
+    },
+    {
+      "domain": "webtoon.klick.kr",
+      "operationStatus": "paused",
+      "expectedHost": "unknown",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 3,
+      "dnsAnswers": [],
+      "httpError": "ConnectionError",
+      "registrationDomain": "klick.kr"
+    },
+    {
+      "domain": "wedding-fair-decision-hub.vercel.app",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "wedding-fair-decision-hub.vercel.app.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.198.79.67"
+        },
+        {
+          "name": "wedding-fair-decision-hub.vercel.app.",
+          "type": 1,
+          "TTL": 300,
+          "data": "64.29.17.67"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://wedding-fair-decision-hub.vercel.app/",
+      "registrationDomain": null
+    },
+    {
+      "domain": "wedfairguide.com",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "wedfairguide.com.",
+          "type": 1,
+          "TTL": 60,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://wedfairguide.com/",
+      "registrationDomain": "wedfairguide.com"
+    },
+    {
+      "domain": "wonon.ehon365.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "wonon.ehon365.kr.",
+          "type": 5,
+          "TTL": 180,
+          "data": "3497de2890fedbbb.vercel-dns-016.com."
+        },
+        {
+          "name": "3497de2890fedbbb.vercel-dns-016.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.150.16.129"
+        },
+        {
+          "name": "3497de2890fedbbb.vercel-dns-016.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.150.1.129"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://wonon.ehon365.kr/",
+      "registrationDomain": "ehon365.kr"
+    },
+    {
+      "domain": "workgogo.kr",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "workgogo.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "216.150.1.1"
+        }
+      ],
+      "httpStatus": 404,
+      "finalUrl": "https://workgogo.kr/",
+      "registrationDomain": "workgogo.kr"
+    },
+    {
+      "domain": "yesa.kr",
+      "operationStatus": "core",
+      "expectedHost": "turbo2",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "yesa.kr.",
+          "type": 1,
+          "TTL": 14400,
+          "data": "158.247.209.217"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://yesa.kr/",
+      "registrationDomain": "yesa.kr"
+    },
+    {
+      "domain": "youkamap.kr",
+      "operationStatus": "core",
+      "expectedHost": "contabo",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "youkamap.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "13.140.77.84"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://youkamap.kr/",
+      "registrationDomain": "youkamap.kr"
+    },
+    {
+      "domain": "yourtripgo.com",
+      "operationStatus": "core",
+      "expectedHost": "vercel",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "yourtripgo.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "76.76.21.21"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://yourtripgo.com/",
+      "registrationDomain": "yourtripgo.com"
+    },
+    {
+      "domain": "yungyanggogo.kr",
+      "operationStatus": "core",
+      "expectedHost": "ovh",
+      "checkedAt": "2026-11-15T05:12:01.664878+00:00",
+      "dnsStatus": 0,
+      "dnsAnswers": [
+        {
+          "name": "yungyanggogo.kr.",
+          "type": 1,
+          "TTL": 180,
+          "data": "51.79.206.71"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://yungyanggogo.kr/",
+      "registrationDomain": "yungyanggogo.kr"
+    }
+  ],
+  "notes": [
+    "Account coverage limited to configured Dynadot API account and current HostingKR profile. Other registrars remain unverified.",
+    "Subdomains inherit registration expiry only; site operation policy is exact-host.",
+    "No renewal, DNS, registrar, monetization or hosting changes performed."
+  ]
+}

@@ -1,5 +1,13 @@
 # Project Rules
 
+## Operator core portfolio (2026-11-15)
+
+- `data/site-operations-policy.json` freezes the operator-confirmed exact hosts from the production dashboard: OVHcloud14, Contabo17, Turbo1 29, Turbo2 25, Vercel21 (106 total). All other inventoried sites are `운영 보류` (24 at this checkpoint).
+- Use this explicit policy for operational priority and remediation. A DNS outage must not demote an approved core site; a newly reachable/discovered host must not automatically become core. Subdomain operation decisions are exact-host and never inherited from a parent.
+- Preserve paused sites' historical metrics, hosting observations, source, backups and account records. Pausing does not authorize deletion, restoration, indexing changes, monetization changes or registrar changes.
+- Domain registration/expiry/renewal and observed DNS/HTTPS status are separate from site operation policy. `data/domain-status-current.json` records sanitized source timestamps and incomplete registrar coverage; never interpret no account match as unregistered.
+- Domain status collection is read-only. Renewal, registration, transfer, nameserver/DNS and account verification changes require their own explicit authority.
+
 ## Site account and AdSense inventory (2026-11-10)
 
 - This dashboard is the first lookup for managed-site account registration and AdSense state. Collect all configured authorized accounts with pagination and preserve each exact-domain publisher match, approval state, evidence source and check time.

@@ -1,0 +1,456 @@
+{
+  "decidedAt": "2026-11-15T05:12:01.664878+00:00",
+  "source": "Operator instruction 2026-11-15; production dashboard server groups at commit 45d9ac589496b5d428972b2db53758af9f3f283f",
+  "coreSites": [
+    {
+      "domain": "2mlab.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "alt.coinyo.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "askore.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "autopickgo.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "autorentlab.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "autoscares.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "bit.coinyo.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "bojo24.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "bu.sellerpit.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "campgogo.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "caregos.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "cartain.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "certifi.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "coinyo.knewstory.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "coinyo.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "coverclarityhealth.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "crepika.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "discparty.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "dog.nekau.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "dogbreedcost.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "dogspang.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "dogswhere.com",
+      "host": "ovh"
+    },
+    {
+      "domain": "dolbomjigi.ehon365.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "doseogogo.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "dullegilgogo.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "ehon365.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "esgyo.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "estat.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "etique.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "ezfunnel.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "fastjob.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "finan.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "go.sellerpit.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "goesku.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "gold79.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "gong365.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "gover.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "gpt.nexttech7.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "gradienttrail.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "haemongdream.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "healfood.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "healthgotoo.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "insupang.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "item79.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "jasamall.sellerpit.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "jeompolab.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "joy.ehon365.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "kapti.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "kayest.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "kdramanote.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "klick.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "knewstory.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "lawer.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "legalser.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "limsight.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "localgeo.app",
+      "host": "ovh"
+    },
+    {
+      "domain": "luckyday.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "multi-dashboard-one.vercel.app",
+      "host": "vercel"
+    },
+    {
+      "domain": "nekau.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "nexttech7.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "nicewomen.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "nongsusangogo.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "patentgogo.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "petcostlab.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "pethomepick.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "petinsuer.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "petjigi.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "picklefriend.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "picturebooks.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "plategogo.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "pregnancy.ehon365.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "richyou.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "rndatlas.com",
+      "host": "contabo"
+    },
+    {
+      "domain": "roadways.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "runmania.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "saju.tasko.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "sellerpit.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "seniorlivingnote.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "shotsetup.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "sinhonjigi.ehon365.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "smallhomepick.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "smart.sellerpit.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "softwa.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "solarpaybackmap.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "sorimate.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "spinkorea.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "sssaass.com",
+      "host": "turbo2"
+    },
+    {
+      "domain": "temon.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "tennisfrens.com",
+      "host": "ovh"
+    },
+    {
+      "domain": "texturb.com",
+      "host": "ovh"
+    },
+    {
+      "domain": "today2424.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "todaypharm.kr",
+      "host": "ovh"
+    },
+    {
+      "domain": "todayshops.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "toolnavigo.com",
+      "host": "turbo1"
+    },
+    {
+      "domain": "trave.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "travel.sellerpit.kr",
+      "host": "turbo1"
+    },
+    {
+      "domain": "travelpang.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "wattbenchs.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "wedding-fair-decision-hub.vercel.app",
+      "host": "vercel"
+    },
+    {
+      "domain": "wedfairguide.com",
+      "host": "ovh"
+    },
+    {
+      "domain": "wonon.ehon365.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "workgogo.kr",
+      "host": "vercel"
+    },
+    {
+      "domain": "yesa.kr",
+      "host": "turbo2"
+    },
+    {
+      "domain": "youkamap.kr",
+      "host": "contabo"
+    },
+    {
+      "domain": "yourtripgo.com",
+      "host": "vercel"
+    },
+    {
+      "domain": "yungyanggogo.kr",
+      "host": "ovh"
+    }
+  ],
+  "pausedSites": [
+    "ai.tasko.kr",
+    "blogsample2.nexttech7.com",
+    "car.klick.kr",
+    "car.luckyday.kr",
+    "chatgipt.kr",
+    "comu.chatgipt.kr",
+    "dog.klick.kr",
+    "educaer.com",
+    "email.chatgipt.kr",
+    "finance.2mlab.kr",
+    "food.2mlab.kr",
+    "gong.luckyday.kr",
+    "homeimer.com",
+    "hos.dogspang.kr",
+    "ko.klick.kr",
+    "lim01.soonsaak.co.kr",
+    "lo.klick.kr",
+    "luxurytraver.com",
+    "mbti.tasko.kr",
+    "mohana.kr",
+    "notebook.klick.kr",
+    "phone.luckyday.kr",
+    "travel.dogspang.kr",
+    "webtoon.klick.kr"
+  ]
+}

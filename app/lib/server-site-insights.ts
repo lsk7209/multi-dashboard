@@ -1,8 +1,8 @@
 import type { ServerSiteRow } from "./server-site-metrics";
 
-export function serverSiteMatchesHost(site: Pick<ServerSiteRow, "host" | "hostStatus">, id: string): boolean {
+export function serverSiteMatchesHost(site: Pick<ServerSiteRow, "host" | "hostStatus" | "operationStatus" | "operationExpectedHost">, id: string): boolean {
   const knownHosts = ["ovh", "contabo", "turbo1", "turbo2", "vercel"];
-  return id === "all" || (id === "unknown" ? !knownHosts.includes(site.host) : site.host === id);
+  return id === "all" || (id === "core" ? site.operationStatus === "core" : id === "paused" ? site.operationStatus !== "core" : id === "unknown" ? !knownHosts.includes(site.host) : (site.operationExpectedHost ?? site.host) === id && site.operationStatus !== "paused");
 }
 
 export type ServerSiteFocus = "all" | "access" | "decline" | "search" | "migration" | "attention";
@@ -45,6 +45,7 @@ export function getServerSiteIssues(row: ServerSiteRow): string[] {
 }
 
 export function serverSiteMatchesFocus(row: ServerSiteRow, focus: ServerSiteFocus): boolean {
+  if (focus !== "all" && row.operationStatus === "paused") return false;
   switch (focus) {
     case "all": return true;
     case "access": return accessIssue(row);

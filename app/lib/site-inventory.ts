@@ -1,4 +1,6 @@
 import type { AdSenseEvidence, AdSenseSnapshot } from "./adsense-evidence";
+import type { DomainPortfolio, SiteRegistration } from "./domain-portfolio";
+import type { OperationStatus } from "./site-operations";
 
 export interface InventoryBinding {
   id: string;
@@ -11,6 +13,9 @@ export interface InventoryBinding {
 }
 
 export interface InventorySite {
+  operationStatus?: OperationStatus;
+  operationExpectedHost?: string | null;
+  registration?: SiteRegistration;
   domain: string;
   url: string;
   enabled: boolean;
@@ -37,6 +42,10 @@ export interface InventorySite {
 }
 
 export interface SiteInventory {
+  operationsPolicyAvailable?: boolean;
+  operationsDecidedAt?: string | null;
+  domainPortfolio?: DomainPortfolio | null;
+  domainPortfolioAvailable?: boolean;
   generatedAt: string;
   statsGeneratedAt: string | null;
   adsenseCheckedAt: string | null;

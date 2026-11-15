@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { AppHeader } from "./app-header";
 import { ServerSites } from "./server-sites";
+import { DomainPortfolio } from "./domain-portfolio";
 import { getSiteInventory } from "../lib/site-inventory-store";
 import { serverSiteMetrics } from "../lib/server-site-metrics";
 import type { DateRangeSummary, SiteStat } from "../lib/dashboard-data";
@@ -12,14 +13,17 @@ export function ServerWorkspace() {
   const sites = inventory?.sites ?? [];
   const known = sites.filter(site => ["ovh", "contabo", "turbo1", "turbo2", "vercel"].includes(site.host) && site.hostStatus === "public_route_verified").length;
   const staged = sites.filter(site => site.stagingTargets?.length).length;
+  const core = sites.filter(site => site.operationStatus === "core");
   const age = Date.now() - Date.parse(snapshot?.generatedAt ?? "");
   const fresh = Number.isFinite(age) && age >= -300000 && age < 36 * 3600000;
   return <main className="dashboard-shell servers-page workspace-page">
     <AppHeader active="servers" eyebrow="SITE OPERATIONS" title="사이트 운영 현황" status={`통계 갱신 ${time(snapshot?.generatedAt)}`} />
     <p className="servers-intro">어느 서버에서 운영 중인지, 무엇을 먼저 확인할지 한눈에 살펴보세요.</p>
     <section className="workspace-overview" aria-label="운영 현황 요약">
-      {[{label:"관리 도메인",value:sites.length,note:"중복 도메인 제외"},{label:"공개 호스팅 확인",value:known,note:"현재 공개 경로 기준"},{label:"서버 확인 필요",value:sites.length-known,note:"원본·DNS·목적지 확인"},{label:"비공개 준비본",value:staged,note:"공개 이전 완료와 별도"}].map(item => <article key={item.label}><span>{item.label}</span><strong>{item.value.toLocaleString("ko-KR")}</strong><small>{item.note}</small></article>)}
+      {[{label:"관리 도메인",value:sites.length,note:"중복 도메인 제외"},{label:"핵심 운영",value:core.length,note:"사용자 지정 운영 목록"},{label:"운영 보류",value:sites.length-core.length,note:"개선·복구 작업 대상 제외"},{label:"공개 호스팅 확인",value:known,note:`비공개 준비본 ${staged}개 · 운영 의도와 별도`}].map(item => <article key={item.label}><span>{item.label}</span><strong>{item.value.toLocaleString("ko-KR")}</strong><small>{item.note}</small></article>)}
     </section>
+    {!inventory?.operationsPolicyAvailable && <p className="workspace-notice" role="status">운영 목록 정책을 읽지 못했습니다. 자동으로 핵심 운영에 포함하지 않고 운영 보류로 표시합니다.</p>}
+    <p>운영 기준 {time(inventory?.operationsDecidedAt)} · 핵심 운영은 접속 장애가 생겨도 유지됩니다. 운영 보류 사이트의 과거 통계는 보존하며 점검 후보에서 제외합니다.</p>
     {!fresh && <p className="workspace-notice" role="status">통계가 없거나 갱신 후 36시간이 지났습니다. 표시된 수집 시각을 확인해 주세요.</p>}
     {!snapshot && <p className="workspace-notice">통계 원본을 읽지 못했습니다. 수치는 미확인으로 표시합니다.</p>}
     {inventory?.adsenseDiagnostics?.map(message => <p className="workspace-notice" role="status" key={message}>{message}</p>)}
@@ -28,6 +32,7 @@ export function ServerWorkspace() {
       <div className="workspace-section-heading"><h2>사이트 탐색</h2><p>기간을 선택해 GA4와 GSC를 비교하세요.</p></div>
       {inventory ? <ServerSites sites={sites.map(site => serverSiteMetrics(site, snapshot?.stats ?? []))} /> : <p role="status">호스팅 현황을 불러오지 못했습니다.</p>}
     </section>
+    <DomainPortfolio portfolio={inventory?.domainPortfolio ?? null} coreDomains={core.map(site => site.domain)} />
     <footer id="data-notes" className="workspace-notes">
       <h2>데이터를 읽는 기준</h2>
       <p>호스팅 확인 {time(inventory?.generatedAt)} · AdSense 계정 확인 {time(inventory?.adsenseCheckedAt)}</p>

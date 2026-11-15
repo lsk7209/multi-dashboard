@@ -1,8 +1,13 @@
 import type { SiteStat } from "./dashboard-data";
 import type { InventorySite } from "./site-inventory";
 import type { AdSenseEvidence } from "./adsense-evidence";
+import type { SiteRegistration } from "./domain-portfolio";
+import type { OperationStatus } from "./site-operations";
 
 export interface ServerSiteRow {
+  operationStatus?: OperationStatus;
+  operationExpectedHost?: string | null;
+  registration?: SiteRegistration;
   periods?: Record<"1" | "7" | "14" | "30", { users: number | null; clicks: number | null; impressions: number | null; ctr: number | null; position: number | null }>;
   domain: string;
   url: string;
@@ -30,7 +35,7 @@ export interface ServerSiteRow {
 const finiteMetric = (value: number | undefined): number | null =>
   typeof value === "number" && Number.isFinite(value) ? value : null;
 
-export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "host" | "approval" | "bindings"> & Partial<Pick<InventorySite, "httpStatus" | "checkedAt" | "hostStatus" | "stagingTargets" | "issues" | "adsense">>, stats: SiteStat[]): ServerSiteRow {
+export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "host" | "approval" | "bindings"> & Partial<Pick<InventorySite, "httpStatus" | "checkedAt" | "hostStatus" | "stagingTargets" | "issues" | "adsense" | "operationStatus" | "operationExpectedHost" | "registration">>, stats: SiteStat[]): ServerSiteRow {
   const sameDomain = (url: string) => {
     try { return new URL(url).hostname.replace(/^www\./, "") === site.domain.replace(/^www\./, ""); }
     catch { return false; }
@@ -56,6 +61,8 @@ export function serverSiteMetrics(site: Pick<InventorySite, "domain" | "url" | "
     "30": period(ga4?.stat?.last30Days?.activeUsers, gsc?.stat?.gscLast30Days),
   };
   return { periods, domain: site.domain, url: site.url, host: site.host, approval: site.approval,
+    operationStatus: site.operationStatus ?? "paused", operationExpectedHost: site.operationExpectedHost ?? null,
+    ...(site.registration ? {registration: site.registration} : {}),
     ...(site.adsense ? {adsense: site.adsense} : {}),
     httpStatus: site.httpStatus ?? null,
     checkedAt: site.checkedAt ?? null,
