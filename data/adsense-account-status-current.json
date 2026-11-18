@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-11-17T03:28:22.411Z",
-  "checkedAt": "2026-11-17T03:28:23.331Z",
+  "attemptedAt": "2026-11-18T02:49:16.902Z",
+  "checkedAt": "2026-11-18T02:49:17.719Z",
   "listComplete": true,
   "proofDomains": [
     "2mlab.kr",
@@ -131,8 +131,8 @@
   "sourceChecks": [
     {
       "sourceIndex": 0,
-      "attemptedAt": "2026-11-17T03:28:22.412Z",
-      "checkedAt": "2026-11-17T03:28:22.977Z",
+      "attemptedAt": "2026-11-18T02:49:16.902Z",
+      "checkedAt": "2026-11-18T02:49:17.363Z",
       "listComplete": true,
       "publisherIds": [
         "pub-3050601904412736"
@@ -140,8 +140,8 @@
     },
     {
       "sourceIndex": 1,
-      "attemptedAt": "2026-11-17T03:28:22.977Z",
-      "checkedAt": "2026-11-17T03:28:23.331Z",
+      "attemptedAt": "2026-11-18T02:49:17.363Z",
+      "checkedAt": "2026-11-18T02:49:17.719Z",
       "listComplete": true,
       "publisherIds": [
         "pub-7865675606131621"
@@ -159,7 +159,8 @@
   },
   "stateCounts": {
     "READY": 11,
-    "GETTING_READY": 4
+    "NEEDS_ATTENTION": 1,
+    "GETTING_READY": 3
   },
   "sites": [
     {
@@ -169,7 +170,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -180,7 +181,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -191,7 +192,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -202,7 +203,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -213,18 +214,18 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
     {
       "domain": "nekau.com",
-      "rawState": "GETTING_READY",
+      "rawState": "NEEDS_ATTENTION",
       "accountStates": [
         {
           "publisherId": "pub-3050601904412736",
-          "rawState": "GETTING_READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "rawState": "NEEDS_ATTENTION",
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -235,7 +236,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -246,7 +247,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -257,7 +258,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -268,7 +269,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-17T03:28:22.977Z"
+          "checkedAt": "2026-11-18T02:49:17.363Z"
         }
       ]
     },
@@ -279,7 +280,7 @@
         {
           "publisherId": "pub-7865675606131621",
           "rawState": "GETTING_READY",
-          "checkedAt": "2026-11-17T03:28:23.331Z"
+          "checkedAt": "2026-11-18T02:49:17.719Z"
         }
       ]
     },
@@ -290,7 +291,7 @@
         {
           "publisherId": "pub-7865675606131621",
           "rawState": "GETTING_READY",
-          "checkedAt": "2026-11-17T03:28:23.331Z"
+          "checkedAt": "2026-11-18T02:49:17.719Z"
         }
       ]
     },
@@ -301,7 +302,7 @@
         {
           "publisherId": "pub-7865675606131621",
           "rawState": "GETTING_READY",
-          "checkedAt": "2026-11-17T03:28:23.331Z"
+          "checkedAt": "2026-11-18T02:49:17.719Z"
         }
       ]
     }
