@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-11-19T02:19:15.272Z",
-  "checkedAt": "2026-11-19T02:19:16.010Z",
+  "attemptedAt": "2026-11-20T02:07:33.563Z",
+  "checkedAt": "2026-11-20T02:07:34.540Z",
   "listComplete": true,
   "proofDomains": [
     "2mlab.kr",
@@ -131,8 +131,8 @@
   "sourceChecks": [
     {
       "sourceIndex": 0,
-      "attemptedAt": "2026-11-19T02:19:15.273Z",
-      "checkedAt": "2026-11-19T02:19:15.747Z",
+      "attemptedAt": "2026-11-20T02:07:33.564Z",
+      "checkedAt": "2026-11-20T02:07:34.214Z",
       "listComplete": true,
       "publisherIds": [
         "pub-3050601904412736"
@@ -140,8 +140,8 @@
     },
     {
       "sourceIndex": 1,
-      "attemptedAt": "2026-11-19T02:19:15.747Z",
-      "checkedAt": "2026-11-19T02:19:16.010Z",
+      "attemptedAt": "2026-11-20T02:07:34.214Z",
+      "checkedAt": "2026-11-20T02:07:34.540Z",
       "listComplete": true,
       "publisherIds": [
         "pub-7865675606131621"
@@ -170,7 +170,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -181,7 +181,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -192,7 +192,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -203,7 +203,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -214,7 +214,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -225,7 +225,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "NEEDS_ATTENTION",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -236,7 +236,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -247,7 +247,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -258,7 +258,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -269,7 +269,7 @@
         {
           "publisherId": "pub-3050601904412736",
           "rawState": "READY",
-          "checkedAt": "2026-11-19T02:19:15.747Z"
+          "checkedAt": "2026-11-20T02:07:34.214Z"
         }
       ]
     },
@@ -280,7 +280,7 @@
         {
           "publisherId": "pub-7865675606131621",
           "rawState": "GETTING_READY",
-          "checkedAt": "2026-11-19T02:19:16.010Z"
+          "checkedAt": "2026-11-20T02:07:34.540Z"
         }
       ]
     },
@@ -291,7 +291,7 @@
         {
           "publisherId": "pub-7865675606131621",
           "rawState": "NEEDS_ATTENTION",
-          "checkedAt": "2026-11-19T02:19:16.010Z"
+          "checkedAt": "2026-11-20T02:07:34.540Z"
         }
       ]
     },
@@ -302,7 +302,7 @@
         {
           "publisherId": "pub-7865675606131621",
           "rawState": "GETTING_READY",
-          "checkedAt": "2026-11-19T02:19:16.010Z"
+          "checkedAt": "2026-11-20T02:07:34.540Z"
         }
       ]
     }
