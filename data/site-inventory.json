@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-22T00:59:25.349Z",
-  "statsGeneratedAt": "2026-11-22T00:58:12.661Z",
-  "adsenseCheckedAt": "2026-11-22T00:58:16.710Z",
+  "generatedAt": "2026-11-23T01:27:16.126Z",
+  "statsGeneratedAt": "2026-11-23T01:26:03.328Z",
+  "adsenseCheckedAt": "2026-11-23T01:26:06.485Z",
   "adsenseListComplete": true,
   "adsenseAccountSummary": {
     "total": 15,
     "ready": 11,
-    "gettingReady": 2
+    "gettingReady": 3
   },
-  "googleBindingsCheckedAt": "2026-11-22T00:58:18.862Z",
+  "googleBindingsCheckedAt": "2026-11-23T01:26:07.762Z",
   "googleBindingsComplete": true,
   "sites": [
     {
@@ -28,7 +28,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.477Z",
+      "checkedAt": "2026-11-23T01:26:18.077Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -39,7 +39,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "2mlab",
@@ -57,7 +57,7 @@
           "gscSiteUrl": "https://2mlab.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 7
+          "dailyUsers": 8
         }
       ],
       "discoveredGa4": [
@@ -83,7 +83,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -99,7 +99,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:41.293Z",
+      "checkedAt": "2026-11-23T01:26:37.705Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -110,7 +110,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "ai-tasko",
@@ -141,7 +141,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -161,7 +161,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:38.546Z",
+      "checkedAt": "2026-11-23T01:26:26.434Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -172,7 +172,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "coinyo-alt",
@@ -203,7 +203,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -223,7 +223,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:39.163Z",
+      "checkedAt": "2026-11-23T01:26:26.935Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -234,7 +234,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "askore",
@@ -243,7 +243,7 @@
           "gscSiteUrl": "https://askore.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 9
+          "dailyUsers": 20
         }
       ],
       "discoveredGa4": [
@@ -263,7 +263,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -283,7 +283,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.224Z",
+      "checkedAt": "2026-11-23T01:26:51.848Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -294,7 +294,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "autopickgo",
@@ -303,7 +303,7 @@
           "gscSiteUrl": "https://autopickgo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -325,7 +325,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -345,7 +345,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.702Z",
+      "checkedAt": "2026-11-23T01:26:51.254Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -356,7 +356,7 @@
       ],
       "monetization": true,
       "approval": "GETTING_READY",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "autorentlab",
@@ -365,7 +365,7 @@
           "gscSiteUrl": "https://autorentlab.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 4
+          "dailyUsers": 10
         }
       ],
       "discoveredGa4": [
@@ -386,12 +386,12 @@
           {
             "publisherId": "pub-7865675606131621",
             "rawState": "GETTING_READY",
-            "checkedAt": "2026-11-22T00:58:16.710Z"
+            "checkedAt": "2026-11-23T01:26:06.485Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -411,7 +411,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:33.909Z",
+      "checkedAt": "2026-11-23T01:26:22.172Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -422,7 +422,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "autoscares",
@@ -440,7 +440,7 @@
           "gscSiteUrl": "https://autoscares.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 6
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -466,7 +466,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -486,7 +486,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:38.350Z",
+      "checkedAt": "2026-11-23T01:26:26.238Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -497,7 +497,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "coinyo-bit",
@@ -528,7 +528,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -544,7 +544,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:05.001Z",
+      "checkedAt": "2026-11-23T01:26:53.880Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -605,7 +605,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:37.649Z",
+      "checkedAt": "2026-11-23T01:26:25.597Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -616,7 +616,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "bojo24",
@@ -625,7 +625,7 @@
           "gscSiteUrl": "https://bojo24.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 8
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -649,7 +649,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -669,7 +669,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.809Z",
+      "checkedAt": "2026-11-23T01:26:52.616Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -678,7 +678,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "bu-sellerpit",
@@ -707,7 +707,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -727,7 +727,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.318Z",
+      "checkedAt": "2026-11-23T01:26:49.535Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -738,7 +738,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "campgogo",
@@ -747,7 +747,7 @@
           "gscSiteUrl": "https://campgogo.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 5
+          "dailyUsers": 9
         }
       ],
       "discoveredGa4": [
@@ -767,7 +767,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -783,7 +783,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:03.267Z",
+      "checkedAt": "2026-11-23T01:26:52.042Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -792,7 +792,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "car-klick",
@@ -823,7 +823,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -839,7 +839,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:40.603Z",
+      "checkedAt": "2026-11-23T01:26:37.980Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -850,7 +850,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "car-luckyday",
@@ -881,7 +881,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -901,7 +901,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.134Z",
+      "checkedAt": "2026-11-23T01:26:50.319Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -912,7 +912,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "caregos",
@@ -945,7 +945,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -965,7 +965,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.869Z",
+      "checkedAt": "2026-11-23T01:26:20.225Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -976,7 +976,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "cartain",
@@ -1018,7 +1018,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1038,7 +1038,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:41.497Z",
+      "checkedAt": "2026-11-23T01:26:38.371Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1050,7 +1050,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "certifi",
@@ -1059,7 +1059,7 @@
           "gscSiteUrl": "https://certifi.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 13
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -1081,7 +1081,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1097,7 +1097,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:58.228Z",
+      "checkedAt": "2026-11-23T01:26:38.189Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -1108,7 +1108,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "chatgipt",
@@ -1167,7 +1167,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1187,7 +1187,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:05.984Z",
+      "checkedAt": "2026-11-23T01:26:58.545Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1238,7 +1238,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.632Z",
+      "checkedAt": "2026-11-23T01:26:19.826Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1249,7 +1249,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "coinyo",
@@ -1293,7 +1293,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1309,7 +1309,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:24.366Z",
+      "checkedAt": "2026-11-23T01:27:16.126Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -1362,7 +1362,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.574Z",
+      "checkedAt": "2026-11-23T01:26:50.851Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -1373,7 +1373,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "coverclarityhealth",
@@ -1382,7 +1382,7 @@
           "gscSiteUrl": "https://coverclarityhealth.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -1402,7 +1402,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1422,7 +1422,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:38.239Z",
+      "checkedAt": "2026-11-23T01:26:26.068Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1433,7 +1433,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "crepika",
@@ -1442,7 +1442,7 @@
           "gscSiteUrl": "https://crepika.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -1462,7 +1462,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1482,7 +1482,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.406Z",
+      "checkedAt": "2026-11-23T01:26:17.939Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1493,7 +1493,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "discparty",
@@ -1502,7 +1502,7 @@
           "gscSiteUrl": "https://discparty.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -1524,7 +1524,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1540,7 +1540,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:00.153Z",
+      "checkedAt": "2026-11-23T01:26:47.853Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -1551,7 +1551,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dog-klick",
@@ -1582,7 +1582,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1602,7 +1602,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:05.035Z",
+      "checkedAt": "2026-11-23T01:26:54.241Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -1611,7 +1611,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dog-nekau",
@@ -1620,7 +1620,7 @@
           "gscSiteUrl": "https://dog.nekau.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 7
+          "dailyUsers": 9
         }
       ],
       "discoveredGa4": [
@@ -1642,7 +1642,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1662,7 +1662,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.767Z",
+      "checkedAt": "2026-11-23T01:26:51.190Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -1673,7 +1673,7 @@
       ],
       "monetization": true,
       "approval": "NEEDS_ATTENTION",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dogbreedcost",
@@ -1703,12 +1703,12 @@
           {
             "publisherId": "pub-7865675606131621",
             "rawState": "NEEDS_ATTENTION",
-            "checkedAt": "2026-11-22T00:58:16.710Z"
+            "checkedAt": "2026-11-23T01:26:06.485Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1728,7 +1728,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.853Z",
+      "checkedAt": "2026-11-23T01:26:20.411Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -1737,7 +1737,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dogspang",
@@ -1755,7 +1755,7 @@
           "gscSiteUrl": "https://dogspang.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -1781,7 +1781,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1801,7 +1801,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.512Z",
+      "checkedAt": "2026-11-23T01:26:48.016Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -1812,7 +1812,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dogswhere",
@@ -1821,7 +1821,7 @@
           "gscSiteUrl": "sc-domain:dogswhere.com",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -1841,7 +1841,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1861,7 +1861,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.653Z",
+      "checkedAt": "2026-11-23T01:26:49.016Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -1872,7 +1872,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dolbomjigi-ehon365",
@@ -1881,7 +1881,7 @@
           "gscSiteUrl": "https://dolbomjigi.ehon365.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 11
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -1901,7 +1901,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1921,7 +1921,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.995Z",
+      "checkedAt": "2026-11-23T01:26:50.285Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -1932,7 +1932,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "doseogogo",
@@ -1965,7 +1965,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -1985,7 +1985,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.512Z",
+      "checkedAt": "2026-11-23T01:26:49.616Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -1996,7 +1996,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "dullegilgogo",
@@ -2025,7 +2025,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2041,7 +2041,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:00.298Z",
+      "checkedAt": "2026-11-23T01:26:48.562Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -2052,7 +2052,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "educaer",
@@ -2085,7 +2085,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2105,7 +2105,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:37.789Z",
+      "checkedAt": "2026-11-23T01:26:25.435Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -2116,7 +2116,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "ehon365",
@@ -2125,7 +2125,7 @@
           "gscSiteUrl": "sc-domain:ehon365.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 8
         }
       ],
       "discoveredGa4": [
@@ -2146,12 +2146,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -2167,7 +2167,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:25.348Z",
+      "checkedAt": "2026-11-23T01:27:15.150Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -2220,7 +2220,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:34.836Z",
+      "checkedAt": "2026-11-23T01:26:23.533Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2231,7 +2231,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "esgyo",
@@ -2240,7 +2240,7 @@
           "gscSiteUrl": "https://esgyo.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         },
         {
           "id": "esgyo-2",
@@ -2275,7 +2275,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2294,19 +2294,19 @@
         "158.247.209.217"
       ],
       "cname": [],
-      "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:34.859Z",
+      "httpStatus": 500,
+      "checkedAt": "2026-11-23T01:26:23.532Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
-        "HTTPS 200"
+        "HTTPS 500"
       ],
       "configuredLocations": [
         "kwangju"
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "estat",
@@ -2324,7 +2324,7 @@
           "gscSiteUrl": "https://estat.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -2350,7 +2350,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2370,7 +2370,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:33.939Z",
+      "checkedAt": "2026-11-23T01:26:22.331Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -2381,7 +2381,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "etique",
@@ -2390,7 +2390,7 @@
           "gscSiteUrl": "https://etique.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         },
         {
           "id": "etique-2",
@@ -2425,7 +2425,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2445,7 +2445,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:38.793Z",
+      "checkedAt": "2026-11-23T01:26:26.646Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2456,7 +2456,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "ezfunnel",
@@ -2465,7 +2465,7 @@
           "gscSiteUrl": "https://ezfunnel.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -2487,7 +2487,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2507,7 +2507,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.676Z",
+      "checkedAt": "2026-11-23T01:26:18.353Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2518,7 +2518,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "fastjob",
@@ -2527,7 +2527,7 @@
           "gscSiteUrl": "https://fastjob.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 0
         },
         {
           "id": "fastjob-2",
@@ -2563,12 +2563,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -2588,7 +2588,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:33.807Z",
+      "checkedAt": "2026-11-23T01:26:21.325Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -2599,7 +2599,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "finan",
@@ -2643,7 +2643,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2659,7 +2659,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:04.441Z",
+      "checkedAt": "2026-11-23T01:26:53.485Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2668,7 +2668,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "finance-2mlab",
@@ -2699,7 +2699,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2715,7 +2715,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:04.686Z",
+      "checkedAt": "2026-11-23T01:26:53.581Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2724,7 +2724,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "food-2mlab",
@@ -2755,7 +2755,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2775,7 +2775,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.935Z",
+      "checkedAt": "2026-11-23T01:26:52.481Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -2784,7 +2784,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "go-sellerpit",
@@ -2813,7 +2813,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2833,7 +2833,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:39.303Z",
+      "checkedAt": "2026-11-23T01:26:26.950Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -2842,7 +2842,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "goesku",
@@ -2851,7 +2851,7 @@
           "gscSiteUrl": "https://goesku.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -2871,7 +2871,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2891,7 +2891,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.671Z",
+      "checkedAt": "2026-11-23T01:26:53.731Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -2900,7 +2900,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "gold79",
@@ -2929,7 +2929,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -2945,7 +2945,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:40.813Z",
+      "checkedAt": "2026-11-23T01:26:28.612Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -2956,7 +2956,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "gong-luckyday",
@@ -2987,7 +2987,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3007,7 +3007,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:39.265Z",
+      "checkedAt": "2026-11-23T01:26:27.016Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -3018,7 +3018,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "gong365",
@@ -3047,7 +3047,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3067,7 +3067,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:34.629Z",
+      "checkedAt": "2026-11-23T01:26:23.405Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3078,7 +3078,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "gover",
@@ -3087,7 +3087,7 @@
           "gscSiteUrl": "https://gover.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 7
         },
         {
           "id": "gover-2",
@@ -3122,7 +3122,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3133,17 +3133,19 @@
       "host": "turbo1",
       "hostStatus": "public_route_verified",
       "accountHosts": [],
-      "publicDnsAddresses": [],
+      "publicDnsAddresses": [
+        "158.247.212.123"
+      ],
       "stagingTargets": [],
       "addresses": [
         "158.247.212.123"
       ],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:58.836Z",
+      "checkedAt": "2026-11-23T01:26:47.668Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS 조회 미확인",
+        "Google DNS: 158.247.212.123",
         "HTTPS unavailable"
       ],
       "configuredLocations": [
@@ -3151,7 +3153,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "gpt-nexttech7",
@@ -3182,7 +3184,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3202,7 +3204,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.699Z",
+      "checkedAt": "2026-11-23T01:26:51.252Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -3213,7 +3215,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "gradienttrail",
@@ -3222,7 +3224,7 @@
           "gscSiteUrl": "https://gradienttrail.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 8
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -3233,11 +3235,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://gradienttrail.com/",
+          "siteUrl": "sc-domain:gradienttrail.com",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:gradienttrail.com",
+          "siteUrl": "https://gradienttrail.com/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -3246,7 +3248,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3266,7 +3268,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.988Z",
+      "checkedAt": "2026-11-23T01:26:18.704Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -3277,7 +3279,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "haemongdream",
@@ -3286,7 +3288,7 @@
           "gscSiteUrl": "https://haemongdream.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 25
+          "dailyUsers": 15
         }
       ],
       "discoveredGa4": [
@@ -3309,12 +3311,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -3334,7 +3336,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:33.752Z",
+      "checkedAt": "2026-11-23T01:26:21.714Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3345,7 +3347,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "healfood",
@@ -3389,7 +3391,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3409,7 +3411,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.002Z",
+      "checkedAt": "2026-11-23T01:26:19.971Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3420,7 +3422,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "healthgotoo",
@@ -3464,7 +3466,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3480,7 +3482,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:59.625Z",
+      "checkedAt": "2026-11-23T01:26:39.093Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -3491,7 +3493,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "homeimer",
@@ -3537,7 +3539,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3553,7 +3555,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:04.501Z",
+      "checkedAt": "2026-11-23T01:26:53.722Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -3562,7 +3564,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "hos-dogspang",
@@ -3588,7 +3590,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3608,7 +3610,7 @@
       ],
       "cname": [],
       "httpStatus": 410,
-      "checkedAt": "2026-11-22T00:58:31.954Z",
+      "checkedAt": "2026-11-23T01:26:19.812Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -3619,7 +3621,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "insupang",
@@ -3663,7 +3665,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3683,7 +3685,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.683Z",
+      "checkedAt": "2026-11-23T01:26:53.464Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -3692,7 +3694,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "item79",
@@ -3701,7 +3703,7 @@
           "gscSiteUrl": "https://item79.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -3721,7 +3723,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3741,7 +3743,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.275Z",
+      "checkedAt": "2026-11-23T01:26:49.421Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -3752,7 +3754,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "jasamall-sellerpit",
@@ -3761,7 +3763,7 @@
           "gscSiteUrl": "https://jasamall.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -3787,7 +3789,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3807,7 +3809,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.154Z",
+      "checkedAt": "2026-11-23T01:26:52.760Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -3816,7 +3818,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "jeompolab",
@@ -3845,7 +3847,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3865,7 +3867,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.239Z",
+      "checkedAt": "2026-11-23T01:26:52.910Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -3874,7 +3876,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "joy-ehon365",
@@ -3903,7 +3905,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3923,7 +3925,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.649Z",
+      "checkedAt": "2026-11-23T01:26:51.013Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -3934,7 +3936,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "kapti",
@@ -3963,7 +3965,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -3983,7 +3985,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:08.775Z",
+      "checkedAt": "2026-11-23T01:26:57.902Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4034,7 +4036,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.240Z",
+      "checkedAt": "2026-11-23T01:26:48.746Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4045,7 +4047,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "kdramanote",
@@ -4054,7 +4056,7 @@
           "gscSiteUrl": "https://kdramanote.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -4076,7 +4078,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4096,7 +4098,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.277Z",
+      "checkedAt": "2026-11-23T01:26:19.205Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4107,7 +4109,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "klick",
@@ -4125,7 +4127,7 @@
           "gscSiteUrl": "https://klick.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 54
+          "dailyUsers": 74
         }
       ],
       "discoveredGa4": [
@@ -4152,12 +4154,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -4177,7 +4179,7 @@
       ],
       "cname": [],
       "httpStatus": 410,
-      "checkedAt": "2026-11-22T00:58:31.902Z",
+      "checkedAt": "2026-11-23T01:26:19.060Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4188,7 +4190,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "knewstory",
@@ -4232,7 +4234,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4248,7 +4250,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:04.009Z",
+      "checkedAt": "2026-11-23T01:26:52.732Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4257,7 +4259,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "ko-klick",
@@ -4288,7 +4290,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4308,7 +4310,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:34.760Z",
+      "checkedAt": "2026-11-23T01:26:22.333Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4319,7 +4321,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "lawer",
@@ -4328,7 +4330,7 @@
           "gscSiteUrl": "https://lawer.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 3
         },
         {
           "id": "lawer-2",
@@ -4363,7 +4365,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4383,7 +4385,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.734Z",
+      "checkedAt": "2026-11-23T01:26:21.131Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4394,7 +4396,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "legalser",
@@ -4403,7 +4405,7 @@
           "gscSiteUrl": "https://legalser.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 9
+          "dailyUsers": 5
         },
         {
           "id": "legalser-2",
@@ -4438,7 +4440,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4450,28 +4452,28 @@
       "hostStatus": "unverified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "172.67.147.161",
-        "104.21.47.121"
+        "104.21.47.121",
+        "172.67.147.161"
       ],
       "stagingTargets": [],
       "addresses": [
-        "104.21.47.121",
         "172.67.147.161",
-        "2606:4700:3032::6815:2f79",
-        "2606:4700:3035::ac43:93a1"
+        "104.21.47.121",
+        "2606:4700:3035::ac43:93a1",
+        "2606:4700:3032::6815:2f79"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.127Z",
+      "checkedAt": "2026-11-23T01:26:52.975Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 172.67.147.161, 104.21.47.121",
+        "Google DNS: 104.21.47.121, 172.67.147.161",
         "HTTPS 200"
       ],
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "lim01-soonsaak-co",
@@ -4500,7 +4502,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4520,7 +4522,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.531Z",
+      "checkedAt": "2026-11-23T01:26:50.798Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -4531,7 +4533,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "limsight",
@@ -4540,7 +4542,7 @@
           "gscSiteUrl": "https://limsight.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 19
         }
       ],
       "discoveredGa4": [
@@ -4562,7 +4564,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4578,7 +4580,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:03.767Z",
+      "checkedAt": "2026-11-23T01:26:52.532Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4587,7 +4589,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "lo-klick",
@@ -4618,7 +4620,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4638,7 +4640,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.576Z",
+      "checkedAt": "2026-11-23T01:26:51.158Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -4649,7 +4651,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "localgeo",
@@ -4658,7 +4660,7 @@
           "gscSiteUrl": "https://localgeo.app/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -4678,7 +4680,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4698,7 +4700,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.272Z",
+      "checkedAt": "2026-11-23T01:26:19.472Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -4709,7 +4711,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "luckyday",
@@ -4718,7 +4720,7 @@
           "gscSiteUrl": "sc-domain:luckyday.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 20
+          "dailyUsers": 39
         },
         {
           "id": "luckyday-2",
@@ -4754,12 +4756,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -4775,7 +4777,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:59.622Z",
+      "checkedAt": "2026-11-23T01:26:38.078Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS 조회 미확인",
@@ -4786,7 +4788,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "luxurytraver",
@@ -4830,7 +4832,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4846,7 +4848,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:35.738Z",
+      "checkedAt": "2026-11-23T01:26:23.971Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -4857,7 +4859,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "mbti-tasko",
@@ -4881,11 +4883,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://mbti.tasko.kr/",
+          "siteUrl": "sc-domain:mbti.tasko.kr",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:mbti.tasko.kr",
+          "siteUrl": "https://mbti.tasko.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -4896,7 +4898,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4916,7 +4918,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:05.058Z",
+      "checkedAt": "2026-11-23T01:26:53.484Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 121.254.224.110",
@@ -4925,7 +4927,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "mohana",
@@ -4934,7 +4936,7 @@
           "gscSiteUrl": "https://mohana.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 8
+          "dailyUsers": 7
         }
       ],
       "discoveredGa4": [
@@ -4954,7 +4956,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -4966,20 +4968,20 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "64.29.17.131",
-        "216.198.79.131"
+        "64.29.17.195",
+        "216.198.79.195"
       ],
       "stagingTargets": [],
       "addresses": [
-        "64.29.17.67",
-        "216.198.79.67"
+        "216.198.79.131",
+        "64.29.17.131"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:05.413Z",
+      "checkedAt": "2026-11-23T01:26:54.377Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 64.29.17.131, 216.198.79.131",
+        "Google DNS: 64.29.17.195, 216.198.79.195",
         "HTTPS 200"
       ],
       "configuredLocations": [],
@@ -5026,7 +5028,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.796Z",
+      "checkedAt": "2026-11-23T01:26:53.943Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5034,8 +5036,8 @@
       ],
       "configuredLocations": [],
       "monetization": true,
-      "approval": "NEEDS_ATTENTION",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approval": "GETTING_READY",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "nekau",
@@ -5044,7 +5046,7 @@
           "gscSiteUrl": "https://nekau.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 8
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -5066,13 +5068,13 @@
         "accounts": [
           {
             "publisherId": "pub-3050601904412736",
-            "rawState": "NEEDS_ATTENTION",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "rawState": "GETTING_READY",
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z",
+        "checkedAt": "2026-11-23T01:26:05.771Z",
         "consoleObservation": {
           "domain": "nekau.com",
           "state": "GETTING_READY",
@@ -5100,7 +5102,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:36.270Z",
+      "checkedAt": "2026-11-23T01:26:24.145Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5111,7 +5113,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "nexttech7",
@@ -5120,7 +5122,7 @@
           "gscSiteUrl": "https://nexttech7.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -5143,12 +5145,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -5168,7 +5170,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:35.116Z",
+      "checkedAt": "2026-11-23T01:26:23.202Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5179,7 +5181,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "nicewomen",
@@ -5210,7 +5212,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5230,7 +5232,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.773Z",
+      "checkedAt": "2026-11-23T01:26:49.931Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5241,7 +5243,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "nongsusangogo",
@@ -5270,7 +5272,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5286,7 +5288,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:40.901Z",
+      "checkedAt": "2026-11-23T01:26:37.982Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -5297,7 +5299,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "notebook-klick",
@@ -5330,11 +5332,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://notebook.klick.kr/",
+          "siteUrl": "sc-domain:notebook.klick.kr",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:notebook.klick.kr",
+          "siteUrl": "https://notebook.klick.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -5345,7 +5347,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5365,7 +5367,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.009Z",
+      "checkedAt": "2026-11-23T01:26:50.725Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -5376,7 +5378,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "patentgogo",
@@ -5385,7 +5387,7 @@
           "gscSiteUrl": "https://patentgogo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 5
         }
       ],
       "discoveredGa4": [
@@ -5405,7 +5407,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5425,7 +5427,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.548Z",
+      "checkedAt": "2026-11-23T01:26:52.252Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5436,7 +5438,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "petcostlab",
@@ -5467,7 +5469,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5487,7 +5489,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.561Z",
+      "checkedAt": "2026-11-23T01:26:48.872Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5498,7 +5500,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "pethomepick",
@@ -5507,7 +5509,7 @@
           "gscSiteUrl": "sc-domain:pethomepick.com",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -5533,7 +5535,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5553,7 +5555,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.754Z",
+      "checkedAt": "2026-11-23T01:26:21.068Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -5564,7 +5566,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "petinsuer",
@@ -5582,7 +5584,7 @@
           "gscSiteUrl": "https://petinsuer.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 3
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -5608,7 +5610,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5628,7 +5630,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:42.378Z",
+      "checkedAt": "2026-11-23T01:26:47.091Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5639,7 +5641,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "petjigi",
@@ -5668,7 +5670,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5684,7 +5686,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:40.146Z",
+      "checkedAt": "2026-11-23T01:26:28.298Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -5695,7 +5697,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "phone-luckyday",
@@ -5715,11 +5717,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://phone.luckyday.kr/",
+          "siteUrl": "sc-domain:phone.luckyday.kr",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:phone.luckyday.kr",
+          "siteUrl": "https://phone.luckyday.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -5730,7 +5732,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5750,7 +5752,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:42.814Z",
+      "checkedAt": "2026-11-23T01:26:47.381Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -5761,7 +5763,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "picklefriend",
@@ -5770,7 +5772,7 @@
           "gscSiteUrl": "https://picklefriend.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 9
+          "dailyUsers": 16
         }
       ],
       "discoveredGa4": [
@@ -5790,7 +5792,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5810,7 +5812,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.717Z",
+      "checkedAt": "2026-11-23T01:26:52.168Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -5819,7 +5821,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "picturebooks",
@@ -5828,7 +5830,7 @@
           "gscSiteUrl": "https://picturebooks.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -5848,7 +5850,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5868,7 +5870,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.903Z",
+      "checkedAt": "2026-11-23T01:26:51.302Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -5879,7 +5881,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "plategogo",
@@ -5888,7 +5890,7 @@
           "gscSiteUrl": "https://plategogo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -5908,7 +5910,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5919,17 +5921,19 @@
       "host": "contabo",
       "hostStatus": "public_route_verified",
       "accountHosts": [],
-      "publicDnsAddresses": [],
+      "publicDnsAddresses": [
+        "13.140.77.84"
+      ],
       "stagingTargets": [],
       "addresses": [
         "13.140.77.84"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:58.767Z",
+      "checkedAt": "2026-11-23T01:26:47.469Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS 조회 미확인",
+        "Google DNS: 13.140.77.84",
         "HTTPS 200"
       ],
       "configuredLocations": [
@@ -5937,7 +5941,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "pregnancy-ehon365",
@@ -5966,7 +5970,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -5986,7 +5990,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:40.376Z",
+      "checkedAt": "2026-11-23T01:26:28.250Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -5997,7 +6001,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "richyou",
@@ -6006,7 +6010,7 @@
           "gscSiteUrl": "https://richyou.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -6028,7 +6032,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6048,7 +6052,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.595Z",
+      "checkedAt": "2026-11-23T01:26:51.124Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -6059,7 +6063,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "rndatlas",
@@ -6088,7 +6092,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6108,7 +6112,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:39.513Z",
+      "checkedAt": "2026-11-23T01:26:27.357Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -6119,7 +6123,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "roadways",
@@ -6139,11 +6143,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://roadways.kr/",
+          "siteUrl": "https://www.roadways.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://www.roadways.kr/",
+          "siteUrl": "https://roadways.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -6152,7 +6156,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6172,7 +6176,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:36.190Z",
+      "checkedAt": "2026-11-23T01:26:24.413Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -6183,7 +6187,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "runmania",
@@ -6192,7 +6196,7 @@
           "gscSiteUrl": "https://runmania.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -6212,7 +6216,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6232,7 +6236,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:41.880Z",
+      "checkedAt": "2026-11-23T01:26:38.665Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6243,7 +6247,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "saju-tasko",
@@ -6252,7 +6256,7 @@
           "gscSiteUrl": "sc-domain:saju.tasko.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 61
+          "dailyUsers": 49
         }
       ],
       "discoveredGa4": [
@@ -6274,7 +6278,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6294,7 +6298,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:35.494Z",
+      "checkedAt": "2026-11-23T01:26:23.163Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6305,7 +6309,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "sellerpit",
@@ -6323,7 +6327,7 @@
           "gscSiteUrl": "https://sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 5
         }
       ],
       "discoveredGa4": [
@@ -6350,12 +6354,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -6375,7 +6379,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.293Z",
+      "checkedAt": "2026-11-23T01:26:51.600Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6386,7 +6390,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "seniorlivingnote",
@@ -6395,7 +6399,7 @@
           "gscSiteUrl": "https://seniorlivingnote.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -6417,7 +6421,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6437,7 +6441,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.572Z",
+      "checkedAt": "2026-11-23T01:26:52.213Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6446,7 +6450,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "shotsetup",
@@ -6455,7 +6459,7 @@
           "gscSiteUrl": "https://shotsetup.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 4
         }
       ],
       "discoveredGa4": [
@@ -6477,7 +6481,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6488,7 +6492,10 @@
       "host": "vercel",
       "hostStatus": "public_route_verified",
       "accountHosts": [],
-      "publicDnsAddresses": [],
+      "publicDnsAddresses": [
+        "216.150.1.193",
+        "216.150.16.193"
+      ],
       "stagingTargets": [],
       "addresses": [
         "216.150.16.193",
@@ -6498,10 +6505,10 @@
         "7559dbd876501752.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:58.793Z",
+      "checkedAt": "2026-11-23T01:26:47.286Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS 조회 미확인",
+        "Google DNS: 216.150.1.193, 216.150.16.193",
         "HTTPS 200"
       ],
       "configuredLocations": [
@@ -6509,7 +6516,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "sinhonjigi-ehon365",
@@ -6538,7 +6545,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6558,7 +6565,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.407Z",
+      "checkedAt": "2026-11-23T01:26:48.322Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6569,7 +6576,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "smallhomepick",
@@ -6578,7 +6585,7 @@
           "gscSiteUrl": "https://smallhomepick.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 13
+          "dailyUsers": 3
         }
       ],
       "discoveredGa4": [
@@ -6600,7 +6607,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6620,7 +6627,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:42.984Z",
+      "checkedAt": "2026-11-23T01:26:47.120Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -6631,7 +6638,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "smart-sellerpit",
@@ -6640,7 +6647,7 @@
           "gscSiteUrl": "https://smart.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -6662,7 +6669,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6682,7 +6689,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:33.069Z",
+      "checkedAt": "2026-11-23T01:26:21.257Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6693,7 +6700,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "softwa",
@@ -6702,7 +6709,7 @@
           "gscSiteUrl": "https://softwa.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 9
+          "dailyUsers": 13
         },
         {
           "id": "softwa-2",
@@ -6737,7 +6744,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6757,7 +6764,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.379Z",
+      "checkedAt": "2026-11-23T01:26:50.602Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -6768,7 +6775,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "solarpaybackmap",
@@ -6777,7 +6784,7 @@
           "gscSiteUrl": "https://solarpaybackmap.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -6797,7 +6804,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6817,7 +6824,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.906Z",
+      "checkedAt": "2026-11-23T01:26:48.773Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6826,7 +6833,7 @@
       "configuredLocations": [],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "sorimate",
@@ -6835,7 +6842,7 @@
           "gscSiteUrl": "https://sorimate.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -6857,7 +6864,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6865,30 +6872,26 @@
       "url": "https://spinkorea.kr/",
       "enabled": true,
       "platform": "static",
-      "host": "contabo",
-      "hostStatus": "public_route_verified",
+      "host": "unknown",
+      "hostStatus": "public_route_unavailable",
       "accountHosts": [],
-      "publicDnsAddresses": [
-        "13.140.77.84"
-      ],
+      "publicDnsAddresses": [],
       "stagingTargets": [],
-      "addresses": [
-        "13.140.77.84"
-      ],
+      "addresses": [],
       "cname": [],
-      "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:35.972Z",
+      "httpStatus": null,
+      "checkedAt": "2026-11-23T01:26:23.533Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 13.140.77.84",
-        "HTTPS 200"
+        "Google DNS: A 응답 없음",
+        "HTTPS unavailable"
       ],
       "configuredLocations": [
         "kwangju"
       ],
       "monetization": true,
       "approval": "GETTING_READY",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "spinkorea",
@@ -6906,7 +6909,7 @@
           "gscSiteUrl": "https://spinkorea.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 2
         }
       ],
       "discoveredGa4": [
@@ -6925,18 +6928,20 @@
           "permission": "속성 목록에 있음"
         }
       ],
-      "issues": [],
+      "issues": [
+        "공개 DNS 확인 불가"
+      ],
       "adsense": {
         "accounts": [
           {
             "publisherId": "pub-7865675606131621",
             "rawState": "GETTING_READY",
-            "checkedAt": "2026-11-22T00:58:16.710Z"
+            "checkedAt": "2026-11-23T01:26:06.485Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -6956,7 +6961,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:39.388Z",
+      "checkedAt": "2026-11-23T01:26:27.488Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -6967,7 +6972,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "sssaass",
@@ -6976,7 +6981,7 @@
           "gscSiteUrl": "https://sssaass.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -6998,7 +7003,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7018,7 +7023,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:31.917Z",
+      "checkedAt": "2026-11-23T01:26:18.800Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7029,7 +7034,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "temon",
@@ -7038,7 +7043,7 @@
           "gscSiteUrl": "sc-domain:temon.kr",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 25
+          "dailyUsers": 23
         }
       ],
       "discoveredGa4": [
@@ -7049,11 +7054,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://temon.kr/",
+          "siteUrl": "sc-domain:temon.kr",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "sc-domain:temon.kr",
+          "siteUrl": "https://temon.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -7063,12 +7068,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -7088,7 +7093,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:37.353Z",
+      "checkedAt": "2026-11-23T01:26:25.111Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7099,7 +7104,7 @@
       ],
       "monetization": true,
       "approval": "READY",
-      "approvalCheckedAt": "2026-11-22T00:58:15.870Z",
+      "approvalCheckedAt": "2026-11-23T01:26:05.771Z",
       "bindings": [
         {
           "id": "tennisfrens",
@@ -7108,7 +7113,7 @@
           "gscSiteUrl": "sc-domain:tennisfrens.com",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 21
+          "dailyUsers": 36
         }
       ],
       "discoveredGa4": [
@@ -7129,12 +7134,12 @@
           {
             "publisherId": "pub-3050601904412736",
             "rawState": "READY",
-            "checkedAt": "2026-11-22T00:58:15.870Z"
+            "checkedAt": "2026-11-23T01:26:05.771Z"
           }
         ],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:15.870Z"
+        "checkedAt": "2026-11-23T01:26:05.771Z"
       }
     },
     {
@@ -7154,7 +7159,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:37.264Z",
+      "checkedAt": "2026-11-23T01:26:25.278Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7166,7 +7171,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "texturb",
@@ -7175,7 +7180,7 @@
           "gscSiteUrl": "https://texturb.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 12
+          "dailyUsers": 24
         }
       ],
       "discoveredGa4": [
@@ -7186,11 +7191,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://texturb.com/",
+          "siteUrl": "https://www.texturb.com/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://www.texturb.com/",
+          "siteUrl": "https://texturb.com/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -7199,7 +7204,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7219,7 +7224,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:36.623Z",
+      "checkedAt": "2026-11-23T01:26:24.478Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.198.79.1",
@@ -7230,7 +7235,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "today2424",
@@ -7263,7 +7268,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7283,7 +7288,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:37.355Z",
+      "checkedAt": "2026-11-23T01:26:25.266Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7294,7 +7299,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "todaypharm",
@@ -7303,7 +7308,7 @@
           "gscSiteUrl": "https://todaypharm.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 10
+          "dailyUsers": 9
         }
       ],
       "discoveredGa4": [
@@ -7314,11 +7319,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://todaypharm.kr/",
+          "siteUrl": "https://www.todaypharm.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://www.todaypharm.kr/",
+          "siteUrl": "https://todaypharm.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -7327,7 +7332,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7347,7 +7352,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:40.221Z",
+      "checkedAt": "2026-11-23T01:26:28.027Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -7358,7 +7363,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "todayshops",
@@ -7376,7 +7381,7 @@
           "gscSiteUrl": "https://todayshops.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 11
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -7398,7 +7403,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7418,7 +7423,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:05.241Z",
+      "checkedAt": "2026-11-23T01:26:54.186Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -7427,7 +7432,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "toolnavigo",
@@ -7436,7 +7441,7 @@
           "gscSiteUrl": "https://toolnavigo.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -7458,7 +7463,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7478,7 +7483,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:33.964Z",
+      "checkedAt": "2026-11-23T01:26:22.061Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -7489,7 +7494,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "trave",
@@ -7498,7 +7503,7 @@
           "gscSiteUrl": "https://trave.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         },
         {
           "id": "trave-2",
@@ -7533,7 +7538,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7549,7 +7554,7 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:59:04.656Z",
+      "checkedAt": "2026-11-23T01:26:53.486Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: A 응답 없음",
@@ -7558,7 +7563,7 @@
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "travel-dogspang",
@@ -7584,7 +7589,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7604,7 +7609,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:00.688Z",
+      "checkedAt": "2026-11-23T01:26:48.739Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.212.123",
@@ -7615,7 +7620,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "travel-sellerpit",
@@ -7624,7 +7629,7 @@
           "gscSiteUrl": "https://travel.sellerpit.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 1
         }
       ],
       "discoveredGa4": [
@@ -7646,7 +7651,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7666,7 +7671,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:32.575Z",
+      "checkedAt": "2026-11-23T01:26:20.412Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -7677,7 +7682,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "travelpang",
@@ -7695,7 +7700,7 @@
           "gscSiteUrl": "https://travelpang.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 2
+          "dailyUsers": 5
         }
       ],
       "discoveredGa4": [
@@ -7721,7 +7726,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7741,7 +7746,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.792Z",
+      "checkedAt": "2026-11-23T01:26:50.262Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -7752,7 +7757,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "wattbenchs",
@@ -7781,7 +7786,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7797,10 +7802,10 @@
       "addresses": [],
       "cname": [],
       "httpStatus": null,
-      "checkedAt": "2026-11-22T00:58:58.308Z",
+      "checkedAt": "2026-11-23T01:26:47.113Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS 조회 미확인",
+        "Google DNS: A 응답 없음",
         "HTTPS unavailable"
       ],
       "configuredLocations": [
@@ -7808,7 +7813,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "webtoon-klick",
@@ -7839,7 +7844,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7851,20 +7856,20 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.198.79.131",
-        "64.29.17.131"
+        "216.198.79.3",
+        "64.29.17.3"
       ],
       "stagingTargets": [],
       "addresses": [
-        "64.29.17.131",
-        "216.198.79.131"
+        "216.198.79.195",
+        "64.29.17.195"
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.887Z",
+      "checkedAt": "2026-11-23T01:26:53.889Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.198.79.131, 64.29.17.131",
+        "Google DNS: 216.198.79.3, 64.29.17.3",
         "HTTPS 200"
       ],
       "configuredLocations": [],
@@ -7916,7 +7921,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:03.201Z",
+      "checkedAt": "2026-11-23T01:26:51.539Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -7927,7 +7932,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "wedfairguide",
@@ -7936,7 +7941,7 @@
           "gscSiteUrl": "https://wedfairguide.com/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 1
+          "dailyUsers": 0
         }
       ],
       "discoveredGa4": [
@@ -7956,7 +7961,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -7968,28 +7973,28 @@
       "hostStatus": "public_route_verified",
       "accountHosts": [],
       "publicDnsAddresses": [
-        "216.150.1.1",
-        "216.150.16.1"
+        "216.150.1.129",
+        "216.150.16.129"
       ],
       "stagingTargets": [],
       "addresses": [
-        "216.150.1.1",
-        "216.150.16.1"
+        "216.150.1.193",
+        "216.150.16.193"
       ],
       "cname": [
         "3497de2890fedbbb.vercel-dns-016.com"
       ],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:04.194Z",
+      "checkedAt": "2026-11-23T01:26:52.759Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
-        "Google DNS: 216.150.1.1, 216.150.16.1",
+        "Google DNS: 216.150.1.129, 216.150.16.129",
         "HTTPS 200"
       ],
       "configuredLocations": [],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "wonon-ehon365",
@@ -8018,7 +8023,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -8038,7 +8043,7 @@
       ],
       "cname": [],
       "httpStatus": 404,
-      "checkedAt": "2026-11-22T00:59:01.667Z",
+      "checkedAt": "2026-11-23T01:26:49.802Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 216.150.1.1",
@@ -8049,7 +8054,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "workgogo",
@@ -8069,11 +8074,11 @@
       ],
       "discoveredGsc": [
         {
-          "siteUrl": "https://workgogo.kr/",
+          "siteUrl": "http://workgogo.kr/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "http://workgogo.kr/",
+          "siteUrl": "https://workgogo.kr/",
           "permission": "속성 목록에 있음"
         }
       ],
@@ -8082,7 +8087,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -8102,7 +8107,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:58:42.344Z",
+      "checkedAt": "2026-11-23T01:26:47.059Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 158.247.209.217",
@@ -8113,7 +8118,7 @@
       ],
       "monetization": false,
       "approval": "EXCLUDED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "yesa",
@@ -8122,7 +8127,7 @@
           "gscSiteUrl": "https://yesa.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 0
+          "dailyUsers": 5
         }
       ],
       "discoveredGa4": [
@@ -8144,7 +8149,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -8164,7 +8169,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:01.794Z",
+      "checkedAt": "2026-11-23T01:26:49.985Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 13.140.77.84",
@@ -8175,7 +8180,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "youkamap",
@@ -8204,7 +8209,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     },
     {
@@ -8224,7 +8229,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:05.220Z",
+      "checkedAt": "2026-11-23T01:26:54.118Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 76.76.21.21",
@@ -8248,11 +8253,11 @@
       "discoveredGa4": [],
       "discoveredGsc": [
         {
-          "siteUrl": "https://www.yourtripgo.com/",
+          "siteUrl": "https://yourtripgo.com/",
           "permission": "속성 목록에 있음"
         },
         {
-          "siteUrl": "https://yourtripgo.com/",
+          "siteUrl": "https://www.yourtripgo.com/",
           "permission": "속성 목록에 있음"
         },
         {
@@ -8287,7 +8292,7 @@
       ],
       "cname": [],
       "httpStatus": 200,
-      "checkedAt": "2026-11-22T00:59:02.084Z",
+      "checkedAt": "2026-11-23T01:26:50.584Z",
       "evidence": [
         "시스템 DNS A/AAAA/CNAME",
         "Google DNS: 51.79.206.71",
@@ -8298,7 +8303,7 @@
       ],
       "monetization": true,
       "approval": "NOT_LISTED",
-      "approvalCheckedAt": "2026-11-22T00:58:16.710Z",
+      "approvalCheckedAt": "2026-11-23T01:26:06.485Z",
       "bindings": [
         {
           "id": "yungyanggogo",
@@ -8307,7 +8312,7 @@
           "gscSiteUrl": "https://yungyanggogo.kr/",
           "ga4Status": "ok",
           "gscStatus": "ok",
-          "dailyUsers": 24
+          "dailyUsers": 28
         }
       ],
       "discoveredGa4": [
@@ -8327,7 +8332,7 @@
         "accounts": [],
         "coverage": "configured_accounts_complete",
         "source": "adsense_management_api_v2",
-        "checkedAt": "2026-11-22T00:58:16.710Z"
+        "checkedAt": "2026-11-23T01:26:06.485Z"
       }
     }
   ],
